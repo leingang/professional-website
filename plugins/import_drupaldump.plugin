@@ -1,0 +1,12 @@
+[Core]
+name = import_drupaldump
+module = import_drupaldump
+
+[Documentation]
+author = Matthew Leingang
+version = 1.0
+website = http://www.matthewleingang.com/
+description = Import a static dump of a drupal site.
+
+[Nikola]
+plugincategory = Command

@@ -1,0 +1,40 @@
+<!--
+.. title: Configuring tex4ht to link to PDF
+.. slug: configuring-tex4ht-to-link-to-pdf
+.. date: 2007-04-27T07:19:00
+.. tags: courses,harvard,computing,latex
+.. category: courses
+.. link: 
+.. description: 
+.. type: text
+.. categories: courses,computing,latex
+-->
+
+<p><a href="/posts/tex4ht/">As I wrote before</a>, I&#8217;m a big fan of <a href="http://www.cse.ohio-state.edu/%7Egurari/TeX4ht/">TeX4ht</a> to convert (La)TeX documents to HTML and variants.  One thing I liked was its professed configurability.  So I gave it a whirl.</p>
+
+<p>The HTML that TeX4ht isn&#8217;t quite perfect, still.  It needs some help with tables, and if I use custom list styles they don&#8217;t carry over (although that might be a browser thing, now, come to think of it).  So I wanted to insert two things into the HTML file: a &lt;LINK&gt; element in the document head indicating to any machine reader that the PDF version exists, and a note at the top of the document body indicating to any human reader that the PDF version exists and is more authoritative.</p>
+
+<p>So here&#8217;s my linktopdf.cfg file, which I put in the same directory as the LaTeX file.</p>
+
+<p>
+  <code>\Preamble{xhtml}<br />
+% You can put definitions here<br />
+\begin{document}<br />
+% This stuff goes in the &lt;head&gt; of the HTML document<br />
+\HCode{&lt;link rev="alternate" media="print" xhref="\jobname.pdf" mce_href="\jobname.pdf"  /&gt;}<br />
+\EndPreamble<br />
+% This goes at the beginning of the &lt;body&gt; of the document.<br />
+Note: This is an automatically generated HTML conversion of a LaTeX file, provided for convenience.  The authoritative version is the \Link[\jobname.pdf]{}{PDF}PDF\EndLink\ version.<br />
+</code>
+</p>
+
+<p>To compile a LaTeX file with this configuration use</p>
+
+<p>
+  <code>$htlatex foo.tex "linktopdf" "" "-cvalidate"</code>
+</p>
+
+<p>and that ought to do it!  I&#8217;d kind of like it to go after the title, rather than at the very beginning of the document, but that would take a little more reading of the configuration process.  Advanced usage would be to give it a class and add CSS to the head that sets this paragraph in a different style</p>
+
+<p>I thought for a while whether I wanted to use a LINK REL or a LINK REV declaration.  The question is, is it more useful or correct to say the the PDF file is a printable version of the HTML, or that the HTML is a screen version of the PDF?  Perhaps the latter, but i don&#8217;t exactly know which would make a machine go get the PDF instead.</p>
+

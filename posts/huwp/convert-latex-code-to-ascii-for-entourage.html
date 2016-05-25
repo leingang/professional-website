@@ -1,0 +1,75 @@
+<!--
+.. title: Convert (La)TeX code to ASCII for Entourage
+.. slug: convert-latex-code-to-ascii-for-entourage
+.. date: 2005-12-01T08:47:00
+.. tags: harvard,computing,latex
+.. category: computing
+.. link: 
+.. description: 
+.. type: text
+.. categories: computing,latex
+-->
+
+<p>
+I&#8217;ve rediscovered (after having forgotten its name) <a href="http://www.tug.org/tex-archive/support/tex2mail/">tex2mail</a>, a nifty perl script that converts equations written in TeX or LaTeX to ASCII art.  It&#8217;s not beautiful, but it works and is especially useful when discussing math over e-mail.  On the Mac, you can use a cheap AppleScript to grab a selection and pipe it through this script, and you&#8217;ve got ASCII equations in your fancy mail user agent.
+</p>
+
+<p>
+<!-- more -->
+</p>
+
+<p>
+For instance, the LaTeX code
+</p>
+
+<p>
+  <code><br />
+\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}<br />
+</code>
+</p>
+
+<p>
+which would be written in a real mathematics document as <img src="/images/30f30e73caaa9eb673e8c166ce2b0839.gif" title="$\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$" alt="$\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$" align="absmiddle" />, becomes after tex2mail
+</p>
+
+<pre>
+                                            2
+                             ~~   oo1   pi
+                              &gt;     -- = ----
+                             /__ i=1 2    6
+                                    n
+</pre>
+
+<p>
+Okay, so that&#8217;s not perfect, but it&#8217;s 90% there; you can clean it up if you want.
+</p>
+
+<p>
+Once you&#8217;ve downloaded the perl script, put it in some directory where you keep scripts (~/bin or ~/Library/Scripts, perhaps), then create <a href="/files/Convert_TeX_text_to_ASCII.scpt">an AppleScript like this</a>:
+</p>
+
+<p>
+  <code>
+<pre>
+tell application "Microsoft Entourage"
+     set theText to the selection
+     if the class of theText is not Unicode text then
+          error "Please select some text before running this script."
+          quit
+     end if
+     set scriptName to "/your/path/to/tex2mail.pl"
+     set replacementText to do shell script "echo '" &amp; theText &amp; "' | " &amp; scriptName
+     set the selection to replacementText
+end tell
+</pre>
+<p></p></code>
+</p>
+
+<p>
+(I am a wordpress newbie so I don&#8217;t know why all my quote characters got escaped there.  They shouldn&#8217;t be in your script.  Alternatively, you can download the script.)</p>
+
+<p>
+You can save this script in a directory that your mail user agent looks in for scripts.  For instance, with Microsoft Entourage, the directory is &#8220;&lt;your Home Directory&gt;:Documents:Microsoft User Data:Entourage Script Menu Items&#8221; (unless you&#8217;ve changed the Microsoft User Data folder name somewhere in your Office preferences).  Now in Entourage you can select some text, then choose your script from the menu that has the script icon.  Hey presto! Cruddy ASCII equations.
+</p>
+			
+			

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- generator="wordpress/2.0.4" -->
+<rss version="2.0" 
+	xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+	<title>Comments for What the heck is a preceptor?</title>
+	<link>http://www.math.harvard.edu/~leingang</link>
+	<description>Teaching, Training, and Advising for the Harvard Mathematics Department.  Oh, and some computer stuff.</description>
+	<pubDate>Wed, 23 Jul 2008 16:46:01 +0000</pubDate>
+	<generator>http://wordpress.org/?v=2.0.4</generator>
+
+	<item>
+		<title>Comment on Number pages within chapters in LaTeX by leingang</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html#comment-15310</link>
+		<pubDate>Tue, 08 Apr 2008 13:19:08 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html#comment-15310</guid>
+					<description>Like I said, this is my first use of &lt;code&gt;\expandafter&lt;/code&gt;, so I'm not quite sure I can explain it well.  The problem with &lt;code&gt;\def\chapter{\oldchapter\resetpage&lt;/code&gt; is that \chapter expects some arguments, and we the macro writer can't anticipate how many arguments are going to be present.  &lt;code&gt;\oldchapter\resetpage&lt;/code&gt; is going to try to create a chapter named &lt;code&gt;\resetpage&lt;/code&gt;, which will probably be disastrous. :-)
+
+Another common use of &lt;code&gt;\expandafter&lt;/code&gt; is to use variable variable names, so that
+
+&lt;code&gt;
+\def\save#1#2{
+  \expandafter\def\expandafter\csname#1\endcsname{#2}}
+&lt;/code&gt;
+
+has the effect of what you probably mean when you want to write &lt;code&gt;\def\#1{#2}&lt;/code&gt;: that is, save #2 in a macro named #1.  Although the TeXBook does say that the held token is put in front of the token string and then evaluated in the same order, I think the fact that the second token is evaluated and expanded first is almost the same thing as having the second token come first.  There was another use of \expandafter as a solution to a &lt;a href="http://thread.gmane.org/gmane.comp.tex.macosx/29461/focus=29512" rel="nofollow"&gt;question on comp.tex.macosx&lt;/a&gt; the other day.</description>
+		<content:encoded><![CDATA[<p>Like I said, this is my first use of <code>\expandafter</code>, so I&#8217;m not quite sure I can explain it well.  The problem with <code>\def\chapter{\oldchapter\resetpage</code> is that \chapter expects some arguments, and we the macro writer can&#8217;t anticipate how many arguments are going to be present.  <code>\oldchapter\resetpage</code> is going to try to create a chapter named <code>\resetpage</code>, which will probably be disastrous. <img src='http://www.math.harvard.edu/~leingang/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>Another common use of <code>\expandafter</code> is to use variable variable names, so that</p>
+<p><code><br />
+\def\save#1#2{<br />
+  \expandafter\def\expandafter\csname#1\endcsname{#2}}<br />
+</code></p>
+<p>has the effect of what you probably mean when you want to write <code>\def\#1{#2}</code>: that is, save #2 in a macro named #1.  Although the TeXBook does say that the held token is put in front of the token string and then evaluated in the same order, I think the fact that the second token is evaluated and expanded first is almost the same thing as having the second token come first.  There was another use of \expandafter as a solution to a <a href="http://thread.gmane.org/gmane.comp.tex.macosx/29461/focus=29512" rel="nofollow">question on comp.tex.macosx</a> the other day.
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Number pages within chapters in LaTeX by bready</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html#comment-15309</link>
+		<pubDate>Mon, 07 Apr 2008 22:12:42 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html#comment-15309</guid>
+					<description>If \resetpage is still called BEFORE \oldchapter, then you should still have the same problem, according to your quote from the TeXBook.  You would be setting the last page of chapter 3 to 1 and the first page of chapter four to 2.  It seems like what you would want to do is call:
+
+\def\chapter{\oldchapter\resetpage}
+
+What am I missing?</description>
+		<content:encoded><![CDATA[<p>If \resetpage is still called BEFORE \oldchapter, then you should still have the same problem, according to your quote from the TeXBook.  You would be setting the last page of chapter 3 to 1 and the first page of chapter four to 2.  It seems like what you would want to do is call:</p>
+<p>\def\chapter{\oldchapter\resetpage}</p>
+<p>What am I missing?
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Hacking your signature file (baseball bragging rights division) by Keith</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/hacking-your-signature-file-baseball-bragging-rights-division.html#comment-15295</link>
+		<pubDate>Tue, 25 Mar 2008 18:56:15 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/hacking-your-signature-file-baseball-bragging-rights-division.html#comment-15295</guid>
+					<description>The site that you linked to is mine.
+
+I wrote my calculator in PHP. I do pretty much the same thing you did for all the MLB teams, not just the Red Sox. It kicks off March 31, and checks every hour from 12PM to 1AM (I don't want to stress the host site). Instead of using the elim number, I use a brute force approach to sort the divisions and calculate the magic number as: 163 - team wins - next in ranking losses  (if a first place team this is 2nd place team's losses, if not first it is first place team's losses). This is a little different. I haven't thought about it much but it strikes me that you had better check that you are calculating the magic number correctly if the Red Sox are ever in first place (unlikely as this may be).
+
+My method assumes that all teams have played the same number of games and it breaks due to schedule issues and delayed games, but eventually catches up.
+
+I am sorry about the ads, but I am a capitalist in my own small way. I make the equivalent of case a beer a month off the sites during the regular season. Personally, I browse using Firefox with the AdBlock plug-in and I never see ads, Google or otherwise, unless I am testing one of my own sites. This speeds up web access quite a bit and improves my web experience at the expense of not funding all the other capitalists out there. 
+
+Blog: http://www.cthreepo.com/blog</description>
+		<content:encoded><![CDATA[<p>The site that you linked to is mine.</p>
+<p>I wrote my calculator in PHP. I do pretty much the same thing you did for all the MLB teams, not just the Red Sox. It kicks off March 31, and checks every hour from 12PM to 1AM (I don&#8217;t want to stress the host site). Instead of using the elim number, I use a brute force approach to sort the divisions and calculate the magic number as: 163 - team wins - next in ranking losses  (if a first place team this is 2nd place team&#8217;s losses, if not first it is first place team&#8217;s losses). This is a little different. I haven&#8217;t thought about it much but it strikes me that you had better check that you are calculating the magic number correctly if the Red Sox are ever in first place (unlikely as this may be).</p>
+<p>My method assumes that all teams have played the same number of games and it breaks due to schedule issues and delayed games, but eventually catches up.</p>
+<p>I am sorry about the ads, but I am a capitalist in my own small way. I make the equivalent of case a beer a month off the sites during the regular season. Personally, I browse using Firefox with the AdBlock plug-in and I never see ads, Google or otherwise, unless I am testing one of my own sites. This speeds up web access quite a bit and improves my web experience at the expense of not funding all the other capitalists out there. </p>
+<p>Blog: <a href='http://www.cthreepo.com/blog' rel='nofollow'>http://www.cthreepo.com/blog</a>
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Game Theory, NFL style by Derek</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/game-theory-nfl-style.html#comment-15235</link>
+		<pubDate>Sun, 02 Dec 2007 14:55:39 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/game-theory-nfl-style.html#comment-15235</guid>
+					<description>In his very interesting book, &lt;i&gt;The Wisdom of Crowds&lt;/i&gt;, James Surowiecki spends a few pages talking about Romer's work and how NFL coaches routinely ignore his research-based advice to "go for it."  He notes that trying out a new strategy like this one is risky for NFL coaches, in part because if it fails, it will fail very publicly.  
+
+Surowiecki writes, "Under those conditions, sticking with the crowd and failing small, rather than trying to innovate and running the risk of failing big, makes not just emotional sense but professional sense."  He calls this phenomenon "herding."</description>
+		<content:encoded><![CDATA[<p>In his very interesting book, <i>The Wisdom of Crowds</i>, James Surowiecki spends a few pages talking about Romer&#8217;s work and how NFL coaches routinely ignore his research-based advice to &#8220;go for it.&#8221;  He notes that trying out a new strategy like this one is risky for NFL coaches, in part because if it fails, it will fail very publicly.  </p>
+<p>Surowiecki writes, &#8220;Under those conditions, sticking with the crowd and failing small, rather than trying to innovate and running the risk of failing big, makes not just emotional sense but professional sense.&#8221;  He calls this phenomenon &#8220;herding.&#8221;
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Tuesday reading list and DITL by Bret Benesh</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14055</link>
+		<pubDate>Tue, 11 Sep 2007 15:13:26 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14055</guid>
+					<description>I agree with everything you said - particularly the point about (most) everybody benefiting from math every day.
+
+Here is what I suppose I was really asking (still in devil's advocate mode):  after, say, 8th grade math, does any of the math that we study significantly help us interpret the everyday math more fluently?  At least, in any measurable amount?  I could keep track of fantasy sports teams in middle school, read a newspaper, and count change.  This is not simply because I was particularly gifted at math - I would guess that well over half of Americans could do these things without any high school math.
+
+Response?</description>
+		<content:encoded><![CDATA[<p>I agree with everything you said - particularly the point about (most) everybody benefiting from math every day.</p>
+<p>Here is what I suppose I was really asking (still in devil&#8217;s advocate mode):  after, say, 8th grade math, does any of the math that we study significantly help us interpret the everyday math more fluently?  At least, in any measurable amount?  I could keep track of fantasy sports teams in middle school, read a newspaper, and count change.  This is not simply because I was particularly gifted at math - I would guess that well over half of Americans could do these things without any high school math.</p>
+<p>Response?
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Tuesday reading list and DITL by leingang</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14054</link>
+		<pubDate>Tue, 11 Sep 2007 12:36:55 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14054</guid>
+					<description>Well, Bret, you and I certainly do. :-)
+
+Does everybody use math every day?  I think the answer to that is yes as well.  Although I guess not everybody does a math problem every day, we always have to process information and express ourselves qualitatively.  Whether it's reading a newspaper or counting change or keeping track of your fantasy football team, numbers are everywhere, and where there are numbers, there is math.  And of course there are the other branches of math, which I think we also use a lot.
+
+And I think another point of the website is that we all &lt;b&gt;benefit&lt;/b&gt; from math every day, too.  The computers we use and the bits that they send over the internet (oh, and the internet, too), wouldn't be around if it weren't for math.  I think it would be hard to swing your arms around and not hit something that didn't require math to create.  Unless you're out in a forest, but there's math there  to be observed, too.</description>
+		<content:encoded><![CDATA[<p>Well, Bret, you and I certainly do. <img src='http://www.math.harvard.edu/~leingang/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>Does everybody use math every day?  I think the answer to that is yes as well.  Although I guess not everybody does a math problem every day, we always have to process information and express ourselves qualitatively.  Whether it&#8217;s reading a newspaper or counting change or keeping track of your fantasy football team, numbers are everywhere, and where there are numbers, there is math.  And of course there are the other branches of math, which I think we also use a lot.</p>
+<p>And I think another point of the website is that we all <b>benefit</b> from math every day, too.  The computers we use and the bits that they send over the internet (oh, and the internet, too), wouldn&#8217;t be around if it weren&#8217;t for math.  I think it would be hard to swing your arms around and not hit something that didn&#8217;t require math to create.  Unless you&#8217;re out in a forest, but there&#8217;s math there  to be observed, too.
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Tuesday reading list and DITL by Bret Benesh</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14053</link>
+		<pubDate>Tue, 11 Sep 2007 12:19:23 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/tuesday-reading-list-and-ditl.html#comment-14053</guid>
+					<description>Do you think that it is really true that "we all use math every day?"  I know that this is not the main topic of this post, but I'm asking you anyway.</description>
+		<content:encoded><![CDATA[<p>Do you think that it is really true that &#8220;we all use math every day?&#8221;  I know that this is not the main topic of this post, but I&#8217;m asking you anyway.
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Is Numb3rs for real? Kinda! by What the heck is a preceptor? &#187; Tuesday reading list and DITL</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/is-numb3rs-for-real.html#comment-14052</link>
+		<pubDate>Tue, 11 Sep 2007 11:47:38 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/is-numb3rs-for-real.html#comment-14052</guid>
+					<description>[...] We All Use Math Every Day: a set of learning modules created by TI linked to episodes of Numb3rs. I&#8217;ve blogged before that Numb3rs is kind of realistic, IMO. [...]</description>
+		<content:encoded><![CDATA[<p>[&#8230;] We All Use Math Every Day: a set of learning modules created by TI linked to episodes of Numb3rs. I&#8217;ve blogged before that Numb3rs is kind of realistic, IMO. [&#8230;]
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Day in the Life: Teaching Fellow Orientation today by Westwood College Student</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/day-in-the-life-teaching-fellow-orientation-today.html#comment-14044</link>
+		<pubDate>Mon, 10 Sep 2007 17:17:21 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/day-in-the-life-teaching-fellow-orientation-today.html#comment-14044</guid>
+					<description>Hello Preceptor,
+
+Orientation is one of the happiest experiences I noticed for a lot of freshmen.  It's usually the first time they have left their parents and are feeling free from everything.  They are going to have fun answering movie questions about popular movies about teaching.  I'm am sure you are going to have Good Will Hunting questions in there because it is Harvard.  Well have a fun time with the orientation of Freshmen today.</description>
+		<content:encoded><![CDATA[<p>Hello Preceptor,</p>
+<p>Orientation is one of the happiest experiences I noticed for a lot of freshmen.  It&#8217;s usually the first time they have left their parents and are feeling free from everything.  They are going to have fun answering movie questions about popular movies about teaching.  I&#8217;m am sure you are going to have Good Will Hunting questions in there because it is Harvard.  Well have a fun time with the orientation of Freshmen today.
+</p>
+]]></content:encoded>
+				</item>
+	<item>
+		<title>Comment on Want to go to B-School?  Better brush up on PowerPoint! by leingang</title>
+		<link>http://www.math.harvard.edu/~leingang/index.php/want-to-go-to-b-school-better-brush-up-on-powerpoint.html#comment-13787</link>
+		<pubDate>Sun, 12 Aug 2007 10:32:06 +0000</pubDate>
+		<guid>http://www.math.harvard.edu/~leingang/index.php/want-to-go-to-b-school-better-brush-up-on-powerpoint.html#comment-13787</guid>
+					<description>So that touches on other weird feeling I have about this:  to me, PowerPoint is a tool for assisting presentations, the kind where you stand in front of an audience and talk to them.
+
+What the GSB and Microsoft are requesting is some form of presenterless presentation, similar, I guess, to the kind you would put on a loop in a kiosk.  There's probably a different set of rules for those presentations, since they really are the central focus.</description>
+		<content:encoded><![CDATA[<p>So that touches on other weird feeling I have about this:  to me, PowerPoint is a tool for assisting presentations, the kind where you stand in front of an audience and talk to them.</p>
+<p>What the GSB and Microsoft are requesting is some form of presenterless presentation, similar, I guess, to the kind you would put on a loop in a kiosk.  There&#8217;s probably a different set of rules for those presentations, since they really are the central focus.
+</p>
+]]></content:encoded>
+				</item>
+</channel>
+</rss>

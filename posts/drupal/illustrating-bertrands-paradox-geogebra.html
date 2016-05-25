@@ -1,0 +1,36 @@
+<!--
+.. title: Illustrating Bertrand's Paradox with GeoGebra
+.. slug: illustrating-bertrands-paradox-geogebra
+.. date: 2009-07-24 09:27:00
+.. tags: V63.0233,V63.0233.2009Su,probability,geometry
+.. category: math
+.. link: 
+.. description: 
+.. type: text
+-->
+
+<html><body><div class="content"><p><applet name="ggbApplet" code="http://www.math.nyu.edu/~leingang/content/geogebra.GeoGebraApplet" codebase="./" archive="http://www.geogebra.org/webstart/3.2/geogebra.jar" width="375" height="906" id="ggbApplet"><br>
+<param name="filename" value="http://www.cims.nyu.edu/~leingang/sites/default/files/bertrand2.ggb">
+<param name="java_arguments" value="-Xmx512m">
+<param name="framePossible" value="true">
+<param name="showResetIcon" value="false">
+<param name="showAnimationButton" value="true">
+<param name="enableRightClick" value="false">
+<param name="errorDialogsActive" value="true">
+<param name="enableLabelDrags" value="false">
+<param name="showMenuBar" value="false">
+<param name="showToolBar" value="false">
+<param name="showToolBarHelp" value="false">
+<param name="showAlgebraInput" value="false">
+Sorry, the GeoGebra Applet could not be started. Please make sure that Java 1.4.2 (or later) is installed and active in your browser (<a href="http://java.sun.com/getjava">Click here to install Java now</a>)<br>
+</applet></p>
+<p><a href="http://en.wikipedia.org/wiki/Bertrand%27s_paradox_(probability)">Bertrand's Paradox</a> is a question in continuous probability that shows the perils of uniformly distributed variables.  The question is simple: given a random chord in a circle, what's the probability that it's longer than the side length of an equilateral triangle inscribed in that circle?  (OK, maybe that's not so simple to state.  But the side length can be shown to be sqrt(3) times the radius.)</p>
+<p>To demonstrate this in class I whipped up a <a href="http://geogebra.org/">GeoGebra</a> worksheet.  I have three circles, and three different ways to define a chord of that circle.  I used the Dynamic Color feature to color the chord red if it's too short and green if it's long enough.</p>
+<p>In the first circle a vertex of triangle and the first endpoint of the chord are put at the same place.  When you arrange things this way, it's clear the chord is long enough only when the other endpoint is between the other two vertices of the triangle.  If you drag around the other endpoint of the chord, you see it turns green exactly then.  So in this method the probability of the chord being long enough is 1/3</p>
+<p>In the second circle a random radius is selected, and a random point on that radius is selected.  By drawing a perpendicular to the radius at the point a chord can be determined.  You can drag S and T around to draw various chords.  If you align the radius to be an altitude of the triangle (perpendicular to one its sides), you see the triangle and radius intersect in the midpoint of the radius.  This means the chord is long enough precisely when the point on the radius is closer to the center than the midpoint.  And this is independent of the radius angle.  So in this method the probability of the chord being long enough is 1/2.</p>
+<p>In the third circle a random point within the circle is selected, and by drawing the radius through that point and a similar perpendicular as in the second method, a chord can be constructed.  Here we can see that the chord is long enough only when the point is within half the radius of the center.  So the probability this time is the radius of the area of the small circle to that of the big circle, or 1/4.</p>
+<p>So which is it?  Like many paradoxes, refining the question produces the answer.  The second (polar coordinates) method is the one which is invariant under translations and scalings of the plane, so it has an advantage over the other two.  But the point of the exercise is to show that uniform distributions aren't as uniform as you'd think!</p>
+</div>
+
+  
+</body></html>

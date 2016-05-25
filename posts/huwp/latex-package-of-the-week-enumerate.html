@@ -1,0 +1,43 @@
+<!--
+.. title: LaTeX package of the week: enumerate
+.. slug: latex-package-of-the-week-enumerate
+.. date: 2007-05-17T12:47:00
+.. tags: harvard,latex
+.. category: latex
+.. link: 
+.. description: 
+.. type: text
+.. categories: latex
+-->
+
+<p>I use the<strong> <a href="http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=enumerate">enumerate</a></strong> package a lot to create custom enumerated environments.  It&#8217;s easy to created an enumerated list (much like the HTML &lt;ul&gt; element) using</p>
+
+<pre>\begin{enumerate}
+\item Item the first
+\item Item the second
+\item Item the third
+\end{enumerate}</pre>
+
+<p>The default label for those items is of the form &#8220;&lt;<em>number</em>&gt;.&#8221;  For nested lists the label changes to something else. But when I write mathematics problems I use different labels at the same level for different meanings.  For instance, numbering parts (a)&#8230;(b)&#8230;(c)&#8230; means that each builds on the last.  Numbering them (i)&#8230;(ii)&#8230;(iii)&#8230; means these are unrelated parts with the same theme. (I learned of this convention from Michael Spivak&#8217;s <em>Calculus</em> book.)</p>
+
+<p>To achieve this customization of labeling, I use the enumerate package.  It adds a single optional argument to the enumerate environment, so that I can say</p>
+
+<pre>\begin{enumerate}[(a)]
+\item Item a
+\item Item b
+\item Item c
+\end{enumerate}</pre>
+
+<p>The syntax for the optional argument is pretty easy:</p>
+
+<ul>
+<li>&#8220;1&#8243; is interpreted as the arabic form of the item number</li>
+<li>&#8220;a&#8221; is interpreted as the lowercase letter form of the item number</li>
+<li>&#8220;A&#8221; is interpreted as the uppercase letter form of the item number</li>
+<li>&#8220;i&#8221; and &#8220;I&#8221; are interpreted as the roman numeral forms of the item number, in lower- and upper-case, respectively.</li>
+</ul>
+
+<p>Anything else, for instance a punctuation mark, is inserted directly into the label.</p>
+
+<p>Next week I&#8217;ll look at the <strong>enumitem</strong> package, which does a lot more than <strong>enumerate</strong>.  But enumerate is still pretty cool.</p>
+

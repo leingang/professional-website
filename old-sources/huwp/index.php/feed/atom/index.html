@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><feed version="0.3"
+  xmlns="http://purl.org/atom/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:lang="en"
+    >
+	<title>What the heck is a preceptor?</title>
+	<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang" />
+	<tagline>Teaching, Training, and Advising for the Harvard Mathematics Department.  Oh, and some computer stuff.</tagline>
+	<modified>2008-04-08T13:48:18Z</modified>
+	<copyright>Copyright 2008</copyright>
+	<generator url="http://wordpress.org/" version="2.0.4">WordPress</generator>
+			<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Google Summer Of Code LaTeX Project]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/google-summer-of-code-latex-project.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=176</id>
+		<modified>2008-04-08T13:48:18Z</modified>
+		<issued>2008-04-08T13:48:18Z</issued>
+		
+	<dc:subject>LaTeX</dc:subject>
+	<dc:subject>Web</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[The TeX Users Group will be participating as a mentoring organization in the Google Summer of Code program, and my project of a Dublin Core metadata interface was accepted.&#160; I&#8217;m hoping some enterprising youth with lots of experience in programming TeX will be interested in the project.
+Here is an overview of the project: Dublin Core [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/google-summer-of-code-latex-project.html"><![CDATA[<p>The <a href="http://www.tug.org/">TeX Users Group</a> will be participating as a mentoring organization in the <a href="http://code.google.com/soc/">Google Summer of Code</a> program, and my project of a <a href="http://tug.org/pipermail/summer-of-code/2008/000019.html">Dublin Core metadata interface</a> was accepted.&nbsp; I&#8217;m hoping some enterprising youth with lots of experience in programming TeX will be interested in the project.</p>
+<p>Here is an overview of the project: <a href="http://dublincore.org/">Dublin Core</a> is a scheme for expressing metadata (data about data) in a reliable, machine-readable way.&nbsp; It can be expressed in various languages, including <a href="http://www.w3.org/TR/rdf/">RDF</a>, which can itself be serialized in <a href="http://www.w3.org/TR/rdf-syntax-grammar/">XML</a>.&nbsp; Adobe&#8217;s <a href="http://www.adobe.com/products/xmp/">eXtensible Metadata Platform</a> allows RDF+XML statements to be embedded into PDF files.&nbsp; This metadata can then be read by search engines in order to give context to the document besides its simple contents.&nbsp; </p>
+<p>TeX and LaTeX can be used to produce PDF documents, and have rich macro-programming environments.&nbsp; One goal of the project is to add simple commands which can write the complex metadata statements into the PDF without the user needing to know anything about RDF, XML, or Dublin Core itself.&nbsp; Another goal would be for more advanced users to augment this interface with new Dublin Core element sets and vocabularies.</p>
+<p>I&#8217;ve always taken an interest in the <a href="http://en.wikipedia.org/wiki/Semantic_Web">semantic web</a>, and apparently there aren&#8217;t too many people in this group also interested in TeX.&nbsp; So if the project flies I think it could be very useful.</p>
+<div class="flockcredit" style="text-align: right; color: #CCC; font-size: x-small;">Blogged with the <a href="http://www.flock.com/blogged-with-flock" style="color: #999; font-weight: bold;" target="_new" title="Flock Browser">Flock Browser</a></div>
+<p><!-- technorati tags begin --><br />
+<p style="font-size:10px;text-align:right;">Tags: <a href="http://technorati.com/tag/latex" rel="tag">latex</a>, <a href="http://technorati.com/tag/dublin%20core" rel="tag">dublin core</a>, <a href="http://technorati.com/tag/%20semantic%20web" rel="tag"> semantic web</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Number pages within chapters in LaTeX]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=175</id>
+		<modified>2008-03-20T14:17:10Z</modified>
+		<issued>2008-03-20T14:17:10Z</issued>
+		
+	<dc:subject>LaTeX</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[In latex, the \numberwithin command allows one to bind one counter with another.  A common example is the section counter and the chapter counter.  When a new chapter is created, the chapter counter increments, and the section counter is reset.  In this scheme, if the last section of chapter 1 is labeled [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/number-pages-within-chapters-in-latex.html"><![CDATA[<p>In latex, the <code>\numberwithin</code> command allows one to bind one counter with another.  A common example is the section counter and the chapter counter.  When a new chapter is created, the chapter counter increments, and the section counter is reset.  In this scheme, if the last section of chapter 1 is labeled &#8220;1.5&#8243;, the first section of chapter 2 is labeled &#8220;2.1&#8243;.</p>
+<p>In the process of preparing a large handout, put together in stages and repeatedly distributed, a student asked if I could number the pages of a document within the chapters.  So each page would be labeled <em>chapter-page,</em> and the first page of each chapter would be page 1.</p>
+<p>Sounded simple enough: just use</p>
+<p><code> \renewcommand{\thepage}{\arabic{chapter}-\arabic{page}}</code></p>
+<p>(this changes the way pages are labeled) and <code /></p>
+<p><code>\numberwithin{page}{chapter}</code></p>
+<p>to change the numbering.  But this doesn&#8217;t quite do it, because \numberwithin resets the counter to zero, and so the first page of chapter 4 gets labeled as &#8220;4-0&#8243;.  I need to start a new chapter, then reset the page counter to one, not zero.</p>
+<p>There is probably a package which does this, but five minutes of googling didn&#8217;t produce it.  So I started to roll my own.  One can write a <code>\Chapter</code> command that calls <code>\chapter</code> then resets the page counter.  The disadvantage here is that (1) you have to search-and-replace existing code, and (2) <code>\chapter</code> is a pretty complicated command with a starred version and an optional argument.  The <code>\chapter</code> macro calls lower-level macros and actually returns a seven-argument macro with four arguments filled in.  So rather than call the <code>\chapter</code> macro, I want to make adjustments, then return <code>\chapter</code> so that it can parse as normal.  That&#8217;s when I tried:<br />
+<code><br />
+\let\oldchapter=\chapter<br />
+\def\chapter{\resetcounter{page}{0}\oldchapter}<br />
+</code></p>
+<p>This adds the page reset to the beginning of the chapter, without changing the way it&#8217;s used.  The trouble is that <code>\chapter</code> clears the page before starting the new chapter, and that page needs a label.  So this made sure the first page of Chapter 4 was labeled 4-1, but now the last page of Chapter 3 got labeled 3-0!</p>
+<p>What I needed was to return <code>\chapter</code>, but make sure LaTeX executed the <code>\resetcounter</code> command right afterwards.  The solution is <code>\expandafter</code>, which defers token expansion by one position.  From <a href="http://www.amazon.com/TeXbook-Computers-Typesetting-Donald-Knuth/dp/0201134489"><span style="font-style: italic">The TeXBook</span></a>:</p>
+<blockquote><p>TeX first reads the token that comes immediately after <code>\expandafter</code>, without expanding it; let&#8217;s call this token <em>t</em>.  Then TeX reads the token that comes after <em>t</em> (and possibly more tokens, if that token has an argument), replacing it by its expansion.  Finally TeX puts <em>t</em> back in front of that expansion.</p></blockquote>
+<p>And here&#8217;s the implementation:</p>
+<p><code><br />
+\let\oldchapter=\chapter<br />
+\def\resetpage{\setcounter{page}{1}}<br />
+\def\chapter{\expandafter\resetpage\oldchapter}<br />
+</code></p>
+<p>The parsing works like this: upon reading the new <code>\chapter</code> macro, TeX encounters <code>\expandafter</code>, reads <code>\resetpage</code> but holds onto it.  It then expands <code>\chapter</code>, which under the hood returns that seven-argument monster macro.  At that point <code>\resetpage</code> is called.</p>
+<p><strong>Update 2008-04-08: </strong><a href="http://www.google.com/url?sa=t&#038;ct=res&#038;cd=1&#038;url=http%3A%2F%2Ffiler.case.edu%2Fpmg5%2F&#038;ei=SXH7R_-EAoKgec339I0B&#038;usg=AFQjCNFeLzlJDl2AVVY1QjfTYIC4XJBk4Q&#038;sig2=8QQk0lu7SvaY6xiFIO0xqw">Peter</a> tells me the package I&#8217;m looking for is <a href="http://www.google.com/url?sa=t&#038;ct=res&#038;cd=1&#038;url=http%3A%2F%2Fwww.ctan.org%2Ftex-archive%2Fhelp%2FCatalogue%2Fentries%2Fchappg.html&#038;ei=cXH7R8bgIYy-eJDx4Z4B&#038;usg=AFQjCNGPoHWgkifvrcXA7FLqsm9NvqzoCg&#038;sig2=0DYNnzh1VCKJRt3UbQRbhQ">chappg</a>.  Should have googled more!</p>
+<div style="text-align: right; color: #cccccc; font-size: x-small" class="flockcredit">Blogged with the <a title="Flock Browser" target="_new" style="color: #999999; font-weight: bold" href="http://www.flock.com/blogged-with-flock">Flock Browser</a></div>
+<p><!-- technorati tags begin --></p>
+<p style="font-size: 10px; text-align: right">Tags: <a rel="tag" href="http://technorati.com/tag/tex">tex</a>, <a rel="tag" href="http://technorati.com/tag/latex">latex</a>, <a rel="tag" href="http://technorati.com/tag/%20typesetting"> typesetting</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[This Psychologist Might Outsmart the Math Brains Competing for the Netflix Prize]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/this-psychologist-might-outsmart-the-math-brains-competing-for-the-netflix-prize.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=174</id>
+		<modified>2008-02-29T18:29:46Z</modified>
+		<issued>2008-02-29T18:29:46Z</issued>
+		
+	<dc:subject>Math</dc:subject>
+	<dc:subject>News</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[This month&#8217;s Wired contains an article about the Netflix prize, offering $1,000,000 to the person or team that can improve Netflix&#8217;s recommendation engine by 10%.&#160; It&#8217;s an interesting tale of the frontier of data-centric personal services.&#160; The &#8220;hero&#8221; of the article uses not only mathematical algorithms but psychological concepts when gleaning information about past preferences [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/this-psychologist-might-outsmart-the-math-brains-competing-for-the-netflix-prize.html"><![CDATA[<p>This month&#8217;s <span style="font-style: italic;">Wired</span> contains an <a href="http://www.wired.com/techbiz/media/magazine/16-03/mf_netflix">article</a> about the <a href="http://www.netflixprize.com/">Netflix prize</a>, offering $1,000,000 to the person or team that can improve Netflix&#8217;s recommendation engine by 10%.&nbsp; It&#8217;s an interesting tale of the frontier of data-centric personal services.&nbsp; The &#8220;hero&#8221; of the article uses not only mathematical algorithms but psychological concepts when gleaning information about past preferences in order to predict future ones.&nbsp; </p>
+<p>For instance, there&#8217;s the concept of &#8220;inertia,&#8221; or another way, relativity, when ranking movies on a simple 1-5 scale.&nbsp; Somebody might give the same movie two different rankings depending on the most recent movie he or she watched.&nbsp; If you see, for instance, <a href="http://www.imdb.com/title/tt0119177/"><span style="font-style: italic;">Gattaca</span></a> followed by <a href="http://www.imdb.com/title/tt0133093/"><span style="font-style: italic;">The Matrix</span></a>, you might give&nbsp; <span style="font-style: italic;">The Matrix</span> a 4 because you think it&#8217;s so much better than <span style="font-style: italic;">Gattaca</span>.&nbsp; But if the previous movie was a 5 (I&#8217;ll let you fill in your favorite here), well, maybe <span style="font-style: italic;">The Matrix</span> earns only a 3.&nbsp; Mathematically, we would say that the relationship between the set of movies and a person&#8217;s ratings for them may not actually define a function as the purely math models assume.</p>
+<p>The other cool thing about this article is that it&#8217;s written by mathematician <a href="http://www.math.wisc.edu/%7Eellenber/">Jordan Ellenberg</a>, with whom I went to grad school back in the day (the nineties).&nbsp; </p>
+<p style="text-align: right; font-size: 8px">Blogged with <a href="http://www.flock.com/blogged-with-flock" title="Flock" target="_new">Flock</a></p>
+<p><!-- technorati tags begin --><br />
+<p style="font-size:10px;text-align:right;">Tags: <a href="http://technorati.com/tag/math" rel="tag">math</a>, <a href="http://technorati.com/tag/news" rel="tag">news</a>, <a href="http://technorati.com/tag/%20netflix" rel="tag"> netflix</a>, <a href="http://technorati.com/tag/%20wired" rel="tag"> wired</a>, <a href="http://technorati.com/tag/%20jordan%20ellenberg" rel="tag"> jordan ellenberg</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[The freshman experience]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/the-freshman-experience.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=173</id>
+		<modified>2008-02-18T19:29:16Z</modified>
+		<issued>2008-02-18T19:29:16Z</issued>
+		
+	<dc:subject>News</dc:subject>
+	<dc:subject>Education</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[Today I saw in one of the University of Michigan student papers an article about a WSJ blog post about a Chronicle of Higher Education column about a new book about college freshmen and their first experiences away from home.  The Chronicle story is called &#8220;The Myth of First-Year Enlightenment&#8221; and the book tries [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/the-freshman-experience.html"><![CDATA[<p>Today I saw in one of the University of Michigan student papers an <a href="http://media.www.michiganreview.com/media/storage/paper1232/news/2008/02/12/ArtsCulture/Freshmen.They.Just.Dont.Make.Them.Like.They.Use.To-3204475.shtml">article</a> about a <a href="http://blogs.wsj.com/informedreader/2008/01/29/college-freshmens-minds-rarely-expand/">WSJ blog post</a> about a <a href="http://chronicle.com/jobs/news/2008/02/2008020101c/careers.html">Chronicle of Higher Education column</a> about a new <a href="http://www.amazon.com/First-Year-Out-Understanding-American/dp/0226110664">book</a> about college freshmen and their first experiences away from home.  The Chronicle story is called &#8220;<a href="http://chronicle.com/jobs/news/2008/02/2008020101c/careers.html">The Myth of First-Year Enlightenment</a>&#8221; and the book tries to burst the bubble of those who picture a monumental eye-opening and metamorphosis during the first year.  Instead of undergoing then sudden realization that the world is much bigger than they originally thought and what they had come to value was now clearly so&#8230;<span style="font-style: italic">philistine </span>(this was the word used at my freshman orientation), Tim Clydesdale writes,</p>
+<blockquote><p>Most of the mainstream American teens I spoke with neither liberated themselves intellectually nor broadened themselves socially during their first year out&#8230;What teens actually focus on during the first year out is this: daily life management.</p>
+<p>Most American teens keep core identities in an &#8216;identity lockbox&#8217; during their first year out and actively resist efforts to examine their self-understandings through classes or to engage their humanity through institutional efforts such as public lectures, the arts, or social activism.  Contemporary teens are practical men and women. They . . . manage their daily lives fairly well. But they are not, by and large, thinking men and women.</p></blockquote>
+<p>Practical rather than paradigmatic shifts, I suppose.  Clydesdale writes that some students do undergo big philosophical changes, but those are the exception.  They end up becoming college teachers and perpetuate the metamorphosis myth.</p>
+<p>How does that affect current college teachers?  I think the older I get the more I appreciate the college experience, but I have to remember what I was <span style="font-style: italic">actually</span> like as a college freshmen.  And even then I have to acknowledge that my experiences of learning the discipline I teach aren&#8217;t shared by the general population of students taking introductory courses in that discipline.  Although <a href="http://www.math.uchicago.edu/undergraduate/course_description.shtml">Math 160&#8217;s</a> at the University of Chicago changed the way I think about mathematics, that doesn&#8217;t mean that everyone should take it.  But understanding where students do come from helps me reach them.</p>
+<p>Getting this away from me: James Lang writes in the Chronicle story that we can do better at motivating our courses with what our students are seeking.  No, not grades. <img src='http://www.math.harvard.edu/~leingang/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' />  But practical-minded students need the tools to communicate, to analyze, to formulate, to critique, to defend, to think, to solve problems, and so on.  He says he&#8217;s stopped advertising that he plans to change the way students think, leaving it as a covert mission.  Now he focuses on teaching them to think in the first place.</p>
+<p style="text-align: right; font-size: 8px">Blogged with <a title="Flock" target="_new" href="http://www.flock.com/blogged-with-flock">Flock</a></p>
+<p><!-- technorati tags begin --></p>
+<p style="font-size: 10px; text-align: right">Tags: <a rel="tag" href="http://technorati.com/tag/teaching">teaching</a>, <a rel="tag" href="http://technorati.com/tag/freshmen">freshmen</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[In defense of fractions]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/in-defense-of-fractions.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=172</id>
+		<modified>2008-02-17T00:14:26Z</modified>
+		<issued>2008-02-17T00:14:26Z</issued>
+		
+	<dc:subject>Math</dc:subject>
+	<dc:subject>News</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[A couple of people pointed out this article in USA Today about a mathematics professor who thinks fractions need not be taught in schools.&#160; 
+I know that I work for one of the most famous organizations in the world, and I&#8217;m well aware that the things I write on my blog could be misconstrued as [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/in-defense-of-fractions.html"><![CDATA[<p>A couple of people pointed out this <a href="http://www.usatoday.com/tech/science/mathscience/2008-01-23-fractions_N.htm?se=yahoorefer">article in USA Today</a> about a mathematics professor who thinks <a href="http://dbpedia.org/resource/Fraction">fractions</a> need not be taught in schools.&nbsp; </p>
+<p>I know that I work for one of the most famous organizations in the world, and I&#8217;m well aware that the things I write on my blog could be misconstrued as coming from my employer or representing positions held by them.&nbsp; So I keep things pretty close to the vest.&nbsp; But I hope I&#8217;m not being too controversial when I say that I like fractions and hope they continue to be taught.&nbsp; I&#8217;m not quite sure how algebra can be done without fractions (what becomes of rational functions if you can&#8217;t abstractly divide polynomials?), and without the skills to algebraically manipulate expressions, calculus becomes very hard to do as well.&nbsp; </p>
+<p>Prof. DeTurck compares fractions to roman numerals, which of course were abandoned once the arabic system became more widespread.&nbsp; The arabic system had <em><a href="http://dbpedia.org/resource/Place%20value">place value</a></em>, that is, the idea that the position of a digit within a number changed the value of the number.&nbsp; They also had one of the most important numbers: zero.&nbsp; With these ideas, finitely many symbols can be used to express infinitely many numbers.</p>
+<p>The quickest to move to the arabic system from roman numerals were the accountants, and indeed, a big advantage of arabic numerals is the ease of computation.&nbsp; The same could be said of <a href="http://dbpedia.org/resource/Decimal/">decimals</a> versus factions: it&#8217;s usually easier to add decimals.&nbsp; Alexander Hamilton wanted a base ten system for the currency of the United States, rejecting the 12 schillings per pound, 20 pence per schilling system long before the UK themselves did.&nbsp; Computers are built for floating-point arithmetic rather than adding fractions, and so most stock exchanges list decimal prices for commodities now.&nbsp; </p>
+<p>But fractions are for more than just arithmetic. And decimals are only useful ways to express numbers when the numbers themselves are expressed as points on a line.&nbsp; But there are other ways that numbers are used.&nbsp; If I show you a pie and offer you 0.25 of it, how would you cut the pie?&nbsp; If you said &#8220;I&#8217;d cut it in half, then cut one of the halves in half&#8221;, then you converted the 0.25 to 1/4 and used the fact that (1/2)(1/2) = 1/4.&nbsp; But if numbers are only lengths, I think the only way to do this is to cut a circular piece out of the center of the pie whose radius is 0.5 of the radius of the whole pie.</p>
+<p>And don&#8217;t forget that many fractions aren&#8217;t expressible exactly in decimals.&nbsp; To get a sixth of the pie (a much more modest slice), you&#8217;d have to cut out a circle whose radius is the square root of 0.166666&#8230; which is about 0.408248.&nbsp; </p>
+<p>So I say, <span style="font-style: italic;">vive les fractions</span>.&nbsp; And mmm&#8230;pie&#8230;.<br />
+<p style="text-align: right; font-size: 8px">Blogged with <a href="http://www.flock.com/blogged-with-flock" title="Flock" target="_new">Flock</a></p>
+<p><!-- technorati tags begin --><br />
+<p style="font-size:10px;text-align:right;">Tags: <a href="http://technorati.com/tag/fractions" rel="tag">fractions</a>, <a href="http://technorati.com/tag/deturck" rel="tag">deturck</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[February 16 roundup of Math 21a]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/february-16-roundup-of-math-21a.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=171</id>
+		<modified>2008-02-16T23:15:05Z</modified>
+		<issued>2008-02-16T23:15:05Z</issued>
+		
+	<dc:subject>Math 21a, Spring 2008</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[We&#8217;re now firmly grounded in three-dimensional space.  We talked this week about the various linear objects in 3D: lines, points, planes, and finding equations for them.  Also, we showed how to define and calculate the distance between points and lines, lines and planes, etc.
+Then we moved into the functional unit of the course. [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/february-16-roundup-of-math-21a.html"><![CDATA[<p>We&#8217;re now firmly grounded in three-dimensional space.  We talked this week about the various linear objects in 3D: lines, points, planes, and finding equations for them.  Also, we showed how to define and calculate the distance between points and lines, lines and planes, etc.</p>
+<p>Then we moved into the functional unit of the course.  A function of two variables has as its graph a surface in three-dimensional space.  Graphing these is a challenge of the brain but of the hands.  But there are some tips, such as the method of traces.</p>
+<p>Finally, we have other ways to measure space besides our boring old rectangular cartesian coordinates.  We defined polar coordinates in the plane, and cylindrical and spherical coordinates in space, to better express certain surfaces.  For instance, the cone in three-space can be described as <img alt="z=\sqrt{x^2+y^2}" src="http://www.texify.com/img/%5Cnormalsize%5C%21z%3D%5Csqrt%7Bx%5E2%2By%5E2%7D.gif" /> in cartesian coordinates, but in cylindrical all you need to say is z=r.<br />
+<!-- technorati tags begin --></p>
+<p style="font-size: 10px; text-align: right">Tags: <a rel="tag" href="http://technorati.com/tag/math">math</a>, <a rel="tag" href="http://technorati.com/tag/math21a">math21a</a>, <a rel="tag" href="http://technorati.com/tag/%20geometry"> geometry</a>, <a rel="tag" href="http://technorati.com/tag/%20surface"> surface</a>, <a rel="tag" href="http://technorati.com/tag/%20coordinates"> coordinates</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[February 16 Roundup of Math 1a]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/february-16-roundup-of-math-1a.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=170</id>
+		<modified>2008-02-16T23:08:00Z</modified>
+		<issued>2008-02-16T23:08:00Z</issued>
+		
+	<dc:subject>Math 1a, Spring 2008</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[In the past week we&#8217;ve defined the derivative as the limit of a difference quotient.&#160; Graphically, it&#8217;s the slope of the line tangent to a curve at a point.&#160; But it has quite a few interpretations in various models.&#160; If the function is position, the derivative is velocity.&#160; If the function is cost, the derivative [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/february-16-roundup-of-math-1a.html"><![CDATA[<p>In the past week we&#8217;ve defined the derivative as the limit of a difference quotient.&nbsp; Graphically, it&#8217;s the slope of the line tangent to a curve at a point.&nbsp; But it has quite a few interpretations in various models.&nbsp; If the function is position, the derivative is velocity.&nbsp; If the function is cost, the derivative is marginal cost.&nbsp; If the function is mass, the derivative is density.&nbsp; The number of different uses for the derivative are what make it so important to study.</p>
+<p>We looked at various interplays between a function and its derivative.&nbsp; For instance, when a function is increasing on an interval, the derivative is nonnegative (positive or zero) on that interval.&nbsp; If the function is decreasing, the derivative is negative or zero.&nbsp; And if the graph has a horizontal tangent line, the derivative is zero.&nbsp; It turns out&#8211;and we will be showing this when we get to The Most Important Theorem in Calculus&#8211;that the converses of these statements are pretty much true as well.&nbsp; That is, if a function has a positive derivative on an interval, it&#8217;s increasing on that interval, and so on.</p>
+<p>The derivative can&#8217;t tell you everything, however.&nbsp; For one, it can&#8217;t tell you the function value at a specific point without any other information.&nbsp; This is true even of constant functions, which all have the derivative zero, no matter what the constant is.&nbsp; It also can&#8217;t tell you about the concavity of the graph of a function.&nbsp; But that can be computed from the second derivative.</p>
+<p>Although we define the derivative in terms of a limit, eventually we will develop a set of rules to make calculating derivatives easier.&nbsp; That&#8217;s the subject of Chapter 3.&nbsp; However, it&#8217;s important not to lose the foundational ideas behind what the derivative actually <span style="font-style: italic;">is</span> and what is <span style="font-style: italic;">for</span>.</p>
+<p>Slides for this week are posted.<br />
+   <!-- technorati tags begin --><br />
+<p style="font-size:10px;text-align:right;">Tags: <a href="http://technorati.com/tag/math" rel="tag">math</a>, <a href="http://technorati.com/tag/math1a" rel="tag">math1a</a>, <a href="http://technorati.com/tag/%20function" rel="tag"> function</a>, <a href="http://technorati.com/tag/%20derivative" rel="tag"> derivative</a>, <a href="http://technorati.com/tag/%20calculus" rel="tag"> calculus</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Math 21a roundup for February 6]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/math-21a-roundup-for-february-6.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=169</id>
+		<modified>2008-02-07T19:31:46Z</modified>
+		<issued>2008-02-07T19:31:46Z</issued>
+		
+	<dc:subject>Math 21a, Spring 2008</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[A vector is a &#8220;thing&#8221; which has magnitude and direction.&#160; We sort of leave those two things undefined, too, but this is better than nothing.&#160; If you take an abstract algebra course, you&#8217;ll learn that a vector is any element of a vector space, but that probably doesn&#8217;t help here, either:-).&#160; 
+Either thinking geometrically (drawing [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/math-21a-roundup-for-february-6.html"><![CDATA[<p>A <span style="font-style: italic;">vector</span> is a &#8220;thing&#8221; which has magnitude and direction.&nbsp; We sort of leave those two things undefined, too, but this is better than nothing.&nbsp; If you take an abstract algebra course, you&#8217;ll learn that a vector is any element of a <span style="font-style: italic;">vector space</span>, but that probably doesn&#8217;t help here, either:-).&nbsp; </p>
+<p>Either thinking geometrically (drawing arrows) or algebraically (recording a vector&#8217;s components), the important thing is that we can add, subtract, and scale vectors.&nbsp; Also, these operations are similar to those we know for regular numbers&#8211;which we&#8217;re going to call <span style="font-style: italic;">scalars</span> from now on for no particularly good reason.&nbsp; For instance, adding two vectors is a <span style="font-style: italic;">commutative</span> operation: the order of addition doesn&#8217;t matter.&nbsp; Scaling distributes over addition, and so on.&nbsp; (This is the &#8220;abstract&#8221; definition of vector space: a set of things you can add and scale).</p>
+<p>Can you multiply vectors?&nbsp; Not in the same sense that you can multiply real numbers.&nbsp; You can multiply two-dimensional vectors by pretending they&#8217;re complex numbers.&nbsp; This doesn&#8217;t work in spaceland, however.&nbsp; There are two useful products of vectors, though: the <span style="font-style: italic;"></span><span style="font-style: italic;">scalar</span> (or <span style="font-style: italic;">dot</span>) <span style="font-style: italic;">product</span> and the <span style="font-style: italic;">vector</span> (or <span style="font-style: italic;">cross</span>) <span style="font-style: italic;">product.</span>&nbsp; The dot product measures the compatibility of vectors in some sense.&nbsp; If the dot product is positive, the angle between the vectors is acute.&nbsp; If it&#8217;s negative, the angle is obtuse.&nbsp; And if it&#8217;s zero, the vectors are perpendicular (another new word for a known concept: we&#8217;ll say <span style="font-style: italic;">orthogonal</span> now instead of perpendicular).&nbsp; </p>
+<p>The cross product is coming up on Friday.</p>
+<p style="text-align: right; font-size: 8px">Blogged with <a href="http://www.flock.com/blogged-with-flock" title="Flock" target="_new">Flock</a></p>
+<p><!-- technorati tags begin --><br />
+<p style="font-size:10px;text-align:right;">Tags: <a href="http://technorati.com/tag/math" rel="tag">math</a>, <a href="http://technorati.com/tag/math21a" rel="tag">math21a</a>, <a href="http://technorati.com/tag/%20vector" rel="tag"> vector</a>, <a href="http://technorati.com/tag/%20dot%20product" rel="tag"> dot product</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Math 1a roundup for February 6]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/math-1a-roundup-for-february-6.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=168</id>
+		<modified>2008-02-07T19:14:21Z</modified>
+		<issued>2008-02-07T19:14:21Z</issued>
+		
+	<dc:subject>Math 1a, Spring 2008</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[Continuity is the property that the limit of a function near a point is the value of the function near that point. It&#8217;s one of many &#8220;nice&#8221; properties a function can have.  Functions can fail to be continuous in a number of different ways, including jumping from one value to another, having a simple [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/math-1a-roundup-for-february-6.html"><![CDATA[<p><span style="font-style: italic">Continuity</span> is the property that the limit of a function near a point is the value of the function near that point. It&#8217;s one of many &#8220;nice&#8221; properties a function can have.  Functions can fail to be continuous in a number of different ways, including jumping from one value to another, having a simple &#8220;removable&#8221; discontinuity, or blowing up to infinity near a point.</p>
+<p>Lots of times we want to model a situation with a function, and we assume the function is continuous to make our lives easier.  For instance, the population of a bacteria culture in a dish.  Clearly there are only whole numbers of organisms in the culture, but we pretend the population function of time is continuous because relative to the population size, an error of one by rounding isn&#8217;t that much.</p>
+<p>An important consequence of continuity is the <span style="font-style: italic">intermediate value theorem</span>, which says that a continuous function on an interval assumes all the values in between the values at the endpoints.  This theorem has important consequences, for instance:</p>
+<ul>
+<li>the square root of two exists</li>
+<li>at some point in your life your height in inches equaled your weight in pounds</li>
+<li>A table on an uneven floor can always be turned so that it won&#8217;t wobble</li>
+<li>Right now there are points on opposite sides of the world with the same temperature!</li>
+</ul>
+<p style="text-align: right; font-size: 8px">Blogged with <a target="_new" title="Flock" href="http://www.flock.com/blogged-with-flock">Flock</a></p>
+<p><!-- technorati tags begin --></p>
+<p style="font-size: 10px; text-align: right">Tags: <a rel="tag" href="http://technorati.com/tag/math">math</a>, <a rel="tag" href="http://technorati.com/tag/math1a">math1a</a>, <a rel="tag" href="http://technorati.com/tag/%20function"> function</a>, <a rel="tag" href="http://technorati.com/tag/%20continuity"> continuity</a>, <a rel="tag" href="http://technorati.com/tag/%20limit"> limit</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+		<entry>
+	  	<author>
+			<name>leingang</name>
+		</author>
+		<title type="text/html" mode="escaped"><![CDATA[Math 21a roundup for February 4]]></title>
+		<link rel="alternate" type="text/html" href="http://www.math.harvard.edu/~leingang/index.php/math-21a-roundup-for-february-4.html" />
+		<id>http://www.math.harvard.edu/~leingang/?p=167</id>
+		<modified>2008-02-05T20:39:44Z</modified>
+		<issued>2008-02-05T20:39:44Z</issued>
+		
+	<dc:subject>Math 21a, Spring 2008</dc:subject> 
+		<summary type="text/plain" mode="escaped"><![CDATA[First, we played a rousing game of Name Bingo to break the ice.  Then we got down to business.
+One major goal of Math 21a is to take what we know in the line and on the plane and generalize it to three-dimensional space.
+One thing is immediately confusing: we have three axes in space, and [...]]]></summary>
+		<content type="text/html" mode="escaped" xml:base="http://www.math.harvard.edu/~leingang/index.php/math-21a-roundup-for-february-4.html"><![CDATA[<p>First, we played a rousing game of Name Bingo to break the ice.  Then we got down to business.</p>
+<p>One major goal of <a target="_blank" href="http://www.courses.fas.harvard.edu/6760">Math 21a</a> is to take what we know in the line and on the plane and generalize it to three-dimensional space.</p>
+<p>One thing is immediately confusing: we have three axes in space, and we only allow those which are &#8220;right-handed&#8221; (biased, perhaps, but we have to pick one).</p>
+<p>But the distance formula generalizes to three dimensions rather well: the distance between two points is the square root of the sum of the squares of the differences between the original coordinates, or</p>
+<p><img border="0" align="middle" alt="|(x_1,y_1,z_1)(x_2,y_2,z_2)| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1 - z_2)^2}" src="http://www.texify.com/img/%5CLARGE%5C%21%7C%28x_1%2Cy_1%2Cz_1%29%28x_2%2Cy_2%2Cz_2%29%7C%20%3D%20%5Csqrt%7B%28x_1-x_2%29%5E2%20%2B%20%28y_1-y_2%29%5E2%20%2B%20%28z_1%20-%20z_2%29%5E2%7D.gif" /></p>
+<p style="text-align: right; font-size: 8px">Blogged with <a target="_new" title="Flock" href="http://www.flock.com/blogged-with-flock">Flock</a></p>
+<p><!-- technorati tags begin --></p>
+<p style="font-size: 10px; text-align: right">Tags: <a rel="tag" href="http://technorati.com/tag/math">math</a>, <a rel="tag" href="http://technorati.com/tag/math21a">math21a</a>, <a rel="tag" href="http://technorati.com/tag/%20distance"> distance</a>, <a rel="tag" href="http://technorati.com/tag/%20axis"> axis</a>, <a rel="tag" href="http://technorati.com/tag/%20right-hand%20rule"> right-hand rule</a></p>
+<p><!-- technorati tags end -->
+</p>
+]]></content>
+	</entry>
+	</feed>

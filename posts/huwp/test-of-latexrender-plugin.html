@@ -1,0 +1,45 @@
+<!--
+.. title: LatexRender Plugin
+.. slug: test-of-latexrender-plugin
+.. date: 2005-09-20T07:56:00
+.. tags: harvard,latex
+.. category: latex
+.. link: 
+.. description: 
+.. type: text
+.. categories: latex
+-->
+
+<p>
+I&#8217;m trying the <a href="http://www.mayer.dial.pipex.com/tex.htm#latexrender">LaTeXRender</a> <a href="http://sixthform.info/steve/wordpress/index.php?cat=2">plugin</a> by <a href="http://sixthform.info/steve/wordpress/index.php">Sixthform</a>.  Installation is easy, but at first I got no formulas, only error messages.
+</p>
+
+<p>
+Using some of the hints found on the <a href="http://sixthform.info/steve/wordpress/index.php?p=34#comments">&#8220;Path problems in Linux&#8221;</a> post, I was able to figure out what was going on.
+</p>
+
+<p>
+My server&#8217;s &#8220;convert&#8221; command didn&#8217;t understand the &#8220;-trim&#8221; option.  I was able to get reasonable results by using &#8220;-crop 0&#215;0&#8243; in the same place.  That is, in the file class.latexrender.php, change this line:<br />
+<code><br />
+ $command = $this-&gt;_convert_path." -density ".$this-&gt;_formula_density.<br />
+                    " -trim -transparent \"#FFFFFF\" ".$this-&gt;_tmp_filename.".ps ".<br />
+                    $this-&gt;_tmp_filename.".".$this-&gt;_image_format;<br />
+</code><br />
+to<br />
+<code><br />
+ $command = $this-&gt;_convert_path." -density ".$this-&gt;_formula_density.<br />
+                    " -crop 0x0 -transparent \"#FFFFFF\" ".$this-&gt;_tmp_filename.".ps ".<br />
+                    $this-&gt;_tmp_filename.".".$this-&gt;_image_format;<br />
+</code><br />
+This doesn&#8217;t crop the image to 0&#215;0, but trims to the smallest rectangle that includes all non-background data.  See the <a href="http://amath.colorado.edu/computing/software/man/convert.html">convert man page</a>
+</p>
+
+<p>
+Here is a test: <img src="/images/3e511b97966cc793ec1f8d848e2705e1.gif" title="\displaystyle\int_{\partial \Omega} \omega = \int_\Omega d\omega" alt="\displaystyle\int_{\partial \Omega} \omega = \int_\Omega d\omega" align="absmiddle" />. It does seem to crop a bit off the right of the omega character.
+</p>
+
+<p>
+Another test: <img src="/images/97828acfca16b16b14e6ce493f19217e.gif" title=" \displaystyle\int_{-\infty}^\infty e^{-x^2}\,dx = \sqrt{\pi} " alt=" \displaystyle\int_{-\infty}^\infty e^{-x^2}\,dx = \sqrt{\pi} " align="absmiddle" />.
+</p>
+			
+			

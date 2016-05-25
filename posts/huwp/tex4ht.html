@@ -1,0 +1,25 @@
+<!--
+.. title: TeX4ht
+.. slug: tex4ht
+.. date: 2007-04-26T06:56:00
+.. tags: web,harvard,computing,latex
+.. category: computing
+.. link: 
+.. description: 
+.. type: text
+.. categories: computing,latex,web
+-->
+
+<p>I&#8217;m so glad that <a href="http://www.cse.ohio-state.edu/~gurari/TeX4ht/">TeX4ht</a> exists.  It&#8217;s a suite of programs that convert TeX or LaTeX to one of many hypertext variants.  You can generate HTML or XHTML, XML files readable by <a href="http://www.openoffice.org/">OpenOffice</a>, JavaHelp, and others.  
+</p>
+
+<p>The mathematics in your document can be handled in various ways, too: the &#8220;normal&#8221; way of producing images for complicated formulas and inlining them to the document, or the &#8220;right&#8221; way of embedding <a href="http://www.w3.org/Math/">MathML</a> into the XML file.  Unfortunately, the &#8220;right&#8221; way is not very well supported&#8211;not too many browsers read MathML yet.  But it&#8217;s nice that tex4ht allows me to get by with this yucky kludge until it happens (if ever!)</p>
+
+<p>A long time ago there was <a href="http://www.latex2html.org/">LaTeX2HTML</a> for this purpose, and man, did I hate it.&#160; It was an impressive project, and sometimes I got it to work.&#160; However, I disagreed with the whole ethos of it.&#160; LaTeX2HTML uses perl to parse TeX files and generates an HTML file.&#160; Why do it this way?&#160; TeX <i>already</i> parses files and produces output in the form of a DVI file.&#160; What tex4ht does is attaches onto TeX&#8217;s parser and operates on the DVI file to make the conversion.&#160; 
+</p>
+
+<p>And then there&#8217;s the fact that tex4ht has so many options and is configurable.&#160; I&#8217;d like to learn more about configuring it well, but in a short time I was able to do one thing I wanted&#8211;link to the PDF in the HTML version.
+</p>
+
+<p></p>
+
