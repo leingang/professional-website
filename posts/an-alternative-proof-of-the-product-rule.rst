@@ -18,6 +18,8 @@ than it) in the American Mathematical Monthly about an alternative proof of the
 product rule.  It requires nothing more than the generalized power rule for
 :math:`n=2` and FOIL_.
 
+.. TEASER_END:
+
 First, let :math:`u` be differentiable at :math:`a`.  Let :math:`v(x) = u(x)^2`.
 Then
 

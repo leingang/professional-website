@@ -18,6 +18,8 @@ Here's a case study: a student with a very irregular course history insists they
 have at one point in their college career learned analysis. What questions would
 you ask the student to verify this?
 
+.. TEASER_END:
+
 In analysis, a *characteristic function* of a set determines whether points in a
 space are in the given set.  To put it more formally, if :math:`X` is a set and :math:`E`
 a subset of :math:`X`, the characteristic function of :math:`E` is the set
