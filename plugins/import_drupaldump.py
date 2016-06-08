@@ -141,7 +141,8 @@ class CommandImportDrupalDump(Command, ImportMixin):
             "math 20" : "education/teaching/math-20",
             "teacher training" : "education/teaching",
             "pop culture" : "leisure",
-            "web" : "computing/web"
+            "web" : "computing/web",
+            "teaching" : "education/teaching"
         }
         slug_to_cat ={
             "hooray-for-boston" : "computing/web",
@@ -170,6 +171,15 @@ class CommandImportDrupalDump(Command, ImportMixin):
             "are-we-still-here" : "math/science",
             "tooting-my-own-horn" : "education/teaching",
             "back-again" : "computing/blog",
+            "yikes" : "miscellaneous",
+            "back-work" : "education/talks",
+            "move-complete" : "NYU",
+            "movin-down" : "NYU",
+            "brought-you-anarchists-organization" : "New York",
+            "7" : "computing/blog",
+            "5" : "computing/blog",
+            "4" : "computing/web",
+            "1" : "computing/blog"
         }
         if slug in slug_to_cat.keys():
             return slug_to_cat[slug]

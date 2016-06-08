@@ -430,6 +430,7 @@ CATEGORY_PAGES_DESCRIPTIONS={
         "education/teaching" : "The art and craft of teaching",
         "education/teaching/calculus-3" : "Multivariable calculus",
         "education/teaching/math-20" : "Multivariable calculus and linear algebra for social sciences",
+        "education/teaching/math e-304" : "Probability and combinatorics for teaching",
         "education/talks" : "Education talks I have seen or given",
         "education/academia" : "Higher education",
         "education/advising" : "Helping students make the most of their education",

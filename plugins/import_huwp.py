@@ -168,6 +168,7 @@ class CommandImportHuwp(Command, ImportMixin):
             "math 1a, spring 2008" : "education/teaching/calculus-1",
             "math 21a, spring 2008" : "education/teaching/calculus-3",
             "math 20" : "education/teaching/math-20",
+            "math e-304" : "education/teaching/math e-304",
             "teacher training" : "education/teaching",
             "pop culture" : "leisure",
             "web" : "computing/web"
