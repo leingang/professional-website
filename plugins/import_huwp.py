@@ -200,7 +200,8 @@ class CommandImportHuwp(Command, ImportMixin):
             "monday-reading-list" : "miscellaneous",
             "web-pedagogy-seminar-google-earth-continues-to-rock" : "education/talks",
             "to-friend-or-not-to-friend" : "education/teaching",
-            "accepted" : "education/talks"
+            "accepted" : "education/talks",
+            "wordpress-upgraded" : "computing/blog"
         }
         if slug in slug_to_cat.keys():
             return slug_to_cat[slug]

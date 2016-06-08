@@ -179,7 +179,8 @@ class CommandImportDrupalDump(Command, ImportMixin):
             "7" : "computing/blog",
             "5" : "computing/blog",
             "4" : "computing/web",
-            "1" : "computing/blog"
+            "1" : "computing/blog",
+            "accepted" : "education/talks",
         }
         if slug in slug_to_cat.keys():
             return slug_to_cat[slug]
