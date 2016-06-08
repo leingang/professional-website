@@ -117,8 +117,9 @@ class CommandImportHuwp(Command, ImportMixin):
         if not args:
             print(self.help())
             return False
-        print("options: %s" % options)
-        print("args: %s" % args)
+        # for debugging
+        # print("options: %s" % options)
+        # print("args: %s" % args)
 
         if not self._read_options(options, args):
             return False
@@ -348,7 +349,16 @@ class CommandImportHuwp(Command, ImportMixin):
         category=self._adjust_category(categories[0],slug)
         tags = tags.union(categories)
 
-        content=self._scrape_content(post)
+        alert=b"""
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Warning: Cobwebs ahead</strong>
+                This post is imported from an old WordPress blog I maintained
+                when I was <a class="alert-link" href="link://slug/what-the-heck-is-a-preceptor">Preceptor in Mathematics</a>
+                at <a class="alert-link" href="http://math.harvard.edu/">Harvard University</a>.
+                Some links are dead, references are dated, and comments were deleted.
+            </div>"""
+        content=alert + self._scrape_content(post)
 
         meta={
             'title' : title,

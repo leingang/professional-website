@@ -250,7 +250,15 @@ class CommandImportDrupalDump(Command, ImportMixin):
         content_lines=[]
         for elt in content_tree:
             content_lines.append(etree.tostring(elt,pretty_print=True))
-        content = b''.join(content_lines)
+        alert=b"""
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Warning: Cobwebs ahead</strong>
+                This post is imported from an old drupal site I maintained at the
+                <a href="http://www.cims.nyu.edu/" class="alert-link">Courant Institute</a>.
+                Some links are dead, references are dated, and comments were deleted.
+            </div>"""
+        content = alert + b''.join(content_lines)
         # LOGGER.debug("content %s" % content) # warning: very verbose!
 
         out_content_filename = slug + ".html"

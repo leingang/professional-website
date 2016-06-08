@@ -9,7 +9,13 @@
 .. type: text
 -->
 
-<html><body><div class="content"><p>While setting up my site I discovered the <a href="https://addons.mozilla.org/en-US/firefox/addon/697">View formatted source</a> extension for Firefox.  What a killer extension when you're tweaking the <a href="http://www.w3.org/TR/REC-CSS2/">styling</a> of a site!</p>
+<html><body><div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <strong>Warning: Cobwebs ahead</strong>
+                This post is imported from an old drupal site I maintained at the
+                <a href="http://www.cims.nyu.edu/" class="alert-link">Courant Institute</a>.
+                Some links are dead, references are dated, and comments were deleted.
+            </div><div class="content"><p>While setting up my site I discovered the <a href="https://addons.mozilla.org/en-US/firefox/addon/697">View formatted source</a> extension for Firefox.  What a killer extension when you're tweaking the <a href="http://www.w3.org/TR/REC-CSS2/">styling</a> of a site!</p>
 <p>In the past when setting the style of a site I've run into the problem of "nothing happened."  It's hard to tell at that point if (a) the <a href="http://www.w3.org/TR/REC-CSS2/selector.html">selector</a> statement I wrote didn't match what I was going for, (b) the style declarations I made have been overidden by something further down the cascade, or (c) the style declarations I've made simply have no effect in this browser.</p>
 <p>The extension gives you a contextual (right-click) submenu.  The "view formatted source" item shows you the document's HTML source, but the div's are collapsible so you can hide what you're not focused on.  Hovering over an element pops up a list of the CSS declarations it matches, along with what files they come from.  This completely takes care of diagnosing problems (a) and (b) above.  (c) is another problem altogether, but I'm not sweating cross-browser issues at the moment.</p>
 <p>Right now this extension hasn't been updated for Firefox 3.  It does work with the current stable version of <a href="http://www.flock.org/">Flock</a>, though.</p>

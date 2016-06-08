@@ -2,7 +2,7 @@
 .. title: Configuring tex4ht to link to PDF
 .. slug: configuring-tex4ht-to-link-to-pdf
 .. date: 2007-04-27T07:19:00
-.. tags: harvard,computing,latex,courses
+.. tags: computing,latex,courses,harvard
 .. category: computing/tex
 .. link: 
 .. description: 
@@ -10,7 +10,15 @@
 .. categories: courses,computing,latex
 -->
 
-<p><a href="/posts/tex4ht/">As I wrote before</a>, I&#8217;m a big fan of <a href="http://www.cse.ohio-state.edu/%7Egurari/TeX4ht/">TeX4ht</a> to convert (La)TeX documents to HTML and variants.  One thing I liked was its professed configurability.  So I gave it a whirl.</p>
+
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Warning: Cobwebs ahead</strong>
+                This post is imported from an old WordPress blog I maintained
+                when I was <a class="alert-link" href="link://slug/what-the-heck-is-a-preceptor">Preceptor in Mathematics</a>
+                at <a class="alert-link" href="http://math.harvard.edu/">Harvard University</a>.
+                Some links are dead, references are dates, and comments were deleted.
+            </div><p><a href="/posts/tex4ht/">As I wrote before</a>, I&#8217;m a big fan of <a href="http://www.cse.ohio-state.edu/%7Egurari/TeX4ht/">TeX4ht</a> to convert (La)TeX documents to HTML and variants.  One thing I liked was its professed configurability.  So I gave it a whirl.</p>
 
 <p>The HTML that TeX4ht isn&#8217;t quite perfect, still.  It needs some help with tables, and if I use custom list styles they don&#8217;t carry over (although that might be a browser thing, now, come to think of it).  So I wanted to insert two things into the HTML file: a &lt;LINK&gt; element in the document head indicating to any machine reader that the PDF version exists, and a note at the top of the document body indicating to any human reader that the PDF version exists and is more authoritative.</p>
 

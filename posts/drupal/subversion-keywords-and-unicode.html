@@ -2,14 +2,20 @@
 .. title: Subversion keywords and unicode
 .. slug: subversion-keywords-and-unicode
 .. date: 2008-08-04 12:30:00
-.. tags: emacs,unicode,subversion,hack,emacs local variables
+.. tags: emacs,subversion,emacs local variables,hack,unicode
 .. category: computing
 .. link: 
 .. description: 
 .. type: text
 -->
 
-<html><body><div class="content"><p>I'm editing some text files, and I like to use <a href="subversion.tigris.org:&lt;br%20/&gt;%0Ahttp://subversion.tigris.org/">subversion</a> to do this.  It helps with managing my own different revisions of the files, and can mark them automatically with metadata.  </p>
+<html><body><div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <strong>Warning: Cobwebs ahead</strong>
+                This post is imported from an old drupal site I maintained at the
+                <a href="http://www.cims.nyu.edu/" class="alert-link">Courant Institute</a>.
+                Some links are dead, references are dated, and comments were deleted.
+            </div><div class="content"><p>I'm editing some text files, and I like to use <a href="subversion.tigris.org:&lt;br%20/&gt;%0Ahttp://subversion.tigris.org/">subversion</a> to do this.  It helps with managing my own different revisions of the files, and can mark them automatically with metadata.  </p>
 <p>(Subversion is a <a href="http://en.wikipedia.org/wiki/Revision_control">version control system</a>--you create a repository, work on a local copy, then commit changes to the repository when you're satisfied with them.  Programmers use version control systems to keep track of giant code bases, so you can prepare new versions of software while at the same time release bug fixes for previous versions.  But there's no reason why the files managed need to be an executable piece of software--it can be a website or a single text file.  And there's no reason why you need more than one developer to have a version control system in place.)</p>
 <p>Anyway, subversion allows you mark keywords in your file to keep track of some metadata.  For instance, I like to note the date when a file was last committed (had changes saved to the repository).  To do this, you use the string "$Date$" in the file.  Then you declare that you want this keyword substituted.  On the command-line, assuming you're in a checked-out working copy of the version-controlled directory, you type</p>
 <pre class="code">
