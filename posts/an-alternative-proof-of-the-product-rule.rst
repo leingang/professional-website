@@ -2,7 +2,7 @@
 .. slug: an-alternative-proof-of-the-product-rule
 .. date: 2016-05-19 09:38:40 UTC-04:00
 .. tags: mathjax, math, calculus, product rule
-.. category: math
+.. category: math/calculus
 .. link: http://dx.doi.org/10.4169/amer.math.monthly.123.5.470
 .. description:
 .. type: text

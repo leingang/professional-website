@@ -2,7 +2,7 @@
 .. slug: orientation-and-my-lawn
 .. date: 2016-05-19 10:28:54 UTC-04:00
 .. tags: math, calculus-3, orientation, topology, draft
-.. category: math
+.. category: education/teaching/calculus-3
 .. link:
 .. description: Orientation of the boundaries of plane regions, explained with a suburban metaphor.
 .. type: text

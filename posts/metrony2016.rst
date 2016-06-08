@@ -2,9 +2,9 @@
 .. date: 2016-05-01 18:42:52
 .. tags: MAA, MAA MetroNY Section, mathjax
 .. author: Matthew Leingang
-.. link: ???
+.. link:
 .. description: How I spent a rainy Sunday in May.
-.. category: news
+.. category: math/talks
 
 
 .. figure:: /images/MAAMetroNYProgramMay1_2016.png
@@ -22,7 +22,7 @@ The meeting was at `Vaughn College of Aeronautics and Technology
 <http://vaughn.edu/>`__, which is built into an airplane hangar just off
 of Laguardia Airport.  It's been recently renovated and is a very nice
 space.  It was the perfect size for our 200-ish meeting.  It's a college
-for students who want to pilots, air traffic controllers, or engineers. 
+for students who want to pilots, air traffic controllers, or engineers.
 They have a `world-champion robotics team
 <http://www.vaughn.edu/news-vaughn-college-robotics-team-named-world-
 champions-at-record-setting-2016-vex-robotics-competition>`__, and
@@ -33,9 +33,9 @@ Starbird
 --------
 
 The keynote speaker was Mike Starbird, whom I always enjoy listening to.
-He talked about “Geometric Gems,” simple proofs of famous theorems. 
+He talked about “Geometric Gems,” simple proofs of famous theorems.
 The one I liked the most was a proof of the Pythagorean Theorem by
-Leonardo da Vinci. 
+Leonardo da Vinci.
 
 .. fixme: put in TikZ for Leonardo's proof.
 
@@ -67,7 +67,7 @@ Lecturing with slides
 ---------------------
 
 I was honored to be part of a panel discussion on enrichment strategies
-for teaching.  I talked about creating good lecture slides. 
+for teaching.  I talked about creating good lecture slides.
 
 .. fixme: add slideshare embed.
 
@@ -75,12 +75,12 @@ I use two modes for slide generation.  When I create slides for
 teaching, I use LaTeX and beamer.  I generate handouts for posting to
 the course website the night before.  These handouts have many solutions
 to examples (and jokes) removed.  The version I do in class steps
-through calculations carefully, and of course, includes solutions. 
-These get posted after class.  
+through calculations carefully, and of course, includes solutions.
+These get posted after class.
 
 When I create slides for professional talks I like to use Keynote on the
 mac.  I prefer it to PowerPoint mostly because I am Mac-native.  It has
-a few more transitions than PowerPoint, most of which I don't need.  
+a few more transitions than PowerPoint, most of which I don't need.
 
 I don't use a lot of flashy transitions and animations, for their own
 sake, but I am fond of automatic builds.  Having a slide with a lot of
@@ -160,7 +160,7 @@ traps.  Considering :math:`24 \div 6 \times 2`, division first gives :math:`4
 \times 2= 8`.  I hadn't heard this before, but if you think about it, it makes
 sense. [#]_  You are effectively converting each division into multiplication by
 the reciprocal, then immediately simplifying the multiplication with its
-predecessor.  You still have to group left-to-right, however.   
+predecessor.  You still have to group left-to-right, however.
 
 If you phrase the order of operations this way, the initials become
 **PEDMSA.**  Unlike **PEMDAS**, which is pronounceable as an acronym,

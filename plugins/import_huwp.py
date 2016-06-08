@@ -153,6 +153,61 @@ class CommandImportHuwp(Command, ImportMixin):
             pass
         return tag
 
+    @classmethod
+    def _adjust_category(cls,cat,slug):
+        """ map old categories to new ones"""
+        old_to_new = {
+            "uncategorized" : "miscellaneous",
+            "wordpress" : "computing/wordpress",
+            "books" : "computing/php", # there's only one book review in this dump
+            "php" : "computing/php",
+            "courses" : "education/teaching",
+            "latex" : "computing/tex",
+            "math s-1ab" : "education/teaching/calculus",
+            "math 1a, spring 2008" : "education/teaching/calculus-1",
+            "math 21a, spring 2008" : "education/teaching/calculus-3",
+            "math 20" : "education/teaching/math-20",
+            "teacher training" : "education/teaching",
+            "pop culture" : "leisure",
+            "web" : "computing/web"
+        }
+        slug_to_cat ={
+            "hooray-for-boston" : "computing/web",
+            "what-the-heck-is-a-preceptor" : "education/teaching",
+            "new-toys-department-i-nikon-coolpix-l10-on-clearance" : "miscellaneous",
+            "a-funny-thing-happened-on-the-way-to-work" : "miscellaneous",
+            "configuring-tex4ht-to-link-to-pdf" : "computing/tex",
+            "ruminations-on-new-technologies-for-teaching" : "education/talks",
+            "tuesday-reading-list-and-ditl" : "education/talks",
+            "day-in-the-life-teaching-fellow-orientation-today" : "education/talks",
+            "upcoming-msri-conference-on-teaching-teachers" : "education/talks",
+            "ibl-courses-in-geometry-and-probability-for-high-school-teachers" : "education/talks",
+            "upcoming-bok-center-talk-2" : "education/talks",
+            "upcoming-tums-ii-talk" : "education/talks",
+            "bok-center-recap" : "education/talks",
+            "lesson-planning-talk" : "education/talks",
+            "inside-higher-ed-advanced-yes-placement-no" : "education",
+            "upcoming-bok-center-talk" : "education/talks",
+            "the-freshman-experience" : "education",
+            "game-theory-nfl-style" : "math",
+            "can-you-own-an-integer" : "math",
+            "habemus-presidentam" : "education/academia",
+            "happy-spring-term" : "education/teaching",
+            "hows-your-penmanship"  : "education",
+            "harvard-studies-ways-to-promote-teaching" : "education/academia",
+            "monday-reading-list" : "miscellaneous",
+            "web-pedagogy-seminar-google-earth-continues-to-rock" : "education/talks",
+            "to-friend-or-not-to-friend" : "education/teaching",
+            "accepted" : "education/talks"
+        }
+        if slug in slug_to_cat.keys():
+            return slug_to_cat[slug]
+        try:
+            return old_to_new[cat]
+        except KeyError:
+            return cat
+
+
     @staticmethod
     def _strip_xpath(tree,xpath):
         for elt in tree.xpath(xpath):
@@ -290,7 +345,7 @@ class CommandImportHuwp(Command, ImportMixin):
         tags=self._scrape_tags(post)
         tags.add('harvard')
         categories=self._scrape_categories(post)
-        category=categories[0]
+        category=self._adjust_category(categories[0],slug)
         tags = tags.union(categories)
 
         content=self._scrape_content(post)

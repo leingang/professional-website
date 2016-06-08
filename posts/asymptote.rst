@@ -5,7 +5,7 @@
 .. author: Matthew Leingang
 .. link: https://gist.github.com/leingang/71ceab3d19bd5c05f3dd6724fb20a24e
 .. description: In which I clutz around in a new graphics description language
-.. category: technology
+.. category: computing
 
 During one of the breakout sessions I was able to hack together some asymptote scripts.
 

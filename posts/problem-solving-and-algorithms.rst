@@ -5,7 +5,10 @@
 .. category: math
 .. link:
 .. description:
+.. previewimage: http://c2.staticflickr.com/9/8093/8580520017_5e491972b4_z.jpg
 .. type: text
+
+.. media:: http://c2.staticflickr.com/9/8093/8580520017_1304fdef1d_h.jpg
 
 This evening at dinner my 9-year-old son talked about a problem he had been working
 on for math homework.
@@ -65,11 +68,18 @@ appropriate solution strategy among many.  I think this is a good thing.
 
 Many of my calculus students arrive assuming that each problem has a unique best
 solution method, which needs to be shown them before the problem can be solved.
-But one of the findings detailed in *`Make it Stick`_* is that students learn
-better when the attempt a problem before being shown its solution.  And having
-many strategies to choose from allows students to find their own solutions.
+But one of the findings detailed in *`Make it Stick`_* by Brown, Roediger, and
+McDaniel is that students learn better when the attempt a problem before being
+shown its solution.  And having many strategies to choose from allows students
+to find their own solutions.
 
 Epilogue: Please do not get the impression that all of our dinner conversations
 at home are about math!  I was just lucky on this particular evening.
 
-.. _`Make it Stick`:
+.. class:: credits
+
+    Image_ by Joe Haupt via flickr (CC-BY-SA_)
+
+.. _CC-BY-SA: https://creativecommons.org/licenses/by-sa/2.0/
+.. _Image: https://flic.kr/p/e5epEi
+.. _`Make it Stick`: https://www.amazon.com/Make-Stick-Science-Successful-Learning/dp/0674729013?ie=UTF8&*Version*=1&*entries*=0

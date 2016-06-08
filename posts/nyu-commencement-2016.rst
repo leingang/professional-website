@@ -4,7 +4,7 @@
 .. tags: nyu, instagram
 .. category: NYU
 .. link:
-.. description: Refelctions on NYU's 2016 Commencement in Yankee Stadium.
+.. description: Reflections on NYU's 2016 Commencement in Yankee Stadium.
 .. type: text
 
 .. todo: include IG pic

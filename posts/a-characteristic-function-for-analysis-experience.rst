@@ -2,7 +2,7 @@
 .. slug: a-characteristic-function-for-analysis-experience
 .. date: 2016-05-23 11:29:14 UTC-04:00
 .. tags: math, education, mathjax
-.. category: math
+.. category: education/advising
 .. link:
 .. previewimage: http://c3.staticflickr.com/8/7098/7305951154_1abf87af4c_z.jpg
 .. description: In which we wonder how to tell if someone has taken analysis, long after they have allegedly taken analysis.

@@ -403,7 +403,7 @@ HIDDEN_TAGS = ['mathjax']
 # using a forward slash ('/') to separate paths. Use a backslash ('\') to escape
 # a forward slash or a backslash (i.e. '\//\\' is a path specifying the
 # subcategory called '\' of the top-level category called '/').
-CATEGORY_ALLOW_HIERARCHIES = False
+CATEGORY_ALLOW_HIERARCHIES = True
 # If CATEGORY_OUTPUT_FLAT_HIERARCHY is set to True, the output written to output
 # contains only the name of the leaf category and not the whole path.
 CATEGORY_OUTPUT_FLAT_HIERARCHY = False
@@ -421,6 +421,32 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 #        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
 #    },
 # }
+CATEGORY_PAGES_DESCRIPTIONS={
+    DEFAULT_LANG: {
+        # "math" : "Uncomment once I get a meaningful description",
+        "math/talks" : "Math talks I have seen or given",
+        "education" : "My day job",
+        # "education/teaching" : "Uncomment once I get a meaningful description",
+        "education/teaching" : "The art and craft of teaching",
+        "education/teaching/calculus-3" : "Multivariable calculus",
+        "education/teaching/math-20" : "Multivariable calculus and linear algebra for social sciences",
+        "education/talks" : "Education talks I have seen or given",
+        "education/academia" : "Higher education",
+        "education/advising" : "Helping students make the most of their education",
+        # "computing" : "Uncomment once I get a meaningful description",
+        "NYU" : "New York University, my place of work",
+        "computing/python" : "Currently my favorite programming language",
+        "computing/tex" : "Over 50 years of continual use have not dulled this incomparable instrument",
+        "computing/blog" : "Posts about this blog",
+        "computing/web" : "The world wide web",
+        "New York" : "The most exciting city I've worked in",
+        "leisure" : "Free time stuff",
+        "leisure/cooking" : "Some people eat to live, others live to eat.",
+        #"leisure/running": "Uncomment once I get a meaningful description",
+        #"leisure/sports" : : "Uncomment once I get a meaningful description",
+        "miscellaneous" : "Anything else not otherwise uncategorized"
+    }
+}
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
 # CATEGORY_PAGES_TITLES = {

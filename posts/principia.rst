@@ -6,7 +6,7 @@
 .. author: Matthew Leingang
 .. link: https://www.instagram.com/p/BEwrFOEuWdo/?hl=en
 .. description: In which I laid eyes on an original printing of Newton's Principia.
-.. category: news
+.. category: math/calculus
 
 .. raw:: html
 

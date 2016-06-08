@@ -2,7 +2,7 @@
 .. slug: nyu-prepares-for-graduation-week
 .. date: 2016-05-16 10:52:48 UTC-04:00
 .. tags: instagram,nyu
-.. category:
+.. category: NYU
 .. link:
 .. description:
 .. type: text

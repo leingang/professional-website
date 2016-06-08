@@ -2,7 +2,7 @@
 .. slug: exceeding-texs-save_size-with-auto-multiple-choice
 .. date: 2016-05-12 13:46:46 UTC-04:00
 .. tags: auto-multiple-choice, latex, tikz-pgf, calculus-ii
-.. category: hacking
+.. category: computing/tex
 .. link:
 .. description: Understanding why TeX's save stack was overflowing requires a deep dive into old TikZ libraries.
 .. type: text
