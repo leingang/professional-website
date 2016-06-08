@@ -68,7 +68,7 @@ appropriate solution strategy among many.  I think this is a good thing.
 
 Many of my calculus students arrive assuming that each problem has a unique best
 solution method, which needs to be shown them before the problem can be solved.
-But one of the findings detailed in *`Make it Stick`_* by Brown, Roediger, and
+But one of the findings detailed in `Make it Stick`_ by Brown, Roediger, and
 McDaniel is that students learn better when the attempt a problem before being
 shown its solution.  And having many strategies to choose from allows students
 to find their own solutions.
