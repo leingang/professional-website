@@ -41,7 +41,7 @@
                         % if rel_link(permalink, suburl) == "#":
                             <li class="active"><a href="${permalink}">${text}<span class="badge">${count}</span><span class="sr-only">${messages("(active)", lang)}</span></a>
                         %else:
-                            <li><a href="${suburl}">${text}<span class="badge">${count}</span></a>
+                            <li><a href="${suburl}">${text}<span class="badge ${loop.cycle('golden','','red','blue')}">${count}</span></a>
                         %endif
                     %endfor
                 </ul>
