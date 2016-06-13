@@ -5,12 +5,9 @@
 .. category: education/advising
 .. link:
 .. previewimage: http://c3.staticflickr.com/8/7098/7305951154_1abf87af4c_z.jpg
+.. coverimage: https://farm8.staticflickr.com/7098/7305951154_7e4a6f6d76_k.jpg
 .. description: In which we wonder how to tell if someone has taken analysis, long after they have allegedly taken analysis.
 .. type: text
-
-.. raw:: html
-
-    <a data-flickr-embed="true"  href="https://www.flickr.com/photos/69615420@N00/7305951154/in/photolist-c8AUK5-Nywpp-8AZeXr-8FPiR9-7w5s4w-6WvnzH-ciosuS-dnwMud-p3mzwe-4zC8oy-6xnjNG-7m2Rcp-7AsFGT-vbEd1W-edfAro-h2GYzy-83yHfJ-9yA31J-4PAtTo-8bAqPJ-9vt5rs-p69TzJ-egdSCj-6odksE-9c5jtN-9B93Bm-sou23R-c6aLK-5MQ8CZ-akCeuu-6zteAX-8Z6iDZ-9f8vjQ-5UYsgC-p2FFor-mvXQLr-5nKMj6-5UscRE-2LTAn-dkHt4F-7napFU-oCKYTa-p8KSGF-5wMcFN-6KKsH8-8g86VW-5FMmv6-kchD6Z-6Zq1Ws-6WCDBo" title="math"><img src="https://farm8.staticflickr.com/7098/7305951154_7e4a6f6d76_k.jpg" width="2048" height="1358" alt="math"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 (This is a based on a Facebook post I made a couple of days ago.)
 
@@ -63,3 +60,12 @@ In the case that inspired this post, I got all the good answers far too late. In
 I emailed the head of the department of the students' previous school.  The information
 she provided was definitive in deciding whether the student had learned analysis.  But
 at least I know what to do next time.
+
+.. class:: credits
+
+    Image_ by Bryon Barrett via Flickr (CC-BY-NC-ND_)
+
+
+.. _Image: https://flic.kr/p/c8AUK5
+
+.. _CC-BY-NC-ND: https://creativecommons.org/licenses/by-nc-nd/2.0/

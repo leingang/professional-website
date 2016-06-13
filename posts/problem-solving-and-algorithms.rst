@@ -6,9 +6,9 @@
 .. link:
 .. description:
 .. previewimage: http://c2.staticflickr.com/9/8093/8580520017_5e491972b4_z.jpg
+.. coverimage: http://c2.staticflickr.com/9/8093/8580520017_1304fdef1d_h.jpg
 .. type: text
 
-.. media:: http://c2.staticflickr.com/9/8093/8580520017_1304fdef1d_h.jpg
 
 This evening at dinner my 9-year-old son talked about a problem he had been working
 on for math homework.
@@ -17,7 +17,7 @@ on for math homework.
 
 We had some fun discussing solutions to this problem, and a few wrong answers.
 
-.. TEASER_END:
+.. TEASER_END
 
 First, the wrong answer: more than one person at the table blurted out that Ben
 had 28 cars.  Why?  Because :math:`36-8=28`.  The logic behind this solution
