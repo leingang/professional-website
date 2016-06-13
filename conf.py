@@ -24,9 +24,9 @@ BLOG_TITLE = "Matthew Leingang"  # (translatable)
 SITE_URL = "http://www.matthewleingang.com/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://www.matthewleingang.com/
+# BASE_URL = "http://www.matthewleingang.com/"
 BLOG_EMAIL = "ml@matthewleingang.com"
-BLOG_DESCRIPTION = "Professional website and blog of Matthew Leingang, a mathematics professor, higher ed administrator, and technical dilettante."  # (translatable)
+BLOG_DESCRIPTION = "mathematics professor, higher ed administrator, technical dilettante"  # (translatable)
 
 # Nikola is multilingual!
 #
