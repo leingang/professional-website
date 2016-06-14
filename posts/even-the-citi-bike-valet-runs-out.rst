@@ -6,10 +6,9 @@
 .. link:
 .. description:
 .. type: text
-
-.. raw:: html
-
-    <a data-flickr-embed="true" data-footer="true"  href="https://www.flickr.com/photos/99576374@N02/10414628345/in/photolist-gSiGaF-fSCcWA-6iHzWg-y72aUg-BcCmsm-yFadDN-yYxG3T" title="citi bike 2"><img src="https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg" width="4658" height="1975" alt="citi bike 2"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+.. coverimage: //farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg
+.. todo: <a data-flickr-embed="true" data-footer="true"  href="https://www.flickr.com/photos/99576374@N02/10414628345/in/photolist-gSiGaF-fSCcWA-6iHzWg-y72aUg-BcCmsm-yFadDN-yYxG3T" title="citi bike 2"><img src="https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg" width="4658" height="1975" alt="citi bike 2"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+.. todo: get metadata and licensing.
 
 I am a normally happy `Citi Bike`_ user.  I take it back and forth from Port Authority Bus Terminal to NYU.  (One of my dreams came true a couple of years ago when they `profiled me`_.) One thing I don't like is not being able to find a bike when I need one.
 
@@ -34,6 +33,12 @@ I understand Citi Bike is a victim of their own success.  The valet stations are
 
 I took the subway.
 
+.. class:: credits
+
+    Image_ by Tom Marvel via Flickr (CC-BY_)
+
+.. _Image: https://flic.kr/p/gSiGaF
+.. _CC-BY: https://creativecommons.org/licenses/by/2.0/
 
 .. _`Citi Bike`: https://www.citibikenyc.com/
 .. _`profiled me`: http://citibikeblog.tumblr.com/post/89385044537/member-profile-matthew
