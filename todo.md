@@ -6,17 +6,15 @@ Before going live
 
 * one-pager "coming soon" at ml.com
 
-* fix the header to have page title & subtitle (and cover image)
+* other template adaptations
 
-  - try just swapping the hero element and nav menu
+  - [Shisaa](http://www.shisaa.jp/postset/nikola-web.html) has a good post on developing a theme
 
-  - cover image needs to be inserted as CSS into extra_head
+  - gallery
+
+* Pick pygments color theme
 
 * archive menu
-
-* about page
-
-* contact page
 
 * algorithm for choosing "popular" posts which can be overridden (since all posts are equally unread atm)
 
@@ -25,6 +23,12 @@ Before going live
     - paul sally
 
     - raoul bott eulogy
+
+    - TF-IDF is the name of the game.
+
+    - See also YARPP.
+
+        + Yarp_Cache::sql and related have the guts
 
 * cover images: configurable by
 
@@ -37,6 +41,14 @@ Before going live
 * disqus comments
 
 * google Analytics
+
+* "Statistics"
+
+    - Articles
+
+    - categories
+
+    - tags
 
 * favicon  
 
@@ -55,6 +67,8 @@ After going live
 
 * social buttons: Rather than slide-out buttons I want to use the Key Lime-branded
   ones at the bottom of the post.
+
+* breadcrumb on post page and category page (link to categories)
 
 * feed integrations
 
