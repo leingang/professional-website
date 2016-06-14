@@ -9,11 +9,13 @@
 .. coverimage: https://c8.staticflickr.com/5/4046/4173681751_caa7b8d24c_b.jpg
 .. type: text
 
-Citi Bike Trip #495.
+.. class:: post-intro
 
-* **Depart:** Broadway and W 39th St., 9:18am
-* **Arrive:** Washington Pl. and Broadway, 9:33am
-* **Trip time:** 14:52 minutes
+    Citi Bike Trip #495.
+
+    * **Depart:** Broadway and W 39th St., 9:18am
+    * **Arrive:** Washington Pl. and Broadway, 9:33am
+    * **Trip time:** 14:52 minutes
 
 
 One of the snarls on this path from midtown to NYU is Herald Square.  It's at
@@ -39,7 +41,7 @@ the lane he shouted repeatedly:
     The promise of a green America is ruined when people walk in the bike lane!
 
 At the next light we chatted, and he told me he found it more satisfying than
-simply shouting “Get out the bike lane!”  I don't know if it's more effective.
+simply shouting “Get out of the bike lane!”  I don't know if it's more effective.
 
 
 .. class:: credits
