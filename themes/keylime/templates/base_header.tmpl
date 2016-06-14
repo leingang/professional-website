@@ -15,6 +15,16 @@
     ${template_hooks['page_header']()}
 </%def>
 
+<%def name="html_title()">
+    <h1>${blog_title.upper() | h}</h1>
+</%def>
+
+## overload in descendents
+<%def name="html_subtitle()">
+    <h2>${blog_description|h}</h2>
+</%def>
+
+
 <%def name="html_menu()">
     <div id="menu" class="menu-right">
         <ul>
@@ -28,8 +38,8 @@
                     </div>
                 </form>
             </li>
-            <li><a href="${abs_link(_link("root", None, lang))}"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-            <li><a href="about.html"><i class="icon-user"></i>About</a></li>
+            <li><a href="${_link("root", None, lang)}"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="${_link('slug','about')}"><i class="icon-user"></i>About</a></li>
             <li class="submenu">
                 <a href="#"><i class="icon-books"></i>Categories<b class="caret"></b></a>
                 <ul class="submenu-list">
@@ -46,7 +56,7 @@
                     %endfor
                 </ul>
             </li>
-            <li class="submenu submenu-open">
+            <!-- <li class="submenu submenu-open">
                 <a href="#"><i class="icon-file"></i>Pages<b class="caret"></b></a>
                 <ul class="submenu-list">
                     <li><a href="post-image.html">Post Image</a></li>
@@ -57,7 +67,7 @@
                     <li><a href="search.html">Search</a></li>
                     <li><a href="404.html">404 Error</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li class="submenu">
                 <a href="#"><i class="icon-calendar"></i>Archives <b class="caret"></b></a>
                 <ul class="submenu-list">
@@ -67,19 +77,18 @@
                     <li><a href="archives.html">October<span>2013</span></a></li>
                 </ul>
             </li>
-            <li><a href="contact.html"><i class="icon-envelope"></i>Contact</a></li>
+            <li><a href="${_link('slug','contact')}"><i class="icon-envelope"></i>Contact</a></li>
+            <li><a href="/rss.xml"><i class="fa fa-rss"></i>Feed</a></li>
         </ul>
     </div>
 </%def>
 
 <%def name="html_main_nav()">
-    <!-- copied from Key Lime index.html -->
     <div id="main-nav" class="">
         <div class="container">
             <div class="nav-header">
-                <a class="nav-brand" href="index.html">${blog_title}</a>
+                <a class="nav-brand" href="${_link("root", None, lang)}">${blog_title}</a>
                 <a class="menu-link nav-icon" href="#"><i class="icon-menu2"></i></a>
-                <a class="btn btn-blog outline-white pull-right" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
             </div>
         </div>
     </div>
@@ -90,12 +99,20 @@
         <div id="cover-image" class="image-bg animated fadeIn"></div>
         <div class="container welcome-content">
             <div class="middle-text">
-                <h1>${blog_title.upper() | h}</h1>
-                <h2>${blog_description|h}</h2>
-                <a class="btn smooth-scroll" href="#start">Get Started</a>
+                ${html_title()}
+                ${html_subtitle()}
             </div>
         </div>
     </section>
+</%def>
+
+<%def name="html_title()">
+    <h1>${blog_title.upper() | h}</h1>
+</%def>
+
+## overload in descendents
+<%def name="html_subtitle()">
+    <h2>${blog_description|h}</h2>
 </%def>
 
 <%def name="html_site_title()">

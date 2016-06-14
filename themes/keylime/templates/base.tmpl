@@ -5,6 +5,9 @@
 <%namespace name="annotations" file="annotation_helper.tmpl"/>
 ${set_locale(lang)}
 ${base.html_headstart()}
+<style>
+    .image-bg {background-image: url('<%block name="cover_image">/assets/img/cover.jpg</%block>')}
+</style>
 <%block name="extra_head">
 ### Leave this block alone.
 </%block>
@@ -16,8 +19,19 @@ ${template_hooks['extra_head']()}
     ${header.html_menu()}
     <div id="wrap">
         ${header.html_main_nav()}
-        ${header.html_hero()}
-        <!-- ${header.html_header()} -->
+        <section id="hero" class="light-typo">
+            <div id="cover-image" class="image-bg animated fadeIn"></div>
+            <div class="container welcome-content">
+                <div class="middle-text">
+                    <%block name="html_title">
+                        <h1>${blog_title.upper() | h}</h1>
+                    </%block>
+                    <%block name="html_subtitle">
+                        <h2>${blog_description|h}</h2>
+                    </%block>
+                </div>
+            </div>
+        </section>
          <div id="start" class="container content">
             <div class="row">
                 <%block name="content"></%block>

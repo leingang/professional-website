@@ -3,9 +3,7 @@
 <%namespace name="comments" file="comments_helper.tmpl"/>
 
 <%def name="html_title()">
-%if title and not post.meta('hidetitle'):
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
-%endif
+## title goes in hero now.
 </%def>
 
 <%def name="html_translations(post)">
@@ -23,7 +21,7 @@
 
 <%def name="html_sourcelink()">
     % if show_sourcelink:
-        <p class="sourceline"><a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a></p>
+        <span class="sourceline"><a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a></span>
     % endif
 </%def>
 
@@ -31,24 +29,16 @@
     <header>
         ${html_title()}
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                % if author_pages_generated:
-                    <a href="${_link('author', post.author())}">${post.author()|h}</a>
-                % else:
-                    ${post.author()|h}
+            <div class="post-date">
+                <time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time>
+                ## TODO: add comments
+                % if not post.meta('nocomments') and site_has_comments:
+                    <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
                 % endif
-            </span></p>
-            <p class="dateline"><a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" itemprop="datePublished" title="${post.formatted_date('%B %-d, %Y')|h}">${post.formatted_date('%B %-d, %Y')|h}</time></a></p>
-            % if not post.meta('nocomments') and site_has_comments:
-                <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
-            % endif
             ${html_sourcelink()}
             % if post.meta('link'):
-                    <p class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></p>
+                    <span class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></span>
             % endif
-            %if post.description():
-                <meta name="description" itemprop="description" content="${post.description()|h}">
-            %endif
         </div>
         ${html_translations(post)}
     </header>

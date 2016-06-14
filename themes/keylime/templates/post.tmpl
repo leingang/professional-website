@@ -27,7 +27,31 @@
     ${helper.meta_translations(post)}
 </%block>
 
-## need breadcrumb
+<%block name="html_title">
+%if title and not post.meta('hidetitle'):
+    ## was: <h1 class="p-name entry-title" itemprop="headline name"><a href="${post.permalink()}" class="u-url">${post.title()|h}</a></h1>
+    ## but that messes with the styling.
+    ## todo: fix CSS to make the link invisible
+    <h1 class="p-name entry-title" itemprop="headline name">${post.title()|h}</h1>
+%endif
+</%block>
+
+<%block name="html_subtitle">
+%if post.description():
+    <h2>${post.description()|h}</h2>
+%endif
+</%block>
+
+<%block name="cover_image">
+%if post.meta('coverimage'):
+    ${post.meta('coverimage')}
+%else:
+    /assets/img/cover.jpg
+%endif
+</%block>
+
+## need breadcrumb. Use the category path
+
 
 <%block name="content">
 <article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
