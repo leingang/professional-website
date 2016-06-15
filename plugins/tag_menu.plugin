@@ -1,0 +1,12 @@
+[Core]
+name = tag_menu
+module = tag_menu
+
+[Documentation]
+author = Matthew Leingang
+version = 0.1
+website = https://matthewleingang.com/
+description = insert tag info to global context
+
+[Nikola]
+plugincategory = Config
