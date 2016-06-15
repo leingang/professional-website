@@ -12,9 +12,31 @@ Before going live
 
   - gallery
 
+  - BUG: footer on post page appears differently
+
+  * cover images:
+
+      - for about (?), contact, and archive pages
+
+      - configurable by post, category, tag
+
+* "Statistics"
+
+  - Articles
+
+  - categories
+
+  - tags
+
 * Pick pygments color theme
 
-* archive menu
+* algorithm for choosing related posts
+
+    - TF-IDF is the name of the game.
+
+    - See also YARPP.
+
+        + Yarp_Cache::sql and related have the guts
 
 * algorithm for choosing "popular" posts which can be overridden (since all posts are equally unread atm)
 
@@ -24,31 +46,13 @@ Before going live
 
     - raoul bott eulogy
 
-    - TF-IDF is the name of the game.
+    - imported posts can import a "prior comment count" by parsing.
 
-    - See also YARPP.
+    - disqus comments
 
-        + Yarp_Cache::sql and related have the guts
-
-* cover images: configurable by
-
-    - post
-
-    - category
+    - google Analytics
 
 * deploy script    
-
-* disqus comments
-
-* google Analytics
-
-* "Statistics"
-
-    - Articles
-
-    - categories
-
-    - tags
 
 * favicon  
 
