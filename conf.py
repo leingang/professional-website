@@ -1194,7 +1194,15 @@ USE_BUNDLES = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+    "site_social_profiles" : [
+        ("twitter" , "//twitter.com/mleingang"),
+        ("facebook" , "//facebook.com/matthew.leingang"),
+        ("linkedin" , "//linkedin.com/matthewleingang"),
+        ("instagram" , "//instagram.com/mleingang"),
+        ("googleplus" , "//plus.google.com/u/1/+MatthewLeingangNYU")
+    ]
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
