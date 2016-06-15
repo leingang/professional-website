@@ -1,6 +1,6 @@
 from nikola.plugin_categories import ConfigPlugin
 from nikola import utils
-LOGGER = utils.get_logger('import_huwp', utils.STDERR_HANDLER)
+LOGGER = utils.get_logger('category_menu', utils.STDERR_HANDLER)
 
 class CategoryMenu(ConfigPlugin):
     """Add category menu to global context"""

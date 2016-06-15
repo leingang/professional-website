@@ -6,7 +6,7 @@ module = category_menu
 author = Matthew Leingang
 version = 0.1
 website = https://matthewleingang.com/
-description = Render a category menu
+description = insert category info to global context
 
 [Nikola]
 plugincategory = Config
