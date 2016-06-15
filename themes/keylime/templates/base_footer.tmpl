@@ -5,18 +5,49 @@
     %if content_footer:
         <footer>
             <div class="footer">
+                ## not sure where this should go.
                 ${template_hooks['page_footer']()}
-            </div>
-            <div class="copyright">
                 <div class="container">
-                    <p class="pull-left">${content_footer}</p>
-                    <ul class="social-links pull-right">
-                        <li><a href="#link"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#link"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#link"><i class="icon-googleplus"></i></a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4 footer-widget">
+                            <h3>Statistics</h3>
+                        </div>
+                        <div class="col-sm-4 col-md-4 footer-widget">
+                            <h3>Recent posts</h3>
+                        </div>
+                        <div class="col-sm-4 col-md-4 footer-widget clearfix">
+                            <h3>Tags</h3>
+                            ${html_top_tags()}
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="container">
+                        <p class="pull-left">${content_footer}</p>
+                        ${html_social_links()}
+                    </div>
                 </div>
             </div>
         </footer>
+    %endif
+</%def>
+
+<%def name="html_top_tags()">
+    %if top_tags:
+        <ul class="tags">
+            %for tag in top_tags:
+            <li><a href="${_link('tag',tag)}">${tag}</a></li>
+            %endfor
+        </ul>
+    %endif
+</%def>
+
+<%def name="html_social_links()">
+    %if site_social_profiles:
+    <ul class="social-links pull-right">
+        %for site, url in site_social_profiles:
+        <li><a href="${url}"><i class="${'icon-'+ site if site in ('twitter','facebook','googleplus') else 'fa fa-'+site}"></i></a></li>
+        %endfor
+    </ul>
     %endif
 </%def>
