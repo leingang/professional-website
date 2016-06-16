@@ -11,6 +11,7 @@
                     <div class="row">
                         <div class="col-sm-4 col-md-4 footer-widget">
                             <h3>Statistics</h3>
+                            ${html_site_statistics()}
                         </div>
                         <div class="col-sm-4 col-md-4 footer-widget">
                             <h3>Recent posts</h3>
@@ -30,6 +31,23 @@
             </div>
         </footer>
     %endif
+</%def>
+
+<%def name="html_site_statistics()">
+    <div class="stats">
+        <div class="line">
+            <span class="counter">${post_count}</span>
+            <span class="caption">Posts</span>
+        </div>
+        <div class="line">
+            <span class="counter">${category_count}</span>
+            <span class="caption">Categories</span>
+        </div>
+        <div class="line">
+            <span class="counter">${tag_count}</span>
+            <span class="caption">Tags</span>
+        </div>
+    </div>
 </%def>
 
 <%def name="html_top_tags()">
