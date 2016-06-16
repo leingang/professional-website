@@ -3,11 +3,8 @@ import logbook
 from nikola import utils
 LOGGER = utils.get_logger("tag_menu", utils.STDERR_HANDLER)
 
-debug=False
-
-
-class ArchiveMenu(ConfigPlugin):
-    """Add category menu to global context"""
+class TagMenu(ConfigPlugin):
+    """Add top tags to global context"""
 
     name = "tag_menu"
     debug=False
@@ -18,7 +15,7 @@ class ArchiveMenu(ConfigPlugin):
             for handler in LOGGER.handlers:
                 handler.level=logbook.DEBUG
         self.set_top_tags(site)
-        super(ArchiveMenu,self).set_site(site)
+        super(TagMenu,self).set_site(site)
 
     def set_top_tags(self,site):
         threshold = 2
