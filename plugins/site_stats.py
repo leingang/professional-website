@@ -8,7 +8,7 @@ class SiteStats(ConfigPlugin):
     """Add site statistics to global context"""
 
     name = "site_stats"
-    debug=True
+    debug=False
 
     def set_site(self,site):
         site.scan_posts()
