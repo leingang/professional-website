@@ -12,8 +12,6 @@ Before going live
 
   - gallery
 
-  - BUG: footer on post page appears differently
-
   * cover images:
 
       - for about (?), contact, and archive pages
