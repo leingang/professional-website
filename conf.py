@@ -457,6 +457,23 @@ CATEGORY_PAGES_DESCRIPTIONS={
 #    },
 # }
 
+# MPL added 2016-06-17 cover images for categories
+CATEGORY_COVER_IMAGES = {
+    "math" : "http://c3.staticflickr.com/8/7098/7305951154_1946cf62ff_h.jpg",
+    "math/talks" : "https://farm4.staticflickr.com/3918/14534822191_f5a383c772_k.jpg",
+    "education" : "https://farm9.staticflickr.com/8467/8129232704_c408251a34_k.jpg",
+    "education/teaching" : "https://farm5.staticflickr.com/4025/4548910799_19b1711b72_b.jpg",
+    "education/academia": "https://farm1.staticflickr.com/27/49670431_1ebc34f5cf_b.jpg",
+    "NYU" : "https://farm5.staticflickr.com/4029/4487309524_4ffd76be03_b.jpg",
+    "computing" : "https://farm5.staticflickr.com/4024/4683061782_881e1245be_b.jpg",
+    "computing/blog" : "https://farm6.staticflickr.com/5445/7064964081_50d4eaa505_k.jpg",
+    "New York" : "https://farm8.staticflickr.com/7111/7849620706_43d1232a7d_k.jpg",
+    "leisure" : "https://farm8.staticflickr.com/7283/15751611883_438e68cbe6_k.jpg",
+    "leisure/running" : "https://farm6.staticflickr.com/5569/14766092180_9cf74b1847_k.jpg",
+    "leisure/cooking" : "https://farm6.staticflickr.com/5557/14693129979_603bf036c9_k.jpg",
+    "miscellaneous" : "https://farm9.staticflickr.com/8003/7136673559_8e53974942_k.jpg"
+}
+
 # If you do not want to display a category publicly, you can mark it as hidden.
 # The category will not be displayed on the category list page.
 # Category pages will still be generated.
@@ -858,12 +875,12 @@ CONTENT_FOOTER_FORMATS = {
 # systems.  The following comment systems are supported by Nikola:
 #   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut
 # You can leave this option blank to disable comments.
-COMMENT_SYSTEM = ""
+COMMENT_SYSTEM = "disqus"
 # And you also need to add your COMMENT_SYSTEM_ID which
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = ""
+COMMENT_SYSTEM_ID = "matthewleingangdotcom"
 
 # Enable annotations using annotateit.org?
 # If set to False, you can still enable them for individual posts and pages
@@ -1102,7 +1119,22 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = """
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79503370-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+    // disable disqus reveal
+    this.discovery.disable_all = true;
+</script>
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
