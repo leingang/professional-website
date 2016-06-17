@@ -12,19 +12,11 @@ Before going live
 
   - gallery
 
-  * cover images:
+  * cover images (Issue #1)
 
       - for about (?), contact, and archive pages
 
       - configurable by post, category, tag
-
-* "Statistics"
-
-  - Articles
-
-  - categories
-
-  - tags
 
 * Pick pygments color theme
 
