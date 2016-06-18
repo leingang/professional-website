@@ -14,6 +14,8 @@
 <%block name="cover_image">
 %if category and category in category_cover_images:
     ${category_cover_images[category]}
+%elif tag in tag_cover_images:
+    ${tag_cover_images[tag]}
 %else:
     /assets/img/cover.jpg
 %endif

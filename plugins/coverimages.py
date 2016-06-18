@@ -3,7 +3,7 @@ import logbook
 from nikola import utils
 LOGGER = utils.get_logger("coverimages", utils.STDERR_HANDLER)
 
-import conf
+import conf as config
 import posixpath # for walking a unix-style directory tree
 
 class AddCoverImages(ConfigPlugin):
@@ -17,7 +17,7 @@ class AddCoverImages(ConfigPlugin):
         if self.debug:
             for handler in LOGGER.handlers:
                 handler.level=logbook.DEBUG
-        self.category_cover_images = conf.CATEGORY_COVER_IMAGES
+        self.category_cover_images = config.CATEGORY_COVER_IMAGES
         self.category_hierarchy = site.category_hierarchy
         for node in self.category_hierarchy:
             category = node.category_name
@@ -40,4 +40,5 @@ class AddCoverImages(ConfigPlugin):
                     pass
             # LOGGER.debug("%s.coverimage = %s" %(post.meta('slug'),post.meta[post.default_lang]['coverimage']))
         site.GLOBAL_CONTEXT['category_cover_images'] = self.category_cover_images
+        site.GLOBAL_CONTEXT['tag_cover_images'] = config.TAG_COVER_IMAGES
         super(AddCoverImages,self).set_site(site)

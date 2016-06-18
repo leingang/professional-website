@@ -364,20 +364,36 @@ POSTS_SECTIONS = True
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the tag list or index page’s title.
-# TAG_PAGES_DESCRIPTIONS = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
-#    },
-# }
+TAG_PAGES_DESCRIPTIONS = {
+   DEFAULT_LANG: {
+       #"blogging": "Meta-blog posts about blogging about blogging.",
+       #"open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
+       "tex" : "A typesetting system",
+       "latex" : "A document preparation system",
+       "funny" : "Funny posts"
+   },
+}
 
 # Set special titles for tag pages. The default is "Posts about TAG".
-# TAG_PAGES_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
+TAG_PAGES_TITLES = {
+   DEFAULT_LANG: {
+#       "blogging": "Meta-posts about blogging",
+#       "open source": "Posts about open source software"
+    "tex": "Posts about TeX",
+    "latex" : "Posts about LaTeX"
+   },
+}
+
+# MPL added 2016-06-18
+# Set cover images for tag pages.  The default is to use the theme default cover image.
+TAG_COVER_IMAGES ={
+    "harvard" : "https://farm5.staticflickr.com/4011/4660981281_6984e1e7f3_b.jpg",
+    "latex" : "https://farm6.staticflickr.com/5795/20339468729_a5a7da4f22_k.jpg",
+    "tex" : "https://farm1.staticflickr.com/548/19613493633_4fdc984a72_k.jpg",
+    "math" : "https://farm8.staticflickr.com/7301/11432696204_063b75a8a9_k.jpg",
+    "teaching" : "https://farm9.staticflickr.com/8318/8048191787_1414a02480_k_d.jpg"
+}
+
 
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page, the tag cloud and posts.
@@ -466,6 +482,7 @@ CATEGORY_COVER_IMAGES = {
     "education/academia": "https://farm1.staticflickr.com/27/49670431_1ebc34f5cf_b.jpg",
     "NYU" : "https://farm5.staticflickr.com/4029/4487309524_4ffd76be03_b.jpg",
     "computing" : "https://farm5.staticflickr.com/4024/4683061782_881e1245be_b.jpg",
+    "computing/tex" : "https://farm6.staticflickr.com/5795/20339468729_a5a7da4f22_k.jpg",
     "computing/blog" : "https://farm6.staticflickr.com/5445/7064964081_50d4eaa505_k.jpg",
     "New York" : "https://farm8.staticflickr.com/7111/7849620706_43d1232a7d_k.jpg",
     "leisure" : "https://farm8.staticflickr.com/7283/15751611883_438e68cbe6_k.jpg",
