@@ -12,12 +12,6 @@ Before going live
 
   - gallery
 
-  * cover images (Issue #1)
-
-      - for about (?), contact, and archive pages
-
-      - configurable by post, category, tag
-
 * Pick pygments color theme
 
 * algorithm for choosing related posts
@@ -41,20 +35,6 @@ Before going live
     - disqus comments
 
     - google Analytics
-
-* deploy script    
-
-* favicon  
-
-  - Dana just uses his initials
-
-  - TT uses a tiny version of his banner image
-
-  - Jordan uses the WordPress logo
-
-  - don't like the Key Lime.  
-
-  - Just an L in the font?
 
 After going live
 ----------------
