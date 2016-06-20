@@ -602,11 +602,27 @@ REDIRECTIONS = []
 # to `nikola deploy`.  If no arguments are specified, a preset
 # named `default` will be executed.  You can use as many presets
 # in a `nikola deploy` command as you like.
-# DEPLOY_COMMANDS = {
-#     'default': [
-#         "rsync -rav --delete output/ joe@my.site:/srv/www/site",
-#     ]
-# }
+DEPLOY_COMMANDS = {
+    'default': [
+        "rsync -avz -e 'ssh -p 21098' --stats --progress --exclude '.DS_Store' output/ mattgcwk@server156.web-hosting.com:~/public_html/",
+    ]
+}
+# Some options, from http://mikeclaffey.com/rsync-local-files-to-webserver/
+# $ rsync
+#  -avz                  ## use archive mode, verbose feedback and compression
+#  -e 'ssh -p 21098'     ## use ssh protocol with namecheap's port
+#  --dry-run             ## include this for testing, remove this to actually transfer
+#  --delete              ## delete files on the destination (namecheap server)
+#                        ## that don't exist locally. know what you are doing
+#                        ## if you include this flag
+#  --stats               ## provide extra info, delete if you don't want this
+#  --progress            ## provide extra info, delete if you don't want this
+#  --exclude ".DS_Store" ## I'm on a mac, don't include this standard hidden file
+#  --exclude ".htaccess" ## don't overwrite my .htaccess files on the server
+#  --exclude ".ftpquota" ## don't overwrite ftp quota files on the server
+#  source_dir/           ## this is the source folder on my computer.
+#                        ## Use the trailing slash to copy it's contents, not the directory
+#  [user]@[your-url].com:~/public_html/dest_dir/ ## destination directory
 
 # github_deploy configuration
 # For more details, read the manual:
