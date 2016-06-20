@@ -6,7 +6,7 @@
 .. link:
 .. description: In which mathematicians pretend to be programmers for an afternoon
 .. type: text
-.. coverimage: //c8.staticflickr.com/8/7148/6674301095_77bb086c19_b.jpg
+.. coverimage: https://c8.staticflickr.com/8/7148/6674301095_77bb086c19_b.jpg
 .. previewimage: https://c8.staticflickr.com/8/7148/6674301095_77bb086c19_z.jpg
 
 .. class:: post-intro
@@ -22,9 +22,9 @@
     At least enough to teach my coworkers.  That's what I did today.  I made a fork
     of Rob's gitpractice_ repository, and we all practiced the development process.
 
-.. _AIM: http://aimath.org/
+.. _AIM: https://aimath.org/
 
-.. _`Rob Beezer`: http://buzzard.ups.edu/
+.. _`Rob Beezer`: https://buzzard.ups.edu/
 
 Here is the basic flow:
 
@@ -124,9 +124,9 @@ I also created a `new organization <//github.com/nyumathclinic>`__ and moved my 
 
     Image_ by Pete Ashton via Flickr (CC-BY-NC_)
 
-.. _Image: //flic.kr/p/baMxbP
-.. _CC-BY-NC: //creativecommons.org/licenses/by-nc/2.0/
+.. _Image: https://flic.kr/p/baMxbP
+.. _CC-BY-NC: https://creativecommons.org/licenses/by-nc/2.0/
 
-.. _gitpractice: //github.com/BooksHTML/gitpractice
+.. _gitpractice: https://github.com/BooksHTML/gitpractice
 
-.. _github: //github.com/
+.. _github: https://github.com/

@@ -722,6 +722,10 @@ GITHUB_COMMIT_SOURCE = True
 IMAGE_FOLDERS = {'images': 'images'}
 IMAGE_THUMBNAIL_SIZE = 400
 
+# MPL 2016-06-18: there should be a way to set metadata for local images.
+# haven't figured it out yet.
+# I don't have a local images with licensing info though
+
 # #############################################################################
 # HTML fragments and diverse things that are used by the templates
 # #############################################################################
@@ -1245,12 +1249,12 @@ USE_BUNDLES = False
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
     "site_social_profiles" : [
-        ("twitter" , "//twitter.com/mleingang"),
-        ("facebook" , "//facebook.com/matthew.leingang"),
-        ("linkedin" , "//linkedin.com/matthewleingang"),
-        ("instagram" , "//instagram.com/mleingang"),
-        ("github" , "//github.com/leingang"),
-        ("googleplus" , "//plus.google.com/u/1/+MatthewLeingangNYU")
+        ("twitter" , "https://twitter.com/mleingang"),
+        ("facebook" , "https://facebook.com/matthew.leingang"),
+        ("linkedin" , "https://linkedin.com/matthewleingang"),
+        ("instagram" , "https://instagram.com/mleingang"),
+        ("github" , "https://github.com/leingang"),
+        ("googleplus" , "https://plus.google.com/u/1/+MatthewLeingangNYU")
     ]
 }
 

@@ -6,7 +6,7 @@
 .. link:
 .. description:
 .. type: text
-.. coverimage: //farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg
+.. coverimage: https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg
 .. todo: <a data-flickr-embed="true" data-footer="true"  href="https://www.flickr.com/photos/99576374@N02/10414628345/in/photolist-gSiGaF-fSCcWA-6iHzWg-y72aUg-BcCmsm-yFadDN-yYxG3T" title="citi bike 2"><img src="https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg" width="4658" height="1975" alt="citi bike 2"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 .. todo: get metadata and licensing.
 
