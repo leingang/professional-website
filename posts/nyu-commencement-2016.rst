@@ -17,6 +17,8 @@ where 495 comes off of the Turnpike.  I got into Port Authority a half hour late
 barely made it to Washington Square in time to run to my office, put on my robe, and
 get on the bus.
 
+.. TEASER_END
+
 It takes about an hour to get from NYU to the stadium.  I chatted with `Rick
 Garcia
 <http://www.nyu.edu/life/diversity-nyu/diversity-resources/faculty-resources/postdoctoral-and-transition/fellows7.html>`__,

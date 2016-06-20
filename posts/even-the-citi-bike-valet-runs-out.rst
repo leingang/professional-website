@@ -33,12 +33,5 @@ I understand Citi Bike is a victim of their own success.  The valet stations are
 
 I took the subway.
 
-.. class:: credits
-
-    Image_ by Tom Marvel via Flickr (CC-BY_)
-
-.. _Image: https://flic.kr/p/gSiGaF
-.. _CC-BY: https://creativecommons.org/licenses/by/2.0/
-
 .. _`Citi Bike`: https://www.citibikenyc.com/
 .. _`profiled me`: http://citibikeblog.tumblr.com/post/89385044537/member-profile-matthew
