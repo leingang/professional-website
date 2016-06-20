@@ -1,0 +1,12 @@
+[Core]
+name = recent_posts
+module = recent_posts
+
+[Documentation]
+author = Matthew Leingang
+version = 0.1
+website = https://matthewleingang.com/
+description = insert recent posts into global context (for fancy templates)
+
+[Nikola]
+plugincategory = Config
