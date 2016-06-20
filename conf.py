@@ -380,7 +380,8 @@ TAG_PAGES_TITLES = {
 #       "blogging": "Meta-posts about blogging",
 #       "open source": "Posts about open source software"
     "tex": "Posts about TeX",
-    "latex" : "Posts about LaTeX"
+    "latex" : "Posts about LaTeX",
+    "uncategorized" : "Uncategorized posts"
    },
 }
 

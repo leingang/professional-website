@@ -19,7 +19,7 @@ class TagMenu(ConfigPlugin):
 
     def set_top_tags(self,site):
         threshold = 2
-        tag_counts = [(len(site.posts_per_tag[tag]),tag) for tag in site.posts_per_tag.keys()]
+        tag_counts = [(len(site.posts_per_tag[tag]),tag) for tag in site.posts_per_tag.keys() if tag not in site.config['HIDDEN_TAGS']]
         # this should sort reverse numerical on count, then alpha on tag
         tag_counts.sort(key = lambda e: (-e[0],e[1]))
         LOGGER.debug('tag_counts: %s' % tag_counts)
