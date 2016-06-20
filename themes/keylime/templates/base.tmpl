@@ -3,10 +3,13 @@
 <%namespace name="header" file="base_header.tmpl" import="*"/>
 <%namespace name="footer" file="base_footer.tmpl" import="*"/>
 <%namespace name="annotations" file="annotation_helper.tmpl"/>
+<%!
+    cover_image_ = "/assets/img/cover.jpg"
+%>
 ${set_locale(lang)}
 ${base.html_headstart()}
 <style>
-    .image-bg {background-image: url('<%block name="cover_image">/assets/img/cover.jpg</%block>')}
+    .image-bg {background-image: url('<%block name="cover_image" filter="trim">${self.attr.cover_image_}</%block>')}
 </style>
 <%block name="extra_head">
 ### Leave this block alone.
@@ -36,8 +39,16 @@ ${template_hooks['extra_head']()}
             <div class="row">
                 <%block name="content"></%block>
             </div>
-        </div>
-         ${footer.html_footer()}
+         </div>
+         <%
+            kw = context.kwargs
+            try:
+                cover_image_metadata = image_metadata[capture(self.cover_image).strip()]
+                kw['cover_image_metadata'] = cover_image_metadata
+            except KeyError:
+                pass
+         %>
+         ${footer.html_footer(kw)}
     </div>
     ${base.late_load_js()}
     <%block name="extra_js"></%block>

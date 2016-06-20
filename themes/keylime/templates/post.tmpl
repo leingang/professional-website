@@ -42,11 +42,11 @@
 %endif
 </%block>
 
-<%block name="cover_image">
+<%block name="cover_image" filter="trim">
 %if post.meta('coverimage'):
     ${post.meta('coverimage')}
 %else:
-    /assets/img/cover.jpg
+    ${self.attr.cover_image_}
 %endif
 </%block>
 
