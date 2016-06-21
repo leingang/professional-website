@@ -53,23 +53,27 @@
                 <a href="${post.permalink()}" class="listtitle">${post.title()|h}</a>
             </li>
         % endfor
-    </ul>
+        </ul>
     %endif
-    <div class="metadata">
-        %if len(translations) > 1 and generate_rss:
-        ## this probably doesn't work...
-            <ul class="social-links outline text-center">
-                %for language in sorted(translations):
-                <li><a href="${_link(kind + "_rss", tag, language)}" hreflang="${language}" type="application/rss+xml">
-                    <i class="fa fa-feed"></i>${messages('RSS feed', language)} (${language})</a>
-                </li>
-            %endfor
+    <div class="metadata text-center">
+        <div class="custom_images">
+            <ul class="social-links outline">
+                %if len(translations) > 1 and generate_rss:
+                    %for language in sorted(translations):
+                        <li><a href="${_link(kind + "_rss", tag, language)}" hreflang="${language}" type="application/rss+xml">
+                            <i class="fa fa-feed"></i>${messages('RSS feed', language)} (${language})</a>
+                        </li>
+                    %endfor
+                %elif generate_rss:
+                    <li><a href="${_link(kind + "_rss", tag)}" type="application/rss+xml"><i class="fa fa-feed"></i></a>
+                %endif
+                <li><a class="addthis_button_facebook"><i class="icon-facebook"></i></a></li>
+                <li><a class="addthis_button_twitter"><i class="icon-twitter"></i></a></li>
+                <li><a class="addthis_button_linkedin"><i class="fa fa-linkedin"></i></a></li>
+                ## this one doesn't work, but "addthis_button_google_plusone" adds a plus count that I don't want
+                <li><a class="addthis_button_google_plus"><i class="icon-googleplus"></i></a></li>
             </ul>
-        %elif generate_rss:
-            <ul class="social-links outline text-center">
-                <li><a href="${_link(kind + "_rss", tag)}" type="application/rss+xml"><i class="fa fa-feed"></i></a>
-            </ul>
-        %endif
+        </div>
     </div>
 </article>
 </%block>

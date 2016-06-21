@@ -66,12 +66,26 @@ lang="${lang}">
     ${extra_head_data}
 </%def>
 
+<%def name="html_addthis_buttons()">
+    <div class="text-center">
+        <div class="custom_images">
+            <ul class="social-links outline">
+                <li><a class="addthis_button_facebook"><i class="icon-facebook"></i></a></li>
+                <li><a class="addthis_button_twitter"><i class="icon-twitter"></i></a></li>
+                <li><a class="addthis_button_linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a class="addthis_button_google_plus"><i class="icon-googleplus"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</%def>
+
 <%def name="late_load_js()">
     <script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/js/placeholders.min.js"></script>
     <script type="text/javascript" src="/assets/js/wow.min.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-574f2ac04deb9a3c"></script>
     ${social_buttons_code}
 </%def>
 

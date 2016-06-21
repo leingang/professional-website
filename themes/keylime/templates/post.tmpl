@@ -1,6 +1,7 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="post_helper.tmpl"/>
 <%namespace name="pheader" file="post_header.tmpl"/>
+<%namespace name="bhelper" file="base_helper.tmpl"/>
 <%namespace name="comments" file="comments_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 
@@ -62,6 +63,7 @@
         <aside class="postpromonav">
             <nav>
                 ${helper.html_tags(post)}
+                ${bhelper.html_addthis_buttons()}
                 ${helper.html_pager(post)}
             </nav>
         </aside>

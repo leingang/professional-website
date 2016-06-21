@@ -4,8 +4,6 @@ Features to add
 Before going live
 -----------------
 
-* one-pager "coming soon" at ml.com
-
 * other template adaptations
 
   - [Shisaa](http://www.shisaa.jp/postset/nikola-web.html) has a good post on developing a theme
@@ -32,15 +30,12 @@ Before going live
 
     - imported posts can import a "prior comment count" by parsing.
 
-    - disqus comments
+    - count disqus comments
 
-    - google Analytics
+    - google Analytics?
 
 After going live
 ----------------
-
-* social buttons: Rather than slide-out buttons I want to use the Key Lime-branded
-  ones at the bottom of the post.
 
 * breadcrumb on post page and category page (link to categories)
 
