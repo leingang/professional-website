@@ -48,12 +48,16 @@
                 %for post in recent_posts:
                 <%
                     cover_image = post.meta('coverimage')
-                    if cover_image is not None:
-                        try:
-                            thumbnail_url=image_metadata[cover_image]['thumbnail_url']
-                        except KeyError:
-                            # probably a smarter way to do this but hey.
-                            thumbnail_url="/assets/img/cover.jpg"
+                    thumbnail_image = post.meta('thumbnailimage')
+                    if thumbnail_image:
+                        thumbnail_url = thumbnail_image
+                    else:
+                        if cover_image is not None:
+                            try:
+                                thumbnail_url=image_metadata[cover_image]['thumbnail_url']
+                            except KeyError:
+                                # probably a smarter way to do this but hey.
+                                thumbnail_url="/assets/img/cover.jpg"
                 %>
     			<div class="media">
     				<a class="pull-left" href="${_link('slug',post.meta('slug'))}"><img class="media-object" src="${thumbnail_url}" width="80" alt=""></a>
