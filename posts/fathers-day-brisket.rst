@@ -5,33 +5,36 @@
 .. category: leisure/cooking
 .. link:
 .. description: Smoking brisket on a gas grill
+.. previewimage: https://instagram.fewr1-1.fna.fbcdn.net/t51.2885-15/e35/13385682_1040248472723837_387648386_n.jpg
+.. thumbnailimage: https://instagram.fewr1-1.fna.fbcdn.net/t51.2885-15/s640x640/sh0.08/e35/13385682_1040248472723837_387648386_n.jpg
 .. type: text
 
 .. class:: post-intro
 
-    Last March Seabra's had whole brisket on sale, so I bought one.  The first thing
-    I learned was that "whole" in the circular means "WHOLE", as in, the whole cut
-    and not sliced into family-sized portions.  But they were nice enough to cut
-    it into pieces, which went straight into my freezer.
-
+    Last March Seabra's had whole brisket on sale, so I bought one.
     I decided to smoke one up for Father's day, with delicious consquences.
 
 .. TEASER_END
 
-Brisket is the cut of beef from which corned beef is made.  This is what I kept
+The first thing I learned was that “whole” in the circular means **WHOLE**, as in,
+the whole cut and not sliced into family-sized portions.  But they were nice
+enough to cut it into pieces, which went straight into my freezer.
+
+Brisket_ is the cut of beef from which corned beef is made.  This is what I kept
 telling my kids, because they love corned beef but they wrinkled their noses
 at the sound of the word “brisket.”  Smoked brisket as barbecue is popular in Texas,
 where they have always had plenty of excess beef.
 
-After defrosting I rubbed the piece down with the Southern Dry Rub for Barbecue
-from the Joy of Cooking.  Active ingredients: paprika, cumin, salt, pepper, brown sugar.
+After defrosting I rubbed the piece down with the southern dry rub for `barbecue
+from the Joy of Cooking <http://www.thejoykitchen.com/recipe/faux-smoked-pulled-pork>`__.
+Active ingredients: paprika, cumin, salt, pepper, brown sugar.
 It happened to be in the refrigerator.
 
 .. class:: figure
 
     .. raw:: html
 
-        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/24520353@N08/27188187174/in/dateposted-public/" title="Brisket, dry rubbed"><img class="img-fluid" src="https://c7.staticflickr.com/8/7079/27188187174_8aeef7482b.jpg" alt="Brisket, dry rubbed"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/24520353@N08/27188187174" title="Brisket, dry rubbed"><img src="https://c7.staticflickr.com/8/7079/27188187174_8aeef7482b_z.jpg" width="640" height="480" alt="Brisket, dry rubbed"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 I put in on the grill about 6:00am.  On one side, the heat.  I used an iron
 smoker box full of hickory  wood chips that had soaked overnight.  On the other
@@ -52,7 +55,7 @@ being dry.  Plus I've never owned a thermometer that I had complete faith in.
 
         <a data-flickr-embed="true"  href="https://www.flickr.com/photos/24520353@N08/27724902101/in/dateposted-public/" title="Brisket, smoked"><img src="https://c6.staticflickr.com/8/7041/27724902101_bf2770d65d_z.jpg" width="640" height="480" alt="Brisket, smoked"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-After this I tried the “FTC” method they rave about on the BBQ forums.  FTC
+After this I tried the “FTC_” method they rave about on the BBQ forums.  FTC
 stands  for *foil*, *towel*, *cooler.*  It is a method for resting meat that
 keeps it from cooling down too much.  Resting meat is important to let the juices
 distribute evenly, but let it rest on the counter for too long and it will get
@@ -82,7 +85,12 @@ from the center ribbon.
 
 Served!
 
-.. todo: link to IG photo
+.. class:: figure
+
+    .. raw:: html
+
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BG2hlWouWXj/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">#fathersday brisket</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Matthew Leingang (@mleingang) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-06-19T21:57:03+00:00">Jun 19, 2016 at 2:57pm PDT</time></p></div></blockquote>
+        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
 
 Still life, with High Life.
 
@@ -93,3 +101,6 @@ Barbecue's Sensuous Slathering, if you must know.)  And it was good.
 
 Maybe next time I'll use multiple foil packets so I can keep the smoke going.
 But this one is definitely a keeper.
+
+.. _FTC: http://bbqdictionary.com/foil-towel-cooler/
+.. _Brisket: https://en.wikipedia.org/wiki/Brisket
