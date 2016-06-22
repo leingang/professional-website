@@ -1,7 +1,19 @@
 from nikola.plugin_categories import ConfigPlugin
 import logbook
-from nikola import utils
-LOGGER = utils.get_logger("coverimages", utils.STDERR_HANDLER)
+from nikola.utils import get_logger, STDERR_HANDLER
+import logging
+import copy
+
+_debug = False # for testing
+_name = "coverimages"
+
+handler = copy.copy(STDERR_HANDLER[0])
+handler.level=logbook.INFO if not _debug else logbook.DEBUG
+handler.filter = lambda r,h: r.channel == _name
+LOGGER=get_logger(_name,STDERR_HANDLER)
+logger=logbook.Logger(_name,logbook.DEBUG if _debug else logbook.WARNING)
+handler.push_application()
+
 
 import conf as config
 import posixpath # for walking a unix-style directory tree
@@ -11,13 +23,9 @@ class AddCoverImages(ConfigPlugin):
     """Add site statistics to global context"""
 
     name = "coverimages"
-    debug=False
 
     def set_site(self,site):
         site.scan_posts()
-        if self.debug:
-            for handler in LOGGER.handlers:
-                handler.level=logbook.DEBUG
         self.category_cover_images = config.CATEGORY_COVER_IMAGES
         self.tag_cover_images = config.TAG_COVER_IMAGES
         self.category_hierarchy = site.category_hierarchy
@@ -39,9 +47,15 @@ class AddCoverImages(ConfigPlugin):
                 try:
                     post.meta[post.default_lang]['coverimage'] = self.category_cover_images[post.meta('category')]
                 except KeyError:
-                    # TODO: set coverimage by tag
                     pass
-            # LOGGER.debug("%s.coverimage = %s" %(post.meta('slug'),post.meta[post.default_lang]['coverimage']))
+            if post.meta('coverimage') is "":
+                logger.debug("tags: %s" % post.tags)
+                try:
+                    tag=([tag for tag in post.tags if tag in self.tag_cover_images and tag not in config.HIDDEN_TAGS])[0]
+                    post.meta[post.default_lang]['coverimage'] = self.tag_cover_images[tag]
+                except IndexError: # no tag cover image
+                    pass
+            logger.debug("%s.coverimage = %s" %(post.meta('slug'),post.meta[post.default_lang]['coverimage']))
         site.GLOBAL_CONTEXT['category_cover_images'] = self.category_cover_images
         site.GLOBAL_CONTEXT['tag_cover_images'] = self.tag_cover_images
         self.set_coverimage_metadata(site)
