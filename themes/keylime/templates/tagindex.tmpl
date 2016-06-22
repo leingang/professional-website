@@ -23,12 +23,14 @@
 
 <%block name="content_header">
     %if subcategories:
-    <h3>Subcategories</h3>
-    <ul>
-        %for name, link in subcategories:
-        <li><a href="${link}">${name|h}</a></li>
-        %endfor
-    </ul>
+    <div class="col-md-10 col-offset-1">
+        <h3>Subcategories</h3>
+        <ul>
+            %for name, link in subcategories:
+            <li><a href="${link}">${name|h}</a></li>
+            %endfor
+        </ul>
+    </div>
     %endif
 </%block>
 

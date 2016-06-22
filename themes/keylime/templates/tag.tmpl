@@ -37,7 +37,7 @@
 <article class="tagpage">
     <header>
         %if subcategories:
-        ${messages('Subcategories:')}
+        <h3>${messages('Subcategories:')}</h3>
         <ul>
             %for name, link in subcategories:
             <li><a href="${link}">${name|h}</a></li>
