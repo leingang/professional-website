@@ -7,8 +7,6 @@
 .. description:
 .. type: text
 .. coverimage: https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg
-.. todo: <a data-flickr-embed="true" data-footer="true"  href="https://www.flickr.com/photos/99576374@N02/10414628345/in/photolist-gSiGaF-fSCcWA-6iHzWg-y72aUg-BcCmsm-yFadDN-yYxG3T" title="citi bike 2"><img src="https://farm4.staticflickr.com/3761/10414628345_aab3892803_o.jpg" width="4658" height="1975" alt="citi bike 2"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-.. todo: get metadata and licensing.
 
 I am a normally happy `Citi Bike`_ user.  I take it back and forth from Port Authority Bus Terminal to NYU.  (One of my dreams came true a couple of years ago when they `profiled me`_.) One thing I don't like is not being able to find a bike when I need one.
 
@@ -25,6 +23,7 @@ This is what the map looked like at that point:
 .. figure:: http://i203.photobucket.com/albums/aa27/leingang_math/8F8E949C-F978-4147-AC41-AF8ADBE46E2B.png
     :alt: Citi Bike map
     :scale: 50 %
+    :class: img-responsive, img-thumbnail
 
 
 No bikes at the four closest stations.  There were two at 38th & Broadway.  No guarantees they would be there when I got there.  After that it was 34th and 7th Ave.

@@ -30,11 +30,11 @@ from the Joy of Cooking <http://www.thejoykitchen.com/recipe/faux-smoked-pulled-
 Active ingredients: paprika, cumin, salt, pepper, brown sugar.
 It happened to be in the refrigerator.
 
-.. class:: figure
+.. figure:: https://c7.staticflickr.com/8/7079/27188187174_8aeef7482b_z.jpg
+    :class: img-responsive, img-thumbnail
+    :target: https://www.flickr.com/photos/24520353@N08/27188187174
 
-    .. raw:: html
-
-        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/24520353@N08/27188187174" title="Brisket, dry rubbed"><img src="https://c7.staticflickr.com/8/7079/27188187174_8aeef7482b_z.jpg" width="640" height="480" alt="Brisket, dry rubbed"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    Brisket, dry rubbed
 
 I put in on the grill about 6:00am.  On one side, the heat.  I used an iron
 smoker box full of hickory  wood chips that had soaked overnight.  On the other
@@ -49,11 +49,11 @@ bottom and 175-180 near the top. I know that 190 is the magic number to break
 down meat, but I wanted to give it time to rest, and I was really afraid of  it
 being dry.  Plus I've never owned a thermometer that I had complete faith in.
 
-.. class:: figure
+.. figure:: https://c6.staticflickr.com/8/7041/27724902101_bf2770d65d_z.jpg
+    :class: img-responsive, img-thumbnail
+    :target: https://www.flickr.com/photos/24520353@N08/27724902101
 
-    .. raw:: html
-
-        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/24520353@N08/27724902101/in/dateposted-public/" title="Brisket, smoked"><img src="https://c6.staticflickr.com/8/7041/27724902101_bf2770d65d_z.jpg" width="640" height="480" alt="Brisket, smoked"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    Brisket, smoked
 
 After this I tried the “FTC_” method they rave about on the BBQ forums.  FTC
 stands  for *foil*, *towel*, *cooler.*  It is a method for resting meat that
