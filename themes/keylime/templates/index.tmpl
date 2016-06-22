@@ -12,11 +12,11 @@
 </%block>
 
 <%block name="content">
+<div class="col-md-10 col-md-offset-1 postindex">
 <%block name="content_header"></%block>
 % if 'main_index' in pagekind:
     ${front_index_header}
 % endif
-<div class="col-md-10 col-md-offset-1 postindex">
 % for post in posts:
     <article class="h-entry post-${post.meta('type')} clearfix">
         <div class="post-date">

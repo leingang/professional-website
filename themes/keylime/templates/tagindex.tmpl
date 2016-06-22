@@ -23,14 +23,13 @@
 
 <%block name="content_header">
     %if subcategories:
-    <div class="col-md-10 col-offset-1">
-        <h3>Subcategories</h3>
-        <ul>
-            %for name, link in subcategories:
-            <li><a href="${link}">${name|h}</a></li>
-            %endfor
-        </ul>
-    </div>
+        <div class="post-date">
+        subcategories |
+        <% visible_subcategories=[(name,link) for (name,link) in subcategories if not name in hidden_categories] %>
+        %for name,link in visible_subcategories:
+            <a href="${link}">${name}</a>${', ' if not loop.last else ''}
+        %endfor
+        </div>
     %endif
 </%block>
 
