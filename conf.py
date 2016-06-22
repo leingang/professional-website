@@ -392,7 +392,8 @@ TAG_COVER_IMAGES ={
     "latex" : "https://farm6.staticflickr.com/5795/20339468729_a5a7da4f22_k.jpg",
     "tex" : "https://farm1.staticflickr.com/548/19613493633_4fdc984a72_k.jpg",
     "math" : "https://farm8.staticflickr.com/7301/11432696204_063b75a8a9_k.jpg",
-    "teaching" : "https://farm9.staticflickr.com/8318/8048191787_1414a02480_k_d.jpg"
+    "teaching" : "https://farm9.staticflickr.com/8318/8048191787_1414a02480_k.jpg",
+    "music" : "https://farm6.staticflickr.com/5235/7212640298_9fa167d06c_k.jpg"
 }
 
 
