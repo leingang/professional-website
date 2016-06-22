@@ -2,7 +2,7 @@
 .. slug: move-on-up
 .. date: 2016-06-22 11:56:10 UTC-04:00
 .. tags: music
-.. category: Family
+.. category: family
 .. link: https://www.youtube.com/watch?v=6Z66wVo7uNw
 .. description: A YouTube dedication
 .. type: text
