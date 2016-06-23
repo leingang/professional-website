@@ -31,14 +31,24 @@
         <div class="metadata">
             <div class="post-date">
                 <time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time>
-                ## TODO: add comments
-                % if not post.meta('nocomments') and site_has_comments:
-                    <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
-                % endif
-            ${html_sourcelink()}
-            % if post.meta('link'):
-                    <span class="linkline"><a href="${post.meta('link')}">${messages("Original site")}</a></span>
-            % endif
+                ## FIXME: everything within the span here gets styled "float: right".  Seems like bad CSS
+                <span>
+                    %if not post.meta('nocomments') and site_has_comments:
+                        <!-- p class="commentline" -->
+                        ${comments.comment_link(post.permalink(), post._base_path)}
+                        <!--/p -->
+                    %endif
+                    % if post.meta('link'):
+                        <!-- span class="linkline" -->
+                        <a href="${post.meta('link')}">link</a>
+                        <!-- /span -->
+                    % endif
+                    %if show_sourcelink:
+                        <!-- span class="sourceline" -->
+                        <a href="${post.source_link()}" id="sourcelink">${messages("Source")}</a>
+                        <!-- /span -->
+                    %endif
+                </span>
             </div>
         </div>
         ${html_translations(post)}
