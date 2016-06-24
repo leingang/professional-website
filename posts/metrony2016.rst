@@ -8,6 +8,7 @@
 
 
 .. figure:: /images/MAAMetroNYProgramMay1_2016.png
+	:class: img-responsive, img-thumbnail
 	:target: /images/MAAMetroNYProgramMay1_2016.png
 	:alt: Cover of the program for the MAA MetroNY Section Meeting, May 1, 2016.
 
@@ -59,7 +60,7 @@ on the conditions here) :math:`2\times2` matrix can be decomposed into a
 rotation, a stretching, and another rotation.  Since the space of
 :math:`2\times2` matrices is four-dimensional, we ought to be able to
 see four numbers in the decomposition.  And we can: one for each
-rotation, two for the stetching (along each axis).  Symmetric
+rotation, two for the stretching (along each axis).  Symmetric
 :math:`2\times2` matrices have one less dimension, and that is reflected
 in the decomposition: the two rotations are inverses.
 
@@ -97,8 +98,8 @@ suppose I could *not* put up the slides, but that doesn't seem fair to the
 diligent students who miss class for excusable reasons.  In the end, I hope
 that I add value to the slides by delivering them and interposing my remarks.
 
-Fiscer and Warner
------------------
+Fischer and Warner
+------------------
 
 In the contributed paper sessions I saw a `talk
 <http://fdfisher.com/2016/04/27/maa-metro-nyc-talk/>`__ by `Forest Fisher`_
