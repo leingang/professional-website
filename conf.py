@@ -1282,6 +1282,7 @@ GLOBAL_CONTEXT = {
         ("facebook" , "https://facebook.com/matthew.leingang"),
         ("linkedin" , "https://linkedin.com/matthewleingang"),
         ("instagram" , "https://instagram.com/mleingang"),
+        ("stack-exchange","http://stackexchange.com/users/112976/matthew-leingang"),
         ("github" , "https://github.com/leingang"),
         ("googleplus" , "https://plus.google.com/u/1/+MatthewLeingangNYU")
     ]
