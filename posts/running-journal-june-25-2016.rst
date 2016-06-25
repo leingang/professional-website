@@ -1,4 +1,4 @@
-.. title: running journal--June 25, 2016
+.. title: running journal—June 25, 2016
 .. slug: running-journal-june-25-2016
 .. date: 2016-06-25 12:34:20 UTC-04:00
 .. tags: running
