@@ -12,8 +12,11 @@
 	:target: /images/MAAMetroNYProgramMay1_2016.png
 	:alt: Cover of the program for the MAA MetroNY Section Meeting, May 1, 2016.
 
-.. fixme: Why isn't this an option for the figure?
+	Cover of the meeting program
 
+	.. class:: credits
+
+	Artwork by `Mandy Mei <http://www.mandymei.com/>`__
 
 I had a good time at the 2016 annual meeting of the `MetroNY Section of
 the MAA <http://sections.maa.org/metrony/index.html>`__.  I saw some of
@@ -167,9 +170,6 @@ If you phrase the order of operations this way, the initials become
 **PEDMSA.**  Unlike **PEMDAS**, which is pronounceable as an acronym,
 **PEDMSA** could use a mnemonic to aid with memorization.  Sher produced many
 examples, which you can read in his slides.
-
-(Image from the front cover of the meeting program by `Mandy Mei <http://www.mandymei.com/>`__)
-
 
 .. [#] `xkcd <http://xkcd.com/992>`__ has it right.
 
