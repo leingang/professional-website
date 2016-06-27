@@ -4,7 +4,6 @@
 <%namespace name="bhelper" file="base_helper.tmpl"/>
 <%namespace name="comments" file="comments_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
-
 <%block name="extra_head">
     ${parent.extra_head()}
     % if post.meta('keywords'):
@@ -51,8 +50,40 @@
 %endif
 </%block>
 
-## need breadcrumb. Use the category path
-
+<%block name="html_breadcrumb">
+    <section id="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <ol class="breadcrumb">
+                        <li><a href="${_link("root", None, lang)}">Home</a></li>
+                        %if post.meta('category'):
+                        <%!
+                            from posixpath import dirname, basename
+                            from string import capwords
+                        %>
+                        <%
+                            category = post.meta('category')
+                            path = []
+                            while (category != ''):
+                                name = basename(category)
+                                if not name.isupper():
+                                    name = capwords(name)
+                                path.append((_link('category',category),name))
+                                category = dirname(category)
+                            path.reverse()
+                        %>
+                            %for link,name in path:
+                                <li><a href="${link}">${name}</a></li>
+                            %endfor
+                        %endif
+                        <li class="active">${post.meta('title')}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</%block>
 
 <%block name="content">
     <article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">

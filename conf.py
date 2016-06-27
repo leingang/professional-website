@@ -468,12 +468,10 @@ CATEGORY_PAGES_DESCRIPTIONS={
 }
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
-# CATEGORY_PAGES_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
+CATEGORY_PAGES_TITLES = {
+   DEFAULT_LANG: {
+   },
+}
 
 # MPL added 2016-06-17 cover images for categories
 CATEGORY_COVER_IMAGES = {
@@ -491,6 +489,13 @@ CATEGORY_COVER_IMAGES = {
     "leisure/running" : "https://farm6.staticflickr.com/5569/14766092180_9cf74b1847_k.jpg",
     "leisure/cooking" : "https://farm6.staticflickr.com/5557/14693129979_603bf036c9_k.jpg",
     "miscellaneous" : "https://farm9.staticflickr.com/8003/7136673559_8e53974942_k.jpg"
+}
+
+# MPL added 2016-06-27 titlings of categories to fix wierd cases
+CATEGORY_TITLES ={
+    "php" : "PHP",
+    "tex" : "TeX",
+    "nyu" : "NYU"
 }
 
 # If you do not want to display a category publicly, you can mark it as hidden.

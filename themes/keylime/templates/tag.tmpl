@@ -32,6 +32,40 @@
 %endif
 </%block>
 
+<%block name="html_breadcrumb">
+    <section id="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <ol class="breadcrumb">
+                        <li><a href="${_link("root", None, lang)}">Home</a></li>
+                        %if category:
+                        <%!
+                            from posixpath import dirname, basename
+                            from string import capwords
+                        %>
+                        <%
+                            catcopy = category
+                            path = []
+                            while (catcopy != ''):
+                                name = basename(catcopy)
+                                if not name.isupper():
+                                    name = capwords(name)
+                                path.append((_link('category',catcopy),name))
+                                catcopy = dirname(catcopy)
+                            path.reverse()
+                        %>
+                            %for link,name in path:
+                                <li><a ${'class="active"' if loop.last() else ''}
+                                       href="${"" if loop.last() else link}">${name}</a></li>
+                            %endfor
+                        %endif
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+</%block>
 
 <%block name="content">
 <article class="tagpage">

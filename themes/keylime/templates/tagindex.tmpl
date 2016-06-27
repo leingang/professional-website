@@ -21,17 +21,56 @@
 %endif
 </%block>
 
-<%block name="content_header">
-    %if subcategories:
-        <div class="post-date">
-        subcategories |
-        <% visible_subcategories=[(name,link) for (name,link) in subcategories if not name in hidden_categories] %>
-        %for name,link in visible_subcategories:
-            <a href="${link}">${name}</a>${', ' if not loop.last else ''}
-        %endfor
+<%block name="html_breadcrumb">
+    <section id="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <ol class="breadcrumb">
+                        <li><a href="${_link("root", None, lang)}">Home</a></li>
+                        %if category:
+                        <%!
+                            from posixpath import dirname, basename
+                            from string import capwords
+                        %>
+                        <%
+                            catcopy = category
+                            path = []
+                            while (catcopy != ''):
+                                name = category_title[basename(catcopy)]
+                                path.append((_link('category',catcopy),name))
+                                catcopy = dirname(catcopy)
+                            path.reverse()
+                        %>
+                            %for link,name in path:
+                                %if loop.last:
+                                    <li class="active">${name}</li>
+                                %else:
+                                    <li><a href="${link}">${name}</a></li>
+                                %endif
+                            %endfor
+                        %endif
+                    </ol>
+                </div>
+            </div>
+            <% visible_subcategories=[(name,link) for (name,link) in subcategories if not name in hidden_categories] %>
+            %if visible_subcategories:
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <nav class="nav nav-inline breadcrumb">
+                        Subcategories:
+                        %for name,link in visible_subcategories:
+                            <a class="nav-link" href="${link}">${category_title[name]}</a>${', ' if not loop.last else ''}
+                        %endfor
+                    </nav>
+                </div>
+            </div>
+            %endif
         </div>
-    %endif
+    </section>
 </%block>
+
+<%block name="content_header"></%block>
 
 <%block name="extra_head">
     ${parent.extra_head()}
