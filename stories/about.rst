@@ -16,10 +16,14 @@ Since 2008 I have been on the clinical faculty at `New York University`_.
 .. _`Harvard University` : http://www.harvard.edu/
 .. _`New York University` : http://www.nyu.edu/
 
-I have also always enjoyed computing since I first programmed ASCII art on the Apple II.
-I've contributed to open-sources projects such as PHPSlash_ and MathBookXML_.
-My current favorite language is python, but I've also worked in perl and PHP.
+I have also always enjoyed computing since I first programmed ASCII art on the
+Apple II. In 1995 I put up my first website, not much more than a few pages of
+links and photos. Over the years I have managed websites in WordPress and
+Drupal. Now I'm exploring static site generators (currently Nikola_). I've
+contributed to open-sources projects such as PHPSlash_ and MathBookXML_. My
+current favorite language is python, but I've also worked in perl and PHP.
 
+.. _Nikola: https://getnikola.com/
 .. _PHPSlash: https://sourceforge.net/projects/phpslash/
 .. _MathBookXML: https://mathbook.pugetsound.edu/
 
