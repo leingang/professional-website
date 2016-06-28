@@ -470,6 +470,8 @@ CATEGORY_PAGES_DESCRIPTIONS={
 # Set special titles for category pages. The default is "Posts about CATEGORY".
 CATEGORY_PAGES_TITLES = {
    DEFAULT_LANG: {
+    "miscellaneous" : "Miscellaneous posts",
+    "blog" : "Meta-blog posts"
    },
 }
 
@@ -495,7 +497,8 @@ CATEGORY_COVER_IMAGES = {
 CATEGORY_TITLES ={
     "php" : "PHP",
     "tex" : "TeX",
-    "nyu" : "NYU"
+    "nyu" : "NYU",
+    "wordpress" : "WordPress"
 }
 
 # If you do not want to display a category publicly, you can mark it as hidden.
