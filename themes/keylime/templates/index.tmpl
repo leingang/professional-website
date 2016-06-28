@@ -20,9 +20,13 @@
 % for post in posts:
     <article class="h-entry post-${post.meta('type')} clearfix">
         <div class="post-date">
-            <a href="${post.permalink()}" rel="bookmark"><time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <time class="published dt-published" datetime="${post.formatted_date('webiso')}" title="${post.formatted_date(date_format)|h}">${post.formatted_date(date_format)|h}</time></a>
             % if not post.meta('nocomments') and site_has_comments:
-                | ${comments.comment_link(post.permalink(), post._base_path)}
+                <span>
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    ${comments.comment_link(post.permalink(), post._base_path)}
+                </span>
             % endif
         </div>
         <h2><a href="${post.permalink()}">${post.title()|h}</a></h2>

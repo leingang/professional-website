@@ -50,6 +50,7 @@
 %endif
 </%block>
 
+<%! from posixpath import dirname, basename %>
 <%block name="html_breadcrumb">
     <section id="breadcrumb">
         <div class="container">
@@ -58,18 +59,12 @@
                     <ol class="breadcrumb">
                         <li><a href="${_link("root", None, lang)}">Home</a></li>
                         %if post.meta('category'):
-                        <%!
-                            from posixpath import dirname, basename
-                            from string import capwords
-                        %>
                         <%
                             category = post.meta('category')
                             path = []
                             while (category != ''):
                                 name = basename(category)
-                                if not name.isupper():
-                                    name = capwords(name)
-                                path.append((_link('category',category),name))
+                                path.append((_link('category',category),category_title[name]))
                                 category = dirname(category)
                             path.reverse()
                         %>
@@ -86,7 +81,7 @@
 </%block>
 
 <%block name="content">
-    <article class="post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <article class="col-md-10 col-md-offset-1 post-${post.meta('type')} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
         ${pheader.html_post_header()}
         <div class="e-content entry-content" itemprop="articleBody text">
             ${post.text()}
