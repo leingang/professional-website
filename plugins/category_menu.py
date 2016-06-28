@@ -7,7 +7,7 @@ import logbook
 import logging
 import copy
 
-_debug = False # for testing
+_debug = True # for testing
 _name = "category_menu"
 
 handler = copy.copy(utils.STDERR_HANDLER[0])
@@ -57,21 +57,25 @@ class CategoryMenu(ConfigPlugin):
                 try:
                     category_title[basename] = config.CATEGORY_TITLES[basename]
                 except KeyError:
-                    if cat.isupper():
+                    if basename.isupper():
                         category_title[basename] = basename
                     else:
                         category_title[basename] = capwords(basename)
                 # populate CATEGORY_PAGES_TITLES
                 # FIXME doesn't make its way to category page title.
-                if fullname not in config.CATEGORY_PAGES_TITLES[lang]:
-                    site.config['CATEGORY_PAGES_TITLES'][lang][fullname] = "Posts about %s" % category_title[basename]
+                # I think it's a bug.  for now, we'll key on the basename AND the fullname,
+                # in case the bug gets fixed.
+                if basename not in config.CATEGORY_PAGES_TITLES[lang]:
+                    site.config['CATEGORY_PAGES_TITLES'][lang][basename] = "Posts about %s" % category_title[basename]
+                site.config['CATEGORY_PAGES_TITLES'][lang][fullname] = site.config['CATEGORY_PAGES_TITLES'][lang][basename]
         # decorated list for sorting
         tlcatlist=[
-            (e['link'],e['count'],e['basename']) for e in tlcats.values()
+            (e['link'],e['count'],category_title[e['basename']]) for e in tlcats.values()
         ]
         tlcatlist.sort(key=lambda e: int(e[1]),reverse=True)
         logger.debug("tlcatlist: %s" % tlcatlist)
-        site.GLOBAL_CONTEXT['CATEGORY_MENU'] = tlcatlist
+        site.GLOBAL_CONTEXT['category_menu'] = tlcatlist
         logger.debug("category_title: %s" % category_title)
         site.GLOBAL_CONTEXT['category_title'] = category_title
+        logger.debug("CATEGORY_PAGES_TITLES: %s" % site.config['CATEGORY_PAGES_TITLES'])
         super(CategoryMenu,self).set_site(site)

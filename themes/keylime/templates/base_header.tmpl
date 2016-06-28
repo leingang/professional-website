@@ -44,10 +44,7 @@
                 <a href="#"><i class="icon-books"></i>Categories<b class="caret"></b></a>
                 <ul class="submenu-list">
                     <%! from string import capwords %>
-                    %for suburl, count, text in CATEGORY_MENU:
-                        <% if not text.isupper():
-                               text = capwords(text)
-                        %>
+                    %for suburl, count, text in category_menu:
                         % if rel_link(permalink, suburl) == "#":
                             <li class="active"><a href="${permalink}">${text}<span class="badge">${count}</span><span class="sr-only">${messages("(active)", lang)}</span></a>
                         %else:
