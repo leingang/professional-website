@@ -93,6 +93,23 @@
                 ${helper.html_pager(post)}
             </nav>
         </aside>
+        %try:
+        %if post.related:
+            <div class="post-related">
+                <div class="row hidden-xs">
+                    %for rp in post.related:
+                        ${helper.html_related_noxs(rp)}
+                    %endfor
+                </div>
+                <div class="row visible-xs">
+                    %for rp in post.related:
+                        ${helper.html_related_xs(rp)}
+                    %endfor
+                </div>
+            </div>
+        %endif
+        %except AttributeError:
+        %endtry
         % if not post.meta('nocomments') and site_has_comments:
             <section class="comments hidden-print">
                 <h2>${messages("Comments")}</h2>

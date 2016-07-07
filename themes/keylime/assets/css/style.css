@@ -35,9 +35,9 @@ img, embed, object, video, svg {
 	/*max-width: 100%;*/
 }
 p{
-	 border: 0; 
-	 font-size: 100%; 
-	 font: inherit; 
+	 border: 0;
+	 font-size: 100%;
+	 font: inherit;
 }
 
 code {
@@ -55,14 +55,14 @@ pre {
 
 .lime {
 	background-color: #80B959!important;
-}	
+}
 .lime-text {
 	color: #80B959!important;
-}	
+}
 .blue {
 	background-color: #43b5e9!important;
 	/*#679E42*/
-}	
+}
 .green {
 	background-color: #23A657!important;
 	/*#80B959
@@ -101,7 +101,7 @@ pre {
 	min-height: 200px;
 }
 #hero h1 {
-	 font-size: 45px; 
+	 font-size: 45px;
 	font-weight: 300;
 }
 #hero h2 {
@@ -159,19 +159,19 @@ pre {
 	background-image: url('../img/img1.jpg');
 }
 .image-bg3 {
-	 background-image: url('../img/img4.jpg'); 
+	 background-image: url('../img/img4.jpg');
 }
 .image-bg4 {
-	background-image: url('../img/img7.jpg');  
+	background-image: url('../img/img7.jpg');
 }
 .image-bg5 {
-	background-image: url('../img/img3.jpg');  
+	background-image: url('../img/img3.jpg');
 }
 
 /* ------------------------ animations ------------------------ */
-.tags a,article h2 a, 
+.tags a,article h2 a,
 .btn, .nav-icon, .nav-brand,
-.btn-blog, .btn-blog.outline, 
+.btn-blog, .btn-blog.outline,
 #menu, #wrap, .menu-open, #menu>ul>li a, #menu .close-menu, .submenu-list {
 	-ms-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -248,8 +248,8 @@ pre {
 	font-size: 16px;
 }
 .btn i:before {
-	 line-height: 39px; 
-} 
+	 line-height: 39px;
+}
 .btn i.left {
 	padding-right: 10px;
 }
@@ -280,7 +280,7 @@ pre {
 }
 
 #main-nav.nav-bg{
-	 background-color: #80B959; 
+	 background-color: #80B959;
 }
 #main-nav.fixed-top {
 	position: fixed;
@@ -305,7 +305,7 @@ pre {
 	margin-top: 4px;
 }
 .nav-icon {
-	 float: right!important; 
+	 float: right!important;
 	 width: 55px;
 	 height: 55px;
 	 margin-right: -15px;
@@ -314,9 +314,9 @@ pre {
 	 text-decoration: none;
 }
 .nav-icon i{
-	 font-size: 16px; 
-	 padding-left: 20px; 
-	 line-height: 55px; 
+	 font-size: 16px;
+	 padding-left: 20px;
+	 line-height: 55px;
 	 border: 0;
 }
 .nav-icon:hover,
@@ -325,7 +325,7 @@ pre {
 	color: #383838;
 	border: 0;
 	text-decoration: none;
-} 
+}
 
 .nav-brand {
 	font-family: "Merriweather", georgia, serif;
@@ -415,7 +415,7 @@ pre {
 	position: absolute;
 	left: 0;
 	right: 0;
-	padding-right: -15px; 
+	padding-right: -15px;
 	list-style: none;
 	height: 100%;
 	overflow-x: hidden;
@@ -471,7 +471,7 @@ pre {
 #menu>ul>li a.close-menu:focus{
 	background-color: #679E42!important;
 	color: #383838;
-} 
+}
 #menu .close-menu i{
 	line-height: 55px;
 	padding-left: 20px;
@@ -524,7 +524,7 @@ pre {
 	max-height: 0;
 	overflow-y: hidden;
 	background-color: #1c1d24;
-} 
+}
 .submenu-list li a {
 	position: relative;
 	display: block;
@@ -724,7 +724,7 @@ article {
 }
 article.last {
 	border-bottom: 0;
-} 
+}
 article .post-date {
 	margin-top: 1em;
 }
@@ -745,12 +745,13 @@ article .btn {
 .paging {
 	margin-bottom: 2em;
 }
-.paging a { 
+.paging a {
 	padding: 0 15px;
 	/* margin: 15px; */
 }
 
-.post-popular {
+/* MPL 2016-07-07 add post-related as a clone with different before text */
+.post-popular, .post-related {
 	border-top: 1px solid #ccc;
 	/* border-bottom: 1px solid #ccc; */
 	margin: 1em 0;
@@ -758,8 +759,9 @@ article .btn {
 	position: relative;
 }
 
-.post-popular::before {
-	content: 'Popular post';
+/* MPL 2016-07-07 change 'post' to 'posts' */
+.post-popular::before, .post-related::before {
+	content: 'Popular posts';
 	position: absolute;
 	left: 0;
 	top: -12px;
@@ -773,32 +775,43 @@ article .btn {
 	text-transform: uppercase;
 	color: #9f9f9f;
 }
+
+.post-related::before {
+	content: 'Related posts';
+}
+
+
 .post-popular h4,
+.post-related h4,
 .post-recent-widget h4 {
 	font-size: 14px !important;
 	margin-top: 8px;
-	
+
 }
-.post-popular img, 
+.post-popular img,
+.post-related img,
 .post-recent-widget img{
 	border-radius: 4px;
 }
 .post-popular a:hover img,
+.post-related a:hover img,
 .post-recent-widget a:hover img {
 	opacity: 0.6;
 	transition: all 0.5s ease 0s;
 }
-.post-popular .media a.pull-left {
+.post-popular .media a.pull-left,
+.post-related .media a.pull-left {
 	border: 0;
 }
-.post-popular .media a.pull-left:hover {
+.post-popular .media a.pull-left:hover,
+.post-related .media a.pull-left:hover {
 	border: 0;
 }
 
 .media-heading {
 	/*font-size: 16px !important;*/
 	margin-top: 0 !important;
-	
+
 }
 
 .post-recent-widget p{
@@ -810,7 +823,7 @@ article .btn {
 }
 .post-recent-widget a.pull-left:hover {
 	border: 0;
-}	
+}
 
 /* ------------------------------ Comments -------------------------- */
 
@@ -904,7 +917,7 @@ article .btn {
 
 /* ------------------------------ myform -------------------------- */
 .myform {
-	padding-top: 5px; 
+	padding-top: 5px;
 }
 .myform .form-group label{
 	display:none;
@@ -1030,7 +1043,7 @@ form p {
 
 .form-control-inline {
 	min-width: 0;
-	width: auto!important; 
+	width: auto!important;
 	display: inline!important;
 }
 
@@ -1139,7 +1152,7 @@ address {
 
 .social-links.outline li a {
 	color: #80B959;
-	 border: 1px solid #80B959; 
+	 border: 1px solid #80B959;
 }
 .social-links.outline li a:hover {
 	color: #FFF;
@@ -1149,7 +1162,7 @@ address {
 }
 .social-links.outline-white li a {
 	color: #FFF;
-	 border: 1px solid #FFF; 
+	 border: 1px solid #FFF;
 }
 .social-links.outline-white li a:hover {
 	color: #80B959;
@@ -1194,7 +1207,7 @@ footer .copyright {
 	font-size: 18px;
 }
 .footer-widget .stats .line .caption {
-	
+
 	margin-left: 52px;
 	display: block;
 }
@@ -1240,7 +1253,7 @@ footer .copyright {
 }
 .tags li a:hover,
 .tags li a:active {
-	background-color: #80B959; 
+	background-color: #80B959;
 }
 /* ------------------------------ Media -------------------------- */
 @media (min-width: 600px) {
@@ -1254,13 +1267,13 @@ footer .copyright {
 	}
 	.login .modal-dialog {
 		 width: 320px;
-		 margin: 30px auto; 
+		 margin: 30px auto;
 	}
 }
 
 @media (min-width: 768px) {
 	.navbar-brand {
-		 padding-left: 0; 
+		 padding-left: 0;
 	}
 	#hero .container {
 		height: 377px;
@@ -1324,14 +1337,14 @@ footer .copyright {
 		font-size: 1rem;
 	}
 	.login .modal-dialog {
-		 width: 320px; 
+		 width: 320px;
 	}
 
 }
 
 @media (min-width: 1024px) {
 	.navbar-brand {
-		 padding-left: 0; 
+		 padding-left: 0;
 	}
 	#hero .container {
 		height: 377px;
@@ -1353,6 +1366,4 @@ footer .copyright {
 		font-size: 25px;
 		font-size: 1.5625rem;
 	}
- } 
-
-
+ }

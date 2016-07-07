@@ -25,10 +25,6 @@
     %endif
 </%def>
 
-
-
-
-
 <%def name="html_pager(post)">
     %if post.prev_post or post.next_post:
         <div class="paging clearfix">
@@ -106,4 +102,28 @@
             % endif
         %endif
     %endif
+</%def>
+
+<%def name="html_related_noxs(rpost)">
+    <div class="col-sm-4 col-md-4">
+        <a href="${rpost.permalink()}" title="${rpost.title()|h}"><img src="${rpost.meta('coverimage')}" class="img-responsive" /></a>
+        <h4 class="text-center"><a href="${rpost.permalink()}">${rpost.title()}</a></h4>
+        <p class="post-date text-center">
+            <time class="published dt-published" datetime="${rpost.formatted_date('webiso')}" title="${rpost.formatted_date(date_format)|h}">
+                ${rpost.formatted_date(date_format)|h}
+            </time>
+        </p>
+    </div>
+</%def>
+
+<%def name="html_related_xs(rpost)">
+    <div class="col-sm-12">
+        <div class="media">
+            <a class="pull-left" href="${rpost.permalink()}" title="${rpost.title()|h}"><img src="${rpost.meta('coverimage')}" class="media-object" width="100" alt=""/></a>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="${rpost.permalink()}">${rpost.title()}</a></h4>
+                <time class="post-date published dt-published" datetime="${rpost.formatted_date('webiso')}" title="${rpost.formatted_date(date_format)|h}">${rpost.formatted_date(date_format)|h}</time>
+            </div>
+        </div>
+    </div>
 </%def>
