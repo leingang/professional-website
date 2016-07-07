@@ -7,7 +7,7 @@ import logbook
 import logging
 import copy
 
-_debug = True # for testing
+_debug = False # for testing
 _name = "category_menu"
 
 handler = copy.copy(utils.STDERR_HANDLER[0])
