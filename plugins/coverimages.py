@@ -20,7 +20,7 @@ import posixpath # for walking a unix-style directory tree
 import micawber, micawber.exceptions # for extracting metadata from provided files
 
 class AddCoverImages(ConfigPlugin):
-    """Add site statistics to global context"""
+    """Add cover images to each post"""
 
     name = "coverimages"
 
