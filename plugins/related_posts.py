@@ -169,14 +169,17 @@ class RelatedPosts(ConfigPlugin):
             tfidf = self.tfidf
             result = numpy.dot(tfidf,numpy.transpose(tfidf))
             m,n = result.shape # should be square, but shape returns both
+            dc = numpy.zeros(result.shape)
             # voodoo
             for i in range(1,m):
                 for j in range (1,n):
                     if i != j:
-                        result[i,j] /= (result[i,i] + result[j,j] - result[i,j])
+                        # cosine distance
+                        dc[i,j] =result[i,j] / (math.sqrt(result[i,i] * result[j,j] ))
                     else:
-                        result[i,j] = 0.0
-            self._dc = result
+                        # never match the post itself
+                        dc[i,j] = -2
+            self._dc = dc
             numpy.savetxt("cache/dc.txt",result)
             logger.debug("dc: %s" % self._dc)
         return self._dc
