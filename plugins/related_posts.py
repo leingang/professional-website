@@ -56,20 +56,27 @@ class RelatedPosts(ConfigPlugin):
         """ set the top related posts for each post"""
         logger.debug("set_related: begin")
         self.set_term_count(site)
+        # "singularize" the document correlation matrix (as in homology)
+        # since self.dc[i,i] = 1 for all i, but we don't want to count post i as
+        # related to itself, we correct dc[i,i] to -2 (the minimum is otherwise -1)
+        dcs = self.dc - 3 * numpy.identity(self.dc.shape[0])
         # take the top scores by column index
         # see http://stackoverflow.com/a/23734295/297797
-        indices = numpy.argpartition(self.dc,-self.num_related)[:,-self.num_related:]
-        logger.debug("indices: %s" % indices)
-        logger.debug("top scores: %s" % self.dc[indices])
-        # I would like to sort on score, but can't figure out how.
-        # skipping for now.
+        # and http://stackoverflow.com/q/38257228/297797
+        ## first attempt
+        # indices = numpy.argpartition(dcs,-self.num_related)[:,-self.num_related:]
+        # logger.debug("indices: %s" % indices)
+        # logger.debug("top scores: %s" % self.dc[indices])
+        # rows = rows=numpy.transpose([numpy.arange(dcs.shape[0])])
+        ## looks better
+        indices_sorted = dcs.argsort(axis=1)[:,-self.num_related:][:,::-1]
         for i,post in enumerate(site.posts):
             try:
                 lang = post.lang
             except AttributeError:
                 lang = site.default_lang
             post.related = []
-            for r in indices[i,:]:
+            for r in indices_sorted[i,:]:
                 post.related.append(site.posts[r])
                 logger.debug('%s.related+=(%d)%s' %(post.meta('slug'),r,site.posts[r].meta('slug')))
 
@@ -168,18 +175,10 @@ class RelatedPosts(ConfigPlugin):
         if self._dc is None:
             tfidf = self.tfidf
             result = numpy.dot(tfidf,numpy.transpose(tfidf))
-            m,n = result.shape # should be square, but shape returns both
-            dc = numpy.zeros(result.shape)
-            # voodoo
-            for i in range(1,m):
-                for j in range (1,n):
-                    if i != j:
-                        # cosine distance
-                        dc[i,j] =result[i,j] / (math.sqrt(result[i,i] * result[j,j] ))
-                    else:
-                        # never match the post itself
-                        dc[i,j] = -2
-            self._dc = dc
-            numpy.savetxt("cache/dc.txt",result)
+            # cosine similarity https://en.wikipedia.org/wiki/Cosine_similarity
+            # the original had Tanimoto distance
+            d = numpy.diagonal(result)
+            self._dc = result/numpy.sqrt(numpy.outer(d,d))
+            numpy.savetxt("cache/dc.txt",self._dc)
             logger.debug("dc: %s" % self._dc)
         return self._dc
