@@ -9,6 +9,7 @@ from nltk.stem.snowball import SnowballStemmer
 from more_itertools import unique_everseen
 import numpy
 import math
+from collections import defaultdict
 
 _debug = False # for testing
 _name = "related_posts"
@@ -68,7 +69,7 @@ class RelatedPosts(ConfigPlugin):
         # logger.debug("indices: %s" % indices)
         # logger.debug("top scores: %s" % self.dc[indices])
         # rows = rows=numpy.transpose([numpy.arange(dcs.shape[0])])
-        ## looks better
+        ## looks better.  But sorts every row of the matrix.
         indices_sorted = dcs.argsort(axis=1)[:,-self.num_related:][:,::-1]
         for i,post in enumerate(site.posts):
             try:
@@ -114,12 +115,15 @@ class RelatedPosts(ConfigPlugin):
         if not self.allwords:
             self.set_words(site)
         result = numpy.zeros((len(site.posts),len(self.allwords)))
-        # max is column vector of row maxima
-        for i, post in enumerate(site.posts):
-            for j, word in enumerate(self.allwords):
-                result[i,j] = post.meta('words').count(word)
-        logger.debug("set_term_count: %s" % result)
+        for i,post in enumerate(site.posts):
+            wordarray = numpy.array(post.meta('words'))
+            unique, counts = numpy.unique(wordarray, return_counts=True)
+            worddict = defaultdict(int,zip(unique, counts))
+            for j,word in enumerate(self.allwords):
+                result[i,j] = worddict[word]
+        # logger.debug("set_term_count: %s" % result)
         self.tc = result
+        numpy.savetxt("cache/tc.txt",self.tc)
         return result
 
     @property
