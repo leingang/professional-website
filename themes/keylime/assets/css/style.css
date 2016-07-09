@@ -825,6 +825,28 @@ article .btn {
 	border: 0;
 }
 
+/* MPL 2016-07-09 allow responsive images clipped to fixed aspect ratio */
+.responsive-16by9 {
+	position: relative;
+	width: 100%;
+	height: 0;
+	/* % of width, defines aspect ratio*/
+	padding-bottom: 56.25%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.post-preview-img {
+	border-radius: 4px;
+}
+
+.post-related .media .post-preview-img {
+	border-radius: 0.25em;
+	width: 100px;
+	margin-bottom: 15px;
+}
+
 /* ------------------------------ Comments -------------------------- */
 
 #comments_pagination {
