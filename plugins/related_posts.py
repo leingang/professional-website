@@ -116,11 +116,10 @@ class RelatedPosts(ConfigPlugin):
             self.set_words(site)
         result = numpy.zeros((len(site.posts),len(self.allwords)))
         for i,post in enumerate(site.posts):
-            wordarray = numpy.array(post.meta('words'))
-            unique, counts = numpy.unique(wordarray, return_counts=True)
-            worddict = defaultdict(int,zip(unique, counts))
+            # wordcount[word] is the number of times 'word' appears in the post
+            wordcount= defaultdict(int,zip(*numpy.unique(numpy.array(post.meta('words')), return_counts=True)))
             for j,word in enumerate(self.allwords):
-                result[i,j] = worddict[word]
+                result[i,j] = wordcount[word]
         # logger.debug("set_term_count: %s" % result)
         self.tc = result
         numpy.savetxt("cache/tc.txt",self.tc)
