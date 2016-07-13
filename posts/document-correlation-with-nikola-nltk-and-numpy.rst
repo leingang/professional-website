@@ -1,7 +1,7 @@
 .. title: Document correlation with Nikola, NLTK, and NumPy
 .. slug: document-correlation-with-nikola-nltk-and-numpy
 .. date: 2016-07-11 07:40:32 UTC-04:00
-.. tags: nikola, python, linear algebra, mathjax, draft
+.. tags: nikola, python, linear algebra, mathjax
 .. category: computing
 .. link:
 .. description: what I've learned in the last week implementing related posts in Nikola
