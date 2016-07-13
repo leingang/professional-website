@@ -96,6 +96,7 @@ class RelatedPosts(ConfigPlugin):
                 stemmer=stemmers[lang]
             words=[]
             fulltext = post.meta('title') + post.text(strip_html=True)
+            # TODO: strip stop words http://stackoverflow.com/q/5486337/297797
             for word in word_tokenize(fulltext):
                 words.append(stemmer.stem(word))
             post.meta[lang]['words'] = words
