@@ -1,0 +1,129 @@
+.. title: Philadelphia Day Trip
+.. slug: philadelphia-day-trip
+.. date: 2017-05-28 07:35:54 UTC-04:00
+.. tags: travel
+.. category: family
+.. link:
+.. description: The vast expanse of the Franklin Institute, and a cheesesteak.
+.. type: text
+.. coverimage: https://c1.staticflickr.com/9/8345/8231596663_d11eed85fa_k.jpg
+
+My wife and daughter were away at Girl Scout camp this weekend, so my 
+10-year-old son and I took the opportunity to take a road trip.  He got the idea
+of going to the `Franklin Institute`_ in Philadelphia.  
+
+.. _`Franklin Institute`: https://www.fi.edu/
+
+Even though we live in the Metro NYC area, Philly is only a bit more than an 
+hour and half drive away.  It's one of the perks of living in the East Coast 
+Megalopolis.  We left around 8am on Saturday morning, hit a bit of Shore Traffic
+(it being Memorial Day Weekend after all), and got to downtown Philly around
+9:40.  After parking we walked to the museum, and arrived pretty much exactly at 
+10:00am when it opened.
+
+The first thing you see when you enter the museum is the Benjamin Franklin National
+Memorial.  It's an enormous statue of the seated Franklin, reminiscent of the
+Lincoln Memorial in Washington.  Fitting, since Franklin was a titan of reason.
+
+Past that is the regular museum entrance.  We were disappointed that the coupons we
+clipped for a discount on admission were not valid if we wanted to see any of the
+special exhibits.  It's always annoying when coupons are so narrowly focused that
+you can't use them.  We paid $46 for admission and the special exhibit, which seems
+like a lot but is the going rate for museums these days.  Plus with the amount of 
+time we spent there we got our money's worth.
+
+We happened to be there on the first day of this special exhibit, about `Numbers
+in Nature`_.  They highlighed three types of patterns: the golden ratio, fractals, and
+`Voronoi diagrams`_.  I knew a lot about the first two but very little about the
+third.  Given a set of points in the plane, the plane can be partitioned into cells 
+determined by the closest point.  For instance, the arrangement
+of popcorn kernels around the cob form a Voronoi pattern.
+
+.. _`Numbers in Nature`: https://www.fi.edu/exhibit/mirror-maze-numbers-nature
+.. _`Voronoi diagrams`: https://en.wikipedia.org/wiki/Voronoi_diagram
+
+The “fun” part of that exhibit was a mirror maze.  On a triangular lattice they 
+laid out a maze, and the walls of the maze were mirrors.  When I was a kid and I 
+followed my mom on shopping trips, I remember the department stores had these 
+triptych mirrors so that you could see yourself from several angles while trying on 
+the clothes.  The three mirror panels were all the same rectangular shape, and the outer
+panels were hinged.  My brother and I loved to close the mirrors in on ourselves,
+so that they formed an equilateral triangle.  When you do this, each mirror reflects 
+the other two, and each of those is reflecting the other two, and so on to triangular
+infinity.  This maze was the same thing, except that some of the surfaces were mirrored,
+and others were actually passages through the maze.  It was extremely disorienting, in 
+a fun way.  You couldn't tell how far “forward” extended before you hit a wall.  I 
+bumped my nose more than once.  The only clue I found was to look for fingerprints
+on the mirrors.  It took us two tries—the first time we came out at the entrance—but 
+we finally got through the maze.
+
+The permanent exhibits of the Franklin Institute were also very enjoyable.  The heart 
+exhibit is one of their oldest continuous exhibit, and it shows a bit.  The highlight
+is a giant fiberglass heart that you can walk through, up the vena cava, into the right
+atrium and ventricle, through the lungs, back to the heart through the pulmonary vein,
+into the left atrium and ventricle, and finally out the aorta.  Too bad this was 
+designed only for the ambulatory.  I think it would be impossible to build something
+like this is in the ADA era.  Virtual reality is a nice technological workaround for 
+that, and in fact the FI had several VR exhibits.  
+
+We also spent a long time in the flight exhibit.  I may have finally gotten a bit of 
+understanding into Bernoulli's principle: faster moving area has lower pressure.  So 
+a ball can balance on a column of forced air, buoyed up by the air.  But more than 
+that, the pressure differential between the column of moving air and the surrounding
+“stationary” air pushes the ball back towards the column, creating a stable 
+equilibrium.  
+
+The same principle gives wings their lift.  Air moves more quickly across the curved
+top of the wing than the flat lower surface.  This speed differential again 
+creates a pressure differential, which pushes the wing up.  The rest of flight is 
+moving foward fast enough to create enough lift.  
+
+After seeing nearly every exhibit, and taking in a planetarium show, we left 
+the museum after more than six hours.  So like I said, we got the most out of our
+admission price.  We had planned to visit the Liberty Bell after, but it was in 
+the opposite direction from the car, and we were all walked out.  So we left, 
+but not without a trip to Dallessandros for cheesesteaks.
+
+I've only had the pleasure of a Philly Cheesesteak in Philly a couple of times.
+But I have to concede that they do it best there.  Certain varieties of wine have
+controlled names that only can be used if the wine comes from that place.  For
+instance, only sparkling white wines from the Champagne region of France can be
+called *champagne*.  The notion is that there's something unique about the land
+where it comes from (*terroir*) that makes the wine spacial.  So it is with the
+cheesesteak.  I think only the ones served within metropolitan Philadelphia should
+bear the appellation.  
+
+We got to Dal's right before a big rush.  There were only a few people in line
+and the counter was nearly empty.  We opted for a seat at the counter since it was
+air conditioned inside.  Good idea, but poorly executed.  We took the seats closest
+to the ordering counter, which meant that when the rush came, people were crowding
+behind us, shouting orders between our shoulders.  There is also the option to
+sit outside, or take it to go.  I might opt for outside next time.
+
+I ordered my cheesesteak with American cheese (as recommended by the server), and 
+“fried” (more like sautéed, but that's what they called them) onions.  It didn't
+need anything more than that.  At the table, they had some spicy, vinegary hot
+peppers that were good for cutting the grease and brightening the palate.  My 
+son ordered his with provolone and pepperoni, because that's what he usually puts
+on his sandwiches at home.  I noticed a lot of folks in line were ordering extra 
+cheese, or two cheeses, such as American and Cheez Whiz (one might argue that
+neither of those is a cheese, but then one may be tempted to order swiss cheese 
+instead, thus dooming one's presidential campaign).  
+
+The sandwiches are about a foot long.  My son's first bites were tentative,
+as he tried to pick the whole thing up and eat it hot dog-style.  I showed him
+the crosscut in the middle so that it can be broken into two halves, and how, 
+once divided, you eat from the large end towards the small end of each half.  
+*These are the lessons a boy needs a father for.*
+
+.. media:: https://instagram.com/p/BUnZoGWjnyN
+
+He got about five bites in before he announced he was full.  Not me.  I ate 
+every bit of mine.  The server wrapped his up with a smile and we were on our
+way.  We were home less than two hours later.
+
+Now that we've done the Franklin Institute and gotten a little of the lay of the
+land, I'm hoping we can go back to Philly and see the Liberty Bell, Independence
+Hall, and all that jazz.  I also would like to take in some of their art 
+museums.  And I think Dal's is going to be the regular last stop from now on.
+
