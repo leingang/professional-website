@@ -11,90 +11,93 @@ import numpy
 import math
 from collections import defaultdict
 
-_debug = False # for testing
+_debug = False  # for testing
 _name = "related_posts"
 
 handler = copy.copy(STDERR_HANDLER[0])
-handler.level=logbook.INFO if not _debug else logbook.DEBUG
-handler.filter = lambda r,h: r.channel == _name
-logger=logbook.Logger(_name,logbook.DEBUG if _debug else logbook.WARNING)
+handler.level = logbook.INFO if not _debug else logbook.DEBUG
+handler.filter = lambda r, h: r.channel == _name
+logger = logbook.Logger(_name, logbook.DEBUG if _debug else logbook.WARNING)
 handler.push_application()
+
 
 class RelatedPosts(ConfigPlugin):
     """insert related posts into each post's metadata"""
     name = _name
 
     stemmer_map = {
-        'en' : 'english',
-        'da' : 'danish',
-        'nl' : 'dutch',
-        'de' : 'german',
-        'fi' : 'finnish',
-        'fr' : 'french',
-        'hu' : 'hungarian',
-        'it' : 'italian',
-        'no' : 'norwegian',
-        'pt' : 'portuguese',
-        'ro' : 'romanian',
-        'ru' : 'russian',
-        'es' : 'spanish',
-        'sv' : 'swedish'
+        'en': 'english',
+        'da': 'danish',
+        'nl': 'dutch',
+        'de': 'german',
+        'fi': 'finnish',
+        'fr': 'french',
+        'hu': 'hungarian',
+        'it': 'italian',
+        'no': 'norwegian',
+        'pt': 'portuguese',
+        'ro': 'romanian',
+        'ru': 'russian',
+        'es': 'spanish',
+        'sv': 'swedish'
     }
-    allwords=[]
+    allwords = []
     _tf = None
     _idf = None
     _tfidf = None
     _dc = None
     num_related = 3
 
-    def set_site(self,site):
+    def set_site(self, site):
         site.scan_posts()
         logger.debug("Hello")
         self.set_related(site)
-        super(RelatedPosts,self).set_site(site)
+        super(RelatedPosts, self).set_site(site)
 
-    def set_related(self,site):
+    def set_related(self, site):
         """ set the top related posts for each post"""
         logger.debug("set_related: begin")
         self.set_term_count(site)
         # "singularize" the document correlation matrix (as in homology)
         # since self.dc[i,i] = 1 for all i, but we don't want to count post i as
-        # related to itself, we correct dc[i,i] to -2 (the minimum is otherwise -1)
+        # related to itself, we correct dc[i,i] to -2 (the minimum is otherwise
+        # -1)
         dcs = self.dc - 3 * numpy.identity(self.dc.shape[0])
         # take the top scores by column index
         # see http://stackoverflow.com/a/23734295/297797
         # and http://stackoverflow.com/q/38257228/297797
-        ## first attempt
+        # first attempt
         # indices = numpy.argpartition(dcs,-self.num_related)[:,-self.num_related:]
         # logger.debug("indices: %s" % indices)
         # logger.debug("top scores: %s" % self.dc[indices])
         # rows = rows=numpy.transpose([numpy.arange(dcs.shape[0])])
-        ## looks better.  But sorts every row of the matrix.
-        indices_sorted = dcs.argsort(axis=1)[:,-self.num_related:][:,::-1]
-        for i,post in enumerate(site.posts):
+        # looks better.  But sorts every row of the matrix.
+        indices_sorted = dcs.argsort(axis=1)[:, -self.num_related:][:, ::-1]
+        for i, post in enumerate(site.posts):
             try:
                 lang = post.lang
             except AttributeError:
                 lang = site.default_lang
             post.related = []
-            for r in indices_sorted[i,:]:
+            for r in indices_sorted[i, :]:
                 post.related.append(site.posts[r])
-                logger.debug('%s.related+=(%d)%s' %(post.meta('slug'),r,site.posts[r].meta('slug')))
+                logger.debug('%s.related+=(%d)%s' %
+                             (post.meta('slug'), r, site.posts[r].meta('slug')))
 
-    def set_words(self,site):
-        stemmers={}
-        default_stemmer=SnowballStemmer(self.stemmer_map[site.default_lang])
+    def set_words(self, site):
+        stemmers = {}
+        default_stemmer = SnowballStemmer(self.stemmer_map[site.default_lang])
         for post in site.posts:
             try:
                 lang = post.lang
             except AttributeError:
                 lang = site.default_lang
             try:
-                stemmer=stemmers[lang]
+                stemmer = stemmers[lang]
             except KeyError:
                 stemmers[lang] = SnowballStemmer(self.stemmer_map[lang])
-                stemmer=stemmers[lang]
-            words=[]
+                stemmer = stemmers[lang]
+            words = []
             fulltext = post.meta('title') + post.text(strip_html=True)
             # TODO: strip stop words http://stackoverflow.com/q/5486337/297797
             for word in word_tokenize(fulltext):
@@ -105,7 +108,7 @@ class RelatedPosts(ConfigPlugin):
         self.allwords = list(unique_everseen(self.allwords))
         # logger.debug("allwords: %s" % self.allwords)
 
-    def set_term_count(self,site):
+    def set_term_count(self, site):
         """set the post-word count matrix
 
         set self.tc to be a matrix where
@@ -115,15 +118,16 @@ class RelatedPosts(ConfigPlugin):
         logger.debug("set_term_count: begin")
         if not self.allwords:
             self.set_words(site)
-        result = numpy.zeros((len(site.posts),len(self.allwords)))
-        for i,post in enumerate(site.posts):
+        result = numpy.zeros((len(site.posts), len(self.allwords)))
+        for i, post in enumerate(site.posts):
             # wordcount[word] is the number of times 'word' appears in the post
-            wordcount= defaultdict(int,zip(*numpy.unique(numpy.array(post.meta('words')), return_counts=True)))
-            for j,word in enumerate(self.allwords):
-                result[i,j] = wordcount[word]
+            wordcount = defaultdict(
+                int, zip(*numpy.unique(numpy.array(post.meta('words')), return_counts=True)))
+            for j, word in enumerate(self.allwords):
+                result[i, j] = wordcount[word]
         # logger.debug("set_term_count: %s" % result)
         self.tc = result
-        numpy.savetxt("cache/tc.txt",self.tc)
+        numpy.savetxt("cache/tc.txt", self.tc)
         return result
 
     @property
@@ -137,10 +141,10 @@ class RelatedPosts(ConfigPlugin):
         """
         if self._tf is None:
             term_count = self.tc
-            wordmax=numpy.amax(term_count,axis=1)
+            wordmax = numpy.amax(term_count, axis=1)
             # jekyll-related-posts.rb uses a weight vector.
             # skipping that for now.
-            self._tf = term_count / wordmax[:,None]
+            self._tf = term_count / wordmax[:, None]
             logger.debug("tf: %s" % self._tf)
         return self._tf
 
@@ -154,10 +158,10 @@ class RelatedPosts(ConfigPlugin):
         """
         if self._idf is None:
             tf = self.tf
-            nposts,nwords = tf.shape
+            nposts, nwords = tf.shape
             term_incidence = numpy.ceil(tf)
-            num_containing = numpy.sum(term_incidence,axis=0)
-            self._idf = numpy.log(nposts/(1+num_containing))
+            num_containing = numpy.sum(term_incidence, axis=0)
+            self._idf = numpy.log(nposts / (1 + num_containing))
             logger.debug("idf: %s" % self._idf)
         return self._idf
 
@@ -169,7 +173,7 @@ class RelatedPosts(ConfigPlugin):
         """
         if self._tfidf is None:
             # compute it!
-            self._tfidf = self.tf * self.idf[None,:]
+            self._tfidf = self.tf * self.idf[None, :]
             logger.debug("tfidf: %s" % self._tfidf)
         return self._tfidf
 
@@ -178,11 +182,11 @@ class RelatedPosts(ConfigPlugin):
         """the document correlation matrix"""
         if self._dc is None:
             tfidf = self.tfidf
-            result = numpy.dot(tfidf,numpy.transpose(tfidf))
+            result = numpy.dot(tfidf, numpy.transpose(tfidf))
             # cosine similarity https://en.wikipedia.org/wiki/Cosine_similarity
             # the original had Tanimoto distance
             d = numpy.diagonal(result)
-            self._dc = result/numpy.sqrt(numpy.outer(d,d))
-            numpy.savetxt("cache/dc.txt",self._dc)
+            self._dc = result / numpy.sqrt(numpy.outer(d, d))
+            numpy.savetxt("cache/dc.txt", self._dc)
             logger.debug("dc: %s" % self._dc)
         return self._dc
