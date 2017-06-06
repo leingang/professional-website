@@ -204,10 +204,10 @@
 
 <p>As you can see, none of the teams with the worst three records (Memphis, Boston, and Milwaukee), and thus the biggest probabilities of winning, ended up with any of the top three picks. Mathematicians often get the FAQ &#8220;What are the odds of <i>that</i>?&#8221;  Well, let&#8217;s see.</p>
 
-<p>Let <img src="/images/eca91c83a74a2373ca5f796700e99fd3.gif" title="p_i" alt="p_i" align="absmiddle" /> be the probability that the team with the <i>i</i>th worst record wins the lottery.&#160; The second pick is determined by the same rules, except that the team that got the first pick can&#8217;t get the second pick.&#160; So the probability that team <i>j</i> (i.e., the team with the <i>j</i>th worst record) gets the second pick, given that team <i>i</i> got the first pick is <img src="/images/78dea0294ed774342d8fc58124a9e34f.gif" title="\frac{p_i}{1-p_j}" alt="\frac{p_i}{1-p_j}" align="absmiddle" />.&#160; The third pick is assigned the same way. So the probability that team <i>i</i> gets the first pick, team <i>j</i> gets the second pick, and team <i>k</i> gets the third pick is 
+<p>Let <img src="/images/eca91c83a74a2373ca5f796700e99fd3.png" title="p_i" alt="p_i" align="absmiddle" /> be the probability that the team with the <i>i</i>th worst record wins the lottery.&#160; The second pick is determined by the same rules, except that the team that got the first pick can&#8217;t get the second pick.&#160; So the probability that team <i>j</i> (i.e., the team with the <i>j</i>th worst record) gets the second pick, given that team <i>i</i> got the first pick is <img src="/images/78dea0294ed774342d8fc58124a9e34f.png" title="\frac{p_i}{1-p_j}" alt="\frac{p_i}{1-p_j}" align="absmiddle" />.&#160; The third pick is assigned the same way. So the probability that team <i>i</i> gets the first pick, team <i>j</i> gets the second pick, and team <i>k</i> gets the third pick is 
 </p>
 
-<p><img src="/images/2fd17a9d5e4e9bfc5fb5ce6e44aa7815.gif" title="f(i,j,k) = p_i \cdot \frac{p_j}{1-p_i} \cdot \frac{p_k}{1-p_i-p_j}\,\,." alt="f(i,j,k) = p_i \cdot \frac{p_j}{1-p_i} \cdot \frac{p_k}{1-p_i-p_j}\,\,." align="absmiddle" />
+<p><img src="/images/2fd17a9d5e4e9bfc5fb5ce6e44aa7815.png" title="f(i,j,k) = p_i \cdot \frac{p_j}{1-p_i} \cdot \frac{p_k}{1-p_i-p_j}\,\,." alt="f(i,j,k) = p_i \cdot \frac{p_j}{1-p_i} \cdot \frac{p_k}{1-p_i-p_j}\,\,." align="absmiddle" />
 </p>
 
 <p>All the other teams are assigned picks according to worst record among those remaining.&#160; So there&#8217;s no more probability to be determined.</p>
@@ -215,7 +215,7 @@
 <p>From the above you can see that the probability of the lottery ending up <i>precisely this way</i> is f(6,5,4) = 0.00068228, or .068%.&#160; Very unlikely.&#160; But so is the most likely event that the worst teams gets the first pick, the second-worst the second pick, and the third-worst the third pick.&#160; That&#8217;s f(1,2,3) = 1.88%.&#160;&#160; The more interesting event is that <i>none</i> of the worst three teams got <i>any</i> of the top picks.&#160; The probability of that is the sum</p>
 
 <p>
-  <img src="/images/8b490aec0fc3921b879643ca5a26dc14.gif" title="\sum_{i,j,k} f(i,j,k)\,\,." alt="\sum_{i,j,k} f(i,j,k)\,\,." align="absmiddle" />
+  <img src="/images/8b490aec0fc3921b879643ca5a26dc14.png" title="\sum_{i,j,k} f(i,j,k)\,\,." alt="\sum_{i,j,k} f(i,j,k)\,\,." align="absmiddle" />
 </p>
 
 <p>over all triples (i,j,k) of distinct elements from the set 4, 5, 6, &#8230;, 14.&#160; There are (11)(10)(9)=990 such triples.&#160; There might be a nice combinatorial way to get a closed-form expression for this sum,&#160; or you can just use Mathematica to do it.&#160; I got 0.0405467, or 4.05%.&#160; Not that likely, but you would expect it to happen about once every 25 years.&#160; The lottery in its current form has been around since 1990. 
