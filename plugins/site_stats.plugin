@@ -6,7 +6,8 @@ module = site_stats
 author = Matthew Leingang
 version = 0.1
 website = https://matthewleingang.com/
-description = insert site stats into global context
+description = insert a count of posts, tags, and categories into global context.
 
 [Nikola]
 plugincategory = Config
+MinVersion = 7.7.3+
