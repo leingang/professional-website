@@ -1,6 +1,10 @@
-from nikola.plugin_categories import ConfigPlugin
+"""A Nikola plugin to compute and add site statistics to global context."""
+
 import logbook
+from nikola.plugin_categories import ConfigPlugin
 from nikola import utils
+
+
 LOGGER = utils.get_logger("site_stats", utils.STDERR_HANDLER)
 
 
@@ -34,14 +38,3 @@ class SiteStats(ConfigPlugin):
         category_count = len(site.posts_per_category)
         LOGGER.debug('category_count: %s' % category_count)
         site.GLOBAL_CONTEXT['category_count'] = category_count
-
-    def set_top_tags(self, site):
-        threshold = 2
-        tag_counts = [(len(site.posts_per_tag[tag]), tag)
-                      for tag in site.posts_per_tag.keys()]
-        # this should sort reverse numerical on count, then alpha on tag
-        tag_counts.sort(key=lambda e: (-e[0], e[1]))
-        LOGGER.debug('tag_counts: %s' % tag_counts)
-        top_tags = [tag for count, tag in tag_counts if count > threshold]
-        LOGGER.debug('top_tags: %s' % top_tags)
-        site.GLOBAL_CONTEXT['top_tags'] = top_tags
