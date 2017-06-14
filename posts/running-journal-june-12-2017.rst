@@ -1,0 +1,30 @@
+.. title: Running Journal: June 12, 2017
+.. slug: running-journal-june-12-2017
+.. date: 2017-06-13 08:31:43 UTC-04:00
+.. tags: running
+.. category: leisure/running
+.. link: 
+.. description: High heat, high intensity interval training
+.. type: text
+
+.. class:: embed-responsive embed-responsive-4by3
+
+.. raw:: html
+
+    <iframe height='405' width='590' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/activities/1033136340/embed/99fa5eeda18edf6a55407d365d5995f2deade369'></iframe>
+
+Today was my first speed workout of this training cycle.  Twelve 400-yard intervals with
+400 yards of recovery in between.  It's always tough.  Add to that that I was tired from
+a weekend of camping with Cub Scouts and working our church's social.  I slept in a little
+bit later than normal, and hit the track around 8am.
+
+Unfortunately we are in a heat wave, so by the time I got warmed up the temps were in the
+eighties.  It's impossible to reach full speed when it gets that hot, and it takes much
+more energy to maintain speed.  I gutted through all my intervals, most of them in the
+6:10–6:15 range.  But I cheated by walking on some of the the recovery intervals.  I'm lucky that
+the track at Warinanco has a bathroom and water fountain close by, so I could drink and wet
+down my head and neck.
+
+ But any work is good work.  Tomorrow is a rest day.
+
+
