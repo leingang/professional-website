@@ -614,7 +614,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 DEPLOY_COMMANDS = {
     'default': [
-        "rsync -avz -e 'ssh -p 21098' --stats --progress --exclude '.DS_Store' output/ mattgcwk@server156.web-hosting.com:~/public_html/",
+        "rsync -avz -e 'ssh -p 21098' --stats --progress --exclude '.DS_Store' output/ mattgcwk@server39.web-hosting.com:~/public_html/",
     ]
 }
 # Some options, from http://mikeclaffey.com/rsync-local-files-to-webserver/
