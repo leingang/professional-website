@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7df01f866e6d97e0578bded8a58b6323b1304b89d7dbd10c7ca3dbd00447b1af"
+            "sha256": "fa4164ce45a4b6c9d969668df68728196070654c822292d8cfd6c45f1f3dc272"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -56,7 +56,6 @@
                 "sha256:52b7ad1c0095425bd719c2fc9fb27af94fb0ee478762c50abf385faaf786d010",
                 "sha256:bad01949effd537cade3aea286cc2cde074bdb7a4f442015557b1228dd46f5ea"
             ],
-            "markers": "python_version >= '3.4'",
             "version": "==0.31.1"
         },
         "idna": {
@@ -136,11 +135,11 @@
         },
         "nikola": {
             "hashes": [
-                "sha256:08c713346a9ae0d6f918c0f62b9e10a1d1e3ec009ba0f9a49e02d2b2bf3656f3",
-                "sha256:182b4b9254f0d710603ba491853429ad6ef3f955f3e718191336b44cfd649000"
+                "sha256:6497a0203ccb7663917fea7c82dde9ed0cdb025dfec295a97a5844f5d0e6d54a",
+                "sha256:f0d9106d107cb480cd2f6be7d7640b9b9b2f5d2059dee16d698d5139ee15b89f"
             ],
             "index": "pypi",
-            "version": "==7.8.15"
+            "version": "==8.0.0b2"
         },
         "piexif": {
             "hashes": [
