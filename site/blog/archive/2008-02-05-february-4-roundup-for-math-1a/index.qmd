@@ -1,0 +1,33 @@
+---
+title: February 4 Roundup for Math 1a
+date: '2008-02-05'
+categories:
+- calculus 1
+- math
+- math 1a
+- spring 2008
+- math1a
+- harvard
+- function
+- limit
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Today (yesterday, actually) we introduced the concept of limit: The limit of a function near a point is the number to which function values get arbitrarily close to by making the points sufficiently close to a given point. Or,$$\lim_{x\to a} f(x) = L$$
+
+if values of *f*(*x*) can be made arbitrarily close to *L* by taking *x* sufficiently close to *a*.
+
+There are several ways a function can fail to have a limit. One is that limits “from the right” and “from the left” exist but do not agree. In this case there are two good candidates for the limit, but neither satisfies the definition completely. Another possibility is for the function to be unbounded near [a]{style="font-style: italic"}. Then we cannot get arbitrarily close to any finite value. A third possibility is the kind of oscillation you see in the graph of [y = ]{style="font-style: italic"}sin(1/[x]{style="font-style: italic"}): the frequency of oscillation increases near zero.
+
+But limits do behave well with respect to arithmetic: for instance, the limit of a sum of functions at a point is the sum of the limits of those functions at that point (provided these limits exist). The only caveat here being that we still can’t divide by zero, so for a limit of a quotient where the denominator has a limit of zero, no limit law applies.
+
+In many cases, the limit of a function at a point is the value of the function near that point. We call this property the [Direct Substitution Property]{style="font-style: italic"}, and we will talk much more about it Wednesday.
+
+Another useful method of computing limits is the [Squeeze Theorem]{style="font-style: italic"}. It allows to “pinch” a function between two functions that are known to have the same limit. It follows that the middle function has the same limit.
+
+Slides are now on the website.

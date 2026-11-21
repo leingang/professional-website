@@ -1,0 +1,51 @@
+---
+title: On books
+date: '2007-05-21'
+categories:
+- math
+- spivak
+- math 1a
+- harvard
+- books
+- education
+- math 1b
+- calculus
+legacy-source: huwp
+aliases:
+- /posts/on-books/
+- /posts/on-books/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Last week an Ontario-based programmer named Antonio Cangiano started writing his [Math Blog - Mathematics is wonderful!](http://math-blog.com/) (I agree, BTW). Only two articles so far, but one of them rose up the digg ranks pretty quickly and crashed his server. So maybe he’s doing something right. ![:-)](/images/icon_smile.gif){.wp-smiley}
+
+[Refresh your High School Math skills](http://math-blog.com/2007/05/16/refresh-your-high-school-math-skills/ "Refresh your High School Math skills"){rel="bookmark"} is a post containing precalculus math problems. I’d agree with him that these are the kinds of faculties we’d like our students to have going into calculus–algebra, trigonometry, inequalities, familiarity with exponentials and logarithms, etc. I wish we could assume more of the conic sections material was taught but it doesn’t seem that way anymore.
+
+His other post is called “[The most enlightening Calculus books](http://math-blog.com/2007/05/13/the-most-enlightening-calculus-books/)” and is about his favorite books. There is massive debate among college math teachers about how best to teach calculus: reform, IBL, “Harvard Calculus” (which I do not teach), the list goes on. And as someone who has perused dozens of free calculus books from publishing companies, I can say that I still haven’t found the perfect book for wide university appeal.
+
+What I want in a freshman calculus book is:*\*
+
+## Tell no lies
+
+I don’t insist on epsilons and deltas in a book, but I think we can get within epsilon of it (sorry). The concept that f(x) can be made *arbitrarily* close to L by taking x *sufficiently* close to a is precisely the definition without the greek letters, absolute value bars, and the dreaded less-than sign.
+
+I think the derviative should be defined as a limit of difference quotients, and the integral should be defined as a limit of Riemann sums. I don’t think we need to prove that all continuous functions are integrable (that requires uniform continuity, which requires compactness of closed intervals, which I think is a little much), but the Fundamental Theorem of Calculus needs to be proved.
+
+There is a tightrope to walk here. If you get too technical, students’ eyes will glaze over. I just don’t think everyone needs to know about epsilons and deltas. But if you get too hand-wavy, you lose the faculty to speak in any rigorous fashion about any limit, and suddenly every theorem becomes an article of faith.
+
+## Relevance
+
+I think today’s students are interested in putting everything together rather than following many subjects down their separate paths. So I’d like a book that includes as many applications as possible. Calculus is the universal language of science, and I want my students to think of it as something that continues to be relevant. Of course there are the myriad physics applications that mathematicians are most familiar with, but the majority of our students are concentrating in (a) economics or (b) some sort of life sciences or pre-med. So give me problems in comparative statics, theory of the firm, population systems, rates of absorbing medicine, etc.
+
+## Problems
+
+Many of our students get discouraged about the difference between homework and test problems. I really believe that for a student to demonstrate mastery of calculus, they need to be able to solve “new” problems. I don’t think the students are well served if each exam problem is similar to a homework problem. Again, calculus is not something that has been solved and put in books to be memorized; it is a tool which can be used ad infinitum.
+
+So I also want conceptual problems that are unique, and enough of them to give the impression that this is what calculus “is.” I like drill-type problems for practicing the techniques (after all, the word “calculus” means a set of rules for deriving something), but limiting calculus to that is like saying all you need to know to be a carpenter is how to saw a board in half.
+
+Antonio’s a big fan of *Calculus* by Michael Spivak. Indeed, it is a beautiful book; it changed my life in my first year of college at the University of Chicago. It has excellent prose, wonderful, challenging problems, and the kind of snarkiness that appeals to smart math students and their teachers. I still pick it up about once a month. Yet, as someone in charge of teaching calculus to hundreds of college students, I can’t imagine using it. I don’t think every single student is going to be receptive to that kind of book.
+
+So the quest continues.

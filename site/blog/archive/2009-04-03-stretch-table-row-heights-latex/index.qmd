@@ -1,0 +1,28 @@
+---
+title: Stretch table row heights in LaTeX
+date: '2009-04-03'
+categories:
+- tex
+- table
+- hack
+- array
+- tabular
+legacy-source: drupal
+aliases:
+- /posts/stretch-table-row-heights-latex/
+- /posts/stretch-table-row-heights-latex/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+:::: content
+Like [Naradmuni](http://avizit.blogspot.com/2005/04/latex-row-height-in-tabular.html), I'm always forgetting the simple command to make the rows of a LaTeX table bigger.
+
+::: geshifilter
+``` {.text .geshifilter-text style="font-family:monospace;"}
+\renewcommand\arraystretch{MyValue}% (MyValue=1.0 is for standard spacing)
+```
+:::
+::::

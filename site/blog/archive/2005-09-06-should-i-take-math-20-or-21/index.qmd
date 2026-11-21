@@ -1,0 +1,27 @@
+---
+title: Should I take Math 20 or 21?
+date: '2005-09-06'
+categories:
+- math
+- harvard
+- faq
+- math 20
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’m teaching [](http://my.harvard.edu/course/math20)[Math 20](http://www.courses.fas.harvard.edu/0906){target="_blank"} again this fall and I’m getting e-mailed a FAQ:
+
+**Should I take Math 20 or [21a](http://my.harvard.edu/course/math21a)?**
+
+My answer is as complicated as the question is simple: it depends.
+
+First of all, Math 20 squeezes as much as we can of 21a and [21b](http://my.harvard.edu/course/math21b) into a semester while keeping it relevant to the social sciences. It will definitely give you the mathematics you need for [Economics 1011a](http://my.harvard.edu/course/ec1011a). This might be a good route to take if you want to take just one more math course.
+
+To me the choice is between 20 and **both** 21a and 21b. These two will give you a solid foundation to do undergraduate work in any of the sciences, including economics. They also serve as good background for the more abstract courses such as Math 110 or Math 112. You may be interested in these courses if you are thinking about graduate work in economics. Acquaintance with the basic courses will help you in the advanced ones simply by exposure. When we think abstractly, it’s nice to have the concrete to fall back on.
+
+Any freshman trying to decide on a second-year mathematics course should attend the “Shall I take Math 23,25,55, or 101?” meeting and discussion on Thursday, September 15th at 4:00-5:30 pm in Science Center D.

@@ -1,0 +1,17 @@
+---
+title: A Queuing Model for Use of Laundry Machines in Student Dormitories
+date: '2007-04-23'
+categories:
+- math
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/a-queuing-model-for-use-of-laundry-machines-in-student-dormitories/
+- /posts/a-queuing-model-for-use-of-laundry-machines-in-student-dormitories/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Serena Rezny is speaking this week in the [Undergraduate Mathematics Colloquium aka Math Table](http://math.harvard.edu/mathtable/index.html) on laundry machines. Sounds like a fun practical math application that all undergraduates could learn from. Serena is the four-time [π day](http://www.math.harvard.edu/piday/index_2007.html) recitation champion, having reached 1058 digits this most recent March 14.![](http://www.math.harvard.edu/piday/2007/serena.jpg)\

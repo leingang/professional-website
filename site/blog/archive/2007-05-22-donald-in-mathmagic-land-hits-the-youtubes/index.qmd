@@ -1,0 +1,30 @@
+---
+title: Donald in Mathmagic Land hits the Youtubes
+date: '2007-05-22'
+categories:
+- math
+- duck
+- disney
+- funny
+- donald
+- harvard
+- pop culture
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Somebody’s uploaded clips from one of my favorite math movies (not a very long list) to Youtube: *[Donald in Mathmagic Land](http://www.imdb.com/title/tt0052751/)*.  It’s a little featurette designed to teach the beauty and usefulness of mathematics.  Released in 1959, I have to think that it was part of the space race and math-and-science push spurred by [Sputnik](http://en.wikipedia.org/wiki/Sputnik).
+
+The first time I saw this movie was as a fifth-grader around 1984, when I was in a summer math class at [Black Hawk College](http://www.bhc.edu/) in Moline, Illinois. Since then, I’ve probably seen it 30 times.
+
+As president of the undergraduate math club at The University of Chicago, we had an annual Donald viewing with [Edwardo’s](http://www.yelp.com/biz/lm6lKbD-iAfB85QWj7pX7w) pizza. Then as a postdoc I found a VHS copy on eBay. Now I try to show it in every class.
+
+The movie has some memorable scenes.  The part on the golden ratio is quite interesting, showing first how it’s found in the pentagram, then how that ratio is found in nature.  The second most memorable scene is the part about playing billiards “by the diamonds.”  You can read the whole [plot on Wikipedia](http://en.wikipedia.org/wiki/Donald_in_Mathmagic_Land) if you like, although they seem to suck all the enjoyment out of in that writeup.
+
+It’s quite dated–there are some high-tech items that are genuine artifacts by now, and Donald’s not exactly politically correct.  But I’m glad it was made, and I hope it comes out on DVD sometime soon. 
+
+Youtube videos: [part 1](http://youtube.com/watch?v=CNFOvOJZoWw&mode=related&search=) [part 2](http://youtube.com/watch?v=qLTKX4WxmZ4)

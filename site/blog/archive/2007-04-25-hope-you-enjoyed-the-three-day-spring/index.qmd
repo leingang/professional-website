@@ -1,0 +1,16 @@
+---
+title: Hope you enjoyed the three-day spring
+date: '2007-04-25'
+categories:
+- miscellaneous
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Monday the magnolias bloomed in Boston.  Today the flowers are falling off the dogwoods.  So I guess it’s going to be summer soon.

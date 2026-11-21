@@ -1,0 +1,18 @@
+---
+title: Critical Points - are the horizontal tangents enough?
+date: '2005-04-06'
+categories:
+- math
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/critical-points-are-the-horizontal-tangents-enough/
+- /posts/critical-points-are-the-horizontal-tangents-enough/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I wrote a notebook called\
+[Critical Points](http://abel.math.harvard.edu/~leingang/2005/04/06/CriticalPoints/) to demonstrate why we need to look at *all* critical points of a function, not just the points with horizontal tangents, to find local maxima and minima.

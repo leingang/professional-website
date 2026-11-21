@@ -1,0 +1,18 @@
+---
+title: Tooting my own horn
+date: '2009-03-04'
+categories:
+- teaching
+legacy-source: drupal
+aliases:
+- /posts/tooting-my-own-horn/
+- /posts/tooting-my-own-horn/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+I'm happy to announce that I've been awarded a grant from the [Educational Advancement Foundation](http://www.educationaladvancementfoundation.org/) to develop a graduate student/postdoc teaching seminar.
+:::

@@ -1,0 +1,40 @@
+---
+title: Want to go to B-School?  Better brush up on PowerPoint!
+date: '2007-08-07'
+categories:
+- computing
+- funny
+- powerpoint
+- harvard
+- news
+- beamer
+- latex
+- gettysburg
+legacy-source: huwp
+aliases:
+- /posts/want-to-go-to-b-school-better-brush-up-on-powerpoint/
+- /posts/want-to-go-to-b-school-better-brush-up-on-powerpoint/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+That may be good advice for up-and-coming businesspeople, but it’s actually becoming literally a requirement. Apparently the [University of Chicago](http://gsb.uchicago.edu//) is requiring [Business School applicants to submit PowerPoint-Like Slides](http://www-news.uchicago.edu/citations/07/070730.gsb.ppt-che.html) as part of their application.
+
+> “In four slides or less,” the [online instructions](http://www.chicagogsb.edu/fulltime/admissions/essay.aspx) say, “please provide readers with content that captures who you are.”
+
+Is this a Good Thing or a Bad Thing? Neither, I guess. PowerPoint is a tool, and it can be used for evil as well as good. I hope these applicants read [*The Cognitive Style of PowerPoint*](http://www.edwardtufte.com/tufte/books_pp) by Edward Tufte. He’s a master of visual expression and has many good points of advice and examples of bad slideshow usage.
+
+The article goes on to say that things may not be as bad as they seem. Applicants are still retaining creativity by submitting poetry, photos, even a play. And the admissions committee says it’s more fun than reading essays.
+
+Bad slideshows aren’t limited to business or government, though. I’ve been to many talks where sitting in the back of the room I couldn’t see the slides because the speaker had crammed so much text onto the page. When that happens, the slideshow becomes distracting.
+
+Instead, I try to put no more than three bullet points on a page. Bullet points shouldn’t be too long; they should only give the next few topics I’m going to talk about. The actual text I want to say goes in a separate document–my notes–which I keep with me (PowerPoint does this for you in the notes pane). If I need to show my audience something more complicated, I put it in a third document–a handout–which I copy and hand out.
+
+I use the excellent [beamer](http://latex-beamer.sourceforge.net/) class for LaTeX to produce slideshows for my classes. My students love them–it’s a nice resource to have to supplement class notes. I can’t use PowerPoint because of all the equations and mathematical notation I need to put into my slides (don’t you *dare* say “Equation Editor”), but with beamer I get a nice PDF that I can page through. Hyperlinks in the PDF allow me to jump back and forth, and I can even embed media (not that I have a lot of other media).
+
+Just for laughs: here’s the [Gettysburg Address in PowerPoint](http://norvig.com/Gettysburg/):
+
+`<object width="425" height="348" data="https://s3.amazonaws.com:443/slideshare/ssplayer.swf?id=3828&amp;doc=gettysburg-address-20260" type="application/x-shockwave-flash">`{=html}\
+`<param value="https://s3.amazonaws.com:443/slideshare/ssplayer.swf?id=3828&amp;doc=gettysburg-address-20260" name="movie">`{=html}`</param>`{=html}`</object>`{=html}

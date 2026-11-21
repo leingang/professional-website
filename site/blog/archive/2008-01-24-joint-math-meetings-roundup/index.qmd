@@ -1,0 +1,33 @@
+---
+title: Joint Math Meetings roundup
+date: '2008-01-24'
+categories:
+- math
+- sunset
+- jmm
+- sandiego
+- sotl
+- harvard
+- rume
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+This month I was in beautiful San Diego for the annual [Joint Meetings](http://www.ams.org/amsmtgs/2109_intro.html) of the [American Mathematical Society](http://www.ams.org/) and the [Mathematical Association of America](http://www.maa.org/). Now that my finals are over and (almost) graded, I can recap what happened there.
+
+I assisted Holly Zullo, Mark Parker, Kelly Cline, and Derek Bruff (in absentia, but who had the whole idea in the first place!) in a [minicourse on classroom voting technologies](http://www.ams.org/amsmtgs/2109_program_sunday.html#2109:MINI9A), otherwise known as “clickers.” We had a great time and our participants loved creating clicker questions for their classes.
+
+I went to some of the Scholarship of Teaching and Learning (SoTL) and Research in Undergraduate Mathematics Education (RUME) contributed paper sessions. One of them I found thought-provoking was “[The Effect of Grading Quizzes on Subsequent Student Performance](http://www.ams.org/amsmtgs/2109_abstracts/1035-a5-678.pdf)” by John J. Schiller of Temple University. He compared student performance between sections of linear algebra in which students either got graded quizzes with comments, or graded quizzes with no comments, and he found little difference. Other research suggests that [ungraded ]{style="font-style: italic"}quizzes with comments might have a better effect on student performance than graded ones.
+
+I attended several of the invited addresses, which are usually pretty good. Two of the more notable ones were “[4000 years of algebra](http://www.ams.org/amsmtgs/2109_abstracts/1035-a0-17.pdf)” by Karen Parshall of the University of Viriginia and “[The Mathematics of PageRank](http://www.ams.org/amsmtgs/2109_abstracts/1035-05-21.pdf)” by Fan Chung of UCSD. The PageRank talk was not about how PageRank works (the known parts are a very nice linear algebra application), but about how effective it is. The ideal way to find pages of high PageRank involves finding eigenvectors of a matrix which has about 30 billion rows and columns–that’s 900 quintillion entries. Most of them are zero, but still, this is far beyond the capabilities of modern computers, which can handle matrices about a million square. So PageRank is an approximate solution, but (as Chung has proven mathematically, and Page and Brin have proven financially) a good one.
+
+My favorite recurring session is “[Who Wants to Be a Mathematician?](http://www.ams.org/amsmtgs/2109_program_tuesday.html#2109:MATHGAME)” by Mike Breen of the AMS. He brings in area high school students to compete in a math game show for cash and prizes. This year the contestants had their own cheering sections, which added excitement. Breen is a great emcee, having learned from the best. He was on both [Wheel of Fortune]{style="font-style: italic"} and [Jeopardy!]{style="font-style: italic"} The difference between them, he says, is on [Wheel ]{style="font-style: italic"}they tell you when to jump up and down and clap.
+
+I also took lots of [photos](http://s203.photobucket.com/albums/aa27/leingang_math/JMM%202008/), most of which were of boats, Mexican food, birds of paradise, or sunsets:
+
+[![DSCN0644.jpg](http://i203.photobucket.com/albums/aa27/leingang_math/JMM%202008/th_DSCN0644.jpg){style="width: 414px; height: 313px"}](http://s203.photobucket.com/albums/aa27/leingang_math/JMM%202008/?action=view&current=DSCN0644.jpg "DSCN0644.jpg") [\
+](http://s203.photobucket.com/albums/aa27/leingang_math/JMM%202008/?action=view&current=DSCN0644.jpg "DSCN0644.jpg")

@@ -1,0 +1,16 @@
+---
+title: '"Weapons of Math Destruction”'
+date: '2007-05-17'
+categories:
+- math
+- harvard
+- funny
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I don’t know if [Tony Rogers](http://www.tonyrogers.com/index.htm) was the first to write [this joke](http://www.tonyrogers.com/humor/math_destruction.htm), but it’s a good one.

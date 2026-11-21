@@ -1,0 +1,143 @@
+---
+title: Hacking your signature file (baseball bragging rights division)
+date: '2007-09-27'
+categories:
+- computing
+- baseball
+- hacks
+- microsoft
+- entourage
+- harvard
+- applescript
+- python
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I wanted to blog about this for a while, and suddenly it’s almost too late. I hacked together some stuff to put the Red Sox’ magic number for clinching the American League East division in my e-mail signature automatically. The process is replicable for any kind of updating content.
+
+### About the magic number
+
+In case you’re still confused, the [magic number](http://mathworld.wolfram.com/MagicNumber.html) for a team in first place is a countdown to the “clinching” or mathematical assurance of the championship. Every time the team in first place wins, the number goes down. Every time the team in second places loses, the number goes down. When the number reaches zero, the race is over.
+
+The race is clinched when the first place team is more games ahead of the second-place team (and all the other teams) than the number of games remaining. So one way to define the magic number is the lead in the standings, minus the number of games remanining, plus one or rounded up in the case of half-game differences in the standings. What amounts to the same thing, however, is the total number of games in the season, minus the number of wins by the first-place team, minus the number of losses by the second place team, plus one. It’s clear by that last definition that it does what you want (goes down with each win by first-place team or loss by second-place team), and the number of games plus one makes it reach zero at the point of clinching.
+
+The Red Sox have been in first place in the AL East since April, and although they have been in first place a lot, they have not finished the division in first place since 1995. I’ve had the magic number in my signature since it was in the 60s (shortly after the all-star break), and today it stands at two. Which means the division could be clinched today.
+
+### Generating the content
+
+The idea is simple: write a script which visits an internet location of baseball standings and munge that data to get the magic number. There are tons out there, such as every newspaper’s website or the megasites like EPSN. Scrolling through source code of Dashboard widgets I found out that MLB publishes this data in a lightweight, machine-readable format on a secret page. Today’s AL East standings can be found at
+
+[`http://mlb.com/components/game/year_2007/month_09/day_27/standings_rs_ale.js`](http://mlb.com/components/game/year_2007/month_09/day_27/standings_rs_ale.js)
+
+This file has lots of standings data in the form of a JavaScript object. This is really useful if you’re writing a JavaScript program to display the standings. XML would have been another choice, but this is just as easy to parse, maybe even easier. Also, this resource includes the magic number, not that your script couldn’t calculate it for you. Here’s an excerpt from the file:
+
+`var standings_rs_ale = [{`\
+`w: '94',`\
+`elim: '-',`\
+`rs: '850',`\
+`div: 'ale',`\
+`gameid: '2007_09_27_minmlb_bosmlb_1',`\
+`status: 'P',`\
+`pre: null,`\
+`last10: '5-5',`\
+`onerun: '22-26',`\
+`xtr: '2-5',`\
+`nextg: '9/27 v MIN, 7:05P',`\
+`vsW: '20-17',`\
+`ra: '643',`\
+`gb: '-',`\
+`wrap: '/news/wrap.jsp?ymd=20070926&content_id=2231984&vkey=wrapup2005&fext=.jsp&c_id=mlb',`\
+`home: '49-28',`\
+`code: 'bos',`\
+`pct: '.595',`\
+`league_sensitive_team_name: 'Boston',`\
+`vsC: '20-11',`\
+`vsE: '42-30',`\
+`vsR: '69-41',`\
+`vsL: '25-23',`\
+`xwl: '99-59',`\
+`strk: 'W2',`\
+`l: '64',`\
+`lastg: '9/26 v OAK, W 11-6',`\
+`interleague: '12-6',`\
+`team: 'Boston',`\
+`road: '45-36'`\
+`}, ...`\
+
+There’s one of these records for each team in the division. The “elim” key is the magic number to be eliminated, so the Red Sox’ magic number can be found as the “elim” value for the second-place team.
+
+I wanted to write this part of the program in [python](http://python.org). I like [perl](http://perl.org/), too, but I’ve been flummoxed trying to re-read my own perl scripts after setting them aside for a while. Python is hyper-strict on syntax but that makes it pretty easy to read.
+
+Seeing the page in JavaScript made me think of JSON, a data-interchange format similar to JavaScript syntax. I thought parsing the JavaScript data in python would be as easy as reading it and hitting it with a python JSON library. Not quite. The standings page is valid JavaScript but not valid JSON. But rather than write my own parser I decided to massage the included JavaScript string so that it did parse as JSON. A little quoting of key values, switching double and single quotes, and getting rid of html links did that trick.
+
+So here’s my script, which I saved as \~/Library/Scripts/getmn.py:
+
+` `#!/sw/bin/python
+
+\# Get the Red Sox magic number
+
+import cjson, re, urllib, datetime
+
+today=datetime.date.today()\
+mlburl=”http://mlb.com/components/game/year\_%04d/month\_%02d/day\_%02d/standings_rs_ale.js” % (today.year,today.month,today.day)\
+rawdata=urllib.urlopen(mlburl).read(-1)\
+(varname,data) = rawdata.split(’=',1)\
+\# although this data is legal javascript, it’s not JSON. So we have\
+\# to munge it a bit:\
+\# quote property names with double quotes\
+data=re.compile(”\\t(\[a-zA-Z0-9\_\]+):”,re.M).sub(’\\t”\\\\1″:’,data)\
+\# get rid of links\
+data=re.compile(”\<a\[\^\>\]\*\>\|\</a\>”).sub(”",data)\
+\# replace single quotes by double quotes\
+data=data.replace(”‘”,’”‘)
+
+dd=cjson.decode(data)
+
+if (dd\[0\]\[’team’\]==’Boston’):\
+print “Red Sox magic number: %d” % (int(dd\[1\]\[’elim’\]))\
+What I like about this script is that it does very little lifting of its own, farming out most of the retrieval, data-crunching, and parsing. Even the massaging is done with ultra-powerful (as a class, not to say that *mine* are) regular expressions. This script works on the command-line if that’s all you want.
+
+### Adding the content to the sig
+
+I use Microsoft Entourage for reading my mail and keeping calendar and contact info. I’m not in love with it but it is AppleScriptable, so you can do a lot with it. I wrote an AppleScript to run my magic-number-getter and append it to my standard “work” signature (that has my title, address, and a link to my vCard file in it):
+
+`<style type="text/css">    p.p1 {margin: 0.0px 0.0px 0.0px 41.6px; text-indent: -41.7px; font: 12.0px Verdana; color: #0000ff}    p.p2 {margin: 0.0px 0.0px 0.0px 41.6px; text-indent: -41.7px; font: 12.0px Verdana; min-height: 15.0px}    p.p3 {margin: 0.0px 0.0px 0.0px 41.6px; text-indent: -41.7px; font: 12.0px Verdana}    p.p4 {margin: 0.0px 0.0px 0.0px 83.2px; text-indent: -83.2px; font: 12.0px Verdana; color: #0000ff}    p.p5 {margin: 0.0px 0.0px 0.0px 83.2px; text-indent: -83.2px; font: 12.0px Verdana; color: #408000}    span.s1 {color: #000000}    span.s2 {color: #408000}    span.s3 {color: #0000ff}    span.Apple-tab-span {white-space:pre}  </style>`{=html}
+
+**set**[ ]{.s1}[theScript]{.s2}[ ]{.s1}**to**[ ]{.s1}quoted form[ ]{.s1}**of**[ ]{.s1}POSIX path[ ]{.s1}**of**[ (]{.s1}path to[ ]{.s1}home folder[ ]{.s1}as[ ]{.s1}string[) & “Library/Scripts/getmn.py”]{.s1}
+
+**set**[ ]{.s1}[crlf]{.s2}[ ]{.s1}**to**[ (]{.s1}ASCII character[ 13)]{.s1}
+
+[**tell**]{.s3} [application]{.s3} “Microsoft Entourage”
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[txt]{.s2}[ ]{.s1}**to**[ ]{.s1}do shell script[ ]{.s1}[theScript]{.s2}
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[defaultSig]{.s2}[ ]{.s1}**to**[ ]{.s1}**the**[ ]{.s1}content[ ]{.s1}**of**[ ]{.s1}**the**[ ]{.s1}**first**[ ]{.s1}signature[ ]{.s1}**where**[ ]{.s1}name[ ]{.s1}**is**[ “Harvard”]{.s1}
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[theSig]{.s2}[ ]{.s1}**to**[ ]{.s1}**the**[ ]{.s1}**first**[ ]{.s1}signature[ ]{.s1}**where**[ ]{.s1}name[ ]{.s1}**is**[ “Harvard + Red Sox”]{.s1}
+
+[]{.s1}[ ]{.Apple-tab-span}[**set**]{.s3}[ ]{.s1}[**the**]{.s3}[ ]{.s1}[content]{.s3}[ ]{.s1}[**of**]{.s3}[ ]{.s1}theSig[ ]{.s1}[**to**]{.s3}[ ]{.s1}defaultSig[ & ]{.s1}crlf[ & ]{.s1}crlf[ & ]{.s1}txt
+
+**end** [ ]{.s1} **tell**
+
+AppleScript is a pain in the rear to write—it takes a lot of trial and error. But once it’s done, it reads pretty well. The crlf’s just insert blank lines.
+
+If you have a different mail reader, this is going to change. But I’m confident the idea will work in Apple’s Mail.app as well.
+
+### Automatically updating
+
+I saved this script in the folder \~/MIcrosoft User Data/Entourage Script Menu Items/ as “Get Red Sox Magic Number for Signature” So it’s accessible within the Script menu of Entourage.
+
+But the final feature I wanted was to have that information update automatically. Entourage also has a scheduler, so I configured a job to run this script once a day:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/Entourage%20dialogs/th_entourage-scheduler.png){width="344" height="189" border="0"}
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/Entourage%20dialogs/th_entourage-schedule-reccurence.png){width="345" height="202" border="0"}
+
+That’s it! The workflow is easily copied for whatever oft-changing data you would want in your signture (for instance, the output of /usr/bin/fortune).
+
+PS: While researching this post I found a [site](http://www.metsmagicnumber.com/magicnumber/Red%20Sox/index.html) (with various different URLS) that computes the magic number for you and gives you HTML widgets. Plus a lot of Google ads, but useful all the same.

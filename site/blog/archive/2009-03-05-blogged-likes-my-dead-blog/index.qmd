@@ -1,0 +1,27 @@
+---
+title: Blogged likes my dead blog
+date: '2009-03-05'
+categories:
+- computing
+legacy-source: drupal
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+Got an email the other day from blogged.com:
+
+> Dear Dr. Matthew,
+>
+> Our editors recently [reviewed your blog](http://www.blogged.com/blogs/what-the-heck-is-55368.html) and have given it a 7.5 score out of (10) in the recreation category of Blogged.com.\
+> This is quite an achievement!
+>
+> <http://www.blogged.com/directory/education/math>
+>
+> We evaluated your blog based on the following criteria: Frequency of Updates, Relevance of Content, Site Design, and Writing Style.
+
+I'm happy for the rating, although as far as Frequency of Updates goes, each page clearly marks that the blog has been retired since I moved to NYU. And I have never been able to keep the updates up religiously. Still, I am happy about at least a few of the posts.
+:::

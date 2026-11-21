@@ -1,0 +1,25 @@
+---
+title: Slideaware
+date: '2007-05-10'
+categories:
+- web
+- slideaware
+- harvard
+- presentation
+- web2.0
+legacy-source: huwp
+aliases:
+- /posts/slideaware/
+- /posts/slideaware/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just started looking at [Slideshare](http://www.slideshare.net), a [flickr](http://www.flickr.com/)/[photobucket](http://www.photobucket.com/)-style sharing application for presentations. You upload your presentations (looks like you can use PowerPoint, OpenOffice, or a PDF) and you get a little flash app to embed on your blog as well as hosting of the presentation and all its slides.
+
+Here’s an example, using the talk I gave at UC Irvine last month:`<object width="425" height="348" type="application/x-shockwave-flash" data="https://s3.amazonaws.com:443/slideshare/ssplayer.swf?id=47671&amp;doc=gilligan-mope-and-tivo-22762">`{=html}\
+`<param name="movie" value="https://s3.amazonaws.com:443/slideshare/ssplayer.swf?id=47671&amp;doc=gilligan-mope-and-tivo-22762">`{=html}`</param>`{=html}`</object>`{=html}
+
+I have disk space available to upload my own stuff here at work, but the flash interface is pretty cool.

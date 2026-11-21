@@ -1,0 +1,37 @@
+---
+title: SlideShare now hosts documents
+date: '2009-04-29'
+categories:
+- web
+- slideshare
+- competition
+- feature
+- scribd
+legacy-source: drupal
+aliases:
+- /posts/slideshare-now-hosts-documents/
+- /posts/slideshare-now-hosts-documents/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::::: content
+I just found out that [SlideShare](http://www.slideshare.net/) allows you to upload portrait-oriented documents (like articles and handouts) as well as landscape (presentations). That's good for me, since I use SlideShare a lot for presentations but haven't been as good at sharing worksheets and their solutions. I've used [scribd](http://www.scribd.com/people/view/94344-leingang) for that stuff but for whatever reason I haven't been as diligent at uploading. One-stop shopping will help.
+
+Here's an embed of a SlideShare-hosted worksheet:
+
+:::: {style="width:477px;text-align:left"}
+[Lesson 27: Integration by Substitution (worksheet)](http://www.slideshare.net/leingang/lesson-27-integration-by-substitution-worksheet?type=document "Lesson 27: Integration by Substitution (worksheet)"){style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;"}
+<object style="margin:0px" width="477" height="510">
+`<param name="movie" value="http://static.slidesharecdn.com/swf/ssplayerd.swf?doc=lesson27-integrationbysubtitution010ws-090428192110-phpapp02&amp;stripped_title=lesson-27-integration-by-substitution-worksheet">`{=html}`<param name="allowFullScreen" value="true">`{=html}`<param name="allowScriptAccess" value="always">`{=html}
+<embed src="http://static.slidesharecdn.com/swf/ssplayerd.swf?doc=lesson27-integrationbysubtitution010ws-090428192110-phpapp02&amp;stripped_title=lesson-27-integration-by-substitution-worksheet" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="477" height="510">
+</embed>
+</object>
+
+::: {style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;"}
+View more [documents](http://www.slideshare.net/){style="text-decoration:underline;"} from [Matthew Leingang](http://www.slideshare.net/leingang){style="text-decoration:underline;"}.
+:::
+::::
+:::::

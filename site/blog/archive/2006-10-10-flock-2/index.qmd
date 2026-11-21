@@ -1,0 +1,26 @@
+---
+title: Flock
+date: '2006-10-10'
+categories:
+- wordpress
+- harvard
+- web
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+# [![Flock: The web browser for you and your friends.](http://flock.com/themes/flock/images/logo3.jpg){width="212" height="104" align="right"}](http://www.flock.com)
+
+I just got pointed to [Flock](http://www.flock.com/start/) by a friend over the weekend. It’s pretty cool. It’s a web browser with support for many of the popular web applications (read “Web 2.0″) built in.
+
+Like I was telling him, me and Web 2.0–not so much. But I like to blog, and want to blog more. This application has a built-in blog
+
+editor, so hitting command-B just calls up a window to make new posts. Right-click on links in web pages, and you can create a new blog page with that link in it.
+
+Other things I haven’t got into yet include support for [**Flickr**](http://rds.yahoo.com/_ylt=A0geup30mytFDPEAslJXNyoA;_ylu=X3oDMTB2b2gzdDdtBGNvbG8DZQRsA1dTMQRwb3MDMQRzZWMDc3IEdnRpZAM-/SIG=116qhn08v/EXP=1160572276/**http%3a//flickr.com/){.yschttl} and [**Gmail**](http://rds.yahoo.com/_ylt=A0geuosGnCtFin0ACChXNyoA;_ylu=X3oDMTB2b2gzdDdtBGNvbG8DZQRsA1dTMQRwb3MDMQRzZWMDc3IEdnRpZAM-/SIG=119tv6kec/EXP=1160572294/**http%3a//www.gmail.com/){.yschttl}. You can open up a new message and drag photos into it to send pictures to friends. Pretty cool, if I didn’t have so much work to do…
+
+And from the department of weird coincidences, my friend was telling me about Flock while we were dining at the [**Union Oyster House**](http://rds.yahoo.com/_ylt=A0geuqRrnCtFa4wAnrVXNyoA;_ylu=X3oDMTB2b2gzdDdtBGNvbG8DZQRsA1dTMQRwb3MDMQRzZWMDc3IEdnRpZAM-/SIG=11kskqr74/EXP=1160572395/**http%3a//www.unionoysterhouse.com/){.yschttl} in Boston. While stepping outside for a smoke my friend bumped into a guy with a Flock T-Shirt on. He was one of the lead developers!

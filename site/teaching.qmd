@@ -1,0 +1,109 @@
+---
+title: "Teaching"
+toc: true
+---
+
+## Teaching philosophy
+
+<!-- From tex/Leingang_TS.tex in leingang/cv (2024). Relative dates such as
+     "three years ago" date from 2024; update as needed. -->
+
+I have recently come to realize that I view my students through the eyes of my
+children. When my children were small, I found my students big and
+intimidating. Now that the kids are of college age, I find many parallels
+between teaching and parenting.
+
+**Curiosity.** I believe in fostering a growth mindset in my students by
+modeling it myself. I also seek to instill an appreciation of the beauty of
+mathematics.
+
+I adapted my teaching techniques during the remote instruction year of the
+COVID-19 pandemic, practices that I continue today. I structure classes around
+frequent, repeated practice. Students complete a survey before each class.
+There are content questions to gauge understanding, but the most valuable
+question is open-ended: "What questions do you have?" Student responses inform
+my choices during class.
+
+**Compassion.** I discovered through experience that children are not
+"projects" of their parents. Instead, they are unique human beings with their
+own thoughts, interests, plans, and dreams. In the same way, I cannot form
+every one of my students into a mini-me math major. But I can learn about them
+and how to reach them.
+
+I studied Mandarin for four years to better understand my Chinese
+students, and how to help them learn to write mathematical proofs in English. I
+make a point of learning students' pronouns and name pronunciations. I still
+livestream and record class for students who are unable to attend. I have
+strived to make my classroom and office a safe space for LGBTQ+ students.
+
+**Commitment.** The word *asymptote* in math describes a line that a curve
+approaches but never meets. In my nearly 25 years of teaching, I have spent
+close to 5,000 hours in the classroom alone, and twice that preparing and
+reflecting. But I feel that perfect teaching, much like perfect parenting, is
+an asymptote that can never be reached. The best one can do is commit
+everything to the craft, and aim for continuous growth.
+
+## Program leadership at NYU
+
+**Vice Chair for Undergraduate Affairs** (2008–2023), then **Assistant Director
+for Undergraduate Studies** (2023–2025), Department of Mathematics:
+
+- Directed the service-level mathematics program, which teaches about 7,000
+  students each academic year in calculus, precalculus, discrete mathematics,
+  quantitative reasoning, and linear algebra.
+- Developed a common syllabus for Calculus I, II, and III and instituted a
+  course coordination system to normalize academic content and policies.
+- Managed and led a team of 12 clinical faculty, and led clinical faculty
+  recruitment each year.
+- Directed training for novice teachers: graduate teaching assistants,
+  postdoctoral lecturers, and undergraduate tutors and graders.
+- Managed student affairs: honors, credit transfers, graduation requirements,
+  academic integrity, and other sensitive student issues.
+- Managed learning outcomes assessment for service-level courses.
+
+## Preparing teachers
+
+- **Mathematics department teaching seminar**, NYU (2010–2022), developed with
+  A. Hanhart, C. Clarkson, and other clinical faculty.
+- **Teaching Undergraduate Mathematics Seminar (TUMS)**, Harvard (2005–2008).
+  Expanded the Apprentice program into a mandatory pre-service seminar on
+  lesson planning, classroom management, and public speaking, and reorganized
+  TUMS into an in-service seminar based on case studies.
+- **Apprentice coach**, Harvard (2003–2008). Mentored graduate students who
+  observed one week of my class, then taught for a week.
+- **A.L.M. in Teaching program**, Harvard Extension School (2003–2008).
+  Content courses in geometry and probability for middle- and high-school
+  teachers.
+- **MAA OPEN Math** (2022–), selection committee and advisory board for an
+  NSF-funded professional development project.
+
+## Curriculum development
+
+- **Summer Math Booster Program** (2023–), with E. Stepp: a pre-matriculation
+  calculus-readiness program with the Associate Vice Provost for Student
+  Success.
+- **GSTM-NA 2 Introduction to Data Science** (2021–), with T. Sondjaja, H. Hua,
+  and F. Shum: an online course for high school students.
+- **MATH-UA 129 Honors Calculus III** (2017–2020): taught the pilot sections and
+  proposed the course to the CAS curriculum committee.
+- **MATH-UA 148 Honors Linear Algebra** (2017): taught the pilot sections.
+- **MATH-UA 121 Calculus I** (2014), with S. Kalayçioglu: a hybrid online course
+  with extensive video and interactive content.
+- **MATH-UA 211–213 Mathematics for Economics I–III** (2012), with J. Ramsey and
+  S. Kalayçioglu.
+- **MATH-UA 270 Transformations and Geometries** (2012), reformed with
+  D. Youngren for mathematics education majors.
+- **CORE-UA 110 Great Ideas in Mathematics** (2011), with A. Hanhart.
+- **MATH-UA 325 Analysis I** (2011), taught in a traditional Moore Method format.
+
+## Broadening participation
+
+**NYU Courant GSTEM** (founded 2012). A six-week summer program that raises
+representation in STEM through mentorship and community. Students do
+supervised research projects and attend lectures, panels, and field trips.
+Close to 400 high school students have taken part. I was principal
+investigator on a \$500K grant from the Alfred P. Sloan Foundation.
+
+## Courses taught
+
+{{< courses-taught >}}

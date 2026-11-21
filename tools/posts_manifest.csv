@@ -1,0 +1,198 @@
+decision,date,source,slug,title,category,tags,reason
+keep,2005-03-29,huwp,an-introduction-to-mathematical-reasoning-numbers-sets-and-functions,"An Introduction to Mathematical Reasoning : Numbers, Sets and Functions",math,"math, harvard",
+hide,2005-04-01,huwp,php-503-for-mac-os-x,PHP 5.0.3 for Mac OS X,computing/php,"harvard, php",blog housekeeping / dated tech
+keep,2005-04-06,huwp,critical-points-are-the-horizontal-tangents-enough,Critical Points - are the horizontal tangents enough?,math,"math, harvard",
+hide,2005-09-06,huwp,calculus-sectioning-fall-2005,"Calculus Sectioning, Fall 2005",math,"math, harvard, math 1b",dated course logistics
+hide,2005-09-06,huwp,should-i-take-math-20-or-21,Should I take Math 20 or 21?,math,"math, harvard, faq, math 20",dated course logistics
+keep,2005-09-06,huwp,what-the-heck-is-a-preceptor,What the heck is a preceptor?,education/teaching,"harvard, faq",
+hide,2005-09-09,huwp,what-is-the-difference-between-ap-calculus-and-math-1a-and-1b,What is the difference between AP Calculus and Math 1a and 1b?,math,"math, harvard, faq",dated course logistics
+keep,2005-09-13,huwp,lesson-planning-talk,Lesson Planning Talk,education/talks,"harvard, teacher training",
+hide,2005-09-13,huwp,math-20-syllabus-is-online,Math 20 Syllabus is online,math,"math, harvard, math 20",dated course logistics
+hide,2005-09-13,huwp,mathematical-online-placement-exam,Mathematical Online Placement Exam,math,"math, harvard",dated course logistics
+hide,2005-09-13,huwp,tums-ii-syllabus,“TUMS II” Syllabus,math,"math, harvard, teacher training",dated course logistics
+hide,2005-09-13,huwp,upcoming-bok-center-talk,Upcoming: Bok Center talk,education/talks,"harvard, teacher training",dated course logistics
+hide,2005-09-14,huwp,if-the-irs-had-discovered-the-quadratic-formula,If the IRS had discovered the quadratic formula,math,"math, harvard",pop culture / humor link post
+keep,2005-09-14,huwp,xml-schema-for-ical,XML Schema for iCal?,computing,"computing, harvard",
+keep,2005-09-15,huwp,bok-center-recap,Bok Center Recap,education/talks,"harvard, teacher training",
+hide,2005-09-19,huwp,happy-first-day-of-the-year,Happy first day of the year,education/teaching/math-20,"math 1b, harvard, math 20",dated course logistics
+keep,2005-09-20,huwp,can-i-take-math-x-for-medical-school,Can I take Math X for medical school?,math,"math, harvard, faq",
+keep,2005-09-20,huwp,everything-you-need-to-know-to-succeed-in-college-level-mathematics-but-are-afraid-to-ask,"Everything you need to know to succeed in college-level mathematics, but are afraid to ask",math,"math, harvard",
+keep,2005-09-20,huwp,test-of-latexrender-plugin,LatexRender Plugin,computing/tex,"harvard, latex",
+keep,2005-10-20,huwp,first-naep-report-card-since-nclb,First NAEP Report Card since NCLB,math,"math, harvard, teacher training",
+hide,2005-10-20,huwp,upcoming-tums-ii-talk,Upcoming: TUMS II talk,education/talks,"harvard, teacher training",dated course logistics
+keep,2005-12-01,huwp,convert-latex-code-to-ascii-for-entourage,Convert (La)TeX code to ASCII for Entourage,computing,"computing, harvard, latex",
+keep,2005-12-05,huwp,review-of-no-nonsense-xml-web-development-with-php-by-tom-meyer,Review of “No Nonsense XML Web Development with PHP” by Tom Myer,computing/php,"harvard, books, php",blog housekeeping / dated tech
+hide,2005-12-06,huwp,is-numb3rs-for-real,Is Numb3rs for real? Kinda!,math,"math, harvard, faq",pop culture / humor link post
+hide,2005-12-06,huwp,math-is-hot-says-your-teacher,Math is HOT! says your teacher,math,"math, harvard, funny",pop culture / humor link post
+hide,2006-01-05,huwp,christmas-presents-for-ergonomic-laptop-use-at-work,Christmas presents for ergonomic laptop use at work,computing,"computing, harvard",blog housekeeping / dated tech
+keep,2006-01-05,huwp,raoul-bott,Raoul Bott,math,"math, harvard",
+keep,2006-01-06,huwp,derek-bok-in-the-boston-globe-on-higher-ed,Derek Bok in the Boston Globe on Higher Ed,education/teaching,"harvard, teacher training, news",
+hide,2006-01-06,huwp,lauderdale-teen-who-visited-iraq-says-hell-tell-his-story-after-calculus-exam-newsdaycom,Lauderdale teen who visited Iraq says he’ll tell his story after calculus exam,math,"math, harvard, math 1a, news",pop culture / humor link post
+keep,2006-01-06,huwp,the-art-of-asking-thought-provoking-questions-in-the-mathematics-classroom,The Art of Asking Thought Provoking Questions in the Mathematics Classroom,education/teaching,"harvard, teacher training",
+hide,2006-01-09,huwp,disk-utility-leads-to-excluded-middle,Disk Utility leads to excluded middle,computing,"computing, harvard",blog housekeeping / dated tech
+hide,2006-01-13,huwp,fun-and-games-for-friday-the-13th,Fun and Games for Friday the 13th,math,"math, harvard, math 20",pop culture / humor link post
+hide,2006-01-13,huwp,math-will-rock-your-world-say-suits,"“Math Will Rock Your World”, say suits",math,"math, harvard, news",pop culture / humor link post
+keep,2006-01-18,huwp,know-thy-students,Know thy students,math,"math, harvard, teacher training",
+keep,2006-03-09,huwp,mathematica-notebook-from-class,Mathematica Notebook from Class,computing,"math 21a, computing, harvard",
+keep,2006-03-10,huwp,make-pages-using-the-symbol-font-display-correctly-in-mozillafirefox,Make pages using the Symbol font display correctly in Mozilla/Firefox,math,"math, computing, harvard",
+hide,2006-03-16,huwp,aol-fails-qr,AOL fails QR,math,"math, harvard",pop culture / humor link post
+hide,2006-03-16,huwp,its-time-to-give-teaching-more-weight-csmonitorcom,It’s time to give teaching more weight | csmonitor.com,miscellaneous,"harvard, uncategorized",category 'miscellaneous'
+hide,2006-03-24,huwp,upcoming-rr,Upcoming: R&R,miscellaneous,"harvard, uncategorized",category 'miscellaneous'
+keep,2006-04-18,huwp,tex-frequently-asked-questions-question-label,Visual LaTeX FAQ,computing/tex,"harvard, latex",
+hide,2006-05-31,huwp,outrun-procrastination-with-dashes-43-folders,Outrun Procrastination with “Dash”es | 43 Folders,miscellaneous,"harvard, uncategorized",category 'miscellaneous'
+keep,2006-06-23,huwp,the-cognitive-style-of-powerpoint,The Cognitive Style of Powerpoint,computing,"computing, harvard, books",
+keep,2006-07-12,huwp,inside-higher-ed-advanced-yes-placement-no,"Inside Higher Ed :: Advanced Yes, Placement No",education,"harvard, news",
+hide,2006-08-27,huwp,wordpress-upgraded,WordPress Upgraded,computing/wordpress,"harvard, wordpress",blog housekeeping / dated tech
+keep,2006-09-05,huwp,harvard-studies-ways-to-promote-teaching,Harvard studies ways to promote teaching,education/academia,"harvard, education, news",
+hide,2006-09-06,huwp,upcoming-bok-center-talk-2,Upcoming: Bok Center talk,education/talks,"harvard, teacher training",dated course logistics
+hide,2006-10-10,huwp,flock-2,Flock,computing/wordpress,"harvard, wordpress, web",blog housekeeping / dated tech
+keep,2006-10-11,huwp,hows-your-penmanship,How’s your penmanship?,education,"harvard, news",
+hide,2007-02-02,huwp,happy-spring-term,Happy spring term!,education/teaching,"harvard, news",dated course logistics
+keep,2007-02-09,huwp,habemus-presidentam,Habemus Presidentam,education/academia,"harvard, news",
+keep,2007-04-17,huwp,pdf-and-flash,PDF and Flash,computing/tex,"harvard, latex",
+keep,2007-04-18,huwp,plane-geometry,Plane Geometry,math,"math, mathinthenews, harvard, news",
+keep,2007-04-19,huwp,double-pendulum,Double Pendulum,math,"math, harvard",
+keep,2007-04-19,huwp,ibl-courses-in-geometry-and-probability-for-high-school-teachers,IBL courses in geometry and probability for high school teachers,education/talks,"harvard, teacher training",
+keep,2007-04-20,huwp,web-pedagogy-seminar-google-earth-continues-to-rock,Web pedagogy seminar: Google Earth continues to rock,education/talks,"harvard, web",
+hide,2007-04-22,huwp,flock-again,"Flock, again",computing/web,"harvard, web",blog housekeeping / dated tech
+keep,2007-04-23,huwp,a-queuing-model-for-use-of-laundry-machines-in-student-dormitories,A Queuing Model for Use of Laundry Machines in Student Dormitories,math,"math, harvard",
+hide,2007-04-24,huwp,microsoft-spurns-its-own-keyboard,Microsoft spurns its own keyboard,computing,"computing, harvard, mac",blog housekeeping / dated tech
+keep,2007-04-25,huwp,best-latex-package-ever-of-the-week-hyperref,"""Best LaTeX package ever” of the week: hyperref",computing,"computing, harvard, latex",
+hide,2007-04-25,huwp,hope-you-enjoyed-the-three-day-spring,Hope you enjoyed the three-day spring,miscellaneous,"harvard, uncategorized",category 'miscellaneous'
+keep,2007-04-26,huwp,are-you-smarter-than-a-chinese-12th-grader,Are you smarter than a Chinese 12th grader?,education,"harvard, education",
+hide,2007-04-26,huwp,separated-in-space-time-at-birth,Separated (in space-time) at birth?,math,"math, harvard, funny",pop culture / humor link post
+keep,2007-04-26,huwp,tex4ht,TeX4ht,computing,"computing, harvard, web, latex",
+keep,2007-04-27,huwp,configuring-tex4ht-to-link-to-pdf,Configuring tex4ht to link to PDF,computing/tex,"computing, harvard, latex, courses",
+keep,2007-04-28,huwp,edtags,EdTags,education,"harvard, web, education",
+hide,2007-04-28,huwp,what-you-know-about-math,What you know about math?,math,"math, harvard, funny",pop culture / humor link post
+keep,2007-05-01,huwp,tex-pdf-wow,TeX + PDF = Wow,computing/tex,"harvard, education, latex",
+keep,2007-05-02,huwp,latex-package-of-the-week-nicefrac,LaTeX package of the week: nicefrac,computing,"computing, harvard, latex",
+keep,2007-05-02,huwp,why-blog,Why blog?,education,"harvard, web, education",
+keep,2007-05-02,huwp,writing-in-mathematics,Writing in Mathematics,math,"math, harvard, education",
+keep,2007-05-07,huwp,untitled,The kids are all right,math,"math, undergraduate, hcmr, harvard, latex",
+keep,2007-05-08,huwp,math-on-the-web-without-tex,Math on the web without TeX?,computing/tex,"harvard, web, php, latex",
+keep,2007-05-09,huwp,can-you-own-an-integer,Can you own an integer?,math,"harvard, news",
+keep,2007-05-09,huwp,latex-package-of-the-week-url,LaTeX package of the week: url,computing/tex,"harvard, latex",
+hide,2007-05-10,huwp,james-bond-remembers-his-physics-and-de-2,James Bond remembers his physics and DE,math,"math, funny, math 1b, differential, physics, harvard, examples, equations",pop culture / humor link post
+keep,2007-05-10,huwp,slideaware,Slideaware,computing/web,"slideaware, harvard, presentation, web, web2.0",
+hide,2007-05-11,huwp,geek-lust-the-transformers-movie,Geek lust: The transformers movie,leisure,"graphics, harvard, cool, movie, pop culture, transformers",category 'leisure'
+hide,2007-05-11,huwp,upcoming-msri-conference-on-teaching-teachers,Upcoming: MSRI conference on teaching teachers,education/talks,"extension, education, teaching, school, conference, harvard, teacher training, math e-304, msri",dated course logistics
+hide,2007-05-15,huwp,a-numb3rs-blog,A numb3rs blog,math,"math, harvard, numb3rs, blog, web, pop culture",pop culture / humor link post
+keep,2007-05-15,huwp,ruminations-on-new-technologies-for-teaching,Ruminations on new technologies for teaching,education/talks,"technology, learning, teaching, movie, gis, courses, computing, harvard",
+keep,2007-05-17,huwp,latex-package-of-the-week-enumerate,LaTeX package of the week: enumerate,computing/tex,"harvard, latex",
+hide,2007-05-17,huwp,weapons-of-math-destruction,"""Weapons of Math Destruction”",math,"math, harvard, funny",pop culture / humor link post
+hide,2007-05-18,huwp,funny-responses-to-math-questions,Funny responses to math questions,math,"math, harvard, funny",pop culture / humor link post
+keep,2007-05-21,huwp,on-books,On books,math,"math, spivak, math 1a, harvard, books, education, math 1b, calculus",
+hide,2007-05-22,huwp,donald-in-mathmagic-land-hits-the-youtubes,Donald in Mathmagic Land hits the Youtubes,math,"math, duck, disney, funny, donald, harvard, pop culture",pop culture / humor link post
+hide,2007-05-23,huwp,lottery-mania,Lottery Mania,math,"math, pop culture, mathe-304, probability, lottery, math e-304, harvard, nba, basketball, news",pop culture / humor link post
+hide,2007-05-25,huwp,happy-almost-summer-vacation,Happy almost summer vacation,miscellaneous,"apology, summer, harvard, uncategorized",category 'miscellaneous'
+keep,2007-05-25,huwp,latex-package-of-the-week-enumitem,LaTeX package of the week: enumitem,computing/tex,"enumerate, harvard, package, enumitem, latex",
+hide,2007-06-21,huwp,hooray-for-boston,Hooray for Boston,computing/web,"wikipedia, harvard, web, boston, faq",personal
+hide,2007-06-25,huwp,summer-school,Summer School,education/teaching/calculus,"math, s1-ab, school, harvard, summer, math s-1ab",dated course logistics
+hide,2007-07-05,huwp,food-math-fun,Food + Math = Fun,education/teaching/math e-304,"math, harvard, food, combinatorics, math e-304",pop culture / humor link post
+hide,2007-07-05,huwp,new-toys-department-i-nikon-coolpix-l10-on-clearance,New toys department I: Nikon Coolpix L10 on clearance,miscellaneous,"stapler, funny, harvard, space, office, brother",category 'miscellaneous'
+hide,2007-07-07,huwp,a-funny-thing-happened-on-the-way-to-work,A funny thing happened on the way to work,miscellaneous,"harvard, funny",category 'miscellaneous'
+hide,2007-07-07,huwp,lessons-in-software-installation-itunes-73-version,Lessons in software installation: iTunes 7.3 version,computing,"crashes, mac, harvard, errors, itunes, computing, backup",blog housekeeping / dated tech
+keep,2007-07-08,huwp,untitled-2,"Tell me, tell me, tell me, who took the derivative of love?",math,"math, xkcd, comic, harvard, funny",
+keep,2007-08-07,huwp,want-to-go-to-b-school-better-brush-up-on-powerpoint,Want to go to B-School?  Better brush up on PowerPoint!,computing,"funny, powerpoint, harvard, news, beamer, latex, computing, gettysburg",
+hide,2007-08-29,huwp,cowboys-over-ravens-by-almost-four-touchdowns,Cowboys over Ravens by almost four touchdowns?,math,"baseball, random, harvard, freakonomics, math",pop culture / humor link post
+keep,2007-09-03,huwp,running-arbitrary-text-munging-commands-in-texshop,Running arbitrary text munging commands in TeXShop,computing,"harvard, hack, latex, texshop, computing, applescript",
+keep,2007-09-10,huwp,day-in-the-life-teaching-fellow-orientation-today,Day in the Life: Teaching Fellow Orientation today,education/talks,"training, harvard, teacher training, teacher",
+hide,2007-09-10,huwp,monday-reading-list,Monday reading list,miscellaneous,"harvard, news",category 'miscellaneous'
+hide,2007-09-11,huwp,tuesday-reading-list-and-ditl,Tuesday reading list and DITL,education/talks,"harvard, teacher training",blog housekeeping / dated tech
+hide,2007-09-12,huwp,wednesday-links-and-ditl,Wednesday Links and DITL,miscellaneous,"harvard, uncategorized",category 'miscellaneous'
+hide,2007-09-17,huwp,happy-first-day-of-school,Happy first day of school,education/teaching,"harvard, slideshow, math 20, courses",dated course logistics
+hide,2007-09-27,huwp,hacking-your-signature-file-baseball-bragging-rights-division,Hacking your signature file (baseball bragging rights division),computing,"baseball, hacks, microsoft, computing, entourage, harvard, applescript, python",pop culture / humor link post
+keep,2007-09-27,huwp,resizing-pdfs,Resizing PDFs,computing,"pdf, computing, pdfpages, harvard, latex",
+hide,2007-10-04,huwp,happy-sputnik-day,Happy Sputnik Day,math,"math, sputnik, education, harvard, pop culture",pop culture / humor link post
+hide,2007-11-14,huwp,spirit-airlines-markets-to-math-geeks,Spirit Airlines markets to math geeks,math,"math, harvard, funny, news",pop culture / humor link post
+keep,2007-11-16,huwp,social-bookmarking-for-courses,Social bookmarking for courses,education,"delicious, education, bookmarking, web, pedagogy, harvard, folksonomy, tag",
+hide,2007-11-29,huwp,game-theory-nfl-style,"Game Theory, NFL style",math,"sports, harvard, football, gametheory, news",pop culture / humor link post
+keep,2007-11-29,huwp,texify,Texify,math,"math, harvard, web, latex",
+hide,2007-12-21,huwp,happy-holidays-and-vaguely-work-related-youtube-of-the-week,Happy Holidays and vaguely-work-related YouTube of the Week,education/teaching,"funny, harvard, teacher training, training, microteaching, statistics",dated course logistics
+keep,2007-12-21,huwp,to-friend-or-not-to-friend,To Friend or Not to Friend?,education/teaching,"facebook, harvard, web",
+hide,2008-01-24,huwp,joint-math-meetings-roundup,Joint Math Meetings roundup,math,"math, sunset, jmm, sandiego, sotl, harvard, rume",dated course logistics
+hide,2008-01-25,huwp,a-note-on-the-nfl-single-season-touchdown-receptions-record,A Note on the NFL Single-Season Touchdown Receptions Record,math,"math, harvard, football, sports, hsac, statistics",pop culture / humor link post
+hide,2008-01-29,huwp,spring-1a,Spring 1a,education/teaching/calculus-1,"math 1a, spring 2008, math1a, harvard",dated course logistics
+keep,2008-01-30,huwp,first-day-of-1a,First day of 1a,education/teaching/calculus-1,"math 1a, spring 2008, harvard, mathmath1a slideshow humor",
+hide,2008-01-30,huwp,happy-first-day-of-class,Happy First Day of Class,education/teaching/calculus-1,"math 1a, spring 2008, math 21a, harvard",dated course logistics
+hide,2008-02-01,huwp,february-1-roundup-for-math-1a,February 1 roundup for Math 1a,education/teaching/calculus-1,"math 1a, spring 2008, harvard, mathmath1a function limit derivative",dated course logistics
+hide,2008-02-05,huwp,february-4-roundup-for-math-1a,February 4 Roundup for Math 1a,education/teaching/calculus-1,"math, math 1a, spring 2008, math1a, harvard, function, limit",dated course logistics
+hide,2008-02-05,huwp,math-21a-roundup-for-february-4,Math 21a roundup for February 4,education/teaching/calculus-3,"math, right-hand rule, math 21a, spring 2008, harvard, axis, distance, math21a",dated course logistics
+hide,2008-02-07,huwp,math-1a-roundup-for-february-6,Math 1a roundup for February 6,education/teaching/calculus-1,"math, continuity, math 1a, spring 2008, math1a, harvard, function, limit",dated course logistics
+hide,2008-02-07,huwp,math-21a-roundup-for-february-6,Math 21a roundup for February 6,education/teaching/calculus-3,"math, vector, math 21a, spring 2008, harvard, dot product, math21a",dated course logistics
+hide,2008-02-16,huwp,february-16-roundup-of-math-1a,February 16 Roundup of Math 1a,education/teaching/calculus-1,"math, math 1a, spring 2008, math1a, harvard, function, derivative, calculus",dated course logistics
+hide,2008-02-16,huwp,february-16-roundup-of-math-21a,February 16 roundup of Math 21a,education/teaching/calculus-3,"math, geometry, math 21a, spring 2008, coordinates, surface, harvard, math21a",dated course logistics
+keep,2008-02-16,huwp,in-defense-of-fractions,In defense of fractions,math,"math, fractions, harvard, deturck, news",
+keep,2008-02-18,huwp,the-freshman-experience,The freshman experience,education,"harvard, teaching, freshmen, education, news",
+hide,2008-02-29,huwp,this-psychologist-might-outsmart-the-math-brains-competing-for-the-netflix-prize,This Psychologist Might Outsmart the Math Brains Competing for the Netflix Prize,math,"math, jordan ellenberg, netflix, harvard, wired, news",pop culture / humor link post
+keep,2008-03-20,huwp,number-pages-within-chapters-in-latex,Number pages within chapters in LaTeX,computing/tex,"harvard, tex, typesetting, latex",
+keep,2008-04-08,huwp,google-summer-of-code-latex-project,Google Summer Of Code LaTeX Project,computing/tex,"dublin core, harvard, semantic web, web, latex",
+hide,2008-07-10,drupal,1,"Hello, world!",computing/blog,,blog housekeeping / dated tech
+hide,2008-07-14,drupal,4,Debug CSS within your browser,computing/web,,blog housekeeping / dated tech
+hide,2008-07-18,drupal,5,Drupal progress,computing/blog,,blog housekeeping / dated tech
+keep,2008-07-21,drupal,tagging-dimensions,Tagging dimensions,computing/web,,
+hide,2008-07-23,drupal,7,Dumping a WordPress site,computing/blog,,blog housekeeping / dated tech
+keep,2008-08-04,drupal,education-and-global-competitiveness,Education and global competitiveness,education,"David Brooks, education, comment",
+keep,2008-08-04,drupal,subversion-keywords-and-unicode,Subversion keywords and unicode,computing,"emacs, subversion, emacs local variables, unicode, hack",
+hide,2008-08-11,drupal,what-would-jason-lezak-do,What would Jason Lezak do?,education,"math, krantz, athletics, perserverance",pop culture / humor link post
+keep,2008-08-13,drupal,loc-web-30-bandwagon,LOC on the Web 3.0 bandwagon,computing,"uri, library, semantic web",
+keep,2008-09-08,drupal,geogebra-meet-tex,GeoGebra to meet TeX,computing,"geometry, algebra, software",
+hide,2008-09-10,drupal,are-we-still-here,Are we still here?,math/science,"linear hadron collider, controversy, snark, science",blog housekeeping / dated tech
+hide,2008-09-10,drupal,brought-you-anarchists-organization,Brought to you by the Anarchists Organization...,New York,"snark, funny, photo, nyu",category 'New York'
+keep,2009-01-12,drupal,back,Back,education/teaching,,
+hide,2009-01-27,drupal,back-again,Back again,computing/blog,,blog housekeeping / dated tech
+keep,2009-02-11,drupal,deep-thought,Deep Thought,education,,
+keep,2009-03-04,drupal,hand-gestures-help-math-skills-study-concludes,"Hand Gestures Help Math Skills, Study Concludes",education,"informative, teaching, learning, article",
+keep,2009-03-04,drupal,tooting-my-own-horn,Tooting my own horn,education/teaching,,
+hide,2009-03-05,drupal,blogged-likes-my-dead-blog,Blogged likes my dead blog,computing,,blog housekeeping / dated tech
+hide,2009-03-11,drupal,yikes,Yikes!,miscellaneous,"funny, photo",category 'miscellaneous'
+keep,2009-03-19,drupal,sky-not-falling-anymore-yet,The sky is not falling (anymore? yet?),education,"data, calculus, david bressoud",
+keep,2009-04-03,drupal,stretch-table-row-heights-latex,Stretch table row heights in LaTeX,computing/tex,"table, hack, array, tabular",
+hide,2009-04-06,drupal,movin-down,Movin' on Down,NYU,locative,blog housekeeping / dated tech
+hide,2009-04-20,drupal,move-complete,Move is complete,NYU,locative,blog housekeeping / dated tech
+keep,2009-04-20,drupal,nyu-alum-and-cims-offspring-produces-iphone-app,NYU alum and CIMS offspring produces iPhone app,computing,"software, nyu",
+keep,2009-04-29,drupal,slideshare-now-hosts-documents,SlideShare now hosts documents,computing/web,"slideshare, competition, feature, scribd",
+keep,2009-07-18,drupal,conference-tweets-broadcast-beyond-hotel-ballroom,Conference tweets broadcast beyond hotel ballroom,computing/web,"twitter, ibl",
+keep,2009-07-23,drupal,paul-sally-vs-tiger-woods,Paul Sally vs. Tiger Woods,education,,
+keep,2009-07-24,drupal,illustrating-bertrands-paradox-geogebra,Illustrating Bertrand's Paradox with GeoGebra,math,"V63.0233, V63.0233.2009Su, probability, geometry",
+keep,2009-08-07,drupal,james-stewart-and-house-calculus-built,James Stewart and the House that Calculus Built,math,interesting,
+keep,2009-08-11,drupal,itexts,iTexts,education,"calculus, interesting, textbook, ebook, article, barnes and noble",
+keep,2009-09-15,drupal,byu-students-answer-question-when-will-i-use-math,"BYU students answer question ""When will I use math?""",education,"math, popular culture, website",
+keep,2009-11-05,drupal,pipify-your-life,Pipify your life,computing/web,yahoo,
+keep,2010-01-18,drupal,back-work,Back to work,education/talks,,
+keep,2010-09-18,drupal,new-chapter,A new chapter,education,"ebook, calculus, textbook",
+keep,2010-09-19,drupal,mathjax,MathJAX,computing/tex,"tex, latex",
+hide,2010-09-22,drupal,nawlins-baby,"Nawlins, baby",math,meeting talk jointmath,personal
+keep,2010-10-08,drupal,tex-and-friends-get-stackoverflow-treatment,TeX and friends get the StackOverflow treatment,computing/tex,"programming, tex, website, latex",
+keep,2010-10-12,drupal,accepted,Accepted,education/talks,"talk, meeting, jointmath",
+keep,2011-01-19,drupal,teaching-slides,On teaching with slides,education,"powerpoint, beamer, slideshow",
+keep,2016-04-26,nikola,asymptote,First tries at asymptote,computing,"graphics, technology",
+keep,2016-04-28,nikola,principia,Principia,math/calculus,"instagram, math, book",
+keep,2016-05-01,nikola,fp,Eff Pee,computing/blog,"nikola, blog, technology",
+keep,2016-05-01,nikola,metrony2016,MAA MetroNY Section Meeting 2016,math/talks,"MAA, MAA MetroNY Section",
+keep,2016-05-03,nikola,stokess-theorem,Stokes's Theorem,education/teaching/calculus-3,"instagram, calculus, teaching",
+keep,2016-05-12,nikola,exceeding-texs-save_size-with-auto-multiple-choice,Exceeding TeX's save_size with auto-multiple-choice,computing/tex,"auto-multiple-choice, latex, tikz-pgf, calculus-ii",
+hide,2016-05-16,nikola,even-the-citi-bike-valet-runs-out,Even the Citi Bike valet runs out,New York,citibike,category 'New York'
+keep,2016-05-16,nikola,nyu-prepares-for-graduation-week,NYU prepares for graduation week,NYU,"instagram, nyu",
+keep,2016-05-18,nikola,nyu-commencement-2016,NYU Commencement 2016,NYU,"nyu, instagram",
+keep,2016-05-19,nikola,an-alternative-proof-of-the-product-rule,An alternative proof of the product rule,math/calculus,"math, calculus, product rule",
+keep,2016-05-19,nikola,orientation-and-my-lawn,Orientation and my lawn,education/teaching/calculus-3,"math, calculus-3, orientation, topology, draft",
+keep,2016-05-23,nikola,a-characteristic-function-for-analysis-experience,A characteristic function for analysis experience,education/advising,"math, education",
+hide,2016-05-25,nikola,citibike-journal,Citibike Journal,New York,citibike,category 'New York'
+keep,2016-05-31,nikola,problem-solving-and-algorithms,Problem solving and algorithms,math,"math, education",
+hide,2016-06-02,nikola,tfw-evals-check,#thatfeelingwhen,,twitter,pop culture / humor link post
+keep,2016-06-07,nikola,adding-a-category-menu-to-nikola,Adding a category menu to Nikola,computing/blog,"python, nikola",
+hide,2016-06-08,nikola,citibike-journal-june-8-2016,"Citibike Journal June 8, 2016",New York,citibike,category 'New York'
+keep,2016-06-15,nikola,cloning-a-git-workshop,Cloning a git workshop,computing,"git, github",
+hide,2016-06-19,nikola,fathers-day-brisket,Father's Day Brisket,leisure/cooking,"beef, grill",category 'leisure/cooking'
+hide,2016-06-20,nikola,citibike-journal-june-20-2016,"Citibike Journal--June 20, 2016",,"citibike, draft",personal
+hide,2016-06-22,nikola,move-on-up,Move on Up,family,music,category 'family'
+keep,2016-06-23,nikola,math-with-bad-drawings-what-students-see-when-they-look-at-algebra,Math with Bad Drawings: What Students See When They Look at Algebra,education/teaching,"comic, funny",
+hide,2016-06-25,nikola,running-journal-june-25-2016,"Running Journal—June 25, 2016",leisure/running,running,category 'leisure/running'
+keep,2016-07-11,nikola,document-correlation-with-nikola-nltk-and-numpy,"Document correlation with Nikola, NLTK, and NumPy",computing,"nikola, python, linear algebra",
+hide,2017-05-28,nikola,philadelphia-day-trip,Philadelphia Day Trip,family,travel,category 'family'
+hide,2017-06-07,nikola,running-journal-june-7-2017,"Running Journal: June 7, 2017",leisure/running,running,category 'leisure/running'
+hide,2017-06-13,nikola,running-journal-june-12-2017,"Running Journal: June 12, 2017",leisure/running,running,category 'leisure/running'
+keep,2017-09-05,nikola,first-day-2017,First Day 2017,NYU,"nyu, instagram",
+hide,2017-10-03,nikola,macbook-pro-ssd-migration,Macbook Pro SSD Migration,computing,"mac, macbook pro",blog housekeeping / dated tech

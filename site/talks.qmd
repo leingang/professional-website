@@ -1,0 +1,17 @@
+---
+title: "Talks & Workshops"
+listing:
+  contents: talks.yml
+  type: table
+  fields: [date, title, venue, type]
+  field-display-names:
+    venue: "Where"
+    type: "Kind"
+  sort: "date desc"
+  date-format: "YYYY"
+  sort-ui: false
+  filter-ui: true
+---
+
+Selected presentations at mathematics meetings, teacher-training workshops,
+and outreach events since 2001.

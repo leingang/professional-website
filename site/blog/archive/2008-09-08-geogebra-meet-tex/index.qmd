@@ -1,0 +1,39 @@
+---
+title: GeoGebra to meet TeX
+date: '2008-09-08'
+categories:
+- computing
+- geometry
+- algebra
+- software
+legacy-source: drupal
+aliases:
+- /posts/geogebra-meet-tex/
+- /posts/geogebra-meet-tex/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+I've been a fan of [GeoGebra](http://www.geogebra.org/cms/index.php?option=com_frontpage&Itemid=1) since I saw a demonstration of it by Markus Hohenwarter as MSRI last year. It's a free (open-source), cross-platform (Java-based), dynamical geometry and algebra application.
+
+The nice part about being java-based is you can export your GeoGebra worksheets to html with embedded java applets. And then with a bit of parameter munging you can upload them to your blog. The embedded applet can be as function as the application itself (a nice advantage to being free; it can't be stolen so there's no barrier to making it completely available).
+
+The nice part about being open-source is that people can contribute to it as much as they want. Now in the works is a tool to export a GeoGebra worksheet to [PGF/TikZ](http://sourceforge.net/projects/pgf/), so you can put them in your LaTeX documents.
+
+Here is an example GeoGebra worksheet, in which a regular pentagon is constructed using only compass-and-straightedge techniques:
+
+`<applet name="ggbApplet" code="http://www.math.nyu.edu/~leingang/content/geogebra.GeoGebraApplet" codebase="http://www.cims.nyu.edu/~leingang/sites/default/files/" archive="geogebra.jar" width="347" height="396" id="ggbApplet">`{=html}\
+`<param name="filename" value="5gon_2.ggb">`{=html} `<param name="framePossible" value="true">`{=html} `<param name="showResetIcon" value="true">`{=html} `<param name="enableRightClick" value="true">`{=html} `<param name="showMenuBar" value="true">`{=html} `<param name="showToolBar" value="true">`{=html} `<param name="showToolBarHelp" value="false">`{=html} `<param name="showAlgebraInput" value="true">`{=html}Sorry, the GeoGebra Applet could not be started. Please make sure that Java 1.4.2 (or later) is installed and active in your browser ([Click here to install Java now](http://java.sun.com/getjava))\
+`</applet>`{=html}
+
+The whole thing is based on the *OP* line segment. Drag either of these points, the circle changes, and the construction with it.
+
+To get the TikZ code, select File \> Export \> Drawing Pad to PGF/TikZ... You can export as a stand-alone file, generate the code to copy and paste elsewhere, or generate the code straight to the clipboard.
+
+![](http://www.cims.nyu.edu/~leingang/sites/default/files/geogebra_tikz_dialog.png)
+
+Apparently this is pre-release feature, but I'm looking forward to using it.
+:::

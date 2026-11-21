@@ -1,0 +1,32 @@
+---
+title: Hand Gestures Help Math Skills, Study Concludes
+date: '2009-03-04'
+categories:
+- education
+- informative
+- teaching
+- learning
+- article
+legacy-source: drupal
+aliases:
+- /posts/hand-gestures-help-math-skills-study-concludes/
+- /posts/hand-gestures-help-math-skills-study-concludes/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+A story in [School Library Journal](http://www.schoollibraryjournal.com/article/CA6641167.html) highlights a new article which gives a different meaning to the term "[Active Learning](http://en.wikipedia.org/wiki/Active_learning)":
+
+> It’s long been known that movement helps people remember and retrieve information about an event or physical activity associated with action. But psychologist Susan Goldin-Meadow’s article, “Gesturing Gives Children New Ideas About Math,” is the first to show that gestures also help create new ideas.
+>
+> “This study highlights the importance of motor learning even in nonmotor tasks, and suggests that we may be able to lay the foundation for new knowledge just by telling learners how to move their hands,” writes Goldin-Meadow in her article, now appearing in the current issue of the journal [Psychological Science](http://www.wiley.com/bw/journal.asp?ref=0956-7976).
+
+I try to incorporate active learning (or *inquiry-based* learning) techniques into my classes when I can. Often this involves group work, with an occasional presentation at the board by a student.
+
+But this study makes me think about how I can get students physically moving while they are learning. What about office hours? I spend a lot of time across my desk from students working out problems. Maybe if we were both standing at the blackboard gestures could be modeled to spur on understanding.
+
+(HT: [Aspie Teacher](http://www.aspieteacher.com/) via [Twitter](http://twitter.com/aspieteach))
+:::

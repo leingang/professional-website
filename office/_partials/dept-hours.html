@@ -1,0 +1,8 @@
+<table class="table table-sm office-hours">
+$for(office-hours)$
+    <tr><th scope="row">$it.day$</th><td>$it.time$</td><td>$it.where$</td></tr>
+$endfor$
+</table>
+$if(office-hours-note)$
+<p class="note">$office-hours-note$</p>
+$endif$

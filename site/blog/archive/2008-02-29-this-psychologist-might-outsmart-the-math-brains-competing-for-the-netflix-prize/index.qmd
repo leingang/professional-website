@@ -1,0 +1,23 @@
+---
+title: This Psychologist Might Outsmart the Math Brains Competing for the Netflix Prize
+date: '2008-02-29'
+categories:
+- math
+- jordan ellenberg
+- netflix
+- harvard
+- wired
+- news
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+This month’s [Wired]{style="font-style: italic;"} contains an [article](http://www.wired.com/techbiz/media/magazine/16-03/mf_netflix) about the [Netflix prize](http://www.netflixprize.com/), offering \$1,000,000 to the person or team that can improve Netflix’s recommendation engine by 10%.  It’s an interesting tale of the frontier of data-centric personal services.  The “hero” of the article uses not only mathematical algorithms but psychological concepts when gleaning information about past preferences in order to predict future ones. 
+
+For instance, there’s the concept of “inertia,” or another way, relativity, when ranking movies on a simple 1-5 scale.  Somebody might give the same movie two different rankings depending on the most recent movie he or she watched.  If you see, for instance, [[Gattaca]{style="font-style: italic;"}](http://www.imdb.com/title/tt0119177/) followed by [[The Matrix]{style="font-style: italic;"}](http://www.imdb.com/title/tt0133093/), you might give  [The Matrix]{style="font-style: italic;"} a 4 because you think it’s so much better than [Gattaca]{style="font-style: italic;"}.  But if the previous movie was a 5 (I’ll let you fill in your favorite here), well, maybe [The Matrix]{style="font-style: italic;"} earns only a 3.  Mathematically, we would say that the relationship between the set of movies and a person’s ratings for them may not actually define a function as the purely math models assume.
+
+The other cool thing about this article is that it’s written by mathematician [Jordan Ellenberg](http://www.math.wisc.edu/%7Eellenber/), with whom I went to grad school back in the day (the nineties).

@@ -1,0 +1,28 @@
+---
+title: Math is HOT! says your teacher
+date: '2005-12-06'
+categories:
+- math
+- harvard
+- funny
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I found this [advertisement for a math course](http://www.govhs.org/vhsweb/coursecatalog05.nsf/0/688c46831654bc0485256fcf0073ebea?OpenDocument) on a high school web site.
+
+> Math is HOT! One of the most popular movies of 1998, *[Good Will Hunting](http://www.imdb.com/title/tt0119217)*, was a story about a math nerd who solves the problem and gets the girl. Wall Street relies on complicated formulas from calculus to predict trends and forecast the likelihood of financial success based on many factors. Books about mathematics and numbers are flying off the shelves at bookstores across the country. A major fragrance manufacturer is busy developing a fragrance for men called “![\\pi](/images/4f08e3dba63dc6d40b22952c7a9dac6d.png "\pi"){align="absmiddle"}.” What could explain this mysterious phenomenon? According to National Public Radio, smart is in and so is the study of mathematics.
+
+I love the sentiment, but may I satirically point out:
+
+- One of the most popular movies of 2001 was *[A Beautiful Mind](http://www.imdb.com/title/tt0268978/)*, a true story about a brilliant mathematician who goes insane.
+- Let’s not forget the other math movie of 1998, [![\\pi](/images/4f08e3dba63dc6d40b22952c7a9dac6d.png "\pi"){align="absmiddle"}](http://www.imdb.com/title/tt0138704/), in which \[spoiler alert\] a mathematician drills a hole in his head.
+- I don’t know if NPR is anybody’s arbiter of cool.
+
+One of the things I love about mathematics is its versatility. The invention of calculus was part of the movement that split science from philosophy and made the world something that could be described effectively. With mathematics we have a language that applies to physics, chemistry, biology, economics, psychology, any science, even those which haven’t been discovered yet.
+
+And yes, you can be a mathematician and get the girl.

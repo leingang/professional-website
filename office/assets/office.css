@@ -1,0 +1,8 @@
+/* Small additions on top of the department's main.css. Keep this minimal. */
+#faculty_profile .section table { width: auto; }
+#faculty_profile .section th, .office-hours th { padding-right: 1.5em; font-weight: 700; }
+.office-hours td { padding-right: 1.5em; }
+.course { margin: 0.5em 0; }
+.course-links { margin-left: 0.5em; }
+.note { color: #4c4c4c; font-style: italic; }
+.sidebar ul li a.active { font-weight: 700; }

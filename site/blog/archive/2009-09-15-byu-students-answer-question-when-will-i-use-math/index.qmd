@@ -1,0 +1,29 @@
+---
+title: BYU students answer question "When will I use math?"
+date: '2009-09-15'
+categories:
+- education
+- math
+- popular culture
+- website
+legacy-source: drupal
+aliases:
+- /posts/byu-students-answer-question-when-will-i-use-math/
+- /posts/byu-students-answer-question-when-will-i-use-math/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+![](http://www.whenwilliusemath.com/sites/default/files/rotor/FeatureMJ_0.jpg){width="350"}
+
+Via MAA News, a new [website](http://www.whenwilliusemath.com/) put out by math undergrads at BYU shows just what math is good for. Pretty, cool, and pretty cool.
+
+Tyler Jarvis, head of the department, blogs:
+
+> Luckily math is not just about memorizing formulas and rules. It is about solving new problems and thinking about the world in deep ways. It is about seeing what different things have in common and how to use what you learned on one problem to solve something that looks completely different.
+
+Hear, hear. Not only is math beautiful, it pays. Mathematicians have [high quality of life](http://online.wsj.com/article/SB123119236117055127.html) and make pretty good money (slightly less in academia). To any student who ponders a math major, I say do it. There's hardly anything you can't do with it. You can even be a hall-of-fame basketball player!
+:::

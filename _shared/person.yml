@@ -1,0 +1,44 @@
+# Single source of truth for contact/profile info.
+# Used by both office/ (cims.nyu.edu) and site/ (matthewleingang.com).
+person:
+  name: Matthew Leingang
+  title: Clinical Professor of Mathematics
+  # Current administrative roles (shown under the title). Leave empty if none.
+  roles: []
+  department: Department of Mathematics, Courant Institute, New York University
+  email: leingang@nyu.edu
+  personal-email: mleingang@gmail.com
+  phone: 212-998-3107
+  office: Warren Weaver Hall, Office 718
+  office-short: WWH 718
+  address: |
+    251 Mercer Street
+    New York, NY 10012
+  website: https://www.matthewleingang.com/
+  office-url: https://cims.nyu.edu/~mpl5/
+  education:
+    - Ph.D., Mathematics, Harvard University, USA, 2000.
+    - A.M., Mathematics, Harvard University, USA, 1998.
+    - A.B., Mathematics, University of Chicago, USA, 1995.
+  interests: >-
+    My graduate research was in symplectic geometry and moment maps, an
+    abstraction of classical Hamiltonian dynamics with symmetry. My professional
+    work is in mathematics education: teacher education, teaching methods, and
+    technological tools in the classroom. From 2008 to 2025 I helped lead the
+    department's service-level undergraduate program, first as Vice Chair for
+    Undergraduate Affairs and then as Assistant Director for Undergraduate
+    Studies, coordinating the calculus sequence, training teaching assistants
+    and postdocs, and advising students.
+  publications:
+    - 'M. Leingang, "Using DocStrip for multiple document variants," *TUGboat* 41 (2020), 281–285'
+    - 'S. DeBacker (ed.) et al., "Paul Sally, Jr. (1933–2013)," *Notices of the American Mathematical Society* 65 (2018), 555–565'
+    - 'T. Judson and M. Leingang, "The Development of Pedagogical Content Knowledge in First-Year Mathematics Graduate Teaching Assistants," *Journal of STEM Education* 17 (2016), 37–43'
+    - 'D. C. Ernst, M. Leingang, and R. Taylor, "Facebook for Professional Educators: To Friend or Not to Friend?" *MAA FOCUS* 35(3) (2015), 6–7'
+    - 'M. Leingang, "Symmetric space valued moment maps," *Pacific Journal of Mathematics* 212 (2003), 103–123'
+  links:
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/matthewleingang/
+    - label: ORCID
+      url: https://orcid.org/0000-0001-7021-1696
+    - label: GitHub
+      url: https://github.com/leingang

@@ -1,0 +1,41 @@
+<script>
+    $$(document).ready(function () {
+        $$('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+            if (!$$(this).next().hasClass('show')) {
+                $$(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            var $$subMenu = $$(this).next(".dropdown-menu");
+            $$subMenu.toggleClass('show');
+
+
+            $$(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+                $$('.dropdown-submenu .show').removeClass("show");
+            });
+
+
+            return false;
+        });
+
+        $$(function () {
+
+            $$(".dropdown li").on('mouseenter mouseleave', function (e) {
+                if ($$('ul', this).length) {
+                    var elm = $$('ul:first', this);
+                    var off = elm.offset();
+                    var l = off.left;
+                    var w = elm.width();
+                    var docH = $$(".container").height();
+                    var docW = $$(".container").width();
+
+                    var isEntirelyVisible = (l + w <= docW);
+
+                    if (!isEntirelyVisible) {
+                        $$(this).addClass('edge');
+                    } else {
+                        $$(this).removeClass('edge');
+                    }
+                }
+            });
+        });
+    });
+</script>

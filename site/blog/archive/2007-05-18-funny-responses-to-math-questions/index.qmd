@@ -1,0 +1,42 @@
+---
+title: Funny responses to math questions
+date: '2007-05-18'
+categories:
+- math
+- harvard
+- funny
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+In honor of the [Math 21b](http://www.courses.fas.harvard.edu/1771){target="_blank"} exam today I’ll recycle some of these pictures that seem to have made the rounds on the internet recently, with comments.
+
+Sometimes when we write questions we know exactly what kind of response we want, but our student have not been “trained” in the language we use.  Take this one:![](http://i203.photobucket.com/albums/aa27/leingang_math/1.jpg){border="0"}
+
+The instructor was probably looking for something like “decreasing” or “concave up” but because of the terseness of the wording will never know if the student knows these ideas.  Or if the question intends to check the relation between a physical law and a mathematical representation of it, perhaps it would be better to ask, “Explain *why the graph is shaped the way it is*.”
+
+Another, too-literal response:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/2.jpg){border="0"}
+
+Here’s one where the student might have a point:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/4.jpg){border="0"}
+
+Now *n00b* isn’t in the OED but it’s part of the growing online hacking and gaming slang known as [Leet](http://en.wikipedia.org/wiki/Leet). (Although Wikipedia suggests that the more correct antonym would be *newb*; *n00b* is more pejorative.)  And if the teacher is allowing *death* and *live* (not *life*) to be correct, why not let in this “extended” English word?
+
+Here are some from the “punt with humor” department:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/9.jpg){border="0"}
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/7.gif){border="0"}\\
+
+Poor guy.
+
+Finally, this is the perfect example of the teacher and student completely miscommunicating.  The teacher probably had no idea that the question could be interpreted this way:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/10.gif){border="0"}

@@ -1,0 +1,29 @@
+---
+title: TeX + PDF = Wow
+date: '2007-05-01'
+categories:
+- tex
+- harvard
+- education
+- latex
+legacy-source: huwp
+aliases:
+- /posts/tex-pdf-wow/
+- /posts/tex-pdf-wow/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I found [The TeX showcase](http://www.tug.org/texshowcase/)[![macqtexDemo.pdf](http://www.tug.org/texshowcase/macqtexDemo.jpg){align="right"}](http://www.tug.org/texshowcase/macqtexDemo.pdf) a while back and thought it was pretty neat.  People use TeX and LaTeX for lots more than beautifully typeset documents.  At this site you can find beer bottle labels, maps, and book covers all done with this powerful language.
+
+But what I’m really interested in these days in the integration of TeX with PDF.  In the olden days the workflow was to run (la)tex on a source file to make a DVI file, then convert the DVI file to PostScript and print it, and then (once the web came about) convert PostScript to PDF and publish it on the web.  More often now people use the pdftex and pdflatex tools which go straight from source to PDF.  Mac’s OS X has native support for PDF so the TeX tools for the Mac are centered around a final PDF product.
+
+PDF is almost bloated with features, including embeddable media, fill-in forms, hyperlinks, and even JavaScript support.  This means you can conceivably use TeX to make all sorts of full-featured PDFs.  Plus–and this is the big boon to mathematicians and mathematics teachers–you get the full flexibility of the TeX language to typeset complicated mathematical expressions easily.
+
+The [LaTeX Beamer Class](http://latex-beamer.sourceforge.net/) implements a lot of these, and I’ve used beamer to make some pretty cool slide shows for classes, if I do say so myself.  But I was really impressed with what they do at MacQuarie University in Sydney.  They write [interactive quizzes in LaTeX](http://rutherglen.ics.mq.edu.au/~macqtex/) that are dynamic PDFs.  You can have multiple-choice, check-the-box, or even short-answer questions (I guess this is where the JavaScript comes in).  Once the quiz is over students can see the solutions worked out in the same document.  Very, very cool.
+
+Apparently you need to be a student to take the “real” quizzes, but they have a [demo](http://www.tug.org/texshowcase/macqtexDemo.pdf) at the TeX Showcase. Now if they would only get rid of that tired Computer Modern font!
+
+\

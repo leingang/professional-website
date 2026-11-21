@@ -1,0 +1,15 @@
+---
+title: WordPress Upgraded
+date: '2006-08-27'
+categories:
+- wordpress
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Migrated to WP 2.0.4. That should fend off the Russian hackers and spammers for a while.

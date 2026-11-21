@@ -1,0 +1,20 @@
+---
+title: Can I take Math X for medical school?
+date: '2005-09-20'
+categories:
+- math
+- harvard
+- faq
+legacy-source: huwp
+aliases:
+- /posts/can-i-take-math-x-for-medical-school/
+- /posts/can-i-take-math-x-for-medical-school/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+When advising students on choosing their math courses, many are concerned about whether the [Math Xa](http://www.courses.fas.harvard.edu/1981){target="_blank"} and [Math Xb](http://www.courses.fas.harvard.edu/3857){target="_blank"} sequence will hurt their prospects of medical school admission. The [Harvard Office of Career Services](http://www.ocs.fas.harvard.edu) has a great site and a document called [Premedical Information for Harvard Students, Courses & Resources](http://www.ocs.fas.harvard.edu/careerresources/byfield/healthmedicine/coursereqs/2005premedguideshort.pdf). This guide says that the mathematics required for medical consists of one year, including **some** calculus. It also explicitly states that Math Xab is acceptable.
+
+Math X is not a remedial course; it is an integrated precalculus + calculus course. It’s great for students who need the both. Students finishing Math Xb have proficiency at the level of [Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"}. They can go on right into [Math 1b](http://www.courses.fas.harvard.edu/1804){target="_blank"} the following fall.

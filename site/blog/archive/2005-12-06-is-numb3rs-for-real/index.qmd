@@ -1,0 +1,24 @@
+---
+title: Is Numb3rs for real? Kinda!
+date: '2005-12-06'
+categories:
+- math
+- harvard
+- faq
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I often get asked if math is like how it’s depicted in popular culture. The answer is usually no. For example, in `<cite>`{=html}Good Will Hunting`</cite>`{=html}, Matt Damon’s advisor has a lush office ensconced in wood and leather and complete with a fireplace. I’ve never seen any professor’s office have such an office, at least on this continent.
+
+But an exception to that rule is [Numb3rs](http://www.cbs.com/primetime/numb3rs/), which strikes me as being a surprisingly accurate portrayal of a mathematician’s life. OK, we don’t all use math to solve crimes, and there was this ridiculous scene in which the mathematician covers the inside of a barn with chalkboards to work on a problem. But at least the problem (the famous [P vs. NP](http://www.claymath.org/millennium/P_vs_NP/) question) was a real one.
+
+The show uses a team of mathematicians from Caltech (see “[They’re calculatingly cool](http://www.usatoday.com/news/education/2005-02-08-brainiacs_x.htm)“, by Elizabeth Weise, `<cite>`{=html}USA Today`</cite>`{=html}, 2005-02-08) as consultants, and they’ve gotten it right. Not only is the mathematics discussed pretty real. The mathematician character isn’t some stuffy professor with leather patches on his elbows. He prefers T-shirts and jeans to sportcoats, he uses aloofness to cover his shyness, and he’s only passionate about solving problems. This profile describes more mathematicians I know than Matt Damon or Russell Crowe does.
+
+Even the guy’s office is true-to-life. Nothing posh; just a pretty bare room with linoleum tile, an uncurtained window, a radiator, a desk littered with paper, and a chalkboard. This conjures up to me images of just about every graduate student office at MIT (except they are larger and are shared by several students per office).
+
+To other mathematicians, I say the question is not so much whether this portrayal is accurate. There is a show on network prime time about math! I’ve heard [CSI](http://www.cbs.com/primetime/csi/) is not necessarily an accurate portrayal of crime-scene detection, but if gets young people interested in science, who cares? From the `<cite>`{=html}USA Today`</cite>`{=html} article: “If just one 14-year-old realizes that following a love for mathematics can lead to totally cool, intellectually fascinating work, \[Caltech math department head Gary\] Lordon says he’ll be pleased. ‘Even the smartest kids ask, “But what do you do?” ‘

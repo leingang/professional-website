@@ -1,0 +1,27 @@
+---
+title: First day of 1a
+date: '2008-01-30'
+categories:
+- calculus 1
+- math 1a
+- spring 2008
+- harvard
+- mathmath1a slideshow humor
+legacy-source: huwp
+aliases:
+- /posts/first-day-of-1a/
+- /posts/first-day-of-1a/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=Weareheretohelp025.jpg "Weareheretohelp025.jpg") It’s shopping period, so my [Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"} class today was basically an advertisement for the course. I clicked through the [Introductory presentation](http://www.slideshare.net/leingang/introduction-to-math-1a) and handed out copies of the [syllabus](http://my.harvard.edu/icb/icb.do?keyword=k30281&pageid=icb.page131697).
+
+Here’s one of my favorite slides.
+
+[![Weareheretohelp025.jpg We are here to help.025.jpg picture by leingang_math](http://i203.photobucket.com/albums/aa27/leingang_math/Weareheretohelp025.jpg){style="width: 464px; height: 349px"}](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=Weareheretohelp025.jpg "Weareheretohelp025.jpg")
+
+I want students to know that my goal is not to prevent them from succeeding, but to enable them to succeed. Even though a college-level math course is a lot of work, we try to provide support with office hours, problem sessions, and homework help in the Math Question Center\
+[](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=Weareheretohelp025.jpg "Weareheretohelp025.jpg")

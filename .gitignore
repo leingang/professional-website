@@ -1,7 +1,7 @@
-plugins/__pycache__
-output
-cache
-.doit.db.db
-__pycache__
-	
+/.quarto/
+**/.quarto/
+office/_site/
+site/_site/
+**/*.quarto_ipynb
 .DS_Store
+__pycache__/

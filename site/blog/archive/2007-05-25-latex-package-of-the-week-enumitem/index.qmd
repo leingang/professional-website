@@ -1,0 +1,39 @@
+---
+title: 'LaTeX package of the week: enumitem'
+date: '2007-05-25'
+categories:
+- tex
+- enumerate
+- harvard
+- package
+- enumitem
+- latex
+legacy-source: huwp
+aliases:
+- /posts/latex-package-of-the-week-enumitem/
+- /posts/latex-package-of-the-week-enumitem/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[Last week](http://www.math.harvard.edu/~leingang) I wrote about the [enumerate](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=enumerate) package which customizes the ordered list environment. It’s very useful, but if you want to do more, [enumitem](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=enumitem) is for you.
+
+This package takes many more optional arguments using the [keyval](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=keyval)-style interface. This means in order to get a list labeled (a)…(b)…(c)… you can type
+
+`\begin{enumerate}[label=(\alph*)]`\
+`\item item the first`\
+`\item item the second`\
+`\item item the third`\
+`\end{enumerate}`
+
+So far this is the same functionality as **enumerate** with more cumbersome syntax. But there are lots of other optional arguments you can use as well. For instance, on tests I want not only ordered lists of problem parts, but lots of space between the list items for the students to work. With **enumitem** I can type
+
+`\begin{enumerate}[label=(\alph*),itemsep=\fill]`\
+`\item Derive the equation …`\
+`\item Now solve the equation.`\
+`\end{enumerate}`\
+`\vfill`\
+
+The package’s [documentation](ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/enumitem/enumitem.pdf) has lots of other examples.

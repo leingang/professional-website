@@ -1,0 +1,45 @@
+---
+title: 'LaTeX package of the week: enumerate'
+date: '2007-05-17'
+categories:
+- tex
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/latex-package-of-the-week-enumerate/
+- /posts/latex-package-of-the-week-enumerate/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I use the **[enumerate](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=enumerate)** package a lot to create custom enumerated environments. It’s easy to created an enumerated list (much like the HTML \<ul\> element) using
+
+    \begin{enumerate}
+    \item Item the first
+    \item Item the second
+    \item Item the third
+    \end{enumerate}
+
+The default label for those items is of the form “\<*number*\>.” For nested lists the label changes to something else. But when I write mathematics problems I use different labels at the same level for different meanings. For instance, numbering parts (a)…(b)…(c)… means that each builds on the last. Numbering them (i)…(ii)…(iii)… means these are unrelated parts with the same theme. (I learned of this convention from Michael Spivak’s *Calculus* book.)
+
+To achieve this customization of labeling, I use the enumerate package. It adds a single optional argument to the enumerate environment, so that I can say
+
+    \begin{enumerate}[(a)]
+    \item Item a
+    \item Item b
+    \item Item c
+    \end{enumerate}
+
+The syntax for the optional argument is pretty easy:
+
+- “1″ is interpreted as the arabic form of the item number
+- “a” is interpreted as the lowercase letter form of the item number
+- “A” is interpreted as the uppercase letter form of the item number
+- “i” and “I” are interpreted as the roman numeral forms of the item number, in lower- and upper-case, respectively.
+
+Anything else, for instance a punctuation mark, is inserted directly into the label.
+
+Next week I’ll look at the **enumitem** package, which does a lot more than **enumerate**. But enumerate is still pretty cool.

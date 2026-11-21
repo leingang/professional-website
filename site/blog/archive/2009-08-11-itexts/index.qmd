@@ -1,0 +1,36 @@
+---
+title: iTexts
+date: '2009-08-11'
+categories:
+- education
+- calculus
+- interesting
+- textbook
+- ebook
+- article
+- barnes and noble
+legacy-source: drupal
+aliases:
+- /posts/itexts/
+- /posts/itexts/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+[![iphone_calculus](http://farm3.static.flickr.com/2636/3811555706_c6df3a88da.jpg){width="325" height="480"}](http://www.flickr.com/photos/24520353@N08/3811555706/ "iphone_calculus by sympleko, on Flickr")
+
+Interesting piece on [NPR](http://www.npr.org/) this morning about [Barnes and Noble re-acquiring their spun-off college bookstore company](http://www.npr.org/templates/story/story.php?storyId=111764478) and investing in electronic books. As the Kindle and smarter phones continue to add features for reading electronic documents, textbook companies hope to deliver their media over them (at the same time, they look to change the business model from product to service so that they don't lose so much from resellers).
+
+James Lombardi, CFO, is quoted as saying that although he's old school, the kids will be into it:
+
+> I don't know if I would have been able to do [calculus](/categories/calculus/){.alinks-link} derivatives on my telephone, but it's certainly going to evolve.
+
+Once the iPhone adds Flash support I'm sure more interactive textbooks will be available on it. And of course [Wolfram\|Alpha](http://wolframalpha.com) is already here, putting the full power of Mathematica on the web.
+
+In the future, instead of sore fingers from writing, calculus students will all have sore necks from squinting at their tiny screens.
+
+(image adapted from a screenshot by [Niels von Eck](http://www.flickr.com/photos/nielsvaneck/1490570992))
+:::

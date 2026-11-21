@@ -1,0 +1,50 @@
+<div id="faculty_profile">
+    <img src="assets/headshot.jpg" alt="Photograph of $person.name$"/>
+    <h1>$person.name$</h1>
+    <div class="title">$person.title$</div>
+$for(person.roles)$
+    <div class="title">$it$</div>
+$endfor$
+    <div><a href="mailto:$person.email$">$person.email$</a></div>
+    <div>$person.phone$</div>
+    <div>$person.office$</div>
+    <div><a href="$person.website$">$person.website$</a></div>
+
+    <div class="section">
+        <h2>Office Hours ($term$)</h2>
+${ dept-hours.html() }
+    </div>
+
+    <div class="section">
+        <h2>Courses ($term$)</h2>
+${ dept-current.html() }
+    </div>
+
+    <div id="education" class="section">
+        <h2>Education</h2>
+$for(person.education)$
+        <div>$it$</div>
+$endfor$
+    </div>
+
+    <div class="section">
+        <h2>Research Interests</h2>
+        <p>$person.interests$</p>
+    </div>
+
+    <div id="publications" class="section">
+        <h2>Selected Publications</h2>
+$for(person.publications)$
+        <div>$it$</div>
+$endfor$
+    </div>
+
+$if(person.links)$
+    <div class="section">
+        <h2>Other Links</h2>
+$for(person.links)$
+        <div><a href="$it.url$">$it.label$</a></div>
+$endfor$
+    </div>
+$endif$
+</div>

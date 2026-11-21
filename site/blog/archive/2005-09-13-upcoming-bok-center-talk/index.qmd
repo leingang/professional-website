@@ -1,0 +1,28 @@
+---
+title: 'Upcoming: Bok Center talk'
+date: '2005-09-13'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’m looking forward to the [Derek Bok Center for Teaching and Learning](http://bokcenter.fas.harvard.edu)’s annual [Fall Teaching Conference.](http://bokcenter.harvard.edu/ftc/index.html). It starts tomorrow at 9:30am in Sever Hall. The talks are informative and the lunch is great.
+
+I’m particularly looking forward (albeit nervously) to the talk I’ll be giving called “Seeking Points: A Case Study on Teaching and Grading in the Sciences”. Here’s an abstract:
+
+> Graders in science courses apply a subjective but authoritative rubric\
+> to determine scores on exam or homework problems. Sometimes students\
+> confuse “subjective” with “arbitrary,” resulting in discussions\
+> ranging from the uncomfortable to the combative. This case study will\
+> explore shifting The Great Grade Debate towards a teachable moment.\
+> Tangential topics include dealing with overprepared students and\
+> writing and grading good questions in the first place.
+
+The talk will be taking place on Thursday, September 15 at 10:00 in Sever Hall 214.

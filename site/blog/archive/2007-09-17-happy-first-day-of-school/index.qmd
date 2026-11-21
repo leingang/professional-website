@@ -1,0 +1,38 @@
+---
+title: Happy first day of school
+date: '2007-09-17'
+categories:
+- teaching
+- harvard
+- slideshow
+- math 20
+- courses
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Well, it’s finally here: the first class day of the academic year. Back on Cinco de Mayo when we celebrated the end of classes Tom said, “Can you believe we won’t have to teach for another *four* *months?*” Thin air.
+
+I have one class which meets this week. The intro meeting for [Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"} (Calculus I) is tomorrow morning, and those sections start next Monday.
+
+Here’s my intro talk from Math 20:
+
+`<object width="425" height="348" data="http://s3.amazonaws.com/slideshare/ssplayer.swf?id=111452&amp;doc=math-20-introduction1482" type="application/x-shockwave-flash">`{=html}\
+`<param value="http://s3.amazonaws.com/slideshare/ssplayer.swf?id=111452&amp;doc=math-20-introduction1482" name="movie">`{=html}`</param>`{=html}`</object>`{=html}
+
+I thought about the lessons that [Merlin Mann](http://www.43folders.com/2007/08/23/better-presentations/) wrote about presentations last week. So unlike previous intro talks I’ve given, the slides seem pretty incomplete (the syllabus, handed out on paper as they walk in, has all the nitty-gritty on it). You’re not able to page through the slides and get a full picture of what I said. And I came to that concept, along with Merlin’s example, with the following rhetorical question:
+
+*If the slideshow tells the whole story, what do you add by standing in front of it?*
+
+So I took all my bullet points and moved them into the notes section, and printed that out to make sure I hit them in class (then forgot to bring them, but luckliy I internalized them by this process). I replaced them with one, maybe two words, and a big picture (shout-out to [sxc.hu](http://sxc.hu/) for royalty-free stock photos). The result was a much more impressive-looking slideshow, even if devoid of facts.
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Before                                                                                                                                                                                                                                        After
+  [![before.png PowerPoint with a bunch of words image by leingang_math](http://s203.photobucket.com/albums/aa27/leingang_math/PPT/th_before.png)](http://s203.photobucket.com/albums/aa27/leingang_math/PPT/?action=view&current=before.png)   [![after.png Keynote slide with one word image by leingang_math](http://s203.photobucket.com/albums/aa27/leingang_math/PPT/th_after.png)](http://s203.photobucket.com/albums/aa27/leingang_math/PPT/?action=view&current=after.png)
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Also, I started using Keynote instead of PowerPoint. Starting from zero, after about four hours of working, I realized I was almost as good at Keynote as I was at PowerPoint, even though I’ve usd that program for years. That’s pretty amazing. And even factoring out my re-thinking of the content, I think Keynote just “pops” more then PPT.

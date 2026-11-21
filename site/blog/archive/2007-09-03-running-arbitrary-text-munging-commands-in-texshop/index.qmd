@@ -1,0 +1,125 @@
+---
+title: Running arbitrary text munging commands in TeXShop
+date: '2007-09-03'
+categories:
+- computing
+- harvard
+- hack
+- latex
+- texshop
+- applescript
+legacy-source: huwp
+aliases:
+- /posts/running-arbitrary-text-munging-commands-in-texshop/
+- /posts/running-arbitrary-text-munging-commands-in-texshop/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+`<style type="text/css">    p.p1 {margin: 0.0px 0.0px 0.0px 39.2px; text-indent: -39.3px; font: 12.0px Verdana; color: #4c4e4e}    p.p2 {margin: 0.0px 0.0px 0.0px 39.2px; text-indent: -39.3px; font: 12.0px Verdana; min-height: 15.0px}    p.p3 {margin: 0.0px 0.0px 0.0px 39.2px; text-indent: -39.3px; font: 12.0px Verdana; color: #0000ff}    p.p4 {margin: 0.0px 0.0px 0.0px 39.2px; text-indent: -39.3px; font: 12.0px Verdana}    p.p5 {margin: 0.0px 0.0px 0.0px 78.6px; text-indent: -78.6px; font: 12.0px Verdana; color: #0000ff}    p.p6 {margin: 0.0px 0.0px 0.0px 78.6px; text-indent: -78.6px; font: 12.0px Verdana; min-height: 15.0px}    p.p7 {margin: 0.0px 0.0px 0.0px 78.6px; text-indent: -78.6px; font: 12.0px Verdana; color: #4c4e4e}    p.p8 {margin: 0.0px 0.0px 0.0px 117.8px; text-indent: -117.8px; font: 12.0px Verdana; color: #0000ff}    p.p9 {margin: 0.0px 0.0px 0.0px 157.1px; text-indent: -157.1px; font: 12.0px Verdana; color: #0000ff}    p.p10 {margin: 0.0px 0.0px 0.0px 78.6px; text-indent: -78.6px; font: 12.0px Verdana}    span.s1 {color: #000000}    span.s2 {color: #408000}    span.s3 {color: #0000ff}    span.Apple-tab-span {white-space:pre}  </style>`{=html}\
+
+File this under “If I blog about it, it might actually be worth the time it took to figure it out”…
+
+I use [TeXShop](http://www.uoregon.edu/~koch/texshop/) to handle my LaTeX documents. It works, it’s mac-like, and it’s pretty flexible. One thing I like about it is the Macro Editor, where you can define some boilerplate strings to insert in the document (and tie keyboard shortcuts to them). The Macro Editor has some simple replacement features: for instance #SEL# will get replaced by the current selection. In this way, you can define a macro which wraps an enviroment around whatever’s currently highlighted. The Macro Editor also allows you to write [AppleScript](http://www.apple.com/macosx/features/applescript/) code and execute it.
+
+Another thing I like is the [regular-expression](http://en.wikipedia.org/wiki/Regular_expression) enabled find and replace dialog. Anything you can write with a [sed](http://en.wikipedia.org/wiki/Sed) one-liner, you can use to transform text.
+
+But what I needed was to be able to do this:
+
+- highlight text in TeXShop
+- run a macro that transforms that text (something more complicated than a single regex search-and-replace), probably running AppleScript which in turn would run a shell script.
+- replace the selected text with the transformed text.
+
+The actual job I wanted to do was to take the text exported by OmniOutliner, which is plain text with items indented and marked by “-”, and convert it to the LaTeX itemiz environment.
+
+The Google wasn’t helping me with examples on how this is done, so I had to figure it out myself. First, I forgot about writing the macro inside of TeXShop; I used Apple’s built-in (at least I think it’s built-in, if not, you have to install the giant XCode package) [Script Editor](http://www.apple.com/applescript/scripteditor/).
+
+Writing AppleScripts is a pretty trying process of wading through Script Dictionaries and reading the Result Log and multiple, *multiple* trials and errors. In fact, Chapter 3 of *[AppleScript: The Definitive Guide](http://www.oreilly.com/catalog/applescpttdg/)* shows that this is actually the Best (available) Practice (for some reason that got left out of the latest edition. Pity.) But I got it, eventually:
+
+[–]{.s1} *convert Omni Outliner exported text to LaTex itemize environment*
+
+[–]{.s1} *Matthew Leingang*
+
+[–]{.s1} *2007-09-03*
+
+**set** [ ]{.s1} [crlf]{.s2} [ ]{.s1} **to** [ “]{.s1}
+
+“
+
+**tell**[ ]{.s1}application[ “TeXShop”]{.s1}
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[theSelection]{.s2}[ ]{.s1}**to**[ ]{.s1}**the**[ ]{.s1}selection[ ]{.s1}**of**[ ]{.s1}**the**[ ]{.s1}**first**[ ]{.s1}document
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[input]{.s2}[ ]{.s1}**to**[ ]{.s1}**the**[ ]{.s1}content[ ]{.s1}**of**[ ]{.s1}**the**[ ]{.s1}selection[ ]{.s1}**of**[ ]{.s1}**the**[ ]{.s1}**first**[ ]{.s1}document[ ]{.s1}**as**[ ]{.s1}string
+
+[ ]{.Apple-tab-span}
+
+[]{.s1}[ ]{.Apple-tab-span}– *write selection to a file to avoid quoting issues*
+
+[]{.s1}[ ]{.Apple-tab-span}– *putting “as string” in the definition of input makes this file an ascii file rather than a unicode file*
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}[fileSpec]{.s2}[ ]{.s1}**to**[ (]{.s1}path to[ ]{.s1}temporary items folder[ ]{.s1}as[ ]{.s1}string[) & (]{.s1}do shell script[ “echo \$\$”)]{.s1}
+
+[]{.s1} [ ]{.Apple-tab-span} **try**
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}**set**[ ]{.s1}[f]{.s2}[ ]{.s1}**to**[ ]{.s1}open for access[ ]{.s1}[fileSpec]{.s2}[ ]{.s1}**with**[ ]{.s1}write permission
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}set eof[ ]{.s1}[f]{.s2}[ ]{.s1}to[ 0]{.s1}
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}write[ ]{.s1}[input]{.s2}[ ]{.s1}to[ ]{.s1}[f]{.s2}
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}close access[ ]{.s1}[f]{.s2}
+
+[]{.s1} [ ]{.Apple-tab-span} **on** [ ]{.s1} **error**
+
+[]{.s1} [ ]{.Apple-tab-span} [ ]{.Apple-tab-span} **try**
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}close access[ ]{.s1}[f]{.s2}
+
+[]{.s1} [ ]{.Apple-tab-span} [ ]{.Apple-tab-span} **end** [ ]{.s1} **try**
+
+[]{.s1}[ ]{.Apple-tab-span}[ ]{.Apple-tab-span}beep
+
+[]{.s1} [ ]{.Apple-tab-span} [ ]{.Apple-tab-span} **return**
+
+[]{.s1} [ ]{.Apple-tab-span} **end** [ ]{.s1} **try**
+
+[ ]{.Apple-tab-span}
+
+[]{.s1}[ ]{.Apple-tab-span}– *do the actual text munging*
+
+[ ]{.Apple-tab-span}[**set**]{.s3} [theScript]{.s2} [**to**]{.s3} “perl -pe ” & [quoted form]{.s3} [**of**]{.s3} “s/\^( \*)- /\\\\\\\\item\\\\n\\\\1[ ]{.Apple-converted-space}/” & ” \< ” & [quoted form]{.s3} [**of**]{.s3} [POSIX path]{.s3} [**of**]{.s3} [fileSpec]{.s2}
+
+[ ]{.Apple-tab-span}[**set**]{.s3} [output]{.s2} [**to**]{.s3} “\\\\begin{itemize}” & [crlf]{.s2} & ([do shell script]{.s3} [theScript]{.s2}) & [crlf]{.s2} & “\\\\end{itemize}”
+
+[ ]{.Apple-tab-span}
+
+[]{.s1}[ ]{.Apple-tab-span}– *remove the temporary file*
+
+[]{.s1}[ ]{.Apple-tab-span}do shell script[ “rm ” & ]{.s1}quoted form[ ]{.s1}**of**[ ]{.s1}POSIX path[ ]{.s1}**of**[ ]{.s1}[fileSpec]{.s2}
+
+[ ]{.Apple-tab-span}
+
+[]{.s1}[ ]{.Apple-tab-span}– *replace*
+
+[]{.s1}[ ]{.Apple-tab-span}**set**[ ]{.s1}**the**[ ]{.s1}selection[ ]{.s1}**of**[ (]{.s1}**first**[ ]{.s1}document[) ]{.s1}**to**[ ]{.s1}[output]{.s2}
+
+**end** [ ]{.s1} **tell**
+
+The code block below “–write selection as a file…” takes the current selection and writes it to a temporary file.  There are ways of escaping troublesome characters on the command-line, but AppleScript is not a very good text editor.  So I went the way of the temporary file, which, as you can see, involves generating a path name, opening the file, erasing the file, writing the selection to the file, then closing the file.
+
+It was here I ran into one of my favorite AppleScript gotchas: the selection has type “unicode text”, while shell scripts have type string.  Because of the extra bytes in unicode strings, my regexes would match only when they were one character long!  This is the kind of thing you can only catch when you examine that temporary file in the Terminal: you get all the extra non-printable bytes and you think “what the hell?  Aw, man, *unicode* \<curse /\>.”
+
+Casting the selection to a string fixes this.  I suppose it breaks unicode compatibility, but regular LaTeX isn’t unicode compatible anyway (you need [XeTeX](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=xetex) for that).  I briefly tried casting the shell script string to unicode, but since I wasn’t going to need unicode for the input, I didn’t pursue it beyond one trial, error, undo.
+
+the “echo \$\$” script in the generation of the temporary file name is a big of unix magic: \$\$ evaluates to the number of the operating system’s current process.  Basically, the OS starts a new process each time it runs a program, so each execution of the script is going to result in a new process number.  I actually don’t know what process this evaluates to, that of the AppleScript instance or a brand-new one spawned by this line, only to provide its number and die.  The point is it’s unique to the running of the script, so I know that running it twice at the same time (or starting another run of it while one hasn’t finished) won’t result in the script clobbering its temporary files. 
+
+The code block below “–do the actual text munging” is the meat of this script. I don’t want to blog about perl or regexps here (maybe some other time), so let me just leave that with one piece of advice: *when nothing else seems to work, add more slashes*.
+
+The rest of the script does the actual replacement of the selection with the desired transformed text, then cleans up. 
+
+I haven’t yet tried this with multiple documents open (I can’t figure out how to access “the current document” in TeXShop), but this is a good start.  If you enable the [Script Menu](http://www.apple.com/applescript/scriptmenu/) and save this script in “\~/Library/Scripts/TeXShop/munge.scpt,” you can now invoke it whenever you want.  But to invoke it within the Macro Editor, you can create a macro and put “–Applescript direct” on the first line and delete the “tell” … “end tell” lines.  That changes the behavior of the Macro Editor to run the contents of the macro in AppleScript (rather than insert the text itself into the current document). 
+
+So there’s plenty more error checking to do, but this works and I’m done with it.  Hopefully putting this up will help me remember, and anyone else who needs to do the same thing.

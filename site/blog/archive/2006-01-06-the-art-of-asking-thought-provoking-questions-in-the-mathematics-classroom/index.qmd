@@ -1,0 +1,27 @@
+---
+title: The Art of Asking Thought Provoking Questions in the Mathematics Classroom
+date: '2006-01-06'
+categories:
+- teaching
+- harvard
+- teacher training
+legacy-source: huwp
+aliases:
+- /posts/the-art-of-asking-thought-provoking-questions-in-the-mathematics-classroom/
+- /posts/the-art-of-asking-thought-provoking-questions-in-the-mathematics-classroom/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+A colleague showed me a paper by Bellido, Walker, and Wayland from the University of Puerto Rico called “[The Art of Asking Thought Provoking Questions in the Mathematics Classroom](http://hub.mspnet.org/index.cfm/12574).” It’s an interesting read and has a lot of practical advice.
+
+They write:
+
+> Textbook exercises are quite useful, but no text can provide a universal series of questions that provoke every student or even every class to think through a new concept. Questions that lead students to understand must start at their current understanding and provoke them to think forward to the mathematics at hand. Questions of this type are valuable instructional tools, but textbooks are not designed to provide them. Good, make-them-think questions take practice to design and use effectively.
+>
+> Before deciding that this is for somebody else’s students or somebody who has more time, ask yourself when was the last time you heard “these students don’t even know the basics” or “they can’t even read the easy problems much less solve them” or “they act like they are bored, but they really don’t get it” or “there is no way my students can do those problems!” While such statements, made in private of course, may seem like harmless venting of frustration, they are formidable obstacles to students really understanding the\
+> mathematics we purport to teach. … Substituting in a formula or mechanically executing some procedure is not mathematics, as Mark Twain would say, it is French. In order to learn and understand mathematics, students must think about mathematics. Our job is to provoke that thinking.
+
+The article gives several ways to modify common problem that test only the memorization of a fact or formula to those that provoke learning beyond the formula. Although the examples are taken from algebra and geometry, the techniques are universally applicable.

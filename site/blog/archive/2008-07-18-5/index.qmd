@@ -1,0 +1,24 @@
+---
+title: Drupal progress
+date: '2008-07-18'
+categories:
+- blog
+legacy-source: drupal
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+I haven't been blogging about anything too interesting lately because I've been so busy tinkering with the website itself. I'm using [drupal](http://drupal.org/) now because I was looking for something less bloggy and more content management system-y than [WordPress](http://www.wordpress.org/). (At some point I have to figure out how to get my old WP blog into here, but not today...)
+
+So, after a week of Drupal I'm starting to find my way around. It doesn't take too long to get a basic site set up, and then the rest of the time I've been modifying the theme. My goal for the theme has been to be something that looks integrated into our [department](http://www.math.nyu.edu/) pages, not something that's dropped in blaring "Hey, I just downloaded a PHP/MySQL CMS! You can tell which by looking at the favicon!"
+
+Lucky for me our department's webpages are laid out and styled with [XHTML](http://www.w3.org/TR/xhtml1/) and [Cascading Style Sheets (CSS)](http://www.w3.org/Style/CSS/), i.e., no tables or FONT attributes. So it was very easy to develop a drupal theme which mimicked it. I used the [PHPTemplate](http://drupal.org/phptemplate) theme engine (drupal is so sophisticated you can even swap out the package by which templates are glued together to make pages!), which only requires you to design a small set of HTML snippets with PHP variables in the right place. Then most of the time I only have to edit an extra CSS stylesheet.
+
+One thing I've got planned is to publish my lesson plans on this site. Learning objects have their own metadata, and drupal has a [taxonomy module](http://drupal.org/handbook/modules/taxonomy). A taxonomy is like an extended notion of category. It would be interesting to integrate learning object metadata into drupal so lessons could be found and indexed on their various criteria (subject, difficulty, interactivity type, etc.)
+
+Next week I hope to blog on something other than the blog itself!
+:::

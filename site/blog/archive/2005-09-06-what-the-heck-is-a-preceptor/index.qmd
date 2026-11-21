@@ -1,0 +1,24 @@
+---
+title: What the heck is a preceptor?
+date: '2005-09-06'
+categories:
+- teaching
+- harvard
+- faq
+legacy-source: huwp
+aliases:
+- /posts/what-the-heck-is-a-preceptor/
+- /posts/what-the-heck-is-a-preceptor/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+My most FAQ. Harvard has lots of terms that practically nobody else uses, and this is one of them. But that doesn’t make it incorrect.
+
+For all intents and purposes, a preceptor is a post-doctorate, non-tenure-track, junior faculty appointment focused on teaching. I am involved in teaching and course heading many courses in the calculus sequence (varying from term to term). I also deal with the training of graduate students and junior faculty members in their teaching. A third duty is advising students in mathematics courses.
+
+[Google can find a number of definitions for “precept”](http://www.google.com/search?&q=define:precept), and they say it’s a sort of like a tradition that’s both a rule and a belief. In that sense, a preceptor is in charge of the rules, more than just a teacher but an overseer of teaching. At least, that’s as much as I can make out of it.
+
+Sub-question: **So what do I call you?** I have a Ph.D. and hold a junior faculty appointment (it’s not my first, either). Most of the time that would earn me the title of “Professor.” However, the word “professor” is not in my appointment and so the title “Professor” is probably not in accordance with academic protocol. But you can call me “Dr.” If it works for doctors of medicine and optometry, it should for those of philosophy. ![:-)](/images/icon_smile.gif){.wp-smiley}

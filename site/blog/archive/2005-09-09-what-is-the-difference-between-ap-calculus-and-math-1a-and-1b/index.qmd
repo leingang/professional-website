@@ -1,0 +1,36 @@
+---
+title: What is the difference between AP Calculus and Math 1a and 1b?
+date: '2005-09-09'
+categories:
+- math
+- harvard
+- faq
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+At Harvard we get a large and increasing number of students who have taken the Advanced Placement [Calculus AB](http://www.collegeboard.com/student/testing/ap/sub_calbc.html?calcab) or [Calculus BC](http://www.collegeboard.com/student/testing/ap/sub_calab.html?calcbc) exams. These courses have syllabi similar to those in our first-year calculus classes. The topics in Calculus AB roughly correspond to [](http://my.harvard.edu/course/math1a/)[Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"} (although Math 1a is a semester-long course and Calculus AB is a year-long course), and Calculus BC roughly corresponds to the Math 1a and [](http://my.harvard.edu/course)[Math 1b](http://www.courses.fas.harvard.edu/1804){target="_blank"} sequence.
+
+But there are big differences between an AP course and our first-year undergraduate courses. Not all who have taken Calculus BC are necessarily ready to move on to the second-year courses such as 19, 20, 21a, 21b, 23, or 25. In our first-year undergraduate courses we go beyond the *techniques* of differentiation and integration, and spend a good deal of time on the *conceptual* aspects of calculus. For instance:
+
+- What is a function?
+- What do we mean by the derivative of a function?
+- What do we mean by the integral of a function over an interval?
+
+Armed with these flexible understanding of what functions, derivatives, and integrals are, we are able to apply it to many areas. So we develop many “modeling” techniques, such as
+
+- Given a range of choices and an objective, find the optimal choice by setting up a function, differentiating it and finding its critical points.
+- Given a scientific quantity determined by a product (work, flux, revenue), set up an integral to compute it when the dependent quantities are not constant.
+- Given a quantity that changes over time and a principle which govern its rate of change, set up a and solve a differential equation to determine the quantity.
+
+Finally, we spend more time in 1b on both differential equations and infinite series than is found in the BC class. Infinite series is a topic that seems from out of left of field, having nothing to do with derivatives or integrals. However, it turns out that functions can be expressed as *power series*, which are hugely important for mathematics beyond calculus. Not only that, they are used all the time: Calculators, cell phones, MP3 players, all digital devices depend on series to function.
+
+For the reasons above, we often advise *some* students who have taken AP Calculus to take Math 1a or 1b. This shouldn’t be taken as a “repeat” of a course already taken. Instead, this is a chance to gain a more fundamental understanding of a subject very important in science. If your concentration requires a calculus course, it is because they need you to understand not only the techniques but the concepts which make it apply to your discipline.
+
+Every year in Math 1a and 1b, we have students who have taken calculus before and those who have not taken it before. We feel that both groups will learn a lot. While there is no denying that those who have taken calculus before will find many aspects of our courses familiar, there will be parts which all students will find challenging.
+
+All cases are unique, and we are happy to talk to any student about selecting a math course. During the opening days of each semester, please visit the math department’s advisors for information about your particular situation. A list of advisors (including me) and their availabilities can be found on the [Math Department’s sectioning page](http://www.math.harvard.edu/sectioning/). There is also a wealth of information on math for Harvard Undergraduates at the [Math Department’s undergraduate page](http://www.math.harvard.edu/undergrad/). Feel free to [contact me](http://www.math.harvard.edu/~leingang/index.php/global-coordindates) as well!

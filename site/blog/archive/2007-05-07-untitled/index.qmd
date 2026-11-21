@@ -1,0 +1,32 @@
+---
+title: The kids are all right
+date: '2007-05-07'
+categories:
+- math
+- undergraduate
+- hcmr
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/untitled/
+- /posts/untitled/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I recently got the inaugural issue of [The Harvard College Mathematics Review](http://www.hcs.harvard.edu/hcmr/index.html).  It’s very nice and obviously took a lot of work
+
+Here’s the list of student articles:
+
+- Dunking Donuts: Culinary Calculations of the Euler Characteristic (Alexander P. Ellis, ‘07)
+- Dirichlet’s Prime Number Theorem: Algebraic and Analytic Aspects (Igor Rapinchuk, ‘07)
+- Quivers (Virigina Fisher ‘08 et al)
+- A Fitness-Based Model for Complex Networks (Zhou Fan ‘10)
+- Does Every Polynomial Root have a Simple Approximation? (Bryan Gin-Ge Chen ‘07
+
+Plut there’s an article about the [ABC conjecture](http://en.wikipedia.org/wiki/Abc_conjecture) by Prof. [Noam Elkies](http://www.math.harvard.edu/~elkies/), a list of problems, and a nice little anecdote about teacher preparation by [Dennis Gaitsgory](http://www.math.harvard.edu/~gaitsgde/).
+
+And since I’m talking a lot of TeX these days, I’ll say that there are some very nice graphics done in METAPOST by Zachary Abel, ‘10.

@@ -1,0 +1,8 @@
+<table class="table table-sm past-courses">
+    <thead><tr><th scope="col">Term</th><th scope="col">Course</th><th scope="col">Title</th></tr></thead>
+    <tbody>
+$for(past-courses)$
+        <tr><td>$it.term$</td><td>$it.code$</td><td>$it.title$</td></tr>
+$endfor$
+    </tbody>
+</table>

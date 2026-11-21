@@ -1,0 +1,22 @@
+---
+title: Happy almost summer vacation
+date: '2007-05-25'
+categories:
+- miscellaneous
+- apology
+- summer
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’ve been blogging on a consistent basis (almost one post a day) for just over a month now. The fact that a few people have told me they like reading it makes me want to keep it up.
+
+In the short term, however, posts are likely to slow down. My last final is today, and after the long weekend I’ll be taking off to MSRI for the [Critical Issues in Education: Teaching Teachers Mathematics](http://www.msri.org/calendar/workshops/WorkshopInfo/430/show_workshop) workshop. Bret Benesh, Tom Judson, and I are talking on Thursday, May 31 at 2:05pm. I hope to get a few posts in during that time.
+
+After that, I’ll be going on a vacation ([Holiday World](http://www.holidayworld.com/), here we come!) back sometime after Father’s Day.  My [Math S-1ab](http://www.summer.harvard.edu/2007/courses/math.jsp#s-1ab) (”calculus boot camp”) in the [Harvard Summer School](http://www.summer.harvard.edu/) starts on June 25.

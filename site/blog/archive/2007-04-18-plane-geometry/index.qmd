@@ -1,0 +1,21 @@
+---
+title: Plane Geometry
+date: '2007-04-18'
+categories:
+- math
+- mathinthenews
+- harvard
+- news
+legacy-source: huwp
+aliases:
+- /posts/plane-geometry/
+- /posts/plane-geometry/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’ve been traveling a lot lately and waiting in line at the airport. So I was really surprised to see an [AMS poster](http://www.ams.org/ams/mm50-boarding.pdf) about the mathematics of [Airplane Boarding](http://www.public.asu.edu/~dbvan1/projects/boarding/boarding.htm). After chasing the poster to a Wall Street Journal article, I found the home page of the guy who’s been studying it closely, and has saved airlines millions of dollars per year.
+
+Nice job. But I want to get **off** the plane quicker, too!

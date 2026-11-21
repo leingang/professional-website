@@ -1,0 +1,23 @@
+---
+title: Happy Holidays and vaguely-work-related YouTube of the Week
+date: '2007-12-21'
+categories:
+- teaching
+- funny
+- harvard
+- teacher training
+- training
+- microteaching
+- statistics
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I had nothing to do with the production of this video, but Robin in my group helped that Stats department with the pre-service training, and they made a summary of what they had learned.  Fun stuff.
+
+`<object height="355" width="425">`{=html}\
+`<param name="movie" value="http://www.youtube.com/v/44TsxOHdMbE&amp;rel=1">`{=html}`</param>`{=html} `<param name="wmode" value="transparent">`{=html}`</param>`{=html}`<embed src="http://www.youtube.com/v/44TsxOHdMbE&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" height="355" width="425">`{=html}`</embed>`{=html}`</object>`{=html}\

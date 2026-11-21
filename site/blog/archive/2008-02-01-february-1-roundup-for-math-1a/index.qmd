@@ -1,0 +1,26 @@
+---
+title: February 1 roundup for Math 1a
+date: '2008-02-01'
+categories:
+- calculus 1
+- math 1a
+- spring 2008
+- harvard
+- mathmath1a function limit derivative
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Today we had a rousing game of Name Bingo, and then we settled down to set up the one of the principal ideas of the course. 
+
+Finding the velocity of a moving object involves finding a distance traveled and dividing by the time it takes to move that distance.  Smaller intervals are better, but there’s no smallest positive interval so what can we do?  For now we take as small an interval as we can and approximate. 
+
+Finding the slope of a line tangent to a curve at a point is another problem.  We need its slope, but how do we find that when we only know one point on the line?  We approximate the tangent line with a secant line, measure the slope of the secant line (knowable since it goes through two points on the curve), and use secants to get the best possible approximation.  Again, there’s no smallest distance between two points on the curve, so we have to decide what the successive approximations are actually approximating. 
+
+But the idea of taking something easy and well-understood (the slope of a line defined by two points) and using it to get at something complicated (the slope of a line defined by a point and a tangency condition) is pervasive.  And it turns out that our two calculations–velocities and tangents–are formally very similar.  In fact, we can find the instantaneous rate of change for any function using a limiting process like this.  Formalizing the process is the matter of the next few sections.
+
+[Slides](http://www.slideshare.net/leingang/lesson-1-the-tangent-and-velocity-problems/) are on the web now.

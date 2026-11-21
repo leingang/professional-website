@@ -1,0 +1,20 @@
+---
+title: Deep Thought
+date: '2009-02-11'
+categories:
+- education
+legacy-source: drupal
+aliases:
+- /posts/deep-thought/
+- /posts/deep-thought/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+A little long for a [tweet](http://twitter.com/sympleko), but too short for a big post:
+
+> Students have trouble differentiating between what you tell them because you want them to know it, and what you tell them because you want them to do it.
+:::

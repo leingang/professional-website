@@ -1,0 +1,49 @@
+---
+title: Conference tweets broadcast beyond hotel ballroom
+date: '2009-07-18'
+categories:
+- web
+- twitter
+- ibl
+legacy-source: drupal
+aliases:
+- /posts/conference-tweets-broadcast-beyond-hotel-ballroom/
+- /posts/conference-tweets-broadcast-beyond-hotel-ballroom/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+This is not a "[Why I tweet](http://www.google.com/search?q=%22why+i+tweet%22&ie=utf-8&oe=utf-8&aq=t)" post nor is it a "What [twitter](http://www.twitter.com/){.alinks-link} is for" post. But it's a nice anecdote about how twitter works in interesting ways.
+
+We've just wrapped up the [12th annual Legacy of R.L. Moore Conference](http://www.discovery.utexas.edu/rlm/Reports/legacyrlm12program.htm) in Austin, Texas. It's one of my favorite conferences and I decided to see if I could organize some collective twittering.
+
+At the beginning of the conference I made a quick announcement, tried to explain what twitter was and suggest that people follow me and tweet with the [#rlmoore](http://search.twitter.com/search?q=%23rlmoore) hashtag. I got a few right away, and I got a lot of "I've heard of twitter, but I don't quite understand what the point is" comments. I tried to explain that with friends and colleagues it's a quick way to communicate, and with students it's a nice way to help them understand that you have a life outside of the classroom.
+
+The keynote speaker was [Tim Chartier](http://www.davidson.edu/math/chartier/) of Davidson College, who talked about the intersection of mathematics, teaching, and mime (yes, [mime](http://en.wikipedia.org/wiki/Mime)) in his life. I was fascinated, and tweeted a lot of what I enjoyed from his talk. Before and afterwards he and I talked about twitter and we managed to get him signed up.
+
+On the second day of the conference, Lt. Col. Brian “Coach” Landry, USAF, talked about an important goal of education: to prepare students to independently solve new problems.
+
+> [mleingang](http://twitter.com/mleingang){target="_blank"} Lt. Col. Landry: [](http://www.math.nyu.edu/search?q=%23rlmoore "#rlmoore")[#rlmoore](http://search.twitter.com/search?q=%23rlmoore) education, training, and experience are 3 different things. One can't substitute for either of the others.\
+> [1 day ago](http://twitter.com/mleingang/statuses/2688468412) from [Twitterrific](http://twitterrific.com)
+
+This generated interest from some of my followers not at the conference. They chimed in and we were able to start a discussion.
+
+On the final day the [Berry College](http://www.berry.edu/) Active Learning group presented their program. They have an enormous number of non-lecture-style courses taught in many departments including philosophy(!). I found something [Chuck Lane](http://www2.berry.edu/academics/science/faculty/clane.asp) of the physics department was doing very interesting. He remarked that Inquiry-Based Learning has some challenged in physics that aren't present in math. For instance, the basic facts of mathematics are axioms and can be investigated on paper, while the basic facts of physics are the observables and can only be investigated in the classroom. Another one: the deep facts of mathematics are theorems which need framework to even state, while the deep facts of physics are often easy to state and many students are already aware of them. You cannot make someone "discover" [Coulomb's Law](http://en.wikipedia.org/wiki/Coulomb%27s_law) (which describes how charged particles attract) if he/she knows it.
+
+Chuck solved the problem this way: he invented data for students to model a relationship between, in some alternate universe where Coulomb's law doesn't quite work the same way. And it wasn't a random alternate universe, either: he chose alternate theories that have actually been posed, such as the introduction of massive photons or the removal of rotational symmetry.
+
+> [mleingang](http://twitter.com/mleingang){target="_blank"} Berry physics uses fake data inspired by alternate theories for students to learn how to derive when they don't know the answer [](http://www.math.nyu.edu/search?q=%23rlmoore "#rlmoore")[#rlmoore](http://search.twitter.com/search?q=%23rlmoore)\
+> [about 7 hours ago](http://twitter.com/mleingang/statuses/2707355690) from [Twitterrific](http://twitterrific.com)
+
+This generated
+
+> [salsb](http://twitter.com/salsb){target="_blank"} [](http://twitter.com/mleingang){target="_blank"}[\@mleingang](http://twitter.com/mleingang) That sounds interesting; do you have a reference I can look at for more details?\
+> [about 7 hours ago](http://twitter.com/salsb/statuses/2707407751) from [web](http://twitter.com/)
+
+I retweeted and said I would ask after the talk. And although I could have approached Chuck afterward (it wasn't the most insightful question) I deliberately asked in the Q&A to make a point: this is a question that would not have been asked, and an interest that would not have been generated, had we not been tweeting. I connected Fred to Chuck and maybe it will produce nothing, but the conversation was started because of twitter.
+
+So maybe that's a small part of what twitter is "for": extending conversations. I'm glad to have met [\@stanyoshinobu](http://twitter.com/stanyoshinobu), [\@berryprof](http://twitter.com/berryprof), [\@jmanske](http://twitter.com/jmanske), [\@timchartier](http://twitter.com/timchartier), and gotten [\@alewis43](http://twitter.com/alewis43) online, and I'll be able to keep connected with them after the conference. I'm looking forward to that.
+:::

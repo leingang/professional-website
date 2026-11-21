@@ -1,0 +1,24 @@
+---
+title: Can you own an integer?
+date: '2007-05-09'
+categories:
+- math
+- harvard
+- news
+legacy-source: huwp
+aliases:
+- /posts/can-you-own-an-integer/
+- /posts/can-you-own-an-integer/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Recently a certain 128-bit integer that was part of the key to decrypting high definition DVDs got out onto the web. The company developing the technology demanded that web sites publishing the number delete it because it consisted of a “circumvention technology” under the Digital Millennium Copyright Act (DCMA). Unfortunately, that toothpaste won’t go back into the tube.
+
+The legal argument is that the company holding the technology copyrights also owns the number. If that holds up, then [You Can Own an Integer Too](http://www.freedom-to-tinker.com/?p=1155).
+
+I’ll let the lawyers wrangle the case. But here’s mine:
+
+`06 1C 50 51 4B 1D 5D 5F 63 13 60 BD B2 AE 67 04`

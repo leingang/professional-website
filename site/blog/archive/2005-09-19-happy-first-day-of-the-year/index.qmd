@@ -1,0 +1,18 @@
+---
+title: Happy first day of the year
+date: '2005-09-19'
+categories:
+- math 20
+- math 1b
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+As I’ve been saying, September is the cruelest month. Most of the preparation is done, though, and we finally reached the first day of the 2005 Fall term. I had the opening meetings for [Math 1b](http://www.courses.fas.harvard.edu/1804){target="_blank"} and [Math 20](http://www.courses.fas.harvard.edu/0906){target="_blank"}, distributed syllabi, and did the meet-and-greet. Though it takes a few weeks to build up my teaching stamina, I’m still looking forward to an exciting semester.
+
+If you are interested in taking one of these courses and missed the first day, please go to the course web sites and download the relevant information. If you have other questions, come and see me or e-mail me.

@@ -1,0 +1,17 @@
+---
+title: If the IRS had discovered the quadratic formula
+date: '2005-09-14'
+categories:
+- math
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Found this via [Isabel’s Math Blog](http://izzycat.org/math): A cute bit by [Daniel Vellman](http://www.cs.amherst.edu/~djv) called “[If the IRS had discovered the quadratic formula](http://www.cs.amherst.edu/~djv/irs.pdf)“…
+
+The [IRS](http://en.wikipedia.org/wiki/IRS) provides step-by-step worksheets to make the application of complicated mathematical formulas to your financial situation simpler. I think they basically do a good job of this. But it is funny to see it taken to the extreme.

@@ -1,0 +1,41 @@
+---
+title: Tagging dimensions
+date: '2008-07-21'
+categories:
+- web
+legacy-source: drupal
+aliases:
+- /posts/tagging-dimensions/
+- /posts/tagging-dimensions/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+The mid 90's was the era of Yahoo!'s directory. The web was organized by hierchical categories (the names and children of which were decided by Yahoo) and somebody visited sites to place them in a category. You searched the hierarchy, not the text of the web pages themselves. Search engines came only a little bit later).
+
+Web browsers usually have the ability to save web addresses as *bookmarks*. These can also be organized, like a file system, or like the file cabinet each draws their metaphor from, in a system of hierarchical folders.
+
+Web 2.0 has popularized the concept of *tagging* data; marking it rather than filing it. This increases the complexity of categorization exponentially.
+
+On Wikipedia, pages are not organized in a tree of knowledge, but can be labeled in any number of ways. For instance, the [Frank Sinatra](http://en.wikipedia.org/wiki/Frank_Sinatra) page on Wikipedia is predictably in the [American crooners](http://en.wikipedia.org/wiki/Category:American_crooners) category, but not so predictably in the categories of [American Roman Catholics](http://en.wikipedia.org/wiki/Category:American_Roman_Catholics), [Grammy Lifetime Achievement Award winners](http://en.wikipedia.org/wiki/Category:Grammy_Lifetime_Achievement_Award_winners), and [people who died by myocardial infarction](http://en.wikipedia.org/wiki/Category:Deaths_by_myocardial_infarction). There's no linear file cabinet or tree of knowledge; pages are organized along any number of *orthogonal* directions.
+
+Sites like [del.icio.us](http://del.icio.us/) and browsers like [Flock](http://www.flock.org/) do the same for our bookmarks. Do I want to categorize [xkcd](http://xkcd.com/)--a web comic about math, academia, and other nerdy stuff--within "[math](http://del.icio.us/math)" or "[comics](http://del.icio.us/comics)"? Why choose? Looking at the [del.icio.us page for xkcd](http://del.icio.us/url/8e670181bbe46f51f493370107c790ae) shows that people have done both. Also "[geek](http://del.icio.us/geek)", "[funny](http://del.icio.us/funny)", and the self-tag "[xkcd](http://del.icio.us/xkcd)".
+
+The power of tagging to organize data can be seen when you click on one of those del.icio.us tag pages and see what else has been categorized that way. Following the link to the math page you might find yourself at a page about the [quincunx](http://www.mathsisfun.com/probability/quincunx.html). Go down the funny road and you arrive at an impressive collection of [pictures taken at just the right time](http://www.blingit.us/blog/2008/02/27/pictures-taken-just-at-the-right-time/). The point being the interconnectedness of ideas is so much richer the more ways you can organize it.
+
+(There's also the big difference that the Yahoo! directory was organized by Yahoo!, while del.icio.us is organized by everybody and nobody. That's why the tags used are called a *[folksnomy](http://en.wikipedia.org/wiki/Folksonomy)* instead of a *taxonomy*.)
+
+As a mathematician, I like the idea of classifying things along many dimensions. And I also start to think about what the "right" dimensions are. One of the ideas behind tagging is that it's not so important. That's where the "folk" in folksonomy come in. If people write down the first things that pop into their head about xkcd, "webcomic", "math", and "funny" are up near the top of the list without having to say why. But in classifying my own stuff (my bookmarks list, photo collection, PDF archive, whatever...[Tagamac](http://tagamac.com/) is a cool blog about different kinds of tagging software)\
+), I'd like to have my own tags organized to avoid simply repeating the title or the text itself.
+
+When my fingers are poised over the keyboard and I'm wondering how to tag something, I ask myself these questions:
+
+- *What is it?* If you're bookmarking something on the web, is it a page of text? You probably don't need to tag it as a web page. But what if it's an image? A blog post or the home page of a blog? An FAQ list? These might be useful ways to classify the "form" of a resource.
+- *What is it about?* Tagamac is about tagging (the practice of it), but it's also about software (the means of it). What else? Computers? hacking? There are lots of "subjects" that a resource can have
+- *What do I think about it?* This is subjective, so it doesn't necessarily lead to good folksonomy unless you get enough folk to agree with you. However, for personal purposes, I mark things as "funny" or "useful" or just "cool." A resource can have a number of "qualities" worth mentioning.
+
+I feel like I should have more, but I like these three. There's also the best practice of keeping tags [simple, lowercase, and singular](http://tagamac.com/2007/07/best_practices/). Encouraging "comic" rather than "comics" will ensure that that particular tag will get more weight in the folksonomy, rather than equally split among the two.
+:::

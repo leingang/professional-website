@@ -1,0 +1,27 @@
+---
+title: 'Day in the Life: Teaching Fellow Orientation today'
+date: '2007-09-10'
+categories:
+- talks
+- training
+- harvard
+- teacher training
+- teacher
+legacy-source: huwp
+aliases:
+- /posts/day-in-the-life-teaching-fellow-orientation-today/
+- /posts/day-in-the-life-teaching-fellow-orientation-today/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’m fond of saying that “Sepetember is a the cruelest month” for a preceptor (apologies to T.S. Eliot).  Next week is the first week of classes, but now that the freshmen are here we are in the “Opening Days” period that ramp up to the academic year.
+
+Today we have our annual teaching fellow orientation. We’ve developed a set of activities that we hope will get our graduate students and postdocs excited and prepared for teaching calculus, including:
+
+- Selections from popular movies on teaching
+- A multiple-choice “pop quiz” on teaching choices
+- “The Preceptor Players Present”–Case studies in the form of skits
+- Chinese Food!!

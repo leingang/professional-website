@@ -1,0 +1,29 @@
+---
+title: Texify
+date: '2007-11-29'
+categories:
+- math
+- harvard
+- web
+- latex
+legacy-source: huwp
+aliases:
+- /posts/texify/
+- /posts/texify/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I installed the [LatexRender](http://sixthform.info/steve/wordpress/index.php) plugin to my WordPress blog to express myself in mathematical notation that HTML alone can’t handle.  It runs latex on the server side and serves up an image embedded in the text.
+
+For mathematical bloggers who don’t have access to their webservers (or choose not to get their hands dirty with server-side code), there’s [Texify](http://texify.com/), a nice web service that lets you input LaTeX and get a permalink to a graphic that you can include in your web pages.  For instance, I copied-and-pasted some code from a slideshow I’m working on and got this:
+
+$$\begin{align*} \frac{\partial f}{\partial x_i}(x_1, x_2, \dots, x_n) &= \lambda \frac{\partial g}{\partial x_i}(x_1, x_2, \dots, x_n) & \text{for each $i=1,\dots,n$}\\ g(x_1, x_2, \dots, x_n) &= 0.\end{align*}$$
+
+I’m impressed that they seem to have enabled the amsmath packages in their backend, so some of the more sophisticated mathematical constructs can be used (I’m using an align\* environment and the \\\\text command up there).
+
+The site also provides code to copy-and-paste into BBCode posts such as you’d find on forums, and even Google Docs!
+
+(HT: [Michael Tsai](http://mjtsai.com/blog/2007/11/28/texify/))\

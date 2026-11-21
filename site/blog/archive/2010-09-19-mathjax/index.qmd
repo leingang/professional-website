@@ -1,0 +1,27 @@
+---
+title: MathJAX
+date: '2010-09-19'
+categories:
+- tex
+- latex
+legacy-source: drupal
+aliases:
+- /posts/mathjax/
+- /posts/mathjax/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+[![MathJax](http://www.mathjax.org/wp-content/themes/mathjax/images/logo.gif)](http://www.mathjax.org/ "MathJax")
+
+I cashed in a lot of [round tuits](http://www.cafepress.com/+round-tuit-tile-coaster,2988405?sourcecode=affiliate&cmp=pfc--f--us--037--2988405&utm_source=froogle&utm_medium=productfeed&utm_term=2988405&utm_campaign=tile-coaster) and updated the infrastructure on my site. One new addition is [MathJax](http://www.mathjax.org/).
+
+MathJax is a JavaScript suite which handles setting math in the browser. Users can type in TeX or LaTeX, and the output can be MathML or a graphical rendering in HTML of the code.
+
+Testing: If $ax^2 + bx + c = 0$, then $x = \displaystyle\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+Seems to work pretty well. Server-side methods that parse the body for TeX code, then ran TeX, converted to an image, and served the image, were always kludgy. This is client-side (so it depends on the viewer's software to see), but JavaScript is used in most graphical browsers, so it makes sense to rely on it. If a user can view [Facebook](http://www.facebook.com/), they can view MathJAX.
+:::

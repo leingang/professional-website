@@ -1,0 +1,13 @@
+---
+title: "Back to writing"
+date: 2026-11-21
+description: "After a long quiet stretch, I'm writing here again about teaching, training instructors, and tools."
+categories: [meta]
+draft: true   # TODO: edit, then remove this line to publish
+---
+
+<!-- DRAFT. A short re-introduction post is a good first piece: what you've
+     been doing for the past decade (coordinating calculus, TA training,
+     student affairs) and what you'll write about here. -->
+
+It has been a while.

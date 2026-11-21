@@ -1,0 +1,23 @@
+---
+title: Accepted
+date: '2010-10-12'
+categories:
+- talks
+- talk
+- meeting
+- jointmath
+legacy-source: drupal
+aliases:
+- /posts/accepted/
+- /posts/accepted/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+The Good News: my paper "[Mashups for course websites with Yahoo! Pipes](http://www.ams.org/amsmtgs/2125_abstracts/1067-h1-1791.pdf)" was accepted to the [MAA Session on Harnessing Mobile Communication Devices and Online Communication Tools for Mathematics Education](http://bit.ly/a3ki6w) to be held at the Joint Mathematics Meetings in January in New Orleans. It will be good to see talks in the same session by Frank Wattenberg and Klay Kruczek, both of whom I've worked with/learned from in the past.
+
+The Bad News: My talk is at 8:40am. Could be worse, I guess. The first talk is at 7:40!
+:::

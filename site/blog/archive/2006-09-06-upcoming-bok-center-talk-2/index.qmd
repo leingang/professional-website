@@ -1,0 +1,20 @@
+---
+title: 'Upcoming: Bok Center talk'
+date: '2006-09-06'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+It’s time once again for the [Derek Bok Center for Teaching and Learning](http://bokcenter.harvard.edu/)’s annual [Fall Teaching Conference](http://bokcenter.harvard.edu/ftc/index.html). It’s a great opportunity for graduate student teachers to learn and discuss their teaching development before the academic year begins. And the catered lunches are legendary.
+
+([Derek Bok](http://ksgfaculty.harvard.edu/derek_bok) is former and interim president of Harvard. The center was started to continue his mission of training new university teachers. Derek Bok’s book, [Our Underachieving Colleges: A Candid Look at How Much Students Learn and Why They Should Be Learning More](http://www.pupress.princeton.edu/titles/8125.html), was part of the impetus for the recent teaching initiative here.)
+
+This year I will be again presenting one of the BC case studies in mathematics called “[The Quicksand of Problem Four](http://bokcenter.harvard.edu/ftc/ftc06sched.html#4)“. Like most good case studies, it’s a classic story which many experienced teachers have encountered. How can it be handled? That’s the study part.

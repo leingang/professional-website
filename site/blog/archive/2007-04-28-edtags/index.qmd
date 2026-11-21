@@ -1,0 +1,22 @@
+---
+title: EdTags
+date: '2007-04-28'
+categories:
+- education
+- harvard
+- web
+legacy-source: huwp
+aliases:
+- /posts/edtags/
+- /posts/edtags/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+At the last web pedagogies lunch [Michael Hemment](http://researchforward.wordpress.com/) told us about [Edtags](http://edtags.org/), a social-bookmarking service for educational resources. He’s also blogged about it [here](http://researchforward.wordpress.com/2007/04/03/edtags-bookmarking-education/){rel="bookmark"}.  it seems like a fun tool, and I think like to play with it, but I’m wondering if they’d be upset by the intrusion of an undergraduate educator. ![:-)](/images/icon_smile.gif){.wp-smiley}
+
+But my main question is this: Why use this instead of [del.icio.us](http://del.icio.us/)?  To me it seems like creating a search engine that focuses on pages about fishing.  You can just add “fishing” to your search query in a real engine like Google and probably get better results.  So why not use the same tags on del.icio.us and benefit from the larger community?
+
+**Update:** Apparently [TeachingHacks](http://www.teachinghacks.com/wiki/index.php?title=Social_bookmarking_tools) recommends just that.

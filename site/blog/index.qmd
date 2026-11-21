@@ -1,0 +1,38 @@
+---
+title: "Writing"
+listing:
+  - id: recent
+    contents: posts
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    feed: true
+  - id: archive
+    contents: archive
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    date-format: "YYYY-MM-DD"
+    page-size: 50
+    filter-ui: true
+    sort-ui: true
+    categories: false
+page-layout: full
+title-block-banner: false
+---
+
+Notes on teaching mathematics, preparing instructors, and the tools I build
+along the way.
+
+::: {#recent}
+:::
+
+## Archive (2005–2018)
+
+Posts from my earlier blogs: as Preceptor at Harvard, on the Courant
+Institute site, and from 2016–2018.
+
+::: {#archive}
+:::

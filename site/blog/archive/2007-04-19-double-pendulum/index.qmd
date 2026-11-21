@@ -1,0 +1,17 @@
+---
+title: Double Pendulum
+date: '2007-04-19'
+categories:
+- math
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/double-pendulum/
+- /posts/double-pendulum/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I found this sweet [Double Pendulum Physics Simulation](http://www.myphysicslab.com/dbl_pendulum.html) at myphysicslab. We’re doing nonlinear systems of ODE in [Math 21b](http://www.courses.fas.harvard.edu/1771){target="_blank"} tomorrow. Hopefully I can work it in!

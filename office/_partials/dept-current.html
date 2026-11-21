@@ -1,0 +1,8 @@
+$for(current-courses)$
+<div class="course">
+    <strong>$it.code$: $it.title$</strong>$if(it.meets)$ &mdash; $it.meets$$endif$
+$if(it.links)$
+    <span class="course-links">$for(it.links)$<a href="$it.url$">$it.label$</a>$sep$ · $endfor$</span>
+$endif$
+</div>
+$endfor$

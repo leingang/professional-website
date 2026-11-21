@@ -1,0 +1,30 @@
+---
+title: Tuesday reading list and DITL
+date: '2007-09-11'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Today I’ll be attending the [Fall Teaching Conference](http://isites.harvard.edu/icb/icb.do?keyword=k1985&pageid=icb.page29680) sponsored by the [Derek Bok Center for Teaching and Learning](http://bokcenter.harvard.edu/icb/icb.do). The math department, especially the preceptors, collaborate a lot with the Bok Center in the training of graduate student teaching fellows. I’ve given several talks in these conferences, but I’m free this year.
+
+There are sessions on teaching and learning in the conference. Erin Driver-Linn will speak on “The Confused Problem-Solver in Math and Science,” presenting research on student learning Ryan Hickox will speak on “Successful Science Sections”, a nuts-and-bolts session. There will be panel discussions, case studies, all kinds of great stuff.
+
+One of my favorite Bok Center talks was given by a colleague of mine, talking about the importance of the first day. He decided to create the worst example of first-day teaching and model it without telling the audience. He showed up late, he mumbled, he looked disheveled, he forgot his handouts. Someone asked a question and he said, “What a stupid question!” Fortunately, most of the attendants either figured it out or waited long enough for Andy to reveal the ruse. That’s something I wouldn’t be able to pull off!
+
+The conference runs every Fall and Spring (two days in the Fall, one in the Spring), and features one of the more famous free lunches on campus.
+
+Links for today:
+
+- [We All Use Math Every Day](http://www.weallusematheveryday.com/tools/waumed/home.htm): a set of learning modules created by TI linked to episodes of Numb3rs. I’ve blogged before that [Numb3rs is kind of realistic, IMO](/posts/is-numb3rs-for-real/).
+- [Homework Guidelines](http://purplemath.com/guidline.htm): **extremely** appropriate advice to students on how to prepare and present their homework, both physically and logically
+- [TIME BANDITS: The New Yorker](http://www.newyorker.com/archive/2005/02/28/050228crat_atlarge): A review of a biography of Kurt Gödel including his interactions with Einstein at Princeton
+- [rst2a](http://rst2a.com/): a new package of tools (with a web services API) to convert [reStructured Text](http://docutils.sourceforge.net/) to “anything” (as long as “anything” means HTML and PDF). I love RST and use it all the time.
+- Gotta love [xkcd](http://xkcd.com/314)

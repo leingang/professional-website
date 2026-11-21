@@ -1,0 +1,45 @@
+---
+title: Everything you need to know to succeed in college-level mathematics, but are afraid to ask
+date: '2005-09-20'
+categories:
+- math
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/everything-you-need-to-know-to-succeed-in-college-level-mathematics-but-are-afraid-to-ask/
+- /posts/everything-you-need-to-know-to-succeed-in-college-level-mathematics-but-are-afraid-to-ask/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+The following excerpt is from the article “Teaching at the University Level” by Steven Zucker of Johns Hopkins University. It appears in the [Notices of the American Mathematical Society, Volume 43, Number 8.](http://www.ams.org/notices/199608/199608-toc.html).
+
+I agree with the sentiment even if it’s a little curt. I think honest statements about expectations help make the inevitable adjustment from high school to college at least understandable.
+
+> 1.  You are not in high school anymore! It is absolutely necessary that you\
+>     discard high school notions of teaching, learning and working, and replace\
+>     them with college level notions. Our goal is not simply to coach you to\
+>     reproduce what was said in the classroom.
+> 2.  Expect the material to be routinely covered at a pace that is [two to three\
+>     times]{style="font-weight: bold"} as fast as in high school, and expect to be required to demonstrate\
+>     greater mastery of it.
+> 3.  We only have about 40 hours of lecture - that is less than a single work\
+>     week - so we cannot afford to cover every detail. Do not expect to be\
+>     [taught]{style="font-style: italic"} everything in the classroom. [It is ]{style="font-weight: bold"}[your]{style="font-style: italic"} responsibility\
+>     to learn the material. Most of this learning will take place outside of\
+>     the classroom. You should plan on spending two hours outside of the classroom on this material for\
+>     every hour we spend in class.
+> 4.  The instructor’s job is not to explain everything in excruciating detail,\
+>     but to provide a framework with which to guide you in learning the concepts\
+>     and methods that are the material of the course.
+> 5.  Read the textbook before and after the lectures. Read and study the\
+>     examples, and work them out, along with some other exercises, as you read the\
+>     text.
+> 6.  Ask questions, and work problems.
+> 7.  The purpose of the course is not to program each of you to respond to\
+>     certain problem assignments, but how to think and how to learn within a\
+>     certain mathematical context.
+> 8.  Finally …. your professor is there to [help you]{style="font-weight: bold"}! Ask for his/her\
+>     help as soon as you need it.

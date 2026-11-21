@@ -1,0 +1,33 @@
+---
+title: 'New toys department I: Nikon Coolpix L10 on clearance'
+date: '2007-07-05'
+categories:
+- miscellaneous
+- stapler
+- funny
+- harvard
+- space
+- office
+- brother
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I got my own digital camera to play with when I picked up the [Nikon Coolpix L10 5MP](http://www.amazon.com/Nikon-Coolpix-Digital-Camera-Optical/dp/B000N49WPC) on clearance (90 bucks!) at [MicroCenter](http://www.microcenter.com/).
+
+Partly this is for an article I’m writing about Web 2.0 and all the online photoservices (Flickr, Photobucket, Facebook) that are out there. I need some photos which aren’t of my kids to demonstrate with.
+
+But a major reason is to upload this photo which I nominate for “nerdiest pop culture reference with a Brother labelmaker”:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/DSCN0012.jpg){width="662" height="495" border="0"}
+
+The reference is to *[Office Space](http://www.imdb.com/title/tt0151804/)*, which makes me happy to be in academia.
+
+`<object width="425" height="350">`{=html}\
+`<param name="movie" value="http://www.youtube.com/v/YHKpJaxMoAE">`{=html}`</param>`{=html} `<param name="wmode" value="transparent">`{=html}`</param>`{=html}`<embed width="425" height="350" src="http://www.youtube.com/v/YHKpJaxMoAE" type="application/x-shockwave-flash" wmode="transparent">`{=html}`</embed>`{=html}`</object>`{=html}\
+
+\

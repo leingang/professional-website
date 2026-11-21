@@ -1,0 +1,22 @@
+---
+title: Happy Sputnik Day
+date: '2007-10-04'
+categories:
+- math
+- sputnik
+- education
+- harvard
+- pop culture
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[![](http://i203.photobucket.com/albums/aa27/leingang_math/th_google_sputnik_res.gif){border="0"}](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=google_sputnik_res.gif "google_sputnik_res.gif")Today marks the 50th anniversary of the launch of [Sputnik 1](http://en.wikipedia.org/wiki/Sputnik_1), a mostly harmless satellite but only the first man-made object to orbit the earth. It had a profound effect not only on world politics but on education in the United States.  As [written](http://www.afa.org/magazine/oct2007/1007sputnik.pdf) in [Air Force]{style="font-style: italic;"} Magazine this month:
+
+> In beating Washington to the punch in space, the Kremlin really hit us where it hurt—in our technological ego. Sputnik instantly catapulted the Soviet Union onto the world’s scientific top shelf, raising doubts about America’s own standing…After initial soul-searching, the US embarked on a massive and determined space effort. The Pentagon formulated a huge program. On the civilian side, newly created NASA did the same. The aerospace industry exploded. Colleges were flooded with new engineering students eager to take up the Russian challenge. Public education turned hard toward math and science curricula. Sputnik may have started the Space Age, but America created the Space Race. Soon, the US was to leave Moscow in the dust.
+
+Thanks, comrades! But that was 50 years ago—I’m looking forward to the next big push in science and math education. Or, results of it.

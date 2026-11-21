@@ -1,0 +1,25 @@
+---
+title: Flock, again
+date: '2007-04-22'
+categories:
+- web
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[![I Flock](http://spread.flock.com/buttons/I-Flock.gif "I Flock"){align="right" style="border: medium none "}](http://spread.flock.com/buttons/?user=&ref=I-Flock.gif)I’ve been using [Flock](http://www.flock.com/) on a trial basis for a while now. A friend told me since it was [Firefox](http://www.mozilla.com/en-US/firefox/)-based it would be faster on a mac. Plus he’s into all that Web 2.0 stuff that I’m still getting into. But I’m starting to get the hang of both.
+
+Flock aims to integrate popular web sites and web activities into your browser. It has a blogging tool built in (I’m using it now). Along with the canonical bookmark (Flock calls them “favorites”) management utility, Flock gives a nice interface with your [del.icio.us](http://del.icio.us/) or [shadows](http://www.shadows.com/) accounts so you can tag pages on-the-fly. If you’re into [Flickr](http://www.flickr.com/) or [photobucket](http://www.photobucket.com/), you can use Flock to manage your photo collection.
+
+It also has a nice clipboard of web “snippets” that lives in the bottom margin of any Flock window. So if you’re putting together a blog post and you want to copy an image from another location, drag it down there and then into anything else:
+
+[![Photo of a physics demonstration](http://www.extension.harvard.edu/2006-07/images/crs_default.jpg){border="0"}](http://www.extension.harvard.edu/2006-07/courses/default.jsp;jsessionid=HCDFGJCBGFJF "Photo of a physics demonstration")
+
+I guess your interest in Flock depends on how much you use these other applications. But I think it will be making it easier for me to blog, which is something I’m going to try to do more of.
+
+**PS** I should give a shoutout to [Damon](http://damonjordan.com/) who was the first to tell me about Flock.

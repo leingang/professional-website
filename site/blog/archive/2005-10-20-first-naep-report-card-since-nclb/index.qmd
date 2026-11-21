@@ -1,0 +1,22 @@
+---
+title: First NAEP Report Card since NCLB
+date: '2005-10-20'
+categories:
+- math
+- harvard
+- teacher training
+legacy-source: huwp
+aliases:
+- /posts/first-naep-report-card-since-nclb/
+- /posts/first-naep-report-card-since-nclb/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+The latest report of the [National Assessment of Educational Progress (NAEP)](http://nces.ed.gov/nationsreportcard/) was released yesterday. It’s the first such report since the enactment of the [No Child Left Behind Act](http://www.ed.gov/nclb/landing.jhtml?src=pb) 0f 2002. NAEP is based on tests of 4th- and 8th-graders across the country and is administered every two years.
+
+Unfortunately, as the [Washington Post](http://www.washingtonpost.com/wp-dyn/content/article/2005/10/19/AR2005101900708.html?nav=rss_print/asection) and [New York Times](http://www.nytimes.com/2005/10/20/national/20exam.html?ei=5094&en=9e36304fcafd7e02&hp=&ex=1129780800&partner=homepage&pagewanted=print) are reporting, the results are not so good. Reading scores are *down*, and although math scores are up, they didn’t increase as much as they did in the last testing period.
+
+It’s hard to say what this means for college educators, except that these students will eventually be our students. Understanding our students’ backgrounds, and the fact that they will have been educated in this test-driven scheme, will be critical in the future.

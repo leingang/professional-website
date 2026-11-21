@@ -1,0 +1,26 @@
+---
+title: 'Upcoming: TUMS II talk'
+date: '2005-10-20'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’m glad to be leading the inaugural discussion today in the new [Teaching Undergraduate Mathematics Seminar](http://www.math.harvard.edu/preceptor/tums/) (TUMS II), which meets alternate Thursdays.
+
+To quote from the seminar’s web site:
+
+> Teaching is a significant component of most mathematicians’ careers. Just as future lawyers and doctors must study and train to become more proficient in the skills needed for their professional careers, future mathematicians must study and train to improve their teaching skills. The goal of the Teaching Undergraduate Mathematics Seminar is to provide opportunities during the semester to discuss and reflect on teaching philosophies and practices in order to become better teachers now and to prepare for the teaching activities which will be part of future professional careers.
+>
+> The seminar presentations and discussions are designed primarily for mathematics graduate students, but anyone interested in mathematics teaching is welcome to attend. We will be examining teaching by reading and discussing case studies developed at Boston College.
+
+And here is the teaser for the case today:
+
+> Hugh Brightman, a second year graduate student, is teaching his own Calculus II class under faculty supervision after a successful year as a TA for a recitation section in a large class taught by a professor. Although not many students have been coming to his office hours, Hugh is confident that they are well prepared for his first hour exam. He is shocked when he discovers that they don’t seem to have learned even the most basic techniques and concepts.

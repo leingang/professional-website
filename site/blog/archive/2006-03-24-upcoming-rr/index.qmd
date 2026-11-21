@@ -1,0 +1,16 @@
+---
+title: 'Upcoming: R&R'
+date: '2006-03-24'
+categories:
+- miscellaneous
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+![Spring Break coming](/images/Picture%201.png)

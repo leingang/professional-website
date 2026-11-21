@@ -1,0 +1,20 @@
+---
+title: Math 20 Syllabus is online
+date: '2005-09-13'
+categories:
+- math
+- harvard
+- math 20
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Finally the [Math 20](http://www.courses.fas.harvard.edu/0906){target="_blank"} [syllabus](http://my.harvard.edu:80/icb/icb.do?course=fas-math20&pageid=tk.page.math20.dir.df06c599fcf736615fcfefbb36a38453 "my.harvard") and [calendar](http://my.harvard.edu:80/icb/icb.do?course=fas-math20&pageid=tk.page.math20.dir.8ff922bbcd8ad41cdfc48d3c5163b2ab "my.harvard") are online. I’m looking forward to teaching this course this year.
+
+In previous years, the course focused on a lot of linear algebra and some multivariable calculus. We’ve decided to shift this balance the other direction, and talk more about calculus than linear algebra. This is intended to help those taking Math 20 as prerequisite for [](http://my.harvard.edu/course/ec1011a)[Ec 1011a](http://www.courses.fas.harvard.edu/1862){target="_blank"}.
+
+We will still have time enough to do some fun applications, including linear programming and game theory. And no daily problem sets this term!

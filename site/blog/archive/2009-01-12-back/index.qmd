@@ -1,0 +1,41 @@
+---
+title: Back
+date: '2009-01-12'
+categories:
+- teaching
+legacy-source: drupal
+aliases:
+- /posts/back/
+- /posts/back/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+:::::: content
+I'm glad to say that I'm back at work, both in cyber- and meatspace.
+
+I had let the website malinger in the land of database connection error for a long time, and it turned out all I had to do was start it up again (the server on which it was running had been rebooted for maintenance).
+
+Physically, I'm back in the office after a holiday vacation and a trip to Washington, DC for the annual [Joint Meetings](http://www.ams.org/amsmtgs/2110_intro.html) of the AMS and MAA.  I gave a fun talk about some of the courses I taught at Harvard using the Moore Method style. 
+
+:::: {style="width: 425px; text-align: left;"}
+[Inquiry-Based Learning Opportunities for Secondary Teachers and Students](http://www.slideshare.net/leingang/inquirybased-learning-opportunities-for-secondary-teachers-and-students-presentation?type=powerpoint "Inquiry-Based Learning Opportunities for Secondary Teachers and Students"){style="margin: 12px 0pt 3px; font-family: Helvetica,Arial,Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; display: block; text-decoration: underline;"}
+<object style="margin: 0px;" height="355" width="425">
+`<param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=jmm-2009-ibl-special-session-talk-mergekey-1231450797732636-1&amp;stripped_title=inquirybased-learning-opportunities-for-secondary-teachers-and-students-presentation">`{=html}`<param name="allowFullScreen" value="true">`{=html}`<param name="allowScriptAccess" value="always">`{=html}
+<embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=jmm-2009-ibl-special-session-talk-mergekey-1231450797732636-1&amp;stripped_title=inquirybased-learning-opportunities-for-secondary-teachers-and-students-presentation" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="355" width="425">
+</embed>
+</object>
+
+::: {style="font-size: 11px; font-family: tahoma,arial; height: 26px; padding-top: 2px;"}
+View SlideShare [presentation](http://www.slideshare.net/leingang/inquirybased-learning-opportunities-for-secondary-teachers-and-students-presentation?type=powerpoint "View Inquiry-Based Learning Opportunities for Secondary Teachers and Students on SlideShare"){style="text-decoration: underline;"} or [Upload](http://www.slideshare.net/upload?type=powerpoint){style="text-decoration: underline;"} your own. (tags: [school](http://slideshare.net/tag/school){style="text-decoration: underline;"} [extension](http://slideshare.net/tag/extension){style="text-decoration: underline;"})
+
+But now it's time to get back to work.  This term I'll be coordinating Calc I, II, and II, and teaching Calc I plus a discrete mathematics course. 
+:::
+::::
+
+::: {.flockcredit style="text-align: right; color: #CCC; font-size: x-small;"}
+Blogged with the [Flock Browser](http://www.flock.com/blogged-with-flock "Flock Browser"){style="color: #999; font-weight: bold;" target="_new"}
+:::
+::::::

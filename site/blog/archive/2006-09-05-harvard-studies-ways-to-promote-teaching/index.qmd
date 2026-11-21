@@ -1,0 +1,29 @@
+---
+title: Harvard studies ways to promote teaching
+date: '2006-09-05'
+categories:
+- academia
+- harvard
+- education
+- news
+legacy-source: huwp
+aliases:
+- /posts/harvard-studies-ways-to-promote-teaching/
+- /posts/harvard-studies-ways-to-promote-teaching/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[This from today’s Boston Globe](http://www.boston.com/news/local/articles/2006/09/05/harvard_studies_ways_to_promote_teaching/?rss_id=Boston+Globe+--+City%2FRegion+News):
+
+> CAMBRIDGE — Harvard University today begins a new effort to figure out how to improve teaching and make it a bigger factor in whether professors get tenure or raises.
+>
+> If successful, the initiative could counter Harvard’s image as a school that allows professors to neglect undergraduates in favor of the research that wins them grants, book prizes, and fame.
+
+I would also hope the initiative can improve the quality of education for undergraduates. The committee intends to report on February 1 what recommendations they have, some of which can be adopted immediately and some of which will take some time. One of the ideas listed in the article that I find interesting is this:
+
+> Harvard already has a system for students to evaluate their professors, but Skocpol said she would like to see professors evaluating one another’s classes as well, just as they critique one another’s academic articles and books. The point, she said, would be not just to judge but to expose professors to new ideas and encourage every faculty member, young or old, to think about ways he or she can improve.
+
+That sounds good to me. As non-tenure-track teaching faculty, I suppose it’s only natural to want more attention paid to teaching. But my reasons are not only selfish. I know my department has some excellent teachers, and I would like to see all our great teachers encouraged to further the state of the art of teaching just like they have furthered the state of mathematics.

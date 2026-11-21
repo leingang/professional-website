@@ -1,0 +1,174 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: true
+    toc-location: right
+  typst:
+    output-file: leingang-cv.pdf
+    papersize: us-letter
+    margin: {x: 1in, y: 0.8in}
+    fontsize: 10.5pt
+format-links: [typst]
+---
+
+<!-- Converted from leingang/cv tex/Leingang_CV.tex (March 2024) and updated
+     November 2026. This page is now the source for both the HTML CV and the PDF.
+     Home address and phone are intentionally omitted from the public version. -->
+
+**{{< meta person.name >}}**\
+Courant Institute of Mathematical Sciences, New York University\
+251 Mercer Street, New York, NY 10012\
+{{< meta person.email >}} · {{< meta person.website >}}\
+[LinkedIn](https://www.linkedin.com/in/matthewleingang/) ·
+[ORCID 0000-0001-7021-1696](https://orcid.org/0000-0001-7021-1696) ·
+[GitHub](https://github.com/leingang)
+
+## Appointments
+
+**New York University**, Courant Institute of Mathematical Sciences, 2008–present
+
+- Clinical Professor of Mathematics, 2014–present
+- Clinical Associate Professor of Mathematics, 2008–2014
+
+**Harvard University**, Preceptor in Mathematics, 2003–2008
+
+**Rutgers, the State University of New Jersey**, Hill Assistant Professor of Mathematics, 2000–2003
+
+## Education
+
+- Ph.D., Mathematics, Harvard University, 2000
+- A.M., Mathematics, Harvard University, 1998
+- A.B., Mathematics, University of Chicago, 1995, with honors in the College and in Mathematics
+
+## Administrative leadership
+
+**Assistant Director for Undergraduate Studies**, Department of Mathematics, NYU, 2023–2025
+
+- One of two positions created from the Vice Chair role. Primary focus on the
+  introductory division of the undergraduate program.
+
+**Vice Chair for Undergraduate Affairs**, Department of Mathematics, NYU, 2008–2023
+
+- Directed the service-level mathematics program, which teaches 7,000 students
+  each academic year in calculus, precalculus, discrete mathematics,
+  quantitative reasoning, and linear algebra.
+- Developed a common syllabus for Calculus I, II, and III and instituted a
+  course coordination system to normalize academic content and policies.
+- Managed and led a team of 12 clinical faculty members.
+- Directed training of novice teachers, including graduate teaching assistants,
+  postdoctoral lecturers, and undergraduate tutors and graders.
+- Managed student affairs issues including honors, credit transfers, graduation
+  requirements, academic integrity violations, and other sensitive student issues.
+- Managed learning outcomes assessment of service-level courses.
+
+**Course Head**, Harvard University, 2003–2008
+
+- Led courses across the calculus sequence: chose texts, set syllabi, managed
+  section leaders, wrote exams, and assigned final grades.
+
+## Awards, fellowships, and grants
+
+- Distinguished Teaching Award, MAA Metropolitan New York Section, 2017
+- Alfred P. Sloan Foundation, NYU GSTEM grant (\$500K), 2012–2017
+- Educational Advancement Foundation, development grant, 2009
+- Harvard Provost's Fund for Instructional Technology, \$50K grant for the
+  Mathematical Online Placement Exam (MOPE), 2003–2004
+- National Science Foundation VIGRE Postdoctoral Fellowship, 2000–2003
+- National Science Foundation Graduate Research Fellowship, 1995–1998
+- Paul R. Cohen Memorial Prize in Mathematics, University of Chicago, 1995
+
+## Publications
+
+- "Using DocStrip for multiple document variants." *TUGboat* 41 (2020), 281–285.
+- "Paul Sally, Jr. (1933–2013)," with S. DeBacker (ed.) et al. *Notices of the
+  American Mathematical Society* 65 (2018), 555–565.
+- "The development of pedagogical content knowledge in first-year mathematics
+  graduate teaching assistants," with T. Judson. *Journal of STEM Education* 17
+  (2016), 37–43.
+- "Facebook for professional educators: to friend or not to friend?" with
+  D. C. Ernst and R. Taylor. *MAA FOCUS* 35(3) (2015), 6–7.
+- "Symmetric space valued moment maps." *Pacific Journal of Mathematics* 212 (2003), 103–123.
+- *Symmetric Space Valued Moment Maps.* Ph.D. thesis, Harvard University, 2000.
+
+## Talks and workshops
+
+More than 30 invited and contributed talks, workshops, and panels since 2001,
+including the Joint Mathematics Meetings (2005–2018), MathFest, MSRI, the
+Legacy of R. L. Moore Conference, and MAA section meetings. Full list:
+[matthewleingang.com/talks](https://www.matthewleingang.com/talks.html).
+
+**Conference organized:** "Interactive assessments in open source textbooks"
+(with J. Fowler, M. Keller, and O. Levin), American Institute of Mathematics,
+San Jose, CA, 2019.
+
+## Teacher development
+
+- Mathematics department teaching seminar, NYU, 2010–2022 (with A. Hanhart,
+  C. Clarkson, and other clinical faculty)
+- Teaching Undergraduate Mathematics Seminar (TUMS), Harvard, 2005–2008:
+  expanded the Apprentice program into a mandatory pre-service seminar, and
+  reorganized TUMS as an in-service seminar based on case studies
+- Apprentice coach, Harvard, 2003–2008
+- A.L.M. in Teaching program, Harvard Extension School, 2003–2008: content
+  courses in geometry and probability for middle- and high-school teachers
+
+## Curriculum development
+
+- Summer Math Booster Program, 2023–present (with E. Stepp)
+- GSTM-NA 2 Introduction to Data Science, 2021–present (with T. Sondjaja, H. Hua, and F. Shum)
+- MATH-UA 129 Honors Calculus III, 2017–2020
+- MATH-UA 148 Honors Linear Algebra, 2017
+- MATH-UA 121 Calculus I hybrid online course, 2014 (with S. Kalayçioglu)
+- MATH-UA 211–213 Mathematics for Economics I–III, 2012 (with J. Ramsey and S. Kalayçioglu)
+- MATH-UA 270 Transformations and Geometries, 2012 (with D. Youngren)
+- CORE-UA 110 Great Ideas in Mathematics, 2011 (with A. Hanhart)
+- MATH-UA 325 Analysis I (Moore Method), 2011
+- MATH-UA 375 Topology (modified Moore Method), 2010 (with W. Pegden and A. Hanhart)
+
+## Teaching
+
+**New York University**, 2008–present: courses in calculus, discrete mathematics, and analysis
+
+**Harvard University**, 2003–2008: calculus sequence; Secondary School Program
+(Calculus I and II), Harvard Summer School, 2004–2007; Teaching Fellow, 1997–2000
+
+**Rutgers University**, 2000–2003: calculus, linear algebra, applied
+mathematics, mathematical reasoning; reading course in representation theory
+
+## Service
+
+- Emerging Educational Technology Committee, NYU Provost's Office and NYU IT, 2024–
+- MAA OPEN Math (NSF-funded), selection committee and advisory board, 2022–
+- FAS Nominations and Elections Committee, 2019–2023 (chair, 2022–2023)
+- CAS Academic Program and Core Review Committee, 2018–2019
+- CIMS Website Committee, 2014–2016
+- CAS Course Evaluations Committee, 2014–2016
+- Full-Time Contract Faculty Planning Committee, 2013–2014: developed the
+  proposal for contract faculty inclusion in the University Senate, ratified by
+  the NYU Board of Trustees
+- NYU Classes User Advisory Group Executive Committee, 2013–2023 (chair, 2022–2023)
+- College Core Curriculum Foundations of Scientific Inquiry Steering Committee, 2011–
+- Clinical Faculty Search Committee, 2008– (lead)
+- Mathematics Curriculum Committee, 2008–
+
+## Outreach and mentoring
+
+- NYU Courant GSTEM Summer Program, founder and principal investigator, 2012–
+- Summer Undergraduate Research Experience (SURE), proposal reviewer and symposium emcee, 2008–
+- Dean's Undergraduate Research Fund, faculty judge
+- "The impossible buildings of M. C. Escher," Roselle Park School District Art Days, 2018–2023
+- Thesis supervision: C. Davey (M.A., NYU, 2017), mentoring and retention of high
+  school girls in STEM; H. Bhat (A.B., Harvard, 2000), syzygy crossings in the
+  three-body problem
+- REU projects at Rutgers, 2001–2002
+
+## Other professional activities
+
+- Fellowship screener, Math for America, 2014–2017
+- Mathematics textbook reviewer and subject matter expert, 2004–2010
+- Technical book reviewer (PHP, Mac OS X), Slashdot, 2004–2008
+- LaTeX consultant for books by Harris–Taylor (Princeton, 2002), Gottlieb
+  (Addison–Wesley, 2002), and Guillemin–Sternberg (Springer, 1999)
+- Contributor to PHPSlash (open-source CMS), 2001–2003
+- Software: Python, TeX/LaTeX, Lua, JavaScript, shell; see [Projects](projects.qmd)

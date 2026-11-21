@@ -1,0 +1,35 @@
+---
+title: A new chapter
+date: '2010-09-18'
+categories:
+- education
+- ebook
+- calculus
+- textbook
+legacy-source: drupal
+aliases:
+- /posts/new-chapter/
+- /posts/new-chapter/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+So I've been teaching [calculus](/categories/calculus/){.alinks-link} for over 10 years, almost (with the exception of one summer) exclusively out of some flavor of [Stewart](http://www.stewartcalculus.com/). And I've been a fan of the web and delivering content over the internet since beginning—I was cobbling together course web pages in the 90s before Blackboard and fancy content management systems were around.
+
+I've seen the world of media change in so many ways. Newspapers begat online bulletin boards and bulletin boards begat blogs. Media consumers now expect to be able to interact with and affect whatever they're consuming. HTML5 and Flash now make multimedia interactive content delivery over the internet a real possibility.
+
+But I didn't see that change happening in textbooks. Year after year I met with reps and they were pitching another hardbound textbook (or updated versions of the same books). Later learning management solutions appeared, bolted onto the textbook, and then electronic versions of the textbook, perhaps with hyperlinks or moving pictures. I thought, when are we going to get the next generation of textbook? When are the exposition and the assessment going to become one and the same? When will we get the digital version of instructor and student sitting on a log?
+
+When I found that such a text didn't exist yet, I realized there's an opportunity. And so I'm thrilled to announce that I've signed with [John Wiley & Sons](http://www.wiley.com/) to create an electronic calculus textbook, `<cite>`{=html}Calculus for the Digital Student`</cite>`{=html}, with a target publication date of Fall 2014.
+
+I'd like to create a digital manuscript that students can really interact with. Not just a hyperlinked textbook with moving pictures. I'm thinking of bringing a great mathematics class into the textbook. In a session with this "book" (the correct noun for this project has not been determined), a student would watch some things, read some things, but most importantly, do some things. As the proverb goes, “Tell me and I forget. Teach me and I remember. Involve me and I learn.”
+
+I also want the learning experience to be social. Students will be able to annotate, highlight, and share parts of the text. They will be able to ask questions "in-line" and answer other questions. These learning communities can be focused around an existing course or formed ad hoc.
+
+There are other practical advantages to a digital textbook. It can be delivered in a number of different ways. So Early Transcendentals vs. Late Transcendentals would be easy to swap around. Or front-loaded vs. Just-in-time precalculus refreshers. Really there's lots that can be customized.
+
+This idea has been in discussion for almost two years now, but the Wiley family and I are thrilled to be formally, finally beginning. We need people who are turned on by the idea of harnessing the internet and fresh technologies to teach a 17th-century subject in a 21st-century way. If you are interested in joining this community and advising or reviewing the project as it develops, please let me know.
+:::

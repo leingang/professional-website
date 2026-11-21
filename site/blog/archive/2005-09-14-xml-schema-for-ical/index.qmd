@@ -1,0 +1,19 @@
+---
+title: XML Schema for iCal?
+date: '2005-09-14'
+categories:
+- computing
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/xml-schema-for-ical/
+- /posts/xml-schema-for-ical/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I have a bunch of events that I want to collect in a text file and export in a number of formats. That sounds like a job for XML, right? Except it appears the only well-used file format for calendering is [iCal](http://www.ietf.org/rfc/rfc2445.txt), and it’s a non-SGML format. You could almost manually edit iCal files, except for the fact that commas, semicolons, and newlines have to be escaped. I found an [XML translation of the iCal specification](http://xml.coverpages.org/iCal.html) with [DTD](http://xml.coverpages.org/iCal-DTD-20011103.txt), but the web site doesn’t seem to have seen much activity since 2001. The [RDF](http://www.w3.org/RDF) folks have an [RDF Calendar Workspace](http://www.w3.org/2002/12/cal/) dedicated to round-tripping iCal and RDF, but that too seems to have fallen off around 2004.
+
+I should probably put off this task until a later time, and not worry about unifying the events in a single file. Sigh…

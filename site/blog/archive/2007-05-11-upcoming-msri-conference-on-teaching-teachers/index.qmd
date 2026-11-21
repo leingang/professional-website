@@ -1,0 +1,29 @@
+---
+title: 'Upcoming: MSRI conference on teaching teachers'
+date: '2007-05-11'
+categories:
+- talks
+- extension
+- education
+- teaching
+- school
+- conference
+- harvard
+- teacher training
+- math e-304
+- msri
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I’m really looking forward to the [Critical Issues in Education: Teaching Teachers Mathematics](http://www.msri.org/calendar/workshops/WorkshopInfo/430/show_workshop) [![](http://i203.photobucket.com/albums/aa27/leingang_math/th_msri_logo.jpg){border="0" align="right"}](http://www.msri.org/)conference at the [Mathematical Sciences Research Institute](http://www.msri.org/) coming up at the end of the month.
+
+> This workshop will focus concretely on courses, programs and materials that aim to increase teachers’ mathematical knowledge for teaching. Both courses and programs that lead to initial certification and professional development of current teachers will be examined at the workshop. In addition, the workshop will examine efforts by colleges, universities, school districts, professional organizations and funding agencies to support people who teach these courses or lead these workshops.
+
+I work with the [Harvard Extension School](http://www.extension.harvard.edu/)’s [Master of Liberal Arts in Mathematics for Teaching](http://www.extension.harvard.edu/math/) program, which aims to acquaint schoolteachers with higher mathematics. The goal is not so much to give them material that will be directly applicable to the classroom, but to stretch their minds mathematically so they will be able to stretch their students’ minds.
+
+This past semester I’ve taught a probability course in this program using the [Moore method](http://en.wikipedia.org/wiki/Moore_method). It’s been a real challenge for my students and me because I’ve never done that before. But I found it enjoyable and the students seem to have received it well, too. My colleague [Bret Benesh](http://math.harvard.edu/people/BeneshBret.html) and I will be presenting at this conference on our experiences with Inquiry-based courses in the ALM program.

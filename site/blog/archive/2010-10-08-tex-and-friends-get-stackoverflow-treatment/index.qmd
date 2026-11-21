@@ -1,0 +1,33 @@
+---
+title: TeX and friends get the StackOverflow treatment
+date: '2010-10-08'
+categories:
+- tex
+- programming
+- website
+- latex
+legacy-source: drupal
+aliases:
+- /posts/tex-and-friends-get-stackoverflow-treatment/
+- /posts/tex-and-friends-get-stackoverflow-treatment/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+Finding online support for programming has undergone a change over the years. [Usenet](http://en.wikipedia.org/wiki/Usenet) forums allowed people to organize discussion threads in the pre-web days (now Usenet seems to be only used for file sharing). Email lists were and still are also used, but lack a filter--you have to receive all the questions and answers to be part of the discussion.
+
+With the web came the online forum, with a similar interface to usenet, but slightly prettier. [Wiki](http://en.wikipedia.org/wiki/Wiki)s tend to pop up in the same places to organize established knowledge.
+
+In 2008 [StackOverflow](http://stackoverflow.com/) appeared, and has a lot of great Web 2.0-ish features which make finding community support pretty fun.
+
+First, it's easy to register--you can link your account to your Google, [Facebook](http://www.facebook.com/){.alinks-link}, or other OpenID. No extra username/passwords to forget.
+
+Second, it's easy to post and respond to questions. The post editing interface uses a markdown syntax (like wikis) to format code snippets, links, and images smartly.
+
+Third, it's social. Questions and answers can be voted up or down (like [digg](http://digg.com/)) and tagged (like [delicious](http://delicious.com/)). Users earn reputation by participation and getting votes, and for extra too-cute-but-surprisingly-effective motivation, badges are awarded for completing certain milestones.
+
+TeX and LaTeX and their other variations aren't just document preparation systems, they are programming languages. So I was really excited to see that a [TeX and friends version of StackoverFlow](http://meta.tex.stackexchange.com/) has appeared. I hope [I](http://meta.tex.stackexchange.com/users/1402/matthew-leingang) won't be wasting too much time over there.
+:::

@@ -1,0 +1,31 @@
+---
+title: Mathematical Online Placement Exam
+date: '2005-09-13'
+categories:
+- math
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+This is a copy of the flier that went into yesterday’s Paper placement exam. You can also download an [electronic version of the placement flier](http://math.harvard.edu/~leingang/2005/09/12/PlacementFlier) (48K PDF).
+
+> Welcome to Harvard. We look forward to seeing you in our Math courses.
+>
+> The Mathematics Department offers an “online” placement re-exam for those of you who question the placement advice that you receive from the pencil and paper exam you are taking today. This online exam can be accessed at <http://www.math.placement.fas.harvard.edu/>
+>
+> If your placement advice from the online exam differs from that stemming from today’s exam, you should take the results from both exams to one of our placement advisors. A schedule and list of placement advisors is available on the math department’s [sectioning page](http://www.math.harvard.edu/sectioning/).
+>
+> With regards to placement: The placement score indicates either placement in [Math Xa](http://www.courses.fas.harvard.edu/1981){target="_blank"}, [Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"}, [Math 1b](http://www.courses.fas.harvard.edu/1804){target="_blank"}, or it indicates general eligibility for any of the following: Math [19](http://my.harvard.edu/course/math19), [20](http://my.harvard.edu/course/math20), [21a](http://my.harvard.edu/course/math21a), [21b](http://my.harvard.edu/course/math21b), [23a](http://my.harvard.edu/course/math23a), [25a](http://my.harvard.edu/course/math25a), [55a](http://my.harvard.edu/course/math55a) and [Applied](http://my.harvard.edu/course/apm21a) [Math 21a](http://www.courses.fas.harvard.edu/6760){target="_blank"}. It does not distinguish between the latter as all but [Math 55a](http://www.courses.fas.harvard.edu/4068){target="_blank"} demand more or less the same level of preparation. A choice between Math 19, 20, 21a, 23a, 25a, 55a and [Applied Math 21a](http://www.courses.fas.harvard.edu/6395){target="_blank"} should be based on your interests. A meeting entitled “Should I take Math 19, 20, 21, 23, 25, or 55” will start at 4pm on Thursday, September 15 in Science Center Lecture Hall D. All questions concerning these courses will be answered at that meeting. Questions that arise after the meeting should be addressed to the Math Department’s Head Tutor, Professor Peter Kronheimer (kronheim (at) math).
+>
+> The online exam can also be taken to obtain:
+>
+> - Mastery tests to determine if you have the necessary math prerequisites for certain courses at Harvard that list Math 1b, 21a or 21b as a prerequisite. In particular, the online exam covers material that is not on today’s exam but which is assumed in courses that list Math 1b, 21a or 21b as a prerequisite. Note in particular that high scores on the BC Advanced Placement Exam or a Math 1b, 21a or 21b like course taken elsewhere may not cover the required material.
+> - Feedback to show what specific math skills you need so as to meet the prerequisites for a course that asks for either Math 1b, Math 21a or [Math 21b](http://www.courses.fas.harvard.edu/1771){target="_blank"}. (A ‘Math Warm-Up Series’ is also offered during the first week of the semester to help you brush up on rusty math skills.)
+> - Each online exam consists of 30–40 multiple-choice questions and can be taken at any time from a computer on the Harvard network. Note that you can take the online exam more than once.
+>
+> In any event, remember: If you have conflicting placement advice, you should talk with a placement advisor.

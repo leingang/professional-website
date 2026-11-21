@@ -1,0 +1,18 @@
+---
+title: Outrun Procrastination with “Dash”es | 43 Folders
+date: '2006-05-31'
+categories:
+- miscellaneous
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just discovered [43Folders](http://www.43folders.com/) a personal productivity blog by Merlin Mann. It has lots of neat tips for getting stuff done. One I like is called the [Procrastination dash](http://www.43folders.com/2005/09/08/kick-procrastinations-ass-run-a-dash/): Set aside a block of time or a small part of your task and then do it. Then do it again.
+
+Reminds me of an old elephant joke: “How do you eat an elephant? One bite at a time.”

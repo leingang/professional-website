@@ -1,0 +1,58 @@
+# Courses and office hours. Update this file each term, then `make office`.
+# Values are Markdown, so *italics*, [links](https://…), etc. work.
+term: Fall 2026
+
+office-hours:
+  - day: Wednesday
+    time: 1:00–3:00 p.m.
+    where: CIWW 705
+  - day: Thursday
+    time: 8:00–9:00 p.m.
+    where: "[Zoom](https://nyu.zoom.us/j/96944991540)"   # quoted: a value starting with [ is a YAML list
+office-hours-note: >-
+  Also available by appointment. Email me to set up a time.
+
+current-courses:
+  - code: MATH-UA 122.021
+    title: Calculus II
+    meets: "Tuesday/Thursday 11:00 a.m.–12:15 p.m."
+    links:
+      - label: Brightspace
+        url: https://brightspace.nyu.edu/d2l/home/611388
+  - code: MATH-UA 122.016
+    title: Calculus II
+    meets: "Tuesday/Thursday 3:30–4:45 p.m."
+    links:
+      - label: Brightspace
+        url: https://brightspace.nyu.edu/d2l/home/611388
+  - code: MATH-UA 120.016
+    title: Discrete Mathematics
+    meets: "Tuesday/Thursday 2:00–3:15 p.m."
+    links:
+      - label: Brightspace
+        url: https://brightspace.nyu.edu/d2l/home/611388
+
+# Most recent first. Shown as "Courses taught" on matthewleingang.com
+# and on the office Courses page. Add individual terms if you like.
+past-courses:
+  - term: 2008–present
+    code: MATH-UA 121–123
+    title: Calculus I, II, III
+  - term: 2017–2020
+    code: MATH-UA 129
+    title: Honors Calculus III
+  - term: 2017
+    code: MATH-UA 148
+    title: Honors Linear Algebra (pilot sections)
+  - term: 2017, 2020–
+    code: MATH-UA 120
+    title: Discrete Mathematics
+  - term: 2011
+    code: MATH-UA 325
+    title: Analysis I (Moore Method)
+  - term: 2003–2008
+    code: Harvard
+    title: Calculus sequence (course head); geometry and probability for teachers (Extension School)
+  - term: 2000–2003
+    code: Rutgers
+    title: Calculus, linear algebra, applied mathematics, mathematical reasoning

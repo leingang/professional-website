@@ -1,0 +1,23 @@
+---
+title: Are you smarter than a Chinese 12th grader?
+date: '2007-04-26'
+categories:
+- education
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/are-you-smarter-than-a-chinese-12th-grader/
+- /posts/are-you-smarter-than-a-chinese-12th-grader/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[Oliver](http://www.math.harvard.edu/~knill) forwarded me [this article from the BBC](http://news.bbc.co.uk/2/hi/uk_news/education/6589301.stm#chinese) in which two mathematics problems are compared.
+
+  `<font size="2">`{=html}![Chinese maths test](http://newsimg.bbc.co.uk/media/images/42842000/gif/_42842559_maths_diagram_416.gif){width="416" vspace="0" hspace="0" height="290" border="0"}`</font>`{=html}
+
+[![English maths test](http://newsimg.bbc.co.uk/media/images/42843000/gif/_42843291_maths_diagram02_416.gif){border="0"}](http://news.bbc.co.uk/2/hi/uk_news/education/6589301.stm#chinese "English maths test")
+
+These pictures say a thousand words apiece…

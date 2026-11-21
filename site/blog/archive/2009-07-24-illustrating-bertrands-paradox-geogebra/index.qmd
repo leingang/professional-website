@@ -1,0 +1,36 @@
+---
+title: Illustrating Bertrand's Paradox with GeoGebra
+date: '2009-07-24'
+categories:
+- math
+- V63.0233
+- V63.0233.2009Su
+- probability
+- geometry
+legacy-source: drupal
+aliases:
+- /posts/illustrating-bertrands-paradox-geogebra/
+- /posts/illustrating-bertrands-paradox-geogebra/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+`<applet name="ggbApplet" code="http://www.math.nyu.edu/~leingang/content/geogebra.GeoGebraApplet" codebase="./" archive="http://www.geogebra.org/webstart/3.2/geogebra.jar" width="375" height="906" id="ggbApplet">`{=html}\
+`<param name="filename" value="http://www.cims.nyu.edu/~leingang/sites/default/files/bertrand2.ggb">`{=html} `<param name="java_arguments" value="-Xmx512m">`{=html} `<param name="framePossible" value="true">`{=html} `<param name="showResetIcon" value="false">`{=html} `<param name="showAnimationButton" value="true">`{=html} `<param name="enableRightClick" value="false">`{=html} `<param name="errorDialogsActive" value="true">`{=html} `<param name="enableLabelDrags" value="false">`{=html} `<param name="showMenuBar" value="false">`{=html} `<param name="showToolBar" value="false">`{=html} `<param name="showToolBarHelp" value="false">`{=html} `<param name="showAlgebraInput" value="false">`{=html} Sorry, the GeoGebra Applet could not be started. Please make sure that Java 1.4.2 (or later) is installed and active in your browser ([Click here to install Java now](http://java.sun.com/getjava))\
+`</applet>`{=html}
+
+[Bertrand's Paradox](http://en.wikipedia.org/wiki/Bertrand%27s_paradox_(probability)) is a question in continuous probability that shows the perils of uniformly distributed variables. The question is simple: given a random chord in a circle, what's the probability that it's longer than the side length of an equilateral triangle inscribed in that circle? (OK, maybe that's not so simple to state. But the side length can be shown to be sqrt(3) times the radius.)
+
+To demonstrate this in class I whipped up a [GeoGebra](http://geogebra.org/) worksheet. I have three circles, and three different ways to define a chord of that circle. I used the Dynamic Color feature to color the chord red if it's too short and green if it's long enough.
+
+In the first circle a vertex of triangle and the first endpoint of the chord are put at the same place. When you arrange things this way, it's clear the chord is long enough only when the other endpoint is between the other two vertices of the triangle. If you drag around the other endpoint of the chord, you see it turns green exactly then. So in this method the probability of the chord being long enough is 1/3
+
+In the second circle a random radius is selected, and a random point on that radius is selected. By drawing a perpendicular to the radius at the point a chord can be determined. You can drag S and T around to draw various chords. If you align the radius to be an altitude of the triangle (perpendicular to one its sides), you see the triangle and radius intersect in the midpoint of the radius. This means the chord is long enough precisely when the point on the radius is closer to the center than the midpoint. And this is independent of the radius angle. So in this method the probability of the chord being long enough is 1/2.
+
+In the third circle a random point within the circle is selected, and by drawing the radius through that point and a similar perpendicular as in the second method, a chord can be constructed. Here we can see that the chord is long enough only when the point is within half the radius of the center. So the probability this time is the radius of the area of the small circle to that of the big circle, or 1/4.
+
+So which is it? Like many paradoxes, refining the question produces the answer. The second (polar coordinates) method is the one which is invariant under translations and scalings of the plane, so it has an advantage over the other two. But the point of the exercise is to show that uniform distributions aren't as uniform as you'd think!
+:::

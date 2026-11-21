@@ -1,0 +1,16 @@
+---
+title: Calculus Sectioning, Fall 2005
+date: '2005-09-06'
+categories:
+- math
+- harvard
+- math 1b
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Just wanted to make sure the [Calculus Sectioning, Fall 2005](http://www.math.harvard.edu/sectioning/index.html) page on the Math Department’s web site gets another link. It’s worth a read for any incoming freshman concerned about choosing, registering, and sectioning a math course.

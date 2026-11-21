@@ -1,0 +1,27 @@
+---
+title: Google Summer Of Code LaTeX Project
+date: '2008-04-08'
+categories:
+- tex
+- dublin core
+- harvard
+- semantic web
+- web
+- latex
+legacy-source: huwp
+aliases:
+- /posts/google-summer-of-code-latex-project/
+- /posts/google-summer-of-code-latex-project/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+The [TeX Users Group](http://www.tug.org/) will be participating as a mentoring organization in the [Google Summer of Code](http://code.google.com/soc/) program, and my project of a [Dublin Core metadata interface](http://tug.org/pipermail/summer-of-code/2008/000019.html) was accepted.  I’m hoping some enterprising youth with lots of experience in programming TeX will be interested in the project.
+
+Here is an overview of the project: [Dublin Core](http://dublincore.org/) is a scheme for expressing metadata (data about data) in a reliable, machine-readable way.  It can be expressed in various languages, including [RDF](http://www.w3.org/rdf/), which can itself be serialized in [XML](http://www.w3.org/TR/rdf-syntax-grammar/).  Adobe’s [eXtensible Metadata Platform](http://www.adobe.com/products/xmp/) allows RDF+XML statements to be embedded into PDF files.  This metadata can then be read by search engines in order to give context to the document besides its simple contents. 
+
+TeX and LaTeX can be used to produce PDF documents, and have rich macro-programming environments.  One goal of the project is to add simple commands which can write the complex metadata statements into the PDF without the user needing to know anything about RDF, XML, or Dublin Core itself.  Another goal would be for more advanced users to augment this interface with new Dublin Core element sets and vocabularies.
+
+I’ve always taken an interest in the [semantic web](http://en.wikipedia.org/wiki/Semantic_Web), and apparently there aren’t too many people in this group also interested in TeX.  So if the project flies I think it could be very useful.

@@ -1,0 +1,11 @@
+---
+title: Citibike Journal--June 20, 2016
+date: '2016-06-20'
+categories:
+- citibike
+- draft
+legacy-source: nikola
+draft: true
+---
+
+Write your post here.

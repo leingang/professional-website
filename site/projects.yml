@@ -1,0 +1,22 @@
+# Each entry: title, description, path (URL), categories
+- title: EduBag
+  description: >-
+    Python tools for bootstrapping, aggregating, and gathering learner data
+    across course platforms such as Brightspace. On PyPI as python-edubag.
+  path: https://github.com/nyumathclinic/python-edubag
+  categories: [Python, course administration]
+- title: Human Bingo
+  description: >-
+    Makes "name bingo" icebreaker cards for the first day of class, with custom
+    fields from a data file. On PyPI.
+  path: https://github.com/leingang/humanbingo
+  categories: [Python, first day of class]
+- title: Contributions to PreTeXt (MathBookXML)
+  description: Open-source authoring system for accessible mathematics textbooks.
+  path: https://pretextbook.org/
+  categories: [Open source]
+- title: NYC Subway Bullets fonts
+  description: OpenType color fonts of the New York City Subway route bullets, plus a LaTeX package for using them.
+  path: https://nyumathclinic.github.io/nyc-subway-bullets-font/
+  categories: [Open source, LaTeX]
+# TODO: add other repos worth showing (gradescope tools, LaTeX packages, …)

@@ -1,0 +1,39 @@
+---
+title: Spirit Airlines markets to math geeks
+date: '2007-11-14'
+categories:
+- math
+- harvard
+- funny
+- news
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[Spirit Airlines](http://www.spiritair.com/welcome.aspx?pg=salesinformation&number=437) is running a promotion based on the [Fibonacci Sequence](http://en.wikipedia.org/wiki/Fibonacci_number).
+
+::: {}
+[![](http://i203.photobucket.com/albums/aa27/leingang_math/th_Fibonacci.jpg){border="0"}](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=Fibonacci.jpg "Fibonacci.jpg") [![The image “http://www.airlinepins.com/ftp/i1341187269.jpg” cannot be displayed, because it contains errors.](http://www.airlinepins.com/ftp/i1341187269.jpg){border="0" style="width: 142px; height: 118px"}](http://www.spiritair.com/welcome.aspx?pg=salesinformation&number=437)
+:::
+
+> Cheapano Fibonacci wants you to take advantage of his latest Fabulous Fibonacci Sale. Fares are as low as \$1\* each way. …\$1, \$2, \$3, \$5, \$8, \$13, \$21, and some \$34 and \$55 fares must be booked on spiritair.com between 12:00 PM ET on November 13, 2007 and 11:59 PM ET on November 14, 2007 for travel on the dates as specified by individual market and by market direction…. Please see the terms and conditions for complete restrictions and details.
+
+Asterisks abound , and you can’t fly any day you want, but the deal is legitimate. For instance, you can fly (if you book today)
+
+- from Fort Lauderdale to Nassau for \$1
+- from Fort Lauderdale to Orlando for \$2
+- from Fort Lauderdale to Freeport (Bahamas) for \$3
+- \$5 and \$8 fares seem to be missing!
+- from Fort Lauderdale to Grand Cayman for \$13
+- from Boston to Myrtle Beach for \$21 (**now** we’re talking!)
+- from Atlanta to Las Vegas for \$34
+- from Detroit to Cancun for \$55
+- from Orlando to Agudilla, PR for \$89
+- from Orlando to Kingston, Jamaica for \$144
+- or first class for \$233
+
+Even though the Fibonacci sequence grows (asymptotically) exponentially, this is still my favorite airline promotion based on an integer sequence.

@@ -1,0 +1,26 @@
+---
+title: 'Web pedagogy seminar: Google Earth continues to rock'
+date: '2007-04-20'
+categories:
+- talks
+- harvard
+- web
+legacy-source: huwp
+aliases:
+- /posts/web-pedagogy-seminar-google-earth-continues-to-rock/
+- /posts/web-pedagogy-seminar-google-earth-continues-to-rock/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just got back from a monthly seminar on web pedagogies.  The majority of the seminar was spent on an eye-popping demonstration of [Google Earth](http://earth.google.com/) by [Jason Ur](http://www.fas.harvard.edu/~anthro/ur/).  Jason is an anthropologist (and only three years out of his Ph.D. is already tired of the joke about his name and his field) who uses Google Earth in his classes to visit and really “see” archaeological sites.  I was able to find Kirkuk just by typing it in.  Very cool.
+
+The rest of it was about social bookmarking and how it can improve university library information services. Students today expect Web 2.0 technology from educational websites.  Which means I should be learning more about <http://del.icio.us/> and the like.
+
+I’m still trying to figure out how to get collaborative web technologies into mathematics courses.  Unlike many disciplines, we don’t have primary texts (mostly we don’t.  I recall a few brilliant mathematicians like [Jean-Pierre Serre](http://en.wikipedia.org/wiki/Jean-Pierre_Serre) whose theses spawned seminars).  We have our objects and the relationships between them.
+
+I *was* thinking it would be fun to use a wiki for a Moore-method style mathematics course.  The wiki would be only open to students in the course, and the instructor could seed it with problems.  Then the course would consist of “filling out” the wiki and using the discussion features (such as on a [MediaWiki](http://www.mediawiki.org/wiki/MediaWiki) site) to question and solidify the proofs.  There are the usual barriers to that: mathematicians stubbornly refuse to limit themselves to notation expressible by HTML and a latin character set.  Wikis allow TeX encoding but that’s kind of a steep learning curve.  But if you can train up your students on the software, maybe it could work.  Or, since the Moore method is all about constructing your own mathematics, maybe they would adapt to an a more ASCII-friendly mathematics notation.
+
+[](file:///Users/matthew/Desktop/Kirkuk,%20At%20Ta'mim,%20Iraq.kmz)

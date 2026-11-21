@@ -1,0 +1,38 @@
+---
+title: Social bookmarking for courses
+date: '2007-11-16'
+categories:
+- education
+- delicious
+- bookmarking
+- web
+- pedagogy
+- harvard
+- folksonomy
+- tag
+legacy-source: huwp
+aliases:
+- /posts/social-bookmarking-for-courses/
+- /posts/social-bookmarking-for-courses/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I was at the monthly web pegagogies free lunch sponsored by the [Bok Center](http://bokcenter.harvard.edu/icb/icb.do) today and we talked a little about using social bookmarking sites like [del.icio.us](http://del.icio.us/) to collect bookmarks as a group. (There was also a nice demonstration of [Facebook](http://facebook.com) by two students, but I’ve already [blogged about a similar presentation](http://www.math.harvard.edu/%7Eleingang/?p=123) they made last Spring). I like the idea, but I’m wondering about the methodology.
+
+In the examples of this that I’ve seen, a delicious account is created and the password is given to all the students in the group. The account is given a course-specific username like “history1667″ Then students use that account to save tagged bookmarks relevant to the course. Then to view all the bookmarks tagged by the group you go to [the group’s user page](http://del.icio.us/history1667).
+
+I think this unnecessarily confuses the distinction between a user and a tag. It seems to me that people in the group should use their [own]{style="font-style: italic"} delicious accounts to add a “history1667″ *tag* to their bookmarks. Then you can view the collection of pages tagged for the course by looking at that tag’s page.
+
+That would certainly result in more links as students who already use delicious regularly wouldn’t have to log out/log in to do their research (delicious integrates well with browsers and can be hard to extricate). And it means that people could add links to that collection even after they left the course, and new students would have at their fingertips all the old links, without having to worry about passwords. And the entity “History 1667″ seems more to me like an attribute of the link than an agent in and of itself.
+
+I’ve started doing this for my courses. If I’m looking at a page that might be useful for my [](http://del.icio.us/tag/math20)[Math 20](http://www.courses.fas.harvard.edu/0906){target="_blank"} or [](http://del.icio.us/tag/math21b)[Math 21b](http://www.courses.fas.harvard.edu/1771){target="_blank"} course, I can just tag it. I don’t have to re-login. I can tag the [same]{style="font-style: italic"} page for as many of my courses as I want. And if my students want to do the same, the bank becomes richer.
+
+There are, I suppose, reasons for having a controlled account. There might be another course numbered History 1667 at another university. Well, make the tag less common (I almost said “more unique” there) by calling it “HUHist1667″ or “HUHist1667Fall2007″ (then, if you want a fresh batch every semester you just change the tag). Most delicious interfaces feature tag-completion so you don’t even have to worry about it being easy to remember. Or, you can just apply the philsophy of folksonomy: [don’t worry about it]{style="font-style: italic"}. Tag clouds make sure that the most important (as defined by user activity) links bubble up. It’s only going to become a problem if the tag is used by two groups equally frequently, which is unlikely and can by choice of tag name be made even less likely.
+
+Another worry might be that outsiders might start using the tag to randomly bookmark irrelevant things like, as someone suggested, [a picture of a cat](http://icanhascheezburger.com/). Again, I think the response is [don’t worry about it.]{style="font-style: italic"} A basic tenet of semantic web philosophy is that [anybody should be able to declare anything about anything](http://en.wikipedia.org/wiki/Resource_%28Web%29#Resources_in_RDF_and_the_Semantic_Web), and it’s up to another layer to endow the trust. In this case, the user him/herself is the trust layer by visually weeding out the irrelevant links, and the tag cloud by making pages more users have marked with the same tag more connected to that tag.\
+A third objection might be that we don’t want to force students to create accounts on third-party services if they don’t want to, or to open up their use of a third-party service to a class. I can kind of see that, although delicious is [for]{style="font-weight: bold"} sharing bookmarks, so if you don’t want to share them with the world, why are you using it? But I can see wanting to share different things with different groups (and under different identities). So then maybe you have a group account for those who don’t want one, or encourage users have don’t want to use their “private” delicious accounts to create another one specifically for coursework.
+
+So there’s a tradeoff between openness and quality, but I say, the more the merrier.

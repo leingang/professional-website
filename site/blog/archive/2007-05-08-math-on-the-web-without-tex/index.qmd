@@ -1,0 +1,42 @@
+---
+title: Math on the web without TeX?
+date: '2007-05-08'
+categories:
+- tex
+- harvard
+- web
+- php
+- latex
+legacy-source: huwp
+aliases:
+- /posts/math-on-the-web-without-tex/
+- /posts/math-on-the-web-without-tex/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just found [PhpMathPublisher](http://www.xm1math.net/phpmathpublisher/) on the web and it looks kind of interesting. The name pretty much describes it: a PHP package that parses a kind of math input and produces image-based output.
+
+Most packages (such as [LaTeXRender](http://www.mayer.dial.pipex.com/tex.htm)) along these lines serve as a front end to TeX or LaTeX, then serve up a generated image file. There are some drawbacks to this:
+
+- TeX and LaTeX are complicated programs with huge distributions, and may not be available to all web programmers
+- because these programs can include files, there’s a potential security leak in allowing all web users to effectively execute TeX code on the server.
+
+PhpMathPublisher has a tex-like syntax but seems to parse the input on its own and use GD to assemble a formula. Here’s the markup:
+
+\
+`<m>delim{|}{{1/N} sum{n=1}{N}{gamma(u_n)} - 1/{2 pi} int{0}{2 pi}{gamma(t) dt}}{|} <= epsilon/3</m>`\
+
+[![](http://www.xm1math.net/phpmathpublisher/doc/sample.png){border="0"}](http://www.xm1math.net/phpmathpublisher/)
+
+In LaTeX we would write
+
+`\left|\frac{1}{N}\sum_{n=1}^n \gamma(u_n) - \frac{1}{2\pi}\int_0^{2\pi} \gamma(t)\,dt\right| \leq \frac{\varepsilon}{3}`
+
+to get
+
+![\\displaystyle\\left\|\\frac{1}{N}\\sum\_{n=1}\^n \\gamma(u_n) - \\frac{1}{2\\pi}\\int_0\^{2\\pi} \\gamma(t)\\,dt\\right\| \\leq \\frac{\\varepsilon}{3}](/images/be500655d5eefe2613c35b20b123d4dd.png "\displaystyle\left|\frac{1}{N}\sum_{n=1}^n \gamma(u_n) - \frac{1}{2\pi}\int_0^{2\pi} \gamma(t)\,dt\right| \leq \frac{\varepsilon}{3}"){align="absmiddle"}
+
+It does get the job done, and the finished product is not so bad.

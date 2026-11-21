@@ -1,0 +1,22 @@
+---
+title: Know thy students
+date: '2006-01-18'
+categories:
+- math
+- harvard
+- teacher training
+legacy-source: huwp
+aliases:
+- /posts/know-thy-students/
+- /posts/know-thy-students/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+There’s an interesting article in USA Today on 2006-01-12 called “[Elementary teacher does her homework — lots of it](http://www.keepmedia.com/pubs/USATODAY/2006/01/10/1148110?extID=10032&oliID=213)“. It’s about a teacher who makes a special effort to get to know her students so she can tailor lesson plans to them.
+
+This isn’t a lesson for K-12 teachers only. At the college level our students have even more diverse and interesting backgrounds. Especially here, where it seems that everybody is *very* good at *something*.
+
+For a college teacher, getting to know the students breaks down the misconception that teachers and students are fundamentally different people and shouldn’t converse. That’s one reason why I recommend to teaching fellows they meet one-on-one with their students early in the term.

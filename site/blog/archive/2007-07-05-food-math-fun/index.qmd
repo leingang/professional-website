@@ -1,0 +1,30 @@
+---
+title: Food + Math = Fun
+date: '2007-07-05'
+categories:
+- math e 304
+- math
+- harvard
+- food
+- combinatorics
+- math e-304
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+There’s a nice [Math Problem](http://ask.metafilter.com/66191/Math-Problem) on MetaFilter right now, inspired by an Arby’s promotion. If you can select five items from a set of eight, with repetitions allowed, for one price, how many possible meals can you eat? (The answer is 792).
+
+It reminds me of a problem I put on the Math E-304 final this year:
+
+> Harvard Square has three restaurants that sell burritos: Qdoba, Felipé’s, and Boloco. I’ve decided to eat a burrito for lunch every day of the week. How many ways can I do that if:
+>
+> 1.  I have no preference how often I visit each restaurant?
+> 2.  I want to eat at Felipé’s three times and Qdoba twice?
+> 3.  I want to eat at each no more than twice?
+
+Answers after the jump, if you want to try them.\
+(HT: [43 Folders](http://www.43folders.com/2007/07/04/featured-links-for-july-4th/))

@@ -1,0 +1,24 @@
+---
+title: February 16 roundup of Math 21a
+date: '2008-02-16'
+categories:
+- calculus 3
+- math
+- geometry
+- math 21a
+- spring 2008
+- coordinates
+- surface
+- harvard
+- math21a
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+We’re now firmly grounded in three-dimensional space. We talked this week about the various linear objects in 3D: lines, points, planes, and finding equations for them. Also, we showed how to define and calculate the distance between points and lines, lines and planes, etc.
+
+Then we moved into the functional unit of the course. A function of two variables has as its graph a surface in three-dimensional space. Graphing these is a challenge of the brain but of the hands. But there are some tips, such as the method of traces.

@@ -1,0 +1,19 @@
+---
+title: What you know about math?
+date: '2007-04-28'
+categories:
+- math
+- harvard
+- funny
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+It ain’t “[White and Nerdy](http://www.youtube.com/watch?v=-xEzGIuY7kw),” but they *are* white and nerdy.
+
+`<object width="425" height="350">`{=html}\
+`<param name="movie" value="http://www.youtube.com/v/Ooa8nHKPZ5k">`{=html}`</param>`{=html} `<param name="wmode" value="transparent">`{=html}`</param>`{=html}`<embed width="425" height="350" src="http://www.youtube.com/v/Ooa8nHKPZ5k" type="application/x-shockwave-flash" wmode="transparent">`{=html}`</embed>`{=html}`</object>`{=html}\

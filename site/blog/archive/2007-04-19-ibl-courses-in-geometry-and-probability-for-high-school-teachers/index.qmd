@@ -1,0 +1,20 @@
+---
+title: IBL courses in geometry and probability for high school teachers
+date: '2007-04-19'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+aliases:
+- /posts/ibl-courses-in-geometry-and-probability-for-high-school-teachers/
+- /posts/ibl-courses-in-geometry-and-probability-for-high-school-teachers/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just got back from the [Legacy of R.L. Moore conference](http://www.discovery.utexas.edu/rlm/Reports/reports.html) in Austin, Texas. It was really nice. The conference is not only about sharing ideas for the Moore method but any Inquiry-Based Learning techniques.
+
+We saw some great talks, especially from the executive director of [Project Kaleidoscope](http://pkal.org/). [Bret](http://www.math.harvard.edu/~benesh/) and I gave a [talk](/files/austinibl.pdf) about our work in the extension school and it was well received.

@@ -1,0 +1,29 @@
+---
+title: James Stewart and the House that Calculus Built
+date: '2009-08-07'
+categories:
+- math
+- interesting
+legacy-source: drupal
+aliases:
+- /posts/james-stewart-and-house-calculus-built/
+- /posts/james-stewart-and-house-calculus-built/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+In the recent issue of `<cite>`{=html}MAA Focus`</cite>`{=html} [Ivars Peterson](http://ivarspeterson.googlepages.com/) gets a [look at Integral House](http://www.maa.org/pubs/augsept09pgs4-6.pdf), the home of James Stewart, aka the man who wrote the most popular [calculus](/categories/calculus/){.alinks-link} book in the world.
+
+[![](http://www.maa.org/images/interior01.jpg){width="375"}](http://www.maa.org/news/061809stewart.html)
+
+The house features sweeping curves (natch) and is custom even down to the door handles:
+
+[\
+![](http://i203.photobucket.com/albums/aa27/leingang_math/StewartIntegralHouseDoorHandle.png){border="0"}\
+](http://s203.photobucket.com/albums/aa27/leingang_math/?action=view&current=StewartIntegralHouseDoorHandle.png "StewartIntegralHouseDoorHandle.png")
+
+I guess math pays after all!
+:::

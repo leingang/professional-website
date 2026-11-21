@@ -1,0 +1,21 @@
+---
+title: Lauderdale teen who visited Iraq says he’ll tell his story after calculus exam
+date: '2006-01-06'
+categories:
+- math
+- harvard
+- math 1a
+- news
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Here’s the [story](http://www.newsday.com/news/nationworld/nation/sfl-cfarris03jan03,0,1751473.story?coll=ny-leadnationalnews-headlines) of a guy who’s got some of his priorities straight. Farris Hassan, 16, of Ft. Lauderdale, traveled secretly to Iraq to practice what he learned in his high school about “immersion journalism.” He’s promising to talk about what he saw there, but has to catch up on his schoolwork:
+
+> “I have a big calculus test on relative rates of change that I need to study for, so I have a lot of things going on right now,” Hassan said.
+
+Good luck on the test, Farris, and we’re looking forward to hearing about your experience.

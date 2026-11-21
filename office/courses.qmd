@@ -1,0 +1,10 @@
+---
+title: Courses
+show-courses: true
+active:
+  courses: true
+---
+
+Course materials, announcements, and grades are on
+[Brightspace](https://brightspace.nyu.edu/). Course descriptions for the
+department are at [math.nyu.edu](https://math.nyu.edu/dynamic/courses/course-descriptions/).

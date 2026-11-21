@@ -1,0 +1,57 @@
+# matthewleingang.com — professional site. No NYU branding here.
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - CNAME
+    - images/
+    - files/
+
+metadata-files:
+  - ../_shared/person.yml
+  - ../_shared/teaching.yml
+
+shortcodes:
+  - _shortcodes.lua
+
+website:
+  title: "Matthew Leingang"
+  description: "Mathematics educator and academic leader: teaching, teacher training, and educational technology."
+  site-url: https://www.matthewleingang.com
+  favicon: images/favicon.svg
+  draft-mode: gone
+  open-graph: true
+  twitter-card: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: teaching.qmd
+        text: Teaching
+      - href: talks.qmd
+        text: Talks & Workshops
+      - href: projects.qmd
+        text: Projects
+      - href: blog/index.qmd
+        text: Writing
+      - href: cv.qmd
+        text: CV
+    right:
+      - icon: github
+        href: https://github.com/leingang
+        aria-label: GitHub
+      - icon: rss
+        href: blog/index.xml
+        aria-label: RSS feed
+  page-footer:
+    left: "© 2026 Matthew Leingang"
+    right: "Built with [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme.scss, theme-dark.scss]
+    toc: false
+    html-math-method: mathjax
+    lang: en

@@ -1,0 +1,18 @@
+---
+title: Habemus Presidentam
+date: '2007-02-09'
+categories:
+- academia
+- harvard
+- news
+legacy-source: huwp
+aliases:
+- /posts/habemus-presidentam/
+- /posts/habemus-presidentam/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+The [Crimson](http://www.thecrimson.com/article.aspx?ref=516910) and [Globe](http://www.boston.com/news/local/massachusetts/articles/2007/02/09/harvard_is_said_to_make_pick/?p1=MEWell_Pos4) are reporting that Drew Gilpin Faust, Lincoln Professor of History at Harvard and Dean of the Radcliffe Institute, will be voted the next president of Harvard.

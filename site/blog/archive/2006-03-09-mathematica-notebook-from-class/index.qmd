@@ -1,0 +1,18 @@
+---
+title: Mathematica Notebook from Class
+date: '2006-03-09'
+categories:
+- computing
+- math 21a
+- harvard
+legacy-source: huwp
+aliases:
+- /posts/mathematica-notebook-from-class/
+- /posts/mathematica-notebook-from-class/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Some of my [Math 21a](http://www.courses.fas.harvard.edu/6760){target="_blank"} students were asking about the Mathematica features I used in class, such as plotting two surfaces on the same axes, or rotating graphics. Here’s [the notebook from March 8’s class](/files/Lesson13_-_Linear_Approximation.nb). Hope it helps. I’ll try to do this more often if there’s interest.

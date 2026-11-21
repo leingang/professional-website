@@ -1,0 +1,26 @@
+---
+title: Tell me, tell me, tell me, who took the derivative of love?
+date: '2007-07-08'
+categories:
+- math
+- xkcd
+- comic
+- harvard
+- funny
+legacy-source: huwp
+aliases:
+- /posts/untitled-2/
+- /posts/untitled-2/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Spotted at [xkcd](http://xkcd.com/) this morning:
+
+![](http://imgs.xkcd.com/comics/useless.jpg)
+
+Makes me think of my Math S-1ab students as I just gave them this classic problem on a midterm:
+
+> Show that there is a number *c* in between 0 and π/2 such that cos(*c*) = *c.*

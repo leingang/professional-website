@@ -1,0 +1,28 @@
+---
+title: NYU alum and CIMS offspring produces iPhone app
+date: '2009-04-20'
+categories:
+- computing
+- software
+- nyu
+legacy-source: drupal
+aliases:
+- /posts/nyu-alum-and-cims-offspring-produces-iphone-app/
+- /posts/nyu-alum-and-cims-offspring-produces-iphone-app/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+Via [Washington Square News](http://www.nyunews.com/features/on-the-side/high-school-math-teacher-develops-iphone-app-1.1722585), Tisch alumnus Tim Novikoff (son of Courant professor Albert Novikoff) has developed an SAT prep iPhone app called [Flash of Genius](http://www.flash-of-genius.com/). It's now the [#1](http://search.twitter.com/search?q=%231) seller in its class.
+
+Novikoff credits the theatrical half of his double major for his skills in organizing the project, but no doubt owes the mathematics half for the key idea: organizing vocabulary words by their Latin roots to help students make connections.
+
+Novikoff's "Just do it" advice:
+
+> “I would encourage students who are yearning to make something happen to buckle down and try to make it happen,” Novikoff said. “Chances are it will be gratifying in both predictable and unexpected ways.
+
+HT: Carol
+:::

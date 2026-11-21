@@ -1,0 +1,24 @@
+---
+title: Why blog?
+date: '2007-05-02'
+categories:
+- education
+- harvard
+- web
+legacy-source: huwp
+aliases:
+- /posts/why-blog/
+- /posts/why-blog/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[Anne Davis](http://anne.teachesme.com/about/) at [Georgia State University](http://www.gsu.edu/) has a nice little post about the [Rationale for educational blogging](http://anne.teachesme.com/2007/01/17/rationale-for-educational-blogging/).  What I get out of it is that blogging allows writing skills to be coached and practiced in a web environment, which is what they will be writing in eventually anyway.  I would love to teach those same skills in mathematics classes.
+
+This semester I started a blog for each of my courses and recommitted myself to blogging on my home page about more general topics.  I put in an item every day summarizing the class, and I thought I could use the comments for answering questions.  But I got very few comments and no questions so far.
+
+I think that’s something that can be addressed at the beginning of the course.  If a tone can be set that this blog is there for the class to use, then maybe more can be gotten out of it.
+
+But still, I like the practice and will continue it.  Maybe there’s no “cool” factor left in blogging, but I do enjoy demonstrating that I exist outside of class.  And it’s fun to put up non-course, but math-related stuff that they might find interesting, or at least notice that I find interesting.

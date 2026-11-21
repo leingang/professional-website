@@ -1,0 +1,30 @@
+---
+title: Math 21a roundup for February 4
+date: '2008-02-05'
+categories:
+- calculus 3
+- math
+- right-hand rule
+- math 21a
+- spring 2008
+- harvard
+- axis
+- distance
+- math21a
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+First, we played a rousing game of Name Bingo to break the ice. Then we got down to business.
+
+One major goal of [Math 21a](http://www.courses.fas.harvard.edu/6760){target="_blank"} is to take what we know in the line and on the plane and generalize it to three-dimensional space.
+
+One thing is immediately confusing: we have three axes in space, and we only allow those which are “right-handed” (biased, perhaps, but we have to pick one).
+
+But the distance formula generalizes to three dimensions rather well: the distance between two points is the square root of the sum of the squares of the differences between the original coordinates, or
+
+$$|(x_1,y_1,z_1)(x_2,y_2,z_2)| = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1 - z_2)^2}$$

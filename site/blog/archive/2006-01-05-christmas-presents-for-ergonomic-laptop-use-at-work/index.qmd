@@ -1,0 +1,31 @@
+---
+title: Christmas presents for ergonomic laptop use at work
+date: '2006-01-05'
+categories:
+- computing
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I got a few items from my Amazon.com wish list for Christmas which should ease the wear-and-tear on my neck, shoulders, and wrists. I have a PowerBook G4 which I use for almost all my work computing.
+
+The [iCurve](http://www.griffintechnology.com/products/icurve/) by Griffin holds the laptop about six inches off the tabletop. This brings the screen up to something much more closely resembling eye level. The iCurve is not the only such device, but is pretty and Mac-like, one bit of curvy Lucite that leaves the back, bottom, and sides of the computer unobstructed. So you can still plug in the stuff you need, plus you get a little extra ventilation below and even some space for an outboard peripheral.
+
+Of course, you can’t type on a laptop that’s floating in air. (Well, you can, but your arms will get tired pretty quickly!). So this means you need another keyboard. I got the [Natural Keyboard Elite](http://www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx?pid=022) by Microsoft. It’s very beige and un-Mac-like, but it does have keys that the PowerBook doubles up, plus a number pad, and the left- and right- part of the keyboard separated and rotated. This is supposed to let you hold your hands in a more natural position.
+
+So after using this combination for a couple of hours now, I’m pretty happy. The funny keyboard takes some getting used to. Of course, you really have to recall your [touch typing](http://en.wikipedia.org/wiki/Touch_typing) skills! (Oooh…painful high school flashbacks.) I sometimes end up punching the center part with no keys. But I figure this should go away in a few days.
+
+My Mac seems to map the Windows key on the Microsoft keyboard to the Command (Apple, Propellor, whatever) key, and the Alt key to the Option key. That seems reasonable except these keys are in the opposite position on the PowerBook’s built-in keyboard. On the PowerBook from left to right on the bottom row you have Function, Control, Option, Command. On the Microsoft keyboard you have Control, Windows (Command), Alt (Option). So no function key on the MS keyboard, and then there’s this extra menu key to the right of the right-hand windows key.
+
+This is pretty easy to get around with the System Preferences application. Clicking “Keyboard/Mouse”, then selecting the Keyboard pane, then clicking the “Modifer Keys…” button lets you switch the function of the various superkeys. So you can tell OS X to interpret the command key as the option key and vice versa. This gives the same positioning of keys by function as usual. Of course, now the PB keyboard is bass-ackwards, so this configuration needs to be undone whenver I go mobile with the laptop.
+
+I don’t know if there’s a way to remap the keys on the Microsoft keyboard alone, or if there’s an AppleScript-based solution to switch the keys when the Microsoft keyboard is plugged in and unswitch them when it’s unplugged. I’d love to hear if other users have smarter workarounds.
+
+The other drawback is that I’ve lost a USB port. With my optical mouse taking the other one (you can’t use the trackpad in the air either!) this leaves me a with a grand total of zero to plug in nonessentials like my iPod (the FireWire 400 port is used by an external hard drive). So let’s move the priority of that USB hub up on the old Wish List.
+
+In addition to the extra keyboard and mouse, I have the external drive, external speakers, and an extra monitor to increase screen real estate. This gives me a pretty pimped-out PowerBook!

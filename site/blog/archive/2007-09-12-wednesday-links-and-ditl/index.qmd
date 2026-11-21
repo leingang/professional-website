@@ -1,0 +1,24 @@
+---
+title: Wednesday Links and DITL
+date: '2007-09-12'
+categories:
+- miscellaneous
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Today was Day 2 of the Bok Center Conference, with my colleague Bret leading a case discussion on group work. We are getting ready for our annual freshman advising period, which starts tomorrow and continues until September 24th.
+
+Here’s what piqued my interest on the internet today:
+
+- A new [plugin for iPhoto](http://joeygibson.com/blog/tech/mac/ExportToArchiveiPhotoPlugin.html) that allows you to export directly to a ZIP archive (via [Mac OS X Hints](http://www.macosxhints.com/))
+- [Word Processors: Stupid and Inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html): by the end you realize this is a pro-TeX rant. Also available in German, Spanish, French, and Hebrew!
+- [The Hundred Greatest Theorems by Nathan Kahl of the Stevens Institute of](http://personal.stevens.edu/~nkahl/Top100Theorems.html) Technology. I would put the [Poincaré Conjecture](http://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture) on the list, though.
+- Pretty Pictures department: [The Gallery of Map Projections](http://galleryofmapprojections.com/).
+- [Wikipedia publishes its two millionth article](http://today.reuters.com/news/articlenews.aspx?type=topNews&storyid=2007-09-12T204003Z_01_N12342868_RTRUKOC_0_US-WIKIPEDIA-GROWTH.xml).

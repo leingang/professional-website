@@ -1,0 +1,29 @@
+---
+title: Disk Utility leads to excluded middle
+date: '2006-01-09'
+categories:
+- computing
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I got a CD with some software to install on it from our sysadmin at work. The CD had the 42-character license key written on it. I put it in to install, and naturally, a dialog popped up asking me to input the license key.
+
+Hey, wait a minute…how do I read from the CD and read something written **on** the CD at the same time?
+
+I had a couple of choices. One would be to transcribe the license key by hand. Or I could type it into a text file or before inserting the CD, then copy it over. But what if I made a mistake in transcription? I’d have to eject the CD again to double-check.
+
+Instead I decided to do something really lazy. I used Disk Utility to copy the CD as a disk image, then ejected the CD and mounted the disk image. I executed the installer from the mounted disk image and typed in the licensing code. *Voilà!* I had my CD and installed from it, too.
+
+It’s a little bit cryptic, but the process is easy once you get the hang of it. Insert your CD and open Disk Utility. You see the top level of the the filesystem, with information about the types of media. For instance, the CD drive is listed, then below that the partition consisting of the written image to the CD, and inside the filesystem represented by that image.
+
+Here’s a screenshot:
+
+![Screenshot from Disk Utility](http://www.math.harvard.edu/~leingang/2006/01/09/DU_Screenshot)
+
+It’s the middle piece that you want to create an image of (I learned this by trial and error). Highlight it, click “New Image”, give it a meaningful name, and let ‘er rip.

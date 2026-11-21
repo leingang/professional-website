@@ -1,0 +1,62 @@
+---
+title: “TUMS II” Syllabus
+date: '2005-09-13'
+categories:
+- math
+- harvard
+- teacher training
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+The Mathematics is proud to announce [TUMS II](http://www.math.harvard.edu/preceptor/tums): a seminar for graduate students currently teaching. The seminar will meet alternate Thursdays, 1:30-3:00pm in SC 232. The first meeting will be October 20.
+
+Read on to see the syllabus or you can [download a printable version of the syllabus](http://www.math.harvard.edu/~leingang/2005/09/13/TUMSII-Syllabus) (PDF).
+
+# Goal
+
+Teaching is a significant component of most mathematicians’\
+careers. Just as future lawyers and doctors must study and train to\
+become more proficient in the skills needed in their professional\
+life, future mathematicians must study and train to improve their\
+teaching skills. The goal of the Teaching Undergraduate Mathematics\
+Seminar is to provide opportunities to discuss and reflect on\
+teaching practices, in order to become better teachers now and to\
+prepare for the future.
+
+           \
+All mathematics graduate students are invited to attend. \
+Those teaching during the academic year should attend the first\
+seminar on October 20, and two more of their choice throughout the\
+academic year.
+
+# The Case Method
+
+The seminar will be conducted according to the case\
+method.  Participants will read a fictional story describing a\
+teaching predicament.  The ensuing discussion, though specific\
+to the case at hand, will uncover important lessons beneficial to\
+any teacher.
+
+# Calendar
+
+  **Date**       **Case**                      **Themes**
+  -------------- ----------------------------- ------------------------
+  October 20     What were they Thinking?      Expectations/Attitudes
+  November 3     Salad Days                    Students with Problems
+  November 17    Making the Grade              Evaluation/Assessment
+  December 4     Making Waves                  Presentation
+  Februrary 16   Fundamental Problems          Presentation
+  March 2        Pairing Up                    Classroom Management
+  March 16       Changing Sections             Attitudes/Expectations
+  April 13       ThereÕs Something About Ted   Feedback
+  April 27       Studying the Exam             Assessment
+
+# Course Web Site
+
+Visit our web site at\
+<http://www.math.harvard.edu/preceptor/tums/>.

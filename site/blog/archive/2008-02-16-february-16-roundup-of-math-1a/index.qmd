@@ -1,0 +1,28 @@
+---
+title: February 16 Roundup of Math 1a
+date: '2008-02-16'
+categories:
+- calculus 1
+- math
+- math 1a
+- spring 2008
+- math1a
+- harvard
+- function
+- derivative
+- calculus
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+In the past week we’ve defined the derivative as the limit of a difference quotient.  Graphically, it’s the slope of the line tangent to a curve at a point.  But it has quite a few interpretations in various models.  If the function is position, the derivative is velocity.  If the function is cost, the derivative is marginal cost.  If the function is mass, the derivative is density.  The number of different uses for the derivative are what make it so important to study.
+
+We looked at various interplays between a function and its derivative.  For instance, when a function is increasing on an interval, the derivative is nonnegative (positive or zero) on that interval.  If the function is decreasing, the derivative is negative or zero.  And if the graph has a horizontal tangent line, the derivative is zero.  It turns out–and we will be showing this when we get to The Most Important Theorem in Calculus–that the converses of these statements are pretty much true as well.  That is, if a function has a positive derivative on an interval, it’s increasing on that interval, and so on.
+
+The derivative can’t tell you everything, however.  For one, it can’t tell you the function value at a specific point without any other information.  This is true even of constant functions, which all have the derivative zero, no matter what the constant is.  It also can’t tell you about the concavity of the graph of a function.  But that can be computed from the second derivative.
+
+Although we define the derivative in terms of a limit, eventually we will develop a set of rules to make calculating derivatives easier.  That’s the subject of Chapter 3.  However, it’s important not to lose the foundational ideas behind what the derivative actually [is]{style="font-style: italic;"} and what is [for]{style="font-style: italic;"}.

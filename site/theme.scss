@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+// Same typographic family as the Courant site (Lato + Helvetica Neue),
+// but with its own palette: deep indigo-slate accent, no NYU violet.
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-weight: 700;
+
+$ink:        #212529;
+$slate:      #2c3e5c;   // primary accent
+$link:       #1f66b3;   // close to Courant's link blue, slightly deeper
+
+$body-color: $ink;
+$primary:    $slate;
+$link-color: $link;
+$link-hover-color: darken($link, 12%);
+$navbar-bg:  #ffffff;
+$navbar-fg:  #4c4c4c;
+$navbar-hl:  $slate;
+$footer-bg:  #f8f8f8;
+$border-color: #e6e6e6;
+
+/*-- scss:rules --*/
+.navbar {
+  border-top: 4px solid $slate;
+  border-bottom: 1px solid $border-color;
+  .navbar-title { font-family: $headings-font-family; font-weight: 900; letter-spacing: .02em; }
+  .nav-link { text-transform: uppercase; font-family: $headings-font-family; font-size: .85rem; letter-spacing: .05em; }
+}
+h1, h2, h3 { letter-spacing: -.005em; }
+.page-footer { border-top: 1px solid $border-color; font-size: .85rem; }
+
+// About page hero
+.hero {
+  display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+  margin: 1rem 0 2rem;
+  img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; }
+  .hero-text { flex: 1 1 20rem; }
+  .hero-name { font-family: $headings-font-family; font-weight: 900; font-size: 2.4rem; margin: 0; }
+  .hero-role { color: #4c4c4c; font-size: 1.1rem; margin: .25rem 0 .75rem; }
+}
+.contact-list { list-style: none; padding: 0; li { margin: .2rem 0; } }
+
+// Talks list
+.talk-list .talk { margin-bottom: 1rem; }
+.talk-date { color: #707070; font-variant-numeric: tabular-nums; }
+
+// Legacy-post banner
+.callout.legacy { font-size: .9rem; }

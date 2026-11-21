@@ -1,0 +1,29 @@
+---
+title: James Bond remembers his physics and DE
+date: '2007-05-10'
+categories:
+- math
+- funny
+- math 1b
+- differential
+- physics
+- harvard
+- examples
+- equations
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Funny [comic](http://xkcd.com/c123.html) at [xkcd](http://xkcd.com/) about [centrifugal force](http://en.wikipedia.org/wiki/Centrifugal_force). It reminds me of some examples dreamed up by [Jesse Kass](http://www.math.harvard.edu/~kass/), a graduate student teaching fellow here:
+
+> In this problem, we will use calculus to investigate the classic James Bond film![The image “http://www.cyber-cinema.com/reprint/goldfinger_italian.jpg” cannot be displayed, because it contains errors.](http://www.cyber-cinema.com/reprint/goldfinger_italian.jpg){width="150" align="right" style="cursor: -moz-zoom-in"} [*Goldfinger* (1964)](http://www.imdb.com/title/tt0058150/){.l}. The film concerns James Bond’s attempts to foil the nefarious plot of the evil billionaire Auric Goldfinger. As his name would suggest, Goldfinger has an insatiable love for gold. He plans to destroy the US gold reserves. Doing so will plunge the US economy into chaos and increase the value of his own gold by at least ten-fold. The US gold reserve is stored at Fort Knox. Goldfinger’s plan is to spray the fort with Delta 9 nerve gas to disable the guards. Goldfinger’s henchmen will then detonate an atomic bomb inside the fort vault. Bond has infiltrated the vault and is trying to disarm the bomb before it goes off. However, he has only a very limited amount of time as nerve gas is being pumped into the vault while he works. Your job is to determine whether James Bond has enough time to disarm the bomb.
+>
+> The size of the vault is 1000 cubic meters. Nerve gas is being pumped into the room at a rate of 9.846 cubic meters per minute. Nerve agent is present in the nerve gas at a concentration of .001 milligrams per cubic meter. Inside the vault are fans that mix the air in the room and blow air out at a rate of 9.846 cubic mters per minute (the same rate at which gas is being pumped in). Delta 9 nerve agent is fatal at a concentration of .0001 milligrams per cubic meter. Bond needs 10 minutes to disarm Goldfinger’s bomb and escape from the vault.
+>
+> 1.  Let f (t) equal the milligrams of nerve agent in the vault after t minutes have elapsed. Using the information given in the previous paragraph, find a differential equation that f satisfies. What is the initial condition that is satisfied by f ?
+> 2.  Solve the differential equation that you derived in the previous question. Does Bond have enough time to disarm the bomb?
+> 3.  After Bond disarms the bomb, how long does it take for the amount of nerve agent in the vault to reach fatal levels? Give your answer to 3 decimal places.

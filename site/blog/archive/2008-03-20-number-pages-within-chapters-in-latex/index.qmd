@@ -1,0 +1,53 @@
+---
+title: Number pages within chapters in LaTeX
+date: '2008-03-20'
+categories:
+- tex
+- harvard
+- typesetting
+- latex
+legacy-source: huwp
+aliases:
+- /posts/number-pages-within-chapters-in-latex/
+- /posts/number-pages-within-chapters-in-latex/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+In latex, the `\numberwithin` command allows one to bind one counter with another. A common example is the section counter and the chapter counter. When a new chapter is created, the chapter counter increments, and the section counter is reset. In this scheme, if the last section of chapter 1 is labeled “1.5″, the first section of chapter 2 is labeled “2.1″.
+
+In the process of preparing a large handout, put together in stages and repeatedly distributed, a student asked if I could number the pages of a document within the chapters. So each page would be labeled *chapter-page,* and the first page of each chapter would be page 1.
+
+Sounded simple enough: just use
+
+` \renewcommand{\thepage}{\arabic{chapter}-\arabic{page}}`
+
+(this changes the way pages are labeled) and
+
+`\numberwithin{page}{chapter}`
+
+to change the numbering. But this doesn’t quite do it, because \\numberwithin resets the counter to zero, and so the first page of chapter 4 gets labeled as “4-0″. I need to start a new chapter, then reset the page counter to one, not zero.
+
+There is probably a package which does this, but five minutes of googling didn’t produce it. So I started to roll my own. One can write a `\Chapter` command that calls `\chapter` then resets the page counter. The disadvantage here is that (1) you have to search-and-replace existing code, and (2) `\chapter` is a pretty complicated command with a starred version and an optional argument. The `\chapter` macro calls lower-level macros and actually returns a seven-argument macro with four arguments filled in. So rather than call the `\chapter` macro, I want to make adjustments, then return `\chapter` so that it can parse as normal. That’s when I tried:\
+\
+`\let\oldchapter=\chapter`\
+`\def\chapter{\resetcounter{page}{0}\oldchapter}`\
+
+This adds the page reset to the beginning of the chapter, without changing the way it’s used. The trouble is that `\chapter` clears the page before starting the new chapter, and that page needs a label. So this made sure the first page of Chapter 4 was labeled 4-1, but now the last page of Chapter 3 got labeled 3-0!
+
+What I needed was to return `\chapter`, but make sure LaTeX executed the `\resetcounter` command right afterwards. The solution is `\expandafter`, which defers token expansion by one position. From [[The TeXBook]{style="font-style: italic"}](http://www.amazon.com/TeXbook-Computers-Typesetting-Donald-Knuth/dp/0201134489):
+
+> TeX first reads the token that comes immediately after `\expandafter`, without expanding it; let’s call this token *t*. Then TeX reads the token that comes after *t* (and possibly more tokens, if that token has an argument), replacing it by its expansion. Finally TeX puts *t* back in front of that expansion.
+
+And here’s the implementation:
+
+\
+`\let\oldchapter=\chapter`\
+`\def\resetpage{\setcounter{page}{1}}`\
+`\def\chapter{\expandafter\resetpage\oldchapter}`\
+
+The parsing works like this: upon reading the new `\chapter` macro, TeX encounters `\expandafter`, reads `\resetpage` but holds onto it. It then expands `\chapter`, which under the hood returns that seven-argument monster macro. At that point `\resetpage` is called.
+
+**Update 2008-04-08:** [Peter](http://www.google.com/url?sa=t&ct=res&cd=1&url=http%3A%2F%2Ffiler.case.edu%2Fpmg5%2F&ei=SXH7R_-EAoKgec339I0B&usg=AFQjCNFeLzlJDl2AVVY1QjfTYIC4XJBk4Q&sig2=8QQk0lu7SvaY6xiFIO0xqw) tells me the package I’m looking for is [chappg](http://www.google.com/url?sa=t&ct=res&cd=1&url=http%3A%2F%2Fwww.ctan.org%2Ftex-archive%2Fhelp%2FCatalogue%2Fentries%2Fchappg.html&ei=cXH7R8bgIYy-eJDx4Z4B&usg=AFQjCNGPoHWgkifvrcXA7FLqsm9NvqzoCg&sig2=0DYNnzh1VCKJRt3UbQRbhQ).  Should have googled more!

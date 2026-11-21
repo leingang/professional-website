@@ -1,0 +1,32 @@
+---
+title: What would Jason Lezak do?
+date: '2008-08-11'
+categories:
+- education
+- math
+- krantz
+- athletics
+- perserverance
+legacy-source: drupal
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+[![(From L) US swimmers Garrett Weber-Gale, Jason Lezak, Michael Phelps and Cullen Jones celebrate after winning the men's 4X100m freestyle relay swimming final at the National Aquatics Center in the 2008 Beijing Olympic Games on August 11, 2008. The United States stunned France in an epic men's 4x100m freestyle relay final Monday to keep Michael Phelps's dream of eight gold medals at the Beijing Olympics alive. AFP PHOTO / DDP / MICHAEL KAPPELER (Photo credit should read MICHAEL KAPPELER/AFP/Getty Images)](http://d.yimg.com/a/p/sp/getty/2a/fullj.b340613b4eae98739796a38b630fd21a/b340613b4eae98739796a38b630fd21a-getty-oly-2008-swimming-freestyle-relay.jpg){width="300"}](http://news.yahoo.com/s/afp/20080811/ts_afp/oly2008)
+
+I've been reading Steven Krantz's book `<cite>`{=html}[How to Teach Mathematics](http://www.maa.org/reviews/howteach.html)`</cite>`{=html} lately, looking for some words of wisdom. One item has resurfaced during these [Olympics](http://news.yahoo.com/s/afp/20080811/ts_afp/oly2008).
+
+> *All learning of significant knowledge requires considerable effort on the part of the learner.* This fact has not changed since Euclid told Ptolemy (over 2000 years ago) that "There is no royal road to geometry."...
+>
+> Go to any athletic facility and you will see young people spending hours perfecting their free throw or their skate board technique or their butterfly stroke. They don't hire tutors to achieve these goals...An eighteen-year-old understands clearly when an athletic coach says, "No pain, no gain." However, the same concept makes little sense to him in the context of mathematics or another deep academic subject.
+
+Athletes respect the value of practice and repetition, of achieving a large goal by breaking it up into small goals, and of a personal commitment to success. They also understand coaches force athletes to exert themselves not because they want the athletes to fail, but because they want them to succeed.
+
+Perhaps one reason students don't find academics analogous to athletics is that they don't view college teachers as coaches. Some students view their studies (especially those outside their major) as the barriers to a career rather than the means to one. And their teachers become some kind of gatekeepers who would like nothing more than to sink another medical school application.
+
+This underscores the importance to a teacher of building a trusting environment in the classroom. Young people will put in an effort if they believe it will make progress towards a goal. If we as teachers can get across that we are as interested in our students' success as the students themselves are and that we know the steps that must be taken to succeed, then we can ask students to make those steps.
+:::

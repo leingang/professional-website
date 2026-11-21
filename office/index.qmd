@@ -1,0 +1,7 @@
+---
+title: Faculty Profile
+pagetitle: Profile
+profile: true
+active:
+  profile: true
+---

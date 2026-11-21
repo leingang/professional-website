@@ -1,0 +1,10 @@
+---
+title: Office Hours
+show-hours: true
+active:
+  hours: true
+---
+
+You don't need an appointment during scheduled office hours. Just drop by.
+If you can't make those times, [email me](mailto:leingang@courant.nyu.edu)
+with a few times that work for you.

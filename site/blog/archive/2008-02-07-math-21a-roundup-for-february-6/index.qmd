@@ -1,0 +1,27 @@
+---
+title: Math 21a roundup for February 6
+date: '2008-02-07'
+categories:
+- calculus 3
+- math
+- vector
+- math 21a
+- spring 2008
+- harvard
+- dot product
+- math21a
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+A [vector]{style="font-style: italic;"} is a “thing” which has magnitude and direction.  We sort of leave those two things undefined, too, but this is better than nothing.  If you take an abstract algebra course, you’ll learn that a vector is any element of a [vector space]{style="font-style: italic;"}, but that probably doesn’t help here, either:-). 
+
+Either thinking geometrically (drawing arrows) or algebraically (recording a vector’s components), the important thing is that we can add, subtract, and scale vectors.  Also, these operations are similar to those we know for regular numbers–which we’re going to call [scalars]{style="font-style: italic;"} from now on for no particularly good reason.  For instance, adding two vectors is a [commutative]{style="font-style: italic;"} operation: the order of addition doesn’t matter.  Scaling distributes over addition, and so on.  (This is the “abstract” definition of vector space: a set of things you can add and scale).
+
+Can you multiply vectors?  Not in the same sense that you can multiply real numbers.  You can multiply two-dimensional vectors by pretending they’re complex numbers.  This doesn’t work in spaceland, however.  There are two useful products of vectors, though: the []{style="font-style: italic;"}[scalar]{style="font-style: italic;"} (or [dot]{style="font-style: italic;"}) [product]{style="font-style: italic;"} and the [vector]{style="font-style: italic;"} (or [cross]{style="font-style: italic;"}) [product.]{style="font-style: italic;"}  The dot product measures the compatibility of vectors in some sense.  If the dot product is positive, the angle between the vectors is acute.  If it’s negative, the angle is obtuse.  And if it’s zero, the vectors are perpendicular (another new word for a known concept: we’ll say [orthogonal]{style="font-style: italic;"} now instead of perpendicular). 
+
+The cross product is coming up on Friday.

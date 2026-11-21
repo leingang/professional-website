@@ -1,0 +1,21 @@
+---
+title: Are we still here?
+date: '2008-09-10'
+categories:
+- science
+- linear hadron collider
+- controversy
+- snark
+legacy-source: drupal
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+For months an online [debate](http://blogs.discovermagazine.com/badastronomy/2008/03/29/no-the-lhc-wont-destroy-the-earth/) has raged about whether the new [Linear Hadron Collider](http://en.wikipedia.org/wiki/Large_Hadron_Collider) in Switzerland would create black holes that could "destroy the earth."
+
+Well, the [LHC is now online](http://community.zdnet.co.uk/blog/0,1000000567,10009272o-2000331761b,00.htm), and apparently, it has not destroyed the earth. Either that, or we're living in an episode of `<cite>`{=html}Lost`</cite>`{=html}.
+:::

@@ -1,0 +1,45 @@
+---
+title: Microsoft spurns its own keyboard
+date: '2007-04-24'
+categories:
+- computing
+- harvard
+- mac
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I just posted this on a [macworld thread](http://www.macworld.com/forums/ubbthreads/showflat.php?Cat=0&Number=497612&an=0&page=0#497612), but i’ll republish it as a rant.
+
+`<font class="post">`{=html}I have a Microsoft Natural Keyboard\
+Elite USB keyboard plugged into my PowerBook G4.\
+`</font>`{=html}
+
+![MS NaturalKeyboard Elite](http://mineko.fc2web.com/box/kb-room/items/res/natukey-elite/mainimg.jpg)
+
+`<font class="post">`{=html}It’s been pretty good for my wrists, and it’s cheap, too.`</font>`{=html}
+
+`<font class="post">`{=html}I recently `</font>`{=html} `<font class="post">`{=html}had to do a\
+pair of Archive and Install’s on the PowerBook, and I lost the kernel extensions\
+that made the Microsoft keyboard more like a mac (swapping alt and\
+command keys, etc).`</font>`{=html}
+
+`<font class="post">`{=html}I went to [Microsoft’s download page](http://www.microsoft.com/hardware/mouseandkeyboard/Download.mspx){target="_blank"}\
+and they don’t have a listing for the Natural Keyboard Elite anymore.\
+The latest keyboard driver is Intellitype 6.2, though. I downloaded and\
+installed that, and even though I can click “swap alt and command” in\
+the preference panel, it has no effect.`</font>`{=html} `<font class="post">`{=html} I’ve installed Intellitype 5.4, 6.0, 6.1, and 6.2, and all of\
+them aren’t working out-of-the-box.`</font>`{=html}
+
+`<font class="post">`{=html}I’ve also discovered that\
+when I select Keyboard Info from the Intellitype about window, it tells\
+me that no Microsoft Keyboards have been found. Why not? I repeat, this\
+*used* to work.`</font>`{=html}
+
+`<font class="post">`{=html}I’m using [doubleCommand](http://doublecommand.sourceforge.net/) now ([uControl](http://gnufoo.org/ucontrol/) is another option), but what was\
+nice about Intellitype was it only went into effect when the keyboard\
+was installed. With the laptop on its own it would revert to normal. `</font>`{=html}

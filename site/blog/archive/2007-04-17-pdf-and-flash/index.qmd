@@ -1,0 +1,40 @@
+---
+title: PDF and Flash
+date: '2007-04-17'
+categories:
+- tex
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/pdf-and-flash/
+- /posts/pdf-and-flash/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I didn’t realize how easy it was to create Flash presentations from PDF. I’ve been using [beamer](http://latex-beamer.sourceforge.net/) for LaTeX to make slide shows for classes, and [PGF](http://sourceforge.net/projects/pgf/) to make graphics in those presentations.
+
+It turns out to make it into a flash thingy, you can just start a new flash document and import the PDF to the “stage.” Each page becomes its own frame. Then fool around with it, publish, and you’re done.
+
+It’s the fooling I want to know more about…for instance, my beamer theme uses Computer Modern fonts, which Flash doesn’t know about. So I should probably start switching to prettier fonts. Also, I’d like to do some of the fancier things Flash can do, besides concatenate slides, but this is a start.
+
+::: flashmovie
+:::
+
+<script type="text/javascript">
+    // &lt;![CDATA[
+
+    var so_1129847700 = new SWFObject("http://www.math.harvard.edu/~leingang/wp-content/uploads/2007/04/austinibl.swf","fm_austinibl_1129847700","400","","6","","","","","");
+    so_1129847700.write("so_targ_austinibl_1129847700");
+
+    // ]]&gt;
+</script>
+
+`</code>`{=html}
+
+</p>
+
+Someone asked me how to make dynamic flash objects to reveal solutions to math problems.  I think this is the right path.  The biggest sticking point is the fonts installation, but after that I can even see narrating a slideshow and embedding the audio.

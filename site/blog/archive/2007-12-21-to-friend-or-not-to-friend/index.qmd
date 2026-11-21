@@ -1,0 +1,37 @@
+---
+title: To Friend or Not to Friend?
+date: '2007-12-21'
+categories:
+- teaching
+- facebook
+- harvard
+- web
+legacy-source: huwp
+aliases:
+- /posts/to-friend-or-not-to-friend/
+- /posts/to-friend-or-not-to-friend/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+My old colleague and friend [Derek](http://www.derekbruff.com/) is planning a [workshop session](http://www.vanderbilt.edu/cft/programs/graduate_student/gradstep.htm#24) on [Facebook](http://www.facebook.com/) for graduate student teachers.  He may admit that I told him to get on the Facebook bandwagon.  It turned out he asked for my thoughts at the very moment I was planning to write this post.
+
+Facebook is [the]{style="font-style: italic;"} social networking application for people currently now in college, recent graduates of college, college-bound high school students, and those who work in a higher ed environment.  It’s also extremely popular in Canada: 10% of Canadians have a Facebook page!  I think that having a Facebook page is an important part of being findable and accessible online, much like having an e-mail address used  to be 15 years ago and having a personal website 10 years ago.  Still, there are issues and mores about expected barriers that need to be respected.
+
+People of different generations use Facebook in different ways.  Those who were in college or close to it at the time Facebook was born use it to communicate with each other, upload and share photos, and express themselves in the young and exuberant manner they’re accustomed to.  Professionals often use their facebook pages to promote their work selves, either subtly or overtly.  Academics are caught somewhere in between, having Facebook contacts (or “friends”) in both arenas.
+
+One popular feature of a person’s Facebook profile is the “Wall,” an area on which a user’s Facebook friends can write whatever they want.  It reminds me of the message board I attached to my dorm room door when I was in college.  Fellow students who dropped by and didn’t find me could leave a note, or say something interesting, or say something stupid…you probably have similar memories. 
+
+The Wall scares me now.  I don’t want anyone to write anything they want on my page.  That’s my page and I want control over it.  Luckily, those who use my wall are either my student friends, who are respectful out the fact that they usually want something from me ![:-)](/images/icon_smile.gif){.wp-smiley} , and my in-real-life friends who are obeying the golden rule.
+
+The message board analogy extends to the entire Facebook experience.  Students treat their Facebook pages as their online dorm rooms.  They feel free to let down their hair, join groups for various serious and silly causes, post wide-eyed party pictures of each other with oh-so-convenient camera phones, and essentially bring their entire student life online. 
+
+I feel more like my Facebook profile is my online office.  I only put up stuff that I would be comfortable with [all]{style="font-style: italic;"} my Facebook friends seeing, and that includes my students (I might as well include my Mom in that group, except we’re not Facebook friends.  We are [LinkedIn](http://linkedin.com/) contacts, strangely enough).  This means I don’t get an online dorm room, but I’m of a generation that doesn’t feel the need for that.
+
+Derek pointed out a nice extension of the analogy.  I encourage my students to drop by my office.  But students probably wouldn’t want me dropping by their dorm rooms.  The difference in social protocol is inherent and can’t be leveled by a website. 
+
+I respect that difference.  I’ll accept friend requests from all students, but I don’t friend my students.  I put my work on my Facebook page but only secondarily to the official course websites;  I don’t force students to use Facebook to find it. 
+
+Facebook seems to be very hip to the needs of students and tries to provide one-stop shopping.  They didn’t invent photo sharing, but they adopted it and now host more photos than [Flickr](http://flickr.com).  They added marketplaces to co-opt student use of [craigslist](http://craigslist.org). They opened up their application programming interface so that [anyone]{style="font-style: italic;"} can create an application as part of Facebook.  So I see the day when university websites–including course sites–will be totally integrated in Facebook.  But then again, that might make Facebook suddenly unhip and students will run to the next thing.  Until then, I’ll be in my (online) office; drop on by.

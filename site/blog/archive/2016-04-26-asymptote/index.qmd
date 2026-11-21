@@ -1,0 +1,23 @@
+---
+title: First tries at asymptote
+date: '2016-04-26'
+categories:
+- computing
+- graphics
+- technology
+legacy-source: nikola
+description: In which I clutz around in a new graphics description language
+aliases:
+- /posts/asymptote/
+- /posts/asymptote/index.html
+---
+
+During one of the breakout sessions I was able to hack together some asymptote scripts.
+
+```{=html}
+<script src="https://gist.github.com/leingang/71ceab3d19bd5c05f3dd6724fb20a24e.js"></script>
+```
+
+![](/images/asymptote-3d.png)
+
+![](/images/asymptote-2d.png)

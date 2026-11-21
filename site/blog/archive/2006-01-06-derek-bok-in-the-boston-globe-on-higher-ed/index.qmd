@@ -1,0 +1,23 @@
+---
+title: Derek Bok in the Boston Globe on Higher Ed
+date: '2006-01-06'
+categories:
+- teaching
+- harvard
+- teacher training
+- news
+legacy-source: huwp
+aliases:
+- /posts/derek-bok-in-the-boston-globe-on-higher-ed/
+- /posts/derek-bok-in-the-boston-globe-on-higher-ed/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Derek Bok, former president of Harvard and eponymous for the [Derek Bok Center for Teaching and Learning](http://bokcenter.fas.harvard.edu/) here, had an editorial called “Are colleges failing? Higher ed needs new lesson plans” in the *Boston Globe* on December 18. I can’t link to it any more because it’s moved to their paid-for archives, but you have LexisNexis you can find it. He writes:
+
+> Critics of American colleges typically attribute the failings of undergraduate education to a tendency on the part of professors to neglect their teaching to concentrate on research. In fact, the evidence does not support this thesis, except perhaps in major research universities. Surveys show that most faculty members prefer teaching to research and spend much more time at it. The problem is not that faculty are uninterested in their students but that they do too little to explore new and possibly more effective ways of teaching and learning.
+
+He goes on to say that university faculty don’t research teaching methods and education because they aren’t trained to do so as graduate students. I think this explains the need for a center like the Bok Center. When students think early about the issues of teaching and learning, not only do they become better teaching assistants or teaching fellows, they are equipped to guide their own improvements throughout their academic career.

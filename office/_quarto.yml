@@ -1,0 +1,29 @@
+# cims.nyu.edu office page — a near-replica of the math.nyu.edu look.
+# Data comes from ../_shared/*.yml; edit those, then `make office`.
+project:
+  type: default
+  output-dir: _site
+  render:
+    - "*.qmd"
+  resources:
+    - assets/
+
+metadata-files:
+  - ../_shared/person.yml
+  - ../_shared/teaching.yml
+
+format:
+  html:
+    minimal: true
+    template: _partials/template.html
+    template-partials:
+      - _partials/dept-header.html
+      - _partials/dept-footer.html
+      - _partials/dept-sidebar.html
+      - _partials/dept-profile.html
+      - _partials/dept-hours.html
+      - _partials/dept-current.html
+      - _partials/dept-past.html
+      - _partials/dept-navjs.html
+    html-math-method: mathjax
+    lang: en

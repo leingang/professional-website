@@ -1,0 +1,30 @@
+---
+title: Education and global competitiveness
+date: '2008-08-04'
+categories:
+- education
+- David Brooks
+- comment
+legacy-source: drupal
+aliases:
+- /posts/education-and-global-competitiveness/
+- /posts/education-and-global-competitiveness/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+David Brooks [writes today](http://www.nytimes.com/2008/07/29/opinion/29brooks.html?ex=1375243200&en=5aacbe747169c6b1&ei=5124&partner=facebook&exprod=facebook) in the New York Times about the state of education in the US.
+
+He cites a paper by Claudia Goldin and Lawrence Katz, Harvard economists, titled "[The Race between Education and Technology: The Evolution of U.S. Educational Wage Differentials, 1890 to 2005](http://www.hup.harvard.edu/catalog/GOLRAC.html)". There they track the average education (measured in years of school) of the American workforce over time. This statistic rose steadily at a rate of 0.8 years of school per decade from 1890 until 1970, at which point the US led the world in education. It then stagnated for 20 years, and although it has begun to climb again, in the intervening time the edge has been lost.
+
+Our nation's lack of education doesn't just make us bad Trivial Pursuit players. Education is the key to a career, and on average, more education usually means a more lucrative career. Technology grows steadily, and when education does not outpace technology, those entering the workforce lack the skills to compete for good jobs. And this leads to a widening in the class gap. Writes Brooks:
+
+> \[T\]here is a big debate under way over the sources of middle-class economic anxiety. Some populists emphasize the destructive forces of globalization, outsourcing and predatory capitalism. These people say we need radical labor market reforms to give the working class a chance. But the populists are going to have to grapple with the Goldin, Katz and Heckman research, which powerfully buttresses the arguments of those who emphasize human capital policies. It’s not globalization or immigration or computers per se that widen inequality. It’s the skills gap. Boosting educational attainment at the bottom is more promising than trying to reorganize the global economy.
+
+This reiterates the point made in [Rising Above the Gathering Storm: Energizing and Employing America for a Brighter Economic Future](http://www.nap.edu/catalog.php?record_id=11463#toc), a policy paper by the Committee on Science, Engineering, and Public Policy. Education is not a luxury, it is essential for national productivity.
+
+(Hat tip, again, to my man [Sendhil](http://www.revuluri.com/index-sendhil.html).)
+:::

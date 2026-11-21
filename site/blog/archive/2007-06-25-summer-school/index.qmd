@@ -1,0 +1,27 @@
+---
+title: Summer School
+date: '2007-06-25'
+categories:
+- calculus
+- math
+- s1-ab
+- school
+- harvard
+- summer
+- math s-1ab
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+So the [Harvard Summer School](http://www.summer.harvard.edu/) is up and running.
+
+`<object width="425" height="350">`{=html}\
+`<param value="http://www.youtube.com/v/m4Y0CRVMbU8" name="movie">`{=html}`</param>`{=html} `<param value="transparent" name="wmode">`{=html}`</param>`{=html}`<embed width="425" height="350" wmode="transparent" type="application/x-shockwave-flash" src="http://www.youtube.com/v/m4Y0CRVMbU8">`{=html}`</embed>`{=html}`</object>`{=html}
+
+(Not exactly)
+
+I’m excited to be teaching another summer of [Calculus I and II](http://my.harvard.edu/k15863).

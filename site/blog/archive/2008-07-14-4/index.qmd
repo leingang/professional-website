@@ -1,0 +1,22 @@
+---
+title: Debug CSS within your browser
+date: '2008-07-14'
+categories:
+- web
+legacy-source: drupal
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+While setting up my site I discovered the [View formatted source](https://addons.mozilla.org/en-US/firefox/addon/697) extension for Firefox. What a killer extension when you're tweaking the [styling](http://www.w3.org/TR/REC-CSS2/) of a site!
+
+In the past when setting the style of a site I've run into the problem of "nothing happened." It's hard to tell at that point if (a) the [selector](http://www.w3.org/TR/REC-CSS2/selector.html) statement I wrote didn't match what I was going for, (b) the style declarations I made have been overidden by something further down the cascade, or (c) the style declarations I've made simply have no effect in this browser.
+
+The extension gives you a contextual (right-click) submenu. The "view formatted source" item shows you the document's HTML source, but the div's are collapsible so you can hide what you're not focused on. Hovering over an element pops up a list of the CSS declarations it matches, along with what files they come from. This completely takes care of diagnosing problems (a) and (b) above. (c) is another problem altogether, but I'm not sweating cross-browser issues at the moment.
+
+Right now this extension hasn't been updated for Firefox 3. It does work with the current stable version of [Flock](http://www.flock.org/), though.
+:::

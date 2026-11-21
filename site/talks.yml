@@ -1,0 +1,139 @@
+# Talks, workshops, and panels. The page sorts by date, newest first.
+# Fields: title, date (YYYY-MM-DD; only the year is shown), venue,
+#         type (invited | contributed | workshop | panel | organizer | outreach),
+#         path (optional link to slides or abstract)
+# Source: leingang/cv tex/Leingang_CV.tex (2024). Add new talks at the top.
+- title: Town Hall on Academic Integrity (panelist)
+  date: '2024-01-01'
+  venue: NYU College of Arts and Science
+  type: panel
+- title: Polygonal tilings and other stories
+  date: '2023-01-01'
+  venue: MATHCOUNTS Manhattan, New York
+  type: invited
+- title: Polygonal tilings and other stories
+  date: '2023-01-01'
+  venue: Courant cSPLASH, New York
+  type: outreach
+- title: Interactive assessments in open source textbooks (workshop organizer, with J. Fowler, M. Keller, and O. Levin)
+  date: '2019-01-01'
+  venue: American Institute of Mathematics, San Jose, CA
+  type: organizer
+- title: Combining auto-multiple-choice and Gradescope for paperless grading
+  date: '2018-01-01'
+  venue: Joint Mathematics Meetings, San Diego, CA
+  type: contributed
+- title: Side-by-side comparison of a single instructor's flipped and traditional sections (with S. Kalayçioglu and D. Youngren)
+  date: '2017-01-01'
+  venue: Joint Mathematics Meetings, Atlanta, GA
+  type: contributed
+- title: 'Lecturing with slides: considered harmful?'
+  date: '2016-01-01'
+  venue: MAA Metropolitan New York Section Meeting, Vaughn College, Queens, NY
+  type: invited
+- title: Streamlining assessment, feedback, and archival with auto-multiple-choice
+  date: '2016-01-01'
+  venue: MAA SIGMAA on Teaching on the Web, Seattle, WA
+  type: invited
+- title: Introduction to inquiry-based learning
+  date: '2015-01-01'
+  venue: MAA New Jersey Section NExT workshop, Monmouth University
+  type: invited
+- title: Using online homework systems for written homework
+  date: '2015-01-01'
+  venue: Joint Mathematics Meetings, San Antonio, TX
+  type: contributed
+- title: Using an online homework system for written homework
+  date: '2014-01-01'
+  venue: MathFest, Portland, OR
+  type: contributed
+- title: Electronic grading of paper assessments
+  date: '2013-01-01'
+  venue: Joint Mathematics Meetings, San Diego, CA
+  type: contributed
+- title: Gluing together Blackboard, Facebook, and Twitter
+  date: '2012-01-01'
+  venue: Joint Mathematics Meetings, Boston, MA
+  type: contributed
+- title: 'Tessellating pentagons: The Marjorie Rice story'
+  date: '2012-01-01'
+  venue: NYU Mathematics Society
+  type: outreach
+- title: Social media in inquiry-based learning
+  date: '2011-01-01'
+  venue: Legacy of R. L. Moore Conference, Washington, DC
+  type: invited
+- title: Mashups for course websites with Yahoo! Pipes
+  date: '2011-01-01'
+  venue: Joint Mathematics Meetings, New Orleans, LA
+  type: contributed
+- title: How beginning teachers understand student thinking in calculus (with T. W. Judson)
+  date: '2010-01-01'
+  venue: Joint Mathematics Meetings, San Francisco, CA
+  type: contributed
+- title: A multimedia document workflow using docutils
+  date: '2010-01-01'
+  venue: Joint Mathematics Meetings, San Francisco, CA
+  type: contributed
+- title: Constructible polygons and Euler's totient
+  date: '2010-01-01'
+  venue: NYU Mathematics Society
+  type: outreach
+- title: Inquiry-based learning opportunities for secondary teachers and students (with B. Benesh and T. W. Judson)
+  date: '2009-01-01'
+  venue: Joint Mathematics Meetings, Washington, DC
+  type: contributed
+- title: Two non-traditional content courses for in-service high school teachers at the Harvard Extension School (with B. Benesh and T. W. Judson)
+  date: '2007-01-01'
+  venue: 'MSRI, Critical Issues in Education: Teaching Teachers Mathematics, Berkeley, CA'
+  type: contributed
+- title: IBL approaches to geometry and probability for high school teachers (with B. Benesh)
+  date: '2007-01-01'
+  venue: 10th Legacy of R. L. Moore Conference, Austin, TX
+  type: contributed
+  path: files/austinibl.pdf
+- title: Gilligan, MOPE, and TiVo
+  date: '2007-01-01'
+  venue: Special Faculty Colloquium, University of California, Irvine
+  type: invited
+- title: 'Changing sections: a case study in student preparation'
+  date: '2007-01-01'
+  venue: Derek Bok Center Winter Teaching Conference, Harvard
+  type: workshop
+- title: 'The quicksand of problem four: a case study in classroom assessment'
+  date: '2006-01-01'
+  venue: Derek Bok Center Fall Teaching Conference, Harvard
+  type: workshop
+- title: Symmetric space valued moment maps
+  date: '2006-01-01'
+  venue: University of Connecticut Faculty Colloquium
+  type: invited
+- title: 'Salad days: a case study in students with problems'
+  date: '2005-01-01'
+  venue: Harvard Teaching Undergraduate Mathematics Seminar
+  type: workshop
+- title: What were they thinking? A case study in expectations
+  date: '2005-01-01'
+  venue: Harvard Teaching Undergraduate Mathematics Seminar
+  type: workshop
+- title: 'Seeking points: a case study in grading'
+  date: '2005-01-01'
+  venue: Derek Bok Center Fall Teaching Conference, Harvard
+  type: workshop
+- title: Lesson planning
+  date: '2005-01-01'
+  venue: Harvard Teaching Undergraduate Mathematics Seminar
+  type: workshop
+  path: http://www.slideshare.net/leingang/making-lesson-plans
+- title: Advantages, challenges, and dividends of online placement
+  date: '2005-01-01'
+  venue: Joint Mathematics Meetings, Atlanta, GA
+  type: contributed
+- title: Momentum through the centuries
+  date: '2003-01-01'
+  venue: Rochester Institute of Technology Colloquium
+  type: invited
+- title: Course preparation from start to finish
+  date: '2001-01-01'
+  venue: Rutgers University VIGRE Seminar
+  type: workshop

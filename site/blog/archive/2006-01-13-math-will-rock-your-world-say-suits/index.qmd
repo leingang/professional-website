@@ -1,0 +1,20 @@
+---
+title: “Math Will Rock Your World”, say suits
+date: '2006-01-13'
+categories:
+- math
+- harvard
+- news
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+There’s an interesting article in Business Week called “[Math Will Rock Your World](http://www.businessweek.com/magazine/content/06_04/b3968001.htm).” It talks about a news service that maps articles into a large space and can find articles related to a specific one by comparing the text. But its major point is that math is having more and more applications to the business world.
+
+> The world is moving into a new age of numbers. Partnerships between mathematicians and computer scientists are bulling into whole new domains of business and imposing the efficiencies of math. This has happened before. In past decades, the marriage of higher math and computer modeling transformed science and engineering. Quants turned finance upside down a generation ago. And data miners plucked useful nuggets from vast consumer and business databases. But just look at where the mathematicians are now. They’re helping to map out advertising campaigns, they’re changing the nature of research in newsrooms and in biology labs, and they’re enabling marketers to forge new one-on-one relationships with customers. As this occurs, more of the economy falls into the realm of numbers. Says James R. Schatz, chief of the mathematics research group at the National Security Agency: “There has never been a better time to be a mathematician.”
+
+Thanks to Oliver for the reference.

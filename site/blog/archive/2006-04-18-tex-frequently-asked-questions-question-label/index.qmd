@@ -1,0 +1,19 @@
+---
+title: Visual LaTeX FAQ
+date: '2006-04-18'
+categories:
+- tex
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/tex-frequently-asked-questions-question-label/
+- /posts/tex-frequently-asked-questions-question-label/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+There’s a new\
+[Visual LaTeX FAQ](ftp://tug.ctan.org/pub/tex-archive/info/visualFAQ/visualFAQ.pdf) on [CTAN](http://ctan.org/) which is pretty cool. It’s a big PDF, with answers to FAQ’s implemented. The implementations are linked to parts of the FAQ. This way you can find out how to do what you want without even having to formulate a question!

@@ -1,0 +1,28 @@
+---
+title: 'Geek lust: The transformers movie'
+date: '2007-05-11'
+categories:
+- leisure
+- graphics
+- harvard
+- cool
+- movie
+- pop culture
+- transformers
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I am a [child of the 80s](http://www.relaxorium.com/80s1.html) (Atari, not Nintendo), so I’m very interested in the upcoming CGI [Transformers movie](http://www.transformersmovie.com/). True, I’m married with two little ones, which means I go to the movies about once a year, twice if you count the annual Pixar product. Still, graphics are cool, and so I was pretty excited to see [these shots](http://www.michaelbay.com/blog/files/d58812e5a390e8b3a44162285e4ae054-74.html) of what the new transformers look like.
+
+Here’s a shot from the old cartoon:
+
+![](http://i203.photobucket.com/albums/aa27/leingang_math/bumblebee_optimus.jpg){border="0"}
+
+And now Optimus Prime and Bumblee today:
+
+[![](http://i203.photobucket.com/albums/aa27/leingang_math/th_optimus.png){border="0"}](http://www.michaelbay.com/images/tf/png/optimus.png) [![](http://i203.photobucket.com/albums/aa27/leingang_math/th_bumblebee.png){border="0"}](http://www.michaelbay.com/images/tf/png/bumblebee.png)

@@ -1,0 +1,44 @@
+---
+title: Resizing PDFs
+date: '2007-09-27'
+categories:
+- computing
+- pdf
+- pdfpages
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/resizing-pdfs/
+- /posts/resizing-pdfs/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Yesterday I used my Facebook status line to say I was wondering how to resize PDFs. This seems to be a nontrivial issue. I have at least one workaround now, though.
+
+Background: In my classes I often make slideshows with [beamer](http://latex-beamer.sourceforge.net/) (yay beamer)! It’s a great package for those who need the full flexibility of TeX or LaTeX to present math-rich course material. Some of my colleagues use Keynote with pretty good results, too. You can cut-and-paste PDF from [TeXShop](http://www.uoregon.edu/~koch/texshop/) (an open-source TeX development environment for Mac OS X) to Keynote, with antialiasing and everything “just working”, and apply all of Keynote’s bells and whistles. (Among devotees of this technique is my colleague Tom, who likes the blackboard theme and the page-turning transition. Kind of mixing metaphors, if you ask me, but he didn’t. ![:-)](/images/icon_smile.gif){.wp-smiley} )
+
+I also use the [InterWrite pad](http://www.interwritelearning.com/products/pad/detail.html) for classes, which allows me to draw on the screen and/or annotate the slides I’ve made. Anything that’s annotated gets attached to a file, which can be exported to PDF. It taxes my laptop’s speed, but I have a 4 year old laptop.
+
+After classes I had been posting the slides and the screen notes as separate PDFs. This wasn’t ideal, because the notes file only has the slides I annotated. What I wanted was something that was as close to what happened in class as possible. Then I realized that Acrobat (among other tools, but I have access to Acrobat Pro so why not use that) can rearrange pages of PDFs, so it’s possible to merge the two into one file and post that.
+
+Until yesterday this has worked fine. But suddenly my screen notes PDF came out at a different size. The slides are 128mm x 96mm and you use the reader or view to blow them up to screen size. After cropping the notes, however, the page of writing was for some reason closer to 210mm wide. I wanted to shrink that down to 128 so the merged document would have all its pages the same size.
+
+So I never figured out how to do that in Acrobat Pro. The philosophy is that PDF is “electronic paper,” meant to be a published version of a document, so a lot of editing methods aren’t provided. You can annotate a PDF (in Acrobat Pro or also in Preview), decorate it with a rubber stamp, or move pages around, but you can’t for instance erase parts of a document (although you can white them out).
+
+But LaTeX users are familiar with including graphics into their documents with the [graphicx](http://www.ctan.org/tex-archive/help/Catalogue/entries/graphicx.html) package. PDF is a popular format for included graphics, especially on the Mac. Graphicx does allow scaling of images, which on vector-based PDFs doesn’t lose any detail. Finally, the [pdfpages](http://www.ctan.org/tex-archive/help/Catalogue/entries/pdfpages.html) package provides a frontend to including whole pages of a multi-page PDF rather than embedding a graphic on a page, with graphicx-style options.
+
+So here’s what I did: created a wrapper in LaTeX that looked like this:
+
+`\documentclass{article}`\
+`\usepackage{pdfpages}`\
+`\begin{document}`\
+`\includepdf[pages=-,width=128mm,fitpaper]{interwrite_notes.pdf}`\
+`\end{document}`
+
+Then I pdflatex-ed that file and the resulting PDF was exactly what I wanted.
+
+I’m still kind of surprised that there’s not a Acrobat Pro-based solution to this.  But this works; it’s simple enough to be automated into a script, and it’s free, although it requires a TeX installation.

@@ -1,0 +1,20 @@
+---
+title: Spring 1a
+date: '2008-01-29'
+categories:
+- calculus 1
+- math 1a
+- spring 2008
+- math1a
+- harvard
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+I was the course head for [Math 1a](http://www.courses.fas.harvard.edu/8434){target="_blank"} (Introduction to Calculus) last fall, and I’m happy to be continuing it in the Spring.  The material will be the same, but in the spring there will only be a single section.  So I’ll have less administrative overhead and more time to concentrate on a smaller number of students.
+
+I’m also trying a new blogging idea.  Rather than keep separate blogs on each of my course websites, I’m putting as much on my office blog and filtering it to the other sites with RSS feeds.  We’ll see how that goes.

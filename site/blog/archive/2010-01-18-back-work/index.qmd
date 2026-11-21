@@ -1,0 +1,22 @@
+---
+title: Back to work
+date: '2010-01-18'
+categories:
+- talks
+legacy-source: drupal
+aliases:
+- /posts/back-work/
+- /posts/back-work/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the site I kept at the Courant Institute (2008–2011). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+::: content
+I just got back from the [Joint Math Meetings](http://www.ams.org/amsmtgs/2124_intro.html) and had a great time. I interviewed candidates, gave a few talks (one on [docutils](http://www.ams.org/amsmtgs/2124_intro.html), one on graduate student teaching development), watched a few talks, and met with new and old friends. I also did a lot of tweeting on the [#JointMath](http://search.twitter.com/search?q=%23jointmath) channel.
+
+Now I'm excited about a new academic term. I'll be teaching two sections of [Calculus](/categories/calculus/){.alinks-link} I and one of Discrete Math.
+
+I think mod_security2 is messing with me, so here's the link to the second talk: [pedagogical content knowledge in graduate student teaching fellows](http://www.ams.org/amsmtgs/2124_abstracts/1056-p5-680.pdf)
+:::

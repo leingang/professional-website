@@ -1,0 +1,16 @@
+---
+title: Move on Up
+date: '2016-06-22'
+categories:
+- family
+- music
+legacy-source: nikola
+description: A YouTube dedication
+draft: true
+---
+
+My kids are having their last day of school today, and being promoted to 8th grade and 4th grade, respectively.
+
+{{< video https://www.youtube.com/watch?v=6Z66wVo7uNw >}}
+
+Happy summer!

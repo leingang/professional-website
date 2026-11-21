@@ -1,0 +1,28 @@
+---
+title: 'LaTeX package of the week: url'
+date: '2007-05-09'
+categories:
+- tex
+- harvard
+- latex
+legacy-source: huwp
+aliases:
+- /posts/latex-package-of-the-week-url/
+- /posts/latex-package-of-the-week-url/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+This is another really small package with invaluable flexibility. When typesetting URLs in LaTeX documents we usually want:
+
+- the URL typeset in a “computer-looking” (i.e., monospace) font
+- the ability to use characters which are special to LaTeX but often appear in URLs, like \~, &, #, %
+- clickability
+
+The url.sty package does this all for you. There are some caveats: if you put a % in a URL it’s now fragile and you can’t use that as an argument to another macro. But in general
+
+`\url{http://www.example.com/}`
+
+will typeset to a nice-looking URL, which if you use PDFLaTeX with the hyperref package, will be clickable.

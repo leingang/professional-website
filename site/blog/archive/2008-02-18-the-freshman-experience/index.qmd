@@ -1,0 +1,30 @@
+---
+title: The freshman experience
+date: '2008-02-18'
+categories:
+- education
+- harvard
+- teaching
+- freshmen
+- news
+legacy-source: huwp
+aliases:
+- /posts/the-freshman-experience/
+- /posts/the-freshman-experience/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Today I saw in one of the University of Michigan student papers an [article](http://media.www.michiganreview.com/media/storage/paper1232/news/2008/02/12/ArtsCulture/Freshmen.They.Just.Dont.Make.Them.Like.They.Use.To-3204475.shtml) about a [WSJ blog post](http://blogs.wsj.com/informedreader/2008/01/29/college-freshmens-minds-rarely-expand/) about a [Chronicle of Higher Education column](http://chronicle.com/jobs/news/2008/02/2008020101c/careers.html) about a new [book](http://www.amazon.com/First-Year-Out-Understanding-American/dp/0226110664) about college freshmen and their first experiences away from home. The Chronicle story is called “[The Myth of First-Year Enlightenment](http://chronicle.com/jobs/news/2008/02/2008020101c/careers.html)” and the book tries to burst the bubble of those who picture a monumental eye-opening and metamorphosis during the first year. Instead of undergoing then sudden realization that the world is much bigger than they originally thought and what they had come to value was now clearly so…[philistine ]{style="font-style: italic"}(this was the word used at my freshman orientation), Tim Clydesdale writes,
+
+> Most of the mainstream American teens I spoke with neither liberated themselves intellectually nor broadened themselves socially during their first year out…What teens actually focus on during the first year out is this: daily life management.
+>
+> Most American teens keep core identities in an ‘identity lockbox’ during their first year out and actively resist efforts to examine their self-understandings through classes or to engage their humanity through institutional efforts such as public lectures, the arts, or social activism. Contemporary teens are practical men and women. They . . . manage their daily lives fairly well. But they are not, by and large, thinking men and women.
+
+Practical rather than paradigmatic shifts, I suppose. Clydesdale writes that some students do undergo big philosophical changes, but those are the exception. They end up becoming college teachers and perpetuate the metamorphosis myth.
+
+How does that affect current college teachers? I think the older I get the more I appreciate the college experience, but I have to remember what I was [actually]{style="font-style: italic"} like as a college freshmen. And even then I have to acknowledge that my experiences of learning the discipline I teach aren’t shared by the general population of students taking introductory courses in that discipline. Although [Math 160’s](http://www.math.uchicago.edu/undergraduate/course_description.shtml) at the University of Chicago changed the way I think about mathematics, that doesn’t mean that everyone should take it. But understanding where students do come from helps me reach them.
+
+Getting this away from me: James Lang writes in the Chronicle story that we can do better at motivating our courses with what our students are seeking. No, not grades. ![:-)](/images/icon_smile.gif){.wp-smiley} But practical-minded students need the tools to communicate, to analyze, to formulate, to critique, to defend, to think, to solve problems, and so on. He says he’s stopped advertising that he plans to change the way students think, leaving it as a covert mission. Now he focuses on teaching them to think in the first place.

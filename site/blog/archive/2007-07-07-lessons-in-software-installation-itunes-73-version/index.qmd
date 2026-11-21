@@ -1,0 +1,54 @@
+---
+title: 'Lessons in software installation: iTunes 7.3 version'
+date: '2007-07-07'
+categories:
+- computing
+- crashes
+- mac
+- harvard
+- errors
+- itunes
+- backup
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Mac OS X cheerfully lets you know when new versions of its software are released. Usually this is a good thing. Even when you don’t need the update, sometimes it’s easier to go ahead and take it rather than be nagged by the reminder all the time.
+
+Consider the latest (7.3) release of iTunes. it has new support for AppleTV and the iPhone. I have neither, but I figured I’d go ahead and update.
+
+Suddenly, iTunes stopped working. Upon starting, it would read the library, present the browser window, but before I could click anything, it would crash. Here’s my (definitely not complete, and probably not optimized) flowchart for recovering from errors like this:**\**
+
+**Step 1: Try again.** This isn’t supposed to work. I mean, computers ought to be deterministic, so the same thing should happen every time you perform the same sequence of events. But some bugs really are ephemeral, and so sometimes just trying again does work.
+
+Actually, I read a magazine article by a guy who tried to document exactly what he did every time he encountered a software error he didn’t expect. Almost every time, despite his better judgment and his self-observation, his first step was to try the same thing again Maybe it’s like reflexively saying “What”? when you didn’t quite hear what someone said.**\**
+
+**Step 2: Standard Resetting and Maintenance.** Some of these tasks are kind of like spells that you cast in hopes that they work. Someone I know worked in tech support for a year with absolutely no computer skills. The advice he most frequently gave (I guess the users had passed the “try again” step) was “reboot.” A clean reboot can get rid of stuff that’s happened since the last startup that’s getting in the way without you knowing it.
+
+Regarding macs, I often see the advice to “[repair disk permissions](http://docs.info.apple.com/article.html?artnum=25751).” Not a bad idea. Another one people suggest is to force the periodic tasks:
+
+`$ sudo periodic daily`\
+`$ sudo periodic weekly`\
+`$ sudo periodic monthly`\
+
+These are tasks your computer should be doing every day, week, and month anyway, and unless you’ve done something seriously wrong, they’ll succeed. They may not affect the problem, though.
+
+A third option here is to get rid (or hide) preference files that might be corrupted. In `~/Library/Preferences` there are lots of `.plist,` files which can get corrupted and prevent appliction launch. They have funny, java-style names like “com.apple.iTunes.plist” but you can usually recognize the problem application’s file. Trash it or move it to the Desktop and relaunch to let the application recreate it. If that works, you’ll have to restore the preferences you liked manually, but that’s usually better than not having the application at all.
+
+None of this worked for iTunes 7.3 which is when I moved on to…
+
+**Step 3: Google.** There are so many software support sites out there, whether for applications or operating systems, and so many users that you can be reasonablly assured that you’re not the first to have had this problem and hopefully somebody who’s gone before you figured it out. I googled “iTunes crashes” but I found a lot of stuff relating to old versions (and references to some of the spells above.” So be more specific: googling “iTunes 7.3 crashes” brings up pages on [VersionTracker](http://www.versiontracker.com/dyn/moreinfo/macosx/10227&vid=411156&mode=info) and [MacUpdate](http://www.macupdate.com/reviews.php?id=5661&pid=178610) about the problem. Apparently 7.3 is not ready for prime time. Good to know, but what now? That brings me to…
+
+**Step 0**: **Backup**. (meaning, to duplicate)
+
+**Step 4:** **Back up.** (meaning, to retreat) Luckily, I had backed up my hard drive this week. So I went and copied last week’s iTunes over the new one. Hey presto! back in time to a working iTunes version. And I’ll ignore the nag to update to 7.3 until I see 7.3.1.
+
+What about Step 0? After advice from my sysadmin at work, I installed [SuperDuper!](http://www.shirt-pocket.com/SuperDuper/) a while ago. It makes a bootable copy of your hard drive. This means not only do you have a browsable backup to restore files and applications, you can restart using the backup (upon reboot, hold the option key, then select the backup drive). The pro version of SuperDuper! does incremental backups (a backup of all 80GB or whatever on your internal HD does take a *long* time), as well as a scheduler so you be reminded to do it periodically.
+
+I have the tendency to not want to buy software, especially for something as easy as backup, which after all can be done pretty easily with a little unix. But think about it: if you lost your entire documents folder, with all your work, pictures, music, and everything, how much would you pay to get it back? It’s called insurance.
+
+And if you need iTunes 7.2 yourself and don’t have a backup, I learned through MacUpdate that you can [get it on Oldapps](http://www.oldapps.com/download.php?oldappsid=iTunes72.dmg). God bless the web. ![:-)](/images/icon_smile.gif){.wp-smiley}

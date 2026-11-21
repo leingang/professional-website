@@ -1,0 +1,16 @@
+---
+title: Fun and Games for Friday the 13th
+date: '2006-01-13'
+categories:
+- math
+- harvard
+- math 20
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+[Game theory](http://en.wikipedia.org/wiki/Game_theory) is the featured article on Wikipedia today. It’s a nice read and isn’t too abstract.

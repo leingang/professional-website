@@ -1,0 +1,24 @@
+---
+title: The Cognitive Style of Powerpoint
+date: '2006-06-23'
+categories:
+- computing
+- harvard
+- books
+legacy-source: huwp
+aliases:
+- /posts/the-cognitive-style-of-powerpoint/
+- /posts/the-cognitive-style-of-powerpoint/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Prompted by several ads in [Harper’s](http://harpers.org/) and a love-to-hate attitude to PowerPoint, I finally checked out [The Cognitive Style of Powerpoint](http://www.edwardtufte.com/tufte/books_pp) by Edward Tufte. A fun and thoughtful read.
+
+Tufte, a professor emeritus of Statistics (i.e., not some crackpot) has strong ideas of how to convey information visually. He has a number of very highly praised books on the subject, too.
+
+The author’s thesis is that PowerPoint actually obscures rather than improves communication. As a [case study](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001yB&topic_id=1) he details how poorly-constructed PP slides reporting on danger assessments of Columbia’s last flight may have led to an underestimation of the risk of reentry. Tragically, Columbia burned up attempting to reenter. On a much lighter side, Tufte points to the famous [Gettysburg Address PowerPoint](http://www.stewartcalculus.com/data/ESSENTIAL%20CALCULUS%20Early%20Transcendentals/upfiles/ess-reviewofconics.pdf) by Peter Norvig.
+
+I won’t go far as to say PowerPoint is evil. But I agree with some of Tufte’s points. Starting with blank slides and filling in bullet points puts structure into your presentation where there is none and loses it where the relationship is more complicated. Because of the low screen resolution, presenting data in tables with PP is next-to-impossible, and visual representations of data have to be chosen very carefully to convey the proper message. If you must use PP, read this essay as a guide to make your presentations better.

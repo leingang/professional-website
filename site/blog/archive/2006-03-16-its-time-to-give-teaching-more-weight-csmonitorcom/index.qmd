@@ -1,0 +1,24 @@
+---
+title: It’s time to give teaching more weight | csmonitor.com
+date: '2006-03-16'
+categories:
+- miscellaneous
+- harvard
+- uncategorized
+legacy-source: huwp
+draft: true
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Jonathan Zimmerman has an editorial in the Christian Science Monitor called “[It’s time to give teaching more weight](http://www.csmonitor.com/2006/0314/p09s02-coop.html).” He uses the resignation of Harvard president Larry Summers to point out that universities need to pay more than just lip service to improving the culture of teaching.
+
+> Asked what he would do with the undergraduates who had gathered in his laboratory for instruction, one Johns Hopkins University professor quipped, “I shall neglect them.”
+>
+> He was joking, of course, but only in part. And the joke will continue until we devise new ways to evaluate and reward teaching. As my New York University colleague Ken Bain has written, all professors should have to “construct an argument” for their teaching - just as they do for their scholarship. This argument would explain the objectives of their courses, the classroom strategies they use, the ways they measure student learning, and so on. Like any good argument, it would draw from evidence gathered during the course: syllabi, tests, and student comments.
+
+He goes on to say that teaching should be seriously considered as part of the tenure process, which makes sense as well.
+
+I believe that a truly great university should aim for both exceptional research and exceptional teaching. How hard is that?

@@ -1,0 +1,18 @@
+---
+title: Lesson Planning Talk
+date: '2005-09-13'
+categories:
+- talks
+- harvard
+- teacher training
+legacy-source: huwp
+aliases:
+- /posts/lesson-planning-talk/
+- /posts/lesson-planning-talk/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+Here’s an [online version of the lesson planning talk](http://www.slideshare.net/leingang/making-lesson-plans) that I gave today in the Calculus Instructors Orientation meeting.

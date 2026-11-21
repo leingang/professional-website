@@ -1,0 +1,26 @@
+---
+title: Writing in Mathematics
+date: '2007-05-02'
+categories:
+- math
+- harvard
+- education
+legacy-source: huwp
+aliases:
+- /posts/writing-in-mathematics/
+- /posts/writing-in-mathematics/index.html
+---
+
+::: {.callout-note .legacy appearance="simple"}
+This post is from the blog I kept as Preceptor in Mathematics at Harvard (2005–2008). It's kept here as an archive; some links are dead and references are dated.
+:::
+
+A colleague of mine once tried assigning a lot of writing in his introductory calculus class. He got results that might be expected by somebody who has tried this before: resistance from many of the students. He told me a student complained on his evaluations:
+
+> This is a MATH class. I shouldn’t have to write anything.
+
+Why do some students perceive math and writing as opposites? Here’s a sample scan from one of my favorite mathematics papers: “The moment map and equivariant cohomology,” by Sir Michael Atiyah and the late Raoul Bott, published in the journal *Topology* (Vol. 23, No. 1, pp. 1-28, 1984).
+
+[![](http://i203.photobucket.com/albums/aa27/leingang_math/atiyah-bott-sample.png){width="556" height="428" border="0"}](http://i203.photobucket.com/albums/aa27/leingang_math/th_atiyah-bott-sample.png)
+
+I would guess there are about 800 words and 11 equations on this pair of pages. These two mathematicians are absolute titans of the 20th century, and are considered brilliant lecturers as well as excellent writers (I took a number of classes from Bott as a graduate student. I [eulogized](/posts/raoul-bott/) him on this blog last year.) I think the case that can be made that they are good at conveying the mathematics because they are able to say so much without resorting to notation. And being able to *talk about* mathematics probably was a part of their being able to *create* such beautiful mathematics.

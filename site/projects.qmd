@@ -1,0 +1,11 @@
+---
+title: "Projects"
+listing:
+  contents: projects.yml
+  type: grid
+  grid-columns: 2
+  fields: [title, description, categories]
+  sort: false
+---
+
+Software and open-source work, mostly tools for teaching.
