@@ -6,3 +6,5 @@
 .course-links { margin-left: 0.5em; }
 .note { color: #4c4c4c; font-style: italic; }
 .sidebar ul li a.active { font-weight: 700; }
+/* main.css fixes #main-container at height:101%, so long pages overflow the white box. */
+#bootstrap-override #main-container { height: auto; min-height: 101%; }
