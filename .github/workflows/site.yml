@@ -1,9 +1,9 @@
 # Build site/ (matthewleingang.com) and publish to GitHub Pages on every push
-# to the master branch. In repo Settings → Pages, set Source = "GitHub Actions".
+# to the main branch. In repo Settings → Pages, set Source = "GitHub Actions".
 name: Publish matthewleingang.com
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths: ["site/**", "_shared/**", ".github/workflows/site.yml"]
   workflow_dispatch:
 

@@ -55,7 +55,7 @@ The department profile links to `cims.nyu.edu/~leingang`, which may be an alias 
 After the first deploy, check that both URLs show the page.
 
 **Professional site → GitHub Pages.** `.github/workflows/site.yml` renders `site/` on every
-push to `master` that touches `site/` or `_shared/`. One-time setup:
+push to `main` that touches `site/` or `_shared/`. One-time setup:
 1. Repo Settings → Pages → Source: **GitHub Actions**.
 2. Custom domain `www.matthewleingang.com` (from `site/CNAME`). At the DNS registrar: `CNAME www → leingang.github.io`,
    and apex `A` records → 185.199.108.153, .109.153, .110.153, .111.153.
@@ -63,7 +63,7 @@ push to `master` that touches `site/` or `_shared/`. One-time setup:
 
 ## Legacy blog (2005–2018)
 
-The old Nikola site (still on branch `master` history) had 197 posts from three earlier blogs.
+The old Nikola site (archived at tag `nikola-final`) had 197 posts from three earlier blogs.
 `tools/migrate_nikola.py` converted them with pandoc into `site/blog/archive/`, adding
 `aliases` so old URLs (`/posts/<slug>/`) redirect.
 
