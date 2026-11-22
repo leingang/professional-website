@@ -36,6 +36,33 @@ categories: [teaching, calculus]
 Math works as usual: `$x^2$`, `$$\int f$$`. `make preview-site` to see it; push to publish.
 Add `draft: true` to keep a post out of the build.
 
+### Import Stack Exchange answers
+`tools/import_stackexchange.py` turns my Stack Exchange answers (Math.SE, TeX.SE, Stack Overflow, …) into draft posts in
+`site/blog/answers/`, listed in their own section on the Writing page.
+
+1. One time: create `tools/stackexchange.yml` with the numeric user ids from the profile URLs
+   (`math.stackexchange.com/users/<id>/…`, `stackoverflow.com/users/<id>/…`):
+   ```yaml
+   math: 12345
+   tex: 678
+   stackoverflow: 9
+   ```
+   Any Stack Exchange site works. The key is the site's API name: usually the subdomain
+   (`academia`, `physics`), or the domain for sites outside stackexchange.com
+   (`stackoverflow`, `mathoverflow.net`, `superuser`).
+2. `make import-se`. Every answer becomes a post with `draft: true`, and
+   `tools/se_manifest.csv` lists them by score. Options: `--min-score N`, `--only ID,ID`,
+   `--refresh` (re-download; API responses are cached in `tools/se_cache/`), and
+   `--force ID` (regenerate one post; this overwrites your edits).
+3. Curate: edit a post (trim or paraphrase the quoted question, expand the answer), then
+   delete `draft: true`. Re-running never touches existing posts, except to point links
+   between my answers at the local copy once the target is published.
+
+Licensing: my answers are mine to republish. The quoted question and others' edits are CC BY-SA,
+so each post keeps the generated credit lines (asker, editors, link to the original) and its
+`license:` field. Keep those when you edit. If you paraphrase the question instead of quoting it,
+the credit for the asker can go, but keep the link.
+
 ### Add a talk or project
 Append an entry to `site/talks.yml` or `site/projects.yml`.
 

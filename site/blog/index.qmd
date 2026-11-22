@@ -9,6 +9,16 @@ listing:
     sort-ui: false
     filter-ui: false
     feed: true
+  - id: answers
+    contents: answers
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    date-format: "YYYY-MM-DD"
+    page-size: 50
+    filter-ui: true
+    sort-ui: true
+    categories: false
   - id: archive
     contents: archive
     sort: "date desc"
@@ -27,6 +37,13 @@ Notes on teaching mathematics, preparing instructors, and the tools I build
 along the way.
 
 ::: {#recent}
+:::
+
+## Stack Exchange answers
+
+Answers I wrote on [Stack Exchange](https://stackexchange.com/) sites, lightly edited.
+
+::: {#answers}
 :::
 
 ## Archive (2005–2018)

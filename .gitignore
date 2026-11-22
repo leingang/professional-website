@@ -5,3 +5,4 @@ site/_site/
 **/*.quarto_ipynb
 .DS_Store
 __pycache__/
+tools/se_cache/
