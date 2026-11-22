@@ -8,3 +8,4 @@
 .sidebar ul li a.active { font-weight: 700; }
 /* main.css fixes #main-container at height:101%, so long pages overflow the white box. */
 #bootstrap-override > #main-container.container { height: auto; min-height: 101%; }
+#faculty_profile #awards div { margin: 0.5em 0; }
