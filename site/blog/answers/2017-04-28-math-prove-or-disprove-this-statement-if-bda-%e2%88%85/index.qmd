@@ -1,0 +1,39 @@
+---
+title: prove or disprove this statement If Bd(A) = ∅ .
+date: '2017-04-28'
+description: I agree with you on both choices. I am guessing that when you write $X = (0,1) \cup (2,3)$, you mean those two intervals within the real line. So you are…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2255645
+se-link: https://math.stackexchange.com/questions/2255635/prove-or-disprove-this-statement-if-bda-%e2%88%85/2255645#2255645
+se-score: 1
+se-accepted: false
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[prove or disprove this statement If Bd(A) = ∅ .](https://math.stackexchange.com/questions/2255635/prove-or-disprove-this-statement-if-bda-%e2%88%85), asked by [dr.rise](https://math.stackexchange.com/users/437820/dr-rise) on Mathematics Stack Exchange (2017-04-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> prove or disprove this statement
+>
+>  Let $(X,T)$ be a topological space and let $A \subseteq X$. If $Bd(A) = \emptyset$, then $A = \emptyset$ or $A = X$.
+>
+> I think it is false and let $X=(0,1) \cup (2,3)$ and let $A=(0,1), Bd(A) = \emptyset$ I am not sure here is it equal empty set, but I do not know which topology I can choose for that. How about discrete topology, does that work? and is what I chose for $A$ and $X$ correct?
+:::
+
+I agree with you on both choices.  I am guessing that when you write $X = (0,1) \cup (2,3)$, you mean those two intervals within the real line.  So you are talking about the *subspace* topology on $X$ inherited from the “usual” topology on $\mathbb{R}$.  (“usual” isn't a math term; you could substitute *metric* to be precise).
+
+A smaller counterexample would be the discrete topology on a set of two points.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2255635/prove-or-disprove-this-statement-if-bda-%e2%88%85/2255645#2255645) on Mathematics Stack Exchange, 2017-04-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

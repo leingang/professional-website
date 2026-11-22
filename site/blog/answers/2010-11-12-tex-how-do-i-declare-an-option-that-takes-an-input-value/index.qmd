@@ -1,0 +1,53 @@
+---
+title: How do I declare an option that takes an input value?
+date: '2010-11-12'
+description: The xkeyval package is your friend.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5282
+se-link: https://tex.stackexchange.com/questions/5279/how-do-i-declare-an-option-that-takes-an-input-value/5282#5282
+se-score: 1
+se-accepted: false
+se-tags:
+- packages
+- package-writing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I declare an option that takes an input value?](https://tex.stackexchange.com/questions/5279/how-do-i-declare-an-option-that-takes-an-input-value), asked by [Tomas Aschan](https://tex.stackexchange.com/users/223/tomas-aschan) on TeX Stack Exchange (2010-11-12; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I know I can declare and execute an option for my package using
+>
+> ```latex
+> \DeclareOption{myoption}{\typeout{I did it!}}
+> \ProcessOptions
+> ```
+>
+> but now I'd like to give the option a value:
+>
+> ```latex
+> \DeclareOption{type}{\typeout{You typed: \CurrentOptionValue}}
+> ```
+>
+> which would be used as follows:
+>
+> ```latex
+> \usepackage[type="hello, world!"]{mypackage}
+> ```
+>
+> Requirements on the value string is that it can contain at least some nonalphanumeric characters, like spaces, commas and dots (and maybe some others...).
+:::
+
+The [xkeyval](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=xkeyval) package is your friend.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5279/how-do-i-declare-an-option-that-takes-an-input-value/5282#5282) on TeX Stack Exchange, 2010-11-12. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

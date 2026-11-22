@@ -1,0 +1,45 @@
+---
+title: Prove that det($A$) is non-zero iff $A$ is row equivalent to the $n\times n$ identity matrix
+date: '2015-08-19'
+description: 'You have reduced the proof to this: If $E$ is an $n\times n$ matrix in reduced row echelon form, and $\det(E) \neq0$, then $E$ is the identity matrix. To show…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1402739
+se-link: https://math.stackexchange.com/questions/1402731/prove-that-deta-is-non-zero-iff-a-is-row-equivalent-to-the-n-times-n-ide/1402739#1402739
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- determinant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that det($A$) is non-zero iff $A$ is row equivalent to the $n\times n$ identity matrix](https://math.stackexchange.com/questions/1402731/prove-that-deta-is-non-zero-iff-a-is-row-equivalent-to-the-n-times-n-ide), asked by [user118494](https://math.stackexchange.com/users/118494/user118494) on Mathematics Stack Exchange (2015-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $A$  is  an $n\times n$ matrix. Now  if  the  row-reduced  echelon  form  for  this  $A$  is   $E$  then  after  all  the  row  operations  we  have $\det(A)=M\det(E)$   where  $M$  is  a non-zero  scalar  from  the   field. 
+>  If  $E$  is  the  $n\times n$ identity  matrix  then  $\det(A) \neq 0$.
+> For  the  converse, $\det(A)$   is  non-zero, so  is  $M$. Then obviously $\det(E)\neq0$. How to  reach the  conclusion  that  $E$  is  the  identity matrix,from  here  just  need  a  little  help  with  that.
+:::
+
+You have reduced the proof to this: *If $E$ is an $n\times n$ matrix in reduced row echelon form, and $\det(E) \neq0$, then $E$ is the identity matrix.*
+To show this, I think you can work directly from the definition of RREF.  
+
+The leading coefficient in the first row must be in the first column.  Otherwise $e_{11} = 0$ and $\det(E)$ would be zero.  So $a_{11} = 1$ and there are only zeroes below it.
+
+Suppose now that $e_{11} = e_{22} = \dots e_{kk} = 1$, and all entries above and below these are zero.  That is, $E$ has a block decomposition
+$$E = \begin{pmatrix} I_k & * \\ 0 & E' \end{pmatrix}$$
+where $I_k$ is the $k\times k$ identity matrix, and $E'$ is a $(n-k)\times(n-k)$ matrix in RREF. By the same argument as in the previous paragraph, the leading coefficient of the first row of $E'$ must occur in the first position.  Therefore $e_{k+1,k+1} = 1$, and all entries above and below it are zero. 
+
+Therefore by induction $e_{ii} = 1$ for all $i$ from $1$ to $n$, and all entries above and below these diagonal entries are zero.  So $E$ is the identity matrix.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1402731/prove-that-deta-is-non-zero-iff-a-is-row-equivalent-to-the-n-times-n-ide/1402739#1402739) on Mathematics Stack Exchange, 2015-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

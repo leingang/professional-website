@@ -1,0 +1,46 @@
+---
+title: Is there such a thing as complex rational numbers and does it have the same properties as the usual complex numbers as extension of the real numbers?
+date: '2015-05-26'
+description: Yes, such a field exists. It's sometimes called $\mathbb{Q}(i)$. It's a degree two extension of $\mathbb{Q}$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1299645
+se-link: https://math.stackexchange.com/questions/1299630/is-there-such-a-thing-as-complex-rational-numbers-and-does-it-have-the-same-prop/1299645#1299645
+se-score: 1
+se-accepted: false
+se-tags:
+- complex-analysis
+- complex-numbers
+- real-numbers
+- rational-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there such a thing as complex rational numbers and does it have the same properties as the usual complex numbers as extension of the real numbers?](https://math.stackexchange.com/questions/1299630/is-there-such-a-thing-as-complex-rational-numbers-and-does-it-have-the-same-prop), asked by [rubenvb](https://math.stackexchange.com/users/939/rubenvb) on Mathematics Stack Exchange (2015-05-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've been wondering if there is any use to defining a set that is isomorphic to $\mathbb{Q}^2$ (in the same way that $\mathbb{C}$ is isomorphic to $\mathbb{R}^2$).
+>
+> I immediately see a problem with *e.g.* Cauchy's theorem (there's no $\pi$ available) and perhaps even defining a "analytical function" concept because there are series defined in $\mathbb{Q}$ that do not converge within $\mathbb{Q}$.
+>
+> Still, I wonder if there's a way around these difficulties.
+:::
+
+Yes, such a field exists.  It's sometimes called $\mathbb{Q}(i)$.  It's a degree two extension of $\mathbb{Q}$.
+
+It has the property that some polynomials with coefficients in $\mathbb{Q}$ have roots in $\mathbb{Q}(i)$.  For instance, $X^2+1$.
+
+However, the complex numbers are *algebraically closed*—any polynomial with coefficients in $\mathbb{C}$ has roots in $\mathbb{C}$.  $\mathbb{Q}(i)$ does not have this property: $X^2-2$ has no root in $\mathbb{Q}(i)$.
+
+Also, the complex numbers are *complete* as a metric space, meaning that Cauchy sequences in $\mathbb{C}$ converge to elements of $\mathbb{C}$.  $\mathbb{Q}(i)$ does not have this property, either, making it hard to analyze functions defined on this space.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1299630/is-there-such-a-thing-as-complex-rational-numbers-and-does-it-have-the-same-prop/1299645#1299645) on Mathematics Stack Exchange, 2015-05-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

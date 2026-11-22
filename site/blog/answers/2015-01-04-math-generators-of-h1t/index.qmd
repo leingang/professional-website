@@ -1,0 +1,76 @@
+---
+title: Generators of $H^1(T)$
+date: '2015-01-04'
+description: John's answer is good. I would just like to add that randomly creating differential forms and testing to see if they are closed and exact is not the best way…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1090722
+se-link: https://math.stackexchange.com/questions/1087185/generators-of-h1t/1090722#1090722
+se-score: 1
+se-accepted: false
+se-tags:
+- differential-geometry
+- homology-cohomology
+- solution-verification
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Generators of $H^1(T)$](https://math.stackexchange.com/questions/1087185/generators-of-h1t), asked by [a student](https://math.stackexchange.com/users/180995/a-student) on Mathematics Stack Exchange (2015-01-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $T$ denote the torus. I am working towards an understanding of de Rham cohomology. I previously worked on finding generators for $H^1(\mathbb R^2 - \{(0,0)\})$ but then realised that for better understanding I had to look at different examples, too. For the purpose of this question I am only interested in finding just one generator, I'll think about finding a second generator later.
+>
+>
+> ```
+> Can you tell me if this is correct?
+> ```
+>
+>
+>
+> My work:  
+>
+>
+> By definition, $H^1 = {\ker d_2 \over \mathrm{im} d_1}$ where $d_2: \Omega^1 \to \Omega^2$ and $d_1: \Omega^0 \to \Omega^1$ are the exterior derivatives. My goal is to find a differential $1$-form that is closed and not exact, that is, not in the image of $d_1$.
+>
+>
+> My idea is to randomly examine different $1$-forms and verifying their properties, starting with the simplest one that comes to mind: $$dx + dy$$
+>
+>
+> Since $$d(dx + dy) = dx \wedge dy - dx \wedge dy = 0$$
+>
+> this is a candidate for a generator. The only remaining thing to do is to verify whether this is in the image of $d_1$. If it was in the image of $d_1$, by Stokes' theorem 
+>
+> $$\oint dx + dy$$
+>
+> would have to vanish as the torus has an empty boundary. I am sure this should not vanish but I'm not sure how to calculate such an integral. One would have to parametrise the torus somehow but this is where stuff gets messy. Is there an easy way to do it? Hence my question:
+>
+> > How to calculate $\oint dx + dy$ on the torus?
+:::
+
+John's answer is good.  I would just like to add that randomly creating differential forms and testing to see if they are closed and exact is not the best way to build a relationship with cohomology.  As a grad student, I tried that approach and it was not very fruitful.
+
+Since we're in a low degree, you might understand what's going on by dualizing the situation.  Instead of thinking about closed one-forms, think about *irrotational vector fields*.  Instead of thinking about exact one-forms, think about *conservative* vector fields (gradients of functions).  
+
+There are two interesting motions on the torus: around the “hole” in the center, and around the circle “inside” it.  They move along the circles in this picture:
+
+![torus][1]
+
+  [1]: JuyZ8.png
+
+(I'll try to create a better picture later.)  Call the first one $\mathbf{v}$ and the second one $\mathbf{w}$.  If you draw a small circular patch $C$ on the torus, and integrate $\oint_C \mathbf{v}\cdot d\mathbf{r}$ around it, the symmetry will result in an answer of zero.  Same with $\mathbf{w}$.  So both these vector fields are irrotational.
+
+Are either of these vector fields the gradient of a function?  The torus is compact, so any continuous function is going to have a maximum and minimum point, at which point the gradient must be zero.  Since these vector fields are nowhere zero they can't be gradients.
+
+Now look again at John's answer and you see that his $dx$ and $dy$ forms are the one-forms dual to my $\mathbf{v}$ and $\mathbf{w}$ vector fields.  Hopefully this answer helps visualize why these forms generate $H^1(T)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1087185/generators-of-h1t/1090722#1090722) on Mathematics Stack Exchange, 2015-01-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

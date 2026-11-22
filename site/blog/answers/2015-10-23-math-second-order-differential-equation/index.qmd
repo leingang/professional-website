@@ -1,0 +1,62 @@
+---
+title: Second-Order Differential Equation
+date: '2015-10-23'
+description: 'Letting $u=y''$ gives an an equation for $u$: $$x u'' + 2u = 12 x^2 \implies u'' + \frac{2}{x} u = 12x$$ This differential equation is linear with integrating…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1493634
+se-link: https://math.stackexchange.com/questions/1493620/second-order-differential-equation/1493634#1493634
+se-score: 1
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Second-Order Differential Equation](https://math.stackexchange.com/questions/1493620/second-order-differential-equation), asked by [John Snoe](https://math.stackexchange.com/users/270725/john-snoe) on Mathematics Stack Exchange (2015-10-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$xy'' + 2y' = 12x^2$$
+>
+> Solve this by substituting $u = y'$
+>
+> When I do this I get $u = y' = \frac{4x^3 + C}{2x}$
+>
+> How do I continue?
+>
+> Thanks
+:::
+
+Letting $u=y'$ gives an an equation for $u$:
+$$x u' + 2u = 12 x^2 \implies u' + \frac{2}{x} u = 12x$$
+This differential equation is linear with integrating factor 
+$$p = e^{\int \frac{2}{x}\,dx} = e^{2 \ln x} = x^2$$
+Multiplying through we have
+$$\begin{align*}
+x^2 u' + 2x u &= 12x^3 \\
+\implies (x^2u)' &= 12x^3 \\
+\implies x^2 u &= 3x^4+ C \\
+\implies u &= 3x^2 + \frac{C}{x^2}
+\end{align*}$$
+You can check that $u$ satisfies the desired equation, for
+$$\begin{align*}
+    u' &= 6x - \frac{2C}{x^3} \\
+   xu' &= 6x^2 - \frac{2C}{x^2} \\
+   2u  &= 6x^2 + \frac{2C}{x^2} \\
+\end{align*}$$
+The sum of the RHS of the last two equations is $12x^2$.
+
+But you wanted $y$, not $u$.  No problem; we know
+$$y' = 3x^2 + Cx^{-2} \implies y = x^3 - C x^{-1} + D = x^3 - \frac{C}{x} + D$$
+You can check this $y$ function satisfies your original DE.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1493620/second-order-differential-equation/1493634#1493634) on Mathematics Stack Exchange, 2015-10-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

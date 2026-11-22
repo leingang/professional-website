@@ -1,0 +1,46 @@
+---
+title: Proof for the theorem that the empty set is a subset of every set
+date: '2015-08-28'
+description: Just to add a bit to Colm's very good answer. You want to prove $$\forall a (a\in \varnothing \implies a \in B)$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1413068
+se-link: https://math.stackexchange.com/questions/1411487/proof-for-the-theorem-that-the-empty-set-is-a-subset-of-every-set/1413068#1413068
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof for the theorem that the empty set is a subset of every set](https://math.stackexchange.com/questions/1411487/proof-for-the-theorem-that-the-empty-set-is-a-subset-of-every-set), asked by [root](https://math.stackexchange.com/users/264845/root) on Mathematics Stack Exchange (2015-08-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm new in here. Considering my person: I am physics student (BSc.) who has finished 2 semesters by now. Within the first two semesters, I discovered that mathematics is beautiful and that I want to learn maths in more depth than the courses at my university teach it. Therefore I'm trying to self-study the book "Principles of Mathematical Analysis", by Walter Rudin, in my leisure time. I have a question concerning
+>
+> Chapter 2, Exercise 1: Prove that the empty set is a subset of every set.
+>
+> My first intention would have been:
+>
+> _Let X be an arbitrary set, then_ $\varnothing \cup X = X \cup \varnothing = X \implies \varnothing \subseteq X$ _since_ $S \subseteq S \cup T$ _and_ $T \subseteq S \cup T$ _for arbitrary sets_ $S$ and $T$. $X$ _was arbitrary, thus the assertion holds._ $\Box$
+>
+> But I'm not completely sure, if the prove is complete, as I haven't seen this version anywhere within a quick google search. What would you say?
+:::
+
+Just to add a bit to Colm's very good answer.  You want to prove
+$$\forall a (a\in \varnothing \implies a \in B)$$
+
+Membership in the empty set can be hard to get your head around.  So first, look at the implication.  The statement $p\to q$ is equivalent to $\neg p \vee q$.  (Think of it as “it is never true that $p$ is true and $q$ is not also true.”  This means $p \to q \equiv \neg(p \wedge \neg q)$, and apply DeMorgan's laws.)  So what we want to prove is
+$$\forall a (a\notin\varnothing \vee a \in B)$$
+But since $a\notin\varnothing$ is always true, $a\notin\varnothing \vee a \in B$ is always true, too.  QED.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1411487/proof-for-the-theorem-that-the-empty-set-is-a-subset-of-every-set/1413068#1413068) on Mathematics Stack Exchange, 2015-08-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

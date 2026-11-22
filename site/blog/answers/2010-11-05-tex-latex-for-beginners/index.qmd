@@ -1,0 +1,51 @@
+---
+title: LaTeX for beginners
+date: '2010-11-05'
+description: '- Arabic inline: absolutely. The <a href="http://www.tug.org/mailman/listinfo/xetex">XeTeX mailing list</a> has a number of correspondents who use RTL…'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4976
+se-link: https://tex.stackexchange.com/questions/4974/latex-for-beginners/4976#4976
+se-score: 10
+se-accepted: true
+se-tags:
+- conversion
+- books
+- msword
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LaTeX for beginners](https://tex.stackexchange.com/questions/4974/latex-for-beginners), asked by [Abdullah Jibaly](https://tex.stackexchange.com/users/1705/abdullah-jibaly) on TeX Stack Exchange (2010-11-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> My dad's an author (English books with some Arabic) and until recently has been using WordPerfect for DOS for all his writing. He's been moving to Word and hates the lack of control he has compared to WP. I'm looking for options and LaTeX seems to be a good one. Here are the things I'd like to be able to do:
+>
+> * Arabic inline text
+> * Support for chapters (as separate files)
+> * Support for ebook output (epub/mobi)
+> * Cross platform environment (Mac and Windows)
+> * Some way to move from WP and Word
+>
+> Is this realistic with LaTeX, and what would be the best way to start for a newbie?
+:::
+
+- Arabic inline: absolutely.  The <a href="http://www.tug.org/mailman/listinfo/xetex">XeTeX mailing list</a> has a number of correspondents who use RTL languages.
+
+ - Support for chapters as separate files: absolutely.  You can even control which chapters get included when writing to speed up things.
+
+ - ebook output: don't know. epub <a href="https://tex.stackexchange.com/questions/1551/use-latex-to-produce-epub">has been discussed here</a>.
+
+ - cross platform environment: even more than Mac and Windows. :-)  The source files are plain text and can move freely between operating systems.  The programs are open source and have been ported to everything under the sun.
+
+ - move from WP and Word: Welllll, that depends.  Are you talking about the user adjusting to a different system, or exporting the files.  If your dad likes WordPerfect and is still using it maybe he's the kind of guy who can learn LaTeX and enjoy it.  If you're talking about converting files, that's probably going to be tedious.  You can <a href="http://www.ehow.com/how_7152171_import-wordperfect-files-openoffice.html">import from WordPerfect to OpenOffice</a> and <a href="http://plan-b-for-openoffice.org/writer/topic/export-as-latex-file-tex">export from OpenOffice to LaTeX</a>.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4974/latex-for-beginners/4976#4976) on TeX Stack Exchange, 2010-11-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

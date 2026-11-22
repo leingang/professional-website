@@ -1,0 +1,42 @@
+---
+title: Prove $b+x=a$ has one and only one solution
+date: '2019-10-19'
+description: I'm assuming that $R$ is an abstract ring, since the question was tagged as ring theory.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3400368
+se-link: https://math.stackexchange.com/questions/3400359/prove-bx-a-has-one-and-only-one-solution/3400368#3400368
+se-score: 5
+se-accepted: false
+se-tags:
+- abstract-algebra
+- ring-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $b+x=a$ has one and only one solution](https://math.stackexchange.com/questions/3400359/prove-bx-a-has-one-and-only-one-solution), asked by [Scott](https://math.stackexchange.com/users/393839/scott) on Mathematics Stack Exchange (2019-10-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose $a$ and $b$ in $R$
+>
+> The equation $b+x = a$ has one and only one solution.
+>
+> How do i prove this theorem ? I assume first $x$'s existence has to be shown then its uniqueness
+:::
+
+I'm assuming that $R$ is an abstract ring, since the question was tagged as ring theory.
+
+But that doesn't make the algebra more abstract.  How would you solve the equation in the integers?  Add $-b$ to both sides of the equation.  
+
+In a general ring (or even, as Hagen points out, a general abelian group), the addition operation is commutative and has inverses.  So all the properties you need are available to do the same thing.  You just need to justify each step and point out which axiom you are using.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3400359/prove-bx-a-has-one-and-only-one-solution/3400368#3400368) on Mathematics Stack Exchange, 2019-10-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

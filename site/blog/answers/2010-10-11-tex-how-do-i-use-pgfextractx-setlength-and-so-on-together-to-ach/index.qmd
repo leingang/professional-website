@@ -1,0 +1,87 @@
+---
+title: How do I use \pgfextractx, \setlength and so on together, to achieve a task using paths?
+date: '2010-10-11'
+description: You almost never have to use \pgfextracts. Instead, use named coordinate nodes and transformations.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 3991
+se-link: https://tex.stackexchange.com/questions/3985/how-do-i-use-pgfextractx-setlength-and-so-on-together-to-achieve-a-task-usin/3991#3991
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I use \pgfextractx, \setlength and so on together, to achieve a task using paths?](https://tex.stackexchange.com/questions/3985/how-do-i-use-pgfextractx-setlength-and-so-on-together-to-achieve-a-task-usin), asked by [Hammerite](https://tex.stackexchange.com/users/1427/hammerite) on TeX Stack Exchange (2010-10-10; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> The following code attempts to absolutely position two nodes with rectangular outlines, then draw a line that goes from the right-hand side of one to the left-hand side of the other, along orthogonal lines with the vertical segment lying directly between the two nodes. But instead of getting that result, this happens:
+>
+> ![alt text][q-1]
+>
+> I can't get the hang of how LaTeX and TikZ length commands work. How can I fix what I've got here?
+>
+> ```latex
+> \documentclass[a4paper]{amsart}
+>
+> \usepackage{calc,fullpage,tikz}
+> \usetikzlibrary{arrows}
+>
+> \newlength{\mylengthA}
+> \newlength{\mylengthB}
+> \newlength{\mylengthC}
+>
+> \begin{document}
+>
+> \begin{center}\begin{tikzpicture}
+> [yscale = -1]
+>
+> \begin{scope} % Boxes
+> [ every node/.style = { draw,
+>                         rectangle,
+>                         inner sep = 3mm,
+>                         }
+>   ]
+>     \node (a) at (0,20mm) {Apple};
+>     \node (b) at (28mm,0) {Banana};
+> \end{scope}
+>
+> \begin{scope} % Arrows
+> [->, > = angle 90, very thick]
+>     \pgfextractx{\mylengthA}{(a.east)}
+>     \pgfextractx{\mylengthB}{(b.west)}
+>     \setlength{\mylengthC}{\mylengthA/2 + \mylengthB/2}
+>     \draw (\mylengthA,20mm) -- (\mylengthC,20mm) |- (\mylengthB,0);
+> \end{scope}
+>
+> \end{tikzpicture}\end{center}
+>
+> \end{document}
+> ```
+>
+>
+>   [q-1]: C56ta.png
+:::
+
+This works:
+
+```latex
+% mark the midpoint between nodes a and b
+\path (a.east) -- (b.west) node[coordinate,midway] (c) {};
+% Arrows
+\draw[->,>=angle 90, very thick] (a.east) -| (c) |- (b.west);
+```
+
+You almost never have to use `\pgfextract`s.  Instead, use named coordinate nodes and transformations.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/3985/how-do-i-use-pgfextractx-setlength-and-so-on-together-to-achieve-a-task-usin/3991#3991) on TeX Stack Exchange, 2010-10-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

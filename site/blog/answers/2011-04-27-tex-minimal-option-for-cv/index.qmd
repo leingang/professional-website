@@ -1,0 +1,48 @@
+---
+title: '[minimal] option for CV'
+date: '2011-04-27'
+description: If it were me I would write my full CV in XML or YAML and use a structured datatype (there are XML schemas in this area written by human resources IT…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16757
+se-link: https://tex.stackexchange.com/questions/16711/minimal-option-for-cv/16757#16757
+se-score: 1
+se-accepted: false
+se-tags:
+- programming
+- options
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[[minimal] option for CV](https://tex.stackexchange.com/questions/16711/minimal-option-for-cv), asked by [mech14](https://tex.stackexchange.com/users/5129/mech14) on TeX Stack Exchange (2011-04-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've been thinking of implementing an option for my CV where it extracts a set of predefined sections (in a minimal form) and typesets that instead of the entire list of everything I've done in my life.
+>
+> How can I go about implementing this? I just need an example of how my code should look like, e.g., 
+>
+> for my Talks sections, the minimal option would remove the authors, but would keep only the title of the talk and the venue.
+>
+> At the same time, it would be nice to modify the margins, to squeeze more info onto pages.
+>
+> I'm thinking that it will involve some ifthenelse options? If [minimal], \ignore{\authors} or something of the sort.
+>
+> Can someone give me example code to steer me? I'm OK with messing in LaTeX, but just need guidance with starting this approach.
+:::
+
+If it were me I would write my full CV in XML or YAML and use a structured datatype (there are  [XML schemas][1] in this area written by human resources IT professionals, but it might be overkill).  This way you can list each talk and indicate the title, author, date, location etc.
+
+Then write scripts to extract the data you want and generate the desired TeX file. 
+
+  [1]: http://www.hr-xml.org/hr-xml/wms/hr-xml-1-org/index.php?language=2
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16711/minimal-option-for-cv/16757#16757) on TeX Stack Exchange, 2011-04-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

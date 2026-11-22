@@ -1,0 +1,71 @@
+---
+title: How do I choose which sections to compile from a LaTeX document?
+date: '2010-12-13'
+description: 'Make a file methods.tex and put your methods in it:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7054
+se-link: https://tex.stackexchange.com/questions/7052/how-do-i-choose-which-sections-to-compile-from-a-latex-document/7054#7054
+se-score: 10
+se-accepted: false
+se-tags:
+- sectioning
+- compiling
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I choose which sections to compile from a LaTeX document?](https://tex.stackexchange.com/questions/7052/how-do-i-choose-which-sections-to-compile-from-a-latex-document), asked by [David LeBauer](https://tex.stackexchange.com/users/1783/david-lebauer) on TeX Stack Exchange (2010-12-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is it possible to compile a LaTeX document but only include one section and its associated tables and figures?
+>
+> I have two cases for which this would be useful:
+>
+> 1. I would like to provide the Methods section of a paper to colleagues. 
+>
+> 2. I would like to have multiple versions of a document that contain different combinations of the sections of a master document.
+>
+> I know that I could place each section in a separate file and then have separate master files - likely what I will do for case 2 since it is integral to the final document structure, but at least for case 1, I am hoping that there is a way to only compile one section.
+>
+> Thanks!
+:::
+
+For case 1:
+
+Make a file `methods.tex` and put your methods in it:
+
+```latex
+\section{Methods}
+
+The methods employed here...
+```
+
+Put the rest of the document into a file `rest.tex`.
+
+In place of the text in the main document put 
+
+```latex
+\include{methods}
+\include{rest}
+```
+
+Finally, in your preamble put 
+
+```latex
+\includeonly{methods}
+```
+
+A disadvantage to this solution is that the methods section will start a new page.  
+
+You could also just delete the non-Methods pages from the PDF with a PDF utility.  Or you could send them the whole paper and tell them just to read the Methods section. `:-)`
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7052/how-do-i-choose-which-sections-to-compile-from-a-latex-document/7054#7054) on TeX Stack Exchange, 2010-12-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

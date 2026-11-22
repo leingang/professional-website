@@ -1,0 +1,53 @@
+---
+title: Which of these are homotopy equivalent? $S^1, \mathbb{R}, \{*\}$
+date: '2015-01-19'
+description: 'You''ve asked several questions at once:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1110737
+se-link: https://math.stackexchange.com/questions/1110425/which-of-these-are-homotopy-equivalent-s1-mathbbr/1110737#1110737
+se-score: 2
+se-accepted: true
+se-tags:
+- general-topology
+- algebraic-topology
+- homotopy-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which of these are homotopy equivalent? $S^1, \mathbb{R}, \{*\}$](https://math.stackexchange.com/questions/1110425/which-of-these-are-homotopy-equivalent-s1-mathbbr), asked by [iwriteonbananas](https://math.stackexchange.com/users/195401/iwriteonbananas) on Mathematics Stack Exchange (2015-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Which of these spaces are homotopy equivalent: $S^1, \mathbb{R}, \{*\}$?
+>
+> I found a homotopy equivalence between $\mathbb{R}$ and the one point space $\{*\}$, so they are homotopy equivalent.
+>
+> The sphere and $\mathbb{R}$ are not homotopy-equivalent because the $\pi_1(S^1) \cong \mathbb{Z}$ whereas $\pi_1(\mathbb{R})$ is trivial (since we just proved that $\mathbb{R}$ is contractible). Is there a nicer way of seeing this without using the fundamental group?
+>
+> Is $S^n$ for $n>1$ homotopy equivalent to $\mathbb{R}$?
+:::
+
+You've asked several questions at once:
+
+> Which of these spaces are homotopy equivalent: $S^1, \mathbb{R}, \{*\}$?
+
+You've pretty much figured out the answer to this question already.  You know $\mathbb{R}$ and the one-point space *are* homotopy equivalent, and $S^1$ and $\mathbb{R}$ are *not* homotopy equivalent.  Homotopy equivalence is an equivalence relation, so you don't need to check if $S^1$ is homotopy equivalent to the one-point space.  You know that it's not, because otherwise $S^1$ and $\mathbb{R}$ would be homotopy equivalent by transitivity.
+
+> Is there a nicer way of seeing this without using the fundamental group?
+
+This is pretty much why fundamental groups and other homotopy invariants exist; in order to distinguish spaces.
+
+> Is $S^n$ for $n>1$ homotopy equivalent to $\mathbb{R}$?
+
+No, but I'm not sure how to answer this question without going further into algebraic topology.  As I alluded in the comments, there are higher homotopy groups $\pi_k(X)$ which are also homotopy invariants.  It can be shown $\pi_k(S^n) = 0$ if $1 \leq k < n$, and $\pi_n(S^n) = \mathbb{Z}$.  Also, $\pi_k(X) = 0$ for all $k \geq 1$ if $X$ is contractible.  So this tells you $S^n$ and $\mathbb{R}$ are not homotopy equivalent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1110425/which-of-these-are-homotopy-equivalent-s1-mathbbr/1110737#1110737) on Mathematics Stack Exchange, 2015-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

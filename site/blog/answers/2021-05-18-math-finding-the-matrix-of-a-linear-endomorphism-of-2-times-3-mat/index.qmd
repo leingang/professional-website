@@ -1,0 +1,73 @@
+---
+title: Finding the matrix of a linear endomorphism of $2\times 3$ matrices, given by $\xi \mapsto \psi \xi \varphi$ for $\psi$ and $\varphi$ given matrices
+date: '2021-05-18'
+description: $L$ is a map from $M{3 \times 2}(\mathbb{R})$ to itself. Since $M{3 \times 2}(\mathbb{R})$ is six-dimensional, a matrix representation of $L$ is going to be…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4143155
+se-link: https://math.stackexchange.com/questions/4143145/finding-the-matrix-of-a-linear-endomorphism-of-2-times-3-matrices-given-by/4143155#4143155
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- matrices
+- proof-writing
+- determinant
+- trace
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Finding the matrix of a linear endomorphism of $2\times 3$ matrices, given by $\xi \mapsto \psi \xi \varphi$ for $\psi$ and $\varphi$ given matrices](https://math.stackexchange.com/questions/4143145/finding-the-matrix-of-a-linear-endomorphism-of-2-times-3-matrices-given-by), asked by [Rhaena](https://math.stackexchange.com/users/855476/rhaena) on Mathematics Stack Exchange (2021-05-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I would like to solve a problem in which I'm asked to determine trace and determinant of a linear endomorphism $f:x \mapsto A_1xA_2$ where $$A_1 = \left(\begin{array}{cc}7 & 5\\ 0 & 3\end{array}\right)$$ and $$A_2 = \left(\begin{array}{ccc}1 & 0 & 0\\ -1 & 4 & 0\\2 & -3 & 2\end{array}\right)$$ are both real-valued matrices.
+>
+> **Edit**
+>
+> For those interested, I add my solution below, which I was able to find thanks to @Matthew Leingang's advice! Here it is:
+>
+> I picked base $\{\left($$\begin{array}{cc}1&0\\0&0\\0&0\end{array}$$\right),\left($$\begin{array}{cc}0&1\\0&0\\0&0\end{array}$$\right),\left($$\begin{array}{cc}0&0\\1&0\\0&0\end{array}$$\right),\left($$\begin{array}{cc}0&0\\0&1\\0&0\end{array}$$\right),\left($$\begin{array}{cc}0&0\\0&0\\1&0\end{array}$$\right),\left($$\begin{array}{cc}0&0\\0&0\\0&1\end{array}$$\right),\} = \{x_1,x_2,x_3,x_4,x_5,x_6\}$
+>
+> of the space of $3\times 2$- real valued matrices.
+>
+> Then I computed $f(x_i) = A_1 x_i A_2$, $\forall i \in \{1, ...,6\}$ and reduced the obtained matrices in terms of linear combinations of $x_i$; explicitely I obtained:
+>
+> * $L(x_1) = 7(x_1 - x_3 + 2x_5) + 5(x_2 - x_4 + 2x_6)$
+>
+> * $L(x_2) = 3(x_2 - x_4 + 2x_6)$
+>
+> * $L(x_3) = 7(4x_3 - 3x_5) + 5(4x_4 - 2x_6)$
+>
+> * $L(x_4) = 3(4x_4 - 3x_6)$
+>
+> * $L(x_5) = 2(7x_5 + 5x_6)$
+>
+> * $L(x_6) = 6x_6$
+>
+> Hence I conclude that $f$ can be represented with the matrix:$$ [f]  = \left(\begin{array}{cccccc}
+> 7 & 0 & 0 & 0 & 0 & 0\\
+> 5 & 3 & 0 & 0 & 0 & 0\\
+>
+> - 7 & 0 & 28 & 0 & 0 & 0\\
+> - 5 & - 3 & 20 & 12 & 0 & 0\\
+> 14 & 0 & - 21 & 0 & 14 & 0\\
+> 10 & 6 & - 15 & - 9 & - 10 & 6\\
+> \end{array}\right)$$
+>
+> Therefore $tr([f]) = 70$ and $\det([f]) = 592704$. Hope it helps! (and don't hesitate to tell me if you spot any mistake).
+:::
+
+$L$ is a map from $M_{3 \times 2}(\mathbb{R})$ to itself.  Since $M_{3 \times 2}(\mathbb{R})$ is six-dimensional, a matrix representation of $L$ is going to be $6\times6$ matrix $A$.
+
+You can find that matrix by choosing a basis of $M_{3 \times 2}(\mathbb{R})$.  A typical choice would be setting $\xi_{ij}$ to be the $3\times 2$ matrix with a $1$ in the $(i,j)$ position, and $0$ elsewhere, for each $i \in \{1,2\}$ and $j \in \{1,2,3\}$.  So for each $(i,j)$, find $L(\xi_{ij})$, decompose it into a linear combination of $\xi_{ij}$, and that is the $(i,j)$th column of the matrix $A$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4143145/finding-the-matrix-of-a-linear-endomorphism-of-2-times-3-matrices-given-by/4143155#4143155) on Mathematics Stack Exchange, 2021-05-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

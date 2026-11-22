@@ -1,0 +1,77 @@
+---
+title: LuaLaTeX stopped after updating expl3 package
+date: '2018-02-23'
+description: I had the same issue, asked in chat, and was directed to this question. I have solved it on my machine so I'll just relate what I was told.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 416912
+se-link: https://tex.stackexchange.com/questions/416862/lualatex-stopped-after-updating-expl3-package/416912#416912
+se-score: 10
+se-accepted: true
+se-tags:
+- texlive
+- expl3
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LuaLaTeX stopped after updating expl3 package](https://tex.stackexchange.com/questions/416862/lualatex-stopped-after-updating-expl3-package), asked by [Marcel S.](https://tex.stackexchange.com/users/85499/marcel-s) on TeX Stack Exchange (2018-02-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> After the latest TeX Live updates I keep getting these errors:
+>
+> ```latex
+> LaTeX Warning: You have requested, on input line 26, version
+>            `2018/02/21' of package expl3,
+>            but only version
+>            `2017/12/16 L3 programming layer (loader) '
+>            is available.
+>
+>
+> ! Package xparse Error: Support package l3kernel too old.
+> ```
+>
+> Any help appreciated.
+>
+> **Solution** (from Christian's comment): restore l3packages to the previous version.
+:::
+
+I had the same issue, asked in chat, and was directed to this question.  I have solved it on my machine so I'll just relate what I was told.
+
+You need to revert the `l3packages` to the previous version.  The command is
+
+```latex
+$ tlmgr restore l3packages
+```
+
+(probably prefix that command with `sudo` to run as root)  If no revision number is specified, all available previous revisions are listed. 
+
+The response I got was
+
+```latex
+Do you really want to restore l3packages to revision 44864 (y/N):
+```
+
+After selecting `y`, I got 
+
+```latex
+Restoring l3packages, 44864 from /usr/local/texlive/2016/tlpkg/backups/l3packages.r44864.tar.xz
+```
+
+And after that everything worked again.
+
+According to comments by Christian and Nasser, not everybody's `tlmgr restore` is interactive like the one above.  It may be the case that you just get the list of previously installed revisions.  If so, choose the largest-numbered (i.e., most recent, not counting the current one), revision NUM, and type
+
+```latex
+$ tlmgr restore l3packages <NUM>
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/416862/lualatex-stopped-after-updating-expl3-package/416912#416912) on TeX Stack Exchange, 2018-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

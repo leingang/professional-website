@@ -1,0 +1,82 @@
+---
+title: Skull emoji 💀 in pdfLaTeX
+date: '2026-04-10'
+description: You could use LuaLaTeX and the emoji package.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 761747
+se-link: https://tex.stackexchange.com/questions/761745/skull-emoji-in-pdflatex/761747#761747
+se-score: 13
+se-accepted: false
+se-tags:
+- fontawesome5
+- emoji
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Skull emoji 💀 in pdfLaTeX](https://tex.stackexchange.com/questions/761745/skull-emoji-in-pdflatex), asked by [Bryan](https://tex.stackexchange.com/users/361821/bryan) on TeX Stack Exchange (2026-04-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I’d like to include the skull emoji 💀 in a document compiled with pdfLaTeX but with colors similar to how it displays on my device in other contexts.
+>
+> I can get a skull with `fontawesome`, but it’s not quite the same:
+> ```latex
+> \documentclass{scrartcl}
+> \usepackage{fontawesome5}
+> \begin{document}
+> \faSkull
+> \end{document}
+> ```
+> creates a skull like
+>
+> [![Skull emoji][q-1]][q-1] 
+>
+> which is black/white inverted compared to how my device normally shows 💀, where the skull is white, and the eye sockets are black.
+>
+> I cannot change to LuaTeX because what I am compiling is like, super large.
+>
+> I also tried something along the lines of ```\contourlength{0.5pt}``` and ```\contour{black}{\color{white}\faSkull}``` but that did not work well.
+>
+> Can anyone help get 💀 with black eye sockets on a white skull or something close to it? Thanks!
+>
+>   [q-1]: TMm0uygJ.png
+:::
+
+You could use LuaLaTeX and the [emoji][1] package.
+
+```latex
+% !TEX TS-program = lualatex
+\documentclass{article}
+\usepackage{emoji}
+\begin{document}
+\emoji{skull}
+\end{document}
+```
+
+[![sample code output][3]][3]
+
+From @jessexknight's comment, you can also use the [`twemojis`](https://www.ctan.org/pkg/twemojis) package in any LaTeX:
+
+```latex
+\documentclass{article}
+\usepackage{twemojis}
+\begin{document}
+\twemoji{skull}
+\end{document}
+```
+
+However, the image you get is [the one from the Twitter emojis library](https://emojipedia.org/twitter/twemoji-1.0/skull).
+
+  [1]: https://ctan.org/pkg/emoji
+  [3]: xF7COs2i.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/761745/skull-emoji-in-pdflatex/761747#761747) on TeX Stack Exchange, 2026-04-10, with [edits](https://tex.stackexchange.com/posts/761747/revisions) by [Mico](https://tex.stackexchange.com/users/5001/mico). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

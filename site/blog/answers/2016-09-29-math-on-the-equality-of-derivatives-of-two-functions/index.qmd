@@ -1,0 +1,38 @@
+---
+title: On the equality of derivatives of two functions.
+date: '2016-09-29'
+description: For some $n$? Not even close. Let $n=1$, $f(x) =x$, and $g(x)=x+1$. Then $f'(x) = g'(x)$, but $f(\alpha) \neq g(\alpha)$, not at any point $\alpha$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1946483
+se-link: https://math.stackexchange.com/questions/1946472/on-the-equality-of-derivatives-of-two-functions/1946483#1946483
+se-score: 10
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[On the equality of derivatives of two functions.](https://math.stackexchange.com/questions/1946472/on-the-equality-of-derivatives-of-two-functions), asked by [Q_p](https://math.stackexchange.com/users/704680/q-p) on Mathematics Stack Exchange (2016-09-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f$ and $g$ be two differentiable functions of $x$. Suppose that
+>
+> $$\dfrac{d^{n}f}{dx^n} = \dfrac{d^{n}g}{dx^n}$$ for some positive real $n$, where the derivatives are evaluated at $x=\alpha$.
+>
+> Does this necessarily mean that $f(\alpha) = g(\alpha)$ ?.
+:::
+
+For *some* $n$?  Not even close.  Let $n=1$, $f(x) =x$, and $g(x)=x+1$.  Then $f'(x) = g'(x)$, but $f(\alpha) \neq g(\alpha)$, not at any point $\alpha$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1946472/on-the-equality-of-derivatives-of-two-functions/1946483#1946483) on Mathematics Stack Exchange, 2016-09-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

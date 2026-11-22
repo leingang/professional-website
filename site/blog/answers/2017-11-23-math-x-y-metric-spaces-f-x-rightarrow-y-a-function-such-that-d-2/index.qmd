@@ -1,0 +1,56 @@
+---
+title: '$X, Y$ metric spaces, $ f: X \rightarrow Y $ a function such that $ d_{2} (f(x), f(y)) \leq K d_{1}(x,y)$ $ \Rightarrow $ $ f $ is continuous.'
+date: '2017-11-23'
+description: This is 99% correct. I would only change a few words, only based on many years of reading and writing elementary proofs.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2533307
+se-link: https://math.stackexchange.com/questions/2533285/x-y-metric-spaces-f-x-rightarrow-y-a-function-such-that-d-2-fx/2533307#2533307
+se-score: 3
+se-accepted: true
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$X, Y$ metric spaces, $ f: X \rightarrow Y $ a function such that $ d_{2} (f(x), f(y)) \leq K d_{1}(x,y)$ $ \Rightarrow $ $ f $ is continuous.](https://math.stackexchange.com/questions/2533285/x-y-metric-spaces-f-x-rightarrow-y-a-function-such-that-d-2-fx), asked by [Jacob S.](https://math.stackexchange.com/users/393155/jacob-s) on Mathematics Stack Exchange (2017-11-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If $(X, d_{1})$ y $(Y,d_{2})$  are metric spaces and $f: (X, \tau_{d_{1}}) \rightarrow (Y,\tau_{d_{2}})$ is a function such that $d_{2} (f(x), f(y)) \leq K d_{1}(x,y)$ for any $x, y \in X$, then $f$ is continuous.
+>
+> We will see that for each $\varepsilon > 0$ and $x \in X$, there exists some $\delta > 0$ such that if $y \in X$ and $d_{1}(x,y) < \delta$, then $d_{2}(f(x),f(y)) < \varepsilon$.
+>
+> For fixed $\varepsilon > 0$ and $x \in X$, take $\delta = \varepsilon / K$. Therefore, if $y \in X$ and $d_{1}(x,y) < \delta$, then $d_{2}(f(x),f(y)) \leq K d_{1}(y,x) < K\delta=\varepsilon,$ as desired.
+>
+> Is this proof correct? Where are the induced topologies  $\tau_{d_{1}}$ and $\tau_{d_{2}}$ used?
+:::
+
+This is 99% correct.  I would only change a few words, only based on many years of reading and writing elementary proofs.
+
+> We will **see** that for each $\varepsilon > 0$ and $x \in X$, there exists some $\delta > 0$ such that ...
+
+I would write *show* instead of *see*.  Think of this as a conversation.  You, the prover, is going to show something.  I, the reader, will see it once you've shown it.  *We [will] show* is more often used before a statement is justified, and *we see* afterwards.
+
+> For **fixed** $\varepsilon > 0$ and $x \in X$, **take** $\delta = \varepsilon / K$.
+
+I think a more idiomatic version of this would be “*Given* $\varepsilon > 0$ and $x \in X$, *let* [or maybe *set*] $\delta = \varepsilon/K$.”  Use *given* to echo *for all* in the definition.  I might even put $x\in X$ ahead of $\varepsilon > 0$, but that's just picky because that's the order they would come in the definition of continuous.  There's no logical difference in the order.
+
+> **Therefore**, if $y \in X$ and $d_{1}(x,y) < \delta$, ...
+
+I find *therefore* weird here because that's usually used to indicate you've completed a proof, or a major part of it.  And we're just getting to the meat of the proof.  I would write “Then, if $y \in X$,“ or (again) “Given $y\in X$ with $d_1(x,y) < \delta$, ...”
+
+Finally, at the end, I would add, “Therefore [here is a good place to use that!  You could also say "We see that...”], $f$ is continuous at $x$.  Since $x$ was an arbitrary point of $X$, $f$ is continuous.  $\Box$
+
+* * *
+You asked where the induced topologies were used.  The metric space definition of continuous is equivalent to the topological one ($U$ open in $Y$ $\implies$ $f^{-1}(U)$ open in $X$) when you use the metric topology.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2533285/x-y-metric-spaces-f-x-rightarrow-y-a-function-such-that-d-2-fx/2533307#2533307) on Mathematics Stack Exchange, 2017-11-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

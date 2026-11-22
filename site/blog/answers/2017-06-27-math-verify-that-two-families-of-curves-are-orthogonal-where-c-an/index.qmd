@@ -1,0 +1,53 @@
+---
+title: Verify that two families of curves are orthogonal where $C$ and $K$ are real numbers.
+date: '2017-06-27'
+description: The statements is about two families of curves, each described by a parameter ($C$ in one case, $K$ in the other). What you have shown is that wherever a curve…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2338284
+se-link: https://math.stackexchange.com/questions/2338266/verify-that-two-families-of-curves-are-orthogonal-where-c-and-k-are-real-num/2338284#2338284
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Verify that two families of curves are orthogonal where $C$ and $K$ are real numbers.](https://math.stackexchange.com/questions/2338266/verify-that-two-families-of-curves-are-orthogonal-where-c-and-k-are-real-num), asked by [irocmath](https://math.stackexchange.com/users/458297/irocmath) on Mathematics Stack Exchange (2017-06-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Use a graphing to graph the two families for two values of $C$ and two values of $K$.
+> $xy=C$, $x^2-y^2=K$
+>
+> Here is what I got:
+>
+> $xy'+y=0$ and $2x-2yy'=0$
+>
+> $y'=\frac{-y}{x}$  and  $y'=\frac{x}{y}$
+>
+> Since $\frac{-y}{x}\cdot\frac{x}{y}=-1$, the two curves are orthogonal for some values of $C$ and some values of $K$.
+>
+> How do I find those values? It says to use the calculator to graph the curve for two values of $C$ and two Values of $K$. How? Using a system?
+>
+> Thanks beforehand,
+:::
+
+The statements is about two *families* of curves, each described by a parameter ($C$ in one case, $K$ in the other).  What you have shown is that wherever a curve from the first family (for any $C$) intersects a curve from the second family (for any $K$), the tangent lines to each curve are perpendicular.  
+
+So you just have two choose two values of $C$ and two values of $K$ and graph them.  You might try $C=\pm1$ and $K=\pm1$.
+
+[![orthogonal families][1]][1]
+
+  [1]: 6mzqv.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2338266/verify-that-two-families-of-curves-are-orthogonal-where-c-and-k-are-real-num/2338284#2338284) on Mathematics Stack Exchange, 2017-06-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

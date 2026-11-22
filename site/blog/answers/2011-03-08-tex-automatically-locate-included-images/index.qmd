@@ -1,0 +1,52 @@
+---
+title: Automatically Locate Included Images
+date: '2011-03-08'
+description: The TeX Directory Structure (TDS) reserves the images "package" name for includable graphics. So if you want your graphics to be findable and to be…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12991
+se-link: https://tex.stackexchange.com/questions/12986/automatically-locate-included-images/12991#12991
+se-score: 13
+se-accepted: false
+se-tags:
+- graphics
+- automation
+- paths
+- file-lookup
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Automatically Locate Included Images](https://tex.stackexchange.com/questions/12986/automatically-locate-included-images), asked by [Alan Turing](https://tex.stackexchange.com/users/4069/alan-turing) on TeX Stack Exchange (2011-03-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Do you think it's possible to include images into LaTeX without specifying the exact path to them. So instead of:
+>
+> ```latex
+> \includegraphics{path/to/image/myfig.pdf}
+> ```
+>
+> It would be:
+>
+> ```latex
+> \includegraphics{myfig.pdf}
+> ```
+>
+> While the image would still reside in the `path/to/image/` directory. Basically, I'm asking if there is a macro that can recursively search for the image.
+>
+> An alternative for me is to write a script outside of LaTeX that determines all the images that are included, performs the recursive search and copies those files temporarily in the same directory as the `.tex` file.
+:::
+
+The [TeX Directory Structure](http://www.tug.org/tds/tds.html) (TDS) reserves the `images` "package" name for includable graphics.  So if you want your graphics to be findable and to be TDS-compliant, put them in `${TEXMFHOME}/tex/generic/images`.
+
+(personal story, name drop alert) I brought this up on texhax ages ago and Karl Berry said he had completely forgotten about that convention despite the fact that he's TDS editor.  Apparently it's not used by many distributions.  But I've found it handy.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12986/automatically-locate-included-images/12991#12991) on TeX Stack Exchange, 2011-03-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

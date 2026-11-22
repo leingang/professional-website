@@ -1,0 +1,40 @@
+---
+title: Prove the function $f(x)$ is discontinuous where $f(x)=1$ for $x>0$ and $f(x)=0$ for $x≤0$ at the point $x = 0$
+date: '2018-10-23'
+description: You want to show that $\lim{x\to 0} f(x)$ does not exist.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2967845
+se-link: https://math.stackexchange.com/questions/2967828/prove-the-function-fx-is-discontinuous-where-fx-1-for-x0-and-fx-0/2967845#2967845
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove the function $f(x)$ is discontinuous where $f(x)=1$ for $x>0$ and $f(x)=0$ for $x≤0$ at the point $x = 0$](https://math.stackexchange.com/questions/2967828/prove-the-function-fx-is-discontinuous-where-fx-1-for-x0-and-fx-0), asked by [Bob](https://math.stackexchange.com/users/607607/bob) on Mathematics Stack Exchange (2018-10-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm stuck on this question and I'm not sure how to approach it. I've been solving a few other proofs with the ε-δ property but I don't think I can apply this here. How would I prove that this is discontinuous at the point x=0?
+:::
+
+You want to show that $\lim_{x\to 0} f(x)$ does not exist.
+
+Recall that $\lim_{x\to a} f(x)$ exists if there exists an $L$ such that for every $\epsilon > 0$ there exists a $\delta > 0$ such that for all $x$,
+$$0 < |x - a | < \delta \implies |f(x) - L| < \epsilon.$$
+Negating this property requires flipping all the quantifiers down the chain.  We say $\lim_{x\to a}f(x)$ **does not** exist if *for every* $L$ *there exists* an $\epsilon>0$ such that *for all* $\delta > 0$ *there exists* a point $x$ such that 
+$$0 < |x-a| < \delta \text{ and } |f(x) - L| \geq \epsilon.$$
+
+Any $\epsilon$ that separates $L$ from $1$ or $0$ will work.  Given $\delta > 0$, choose a negative $x$ if $L$ is further than $\epsilon$ from $0$, or a positive $x$ if $L$ is further than $\epsilon$ from $1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2967828/prove-the-function-fx-is-discontinuous-where-fx-1-for-x0-and-fx-0/2967845#2967845) on Mathematics Stack Exchange, 2018-10-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

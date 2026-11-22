@@ -1,0 +1,67 @@
+---
+title: Compute a map on a tensor product
+date: '2018-08-24'
+description: $\newcommand{\Hom}{\operatorname{Hom}} \newcommand{\g}{\mathfrak{g}} \newcommand{\d}{\mathfrak{d}}$Recall that for finite dimensional vector spaces $U$ and…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2893237
+se-link: https://math.stackexchange.com/questions/2893157/compute-a-map-on-a-tensor-product/2893237#2893237
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- lie-groups
+- lie-algebras
+- tensor-products
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Compute a map on a tensor product](https://math.stackexchange.com/questions/2893157/compute-a-map-on-a-tensor-product), asked by [Anne O'Nyme](https://math.stackexchange.com/users/52125/anne-onyme) on Mathematics Stack Exchange (2018-08-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The context is the following:
+>
+> > 2.3. **The canonical $r$-matrix.**
+> Let $(\mathfrak{d}, \mathfrak{g}, \mathfrak{h})$ be a Manin quasi-triple.
+> We identify $\mathfrak{d}$ with $\mathfrak{g} \oplus \mathfrak{g}^*$ using the isomorphism $j^{-1}$ of $\mathfrak{h}$ onto $\mathfrak{g}^*$.
+> The map $r_{\mathfrak{d}} \colon \mathfrak{d}^* \to \mathfrak{d}$ defined by $r_{\mathfrak{d}} \colon (\xi, x) \mapsto (0, \xi)$ for $x \in \mathfrak{g}$, $\xi \in \mathfrak{g}^*$ defines an element $r_{\mathfrak{d}} \in \mathfrak{d} \otimes \mathfrak{d}$, called the *canonical $r$-matrix*.
+> Let $(e_i)$, $i = 1, \dotsc, n$, be a basis of $\mathfrak{g}$ and $(\varepsilon^i)$, $i = 1, \dotsc, n$, be the dual basis of $\mathfrak{g}^*$.
+> Then
+> $$\begin{equation}
+>   \tag{2.3.1}
+>     r_{\mathfrak{d}}
+>   = \sum_{i=1}^n e_i \otimes \varepsilon^i.
+> \end{equation}$$
+>
+> > (Original scan [here][q-1].)
+>
+> (This is an excerpt from ['Manin pairs and moment maps' by A. Alekseev and Y. Kosmann-Scharzbach][q-2] p5)
+>
+> What I don't understand is how the operator defined in (2.3.1) realizes the promised action, i.e. sending a pair $(\xi, x)$ to $(0,\xi)$ with $x$ in $\frak g$ and $\xi \in \frak g^*$.
+>
+>
+>   [q-1]: vo27D.png
+>   [q-2]: https://arxiv.org/abs/math/9909176
+:::
+
+$\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\d}{\mathfrak{d}}$Recall that for finite dimensional vector spaces $U$ and $V$,
+$$U^* \otimes V \cong \Hom(U,V)$$
+The forward map is a pretty natural one: Given $\mu\in U^*$ and $v\in V$, we can define $\phi(\mu \otimes v)$ to be the map which takes $u \in U$ to $\mu(u)v$.  To go in the other direction, choose a basis $u_1,\dots,u_n$ of $U$, a dual basis $\mu^1,\dots,\mu^n$ of $U^*$, and   given $T \in \Hom(U,V)$, let $$\psi(T) = \sum_i\mu^i \otimes T(u_i)$$
+The authors are using a map like $\psi$ but suppressing the notation.
+
+Here $V = \d \cong \g \oplus \g^*$, and $U = \d^* \cong \g^* \oplus \g$.  We have $r_{\d}\in\Hom(\d^*,\d)$; the canonical $r$-matrix is $\psi(r_{\d}) \in \d \otimes \d$.  If $e_1,\dots,e_n$ is a basis of $\g$, and $\varepsilon^1,\dots,\varepsilon^n$ the dual basis of $\g^*$, then $e_1,\dots,e_n,\varepsilon^1,\dots,\varepsilon^n$ is a basis of $\d$ and $\varepsilon^1,\dots,\varepsilon^n,e_1,\dots,e_n$ is the corresponding dual basis of $\d^*$.  We have $r_\d(e_i) = 0$ and $r_\d(\varepsilon^i) = \varepsilon^i$.
+So
+$$\psi(r_{\d}) = \sum_{i=1}^n \varepsilon^i \otimes r_\d(e_i)  + \sum_{i=1}^n e_i \otimes r_\d(\varepsilon^i) = \sum_{i=1}^n e_i \otimes \varepsilon^i$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2893157/compute-a-map-on-a-tensor-product/2893237#2893237) on Mathematics Stack Exchange, 2018-08-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

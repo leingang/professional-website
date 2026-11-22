@@ -1,0 +1,35 @@
+---
+title: 'Tikz node: color change when the mouse is hovering'
+date: '2011-02-01'
+description: You might try something with the fancytooltips package. That's probably not what exactly what you want, but maybe if the tooltip was a copy of the image with…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 10054
+se-link: https://tex.stackexchange.com/questions/10050/tikz-node-color-change-when-the-mouse-is-hovering/10054#10054
+se-score: 4
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikz node: color change when the mouse is hovering](https://tex.stackexchange.com/questions/10050/tikz-node-color-change-when-the-mouse-is-hovering), asked by [Arianna Angeletti](https://tex.stackexchange.com/users/2312/arianna-angeletti) on TeX Stack Exchange (2011-02-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is it possible to get a change of Tikz node colors when the mouse is hovering on it?
+>
+> Thanks in advance!
+:::
+
+You might try something with the [`fancytooltips`](http://ctan.org/pkg/fancytooltips) package.  That's probably not what exactly what you want, but maybe if the tooltip was a copy of the image with the color changed it could work.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/10050/tikz-node-color-change-when-the-mouse-is-hovering/10054#10054) on TeX Stack Exchange, 2011-02-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

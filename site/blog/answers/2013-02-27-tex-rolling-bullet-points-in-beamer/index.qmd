@@ -1,0 +1,106 @@
+---
+title: Rolling bullet points in beamer
+date: '2013-02-27'
+description: 'This is built into beamer:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 100102
+se-link: https://tex.stackexchange.com/questions/69609/rolling-bullet-points-in-beamer/100102#100102
+se-score: 18
+se-accepted: true
+se-tags:
+- beamer
+- lists
+- overlays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Rolling bullet points in beamer](https://tex.stackexchange.com/questions/69609/rolling-bullet-points-in-beamer), asked by [feffemannen](https://tex.stackexchange.com/users/18972/feffemannen) on TeX Stack Exchange (2012-08-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Often when I use beamer for slides I use an `itemize` environment with `\pause` to show off one bullet point at a time. Also, often all the points I want to show on a single slide does not fit and I need to start a new slide with a couple of more points. 
+>
+> What I would like is instead an `itemize`-like environment that would give me (when the points do not fit on a single slide) rolling bullet points, something similar to what the following code does:
+>
+> ```latex
+> \documentclass{beamer}
+> \begin{document}
+>     \begin{frame}
+>         \begin{itemize}
+>             \only<-5>{\item one}
+>             \only<2-6>{\item two}
+>             \only<3-7>{\item three}
+>             \only<4-8>{\item four}
+>             \only<5-9>{\item five}
+>             \only<6-10>{\item six}
+>             \only<7-11>{\item seven}
+>             \only<8-12>{\item eight}
+>             \only<9->{\item nine}
+>             \only<10->{\item ten}
+>             \only<11->{\item eleven}
+>             \only<12->{\item twelve}
+>         \end{itemize}
+>     \end{frame}
+> \end{document}
+> ```
+>
+> However I don't want to keep track of how many slides I'm using.
+>
+> Is there such an environment out there somewhere? 
+>
+> Also, some sort of animated rolling would be excellent, but that might be to ask for to much.
+:::
+
+This is built into beamer:
+
+
+```latex
+\documentclass{beamer}
+\begin{document}
+\begin{frame}
+    \begin{itemize}[<only@+-+(4)>]
+        \item one
+        \item two
+        \item three
+        \item four
+        \item five
+        \item six
+        \item seven
+        \item eight
+        \item nine
+        \item ten
+    \end{itemize}
+\end{frame}
+\end{document}
+```
+
+The overlay specification `+-+(4)` means the same thing as `(n+1)-(n+5)`, where `n` is the current slide count.  The `only@` action wraps the item in an `\only<...>`.  Putting the specification as an argument to the `itemize` environment makes it the default for each item. 
+
+If you want to specify item text in a `\foreach` loop you can explicitly call `\only` before each item:
+
+```latex
+\documentclass{beamer}
+\usepackage{pgffor}
+\begin{document}
+\begin{frame}
+    \begin{itemize}
+        \foreach \x in {a,b,...,z} {%
+            \only<+-+(4)>{\item \x}
+        }
+    \end{itemize}
+\end{frame}
+\end{document}
+```
+
+See sections 9.6.3 (Action Specifications) and 9.6.4 (Incremental Specifications) of the beamer (v3.22) manual.  Also [this answer](https://tex.stackexchange.com/a/6407/1402) of mine.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/69609/rolling-bullet-points-in-beamer/100102#100102) on TeX Stack Exchange, 2013-02-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

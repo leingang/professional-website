@@ -1,0 +1,62 @@
+---
+title: Design and Prove a Bijection from $\mathbb{Z}^1 \to \mathbb{Z}^2$
+date: '2018-08-20'
+description: I'm assuming from the context that $m=N^2$, that $V = \{0,\dots,m-1\}$, and $W = \{0,\dots,N-1\}^2$. Also you have an $n$ in the definition of $T$ and I think…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2889296
+se-link: https://math.stackexchange.com/questions/2889248/design-and-prove-a-bijection-from-mathbbz1-to-mathbbz2/2889296#2889296
+se-score: 1
+se-accepted: true
+se-tags:
+- proof-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Design and Prove a Bijection from $\mathbb{Z}^1 \to \mathbb{Z}^2$](https://math.stackexchange.com/questions/2889248/design-and-prove-a-bijection-from-mathbbz1-to-mathbbz2), asked by [Matt](https://math.stackexchange.com/users/349998/matt) on Mathematics Stack Exchange (2018-08-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to implement a program and have come across the following problem and would like to see how much discrete math I recall.  I'm mapping m objects to a square 2D grid and I'd like for the mapping to be unique, which I translate as "Given a square grid of side length N and m objects, design a bijection between each object and a unique ordered pair of coordinates." 
+>
+> If my notation is correct, this is a transformation $T: \mathbb{Z}^1 \to \mathbb{Z}^2$.  I've been suggested that $T(x) = (x//n, x \% n)$ will work and I'd like to prove this.  
+>
+> I need to first show that $T: V \to W$ is surjective which means $Im(T) = W$ which I can show by: 
+>
+>  1. $\forall w \in W, \exists v : T(v) = w$
+>
+>  2. **is this equivalent to: $Im(T) \subseteq W \land W \subseteq Im(T)$?** 
+>
+> To show (1) means to show any ordered pair integers can be generated from an integer $\iff$ $\exists x : T(x) = (z_1, z_2)$.  
+>
+> I said let $x = z_1N + z_2$ and then T($z_1N + z_2$) = $((z_1N + z_2) // N, (z_1N + z_2) \% N) = (z_1, z_2)$ where I'm assuming the mod operator and floor division operators are distributive? 
+>
+> Then I need to prove T is injective which means if $T(x_1) = (N//x_1, N\%x_1) = T(x_2) = (N//x_2, N \% x_2) \implies x_1 = x_2$
+>
+> I thought about considering equating each component but wasn't sure how that helped me.  Now I'm considering the approach that if the ordered pairs are equal $\implies Nx_1 + x_1 = Nx_2+ x_2$ to which I get $-N(x_2 - x_1) = x_2 - x_1$ but here I am stuck.  
+>
+> Any pointers and verifications are appreciated!
+:::
+
+I'm assuming from the context that $m=N^2$, that $V = \{0,\dots,m-1\}$, and $W = \{0,\dots,N-1\}^2$.  Also you have an $n$ in the definition of $T$ and I think you mean $N$.
+
+Your answer to (2) is correct.  You need to show $T(x) \in W$ for each $x \in V$, and for each $y$ in $W$ there exists $x \in V$ such that $T(x) = y$.  The fact that $T(z_1N+z_2) = (z_1,z_2)$, and the injectivity of $T$, comes from a theorem called (among other things) the [Division algorithm][1]:
+
+> Given two integers $a$ and $b$ with $b>0$, there exist *unique* integers $q$ and $r$ such that $0 \leq r < b$ and $$a = bq + r$$ 
+
+This theorem rests on the [Well-ordering Principle][2]: A nonempty set of positive integers has a minimum element.  
+
+
+  [1]: https://en.wikipedia.org/wiki/Euclidean_division
+  [2]: https://en.wikipedia.org/wiki/Well-ordering_principle
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2889248/design-and-prove-a-bijection-from-mathbbz1-to-mathbbz2/2889296#2889296) on Mathematics Stack Exchange, 2018-08-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

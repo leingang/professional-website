@@ -1,0 +1,54 @@
+---
+title: How can I find the volume enclosed by the following graphs?
+date: '2016-11-08'
+description: Alternatively to Behrouz's answer, the solid lies over the plane region $$D = \left\{(x,y)\mid - \sqrt{3}/2 \leq y \leq \sqrt{3}/2,\ 0 \leq x \leq…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2005666
+se-link: https://math.stackexchange.com/questions/2005581/how-can-i-find-the-volume-enclosed-by-the-following-graphs/2005666#2005666
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I find the volume enclosed by the following graphs?](https://math.stackexchange.com/questions/2005581/how-can-i-find-the-volume-enclosed-by-the-following-graphs), asked by [Reed Oei](https://math.stackexchange.com/users/113879/reed-oei) on Mathematics Stack Exchange (2016-11-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How do I find the volume bound by planes $x=0$, $y=0$, and the surfaces $x=-4y^2+3$, $z=x^3y$?
+>
+> I think that I probably need to do:
+>
+> $$\iint_D (x^3y) \, dx\,dy$$
+>
+> But I'm not sure what to do for the limits. I think that for the $x$ I should use $0$ and $-4y^2+3$, but I don't know what to do about the $y$.
+>
+> EDIT: I tried using 0 and 3 for the limits for $x$, and $0$ and $\frac{\sqrt{3-x}}{2}$ as limits for the $y$, but I got half of the answer that I was supposed to get ($\frac{243}{80}$).
+:::
+
+Alternatively to Behrouz's answer, the solid lies over the plane region
+$$D = \left\{(x,y)\mid - \sqrt{3}/2 \leq y \leq \sqrt{3}/2,\ 0 \leq x \leq -4y^2+3\right\}$$
+[It looks like this][1]:
+
+[![set][2]][2]
+
+So the volume is
+$$\int_{-\sqrt{3}/2}^{\sqrt{3}/2} \int_0^{3-4y^2} x^3y\,dx\,dy$$
+
+
+  [1]: http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=x%20%E2%89%A50%20and%20x%20%E2%89%A4-4y%5E2%20%2B%203
+  [2]: HtmA1.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2005581/how-can-i-find-the-volume-enclosed-by-the-following-graphs/2005666#2005666) on Mathematics Stack Exchange, 2016-11-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

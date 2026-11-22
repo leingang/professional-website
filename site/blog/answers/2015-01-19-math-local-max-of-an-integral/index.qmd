@@ -1,0 +1,52 @@
+---
+title: Local Max of an Integral
+date: '2015-01-19'
+description: 'Hint: There is a theorem about differentiating functions of the form $$f(x) = \int0^x g(t) \,dt$$ It''s a very important theorem. Some may even call it…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1111213
+se-link: https://math.stackexchange.com/questions/1111208/local-max-of-an-integral/1111213#1111213
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Local Max of an Integral](https://math.stackexchange.com/questions/1111208/local-max-of-an-integral), asked by [user3776749](https://math.stackexchange.com/users/181642/user3776749) on Mathematics Stack Exchange (2015-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm having trouble with the following problem.
+>
+> > $f(x)=\int_0^x \frac{t^2-4}{1+cos^2(t)}dt$
+> > 
+> > At what value of $x$ does the local max of $f(x)$ occur?
+>
+> I've tried just taking the integral then finding the Max using critical points, but I can't find a way to make the integration straight forward using trig identities and algebra. So either I'm missing something on that front or there is another approach I'm not privy to.
+:::
+
+Hint: There is a theorem about differentiating functions of the form
+$$f(x) = \int_0^x g(t) \,dt$$
+It's a very important theorem.  Some may even call it fundamental.
+
+<!---
+By the first fundamental theorem of calculus
+$$f'(x) = g(x)$$
+So for your function
+$$f'(x) = \frac{x^2-4}{1 + \cos^2 x}$$
+The critical points are the zeroes of this function, apparently $\pm 2$.  Lucky for us the denominator is at least $1$, so we only need to look at the numerator to determine the sign of the derivative.  
+
+At $x=-2$, $f'$ changes sign from positive to negative, making this point a local maximum.  At $x=+2$, $f'$ changes from negative to positive, making this point a local minimum.  
+-->
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1111208/local-max-of-an-integral/1111213#1111213) on Mathematics Stack Exchange, 2015-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

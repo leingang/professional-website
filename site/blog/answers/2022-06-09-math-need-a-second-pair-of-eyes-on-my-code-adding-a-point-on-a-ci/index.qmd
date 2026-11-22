@@ -1,0 +1,109 @@
+---
+title: Need a second pair of eyes on my code - adding a point on a circle to match an existing point using a given an angle
+date: '2022-06-09'
+description: I assume you want to place $p3$ such that the angle formed by $p2$, $p1$, and $p3$ (with $p1$ as the vertex) has measure $\theta$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4468908
+se-link: https://math.stackexchange.com/questions/4468890/need-a-second-pair-of-eyes-on-my-code-adding-a-point-on-a-circle-to-match-an-e/4468908#4468908
+se-score: 1
+se-accepted: false
+se-tags:
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Need a second pair of eyes on my code - adding a point on a circle to match an existing point using a given an angle](https://math.stackexchange.com/questions/4468890/need-a-second-pair-of-eyes-on-my-code-adding-a-point-on-a-circle-to-match-an-e), asked by [sortofsleepy](https://math.stackexchange.com/users/1065998/sortofsleepy) on Mathematics Stack Exchange (2022-06-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> First off, I am really just a programmer; I was a little conflicted as to where to ask this as the issue could easily be code related. That said I figured I'd start here. Also if possible, I'm not great with reading formulas or,well, math in general haha; it'd be fantastic if any explanations could dumbed down or stick to code if possible. 
+>
+> If this is a better question for stackoverflow, feel free to mention and I'll post there instead. 
+>
+> Anyways; the basic issue I'm having is - with a given angle I am trying to find x/y values so that I can add a new point to a drawing that lines up with an existing point.
+>
+> let say we have 
+>
+> ```
+> vec2 p1 = vec2(0.5,0); // lets say this is the origin
+> vec2 p2 = vec2(20,30);
+> ```
+>
+> I'd like to plot another point, lets call it p3, so that it's angle on a circle lines up with p2. I guess another way to try and explain - if I were to rotate p3 by a given angle, it should get drawn on the same spot as p2 (I hope that's clear enough of an explanation, I can try to reword it)
+>
+> From what I can find, the basic formula should be 
+>
+> ```
+> radius = sqrt((p2.x - p1.x)^2 + (p2.y - p1.y)^2)
+> p3.x = p1.x + (radius * cos(angle))
+> p3.y = p1.y + (radius * sin(angle))
+> ```
+>
+> My understanding is that,with the formula, p3 should get plotted onto the same x and y as p2. However when I draw this out, while both p2 and p3 do appear to lie on the same circle, the resulting x and y values appear to be very different between p2/p3. 
+>
+> I was hoping someone could help me try to understand the seemingly inconsistent values and what I could possibly be doing wrong or even point me in the right direction of what to search for. 
+>
+> Thank you very much!
+>
+> I have a p5.js sketch here for demonstration 
+> https://editor.p5js.org/sortofsleepy/sketches/smJ5Kl_GT
+>
+> I can't add inline images yet but an image for reference (note you can also hit the play button in p5 to get the image as well and generate new ones if you tweak something)
+>
+> [Issue I'm having][q-1]
+>
+>
+>   [q-1]: CoXsC.png
+>
+> **Edit :** Solved! Thanks to David K for pointing me in the right direction and confirming what I was thinking(if you want to make an answer reply I can mark it as the correct solution). 
+>
+> Not that I expect this to be a common problem but just in case the concepts and ideas at least happens to be helpful for other problems, 
+>
+> To first explain the bigger problem, I was asked to write a unit test to confirm that if I rotate a matrix and project a point at a given angle from world space to screen space using that matrix, the value should = the value I would get if all points were in screen space to begin with and perform the same rotation operation.
+>
+> Solution was to first, find the angle of a p2 on a circle. If you take that angle and apply it to p3 using the formula mentioned above, you get the same x and y values of p2. Finding that angle is 
+>
+> ```
+> atan2(p2.y - p1.y, p2.x - p1.x)
+> ```
+>
+> If you take that and and re-apply it to the formula, but also add the angle you actually want to deal with, that appears to yield the correct solution that I needed. In other words
+>
+> ```
+> angle = <angle we're testing against, can be any value in radians>
+> p2Angle = atan2(p2.y - p1.y, p2.x - p1.x)
+> radius = sqrt((p2.x - p1.x)^2 + (p2.y - p1.y)^2)
+> p3.x = p1.x + (radius * cos(angle + p2Angle))
+> p3.y = p1.y + (radius * sin(angle + p2Angle))
+> ```
+>
+> There might be an edge case(s) I'm not thinking of but at the very least, this appears to solve my specific issue.
+:::
+
+I assume you want to place $p_3$ such that the angle formed by $p_2$, $p_1$, and $p_3$ (with $p_1$ as the vertex) has measure $\theta$.
+
+First, the math. If $p_1$ is the origin, you need to apply a [rotation matrix][1] $R = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$ to $p_2$. Your code is only going to work if $p_2$ lies on the $x$-axis.
+
+If $p_1$ is not the origin, you can translate $p_2$ to the origin by subtracting $p_1$, then rotate, then add it back. So
+$$p_3 = R(p_2 - p_1)+p_1$$
+
+Your code should read:
+
+```
+let x = cos(angle)*(pt2.x-pt1.x)-sin(angle)*(pt2.y-pt1.y) + pt1.x
+let y = sin(angle)*(pt2.x-pt1.x)+cos(angle)*(pt2.y-pt1.y) + pt1.x
+```
+
+
+  [1]: https://en.wikipedia.org/wiki/Rotation_matrix
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4468890/need-a-second-pair-of-eyes-on-my-code-adding-a-point-on-a-circle-to-match-an-e/4468908#4468908) on Mathematics Stack Exchange, 2022-06-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

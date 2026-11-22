@@ -1,0 +1,38 @@
+---
+title: Find 3rd point of triangle with the opposite angle
+date: '2017-09-10'
+description: I don't think you can. If you put A at $(-1,0)$ and B at $(0,1)$, then any point $C$ on the unit circle will make a right triangle with A and B. Which means…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2424451
+se-link: https://math.stackexchange.com/questions/2424445/find-3rd-point-of-triangle-with-the-opposite-angle/2424451#2424451
+se-score: 1
+se-accepted: false
+se-tags:
+- triangles
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find 3rd point of triangle with the opposite angle](https://math.stackexchange.com/questions/2424445/find-3rd-point-of-triangle-with-the-opposite-angle), asked by [Kevin Castejon](https://math.stackexchange.com/users/479331/kevin-castejon) on Mathematics Stack Exchange (2017-09-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I got a triangle, I know A and B coordinates, I know all angles, how can I calculate C coordinates?
+>
+> [Schema][q-1]
+>
+>
+>   [q-1]: Cw1xC.jpg
+:::
+
+I don't think you can.  If you put A at $(-1,0)$ and B at $(0,1)$, then any point $C$ on the unit circle will make a right triangle with A and B.  Which means the coordinates of A and B and the measure of the angle C are not enough.  If you know one more side length or one more angle, you can use the law of sines to get the other measurements.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2424445/find-3rd-point-of-triangle-with-the-opposite-angle/2424451#2424451) on Mathematics Stack Exchange, 2017-09-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

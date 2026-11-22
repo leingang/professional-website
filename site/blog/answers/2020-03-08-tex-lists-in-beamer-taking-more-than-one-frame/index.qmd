@@ -1,0 +1,65 @@
+---
+title: Lists in beamer taking more than one frame
+date: '2020-03-08'
+description: 'Another way would be to use overlays:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 531806
+se-link: https://tex.stackexchange.com/questions/531800/lists-in-beamer-taking-more-than-one-frame/531806#531806
+se-score: 2
+se-accepted: false
+se-tags:
+- beamer
+- lists
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Lists in beamer taking more than one frame](https://tex.stackexchange.com/questions/531800/lists-in-beamer-taking-more-than-one-frame), asked by [Andrea Mori](https://tex.stackexchange.com/users/8175/andrea-mori) on TeX Stack Exchange (2020-03-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am preparing some slides using beamer.
+>
+> I have to write a list of examples of a certain mathematical structure that takes more space than allowed in a single frame.
+>
+> How can I avoid that the numbering restarts anew in the second frame?
+>
+> I tried what I would do in the "usual" documentclass namely specifying the initial numbering by
+>
+> ```latex
+> \begin{enumerate}
+>
+> \item[7]
+> ```
+> but that changes the style of the numbers
+:::
+
+Another way would be to use overlays:
+
+```latex
+\begin{frame}{Examples}
+    \begin{enumerate}
+        \item<only@-6> first
+        \item<only@-6> second
+        \item<only@-6> third
+        \item<only@-6> fourth
+        \item<only@-6> fifth
+        \item<only@-6> sixth
+        \item<only@7-> seventh
+        \item<only@7-> eighth, etc.
+    \end{enumerate}
+\end{frame}
+```
+
+Then items 1–6 appear one one overlay, and item 7 onward appear on another.  This way in article mode you only get one list.  You can add overlay specifications to make the items appear incrementally, on separate frames in handout mode, etc.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/531800/lists-in-beamer-taking-more-than-one-frame/531806#531806) on TeX Stack Exchange, 2020-03-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

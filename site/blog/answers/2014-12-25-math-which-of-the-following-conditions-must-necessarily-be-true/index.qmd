@@ -1,0 +1,45 @@
+---
+title: Which of the following conditions must necessarily be true?
+date: '2014-12-25'
+description: You have $B = \neg A$ and $D = \neg C$. Therefore $A \implies C$ and $\neg A \implies \neg C$. Hence $A \iff C$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1080597
+se-link: https://math.stackexchange.com/questions/1080569/which-of-the-following-conditions-must-necessarily-be-true/1080597#1080597
+se-score: 1
+se-accepted: true
+se-tags:
+- logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which of the following conditions must necessarily be true?](https://math.stackexchange.com/questions/1080569/which-of-the-following-conditions-must-necessarily-be-true), asked by [Jose Arnaldo Bebita Dris](https://math.stackexchange.com/users/28816/jose-arnaldo-bebita-dris) on Mathematics Stack Exchange (2014-12-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Suppose that $\{A, B\}$ is a set of mutually exhaustive conditions, and that $\{C, D\}$ is another set of mutually exhaustive conditions.
+>
+> If the following implications are true:
+>
+> $$A \Longrightarrow C$$
+>
+> and
+>
+> $$B \Longrightarrow D,$$
+>
+> then which of the conditions $A$, $B$, $C$ and $D$ must necessarily be true?
+:::
+
+You have $B = \neg A$ and $D = \neg C$.  Therefore $A \implies C$ and $\neg A \implies \neg C$.  Hence $A \iff C$.  
+
+But neither $A$ nor $C$ need be true.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1080569/which-of-the-following-conditions-must-necessarily-be-true/1080597#1080597) on Mathematics Stack Exchange, 2014-12-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,50 @@
+---
+title: Plotting an implicit function using TikZ
+date: '2010-10-31'
+description: Probably the easiest thing to do would be to use TikZ's front end to gnuplot. If you use the raw gnuplot option you can pass a more complicated script to…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4743
+se-link: https://tex.stackexchange.com/questions/4738/plotting-an-implicit-function-using-tikz/4743#4743
+se-score: 13
+se-accepted: true
+se-tags:
+- tikz-pgf
+- graphics
+- gnuplot
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Plotting an implicit function using TikZ](https://tex.stackexchange.com/questions/4738/plotting-an-implicit-function-using-tikz), asked by [Pieter](https://tex.stackexchange.com/users/210/pieter) on TeX Stack Exchange (2010-10-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How could one plot an implicit function, like `(x^2+y^2)^3-4x^2y^2` using TikZ?
+>
+> I know `gnuplot` [supports them][q-1], but they are drawn using a surface built from the function and intersecting the result with the `z=0` plane. How would one implement this work flow directly from TikZ? I know you can easily pass explicit functions to `gnuplot` but I don't want to split up the implicit function in its constituent parts if it's not necessary.
+>
+> Of course, it's possible to plot in the `gnuplot` program and save the results, but I'm curious whether there is a more direct way :).
+>
+>
+>   [q-1]: http://newton.ph.unito.it/~moretti/gnuplot/implicit/solve-e.html
+:::
+
+Probably the easiest thing to do would be to use TikZ's front end to gnuplot.  If you use the `raw gnuplot` option you can pass a more complicated script to gnuplot to make it to what you want (rather than just plot a simple function).
+
+I think it's almost impossible to do within TeX itself, which is after all a text processing system and not a computer algebra system.  You *could* use `pgfmath` (the math engine within TiKZ) to generate the surface points, and only plot the points where *z* is sufficiently close to 0.  But how would you connect these points?
+
+Another method would be to use the function to write a differential equation and then implement Euler's method to plot a curve.  But that probably won't be as pretty as you want—assuming the curve is closed you would have to guess-and-check to make sure you plotted enough to close the curve and not too much to overlap.
+
+There might also be a LuaTeX option but I don't know anything about that.
+
+This particular curve is highly singular so first-stab TeX efforts probably wouldn't be very successful here.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4738/plotting-an-implicit-function-using-tikz/4743#4743) on TeX Stack Exchange, 2010-10-31. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

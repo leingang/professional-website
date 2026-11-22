@@ -1,0 +1,60 @@
+---
+title: Algebraic derivation of a formula with norms
+date: '2018-10-11'
+description: ''
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2951176
+se-link: https://math.stackexchange.com/questions/2951149/algebraic-derivation-of-a-formula-with-norms/2951176#2951176
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- linear-algebra
+- algebra-precalculus
+- normed-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Algebraic derivation of a formula with norms](https://math.stackexchange.com/questions/2951149/algebraic-derivation-of-a-formula-with-norms), asked by [John Davis](https://math.stackexchange.com/users/602256/john-davis) on Mathematics Stack Exchange (2018-10-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Assume that  $x_{n}$, $\widetilde{x}_{n}$ and $\bar{x}$ are column vectors and $u_{i}$ are orthonormal basis vectors.
+>
+> When considering equations (1) and (2), it is not clear to me how equation (3) follows from that.
+>
+> [![Formula][q-1]][q-1]
+>
+>
+>   [q-1]: Hec1J.png
+>
+> I know that $||x_{n}-\widetilde{x}_{n}||^2 = (x_{n}-\widetilde{x}_{n})^{T}(x_{n}-\widetilde{x}_{n})$. 
+>
+> However, after plugging in eq (2), I don't end up with eq (3).
+>
+> Is someone able to help me out with this? Thanks a lot!
+:::
+
+[Same as Berci, but with more details]
+Since $\mathbf u_i$ are orthonormal, for any pair of indices $(i,j)$,
+$$\mathbf u_i^T \mathbf u_j = \delta_{ij} = \begin{cases} 1 & i = j \\ 0 & i \neq j \end{cases}$$
+So
+$$\begin{align*}
+    J &= \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n - \tilde{\mathbf{x}}_n)^T(\mathbf{x}_n - \tilde{\mathbf{x}}_n) \\
+      &= \frac{1}{N} \sum_{n=1}^N\left(\sum_{i=M+1}^N\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_i\right\}\mathbf{u}_i\right)^T\left(\sum_{j=M+1}^N\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_j\right\}\mathbf{u}_j\right) \\
+      &= \frac{1}{N} \sum_{n=1}^N\sum_{i,j=M+1}^N\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_i\right\}\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_j\right\}\mathbf{u}_i^T\mathbf{u}_j \\
+      &= \frac{1}{N} \sum_{n=1}^N\sum_{i,j=M+1}^N\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_i\right\}\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_j\right\}\delta_{ij} \\
+      &= \frac{1}{N} \sum_{n=1}^N\sum_{i=M+1}^N\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_i\right\}\left\{(\mathbf{x}_n-\bar{\mathbf{x}})^T \mathbf{u}_i\right\}\\
+      &= \frac{1}{N} \sum_{n=1}^N\sum_{i=M+1}^N\left\{\mathbf{x}_n^T\mathbf{u}_i-\bar{\mathbf{x}}^T\mathbf{u}_i \right\}^2\\
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2951149/algebraic-derivation-of-a-formula-with-norms/2951176#2951176) on Mathematics Stack Exchange, 2018-10-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

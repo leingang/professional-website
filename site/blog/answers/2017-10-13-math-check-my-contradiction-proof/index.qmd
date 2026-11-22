@@ -1,0 +1,49 @@
+---
+title: Check my contradiction proof
+date: '2017-10-13'
+description: You claim to have contradicted the FTA, but I don't see that. To contradict the FTA you would need two distinct factorizations of some number.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2469990
+se-link: https://math.stackexchange.com/questions/2469979/check-my-contradiction-proof/2469990#2469990
+se-score: 1
+se-accepted: false
+se-tags:
+- proof-verification
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Check my contradiction proof](https://math.stackexchange.com/questions/2469979/check-my-contradiction-proof), asked by [Juma](https://math.stackexchange.com/users/292072/juma) on Mathematics Stack Exchange (2017-10-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Prove that $\forall n\in \Bbb N,(n>3\wedge n\mbox{ is prime})\to\exists q\in\Bbb N,(n=6q+1\lor n=6q+5)$.
+>
+> Here's my attempted proof:
+>
+> *Pf.* Suppose to the contrary that $\forall n\in \Bbb N,(n>3\wedge n\mbox{ is prime})\wedge \forall q\in\Bbb N,(n\ne 6q+1\wedge n\ne 6q+5)$. By the fundamental theorem of arithmetic (FTA), if $n$ is an integer, then $n$ is either a prime, or a product of unique primes $p_1p_2\dots p_{k-1}p_k$, $k\in \Bbb N$. We can say that, if $n$ is prime, $n$ can be represented as a sum of a product of unique primes $p_1p_2\dots p_{k-1}p_k$ and some integer remainder (since $p_1p_2\dots p_{k-1}p_k\nmid n$). However, when $n>3,n\ne 6q+1\implies n\ne(2)(3)q+1$ and $n\ne 6q+5\implies n\ne(2)(3)q+5$, which are contradictions to the FTA. Therefore, our original supposition must have been false, and $\forall n\in \Bbb N,(n>3\wedge n\mbox{ is prime})\to\exists q\in\Bbb N,(n=6q+1\lor n=6q+5)$. $\ \blacksquare$
+>
+> The thing I'm shaky on is whether the contradiction I found is actually a contradiction ...
+:::
+
+You claim to have contradicted the FTA, but I don't see that.  To contradict the FTA you would need two distinct factorizations of some number.
+
+The first mistake you made was the negation of the proposition.  It should start with $\exists n\in\mathbb{N}$ instead of $\forall n\in \mathbb{N}$.  The rest of it is right, though:
+$$\exists n\in\Bbb N: (n>3) \wedge (\text{$n$ is prime})\wedge\left(\forall q\in\Bbb N,(n\neq 6q+1)\wedge(n\neq 6q+5)\right)$$
+Proceed in cases: $n$ must be congruent to $0$, $2$, $3$, or $4$ modulo $6$.
+In the cases $n\bmod 6 = 0$, $2$, or $4$, $n$ must be even.
+In the case $n\bmod 6 = 3$ $n$ is a multiple of $3$.
+In any case, $n$ has a positive divisor greater than $1$ and less than $n$, so can't be prime.  This contradicts the assumption that $n$ is prime.
+
+Real proof by contradictions are when the contradiction is internal to the proof.  In this case, we ended up contradicting one of the hypotheses.  So this is really a proof by contrapositive.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2469979/check-my-contradiction-proof/2469990#2469990) on Mathematics Stack Exchange, 2017-10-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

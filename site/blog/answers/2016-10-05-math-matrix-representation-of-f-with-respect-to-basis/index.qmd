@@ -1,0 +1,55 @@
+---
+title: Matrix representation of $ f$ with respect to basis
+date: '2016-10-05'
+description: Let your linear transformation be called $D$ instead of $f$—it's a little confusing because you called the basis elements $f1$ and $f2$. Since the domain of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1954994
+se-link: https://math.stackexchange.com/questions/1954987/matrix-representation-of-f-with-respect-to-basis/1954994#1954994
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Matrix representation of $ f$ with respect to basis](https://math.stackexchange.com/questions/1954987/matrix-representation-of-f-with-respect-to-basis), asked by [Methamortix](https://math.stackexchange.com/users/197545/methamortix) on Mathematics Stack Exchange (2016-10-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given
+>
+> $$V = \{f: [-\pi,\pi] \to R;\ f(x) = a\,\sin(x) + b\,\cos(x)\ a,b \in \mathbb R\}$$
+>
+> I have shown that it is a vector space with basis $$B = \{f_{1}=\sin(x),f_{2}=\cos(x)\}$$
+>
+> Now the mapping $$D: V \to V, f(x) = f^{'}(x)$$ is given and I shall compute the matrix represntation of f with respect to basis B.
+>
+> However, I am really not sure how to approach this. I know that every linear function $f$ can be represented as a matrix $A$ with respect to the standard bases as $$A=(f(e_{1},f(e_{2}),...f(e_{n}))$$.
+>
+> So I would have solved it as following;
+>
+> $$A_{B}=(f(f_{1}),f(f_{2})) = (f(\sin(x)),f(\cos(x))) = (\cos(x),-\sin(x))$$
+>
+> But I am not really sure - I think I have still problems to understand the concept behind it. Would be great if you could hep me!
+:::
+
+Let your linear transformation be called $D$ instead of $f$—it's a little confusing because you called the basis elements $f_1$ and $f_2$.  Since the domain of $D$ consists of functions, it's natural to name the input of $D$ by $f$.
+
+So, $D\colon V\to V$ is the derivative operator: $Df = f'$.  To find its matrix representation in the basis $B$, you need to find scalars $a_{ij}$ such that
+$$\begin{align*}
+    Df_1 &= a_{11} f_1 + a_{12} f_2 \\
+    Df_2 &= a_{21} f_1 + a_{22} f_2 \\
+\end{align*}$$
+Can you do that?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1954987/matrix-representation-of-f-with-respect-to-basis/1954994#1954994) on Mathematics Stack Exchange, 2016-10-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

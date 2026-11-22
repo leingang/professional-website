@@ -1,0 +1,61 @@
+---
+title: How can you comment this calculation step to avoid points deduction by teacher?
+date: '2017-10-03'
+description: I can't decide whether to offer my opinion (as a teacher) as an answer, or to vote to close because it's impossible to know your teacher's rationale. I guess…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2455761
+se-link: https://math.stackexchange.com/questions/2455743/how-can-you-comment-this-calculation-step-to-avoid-points-deduction-by-teacher/2455761#2455761
+se-score: 26
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- analysis
+- ordinary-differential-equations
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can you comment this calculation step to avoid points deduction by teacher?](https://math.stackexchange.com/questions/2455743/how-can-you-comment-this-calculation-step-to-avoid-points-deduction-by-teacher), asked by [cnmesr](https://math.stackexchange.com/users/350460/cnmesr) on Mathematics Stack Exchange (2017-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Solve the initial value problem: $y'+2y=e^{-x}$ with $y(0)=4$
+>
+> Our teacher gave me a mistake / unclear mark at the part which I will mark red here. But I don't understand why and I no longer have the opportunity to ask him.
+>
+> This is an extract of my solution (it leads to the correct solution):
+>
+> $$e^{2x} \cdot \frac{dy}{dx} + e^{2x} \cdot 2y = e^{2x} \cdot e^{-x} \Leftrightarrow$$
+>
+> $$\Leftrightarrow \color{red}{\frac{d}{dx} \cdot e^{2x} \cdot y} = e^{x} \Leftrightarrow$$
+>
+> $$\int{\frac{d}{dx} \cdot e^{2x} \cdot y} \text{ } dx = \int{e^x} \text{ } dx$$
+>
+> $$...$$
+>
+> I don't understand, is an explanation here really required? So I took that $y$ from $\frac{dy}{dx}$ and wrote it at the end of the term and now we got $\frac{d}{dx}$ at the front. $\frac{d}{dx}$ means "the derivative of.." (whatever comes after). And taking that derivative, we will get what we had before (the line before the red marked line), so they are equal to each other. 
+>
+> But how would you explain that (on paper) in a reasonable way? I don't know if my current explanation is fine.
+>
+> **Edit: When I handed this in, I used brackets too. The reason I got point deduction is "how do you get from here to there?" (first line to red line).**
+:::
+
+I can't decide whether to offer my opinion (as a teacher) as an answer, or to vote to close because it's impossible to know your teacher's rationale.  I guess the former.
+
+There is a little bit of ambiguity in writing $\frac{d}{dx}\cdot e^{2x} \cdot y$ on the left-hand side of your highlighted equation.  We don't normally multiply ($\cdot$) by the operator $\frac{d}{dx}$.  I think you meant to say that the derivative is applied to the product $e^{2x} \cdot y$.  I would prefer that be written as $\frac{d}{dx}\left(e^{2x}\cdot y\right)$. 
+
+Second point, and not having to do with your notation (which, as you say in your edit, was not as it was in the original submission).  If this problem is assigned at a time when you are *just* learning how to solve linear ODEs with the integrating factor, it might also be the teacher wants you to show a few more steps.  Once you move on to other new topics, this technique becomes routine, and steps can be skipped.  But in some sense, you need to show that you *can* fill in the steps before you're afforded the privilege of skipping the steps.  
+
+I admit, it's possible that these reasons have nothing to do with the deduction.  It could also be a straight-up mistake on the part of the instructor.  But I usually ask for students to write up clear, explained answers, and this response lacks clarity in the notation and could possibly (depending on context) fall short of the expectations for explanation.  Keep in mind that *getting the right answer* is not the only learning objective your teacher has for you.  Being able to communicate mathematically, use symbols correctly, and justify steps, is also part of the learning.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2455743/how-can-you-comment-this-calculation-step-to-avoid-points-deduction-by-teacher/2455761#2455761) on Mathematics Stack Exchange, 2017-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,67 @@
+---
+title: What symbol is this?
+date: '2014-07-02'
+description: To me this looks like a blackboard bold lowercase a. Specifically, it looks like the lowercase a from the bbold font.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 187630
+se-link: https://tex.stackexchange.com/questions/187625/what-symbol-is-this/187630#187630
+se-score: 25
+se-accepted: true
+se-tags:
+- symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What symbol is this?](https://tex.stackexchange.com/questions/187625/what-symbol-is-this), asked by [Igor](https://tex.stackexchange.com/users/56454/igor) on TeX Stack Exchange (2014-07-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ![Symbol][q-1]
+>
+> I need the command to display this symbol in LaTeX or, at least, its name.
+>
+> I guess it’s from some kind of a mathematical or informatics discipline. I saw it in article called “[A comparison of collapsed Bayesian methods for probabilistic finite automata][q-2]”. Actually, I have no idea what it is all about: I just started learning LaTeX and I have to copy this article. This symbol is used just as if it is a casual letter like *x* or *y*. The line which includes it is,
+>
+> > Input : a(this symbol), N, BurnInTime, SamplingNum, Period
+>
+>
+>   [q-1]: DYpgh.jpg
+>   [q-2]: http://link.springer.com/article/10.1007%2Fs10994-013-5410-3#page-1
+:::
+
+To me this looks like a blackboard bold lowercase *a*.  Specifically, it looks like the lowercase *a* from the [bbold](http://luc.devroye.org/fonts-26732.html) font.  
+
+![bbold font][1]
+
+For blackboard bold capitals you can use the `\mathbb` macro provided by the `amsfonts` or `amssymb` packages.  But `$\mathbb{a}$` gives a backwards *G*.
+
+Instead, you need to load the whole `bbold` font.  Here's a quick snippet to do that.  
+
+```latex
+\documentclass{article}
+\DeclareSymbolFont{bbold}{U}{bbold}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbbold}{bbold}
+
+\begin{document}
+$\mathbbold{a}$
+\end{document}
+```
+
+![bbold a][2]
+
+See also https://tex.stackexchange.com/questions/488/blackboard-bold-characters
+
+
+  [1]: xwrNg.png
+  [2]: j9CzT.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/187625/what-symbol-is-this/187630#187630) on TeX Stack Exchange, 2014-07-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,64 @@
+---
+title: Which variable has to be with respect to for partial derivative in minimization algorithm?
+date: '2017-08-15'
+description: Contextual clues indicate that the authors mean "for each $j$ between $1$ and $J$" whenever they refer to a symbol $sj$ or $xj$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2394420
+se-link: https://math.stackexchange.com/questions/2392833/which-variable-has-to-be-with-respect-to-for-partial-derivative-in-minimization/2394420#2394420
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- algorithms
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which variable has to be with respect to for partial derivative in minimization algorithm?](https://math.stackexchange.com/questions/2392833/which-variable-has-to-be-with-respect-to-for-partial-derivative-in-minimization), asked by [Jan](https://math.stackexchange.com/users/437249/jan) on Mathematics Stack Exchange (2017-08-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The function has many variables. Which variable has to be with respect to for partial derivative in minimization algorithm? I would like to ask in general but probably, the example would be helpful. 
+>
+> For example from [this paper][q-1], they choose $x_j$ for doing $dQ'/dx_j$. Why we know it has to be with respect to $x_j$? The paper said...
+>
+> "We can derive update rules by partial derivation on this function. First, we use a auxiliary function defined as
+>
+> $$Q(X,\gamma)=- \sum_{j} \frac{1}{2\gamma}|x_{j}|^2+\frac{\gamma}{2}$$
+>
+> where $γ_j$ is an auxiliary variable. This cost function satisfies
+> the three properties described in 3.1 (about $Q(θnew) ≤ Q+(θnew, φnew) ≤ Q+(θ, φnew) = Q(θ)$) and is equal to the original
+> cost function when
+> $$γ_j = |s_j|$$
+> When we solve $∂Q'/∂x_j = 0$, the update rule of separated signal $x_j$ is written as
+>
+> $$x_j = 2\gamma"$$
+>
+> Is it because $\gamma$ is just auxiliary variable so it is not important? If the function has more than one variables, which one will we choose for partial derivative?
+>
+>
+>   [q-1]: http://winnie.kuis.kyoto-u.ac.jp/members/okuno/Public/Interspeech2011-Hirasawa.pdf
+:::
+
+Contextual clues indicate that the authors mean "**for each $j$ between $1$ and $J$**" whenever they refer to a symbol $s_j$ or $x_j$.  
+
+1. Notice how in some equations the index $j$ is summed over.  This makes it a dummy variable in those equations.  It would be confusing for $j$ to be a dummy variable in some equations and a fixed index in others.
+
+2. At no point do the authors say "**for some** $j$", which would indicate a specific index.
+
+3. The first-order conditions for a function of several variables $Q(x_1, \dots, x_J)$ to have a minimum are that $\frac{\partial Q}{\partial x_j} = 0$ **for each $j$**.  
+
+I am not sure why the authors use $\gamma_j$ in some places and $\gamma$ in others (e.g., the caption for Figure 3).  Could it be that $J=1$ in those cases, so there is only a single variable?
+
+It seems to me that these ambiguities should have been caught by an editor.  You might get full clarity by emailing one of the authors.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2392833/which-variable-has-to-be-with-respect-to-for-partial-derivative-in-minimization/2394420#2394420) on Mathematics Stack Exchange, 2017-08-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,45 @@
+---
+title: Prove that there exists no scalar field which has derivative $> 0$ at a fixed point wrt every direction
+date: '2021-05-11'
+description: I think that every proof you find is going to be equivalent to the one you already gave, but here is a proof by meme. If such a function existed, it would be…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4135740
+se-link: https://math.stackexchange.com/questions/4135233/prove-that-there-exists-no-scalar-field-which-has-derivative-0-at-a-fixed-po/4135740#4135740
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+- multivariable-calculus
+- derivatives
+- scalar-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that there exists no scalar field which has derivative $> 0$ at a fixed point wrt every direction](https://math.stackexchange.com/questions/4135233/prove-that-there-exists-no-scalar-field-which-has-derivative-0-at-a-fixed-po), asked by [The Limit Does Not Exist](https://math.stackexchange.com/users/908230/the-limit-does-not-exist) on Mathematics Stack Exchange (2021-05-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The problem statement : Prove that there is no scalar field $f$ such that $\nabla_\vec{y}f(\vec{a})>0$ for a fixed vector $\vec{a}$ and every non-zero vector $\vec{y}$. \
+> Here $\nabla_\vec{y}f(\vec{a})$ represents the derivative of $f$ at $\vec{a}$ with respect to  $\vec{y}$.  
+> $$\nabla_\vec{y}f(\vec{a})=\lim_{h\rightarrow 0}\frac{f(\vec{a}+h\vec{y})-f(\vec{a})}{h}$$
+> I proved it using that if $\vec{y}\neq0$ then $$\nabla_\vec{-y}f(\vec{a})=-\nabla_\vec{y}f(\vec{a})<0$$
+> This gives a contradiction. Is there any other way to prove this ?
+:::
+
+I think that every proof you find is going to be equivalent to the one you already gave, but here is a proof by meme.  If such a function existed, it would be possible to walk from one point on the graph to another, uphill both ways.
+
+[![meme describing a path from home to school.  The path goes over a giant hill, labeled with “snow” on top.  But slopes of the hill are labeled with “uphill.”][1]][1]
+
+
+  [1]: 9Xf3R.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4135233/prove-that-there-exists-no-scalar-field-which-has-derivative-0-at-a-fixed-po/4135740#4135740) on Mathematics Stack Exchange, 2021-05-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,44 @@
+---
+title: Linear, first order ODE, given general solution
+date: '2016-10-03'
+description: If $y = x^3 + cx^{-3}$ then $$xy' = x\left(3x^2 -3cx^{-4}\right) = 3x^3 - 3cx^{-3}$$ So $$xy' + a0(x) y = 3x^3 - 3cx^{-3}+ a0(x) \left(x^3 + cx^{-3}\right) =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1952201
+se-link: https://math.stackexchange.com/questions/1952192/linear-first-order-ode-given-general-solution/1952201#1952201
+se-score: 0
+se-accepted: false
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Linear, first order ODE, given general solution](https://math.stackexchange.com/questions/1952192/linear-first-order-ode-given-general-solution), asked by [user118035](https://math.stackexchange.com/users/118035/user118035) on Mathematics Stack Exchange (2016-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Construct a linear first order ODE of $$xy'+a_0(x)y=g(x)$$
+> such that the general solution is $$y=x^3+\frac{c}{x^3}$$
+>
+> If I substitute the general solution into the question, 
+> $$xy'+a_0(x)(x^3+\frac{c}{x^3})=g(x)$$
+> this form looks unusual to solve and a(x), g(x) are not given in any expression.  how can I to approach this?
+:::
+
+If $y = x^3 + cx^{-3}$ then
+$$xy' = x\left(3x^2 -3cx^{-4}\right) = 3x^3 - 3cx^{-3}$$
+So
+$$xy' + a_0(x) y 
+   = 3x^3 - 3cx^{-3}+ a_0(x) \left(x^3 + cx^{-3}\right)
+   = (a_0(x)+3)x^3 + c(a_0(x)-3)x^{-3}$$
+Since this is to be equal to a function $g(x)$ independent of $c$, we must have $a_0(x)=3$.  It follows that $g(x)=6x^3$ works.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1952192/linear-first-order-ode-given-general-solution/1952201#1952201) on Mathematics Stack Exchange, 2016-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

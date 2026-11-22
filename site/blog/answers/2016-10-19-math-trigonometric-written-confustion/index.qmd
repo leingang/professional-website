@@ -1,0 +1,54 @@
+---
+title: Trigonometric Written Confustion
+date: '2016-10-19'
+description: There is a trigonometric identity that states $$\cos^2 \theta = \frac{1 + \cos 2\theta}{2}$$ That's what's being employed in your integral >$$\int 4\cos^2x\,dx…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1975688
+se-link: https://math.stackexchange.com/questions/1975662/trigonometric-written-confustion/1975688#1975688
+se-score: 1
+se-accepted: true
+se-tags:
+- trigonometry
+- trigonometric-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trigonometric Written Confustion](https://math.stackexchange.com/questions/1975662/trigonometric-written-confustion), asked by [user36278](https://math.stackexchange.com/users/195607/user36278) on Mathematics Stack Exchange (2016-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am currently doing trig integration and have come across trig functions which are written as:
+>
+>  cos2(x) or 2cos(x).
+>
+> I was wondering whether they are the same thing.Or are they just written differently as in the case of  1/tan(x) being the same as cot(x).
+>
+> **Further clarification:**
+>
+> Integral ( 4cos^2(x) dx)
+>
+> Integral ( 2(1 + cos2x) dx 
+>
+> = 2x + sin2x + C
+:::
+
+There is a [trigonometric identity][1] that states
+$$\cos^2 \theta = \frac{1 + \cos 2\theta}{2}$$
+That's what's being employed in your integral
+>$$\int 4\cos^2x\,dx = \int 2 (1+\cos 2x)\,dx = 2x + \sin 2x + C$$ 
+
+Like Simple Art, I've never seen $\cos 2(x)$ used in a formula.  I would take it to mean $\cos(2x)$, but it could also be, as Emilio suggested, an incorrect transcription of $\cos^2(x)$.  Best avoided, either way.
+
+
+  [1]: https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Power-reduction_formula
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1975662/trigonometric-written-confustion/1975688#1975688) on Mathematics Stack Exchange, 2016-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

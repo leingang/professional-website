@@ -1,0 +1,73 @@
+---
+title: How can I change the font size in math equations?
+date: '2010-11-09'
+description: 'Put this in your preamble, but after all \usepackage commands:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5149
+se-link: https://tex.stackexchange.com/questions/5148/how-can-i-change-the-font-size-in-math-equations/5149#5149
+se-score: 19
+se-accepted: false
+se-tags:
+- math-mode
+- equations
+- fontsize
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I change the font size in math equations?](https://tex.stackexchange.com/questions/5148/how-can-i-change-the-font-size-in-math-equations), asked by [wrongusername](https://tex.stackexchange.com/users/1660/wrongusername) on TeX Stack Exchange (2010-11-09; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I find that whenever I'm typing some equations into a document, and the equation gets a bit complex (let's say a fraction in a parentheses, squared, inside a square root, inside a fraction), the variables and whatnot that I put inside the "inner" parts of the equation get really, really, tiny. But if I set the font size to something a lot larger, the stuff on the "inside" gets tolerable, but the stuff on the "outside" (e.g., "x = lots of junk", x would be in the "outside") become gigantic!
+>
+> How can I make it more pretty like my textbooks, where all variables are at the same size regardless of whatever parentheses/fractions/radicals they're under?
+:::
+
+Put this in your preamble, but after all `\usepackage` commands:
+
+```latex
+\everymath=\expandafter{\the\everymath\displaystyle}
+```
+
+This will effectively add `\displaystyle` to every (inline) math made environment, making all math look like the math that's displayed.  
+
+**Edits:** Thanks to Charles for pointing out that this can/should be done in a way which doesn't clobber the existing `\everymath` token list, in case it's already nonempty.  And as Willie says the `=` is optional.  I like using it; it just reminds me that there is some assignment going on.
+
+**Edit 2:** The OP asked for a detailed explanation.  I'll try.  
+
+First, remember that `\everymath` is a *token list* that is inserted in front of every math mode material.  So if you type `\everymath={\text{Here comes the math: }}` you will get that in front of every equation.  `\everymath={\displaystyle}` does something a little more productive by inserting `\displaystyle` in front of each math mode.  
+
+The trouble arises when you or some other package has already modified `\everymath`.  So we need to *append* `\displaystyle` to the `\everymath` token list.  In pseudo-TeX you want to say:
+
+```latex
+\everymath={\currentcontentsof{\everymath}\displaystyle}
+```
+
+The TeX implementation of the pseudo-macro `\currentcontentsof` is `\the`.  So a closer approximation is this:
+
+```latex
+\everymath={\the\everymath\displaystyle}
+```
+
+But this is going to be trouble, When TeX reads a token list declaration it just reads the tokens *without expanding*.  That is, the `\the` will be expanded not here but at the the first encountered math mode.  That will cause TeX to try to expand `\everymath`, which will need an expansion of `\everymath` inside it.  Oops!  Infinite loop.
+
+So you need the `\the` expanded *before* you save the token list.  Hence `\expandafter`:
+
+```latex
+\everymath=\expandafter{\the\everymath\displaystyle}
+```
+
+When TeX reads `\everymath=`, it expects a token list.  But instead, it gets `\expandafter`, which says "hold on to the next token, expand the following token, then put the held token back in place and expand normally."  So the `{` token is deferred while `\the` is expanded.  `\the` needs another token to work, so the next token `\everymath` is read.  This replaces the two tokens `\the\everymath` with the tokens currently in `\everymath`.  Now that `{` is put back in place, and TeX can read a normal token list declaration.
+
+Other TeXnicians may correct that answer, but it's how I understand things.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5148/how-can-i-change-the-font-size-in-math-equations/5149#5149) on TeX Stack Exchange, 2010-11-09. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

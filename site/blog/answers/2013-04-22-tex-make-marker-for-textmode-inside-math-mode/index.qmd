@@ -1,0 +1,64 @@
+---
+title: Make §...§ marker for textmode INSIDE math mode
+date: '2013-04-22'
+description: 'This isn''t what you asked but it''s a nice way to mix math mode and text mode without having to type \text (which is sort of what you want): build it into the…'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109999
+se-link: https://tex.stackexchange.com/questions/109992/make-marker-for-textmode-inside-math-mode/109999#109999
+se-score: 3
+se-accepted: false
+se-tags:
+- math-mode
+- mathcode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Make §...§ marker for textmode INSIDE math mode](https://tex.stackexchange.com/questions/109992/make-marker-for-textmode-inside-math-mode), asked by [Rupert Hölzl](https://tex.stackexchange.com/users/29437/rupert-h%c3%b6lzl) on TeX Stack Exchange (2013-04-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to definde §...§ as markers for textmode inside math mode. This would be useful for example inside "cases" environments, to add text defining the cases; or for defining sets.
+>
+> Instead of having to write
+>
+> ```latex
+> \{ x \mid x \text{ is prime.}\}
+> ```
+>
+> I want to be able to use
+>
+> ```latex
+> \{ x \mid x § is prime.§\}
+> ```
+>
+> Currently I achieve this in a very primitive way:
+>
+> ```latex
+> \def§#1§{\text{#1}}%
+> ```
+>
+> But this does not nest (text inside math inside text inside math...) unlike when using the \text command.
+>
+> I tried reading about catcodes, mathcodes, etc.pp. but unfortunately this is nowhere documented well enough for me to understand. Also it seems to me that the fact that I want to use § as opening AND closing symbol makes things a lot more complicated.
+>
+> Can you help me?
+:::
+
+This isn't what you asked but it's a nice way to mix math mode and text mode without having to type `\text` (which is sort of what you want): build it into the macro.
+
+```latex
+\newcommand\setst[2]{\left\{#1\mid\text{#2}\right\}
+```
+
+Then you can type  `\setst{x}{$x$ is prime}`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109992/make-marker-for-textmode-inside-math-mode/109999#109999) on TeX Stack Exchange, 2013-04-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

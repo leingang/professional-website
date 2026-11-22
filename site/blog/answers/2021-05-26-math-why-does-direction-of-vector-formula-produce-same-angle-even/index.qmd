@@ -1,0 +1,71 @@
+---
+title: Why does direction of vector formula produce same angle, even when exchanging the order of points?
+date: '2021-05-26'
+description: In your example, $$\begin{align} \frac{y2 - y1}{x2 - x1} &= {8-3}{5-3} = \frac{5}{2} \\ \frac{y1 - y2}{x1 - x2} &= {3-8}{3-5} = \frac{-5}{-2} = \frac{5}{2} \\…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4151945
+se-link: https://math.stackexchange.com/questions/4151918/why-does-direction-of-vector-formula-produce-same-angle-even-when-exchanging-th/4151945#4151945
+se-score: 1
+se-accepted: true
+se-tags:
+- angle
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does direction of vector formula produce same angle, even when exchanging the order of points?](https://math.stackexchange.com/questions/4151918/why-does-direction-of-vector-formula-produce-same-angle-even-when-exchanging-th), asked by [mavavilj](https://math.stackexchange.com/users/248602/mavavilj) on Mathematics Stack Exchange (2021-05-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Why does direction of vector formula produce same signed angle, even when exchanging the order of points?
+>
+> For points $P=(x_1,y_1)$, $Q=(x_2,y_2)$
+>
+> Angle of direction vector is
+>
+> $\arctan(\theta)=\frac{y_2-y_1}{x_2-x_1}$
+>
+> If we assume for example $P=(2,3)$, $Q=(5,8)$.
+>
+> Then both
+>
+> ```
+> atan((8-3)/(5-3))*180/pi
+> ```
+>
+> and
+>
+> ```
+> atan((3-8)/(3-5))*180/pi
+> ```
+>
+> = 68.19859 deg
+>
+> Even though visually they should be different depending on whether one goes from $P$ to $Q$ or from $Q$ to $P$?
+>
+> Do I need another formula?
+:::
+
+In your example, 
+$$\begin{align*}
+    \frac{y_2 - y_1}{x_2 - x_1} &= {8-3}{5-3} = \frac{5}{2} \\
+    \frac{y_1 - y_2}{x_1 - x_2} &= {3-8}{3-5} = \frac{-5}{-2} = \frac{5}{2} \\
+\end{align*}$$
+So it's not really the arctan that's obscuring the order of the points, it's the slope formula.
+
+In the general formula:
+$$\tan \theta = m = \frac{y_2-y_1}{x_2-x_1}$$
+$\theta$ is the angle measured from the positive $x$-axis to the line with slope $y=mx$.  Since $m$ doesn't depend on the order of the points, $\theta$ won't either, not from this formula.
+
+If you want an orientation-dependent vector angle formula in $\mathbb{R}^2$, you can use the cross product.  If $\vec u = \left<x_1,y_1\right>$ and $\vec v = \left<x_2,y_2\right>$, then $\vec u \times \vec v = \left<0,0,x_1y_2 - x_2 y_1\right>$ will have a positive $z$-component if $\vec v$ is counterclockwise from $\vec u$, and negative if clockwise.  Indeed,
+$$\sin\theta = \frac{x_1y_2 - x_2y_1}{\sqrt{x_1^2 + y_1^2} \sqrt{x_2^2 + y_2^2}}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4151918/why-does-direction-of-vector-formula-produce-same-angle-even-when-exchanging-th/4151945#4151945) on Mathematics Stack Exchange, 2021-05-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

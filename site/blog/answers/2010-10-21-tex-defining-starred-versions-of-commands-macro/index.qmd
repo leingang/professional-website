@@ -1,0 +1,56 @@
+---
+title: Defining starred versions of commands (* macro)
+date: '2010-10-21'
+description: If you look at source2e you might see a lot of lines that look like
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4389
+se-link: https://tex.stackexchange.com/questions/4386/defining-starred-versions-of-commands-macro/4389#4389
+se-score: 94
+se-accepted: false
+se-tags:
+- macros
+- starred-version
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Defining starred versions of commands (* macro)](https://tex.stackexchange.com/questions/4386/defining-starred-versions-of-commands-macro), asked by [Neil Olver](https://tex.stackexchange.com/users/490/neil-olver) on TeX Stack Exchange (2010-10-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to define a `*`'d version of a command, something like
+>
+> ```latex
+> \newcommand{\foo}{blah}
+> \newcommand{\foo*}{blahblah}
+> ```
+>
+> If I try to do this, LaTeX complains that I'm trying to redefine `\foo`, so I guess I need to do something special to handle `*`s. But what?
+:::
+
+If you look at [source2e][1] you might see a lot of lines that look like 
+
+```latex
+\def\foo{\@ifstar\@foo\@@foo}
+\def\@foo#1{...}
+\def\@@foo#1{...}
+```
+
+This makes `\foo` a one-argument command that has regular and starred versions.  The starred version is the expansion of `\@foo` while the nonstarred version is that of `\@@foo`.  Using the @ sign in the auxiliary macros is a TeX convention which some authors embrace and some avoid.
+
+There are higher-level ways to do it (as lockstep points out) but once you learn this pattern it's not too hard to use.  Just make sure it's between `\makeatletter...\makeatother` or in a `.sty` file.
+
+**Edits** removed some inaccuracies and editorializing.
+
+
+  [1]: http://www.tex.ac.uk/CTAN/macros/latex/doc/source2e.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4386/defining-starred-versions-of-commands-macro/4389#4389) on TeX Stack Exchange, 2010-10-21, with [edits](https://tex.stackexchange.com/posts/4389/revisions) by [lockstep](https://tex.stackexchange.com/users/510/lockstep). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

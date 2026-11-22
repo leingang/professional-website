@@ -1,0 +1,46 @@
+---
+title: Correct definition for a limit
+date: '2020-02-20'
+description: No, you have your quantifiers in the wrong order. Consider the function $$f(x) = \begin{cases} 1 & x > 0; \\ 0 & x= 0 \\ -1 & x < 0 \end{cases}$$ I claim that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3554067
+se-link: https://math.stackexchange.com/questions/3554016/correct-definition-for-a-limit/3554067#3554067
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Correct definition for a limit](https://math.stackexchange.com/questions/3554016/correct-definition-for-a-limit), asked by [Nikkal](https://math.stackexchange.com/users/688889/nikkal) on Mathematics Stack Exchange (2020-02-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to figure out if this is a correct definition of limit:
+>
+> > If for every $a>0$ there exists $b>0$ such that for every $x \in (x_{0}-a,x_{0}+a)$ we have that $|f(x) - l| < b$, then we say that the limit of $f$ as $x$ goes to $x_{0}$ is $l$.
+>
+> Is this definition correct?
+:::
+
+No, you have your quantifiers in the wrong order.  Consider the function
+$$f(x) = \begin{cases} 1 & x > 0; \\ 0 & x= 0 \\ -1 & x < 0 \end{cases}$$
+I claim that (**according to your definition**) $\lim_{x\to 0} f(x) = 0$.
+
+*Proof*.  Given $a > 0$, let $b=2$.  Choose a point $x$ in the interval $(-a,a)$.  Then $f(x)$ is at least $-1$ and at most $1$.  In particular $|f(x)|<2$.  Since this can be done for all $a>0$, the definition is satisfied. $\Box$
+
+But that doesn't square with anyone else's idea of limit.  
+
+If you swap the order of the quantifiers, and also rule out the condition at the point $x=x_0$, then you get the ordinary $\epsilon$,$\delta$ definition with the names of $\epsilon$ and $\delta$ changed to $b$ and $a$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3554016/correct-definition-for-a-limit/3554067#3554067) on Mathematics Stack Exchange, 2020-02-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,44 @@
+---
+title: How to interpret a double integral?
+date: '2019-08-31'
+description: If you bake a cake in a pan with straight vertical sides, and the cake is one inch thick, what is the volume of the cake?
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3340341
+se-link: https://math.stackexchange.com/questions/3340316/how-to-interpret-a-double-integral/3340341#3340341
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to interpret a double integral?](https://math.stackexchange.com/questions/3340316/how-to-interpret-a-double-integral), asked by [Knight wants Loong back](https://math.stackexchange.com/users/569595/knight-wants-loong-back) on Mathematics Stack Exchange (2019-08-31; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What can be the geometrical meaning of $$\iint_R dA ~~~~~~~~~~ (1)$$ ? It is the particular case of $$\iint_R {f(x,y)} dA$$ where $f(x,y) = 1$. What I have found from my search is that (1) represents the area of the region R which is quite intuitive : if we have an area element which is a function of two variables then we must have to integrate it twice to get the area of the region. But if we see it from a different view point then it is the volume under the plane $z=1$  and above the region R. Well, we can even extend this to triple integrals where $$\iiint_S dV$$ represents the volume. The thing which is causing the doubt is the substitution of $f(x,y)$ or $f(x,y,z)$ with $1$ .   
+>
+> So, which interpretation is correct? Am I wrong somewhere in the very essence?
+>
+> Any help will be much appreciated.
+:::
+
+If you bake a cake in a pan with straight vertical sides, and the cake is one inch thick, what is the volume of the cake?
+
+>! The area of the pan's bottom, in square inches, times 1 inch.
+
+[Think about it first, then hover over the rectangle to reveal.  Also, sorry if you don't use inches for units; it's just more realistic for a cake to be 1 in thick than 1 cm thick.]
+
+So if you're not counting units, the integral of the constant function $1$ over a region $R$ computes the area of $R$.  Likewise, the integral of the constant function $1$ over a solid $E$ in three-dimensional space computes the volume of $E$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3340316/how-to-interpret-a-double-integral/3340341#3340341) on Mathematics Stack Exchange, 2019-08-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

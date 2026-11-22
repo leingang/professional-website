@@ -1,0 +1,45 @@
+---
+title: Am I just not smart enough?
+date: '2014-10-08'
+description: The late great Paul Sally told me a story about his days as a post-doc. He was struggling with his research, and complained to his mentor, "I'm busting my a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 963781
+se-link: https://math.stackexchange.com/questions/962986/am-i-just-not-smart-enough/963781#963781
+se-score: 4
+se-accepted: false
+se-tags:
+- elementary-number-theory
+- soft-question
+- advice
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Am I just not smart enough?](https://math.stackexchange.com/questions/962986/am-i-just-not-smart-enough), asked by [Kun](https://math.stackexchange.com/users/175962/kun) on Mathematics Stack Exchange (2014-10-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When I was doing math, let us say for example, introductory number theory, it seems to take me a lot of time to fully understand a theorem. By understanding, I mean, both intuitively and also rigorously (know how to prove or derive). However, I really find many results (even elementary results like euclidean algorithm or things like $ax+by=\gcd(a,b)$) hard to intuitively understand. I usually will be thinking about these theorems most of the spare time, whenever I am not doing anything requires my thought... 
+>
+> Even if I do comprehend, it takes a long time until I fully comprehend the theorem. And sometimes I may even forgot them(maybe I didn't actually fully comprehend) I feel like I am spending tons of time more than others on number theory. I mean, many of people online claim that introductory number theory is easy. Is that I am not smart enough to do mathematics and make contribution to the world of math later on since great mathematicians must have great intuition, or is that other people are not fully comprehending the theorems and it really does take a lot of time to just figure out one theorem completely?
+>
+> I am very confused. I like math, but I really want to know if I am capable of doing it and make contributions. And I wish to make the best choice for myself. I appreciate any good comments or advices!
+:::
+
+The late great [Paul Sally][1] told me a story about his days as a post-doc.  He was struggling with his research, and complained to his mentor, "I'm busting my a** and I still can't get a theorem!"  
+
+The mentor replied that yes, hard work is necessary for good results.  In consolation, he replied that "In time, you'll find it's sufficient."
+
+  [1]: http://en.wikipedia.org/wiki/Paul_Sally
+
+Apologies for the name drop.  It's necessary to read the quote in his native Bostonian inflection.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/962986/am-i-just-not-smart-enough/963781#963781) on Mathematics Stack Exchange, 2014-10-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

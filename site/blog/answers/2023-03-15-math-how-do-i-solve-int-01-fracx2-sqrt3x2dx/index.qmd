@@ -1,0 +1,59 @@
+---
+title: How do I solve $ \int_{0}^{1}\frac{x^2}{\sqrt{3+x^2}}dx$?
+date: '2023-03-15'
+description: The trigonometric route is to substitute $x = \sqrt{3}\tan\theta$, $dx = \sqrt{3} \sec^2\theta\,d\theta$. Then $\sqrt{3 + x^2} = \sqrt{3} \sec\theta$ and we…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4659862
+se-link: https://math.stackexchange.com/questions/4659849/how-do-i-solve-int-01-fracx2-sqrt3x2dx/4659862#4659862
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I solve $ \int_{0}^{1}\frac{x^2}{\sqrt{3+x^2}}dx$?](https://math.stackexchange.com/questions/4659849/how-do-i-solve-int-01-fracx2-sqrt3x2dx), asked by [Matheman](https://math.stackexchange.com/users/117904/matheman) on Mathematics Stack Exchange (2023-03-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I had to solve this integral:
+>
+> $$\int_{0}^{1}\frac{x^2}{\sqrt{3+x^2}}\mathrm{d}x$$
+> by the substitution $x=\sqrt{3}t$ the indefinite integral can be written as:
+> $$\int \frac{x^2}{\sqrt{3+x^2}}\;\mathrm{d}x = \int \frac{3t^2}{\sqrt{1+t^2}}\; \mathrm{d}t$$
+> at this stage I performed the substitution $\displaystyle t=\frac{e^u-e^{-u}}{2}$, but the computations are definitely too tough for being a high school exercise.
+> I'd like to know if there's a simpler method, by substitution, that allows to solve it.
+:::
+
+The trigonometric route is to substitute $x = \sqrt{3}\tan\theta$, $dx = \sqrt{3} \sec^2\theta\,d\theta$. Then $\sqrt{3 + x^2} = \sqrt{3} \sec\theta$ and we get
+$$\begin{aligned}
+    \int_0^1 \frac{x^2}{\sqrt{3+x^2}}\,dx 
+    &= \int_0^{\pi/6} \frac{3\tan^2\theta \sqrt{3}\sec^2\theta}{\sqrt{3} \sec\theta}\,d\theta
+\\  &= \int_0^{\pi/6} 3\sec\theta\tan^2\theta\,d\theta
+\end{aligned}$$
+At this point you can either:
+
+* Integrate by parts with $u=\tan\theta$ and $dv = \sec\theta\tan\theta\,d\theta$. The new integral is a multiple of $\sec^3\theta$.
+* Substitute $\tan^2\theta = \sec^2\theta-1$ so the integrand is a multiple of $\sec^3\theta - \sec\theta$
+
+Both $\int \sec\theta\,d\theta$ and $\int\sec^3\theta\,d\theta$ are “standard” memorizable (or lookupable) functions. We get
+
+$$\begin{aligned}
+     3\int_0^{\pi/6} \left(\sec^3\theta-\sec\theta\right)\,d\theta
+    &= 3\left[\frac{1}{2}\sec\theta\tan\theta - \ln\left|\sec\theta+\tan\theta\right|\right]^{\pi/6}_0
+    \\&= \frac{3}{2} \left(\sec\frac{\pi}{6}\tan\frac{\pi}{6} - \ln \left( \sec\frac{\pi}{6}+\tan\frac{\pi}{6}\right)\right)
+    \\&= \frac{3}{2} \left(\frac{2}{\sqrt{3}}\cdot \frac{1}{\sqrt{3}} - \ln \left( \frac{2}{\sqrt{3}}+\frac{1}{\sqrt{3}}\right)\right)
+    \\&= 1 - \frac{3}{4} \ln 3
+\end{aligned}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4659849/how-do-i-solve-int-01-fracx2-sqrt3x2dx/4659862#4659862) on Mathematics Stack Exchange, 2023-03-15, with [edits](https://math.stackexchange.com/posts/4659862/revisions) by [CN_lift](https://math.stackexchange.com/users/1159218/cn-lift). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

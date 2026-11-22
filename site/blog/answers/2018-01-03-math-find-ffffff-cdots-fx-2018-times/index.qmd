@@ -1,0 +1,57 @@
+---
+title: Find $f(f(f(f(f(f(\cdots f(x)))))))$ $2018$ times
+date: '2018-01-03'
+description: 'We can rewrite the problem as a first-order difference equation: $$\begin{align} a{n+1} &= \frac{1}{3} an + 3 \\ a0 &= 4 \end{align}$$ We want to know…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2590667
+se-link: https://math.stackexchange.com/questions/2590631/find-ffffff-cdots-fx-2018-times/2590667#2590667
+se-score: 7
+se-accepted: true
+se-tags:
+- functions
+- recurrence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find $f(f(f(f(f(f(\cdots f(x)))))))$ $2018$ times](https://math.stackexchange.com/questions/2590631/find-ffffff-cdots-fx-2018-times), asked by [Student12](https://math.stackexchange.com/users/480602/student12) on Mathematics Stack Exchange (2018-01-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > I was given a problem to calculate $f(f(f(\dots f(x))))$ $2018$ times if $f(x)=\frac{x}{3} + 3$ and $x=4$. 
+>
+> Is it even possible to be done without a computer?
+:::
+
+We can rewrite the problem as a first-order difference equation:
+$$\begin{align*}
+    a_{n+1} &= \frac{1}{3} a_n + 3 \\ a_0 &= 4
+\end{align*}$$
+We want to know $a_{2018}$.
+
+There are a number of standard techniques to solve these, that are covered in discrete math courses.  One trick is temporarily ignore the $+3$ at the end and find a general solution to $a_{n+1} = \frac{1}{3} a_{n}$.  It's not too hard to see that $a_{n} = \frac{1}{3^n}$ satisfies that, and so does any multiple of it.
+
+OK, now what about the $3$?  Let's look for a constant solution to $a_{n+1} = \frac{1}{3}a_n  + 3$.  That is, we solve $a = \frac{1}{3}a + 3$ for $a$.  We get $a = \frac{9}{2}$.
+
+Combining the two, we have a solution $$a_n = c \cdot \left(\frac{1}{3}\right)^n + \frac{9}{2}$$
+This sequence does satisfy $a_{n+1} = \frac{1}{3}a_n + 3$ for any $c$, as you can check.  We now just need to fit the initial condition $a_0 = 4$.  Substituting $n=0$ gives
+$$4= c \cdot 1 + \frac{9}{2} \implies c = - \frac{1}{2}$$
+So our particular solution is 
+$$a_n = -\frac{1}{2} \cdot \left(\frac{1}{3}\right)^n + \frac{9}{2}
+    = \frac{9}{2} - \frac{1}{2\cdot 3^n}$$
+Therefore
+$$a_{2018} = \frac{9}{2} - \frac{1}{2\cdot 3^{2018}}$$
+This is very, *[very][1]* close to $\frac{9}{2} = 4.5$.
+
+
+  [1]: http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=9%2F2%20-%201%2F(2*3%5E2018)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2590631/find-ffffff-cdots-fx-2018-times/2590667#2590667) on Mathematics Stack Exchange, 2018-01-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

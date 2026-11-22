@@ -1,0 +1,60 @@
+---
+title: On "Proving' Infinite Limits, And A Counterexample
+date: '2018-08-28'
+description: It's very good that you're noticing what seems to be a contradiction here. The flaw in your reasoning is that the limit laws can only be used when the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2897246
+se-link: https://math.stackexchange.com/questions/2897228/on-proving-infinite-limits-and-a-counterexample/2897246#2897246
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- self-learning
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[On "Proving' Infinite Limits, And A Counterexample](https://math.stackexchange.com/questions/2897228/on-proving-infinite-limits-and-a-counterexample), asked by user577730 on Mathematics Stack Exchange (2018-08-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The textbook I am using has come up with this method to prove why in infinite limits, the term with the highest degree will dominate: 
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: a5tIe.png
+> It then goes on to say that at infinity, 1000/3x and all the other terms will be virtually 0. Therefore, the function will approach 1 (since it it lim x->infinity (1-0+0-0).
+>
+> However, my problem with this, is for instance, take a function x+2/x-1. On the logic of the above, when we break it up, it is (x+2)*(1/x-1). At infinity, 1/x-1=0. So therefore, the limit is 0. But the limit of x+2/x-2 is actually 1. 
+>
+> We see this again we we take a function sin(x)*1/x. Again, at infinity, the limit should be 0, but it's not. 
+>
+> So what can explain this contradiction? Why is the above proof still right in these situations despite the examples below? How can we know that the proof above is universally true? And why is my logic wrong? Why is is x+2/x-1 not equals to 0?
+:::
+
+> [T]ake a function $\frac{x+2}{x-1}$. On the logic of the above, when we break it up, it is $(x+2)\frac{1}{x-1}$. At infinity, $\frac{1}{x-1}$ [tends to] $0$. So therefore, the limit is 0. But the limit of $\frac{x+2}{x-1}$ is actually $1$. 
+
+It's very good that you're noticing what seems to be a contradiction here.  The flaw in your reasoning is that the limit laws can only be used when the constituent limits exist.  For instance, the product law for limits is
+
+*If $\lim_{x\to\infty}f(x) = L$ and $\lim_{x\to\infty} g(x) = M$, then $\lim_{x\to\infty} f(x)g(x) = LM$.*  
+
+You're trying to apply this law to the situation $f(x) = x+2$ and $g(x) = \frac{1}{x+1}$.  Yes, $\lim_{x\to\infty} g(x) = 0$ and “anything times zero is zero.”  However, $\lim_{x\to\infty} f(x)$ is not a “thing”—it *doesn't exist.*  So we *cannot* apply the product law.
+
+Students get confused because we say $\lim_{x\to\infty}f(x) =\infty$, and because there's an equals sign and a symbol on the other side, it sure looks like the limit “is” something.  But $\lim_{x\to\infty}f(x) =\infty$ is shorthand for an infinite limit.  There is *some* arithmetic than can be done with infinity, but $\infty\cdot0$ is undefined.
+
+> We see this again we we take a function $\sin(x)\frac{1}{x}$. Again, at infinity, the limit should be 0, but it's not. 
+
+Again, the first factor has no limit as $x\to\infty$, so the product law for limits doesn't apply.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2897228/on-proving-infinite-limits-and-a-counterexample/2897246#2897246) on Mathematics Stack Exchange, 2018-08-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

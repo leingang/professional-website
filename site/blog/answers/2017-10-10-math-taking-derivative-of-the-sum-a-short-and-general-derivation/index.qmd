@@ -1,0 +1,50 @@
+---
+title: 'Taking derivative of the sum: A short and general derivation question'
+date: '2017-10-10'
+description: One trick to understanding complicated notation is to do a couple of special cases. For instance, set $n=3$. What is the derivative of $x1+x2+x3$ with respect…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465384
+se-link: https://math.stackexchange.com/questions/2465366/taking-derivative-of-the-sum-a-short-and-general-derivation-question/2465384#2465384
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- ordinary-differential-equations
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Taking derivative of the sum: A short and general derivation question](https://math.stackexchange.com/questions/2465366/taking-derivative-of-the-sum-a-short-and-general-derivation-question), asked by user489188 on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What is the result of the derivative
+>
+> $\frac{\partial \sum_i x_i}{\partial x_i}$
+>
+> Thank you
+:::
+
+One trick to understanding complicated notation is to do a couple of special cases.  For instance, set $n=3$.  What is the derivative of $x_1+x_2+x_3$ with respect to $x_1$? To $x_2$? To $x_3$?  I think you will see a pattern there that can be generalized.
+
+In general, for each $j$,
+$$\frac{\partial}{\partial x_j} \sum_{i=1}^n x_i 
+   =\sum\frac{\partial x_i}{\partial x_j}$$
+The coordinates are independent variables, so the derivative of any of them with respect to any other one of them is zero.  So $\frac{\partial x_i}{\partial x_j} = 0$ if $i \neq j$.  If $i=j$, though, the variables are exactly the same, and the derivative is one.  There's a special name for this kind of symbol, called the **Kronecker delta:**
+$$\frac{\partial x_i}{\partial x_j}  = \delta_{ij} = \begin{cases} 0 & i \neq j \\ 1 & i = j \end{cases}$$
+So we want to find $\sum_{i=1}^n \delta_{ij}$.  
+
+Here's the part which I found confusing at first: we don't know what $i$ is!  But we do know that exactly one of the indices $j=1,2, \dots n$ is equal to $i$.  So $\sum_{i=1}^n \delta_{ij}$ is summing one $1$ and $n-1$ zeroes.  Therefore,
+$$\sum_{i=1}^n \delta_{ij}=1$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465366/taking-derivative-of-the-sum-a-short-and-general-derivation-question/2465384#2465384) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

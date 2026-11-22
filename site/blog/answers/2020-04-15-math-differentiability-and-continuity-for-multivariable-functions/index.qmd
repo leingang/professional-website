@@ -1,0 +1,45 @@
+---
+title: Differentiability and Continuity for multivariable functions
+date: '2020-04-15'
+description: 1) is true. This is usually part of the definition of differentiable.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3626888
+se-link: https://math.stackexchange.com/questions/3626776/differentiability-and-continuity-for-multivariable-functions/3626888#3626888
+se-score: 1
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- derivatives
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiability and Continuity for multivariable functions](https://math.stackexchange.com/questions/3626776/differentiability-and-continuity-for-multivariable-functions), asked by [Snowball](https://math.stackexchange.com/users/733272/snowball) on Mathematics Stack Exchange (2020-04-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have encountered these 2 claims in one textbook, asking whether they are true or false. Searching through the web, however, I was not able to correctly answer them(even understand their concepts). It would be grateful if you can help me.
+>
+> $1)$ If a function $f(x,y)$ is differentiable at $(a,b)$, then $f$ has partial derivatives with respect to both $x$ and $y$ there. 
+> $2)$ If a function $f(x,y)$ is differentiable at $(a,b)$, then all the first-order partial derivatives of $f$ are continuous at $(a,b)$.
+:::
+
+1) is true.  This is usually part of the definition of *differentiable*.  
+
+2) is false.  A typical counterexample is $f(x,y) = \frac{xy^2}{x^2+y^2}$ at $(0,0)$.  Both partial derivatives exist at $(0,0)$, and have value $0$.  But away from $(0,0)$,
+$$\begin{align*}
+   \frac{\partial f}{\partial x} &= \frac{y^2(y^2-x^2)}{(x^2+y^2)^2} \\
+   \frac{\partial f}{\partial y} &= \frac{2x^3y}{(x^2+y^2)^2}
+\end{align*}$$
+and these derivatives do not approach $0$ as $(x,y) \to (0,0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3626776/differentiability-and-continuity-for-multivariable-functions/3626888#3626888) on Mathematics Stack Exchange, 2020-04-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

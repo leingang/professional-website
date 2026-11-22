@@ -1,0 +1,52 @@
+---
+title: What's wrong with the proof that $1!=0$
+date: '2021-06-11'
+description: Line 2 is wrong. That's not the Taylor series for $-\cos x$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4170170
+se-link: https://math.stackexchange.com/questions/4170165/whats-wrong-with-the-proof-that-1-0/4170170#4170170
+se-score: 6
+se-accepted: true
+se-tags:
+- integration
+- taylor-expansion
+- fake-proofs
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What's wrong with the proof that $1!=0$](https://math.stackexchange.com/questions/4170165/whats-wrong-with-the-proof-that-1-0), asked by [p_square](https://math.stackexchange.com/users/920884/p-square) on Mathematics Stack Exchange (2021-06-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I found this proof which shows that $1! = 0$ using Taylor Series. Here's what we do:
+> Start with the Taylor series of $\sin(x)$. We get :
+> $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots$$ Now if we integrate both the sides we get:
+> $$-\cos(x) = \frac{x^2}{2} - \frac{x^4}{4!} + \frac{x^6}{6!} - \frac{x^8}{8!} + \dots$$ So we get that $\cos(x)$ is equal to(By multiplying both sides by $-1$) :
+> $$\cos(x) = -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \frac{x^8}{8!} - \dots$$ Now we'll again integrate both the sides, getting :
+> $$\sin(x) = -\frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \dots$$ Now if we re-arrange it, we get :
+> $$\sin(x) = \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \frac{x^{11}}{11!} + \dots$$ Now, we'll do the same thing with $\cos(x)$, getting :
+> $$\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots (1)$$ Now, we'll re-arrange $\cos(x)$ too, getting :
+> $$\cos(x) = -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots (2)$$ Now, we know that $(1)=(2)$ So,
+> $$1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots = -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots$$ So, we get that $1! = 0$
+>
+> But, what's wrong with this proof?
+:::
+
+Line 2 is wrong.  That's not the Taylor series for $-\cos x$.  
+
+With any functions, including Taylor series, antiderivatives are only defined up to a constant.  So line 2 should read
+$$-\cos(x) +C = \frac{x^2}{2} - \frac{x^4}{4!} + \frac{x^6}{6!} - \frac{x^8}{8!} + \dots$$ 
+In this case $C=1$, since $\cos(0) = 1$.
+
+The rest of the derivation covers up the basic fact that you are missing a $1$.  So it's not surprising that it leads to $1=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4170165/whats-wrong-with-the-proof-that-1-0/4170170#4170170) on Mathematics Stack Exchange, 2021-06-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

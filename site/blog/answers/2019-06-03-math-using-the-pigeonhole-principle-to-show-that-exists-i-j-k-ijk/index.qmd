@@ -1,0 +1,45 @@
+---
+title: using the pigeonhole principle to show that $\exists i,j,k.(i<j<k)\wedge(<i,j>,<j,k>,<k,i>\in R) \vee (<i,j>,<j,k>,<k,i>\notin R)$
+date: '2019-06-03'
+description: I'm assuming that the relation is irreflexive (no element is related to itself) rather than non-reflexive (it is not the case that each element is related to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3249596
+se-link: https://math.stackexchange.com/questions/3249585/using-the-pigeonhole-principle-to-show-that-exists-i-j-k-ijk-wedgei-j/3249596#3249596
+se-score: 1
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- pigeonhole-principle
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[using the pigeonhole principle to show that $\exists i,j,k.(i<j<k)\wedge(<i,j>,<j,k>,<k,i>\in R) \vee (<i,j>,<j,k>,<k,i>\notin R)$](https://math.stackexchange.com/questions/3249585/using-the-pigeonhole-principle-to-show-that-exists-i-j-k-ijk-wedgei-j), asked by [KIMKES1232](https://math.stackexchange.com/users/634112/kimkes1232) on Mathematics Stack Exchange (2019-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> If $R$ is a symmetric and irreflexive relation 
+> $R\subseteq [6]\times [6]$ , $[6]=\{1,....6\}$
+>
+> How can I show that:
+>
+>  $\exists i,j,k.(i<j<k)\wedge(\langle i,j\rangle,\langle j,k\rangle, \langle k,i\rangle\in R) \vee (\langle i,j\rangle,\langle j,k\rangle,\langle k,i\rangle\notin R)$
+>
+> How can I use the pigeonhole principle to solve the problem ?
+:::
+
+I'm assuming that the relation is *irreflexive* (no element is related to itself) rather than non-reflexive (it is not the case that each element is related to itself).  Such a relation can be modeled with a simple graph.  In that case, the statement to be proved is:
+
+> Given a simple graph with six vertices, there is either a set of three vertices all of which adjacent to each other, or a set of three vertices none of which are adjacent to each other.
+
+This is sometimes called the [Theorem on friends and strangers](https://en.wikipedia.org/wiki/Theorem_on_friends_and_strangers).  The proof is a straightforward (perhaps slightly tedious) case-by-case analysis.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3249585/using-the-pigeonhole-principle-to-show-that-exists-i-j-k-ijk-wedgei-j/3249596#3249596) on Mathematics Stack Exchange, 2019-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

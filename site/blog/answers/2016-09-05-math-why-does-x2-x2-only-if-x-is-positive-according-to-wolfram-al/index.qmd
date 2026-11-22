@@ -1,0 +1,54 @@
+---
+title: Why does $|x^2| = x^2$, only if $x$ is positive? (according to Wolfram Alpha)
+date: '2016-09-05'
+description: 'Assuming that we''re looking at the page linked by The Chaz 2.0:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1915720
+se-link: https://math.stackexchange.com/questions/1915695/why-does-x2-x2-only-if-x-is-positive-according-to-wolfram-alpha/1915720#1915720
+se-score: 3
+se-accepted: true
+se-tags:
+- algebra-precalculus
+- absolute-value
+- wolfram-alpha
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does $|x^2| = x^2$, only if $x$ is positive? (according to Wolfram Alpha)](https://math.stackexchange.com/questions/1915695/why-does-x2-x2-only-if-x-is-positive-according-to-wolfram-alpha), asked by [Henry Rillovian](https://math.stackexchange.com/users/359307/henry-rillovian) on Mathematics Stack Exchange (2016-09-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I don't understand why Wolfram says $|x^2|$ is equal to $x^2$, but only when $x$ is positive. Since we're squaring the value of $x$, the input to $abs$ will always be positive, and the result will be identical to the input. Here's my proof:
+>
+> Lets take two possible values of $x$: $k$, and $-k$, and compare their equations: $|k^2|$ and $|(-k)^2|$
+>
+> It's trivial that $(-k)^2$ = $k^2$, since $(-k)^2$ = $(-1)^2 \cdot k^2$ = $1 \cdot k^2$ = $k^2$.
+>
+> So $|(-k)^2|$ = $|(-1)^2 \cdot k^2|$ = $|1 \cdot k^2|$ = $|k^2$|.
+>
+> So it then follows that since $|k^2| = k^2$ when $k$ is positive,  $|k^2| = k^2$ for all values $k$.
+>
+> Where am I going wrong?
+:::
+
+Assuming that we're looking at the [page][1] linked by The Chaz 2.0:
+
+![wolfram alpha page][2]]
+
+I read this as telling the truth but not the whole truth.  In other words, *if* $x$ is positive *then* $|x^2| = x^2$.  Wolfram Alpha is not saying that if $x^2 = |x^2|$ then $x$ is positive.  That would be false, as you point out.
+
+I am not sure why Wolfram Alpha provides this incomplete information.  It does try to be general and not assume that variables have strictly *real* values.  Notice that $|i^2| \neq i^2$.  As for why it doesn't say “Alternate form assuming $x$ is real,” who knows.
+
+  [1]: https://www.wolframalpha.com/input/?i=%7Cx%5E2%7C
+  [2]: Ie50q.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1915695/why-does-x2-x2-only-if-x-is-positive-according-to-wolfram-alpha/1915720#1915720) on Mathematics Stack Exchange, 2016-09-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

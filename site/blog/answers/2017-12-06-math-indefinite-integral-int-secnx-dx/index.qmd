@@ -1,0 +1,39 @@
+---
+title: 'Indefinite Integral: $\int sec^{n}x dx$'
+date: '2017-12-06'
+description: 'Peel off two factors of secant: $$\sec^n x = \sec^{n-2} x \cdot\sec^2 x$$ Now integrate by parts with $u=\sec^{n-2} x$ and $dv = \sec^2 x\,dx$. Rearrange…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2553244
+se-link: https://math.stackexchange.com/questions/2553240/indefinite-integral-int-secnx-dx/2553244#2553244
+se-score: 2
+se-accepted: true
+se-tags:
+- integration
+- indefinite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Indefinite Integral: $\int sec^{n}x dx$](https://math.stackexchange.com/questions/2553240/indefinite-integral-int-secnx-dx), asked by [sergio.azevedo](https://math.stackexchange.com/users/474746/sergio-azevedo) on Mathematics Stack Exchange (2017-12-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How do I show that
+>
+> $$\int \sec^{n}(x)\,\mathrm{d}x = \frac{1}{n-1}\sec^{n-2}(x)\tan(x) + \frac{n-2}{n-1}\int \sec^{n-2}(x)\,\mathrm{d}x$$
+:::
+
+Peel off two factors of secant:
+$$\sec^n x = \sec^{n-2} x \cdot\sec^2 x$$
+Now integrate by parts with $u=\sec^{n-2} x$ and $dv = \sec^2 x\,dx$.  Rearrange making use of the formula
+$$\tan^2 x = \sec^2 x - 1$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2553240/indefinite-integral-int-secnx-dx/2553244#2553244) on Mathematics Stack Exchange, 2017-12-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

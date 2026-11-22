@@ -1,0 +1,42 @@
+---
+title: Indeterminate form $0 \times \infty$
+date: '2019-07-24'
+description: 'Perhaps it helps to think about it this way: take a rectangle and bisect it horizontally from left to right. The larger rectangle is decomposed into two…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3302716
+se-link: https://math.stackexchange.com/questions/3302698/indeterminate-form-0-times-infty/3302716#3302716
+se-score: 1
+se-accepted: true
+se-tags:
+- sequences-and-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Indeterminate form $0 \times \infty$](https://math.stackexchange.com/questions/3302698/indeterminate-form-0-times-infty), asked by [AgentS](https://math.stackexchange.com/users/168854/agents) on Mathematics Stack Exchange (2019-07-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In below figure the longer polygon is obtained by halving the height and doubling the length. Both areas are same. I'm wondering what happens if we continue this forever. Height follows the sequence $\{\frac{1}{2^n}\}$ and length follows the sequence $\{2^n\}$. Then the area is given by 
+> $$\frac{1}{2^n}\times 2^n$$
+> which is always $1$. However the height seems to approach $0$. Doesn't this make area also $0$? I couldn't imagine how the area can remain $1$ even when the height becomes $0$. Any help?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: c3yiy.png
+:::
+
+Perhaps it helps to think about it this way: take a rectangle and bisect it horizontally from left to right.  The larger rectangle is decomposed into two smaller rectangles, one above the other.
+
+Take the rectangle “on top” and move it so it's “on the right” of the lower rectangle.  The resulting rectangle has the same area of the previous rectangle, because all we did was cut it into pieces and rearrange the pieces.  But it's equivalent to halving the height and doubling the width of the rectangle.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3302698/indeterminate-form-0-times-infty/3302716#3302716) on Mathematics Stack Exchange, 2019-07-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

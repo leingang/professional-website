@@ -1,0 +1,38 @@
+---
+title: Let $R$ be a relation. Suppose that $A$ and $B$ are two sets. Then $R[A] \setminus R[B]$ $\subseteq$ $R[A\setminus B]$
+date: '2020-03-03'
+description: Assuming that Graham's clarification is correct, the left-hand side $R[A] \setminus R[B]$ is the set of all $x$ such that $x \mathrel{R} y$ for some $y$ in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3568471
+se-link: https://math.stackexchange.com/questions/3568453/let-r-be-a-relation-suppose-that-a-and-b-are-two-sets-then-ra-setmin/3568471#3568471
+se-score: 0
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $R$ be a relation. Suppose that $A$ and $B$ are two sets. Then $R[A] \setminus R[B]$ $\subseteq$ $R[A\setminus B]$](https://math.stackexchange.com/questions/3568453/let-r-be-a-relation-suppose-that-a-and-b-are-two-sets-then-ra-setmin), asked by [Abigail Webb](https://math.stackexchange.com/users/756496/abigail-webb) on Mathematics Stack Exchange (2020-03-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know how to prove something is a subset of another but I’m not sure how to use the properties of the image to prove $x$ is not in the image of $B.$
+:::
+
+Assuming that Graham's clarification is correct, the left-hand side $R[A] \setminus R[B]$ is the set of all $x$ such that $x \mathrel{R} y$ for some $y$ in $A$, but $x \mathrel{R} z$ is true for no $z \in B$.
+
+The right-hand side $R[A\setminus B]$ is the set of all $x$ such that $x \mathrel{R} y$ for some $y$ that is in $A$ but not in $B$.
+
+Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3568453/let-r-be-a-relation-suppose-that-a-and-b-are-two-sets-then-ra-setmin/3568471#3568471) on Mathematics Stack Exchange, 2020-03-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

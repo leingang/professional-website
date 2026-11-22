@@ -1,0 +1,52 @@
+---
+title: Is it common to provide digital notes (slides or handwritten) for students?
+date: '2014-08-19'
+description: When I last taught big lecture classes, I would distribute pre-class and post-class versions of my slides.
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 27362
+se-link: https://academia.stackexchange.com/questions/27347/is-it-common-to-provide-digital-notes-slides-or-handwritten-for-students/27362#27362
+se-score: 4
+se-accepted: false
+se-tags:
+- teaching
+- note-taking
+- presentation
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it common to provide digital notes (slides or handwritten) for students?](https://academia.stackexchange.com/questions/27347/is-it-common-to-provide-digital-notes-slides-or-handwritten-for-students), asked by [darthbith](https://academia.stackexchange.com/users/7346/darthbith) on Academia Stack Exchange (2014-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am preparing a lecture course for this semester and I am planning to teach from slides. I will consider these slides my notes for the course. However, the following points may also apply to handwritten notes that a lecturer might use as a reference.
+>
+> I can see several advantages and disadvantages associated with providing the students with the notes for a given lecture prior to that lecture:
+>
+> Advantages:
+>
+> - Students have to write less (because the core of the material is already present), so more material can be covered;
+>
+> Disadvantages:
+>
+> - Students may lose focus more easily when they have digital notes because they do not have to copy everything down (this was my experience as an undergrad);
+> - Students may choose not to attend class because notes are available elsewhere (of course, they may choose to do so anyways...).
+>
+> One alternative I have considered is to distribute all of the notes relevant to an exam some suitable time period prior to that exam. However, this may reduce the effectiveness of the advantage, although it will mitigate to a certain extent the disadvantages. So, my question is as in the title: Is it common for professors to distribute digital notes to the class? If so, what methods are common?
+:::
+
+When I last taught big lecture classes, I would distribute pre-class and post-class versions of my slides.  
+
+The pre-class versions would go online the night before.  They would have fewer steps worked out (I teach math), some solutions left blank for students to ponder in advance, and jokes subtracted.  They would be laid out three slideframes to a letter-sized page, with ample space for annotation.  So they could print them out and take them to class.
+
+The post-class versions would be the complete slideshow from class, with worked-out solutions, jokes, and errata included.  They would go up at the end of the day of class (depending on how much I had to fix).  They were not laid out to be printed; it was just one slide per page of PDF.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/27347/is-it-common-to-provide-digital-notes-slides-or-handwritten-for-students/27362#27362) on Academia Stack Exchange, 2014-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

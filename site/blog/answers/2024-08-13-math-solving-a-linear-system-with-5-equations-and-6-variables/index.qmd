@@ -1,0 +1,42 @@
+---
+title: Solving a Linear System with 5 Equations and 6 Variables
+date: '2024-08-13'
+description: Although the number of equations and variables makes the calculation by hand rather tedious, this is a straightforward application of Gaussian elimination.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4958179
+se-link: https://math.stackexchange.com/questions/4958095/solving-a-linear-system-with-5-equations-and-6-variables/4958179#4958179
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Solving a Linear System with 5 Equations and 6 Variables](https://math.stackexchange.com/questions/4958095/solving-a-linear-system-with-5-equations-and-6-variables), asked by [Someone](https://math.stackexchange.com/users/1264858/someone) on Mathematics Stack Exchange (2024-08-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Variables $a,b,c,d,e,f$ are real numbers such that: 
+> $$\begin{align} &a+b+c+d+e+f=0 \\ &a+2b+3c+4d+2e+2f=0 \\ &a+3b+6c+9d +4e +6f=0 \\ &a+4b+10c+16d+8e+24f=0 \\ &a+5b+15c +25d+16e+120f=42\end{align}$$
+>
+> then the question is to find the sum of digits of $a+6b+21c+36d+32e+720f$.
+>
+> My attempt: I tried subtracting, and solving using matrix, but can't solve further. Any hints would help a lot. To elaborate, from subtracting equation $5$ and $4$, $4$ and $3$, $3$ and $2$, and $4-3-2$ and  $3-2-1$ , I was able to reduce: $a=28f$, $e=\frac{13f}5$, $a= \frac{84e}{13}$ but cannot solve further.
+:::
+
+Although the number of equations and variables makes the calculation by hand rather tedious, this is a straightforward application of Gaussian elimination. 
+
+One shortcut would be to add one more variable, let's call it $g$, and one more equation:
+$$a+6b+21c+36d+32e+720f-g = 0$$
+There is one free variable, but once you solve the system, you will see $g$ does not depend on it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4958095/solving-a-linear-system-with-5-equations-and-6-variables/4958179#4958179) on Mathematics Stack Exchange, 2024-08-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

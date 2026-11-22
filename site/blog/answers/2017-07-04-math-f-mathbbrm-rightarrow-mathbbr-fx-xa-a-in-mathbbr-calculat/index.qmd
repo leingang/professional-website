@@ -1,0 +1,55 @@
+---
+title: $f:\mathbb{R^m} \rightarrow \mathbb{R}, f(x) = |x|^a, a\in \mathbb{R}$. Calculate the derivative of f.
+date: '2017-07-04'
+description: 'Starting with where you left off, L''Hôpital''s Rule is useful: $$\begin{align} \lim{t\to 0} \frac{\left(\left<x,x\right> + 2t \left<x,v\right> + t^2…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2345969
+se-link: https://math.stackexchange.com/questions/2345673/f-mathbbrm-rightarrow-mathbbr-fx-xa-a-in-mathbbr-calculat/2345969#2345969
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$f:\mathbb{R^m} \rightarrow \mathbb{R}, f(x) = |x|^a, a\in \mathbb{R}$. Calculate the derivative of f.](https://math.stackexchange.com/questions/2345673/f-mathbbrm-rightarrow-mathbbr-fx-xa-a-in-mathbbr-calculat), asked by [Matheus barros castro](https://math.stackexchange.com/users/371458/matheus-barros-castro) on Mathematics Stack Exchange (2017-07-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $f:\mathbb{R^m} \rightarrow \mathbb{R}, f(x) = |x|^a, a\in \mathbb{R}$ and $|\cdot |$ is the euclidean norm ($|x| = \sqrt{<x,x>}$). Show that $df(x)\cdot v = a |x|^{a-2}<x,v>$
+>
+>
+> $df(x)\cdot v = \frac{\partial f(x)}{\partial v} = \lim_{t \to 0}\frac{f(x+tv)-f(x)}{t}$ by definition.
+>
+> $\lim_{t \to 0}\frac{f(x+tv)-f(x)}{t} = \lim_{t \to 0}\frac{|x+tv|^a-|x|^a}{t} =  \lim_{t \to 0}\frac{(<x+tv,x+tv>)^{a/2}-(<x,x>)^{a/2}}{t}$
+> $$=\lim_{t\to 0}\frac{(<x,x>+2t<x,v>+t^2<v,v>)^{a/2}-<x,x>^{a/2}}{t}$$
+>
+> From this part I can't make anything else, any hints?
+:::
+
+Starting with where you left off, L'Hôpital's Rule is useful:
+$$\begin{align*}
+    \lim_{t\to 0} \frac{\left(\left<x,x\right> + 2t \left<x,v\right> + t^2 \left<v,v\right>\right)^{a/2} - \left<x,x\right>^{a/2}}{t}
+  &=\lim_{t\to 0} \frac{a}{2}\left(\left<x,x\right> + 2t \left<x,v\right> + t^2 \left<v,v\right>\right)^{a/2-1}\left(2\left<x,v\right> + 2t\left<v,v\right>\right)\\
+  &=\frac{a}{2}\left<x,x\right>^{a/2-1}\cdot 2 \left<x,v\right> = a\left<x,x\right>^{(a-2)/2}\left<x,v\right>\\
+  &=a \left|x\right|^{a-2} \left<x,v\right>
+\end{align*}$$
+If $x=0$, use the definition, just like Gio:
+$$\begin{align*}
+    \lim_{t\to 0} \frac{\left(\left<0,0\right> + 2t \left<0,v\right> + t^2 \left<v,v\right>\right)^{a/2} - \left<0,0\right>^{a/2}}{t}
+    &= \lim_{t\to 0} \frac{\left(t^2\left<v,v\right>\right)^{a/2}}{t} \\
+    &= \left<v,v\right>\lim_{t\to 0} \frac{|t|^a}{t}
+\end{align*}$$
+which is zero iff $a>1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2345673/f-mathbbrm-rightarrow-mathbbr-fx-xa-a-in-mathbbr-calculat/2345969#2345969) on Mathematics Stack Exchange, 2017-07-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

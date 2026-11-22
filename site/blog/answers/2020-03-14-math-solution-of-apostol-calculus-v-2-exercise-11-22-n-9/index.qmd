@@ -1,0 +1,69 @@
+---
+title: Solution of Apostol calculus v 2 exercise 11.22 n. 9
+date: '2020-03-14'
+description: Your approach looks good to me. I solved it a bit more explicitly using $\theta$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3581121
+se-link: https://math.stackexchange.com/questions/3581045/solution-of-apostol-calculus-v-2-exercise-11-22-n-9/3581121#3581121
+se-score: 2
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Solution of Apostol calculus v 2 exercise 11.22 n. 9](https://math.stackexchange.com/questions/3581045/solution-of-apostol-calculus-v-2-exercise-11-22-n-9), asked by [latelrn](https://math.stackexchange.com/users/701966/latelrn) on Mathematics Stack Exchange (2020-03-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am looking at the solution to this exercise that says
+>
+> > Suppose the differential equation
+> $$P(x,y)dx+Q(x,y)dy=0$$
+> has an integrating factor $\mu(x,y)$ which leads to a one-parameter family of solutions of the form $\phi(x,y)=C$. If the slope of the curve $\phi(x,y)=C$ at $(x,y)$ is $tan\theta$, the unit normal vector $\pmb{n}$ is taken to mean
+> $$\pmb{n}=sin\theta\pmb{i}-cos\theta\pmb{j}.$$
+> There is a scalar field $g(x,y)$ such that the normal derivative of $\phi$ is given by the formula 
+> $$\frac{\partial\phi}{\partial n}=\mu(x,y)g(x,y),$$
+> where $\frac{\partial\phi}{\partial n}=\nabla\phi\cdot\pmb{n}$. Find an explicit formula for $g(x,y)$ in terms of $P(x,y)$ and $Q(x,y)$.
+>
+> The solution of the exercise (I cheated, I know) reported at the end of the book is 
+>
+> $$g(x,y)=\pm\sqrt{P^2(x,y)+Q^2(x,y)}$$
+>
+> What I observed to justify this is that if the equation $P(x,y)dx+Q(x,y)dy=0$ has an integrating factor $\mu(x,y)$, it means that the equation $\mu(x,y)P(x,y)dx+\mu(x,y)Q(x,y)dy=0$ is exact, i.e. the field
+> $\mu(x,y)P(x,y)\pmb{i}+\mu(x,y)Q(x,y)\pmb{j}$ is the gradient of the field $\phi(x,y)$. I then observe that being the gradient always orthogonal to level curves, it is always aligned with the unit outer normal $\pmb{n}$, hence the scalar product $\nabla\phi\cdot\pmb{n}$ is the magnitude of the gradient itself, $\sqrt{\mu^2(x,y)P^2(x,y)+\mu(x,y)^2Q^2(x,y)}$, and the solution derives from the fact that an integrating factor is always non zero when needed.
+>
+> Does this logic make sense? I don't understand how the definition of unit normal vector in terms of $\theta$ could be used... maybe in a more rigorous proof which I fail to grasp.
+> Also, is the solution of this exercise used as a formula to solve a particular class of differential equations?
+>
+> Thanks
+:::
+
+Your approach looks good to me.  I solved it a bit more explicitly using $\theta$.
+
+If $\mu (P\,dx + Q\,dy)=0$ is exact, there exists $\phi$ such that $\nabla \phi = \mu P \mathbf{i} + \mu Q \mathbf{j}$.  So 
+$$\frac{\partial \phi}{\partial x} = \mu P
+    \qquad
+    \frac{\partial \phi}{\partial y} = \mu Q$$
+Along level curves $\phi = C$, the slope of the tangent line to $(x,y)$ is 
+$$\frac{dy}{dx} = - \frac{\partial \phi/\partial x}{\partial \phi/\partial y}
+                  = - \frac{P}{Q}$$
+Setting $-\frac{P}{Q} = \tan\theta = \frac{\sin\theta}{\cos\theta}$, we see a solution with $\sin\theta = -\frac{P}{\sqrt{P^2+Q^2}}$ and $\cos\theta = \frac{Q}{\sqrt{P^2+Q^2}}$.  Then
+$$\mathbf{n} = - \frac{P}{\sqrt{P^2+Q^2}} \mathbf{i} - \frac{Q}{\sqrt{P^2+Q^2}} \mathbf{j}$$
+is a unit normal to the same level curve at $(x,y)$.  It follows that
+$$\frac{\partial \phi}{\partial n}
+    = \nabla \phi \cdot \mathbf{n}
+    = \left(\mu P \mathbf{i} + \mu Q \mathbf{j}\right) \cdot
+      \left(- \frac{P}{\sqrt{P^2+Q^2}} \mathbf{i} - \frac{Q}{\sqrt{P^2+Q^2}} \mathbf{j}\right) = -\frac{\mu(P^2+Q^2)}{\sqrt{P^2+Q^2}} = -\mu\sqrt{P^2+Q^2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3581045/solution-of-apostol-calculus-v-2-exercise-11-22-n-9/3581121#3581121) on Mathematics Stack Exchange, 2020-03-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

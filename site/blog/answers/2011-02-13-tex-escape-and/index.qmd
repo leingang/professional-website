@@ -1,0 +1,46 @@
+---
+title: Escape "> and <"
+date: '2011-02-13'
+description: 'I don''t think the less-than and greater-than signs are that pretty here. You might try instead:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 11018
+se-link: https://tex.stackexchange.com/questions/11012/escape-and/11018#11018
+se-score: 15
+se-accepted: false
+se-tags:
+- symbols
+- punctuation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Escape "> and <"](https://tex.stackexchange.com/questions/11012/escape-and), asked by [Till](https://tex.stackexchange.com/users/3564/till) on TeX Stack Exchange (2011-02-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have the following piece of text which I want to output literally: `<<"Welcome">>`. However it's converted to those funky quotations. I've been trying all sorts of things with `\` mostly but to no avail.
+>
+> `\verb=!<<"Welcome">>!` kind of works, or gets the job done, but then it loses all other formatting (font face, size, etc.) as well.
+:::
+
+I don't think the less-than and greater-than signs are that pretty here.  You might try instead:
+
+ - `$\langle\langle$``Welcome''$\rangle\rangle$` for angle brackets that are narrower and taller than the mathematical relations.
+ - `\guillemotleft``Welcome''\guillemotright` for french quotation marks.  Make sure you also have `\usepackage[T1]{fontenc}` in the preamble.
+
+![enter image description here][1]
+
+To be honest I don't think any of those look that pretty, but it is what you asked for. `:-D`
+
+
+  [1]: nTEwn.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11012/escape-and/11018#11018) on TeX Stack Exchange, 2011-02-13, with [edits](https://tex.stackexchange.com/posts/11018/revisions) by [smonff](https://tex.stackexchange.com/users/136146/smonff). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,52 @@
+---
+title: How to add paragraph line number in right margin
+date: '2011-03-15'
+description: Have a look at the lineno package.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13517
+se-link: https://tex.stackexchange.com/questions/13515/how-to-add-paragraph-line-number-in-right-margin/13517#13517
+se-score: 4
+se-accepted: false
+se-tags:
+- paragraphs
+- line-numbering
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to add paragraph line number in right margin](https://tex.stackexchange.com/questions/13515/how-to-add-paragraph-line-number-in-right-margin), asked by [yolo](https://tex.stackexchange.com/users/3864/yolo) on TeX Stack Exchange (2011-03-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> In passages, the line numbers are given on the right side of the paragraph. Like this:
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: TTkhD.png
+>
+> How could this be implemented in LaTeX?
+:::
+
+Have a look at the [`lineno`](http://ctan.org/pkg/lineno) package.
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[modulo,right]{lineno}
+\begin{document}
+\linenumbers
+\lipsum
+\end{document}
+```
+
+**Edit** package options suggested by Seamus.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13515/how-to-add-paragraph-line-number-in-right-margin/13517#13517) on TeX Stack Exchange, 2011-03-15. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

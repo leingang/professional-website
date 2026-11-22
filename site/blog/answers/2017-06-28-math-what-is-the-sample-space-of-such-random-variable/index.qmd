@@ -1,0 +1,62 @@
+---
+title: What is the sample space of such random variable?
+date: '2017-06-28'
+description: You can use as a sample space the set $$\Omega=\left\{H,TH,TTH,TTTH,TTTT\right\}$$ The probabilities of these outcomes are $\frac{1}{2}$, $\frac{1}{4}$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2339456
+se-link: https://math.stackexchange.com/questions/2339408/what-is-the-sample-space-of-such-random-variable/2339456#2339456
+se-score: 1
+se-accepted: false
+se-tags:
+- probability
+- random-variables
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the sample space of such random variable?](https://math.stackexchange.com/questions/2339408/what-is-the-sample-space-of-such-random-variable), asked by [Eric](https://math.stackexchange.com/users/309041/eric) on Mathematics Stack Exchange (2017-06-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I see a question in Chinese senior high schools books:
+>
+> > Throwing a fair coin until either there is one Head or four Tails.
+> > Find the expectation of times of throwing.
+> > (You start throwing a coin, if you see Head, then the game suddenly over; and if you see four Tail, the game is over too. Only these two situation can the game be over.)
+>
+> (The answer is $1\times\frac{1}{2}+2\times\frac{1}{4}+\cdots=\frac{15}{8}$)
+>
+> I know that, if we want to calculate the expectation, we, of course, need to find the random variable first. In order to find the random variable, we need to know the sample space of the experiment. However, how can we say about this sample space? The throwing times are varing, not a constant like 3. If the times we throw is 3, the sample space is $\{(a_1,a_2,a_3)\mid \forall 1\le i\le 3,~a_i\in\{H,T\}\}$. But the sample space like this question, is not like this one. What is its sample space?
+:::
+
+You can use as a sample space the set
+$$\Omega=\left\{H,TH,TTH,TTTH,TTTT\right\}$$
+The probabilities of these outcomes are $\frac{1}{2}$, $\frac{1}{4}$, $\frac{1}{8}$, $\frac{1}{16}$, and $\frac{1}{16}$ respectively.
+
+[You asked how to show this rigorously.  Each throw is independent from every other throw, and on each throw the probability of $H$ or $T$ is $\frac{1}{2}$.  The probability of independent events is the product of the probabilities of each of those events.]
+
+Let $X$ be the number of throws in each outcome.  That's just the length of the word: 
+$$\begin{align*}
+    X(H) &= 1 \\
+    X(TH) &= 2 \\
+    X(TTH) &= 3 \\
+    X(TTTH) &= 4 \\
+    X(TTTT) &= 4
+\end{align*}$$
+So the expected value is:
+$$E(X) = 1 \left(\frac{1}{2}\right)
+          +2 \left(\frac{1}{4}\right)
+          +3 \left(\frac{1}{8}\right)
+          +4 \left(\frac{1}{16}\right)
+          +4 \left(\frac{1}{16}\right)
+         = \frac{15}{8}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2339408/what-is-the-sample-space-of-such-random-variable/2339456#2339456) on Mathematics Stack Exchange, 2017-06-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

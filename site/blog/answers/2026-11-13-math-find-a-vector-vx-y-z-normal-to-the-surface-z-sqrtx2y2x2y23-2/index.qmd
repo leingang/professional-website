@@ -1,0 +1,71 @@
+---
+title: Find a vector $V(x,y,z)$ normal to the surface $z=\sqrt{x^2+y^2}+(x^2+y^2)^{3/2}$
+date: '2026-11-13'
+description: Write $r = \sqrt{x^2+y^2}$ so that the surface has equation $f=0$, where $f = r + r^3 - z$. The partial derivatives of $f$ are $$\begin{align} \frac{\partial…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5154291
+se-link: https://math.stackexchange.com/questions/1312624/find-a-vector-vx-y-z-normal-to-the-surface-z-sqrtx2y2x2y23-2/5154291#5154291
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find a vector $V(x,y,z)$ normal to the surface $z=\sqrt{x^2+y^2}+(x^2+y^2)^{3/2}$](https://math.stackexchange.com/questions/1312624/find-a-vector-vx-y-z-normal-to-the-surface-z-sqrtx2y2x2y23-2), asked by [nomadicmathematician](https://math.stackexchange.com/users/135204/nomadicmathematician) on Mathematics Stack Exchange (2015-06-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> (a) Find a vector $V(x,y,z)$ normal to the surface
+>
+> $$z=\sqrt{x^2+y^2}+(x^2+y^2)^{3/2}$$
+>
+> at a general point $(x,y,z)$ of the surface, $(x,y,z)\neq (0,0,0)$.
+>
+> (b) Find the cosine of the angle $\theta$ between $V(x,y,z)$ and the z-axis and determine the limit of $\operatorname{cos}\theta$ as $(x,y,z)\to (0,0,0)$.
+>
+> The answer for these are
+> (a) $(1+3x^2+3y^2)(x\mathbf{i} +y\mathbf{j})-(x^2+y^2)^{1/2}\mathbf{k}$ or any scalar multiple thereof.
+>
+> (b) $\operatorname{cos}\theta =-[1+(1+3x^2+3y^2)^2]^{-1/2}$; $cos\theta \to -\frac{1}{2}\sqrt{2}$ as $(x,y,z)\to (0,0,0)$.
+>
+> First I don't see how the answer for (a) turns out to be as such. My idea is to set the equation of the surface to be $f(x,y,z)=\sqrt{x^2+y^2}+(x^2+y^2)^{3/2}-z=0$, and get the gradient of $f$, which should be normal to the surface, however, this does not match the one given in the answer.
+>
+> Also, taking the answer for (a) as given, I tried to find the cosine of $\theta$ by the equation $cos\theta=\frac{a\dot b}{|a||b|}$, however, this turns out to be \frac{-(x^2+y^2)^{1/2}}{[1+(1+3x^2+3y^2)^2]^{-1/2}, which is again not the answer. 
+>
+> I would greatly appreciate it if anyone could explain what's wrong about my answers and how I can get the right ones.
+:::
+
+Write $r = \sqrt{x^2+y^2}$ so that the surface has equation $f=0$, where $f = r + r^3 - z$. The partial derivatives of $f$ are 
+$$\begin{align*}
+  \frac{\partial f}{\partial x}
+  &= (1+3r^2)\frac{\partial r}{\partial x}
+   = (1+3r^2)\frac{x}{r}\\
+  \frac{\partial f}{\partial x}
+  &= (1+3r^2)\frac{\partial r}{\partial y}
+   = (1+3r^2)\frac{y}{r} \\
+  \frac{\partial f}{\partial z}
+  &= -1
+\end{align*}$$
+Scaling by $r$, we see that the vector 
+$$\mathbf{V} = \left<(1+3r^2)x,(1+3r^2)y,-r\right>
+  = (1+3r^2)(x\mathbf{i} + y \mathbf{j})- r \mathbf{k}$$
+is normal to the surface at $(x,y,z)$, as long as $(x,y) \neq (0,0)$.
+
+Now
+$$\cos \theta = \frac{\mathbf{V} \cdot \mathbf{k}}{|\mathbf{V}|}
+= -\frac{r}{\sqrt{(1+3r^2)^2r^2+r^2}}
+= -\frac{1}{\sqrt{(1+3r^2)^2+1}}$$
+Since $\lim_{(x,y,z) \to (0,0,0)} r = 0$, it's clear that $$\lim_{(x,y,z) \to (0,0,0)} \cos \theta = -\frac{1}{\sqrt{2}}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1312624/find-a-vector-vx-y-z-normal-to-the-surface-z-sqrtx2y2x2y23-2/5154291#5154291) on Mathematics Stack Exchange, 2026-11-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

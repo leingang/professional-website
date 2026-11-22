@@ -1,0 +1,52 @@
+---
+title: Use induction to prove the Division Algorithm?
+date: '2016-09-09'
+description: A first step to proving this by induction is to get the statement in the form $P(m)$; that is, a statement depending on a single natural number variable $m$.…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1920660
+se-link: https://math.stackexchange.com/questions/1920626/use-induction-to-prove-the-division-algorithm/1920660#1920660
+se-score: 1
+se-accepted: false
+se-tags:
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use induction to prove the Division Algorithm?](https://math.stackexchange.com/questions/1920626/use-induction-to-prove-the-division-algorithm), asked by [Christian Soto](https://math.stackexchange.com/users/240437/christian-soto) on Mathematics Stack Exchange (2016-09-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I am trying to Prove the division algorithm by induction.  The Division Algorithm is written in my book as this:
+>
+> > **The Divison Algorithm for Natural Numbers** If $n$, $m$ are natural numbers and 
+> $n\leq m$, then either
+> >
+> >  1. There is a natural number $q$ such that $m=nq$, or 
+> >
+> >  2. There are natural numbers $q$ and $r$ such that $m = nq+r$.
+>
+> This is what I have so far,
+>
+> Assume $n$ and $m$ are natural numbers and $n<m$ or $n=m$.
+>
+> I have no idea how to use induction to prove this theorem.  I just need help getting started.
+:::
+
+A first step to proving this by induction is to get the statement in the form $P(m)$; that is, a statement depending on a single natural number variable $m$.  In this case, you can say, “Let $P(m)$ be the statement that for all natural numbers $n$ with $n \leq m$, then either ... or ... is true.”
+
+You need to verify that $P(1)$ is true.  But if $m=1$ and $n\leq m$, then $n=1$.  So option 1 holds with $q=1$.
+
+Next, you need to assume that $P(m)$ is true and show that $P(m+1)$ is true.  This is going to require some case work.  But consider that if $n \leq m+1$, then either $n \leq m$ or $n=m+1$.  
+
+Can you keep it going?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1920626/use-induction-to-prove-the-division-algorithm/1920660#1920660) on Mathematics Stack Exchange, 2016-09-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

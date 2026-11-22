@@ -1,0 +1,56 @@
+---
+title: Definition of double integral in $\epsilon - \delta$ terms.
+date: '2018-08-06'
+description: It's not clear what you mean by “not working” here. Do you mean, why is it necessary that $d<\delta$? Otherwise, the condition is not equivalent to the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2873966
+se-link: https://math.stackexchange.com/questions/2873932/definition-of-double-integral-in-epsilon-delta-terms/2873966#2873966
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Definition of double integral in $\epsilon - \delta$ terms.](https://math.stackexchange.com/questions/2873932/definition-of-double-integral-in-epsilon-delta-terms), asked by [cdummie](https://math.stackexchange.com/users/298588/cdummie) on Mathematics Stack Exchange (2018-08-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When we define double integral for function $f$, we usually start with it's definition on a rectangle $R=[a,b]\times[c,d]$  which can be split into bunch of smaller rectangles $[a,b]=[x_0,x_1]\cup[x_1,x_2]\cup...\cup[x_{n-1},x_n]$ and $[c,d]=[y_0,y_1]\cup[y_1,y_2]\cup...\cup[y_{n-1},y_n]$ then forming a sum 
+>
+> where $\Delta x_i=x_i-x_{i-1}$ and $\Delta y_j=y_j-y_{j-1}$ and $(\epsilon_i, \gamma_j)$ is point inside rectangle $R_{ij}$
+>
+> Now, if we choose the rectangle with greatest diameter (let that diameter be $d_{ij}$ ) and if we what to find limit of the given sum when $d_{ij} \rightarrow 0$, then if that sum has a finite limit regardless of how we split the intervals $[a,b]$ and $[c,d]$ and which points inside $R_{ij}$ rectangles we choose, then, that limit of the sum is called DOUBLE INTEGRAL of $f$ on $R$.
+>
+> However, i am supposed to understand the definition of double integral in $\epsilon - \delta$ terms.
+>
+> Defining double integral this way makes sense since this is obviously a limit and we know that limits can be definied in $\epsilon - \delta$ terms.
+>
+> There it goes:
+>
+> Number $I$ is called double integral of function $f$ on rectangle $R$ if for every $\epsilon > 0$ there is $\delta >0$ such that  if we split intervals $[a,b]$ and $[c,d]$ and we get $d_{ij}<\delta$, then, regardless of points chosen following inequality is true:
+>
+> $$| \sum_{i=1}^m \sum_{j=1}^n f(\epsilon_i, \gamma_j)\Delta x_i \Delta y_j - I | < \epsilon$$
+>
+> Now, this should't be difficult to understand, but I struggle with it very much, since i cannot understand why is it required that we have to split given intervals in such way that $d_{ij}<\delta$, why this is not working if we split the intervals in a such way that $d_{ij}>\delta$ (AGAIN: $d_{ij}$ is a diameter of largest rectangle we got when we split the two intervals given). Any help is appreciated!
+:::
+
+> why this is not working if we split the intervals in a such way that $d > \delta$
+
+It's not clear what you mean by “not working” here.  Do you mean, why is it necessary that $d<\delta$?  Otherwise, the condition is not equivalent to the definition.  
+
+I mean, it's *possible* that for some $\epsilon$, there exists a partition with $d > \delta$ and the difference between the Riemann sum and $I$ is smaller than $\epsilon$.  But if you are looking for functions which satisfy that condition for all partitions with $d>\delta$, you're going to eliminate a lot of integrable functions.
+
+Compare it to the $\epsilon$-$\delta$ definition of limit.  We say $\lim_{x\to a}f(x) = L$ if for all $\epsilon > 0$ there exists a $\delta > 0$ such that $0 < | x- a | < \delta \implies |f(x) - L| < \epsilon$.  Why do we rule out points $x$ with $|x - a| > \delta$? Without it, the statement that $\lim_{x\to a} x = a$ wouldn't be true.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2873932/definition-of-double-integral-in-epsilon-delta-terms/2873966#2873966) on Mathematics Stack Exchange, 2018-08-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

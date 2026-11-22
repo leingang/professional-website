@@ -1,0 +1,52 @@
+---
+title: Disprove that $\lim_{x\to 0^+}\frac{1}{x} = c \in R$ using formal finite limit definition
+date: '2020-01-28'
+description: Your reasoning is correct. I would fix up the language to be more precise and conventional.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3526079
+se-link: https://math.stackexchange.com/questions/3526024/disprove-that-lim-x-to-0-frac1x-c-in-r-using-formal-finite-limit-d/3526079#3526079
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Disprove that $\lim_{x\to 0^+}\frac{1}{x} = c \in R$ using formal finite limit definition](https://math.stackexchange.com/questions/3526024/disprove-that-lim-x-to-0-frac1x-c-in-r-using-formal-finite-limit-d), asked by [Tortar](https://math.stackexchange.com/users/704856/tortar) on Mathematics Stack Exchange (2020-01-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to disprove : $$\lim_{x\to 0^+}\frac{1}{x} = c \in R$$ using epsilon-delta definition. So here is what I've done : 
+>
+> I know that $c>0$ ( because $\frac{1}{x}>0$ if $x>0$ ).  
+> So applying $\epsilon ,\delta$ definition to check whether the limit is verified , namely : $$\forall\epsilon>0\,\exists\,\delta >0 \,\backslash\,0<x<\delta\Rightarrow-\epsilon<\frac{1}{x}-c<\epsilon$$ 
+> So taking $0<\epsilon<c$ : 
+>
+> $$-\epsilon<\frac{1}{x}-c<\epsilon  \Rightarrow \frac{1}{c-\epsilon} < x < \frac{1}{c+\epsilon}\;$$ which is a contradiction of  $x \rightarrow0^+$  if $\epsilon\rightarrow 0$ . So this limit can't be finite.
+>
+> Is this reasoning correct? How can I write it in a more formal way that the last inequality implies a contradiction?
+:::
+
+Your reasoning is correct.  I would fix up the language to be more precise and conventional.
+
+You want to show that it is *not* true that **there exists** $c \in \mathbb{R}$ such that **for all** $\epsilon > 0$ **there exists** $\delta > 0$ such that **for all** $x$, $0 < x < \delta \implies \left|\frac{1}{x}-c\right| < \epsilon$.
+
+When you negate a quantified statement, the quantifiers get flipped.  So you want to show: **for all** $c \in \mathbb{R}$, **there exists** $\epsilon > 0$ such that **for all** $\delta > 0$, **there exists** $x$, such that $0 < x < \delta$ and $\left|\frac{1}{x}-c\right| \geq \epsilon$.
+
+You wrote “taking $0 < \epsilon < c$,” but I would recommend being specific.  You are trying to satisfy a “there exists” quantifier, so point one out.  $\epsilon = \frac{c}{2}$ works pretty well.
+
+Now, given $\delta > 0$, you want to find $x$ such that $0 < x < \delta$ and $\left|\frac{1}{x}-c\right| \geq \frac{c}{2}$.  As long as $0 < x < \frac{1}{2c}$, then $\left|\frac{1}{x}-c\right| > c > \frac{c}{2}$.  So let $x$ be the minimum of $\frac{1}{2c}$ and $\frac{\delta}{2}$.  That way both $0  < x < \delta$ and $0 < x < \frac{1}{2c}$ are satisfied.
+
+This takes care of the case that $c > 0$.  What about $c = 0$?  (You asserted that the limit must be positive; that's not true.)  $c < 0$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3526024/disprove-that-lim-x-to-0-frac1x-c-in-r-using-formal-finite-limit-d/3526079#3526079) on Mathematics Stack Exchange, 2020-01-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

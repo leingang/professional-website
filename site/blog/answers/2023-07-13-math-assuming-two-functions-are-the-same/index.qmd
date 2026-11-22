@@ -1,0 +1,52 @@
+---
+title: Assuming two functions are the same
+date: '2023-07-13'
+description: The problem doesn't say whether $a$ and $b$ are existentially or universally quantified. If we assume the latter, and something more about $f$ and $g$, we can…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4735696
+se-link: https://math.stackexchange.com/questions/4735435/assuming-two-functions-are-the-same/4735696#4735696
+se-score: 10
+se-accepted: false
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Assuming two functions are the same](https://math.stackexchange.com/questions/4735435/assuming-two-functions-are-the-same), asked by [Nav Bhatthal](https://math.stackexchange.com/users/1108865/nav-bhatthal) on Mathematics Stack Exchange (2023-07-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> If we know the following:
+> $$\int_a^b f(x) \,dx= k$$
+> and:
+> $$\int_a^b g(x) \,dx= k$$
+> Can we deduce that $f(x) = g(x)$? If not, could someone find me an example where the above is the case and $f(x)$ does not equal $g(x)$?
+> Thanks in advance.
+:::
+
+The problem doesn't say whether $a$ and $b$ are existentially or universally quantified. If we assume the latter, and something more about $f$ and $g$, we can assert:
+
+> **Claim:** If $f$ and $g$ are **continuous** functions and $$\int_a^b f(x)\,dx = \int_a^b g(x)\,dx$$ for all real numbers $a < b$, then $f(x) = g(x)$ for all $x$.
+
+To prove this, it is enough to show: If $h$ is continuous and $\int_a^b h(x)\,dx = 0$ for all $a < b$, then $h(x) = 0$ for all $x$.
+
+To prove _this_, it is enough to show the contrapositive: If $f$ is continuous, and there exists $x_0$ such that $f(x_0) \neq 0$, then there exist real numbers $a < b$ such that $\int_a^b f(x)\,dx \neq 0$.
+
+And finally, it is enough to show that: If $f$ is continuous, and there exists $x_0$ such that $f(x_0) > 0$, then there exist real numbers $a< b$ such that $\int_a^b f(x)\,dx > 0$.
+
+The gist of the argument is that: if $f$ is continuous, and positive at a point, it is positive on an open interval around that point. The integral of $f$ over that interval must be positive. 
+
+Here is the formal proof: Let $\epsilon = f(x_0)/2$. There exists $\delta$ such that $|f(x) - f(x_0)| < \epsilon$ when $|x-x_0| < \delta$. Let $a =x_0 - \delta/2$ and $b = x_0 + \delta/2$. Then $f(x) > f(x_0)/2$ for all $x$ in $[a,b]$. So $$\int_a^b f(x) > (f(x_0)/2) \cdot (b-a) = \frac{f(x_0)}{2}\cdot \delta$$
+
+Notice how the proof breaks down without the continuity assumption. The function $f$ which is $1$ at $x=0$ and $0$ elsewhere has $f(0) > 0$, but for all $a < b$, $\int_a^b f(x)\,dx = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4735435/assuming-two-functions-are-the-same/4735696#4735696) on Mathematics Stack Exchange, 2023-07-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

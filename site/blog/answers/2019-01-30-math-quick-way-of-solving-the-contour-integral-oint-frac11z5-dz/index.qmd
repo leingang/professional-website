@@ -1,0 +1,89 @@
+---
+title: Quick way of solving the contour integral $\oint \frac{1}{1+z^5} dz$
+date: '2019-01-30'
+description: Partial fractions can work. I think this approach is pretty much equivalent to Mark Viola's residue one, but it's nice to see the agreement.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3093973
+se-link: https://math.stackexchange.com/questions/3093958/quick-way-of-solving-the-contour-integral-oint-frac11z5-dz/3093973#3093973
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- complex-analysis
+- contour-integration
+- complex-integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Quick way of solving the contour integral $\oint \frac{1}{1+z^5} dz$](https://math.stackexchange.com/questions/3093958/quick-way-of-solving-the-contour-integral-oint-frac11z5-dz), asked by [Belgium_Physics](https://math.stackexchange.com/users/402994/belgium-physics) on Mathematics Stack Exchange (2019-01-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the contour integral in the complex plane:
+> $$\oint \frac{1}{1+z^5} dz$$
+> Here the contour is a circle with radius $3$ with centre in the origin. If we look at the poles, they need to satisfy $z^5 = -1$. So the solutions of the poles are given by:
+> $$\begin{align*}
+> z_0 &= \cos(\frac{\pi}{5}) + i \sin(\frac{\pi}{5})\\
+> z_1 &= \cos(\frac{3\pi}{5}) + i \sin(\frac{3\pi}{5})\\
+> z_2 &= \cos(\pi) + i \sin(\pi) = -1\\
+> z_3 &= \cos(\frac{7\pi}{5}) + i \sin(\frac{7\pi}{5})\\
+> z_4 &= \cos(\frac{9\pi}{5}) + i \sin(\frac{9\pi}{5})
+> \end{align*}$$
+> So one can use Cauchy's formula or the residue theorem to calculate for every solution the integral and then adding them up to get the full integral. But I have the feeling that there needs to be a more simple way of calculating the full contour integral. Can one just calculate the integral for one solution $z_i$ (like the simple solution $-1$) and then multiply by it $5$, suggesting that the others have the same value. This would make the calculation much efficienter. 
+>
+> EDIT:
+> I now see that $4$ solutions are symmetric (the solutions except $z=-1$) in the complex plane. If one approximates the solutions of the poles in decimals, one finds:
+> $$\begin{align*}
+> z_0 &= 0.81 + 0.58i\\
+> z_1 &= -0.31 + 0.95i\\
+> z_2 &= -1\\
+> z_3 &= -0.31 -0.95i\\
+> z_4 &= 0.81 -0.58i
+> \end{align*}$$
+> So there are four symmetric solutions. For instance $z_0$ is symmetric with $z_4$, they are mirrored around the x-axis. Could this mean they cancell each other out so we only need to calculate the integral for $z_2 = -1$?
+:::
+
+Partial fractions can work.  I think this approach is pretty much equivalent to Mark Viola's residue one, but it's nice to see the agreement.
+
+Let $\zeta$ be a primitive fifth root of unity.  If you want to be explicit, let $\zeta = e^{2\pi/5}$.  But the important thing is that
+
+* the roots of $z^5+1$ are $-1$, $-\zeta$, $-\zeta^2$, $-\zeta^3$, and $-\zeta^4$.
+* Since $(z^5 - 1) = (z-1)(z^4+z^3+z^2+z+1)$, we know that $1 + \zeta + \zeta^2 + \zeta^3 + \zeta^4 = 0$.
+
+Now for something about partial fractions that I didn't know until just now.
+If $f(z) = (z-\alpha_1) \cdots (z-\alpha_n)$, and all the roots are distinct, then
+$$\frac{1}{f(z)} = \frac{1}{f'(\alpha_1)(z-\alpha_1)}  + \frac{1}{f'(\alpha_2)(z-\alpha_2)}   + \dots + \frac{1}{f'(\alpha_n)(z-\alpha_n)}$$
+To show this, start from 
+$$\frac{1}{(z-\alpha_1) \cdots (z-\alpha_n)} = \sum_{i=1}^n \frac{A_i}{z-\alpha_i}$$
+for some constants $A_1, \dots, A_n$.  Clear out the denominators, and you get
+$$1 = \sum_{i=1}^n \frac{A_i f(z)}{z-\alpha_i}
+      = \sum_{i=1}^n A_i \frac{f(z)-f(\alpha_i)}{z-\alpha_i}
+\tag{$*$}$$
+Now for any $i$ and $j$,
+$$\lim_{z\to \alpha_j} \frac{f(z)-f(\alpha_i)}{z-\alpha_i} = 
+\begin{cases} 0 & i \neq j \\ f'(\alpha_i) & i = j \end{cases}$$
+So if we take the limit of both sides of ($*$) as $z\to z_j$ we get $1 = A_j f'(\alpha_j)$ for each $j$.
+
+This means that
+$$\begin{align*}
+    \frac{1}{z^5+1} 
+    &= \frac{1}{5(z+1)} + \frac{1}{5(-\zeta)^4(z+\zeta)} + \frac{1}{5(-\zeta^2)^4(z+\zeta^2)} + \frac{1}{5(-\zeta^3)^4(z+\zeta^3)} + \frac{1}{5(-\zeta^4)^4(z+\zeta^4)}
+\\&= \frac{1}{5}\left(\frac{1}{z+1} + \frac{1}{\zeta^4(z + \zeta)} + \frac{1}{\zeta^3(z + \zeta^2)} + \frac{1}{\zeta^2(z + \zeta^3)} + \frac{1}{\zeta(z + \zeta^4)}\right)
+\\&= \frac{1}{5}\left(\frac{1}{z+1} + \frac{\zeta}{z + \zeta} + \frac{\zeta^2}{z + \zeta^2} + \frac{\zeta^3}{z + \zeta^3} + \frac{\zeta^4}{z + \zeta^4}\right)
+\end{align*}$$
+You wanted an argument involving symmetry; what could be more symmetric than that equation?
+
+Now $C$ encloses all those roots, so by the Cauchy Integral Formula,
+$$\oint_C \frac{dz}{z^5+1} = \frac{2\pi i}{5}\left(1 + \zeta + \zeta^2 + \zeta^3 + \zeta^4\right)$$
+and as we showed above, the latter factor is zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3093958/quick-way-of-solving-the-contour-integral-oint-frac11z5-dz/3093973#3093973) on Mathematics Stack Exchange, 2019-01-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

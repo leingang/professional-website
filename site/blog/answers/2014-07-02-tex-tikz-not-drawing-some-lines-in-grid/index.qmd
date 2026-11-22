@@ -1,0 +1,128 @@
+---
+title: TikZ not drawing some lines in grid
+date: '2014-07-02'
+description: 'The PGF manual section on the grid operation (14.9 in my version) says:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 187670
+se-link: https://tex.stackexchange.com/questions/187668/tikz-not-drawing-some-lines-in-grid/187670#187670
+se-score: 7
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TikZ not drawing some lines in grid](https://tex.stackexchange.com/questions/187668/tikz-not-drawing-some-lines-in-grid), asked by [Joshua](https://tex.stackexchange.com/users/56475/joshua) on TeX Stack Exchange (2014-07-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When I use \draw to create a grid, several lines are missing. See the attached code and images, where, for example, the dashed red grid is missing the bottom and left boundaries. Actually the solid green and solid red gird are missing it as well. I'm not sure if I am getting graphical bugs or if this is intended behavior:
+>
+> ![Missing lines][q-1]
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \pagestyle{empty}
+>
+> \pgfdeclarelayer{level0}
+> \pgfdeclarelayer{level1}
+> \pgfdeclarelayer{level2}
+> \pgfsetlayers{main,level0,level1,level2}
+>
+> \begin{document}
+>
+> \begin{figure}[h]
+>   \centering
+>     \begin{tikzpicture}[scale=2]
+>       \begin{pgfonlayer}{level0} % Level 0
+>         \draw[help lines] (0,0) grid (5,5); % Base grid
+>         \draw[very thick, scale=5] (0,0) grid (1,1); % Darker lines to mark e.g. box boundaries
+>       \end{pgfonlayer}
+>
+>       \begin{pgfonlayer}{level1} % Level 1
+>         \draw[green, dashed] (.5,.5) grid[step=.5] (4.5,4.5); % Ghost cells
+>         \draw[green] (1,1) grid[step=.5] (4,4);
+>       \end{pgfonlayer}
+>
+>       \begin{pgfonlayer}{level2} % Level 2
+>         \draw[red, dashed] (1.75,1.75) grid[step=.25] (3.25,3.25); % Ghost cells
+>         \draw[red] (2,2) grid[step=.25] (3,3);
+>       \end{pgfonlayer}
+>
+>     \end{tikzpicture}
+>     \caption{Standard isotropic refinement.}
+> \end{figure}
+>
+> \end{document}
+> ```
+>
+> Thank you!
+>
+>   [q-1]: nSFJ5.png
+:::
+
+The PGF manual section on the `grid` operation (14.9 in my version) says:
+
+> It is important to note that the grid is always “phased” such that it
+> contains the point (0,0) if that point happens to be inside the
+> rectangle. Thus, the grid does not always have an intersection at the
+> corner points; this occurs only if the corner points are multiples of
+> the stepping. *Note that due to rounding errors, the “last” lines of a
+> grid may be omitted. In this case, you have to add an epsilon to the
+> corner points.* [emphasis added]
+
+Not sure why you're missing the lines at the start of the grid instead of the end, but in any case the analogous workaround works.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\pagestyle{empty}
+
+\pgfdeclarelayer{level0}
+\pgfdeclarelayer{level1}
+\pgfdeclarelayer{level2}
+\pgfsetlayers{main,level0,level1,level2}
+
+\begin{document}
+
+\begin{figure}[h]
+  \centering
+    \begin{tikzpicture}[scale=2]
+      \begin{pgfonlayer}{level0} % Level 0
+        \draw[help lines] (0,0) grid (5,5); % Base grid
+        \draw[very thick, scale=5] (0,0) grid (1,1); % Darker lines to mark e.g. box boundaries
+      \end{pgfonlayer}
+
+      \begin{pgfonlayer}{level1} % Level 1
+        \draw[green, dashed] (.4999,.4999) grid[step=.5] (4.5,4.5); % Ghost cells
+        \draw[green] (0.999,0.999) grid[step=.5] (4,4);
+      \end{pgfonlayer}
+
+      \begin{pgfonlayer}{level2} % Level 2
+        \draw[red, dashed] (1.74999,1.74999) grid[step=.25] (3.25,3.25); % Ghost cells
+        \draw[red] (2,2) grid[step=.25] (3,3);
+      \end{pgfonlayer}
+
+    \end{tikzpicture}
+    \caption{Standard isotropic refinement.}
+\end{figure}
+
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: rYm8g.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/187668/tikz-not-drawing-some-lines-in-grid/187670#187670) on TeX Stack Exchange, 2014-07-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,51 @@
+---
+title: A researcher that I know organizes a symposium within a strange conference and has asked me to go. What is the appropriate etiquette for declining?
+date: '2015-01-05'
+description: This is polite but firm. Like Jake says in the comments, it is possible to increase the apparent (or intended) sincerity of the message by being more specific…
+categories:
+- academia.se
+license: CC BY-SA 4.0
+draft: true
+se-site: academia
+se-answer-id: 35277
+se-link: https://academia.stackexchange.com/questions/35261/a-researcher-that-i-know-organizes-a-symposium-within-a-strange-conference-and-h/35277#35277
+se-score: 19
+se-accepted: false
+se-tags:
+- conference
+- mathematics
+- etiquette
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[A researcher that I know organizes a symposium within a strange conference and has asked me to go. What is the appropriate etiquette for declining?](https://academia.stackexchange.com/questions/35261/a-researcher-that-i-know-organizes-a-symposium-within-a-strange-conference-and-h), asked by [epsilone](https://academia.stackexchange.com/users/20897/epsilone) on Academia Stack Exchange (2015-01-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have been invited to a symposium related with my research field within a conference devoted to a broad area in Mathematics, not really associated with my field. This symposium is organized by a researcher that I met in previous, well-established and respectable conferences. 
+>
+> The problem is that I have never heard before about that conference to any colleague in my field, if we exclude the emails sent by the conference organizers asking researchers to attend *or to organize* a symposium within the conference (I have received myself a lot of them in my email *spam* folder). Indeed, I am really confused about the reputability of the conference itself, and I tried to find it out without too much success in [this][q-1] closed question.
+>
+> I have decided not to attend the conference given the information that I have at hand, since as a young researcher I want to stay as far as I can from *potential predatory* conferences. Also the funding money for attending conferences is limited and I think I will get a better value for it on another conference.
+>
+> Now, my question is regarding the **way and etiquette for rejecting the invitation**. My initial idea was to be honest and tell the symposium organizer about my reason to not accept the invitation (not feeling confortable in that conference), without making up any excuse such as problem in the dates or whatever. But maybe in that way I will hurt his/her feelings, something that obviously I do not want. 
+>
+> **What will be a honest and polite way of rejecting this invitation?**
+>
+>
+>
+>   [q-1]: https://academia.stackexchange.com/questions/34723/how-to-know-if-the-icnaam-conference-is-good
+:::
+
+>Thank you very much for the invitation to this conference.  It seems like a very interesting event.  I will not be able to attend, but I wish you the best of luck with it. 
+>
+> Yours, etc. ...
+
+This is polite but firm.  Like Jake says in the comments, it is possible to increase the apparent (or intended) sincerity of the message by being more specific about why you think the conference will be interesting.  And it is *true* that you are unable to attend because you have given higher priority for your limited travel budget on other events.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/35261/a-researcher-that-i-know-organizes-a-symposium-within-a-strange-conference-and-h/35277#35277) on Academia Stack Exchange, 2015-01-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,45 @@
+---
+title: Find $\frac{\partial x}{\partial u}$ and $\frac{\partial y}{\partial v}$ if $z=f(x,y)$ , $u=e^x\cos y$ , $v=e^{-x}\sin y$
+date: '2016-09-27'
+description: If you take $u=e^x \cos y$ and differentiate with respect to $u$, you get $$1 = e^{x} \cos y \frac{\partial x}{\partial u} - e^x \sin y \frac{\partial…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1943642
+se-link: https://math.stackexchange.com/questions/1943618/find-frac-partial-x-partial-u-and-frac-partial-y-partial-v-if-z-f/1943642#1943642
+se-score: 1
+se-accepted: false
+se-tags:
+- partial-derivative
+- implicit-differentiation
+- chain-rule
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find $\frac{\partial x}{\partial u}$ and $\frac{\partial y}{\partial v}$ if $z=f(x,y)$ , $u=e^x\cos y$ , $v=e^{-x}\sin y$](https://math.stackexchange.com/questions/1943618/find-frac-partial-x-partial-u-and-frac-partial-y-partial-v-if-z-f), asked by [Mohamed Mostafa](https://math.stackexchange.com/users/253281/mohamed-mostafa) on Mathematics Stack Exchange (2016-09-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I don't know how to use the fact that $z=f(x,y)$.
+>
+> I tried to solve $(x,y)$ in terms of $(u,v)$ and found that $y=\frac{\sin^{-1}(2uv)}{2}$ but can't solve $x$.
+>
+> Another question: Is $\frac{\partial x}{\partial u}=\frac{1}{\frac{\partial u}{\partial x}}$ ?
+:::
+
+If you take $u=e^x \cos y$ and differentiate with respect to $u$, you get
+$$1 = e^{x} \cos y \frac{\partial x}{\partial u} - e^x \sin y \frac{\partial y}{\partial u}$$
+If you take $v = e^{-x}\sin y$ and differentiate with respect to $u$, you get
+$$0 = -e^{-x} \cos y \frac{\partial x}{\partial u} - e^{-x} \sin y \frac{\partial y}{\partial u}$$
+This is a system of two equations for the two unknowns $\frac{\partial x}{\partial u}$ and $\frac{\partial y}{\partial u}$. 
+
+Can you solve it from here?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1943618/find-frac-partial-x-partial-u-and-frac-partial-y-partial-v-if-z-f/1943642#1943642) on Mathematics Stack Exchange, 2016-09-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

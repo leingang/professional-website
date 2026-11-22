@@ -1,0 +1,60 @@
+---
+title: Determine if the following sets are subspaces of $\mathbb{R}^4$ and if they are affine spaces.
+date: '2018-08-08'
+description: 'I''m not sure what your definition of affine space is, but I think this condition is correct: a subset $M$ of a vector space $V$ is an affine subspace if for…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2876508
+se-link: https://math.stackexchange.com/questions/2876435/determine-if-the-following-sets-are-subspaces-of-mathbbr4-and-if-they-are/2876508#2876508
+se-score: 0
+se-accepted: true
+se-tags:
+- linear-algebra
+- geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determine if the following sets are subspaces of $\mathbb{R}^4$ and if they are affine spaces.](https://math.stackexchange.com/questions/2876435/determine-if-the-following-sets-are-subspaces-of-mathbbr4-and-if-they-are), asked by [Liam](https://math.stackexchange.com/users/415417/liam) on Mathematics Stack Exchange (2018-08-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Q: Determine if the following sets are subspaces of $\mathbb{R}^4$ and if they are affine spaces. (Suppose regular operations on the elements of the sets such as addition and skalar multiplication in $\mathbb{R}^4$.)
+> $$\begin{equation}
+> \begin{split}
+> M_1 & = \{ x\in \mathbb{R}^4: x_1x_3=0 \} \\
+> M_2 & = \{ x\in \mathbb{R}^4: x_1^2+x_2^2=1 \}
+> \end{split}
+> \end{equation}$$
+>
+> I struggle to determine if $M_1$ and $M_2$ are affine spaces.
+>
+> a) Let $x,y\in M_1$ $\alpha,\beta\in\mathbb{R}$. If $M_1$ is a subspace of $\mathbb{R}^4$ then $\alpha x+\beta y$ should satisfy the equation that define $M_1$.
+> $$\begin{equation}
+>   (\alpha x_1+\beta y_1)(\alpha x_3+\beta y_3)=\alpha^2x_1x_3+\alpha \beta(x_1y_3+x_3y_1) + \beta^2y_1y_3= \alpha \beta(x_1y_3+x_3y_1)
+> \end{equation}$$
+> But $\alpha x+\beta y \notin M_1$ if for example $\alpha,\beta \neq 0$ and $x_1y_3 \neq 0$ or $x_3y_1 \neq 0$, therefore $M_1$ is not a subspace of $\mathbb{R}^4$.
+>
+> $M_1$ is affine if $M_1=u+V$ for a fix vector $u\in\mathbb{R}^4$ and a subspace $V\subset\mathbb{R}^4$
+>
+> b) For instance $(-1,0,0,0)+(1,0,0,0)=(0,0,0,0) \notin M_2$ proves that $M_2$ is not closed under addition and is not a subspace of $\mathbb{R}^4$
+:::
+
+I'm not sure what your definition of affine space is, but I think this condition is correct: a subset $M$ of a vector space $V$ is an affine subspace if *for all* $x$ and $y$ in $M$, and scalars $\alpha$ and $\beta$ with $\alpha + \beta = 1$, we have $\alpha x + \beta y \in M$.  
+
+Geometrically, if you draw $V$ as $\mathbb{R}^n$, $M$ is an affine subspace if the line between any two points of $M$ is contained in $M$.  
+
+Negating this definition, $M$ is *not* an affine subspace if *there exist* $x$ and $y$ in $M$, and scalars $\alpha$ and $\beta$ with $\alpha + \beta = 1$, such that $\alpha x + \beta y \notin M$.
+
+It shouldn't be too hard to come up with such counterexamples in these two cases.
+
+Since regular subspaces are also affine subspaces, showing that $M_1$ and $M_2$ are not affine subspaces is sufficient.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2876435/determine-if-the-following-sets-are-subspaces-of-mathbbr4-and-if-they-are/2876508#2876508) on Mathematics Stack Exchange, 2018-08-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,48 @@
+---
+title: How do I determine whether the orientation of a basis is positive or negative using the cross product
+date: '2018-03-03'
+description: A basis $u$, $v$, $w$ of $\mathbb{R}^3$ is positively oriented if $(u\times v)\cdot w > 0$, and negatively oriented if $(u \times v) \cdot w < 0$. In the case…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2675134
+se-link: https://math.stackexchange.com/questions/2675132/how-do-i-determine-whether-the-orientation-of-a-basis-is-positive-or-negative-us/2675134#2675134
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- vector-spaces
+- orthonormal
+- orientation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I determine whether the orientation of a basis is positive or negative using the cross product](https://math.stackexchange.com/questions/2675132/how-do-i-determine-whether-the-orientation-of-a-basis-is-positive-or-negative-us), asked by [Chisq](https://math.stackexchange.com/users/480197/chisq) on Mathematics Stack Exchange (2018-03-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know that if I have an orthonormal base in $\mathbb{R}^3$, namely $e_1$, $e_2$ & $e_3$, then it is positively oriented if
+>
+> $$e_1 \times e_2 = e_3$$
+> $$e_2 \times e_3 = e_1$$
+> $$e_3 \times e_1 = e_2$$
+>
+> It would make sense if it was negatively oriented when
+>
+> $$e_1 \times e_2 = -e_3$$
+> $$e_2 \times e_3 = -e_1$$
+> $$e_3 \times e_1 = -e_2$$
+>
+> But I would like to be sure. Am I correct?
+:::
+
+A basis $u$, $v$, $w$ of $\mathbb{R}^3$ is positively oriented if $(u\times v)\cdot w > 0$, and negatively oriented if $(u \times v) \cdot w < 0$.  In the case of orthonormal vectors, that is probably equivalent to what you have.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2675132/how-do-i-determine-whether-the-orientation-of-a-basis-is-positive-or-negative-us/2675134#2675134) on Mathematics Stack Exchange, 2018-03-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

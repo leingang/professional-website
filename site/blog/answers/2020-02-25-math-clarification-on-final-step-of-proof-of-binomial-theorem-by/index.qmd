@@ -1,0 +1,57 @@
+---
+title: Clarification on final step of proof of binomial theorem by induction.
+date: '2020-02-25'
+description: The easiest thing to do is define $\binom{k}{j} = 0$ if $j < 0$ or $j>k$. That way $\binom{k+1}{j} = \binom{k}{j} + \binom{k}{j-1}$ is still true when $j=0$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3560026
+se-link: https://math.stackexchange.com/questions/3560021/clarification-on-final-step-of-proof-of-binomial-theorem-by-induction/3560026#3560026
+se-score: 1
+se-accepted: true
+se-tags:
+- induction
+- binomial-coefficients
+- binomial-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Clarification on final step of proof of binomial theorem by induction.](https://math.stackexchange.com/questions/3560021/clarification-on-final-step-of-proof-of-binomial-theorem-by-induction), asked by [D.C. the III](https://math.stackexchange.com/users/183917/d-c-the-iii) on Mathematics Stack Exchange (2020-02-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I had a question with regards to the final step in proving the binomial theorem using induction. After changing indices on the second term I arrive at the following:
+>
+> $$\sum_{j = 0}^{k}\binom{k}{j}a^{k+1-j}b^{j} + \sum_{j = 1}^{k + 1}\binom{k}{j - 1}a^{k+1-j}b^{j}$$
+>
+> It is the following step that I'm having an issue with. I know that $\binom{k+1}{j} = \binom{k}{j} + \binom{k}{j-1}$.
+>
+> I'm having trouble justifying to myself the next steps. Now what I would like to do is group everything together under one summation and then factor out the shared terms:
+>
+> $$\sum_{j = 0}^{k+1}\bigg[\binom{k}{j}a^{k+1-j}b^{j} + \binom{k}{j - 1}a^{k+1-j}b^{j}\bigg] = \sum_{j = 0}^{k+1}\bigg(\binom{k}{j} + \binom{k}{j-1}\bigg)a^{k+1-j}b^{j}$$ 
+>
+> This would then result in the desired final result:
+>
+> $$\sum_{j = 0}^{k+1}\binom{k+1}{j}a^{k+1-j}b^{j}$$
+>
+> My issue is with the indices. As can be seen when $j = 0$ I will end up with a negative value in my second binomial coefficient, not a good thing. So what or how do I reconcile that one piece to be able to have the factorization work out the way I envision?
+:::
+
+The easiest thing to do is define $\binom{k}{j} = 0$ if $j < 0$ or $j>k$.  That way $\binom{k+1}{j} = \binom{k}{j} + \binom{k}{j-1}$ is still true when $j=0$.
+
+Otherwise, you have to restrict the statement of Pascal's identity:
+$$\binom{k+1}{j} = 
+    \begin{cases}
+        1 & j=0 \\
+        1 & j=k+1 \\
+        \binom{k}{j} + \binom{k}{j-1} & 1 \leq j \leq k
+    \end{cases}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3560021/clarification-on-final-step-of-proof-of-binomial-theorem-by-induction/3560026#3560026) on Mathematics Stack Exchange, 2020-02-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

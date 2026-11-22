@@ -1,0 +1,56 @@
+---
+title: Define strange operators
+date: '2010-11-07'
+description: You have some good answers for the procedure. The connected-sum symbol can be found in the mathabx package as \hash or \varhash. See “How to look up a math…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 5046
+se-link: https://tex.stackexchange.com/questions/5042/define-strange-operators/5046#5046
+se-score: 5
+se-accepted: false
+se-tags:
+- math-mode
+- symbols
+- math-operators
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Define strange operators](https://tex.stackexchange.com/questions/5042/define-strange-operators), asked by [fosco](https://tex.stackexchange.com/users/1728/fosco) on TeX Stack Exchange (2010-11-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I' looking for a symbol rendering the connected sum of \$n\$ topological spaces (or other quite strange topological operations) in a "product-like" manner... What For example in writing
+>
+> ```latex
+> $$
+> {\Large{*}}_{i=1}^n G_i
+> $$
+> ```
+>
+> for the free product of n groups. How can I render this with the # operation in topological spaces? (Yes, I'm studying Hatcher's AT...)
+>
+> **Edit:** *(Some mind-reading clarification by Willie)*
+>
+> The OP is not asking about how to use the `*` or `\ast` symbols, if I read him correctly. He is asking the following question:
+>
+> > How to define a (possibly variable size) math operator like `\sum` and `\prod` where the operator symbol is the octothorpe `#`, such that for in-line maths the upper and lower limits follow next to the symbol, and in `\displaystyle` with the upper and lower limits above and below the symbol?
+>
+> This seems to be the referred part of Hatcher’s AG: 
+>
+> ![definition from Hatcher][q-1]
+>
+>
+>   [q-1]: NGtih.png
+:::
+
+You have some good answers for the procedure.  The connected-sum symbol can be found in the `mathabx` package as `\hash` or `\varhash`.  See [“How to look up a math symbol?”](https://tex.stackexchange.com/questions/14/how-to-look-up-a-math-symbol).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5042/define-strange-operators/5046#5046) on TeX Stack Exchange, 2010-11-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

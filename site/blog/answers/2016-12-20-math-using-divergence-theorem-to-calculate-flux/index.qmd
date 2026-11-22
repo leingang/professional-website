@@ -1,0 +1,52 @@
+---
+title: Using Divergence theorem to calculate flux
+date: '2016-12-20'
+description: If $x = r\cos\theta = -1$, then $$\begin{align} r = -\frac{1}{\cos\theta} = -\sec\theta \end{align}$$ But since this means you will eventually have two compute…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2065522
+se-link: https://math.stackexchange.com/questions/2065449/using-divergence-theorem-to-calculate-flux/2065522#2065522
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- multivariable-calculus
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using Divergence theorem to calculate flux](https://math.stackexchange.com/questions/2065449/using-divergence-theorem-to-calculate-flux), asked by [Hendrix](https://math.stackexchange.com/users/328970/hendrix) on Mathematics Stack Exchange (2016-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![image][q-1]][q-1]
+> >Let $W$ be the region bounded by the cylinder $x^2+y^2=4$, the plane $z=x+1$, and the $xy$-plane. Use the Divergence Theorem to compute the flux of $F = \langle z,x,y+z^2 \rangle$ through the boundary of $W$.
+>
+> So far I've gotten to the point of computing div$(F)$ and integrating from $0$ to $x+1$ to obtain $$\iint_{D}(x+1)^2 dA.$$
+>
+> My problem is finding the bounds of the domain which is the circle of radius $2$ centered at the origin. I understand I must use polar coordinates but since the circle is cut off by the line $x=-1$ I'm having trouble figuring out what the bounds for the radius should be. I think $\theta$ goes from $2\pi/3$ to $4\pi/3$ (somewhat guessing the bound for theta when the radius is cut off by the line $x = -1$)
+>
+>
+>   [q-1]: ni51e.png
+:::
+
+If $x = r\cos\theta = -1$, then 
+$$\begin{align*}
+    r = -\frac{1}{\cos\theta} = -\sec\theta
+\end{align*}$$
+But since this means you will eventually have two compute two integrals, maybe polar coordinates is not the way to go.
+$$\begin{align*}
+    \iint_D (x+1)^2\,dA &= \int_{-1}^2 \int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}(x+1)^2\,dy \,dx \\
+    &= 2 \int_{-1}^2 (x+1)^2\sqrt{4-x^2}\,dx \\
+\end{align*}$$
+Then substitute $x=2\sin\theta$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2065449/using-divergence-theorem-to-calculate-flux/2065522#2065522) on Mathematics Stack Exchange, 2016-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

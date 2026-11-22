@@ -1,0 +1,46 @@
+---
+title: Desired resolution of images for a Beamer presentation
+date: '2011-02-16'
+description: I do beamer presentations with lots of art. While I have not experimented to find minimum values, I get good results from anything 1024x768 pixels and up. This…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11209
+se-link: https://tex.stackexchange.com/questions/11203/desired-resolution-of-images-for-a-beamer-presentation/11209#11209
+se-score: 4
+se-accepted: true
+se-tags:
+- beamer
+- graphics
+- presentations
+- resolution
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Desired resolution of images for a Beamer presentation](https://tex.stackexchange.com/questions/11203/desired-resolution-of-images-for-a-beamer-presentation), asked by [Little Bobby Tables](https://tex.stackexchange.com/users/1527/little-bobby-tables) on TeX Stack Exchange (2011-02-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am working on a Beamer presentation for less-technically-inclined audience, so I want to use many visual aids, pictures, stock photos, etc.  Unfortunately, these are mostly raster images, not vector diagrams.
+>
+> From your experience, what minimal resolution is required so that an image would not appear pixelated when covering a full slide?  I particularly refer to projecting the presentation from a beamer, not viewing it on a computer screen.
+:::
+
+I do beamer presentations with lots of art.  While I have not experimented to find minimum values, I get good results from anything 1024x768 pixels and up.  This is flickr's "large" size.  
+
+I mention flickr because it's a good resource for this kind of thing.  Do an advanced search and check the box for Creative Commons-licensed photos.
+
+In case you want to keep looking for vector art, try these: 
+
+ - [Free Vector Resources For Designers in 2011](http://webification.com/free-vector-resources-designers-websites-2011) Showed up in my tweetstream the other day; lists many sites.  I don't know what the licensing is for these.
+
+ - [openclipart.org](http://openclipart.org) has only public-domain works.  You can even search this site within InkScape to make your own modifications.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11203/desired-resolution-of-images-for-a-beamer-presentation/11209#11209) on TeX Stack Exchange, 2011-02-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

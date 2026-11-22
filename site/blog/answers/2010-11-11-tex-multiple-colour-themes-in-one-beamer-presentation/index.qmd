@@ -1,0 +1,94 @@
+---
+title: Multiple colour themes in one beamer presentation
+date: '2010-11-11'
+description: This sort of works. \usecolortheme{foo} uses a package beamercolorthemefoo.sty, which is why it can only be used in the preamble. But if you neuter the…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5217
+se-link: https://tex.stackexchange.com/questions/5209/multiple-colour-themes-in-one-beamer-presentation/5217#5217
+se-score: 14
+se-accepted: true
+se-tags:
+- beamer
+- color
+- presentations
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Multiple colour themes in one beamer presentation](https://tex.stackexchange.com/questions/5209/multiple-colour-themes-in-one-beamer-presentation), asked by [Ross Churchley](https://tex.stackexchange.com/users/1421/ross-churchley) on TeX Stack Exchange (2010-11-11; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm preparing a single seminar talk on three more-or-less unrelated results. In order to visually separate these results, I wanted to give each one a different (custom) colour theme for the corresponding beamer slides. I know I could make three different presentations and stitch their pdf output together, but I'd prefer not to do this. So, my question is:
+>
+> > Is there any way to switch colour
+> > themes partway through a beamer
+> > document?
+:::
+
+This sort of works.  `\usecolortheme{foo}` uses a package `beamercolorthemefoo.sty`, which is why it can only be used in the preamble.  But if you neuter the commands in the `.sty` file which make it a package, and `\input` it instead, you can get those commands anywhere you want.  So:
+
+```latex
+\documentclass{beamer}
+
+\newenvironment{colortheme}[1]{
+\def\ProvidesPackageRCS $##1${\relax}
+\renewcommand{\DeclareOption[2]}{\relax}
+\renewcommand{\ProcessOptions}{\relax}
+\makeatletter
+\input beamercolortheme#1.sty
+\makeatother
+}{}
+
+\begin{document}
+
+\begin{frame}
+\begin{theorem}[Pythagoras]
+If $a$ and $b$ are the legs of a right triangle and $c$ is the hypotenuse, then
+\[
+	a^2 + b^2 = c^2 
+\]
+\end{theorem}
+\end{frame}
+
+
+\begin{colortheme}{albatross}
+\begin{frame}
+\begin{theorem}[Pythagoras]
+If $a$ and $b$ are the legs of a right triangle and $c$ is the hypotenuse, then
+\[
+	a^2 + b^2 = c^2 
+\]
+\end{theorem}
+\end{frame}
+\end{colortheme}
+
+\begin{colortheme}{crane}
+\begin{frame}
+\begin{theorem}[Pythagoras]
+If $a$ and $b$ are the legs of a right triangle and $c$ is the hypotenuse, then
+\[
+	a^2 + b^2 = c^2 
+\]
+\end{theorem}
+\end{frame}
+\end{colortheme}
+
+\end{document}
+```
+
+The trouble is that some of the themes have optional arguments and this is going to ignore them.  You would have to reprogram `\DeclareOption` and `\ProcessOptions` to do what you want outside of a package file.  That could be possible with the `pgfkeys` package.  
+
+Also, there might be other commands that are specific to packages and need to be neutered.  Grepping a few of the other color theme packages I see `\DeclareBeamerOption` and `\ProcessBeamerOption`.  
+
+I think a nice enhancement to beamer would be to change the theme implementation so that this could be done easily.  You could have `\loadcolortheme{foo}` in the preamble which sets up and configures the theme, but doesn't call any of the `\setbeamercolor` commands until `\usecolortheme{foo}` is found.  For backwards compatibility `\usecolortheme` can check if the theme is loaded first.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5209/multiple-colour-themes-in-one-beamer-presentation/5217#5217) on TeX Stack Exchange, 2010-11-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

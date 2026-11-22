@@ -1,0 +1,38 @@
+---
+title: Please how solve this Improper Integral
+date: '2017-03-20'
+description: Presumably you were able to show that $\int1^\infty \sqrt[x]{e}\,dx$ diverges, because $$\lim{x\to\infty} \sqrt[x]{e} = 1$$ But it follows from the above that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2195119
+se-link: https://math.stackexchange.com/questions/2195112/please-how-solve-this-improper-integral/2195119#2195119
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Please how solve this Improper Integral](https://math.stackexchange.com/questions/2195112/please-how-solve-this-improper-integral), asked by [Trucker](https://math.stackexchange.com/users/153069/trucker) on Mathematics Stack Exchange (2017-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Please how solve this Improper Integral ... $$\int_{1}^{+\infty}\frac{1}{\sqrt[x]{e}}dx$$... i know how to solve $$\int_1^{+\infty} \sqrt[x]{e}$$ I create a Taylor Polynomial and integrate, but this is a little hard. 
+> if it is possible...
+:::
+
+Presumably you were able to show that $\int_1^\infty \sqrt[x]{e}\,dx$ diverges, because
+$$\lim_{x\to\infty} \sqrt[x]{e} = 1$$
+But it follows from the above that
+$$\lim_{x\to\infty} \frac{1}{\sqrt[x]{e}} = \frac{1}{1} = 1$$
+so $\int_1^\infty \frac{1}{\sqrt[x]{e}}\,dx$ diverges, too.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2195112/please-how-solve-this-improper-integral/2195119#2195119) on Mathematics Stack Exchange, 2017-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

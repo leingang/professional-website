@@ -1,0 +1,70 @@
+---
+title: Euler's method for exact solution
+date: '2019-06-04'
+description: 'I think that the process you''re envisioning, if you did it rigorously, becomes equivalent to Picard''s iterative process: Given an initial value problem $y''(t)=…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3251097
+se-link: https://math.stackexchange.com/questions/3251016/eulers-method-for-exact-solution/3251097#3251097
+se-score: 2
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- functions
+- numerical-methods
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Euler's method for exact solution](https://math.stackexchange.com/questions/3251016/eulers-method-for-exact-solution), asked by [Anastassis Kapetanakis](https://math.stackexchange.com/users/342024/anastassis-kapetanakis) on Mathematics Stack Exchange (2019-06-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We know that the solution of
+>
+> $$y'=y$$
+>
+> with $y(0)=1$
+> is 
+>
+> $$y=e^{x}$$
+>
+> As far as I see the Euler's method is explicitly used only to find the numerical approximation of e.g. $y(3)$. Can we use the Euler's method to solve this differential equation and find the exact solution?
+>
+> Edit:
+>
+> I thought of the following:
+> $$y(t_1+\delta t) = y(t_0) + y'(t_1) \delta t$$
+> $$y(t_1+2\delta t) = y(t_1+\delta t) + y'(t_1+\delta t) \delta t$$
+> $$...$$
+> and from that we could find a recursive solution for $y(t_0)$. Then by taking the limit $\lim_{\delta t \to 0}$ of it, it could be possible to find the general solution of $y$ for every $t_0$ in the domain.
+>
+> Is it impossible?
+:::
+
+I think that the process you're envisioning, if you did it rigorously, becomes equivalent to Picard's iterative process: Given an initial value problem $y'(t)= f(t,y)$, $y(0) = y_0$, the sequence of functions defined by
+$$\begin{align*}
+    \phi_0(t) &= y_0 \\
+    \phi_{k+1}(t) &= y_0 + \int_0^t f(s,\phi_k(s))\,ds
+\end{align*}$$
+converges to a solution $\phi(t)$.
+
+(You can think of that integral as summing $f(s,\phi_k(s))$ at many discrete points between $s=0$ and $s=t$, multiplied by a small amount $\Delta s$, and taking the limit as $\Delta s \to 0$.)
+
+In your problem, you have $f(t,y) = y$ and $y_0 = 1$.  Picard's process gives:
+$$\begin{align*}
+    \phi_0(t) &= 1 \\
+    \phi_1(t) &= 1 + \int_0^t \phi_0(s)\,ds = 1 + \int_0^t 1\,ds = 1 + t \\
+    \phi_2(t) &= 1 + \int_0^t(1+s)\,ds = 1 + t + \tfrac{1}{2}t^2 \\
+    \phi_3(t) &= 1 + \int_0^t\left(1 + s + \tfrac{1}{2}s^2\right)\,ds = 1 + t + \tfrac{1}{2}t^2 + \tfrac{1}{6} t^3
+\end{align*}$$  
+You can see that $\phi_k(t)$ is the $k$-th degree Taylor polynomial for $\phi(t) = e^t$, and that is the solution to the IVP.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3251016/eulers-method-for-exact-solution/3251097#3251097) on Mathematics Stack Exchange, 2019-06-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

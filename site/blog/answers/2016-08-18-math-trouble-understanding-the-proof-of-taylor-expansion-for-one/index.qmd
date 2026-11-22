@@ -1,0 +1,57 @@
+---
+title: Trouble understanding the proof of Taylor expansion for one variable functions
+date: '2016-08-18'
+description: First, remember that $$\lim{x\to a} \frac{g(x) - g(a)}{x-a} = g'(a)$$ whenever $g$ is differentiable at $a$. Some people are more familiar with the limit in…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1896327
+se-link: https://math.stackexchange.com/questions/1896300/trouble-understanding-the-proof-of-taylor-expansion-for-one-variable-functions/1896327#1896327
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- taylor-expansion
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trouble understanding the proof of Taylor expansion for one variable functions](https://math.stackexchange.com/questions/1896300/trouble-understanding-the-proof-of-taylor-expansion-for-one-variable-functions), asked by [bonehead](https://math.stackexchange.com/users/347105/bonehead) on Mathematics Stack Exchange (2016-08-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In [this][q-1] link I don't understand two last lines in that segment. 
+>
+> > $$\begin{align}
+> \lim_{x\to a} \frac{f(x) - P(x)}{(x-a)^k} &= \lim_{x\to a} \frac{\frac{d}{dx}(f(x) - P(x))}{\frac{d}{dx}(x-a)^k} = \cdots = \lim_{x\to a} \frac{\frac{d^{k-1}}{dx^{k-1}}(f(x) - P(x))}{\frac{d^{k-1}}{dx^{k-1}}(x-a)^k}\\
+> &=\frac{1}{k!}\lim_{x\to a} \frac{f^{(k-1)}(x) - P^{(k-1)}(x)}{x-a}\\
+> &=\frac{1}{k!}(f^{(k)}(a) - f^{(k)}(a)) = 0
+> \end{align}$$
+>
+> I know it says that it follows from the definition of the derivative at $x=a$ but can someone explain this to me more thoroughly ?
+>
+>   [q-1]: https://en.wikipedia.org/wiki/Taylor%27s_theorem#Proof_for_Taylor.27s_theorem_in_one_real_variable
+:::
+
+First, remember that 
+$$\lim_{x\to a} \frac{g(x) - g(a)}{x-a} = g'(a)$$
+whenever $g$ is differentiable at $a$.  Some people are more familiar with the limit in the form $\lim_{h\to0} \frac{f(a+h) - f(a)}{h}$, but they are equivalent by changing the variables from $h$ to $x=a+h$.  
+
+Also, there seems to be a typo in the Wiki article.  It says $f^{(j)}(a) = P^{(j)}(a)$ for all $j$ from $1$ to $k-1$, but it also holds for $j=k$.
+
+The rest of it is the old add-and-subtract-the-same-thing trick:
+$$\begin{split}
+\lim_{x\to a} \frac{f^{(k-1)}(x) - P^{(k-1)}(x)}{x-a}
+&= \lim_{x\to a} \frac{f^{(k-1)}(x) -f^{(k-1)}(a) + f^{(k-1)}(a) - P^{(k-1)}(x)}{x-a} \\
+&= \lim_{x\to a}\left(\frac{f^{(k-1)}(x) -f^{(k-1)}(a)}{x-a} - \frac{P^{(k-1)}(x) - f^{(k-1)}(a)}{x-a}\right) \\
+&= \lim_{x\to a}\frac{f^{(k-1)}(x) -f^{(k-1)}(a)}{x-a} - \lim_{x\to a}\frac{P^{(k-1)}(x) - P^{(k-1)}(a)}{x-a} \\
+&= f^{(k)}(a) - P^{(k)}(a) = f^{(k)}(a) - f^{(k)}(a) = 0 
+\end{split}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1896300/trouble-understanding-the-proof-of-taylor-expansion-for-one-variable-functions/1896327#1896327) on Mathematics Stack Exchange, 2016-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

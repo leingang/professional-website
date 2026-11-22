@@ -1,0 +1,44 @@
+---
+title: get latex variable/definition from file
+date: '2011-05-12'
+description: You might try the datatool package.
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 5977874
+se-link: https://stackoverflow.com/questions/5975782/get-latex-variable-definition-from-file/5977874#5977874
+se-score: 0
+se-accepted: false
+se-tags:
+- latex
+- pdflatex
+- miktex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[get latex variable/definition from file](https://stackoverflow.com/questions/5975782/get-latex-variable-definition-from-file), asked by [Francis](https://stackoverflow.com/users/557199/francis) on Stack Overflow (2011-05-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So we have a file which has mappings like:
+>
+> one/two/one.tex 27/11/85
+> some/other/two.tex 27/03/89
+>
+> I would like all our documents to reference this file and pull out the appropriate date. For example, for one.tex, it would display 27/11/85
+>
+> Any suggestion on how I can do this?
+:::
+
+You might try the [`datatool`](http://ctan.org/pkg/datatool) package.  
+
+You can find an entire community on the [TeX StackExchange](https://tex.stackexchange.com/), where no TeX-related question is too small.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/5975782/get-latex-variable-definition-from-file/5977874#5977874) on Stack Overflow, 2011-05-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

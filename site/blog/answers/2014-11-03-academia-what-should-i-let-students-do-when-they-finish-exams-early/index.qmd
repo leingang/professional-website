@@ -1,0 +1,44 @@
+---
+title: What should I let students do when they finish exams early?
+date: '2014-11-03'
+description: I simply make an announcement with, say, 30 minutes to go requesting that, to respect the concentration of the students still working, students finishing early…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 31093
+se-link: https://academia.stackexchange.com/questions/31065/what-should-i-let-students-do-when-they-finish-exams-early/31093#31093
+se-score: 3
+se-accepted: false
+se-tags:
+- teaching
+- exams
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What should I let students do when they finish exams early?](https://academia.stackexchange.com/questions/31065/what-should-i-let-students-do-when-they-finish-exams-early), asked by [Village](https://academia.stackexchange.com/users/600/village) on Academia Stack Exchange (2014-11-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I organized my students to take their exams in the school’s computer labs. Some students finished well before others. In each section, I tried different policies for what students should do in this situation, but none worked very well.
+>
+> 1. I let one section of students leave when they finished, but make much noise while moving their chairs and gathering their things. Furthermore, I am concerned that students will find ways to cheat, e.g. leave and access the Web-based testing system from their iPod.
+>
+> 2. I let one section do as they like on the computers when they finished, but this made it difficult to determine who was finished and who was using resources to cheat on the exams.
+>
+> 3. I gave one section some extra credit work to do if they finished early, but many students did other homework instead, which led to similar difficulty in determining who was finished or cheating.
+>
+> What is a good policy that does not cause interruption to other students but also does not hinder proctoring efforts?
+:::
+
+I simply make an announcement with, say, 30 minutes to go requesting that, to respect the concentration of the students still working, students finishing early remain quietly seated until time is up.
+
+This usually has the intended effect.  The worst thing that's happened is that some students get up and try to leave immediately after that announcement.  I meet them in the aisle and quietly repeat my request.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/31065/what-should-i-let-students-do-when-they-finish-exams-early/31093#31093) on Academia Stack Exchange, 2014-11-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

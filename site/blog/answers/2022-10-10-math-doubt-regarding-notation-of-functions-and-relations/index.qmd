@@ -1,0 +1,47 @@
+---
+title: Doubt regarding notation of functions and relations
+date: '2022-10-10'
+description: Yes, there is some ambiguity here.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4549754
+se-link: https://math.stackexchange.com/questions/4549731/doubt-regarding-notation-of-functions-and-relations/4549754#4549754
+se-score: 2
+se-accepted: true
+se-tags:
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Doubt regarding notation of functions and relations](https://math.stackexchange.com/questions/4549731/doubt-regarding-notation-of-functions-and-relations), asked by [AVS](https://math.stackexchange.com/users/1056829/avs) on Mathematics Stack Exchange (2022-10-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In the notation $f : A \rightarrow B$, $A$ is the domain of $f$ and $B$ is the codomain.
+>
+> 1) What actually _is_ the codomain? Defining it as the set into which all outputs of the function are constrained to doesn't seem very solid to me. Is it wrong to say that for the function $x \mapsto x+1, x \in \mathbb{Z}$, one may say that the codomain is $\mathbb{R}$ or $\mathbb{Z}$ or any other superset of $\mathbb{Z}$?
+>
+> 2. Let's say I define sets $A = \{1,2,3,4,5\}$ and $B =  \{2,4,6,8,10\}$, and a relation, $R:A \to B$ (which means domain is $A$ and codomain is $B$), such that $R = \{(1,2),(2,4),(3,6),(4,8)\}$. In this case, $R$ is a subset of $A \times B$, and I've always thought that this means $R$ is a relation from A to $B$. But if $A$ is the domain, then that means $A$ should be the set of all first elements of all ordered pairs in $R$. But clearly in this case, the element $5$ is in $A$ but it is not the first element of any ordered pair in $R$.
+>
+> So my question is, is it valid to say that $R$ is a relation from $A \to B$, _purely from the fact that $R \subset A \times B$_? Does this not contradict the fact that the $R:A \to B$ notation _says that $A$ is the domain_?
+:::
+
+Yes, there is some ambiguity here.
+
+Regarding codomains, a function can have many. As you point out, the function $\{ (x,x+1) : x \in \mathbb{Z} \}$ can have codomain $\mathbb{Z}$ or any set that contains $\mathbb{Z}$. If you consider a function only as a set of ordered pairs, then you really only see its range, not any specific codomain. 
+
+In practice, functions are more often constructed or considered with a specific codomain in mind, and the one given in the notation is this one. For instance, in calculus we often start with a function $f\colon[a,b] \to \mathbb{R}$, even though we can assume a closed, bounded codomain if $f$ is continuous.
+
+Regarding “from ... to ...,” it's true that a relation from $A$ to $B$ can be a function, but may not necessarily be a function from $A$ to $B$. Your example is a good one. And this is just the conventions of language that arose around functions and relations not coalescing. 
+
+At least the use of the term *domain* is pretty consistent.  If a relation $R$ is a function, the domain of $R$ as a relation is the same as its domain as a function. If $f$ is a function from $A$ to $B$, then $A$ is the domain of $f$. But in contrast, if $R$ is a relation from $A$ to $B$, then the domain of $R$ is merely a subset of $A$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4549731/doubt-regarding-notation-of-functions-and-relations/4549754#4549754) on Mathematics Stack Exchange, 2022-10-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

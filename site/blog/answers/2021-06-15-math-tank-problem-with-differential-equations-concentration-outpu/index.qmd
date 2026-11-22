@@ -1,0 +1,68 @@
+---
+title: Tank Problem with Differential Equations (concentration output starts at a different t than the initial t)
+date: '2021-06-15'
+description: I think this is the issue. If $q(t)$ is the mass of solute (salt in this case), and $V(t)$ is the volume of solution, then $$Q(t) = \frac{q(t)}{V(t)}$$ If…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4173830
+se-link: https://math.stackexchange.com/questions/4173786/tank-problem-with-differential-equations-concentration-output-starts-at-a-diffe/4173830#4173830
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tank Problem with Differential Equations (concentration output starts at a different t than the initial t)](https://math.stackexchange.com/questions/4173786/tank-problem-with-differential-equations-concentration-output-starts-at-a-diffe), asked by [Ivan Camilo Ballen Mendez](https://math.stackexchange.com/users/881205/ivan-camilo-ballen-mendez) on Mathematics Stack Exchange (2021-06-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Problem:** Consider a tank of $350$lts with $100$lts of pure water at $t=0$. At $t=0$, the tank begins to fill with a saline concentration that has $10$gr per lt, at a rate of $5$ lts$/$min. It continues to fill for $20$ minutes when suddenly a leak opens at the bottom of the tank where $2$ liters of contents per minute leak out. Calculate the salt concentration in the tank at the moment it reaches its maximum capacity.
+>
+> **My Solution:** For $0\leq t \leq 20$ it is clear that the differential equation that models the salt concentration is:
+>
+> $$\frac{dQ}{dt} = \frac{10 \cdot 5}{100+5t}$$
+>
+> For $t \geq 20$ I proposed the following equation:
+>
+> $$\frac{dQ}{dt} = \frac{10\cdot 5 - 2Q}{200+3(t-20)}$$
+>
+> Here the explanation of this equation:
+>
+> Salt rate in: $10gr/lt \cdot 5lt/min$
+>
+> Salt rate out: $Q \cdot 2lt/min$
+>
+> Volume (at $t=20$): $100+5\cdot 20 = 200$
+>
+> Volume (after $t=20$): $200+(5-2)(t-20)$ because in $t=0$ I want to obtain $200lt$
+>
+> Since the change of concentration is (rate in - rate out)/V(t), then:
+>
+> $$\frac{dQ}{dt} = \frac{10\cdot 5 - 2Q}{200+3(t-20)}$$
+>
+> However, my professor told me that there is a problem with this second differential equation and I don't realize what is the error.
+:::
+
+> Since the change of concentration is (rate in - rate out)/V(t)
+
+I think this is the issue.  If $q(t)$ is the mass of solute (salt in this case), and $V(t)$ is the volume of solution, then
+$$Q(t) = \frac{q(t)}{V(t)}$$
+If $V(t)$ is constant, then $Q'(t) = q'(t)/V(t)$, and your equation is satisfied.  But if $V(t)$ is not constant, then $Q'(t)$ is a more complicated expression involving $q'(t)$ and $V'(t)$.
+
+* * *
+
+It always seems easier for me to work with the mass of the solute instead.  If you need concentration, divide by the volume.  For $t > 20$, there is salt entering and leaving the tank.  The mass of salt going in is $50$ g/min.  Assuming that the solution is well-mixed (and this assumption is usually stated in the problem), the mass of salt going out is the concentration of salt in the solution, times the rate at which solution is leaving the tank.  So
+$$\frac{dq}{dt} = 50 - \frac{q(t)}{200 + 3(t-20)}(2)$$
+The initial condition is $q(20) = 1000$.  You want to know $Q(t_*) = \frac{q(t_*)}{350}$ at the moment $t_*$ where $V(t_*) = 350$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4173786/tank-problem-with-differential-equations-concentration-output-starts-at-a-diffe/4173830#4173830) on Mathematics Stack Exchange, 2021-06-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

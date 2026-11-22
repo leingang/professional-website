@@ -1,0 +1,39 @@
+---
+title: Best font size for Latex Beamer
+date: '2010-04-08'
+description: You want something "rounder" than you would use for handouts. Also sans-serif. Beyond that it's probably not that big a deal.
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2600463
+se-link: https://stackoverflow.com/questions/2054557/best-font-size-for-latex-beamer/2600463#2600463
+se-score: 1
+se-accepted: false
+se-tags:
+- latex
+- fonts
+- size
+- presentation
+- beamer
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Best font size for Latex Beamer](https://stackoverflow.com/questions/2054557/best-font-size-for-latex-beamer), asked by [Setjmp](https://stackoverflow.com/users/30636/setjmp) on Stack Overflow (2010-01-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am preparing a presentation in latex using the beamer package.  I am wondering what font size "pros" who give a lot of presentations use to make sure people in the back of the room can see.   The default font size seems a bit small to me.
+:::
+
+You want something "rounder" than you would use for handouts.  Also sans-serif.  Beyond that it's probably not *that* big a deal.
+
+I've used Futura and Gill Sans (Keynote's default font) in the past.  Calibri (PowerPoint's default in their latest version) is nice.  Gotham is a very popular font, too.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2054557/best-font-size-for-latex-beamer/2600463#2600463) on Stack Overflow, 2010-04-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

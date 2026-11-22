@@ -1,0 +1,44 @@
+---
+title: The fundamental group of n dimensional sphere
+date: '2024-04-07'
+description: Let's represent $S^n$ as the set of all $(x1,x2,\dots,xn,x{n+1}) \in \mathbb{R}^{n+1}$ satisfying $x1^2 + x2^2 + \dots + xn^2 + x{n+1}^2 = 1$. Then $S^n -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4894508
+se-link: https://math.stackexchange.com/questions/4894474/the-fundamental-group-of-n-dimensional-sphere/4894508#4894508
+se-score: 2
+se-accepted: false
+se-tags:
+- general-topology
+- algebraic-topology
+- homotopy-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The fundamental group of n dimensional sphere](https://math.stackexchange.com/questions/4894474/the-fundamental-group-of-n-dimensional-sphere), asked by [Gjigji](https://math.stackexchange.com/users/1178609/gjigji) on Mathematics Stack Exchange (2024-04-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In the book of Allan Hatcher in the proof of 
+> > **Proposition 1.14:** $\pi_{1}(S^{n}) = 0$ if $n \geq 2$ 
+>
+> I don't understand why $A_{1}\cap A_{2}$ is homeomorphic to $S^{n-1} \times \mathbb{R}$, where $p$ and $q$ denote the north and south pole of $S^n$, respectively, and $A_1 = S^n - \{p\}$ and $A_2 = S^n - \{q\}$. 
+>
+> How to prove it?
+:::
+
+Let's represent $S^n$ as the set of all $(x_1,x_2,\dots,x_n,x_{n+1}) \in \mathbb{R}^{n+1}$ satisfying $x_1^2 + x_2^2 + \dots + x_n^2 + x_{n+1}^2 = 1$. Then $S^n - \{p,q\}$ consists of the points in $S^n$ for which $x_{n+1} \neq \pm 1$. Since $x_{n+1}^2 < 1$, $x_1^2 + x_2^2 + \dots x_n^2 > 0$.
+Define $f \colon S^n - \{p,q\} \to S^{n-1} \times \mathbb{R}$ by
+$$f(x_1,x_2,\dots,x_n,x_{n+1}) = \left(\frac{x_1}{\sqrt{x_1^2 + x_2^2 + \dots +x_n^2}},\dots, \frac{x_n}{\sqrt{x_1^2 + x_2^2 + \dots +x_n^2}}, \frac{x_{n+1}}{\sqrt{x_1^2 + x_2^2 + \dots + x_n^2}}\right)$$
+Then 
+$$f^{-1}(y_1,y_2,\dots,y_n,t) = \left(\frac{y_1}{\sqrt{1+t^2}},\dots,\frac{y_n}{\sqrt{1+t^2}},\frac{t}{\sqrt{1+t^2}}\right)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4894474/the-fundamental-group-of-n-dimensional-sphere/4894508#4894508) on Mathematics Stack Exchange, 2024-04-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

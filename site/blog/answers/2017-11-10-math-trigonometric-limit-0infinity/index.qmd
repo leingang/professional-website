@@ -1,0 +1,57 @@
+---
+title: Trigonometric Limit 0*infinity
+date: '2017-11-10'
+description: You want to use the fact that $\lim{\theta\to 0} \frac{\sin\theta}{\theta} = 1$. $$\begin{align} \lim{x\to 1}(1-x) \tan\left(\frac{x\pi}{2}\right) &= \lim{x\to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2514277
+se-link: https://math.stackexchange.com/questions/2514258/trigonometric-limit-0infinity/2514277#2514277
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trigonometric Limit 0*infinity](https://math.stackexchange.com/questions/2514258/trigonometric-limit-0infinity), asked by user446681 on Mathematics Stack Exchange (2017-11-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I came across this trigonometric limit. I’ve tried to solve it by **transformation** but failed. 
+>
+> How can I evaluate it? Answer is $2/\pi$. 
+>
+> > $$\lim_{x\to 1} (1-x) \tan\left(\frac{x\pi}{2}\right)$$
+:::
+
+You want to use the fact that $\lim_{\theta\to 0} \frac{\sin\theta}{\theta} = 1$.
+$$\begin{align*}
+    \lim_{x\to 1}(1-x) \tan\left(\frac{x\pi}{2}\right)
+    &= \lim_{x\to 1}(1-x)\frac{\sin\left(\frac{x\pi}{2}\right)}{\cos\left(\frac{x\pi}{2}\right)}
+     = \lim_{x\to 1}\frac{1-x}{\cos\left(\frac{x\pi}{2}\right)}
+\end{align*}$$
+since the sine term tends to one.  Let $t = 1-x$.  Then $t\to 0$ as $x\to 1$ and
+$$\begin{align*}
+    \lim_{x\to 1}\frac{1-x}{\cos\left(\frac{x\pi}{2}\right)}
+    &= \lim_{t\to 0} \frac{t}{\cos\left(\frac{\pi}{2} - \frac{t\pi}{2}\right)}
+    \\&= \lim_{t\to 0} \frac{t}{\sin(t\pi/2)}
+    \\&= \lim_{t\to 0} \frac{2}{\pi} \cdot \frac{t\pi/2}{\sin(t\pi/2)}
+\end{align*}$$
+Now let $\theta = \frac{t\pi}{2}$ and you are home free.
+
+Alternatively, picking up on the good Doctor's suggestion, let $f(x) = \cot\left(\frac{\pi x}{2}\right)$.  Then 
+$$f'(x) = -\csc^2\left(\frac{\pi x}{2}\right)\cdot \frac{\pi}{2}$$
+So $f'(1) = - \frac{\pi}{2}$.  Your limit can be expressed as
+$$\lim_{x\to 1} \left[(-1)\cdot \frac{x-1}{f(x)-f(1)}\right] = (-1) \cdot \frac{1}{f'(1)} = \frac{2}{\pi}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2514258/trigonometric-limit-0infinity/2514277#2514277) on Mathematics Stack Exchange, 2017-11-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

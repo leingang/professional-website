@@ -1,0 +1,45 @@
+---
+title: Showing two topological spaces are not homeomorphic
+date: '2017-12-15'
+description: Let $X$ be a point and $Y$ the integers, both with the discrete topology. Then $X$ has finitely many open sets, while $Y$ has infinitely many open sets. But…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2568088
+se-link: https://math.stackexchange.com/questions/2568082/showing-two-topological-spaces-are-not-homeomorphic/2568088#2568088
+se-score: 1
+se-accepted: false
+se-tags:
+- general-topology
+- proof-verification
+- algebraic-topology
+- topological-groups
+- universal-property
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Showing two topological spaces are not homeomorphic](https://math.stackexchange.com/questions/2568082/showing-two-topological-spaces-are-not-homeomorphic), asked by [Overflow2341313](https://math.stackexchange.com/users/455423/overflow2341313) on Mathematics Stack Exchange (2017-12-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Having infinitely many open sets in a topology is a topological property
+>
+> **#1:** What are example of two topological spaces, preferably simple ones, which this statement show are not homeomorphic.
+>
+> But, more importantly *why* does it show this? Having trouble understanding topological properties in connection to homeomorphisms.
+>
+> **#2**: What about two spaces where this statement doesn't help deciding whether they are homeomorphic or not?
+:::
+
+Let $X$ be a point and $Y$ the integers, both with the discrete topology.  Then $X$ has finitely many open sets, while $Y$ has infinitely many open sets.  But since there's no bijection between the two, they definitely can't be homeomorphic.
+
+Topological properties are the same as invariants under homeomorphism.  Checking for different topological properties can tell you when spaces are not homeomorphic.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2568082/showing-two-topological-spaces-are-not-homeomorphic/2568088#2568088) on Mathematics Stack Exchange, 2017-12-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

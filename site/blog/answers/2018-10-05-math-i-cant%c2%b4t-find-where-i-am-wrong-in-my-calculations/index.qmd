@@ -1,0 +1,46 @@
+---
+title: I cant´t find where I am wrong in my calculations
+date: '2018-10-05'
+description: Your $\Phi1$ parametrization is going to produce a cylinder of radius 1 and height 9.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2943577
+se-link: https://math.stackexchange.com/questions/2943549/i-cant%c2%b4t-find-where-i-am-wrong-in-my-calculations/2943577#2943577
+se-score: 1
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I cant´t find where I am wrong in my calculations](https://math.stackexchange.com/questions/2943549/i-cant%c2%b4t-find-where-i-am-wrong-in-my-calculations), asked by [YCB](https://math.stackexchange.com/users/467121/ycb) on Mathematics Stack Exchange (2018-10-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the surfaces  $S_1=\{(x,y,z\in\mathbb{R^3}):x^2+y^2=9-z, \ z\geq0 \}$ and $S_2=\{(x,y,z)\in\mathbb{R^3}:x^2+y^2\leq9,\ z=0\}$ and the vector field $F=(y,2z,-3y^2)$. I know that by stokes theorem I have that
+>
+> $$\int\int_{s_1}\nabla \times F\cdot dS_1=\int\int_{s_2}\nabla\times F\cdot dS_2$$
+>  My problem is the following: if I take the parameterizations $\Phi_1=(\cos(\theta),\sin(\theta),z)\ \  0\leq\theta\leq2\pi\ \ 0\leq z\leq9$ for the surface $S_1$ and $\Phi_2=(r\cos(\theta),r\sin(\theta),0)\ \ 0\leq\theta\leq2\pi\ \ 0\leq r\leq3$ for $S_2$ I obtain that
+> $$\int\int_{s_1}\nabla \times F\cdot dS_1=0$$
+> $$\int\int_{s_2}\nabla\times F\cdot dS_2=-9\pi$$
+> And this must be impossible. I don't know where is my mistake, can someone explain me?. 
+>
+> In my calculations a get that $\nabla\times F=(-6y-2,0,-1),\ J(\Phi_1)=(\cos(\theta),\sin(\theta),0), \ J(\Phi_2)=(0,0,r)$.
+:::
+
+Your $\Phi_1$ parametrization is going to produce a cylinder of radius 1 and height 9. 
+
+Instead, write the equation for $S_1$ as $z = 9-x^2-y^2$.  Then you can parametrize it as
+$$\Phi_1(r,\theta) = (r \cos\theta, r \sin\theta,9-r^2)$$
+for $0 \leq \theta \leq 2\pi$, $0 \leq r \leq 3$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2943549/i-cant%c2%b4t-find-where-i-am-wrong-in-my-calculations/2943577#2943577) on Mathematics Stack Exchange, 2018-10-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

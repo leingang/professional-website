@@ -1,0 +1,36 @@
+---
+title: How can I change the link text of a PDF Link with JavaScript?
+date: '2012-01-18'
+description: The answer is no, and the reason has to do with the specifications of links in PDF vs. HTML. In an HTML file a link is part of the document tree, and the text…
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 8910916
+se-link: https://stackoverflow.com/questions/6862712/how-can-i-change-the-link-text-of-a-pdf-link-with-javascript/8910916#8910916
+se-score: 0
+se-accepted: true
+se-tags:
+- javascript
+- pdf
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I change the link text of a PDF Link with JavaScript?](https://stackoverflow.com/questions/6862712/how-can-i-change-the-link-text-of-a-pdf-link-with-javascript), asked by [Matthew Leingang](https://stackoverflow.com/users/297797/matthew-leingang) on Stack Overflow (2011-07-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to make a link in a PDF file that when clicked on changes the text of the link.  In HTML with JavaScript you can do that with the `innerHTML` property of the link.  Is there an analog in JavaScript for PDF?
+:::
+
+The answer is *no*, and the reason has to do with the specifications of links in PDF vs. HTML.  In an HTML file a link is part of the document tree, and the text of the link is one of its children.  In a PDF file a link is a "hot" rectangle on the page that does something when the user clicks in it.  The link may surround some text but as far as the document is concerned that's a coincidence.
+
+The way I found to have dynamic data in a PDF file is to use form fields.  Those can change their contents on mouse events.  By default form fields look different than the regular document text but in my case that was not a problem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/6862712/how-can-i-change-the-link-text-of-a-pdf-link-with-javascript/8910916#8910916) on Stack Overflow, 2012-01-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

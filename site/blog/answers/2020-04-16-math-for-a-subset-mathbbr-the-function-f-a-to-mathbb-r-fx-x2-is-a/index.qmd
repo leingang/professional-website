@@ -1,0 +1,64 @@
+---
+title: 'For $A \subset \mathbb{R}$, the function $f: A \to \mathbb R$, $f(x)=x^2$ is a uniform continuous function if?'
+date: '2020-04-16'
+description: For (D), the subspace topology on $\mathbb Z$ is discrete. So $\delta = \frac{1}{2}$ will ensure that $$|x-y| < \delta \implies x=y \implies |f(x) - f(y)| = 0…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3628467
+se-link: https://math.stackexchange.com/questions/3628427/for-a-subset-mathbbr-the-function-f-a-to-mathbb-r-fx-x2-is-a-u/3628467#3628467
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- uniform-continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[For $A \subset \mathbb{R}$, the function $f: A \to \mathbb R$, $f(x)=x^2$ is a uniform continuous function if?](https://math.stackexchange.com/questions/3628427/for-a-subset-mathbbr-the-function-f-a-to-mathbb-r-fx-x2-is-a-u), asked by [Nitish Kumar](https://math.stackexchange.com/users/697936/nitish-kumar) on Mathematics Stack Exchange (2020-04-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For $A \subset \mathbb{R}$, the function $f: A \to \mathbb R$, $f(x)=x^2$ is a uniform continuous function if 
+>
+> (A) A is bounded
+>
+> (B) A is unbounded
+>
+> (C) A is compact 
+>
+> (D) A is the set $\mathbb Z$ of all integers.
+>
+> >My attempt:
+>
+> (A) If $A$ is a bounded set then from the mean value theorem, we will have that $|f(x)-f(y)|\le M|x-y|$. Hence, $f(x)$ is uniformly continuous.
+>
+> (C) If $A$ is compact, then $f(x)$ is uniformly continuous.
+>
+> For options (B) and (D), using definition of uniform continuity,
+> $$|x^2-y^2|\le |x-y||x+y|$$ But if $A$ is unbounded of $\mathbb Z$, then there's no bound for $|x+y|$, so in my opinion only (A) and (C) are the correct options.
+>
+> I don't know how to check for options (B) and (D).
+> >!The answer is: (A), (B), (C), (D)
+:::
+
+For (D), the subspace topology on $\mathbb Z$ is discrete.  So $\delta = \frac{1}{2}$ will ensure that $$|x-y| < \delta \implies x=y \implies |f(x) - f(y)| = 0 < \epsilon$$
+
+I think (B) is inconclusive.  In light of (D), $f$ could be uniformly continuous on an unbounded set.  But $f$ is definitely not uniformly continuous on $\mathbb R$, another unbounded set.
+
+I started to prove that $f$ couldn't be uniformly continuous on $A$ if $A$ was unbounded.  Here is how that proof went: we want to show that there exists $\epsilon > 0$ such that for all $\delta > 0$ there exists $x$ and $y$ in $A$ with $|x - y | < \delta$ but $|f(x) - f(y) | \geq \epsilon$.  Let $\epsilon = 1$.  Given $\delta > 0$, there exists $x \in A$ such that $|x| > \frac{1}{\delta}$.  Notice that for all $y$,
+$$|f(x) - f(y)| = |f'(c)||x-y| = 2|c| |x-y|$$
+for some $c$ between $x$ and $y$.  If there exists $y \in A$ such that $|y| > |x|$ and $\frac{\delta}{2} < |x-y| < \delta$, we are done, because
+$$2|c| |x-y| > 2 |x| |x-y| > 2 \cdot \frac{1}{\delta} \cdot \frac{\delta}{2} =1$$
+Since $A$ is unbounded, there definitely exists $y \in A$ with $|y| > |x|$. But the second condition isn't guaranteed, and fails for discrete sets like $\mathbb Z$.
+
+Like @zhw says in the comments, since it's not true that $f$ is uniformly continuous on every unbounded set $A$, the statement “If $A$ is unbounded, then $f$ is uniformly continuous on $A$” is false.  But in light of (D), the statement, “If $A$ is unbounded, then $f$ is *not* uniformly continuous on $A$” is also false.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3628427/for-a-subset-mathbbr-the-function-f-a-to-mathbb-r-fx-x2-is-a-u/3628467#3628467) on Mathematics Stack Exchange, 2020-04-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

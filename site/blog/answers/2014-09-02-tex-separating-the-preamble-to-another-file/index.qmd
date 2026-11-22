@@ -1,0 +1,72 @@
+---
+title: Separating the preamble to another file
+date: '2014-09-02'
+description: Preamble commands that add functionality to the document (e.g., defining macros) belong in a package (.sty file).
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 199187
+se-link: https://tex.stackexchange.com/questions/199184/separating-the-preamble-to-another-file/199187#199187
+se-score: 7
+se-accepted: true
+se-tags:
+- preamble
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Separating the preamble to another file](https://tex.stackexchange.com/questions/199184/separating-the-preamble-to-another-file), asked by [Tim Hoffmann](https://tex.stackexchange.com/users/24770/tim-hoffmann) on TeX Stack Exchange (2014-09-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What is the best practice for separating the preamble to a dedicated file?
+>
+> I've seen two variants:
+>
+> 1. A package: preamble.sty and `\usepackage{preamble}`
+> 2. A .tex file: preamble.tex and `\input{preamble}`
+>
+> Which one is to be preferred?
+:::
+
+My opinion mostly:
+
+Preamble commands that add *functionality* to the document (e.g., defining macros) belong in a package (`.sty` file).
+
+Preamble commands that define the *look* of the document (paper geometry, page headers, font selections), belong in a custom *document class* (`.cls` file).  You can use high-level LaTeX commands to derive a custom class from a standard-issue class, and pass options to it.
+
+See https://tex.stackexchange.com/questions/528/style-class-tutorials for examples of both.
+
+* * *
+
+**Update** 2022-03-27 User @tush asked for a reference.  The closest I could find is [LaTex2e for class and package writers](https://www.latex-project.org/help/documentation/clsguide.pdf) by the LaTeX project team. They write:
+
+> **2.3 Is it a class or a package?**
+> 
+> The first thing to do when you want to put some new LaTeX commands in a file
+is to decide whether it should be a document class or a package. The rule of
+thumb is:
+>> If the commands could be used with any document class, then make
+them a package; and if not, then make them a class.
+>
+> There are two major types of class: those like `article`, `report` or `letter`,
+which are free-standing; and those which are extensions or variations of other
+classes—for example, the `proc` document class, which is built on the `article`
+document class.
+Thus, a company might have a local `ownlet` class for printing letters with
+their own headed note-paper. Such a class would build on top of the existing `letter` class but it cannot be used with any other document class, so we
+have `ownlet.cls` rather than `ownlet.sty`.
+>
+> The `graphics` package, in contrast, provides commands for including images
+into a LaTeX document. Since these commands can be used with any document
+class, we have `graphics.sty` rather than `graphics.cls`.
+
+Commands that set the document's look like paper geometry, page headers, font selections, seem closer to the `ownlet` case than to the `graphics` case.  That's why I think they belong in a class rather than a package.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/199184/separating-the-preamble-to-another-file/199187#199187) on TeX Stack Exchange, 2014-09-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

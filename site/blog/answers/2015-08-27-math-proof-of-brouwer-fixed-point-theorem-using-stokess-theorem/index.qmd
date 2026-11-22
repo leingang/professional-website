@@ -1,0 +1,73 @@
+---
+title: Proof of Brouwer fixed point theorem using Stokes's theorem
+date: '2015-08-27'
+description: In the equation $$\int{\partial \Omega} \alpha = \int{\Omega} d\alpha$$ it is assumed that $\alpha$ is defined on $\Omega$. If $i\colon\partial\Omega\to\Omega$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1411368
+se-link: https://math.stackexchange.com/questions/1411178/proof-of-brouwer-fixed-point-theorem-using-stokess-theorem/1411368#1411368
+se-score: 6
+se-accepted: true
+se-tags:
+- differential-geometry
+- differential-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof of Brouwer fixed point theorem using Stokes's theorem](https://math.stackexchange.com/questions/1411178/proof-of-brouwer-fixed-point-theorem-using-stokess-theorem), asked by [LeastSquaresWonderer](https://math.stackexchange.com/users/233263/leastsquareswonderer) on Mathematics Stack Exchange (2015-08-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\omega$ is the volume form on the boundary
+>
+> B -ball
+>
+> $f\colon B \to \partial B$
+>
+> $$0 < \int_{\partial B}\omega = \int_{\partial B} f^*(\omega) = \int_{B} df^*(\omega) = \int_B f^*(d\omega) = \int_B(0) = 0$$
+>
+> What I do not understand, is why on the left, we may conclude that
+>
+> 1. $\int_{B}  d \omega = \int_{\partial B}  \omega > 0$
+>
+> where as later we are alowed to conclude
+>
+> 2. $\int_{B}  f^*(d\omega$) =0
+>
+> as $d\omega=0$
+>
+> What puzzles me is, what prevents us from concluding that $d\omega=0$ in 1. 
+>
+> Both 1. and 2. are integrated over B, so where does the difference come from?
+:::
+
+In the equation
+$$\int_{\partial \Omega} \alpha = \int_{\Omega} d\alpha$$
+it is assumed that $\alpha$ is defined on $\Omega$.  If $i\colon\partial\Omega\to\Omega$ is the inclusion, it induces a restriction map $i^*$ on differential forms in the opposite direction. Really the $\alpha$ on the left-hand side is $i^*\alpha$. We don't usually bother with this extra notation, but it matters.
+
+In general $i^*$ is not an injection.  Let's consider the $n=2$ case.  So $B$ is the unit disk and $\partial B$ is the unit circle.  Let $\alpha = x\,dy - y\,dx$ and $\omega = i^*\alpha$.  In other words, $\alpha$ is an extension of $\omega$ from $\partial B$ to $B$.  We have
+$$d\alpha = 2\, dx\wedge dy$$
+which is definitely not zero on the unit disk.
+But $i^*(d\alpha)=di^*\alpha = d\omega$ *is* zero, by dimension count (it's a two-form on a one-manifold).
+
+To say the same thing without the $i^*$, it is possible for $\omega$ to extend from $\partial B$ to $B$, and for $d\omega =0$ to be true on $\partial B$, but $d\omega \neq 0$ on $B$.  This is what's happening here.
+
+Now back to your proof.  Suppose $\omega$ is a volume form on $\partial B$ (we are no longer assuming that $\omega = i^*\alpha$ for some $\alpha$ on $B$; maybe it is, maybe it isn't).  If $f \colon B \to \partial B$ were a retraction, then $f \mathbin{\circ} i = \operatorname{id}_{\partial B}$.  Then on differential forms, $i^* \mathbin{\circ} f^* = \operatorname{id}_{\Omega^*(\partial B)}$.  Therefore
+$$\begin{split}
+\int_{\partial B}\omega &= \int_{\partial B}i^*(f^*\omega) \\
+&= \int_B d(f^*\omega) \qquad\text{(by Stokes)} \\
+&= \int_B f^*(d\omega) \\
+&= \int_B f^*(0) \qquad\text{(by dimension count)} \\
+&= 0
+\end{split}$$
+If $\omega$ is a volume form on $\partial B$, this is a contradiction.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1411178/proof-of-brouwer-fixed-point-theorem-using-stokess-theorem/1411368#1411368) on Mathematics Stack Exchange, 2015-08-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

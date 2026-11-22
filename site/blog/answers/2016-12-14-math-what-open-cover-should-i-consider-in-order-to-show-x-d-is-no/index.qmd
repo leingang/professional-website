@@ -1,0 +1,41 @@
+---
+title: What open cover should i consider in order to show $(X,d)$ is not compact?
+date: '2016-12-14'
+description: If $X$ were compact, the map $f \colon X \to \mathbb{R}$, $x \mapsto d(x,0)$ would have a compact image. Does it?
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2058665
+se-link: https://math.stackexchange.com/questions/2058655/what-open-cover-should-i-consider-in-order-to-show-x-d-is-not-compact/2058665#2058665
+se-score: 1
+se-accepted: false
+se-tags:
+- general-topology
+- metric-spaces
+- compactness
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What open cover should i consider in order to show $(X,d)$ is not compact?](https://math.stackexchange.com/questions/2058655/what-open-cover-should-i-consider-in-order-to-show-x-d-is-not-compact), asked by [Styles](https://math.stackexchange.com/users/329752/styles) on Mathematics Stack Exchange (2016-12-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $X= \mathbb R$,let
+>
+> $d(x,y)=\frac{\left|x-y\right|}{1+\vert  x-y \vert} \forall x,y \in \mathbb R$.
+>
+> Show that $(X,d)$ is not compact.
+>
+> What is the form of open sets of $(X,d)$?
+:::
+
+If $X$ were compact, the map $f \colon X \to \mathbb{R}$, $x \mapsto d(x,0)$ would have a compact image.  Does it?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2058655/what-open-cover-should-i-consider-in-order-to-show-x-d-is-not-compact/2058665#2058665) on Mathematics Stack Exchange, 2016-12-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

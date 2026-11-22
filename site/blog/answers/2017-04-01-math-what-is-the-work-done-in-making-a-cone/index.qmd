@@ -1,0 +1,48 @@
+---
+title: What is the work done in making a cone?
+date: '2017-04-01'
+description: Slice the cone into parallel horizontal layers, each at height $y$ off the ground and having thickness $\Delta y$. Then the incremental work $\Delta W$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2213032
+se-link: https://math.stackexchange.com/questions/2212977/what-is-the-work-done-in-making-a-cone/2213032#2213032
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the work done in making a cone?](https://math.stackexchange.com/questions/2212977/what-is-the-work-done-in-making-a-cone), asked by [Student](https://math.stackexchange.com/users/255452/student) on Mathematics Stack Exchange (2017-04-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Problem:** A child is building a sand structure at the beach. Find the work done if the weight density of the sand is $\delta=140$ lb/ft$^3$ and the structure is a cone of height $1$ ft and diameter $2$ ft. 
+>
+> **My Attempt:** To be frank, I have tried to think about this problem, but I am quite clueless as to how should I even start solving this problem. The real issue that I am facing is that I don't understand how can I compute the work done in making something because $W=\int Fdx$ and in this problem I can't deduce an expression for $F$ in terms of $x$. So any initial ideas will be much appreciated.
+:::
+
+Slice the cone into parallel horizontal layers, each at height $y$ off the ground and having thickness $\Delta y$.  Then the incremental work $\Delta W$ required to build this layer (that is, raise that much sand to that height) is
+$$\Delta W \approx \Delta F \,y$$
+where $\Delta F$ is the weight of the layer.  That's from the force $\times$ distance rule of work.  Now the weight is proportional to the volume:
+$$\Delta W \approx \Delta V\cdot \delta\,y$$
+[Trouble spot for those more familiar with the metric system:  The density of sand given in the problem is a *weight* density in pounds (force) per unit of volume.  So $\delta$ times volume is force, not mass, and further scaling by $g$ is not needed.]
+The layer is basically a disk with thickness $\Delta y$; let its radius be called $r$.  Then:
+$$\Delta W \approx \pi r^2 \,\Delta y\cdot \delta \,y$$
+Now consider that the radius of the bottommost layer ($y=0$) is $1$ foot and the height is $1$ foot.  So the radius of the layer at height $y$ is $1-y$.  Therefore
+$$\Delta W \approx \pi (1-y)^2\,\Delta y \cdot \delta \,y 
+    = \delta\pi(1-y)^2y\,\Delta y$$
+Do a little unit analysis here: $\delta$ has units of $\text{lb}/\text{ft}^3$.  In the expression for $\Delta W$ we multiply $\delta$ by four lengths, all measured in feet: $(1-y)$ twice, $y$, and $\Delta y$.  So the units of $\Delta W$ are foot-pounds, as work should be.
+
+Summing up all the layers, and letting their thickness tend to zero, we get an integral
+$$W = \int_0^1 \delta\pi(1-y)^2y\,dy = \frac{\pi \delta}{12}\text{ft}\cdot\text{lb}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2212977/what-is-the-work-done-in-making-a-cone/2213032#2213032) on Mathematics Stack Exchange, 2017-04-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,144 @@
+---
+title: Bell curve with multiple x-axes and annotations
+date: '2013-03-18'
+description: 'Short answer: Have a look at Christian''s answer to this question about multiple y-axes on the same plot and adapt.'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103058
+se-link: https://tex.stackexchange.com/questions/103021/bell-curve-with-multiple-x-axes-and-annotations/103058#103058
+se-score: 10
+se-accepted: true
+se-tags:
+- tikz-pgf
+- pgfplots
+- plot
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Bell curve with multiple x-axes and annotations](https://tex.stackexchange.com/questions/103021/bell-curve-with-multiple-x-axes-and-annotations), asked by [Daniel](https://tex.stackexchange.com/users/11898/daniel) on TeX Stack Exchange (2013-03-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've just started working with `pgfplots` and I'm getting good results, but I'm having difficulties getting this one done in LaTeX:
+>
+> ![Bell curve with multiple x-axes and annotations][q-1]
+>
+>
+> The curve itself is not a problem, but the multiple x-axes (I don't need the top one, just the middle and the bottom ones) and especially the "68.2%" right in the middle of the plot just won't work.
+>
+> **Here's what I got so far:**
+>
+> ![My try][q-2]
+>
+> ```latex
+>     \pgfmathdeclarefunction{gauss}{2}{%
+>     \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+>         }
+>
+>     \begin{tikzpicture}
+>
+>     \begin{axis}[
+>       hide y axis, tick align=outside,
+>       domain=-3:3, samples=50,
+>       axis lines*=left, xlabel=$IQ-Werte$, ylabel=$~$,
+>       height=5cm, width=13cm,
+>       xtick={-2,-1,0,1,2}, ytick=\empty,
+>       xticklabels={%
+>       	$70$,
+>       	$85$,
+>       	$100$,
+>       	$115$,
+>       	$130$}  	
+>       ]
+>
+>       \addplot [thick,black!50!black] {gauss(0,1)};
+>       \addplot [fill=black!10, domain=-1:1] {gauss(0,1)} \closedcycle;
+>
+>     \end{axis}
+>     \end{tikzpicture}
+> ```
+>
+>
+>   [q-1]: gWJwQ.png
+>   [q-2]: tyYJ4.png
+:::
+
+Short answer: Have a look at [Christian's answer to this question about multiple y-axes on the same plot][1] and adapt.
+
+Longer answer: keep in mind that a pgfplots `axis` environment just a special type of `tikz` node.  It has special coordinate systems, and a useful one for drawing over the the plot is the one called `axis cs`.  With this coordinate system you can place TikZ drawing commands on any part of the plot window.
+
+You can achieve a second x-axis by making a second axis environment with the same specifications but no actual function plotted, shifted appropriately.  If there were a function plotted it would overlap the first, but without a function all you see are the axes.
+
+
+```latex
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{icomma}
+\begin{document}
+   \pgfmathdeclarefunction{gauss}{2}{%
+      \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+   }
+   \begin{tikzpicture}
+      % options common to all axes here
+      \pgfplotsset{
+         axis x line*=middle, 
+         hide y axis, 
+         tick align=outside,
+         ytick=\empty,
+         xmin=-3,xmax=3,
+         width=13cm,height=7cm,
+         xtick={-2,-1,0,1,2},      
+      }
+
+   % main plot
+   \begin{axis}[
+      samples=50,
+      xlabel={IQ-Werte},
+      domain=-3:3, 
+      xticklabels={%
+         $70$,
+         $85$,
+         $100$,
+         $115$,
+         $130$}      
+      ]
+      \addplot [thick,fill=blue!10,domain=-3.1:3.1] {gauss(0,1)} \closedcycle;
+      \addplot [fill=blue!20, domain=-1:1] {gauss(0,1)} \closedcycle;
+      \draw[thick,arrows={<->}] (axis cs:-1,0.125) -- (axis cs:1,0.125)
+         node[pos=0.5,above] {$68,2\%$};
+    \end{axis}
+
+    % extra x axis
+    \begin{axis}[yshift=-1.5cm,
+      xlabel={Prozentr\"ange},
+      xticklabels={{$2,3$}, {$15,9$}, {$50$}, {$84,1$}, {$97,7$}}
+    ]
+    \addplot[draw=none]{1};
+    \end{axis}
+    \end{tikzpicture}
+\end{document}
+```
+
+![sample code output][3]
+
+Notes:
+
+  * The [`icomma`](http://ctan.org/pkg/icomma) package allows for comma decimal separators like you used.  You might be implementing that with a different package.
+  * You used `$IQ-Werte$` for the x axis label, but that sets the text within math mode.  This means the font shape comes out math italic, there are no ligatures, and the hyphen becomes a minus sign.  You probably just want the plain text.  Use `\textit{IQ-Werte}` if you want italic.
+  * One hack I needed to ensure that the ticks plotted in the second `axis` were noticed: I  plotted a constant function and made it invisible with the `draw=none` key.
+  * An earlier version had some white space between the axis and the first plot, as noticed by @maetra.  I fixed this by making it a `\closedcycle`, then extending the domain slightly so that the resulting vertical edges are clipped by the `xmin:xmax` window.
+
+
+  [1]: https://tex.stackexchange.com/a/27477/1402
+  [2]: EWT6u.png
+  [3]: IxeSz.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103021/bell-curve-with-multiple-x-axes-and-annotations/103058#103058) on TeX Stack Exchange, 2013-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

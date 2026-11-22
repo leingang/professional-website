@@ -1,0 +1,57 @@
+---
+title: What's enough to prove $H\leq G$ where G is a group and $ H\subseteq G$?
+date: '2017-10-23'
+description: Let's be careful. Suppose $G$ is a group with operation $\cdot$, and $H$ is a subset of $G$. We say $H$ is a subgroup of $G$ provided $H$ is a group under the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2486180
+se-link: https://math.stackexchange.com/questions/2486080/whats-enough-to-prove-h-leq-g-where-g-is-a-group-and-h-subseteq-g/2486180#2486180
+se-score: 1
+se-accepted: true
+se-tags:
+- group-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What's enough to prove $H\leq G$ where G is a group and $ H\subseteq G$?](https://math.stackexchange.com/questions/2486080/whats-enough-to-prove-h-leq-g-where-g-is-a-group-and-h-subseteq-g), asked by [Leyla](https://math.stackexchange.com/users/459554/leyla) on Mathematics Stack Exchange (2017-10-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let G be a group and $H\subseteq G$. 
+> >
+> >To show that $H\leq G$ is checking the identity is in H, the inverses are in H and H is associative under the binary operation of G $(*)$ equivalent to checking the identity is in H, the inverses are in H and H is closed under the binary operation of G $(**)$? 
+>
+> I realized my instructor uses $(*)$ and $(**)$ interchangeably . Are they equivalent and are these enough to prove $H\leq G?$
+:::
+
+Let's be careful.  Suppose $G$ is a group with operation $\cdot$, and $H$ is a subset of $G$.  We say $H$ is a *subgroup* of $G$ provided $H$ is a group *under the same operation*.  In particular, $\cdot$ needs to be a binary operation on $H$.  That means $h_1 \cdot h_2 \in H$ for all $h_1, h_2 \in H$.  This property is often summarized by “$H$ is closed under the operation $\cdot$.”
+
+The other group axioms are: the operation needs to be associative, you need an identity, and you need inverses.  Since you dealing with a larger group $G$, all of those axioms hold within $G$.  Since $G$ is a group, $\cdot$ is associative.  If $H$ is closed under $\cdot$, then the associative property of $\cdot$ *automatically* holds in $H$.  
+
+[I am assuming that this is what you meant by “$H$ is associative under $\cdot$.”  Freakish is right that this isn't a precise statement:  Associativity is a property of *operations*, not a property of *sets*.  When it comes time to write things or say things formally, make sure you keep this distinction.]
+
+Next we have to check whether $H$ has an identity element.  Since $G$ is a group, we know $G$ has a identity element, so we really just need to show that that identity element is in $H$ too.  Likewise for inverses—any $h\in H$ has an inverse which *a priori* belongs to $G$; we must show it is in fact in $H$.
+
+To summarize, these are necessary and sufficient conditions for $H$ to be a subgroup of $G$:
+
+1. $H$ is closed under the operation $\cdot$.
+2. The identity element $e \in H$.
+3. For all $h \in H$, its inverse $h^{-1} \in H$.
+
+Based on what you're describing, it seems that when your instructor is showing that a subset is a subgroup, sometimes they discuss the associative law and sometimes they discuss closure.  I wasn't in the room, but I can imagine that happening.
+
+If the instructor checked that the set is closed under the operation, that the identity is in $H$, and inverses of elements in $H$ are also in $H$, than this is enough to prove that $H$ is a subgroup of $G$.  We don't need to check that the operation is associative; that comes from $G$.
+
+If the instructor checked that the operation is associative, the identity is in $H$, and the inverses are in $H$, but skipped checking that the subset is closed under the operation, then it's an incomplete proof.  The associativity check is not important to the subgroup proof; it follows automatically.  Perhaps they illustrated it just to reinforce that $G$ was a group.  Why did they skip the closure step?  It's plausible they wanted you to verify this on your own, or that it was obvious and they didn't want to bother writing it down.  I do this frequently.  Note that these two cases can often be the same—if the instructor says something is obvious and it's not obvious to you, you should definitely verify it on your own and ask your instructor if it's still not obvious!
+
+As an example for why closure is necessary, consider $G= \mathbb{Z}$ under addition and $H=\left\{-2,0,2\right\}$.  Then properties 2 and 3 are satisfied, but not 1.  And this $H$ is a not a subgroup of $G$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2486080/whats-enough-to-prove-h-leq-g-where-g-is-a-group-and-h-subseteq-g/2486180#2486180) on Mathematics Stack Exchange, 2017-10-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

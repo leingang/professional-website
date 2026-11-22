@@ -1,0 +1,51 @@
+---
+title: Does $x \in gl(V)$ semisimple lets us choose basis such that the matrix is diagonal? (Humphrey Lie Algebra text)
+date: '2023-07-25'
+description: 'The first paragraph of Chapter II says:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4742409
+se-link: https://math.stackexchange.com/questions/4742387/does-x-in-glv-semisimple-lets-us-choose-basis-such-that-the-matrix-is-diago/4742409#4742409
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+- lie-algebras
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does $x \in gl(V)$ semisimple lets us choose basis such that the matrix is diagonal? (Humphrey Lie Algebra text)](https://math.stackexchange.com/questions/4742387/does-x-in-glv-semisimple-lets-us-choose-basis-such-that-the-matrix-is-diago), asked by [Bill](https://math.stackexchange.com/users/801005/bill) on Mathematics Stack Exchange (2023-07-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This is from Humphrey's Lie algebra text, page 17:
+>
+> So Humphrey defines what is semisimple here:
+> [![enter image description here][q-1]][q-1]
+>
+>
+> Now the next page explains why the Jordan decomposition is useful and he proves a useful result:
+> [![enter image description here][q-2]][q-2]
+>
+>
+>   [q-1]: clCK8.png
+>   [q-2]: rF3jS.png
+>
+> Now the part that I am confused about is why are we allowed to choose a basis such that our matrix is diagonal? Because x being semisimple implies diagonalizability if our field is algebraically closed but I don't think we ever made that assumption here so why is this possible?
+:::
+
+The first paragraph of Chapter II says:
+
+> In Chapter I we looked at Lie algebras over an arbitrary field $\mathsf{F}$. Apart from introducing the basic notions and examples, we were able to prove only one substantial theorem (Engel’s Theorem). Virtually all of the remaining theory to be developed in this book will require the assumption that $\mathsf{F}$ have characteristic $0$. (Some of the exercises will indicate how counterexamples arise in prime characteristic.) Moreover, in order to have available the eigenvalues of $\operatorname{ad} x$ for arbitrary $x$ (not just for $\operatorname{ad} x$ nilpotent), **we shall assume that $\mathsf{F}$ is algebraically closed**, except where otherwise specified. 
+
+The section from which you clipped the second screenshot does relax the assumption that $\operatorname{char} \mathsf{F} = 0$, but as far as I can tell it is still assumed to be algebraically closed. In fact, given what precedes the assumption (after “Moreover...”), it seems that this is the main reason for making such an assumption.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4742387/does-x-in-glv-semisimple-lets-us-choose-basis-such-that-the-matrix-is-diago/4742409#4742409) on Mathematics Stack Exchange, 2023-07-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

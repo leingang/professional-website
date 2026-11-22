@@ -1,0 +1,47 @@
+---
+title: Can you row reduce and then diagonalize a matrix?
+date: '2015-10-27'
+description: No, performing row reduction on a matrix changes its eigenvalues, so changes its diagonalization.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1500426
+se-link: https://math.stackexchange.com/questions/1500391/can-you-row-reduce-and-then-diagonalize-a-matrix/1500426#1500426
+se-score: 4
+se-accepted: false
+se-tags:
+- linear-algebra
+- diagonalization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can you row reduce and then diagonalize a matrix?](https://math.stackexchange.com/questions/1500391/can-you-row-reduce-and-then-diagonalize-a-matrix), asked by [John](https://math.stackexchange.com/users/284445/john) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm studying for a midterm and I've got a recurring question:
+>
+> If we have an nxn matrix A, can we row reduce A and then diagonalize? I seem to be getting conflicting answers from 2 different TAs. 
+>
+> Also, if the determinant of A is 0, does that mean A is not diagonalizable? Thanks!
+:::
+
+No, performing row reduction on a matrix changes its eigenvalues, so changes its diagonalization.
+
+Consider the matrix $A = \begin{bmatrix} 1 & 2 \\ 1 & 1 \end{bmatrix}$.
+By subtracting the first row from the second, we get a matrix in row echelon form:
+$$A \sim \begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix}$$
+The eigenvalues of the matrix on the right are $1$ and $-1$.
+
+But the eigenvalues of $A$ are the roots of $(\lambda-1)^2 - 2 = 0$.  That is, $\lambda = 1 \pm \sqrt{2}$.  So the diagonalization of $A$ is going to be something else entirely.
+
+As for your second question, the matrix $\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$ is already diagonal (hence, diagonalizable), but has determinant zero.  So invertible and diagonalizable are different things entirely.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1500391/can-you-row-reduce-and-then-diagonalize-a-matrix/1500426#1500426) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

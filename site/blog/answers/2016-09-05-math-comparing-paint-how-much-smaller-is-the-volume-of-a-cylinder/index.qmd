@@ -1,0 +1,44 @@
+---
+title: 'Comparing Paint: How much smaller is the Volume of a cylinderof pigment 3" long and with a 1" diameter than a tube containing 15 ml of pigment?'
+date: '2016-09-05'
+description: This question has a lot of details but in the end you want to compare apples to apples. And in this case an “apple” is the price per unit volume of pigment.…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1915610
+se-link: https://math.stackexchange.com/questions/1915599/comparing-paint-how-much-smaller-is-the-volume-of-a-cylinderof-pigment-3-long/1915610#1915610
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Comparing Paint: How much smaller is the Volume of a cylinderof pigment 3" long and with a 1" diameter than a tube containing 15 ml of pigment?](https://math.stackexchange.com/questions/1915599/comparing-paint-how-much-smaller-is-the-volume-of-a-cylinderof-pigment-3-long), asked by [Joe Calabria](https://math.stackexchange.com/users/366449/joe-calabria) on Mathematics Stack Exchange (2016-09-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to determine the most economical way to purchase paint. Pigment is offered in tubes of 5 and 15 ml and in round sticks that measure 3 inches in length and 1/2 inch in diameter or with 1/4 inch radius. I would like to convert the stick into ml to make the comparison.
+>
+> Additionally the sticks is pure pigment and contains 1.6 times the amount of pigment contained in the paint in the tubes which are diluted with filler to keep it in liquid form that can be squeezed out of the tube. The paint stick is 100% pigment and just cut to use.
+>
+> The cost of the tube is stick is 8.5 dollars and the tubes average cost of the 15 ml tubes is 12 dollars. 5ml tubes are also offered for 7 dollars but they are obviously more expensive that the larger 15ml tubes.
+:::
+
+This question has a lot of details but in the end you want to compare apples to apples.  And in this case an “apple” is the price per unit volume of pigment.  Probably easiest to convert all volumes to milliliters.
+
+ - The tube pigments have to be multiplied by $\frac{1}{1.6} = \frac{5}{8}$ to extract the pigment portion from the filler.  Then you can divide their price by that volume.
+
+ - The solid pigments have to be converted to milliliters.  Remember that another name for millimeter is *cubic centimeter*.  So you know the conversion factor from inches to centimeters, the cube of that factor will convert cubic inches to cubic centimeters / milliliters.
+
+Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1915599/comparing-paint-how-much-smaller-is-the-volume-of-a-cylinderof-pigment-3-long/1915610#1915610) on Mathematics Stack Exchange, 2016-09-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

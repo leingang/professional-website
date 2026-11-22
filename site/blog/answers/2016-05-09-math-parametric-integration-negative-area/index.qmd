@@ -1,0 +1,46 @@
+---
+title: Parametric integration negative area?
+date: '2016-05-09'
+description: Your thinking is correct, and your book is not wrong.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1778118
+se-link: https://math.stackexchange.com/questions/1155989/parametric-integration-negative-area/1778118#1778118
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- area
+- parametric
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Parametric integration negative area?](https://math.stackexchange.com/questions/1155989/parametric-integration-negative-area), asked by [Meep](https://math.stackexchange.com/users/169507/meep) on Mathematics Stack Exchange (2015-02-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know there is a question very similar to mine already here https://math.stackexchange.com/questions/114677/why-does-using-an-integral-to-calculate-an-area-sometimes-return-a-negative-valu
+> , but I am still a bit unsure after reading the answers as to when the integral gives you a positive area and when it gives you a negative area. My text book says that the area is positive if t traces out the curve clockwise and negative for anticlockwise, however I think there is more going on with regards to whether the curve is above or below the x axis.
+>
+> Since $A=\int_a^b y\frac{dx}{dt}dt$, my guess is that you get a positive answer if either the graph is above the x axis (y is positive) and the point is moving to the right (dx/dt positive) or the graph is below the x axis and the point is moving to the left. Then you get a negative answer if either the graph is below the x axis but is being traced out moving to the right, or the graph is above the x axis but is being traced out moving to the left.
+>
+> Was my book wrong? Is my thinking correct?
+>
+> Thank you in advance :)
+:::
+
+Your thinking is correct, and your book is not wrong.
+
+You say that that the integral $\int_a^b y \frac{dx}{dt}\,dt$ is positive when either $y>0$ and $\frac{dx}{dt}>0$ (above the $x$-axis, moving left-to-right), or $y < 0$ and $\frac{dx}{dt} < 0$ (below the $x$-axis, moving right-to-left).  
+In both of these cases, the particle moves clockwise with respect to the origin.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1155989/parametric-integration-negative-area/1778118#1778118) on Mathematics Stack Exchange, 2016-05-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

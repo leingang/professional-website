@@ -1,0 +1,97 @@
+---
+title: How to use pstool in pdfLatex?
+date: '2013-01-31'
+description: 'Here is a short example of psfrag and pstool in action. I took this from the package''s example directory on CTAN:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 96165
+se-link: https://tex.stackexchange.com/questions/96131/how-to-use-pstool-in-pdflatex/96165#96165
+se-score: 6
+se-accepted: false
+se-tags:
+- pdftex
+- pstricks
+- psfrag
+- epstool
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to use pstool in pdfLatex?](https://tex.stackexchange.com/questions/96131/how-to-use-pstool-in-pdflatex), asked by [datcn](https://tex.stackexchange.com/users/10528/datcn) on TeX Stack Exchange (2013-01-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Update: After I adding those `--shell -escape ` commands, when I run the code as below, it still cannot work.
+>
+> ```latex
+> \documentclass[pdftex]{memoir}
+> \usepackage{color}
+> \usepackage{pstool}
+> \input macros.tex
+> \EndPreamble
+> \begin{document}
+>
+> External macros: \a, \b, \c
+>
+> \pstool{trial}{%
+> }
+>
+> \psfragfig{subdir/trial2}{%
+> \psfrag{[Mp]}{$Z_\b$}%
+> }
+>
+> \end{document}
+> ```
+>
+> * * *
+> Update: The question (described in the quotation as below) is solved by deleting the space between the name of my tex file.
+> But, I am still not clear of how to use the command of `pstool` combined with `psfrag`. Can anyone shed a light on this for me?
+> --------------------
+> > I tried to add the package at the very beginning of the document. But,
+> > there are some errors happened and the console said that 
+> > `/usr/local/texlive/2012/texmf-dist/tex/latex/ifplatform/ifplatform.sty:93:
+> > Pack age catchfile Error: File `"my files".w18' not found.`
+> > 
+> > When I removed the sentence of `\usepackage{pstool}`, the compiling
+> > runs well. 
+> > 
+> > Any suggestions will be great appreciated. Thanks!!!
+:::
+
+Here is a short example of `psfrag` and `pstool` in action. I took this from the [package's example directory on CTAN][1]:
+
+
+```latex
+\documentclass{article}
+\usepackage{color}
+\usepackage{pstool}
+\def\a{A}
+\EndPreamble
+\begin{document}
+
+\psfragfig*[mode=nonstop]{trial}{%
+  \color{red}
+  \tiny
+  \psfrag{[Mp]}{$M_\a$!}%
+}
+
+\end{document}
+```
+
+![sample output][2]
+
+(The red mark is what's added with `\psfrag`.)
+
+As egreg notes below, the `-shell-escape` option must be specified to `pdflatex` at run time.
+
+  [1]: http://www.ctan.org/tex-archive/macros/latex/contrib/pstool/example
+  [2]: 7OeXA.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/96131/how-to-use-pstool-in-pdflatex/96165#96165) on TeX Stack Exchange, 2013-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

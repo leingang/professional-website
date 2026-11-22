@@ -1,0 +1,52 @@
+---
+title: Line integral with respect to arc length
+date: '2016-12-02'
+description: This is an example of line integral with respect to $x$. Line integrals with respect to coordinate functions are not entirely intuitive (to me). One possible…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2040490
+se-link: https://math.stackexchange.com/questions/2040003/line-integral-with-respect-to-arc-length/2040490#2040490
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- definite-integrals
+- line-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Line integral with respect to arc length](https://math.stackexchange.com/questions/2040003/line-integral-with-respect-to-arc-length), asked by [Somatic](https://math.stackexchange.com/users/301243/somatic) on Mathematics Stack Exchange (2016-12-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I ran into a problem that, initially, I thought was a typo.
+>
+> $$\int_C\ e^xdx$$
+>
+> where C is the arc of the curve $x=y^3$ from $(-1,-1)$ to $(1,1)$.
+>
+> I have only encountered line integrals with $ds$ before, not $dx$ (or $dy$, for that matter). At first, I thought the $dx$ was supposed to be a $ds$, but that led to an unsolvable integral.
+>
+> Unfortunately, my book does not cover this topic very well, and the online answers I have found are rather vague. I tried plugging in $x=y^3$ to get $$\int_{-1}^{1}\ e^{y^3}3y^2dy$$
+>
+> which evaluates to $e - \frac{1}{e}$. This is also what I get when I do $\int_{-1}^{1}\ e^{x}dx$, so I am inclined to believe it is correct. However, I'm not sure, and I'd like to know for certain if my intuition is valid.
+:::
+
+This is an example of line integral with respect to $x$.  Line integrals with respect to coordinate functions are not entirely intuitive (to me).  One possible motivation for such a thing would be computing work.  If you roll a snowball up a hill, you do work.  The work depends on the mass of the snowball, which depends on how long you've been rolling it, and the elevation gain of the hill.  But any horizontal component to the rolling takes no work, since the only force is gravity.  Thus, if the hill has a profile in the shape of a curve $C$, and $f(x,y)$ is the mass of the snowball at position $(x,y)$ on the hill, ($y$ is the vertical coordinate), then the work is proportional to $\int_C f(x,y)\,dy$.
+
+There is a simple, formal procedure to compute integrals like these.  For yours, parametrize $C$ by $x=t^3$, $y=t$ over $-1 \leq t\leq 1$.  Then the integrand is $e^{t^3}$, and the differential is $dx= 3t^2 \,dt$.  The integral becomes
+$$\int_C e^{x}\,dx=\int_{-1}^t e^{t^3} 3t^2\,dt = \left. e^{t^3}\right|^{1}_{-1} = e - e^{-1}$$
+
+Actually, I think the formality is the major advantage to these integrals.  If $\mathbf{F} = P\mathbf{i} + Q \mathbf{j} + R\mathbf{k}$ is a vector field on $C$, then 
+$$\int_C \mathbf{F}\cdot d\mathbf{r}
+    = \int_C P\,dx + \int_C Q\,dy + \int_C R\,dz$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2040003/line-integral-with-respect-to-arc-length/2040490#2040490) on Mathematics Stack Exchange, 2016-12-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

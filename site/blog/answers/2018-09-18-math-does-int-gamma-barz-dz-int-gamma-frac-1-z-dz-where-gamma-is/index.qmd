@@ -1,0 +1,45 @@
+---
+title: Does $\int_\Gamma \bar{z} \, dz= \int_\Gamma \frac 1 z \, dz$, where $\Gamma$ is the circle $|z|=1$ traversed counter-clockwise?
+date: '2018-09-18'
+description: On the unit circle, $\bar z = \frac{1}{z}$, so the integrands are equal.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2920895
+se-link: https://math.stackexchange.com/questions/2920889/does-int-gamma-barz-dz-int-gamma-frac-1-z-dz-where-gamma-is/2920895#2920895
+se-score: 2
+se-accepted: false
+se-tags:
+- complex-analysis
+- proof-verification
+- complex-integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does $\int_\Gamma \bar{z} \, dz= \int_\Gamma \frac 1 z \, dz$, where $\Gamma$ is the circle $|z|=1$ traversed counter-clockwise?](https://math.stackexchange.com/questions/2920889/does-int-gamma-barz-dz-int-gamma-frac-1-z-dz-where-gamma-is), asked by [Leorio Paradinight](https://math.stackexchange.com/users/588340/leorio-paradinight) on Mathematics Stack Exchange (2018-09-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I think this is true but I'm not sure. The parametrization for the contour is $z(\theta) = e^{i\theta}$, with $z'(\theta)=ie^{i\theta}$ ($0\leq\theta\leq2\pi$). Calculating each integral separately:
+>
+> $$\int_\Gamma \bar{z} \, dz = \int_0^{2\pi} \overline{z(\theta)} z'(\theta) \, d\theta = \int_0^{2\pi}(e^{-i\theta})(ie^{i\theta}) \, d\theta$$
+>
+> Reducing that gives me $2\pi i$
+>
+> For the next integral, we have
+>
+> $$\int_\Gamma \frac{1}{z} \, dz = \int_0^{2\pi} \frac{1}{e^{i\theta}} ie^{i\theta} \, d\theta$$
+>
+> which also gives $2\pi i.$
+:::
+
+On the unit circle, $\bar z = \frac{1}{z}$, so the integrands are equal.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2920889/does-int-gamma-barz-dz-int-gamma-frac-1-z-dz-where-gamma-is/2920895#2920895) on Mathematics Stack Exchange, 2018-09-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

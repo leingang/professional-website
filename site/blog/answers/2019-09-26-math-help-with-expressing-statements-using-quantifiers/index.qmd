@@ -1,0 +1,67 @@
+---
+title: Help with expressing statements using quantifiers
+date: '2019-09-26'
+description: Your answers for 1–4 look correct to me. There's no need for nested quantifiers here, since all the relations are unary (have one variable).
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3371128
+se-link: https://math.stackexchange.com/questions/3371117/help-with-expressing-statements-using-quantifiers/3371128#3371128
+se-score: 3
+se-accepted: false
+se-tags:
+- logic
+- predicate-logic
+- quantifiers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help with expressing statements using quantifiers](https://math.stackexchange.com/questions/3371117/help-with-expressing-statements-using-quantifiers), asked by [domsquad](https://math.stackexchange.com/users/708927/domsquad) on Mathematics Stack Exchange (2019-09-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was hoping for someone to check over my answers for a question I am not totally confident about. I'm also not sure if they would require nested quantifiers (which I didn't use). Thank you in advance.
+>
+> Let $P(x), Q(x), R(x)$, and $S(x)$ be the statements:
+>
+>  - $P(x): x$ is a duck
+>  - $Q(x): x$ is one of my poultry
+>  - $R(x): x$ is an officer
+>  - $S(x): x$ is willing to waltz
+>
+> The Domain is the set of all poultry. Express each of the statements using quantifiers; logical connectives; and $P(x), Q(x), R(x),$ and $S(x).$
+>
+>  1. No ducks are willing to waltz.
+>
+>         ∀x,(P(x) → ¬S(x))
+>
+>  2. No officers ever decline to waltz.
+>
+>         ∀x,(R(x) → S(x))
+>
+>  3. All of my poultry are ducks
+>
+>         ∀x,(Q(x) → P(x))
+>
+>  4. My poultry are not officers
+>
+>         ∀x,(Q(x) → ¬R(x))
+>
+>  5. Is it possible that I have poultry that is willing to waltz? Explain
+>     briefly.
+>
+>         ∃x,(Q(x) → S(x)) ...Not quite sure how to explain
+:::
+
+Your answers for 1–4 look correct to me.  There's no need for nested quantifiers here, since all the relations are unary (have one variable).
+
+I think that question 5 is asking you to decide if the statement is true *assuming that statements 1–4 are true*.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3371117/help-with-expressing-statements-using-quantifiers/3371128#3371128) on Mathematics Stack Exchange, 2019-09-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

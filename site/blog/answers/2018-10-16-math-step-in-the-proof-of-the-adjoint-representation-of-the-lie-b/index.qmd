@@ -1,0 +1,45 @@
+---
+title: Step in the proof of the adjoint representation of the Lie bracket
+date: '2018-10-16'
+description: You said you have trouble understanding the notation $\gamma'(0)(\phi)$. That's a good place to start. Remember that elements of $TpM$ act on $\mathcal{E}(p)$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2958060
+se-link: https://math.stackexchange.com/questions/2957634/step-in-the-proof-of-the-adjoint-representation-of-the-lie-bracket/2958060#2958060
+se-score: 1
+se-accepted: true
+se-tags:
+- derivatives
+- differential-topology
+- lie-groups
+- partial-derivative
+- lie-algebras
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Step in the proof of the adjoint representation of the Lie bracket](https://math.stackexchange.com/questions/2957634/step-in-the-proof-of-the-adjoint-representation-of-the-lie-bracket), asked by [userr777](https://math.stackexchange.com/users/403136/userr777) on Mathematics Stack Exchange (2018-10-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $a: \mathbb{R}^2 \rightarrow M$ a differential map such that $a(s, 0) = p$ for all $s \in \mathbb{R}$. Let $\gamma : \mathbb{R} \rightarrow T_p M$ the path given by $\gamma(s) : = \frac{\partial}{\partial t}_{|t=0} a(s,t)$. We identify $T_{\gamma(0)}(T_pM)$ canonical with $T_pM$. The path $\gamma$ define a tangent vector $\gamma '(0) \in T_p M$. Let $\phi \in \mathcal{E}(p)$, where $\mathcal{E}(p)$ is the set of the function germ in $p$ . Show that
+> $$\begin{align}
+> \gamma '(0)(\phi) = \frac{\partial ^2}{\partial s \partial t}_{|s=t=0} \phi(a(s, t))
+> \end{align}$$
+> Hint: wlog $(M, p ) = (\mathbb{R}^n , 0)$ and $\phi$ linear
+>
+> I have no idea how to approach this exercise. Any suggestions? Thanks in advance!
+:::
+
+You said you have trouble understanding the notation $\gamma'(0)(\phi)$.  That's a good place to start.  Remember that elements of $T_pM$ act on $\mathcal{E}(p)$ like this: if $\gamma$ is a path in $M$ with $\gamma(0) = p$, then $\gamma'(0) \in T_pM$.  If $\phi \in \mathcal{E}(p)$, the action is
+$$\gamma'(0)(\phi) = \left.\frac{d}{ds}(\phi(\gamma(s)))\right|_{s=0}$$
+In your problem, $\gamma(s) = \left.\frac{\partial}{\partial t} a(s,t)\right|_{t=0}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2957634/step-in-the-proof-of-the-adjoint-representation-of-the-lie-bracket/2958060#2958060) on Mathematics Stack Exchange, 2018-10-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

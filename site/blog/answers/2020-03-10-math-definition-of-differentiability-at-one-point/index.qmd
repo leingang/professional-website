@@ -1,0 +1,40 @@
+---
+title: Definition of differentiability at one point
+date: '2020-03-10'
+description: For a fixed point $(a,b)$ the function $$L(a+h,b+k) = f(a,b) + h \frac{\partial f}{\partial x}(a,b) + k \frac{\partial f}{\partial y}(a,b)$$ is a (affine)…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3575542
+se-link: https://math.stackexchange.com/questions/3575523/definition-of-differentiability-at-one-point/3575542#3575542
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Definition of differentiability at one point](https://math.stackexchange.com/questions/3575523/definition-of-differentiability-at-one-point), asked by [Daniel Oscar](https://math.stackexchange.com/users/571152/daniel-oscar) on Mathematics Stack Exchange (2020-03-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My Multivariable Calculus notes state that, in order for a function of the type $\mathbb{R}^2\rightarrow \mathbb{R}$ to be differentiable at a given point, the limit $$\lim _{h,\:k\to 0}\left(\frac{E\left(h,\:k\right)\:}{\:\sqrt{h^2+k^2}}\right)=0$$ Where $$f\left(a+h,\:b+k\right)-f\left(a,\:b\right)=h\cdot \frac{\partial }{\partial x}\left(a,\:b\right)+k\cdot \frac{\partial }{\partial y}\left(a,\:b\right)+E\left(h,\:k\right)$$ But everyone just expect us to memorize this and reproduce it on the exam. What does this really mean? Why does the limit must approach $0$?
+:::
+
+For a fixed point $(a,b)$ the function
+$$L(a+h,b+k) = f(a,b) + h \frac{\partial f}{\partial x}(a,b) + k \frac{\partial f}{\partial y}(a,b)$$
+is a (affine) linear function that satisfies $L(a,b) = f(a,b)$, $\frac{\partial L}{\partial x}(a,b) = \frac{\partial f}{\partial x}(a,b)$, and $\frac{\partial L}{\partial y}(a,b) = \frac{\partial f}{\partial y}(a,b)$.  So $L$ is essentially the *best possible* linear approximation to $f$ near $(a,b)$.
+
+But how good an approximation is it?  That depends how close $f$ is to $L$ in a neighborhood of $(a,b)$.  We want the difference $f-L = E$ to go to zero as $(h,k) \to (0,0)$.  But not *just* go to zero, go to zero faster than $h$ and $k$ go to zero.  Or equivalently, faster than the length $\sqrt{h^2+k^2}$ goes to zero. That is why we take the quotient and require it to have a limit of zero.
+
+Heuristically, $f$ is differentiable at $(a,b)$ if the graph of $L$ matches our intuitive notions of “tangent plane to the graph of $f$” at $(a,b)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3575523/definition-of-differentiability-at-one-point/3575542#3575542) on Mathematics Stack Exchange, 2020-03-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

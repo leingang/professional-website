@@ -1,0 +1,36 @@
+---
+title: What do elements of this set look like?
+date: '2020-03-04'
+description: An element of the quotient ring is an equivalence class of the original ring modulo elements of the ideal. So for instance, one of the elements of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3569473
+se-link: https://math.stackexchange.com/questions/3569450/what-do-elements-of-this-set-look-like/3569473#3569473
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- quotient-set
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What do elements of this set look like?](https://math.stackexchange.com/questions/3569450/what-do-elements-of-this-set-look-like), asked by [Loobear23](https://math.stackexchange.com/users/620266/loobear23) on Mathematics Stack Exchange (2020-03-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was under the impression that elements of quotient rings such as $\mathbb F[x]/(f)$ were of the form $h(x)+(f)$ where $h(x)\in\mathbb F[x]$. Is this correct? If so could somebody explain why elements of $\mathbb F[x]/(x^3+x+1)$ have degree 2 or less? Why isn’t $2x+x^3+x+1$ an element? Is my understanding of what $\mathbb F[x]/(f)$ means wrong? I have looked at several answers and still don’t understand
+:::
+
+An element of the quotient ring is an *equivalence class* of the original ring modulo elements of the ideal.  So for instance, one of the elements of $\mathbb{F}[x]/(x^3+x+1)$ is the equivalence class $[2x+x^3+x+1]$.  But since $(2x+x^3+x+1) - (2x) = x^3 + x+1$, that is, an element of the ideal $(x^3+x+1)$, the equivalence classes are the same: $[2x + x^3 + x + 1] = [2x]$.  
+
+By the division algorithm, every equivalence class has a unique representative with degree less than 3.  So it's commonplace to write “$2x$” instead of “$[2x]$” and simply cancel $x^3+x+1$ whenever we see it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3569450/what-do-elements-of-this-set-look-like/3569473#3569473) on Mathematics Stack Exchange, 2020-03-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

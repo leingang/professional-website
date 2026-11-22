@@ -1,0 +1,54 @@
+---
+title: 'Proof verification: powers of a group element of finite order are distinct'
+date: '2016-08-02'
+description: Logically, everything looks good, except for @Ethan's point. If you are worried about circularity, make sure you understand why your statement “$x^{b-a} = 1…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1879178
+se-link: https://math.stackexchange.com/questions/1879150/proof-verification-powers-of-a-group-element-of-finite-order-are-distinct/1879178#1879178
+se-score: 3
+se-accepted: false
+se-tags:
+- abstract-algebra
+- group-theory
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof verification: powers of a group element of finite order are distinct](https://math.stackexchange.com/questions/1879150/proof-verification-powers-of-a-group-element-of-finite-order-are-distinct), asked by [m1cky22](https://math.stackexchange.com/users/165667/m1cky22) on Mathematics Stack Exchange (2016-08-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm finally attempting to conquer D&F (3rd ed) and I want to build good proof habits and fix mistakes early on. Here is the exercise (Ch. 1 ex. 32) and the following is my proof.
+>
+> Prove that for $x \in G$, where $G$ is a group and $x$ has finite order $n$, all of $1, x, x^2, \ldots, x^{n-1}$ are distinct and deduce that $|x| \leq |G|$.
+>
+> Proof. Let $a,b \in [0,n-1]\cap \mathbb{N}$ such that $x^a=x^b$. Then $1 = x^ax^{-a}=x^bx^{-a} = x^{b-a}$. Since $1 \leq a \lt n$ and $1 \leq b \lt n$, $b-a\lt n$. So $x^{b-a}=1 \implies b-a=0$ and $a=b$. Since $a$ and $b$ were arbitrarily chosen, $x^c$ is distinct for all $c \in [0,n-1] \cap \mathbb{N}$. We know $x^c\in G$ for all $c \in [0, n-1]\cap \mathbb{N}$ by definition of group closure, and $|[0,n-1]\cap \mathbb{N}|=n$. So $G$ contains at least $n$ elements, and $|x|\leq |G|$.
+>
+> Is this a convincing proof? I feel like there might be some circular logic, and perhaps not enough detail. I was thinking of establishing that the elements form a cyclic group, and show this group is a subgroup of $G$. Any tips or comments would be greatly appreciated.
+:::
+
+Logically, everything looks good, except for @Ethan's point.  If you are worried about circularity, make sure you understand why your statement “$x^{b-a} = 1 \implies b-a =0$” is true.
+
+I think notations like 
+> Let $a,b\in[0,n-1] \cap \mathbb{N}$ such that $x^a = x^b$.
+
+are a bit cumbersome.  Personally, I would rewrite the first sentence as 
+> Let $a$ and $b$ be integers such that $0 \leq a \leq b \leq n-1$ and $x^a = a^b$.
+
+Or perhaps even
+> Suppose $x^a = x^b$ for some integers $a$ and $b$ with $0 \leq a\leq b\leq n-1$.
+
+In essence, you want to show $x^a = x^b \implies a=b$, so writing the first sentence that way aligns the paragraph with that logical statement.
+
+Having a higher density of symbols does not make a more mathematically sophisticated argument.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1879150/proof-verification-powers-of-a-group-element-of-finite-order-are-distinct/1879178#1879178) on Mathematics Stack Exchange, 2016-08-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

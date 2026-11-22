@@ -1,0 +1,96 @@
+---
+title: rectangles in beamer background canvas
+date: '2010-12-03'
+description: I think what you want to do is edit the background template, which goes over the canvas and under the text. Put that inside a group with your title page and it…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6484
+se-link: https://tex.stackexchange.com/questions/6479/rectangles-in-beamer-background-canvas/6484#6484
+se-score: 1
+se-accepted: false
+se-tags:
+- beamer
+- backgrounds
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[rectangles in beamer background canvas](https://tex.stackexchange.com/questions/6479/rectangles-in-beamer-background-canvas), asked by [oz123](https://tex.stackexchange.com/users/2266/oz123) on TeX Stack Exchange (2010-12-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am trying to create a custom title page in Beamer, and I've tried many things, but I'm just helpless with all the solutions I found. 
+>
+> I would like to create only in the title page, the following structure:
+>
+> A wide rectangle on top (from side to side) with blue color (width=slidewidth, hight 3 cm), then should come my presentation text and other info, and in the bottom I wan to put the same rectangle ... (width=slidewidth, hight 3 cm). 
+>
+> I would like the rectangle to be part of the canvas, so I could insert the institute logo overlaid above the bottom rectangle. Any help would be appreciated. 
+>
+> Oz
+>
+>
+> UPDATE: 
+>
+>  I managed to insert the fancy rectangels, but they are inside the text space, and I can't put them yet inside the footer and headers ...
+>
+> here is what I did:
+>
+>
+>
+> ```latex
+>  \setbeamertemplate{title page}
+>    {
+>    \begin{beamercolorbox}[ht=2cm,wd=\paperwidth]{title in head/foot}
+>    \usebeamerfont{title in head/foot}
+> % {\centering \hskip3.5cm \includegraphics[scale=0.15]{FZD_LOGO.png}}
+> % \vskip1.25cm
+> \end{beamercolorbox}%
+>
+>   \centering{
+>     {
+>     \usebeamerfont{title}\usebeamercolor[fg]{title}
+>     \inserttitle
+>     } 
+>     }
+> %     \vskip5cm
+> \vskip1.cm
+> \begin{beamercolorbox}[ht=2cm,wd=\paperwidth]{title in head/foot}
+> \usebeamerfont{title in head/foot}
+> {\centering \hskip3.5cm \includegraphics[scale=0.15]{FZD_LOGO.png}}
+> \end{beamercolorbox}%
+> % \end{minipage}
+> }
+> ```
+>
+> Sample output:
+>
+> ![sample output][q-1]
+>
+>
+>   [q-1]: a2qtO.png
+:::
+
+I think what you want to do is edit the `background` template, which goes over the canvas and under the text.  Put that inside a group with your title page and it will only affect the title page.
+
+```latex
+\mode<all>{\bgroup}
+
+\setbeamertemplate{background{% draw stuff...
+}
+
+\begin{frame}
+   \maketitle
+\end{frame}
+
+\mode<all>{\egroup}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6479/rectangles-in-beamer-background-canvas/6484#6484) on TeX Stack Exchange, 2010-12-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,48 @@
+---
+title: Solve for $x$ in $\frac{x^2+12x+36}{x^2+4x-12}=2$
+date: '2017-03-31'
+description: 'You''re right, for (almost) the very reason that you say: $-6$ is not a solution because the left-hand side is not defined when $x=-6$.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2211128
+se-link: https://math.stackexchange.com/questions/2211124/solve-for-x-in-fracx212x36x24x-12-2/2211128#2211128
+se-score: 7
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Solve for $x$ in $\frac{x^2+12x+36}{x^2+4x-12}=2$](https://math.stackexchange.com/questions/2211124/solve-for-x-in-fracx212x36x24x-12-2), asked by [user3255759](https://math.stackexchange.com/users/430979/user3255759) on Mathematics Stack Exchange (2017-03-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\frac{x^2+12x+36}{x^2+4x-12}=2$
+>
+> I factored top and bottom to $\frac{(x+6)(x+6)}{(x+6)(x-2)}=2$
+> and eliminated the common factor (x+6) for $\frac{x+6}{x-2}=2$
+> then $x+6=2(x-2)$  and  $x+6=2x-4$  and  $6+4=2x-x$ and finally $x = 10$
+> Plugging this back into the original fraction proves true
+>
+> My instructor however in her exam prep test says
+> $\frac{x^2+12x+36}{x^2+4x-12}=2$
+>
+> $$x^2+12x+36 = 2(x^2+4x-12)$$
+> $$x^2+12x+36 = 2x^2+8x-24$$
+> $$0 =2x^2-x^2 +8x -12x -24 -36$$
+> $$0 =x^2-4x -60$$ 
+> which she then factors to $(x-10)(x+6)$ saying the answer to the problem is $x=10$ or $x=-6$
+> But if you plug -6 back into the original fraction you get $0=2$. Where is the problem here? Thanks
+:::
+
+You're right, for (almost) the very reason that you say: $-6$ is not a solution because the left-hand side is not defined when $x=-6$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2211124/solve-for-x-in-fracx212x36x24x-12-2/2211128#2211128) on Mathematics Stack Exchange, 2017-03-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

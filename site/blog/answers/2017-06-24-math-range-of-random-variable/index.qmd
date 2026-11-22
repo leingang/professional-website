@@ -1,0 +1,40 @@
+---
+title: Range of Random Variable
+date: '2017-06-24'
+description: As someone who took his first statistics class after his honors analysis class in college, I tried to think of a random variable as a real-valued, measurable…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2334532
+se-link: https://math.stackexchange.com/questions/2334520/range-of-random-variable/2334532#2334532
+se-score: 1
+se-accepted: false
+se-tags:
+- random-variables
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Range of Random Variable](https://math.stackexchange.com/questions/2334520/range-of-random-variable), asked by [Beverlie](https://math.stackexchange.com/users/442594/beverlie) on Mathematics Stack Exchange (2017-06-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I understand that the Random variable is a function such as, 
+>
+> $\text{RV}:\sigma-\text{field}(\Bbb C) \rightarrow \text{range of random variable} \in\Bbb R$ where $\Bbb C$ denotes sample space. 
+>
+> Is there any particular name for the range of random variable?
+:::
+
+As someone who took his first statistics class after his honors analysis class in college, I tried to think of a random variable as a real-valued, measurable function $X$ on a $\sigma$-field $\Omega$.
+
+Although that's technically the definition of random variable, it doesn't capture how they are used.  What helped me grok random variables is the notion that, for any interval $(a,b)$ in $\mathbb{R}$, we can find
+$$P(a < X < b) = P\left(\left\{\omega \in \Omega\mid a < X(\omega) < b\right\}\right)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2334520/range-of-random-variable/2334532#2334532) on Mathematics Stack Exchange, 2017-06-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,58 @@
+---
+title: Finding a homotopy directly to show that two induced homomorphisms on a fundamental group are the same
+date: '2019-01-14'
+description: Let's define loops in $X$ based at $x0$ to be continuous maps $\gamma\colon[0,1] \to X$ with $\gamma(0) = \gamma(1) = x0$. This is equivalent to maps $f \colon…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3073673
+se-link: https://math.stackexchange.com/questions/3073561/finding-a-homotopy-directly-to-show-that-two-induced-homomorphisms-on-a-fundamen/3073673#3073673
+se-score: 1
+se-accepted: true
+se-tags:
+- algebraic-topology
+- homotopy-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding a homotopy directly to show that two induced homomorphisms on a fundamental group are the same](https://math.stackexchange.com/questions/3073561/finding-a-homotopy-directly-to-show-that-two-induced-homomorphisms-on-a-fundamen), asked by user555729 on Mathematics Stack Exchange (2019-01-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the following problem:
+>
+> “Let $I\in \pi_1(S^1,(1,0))$ be the class of the identity map. Show that $nI$ is the class of the map $f_n:S^1\rightarrow S^1$ given by $f_n(z)=z^n$.
+>
+> I can solve it using the fact that $\pi_1(S^1)=\mathbb Z$. But without assuming this fact, how can one directly solve that problem only using the definition of homotopy? I tried to construct a homotopy writing paths in the polar coordinates but I couldn’t find any.
+:::
+
+Let's define loops in $X$ based at $x_0$ to be continuous maps $\gamma\colon[0,1] \to X$ with $\gamma(0) = \gamma(1) = x_0$.  This is equivalent to maps $f \colon S^1 \to X$ with $f(1,0) = x_0$, but it's a bit easier for me to think in terms of a real variable.
+
+If $\gamma_1$ and $\gamma_2$ are two loops, the usual definition of their concatenation $\gamma_1 * \gamma_2$ is
+$$(\gamma_1 * \gamma_2)(t) = \begin{cases}
+        \gamma_1(2t) & 0 \leq t \leq \frac{1}{2} \\
+        \gamma_2(2t-1) & \frac{1}{2} \leq t \leq 1
+    \end{cases}$$
+The idea is that you split up the interval $[0,1]$ into two sub-intervals, you do $\gamma_1$ on the first half (scaling $[0,\frac12]$ to $[0,1]$), then $\gamma_2$ on the second half (scaling and shifting $[\tfrac12,1]$ to $[0,1]$).
+
+But you can also break up the interval into unequal pieces $[0,z]$ and $[z,1]$.  You would get a weighted-concatenation operation
+$$(\gamma_1 *_z \gamma_2)(t) = \begin{cases}
+        \gamma_1\left(\frac{t}{z}\right) & 0 \leq t \leq z \\
+        \gamma_2\left(\frac{t-z}{1-z}\right) & z \leq t \leq 1
+    \end{cases}$$
+Notice that $\gamma_1 *_{1/2} \gamma_2 = \gamma_1 * \gamma_2$.  Also, all of the maps $\gamma_1 *_z \gamma_2$ are homotopic.  You just continuously move that breakpoint from one $z$-value to each other.  To be explicit:
+$$h(t,s) = (\gamma_1 *_{s z_1 + (1-s)z_2} \gamma_2)(t)$$
+is a homotopy between $\gamma_1 *_{z_1} \gamma_2$ and $\gamma_1 *_{z_2} \gamma_2$.
+
+Let $\eta_n \colon[0,1] \to S^1$ be the map $\eta_n(t) = e^{2\pi int}$.  Notice $\eta_n(t) = f_n(e^{2\pi i t})$, so they induce the same homotopy classes in $\pi_1(S^1)$.  Let $m$ and $n$ be positive integers.  We want to show that $\eta_m * \eta_n$ is homotopic to $\eta_{m+n}$.  
+
+Now $\eta_{m+n}$ completes $m+n$ loops, equally spaced in the interval $[0,1]$.  $\eta_m * \eta_n$ also completes $m+n$ loops, but the first $m$ are equally spaced in the interval $[0,\frac12]$, and the last $n$ are equally spaced in the interval $[\frac12,1]$.  So let's form $\eta_m *_{m/(m+n)} \eta_n$ instead.  It completes its first $m$ loops equally spaced within the interval $[0,\frac{m}{m+n}]$, and its last $n$ loops equally spaced within the interval $[\frac{m}{m+n},1]$.  But this means that each loop is completed in the same width interval: $\frac{1}{m}\frac{m}{m+n} = \frac{1}{m+n}$ on the first part, and $\frac{1}{n}\left(1 - \frac{m}{m+n}\right) = \frac{1}{m+n}$ on the second part.  So in fact, $\eta_m *_{m/(n+m)} \eta_n = \eta_{n+m}$.  Since $\eta_m *_{m/(n+m)} \eta_n$ is homotopic to $\eta_m * \eta_n$, we are done.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3073561/finding-a-homotopy-directly-to-show-that-two-induced-homomorphisms-on-a-fundamen/3073673#3073673) on Mathematics Stack Exchange, 2019-01-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

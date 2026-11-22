@@ -1,0 +1,64 @@
+---
+title: Negation of Spivak's Definition of a Limit
+date: '2019-05-22'
+description: Like Eevee says, you are talking about the negation of this definition. But here is an example.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3236308
+se-link: https://math.stackexchange.com/questions/3236301/negation-of-spivaks-definition-of-a-limit/3236308#3236308
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Negation of Spivak's Definition of a Limit](https://math.stackexchange.com/questions/3236301/negation-of-spivaks-definition-of-a-limit), asked by [Aaron](https://math.stackexchange.com/users/573488/aaron) on Mathematics Stack Exchange (2019-05-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Spivak's Calculus (3rd edition) offers this as the definition of a limit (pg. 96-97): 
+>
+> “The function $f$ approaches the limit $l$ near $a$ means: for every $\epsilon>0$ there is some $\delta>0$ such that, for all $x$, if $0< | x-a | < \delta$, then $|f(x)-l|< \epsilon$,”
+>
+> and this as its negation: 
+>
+> “there is *some* $\epsilon > 0$ such that for *every* $\delta > 0$ there is *some* $x$ which satisfies $0 < | x-a |<\delta$ but not $|f(x)-l| < \epsilon$.” 
+>
+> What are some examples of functions that the negation defines? How would you prove that the sum/product of two functions of this type (ie, whose limit doesn't exist) exists?
+:::
+
+Like Eevee says, you are talking about the *negation* of this definition.  But here is an example.  
+
+Let
+$$f(x) = \begin{cases} -1 & \text{if $x < 0$} \\ 1 & \text{if $x \geq 0$} \end{cases}$$
+We claim $\lim_{x\to 0} f(x) =1$ is not true.
+
+Let $\epsilon = \frac{1}{2}$.  Given $\delta > 0$, let $x = -\frac{\delta}{2}$.  Then $|x| < \delta$ by construction, but $f(x) = -1$, which is not in the interval $\left(\frac{1}{2},\frac{3}{2}\right)$.
+
+* * *
+
+A limit “not existing” is an even more complicated definition because it requires one more quantifier (four instead of three for the limit):
+
+> $\lim_{x\to a} f(x)$ *does not exist* if for all $L$, there exists $\epsilon > 0$ such that for all $\delta > 0$, there exists $x$ such that $0<|x-a| < \delta$ but $|f(x) - L| \geq \epsilon$.
+
+We claim that the function $f$ above does not have a limit at $0$.  Let $L$ be given.  At least one of $L>-1$ or $L< 1$ must be true:
+
+* If $L > -1$, there exists $\epsilon > 0$ such that $L-\epsilon > -1$.  Given $\delta > 0$, let $x = -\frac{\delta}{2}$.  Then $|x| < \delta$ but $f(x) < L -\epsilon$.  
+
+* On the other hand, if $L < 1$, there exists $\epsilon$ such that $L+\epsilon < 1$.  Given $\delta > 0$, let $x = \frac{\delta}{2}$.  Then $|x|< \delta$ but $f(x) > L + \epsilon$.  
+
+* * *
+
+You also asked how one might prove that a sum of functions that don't have a limit could still have a limit.  The basic idea is that the combination might “cancel” the problematic part.  For instance, given $f$ as above, we could let $g = 3-f$. Then $g$ doesn't have a limit either, but their sum is the constant function $3$, and that obviously does have a limit.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3236301/negation-of-spivaks-definition-of-a-limit/3236308#3236308) on Mathematics Stack Exchange, 2019-05-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

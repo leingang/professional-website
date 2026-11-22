@@ -1,0 +1,47 @@
+---
+title: 'Competition time: Design an error page!'
+date: '2010-11-12'
+description: What about asking Duane Bibby to contribute some art? His drawings are iconic, and would help associate the site with the TeX "brand" (if an open source…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 5276
+se-link: https://tex.stackexchange.com/questions/5262/competition-time-design-an-error-page/5276#5276
+se-score: 45
+se-accepted: false
+se-tags:
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Competition time: Design an error page!](https://tex.stackexchange.com/questions/5262/competition-time-design-an-error-page), asked by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey) on TeX Stack Exchange (2010-11-12; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Or a 404 or the "captcha" image.
+>
+> To go with our amazing new design, we need some amazing pictures to go on the error page, the 404 page, and the captcha page.  They should have a lighthearted theme, vaguely related to the purpose of the page, and - of course - be TeX-related (the TeX-purists would say that it has to be actually _generated_ by TeX).
+>
+> For a couple of examples from other sites, see [this post](https://tex.meta.stackexchange.com/questions/656/404-captcha-error-images) on meta by our amazing designer.
+>
+> So ... keyboards at the ready ... and ... _go_!
+:::
+
+What about asking Duane Bibby to contribute some art?  His drawings are iconic, and would help associate the site with the TeX "brand" (if an open source project can be said to have a brand).  New users would be more inclined to trust the site.  
+
+![TeX Lion][1]
+
+CTAN lion drawing by Duane Bibby courtesy of <a href="https://ctan.org/lion">CTAN.org</a>.
+
+We could get the lion scratching his head for the 404 page, or squinting at a screen for the captcha page, etc.  
+
+  [1]: gKqF6.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5262/competition-time-design-an-error-page/5276#5276) on TeX Stack Exchange, 2010-11-12, with [edits](https://tex.stackexchange.com/posts/5276/revisions) by [Emanuele Nardi](https://tex.stackexchange.com/users/127473/emanuele-nardi). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

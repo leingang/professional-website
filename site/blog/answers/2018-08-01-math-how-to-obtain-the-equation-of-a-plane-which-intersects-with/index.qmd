@@ -1,0 +1,58 @@
+---
+title: How to obtain the equation of a plane which intersects with a given plane in a given line
+date: '2018-08-01'
+description: Try to think geometrically rather than algebraically. You're given a plane $\Pi$; think about this plane as determined by a reference point and a normal vector…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2869137
+se-link: https://math.stackexchange.com/questions/2869084/how-to-obtain-the-equation-of-a-plane-which-intersects-with-a-given-plane-in-a-g/2869137#2869137
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to obtain the equation of a plane which intersects with a given plane in a given line](https://math.stackexchange.com/questions/2869084/how-to-obtain-the-equation-of-a-plane-which-intersects-with-a-given-plane-in-a-g), asked by [Sulayman](https://math.stackexchange.com/users/367302/sulayman) on Mathematics Stack Exchange (2018-08-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given the plane $2x + y - 3z = 1$.
+> How to obtain the equation of a plane which intersects this plane in the line
+> $$r=\left(
+>    \begin{array}{c}1\\2\\1\\\end{array}\right)+t\left(
+>   \begin{array}{c}1\\-2\\0\\\end{array}\right)?$$
+>
+> I have assumed that the other plane is $ax+by+cz=d$.  Then the line satisfies this plane $$a(1+t)+b(2-2t)+c=d.$$
+> But I can't proceed from here.
+:::
+
+Try to think geometrically rather than algebraically.  You're given a plane $\Pi$; think about this plane as determined by a reference point and a *normal* vector $\mathbf{n}$.  You're also given a line $\ell$ within that plane; that's determined by a reference point and a *direction* vector $\mathbf{v}$.  Since $\ell$ is contained in $\Pi$, we can choose the reference points of each to be the same point $P$, and we know that $\mathbf{n}$ and $\mathbf{v}$ are orthogonal.
+
+We want another plane $\Pi'$; again, it's determined by a reference point and normal vector $\mathbf{n}'$.  It's required to include $\ell$, so it must contain $P$, and $\mathbf{n}'$ must be orthogonal to $\mathbf{v}$ too.  We might as well use $P$ as the reference point for $\Pi'$.  As long as $\mathbf{n}'$ is not parallel to $\mathbf{n}$ (otherwise the planes coincide), their intersection will be $\ell$ alone.  
+
+It remains to find a vector $\mathbf{n}'$ that is perpendicular to $\mathbf{v}$ and not parallel to $\mathbf{n}$.  Now it's an algebra problem, but let's keep it in terms of vector algebra.  There are infinitely many choices, but one convenient one is $\mathbf{n}' = \mathbf{n} \times \mathbf{v}$.  This is nonzero because $\mathbf{n}$ and $\mathbf{v}$ are nonzero orthogonal vectors, and it's orthogonal to both $\mathbf{n}$ and $\mathbf{v}$.  In particular, it's *not* parallel to $\mathbf{n}$.  
+
+Therefore a solution to your problem is the plane through $P$ normal to $\mathbf{n} \times \mathbf{v}$, where $P$ is a point on $\ell$, $\mathbf{v}$ is a direction vector of $\ell$, and $\mathbf{n}$ is a normal vector to $\Pi$.  And we did this without any messy algebra!
+
+But you probably need an equation for this plane.  Remember $P$ can be any point on $\ell$.  Since $\ell$ is parametrized by a vector function $\mathbf{r}(t)$, a convenient point to call $P$ is the tip of $\mathbf{r}(0)$.  That is, let $P = (1,2,1)$.  Since $\Pi$ has equation $2x + y - 3z = 1$, the vector of coefficients $\mathbf{n} = \left<2,1,-3\right>$ is a normal vector to $\Pi$.  Finally, a direction vector $\mathbf{v}$ to $\ell$ can be found by taking $\mathbf{r}'(t) = \left<1,-2,0\right>$.  Therefore,
+$$\mathbf{n}' = \mathbf{n} \times \mathbf{v} = \left<-6,-3,-5\right>$$
+And $\Pi'$ has equation
+$$\begin{align*}
+    -6(x-1) - 3(y-2) - 5(z-1) &= 0
+\\\implies
+    -6x -3y - 5z &= -17
+\\\implies
+     6x + 3y + 5z &= 17
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2869084/how-to-obtain-the-equation-of-a-plane-which-intersects-with-a-given-plane-in-a-g/2869137#2869137) on Mathematics Stack Exchange, 2018-08-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

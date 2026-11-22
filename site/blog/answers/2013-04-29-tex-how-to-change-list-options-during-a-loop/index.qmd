@@ -1,0 +1,161 @@
+---
+title: How to change list options during a loop?
+date: '2013-04-29'
+description: 'You can do everything you want with overlay specifications and the \againframe command. First of all, format the list like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 111384
+se-link: https://tex.stackexchange.com/questions/111340/how-to-change-list-options-during-a-loop/111384#111384
+se-score: 2
+se-accepted: true
+se-tags:
+- beamer
+- lists
+- itemize
+- loops
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to change list options during a loop?](https://tex.stackexchange.com/questions/111340/how-to-change-list-options-during-a-loop), asked by [Rehj Cantrell](https://tex.stackexchange.com/users/6307/rehj-cantrell) on TeX Stack Exchange (2013-04-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I currently have a beamer presentation, which, using the forloop package, looks basically like this:
+>
+> ```latex
+> \documentclass{beamer}
+>
+> \usepackage{forloop}
+>
+> \begin{document}
+>
+> \newcounter{ctr}
+> \newcounter{gulp}
+>
+> \forLoop{1}{3}{ctr}{
+>
+>     \ifnum\thectr=1
+>         \def \endvalue {2}
+>     \else
+>         \def \endvalue {1}
+>     \fi
+>
+>     \forLoop{1}{\endvalue}{gulp}{
+>         \begin{frame}{Plan}
+>             \begin{itemize}[]
+>                 \item {\ifnum\thectr=1\ifnum\thegulp=2\color{red}\fi\fi 1 }
+>                 \item {\ifnum\thectr=2\color{red}\fi 2 }
+>                 \item {\ifnum\thectr=3\color{red}\fi 3 }
+>             \end{itemize}
+>         \end{frame}
+>     }
+>
+>     \ifnum\thectr=1 { \begin{frame}{All about 1}\end{frame} } \fi
+>
+>     \ifnum\thectr=2 { \begin{frame}{All about 2}\end{frame} } \fi
+>
+>     \ifnum\thectr=3 { \begin{frame}{All about 3}\end{frame} } \fi
+> }
+>
+> \end{document}
+> ```
+>
+> So my structure is this: I explain the plan, then I show which item of the plan I'm on, expand on that item, repeat until done. However, I'd like to change the list options so that the first time the plan slide appears (ctr=1,gulp=1) it will be differently formatted (specifically, [<+->], or incremental appearance of items.)
+>
+> How could I change the formatting with a conditional? I tried a few things, e.g.,
+>
+> ```latex
+> \begin{frame}{Plan}
+>   \ifnum\thectr=1\ifnum\thegulp=1\begin{itemize}[<+->]\fi
+>   \else \begin{itemize}[]\fi
+>   \item {\ifnum\thectr=1\ifnum\thegulp=2\color{red}\fi\fi 1 }
+> ```
+>
+> and
+>
+> ```latex
+> \ifnum\thectr=1\ifnum\thegulp=1\def \listformat { <+-> }
+> \else \def \listformat { } \fi
+> \begin{itemize[\listformat]}
+> ```
+>
+> So, guys, can anyone tell me the [possibly extremely obvious] way of doing this?
+:::
+
+You can do everything you want with overlay specifications and the `\againframe` command.  First of all, format the list like this:
+
+```latex
+\begin{enumerate}[<+-| alert@+>]
+\item collect underpants
+\item ...
+\item profit!
+\end{enumerate}
+```
+
+The `+-` specification says that each item should automatically increment the pause counter by one, and display that item from this step onwards.  The `alert@+` specification says that the item should be `\alert`ed at current pause but not afterwards.  It's equivalent to:
+
+```latex
+\begin{enumerate}
+\item<1- | alert@1> collect underpants
+\item<2- | alert@2> ...
+\item<3- | alert@3> profit!
+\end{enumerate}
+```
+
+Secondly, if you label a frame with the `label=myframe` option, you can come back to it later on by typing `\againframe{myframe}`.  You can combine this with the overlay specifications to display one slide (or several slides) of a frame now, and others later.  Something like:
+
+```latex
+\begin{frame}<1>[label=myframe] \only<1>{foo} \only<2>{bar} \end{frame}
+% displays slide 1 of this frame only
+
+\begin{frame} stuff about foo \end{frame}
+
+\againframe<2>{myframe} % now display slide 2 only
+
+\begin{frame} stuff about bar \end{frame}
+```
+
+Putting these together gives this:
+
+```latex
+\documentclass{beamer}
+\begin{document}
+
+\begin{frame}<1>[label=theplan]{The Plan}
+\begin{enumerate}[<+-| alert@+>]
+\item collect underpants
+\item ...
+\item profit!
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Step 1: Collect Underpants}
+\end{frame}
+
+\againframe<2>{theplan}
+
+\begin{frame}{Step 2: ...}
+\end{frame}
+
+\againframe<3>{theplan}
+
+\begin{frame}{Step 3: Profit!}
+\end{frame}
+
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: FUR5r.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/111340/how-to-change-list-options-during-a-loop/111384#111384) on TeX Stack Exchange, 2013-04-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

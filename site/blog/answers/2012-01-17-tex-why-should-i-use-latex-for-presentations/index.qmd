@@ -1,0 +1,45 @@
+---
+title: Why should I use LaTeX for presentations?
+date: '2012-01-17'
+description: To me it's all about the math. If I'm giving a talk or lecture with a large amount of math in it, I will want to use beamer so I can do it in LaTeX.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 41399
+se-link: https://tex.stackexchange.com/questions/41116/why-should-i-use-latex-for-presentations/41399#41399
+se-score: 23
+se-accepted: false
+se-tags:
+- beamer
+- presentations
+- powerdot
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why should I use LaTeX for presentations?](https://tex.stackexchange.com/questions/41116/why-should-i-use-latex-for-presentations), asked by [clabacchio](https://tex.stackexchange.com/users/10589/clabacchio) on TeX Stack Exchange (2012-01-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've read that LaTeX can be used also for presentations, using specific packages to make slides in PDF.
+>
+> But I'm wondering: since LaTeX is a typographic language made to separate content from style, and being PDF a format designed for printing; what are these presentation tools meant for? Maybe I'm thinking about the wrong type of presentation?
+>
+> What's the reason for using LaTeX for this task?
+>
+> UPDATE: I'm asking this because I'm about to start making a presentation, and yes, I'd prefer avoiding PowerPoint; I like vector graphics and I was wondering if it's possible to create a sort of vector animation, or anyway something of platform-independent. But I find PDF too static for this purpose (maybe it's just a personal feeling).
+:::
+
+To me it's all about the math.  If I'm giving a talk or lecture with a large amount of math in it, I will want to use `beamer` so I can do it in LaTeX.  
+
+Another big advantage to `beamer` over WYSIWYG presentation apps is the programmability of LaTeX.  You can copy-and-paste code or write macros to eliminate repetition.  You can produce slides and handouts from the same source file.  And so on.
+
+If it's a non-mathematical presentation I will use Keynote, and let me just defend apps of its sort.  I think that many of the objections people raise to WYSIWYG apps are the fault of poorly prepared talks using WYSIWYG apps.  Gratuitous animations and transitions can be distracting, but these effects can also be used well.  So maybe one advantage to LaTeX as a presentation editor is that it makes it harder to make a bad presentation.  On the other hand, I have seen several talks prepared with beamer which are just the article on the screen in *slightly* larger type, so it's not idiot-proof.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/41116/why-should-i-use-latex-for-presentations/41399#41399) on TeX Stack Exchange, 2012-01-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

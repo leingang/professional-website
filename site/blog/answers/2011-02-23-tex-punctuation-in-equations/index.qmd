@@ -1,0 +1,57 @@
+---
+title: Punctuation in equations
+date: '2011-02-23'
+description: No, you can key in the punctuations marks as usual. As Seamus writes in his comment, macros like \colon are for punctuation marks that are being used as…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 11823
+se-link: https://tex.stackexchange.com/questions/11821/punctuation-in-equations/11823#11823
+se-score: 9
+se-accepted: true
+se-tags:
+- math-mode
+- spacing
+- equations
+- punctuation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Punctuation in equations](https://tex.stackexchange.com/questions/11821/punctuation-in-equations), asked by [Cedric H.](https://tex.stackexchange.com/users/827/cedric-h) on TeX Stack Exchange (2011-02-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> My document will contain a lot of equations, and as usual in that case I would like to use "punctuation" in the equations, like commas, colons, periods/full stops, semicolons, etc.
+>
+> Is there a special way to correctly do that? Now I just type these characters at the end of the equations, but as it's in math mode maybe there is a better way that improve the spacing, etc.
+>
+> I also read about `\colon`, `\ldotp`. What do they do that the normal "characters" don't?
+:::
+
+No, you can key in the punctuations marks as usual.  As Seamus writes in his comment, macros like `\colon` are for punctuation marks that are being used as mathematical relations rather than punctuation.
+
+Sentence punctuation should not appear inside of *inline* mathematics.  For *displayed* mathematics, I think it's safe to say it's a matter of style.  See ["For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar?"][1]
+I'm in the camp of no sentence punctuation in display math; it's just distracting.  *De gustibus non est disputandum.*
+
+So for example:
+
+```latex
+If $a$ and $b$ are the lengths of the legs of a right triangle 
+and $c$ is the length of the hypotenuse, then $a^2 + b^2 = c^2$, or:
+\[
+   c = \sqrt{a^2 + b^2}
+\]
+This amazing relation is known as the \textbf{Pythagorean Theorem}.
+```
+
+
+  [1]: https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11821/punctuation-in-equations/11823#11823) on TeX Stack Exchange, 2011-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

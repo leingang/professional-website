@@ -1,0 +1,56 @@
+---
+title: Math in division in two cases proof
+date: '2017-11-17'
+description: 'The second line in your proof assumes the very thing you want to prove. The Division Algorithm provides four cases, and you want to narrow it down to two:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2524961
+se-link: https://math.stackexchange.com/questions/2524941/math-in-division-in-two-cases-proof/2524961#2524961
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-number-theory
+- discrete-mathematics
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Math in division in two cases proof](https://math.stackexchange.com/questions/2524941/math-in-division-in-two-cases-proof), asked by user503376 on Mathematics Stack Exchange (2017-11-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Using division in two cases, I have to solve the problem
+>
+> The fourth power of any integer has the form 4k or 4k+1 For some integer k.
+>
+> ```
+>  Claim: For all integers z, z^4 equals 4k or 4k+1 For some integer k.
+>
+>  Proof: Let integer z be given.
+>     By the Division Algorithm, There exists an integer k such that z^4=4k or z^4=4k+1.
+>
+>     Case1: Suppose there exists an integer k such that z^4=4k.
+>         Then ....
+>
+>     Case2: Suppose there exists an integer k such that z^4=4k+1
+>          Then...
+> ```
+>
+> I am struggling with the math to actually prove these things. I can set it all up I just can't finish it.
+:::
+
+The second line in your proof assumes the very thing you want to prove.  The Division Algorithm provides *four* cases, and you want to narrow it down to two:
+
+> **Proof**.  Let $z$ be given. By the division algorithm, **there exist integers $k$ and $q$ with $0 \leq q < 4$ such that $z = 4k + q$.**
+
+Now expand $z^4$ and see what remainders are possible modulo 4.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2524941/math-in-division-in-two-cases-proof/2524961#2524961) on Mathematics Stack Exchange, 2017-11-17, with [edits](https://math.stackexchange.com/posts/2524961/revisions) by [John Doe](https://math.stackexchange.com/users/399334/john-doe). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

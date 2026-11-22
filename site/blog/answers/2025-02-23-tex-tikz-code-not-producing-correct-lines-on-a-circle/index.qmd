@@ -1,0 +1,69 @@
+---
+title: Tikz code not producing correct lines on a circle
+date: '2025-02-23'
+description: 'As Jasper pointed out in their comment, your syntax for calculating the coordinates of the slice endpoints is wrong. Try it this way:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 737703
+se-link: https://tex.stackexchange.com/questions/737698/tikz-code-not-producing-correct-lines-on-a-circle/737703#737703
+se-score: 2
+se-accepted: false
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikz code not producing correct lines on a circle](https://tex.stackexchange.com/questions/737698/tikz-code-not-producing-correct-lines-on-a-circle), asked by [poka luka wan](https://tex.stackexchange.com/users/379953/poka-luka-wan) on TeX Stack Exchange (2025-02-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to write Tikz that will draw lines on a circle at regular intervals (in order to slice it) and have used this code:
+> ```latex
+> \begin{tikzpicture}
+> \draw (0,0) circle(2);
+> \draw plot[domain=pi:2*pi] ({2*cos(\x r)},{.4*sin(\x r)});
+> \draw[dashed] plot[domain=0:pi] ({2*cos(\x r)},{.4*sin(\x r)});
+>
+> \foreach \y in {-2, -1.8, ..., 2}{
+> 	\draw (sqrt{4-\y*\y},\y) -- (-1 * sqrt{4-\y*\y},\y);
+> }
+>
+> \end{tikzpicture}
+> ```
+>
+> however this code produces:
+> [![the incorrect result][q-1]][q-1]
+>
+> which as you can guess, isn't the result I'm looking for, where did I go wrong?
+>
+>
+>   [q-1]: CbhvLNAr.png
+:::
+
+As Jasper pointed out in their comment, your syntax for calculating the coordinates of the slice endpoints is wrong. Try it this way:
+
+```latex
+\begin{tikzpicture}[
+    declare function={f(\x) = sqrt(4-(\x)^2);}
+]
+\draw (0,0) circle(2);
+\draw plot[domain=pi:2*pi] ({2*cos(\x r)},{.4*sin(\x r)});
+\draw[dashed] plot[domain=0:pi] ({2*cos(\x r)},{.4*sin(\x r)});
+
+\foreach \y in {-2, -1.8, ..., 2}{
+    \draw ({-f(\y)},\y) -- ({f(\y)},\y);
+}
+\end{tikzpicture}
+```
+
+I like the `declare function` key for this because you can write out the formula once and refer to it by name.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/737698/tikz-code-not-producing-correct-lines-on-a-circle/737703#737703) on TeX Stack Exchange, 2025-02-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

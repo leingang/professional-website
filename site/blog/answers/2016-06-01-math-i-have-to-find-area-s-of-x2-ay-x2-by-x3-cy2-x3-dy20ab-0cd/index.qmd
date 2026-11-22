@@ -1,0 +1,35 @@
+---
+title: I have to find area S of $x^2=ay,x^2=by,x^3=cy^2,x^3=dy^2(0<a<b,0<c<d)$.
+date: '2016-06-01'
+description: Interesting question! I would start by drawing a picture of the region described, and setting up the area in terms of integrals. Then, evaluate those integrals.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1808410
+se-link: https://math.stackexchange.com/questions/1808401/i-have-to-find-area-s-of-x2-ay-x2-by-x3-cy2-x3-dy20ab-0cd/1808410#1808410
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I have to find area S of $x^2=ay,x^2=by,x^3=cy^2,x^3=dy^2(0<a<b,0<c<d)$.](https://math.stackexchange.com/questions/1808401/i-have-to-find-area-s-of-x2-ay-x2-by-x3-cy2-x3-dy20ab-0cd), asked by [Tuanlee](https://math.stackexchange.com/users/284369/tuanlee) on Mathematics Stack Exchange (2016-06-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have to find area S of $x^2=ay,x^2=by,x^3=cy^2,x^3=dy^2(0<a<b,0<c<d)$. It is difficult for me. Can someone help me to sovle it. Thankyou very much
+:::
+
+Interesting question!  I would start by drawing a picture of the region described, and setting up the area in terms of integrals.  Then, evaluate those integrals.
+
+It seems that each of the first two curves intersect each of the last two curves in exactly one non-zero point.  That gives you the four “corners” of the region described.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1808401/i-have-to-find-area-s-of-x2-ay-x2-by-x3-cy2-x3-dy20ab-0cd/1808410#1808410) on Mathematics Stack Exchange, 2016-06-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

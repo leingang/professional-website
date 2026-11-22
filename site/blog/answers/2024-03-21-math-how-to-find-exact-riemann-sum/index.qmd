@@ -1,0 +1,60 @@
+---
+title: How to find exact Riemann-Sum?
+date: '2024-03-21'
+description: If you divide the interval $[0,5]$ into $n$ equal subintervals, they have endpoints at $xj = \frac{5j}{n}$, for each $j$ from $0$ to $n$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4885090
+se-link: https://math.stackexchange.com/questions/4885085/how-to-find-exact-riemann-sum/4885090#4885090
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- definite-integrals
+- graphing-functions
+- riemann-integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find exact Riemann-Sum?](https://math.stackexchange.com/questions/4885085/how-to-find-exact-riemann-sum), asked by [N G](https://math.stackexchange.com/users/1223849/n-g) on Mathematics Stack Exchange (2024-03-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have been given this rather simple looking assignment, which is confusing me a lot. 
+>
+> Given is: 
+> $f:[0,5] \rightarrow \mathbb{R}$ where $f(x)=2x+3$.
+>
+> The first thing I had to do, was to determine the area under the curve, for the given interval $[0,5]$, from the left and right side, for 30 subintervals.
+> I solved this by using
+> $$S_J = \sum_{j = 1}^{J} f(\xi) \Delta x_j$$
+>
+> What I now have to solve is: **Find the *exact* values for the riemann-summ in the interval $[0,5]$ with $n$ subintervals, from the left and right side**
+>
+> My initial thought was to do this, to find the exact area:
+>
+> $$S_J = \int_{a}^{b} f(x) \, dx$$
+> But that how would that allow me to do it from the left and right side?
+>
+> Any ideas? I am completely lost
+:::
+
+If you divide the interval $[0,5]$ into $n$ equal subintervals, they have endpoints at $x_j = \frac{5j}{n}$, for each $j$ from $0$ to $n$.
+
+So you have to evaluate the sums
+$$\begin{aligned}
+L_J &= \sum_{j=1}^J f(x_{j-1}) \frac{5}{n}
+\\
+U_J &= \sum_{j=1}^J f(x_j) \frac{5}{n}
+\end{aligned}$$
+The idea is to find a closed-form expression for the sum in terms of $J$ alone. If this kind of series is unfamiliar to you, you might consider reading about [sums of arithmetic progressions](https://en.wikipedia.org/wiki/Arithmetic_progression#Sum) (from Wikipedia) or researching the formula: $$\sum_{j=1}^J j = \frac{J(J+1)}{2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4885085/how-to-find-exact-riemann-sum/4885090#4885090) on Mathematics Stack Exchange, 2024-03-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

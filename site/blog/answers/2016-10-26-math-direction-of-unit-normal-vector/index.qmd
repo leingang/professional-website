@@ -1,0 +1,36 @@
+---
+title: Direction of unit normal vector
+date: '2016-10-26'
+description: Draw it. $S$ is a cone with vertex at the origin. As Parcly mentions in the comments, it has equation $z=r$ in cylindrical coordinates. The vector $N$ at the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1985965
+se-link: https://math.stackexchange.com/questions/1985924/direction-of-unit-normal-vector/1985965#1985965
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Direction of unit normal vector](https://math.stackexchange.com/questions/1985924/direction-of-unit-normal-vector), asked by [user374859](https://math.stackexchange.com/users/374859/user374859) on Mathematics Stack Exchange (2016-10-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $S$ be a surface in $\mathbb{R}^3$ given by $z=(x^2+y^2)^{1/2}$ where $x^2+y^2\leq1$. I need to make sure that the normal vector is pointing inwards. I have computed $N$ and found it to be $N=(-z\cos(\theta),-z\sin(\theta),z)$. 
+>
+> How can I tell if this points inwards or not?
+:::
+
+Draw it.  $S$ is a cone with vertex at the origin.  As Parcly mentions in the comments, it has equation $z=r$ in cylindrical coordinates.  The vector $N$ at the point with cylindrical coordinates $(z,\theta,z)$ can be written as $-z \hat{\mathbf{r}} + z \hat{\mathbf{k}}$, where $\hat{\mathbf{r}}$ is the unit vector pointing in the direction of increasing $r$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1985924/direction-of-unit-normal-vector/1985965#1985965) on Mathematics Stack Exchange, 2016-10-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

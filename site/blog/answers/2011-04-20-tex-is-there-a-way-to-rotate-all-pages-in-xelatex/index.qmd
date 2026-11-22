@@ -1,0 +1,82 @@
+---
+title: Is there a way to rotate all pages in XeLaTeX?
+date: '2011-04-20'
+description: This is possible with the pgfpages package that is part of the pgf bundle. Unfortunately there is a bug in the 2.10 release. There is a simple fix, though…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16245
+se-link: https://tex.stackexchange.com/questions/16237/is-there-a-way-to-rotate-all-pages-in-xelatex/16245#16245
+se-score: 1
+se-accepted: false
+se-tags:
+- xetex
+- landscape
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way to rotate all pages in XeLaTeX?](https://tex.stackexchange.com/questions/16237/is-there-a-way-to-rotate-all-pages-in-xelatex), asked by [Ma Ming](https://tex.stackexchange.com/users/2404/ma-ming) on TeX Stack Exchange (2011-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I known there is a `landscape` command to set horizontal pages, but this is not I want. My purpose is to typeset vertical CJK with `XeLaTeX`. The general approach is using `\rotatebox{-90}` get a vertical paragraph in a box. It works for a single paragraph in one page; The disadvantage is that it can not deal with more complex situations such as multiple pages. I am wondering if there is a way to rotate the all pages?
+:::
+
+This is possible with the `pgfpages` package that is part of the `pgf` bundle.  Unfortunately there is a [bug](http://sourceforge.net/tracker/index.php?func=detail&aid=1911195&group_id=142562&atid=752792) in the 2.10 release.  There is a [simple fix][1], though, which you can patch in like this:
+
+```latex
+792a793,801
+> % MPL 2011-04-20 08:04:45
+> % patch to fix bug in rotation.  See
+> % http://old.nabble.com/pgfpages-and-rotation-tt26508856.html#a26508856
+> %        \expandafter\ifx\csname pgfpages@p@\the\pgf@cpn @rotation\endcsname\relax%
+> %           \pgfscope%
+> %        \else%
+> %          \pgflowlevel{\pgftransformrotate{\csname pgfpages@p@\the\pgf@cpn @rotation\endcsname}}%
+> %        \fi%
+>         \pgfscope%
+794d802
+<           \pgfscope%
+```
+
+(the only substantial change is that a `\pgfscope` macro is moved from within an `\ifx...\fi` to before it.)
+
+Here is a sample to see how it works:
+
+```latex
+\documentclass{article}
+\usepackage{lipsum} % just for dummy text
+\usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{down}{}{%
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+    physical height=8.5in,
+    physical width=11in
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    rotation=-90,
+    center=\pgfpoint{0.5\pgfphysicalwidth}{0.5\pgfphysicalheight}%
+  }%
+}
+\pgfpagesuselayout{down}
+
+\begin{document}
+\lipsum
+\end{document}
+```
+
+  [1]: http://old.nabble.com/pgfpages-and-rotation-tt26508856.html#a26508856
+
+This was all going great until I tried compiling with xelatex, and I got that the physical page size did not change.  But we are 90% there.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16237/is-there-a-way-to-rotate-all-pages-in-xelatex/16245#16245) on TeX Stack Exchange, 2011-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

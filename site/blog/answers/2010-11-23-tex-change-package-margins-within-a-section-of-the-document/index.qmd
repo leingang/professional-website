@@ -1,0 +1,35 @@
+---
+title: Change package margins within a section of the document
+date: '2010-11-23'
+description: It would be easier to make your CV and cover letter separate documents and use a PDF utility to combine them. The PDF utility could be LaTeX with the pdfpages…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5843
+se-link: https://tex.stackexchange.com/questions/5842/change-package-margins-within-a-section-of-the-document/5843#5843
+se-score: 8
+se-accepted: true
+se-tags:
+- margins
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Change package margins within a section of the document](https://tex.stackexchange.com/questions/5842/change-package-margins-within-a-section-of-the-document), asked by [Vass](https://tex.stackexchange.com/users/1026/vass) on TeX Stack Exchange (2010-11-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am using a style file that I found for a CV but I need to include the cover letter with the CV in a single file. So I am just putting the cover letter on the first page. The margins though are too small on the right hand side. So how can I override this and put more space on that side?
+:::
+
+It would be easier to make your CV and cover letter separate documents and use a PDF utility to combine them.  The PDF utility could be LaTeX with the [`pdfpages`][1] package. 
+
+  [1]: http://ctan.org/pkg/pdfpages
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5842/change-package-margins-within-a-section-of-the-document/5843#5843) on TeX Stack Exchange, 2010-11-23. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

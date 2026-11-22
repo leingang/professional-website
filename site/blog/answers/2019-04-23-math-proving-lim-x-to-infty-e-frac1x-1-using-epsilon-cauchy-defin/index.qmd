@@ -1,0 +1,54 @@
+---
+title: Proving $\lim_{x\to\infty} e^{\frac{1}{x}} = 1$ using $\epsilon$ (Cauchy definition for limits)
+date: '2019-04-23'
+description: As $x\to\infty$, we can assume $x$ is positive, so $\frac{1}{x}$ is positive. Therefore $e^{1/x} > 1$. So instead of $1-\epsilon < e^{1/x} < 1+ \epsilon$, you…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3198458
+se-link: https://math.stackexchange.com/questions/3198433/proving-lim-x-to-infty-e-frac1x-1-using-epsilon-cauchy-definit/3198458#3198458
+se-score: 2
+se-accepted: true
+se-tags:
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving $\lim_{x\to\infty} e^{\frac{1}{x}} = 1$ using $\epsilon$ (Cauchy definition for limits)](https://math.stackexchange.com/questions/3198433/proving-lim-x-to-infty-e-frac1x-1-using-epsilon-cauchy-definit), asked by [PhysicsPrincess](https://math.stackexchange.com/users/283860/physicsprincess) on Mathematics Stack Exchange (2019-04-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to prove that $\lim_{x\to\infty} e^{\frac{1}{x}} = 1$ using the $\epsilon$ definition of diverging to $\infty$.
+>
+> My attempt:
+>
+> (Sorry in advance for English mistakes).
+>
+> For a given $\epsilon > 0$, I need to find an $M$ so that for every $x>M$:
+> $$|e^{\frac{1}{x}}-1| < \epsilon$$
+>
+> I tried the  following:
+> $$-\epsilon +1<e^{\frac{1}{x}}< \epsilon +1$$
+> Therefore:
+>
+> $$\frac{1}{x} > \ln{(1-\epsilon)} \space\space\wedge\space\space  \frac{1}{x} < \ln{(1+\epsilon)}$$
+>
+> $$x < \frac{1}{ln{(1-\epsilon)}} \space\space\wedge\space\space  x > \frac{1}{ln{(1+\epsilon)}}$$
+>
+> So that means that in order for the first inequality to be true, $x$ should be within a range dependent on $\epsilon$ that is bounded above... So how can I find such $M$?
+>
+> What am I doing wrong?
+:::
+
+As $x\to\infty$, we can assume $x$ is positive, so $\frac{1}{x}$ is positive.  Therefore $e^{1/x} > 1$.  So instead of $1-\epsilon < e^{1/x} < 1+ \epsilon$, you can say $1 < e^{1/x} < 1 + \epsilon$.
+
+Given $\epsilon > 0$, it's sufficient to take $M \geq \frac{1}{\ln(1+\epsilon)}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3198433/proving-lim-x-to-infty-e-frac1x-1-using-epsilon-cauchy-definit/3198458#3198458) on Mathematics Stack Exchange, 2019-04-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

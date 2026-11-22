@@ -1,0 +1,50 @@
+---
+title: Defining $u(x,y)$ in terms of $z$ and $\bar z$
+date: '2017-11-22'
+description: Not quite. We have $x+iy = \mathop{\mathrm{Re}}(z) + i \mathop{\mathrm{Im}}(z)$. So we can write a function $\tilde u(z,\bar z)$ as $$\tilde u(z,\bar z) =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2532435
+se-link: https://math.stackexchange.com/questions/2532422/defining-ux-y-in-terms-of-z-and-bar-z/2532435#2532435
+se-score: 1
+se-accepted: true
+se-tags:
+- complex-analysis
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Defining $u(x,y)$ in terms of $z$ and $\bar z$](https://math.stackexchange.com/questions/2532422/defining-ux-y-in-terms-of-z-and-bar-z), asked by [Danxe](https://math.stackexchange.com/users/170847/danxe) on Mathematics Stack Exchange (2017-11-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $u(x,y)$ be a real valued differentiable function defined on $\mathbb C$.
+> Then $u$ can also be written as a function of $z$ and $\bar z$.
+>
+> When explaining this part, my lecturer jumped straight to claiming that 
+> $$x = \frac{1}{2}(z + \bar z)$$
+> $$y = \frac{1}{2i}(z - \bar z)$$
+> I've been at this for awhile now and i can't seem to figure out why this is so.
+>
+> This is my thoughts on it: The value of $x$ is the real part of $u$ which would mean that performing $z+\bar z$ effectively nullifies the imaginary terms of $z$ leaving $2 \times Re(z)$, which is why the value was halved.
+>
+> As for $y$, $z-\bar z$ cancels out the real terms leaving only $2\times Im(z) \times i$, which is why it was further divided by $2i$.
+>
+> So now we have $u(x,y) = Re(z) + i\times Im(z)$? I don't see why this is the form described above. Is this the only real valued differentiable function for $u$? If not, why was it ok to make this assumption?
+:::
+
+> So now we have $u(x,y) = Re(z) + i\times Im(z)$?
+
+Not quite.  We have $x+iy = \mathop{\mathrm{Re}}(z) + i \mathop{\mathrm{Im}}(z)$.  So we can write a function $\tilde u(z,\bar z)$ as
+$$\tilde u(z,\bar z) = u\left(\frac{1}{2}(z+\bar z),\frac{1}{2i}(z-\bar z)\right)$$
+Through a slight abuse of language we consider $u$ and $\tilde u$ to be the same function.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2532422/defining-ux-y-in-terms-of-z-and-bar-z/2532435#2532435) on Mathematics Stack Exchange, 2017-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

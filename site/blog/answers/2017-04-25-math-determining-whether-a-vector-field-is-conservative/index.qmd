@@ -1,0 +1,50 @@
+---
+title: Determining whether a vector field is conservative
+date: '2017-04-25'
+description: Assume the derivatives of the components of $\vec F$ are continuous functions. If $\vec F = \left<P(x,y,z),Q(x,y,z),R(x,y,z)\right>$ were the gradient of a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2251818
+se-link: https://math.stackexchange.com/questions/2251798/determining-whether-a-vector-field-is-conservative/2251818#2251818
+se-score: 7
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining whether a vector field is conservative](https://math.stackexchange.com/questions/2251798/determining-whether-a-vector-field-is-conservative), asked by [user369262](https://math.stackexchange.com/users/369262/user369262) on Mathematics Stack Exchange (2017-04-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For a vector field $\vec{F}(x,y,z) = \langle F_1(x,y,z), F_2(x,y,z), F_3(x,y,z) \rangle$ in $\mathbb{R}^3$, how can I use mixed second-order partial derivatives of each of the components to determine whether it is conservative? Which partial derivatives should I compare?
+:::
+
+Assume the derivatives of the components of $\vec F$ are continuous functions.  If $\vec F = \left<P(x,y,z),Q(x,y,z),R(x,y,z)\right>$ were the gradient of a function $f(x,y,z)$, then 
+$$\frac{\partial f}{\partial x} = P \text{,}\qquad
+    \frac{\partial f}{\partial y} = Q \text{,}\qquad\text{and}\qquad
+    \frac{\partial f}{\partial z} = R$$
+Taking the derivative of both sides of the first equation with respect to $y$, and the second equation with respect to $x$, we get
+$$\frac{\partial^2 f}{\partial y\,\partial x} = \frac{\partial P}{\partial y}
+\qquad\text{and}\qquad
+    \frac{\partial^2 f}{\partial x\,\partial y} = \frac{\partial Q}{\partial x}$$
+By Clairaut's theorem the left-hand sides of the two equations are equal.  Therefore
+$$\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$$
+Similarly, it can be shown that
+$$\frac{\partial P}{\partial z} = \frac{\partial R}{\partial x}
+\qquad\text{and}\qquad
+    \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y}$$
+These are all **necessary** conditions for $\vec F$ to be conservative.  They can be written in a form that doesn't assume only three variables, or, in the case of three variables, in a vector form.  If these equations do not hold, $\vec F$ cannot be conservative.
+
+The big question is when these conditions are **sufficient** as well.  The answer is that as long as the domain of $\vec F$ is connected and simply connected, they are sufficient.  This follows from Stokes's Theorem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2251798/determining-whether-a-vector-field-is-conservative/2251818#2251818) on Mathematics Stack Exchange, 2017-04-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

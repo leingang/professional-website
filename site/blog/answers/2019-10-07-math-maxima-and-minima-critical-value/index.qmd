@@ -1,0 +1,58 @@
+---
+title: Maxima and Minima, Critical value
+date: '2019-10-07'
+description: 'The curve $D1$ is not part of the boundary of $D$. If you change the definition of $D3$ to $$D3 = \{(x,y) \in \mathbb{R}^2 : \color{blue}{-\sqrt{2} \leq x \leq…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3384217
+se-link: https://math.stackexchange.com/questions/3384204/maxima-and-minima-critical-value/3384217#3384217
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- optimization
+- maxima-minima
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Maxima and Minima, Critical value](https://math.stackexchange.com/questions/3384204/maxima-and-minima-critical-value), asked by [Lioness Queen](https://math.stackexchange.com/users/700955/lioness-queen) on Mathematics Stack Exchange (2019-10-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We have a function: $f(x,y)= xy-x$
+> defined on the set 
+> $$D = \{(x,y)\in\mathbb{R}^2 : 0 ≤ y ≤ 2-x^2\}.$$
+>
+> I have found the critical point to be $(0,1)$, which I'm not sure is true. 
+> But I also have to find the biggest and smallest value that the function has in the set $D$. 
+>
+> I have defined the following, but can't come further:
+>
+> $$D_1 = \{(x,y)\in\mathbb{R}^2: x = 0, 0 ≤ y ≤ 2\}$$
+> $$D_2 = \{(x,y)\in\mathbb{R}^2: y = 0, -\sqrt{2}≤ x ≤ \sqrt{2}\}$$
+> $$D_3 = \{(x,y)\in\mathbb{R}^2: y = 2-x^2, -\sqrt{2}≤ x ≤ \sqrt{2}\}$$
+>
+> And then I'm supposed to find the values from those definitions, but I'm kind of stuck.
+:::
+
+The curve $D_1$ is not part of the boundary of $D$.  If you change the definition of $D_3$ to
+$$D_3 = \{(x,y) \in \mathbb{R}^2 : \color{blue}{-\sqrt{2} \leq x \leq \sqrt{2}},\ y=2-x^2\}$$
+Then $D_2$ and $D_3$ form the boundary of $D$.
+
+Since $D$ is closed and bounded, the global max and min exist.  Either they occur in the interior of $D$, or on the boundary of $D$.  You have already found the one critical point in the interior of $D$.  To find critical points on the boundary, look at the functions
+$$\begin{align*}
+    g_1(x) &= f(x,0) & - \sqrt{2} \leq x \leq \sqrt{2} \\
+    g_2(x) &= f(x,2-x^2) & - \sqrt{2} \leq x \leq \sqrt{2} \\
+\end{align*}$$
+These you can analyze with single-variable calculus techniques.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3384204/maxima-and-minima-critical-value/3384217#3384217) on Mathematics Stack Exchange, 2019-10-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

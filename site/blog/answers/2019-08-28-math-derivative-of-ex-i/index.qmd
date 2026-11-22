@@ -1,0 +1,53 @@
+---
+title: Derivative of $e^x$ (i)
+date: '2019-08-28'
+description: Equations (2) and (3) are false. $e^2$ is a constant, and the derivative of a constant is zero.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3337132
+se-link: https://math.stackexchange.com/questions/3337130/derivative-of-ex-i/3337132#3337132
+se-score: 12
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- exponential-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derivative of $e^x$ (i)](https://math.stackexchange.com/questions/3337130/derivative-of-ex-i), asked by [mjc](https://math.stackexchange.com/users/596895/mjc) on Mathematics Stack Exchange (2019-08-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This will be a very basic question, but it will help my thought process to have someone answer it.
+>
+> $e$ can be defined as the number such that $$\frac{de^x}{dx}=e^x\;\;\;\;\;(1)$$
+>
+> Taking $x=2$, this implies that $$\frac{de^2}{dx}=e^2\;\;\;\;\;(2)$$
+>
+> The power rule gives us that $$\frac{de^2}{dx}=2e\;\;\;\;\;(3)$$
+>
+> Therefore from $(2)$ and $(3)$ we get $$e^2=2e\;\;\;\;\;(4)$$
+>
+> But a calculator tells me that $(4)$ is false. Where have I gone wrong?
+:::
+
+Equations (2) and (3) are false. $e^2$ is a constant, and the derivative of a constant is zero.
+
+Remember that you evaluate the derivative *after* differentiating the function.  So when you say $\frac{de^x}{dx} =e^x$, you mean that the slope of the line tangent to $y=e^x$ at $x=2$ is $e^2$.  In Leibniz notation, the correct form of (2) is
+$$\left.\frac{de^x}{dx}\right|_{x=2} = e^2$$
+The correct form of (3) is
+$$\left.\frac{dx^2}{dx}\right|_{x=e} = 2e$$
+As you can see, these are different functions, differentiated and evaluated at different points, so there's no surprise the derivatives are different.
+
+*Dilatory aside.* You say that (1) can be taken as the definition of $e$, and you are right, with the insertion of the word *positive*.  Equation (1) is also satisfied with $e$ replaced by $0$, and if $e$ is “defined” to be zero, then (2), (3), and (4) are also all satisfied.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3337130/derivative-of-ex-i/3337132#3337132) on Mathematics Stack Exchange, 2019-08-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

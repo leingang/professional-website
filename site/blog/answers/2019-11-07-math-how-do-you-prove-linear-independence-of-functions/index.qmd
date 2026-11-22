@@ -1,0 +1,35 @@
+---
+title: How do you prove linear independence of functions?
+date: '2019-11-07'
+description: With polynomials, or functions in general, you can evaluate them at certain points and explore the consequences.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3425382
+se-link: https://math.stackexchange.com/questions/3425369/how-do-you-prove-linear-independence-of-functions/3425382#3425382
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do you prove linear independence of functions?](https://math.stackexchange.com/questions/3425369/how-do-you-prove-linear-independence-of-functions), asked by [ahzired](https://math.stackexchange.com/users/722802/ahzired) on Mathematics Stack Exchange (2019-11-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm taking a linear algebra course and I'm having trouble proving linear (in)dependence of functions. I understand that I have to prove that the $a_1f(x) + a_2g(x) = 0$ but I don't know how to actually do that. For example given a pair of functions 1 and t, how do you prove linear independence?
+:::
+
+With polynomials, or functions in general, you can evaluate them at certain points and explore the consequences.
+
+For instance, suppose that there exist scalars $a_1$ and $a_2$ such that $a_1 \cdot 1 + a_2 \cdot t = 0$ as functions.  This means the equation holds for all $t$.  Evaluating at $t=0$ gives $a_1 = 0$.  Evaluating at $t=1$ gives $a_1 + a_2 =0$, but since $a_1 =0$ is already known, $a_2 = 0$ as well.  Therefore $1$ and $t$ are linearly independent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3425369/how-do-you-prove-linear-independence-of-functions/3425382#3425382) on Mathematics Stack Exchange, 2019-11-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

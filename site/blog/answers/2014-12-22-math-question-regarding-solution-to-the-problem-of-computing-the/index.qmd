@@ -1,0 +1,63 @@
+---
+title: Question regarding solution to the problem of computing the expected number of coin flips until getting 5 in a row.
+date: '2014-12-22'
+description: The idea is that once we get a tail, the head count “resets.” Each sequence of tosses that contains five consecutive heads corresponds to one that begins with…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1077521
+se-link: https://math.stackexchange.com/questions/1077499/question-regarding-solution-to-the-problem-of-computing-the-expected-number-of-c/1077521#1077521
+se-score: 2
+se-accepted: true
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question regarding solution to the problem of computing the expected number of coin flips until getting 5 in a row.](https://math.stackexchange.com/questions/1077499/question-regarding-solution-to-the-problem-of-computing-the-expected-number-of-c), asked by [NoBackingDown](https://math.stackexchange.com/users/170343/nobackingdown) on Mathematics Stack Exchange (2014-12-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a question for further explanation regarding the solution to the problem here https://math.stackexchange.com/questions/364038/expected-number-of-coin-tosses-to-get-five-consecutive-heads.
+>
+> The most favorite solution by André Nicolas is:
+>
+> > Let e be the expected number of tosses. It is clear that e is finite.
+> Start tossing. If we get a tail immediately (probability $\frac{1}{2}$) then the expected number is e+1. If we get a head then a tail (probability $\frac{1}{4}$), then the expected number is e+2. Continue …. If we get 4 heads then a tail, the expected number is e+5. Finally, if our first 5 tosses are heads, then the expected number is 5. Thus 
+>
+> > $$e=\frac{1}{2}(e+1)+\frac{1}{4}(e+2)+\frac{1}{8}(e+3)+\frac{1}{16}(e+4)+\frac{1}{32}(e+5)+\frac{1}{32}(5).$$
+>
+> I don't understand why not all cases are consideres. For instance, why is it that after we get 4 heads and on tail, the expecation is $e+5$? What about the cases where we get for instance 2 heads, one tail, one head, one tail?
+:::
+
+The idea is that once we get a tail, the head count “resets.”  Each sequence of tosses that contains five consecutive heads corresponds to one that begins with a tail, or a head and tail, or two heads and tail, or three heads and a tail, or four heads and a tail, or five heads and a tail....But if you start with five heads, well, then you're done.
+
+More precisely, the sample space is the set $U$ of all sequences taken from $\left\{\text{head},\text{tail}\right\}$.  Let $T$ be the set of all elements in $U$ that begin with a tail.  Let $HT$ be the set of all elements in $U$ that begin with a head, then a tail.  And so on for $HHT$, $HHHT$, and $HHHHT$.  Let $HHHHH$ be the set of all sequences that begin with five heads.  
+
+These six sets partition the whole sample space.  By which we mean every element is in exactly one of them.  You suggest the case of two heads, one tail, one head, one tail, but any sequence beginning with those is already in $HHT$.  
+
+(We *could* partition the sample space by all possibilities of the first five tosses.  That would result in $2^5 =32$ different sets.  But this wouldn't help us with the problem of counting the number of tosses before getting the fifth head.)
+
+From our partition of $U$ we get this equation involving the conditional expected values:
+$$E(X) = E(X\mid T)P(T) + E(X \mid HT)P(HT) + E(X\mid HHT)P(HHT) + E(X \mid HHHT) P(HHHT) + E(X \mid HHHHT) P(HHHHT) + E(X \mid HHHHH) P(HHHHH)$$
+
+Now $E(X \mid T) = E(X) + 1$, because if we start with a tail then we have to wait at least one more toss.  To put it more precisely, $U$ and $T$ are in correspondence: for each $\omega$ in $U$, let $\omega'$ be the same sequence with a tail added to the front.  Clearly $\omega' \in T$, and this is a bijection between $U$ and $T$.  Since $X(\omega') = X(\omega)+1$, we have $E(X\mid T) = E(X) + 1$.
+Similarly,
+$$\begin{aligned}
+    E(X \mid HT) &= E(X) + 2 \\
+    E(X \mid HHT) &= E(X) + 3 \\
+    E(X \mid HHHT) &= E(X) + 4 \\
+    E(X \mid HHHHT) &= E(X) + 5 \\
+\end{aligned}$$
+
+But if the first five tosses are heads, we don't need any more tosses.
+Therefore, $$E(X \mid HHHHH) = 5$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1077499/question-regarding-solution-to-the-problem-of-computing-the-expected-number-of-c/1077521#1077521) on Mathematics Stack Exchange, 2014-12-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,48 @@
+---
+title: Prove $a'(t)$ and $a''(t)$ are linearly independent
+date: '2017-01-10'
+description: Two nonzero vectors are linearly dependent if and only if one is a nonzero multiple of the other. Given $t \in \mathbb{R}$, suppose $\alpha'(t)$ and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2091803
+se-link: https://math.stackexchange.com/questions/2091788/prove-at-and-at-are-linearly-independent/2091803#2091803
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- curves
+- independence
+- cross-product
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $a'(t)$ and $a''(t)$ are linearly independent](https://math.stackexchange.com/questions/2091788/prove-at-and-at-are-linearly-independent), asked by [Lauren Bathers](https://math.stackexchange.com/users/191344/lauren-bathers) on Mathematics Stack Exchange (2017-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Consider the curve $a\subset \mathbb{R}^3$ defined by $\alpha((t)=(2t, t^2,\frac{t^3}{3})$ where $t \in \mathbb{R}^3$. Verify that {$\alpha', \alpha''$} is a linearly independent set for each t
+>
+> Find $\alpha'=(2,2t,t^2)$ and $\alpha''=(0,2,2t)$
+>
+> To test linear dependence I am used to finding the determinant. I was looking into proofs using cross-product and came up with the following but am unsure if its correct.
+>
+> $\alpha'$x $\alpha'' = (2t^2, -4t, 4)$
+>
+> Would I know do $2t^2-4t+4$ and factorise to get:
+>
+> $\frac{4 \pm \sqrt{16-32}}{4}= \frac{4 \pm 2i}{4}$ which obviously isn't in the real numbers and therefore it can not equal zero proving linear independence?
+:::
+
+Two nonzero vectors are linearly dependent if and only if one is a nonzero multiple of the other.  Given $t \in \mathbb{R}$, suppose $\alpha'(t)$ and $\alpha''(t)$ were linearly dependent.  Then there would exist a nonzero scalar $\lambda$ such that 
+$$(0,2,2t) = \lambda (2,2t,t^2)$$
+By comparing the first components, we see $\lambda = 0$, a contradiction.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2091788/prove-at-and-at-are-linearly-independent/2091803#2091803) on Mathematics Stack Exchange, 2017-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

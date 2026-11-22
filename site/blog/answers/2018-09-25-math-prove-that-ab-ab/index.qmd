@@ -1,0 +1,48 @@
+---
+title: Prove that $(-a)b = -ab$
+date: '2018-09-25'
+description: You've started your proof by assuming that which you want to prove. Then you derived a tautology ($b=b$). There are several issues with this.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2930362
+se-link: https://math.stackexchange.com/questions/2930348/prove-that-ab-ab/2930362#2930362
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $(-a)b = -ab$](https://math.stackexchange.com/questions/2930348/prove-that-ab-ab), asked by [Lorenzo](https://math.stackexchange.com/users/597040/lorenzo) on Mathematics Stack Exchange (2018-09-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> can you please tell me if my proof is right or if I'm taking some steps for granted? Thanks
+>
+> $$\forall a, b\in \Bbb R \Rightarrow (-a)b=-ab$$
+>
+> $$(-a)b\cdot (-a)^{-1} = -ab\cdot (-a)^{-1} \\
+> 1\cdot b = \frac{-ab}{-a} \\
+> b=b$$
+:::
+
+You've started your proof by assuming that which you want to prove.  Then you derived a tautology ($b=b$).  There are several issues with this.
+
+The first is that this is regarded as a sloppy form of proof.  The only way that assuming what you want to show and deriving a tautology produces a logically valid argument, is if the steps can be reversed to go from the tautology to that which you want to show.  And even in this case, people who read a lot of proofs are going to regard it as fishy.
+
+Now in this proof specifically, certain steps are not reversible.  When you multiply by $(-a)^{-1}$, for instance, you have added in the assumption that $a \neq 0$.  That's not part of the original proposition.
+
+Also, buried in the algebra, you have once again assumed that which you want to prove.  When you go from $\frac{-ab}{-a}$ to $b$, you are factoring the numerator as $\frac{(-a)b}{-a}$.  So the entire argument is circular.
+
+You've already got some hints on how to proceed.  But essentially, because you have a statement about additive inverses, you should use addition to prove it, not multiplication or division.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2930348/prove-that-ab-ab/2930362#2930362) on Mathematics Stack Exchange, 2018-09-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

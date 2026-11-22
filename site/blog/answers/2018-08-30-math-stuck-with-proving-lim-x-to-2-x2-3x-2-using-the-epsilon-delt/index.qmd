@@ -1,0 +1,60 @@
+---
+title: Stuck with proving $\lim_{x\to 2} (x^2-3x)=-2$, using the $\epsilon, \delta$ deifnition
+date: '2018-08-30'
+description: You're almost there. If $\delta \leq 1$, and $|x-2|<\delta$, then you know $$|x-1| \leq |x-2| +1 \leq 2$$ and also $$|x-1||x-2| < 2 \delta$$ In order for the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2899704
+se-link: https://math.stackexchange.com/questions/2899692/stuck-with-proving-lim-x-to-2-x2-3x-2-using-the-epsilon-delta-dei/2899704#2899704
+se-score: 2
+se-accepted: true
+se-tags:
+- limits
+- definition
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Stuck with proving $\lim_{x\to 2} (x^2-3x)=-2$, using the $\epsilon, \delta$ deifnition](https://math.stackexchange.com/questions/2899692/stuck-with-proving-lim-x-to-2-x2-3x-2-using-the-epsilon-delta-dei), asked by [Sebastián Acosta](https://math.stackexchange.com/users/268855/sebasti%c3%a1n-acosta) on Mathematics Stack Exchange (2018-08-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was asked to prove that: $\lim_{x\to 2} (x^2-3x)=-2$ using the $\epsilon, \delta$ deifnition 
+>
+> I started to try and solve the epsilon inequality in this manner: 
+>
+> for every  $\epsilon>0$ there exist $\delta >0$ such that if:    
+>
+> $0<|x-2|<\delta$ then $|(x^2-3x)-(-2)|<\epsilon$
+>
+> Then I started to manipulate my epsilon inequality in order to get a delta in terms of epsilon by doing the following:
+>
+> $$|(x^2-3x)-(-2)|=|x^2-3x+2|=|(x-2)(x-1)|=|x-2||x-1|$$
+>
+> Now, we must see that 
+>
+> $$|x-1|=|x-2+1| ≤ |x-2|+1$$
+>
+> And thus, that:
+> $$|x-2||x-2+1|≤ (|x-2|+1)|x-2|$$
+>
+> After this step I get stuck. I do not know how to proceed or how to use the equations I have in order to get delta in terms of epsilon.
+>
+> Thanks in advance for the help.
+:::
+
+You're almost there.  If $\delta \leq 1$, and $|x-2|<\delta$, then you know 
+$$|x-1| \leq |x-2| +1 \leq 2$$
+and also
+$$|x-1||x-2| < 2 \delta$$
+In order for the right-hand side to be $\leq\epsilon$, you need to make sure that $\delta \leq \frac{\epsilon}{2}$.  In order to guarantee both $\delta \leq 1$ and $\delta \leq \frac{\epsilon}{2}$, choose $\delta = \min\left\{1,\frac{\epsilon}{2}\right\}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2899692/stuck-with-proving-lim-x-to-2-x2-3x-2-using-the-epsilon-delta-dei/2899704#2899704) on Mathematics Stack Exchange, 2018-08-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

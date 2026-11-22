@@ -1,0 +1,53 @@
+---
+title: General equation of cylinder surface
+date: '2019-02-19'
+description: Suppose the plane curve is given by the equation $f(x,y) = 0$, and the line is parallel to $\vec v = \left<a,b,c\right>$. Given a point $P= (x1,y1,z1)$ in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3119210
+se-link: https://math.stackexchange.com/questions/3119145/general-equation-of-cylinder-surface/3119210#3119210
+se-score: 5
+se-accepted: false
+se-tags:
+- geometry
+- analytic-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[General equation of cylinder surface](https://math.stackexchange.com/questions/3119145/general-equation-of-cylinder-surface), asked by [S.H.W](https://math.stackexchange.com/users/325808/s-h-w) on Mathematics Stack Exchange (2019-02-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> According to the definition "**A cylinder is a surface that consists of all lines (called rulings) that are parallel to a given line and pass through a given plane curve.**
+> " I'm curious about the general equation of cylinder . I mean finding the equation by using the line and plane curve .
+:::
+
+Suppose the plane curve is given by the equation $f(x,y) = 0$, and the line is parallel to $\vec v = \left<a,b,c\right>$.  Given a point $P= (x_1,y_1,z_1)$ in space, we need to: 
+
+1. Trace the line through $P$ parallel to $\vec v$;
+2. Find the point $Q$ of intersection of that line with the $xy$-plane;
+3. Decide if $Q$ is on the curve. If it is, $P$ is on the cylinder. 
+
+Let the coordinates of $Q$ be $(x_0,y_0,0)$.  The parametric equations for the line are
+$$\begin{align*}
+    x &= x_1 + at \\
+    y &= y_1 + bt \\
+    z &= z_1 + ct
+\end{align*}$$
+If $x=x_0$, $y=y_0$, and $z=0$, we can solve
+$$\begin{align*}
+    x_0 &= x_1 - \frac{a}{c}z_1 \\
+    y_0 &= y_1 - \frac{b}{c}z_1
+\end{align*}$$
+[If $c=0$, the vector is parallel to the $xy$-plane and we won't get a cylinder at all.]  This point is on the curve if $f(x_0,y_0) = 0$.  Replacing the point $(x_1,y_1,z_1)$ with a varying point $(x,y,z)$, the equation for the cylinder is
+$$f\left(x-\frac{a}{c}z,y-\frac{b}{c}z\right) = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3119145/general-equation-of-cylinder-surface/3119210#3119210) on Mathematics Stack Exchange, 2019-02-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

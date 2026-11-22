@@ -1,0 +1,47 @@
+---
+title: 'Slightly changing the formal definition of continuity of $f: \mathbb{R} \to \mathbb{R}$?'
+date: '2016-11-02'
+description: You've got some good answers about why your new definition doesn't characterize continuous functions. The general point is that $\forall y \exists x P(x,y)$ is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1996467
+se-link: https://math.stackexchange.com/questions/1198831/slightly-changing-the-formal-definition-of-continuity-of-f-mathbbr-to-mat/1996467#1996467
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- general-topology
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Slightly changing the formal definition of continuity of $f: \mathbb{R} \to \mathbb{R}$?](https://math.stackexchange.com/questions/1198831/slightly-changing-the-formal-definition-of-continuity-of-f-mathbbr-to-mat), asked by [layman](https://math.stackexchange.com/users/131740/layman) on Mathematics Stack Exchange (2015-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm curious for some perspectives on why it would be wrong to change the definition of continuity of $f: \Bbb R \to \Bbb R$ in the following way:
+>
+> >**Original definition.** $f : \Bbb R \to \Bbb R$ is said to be *continuous* at $x \in \Bbb R$ if $\forall \epsilon > 0$ $\exists \delta > 0$ such that $|x - a| < \delta \implies |f(x) - f(a)| < \epsilon$.
+> >
+> >**Altered definition.** $f : \Bbb R \to \Bbb R$ is said to be *continuous* at $x \in \Bbb R$ if $\forall \delta > 0$ $\exists \epsilon > 0$ such that $|x - a| < \delta \implies |f(x) - f(a)| < \epsilon$.
+>
+> The altered definition is more in line with what I think when I think about continuity intuitively: nearby points are sent to nearby points.  It only makes sense to me to be able to choose "nearness" in the domain (i.e., $\forall \delta > 0$) and show there is nearness in the codomain (i.e., $\exists \epsilon > 0$) to prove intuitively that "nearby points are sent to nearby points".
+>
+> **Similarly**, if $X, Y$ are topological spaces, we say $f: X \to Y$ is continuous if the preimages of open sets are open.  What would be wrong about changing the definition to say that a map is continuous if the images of open sets are open (i.e., $f$ is continuous if it is an open map)?  This is more inline with the intuitive idea of "nearby points being sent to nearby points" -- you pick nearness in the domain (i.e., an arbitrary open set) an show nearness in the codomain (i.e., the image is open).
+>
+> Does anyone have any useful remarks?
+:::
+
+You've got some good answers about why your new definition doesn't characterize continuous functions.  The general point is that $\forall y \exists x P(x,y)$ is very different from $\forall x \exists y P(x,y)$.  (Here $P(x,y)$ is some statement about $x$ and $y$.
+
+To use a simpler example, suppose $P(x,y)$ is the formula $y=x^2$, and let $x$ and $y$.  Then $\forall y \exists x P(x,y)$ means that every number $y$ has a square root.  But $\forall x \exists y P(x,y)$ means that every number $x$ can be squared.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1198831/slightly-changing-the-formal-definition-of-continuity-of-f-mathbbr-to-mat/1996467#1996467) on Mathematics Stack Exchange, 2016-11-02, with [edits](https://math.stackexchange.com/posts/1996467/revisions) by [Jyrki Lahtonen](https://math.stackexchange.com/users/11619/jyrki-lahtonen). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

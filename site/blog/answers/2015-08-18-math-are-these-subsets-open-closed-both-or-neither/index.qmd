@@ -1,0 +1,60 @@
+---
+title: Are these subsets open, closed, both or neither?
+date: '2015-08-18'
+description: Jooi is correct about (d) being wrong. Your flaw when applying (c)'s logic to (d) is that in (d), $B{0.5}(3,3) \neq \left\{(3,3)\right\}$, so points of $S$ are…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1401727
+se-link: https://math.stackexchange.com/questions/1401711/are-these-subsets-open-closed-both-or-neither/1401727#1401727
+se-score: 5
+se-accepted: true
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Are these subsets open, closed, both or neither?](https://math.stackexchange.com/questions/1401711/are-these-subsets-open-closed-both-or-neither), asked by [Michael Maliszesky](https://math.stackexchange.com/users/262457/michael-maliszesky) on Mathematics Stack Exchange (2015-08-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm teaching myself topology using a text I found online. Right now I'm reviewing "Metrics." Please let me know if my answers are correct, and If my reasoning is accurate and complete.
+> <p>I think (c)and (d) are correct, but my reason could be better stated. (not sure how)</p>  
+>
+> <br>.............................................<br>
+> In each part below, a subset $S$ of a metric space $M$ is given. In each case decide whether $S$ is open, closed, both or neither. <br>
+>
+> <br>(a)$M = \mathbb{R},$ and $S = [0,1)$
+> <p>   <b>Neither.</b> S is not open because the point {0} cannot have an open ball around it contained in $S$. S is not closed because $M-S$ has the point {1}, and it cannot have an open ball around it contained in $M-S$.  </p>
+>
+> <br>(b)$M = \mathbb{R},$ and $S =  \mathbb{N}$
+> <p><b>Closed.</b> $M-S = ...(0,1) \cup (1,2) \cup (2,3)...$ So $M-S$ is a union of arbitrarily many open subsets of M, and thus an open subset of M. And since the complement of S is open, S is closed. <i>Not open</i> because the point {1}, for example, can not have a ball around it contained in $S$</p>
+>
+> <br>(c)$M = \mathbb{Z},$ and $S =  \mathbb{N}$
+> <p><b>Both.</b> $B_{0.5}(3)=\{3\}$ is open, and $\overline B_{0.5}(3)=\{3\}$ is closed. Thus S is both, since every subset is a finite union of singletons, and finite unions preserve both openness and closedness. </p>
+>
+> <br>(d)$M = \mathbb{R}^2,$ and $S$ is the set of point with rational coordinates
+> <p><b>Both.</b> Rational numbers are countably infinite, and thus a infinite union of singletons. Ergo, the argument for (c) applies.</p>
+>
+> <br>(e)$M = \mathbb{R}^2,$ and $S$ is the unit disk $\{ (x,y) \in  \mathbb{R}^2:x^2+y^2<1  \}$.
+> <p><b>Open.</b> This is a 2 dimensional open ball, and an open ball is an open set. <i>Not Closed</i> because $(1,0) \in M-S$, and $(1,0)$ cannot have a ball around it contained in $M-S$.</p>
+>
+> <br>(f)$M = \mathbb{R}^3,$ and $S$ is the unit disk $\{ (x,y,z) \in  \mathbb{R}^3: z=0$ and $x^2+y^2<1  \}$.
+> <p><b>Neither.</b> <i>Not open</i>, because if a ball is formed at any point on the unit disk, it will contain points in M that are not on the disk, thus it does not contain a open ball around each of its points.  <i>Not closed</i>, because the compliment of S is  \mathbb{R}^3 with the disk removed, thus it contains the unit circle ($z=0$ and $x^2+y^2=1$); The points on the unit circle are boundary points, and don't have open balls.   </p>
+>
+> <br>(g)$M =\{ (x,y) \in \mathbb{R}^2 :x>0$ and $y>0 \},$ and $S = \{ (x,y) \in M:x^2+y^2 \leq 1\}$.
+> <p><b>Closed.</b> $M-S$ does not contain any boundary points (they are all in S), and is therefor open, which implies that S is closed. <i>Not open</i>, because the points on $x^2+y^2=1 are boundary points and thus don't have open balls. </p>
+:::
+
+Jooi is correct about (d) being wrong.  Your flaw when applying (c)'s logic to (d) is that in (d), $B_{0.5}(3,3) \neq \left\{(3,3)\right\}$, so points of $S$ are not open in $M$.  As for closed, what are the boundary points of $S$?
+
+Looking back at (c) I see another issue.  You say every subset of $S$ is a *finite* union of singletons.  This isn't true.   But in the discrete topology (where points are open sets), every set is open, therefore every set is closed.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1401711/are-these-subsets-open-closed-both-or-neither/1401727#1401727) on Mathematics Stack Exchange, 2015-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

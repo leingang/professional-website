@@ -1,0 +1,37 @@
+---
+title: How many different ways are there to pay exactly $20$ p using only $1$ p and $2$ p?
+date: '2018-08-08'
+description: I'm going to assume that the order of the coins doesn't affect the count. In other words, "5 2p coins and 10 1p coins" and "3 2p coins, 10 1p coins, and 2 more…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2876010
+se-link: https://math.stackexchange.com/questions/2875990/how-many-different-ways-are-there-to-pay-exactly-20-p-using-only-1-p-and-2/2876010#2876010
+se-score: 4
+se-accepted: false
+se-tags:
+- combinatorics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How many different ways are there to pay exactly $20$ p using only $1$ p and $2$ p?](https://math.stackexchange.com/questions/2875990/how-many-different-ways-are-there-to-pay-exactly-20-p-using-only-1-p-and-2), asked by [Dinesh Potluru](https://math.stackexchange.com/users/539730/dinesh-potluru) on Mathematics Stack Exchange (2018-08-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > How many different ways are there to pay exactly $20$ p using only $1$ p and $2$ p?
+>
+> Any quicker method to solve such type of questions? tried writing a list of numbers but I don't think it is a suitable workout for an exam.
+:::
+
+I'm going to assume that the order of the coins doesn't affect the count.  In other words, "5 2p coins and 10 1p coins" and "3 2p coins, 10 1p coins, and 2 more 2p coins" are counted the same.
+
+If so, you can have any number of 2p coins between 0 and 10.  For each of those, there's a unique way to add in 1p coins so that the total value will be 20p.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2875990/how-many-different-ways-are-there-to-pay-exactly-20-p-using-only-1-p-and-2/2876010#2876010) on Mathematics Stack Exchange, 2018-08-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,40 @@
+---
+title: Which package to use for presentations? Beamer, Prosper, or Other
+date: '2011-04-20'
+description: I do not have a basis of comparison as I've used nothing else (except for SliTeX back in the day), but I have to say that beamer is phenomenal.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16209
+se-link: https://tex.stackexchange.com/questions/16204/which-package-to-use-for-presentations-beamer-prosper-or-other/16209#16209
+se-score: 26
+se-accepted: false
+se-tags:
+- beamer
+- presentations
+- powerdot
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which package to use for presentations? Beamer, Prosper, or Other](https://tex.stackexchange.com/questions/16204/which-package-to-use-for-presentations-beamer-prosper-or-other), asked by [berkay](https://tex.stackexchange.com/users/3115/berkay) on TeX Stack Exchange (2011-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have to prepare my slides in latex. A quick search came up with different packages. Before start preparing, I need your experiences. I do not want to regret after learning one as I did, learning vim (now can not quit) instead of emacs.
+>
+> EDIT:
+> After asking this question at that time, I start learning Beamer. Now I'm really happy with that, I created my own template and now it's easier just copying from my .tex files to beamer template. I recommend beamer for powerpoint users who are actively using latex .
+:::
+
+I do not have a basis of comparison as I've used nothing else (except for SliTeX back in the day), but I have to say that [`beamer`](http://ctan.org/pkg/beamer) is phenomenal.  
+
+Its templating, font, and color selection mechanism make it infinitely customizable, and the overlay mechanisms allows slideshows to be really dynamic.  I've never regretted learning it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16204/which-package-to-use-for-presentations-beamer-prosper-or-other/16209#16209) on TeX Stack Exchange, 2011-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

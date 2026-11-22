@@ -1,0 +1,54 @@
+---
+title: Finding speed from a vector, parametization of its tangent line at a point
+date: '2017-05-03'
+description: I agree with you on the velocity vector. But as Doug M points out, speed is not the same thing. Speed is the magnitude of velocity, or the length of the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2263248
+se-link: https://math.stackexchange.com/questions/2263227/finding-speed-from-a-vector-parametization-of-its-tangent-line-at-a-point/2263248#2263248
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- vectors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding speed from a vector, parametization of its tangent line at a point](https://math.stackexchange.com/questions/2263227/finding-speed-from-a-vector-parametization-of-its-tangent-line-at-a-point), asked by [TobyTobyo](https://math.stackexchange.com/users/435196/tobytobyo) on Mathematics Stack Exchange (2017-05-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following questions on my homework problem, and I've gotten the first part wrong. Since I think I need part a) to figure out subsequent parts, I'm hoping that if you can help me get a), I can figure out c) and d) with minimal help.
+>
+> The problem as copied from my homework:
+>
+> The position vector for a particle moving on a helix is $c(t) = (3 cos(t), 5 sin(t), t^2)$.
+>
+> a) Find the speed of the particle at time $t_0 = 4π$
+>
+> b) Is $c'(t)$ ever orthogonal to $c(t)$?
+>
+> c) Find a parametrization for the tangent line to $c(t)$ at $t_0 = 4π.$ (Enter your answer as a comma-separated list of equations in $(x, y, z)$ coordinates.)
+>
+> d) Where will this line intersect the xy-plane?
+>
+> For part a), I get $c'(t)=(-3\sin(t),5\cos(t),2t)$, which means $c'(4\pi)=(0, 5, 8\pi)$. However, the software flags it as incorrect, and I am confused on why.
+>
+> I guessed part for part b), and got it wrong. Why is $c'(t)$ orthogonal to $c(t)$ at $0$, and not multiples of $\pi$?
+:::
+
+I agree with you on the velocity vector.  But as Doug M points out, speed is not the same thing.  Speed is the magnitude of velocity, or the length of the velocity vector.
+
+As for (b), notice
+$$c(t) \cdot c'(t) = 16\cos t\sin t + 2t^3$$
+This is zero when $t=0$, but not any other multiple of $\pi$.  It's hard to show this analytically, but with a graph you can see it's only zero at $t=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2263227/finding-speed-from-a-vector-parametization-of-its-tangent-line-at-a-point/2263248#2263248) on Mathematics Stack Exchange, 2017-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

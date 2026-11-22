@@ -1,0 +1,47 @@
+---
+title: Does anybody know what $S^1$ is in the following formula?
+date: '2017-05-02'
+description: The set $$S^n = \left\{(x1,x2,\dots,xn,x{n+1}) \in \mathbb{R}^{n+1} \mid x1^2 + x2^2 + \dots + xn^2 + x{n+1}^2 = 1\right\}$$ is called the unit $n$-sphere. The…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2262196
+se-link: https://math.stackexchange.com/questions/2262174/does-anybody-know-what-s1-is-in-the-following-formula/2262196#2262196
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does anybody know what $S^1$ is in the following formula?](https://math.stackexchange.com/questions/2262174/does-anybody-know-what-s1-is-in-the-following-formula), asked by user388879 on Mathematics Stack Exchange (2017-05-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: wDmLe.png
+>
+>
+> Where it says $\mathbb{R}\times S^1$, I do not understand what $S^1$ is.
+>
+> Any idea?
+:::
+
+The set
+$$S^n = \left\{(x_1,x_2,\dots,x_n,x_{n+1}) \in \mathbb{R}^{n+1} \mid x_1^2 + x_2^2 + \dots + x_n^2 + x_{n+1}^2 = 1\right\}$$
+is called the *unit $n$-sphere*.  The unit 2-sphere is what's normally called “the” unit sphere in three-dimensional space.  The unit 1-sphere $S^1$ is another name for the unit circle in the plane.  The notation and the equation generalizes to any number of dimensions though.
+
+If $A$ and $B$ are sets, the cartesian product $A\times B$ is set of all pairs
+$$A \times B = \left\{(a,b)\mid a\in A,\ b\in B\right\}$$
+So in your case, $\mathbb{R} \times S^1$ is the set of all pairs $(t,\theta)$, where $t$ is a real number and $\theta$ is an angle.  This paragraph is saying that lines in the plane can be specified (though not uniquely) by two quantities: the minimum distance $t$ from the line to the origin, and the angle $\theta$ normal to the line.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2262174/does-anybody-know-what-s1-is-in-the-following-formula/2262196#2262196) on Mathematics Stack Exchange, 2017-05-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

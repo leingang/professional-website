@@ -1,0 +1,76 @@
+---
+title: Tangent planes to $2+x^2+y^2$ and that contains the $x$ axis
+date: '2015-08-18'
+description: So far you have worked out that the tangent plane to the surface at $(x0,y0,x0^2 + y0^2+2)$ has equation $$2xx0 + 2yy0-z-x0^2-y0^2+2=0 \tag{1}$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1401768
+se-link: https://math.stackexchange.com/questions/1401716/tangent-planes-to-2x2y2-and-that-contains-the-x-axis/1401768#1401768
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- linear-algebra
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tangent planes to $2+x^2+y^2$ and that contains the $x$ axis](https://math.stackexchange.com/questions/1401716/tangent-planes-to-2x2y2-and-that-contains-the-x-axis), asked by [Poperton](https://math.stackexchange.com/users/166180/poperton) on Mathematics Stack Exchange (2015-08-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to find the tangent planes to $f(x,y) = 2+x^2+y^2$ and that contains the $x$ axis, so that's what I did:
+>
+> $$z = z_0 + \frac{\partial f(x_0,y_0)}{\partial x}(x-x_0)+\frac{\partial f(x_0,y_0)}{\partial y}(y-y_0) \implies \\ z = 2 + x_0^2 + y_0^2 + 2x_0(x-x_0) + 2y_0(y-y_0) \implies \\ 2xx_0 + 2yy_0-z-x_0^2-y_0^2+2=0$$
+>
+> So since the plane must contain the $x$ axis, its normal vector must have the form $(0,y,z)$. The normal vector fot the plane I found is: 
+>
+> $$(2x_0, 2y_0, -1)$$
+>
+> so $x_0 = 0, y_0 = y_0$
+>
+> our plane has the form:
+>
+> $$2y_0y -z -y_0^2+2 = 0$$
+>
+> but when I plot this graph for some values of $y_0$ I only get 1 tangent plane at $y_0\approx 1.5$
+:::
+
+So far you have worked out that the tangent plane to the surface at $(x_0,y_0,x_0^2 + y_0^2+2)$ has equation
+$$2xx_0 + 2yy_0-z-x_0^2-y_0^2+2=0
+\tag{1}$$
+
+If this plane contains the $x$-axis, it contains *all* points $(x,y,z)$ with $y=z=0$.  So the equation reduces to
+$$2x x_0 = x_0^2 + y_0^2 -2
+\tag{2}$$
+Again, we are looking for pairs $(x_0,y_0)$ such that (2) is true *for all $x$*.  This is different from looking for triples $(x,x_0,y_0)$ satisfying (2).  If we substitute $x=\frac{x_0}{2}$ into (2) we get
+$$x_0^2 = x_0^2 + y_0^2 - 2 \implies y_0^2 = 2 \implies y_0 = \pm\sqrt{2}$$
+Now equation (2) reduces to $2x x_0 = x_0^2$.  If we substitute $x=0$ we get 
+$$x_0^2 = 0 \implies x_0=0$$
+Since the points are on the paraboloid, their $z$-coordinates satisfy
+$$z_0 = x_0^2 + y_0^2 + 2 
+= (0)^2 + \left(\sqrt{2}\right)^2 +2 = 4$$
+So there are two points on the surface for which the tangent plane contains the $x$-axis: $(0,\sqrt{2},4)$ and $(0,-\sqrt{2},4)$.
+We can find the equations for the planes by substituting these points into (1).
+The first gives
+$$2x(0) + 2y(\sqrt{2}) - z - 0^2 - 2 + 2 = 0
+\implies z = 2 \sqrt{2} y$$
+The second is $z = -2\sqrt{2} y$.
+
+
+Another way to think about this is to project into two dimensions.
+It's equivalent to asking: Which lines in the $yz$-plane are tangent to $z=y^2+2$ and pass through the origin?  The line through $(y_0,y_0^2+2)$ and the origin has slope $\frac{y_0^2 + 2}{y_0}$.  The line through $(y_0,y_0^2+2)$ tangent to $z=y^2+2$ has slope $2y_0$.  So
+$$\frac{y_0^2 + 2}{y_0} = 2y_0
+\implies y_0^2 + 2 = 2y_0^2
+\implies y_0^2 = 2
+\implies y_0 = \pm\sqrt{2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1401716/tangent-planes-to-2x2y2-and-that-contains-the-x-axis/1401768#1401768) on Mathematics Stack Exchange, 2015-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

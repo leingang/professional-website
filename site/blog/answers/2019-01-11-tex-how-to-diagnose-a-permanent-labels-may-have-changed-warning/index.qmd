@@ -1,0 +1,66 @@
+---
+title: How to diagnose a permanent "Label(s) may have changed" warning?
+date: '2019-01-11'
+description: 'I had this issue too. I used David''s excellent little snippet to catch changed references. Since the log file is very long, I grepped them out with:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 469699
+se-link: https://tex.stackexchange.com/questions/154594/how-to-diagnose-a-permanent-labels-may-have-changed-warning/469699#469699
+se-score: 1
+se-accepted: false
+se-tags:
+- cross-referencing
+- warnings
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to diagnose a permanent "Label(s) may have changed" warning?](https://tex.stackexchange.com/questions/154594/how-to-diagnose-a-permanent-labels-may-have-changed-warning), asked by [mhelvens](https://tex.stackexchange.com/users/14886/mhelvens) on TeX Stack Exchange (2014-01-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm getting the following warning:
+>
+> ```latex
+> LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+> ```
+>
+> The problem is, it doesn't go away after rerunning (any number of times).
+>
+> The document in question is over 200 pages long and includes about 30 packages, so it's not really feasible for me to provide a minimal example. But I know my own code pretty well. I can probably fix it if I knew a bit more about the problem. So I want to ask some general questions:
+>
+> * How does the "labels changed; rerun" mechanism work, anyway?
+> * Is there a common culprit responsible for this problem?
+> * How would someone generally go about diagnosing it?
+>
+> I've read the following question:
+>
+> * https://tex.stackexchange.com/questions/109178/why-does-the-compiler-keeps-telling-me-forever-to-rerun-because-labels-have-ch
+>
+> But I'm not using the `elsarticle` or `acronym` packages, so the accepted answer didn't apply to me.
+>
+> * * *
+>
+> **More info:** As suggested, I did a kind of 'commenting out' binary search. (By the way, if LaTeX knows that labels may have changed, why can't it tell me *which* labels?)
+>
+> Anyway, I seemed to track down the problem to a specific `figure`. When I compile only chapters 1 to 3, removing that figure also removes the warning. However, if I once again include all chapters, removing that `figure` isn't enough. So I guess there are other problem locations. But I don't have time to search chapters 4 to 9 right now...
+>
+> I can also tell you this: I have a `tmp` directory where LaTeX and friends dump all temporary files. And between two compilations, the relevant content of this directory does not change *at all*. That is to say, `diff -r` tells me that the only changes are some timestamps and the `.pdf` file. In particular: all `.aux` files are identical.
+:::
+
+I had this issue too.  I used David's excellent little snippet to catch changed references.  Since the log file is very long, I grepped them out with:
+
+```latex
+$ egrep -A2 "label .* changed:" jobname.log
+```
+
+In my case, I found that the unstable labels were of the form `pgfidnnnn`, which I believe come from using the TikZ key `remember picture`.  And they weren't changing by much.  Per the manual's suggestion, I had placed `\tikzstyle{every picture}+=[remember picture]` in my document's preamble.  I shut off this blanket option and the unstable labels disappeared.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/154594/how-to-diagnose-a-permanent-labels-may-have-changed-warning/469699#469699) on TeX Stack Exchange, 2019-01-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

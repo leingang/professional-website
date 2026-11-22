@@ -1,0 +1,41 @@
+---
+title: Why is the following relation not transitive?
+date: '2018-01-02'
+description: 'It seems the question has been answered in comments, but just to make sure it has an answer:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2589111
+se-link: https://math.stackexchange.com/questions/2589089/why-is-the-following-relation-not-transitive/2589111#2589111
+se-score: 3
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is the following relation not transitive?](https://math.stackexchange.com/questions/2589089/why-is-the-following-relation-not-transitive), asked by [CalciumTablet](https://math.stackexchange.com/users/495672/calciumtablet) on Mathematics Stack Exchange (2018-01-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $A$ be $\{a,b,c\}$. Let the relation $R$ be $\{(a,a),(c,c),(a,b),(b,a)\}$.
+>
+> Since $(a,b) \land (b,a) \to (a,a)$ this shows transitivity.
+> Furthermore $(c,c)$ doesn't have anything else it relates to so, therefore, you can assume the premises are false as well as the conclusion being false so, therefore, showing transitivity.
+:::
+
+It seems the question has been answered in comments, but just to make sure it has an answer:
+
+> A relation $R$ on a set $A$ is called **transitive** provided for all $x$, $y$, and $z$ in $A$, $x\mathrel Ry \wedge y\mathrel Rz \implies x\mathrel Rz$.
+
+Let $x=b$, $y=a$, and $z=b$.  Then $x \mathrel{R} y$ and $y \mathrel{R} z$.  But $x \mathrel{R} z$ is equivalent to $b \mathrel{R} b$, which is not true.  So $R$ is not transitive.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2589089/why-is-the-following-relation-not-transitive/2589111#2589111) on Mathematics Stack Exchange, 2018-01-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

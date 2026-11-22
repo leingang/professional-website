@@ -1,0 +1,46 @@
+---
+title: Let $E$ a vector space and $f\in E^*$. Why $\|f\|:=\sup_{x\in E, \|x\|\leq 1}|f(x)|=\sup_{x\in E, \|x\|\leq 1}f(x)$?
+date: '2018-08-17'
+description: Umberto's answer is direct and efficient. I thought it might help to fill in the details.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2885776
+se-link: https://math.stackexchange.com/questions/2885755/let-e-a-vector-space-and-f-in-e-why-f-sup-x-in-e-x-leq-1f/2885776#2885776
+se-score: 2
+se-accepted: false
+se-tags:
+- functional-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $E$ a vector space and $f\in E^*$. Why $\|f\|:=\sup_{x\in E, \|x\|\leq 1}|f(x)|=\sup_{x\in E, \|x\|\leq 1}f(x)$?](https://math.stackexchange.com/questions/2885755/let-e-a-vector-space-and-f-in-e-why-f-sup-x-in-e-x-leq-1f), asked by [Peter](https://math.stackexchange.com/users/575743/peter) on Mathematics Stack Exchange (2018-08-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $E$ a vector space and $f\in E^*$. By definition $$\|f\|_{E^*}:=\sup_{x\in E, \|x\|\leq 1}|f(x)|.$$
+> But why do we have $$\|f\|_{E^*}=\sup_{x\in E, \|x\|\leq 1}f(x) \ \ ?$$ 
+>
+> Because linear functional are not positive, do they ?
+:::
+
+Umberto's answer is direct and efficient. I thought it might help to fill in the details.
+
+Let $S = \left\{x \in E \mid \Vert x \leq 1 \Vert \right\}$, $m = \sup_{x\in S} f(x)$, and $M = \sup_{x\in S} |f(x)|$ for brevity.  The claim is that $m = M$.
+
+Since $f(x) \leq |f(x)|$ for all $x$, it's clear that $m \leq M$.  Choose any $x \in S$.  Then either $f(x) \geq 0$ or $f(x) < 0$.  In the former case,
+$$|f(x)| = f(x) \leq m$$ 
+and in the latter case:
+$$|f(x)| =-f(x) = f(-x) \leq m$$
+The second equality comes from the fact that $f$ is linear, and the inequality from the face that $x \in S \implies -x \in S$.  So either way, $|f(x)| \leq m$.  
+
+Thus $m$ is an upper bound to $|f|$ on $S$.  Since $M$ is the *least* upper bound of $|f|$ on $S$, $M \leq m$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2885755/let-e-a-vector-space-and-f-in-e-why-f-sup-x-in-e-x-leq-1f/2885776#2885776) on Mathematics Stack Exchange, 2018-08-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

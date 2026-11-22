@@ -1,0 +1,126 @@
+---
+title: How to change the color of the title separator line in the title page in beamer?
+date: '2022-05-24'
+description: 'Using \setbeamercolor instead of \setbeamertemplate works:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 645392
+se-link: https://tex.stackexchange.com/questions/645390/how-to-change-the-color-of-the-title-separator-line-in-the-title-page-in-beamer/645392#645392
+se-score: 2
+se-accepted: true
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to change the color of the title separator line in the title page in beamer?](https://tex.stackexchange.com/questions/645390/how-to-change-the-color-of-the-title-separator-line-in-the-title-page-in-beamer), asked by [sound wave](https://tex.stackexchange.com/users/149290/sound-wave) on TeX Stack Exchange (2022-05-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'd like to change the color of the orange horizontal line in the title page of a beamer presentation based on the `metropolis` theme.
+>
+> ```latex
+> \documentclass{beamer}
+> \usetheme{metropolis}
+>
+> \title{How to change the color of the orange line?}
+> \date{May, 2022}
+> \author{Author}
+> \institute{University}
+>
+> \begin{document}
+>
+> \maketitle % Why this warning? Overfull \vbox (15.63992pt too high) detected at line 11
+>
+> \end{document}
+> ```
+>
+>
+> [![enter image description here][q-1]][q-1]
+>
+> I tried this, but it doesn't work
+>
+> ```latex
+> \definecolor{mygreen}{RGB}{33, 117, 0}
+> \setbeamertemplate{title separator}{fg=mygreen, bg=mygreen}
+> ```
+>
+> I tried also the code written in the [official documentation][q-2], at page 21, but it doesn't work too.
+>
+> ```latex
+> \usepackage{tikz}
+> \newlength{\metropolis@titleseparator@linewidth}
+> \setlength{\metropolis@titleseparator@linewidth}{0.4pt}
+> \setbeamertemplate{title separator}{
+> \begin{tikzpicture}
+> \fill[fg] (0,0) rectangle (\textwidth, \metropolis@titleseparator@linewidth);
+> \end{tikzpicture}%
+> \par%
+> }
+> ```
+>
+> Am I missing something or it is a more difficult task than one can think? I thought there was a simple one-line command, but maybe I was too optimistic.
+>
+> p.s. I noticed that the compiler gives a warning at the line `\maketitle`, is it normal?
+>
+> ```latex
+> Overfull \vbox (15.63992pt too high) detected at line 11
+> ```
+>
+> * * *
+>
+> UPDATE
+> ------
+>
+> The second code works with a slight modification (namely I had to add `\makeatletter` and replace `\fill[fg]` with `\fill[mygreen]`)
+>
+> ```latex
+> \definecolor{mygreen}{RGB}{33, 117, 0}
+> \usepackage{tikz}
+> \makeatletter
+> \setlength{\metropolis@titleseparator@linewidth}{1pt}
+> \setbeamertemplate{title separator}{
+> \begin{tikzpicture}
+> \fill[mygreen] (0,0) rectangle (\textwidth, \metropolis@titleseparator@linewidth);
+> \end{tikzpicture}%
+> \par%
+> }
+> ```
+>
+>   [q-1]: pxXev.png
+>   [q-2]: https://tug.org/docs/latex/beamertheme-metropolis/metropolistheme.pdf
+:::
+
+Using `\setbeamercolor` instead of `\setbeamertemplate` works:
+
+```latex
+\documentclass{beamer}
+\usetheme{metropolis}
+
+\title{How to change the color of the orange line?}
+\date{May, 2022}
+\author{Author}
+\institute{University}
+
+\definecolor{mygreen}{RGB}{33, 117, 0}
+\setbeamercolor{title separator}{fg=mygreen, bg=mygreen}
+
+
+\begin{document}
+
+\maketitle % Why this warning? Overfull \vbox (15.63992pt too high) detected at line 11
+
+\end{document}
+```
+
+The warning must have had something to do with this silent error, too, because it went away after making this change.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/645390/how-to-change-the-color-of-the-title-separator-line-in-the-title-page-in-beamer/645392#645392) on TeX Stack Exchange, 2022-05-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

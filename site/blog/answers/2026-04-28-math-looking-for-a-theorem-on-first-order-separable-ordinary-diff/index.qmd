@@ -1,0 +1,49 @@
+---
+title: Looking for a theorem on first-order separable ordinary differential equations likely in a book by Tom M. Apostol
+date: '2026-04-28'
+description: This is Theorem 8.10 on page 345 of my copy of Calculus, Volume 1 (2nd ed., 1967) by Apostol. I have been taught, and passed down to my students, that the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5134746
+se-link: https://math.stackexchange.com/questions/5134743/looking-for-a-theorem-on-first-order-separable-ordinary-differential-equations-l/5134746#5134746
+se-score: 3
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- reference-request
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Looking for a theorem on first-order separable ordinary differential equations likely in a book by Tom M. Apostol](https://math.stackexchange.com/questions/5134743/looking-for-a-theorem-on-first-order-separable-ordinary-differential-equations-l), asked by [An Android Runner](https://math.stackexchange.com/users/1737636/an-android-runner) on Mathematics Stack Exchange (2026-04-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> If it's not false memory, then years ago I found a nice theorem in one of Tom M. Apostol's book that justifies the method of solving first-order separable differential equations. It's been so many years, I could be wrong even about the fact that the theorem was from one of Apostol's book, but I would say yes---it's one of his.
+>
+> **What is the theorem?** These are my own words of what I remember about the theorem. 
+>
+> *Theorem.* Let $y = Y(x)$ be a solution of the equation 
+> $$\begin{equation}\tag{*}\label{star}A(y)y' = Q(x)\end{equation}$$ such that Y' is continuous on an interval $I$. Assume that $Q$ and $(A \circ Y)$ are continuous on $I$. Let $G$ be an antiderivative of $A$. Then $y$ satisfies $$\begin{equation}\tag{**}\label{starr}G(y) = \int Q(x) dx + C.\end{equation}$$ Conversely, if $y$ satisfies Equation $(\ref{starr})$, then $y$ is a solution of $A(y)y' = Q(x)$.
+>
+> *Proof*. Let $Y$ be a solution of Equation $(\ref{star})$. Then $$A(Y(x))Y'(x) = Q(x)$$ for each $x$ in $I$. Since $G' = A$, then Equation $(\ref{star})$ implies $$G'(Y(x))Y'(x) = Q(x).$$ But $G'(Y(x))Y'(x) = Q(x)$ is the derivative of $G(Y(x))$, which therefore is an antiderivative of $Q$, that is, $$G(Y(x)) = \int Q(x) dx + C,$$ thus proving the forward implication. For the backward implication, assume that $y$ satisfies $(\ref{starr})$. Taking its derivative, we get $$A(y) y' = Q(x),$$ as desired.
+>
+> **Question**. In which book (and hopefully chapter) by Tom M. Apostol can I find this theorem? Keep in mind I'm interested in any book that discusses this theorem and the manipulation of $dy$, $dx$ in solving first-order separable ordinary differential equations, so if you know of any that's not Tom M. Apostol's, that's also an answer to the question. Thank you.
+>
+> **Update**. It's possible it wasn't a theorem as I wrote it above. It could've been a regular paragraph in a text, for example. I certainly wouldn't take something like this from my mind---that's for sure. I read this somewhere and I believe this is how I got to know Tom M. Apostol in the first place, so I think it must be a book of his. But I'm human, so I could be misremembering---in which case it would be another author.
+:::
+
+This is Theorem 8.10 on page 345 of my copy of *[Calculus, Volume 1](https://archive.org/details/calculus01apos)* (2nd ed., 1967) by Apostol. I have been taught, and passed down to my students, that the colloquial name for the technique is *separation of variables.* 
+
+After the proof, he writes:
+
+> In practice, formula (`**`) is obtained directly from (`*`) by a mechanical process. In the differential equation (`*`) we write $dy/dx$ for the derivative $y’$ and then treat $dy/dx$ as a fraction to obtain the relation $A(y) dy = Q(x) dx$. Now we simply attach integral signs to both sides of this equation and add the constant $C$ to obtain (`**`). The justification for this mechanical process is provided by Theorem 8.10. This process is another example illustrating the effectiveness of the Leibniz notation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5134743/looking-for-a-theorem-on-first-order-separable-ordinary-differential-equations-l/5134746#5134746) on Mathematics Stack Exchange, 2026-04-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

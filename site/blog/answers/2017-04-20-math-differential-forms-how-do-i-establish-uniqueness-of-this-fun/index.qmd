@@ -1,0 +1,41 @@
+---
+title: 'Differential forms: How do I establish uniqueness of this function?'
+date: '2017-04-20'
+description: Since $\eta$ is exact, $\eta = df$ for some function $f$ on $U$. Let $g(x) = f(x) - f(p)$. Then $dg = df = \eta$ and $g(p) = f(p)-f(p) = 0$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2243779
+se-link: https://math.stackexchange.com/questions/2243742/differential-forms-how-do-i-establish-uniqueness-of-this-function/2243779#2243779
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- analysis
+- differential-geometry
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differential forms: How do I establish uniqueness of this function?](https://math.stackexchange.com/questions/2243742/differential-forms-how-do-i-establish-uniqueness-of-this-function), asked by [user247381](https://math.stackexchange.com/users/247381/user247381) on Mathematics Stack Exchange (2017-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Conclude that if $\eta$ is an exact $1$-form, and $p \in U$, that there exists a unique function $g$ such that $dg = \eta$ and $g(p) = 0$. $U \subset \mathbb{R}^n$ is open and connected. 
+>
+> By definition of exactness, I know such a $g$ exists but I am unable to prove the uniqueness bit. Was considering expressing $g$ as in integral in generality.
+:::
+
+Since $\eta$ is exact, $\eta = df$ for some function $f$ on $U$.  Let $g(x) = f(x) - f(p)$.  Then $dg = df = \eta$ and $g(p) = f(p)-f(p) = 0$.
+
+Now suppose $\tilde g$ is any function on $U$ satisfying $d\tilde g = \eta$ and $g(p) = 0$.  Let $h = g - \tilde g$.  Then $dh = 0$, which means that $h$ is constant on connected components of $U$.  Since $U$ is connected, $h$ is indeed constant.  Since $h(p) = 0$, that constant is zero.  Hence $g$ and $\tilde g$ are identical.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2243742/differential-forms-how-do-i-establish-uniqueness-of-this-function/2243779#2243779) on Mathematics Stack Exchange, 2017-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

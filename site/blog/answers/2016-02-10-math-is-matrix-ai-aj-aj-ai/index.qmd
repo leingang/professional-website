@@ -1,0 +1,40 @@
+---
+title: Is matrix $A^i A^j = A^j A^i$
+date: '2016-02-10'
+description: Yes, it is pretty trivial, but it follows from the definition of $A^n$ as the product of a string of $n$ copies of $A$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1648583
+se-link: https://math.stackexchange.com/questions/1648557/is-matrix-ai-aj-aj-ai/1648583#1648583
+se-score: 0
+se-accepted: true
+se-tags:
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is matrix $A^i A^j = A^j A^i$](https://math.stackexchange.com/questions/1648557/is-matrix-ai-aj-aj-ai), asked by [lll](https://math.stackexchange.com/users/307657/lll) on Mathematics Stack Exchange (2016-02-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to know if $$A^i  A^j = A^j  A^i$$ holds or not. 
+> It seems like an obvious, but I am wondering if there is a more formal proof
+:::
+
+Yes, it is pretty trivial, but it follows from the definition of $A^n$ as the product of a string of $n$ copies of $A$.
+
+On one hand, $A^iA^j$ is a string of $i$ copies of $A$, followed by a string of $j$ copies of $A$.  The result is $i+j$ copies of $A$.  That is,
+$$A^i A^j = A^{i+j}$$
+On the other hand, $A^jA^i$ is the product of a string of $j$ copies of $A$, followed by a string of $i$ copies of $A$.  The result is $j+i$ copies of $A$.  That is,
+$$A^j A^i = A^{j+i}$$
+Since $i+j = j+i$, we know $A^i A^j = A^j A^i$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1648557/is-matrix-ai-aj-aj-ai/1648583#1648583) on Mathematics Stack Exchange, 2016-02-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

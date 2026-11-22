@@ -1,0 +1,58 @@
+---
+title: write newline to file in TeX/LaTeX
+date: '2010-10-05'
+description: 'There are two answers: One is to just use a lot of \write statements, one for each line you want written. That is, \write writes a line to the file, including…'
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 3866961
+se-link: https://stackoverflow.com/questions/3866739/write-newline-to-file-in-tex-latex/3866961#3866961
+se-score: 3
+se-accepted: true
+se-tags:
+- text
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[write newline to file in TeX/LaTeX](https://stackoverflow.com/questions/3866739/write-newline-to-file-in-tex-latex), asked by [Matthew Leingang](https://stackoverflow.com/users/297797/matthew-leingang) on Stack Overflow (2010-10-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a latex document that I want to use to write text to a plain text file.  I want macros to be expanded, so I can't use `\filecontents` (which just saves input verbatim to a file)
+>
+> So far I have 
+>
+> ```latex
+> \newwrite\metadatafile
+> \immediate\openout\metadatafile=\jobname-meta.txt
+> \immediate\write\metadatafile{Title: \jobname\string
+>
+> Tags: \coursecode.\secnum.\termcode, \coursecode.\termcode, ...
+>
+> Description:
+> ...}
+> \immediate\closeout\metadatafile
+> ```
+>
+> What comes out in the text file inserts `\par` tokens instead of my double-newlines, and doesn't have any newlines in it at all.  How can I get newlines and have a regular plain text file?
+:::
+
+There are two answers:  One is to just use a lot of `\write` statements, one for each line you want written.  That is, `\write` writes a *line* to the file, including the newline character.  So a blank line can be done with just
+
+```latex
+\write\metadatafile{}
+```
+
+Or you can use the primitive `\newlinechar`.  In plain tex the double-carat macro `^^J` is aliased to `\newlinechar` so you can use that as well.  See pages 228 and 348 of *The TeXBook*.
+
+While I have that book open, I looked up the importance of the `\immediate` primitive before `\write`.  All usages of `\write` cited also use `\immediate`.  I've tried without the `\immediate` and without it things don't get written.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/3866739/write-newline-to-file-in-tex-latex/3866961#3866961) on Stack Overflow, 2010-10-05. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

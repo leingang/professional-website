@@ -1,0 +1,38 @@
+---
+title: Reciproque version of TAF
+date: '2017-09-30'
+description: Sure. Let $\phi(x) = f(c) x$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2451945
+se-link: https://math.stackexchange.com/questions/2451942/reciproque-version-of-taf/2451945#2451945
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Reciproque version of TAF](https://math.stackexchange.com/questions/2451942/reciproque-version-of-taf), asked by [Houssaine Philou](https://math.stackexchange.com/users/449648/houssaine-philou) on Mathematics Stack Exchange (2017-09-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is the following statement true ?
+>
+> Let $a,b \in \mathbb{R}$ and $f$ a real-valued continous function on $[a,b$]. Do we have the following statement: for every $c\in ]a,b[$ there exist a derivable fucntion $\varphi$ on $]a,b[$  such that
+> $$\varphi(a) - \varphi(b) = f(c)(a-b).$$
+>
+> If yes, how can we get it. Thank you
+:::
+
+Sure.  Let $\phi(x) = f(c) x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2451942/reciproque-version-of-taf/2451945#2451945) on Mathematics Stack Exchange, 2017-09-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

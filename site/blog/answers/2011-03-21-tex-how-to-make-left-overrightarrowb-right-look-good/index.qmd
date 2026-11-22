@@ -1,0 +1,63 @@
+---
+title: How to make \left<\overrightarrow{b}\right> look good?
+date: '2011-03-21'
+description: 'This is probably going to give the same result as TH.''s answer, but it illustrates the technique to get what you want: a b with an arrow on top which is…'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13987
+se-link: https://tex.stackexchange.com/questions/13985/how-to-make-left-overrightarrowb-right-look-good/13987#13987
+se-score: 2
+se-accepted: false
+se-tags:
+- math-mode
+- arrows
+- brackets
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to make \left<\overrightarrow{b}\right> look good?](https://tex.stackexchange.com/questions/13985/how-to-make-left-overrightarrowb-right-look-good), asked by [srs](https://tex.stackexchange.com/users/4361/srs) on TeX Stack Exchange (2011-03-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want a 'b' with an arrow on top, enclosed in angle brackets.
+>
+> ```latex
+> \left<\overrightarrow{b}\right>
+> ```
+>
+> gives angle brackets which are far too high.
+>
+> ```latex
+> <\overrightarrow{b}>
+> ```
+>
+> gives  far too much horizontal space between the brackets and the `\overrightarrow{b}`:
+>
+> ```latex
+> \left<\smash{\overrightarrow}\right>
+> ```
+>
+> makes that formula look good, but the upper end of the 'b' touches the line above.
+>
+> So what I want is basically a `\smash` that only affects the brackets, but not e.g. line spacing. Is this possible?
+:::
+
+What about
+
+```latex
+\left<\smash{\overrightarrow{b}}\vphantom{b}\right>\vphantom{\overrightarrow{b}}
+```
+
+This is probably going to give the same result as TH.'s answer, but it illustrates the technique to get what you want: a *b* with an arrow on top which is treated for the purpose of expanding delimiters as a plain *b*.  
+
+**Edit** You are right about the line spacing--the `\smash`ed `\overrightarrow{b}` will run over the line above.  I've added another `\vphantom` to stretch the line after the delimiter.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13985/how-to-make-left-overrightarrowb-right-look-good/13987#13987) on TeX Stack Exchange, 2011-03-21. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,47 @@
+---
+title: Triple Integral Question with Absolute Value
+date: '2020-04-09'
+description: If you're integrating over $0 \leq x \leq 1$, $0 \leq y \leq 1-x$, and $0 \leq z \leq 1-x-y$, then that's only the portion of $R$ in the first octant. Lets…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3616618
+se-link: https://math.stackexchange.com/questions/3616608/triple-integral-question-with-absolute-value/3616618#3616618
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- definite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Triple Integral Question with Absolute Value](https://math.stackexchange.com/questions/3616608/triple-integral-question-with-absolute-value), asked by [FreshDough](https://math.stackexchange.com/users/769608/freshdough) on Mathematics Stack Exchange (2020-04-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to calculate this problem where it says to calculate the triple integral $$\iiint_R(3xy+2z^2)\,dV$$ where the region $R$ is given by $0\leq z \leq 1-|x|-|y|$.
+>
+> When I tried to evaluate it with bounds from $0 \leq z \leq 1-x-y$, $0 \leq y \leq 1-x$ and $0 \leq x \leq 1$ with the order as $dz\,dy\,dx$, I sometimes get $0$ as the final result and sometimes I get $\frac{7}{120}$. The absolute value in the region is throwing me off so I am unsure what my setup should be for the integral.
+:::
+
+If you're integrating over $0 \leq x \leq 1$, $0 \leq y \leq 1-x$, and $0 \leq z \leq 1-x-y$, then that's only the portion of $R$ in the first octant.  Lets call this part $R^+$.  On $R^+$, $x$, $y$, and $z$ are all positive, so the integrand is positive, which means the integral is positive.  So $0$ is definitely not the right answer for the integral you did.
+
+So you could look at the other four portions of $R$ in the other quadrants of the upper half space, and set up iterated integrals for those.  However, it's easier to exploit the symmetry of $R$ and the integrand.  Notice that $R$ is symmetric across both the $xz$ and $yz$-planes.  That is, the transformations $x \mapsto -x$ and $y \mapsto -y$ preserve $R$, and map $R^+$ onto congruent regions in the other quadrants.  But each also flips the sign of $xy$.  So $\iiint_R xy\,dV$ decomposes into four integrals, two of which are equal to $\iiint_{R^+} xy\,dV$, and two of which are equal to $-\iiint_{R^+} xy\,dV$.  For this reason $\iiint_{R} xy\,dV =0$.
+
+The $z^2$ portion of the integrand is unchanged by these transformations. So $\iiint_R z^2\,dV$ decomposes into four integrals, each of which is equal to $\iiint_{R^+} z^2\,dV$.  Putting these together, we know
+$$\begin{align*}
+    \iiint_R (3xy + 2z^2)\,dV &= 4 \int_0^1 \int_0^{1-x} \int_{0}^{1-x-y} 2z^2\,dz\,dy\,dx
+    \\&= \frac{8}{3} \int_0^1 \int_0^{1-x} (1-x-y)^3\,dy\,dx
+    \\&= \frac{8}{3} \cdot \frac{1}{4} \int_0^1 \int_0^{1-x} (1-x)^4\,dy\,dx
+    \\&= \frac{8}{3} \cdot \frac{1}{4} \cdot \frac{1}{5} = \frac{2}{15}
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3616608/triple-integral-question-with-absolute-value/3616618#3616618) on Mathematics Stack Exchange, 2020-04-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

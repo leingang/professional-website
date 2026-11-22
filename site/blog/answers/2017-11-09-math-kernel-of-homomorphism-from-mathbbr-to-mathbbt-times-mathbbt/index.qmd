@@ -1,0 +1,43 @@
+---
+title: Kernel of homomorphism from $\mathbb{R} \to \mathbb{T} \times \mathbb{T}$
+date: '2017-11-09'
+description: Suppose $t \neq 0$ is in the kernel of $\theta$. Then $e^{it}$ and $e^{\alpha it}$ are both $1$, so $t$ and $\alpha t$ are both integer multiples of $2\pi$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2512343
+se-link: https://math.stackexchange.com/questions/2512328/kernel-of-homomorphism-from-mathbbr-to-mathbbt-times-mathbbt/2512343#2512343
+se-score: 2
+se-accepted: true
+se-tags:
+- abstract-algebra
+- group-theory
+- group-homomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Kernel of homomorphism from $\mathbb{R} \to \mathbb{T} \times \mathbb{T}$](https://math.stackexchange.com/questions/2512328/kernel-of-homomorphism-from-mathbbr-to-mathbbt-times-mathbbt), asked by [Roz](https://math.stackexchange.com/users/290738/roz) on Mathematics Stack Exchange (2017-11-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $\alpha \in \mathbb{R}$, let $\mathbb{T}$ be the set of complex numbers with absolute value $1$ and let $\theta:\mathbb{R} \to \mathbb{T} \times \mathbb{T}, \; \theta(t)=(e^{it}, e^{\alpha i t})$ be a group homomorphism. 
+> >
+> >Show that $\ker\theta$ is non-trivial if and only if $\alpha \in \mathbb{Q}$.
+>
+> Now $\ker\theta = \{x \in \mathbb{R} : (e^{ix}, e^{\alpha i x})=(1,1)\}$ and I have the implication that $\alpha \in \mathbb{Q} \implies \ker\theta$ is non-trivial, but I can't express a closed argument for the reverse implication.
+>
+> Please help!
+:::
+
+Suppose $t \neq 0$ is in the kernel of $\theta$.  Then $e^{it}$ and $e^{\alpha it}$ are both $1$, so $t$ and $\alpha t$ are both integer multiples of $2\pi$.  
+
+If $t = 2\pi m$ and $\alpha t = 2\pi n$ for integers $m$ and $n$, then by dividing the two (remember $t \neq 0$), $\alpha= \frac{n}{m}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2512328/kernel-of-homomorphism-from-mathbbr-to-mathbbt-times-mathbbt/2512343#2512343) on Mathematics Stack Exchange, 2017-11-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

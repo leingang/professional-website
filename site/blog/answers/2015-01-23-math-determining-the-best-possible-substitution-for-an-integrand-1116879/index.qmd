@@ -1,0 +1,56 @@
+---
+title: Determining the best possible substitution for an integrand
+date: '2015-01-23'
+description: '@Pp. suggests an Euler substitution of the form $$\begin{align} x &= \frac{t^2+1}{2t} = \frac{t}{2} + \frac{1}{2t} \\ dx &= \left(\frac{1}{2} -…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1116879
+se-link: https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand/1116879#1116879
+se-score: 6
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining the best possible substitution for an integrand](https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand), asked by [user208567](https://math.stackexchange.com/users/208567/user208567) on Mathematics Stack Exchange (2015-01-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What substitution is best used to calculate  $$\int \frac{1}{1 + \sqrt{x^2 -1}}dx$$
+:::
+
+@Pp. suggests an [Euler substitution](http://en.wikipedia.org/wiki/Euler_substitution) of the form
+$$\begin{align*}
+x  &= \frac{t^2+1}{2t} = \frac{t}{2} + \frac{1}{2t} \\
+dx &= \left(\frac{1}{2} - \frac{1}{2t^2}\right)\,dt = \frac{t^2-1}{2t^2}\,dt 
+\end{align*}$$
+
+> By this method you gain being able to solve **all** integrals of this type: Additions, multiplications and divisions of the square root of a quadratic polynomial and $x$.
+
+Then
+$$\begin{align}
+x^2 - 1 &= \frac{t^4+2t^2+1}{4t^2} - \frac{4t^2}{4t^2} \\
+        &= \frac{t^4-2t^2+1}{4t^2} = \left(\frac{t^2-1}{2t}\right)^2
+\end{align}$$
+So the integral becomes
+$$\begin{align*}
+\int\frac{1}{1+\sqrt{x^2-1}}\,dx
+&= \int\frac{1}{1+\dfrac{t^2-1}{2t}} \left(\frac{t^2-1}{2t^2}\right)\,dt\\
+&= \int\frac{t^2-1}{t(t^2+2t-1)}\,dt
+\end{align*}$$
+
+> The result of the Euler substitution is the integral of a rational function, which can always be solved by using their partial fraction decomposition.
+
+In this case the denominator splits into linear factors.
+$$\frac{t^2-1}{t(t^2+2t-1)} = \frac{A}{t} + \frac{B}{t+1-\sqrt{2}} + \frac{C}{t+1+\sqrt{2}}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand/1116879#1116879) on Mathematics Stack Exchange, 2015-01-23, with [edits](https://math.stackexchange.com/posts/1116879/revisions) by [Pp..](https://math.stackexchange.com/users/203995/pp). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

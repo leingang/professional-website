@@ -1,0 +1,66 @@
+---
+title: 'Find the misstep: Area of ellipse $ (x/a)^2 + (y/b)^2 = 1 $ using polar coordinates yields $ \pi \cdot (a^2+b^2)/2 $ rather than $ \pi \cdot ab $'
+date: '2026-05-21'
+description: The area formula you assumed, “the double integral of $r \,dr \,dt$”, comes from the Jacobian determinant when the variables are changed from $(x,y)$ to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5137798
+se-link: https://math.stackexchange.com/questions/5137789/find-the-misstep-area-of-ellipse-x-a2-y-b2-1-using-polar-coordina/5137798#5137798
+se-score: 5
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- solution-verification
+- conic-sections
+- polar-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the misstep: Area of ellipse $ (x/a)^2 + (y/b)^2 = 1 $ using polar coordinates yields $ \pi \cdot (a^2+b^2)/2 $ rather than $ \pi \cdot ab $](https://math.stackexchange.com/questions/5137789/find-the-misstep-area-of-ellipse-x-a2-y-b2-1-using-polar-coordina), asked by [Jon](https://math.stackexchange.com/users/557317/jon) on Mathematics Stack Exchange (2026-05-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I recently wanted to show the area of an ellipse $(x/a)^2 + (y/b)^2 = 1$ is $\pi \cdot a b$. There are multiple approaches, but I first decided to try direct integration in polar coordinates.
+>
+> Setting up the double integral of $r \; dr \; dt$ it reduces to evaluating $r^2/2$ from $r=0$ to its upper limit and then integrating that from $t=0$ to $2 \cdot \pi$.
+>
+> Using the "natural" parameterization of the curve by $x = a \cos t$, $y = b \sin t$ leads to upper limit for $r$ as $$\frac{r^2}{2} = \frac{a^2 \cos^2(t) + b^2 \sin^2(t)}{2}$$ for each $t$. We are then left to integrate that from $t=0$ to $2 \pi$, which yields $\pi \cdot (a^2+b^2)/2$ rather than $\pi \cdot ab$.
+>
+> So something is "fishy" in this parameterization argument.
+> Can someone please find the error?
+:::
+
+The area formula you assumed, “the double integral of $r \,dr \,dt$”, comes from the Jacobian determinant when the variables are changed from $(x,y)$ to $(r,\theta)$:
+$$\frac{\partial(x,y)}{\partial(r,\theta)}
+= \begin{vmatrix}
+\frac{\partial x}{\partial r} & \frac{\partial y}{\partial r} \\
+\frac{\partial x}{\partial \theta} & \frac{\partial y}{\partial \theta} \end{vmatrix}
+= \begin{vmatrix} 
+  \cos\theta & \sin\theta \\ -r \sin\theta & r \cos\theta
+\end{vmatrix}
+= r$$
+
+The parametrization you used is not in polar coordinates. To correct the double integral, use another parameter and apply the change of variables formula. 
+
+Set $x(s,t) = a s \cos t$ and $y(s,t) = b s \sin t$, where $0 \leq s \leq 1$ and $0 \leq t \leq 2\pi$. This will cover the region inside the ellipse. Now
+$$\frac{\partial(x,y)}{\partial(s,t)}
+= \begin{vmatrix}
+\frac{\partial x}{\partial s} & \frac{\partial y}{\partial s} \\
+\frac{\partial x}{\partial t} & \frac{\partial y}{\partial t} \end{vmatrix}
+= \begin{vmatrix} 
+  a\cos t& b \sin t\\ -as \sin t & bs \cos t
+\end{vmatrix}
+= ab s$$
+So
+$$A = \int_0^{2\pi} \int_0^1 ab s\,ds \,dt
+  = 2\pi \cdot ab \cdot \frac{1}{2} = \pi a b$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5137789/find-the-misstep-area-of-ellipse-x-a2-y-b2-1-using-polar-coordina/5137798#5137798) on Mathematics Stack Exchange, 2026-05-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

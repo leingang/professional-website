@@ -1,0 +1,69 @@
+---
+title: Number Systems - Proof
+date: '2018-08-17'
+description: The author is being succinct (maybe too much so). The definition of $\mathbb{Q}$ without symbols is that it's the set of all numbers which can be written as…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2886062
+se-link: https://math.stackexchange.com/questions/2886007/number-systems-proof/2886062#2886062
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-number-theory
+- proof-explanation
+- number-systems
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Number Systems - Proof](https://math.stackexchange.com/questions/2886007/number-systems-proof), asked by [Scb](https://math.stackexchange.com/users/457757/scb) on Mathematics Stack Exchange (2018-08-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Can someone explain the second part of this proof?
+>
+> This is literally the very first example of the introduction to number systems in my textbook, and I'm failing to grasp it.
+>
+> In the introduction chapter the definition of a number system is given as: “A set of numbers closed under operations of addition and multiplication”
+>
+> The set of rational numbers is defined as: $$\mathbb{Q} = \left\{ \frac{k}{n} : k \in \mathbb{Z} , n \in \mathbb{N} \right\}$$
+>
+> Following this I've assumed that I needed to proof that, $k \in \mathbb{N}$ which it does since $\mathbb{N}$ is a subset of $\mathbb{Z}$. But I don't understand the statement “$k$ or $-k$ is in $\mathbb{N}$”. I mean, I understand its truth value, but how does it fit into the definition?
+>
+> It would be great if someone could give me a step-by-step breakdown of the proof.
+>
+> > **Example 1.1.1.**
+> Assuming that $\mathbb{N}$ and $\mathbb{Z}$ are number systems, prove that $\mathbb{Q}$ is a number system.
+> Show, also, that if $q \in \mathbb{Q}$ with $q \neq 0$ then $1/q \in \mathbb{Q}$.
+>
+> > **Solution.**
+> Let $p, q \in \mathbb{Q}$.
+> Then $p = h/m$ and $q = k/n$ where $h,k \in \mathbb{Z}$ and $m,n \in \mathbb{N}$.
+> So
+> $$p + q = \frac{nh + mk}{mn}
+>     \quad\text{and}\quad
+>    pq = \frac{hk}{mn}.$$
+> Since $\mathbb{N}$ and $\mathbb{Z}$ are closed under addition and multiplication and $\mathbb{N} \subseteq \mathbb{Z}$ we have $nh + mk \in \mathbb{Z}$, $hk \in \mathbb{Z}$ and $mn \in \mathbb{N}$.
+> Hence $p + q \in \mathbb{Q}$ and $pq \in \mathbb{Q}$ as required.
+>
+> > Now let $q \in \mathbb{Q}$ with $q \neq 0$.
+> Then $q = k/n$ where $k \in \mathbb{Z}$, $k \neq 0$ and $n \in \mathbb{N}$.
+> Hence $1/q = n/k = (-n)/(-k) \in \mathbb{Q}$ since $n$ and $-n$ are in $\mathbb{Z}$ and $k$ or $-k$ is in $\mathbb{N}$.
+>
+> > (Original image [here][q-1].)
+>
+>   [q-1]: XLZrr.png
+:::
+
+The author is being succinct (maybe too much so).  The definition of $\mathbb{Q}$ without symbols is that it's the set of all numbers which can be written as the quotient of an integer by a natural number.  
+
+We are given a nonzero $q \in \mathbb{Q}$, and we want to show $1/q \in \mathbb{Q}$.  Since $q \in \mathbb{Q}$, we can write $q=n/k$ with $n\in\mathbb{Z}$, $n\neq 0$,  and $k\in\mathbb{N}$.  Then $1/q = k/n$.  If $n>0$, then $n\in\mathbb{N}$, and so we have $1/q$ expressed as the quotient of an integer by a natural.  If $n <0$, write $1/q$ as $(-k)/(-n)$ instead.  Then $-n >0$, so $-n\in\mathbb{N}$, and again we can represent $1/q$ as the quotient of an integer by a natural.   Either way, $1/q$ is seen to be an element of $\mathbb{Q}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2886007/number-systems-proof/2886062#2886062) on Mathematics Stack Exchange, 2018-08-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

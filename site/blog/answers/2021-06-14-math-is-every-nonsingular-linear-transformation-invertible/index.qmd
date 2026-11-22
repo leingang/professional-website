@@ -1,0 +1,48 @@
+---
+title: Is every nonsingular linear transformation invertible?
+date: '2021-06-14'
+description: A quick search reveals contradicting conventions. Here are some well-established terms for properties of a linear transformation $T \colon V \to W$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4173074
+se-link: https://math.stackexchange.com/questions/4173058/is-every-nonsingular-linear-transformation-invertible/4173074#4173074
+se-score: 3
+se-accepted: false
+se-tags:
+- linear-algebra
+- linear-transformations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is every nonsingular linear transformation invertible?](https://math.stackexchange.com/questions/4173058/is-every-nonsingular-linear-transformation-invertible), asked by [Amita Singh](https://math.stackexchange.com/users/940983/amita-singh) on Mathematics Stack Exchange (2021-06-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know that every nonsingular square matrix is invertible.
+> So every nonsingular linear transformation should also invertible.
+> But $T\colon\mathbb R^2\to\mathbb R^3$ such that $T(x,y)=(x+y,x-2y,3x+y)$ is nonsingular but inverse does not exist.
+> So can I conclude that:
+> "If $T$ is invertible then it is nonsingular but if $T$ is nonsingular then it is not necessarily invertible."
+>
+> Thanks in advance.
+:::
+
+A quick search reveals contradicting conventions.  Here are some well-established terms for properties of a linear transformation $T \colon V \to W$.
+
+* $T$ is *injective* or *one-to-one* if for all $v \in V$, $T(v) = 0 \implies v=0$.
+* $T$ is *surjective* or *onto $W$* if for all $w \in W$ there exists $v \in V$ such that $T(v) = w$.
+* $T$ is *bijective* if $T$ is simultaneously one-to-one and onto $W$.
+
+I found some sources that define *nonsingular* for linear transformations as equivalent to *injective*.  However, I am more familiar with the term applied to matrices, and equivalent to “square and invertible”.  So closer to *bijective* for linear transformations.
+
+I agree with you that the linear transformation you describe is injective but not surjective.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4173058/is-every-nonsingular-linear-transformation-invertible/4173074#4173074) on Mathematics Stack Exchange, 2021-06-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

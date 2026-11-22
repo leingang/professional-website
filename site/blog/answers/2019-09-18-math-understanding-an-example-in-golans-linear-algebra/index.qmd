@@ -1,0 +1,55 @@
+---
+title: Understanding an example in Golan's "Linear Algebra"
+date: '2019-09-18'
+description: The details probably come in the proof of Theorem 8.1 (which you should read).
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3361318
+se-link: https://math.stackexchange.com/questions/3361293/understanding-an-example-in-golans-linear-algebra/3361318#3361318
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+- linear-transformations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Understanding an example in Golan's "Linear Algebra"](https://math.stackexchange.com/questions/3361293/understanding-an-example-in-golans-linear-algebra), asked by [Intuition](https://math.stackexchange.com/users/593938/intuition) on Mathematics Stack Exchange (2019-09-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The example is given below:
+>
+> >[![enter image description here][q-1]][q-1]
+>
+> But I do not understand the details of calculating $\phi_{BB}(\alpha_{v})$, could anyone explain this for me please?
+>
+> The definition of $\phi_{BB}(\alpha_{v})$ is given below:
+>
+> >[![enter image description here][q-2]][q-2]
+>
+> **EDIT:**
+> I mean how the definition of the linear transformation given affect the matrix?
+>
+>   [q-1]: Ufoz8.png
+>   [q-2]: 34ImC.png
+:::
+
+The details probably come in the proof of Theorem 8.1 (which you should read).
+
+Let $B = (v_1,\dots,v_n)$ and $D = (w_1,\dots,w_k)$ be the given bases.  Suppose that $\alpha\in\operatorname{Hom}(V,W)$.  For each $i$ in $1,\dots,n$ there exist scalars $\phi_{ij} \in F$ such that
+$$\alpha(v_i) = \phi_{1i}w_1 + \phi_{2i}w_2 + \dots + \phi_{ki} w_k$$
+Set $\Phi_{BD}(\alpha)$ to be the $k\times n$ matrix whose $(i,j)$-th entry is $\phi_{ij}$.
+
+Now we come to angryavian's suggestion.  Here $V = W = \mathbb{R}^3$, and $B = D = (e_1,e_2,e_3)$.  Moreover, $\alpha(w) = v \times w$ for a fixed $v = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix}$.  So you need to find the coefficients of $\alpha(e_1)$, $\alpha(e_2)$ and $\alpha(e_3)$ in the basis $(e_1,e_2,e_3)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3361293/understanding-an-example-in-golans-linear-algebra/3361318#3361318) on Mathematics Stack Exchange, 2019-09-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

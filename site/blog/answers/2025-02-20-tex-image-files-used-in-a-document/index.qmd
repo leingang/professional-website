@@ -1,0 +1,81 @@
+---
+title: Image files used in a document
+date: '2025-02-20'
+description: The included graphics files are all named in the .log file marked by angle brackets. So theoretically all one has to do is parse for strings <file.ext> where…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 737516
+se-link: https://tex.stackexchange.com/questions/737475/image-files-used-in-a-document/737516#737516
+se-score: 3
+se-accepted: true
+se-tags:
+- external-files
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Image files used in a document](https://tex.stackexchange.com/questions/737475/image-files-used-in-a-document), asked by [projetmbc](https://tex.stackexchange.com/users/6880/projetmbc) on TeX Stack Exchange (2025-02-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Is there a ‘turnkey’ tool that allows you to retrieve all the image files used in a document using the `\includegraphics` command, for example? I know that these files appear in the `log` file, but I don't want to reinvent the wheel.
+:::
+
+The included graphics files are all named in the `.log` file marked by angle brackets. So theoretically all one has to do is parse for strings `<file.ext>` where `.ext` is one of the graphics extensions.
+
+This has an advantage over grepping the source files for `\includegraphics` because (a) a command could call `\includegraphics` on some variable parameter, or (b) some package or class command could include graphics too.
+
+However, the log file has hard line wraps, so some of these will be split by newlines. So I wasn't able to come up with a one-line shell command to extract these.
+
+Here is a python script that does the trick:
+
+```python
+#!/usr/bin/env python
+
+import re
+import sys
+from typing import List
+
+def find_included_graphics(file_path:str) -> List[str]:
+    """Search a file for included graphics
+
+    Searches for patterns of the form `<file.ext>` where `ext` pdf, png, jpg,
+    jpeg, mps, jb2, or jbig2. 
+
+    Embedded newlines (caused by hard line wraps) are removed.
+    
+    Args:
+        file_path (str): The path to the file to search
+    Returns:
+        List[str]: A list of the graphics included in the file
+    """
+
+    pattern = re.compile(r"<(?!use\s)([^>]+\.(pdf|png|jpg|jpeg|mps|jb2,jbig2))>", re.IGNORECASE)
+    matches = []
+
+    with open(file_path, "r") as file:
+        content = file.read()
+        matches = pattern.findall(content)
+
+    return [m[0].replace("\n", "") for m in matches]
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python findimages.py <file_path>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    matches = find_included_graphics(file_path)
+    for match in matches:
+        print(match)
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/737475/image-files-used-in-a-document/737516#737516) on TeX Stack Exchange, 2025-02-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

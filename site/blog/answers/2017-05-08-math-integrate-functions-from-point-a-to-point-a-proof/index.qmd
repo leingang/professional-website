@@ -1,0 +1,51 @@
+---
+title: Integrate functions from point 'a' to point 'a' proof
+date: '2017-05-08'
+description: 'Paramand Singh''s comment comes closest to answering this question so far: The relation is not a statement that can be proved, but a convention that exists in…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2271566
+se-link: https://math.stackexchange.com/questions/2271044/integrate-functions-from-point-a-to-point-a-proof/2271566#2271566
+se-score: 6
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integrate functions from point 'a' to point 'a' proof](https://math.stackexchange.com/questions/2271044/integrate-functions-from-point-a-to-point-a-proof), asked by [Eva](https://math.stackexchange.com/users/427757/eva) on Mathematics Stack Exchange (2017-05-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I understand that the integral of any function from and to the same point must equal zero, such;
+> $$\int_a^a f(x) \,dx= 0$$
+> It makes sense, area from one point to the same point should be zero. But, how is this shown in a mathematical sense, proving it fully, without just saying 'it makes sense'?
+:::
+
+Paramand Singh's comment comes closest to answering this question so far: The relation is not a statement that can be proved, but a *convention* that exists in order to fit in with some other true statements.  It reminds me a little bit of this endless “[Why is $0! = 1$?](https://www.quora.com/Why-does-zero-factorial-0-equal-one-1-1)” question on Quora. 
+
+For instance, If $a < c < b$ and $f$ is integrable on $[a,b]$, then
+$$\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+\tag{1}$$
+This can be proven from the Riemann sum definition of the definite integral.  The definition
+$$\int_b^a f(x)\,dx = - \int_a^b f(x)\,dx
+\tag{2}$$
+is consistent with the definition, since when you try to partition an interval $[a,b]$ in the opposite order, the differences $\Delta x_i = x_{i} - x_{i-1}$ become negative, and the Riemann sums flip signs.
+
+I looked at Spivak, Courant, and Apostol, and all state (1) as a theorem, make a moral justification for (2) as a definition, and finally define $$\int_a^a f(x)\,dx = 0 \tag{3}$$  These two definitions allow the theorem (1) to be extended to all triples $(a,b,c)$, including $c<a$, $c=a$, $c=b$, and $c>b$.  
+
+Another important fact about the integral is that it makes integrable functions into continuous functions.  If $f$ is integrable on $[a,b]$, and $F(x) = \int_a^c f(t)\,dt$, then $F$ is continuous on $(a,b)$.  If we use definitions (2) and (3), we can extend the domain of $F$ to the domain of $f$, including $x=a$, $x<a$, $x=b$, and $x>b$.  The definitions ensure that the extended function $F$ remains continuous.
+
+It's been said that the best definitions are the ones which make the theorems easy to state and prove.  This is a good example.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2271044/integrate-functions-from-point-a-to-point-a-proof/2271566#2271566) on Mathematics Stack Exchange, 2017-05-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

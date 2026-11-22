@@ -1,0 +1,65 @@
+---
+title: 'LaTeX beamer: Code listings in notes'
+date: '2010-12-14'
+description: Welcome! One problem with the snippet you provide is an unmatched brace. But even so, like verbatim, lstlisting does strange things with category codes of…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7098
+se-link: https://tex.stackexchange.com/questions/7083/latex-beamer-code-listings-in-notes/7098#7098
+se-score: 9
+se-accepted: true
+se-tags:
+- beamer
+- listings
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LaTeX beamer: Code listings in notes](https://tex.stackexchange.com/questions/7083/latex-beamer-code-listings-in-notes), asked by [nemron](https://tex.stackexchange.com/users/2496/nemron) on TeX Stack Exchange (2010-12-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How can I add a code listing to a `beamer` note slide?
+>
+> I tried the following which doesn't work:
+>
+> <pre><code>
+> \note{{\tiny{This is a note
+>       \begin{lstlisting}
+> foo bar
+>       \end{lstlisting}}}
+> </code></pre>
+>
+> Any suggestions?
+:::
+
+Welcome! One problem with the snippet you provide is an unmatched brace.  But even so, like `verbatim`, `lstlisting` does strange things with category codes of characters which usually precludes it from being in the argument of another macro.
+
+Inspired by [this post to the beamer mailing list][1], I found a workaround with the `\lstinputlisting` command.  You have to put your code snippet in a file, but using the `linerange` options you can excerpt multiple snippets from the same file.
+
+```latex
+\documentclass{beamer}
+\setbeameroption{show notes}
+\usepackage{listings}
+
+\begin{document}
+
+\begin{frame}
+first frame
+\note{\lstinputlisting[language=tex,linerange=7-10]{Untitled.tex}}
+\end{frame}
+
+\end{document}
+```
+
+
+  [1]: http://osdir.com/ml/tex.latex.beamer.general/2008-07/msg00052.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7083/latex-beamer-code-listings-in-notes/7098#7098) on TeX Stack Exchange, 2010-12-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

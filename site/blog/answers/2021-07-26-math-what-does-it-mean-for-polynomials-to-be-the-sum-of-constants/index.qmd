@@ -1,0 +1,82 @@
+---
+title: what does it mean for polynomials to be the sum of constants multiples of powers of x?
+date: '2021-07-26'
+description: First, polynomials are expressions, not equations. “$ax^2+bx+c = 0$” is an equation. $ax^2+bx+c$ is an expression.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4207889
+se-link: https://math.stackexchange.com/questions/4207829/what-does-it-mean-for-polynomials-to-be-the-sum-of-constants-multiples-of-powers/4207889#4207889
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- algebra-precalculus
+- polynomials
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[what does it mean for polynomials to be the sum of constants multiples of powers of x?](https://math.stackexchange.com/questions/4207829/what-does-it-mean-for-polynomials-to-be-the-sum-of-constants-multiples-of-powers), asked by [Rida](https://math.stackexchange.com/users/911599/rida) on Mathematics Stack Exchange (2021-07-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Hey just a very beginner question, i've been reading into a book of calculus and this shows up
+>
+> <strong>"a polynomial in $x$ is a sum of constant multiples of
+> powers of $x$ in which each exponent is zero or a positive integer"</strong>
+> $$P(x) = a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0$$
+> Polynomial is not something new for me, but this definition is, the form i know is:
+> $$\text{linear} ~:~   ax+b = 0$$
+> $$\text{quadratic} ~:~ ax^2 + bx + c = 0$$
+> $$\text{cubic} ~:~ ax^3 + bx^2 + cx + d = 0$$
+> the question is easy even though I can't relate,
+>  how the above definition can relate to Polynomials ? in what way and why ?
+:::
+
+First, polynomials are expressions, not equations.  “$ax^2+bx+c = 0$” is an equation.  $ax^2+bx+c$ is an expression.
+
+Other than that, those are indeed three kinds of polynomials.  The definition needs to be general enough to include those, but also the  general form they suggest.
+
+Unpack the given definition one word at a time:
+
+* A **power of $x$** is an expression like $x^r$.  In such an expression, the number $r$ is called the **exponent.**
+
+* A **constant** is a fixed number.  It could be a literal number like $3$ or $\sqrt{2}$, or a symbol for a fixed but unknown number.  Usually letters like $a$, $b$, $c$, etc., are used as symbols for constants.
+
+* A **positive integer** is one of the whole numbers $1$, $2$, $3$, ...
+
+* I assume you know what **sum** and **multiple** are.
+
+Consider the expression $ax^2+bx+c$.  It is a *sum* of three terms: $ax^2$, $bx$, and $c$.  
+
+* The first is a *constant* ($a$) *multiple* of the *power* $x^2$.  The *exponent* is a positive integer, in this case $2$.
+
+* The second is a constant ($b$) multiple of $x$.  Since $x=x^1$, it counts as a power with positive integer exponent.
+
+* The third is just a constant $c$.  But since $x^0 = 1$, we can write $c=cx^0$.  We see that $c$ is also equal to a constant multiple of a power of $x$, with exponent $0$.
+
+But now you see how this can generalize.  Take any positive whole integer power of $x$, and also the constant $1$.  Take any constant multiples of these.  Then add them up.
+
+* * *
+
+I think polynomials are very tricky to define, even though we can quickly get a picture of what is meant with a few examples. One explicit definition is that a polynomial is an expression of the form
+$$a_n x^n + a_{n-1} x^{n-1} + \dots + a_2 x^2 + a_1 x + a_0$$
+where $n$ is a nonnegative integer, $a_0, \dots, a_n$ are constants, and $a_n \neq 0$.  See? “A sum of constant multiples of powers of $x$, where the exponents are positive integers or zero.”
+
+Another, more implicit version is that polynomials are defined by these relations:
+
+* Constants are polynomials.
+* The variable $x$ is a polynomial.
+* If $p$ and $q$ are polynomials, then $p+q$ and $pq$ are polynomials.
+
+I'll leave it as an exercise to you to show that two definitions are equivalent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4207829/what-does-it-mean-for-polynomials-to-be-the-sum-of-constants-multiples-of-powers/4207889#4207889) on Mathematics Stack Exchange, 2021-07-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

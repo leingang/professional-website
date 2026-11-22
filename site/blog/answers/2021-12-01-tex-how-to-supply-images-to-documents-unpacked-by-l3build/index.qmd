@@ -1,0 +1,115 @@
+---
+title: How to supply images to documents unpacked by l3build
+date: '2021-12-01'
+description: I submitted an issue to the l3build github and it has been fixed. Thanks Joseph and Marcel!
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 624608
+se-link: https://tex.stackexchange.com/questions/623511/how-to-supply-images-to-documents-unpacked-by-l3build/624608#624608
+se-score: 0
+se-accepted: true
+se-tags:
+- graphics
+- l3build
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to supply images to documents unpacked by l3build](https://tex.stackexchange.com/questions/623511/how-to-supply-images-to-documents-unpacked-by-l3build), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2021-11-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have an module that I want to manage with l3build.  Unpacking a docstrip file generates a tex file.  `l3build doc` typesets that generated tex file.  But I can't figure out how to configure `build.lua` to enable that process to see any images that should be included.
+>
+> My MWE is four files (all in a [Github repo][q-1] for ease)
+>
+> **file tree**
+>
+> ```latex
+> ├── build.lua
+> ├── foo.dtx
+> ├── foo.ins
+> └── support
+>     └── duck.png
+> ```
+>
+> **`foo.dtx`**
+>
+> ```latex
+> %<*foo>
+> \documentclass{article}
+> \usepackage{graphicx}
+> \usepackage{lipsum}
+> \begin{document}
+> \lipsum[1]
+> \includegraphics[
+>     width=\textwidth,
+> %<bar>angle=180,
+> ]{duck}
+> \end{document}
+> %</foo>
+> ```
+>
+> **`foo.ins`**
+>
+> ```latex
+> \input docstrip.tex
+> \askforoverwritefalse
+> \generate{\file{bar.tex}{\from{\jobname.dtx}{foo,bar}}}
+> \endbatchfile
+> ```
+>
+> So `bar.tex` has one extra line, which should rotate the image 180
+> degrees.
+>
+> **`build.lua`**
+>
+> ```latex
+> module = "foo"
+>
+> typesetsuppfiles = {"duck.png"}
+> typesetfiles = {"foo.dtx","bar.tex"}
+> ```
+>
+> **duck.png**
+>
+> [![duck][q-2]][q-2]
+>
+> Command:
+>
+> ```latex
+> l3build doc foo
+> ```
+>
+> * `duck.png` is copied into `typesetdir`
+> * `foo.dtx` is typeset in `typesetdir` (I think)
+> * result: success.  `foo.pdf` is moved into `maindir`.
+>
+> Command:
+>
+> ```latex
+> l3build doc bar
+> ```
+>
+> * `bar.tex` is unpacked into `unpackdir`
+> * `tex` is run on `bar.tex` in `unpackdir`
+> * result: failure because `duck.png` is not found.
+>
+>
+>   [q-1]: https://github.com/leingang/test-l3build-doc-images/tree/master
+>   [q-2]: BkFhn.png
+:::
+
+I submitted an [issue][1] to the l3build github and it has been fixed.  Thanks Joseph and Marcel!
+
+
+  [1]: https://github.com/latex3/l3build/issues/210
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/623511/how-to-supply-images-to-documents-unpacked-by-l3build/624608#624608) on TeX Stack Exchange, 2021-12-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

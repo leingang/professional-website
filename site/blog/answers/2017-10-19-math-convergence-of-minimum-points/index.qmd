@@ -1,0 +1,42 @@
+---
+title: convergence of minimum points
+date: '2017-10-19'
+description: It seems that (2) follows from (1) and the fact that $$\phi'\varepsilon(x\varepsilon) = 0 \implies \phi'(x\varepsilon) - \frac{\varepsilon}{x\varepsilon^2} = 0…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2480057
+se-link: https://math.stackexchange.com/questions/2480041/convergence-of-minimum-points/2480057#2480057
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[convergence of minimum points](https://math.stackexchange.com/questions/2480041/convergence-of-minimum-points), asked by [Lookout](https://math.stackexchange.com/users/161406/lookout) on Mathematics Stack Exchange (2017-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Smooth function $\phi$ is defined on $x\ge 0$, and $\phi$ attains its minimum at $x=0$. Define functions $\phi_\varepsilon(x):=\phi(x)+\varepsilon/x$, and $\phi_\varepsilon$ attains its minimum at $x_\varepsilon$.
+>
+> I want to prove the following result: (1)$x_\varepsilon\to 0$ (2)$\varepsilon/x_\varepsilon\to 0$
+>
+> This result is given in a research paper without proof. I verified using $\phi(x)=x$ and it turns to be right. But I can't get the intuition behind this result, especially (2). Any help would be appreciated.
+:::
+
+It seems that (2) follows from (1) and the fact that
+$$\phi'_\varepsilon(x_\varepsilon) = 0
+    \implies
+    \phi'(x_\varepsilon) - \frac{\varepsilon}{x_\varepsilon^2} = 0
+    \implies \frac{\varepsilon}{x_{\varepsilon}} = x_\varepsilon \phi'(x_\varepsilon)$$
+Since $x_\varepsilon \to 0$ and $\phi$ is smooth, the right-hand side tends to $0 \cdot \phi'(0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2480041/convergence-of-minimum-points/2480057#2480057) on Mathematics Stack Exchange, 2017-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

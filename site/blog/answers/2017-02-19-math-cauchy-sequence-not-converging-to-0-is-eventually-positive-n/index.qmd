@@ -1,0 +1,56 @@
+---
+title: Cauchy Sequence not converging to 0 is eventually positive/negative
+date: '2017-02-19'
+description: Do you mean that that this fact about Cauchy sequences was established in a prior exercise or lesson? I am guessing this is what you're saying. If so, then I…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2151841
+se-link: https://math.stackexchange.com/questions/2151808/cauchy-sequence-not-converging-to-0-is-eventually-positive-negative/2151841#2151841
+se-score: 2
+se-accepted: true
+se-tags:
+- proof-verification
+- cauchy-sequences
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Cauchy Sequence not converging to 0 is eventually positive/negative](https://math.stackexchange.com/questions/2151808/cauchy-sequence-not-converging-to-0-is-eventually-positive-negative), asked by [student_t](https://math.stackexchange.com/users/372513/student-t) on Mathematics Stack Exchange (2017-02-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Suppose $\{x_n\}$ is a Cauchy sequence, and it is not true that $x_n \rightarrow 0, n \rightarrow \infty$. Prove that the sequence is eventually positive or negative.
+>
+> Was wondering if someone could look over my proof. I have just shown that if you have two infinite sets $S_1 = \{n : x_n \geq 0\}$ and $S_2 = \{n : x_n \leq 0\}$ then $x_n \rightarrow 0, n \rightarrow \infty$ and I use this result. 
+>
+> Since $x_n$ is Cauchy and does not approach 0 as n approaches infinity. We have just shown that there cannot be two infinite sets $S_1, S_2$ as defined above. 
+>
+> Suppose $S_1$ is infinite and $S_2$ is finite. Since $S_2$ is finite there exists some $n \notin S_2$. Choose $N$ to be the first such integer where this is true. Then for all $n \geq N, x_n > 0$ and $x_n$ is eventually positive.
+>
+> Similarly, suppose $S_2$ is infinite and $S_1$ is finite. Then as before,let $N$ be the first such integer where $x_N notin S_1$. Then for all $n \geq N, x_n < 0$ and $x_n$ is eventually negative.
+:::
+
+You write:
+
+>  **I have just shown** that if you have two infinite sets $S_1 = \{n : x_n \geq 0\}$ and $S_2 = \{n : x_n \leq 0\}$ then $x_n \rightarrow 0, n \rightarrow \infty$ and I use this result. 
+
+Do you mean that that this fact about Cauchy sequences was established in a prior exercise or lesson?  I am guessing this is what you're saying.  If so, then I agree this is the right way to go.  This is essentially equivalent to the given statement.  
+
+If you mean that your proof of this fact is written in your question, then no, I wouldn't agree.
+
+> Since $x_n$ is Cauchy and does not approach 0 as n approaches infinity. We have just shown that **there cannot be two infinite sets $S_1, S_2$ as defined above**. 
+
+This is weirdly worded because the first sentence is a fragment.  In the second sentence, you want to emphasize not that $S_1$ and $S_2$ do not exist, but rather that they cannot *both* be infinite.  In other words, one of them must be finite.  So it might be better to say: “Since $x_n$ is Cauchy and does not approach $0$ as $n\to\infty$, **one of $S_1$ and $S_2$ must be finite**.” Saying it that way also sets up that the next two paragraphs are the two cases.
+
+> Suppose $S_1$ is infinite and $S_2$ is finite. Since $S_2$ is finite there exists some $n \notin S_2$. Choose $N$ to be the first such integer where this is true. **Then for all $n \geq N, x_n > 0$** and $x_n$ is eventually positive.
+
+Not quite.  Just because $N \notin S_2$ doesn't guarantee that $N+1 \notin S_2$, especially since you picked $N$ to be the *least* integer not in $S_2$.  But this would be true if $N$ were the *greatest* integer in $S_2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2151808/cauchy-sequence-not-converging-to-0-is-eventually-positive-negative/2151841#2151841) on Mathematics Stack Exchange, 2017-02-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

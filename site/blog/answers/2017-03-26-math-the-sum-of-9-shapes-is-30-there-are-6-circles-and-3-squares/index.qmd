@@ -1,0 +1,68 @@
+---
+title: The sum of $9$ shapes is $30$. There are $6$ circles and $3$ squares. What are the values of the shapes?
+date: '2017-03-26'
+description: Your solution doesn't work because you isolated $a$ in the equation then substituted it back into the same equation. The result is a tautology (not zero, that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2203157
+se-link: https://math.stackexchange.com/questions/2203152/the-sum-of-9-shapes-is-30-there-are-6-circles-and-3-squares-what-are-t/2203157#2203157
+se-score: 0
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- arithmetic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The sum of $9$ shapes is $30$. There are $6$ circles and $3$ squares. What are the values of the shapes?](https://math.stackexchange.com/questions/2203152/the-sum-of-9-shapes-is-30-there-are-6-circles-and-3-squares-what-are-t), asked by [user429317](https://math.stackexchange.com/users/429317/user429317) on Mathematics Stack Exchange (2017-03-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Hello mathematicians!
+>
+>
+> Today I was caught off guard with a 4th grade question and I think I solved it. Now after taking a look at this and thinking, I was really shocked at how stupid I was, is or still am. Since I am in a college mathematics, doing functions and stuff but this had me the most stressed out as I could ever be. Because it was my little cousin's homework! I mean 14th grader can't even do 4th grades mathematics? Am I stupid?
+>
+> Question: 
+>
+> > The sum of $9$ shapes is $30$. There are $6$ circles and $3$ squares. What are the values of the shapes? (nothing else is given)
+>
+> $6$ Circles + $3$ Squares = $30$ 
+>
+>
+> My calculation:
+>
+> Now I thought, oh hey it's a easy question and I did this.
+>
+> $$6a + 3b = 30$$
+>
+> $$6a = 30-3b$$
+>
+> $$a = 5-0.5b$$
+>
+> $$6 \times (5-0.5b) + 3b = 30$$
+>
+> However, I get zero trying to solve for $a$ and $b$. 
+>
+> So my theory is that there is no right answer, you can simply say the value for each circle is $3$, then $3 \times 6 = 18$ and $30 - 18 = 12$, so the value for each square is $4$. And you can find it with any numbers.
+>
+> So is my theory right? or am I stupid because this is a very laughable equation for a college student? But for me, well I think I am stupid.
+>
+> Appreciate your time in reading and solving my question.
+>
+> -Thanks
+:::
+
+Your solution doesn't work because you isolated $a$ in the equation then substituted it back into the same equation.  The result is a tautology (not zero, that wouldn't satisfy $6a+3b=30$.)
+
+There isn't a second equation given to do an algebraic solution.  So forget you know algebra; just start guessing and checking.  A multiple of $6$ plus a multiple of $3$ equals $30$.  I stumbled on $a=4$ and $b=2$ after a bit.  Since $6$ is a multiple of $3$, you can find more solutions by decreasing $a$ by $1$ and increasing $b$ by $2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2203152/the-sum-of-9-shapes-is-30-there-are-6-circles-and-3-squares-what-are-t/2203157#2203157) on Mathematics Stack Exchange, 2017-03-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,58 @@
+---
+title: Prove that $B=\{z \in \mathbb{C}; 0<\operatorname{Im}(z) \le 1\}$ is not an open set.
+date: '2023-09-05'
+description: What you're quoting in sentence 1 is incorrect. $B$ is open if for all $w \in B$ there exists $\delta$ such that $D(w,\delta) \subseteq B$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4764077
+se-link: https://math.stackexchange.com/questions/4764057/prove-that-b-z-in-mathbbc-0-operatornameimz-le-1-is-not-an-open/4764077#4764077
+se-score: 7
+se-accepted: true
+se-tags:
+- general-topology
+- solution-verification
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $B=\{z \in \mathbb{C}; 0<\operatorname{Im}(z) \le 1\}$ is not an open set.](https://math.stackexchange.com/questions/4764057/prove-that-b-z-in-mathbbc-0-operatornameimz-le-1-is-not-an-open), asked by [soldaluz](https://math.stackexchange.com/users/1212182/soldaluz) on Mathematics Stack Exchange (2023-09-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have written a solution for this question but I am unsure if it is right or wrong, and what should be fixed in case it is not.
+>
+>  1. Suppose that $B$ is open. Then, every disk $D(w,δ) = \{z \in \mathbb{C} \mid \lvert z-w \rvert < δ \}$ is contained in $B$. This is the same as saying that, if a belongs to $D$, it belongs to $B$;
+>  2. If $w$ belongs to $B$, then $0< \operatorname{Im}(w) \le 1$;
+>  3. $\lvert \operatorname{Im}(a)-\operatorname{Im}(w) \rvert = \sqrt{(\operatorname{Im}(a)-\operatorname{Im}(w))^2} \le \sqrt{(\operatorname{Re}(a)-\operatorname{Re}(w))^2+(\operatorname{Im}(a)-\operatorname{Im}(w))^2)} = \lvert a-w \rvert < δ;$
+>  4. Choose $δ=\operatorname{Im}(w) \Rightarrow 0<\operatorname{Im}(a)<2\operatorname{Im}(w)$.
+> However, if $0<\operatorname{Im}(a) \leq 1$, then you can guarantee $\operatorname{Im}(a)>0$, but not that $\operatorname{Im}(a) \le 1$. Then, $a$ does not belong to $B$. 
+>
+> Thus, $B$ is not open.
+>
+> Is this right? Thank you for your attention!
+:::
+
+What you're quoting in sentence 1 is incorrect. $B$ is open if *for all* $w \in B$ *there exists* $\delta$ such that $D(w,\delta) \subseteq B$.
+
+Flipping this around, $B$ is *not* open if *there exists* $w \in B$ such that *for all* $\delta$ , $D(w,\delta) \not\subseteq B$.
+
+That is to say, $B$ is not open if you can find some $w \in B$ such that for all $\delta$ there exists $z$ such that $|z-w|<\delta$ but $z \notin B$.
+
+There are many options for $w$; $i$ can't say which is my favorite. 😉
+
+To expand (in response to the comment), here is a new outline:
+
+1. $B$ is not open if there exists $w \in B$ such that for all $\delta$ there exists $z$ such that $|z-w|<\delta$ but $z \notin B$.
+2. Let $w = ...$ *You have to choose a good candidate. $i$ have given you two hints already.*
+3. Given $\delta > 0$, let $z = ...$ *This $z$ should depend explicitly on $\delta$.*
+4. *Show that $|z - w| < \delta$ and that $z \notin B$.*
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4764057/prove-that-b-z-in-mathbbc-0-operatornameimz-le-1-is-not-an-open/4764077#4764077) on Mathematics Stack Exchange, 2023-09-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

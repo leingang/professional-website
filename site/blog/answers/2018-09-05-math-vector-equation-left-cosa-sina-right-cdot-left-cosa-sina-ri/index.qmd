@@ -1,0 +1,49 @@
+---
+title: 'Vector equation: $\left<\cos(a), \sin(a)\right> \cdot \left<\cos(a),-\sin(a) \right> = -\cos(a)$'
+date: '2018-09-05'
+description: Be careful with pronouns. “They” refers to vectors, while $1$ is a scalar. Vectors can't be equal to a scalar. I think what you mean is that $\mathbf{u}$ and…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2906902
+se-link: https://math.stackexchange.com/questions/2906898/vector-equation-left-cosa-sina-right-cdot-left-cosa-sina-ri/2906902#2906902
+se-score: 2
+se-accepted: true
+se-tags:
+- vector-spaces
+- vectors
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Vector equation: $\left<\cos(a), \sin(a)\right> \cdot \left<\cos(a),-\sin(a) \right> = -\cos(a)$](https://math.stackexchange.com/questions/2906898/vector-equation-left-cosa-sina-right-cdot-left-cosa-sina-ri), asked by [Busi](https://math.stackexchange.com/users/544983/busi) on Mathematics Stack Exchange (2018-09-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > $$\left<\cos(a), \sin(a)\right> \cdot \left<\cos(a),-\sin(a) \right> = -\cos(a)$$
+> >
+> >Writing $\textbf{u}=\left<\cos(a), \sin(a)\right>$ and $\textbf{v}=\left<\cos(a), -\sin(a)\right>$. We observe that both **u** and **v** are unit vectors, and the angle between them is $2a$. Therefore from
+> >
+> >$$\textbf{u}\cdot \textbf{v} = |\textbf{u}||\textbf{v}|\cos(\theta)$$
+> >
+> > Where $\theta$ is the angle between the two vectors) we find that the equation is equivalent to
+> >
+> > $$\cos(2a) = -\cos(a)$$
+>
+> Could you explain what he has done so far? I did not get it properly. As a first thing made me confused, how did he obtain the angle between them? It is obvious that $\textbf{u}=\left<\cos(a), \sin(a)\right>$ and $\textbf{v}=\left<\cos(a), -\sin(a)\right>$ are unit vectors, therefore they equal $1$.
+:::
+
+> It is obvious that $\textbf{u}=\left<\cos(a), \sin(a)\right>$ and $\textbf{v}=\left<\cos(a), -\sin(a)\right>$ are **unit vectors, therefore they equal $1$**.
+
+Be careful with pronouns.  “They” refers to vectors, while $1$ is a scalar.  Vectors can't be equal to a scalar.  I think what you mean is that $\mathbf{u}$ and $\mathbf{v}$ have *length* $1$.  Keep your language neat to organize your thinking.
+
+But to your main question: If you draw $\mathbf{u}$ and $\mathbf{v}$ in the plane, you see $\mathbf{u}$ is the unit vector in the first quadrant making an angle of $a$ with the positive $x$-axis, and $\mathbf{v}$ is the unit vector in the fourth quadrant making an angle of $a$ with the positive $x$-axis.  So the angle between $\mathbf{u}$ and $\mathbf{v}$ is $a+a = 2a$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2906898/vector-equation-left-cosa-sina-right-cdot-left-cosa-sina-ri/2906902#2906902) on Mathematics Stack Exchange, 2018-09-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

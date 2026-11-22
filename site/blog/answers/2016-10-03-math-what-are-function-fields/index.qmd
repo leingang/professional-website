@@ -1,0 +1,46 @@
+---
+title: What are function fields?
+date: '2016-10-03'
+description: '- The smallest field containing $F$ and the variable $x$;'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1952442
+se-link: https://math.stackexchange.com/questions/1952435/what-are-function-fields/1952442#1952442
+se-score: 13
+se-accepted: true
+se-tags:
+- abstract-algebra
+- polynomials
+- field-theory
+- function-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What are function fields?](https://math.stackexchange.com/questions/1952435/what-are-function-fields), asked by [John Doe](https://math.stackexchange.com/users/171192/john-doe) on Mathematics Stack Exchange (2016-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given a field $F$, I know that $F[X]$ is the ring of polynomials in $X$. I know that this is not a field.
+>
+> I have seen the notation for $F(x)$ with round brackets. Usually when we use round brackets we take the smallest field containing $F$ and $x$. For example, if $F(\alpha) = F[\alpha]$ for all algebraic $\alpha \in E$ ($E$ some extension of $F$).
+>
+> My question is what $F(x)$ is when $x$ is a variable. Is this just the quotient of polynomials? What is the definition? Is this what is called a function field.
+:::
+
+$F(x)$ is:
+
+ - The smallest field containing $F$ and the variable $x$;
+
+ - The set of symbolic quotients $\frac{p(x)}{q(x)}$, where $p,q\in F[x]$ and $q\neq 0$.
+
+ - The field of fractions associated to the ring $F[x]$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1952435/what-are-function-fields/1952442#1952442) on Mathematics Stack Exchange, 2016-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

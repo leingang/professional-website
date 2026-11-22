@@ -1,0 +1,48 @@
+---
+title: Could an entry of a vector be called a dimension?
+date: '2021-08-28'
+description: I think what the commenters are trying to say is that, in linear algebra as practiced by mathematicians, dimension is an aspect of a vector space rather than…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4235356
+se-link: https://math.stackexchange.com/questions/4234416/could-an-entry-of-a-vector-be-called-a-dimension/4235356#4235356
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- vector-spaces
+- vectors
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Could an entry of a vector be called a dimension?](https://math.stackexchange.com/questions/4234416/could-an-entry-of-a-vector-be-called-a-dimension), asked by [CrazyMageQi](https://math.stackexchange.com/users/523935/crazymageqi) on Mathematics Stack Exchange (2021-08-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> According to the definition, dimension means the number of entries of a vector. However, in a lot of research papers, people use "a dimension" to refer to "an entry". According to the definition of the word dimension (if you google the word dimension), dimension could be "an aspect or feature of a situation, problem, or thing" (Definitions from Oxford Language). That means dimension could be an entry. But in math, could it be used that way?
+>
+> OK. I read some of your comments. Here is an example paper: "The Limitations of Deep Learning in Adversarial Settings" (https://arxiv.org/pdf/1511.07528.pdf)  page: 6 bottom left, above EQ. 4, " that is the derivative of one output neuron F_j according to one input dimension x_i". 
+>
+> To those who think the definition is not well formulated. Look at this book "Introduction to
+> Applied Linear Algebra" (http://vmls-book.stanford.edu/vmls.pdf) page 13: The size (also called dimension or length) of the vector is the number of
+> elements it contains
+:::
+
+I think what the commenters are trying to say is that, in linear algebra as practiced by mathematicians, *dimension* is an aspect of a vector space rather than of an individual vector.   Mathematicians don't only consider finite lists of real numbers as vectors.  A function, or even an equivalence class of functions, can also be a vector, and there's no way to talk about the “entries” of such a vector.
+
+You have found some examples in the literature of the word *dimension* being used as a synonym for *entry* (or *coordinate*, even).  But none of those authors are mathematicians.  So I think the answer to your actual question:
+
+> But *in math*, could it \[the word “dimension”\] be used that way \[as a synonym for “entry”\]?
+
+is “No; in math, the word dimension means something else entirely.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4234416/could-an-entry-of-a-vector-be-called-a-dimension/4235356#4235356) on Mathematics Stack Exchange, 2021-08-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

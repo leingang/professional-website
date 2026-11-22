@@ -1,0 +1,76 @@
+---
+title: Proving a basic fact exclusively using "logic notation"
+date: '2023-09-12'
+description: You have, so far, $$f(X) \setminus f(A) = \left\{y \mid \exists x,\ \forall x',\ (x \in X) \land (y = f(x)) \land ((x'\notin A) \lor (y \neq f(x')) \right\}$$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4768132
+se-link: https://math.stackexchange.com/questions/4768026/proving-a-basic-fact-exclusively-using-logic-notation/4768132#4768132
+se-score: 1
+se-accepted: true
+se-tags:
+- logic
+- solution-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Proving a basic fact exclusively using "logic notation"](https://math.stackexchange.com/questions/4768026/proving-a-basic-fact-exclusively-using-logic-notation), asked by [EE18](https://math.stackexchange.com/users/726560/ee18) on Mathematics Stack Exchange (2023-09-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to practice my ability to manipulate the basic logic elements and so am proving the following basic fact:
+> > Let $f: X \to Y$. Then $A \subseteq X \implies f(X) \setminus f(A) \subseteq f(A^c)$.
+>
+> My attempt is as follows: 
+> > We have
+>     $$[y \in f(X) \setminus f(A))] \iff [(y \in f(X)) \land (y \notin f(A))]$$
+>     $$\iff  [(\exists x: (x \in X)\land (y = f(x))) \land (\neg(\exists x' : (x' \in A)\land (y = f(x'))))]$$
+>     $$\iff [(\exists x:(x \in X)\land(y = f(x))) \land (\forall x' : (x' \notin A)\lor (y \neq f(x')))]$$
+>     $$\stackrel{(1)}{\iff} [\exists x: ((x \in X)\land(y = f(x))) \land (\forall x' : (x' \notin A)\lor (y \neq f(x')))]$$
+>    $$\stackrel{(2)}{\implies} [\exists x: (x \in X) \land (x \notin A)\land(y = f(x))] \iff [\exists x: (x \in A^c)\land(y = f(x))]  \iff y \in f(A^c)$$
+>     where in (1) we've used that $\exists$ factors out of a conjunction, in (2) we use that since $f(x) = y$ is true -- or $y \neq f(x)$ false -- for $x ' = x$ we must have from the truth of $(x \notin A)\lor (y \neq f(x))$ that $(x \notin A)$ is true.
+>
+> I have based some of these manipulations off of the lovely answer in this [question][q-1]. However, I am concerned about my step marked (2). I wanted to use just the basic rules of logic, but I have instead "reasoned" like a mathematician. How should I proceed? I have a sneaking suspicion that perhaps I can actually factor out both the $\forall x'$ and the $\exists x$ because the two quantified variables do not "interact" in any of the subsequent formulas, but I am not sure. That is, can I argue as follows?
+> >We have
+>     $$[y \in f(X) \setminus f(A))] \iff [(y \in f(X)) \land (y \notin f(A))]$$
+>     $$\iff  [(\exists x: (x \in X)\land (y = f(x))) \land (\neg(\exists x' : (x' \in A)\land (y = f(x'))))]$$
+>     $$\iff [(\exists x:(x \in X)\land(y = f(x))) \land (\forall x' : (x' \notin A)\lor (y \neq f(x')))]$$
+>     $$\stackrel{(1)}{\iff} [\exists x: ((x \in X)\land(y = f(x))) \land (\forall x' : (x' \notin A)\lor (y \neq f(x')))]$$
+>  $$\stackrel{(2)}{\iff} [\exists x: (\forall x': ((x \in X)\land(y = f(x))) \land ((x' \notin A)\lor (y \neq f(x')))]$$
+> $$\iff  [\exists x: (\forall x' : ((x \in X)\land(y = f(x)) \land (x' \notin A)) \lor ((x \in X)\land(y = f(x)) \land (y \neq f(x')))]$$
+> $$\stackrel{(3)}{\iff}  [\exists x: (\forall x' : ((x \in X)\land(y = f(x)) \land (x' \notin A))]$$
+>    $$\stackrel{(4)}{\implies} [\exists x: (x \in X) \land (x \notin A)\land(y = f(x))] \iff [\exists x: (x \in A^c)\land(y = f(x))]  \iff y \in f(A^c)$$
+> where in (2) I've now factored out a $\forall x'$, in (3) I've used that the second statement is always false, and in (4) I've used that if it's true for all $x'$ then it's true for $x$ in particular. 
+>
+> But this answer doesn't feel write because I could have factored out $\forall x'$ *before* $\exists x$, and I thought one couldn't exchange the order of these arbitrarily (or perhaps one can if the formula's involving $x,x'$ don't "interact")?
+>
+>   [q-1]: https://math.stackexchange.com/questions/2053240/quantifiers-and-properties-why-and-when-do-they-commute-an-elementary-perpec
+:::
+
+You have, so far,
+$$f(X) \setminus f(A)
+    = \left\{y \mid \exists x,\ \forall x',\ (x \in X) \land (y = f(x)) \land ((x'\notin A) \lor (y \neq f(x'))
+\right\}$$
+Now set $x' = x$, and you get that $f(X) \setminus f(A)$ is contained in the set 
+$$\left\{y \mid \exists x,\ (x \in X) \land (y = f(x)) \land ((x\notin A) \lor (y \neq f(x))
+\right\}$$
+Use the distributive law:
+$$\begin{aligned}
+(x \in X) \land (y = f(x)) \land ((x\notin A) \lor (y \neq f(x))
+&= ((x \in X) \land (y = f(x)) \land (x \notin A)
+\\&\quad\lor ((x \in X) \land \color{red}{(y = f(x)) \land (y \neq f(x)})
+\end{aligned}$$
+The red part simplifies to FALSE, which means that half of the $\land$ expression evaluates to FALSE, and we leave it off. We have
+$$(x \in X) \land (x \notin A) \land (y=f(x))$$
+Which means that $y = f(x)$ for some $x \in X \setminus A$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4768026/proving-a-basic-fact-exclusively-using-logic-notation/4768132#4768132) on Mathematics Stack Exchange, 2023-09-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

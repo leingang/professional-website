@@ -1,0 +1,40 @@
+---
+title: Question about a specific graph theorem
+date: '2025-10-23'
+description: In your example, $G-N(a)$ removes $a$ and $b$. This has an independent set of size 4, namely $\{g,h,i,j\}$. And $\{a,g,h,i,j\}$ is an independent set of size 5.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5103565
+se-link: https://math.stackexchange.com/questions/5103561/question-about-a-specific-graph-theorem/5103565#5103565
+se-score: 6
+se-accepted: false
+se-tags:
+- combinatorics
+- graph-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question about a specific graph theorem](https://math.stackexchange.com/questions/5103561/question-about-a-specific-graph-theorem), asked by [Honer_300](https://math.stackexchange.com/users/1668701/honer-300) on Mathematics Stack Exchange (2025-10-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have been told to prove the theorem that a graph $G$ has an independent set of size at least $k$ containing vertex $v$ iff $G-N(v)$, where $N(v)$ is the set of vertices containing $v$ and all of its neighbors, contains an independent set of at least size $k-1$. The way the question is structured assumes it to be true, but I feel I have found a counterexample.
+>
+> [![enter image description here][q-1]][q-1]
+>
+> I feel that if you were looking for an independent set of size 5, and did the check on vertex $a$, the size check would pass, but $a$ would not be part of the independent set. Am I missing something?
+>
+>   [q-1]: mL1zW6ID.png
+:::
+
+In your example, $G-N(a)$ removes $a$ and $b$. This has an independent set of size 4, namely $\{g,h,i,j\}$. And $\{a,g,h,i,j\}$ is an independent set of size 5.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5103561/question-about-a-specific-graph-theorem/5103565#5103565) on Mathematics Stack Exchange, 2025-10-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

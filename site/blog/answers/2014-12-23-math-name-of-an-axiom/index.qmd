@@ -1,0 +1,56 @@
+---
+title: Name of an axiom
+date: '2014-12-23'
+description: Let me show how this axiom is equivalent to the least upper-bound property. Let $A$ be a nonempty set which is bounded above by a number $M$. Let $$B =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1079208
+se-link: https://math.stackexchange.com/questions/1079199/name-of-an-axiom/1079208#1079208
+se-score: 0
+se-accepted: false
+se-tags:
+- terminology
+- order-theory
+- axioms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Name of an axiom](https://math.stackexchange.com/questions/1079199/name-of-an-axiom), asked by [blz](https://math.stackexchange.com/users/198235/blz) on Mathematics Stack Exchange (2014-12-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What's the name of the following axiom: Let $A$ and $B$ be sets of real numbers, and $(\forall a\in A\text{ and }\forall b\in B)a \leq b$. Then $\exists c\in\mathbb R$ such that $(\forall a\in A\text{ and }\forall b\in B) a \leq c \leq b$
+>
+> I thought it was the completness axiom, but that talks about least upper bounds.
+:::
+
+Let me show how this axiom is equivalent to the least upper-bound property.
+Let $A$ be a nonempty set which is bounded above by a number $M$.
+Let
+$$B = \left\{x : x \geq y\text{ for all $y$ in $A$}\right\}$$
+So $B$ is nonempty too.
+Then by your axiom, there exists a point $c$ such that 
+$$a \leq c \leq b \quad\text{for all $a\in A$ and $b\in B$}
+\tag{1}$$
+
+I claim $c$ is the least upper-bound of $A$.
+Clearly by the first half of (1) $c$ is an upper bound for $A$.  
+Suppose $c'$ were an upper bound for $A$ less than $c$.  Then $c'$ would be in $B$, but less than $c$, contradicting the second half of (2).
+Therefore $c \leq c'$, and $c$ is the least upper bound of $A$.
+
+To show why the least upper-bound property implies your axiom, 
+let us be given two nonempty sets $A$ and $B$ with every element of $A$ less or equal to every element of $B$.
+So every element of $B$ is an upper bound for $A$.
+Let $c$ be the least upper bound of $A$.
+Then $c \geq a$ for each $a$ in $A$.
+If there were an element of $B$ less than $c$, it would be an upper bound of $A$ less than the least upper bound of $A$, a contradiction.  Therefore $b \geq c$ for all $b$ in $B$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1079199/name-of-an-axiom/1079208#1079208) on Mathematics Stack Exchange, 2014-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

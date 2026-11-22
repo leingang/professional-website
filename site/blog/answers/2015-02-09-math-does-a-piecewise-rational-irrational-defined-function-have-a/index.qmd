@@ -1,0 +1,55 @@
+---
+title: Does a piecewise rational/irrational defined function have a bound on its integral?
+date: '2015-02-09'
+description: The reason is that there is no such (Riemann) integral. Since every interval has both rational and irrational numbers in it, we know $$\begin{align} U(f,P) &=…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1140690
+se-link: https://math.stackexchange.com/questions/1140612/does-a-piecewise-rational-irrational-defined-function-have-a-bound-on-its-integr/1140690#1140690
+se-score: 6
+se-accepted: true
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does a piecewise rational/irrational defined function have a bound on its integral?](https://math.stackexchange.com/questions/1140612/does-a-piecewise-rational-irrational-defined-function-have-a-bound-on-its-integr), asked by [Kainui](https://math.stackexchange.com/users/54853/kainui) on Mathematics Stack Exchange (2015-02-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > $$f(x)= \left\{\begin{array}{ll}
+> x/3 &\mbox{if $x$ is rational,}\\
+> x/2 &\mbox{if $x$ is irrational.}
+> \end{array}\right.$$
+>
+> Suppose that $f$ is my function, can I say that the integral of this function between $0$ and any positive number is greater than the integral of $x/3$? I want a good reason why I can't put a lower bound on this integral if the answer is no, since it clearly appears to have an upper and lower bound to it.
+:::
+
+> I want a good reason why I can't put a lower bound on this integral if the answer is no, since it clearly appears to have an upper and lower bound to it.
+
+The reason is that there *is* no such (Riemann) integral. Since every interval has both rational and irrational numbers in it, we know
+$$\begin{align*}
+    U(f,P) &= U(x/2,P) \\
+    L(f,P) &= L(x/3,P)
+\end{align*}$$
+for every partition $P$ of an interval $[a,b]$.  Therefore,
+$$\begin{align*}
+    \inf_P U(f,P) = \inf_P U(x/2,P) = \int_a^b (x/3)\,dx \\
+    \sup_P L(f,P) = \sup_P L(x/3,P) = \int_a^b (x/2)\,dx
+\end{align*}$$
+Since the two on the right are different, $f$ is not integrable on $[a,b]$.  
+
+@sranthrop points out that there is a different answer when using the Lebesgue integral.  In that theory we can partition sets into subsets that are not intervals.  For instance, the interval $[a,b]$ can be partitioned into the rational elements (call this set $E$) and irrational elements ($E'$).  Since $E$ is of measure zero,
+$$\int\limits_{[a,b]} f\,d\mu = \int\limits_E f\,d\mu + \int\limits_{E'} f\,d\mu 
+= \int\limits_{E'} f\,d\mu = \int_a^b (x/2)\,dx$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1140612/does-a-piecewise-rational-irrational-defined-function-have-a-bound-on-its-integr/1140690#1140690) on Mathematics Stack Exchange, 2015-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

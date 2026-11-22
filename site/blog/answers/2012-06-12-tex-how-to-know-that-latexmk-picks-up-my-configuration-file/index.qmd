@@ -1,0 +1,47 @@
+---
+title: How to know that latexmk picks up my configuration file?
+date: '2012-06-12'
+description: 'A latexmkrc file is just perl code, so you can just put a print statement in it:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 59613
+se-link: https://tex.stackexchange.com/questions/59599/how-to-know-that-latexmk-picks-up-my-configuration-file/59613#59613
+se-score: 14
+se-accepted: true
+se-tags:
+- latexmk
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to know that latexmk picks up my configuration file?](https://tex.stackexchange.com/questions/59599/how-to-know-that-latexmk-picks-up-my-configuration-file), asked by [Andriy Drozdyuk](https://tex.stackexchange.com/users/4415/andriy-drozdyuk) on TeX Stack Exchange (2012-06-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've put `.latexmkrc`  file into my working directory, but it doesn't seem to be doing anything. Is there a way to check that latexmk picks up my configuration file?
+:::
+
+A `latexmkrc` file is just [perl][1] code, so you can just put a `print` statement in it:
+
+
+```perl
+# .latexmkrc
+
+print("Hello, world!  I'm a .latexmkrc\n");
+
+# rest of .latexmkrc
+```
+
+For more about useful assignments to make, see the [documentation](http://texdoc.net/pkg/latexmk).  
+
+
+  [1]: http://www.perl.org/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/59599/how-to-know-that-latexmk-picks-up-my-configuration-file/59613#59613) on TeX Stack Exchange, 2012-06-12, with [edits](https://tex.stackexchange.com/posts/59613/revisions) by [doncherry](https://tex.stackexchange.com/users/4012/doncherry). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

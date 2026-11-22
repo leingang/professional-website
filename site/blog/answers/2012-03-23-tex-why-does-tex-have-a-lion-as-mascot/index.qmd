@@ -1,0 +1,82 @@
+---
+title: Why does TeX have a lion as mascot?
+date: '2012-03-23'
+description: I think the comments above make as good an answer as any would so I've taken the liberty of assembling them into a single CW answer.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 49099
+se-link: https://tex.stackexchange.com/questions/49087/why-does-tex-have-a-lion-as-mascot/49099#49099
+se-score: 39
+se-accepted: true
+se-tags:
+- tex-history
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does TeX have a lion as mascot?](https://tex.stackexchange.com/questions/49087/why-does-tex-have-a-lion-as-mascot), asked by [Ingo](https://tex.stackexchange.com/users/1183/ingo) on TeX Stack Exchange (2012-03-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This I have been wondering for years! And where else was I supposed to ask this if not here?
+>
+> Maybe it is not a technical question but it might still interest a great many.
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: VWDm6.png
+:::
+
+I think the comments above make as good an answer as any would so I've taken the liberty of assembling them into a single CW answer.
+
+The TeX lion was designed for the illustrations of the first *TeXBook.*  Duane Bibby is the artist.  He describes the genesis of the idea in a 2006 interview this way:
+
+> Q:     How did the lion motif come about?
+> 
+> A:     During that first meeting, Don [Knuth] showed me some writing he had
+> done that had been published in *Mad* magazine. That not only greatly
+> impressed me, because I had a fair stack of rejection slips from them,
+> but helped in thinking about perhaps using a character to bind things
+> together — somewhat similar to a job I'd just completed with Eleanor
+> Mennick, the design director at Fearon. Don liked the idea, but we
+> didn't have a clear vision at that time of exactly what sort of
+> character. The obvious was, we thought, a kind of computer guy, of
+> which I did some exploratory sketching around. But, as my wife
+> Jeanette Ahlgren noted as I doodled in our cabin in the trees, also
+> kind of boring. I'd also had a chance to read the manuscript and found
+> the tone light and engaging even though I knew nothing of computer
+> software. I think that influenced the approach too.
+> 
+> Various animals came to mind and pad, but a classic lion finally began
+> to pop to life. A possible source of the lion idea was a very large
+> Maine Coon cat — a rather large breed of house cat — that was
+> wandering around. It had been abandoned, was looking for a new home,
+> and was giving us new arrivals the look over, trying to decide if he
+> would adopt us. He later did. ...
+> 
+> I tried the lion sketches on Don, which he liked right off, and we
+> then began working out each chapter idea which further defined the
+> character. Later when it came to Metafont, Don felt the lion needed a
+> mate and so that made it easy.
+
+*The LaTeX Book* and *The Metafont Book* were also illustrated with Bibby's lions, which further enforced the brand.  
+
+The TeX Talk logo designed by Pablo is an homage to Bibby.  TeX StackExchange users would love to have the lion further incorporated into site graphics, but the money required to hire Bibby has not surfaced.  See
+
+ * https://tex.stackexchange.com/questions/5262/competition-time-design-an-error-page
+ * https://tex.meta.stackexchange.com/questions/865/still-missing-illustrations-from-duane-bibby (on meta)
+
+
+[CTAN](http://www.ctan.org/lion/) has a lion illustration that is liberally licensed; Jim Hefferon owns it and requests that proper attribution (to the artist) be made.  In fact we used it for our captcha screens.  (The linked page in turn links to several scanned versions that are available for appropriate uses.)
+
+Some more history: At the "coming out party" for the first hardbound set of *Computers & Typesetting*, at the Computer Museum in Boston, 21 May 1986, [Don Knuth concluded his remarks with a comment on "why a lion?"](http://tug.org/TUGboat/tb07-2/tb15knut.pdf) (p.98). The [introductory remarks by Knuth's editor, Peter Gordon](http://tug.org/TUGboat/tb07-2/tb15gordon.pdf), provide more general background about the occasion.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/49087/why-does-tex-have-a-lion-as-mascot/49099#49099) on TeX Stack Exchange, 2012-03-23, with [edits](https://tex.stackexchange.com/posts/49099/revisions) by [G. Bay](https://tex.stackexchange.com/users/75648/g-bay), [barbara beeton](https://tex.stackexchange.com/users/579/barbara-beeton). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

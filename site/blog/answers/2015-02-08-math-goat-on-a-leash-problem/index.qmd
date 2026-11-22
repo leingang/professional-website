@@ -1,0 +1,50 @@
+---
+title: Goat on a leash problem
+date: '2015-02-08'
+description: The problem so far is underdetermined. Put the pole anywhere, and let out more and more rope for the leash. If you let out exactly enough leash the goat will…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1139545
+se-link: https://math.stackexchange.com/questions/1139522/goat-on-a-leash-problem/1139545#1139545
+se-score: 1
+se-accepted: false
+se-tags:
+- circles
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Goat on a leash problem](https://math.stackexchange.com/questions/1139522/goat-on-a-leash-problem), asked by [Senad Meškin](https://math.stackexchange.com/users/30987/senad-me%c5%a1kin) on Mathematics Stack Exchange (2015-02-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a problem with next data:
+>
+> 1. I have a grass meadow with the shape of circle, and its radius is "r"
+> 2. I have a goat on a leash. 
+> 3. I need to know length of a leash and how far  pale, where leash is attached, have to be from a grass circle (center or edge).
+>
+> In simple words I need to know radius of a circle that can cut another circle into half and how far centers of those circles needs to be away.
+>
+> Illustration:
+>
+> ![enter image description here][q-1]
+>
+> Multiple explanations are welcome.
+> I need this so my goat can eat exactly half of a grass meadow :)
+> > And, length of a goat or where leash is attached to a goat doesn't matter :)
+> > Pole needs to be outside the meadow same as in illustration.
+>
+>   [q-1]: Wrzos.png
+:::
+
+The problem so far is underdetermined.  Put the pole anywhere, and let out more and more rope for the leash.  If you let out exactly enough leash the goat will be able to just barely munch one blade of grass.  If you let out too much he will be able to eat the entire meadow.  So at some length in between he will be able to eat exactly half the grass.  So there's no unique solution of pole placement.  You could even have it in the meadow.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1139522/goat-on-a-leash-problem/1139545#1139545) on Mathematics Stack Exchange, 2015-02-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

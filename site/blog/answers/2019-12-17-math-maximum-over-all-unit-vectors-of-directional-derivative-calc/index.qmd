@@ -1,0 +1,43 @@
+---
+title: Maximum, over all unit vectors, of directional derivative CALCULUS 3
+date: '2019-12-17'
+description: Recall that $Du f(P) = \nabla f(P) \cdot u$, so $$Du f(P) = \Vert \nabla f(P) \Vert \, \Vert u \Vert \,\cos\theta$$ where $\theta$ is the angle between $\nabla…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3479795
+se-link: https://math.stackexchange.com/questions/3472846/maximum-over-all-unit-vectors-of-directional-derivative-calculus-3/3479795#3479795
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Maximum, over all unit vectors, of directional derivative CALCULUS 3](https://math.stackexchange.com/questions/3472846/maximum-over-all-unit-vectors-of-directional-derivative-calculus-3), asked by [hexaquark](https://math.stackexchange.com/users/704928/hexaquark) on Mathematics Stack Exchange (2019-12-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given $f(x,y,z) = x^2 +3xz + \dfrac{y^3}{3}$ I'm asked to find the maximum value, ***over all unit vectors,*** of $D_{u} f(1,2,-1)$.   
+>
+> Attempt :  
+> $$\nabla f = \langle f_x , f_y, f_z \rangle = \langle 2x + 3z, y^2 , 3x \rangle$$
+> $$D_u f = || \nabla f(1,2,-1)|| = || (-1,4,-3)|| = \sqrt{26}$$
+>
+> I feel like i'm  missing a step somewhere, particularly something concerning the " all unit vectors". 
+> Thank you for help.
+:::
+
+Recall that $D_u f(P) = \nabla f(P) \cdot u$, so
+$$D_u f(P) = \Vert \nabla f(P) \Vert \, \Vert u \Vert \,\cos\theta$$
+where $\theta$ is the angle between $\nabla f(P)$ and $u$.  Remember $\Vert u \Vert =1$ and $|\cos\theta|\leq 1$.  So the maximum value of $D_u f(P)$, over all unit vectors $u$, occurs when $u$ points in the same direction as $\nabla f(P)$ (i.e., $\cos\theta =1 \implies \theta = 0$).  In this case, $D_u(P) = \Vert \nabla f(P) \Vert$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3472846/maximum-over-all-unit-vectors-of-directional-derivative-calculus-3/3479795#3479795) on Mathematics Stack Exchange, 2019-12-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

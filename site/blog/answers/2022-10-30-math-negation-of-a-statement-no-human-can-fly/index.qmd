@@ -1,0 +1,42 @@
+---
+title: 'Negation of a statement: No human can fly'
+date: '2022-10-30'
+description: 'My original answer was:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4565161
+se-link: https://math.stackexchange.com/questions/4565157/negation-of-a-statement-no-human-can-fly/4565161#4565161
+se-score: 6
+se-accepted: true
+se-tags:
+- logic
+- predicate-logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Negation of a statement: No human can fly](https://math.stackexchange.com/questions/4565157/negation-of-a-statement-no-human-can-fly), asked by [Yacoub Yacoub](https://math.stackexchange.com/users/1104657/yacoub-yacoub) on Mathematics Stack Exchange (2022-10-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We have the statement: No human can fly.
+> I know that the negation of it is: One human can fly.
+> But i'm not sure why this is true, because it seems more logical to say that at least one human can fly. In this case I described all the other possibilites as well not only the case where only one human can fly.
+:::
+
+My original answer was:
+
+> Those are both correct. In mathematics “one” means “at least one” unless prefaced by “exactly.”
+
+Some may disagree, including the esteemed Prof. Doktor Gödel below. To me, in this context, *one* is synonymous with *a(n)*, the indefinite article.
+
+Perhaps this is evidence that one (meaning *you* in this context) should avoid ambiguity and use *some* or *at least one*.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4565157/negation-of-a-statement-no-human-can-fly/4565161#4565161) on Mathematics Stack Exchange, 2022-10-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

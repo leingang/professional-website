@@ -1,0 +1,43 @@
+---
+title: Is the set of functions $f$ in $C[-1,1]$ with $f(-1)=f(1)$ a subspace of $C[-1,1]$?
+date: '2015-10-26'
+description: The same process which shows even functions are closed under addition will show $$V = \left\{f\in C[-1,1] \mid f(-1) = f(1)\right\}$$ is closed under addition.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1498759
+se-link: https://math.stackexchange.com/questions/1498753/is-the-set-of-functions-f-in-c-1-1-with-f-1-f1-a-subspace-of-c-1-1/1498759#1498759
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- functions
+- vector-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the set of functions $f$ in $C[-1,1]$ with $f(-1)=f(1)$ a subspace of $C[-1,1]$?](https://math.stackexchange.com/questions/1498753/is-the-set-of-functions-f-in-c-1-1-with-f-1-f1-a-subspace-of-c-1-1), asked by [dacabdi](https://math.stackexchange.com/users/177708/dacabdi) on Mathematics Stack Exchange (2015-10-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is the set of functions $f$ in $C[-1,1]$ with $f(-1)=f(1)$ a subspace of $C[-1,1]$?
+>
+> I understand that if $\forall x\in Dom(f)(f(-x)=f(x))$ is $true$ then the function would be even and the sum of two even functions is even therefore the first closure condition is fulfilled and the second too because the multiplication of a scalar times an even function is also an even function. But I don't manage to understand or prove how having just one value in the domain where $f(-x)=f(x)$ makes it even.
+:::
+
+The same process which shows even functions are closed under addition will show 
+$$V = \left\{f\in C[-1,1] \mid f(-1) = f(1)\right\}$$
+is closed under addition.
+
+Suppose $f$ and $g$ are in $V$.  Then what is $(f+g)(-1)$?  What is $(f+g)(1)$?  Are they the same?
+
+Similarly for scalar multiples.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1498753/is-the-set-of-functions-f-in-c-1-1-with-f-1-f1-a-subspace-of-c-1-1/1498759#1498759) on Mathematics Stack Exchange, 2015-10-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

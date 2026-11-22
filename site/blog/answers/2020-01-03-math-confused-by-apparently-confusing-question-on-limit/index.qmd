@@ -1,0 +1,64 @@
+---
+title: Confused by apparently confusing question on limit...
+date: '2020-01-03'
+description: What you're asking is whether $\lim{x\to a} f(x) = f(a)$ is always true. The answer is no. In fact, this exercise is designed to highlight that difference. And…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3496056
+se-link: https://math.stackexchange.com/questions/3496048/confused-by-apparently-confusing-question-on-limit/3496056#3496056
+se-score: 6
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confused by apparently confusing question on limit...](https://math.stackexchange.com/questions/3496048/confused-by-apparently-confusing-question-on-limit), asked by [Sahil](https://math.stackexchange.com/users/361923/sahil) on Mathematics Stack Exchange (2020-01-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Question:** *Let $f: R \rightarrow R$ be defined by*
+> $$f(x) = \begin{cases}
+> x & \text{if $x$ is an integer} \\[6px]
+> 0 & \text{if $x$ is not an integer}
+> \end{cases}$$
+> *Find $\lim_{x \rightarrow 1} f(x)$.*
+>
+> **My answer:**
+>
+> $\lim_{x \rightarrow 1^{-}}f(x)$ here we approach $f(x)$ from left and encounter fractions (decimals), $\{0.9,0.99,0.99,\dotsc\}$ so, the $\lim_{x \rightarrow 1^{-}}f(x)=0$
+>
+> Similar logic for right hand limit and it also gives $0$. 
+>
+> **My confusion:**
+> But, while calculating limit, is it not that we can simply put $x=1$ in to the appropriate function provided in the question?
+>
+> So, $\lim_{x \rightarrow 1}f(x)$ here, can't we put $x=1$ and get the result of limit as $1$?
+>
+> As in the following photo, we chose appropriate function and put $x=1$.
+>
+> [![example pic][q-1]][q-1]
+>
+>
+>   [q-1]: gNqD7.jpg
+:::
+
+> **My confusion:** But, while calculating limit, is it not that we can simply put $𝑥=1$ in to the appropriate function provided in the question?
+
+What you're asking is whether $\lim_{x\to a} f(x) = f(a)$ is always true.  The answer is *no*.  In fact, this exercise is designed to highlight that difference.  And you might consider why we would need limits at all if this were true.  
+
+Your first answer, using the heuristic notion of evaluating $f$ at points closer and closer to $1$, *but not equal to $1$*, is the correct one.
+
+It is true that $\lim_{x\to a} f(x) = f(a)$ for certain functions, the ones we call continuous functions.  Linear functions and polynomials are continuous functions.  That property is the one being invoked in the example photo you added.  But the original function you provided is not such a nice function, and is definitely not continuous.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3496048/confused-by-apparently-confusing-question-on-limit/3496056#3496056) on Mathematics Stack Exchange, 2020-01-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,80 @@
+---
+title: Article signature figure?
+date: '2010-11-03'
+description: First of all, if your signature is scanned as a bitmap file such as PNG or JPG, try to convert it to vector with <a…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4884
+se-link: https://tex.stackexchange.com/questions/4876/article-signature-figure/4884#4884
+se-score: 3
+se-accepted: false
+se-tags:
+- article
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Article signature figure?](https://tex.stackexchange.com/questions/4876/article-signature-figure), asked by [microspino](https://tex.stackexchange.com/users/633/microspino) on TeX Stack Exchange (2010-11-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What is the correct way to add a signature figure to an article in LaTeX?
+> I need to sign an article by adding the image of my signature under my typeset name.
+>
+> This are the packages and the document class I'm using now:
+>
+> ```latex
+> \documentclass[]{article}
+> \usepackage[utf8]{inputenc}
+> \usepackage[greek, italian]{babel}
+> \usepackage{fullpage}
+>
+> \usepackage{boxedminipage}
+> \usepackage{listings}
+> \usepackage{minitoc}
+> \usepackage{graphicx}
+> ```
+>
+> Now my name is aligned onto the right of the page by using:
+>
+> ```latex
+> \flushright\parbox{5cm}{Daniele Spinosa}
+> ```
+>
+> like a letter signature. I'd like to add my signature image below it.
+> How can I do that?
+:::
+
+First of all, if your signature is scanned as a bitmap file such as PNG or JPG, try to convert it to vector with <a href="http://potrace.sourceforge.net/">potrace</a>.  If you use Inkscape this is pretty straightforward.  Save it as PDF.  It will be much prettier.
+
+Then you want to `\includegraphics` but set the bounding box to make the graphic reserve less space than its actual extent.  That produces an effect like you're writing on paper.
+
+```latex
+Yours TeXnically,
+
+Microspino
+
+\includegraphicics[bb=0 0 144 72]{sig.pdf}
+```
+
+To be honest I've never been good at hacking the bounding box, so if it were me I would use TikZ here:
+
+```latex
+Microspino
+
+\begin{tikzpicture}
+  \usesasboundingbox (0,0) rectangle (5cm,4em); % <--adjust the height if you want
+  \node[anchor=south west] {\includegraphics{sig.pdf}};  
+\end{tikzpicture}
+```
+
+If you want things on the right you can use `\flushright` as above.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4876/article-signature-figure/4884#4884) on TeX Stack Exchange, 2010-11-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

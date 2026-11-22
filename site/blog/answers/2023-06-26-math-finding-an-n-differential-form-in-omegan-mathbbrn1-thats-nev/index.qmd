@@ -1,0 +1,55 @@
+---
+title: Finding an $n$-differential form in $\Omega^n \mathbb{R}^{n+1}$ that's never zero on $\mathbb{S}^n$.
+date: '2023-06-26'
+description: I'm not sure if interior products are something you've learned, but they can help here.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4726020
+se-link: https://math.stackexchange.com/questions/4725966/finding-an-n-differential-form-in-omegan-mathbbrn1-thats-never-zer/4726020#4726020
+se-score: 2
+se-accepted: false
+se-tags:
+- differential-geometry
+- differential-topology
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding an $n$-differential form in $\Omega^n \mathbb{R}^{n+1}$ that's never zero on $\mathbb{S}^n$.](https://math.stackexchange.com/questions/4725966/finding-an-n-differential-form-in-omegan-mathbbrn1-thats-never-zer), asked by [Roye sharifie](https://math.stackexchange.com/users/1195663/roye-sharifie) on Mathematics Stack Exchange (2023-06-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Iv'e been struggling with defining an n-form in $\mathbb{R}^{n+1}$ that's never zero on $\mathbb{S}^n$
+>
+> I know how to define an $n$-form that's never zero in $\mathbb{S}^n$ by defining a function for each map in a finite atlas and summing these functions up, but defining it in $\mathbb{R}^{n+1}$ is problematic.  
+> I also know that i need to define a function(diffeomorphism) from $\mathbb{S}^n$ to a representation of $\mathbb{S}^n$ in $\mathbb{R}^{n+1}$
+> $$i: \mathbb{S}^n \longrightarrow \mathbb{R}^{n+1}$$
+> and for a differential form defined on $\Omega^n \mathbb{R}^{n+1}$, $\omega$, $i^*(ω)$ is defined in $\Omega^n \mathbb{R}^{n+1}$
+>
+> but i dont really have the idea of combining these two concepts together
+:::
+
+I'm not sure if [interior products](https://en.wikipedia.org/wiki/Interior_product) are something you've learned, but they can help here.
+
+On $\mathbb{R}^{n+1}$, let:
+$$\begin{align*}
+    X &= x^1 \frac{\partial}{\partial x^1}
+       +x^2 \frac{\partial}{\partial x^2}
+       +\dotsm+ x^{n+1} \frac{\partial}{\partial x^{n+1}} \\
+    \nu &= dx^1 \wedge dx^2 \wedge \dotsm \wedge dx^{n+1}
+\end{align*}$$
+Then the $n$-form $\omega =\iota_X\nu$ is nonzero on $S^{n}$.
+
+Intuitively speaking, $\nu$ is the volume form on $\mathbb{R}^n$ which takes the determinant of the matrix of the components of the $n+1$ vectors. The vector field $X$ is normal to $S^n$. Given $p \in S^n$ and linearly independent tangent vectors $v_1,\dots,v_n$ to $S^n$ at $p$, $\omega(v_1,\dots,v_n) = \nu(X_p,v_1,\dots,v_n)$. Since $X_p,v_1,\dots,v_n$ are linearly independent, $\nu$ of them is nonzero.
+
+You can use the fact that $\iota_X$ is an antiderivation to calculate it explicitly. If you try $n=1$ and $n=2$ you'll see what's going on.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4725966/finding-an-n-differential-form-in-omegan-mathbbrn1-thats-never-zer/4726020#4726020) on Mathematics Stack Exchange, 2023-06-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

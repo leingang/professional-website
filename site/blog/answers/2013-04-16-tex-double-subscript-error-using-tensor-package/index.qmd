@@ -1,0 +1,80 @@
+---
+title: Double subscript error using tensor package
+date: '2013-04-16'
+description: 'You have a misbalance in braces:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109004
+se-link: https://tex.stackexchange.com/questions/109000/double-subscript-error-using-tensor-package/109004#109004
+se-score: 5
+se-accepted: true
+se-tags:
+- errors
+- tensor
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Double subscript error using tensor package](https://tex.stackexchange.com/questions/109000/double-subscript-error-using-tensor-package), asked by [James Fielder](https://tex.stackexchange.com/users/29115/james-fielder) on TeX Stack Exchange (2013-04-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have been attempting to typeset tensors using the [tensor](http://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/contrib/tensor/tensor.pdf) package and have come across an error when attempting to create subscripts on the subscripts of my tensors.
+>
+> An example of this would be the following:
+>
+> ```latex
+> \documentclass{report}
+> \usepackage{mathtools}
+> \usepackage{tensor}
+>
+> \begin{document}
+>
+> \begin{equation} \label{tensor-symmetrize}
+> T\indices{_{(\mu_1 \mu_2 \cdots \mu_n)}_\rho^\sigma} = \frac{1}{n!} (T \indices{_{\mu_1}_{\mu_2}}_{\cdots}_{\mu_n}_\rho^\sigma 
+> + \text{sum over permutations of indices}) .
+> \end{equation}
+>
+> \end{document}
+> ```
+>
+> On compiling this document I get an error saying 
+>
+> ```latex
+> ! Double subscript.
+> l.8 ...frac{1}{n!} (T \indices{_{\mu_1}_{\mu_2}}_
+>                                               {\cdots}_{\mu_n}_\rho^\sig...
+> ```
+:::
+
+You have a misbalance in braces:
+
+```latex
+\begin{equation} \label{tensor-symmetrize}
+T\indices{_{(\mu_1 \mu_2 \cdots \mu_n)}_\rho^\sigma} = \frac{1}{n!} (T \indices{_{\mu_1}_{\mu_2}_{\cdots}_{\mu_n}_\rho^\sigma }
++ \text{sum over permutations of indices}) .
+\end{equation}
+```
+
+You could take out the extra braces and subscripts on the right-hand side like this:
+
+```latex
+\begin{equation} 
+T\indices{_{(\mu_1 \mu_2 \cdots \mu_n)}_\rho^\sigma} = \frac{1}{n!} (T \indices{_{\mu_1\mu_2\cdots\mu_n}_\rho^\sigma }
++ \text{sum over permutations of indices})
+\end{equation}
+```
+
+![sample code output][1]
+
+
+  [1]: zd9Ro.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109000/double-subscript-error-using-tensor-package/109004#109004) on TeX Stack Exchange, 2013-04-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

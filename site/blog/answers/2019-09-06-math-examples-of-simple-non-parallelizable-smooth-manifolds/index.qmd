@@ -1,0 +1,48 @@
+---
+title: Examples of simple non-parallelizable smooth manifolds
+date: '2019-09-06'
+description: $S^2$ is not parallelizable. This fact is famously known as the Hairy ball theorem.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3346408
+se-link: https://math.stackexchange.com/questions/3346395/examples-of-simple-non-parallelizable-smooth-manifolds/3346408#3346408
+se-score: 2
+se-accepted: true
+se-tags:
+- differential-geometry
+- soft-question
+- manifolds
+- differential-topology
+- smooth-manifolds
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Examples of simple non-parallelizable smooth manifolds](https://math.stackexchange.com/questions/3346395/examples-of-simple-non-parallelizable-smooth-manifolds), asked by user637978 on Mathematics Stack Exchange (2019-09-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm looking for examples of simple non-parallelizable smooth manifolds and honestly just general insight into the concept of a manifold being parallelizable.
+>
+> $S^2$ would be parallelizable, right? At each point on $S^2$, you can have two vectors meet orthogonally that are tangent to $S^2$, and would thus span the tangent space at that point. 
+>
+> It seems to me that if you have an $n$ dimensional smooth manifold, that if you can find $n$ linearly independent vector fields, (so that at each point on the manifold, $V_1(x),....,V_n(x)$ are linearly independent)$, Then your manifold would be parallelizable.
+>
+> General insight and comments greatly appreciated!
+:::
+
+$S^2$ is *not* parallelizable.  This fact is famously known as the [Hairy ball theorem][1].
+
+On any coordinate patch $U$ with coordinates $(x^1, x^2, \dots, x^n)$, the vector fields $V_i = \frac{\partial}{\partial x^i}$ are linearly independent.  But when you cover a manifold with multiple coordinate patches, there may not be a way to extend those vector fields to the entire manifold and keep them linearly independent (or nonzero).
+
+
+  [1]: https://en.wikipedia.org/wiki/Hairy_ball_theorem
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3346395/examples-of-simple-non-parallelizable-smooth-manifolds/3346408#3346408) on Mathematics Stack Exchange, 2019-09-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,53 @@
+---
+title: The proof that L_{2}([a,b]) is an inner product space.
+date: '2017-10-19'
+description: You don't need these conditions for the set of complex-valued functions on $[a,b]$ to be a vector space. You can add and scale any such functions without a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2479917
+se-link: https://math.stackexchange.com/questions/2479901/the-proof-that-l-2a-b-is-an-inner-product-space/2479917#2479917
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- functional-analysis
+- measure-theory
+- lebesgue-integral
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The proof that L_{2}([a,b]) is an inner product space.](https://math.stackexchange.com/questions/2479901/the-proof-that-l-2a-b-is-an-inner-product-space), asked by user426277 on Mathematics Stack Exchange (2017-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In the following picture :
+>
+> 1-why we need the property that $|f|^2$ is Lebesgue integrable for the given space 
+> to be a vector space, could anyone explain this for me please?
+>
+> 2-And why we identify functions which are equal almost everywhere, could anyone explain this for me please? 
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: aT52o.png
+:::
+
+You don't need these conditions for the set of complex-valued functions on $[a,b]$ to be a vector space.  You can add and scale any such functions without a problem.
+
+You need these conditions for the $L^2$-norm of a function 
+$$\Vert f \Vert = \sqrt{\left<f,f\right>} = \left(\int_a^b |f|^2 \,dx\right)^{1/2}$$
+to be an actual norm.  In particular, $\Vert f \Vert$ must be a nonnegative real number for any $f$, and $\Vert f \Vert  = 0 \iff f = 0$.
+
+1. If $|f|^2$ isn't integrable, the right-hand side of the above is undefined.
+2. Unless we count functions that agree almost everywhere as identical, there are plenty of nonzero functions with a norm of zero.  For instance, a function which is zero except at one point will have an integral of zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2479901/the-proof-that-l-2a-b-is-an-inner-product-space/2479917#2479917) on Mathematics Stack Exchange, 2017-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

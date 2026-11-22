@@ -1,0 +1,71 @@
+---
+title: Proving that if $\alpha$ is a closed 1-form, then an analytical function $g$ exists such that $\alpha = dg$.
+date: '2023-04-15'
+description: So far you have shown $$\frac{\partial g}{\partial xj} = \int0^1 fj(t\hat x)\,dt + \sum{i=1}^n xi \int0^1 \frac{\partial}{\partial xj} fi(t\hat x)\,dt$$ By the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4679814
+se-link: https://math.stackexchange.com/questions/4679797/proving-that-if-alpha-is-a-closed-1-form-then-an-analytical-function-g-exi/4679814#4679814
+se-score: 4
+se-accepted: true
+se-tags:
+- differential-geometry
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Proving that if $\alpha$ is a closed 1-form, then an analytical function $g$ exists such that $\alpha = dg$.](https://math.stackexchange.com/questions/4679797/proving-that-if-alpha-is-a-closed-1-form-then-an-analytical-function-g-exi), asked by [Declan Bays](https://math.stackexchange.com/users/223526/declan-bays) on Mathematics Stack Exchange (2023-04-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This question is in relation to exercise 4.3 as found in Sjamaar's book "Manifolds and Differential Form", which asks the reader to solve following:
+>
+> Let $\alpha = \sum_{i=1}^n f_i \hspace{0.2cm}dx_i$ be a closed 1-form defined on all of $\mathbb{R}^n$. Verify that the function: 
+>
+> $$g(\hat{x}) = \sum_{i=1}^n x_i \int_0^1 f_i(t\hat{x}).dt$$
+>
+> Satisfies $dg = \alpha$, where $\hat{x} = [x_1, ... x_n] \in \mathbb{R}^n$.
+>
+> My tried approach to this has been to explicitly use the formula that for any function ($0$-form) $\psi:\mathbb{R}^n \to \mathbb{R}$, we can find it's $1$-form via:
+>
+> $$d\psi = \sum_{i=1}^n \frac{\partial \psi}{\partial x_i} \hspace{0.2cm}dx_i$$ 
+>
+> This gives:
+>
+> $$dg = \sum_{j=1}^n \frac{\partial}{\partial x_j} \left(\sum_{i=1}^n x_i \int_0^1 f_i(t\hat{x}).dt\right) \hspace{0.2cm}dx_j$$
+>
+> $$=\sum_{j=1}^n \left[ \sum_{i=1}^n \frac{\partial}{\partial x_j} \left( x_i \int_0^1 f_i(t\hat{x}).dt\right) \right] dx_j$$
+>
+> $$= \sum_{j=1}^n \left[ \sum_{i=1}^n \left\{ \frac{\partial x_i}{\partial x_j} \left( \int_0^1 f_i(t\hat{x}).dt\right)\right\} + \left\{ x_i \left( \int_0^1 \frac{\partial}{\partial x_j}f_i(t\hat{x}).dt\right)\right\}\right] dx_j$$
+>
+> $$= \sum_{j=1}^n \left(\int_0^1 f_j(t\hat{x}).dt\right) + \left[ \sum_{i=1}^n  x_i \left( \int_0^1 \frac{\partial}{\partial x_j}f_i(t\hat{x}).dt\right)\right] dx_j$$
+>
+> Where the third line is by application of the product rule, and the fourth line is due to the fact that $\frac{\partial x_i}{\partial x_j}$ is $0$ unless $i=j$. 
+>
+> I do not know where to go next and am unsure of what I am missing. Whether there is some properties from calculus which I need to invoke or some fact orienting around multivariate functions. 
+>
+> Any help would be appreciated.
+:::
+
+So far you have shown
+$$\frac{\partial g}{\partial x_j} = \int_0^1 f_j(t\hat x)\,dt + \sum_{i=1}^n x_i \int_0^1 \frac{\partial}{\partial x_j} f_i(t\hat x)\,dt$$
+By the chain rule,
+$$\frac{\partial}{\partial x_j} f_i(t\hat x) = \frac{\partial f_i}{\partial x_j}(t\hat x)t$$
+Since $\alpha$ is closed, $$\dfrac{\partial f_i}{\partial x_j} = \dfrac{\partial f_j}{\partial x_i}$$ So
+$$\begin{aligned}
+    \frac{\partial g}{\partial x_j}
+    &= \int_{0}^1 \left(f_j(t\hat x) + \sum_{i=1}^n x_i \frac{\partial f_j}{\partial x_i} (t\hat x)t\right)\,dt
+    \\&= \int_{0}^1 \left(f_j(t\hat x) + t \sum_{i=1}^n \frac{\partial f_j}{\partial x_i} (t\hat x)x_i\right)\,dt
+    \\&= \int_{0}^1 \frac{d}{dt}\left(t f_j(t\hat x)\right)\,dt
+    \\&= \left.tf_j(t\hat x)\right|^{t=1}_{t=0} = f_j(\hat x)
+\end{aligned}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4679797/proving-that-if-alpha-is-a-closed-1-form-then-an-analytical-function-g-exi/4679814#4679814) on Mathematics Stack Exchange, 2023-04-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

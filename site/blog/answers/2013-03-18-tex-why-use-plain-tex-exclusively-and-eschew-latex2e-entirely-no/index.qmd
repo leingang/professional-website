@@ -1,0 +1,51 @@
+---
+title: Why use plain TeX exclusively and eschew LaTeX2e entirely, nowadays?
+date: '2013-03-18'
+description: I'm not sure this is a real question but I will try to answer. Plain TeX allows (requires, even) total control over the document, whereas LaTeX requires a…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103082
+se-link: https://tex.stackexchange.com/questions/103074/why-use-plain-tex-exclusively-and-eschew-latex2e-entirely-nowadays/103082#103082
+se-score: 5
+se-accepted: false
+se-tags:
+- plain-tex
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why use plain TeX exclusively and eschew LaTeX2e entirely, nowadays?](https://tex.stackexchange.com/questions/103074/why-use-plain-tex-exclusively-and-eschew-latex2e-entirely-nowadays), asked by [jub0bs](https://tex.stackexchange.com/users/21891/jub0bs) on TeX Stack Exchange (2013-03-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was surprised to learn that some users, as show in [this post](https://tex.stackexchange.com/q/102989/21891), stil insist on working exclusively in plain Tex, as opposed to LaTeX.
+>
+> I most certainly understand the [benefits of **occasionally** resorting to plain TeX commands](https://tex.stackexchange.com/questions/7278/reasons-to-use-plain-tex), but it got me wondering…
+>
+> What are the reasons, aside force of habit, perhaps, why one would want to use **only** TeX commands all the time and eschew LaTeX altogether, these days?
+>
+> Are there definite advantages, perhaps under some very special purposes, in using exclusively plain TeX?
+:::
+
+I'm not sure this is a real question but I will try to answer.  Plain TeX allows (requires, even) total control over the document, whereas LaTeX requires a class which sets up the document with certain values to fonts, margins, etc. 
+
+I've only known [one person][1] in my 20+ years of TeX-hacking who used plain TeX only and refused to use LaTeX.  He called himself a "technological traditionalist" and prided himself on doing things the simplest way possible.  If you were to ask him why he wouldn't use LaTeX his answer might be "because I don't *need* to."  When we were all tinkering with our XWindows setups he just wanted white-on-black.  
+
+I don't know if he has ever come around or is still bucking the trend.  He went to law school where it was common practice to write emails in Word and send them as attachments, much to his chagrin.  His current CV looks like it was written in plain TeX, though, guessing by the font size.)
+
+I don't know of anything that can be done in plain TeX and can't be done in LaTeX.
+
+Since your question seems to be inspired by a [single user][2] you might just ask him. :-)
+
+  [1]: http://www.law.northwestern.edu/faculty/profiles/ThomasBrennan/
+  [2]: https://tex.stackexchange.com/users/27048/tim-li
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103074/why-use-plain-tex-exclusively-and-eschew-latex2e-entirely-nowadays/103082#103082) on TeX Stack Exchange, 2013-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

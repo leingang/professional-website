@@ -1,0 +1,53 @@
+---
+title: Integrate $\int \frac{\sin x}{\sqrt{3-\cos^4x}} \mathrm{d}x$
+date: '2017-12-01'
+description: The good Doctor is correct. The substitution $u=\cos x$ leads to $$\int \frac{\sin x}{\sqrt{3-\cos^4 x}} = - \int \frac{du}{\sqrt{3-u^4}}$$ However, the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2546050
+se-link: https://math.stackexchange.com/questions/2546024/integrate-int-frac-sin-x-sqrt3-cos4x-mathrmdx/2546050#2546050
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integrate $\int \frac{\sin x}{\sqrt{3-\cos^4x}} \mathrm{d}x$](https://math.stackexchange.com/questions/2546024/integrate-int-frac-sin-x-sqrt3-cos4x-mathrmdx), asked by [J.Low](https://math.stackexchange.com/users/508160/j-low) on Mathematics Stack Exchange (2017-12-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$\int \frac{\sin x}{\sqrt{3-\cos^4x}} \mathrm{d}x$$
+>
+> I tried the substitution $u=tg(\frac{x}{2}) \implies \mathrm{d}x=\frac{2\mathrm{d}u}{1+u^2}$, which gives
+>
+> $$\int \frac{\sin x}{\sqrt{3-\cos^4x}} \mathrm{d}x=\int \frac{\frac{2u}{1+u^2}}{\sqrt{3-\frac{1-u^2}{1+u^2}}} \cdot\frac{2\mathrm{d}u}{1+u^2}=\int \frac{u}{\sqrt{3-\frac{1-u^2}{1+u^2}}} \mathrm{d}u=$$
+>
+> then Substitute $t=\sqrt{3-\frac{1-u^2}{1+u^2}} \implies du=\frac{2\sqrt{3-\frac{1-u^2}{1+u^2}}}{\frac{2u}{ut^2+1}-\frac{2u(u^2-1)}{(u^2+1)^2}}dt$
+>
+> $$=2\int \frac{1}{t^4-8t^2+16}dt$$
+>
+> Should I continue or this is wrong? 
+>
+> Thanks
+:::
+
+The good Doctor is correct.  The substitution $u=\cos x$ leads to 
+$$\int \frac{\sin x}{\sqrt{3-\cos^4 x}} = - \int \frac{du}{\sqrt{3-u^4}}$$
+However, the antiderivative on the right is not an elementary function.  [Wolfram Alpha says][1]
+$$-\int \frac{du}{\sqrt{3-u^4}} = -\frac{1}{3^{1/4}} F\left(\sin^{-1}\left(\frac{u}{3^{1/4}}\right) \mid -1 \right)$$
+where $F$ is an elliptic integral of the first kind.
+
+
+  [1]: http://www.wolframalpha.com/input/?i=integrate%20-1%2Fsqrt(3-u%5E4)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2546024/integrate-int-frac-sin-x-sqrt3-cos4x-mathrmdx/2546050#2546050) on Mathematics Stack Exchange, 2017-12-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

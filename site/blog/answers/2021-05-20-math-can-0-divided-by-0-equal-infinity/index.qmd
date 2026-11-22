@@ -1,0 +1,53 @@
+---
+title: Can 0 divided by 0 equal Infinity
+date: '2021-05-20'
+description: Suppose that $\frac{1}{0} = \infty$. Then $0 \cdot \infty = 1$. Also $$2 = 1 + 1 = 0 \cdot \infty + 0 \cdot \infty = (0 + 0) \cdot \infty = 0 \cdot \infty =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4145657
+se-link: https://math.stackexchange.com/questions/4145648/can-0-divided-by-0-equal-infinity/4145657#4145657
+se-score: 2
+se-accepted: false
+se-tags:
+- infinity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can 0 divided by 0 equal Infinity](https://math.stackexchange.com/questions/4145648/can-0-divided-by-0-equal-infinity), asked by [Lucas Urban](https://math.stackexchange.com/users/929919/lucas-urban) on Mathematics Stack Exchange (2021-05-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Can $1 \div 0$ equal $\infty$?
+>
+> My evidence is:
+>
+> $1 \div 0.1 = 0.1$
+>
+> $1 \div 10^{-2} = 100$
+>
+> $1 \div 10^{-3} = 1000$
+>
+> $1 \div 10^{-4} = 10^4$
+>
+> $1 \div 10^{10^{3}} = 10^{1000}$
+>
+> $1 \div 0 = \infty$
+>
+> Can $1 \div 0$ equal $\infty$, or does it have to be intermediate?
+:::
+
+Suppose that $\frac{1}{0} = \infty$. Then $0 \cdot \infty = 1$.  Also
+$$2 = 1 + 1 = 0 \cdot \infty + 0 \cdot \infty = (0 + 0) \cdot \infty = 0 \cdot \infty = 1$$
+That seems bad.  Also
+$$1 = 2-1 = 1 - 1 = 0$$
+That seems worse.  Trying to assign a value to $\frac{1}{0}$ will not be consistent with the other axioms of arithmetic.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4145648/can-0-divided-by-0-equal-infinity/4145657#4145657) on Mathematics Stack Exchange, 2021-05-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

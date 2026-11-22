@@ -1,0 +1,57 @@
+---
+title: how to tell which equation is the upper and lower bound in a double integral
+date: '2017-10-30'
+description: The process is that the function in the lower limit needs to be less than the function in the upper limit over the interval of integration. In your case, $y^2…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2496255
+se-link: https://math.stackexchange.com/questions/2496242/how-to-tell-which-equation-is-the-upper-and-lower-bound-in-a-double-integral/2496255#2496255
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to tell which equation is the upper and lower bound in a double integral](https://math.stackexchange.com/questions/2496242/how-to-tell-which-equation-is-the-upper-and-lower-bound-in-a-double-integral), asked by [2316354654](https://math.stackexchange.com/users/115082/2316354654) on Mathematics Stack Exchange (2017-10-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+> I tried setting this up as a type 2 integral and used $x = y^2$ and $x = y+2$ for my $dx$ boundaries, and for my$dy$ boundaries I solved for y and used $2$, -1. but I couldn't figure out how to choose which equation for my upper boundary and lower boundary, I tried it with $y^2$ as the upper and $y+2$ as the lower and the answer ended up being negative instead of positive, so i realized it was the other way around. But why? what is the process for figuring out which is the upper boundary? do you have to just guess and see which one is positive?
+>
+> Also, I'm not sure how to split up the boundaries and figure out which is upper and lower for the type 1 equation either. 
+>
+> I read my book and it doesn't seem to explain very clear this part of the process. I can't find any explanation for this particular part of the problem anywhere else.
+>
+>   [q-1]: VpLgo.png
+:::
+
+The process is that the function in the lower limit needs to be less than the function in the upper limit over the interval of integration.  In your case, $y^2 \leq y+2$ for all $y$ in $[-1,2]$.
+
+As for how to determine *that* inequality, you could do it by algebra, but the quickest way is probably with a graph.  You know that $x=y^2$ is a parabola with its vertex at the origin, and which opens to the right.  The line $y=x-2$ passes through $(0,-2)$ and $(2,0)$.
+
+[![enter image description here][1]][1]
+
+A few more comments:
+
+* You may think that you can just try it with the functions in one order, and if you get a negative number, just drop the minus sign and make it positive.  This may work, but only if the graphs don't cross each other in the interval over which you're integrating.  
+
+* In multivariable calculus, you really need graphing skills.  Trying to do it all by just pattern matching and algebra doesn't help you gain any intuition.  
+
+* You asked which “equation” should be in the lower and upper limits of integration, but you mean which *function*.  For instance $y=x+2$ is an equation, but when you set up the integral it had to be manipulated into $x=y-2$, because you needed a function of $y$.   
+
+
+  [1]: kHfz0.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2496242/how-to-tell-which-equation-is-the-upper-and-lower-bound-in-a-double-integral/2496255#2496255) on Mathematics Stack Exchange, 2017-10-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

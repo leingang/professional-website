@@ -1,0 +1,43 @@
+---
+title: Typography in Calculus Textbooks (or math textbooks in general)
+date: '2016-09-30'
+description: I think it's more of a matter of house style than a general convention. I'm an author, and my editors make notes that are inconsistent with those in other…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1947414
+se-link: https://math.stackexchange.com/questions/1947380/typography-in-calculus-textbooks-or-math-textbooks-in-general/1947414#1947414
+se-score: 2
+se-accepted: false
+se-tags:
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Typography in Calculus Textbooks (or math textbooks in general)](https://math.stackexchange.com/questions/1947380/typography-in-calculus-textbooks-or-math-textbooks-in-general), asked by [B flat](https://math.stackexchange.com/users/306540/b-flat) on Mathematics Stack Exchange (2016-09-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My question is about typography in Calculus textbooks. I've scanned through numerous Calculus texts.  I find that sometimes authors vary their use of "traditional" form in textbooks.  For example... (I apologize for being verbose but needed to illustrate the question I have)...
+>
+> They may write the math notation in the middle of a paragraph like the example in the next sentence. It may look something like this $dy/dx$. Notice that the notation is written from left to right (which is bad thing to me), and also notice that there is no awkward line spacing in this paragraph (which is good thing to me).  Everything looks clean.
+>
+> But then occasionally I'll see notation written the middle of a paragraph like the example in the next sentence.   Something like this, $\frac{dy}{dx}$.  Note that the notation is written in "traditional" notation (which is a good thing to me). Also notice that this creates an awkward line spacing in this paragraph between the lines 1,2 and 3(which is a bad thing to me).  You can see it in this paragraph.  It doesn't look good to me at all. 
+>
+> My question to you... Is there a standard practice on when to use each type of notation?  In general, are there rules on typography for math texts somewhere or a guide that you know of?  How do textbook authors know what to do to make there textbook look as professional as possible? 
+>
+> I'm attempting to create professionally written lectures and want them to look as textbook like as possible.
+:::
+
+I think it's more of a matter of house style than a general convention.  I'm an author, and my editors make notes that are inconsistent with those in other books.
+
+If you really want to be careful about style like, use plenty of semantic macros.  For instance, you can write a `\D` macro that will set `\D{y}{x}` as $\frac{dy}{dx}$ in display mode or $dy/dx$ inline.  Then if you want to change the way it looks, you change one line of code instead of hundreds or thousands.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1947380/typography-in-calculus-textbooks-or-math-textbooks-in-general/1947414#1947414) on Mathematics Stack Exchange, 2016-09-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

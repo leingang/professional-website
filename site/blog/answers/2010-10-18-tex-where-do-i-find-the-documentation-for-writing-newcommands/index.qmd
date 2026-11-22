@@ -1,0 +1,41 @@
+---
+title: Where do I find the documentation for writing \newcommand's ?
+date: '2010-10-18'
+description: Try also the not-so-short introduction to latex. Section 6.1 talks about \newcommand et al.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4252
+se-link: https://tex.stackexchange.com/questions/4246/where-do-i-find-the-documentation-for-writing-newcommands/4252#4252
+se-score: 7
+se-accepted: true
+se-tags:
+- macros
+- documentation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Where do I find the documentation for writing \newcommand's ?](https://tex.stackexchange.com/questions/4246/where-do-i-find-the-documentation-for-writing-newcommands), asked by [Kit](https://tex.stackexchange.com/users/791/kit) on TeX Stack Exchange (2010-10-18; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> At what level of the TeX system heirarchy is `\newcommand`? Where do I find documentation for these kinds of macros (e.g. `\renewcommand`, `\def`, `\parskip`, etc.)?
+>
+> My objective is that I will be able to take an existing package or document class and customize it to my needs.
+>
+> As much as possible, kindly point me to a free online resource. Bookstores here in the Philippines do not have LaTeX in their vocabulary.
+:::
+
+Try also the [not-so-short introduction to latex][1].  Section 6.1 talks about `\newcommand` et al.
+
+
+  [1]: http://tobi.oetiker.ch/lshort/lshort.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4246/where-do-i-find-the-documentation-for-writing-newcommands/4252#4252) on TeX Stack Exchange, 2010-10-18. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

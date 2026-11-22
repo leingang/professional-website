@@ -1,0 +1,90 @@
+---
+title: Determining if a given graph is a Word Graph
+date: '2023-07-27'
+description: I don't think word graph is a conventional notion outside of this text. I didn't find anything from a cursory search. Having scanned the text, I notice that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4743543
+se-link: https://math.stackexchange.com/questions/4743391/determining-if-a-given-graph-is-a-word-graph/4743543#4743543
+se-score: 3
+se-accepted: true
+se-tags:
+- graph-theory
+- word-problem
+- random-graphs
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining if a given graph is a Word Graph](https://math.stackexchange.com/questions/4743391/determining-if-a-given-graph-is-a-word-graph), asked by [James](https://math.stackexchange.com/users/1098401/james) on Mathematics Stack Exchange (2023-07-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I started to read the book ["A First Course in Graph Theory"][q-1] to refresh some concepts about Graphs.
+>
+> In the first chapter, the author gives a definition of a word graph (something I didn't know about before). I'll copy his definition below.
+>
+> > In this case, a graph G is called a word graph if G is the word graph of some 
+> set S of 3-letter words. For example, the (unlabeled) graph G of Figure 1.8(a) is 
+> a word graph because it is the word graph of the set S = {BAT, BIT, BUT, BAD, 
+> BAR, CAT, HAT}, as shown in Figure 1.8(b). (This idea is related to the concept 
+> of “isomorphic graphs,” which will be discussed in Chapter 3.) 
+>
+> [![Mentioned figure][q-2]][q-2]
+>
+> The definition is clear, but then in one of the 1st chapter exercises (1.8b), the task is: "For another graph H (of your choice), determine whether H is a word graph of some set S."
+>
+> Altough I can think of a manual way to solve the exercise (creating a graph H that I know is a word graph), I'm wondering if there is a method to give a random graph H and if it is possible to determine if H is or not a word graph (of a fixed word size).
+> This is not mentioned in the 1st chapter, and I didn't find any special method googling around.
+>
+>
+>   [q-1]: https://books.google.fr/books/about/A_First_Course_in_Graph_Theory.html?id=ocIr0RHyI8oC&redir_esc=y
+>   [q-2]: XBhWH.png
+:::
+
+## Word graphs are a peculiar concept
+
+I don't think *word graph* is a conventional notion outside of this text. I didn't find anything from a cursory search. Having scanned the text, I notice that there are a couple of inline definitions of word graphs.
+
+In Example 1.4, a finite set $S$ of *three*-letter words is supposed. The *word graph of $S$* is the graph with vertex set $S$, such that words $W_1$ and $W_2$ are adjacent if one of these is true:
+
+  1. Transposing two letters of $W_1$ results in $W_2$
+  2. Replacing one letter of $W_1$ results in $W_2$
+
+A graph $G$ is a *word graph* if it there exists a finite set of words $S$ such that $G$ is (isomorphic to) the word graph of $S$.  The labeled graph in Figure 1.8(b) is the word graph of a specific set $S$. The unlabeled graph in Figure 1.8(a) is isomorphic to it, so it is “a” word graph.
+
+In Exercise 1.8, the set $S$ may now contain *four*-letter words as well as three-letter words. The adjacency relation is now that $W_1$ and $W_2$ are adjacent if one of these is true:
+
+  1. Replacing one letter of $W_1$ results in $W_2$
+  2. Adding (or deleting) one letter to (or from) $W_1$ results in $W_2$.
+
+You should try a few word sets and construct their word graphs. If you're familiar with python and jupyter notebooks, you can probably cook up some code to draw the word graph of a set of words (the [networkx](https://networkx.org/) library might be a good place to start).
+
+Part (a) asks you to find word sets whose word graphs are isomorphic to the given graphs. 
+
+## Generating word graphs
+
+Part (b), the one you asked about, says to present a graph and decide if it's a word graph or not. There is one way to answer that question easily: pick a word set, construct its word graph, and assert that it is a word graph by design.
+
+## Identifying word graphs
+
+The hard way to answer this question is to come up with a graph and prove that that it is not isomorphic to the word graph on any set of words. 
+
+I don't know how to do that! But if I had to, I would start by trying to identify patterns that word graphs must have. For instance, can the graph have more than one component? Can it be complete? If you can find such a property that must hold in all word graphs, then you only need to find a graph that doesn't have the property to know it's not a word graph.
+
+All of the graphs in Exercise 1.8(a) have four vertices, and given the way the problem is worded, I will assume that they are word graphs. So maybe try five-vertex graphs, such as $K_5$.
+
+## Technicalities
+
+Are these all supposed to be standard words in a natural language (English, in this case)? Or is a “word” just a finite list of “letters” chosen from some “alphabet” (with replacement). Because maybe there is a maximum number of words of a certain length, which means the number of vertices of a word graph is bounded above.
+
+Beware: A lot of graph theory problems are NP-complete. So simple questions become hard quickly!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4743391/determining-if-a-given-graph-is-a-word-graph/4743543#4743543) on Mathematics Stack Exchange, 2023-07-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

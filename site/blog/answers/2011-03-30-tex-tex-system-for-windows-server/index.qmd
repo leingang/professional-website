@@ -1,0 +1,72 @@
+---
+title: TeX system for Windows server
+date: '2011-03-30'
+description: 'According to the MiKTeX 2.9 setup page:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14534
+se-link: https://tex.stackexchange.com/questions/14516/tex-system-for-windows-server/14534#14534
+se-score: 1
+se-accepted: false
+se-tags:
+- windows
+- distributions
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TeX system for Windows server](https://tex.stackexchange.com/questions/14516/tex-system-for-windows-server), asked by Rasika on TeX Stack Exchange (2011-03-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to find a TeX system for the following Windows version:
+>
+> > Windows Server Datacenter  
+>     Copyright 2007 Microsoft Corperation  
+>     Service Pack 2
+>
+> I tried with MiKTeX but seems it is not compatible with this version.
+> Any suggestion would be great.
+>
+> * * *
+> **Edit:**
+>
+> The server is Amazon aws cloud server. And that's the operation system details I can find on the server. 
+> (*Windows Server Datacenter
+> Copyright 2007 Microsoft Corperation
+> Service Pack 2*)
+>
+> And this is the error it  throws when I try to install MiKTeX
+>
+> ```latex
+> The operation could not be completed for the following reason:
+> Windows API error 2: The system cannot find the file specified.
+> Details: C:\Programe Files\MiKTeX2.9\tpm\pakages\a%comb.tpm
+> ```
+:::
+
+According to the [MiKTeX 2.9 setup page][1]:
+
+> The following Windows platforms are
+> supported:
+> 
+>  -  Windows 7
+>  -  Windows Vista with Service Pack 2 (all editions except Starter Edition)
+>  -  Windows XP with Service Pack 3 (all editions except Starter Edition)
+>  -  Windows Server 2008 R2
+>  -  Windows Server 2008 with Service Pack 2
+>  -  Windows Server 2003 R2
+>  -  Windows Server 2003 with Service Pack 2
+
+I don't know what "Windows Server Datacenter, copyright 2007" means, but I would suspect if MiKTeX installs in all of these it should install in yours.  Have you tried it?
+
+  [1]: http://miktex.org/2.9/setup
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14516/tex-system-for-windows-server/14534#14534) on TeX Stack Exchange, 2011-03-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

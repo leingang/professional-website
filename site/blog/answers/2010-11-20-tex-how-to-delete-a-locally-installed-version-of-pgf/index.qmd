@@ -1,0 +1,41 @@
+---
+title: How to delete a locally installed version of pgf?
+date: '2010-11-20'
+description: This looks for all the subdirectories named pgf in the user's texmf directory, then deletes them.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5721
+se-link: https://tex.stackexchange.com/questions/5705/how-to-delete-a-locally-installed-version-of-pgf/5721#5721
+se-score: 2
+se-accepted: false
+se-tags:
+- installing
+- tikz-pgf
+- texmf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to delete a locally installed version of pgf?](https://tex.stackexchange.com/questions/5705/how-to-delete-a-locally-installed-version-of-pgf), asked by [Jan Hlavacek](https://tex.stackexchange.com/users/396/jan-hlavacek) on TeX Stack Exchange (2010-11-20; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a locally installed `pgf` in my local texmf tree.  Now my tex distribution finally caught up and the version of pfg in the package manager is newer than my locally installed version.  How can I delete the local version?
+:::
+
+This looks for all the subdirectories named `pgf` in the user's texmf directory, then deletes them.
+
+```latex
+find ${TEXMFHOME} -type d -name pgf | xargs rm -rf  
+```
+
+Use `rm -rf` with caution, of course!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5705/how-to-delete-a-locally-installed-version-of-pgf/5721#5721) on TeX Stack Exchange, 2010-11-20. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

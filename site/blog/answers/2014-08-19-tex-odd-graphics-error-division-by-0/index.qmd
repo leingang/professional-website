@@ -1,0 +1,63 @@
+---
+title: Odd graphics error -- "division by 0"
+date: '2014-08-19'
+description: The unable to load picture or PDF file error is a clue that something's wrong, not on the TeX side but on the filesystem side. Possible causes include a…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 197041
+se-link: https://tex.stackexchange.com/questions/196036/odd-graphics-error-division-by-0/197041#197041
+se-score: 16
+se-accepted: true
+se-tags:
+- graphics
+- errors
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Odd graphics error -- "division by 0"](https://tex.stackexchange.com/questions/196036/odd-graphics-error-division-by-0), asked by [crmdgn](https://tex.stackexchange.com/users/36448/crmdgn) on TeX Stack Exchange (2014-08-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When I compile this code in `xelatex`...
+>
+> ```latex
+> \documentclass[letterpaper]{texMemo}
+> \usepackage{graphicx}
+> \usepackage{lipsum}
+>
+> \memoto{You}
+> \memofrom{Me}
+> \memodate{\today}
+> \memosubject{Some stuff}
+> \logo{\includegraphics[width=0.3\textwidth]{/Dropbox/foo/bar/baz/my_cool_logo_file.png}}
+>
+> \begin{document}
+>
+> 	\maketitle
+>
+> 	\lipsum[1]
+>
+> \end{document}
+> ```
+>
+> I get errors about `unable to load picture or PDF file` and `package graphics Error: division by 0`. I did find [this page](https://texfaq.org/FAQ-divzero), which looked promising, but it didn't solve the problem. I also had a look at the `grffile` package, but it didn't seem to offer anything I could use. How should I fix this problem?
+:::
+
+The `unable to load picture or PDF file` error is a clue that something's wrong, not on the TeX side but on the filesystem side.  Possible causes include a corrupted image file, a permissions-protected image file, or a nonexistent image file.  The `division by 0` error is secondary to the first: TeX is trying to draw a box without having dimensions to form its corners.
+
+If you can open and view the image with a previewer then it's likely the problem is not with the file itself (or its permissions, since TeX is running as you).  So I guessed the nonexistent file, i.e., bad file name.  Knowing that Dropbox usually doesn't mount at the top level of the file system was another clue that the path was wrong.  
+
+cfr's check that this is the problem is worth repeating.
+> copy the image file to the working directory, delete the leading parts of the path from the filename in the source, and try compiling.
+
+It's another example of how simplifying the non-compiling document down to the barest bones can isolate the error.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/196036/odd-graphics-error-division-by-0/197041#197041) on TeX Stack Exchange, 2014-08-19, with [edits](https://tex.stackexchange.com/posts/197041/revisions) by [crmdgn](https://tex.stackexchange.com/users/36448/crmdgn). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

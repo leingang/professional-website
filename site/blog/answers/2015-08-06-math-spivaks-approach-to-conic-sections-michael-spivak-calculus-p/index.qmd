@@ -1,0 +1,43 @@
+---
+title: Spivak's approach to conic sections (Michael Spivak - Calculus - p.81.)
+date: '2015-08-06'
+description: The plane $P$ intersects the horizontal plane in a line. In particular, a line within the horizontal plane. Rotate “everything” (that is, space) around the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1386773
+se-link: https://math.stackexchange.com/questions/1386761/spivaks-approach-to-conic-sections-michael-spivak-calculus-p-81/1386773#1386773
+se-score: 2
+se-accepted: false
+se-tags:
+- conic-sections
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Spivak's approach to conic sections (Michael Spivak - Calculus - p.81.)](https://math.stackexchange.com/questions/1386761/spivaks-approach-to-conic-sections-michael-spivak-calculus-p-81), asked by [lcaop828](https://math.stackexchange.com/users/259299/lcaop828) on Mathematics Stack Exchange (2015-08-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Conic Sections
+>
+> I don't understand when Spivak says (see the picture) 
+>
+> [![enter image description here][q-1]][q-1]
+>
+> > we can make things a lot simpler for ourselves if we rotate everything so that this intersection line points straight out from the plane of the paper, while the first axis is in the usual position that we are familiar with. The plane $P$ is thus viewed “straight on,” ...
+>
+> Can someone please clarify it? How does he exactly rotate things to get that view?
+>
+>   [q-1]: zYSzo.png
+:::
+
+The plane $P$ intersects the horizontal plane in a line.  In particular, a line within the horizontal plane.  Rotate “everything” (that is, space) around the vertical ($z$-) axis so that line rotates to one perpendicular to the $x$-axis.  So if you look at the $xz$-plane that line is coming right at you.  The intersection of $P$ with the $xz$-plane is the line $L$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1386761/spivaks-approach-to-conic-sections-michael-spivak-calculus-p-81/1386773#1386773) on Mathematics Stack Exchange, 2015-08-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

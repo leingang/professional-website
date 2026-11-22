@@ -1,0 +1,51 @@
+---
+title: Double Integral bounds
+date: '2017-02-12'
+description: I think your Jacobian is not right. I get $$\frac{\partial(u,v)}{\partial(x,y)} = \begin{vmatrix} 2x & y \\ -2y & x \end{vmatrix} = 2(x^2 + y^2)$$ In terms of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2141373
+se-link: https://math.stackexchange.com/questions/2141345/double-integral-bounds/2141373#2141373
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Double Integral bounds](https://math.stackexchange.com/questions/2141345/double-integral-bounds), asked by [User101](https://math.stackexchange.com/users/415720/user101) on Mathematics Stack Exchange (2017-02-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am attempting a question that asks me to evaluate
+> $$\iint_D (x^2+y^2) dx dy$$
+> where $D$ is the finite region in the positive quadrant bounded by the curves 
+> $$x^2 - y^2 = \pm 1, \quad xy = \frac{1}{2}.$$
+>
+> So, I thought of using the transformation $x^2 - y^2 = u$ and $xy=v$, and computed the Jacobian and all that and get to the integral
+>
+> $$\iint_D \frac{1}{v} du dv.$$
+>
+> But I can't get the bounds to work. I thought $u$ would be between $-1$ and $1$, and $v$ would be between $0$ and $\frac{1}{2}$. However then the integral is not finite. Thoughts?
+:::
+
+I think your Jacobian is not right.  I get
+$$\frac{\partial(u,v)}{\partial(x,y)}
+    = \begin{vmatrix} 2x & y \\ -2y & x \end{vmatrix}
+    = 2(x^2 + y^2)$$
+In terms of the area elements,
+$$du\,dv = 2(x^2+y^2)\,dx\,dy$$
+So if $R$ is the rectangle $[-1,1] \times [0,\frac{1}{2}]$ in the $uv$-plane, then
+$$\iint_D (x^2+y^2)\,dx\,dy = \frac{1}{2}\iint_R \,du \,dv = \frac{1}{2} \cdot \operatorname{Area}(R) = \frac{1}{2}.$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2141345/double-integral-bounds/2141373#2141373) on Mathematics Stack Exchange, 2017-02-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

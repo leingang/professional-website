@@ -1,0 +1,77 @@
+---
+title: Show that exists $A\in SO(3)$ and $b\in \mathbb{R}^3$ such that $\tilde{\gamma} = A\gamma + b$
+date: '2017-10-12'
+description: Assume each curve is parametrized according to arc length $s$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2469511
+se-link: https://math.stackexchange.com/questions/2469393/show-that-exists-a-in-so3-and-b-in-mathbbr3-such-that-tilde-gamma/2469511#2469511
+se-score: 0
+se-accepted: true
+se-tags:
+- geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that exists $A\in SO(3)$ and $b\in \mathbb{R}^3$ such that $\tilde{\gamma} = A\gamma + b$](https://math.stackexchange.com/questions/2469393/show-that-exists-a-in-so3-and-b-in-mathbbr3-such-that-tilde-gamma), asked by [Claire](https://math.stackexchange.com/users/287247/claire) on Mathematics Stack Exchange (2017-10-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to show that 
+> if $\tilde{\gamma} : I \rightarrow \mathbb{R}^3$ and $\gamma : I \rightarrow \mathbb{R}^3$ have same curvature $\kappa$ and torsion $\tau$,
+>
+> there exists $A\in SO(3)$ and $b\in \mathbb{R}^3$ such that $\tilde{\gamma} = A\gamma + b$.
+>
+>
+>
+> I'm really confused about this.
+>
+> Please note that it is not to prove 
+>
+> if $\tilde{\gamma} = A\gamma + b$,  then they have same curvature $\kappa$ and torsion $\tau$.
+:::
+
+Assume each curve is parametrized according to arc length $s$.  
+
+For each $s$, the Frenet-Serret frame $\mathbf{T}(s)$, $\mathbf{N}(s)$, $\mathbf{B}(s)$ (unit tangent, normal, and binormal vectors) are an orthonormal set.  This means that the matrix $F(s) = \begin{bmatrix} \mathbf{T}(s) & \mathbf{N}(s) & \mathbf{B}(s) \end{bmatrix}$ is in $SO(3)$ for each $s$.  Letting $\tilde{\mathbf{T}}(s)$, $\tilde{\mathbf{N}}(s)$, and $\tilde{\mathbf{B}}(s)$ be the analogous frame for $\tilde\gamma$, and $\tilde F(s)$ the associated matrix, we define $A(s) = \tilde F(s) F(s)^{-1}$.  This is also in $SO(3)$ for each $s$.
+
+The inverse of a matrix in $SO(3)$ is equal to its transpose.  So we can compute $A(s)$ explicitly in terms of the vectors:
+$$\begin{align*}
+    A(s) &= \begin{bmatrix} \tilde{\mathbf{T}}(s) & \tilde{\mathbf{N}}(s) & \tilde{\mathbf{B}}(s) \end{bmatrix}\begin{bmatrix} \mathbf{T}(s) & \mathbf{N}(s) & \mathbf{B}(s) \end{bmatrix}^{-1} \\
+         &= \begin{bmatrix} \tilde{\mathbf{T}}(s) & \tilde{\mathbf{N}}(s) & \tilde{\mathbf{B}}(s) \end{bmatrix}\begin{bmatrix} \mathbf{T}(s) & \mathbf{N}(s) & \mathbf{B}(s) \end{bmatrix}^{T} \\
+         &= \begin{bmatrix} \tilde{\mathbf{T}}(s) & \tilde{\mathbf{N}}(s) & \tilde{\mathbf{B}}(s) \end{bmatrix}\begin{bmatrix} \mathbf{T}(s)^T \\ \mathbf{N}(s)^T \\ \mathbf{B}(s)^T \end{bmatrix} \\
+         &= \tilde{\mathbf{T}}(s)\mathbf{T}(s)^T + \tilde{\mathbf{N}}(s)\mathbf{N}(s)^T + \tilde{\mathbf{B}}(s)\mathbf{B}(s)^T
+\end{align*}$$ 
+Here we are taking the outer product of each tilde vector with the other non-tilde vector, rather the dot (or inner) product.  So $\tilde{\mathbf{T}}(s)\mathbf{T}(s)^T$ is a rank-one $3\times 3$ matrix for each $s$, to which we add two more rank one matrices.
+
+We claim that $A(s)$ is a constant function.  This comes from the Frenet-Serret formulas:
+$$\begin{align*}
+    \mathbf{T}'(s) &= \kappa \mathbf{N}(s) \\
+    \mathbf{N}'(s) &= -\kappa\mathbf{T}(s) +\tau \mathbf{B}(s) \\
+    \mathbf{B}'(s) &= -\tau \mathbf{N}(s)
+\end{align*}$$
+By assumption, the same is true for the tilde frame.  So by the product rule:
+$$\begin{align*}
+    A' &= \tilde{\mathbf{T}}'\mathbf{T}^T + \tilde{\mathbf{T}}(\mathbf{T}')^T
+         +\tilde{\mathbf{N}}'\mathbf{N}^T + \tilde{\mathbf{N}}(\mathbf{N}')^T
+         +\tilde{\mathbf{B}}'\mathbf{B}^T + \tilde{\mathbf{B}}(\mathbf{B}')^T \\
+       &= (\kappa \tilde{\mathbf{N}})\mathbf{T}^T 
+         + \tilde{\mathbf{T}}(\kappa\mathbf{N})^T
+         +(-\kappa\tilde{\mathbf{T}} + \tau \tilde{\mathbf{B}})\mathbf{N}^T
+         +\tilde{\mathbf{N}}(-\kappa{\mathbf{T}} + \tau {\mathbf{B}})^T
+         +(-\tau\tilde{\mathbf{N}})\mathbf{B}^T
+         +\tilde{\mathbf{B}}(-\tau{\mathbf{N}})^T
+\end{align*}$$
+Distribute the transpose and collect like terms; you get zero.
+
+We're not quite there yet, but that is your matrix $A$.  I'll leave it to you to figure out how to find the $b$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2469393/show-that-exists-a-in-so3-and-b-in-mathbbr3-such-that-tilde-gamma/2469511#2469511) on Mathematics Stack Exchange, 2017-10-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

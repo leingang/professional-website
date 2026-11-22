@@ -1,0 +1,83 @@
+---
+title: How did they make this mathematical jump in steps, in finding a determinant of a simple 3x3 matrix?
+date: '2019-02-19'
+description: You shouldn't assume that whoever wrote those solutions solved the problem in a timed situation, and that their solution is the quickest one.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3118296
+se-link: https://math.stackexchange.com/questions/3118273/how-did-they-make-this-mathematical-jump-in-steps-in-finding-a-determinant-of-a/3118296#3118296
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- determinant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How did they make this mathematical jump in steps, in finding a determinant of a simple 3x3 matrix?](https://math.stackexchange.com/questions/3118273/how-did-they-make-this-mathematical-jump-in-steps-in-finding-a-determinant-of-a), asked by [iammax](https://math.stackexchange.com/users/360394/iammax) on Mathematics Stack Exchange (2019-02-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Question I am looking at: Of the numbers 2, 3, and 5, which are eigenvalues of:
+>
+> ```
+> [3 5 3]
+> [1 7 3]
+> [1 2 8]
+> ```
+>
+> I know that we want to solve:
+>
+> ```
+> |3-x 5 3|
+> |1 7-x 3|
+> |1 2 8-x| = 0
+> ```
+>
+> Which is fairly simple, I understand how to do it. I'm not really asking for help solving the question (it's simple enough), but rather understanding the seemingly magical shortcut the solution pdf has. Located here, question 31: http://rambotutoring.com/GR1268-solutions.pdf
+>
+> In the solutions, they made what appears to me to be a large jump:
+>
+> ```
+> |3-x 5 3|
+> |1 7-x 3|
+> |1 2 8-x| = -(x-2)(x-5)(x-11)
+> ```
+>
+> Implying that 2 and 5 are eigenvalues and 3 is not (since 11 is the third one)
+>
+> When I solved it in my notebook I manually multiplied out the diagonals brute force style, whcih I'm sure is not optimal. But here, they just jump straight to the basically solved form. I do not see how they made that jump, but it does check out if I check it in mathematica. Is there a shortcut for how they got there, or did they just do it out long-style and not write out the steps?
+:::
+
+You shouldn't assume that whoever wrote those solutions solved the problem in a timed situation, and that their solution is the quickest one. 
+
+You are given an equation:
+$$\begin{vmatrix} 3-x & 5 & 3 \\ 1 & 7-x & 3 \\ 1 & 2 & 8-x \end{vmatrix}=0$$
+ and three possible solutions.  Usually the quickest way is not to find *all* the solutions from scratch and check which of them match with the suggested ones.  Why not just plug in those values and see if the equation is satisfied?
+
+* If $x=2$, the matrix and its determinant become
+$$\begin{vmatrix} 1 & 5 & 3 \\ 1 & 5 & 3 \\ 1 & 2 & 6 \end{vmatrix}$$
+This matrix has two repeated rows so you know its determinant is zero.
+
+* If $x=3$, you get
+$$\begin{vmatrix} 0 & 5 & 3 \\ 1 & 4 & 3 \\ 1 & 2 & 5 \end{vmatrix}
+    =
+    \begin{vmatrix} 0 & 5 & 3 \\ 1 & 4 & 3 \\ 0 & -2 & 2 \end{vmatrix}
+    = -16$$
+[we subtracted the second row from the third, then expanded by cofactors along the first column.]
+
+* If $x=5$, then we get
+$$\begin{vmatrix} -2 & 5 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \end{vmatrix}$$
+Again, two repeated rows, so the determinant is zero.
+
+Therefore $2$ and $5$ are eigenvalues and $3$ is not.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3118273/how-did-they-make-this-mathematical-jump-in-steps-in-finding-a-determinant-of-a/3118296#3118296) on Mathematics Stack Exchange, 2019-02-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

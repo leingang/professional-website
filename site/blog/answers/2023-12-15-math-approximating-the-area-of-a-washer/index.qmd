@@ -1,0 +1,46 @@
+---
+title: Approximating the area of a washer
+date: '2023-12-15'
+description: The exact value of the area is $$\pi ri^2 - \pi r{i-1}^2 = \pi (ri^2 - r{i-1}^2) = \pi (ri + r{i+1}) (ri - r{i-1}) = 2\pi \left(\frac{ri +…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4828291
+se-link: https://math.stackexchange.com/questions/4828285/approximating-the-area-of-a-washer/4828291#4828291
+se-score: 2
+se-accepted: true
+se-tags:
+- approximation
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Approximating the area of a washer](https://math.stackexchange.com/questions/4828285/approximating-the-area-of-a-washer), asked by [fadel bedewi](https://math.stackexchange.com/users/1221148/fadel-bedewi) on Mathematics Stack Exchange (2023-12-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In my textbook the area if a washer is appropriated by a washer is $2\pi r_i\Delta r$ while what I know the area if a washer to be is $\pi(r_i + r_{i-1})\Delta r.$ 
+>
+> Here's the segment of my textbook that I'm confused about:
+>
+> [![enter image description here][q-1]][q-1]
+>
+> >In Example 7 in Section 3.7 we discussed the law of laminar flow:$$v(r)=\dfrac P{4\eta l}(R^2-r^2)$$which gives the velocity $v$ of blood that flows along a blood vessel with radius $R$ and length $l$ at a distance $r$ from the central axis, where $P$ is the pressure difference between the ends of the vessel and $\eta$ is the viscosity of the blood. Now, in order to compute the rate of blood flow, or *flux* (volume per unit time), we consider smaller, equally spaced radii $r_1,r_2,...$ The approximate area of the ring (or washer) with inner radius $r_{i-1}$ and outer radius $r_i$ is$$2\pi r_i\Delta r\quad\text{where}\quad\Delta r=r_i-r_{i-1}$$(See Figure 4.) If $\Delta r$ is small, then the velocity is almost constant throughout this ring and can be approximated by $v(r)$. Thus the volume of blood per unit time that flows across the ring is approximately$$(2\pi r_i\Delta r)v(r_i)=2\pi r_iv(r_i)\Delta r$$
+>
+>   [q-1]: px3QY.jpg
+:::
+
+The exact value of the area is
+$$\pi r_i^2 - \pi r_{i-1}^2 = \pi (r_i^2 - r_{i-1}^2)
+    = \pi (r_i + r_{i+1}) (r_i - r_{i-1})
+    = 2\pi \left(\frac{r_i + r_{i+1}}{2}\right)\Delta r$$
+As $\Delta r \to 0$, the difference between the average radius $\frac{r_i + r_{i+1}}{2}$ and $r_i$ tends to zero as well. So we can make this substitution as an approximation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4828285/approximating-the-area-of-a-washer/4828291#4828291) on Mathematics Stack Exchange, 2023-12-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

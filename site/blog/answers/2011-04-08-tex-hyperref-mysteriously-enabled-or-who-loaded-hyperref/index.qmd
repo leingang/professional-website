@@ -1,0 +1,46 @@
+---
+title: Hyperref mysteriously enabled or who loaded hyperref
+date: '2011-04-08'
+description: Look in the log file and you'll notice that included files are printed within parentheses. And if a file that you include includes another file, that file will…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15301
+se-link: https://tex.stackexchange.com/questions/15291/hyperref-mysteriously-enabled-or-who-loaded-hyperref/15301#15301
+se-score: 8
+se-accepted: true
+se-tags:
+- packages
+- hyperref
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Hyperref mysteriously enabled or who loaded hyperref](https://tex.stackexchange.com/questions/15291/hyperref-mysteriously-enabled-or-who-loaded-hyperref), asked by [Dror](https://tex.stackexchange.com/users/412/dror) on TeX Stack Exchange (2011-04-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I can't figure out where do I load the `hyperref` package. I know it sounds odd, but I scanned all my preamble and couldn't find a single `\usepackage{hyperref}`. I feel really stupid, but I don't know where to look for it. Is it possible that some other package I load loaded `hyperref` on it own? Any ideas are welcomed. I'm really puzzled.
+:::
+
+Look in the log file and you'll notice that included files are printed within parentheses. And if a file that you include includes another file, that file will appear within parentheses within the first parentheses.  So each parenthetical group delimits a file.
+
+```latex
+(./a.tex
+ % tex is now processing a.tex ...
+ (./b.tex % a.tex requests b.tex be read
+  % tex is now reading b.tex
+  ) % tex is now done with b.tex and is reading
+  % the rest of a.tex
+ ) % done with a.tex
+```
+
+So search the log file for `hyperref.sty`.  Find the parenthetical group that includes it, and the file at the beginning of that group is your culprit.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15291/hyperref-mysteriously-enabled-or-who-loaded-hyperref/15301#15301) on TeX Stack Exchange, 2011-04-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

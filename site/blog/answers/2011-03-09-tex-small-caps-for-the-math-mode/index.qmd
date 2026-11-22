@@ -1,0 +1,44 @@
+---
+title: Small caps for the math mode
+date: '2011-03-09'
+description: To switch fonts in math mode you often use a command like \mathit (for italic) or \mathrm (for roman). But there's no \mathsc command. So just use \textsc.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13041
+se-link: https://tex.stackexchange.com/questions/13040/small-caps-for-the-math-mode/13041#13041
+se-score: 30
+se-accepted: true
+se-tags:
+- math-mode
+- small-caps
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Small caps for the math mode](https://tex.stackexchange.com/questions/13040/small-caps-for-the-math-mode), asked by [Oldrich Svec](https://tex.stackexchange.com/users/2287/oldrich-svec) on TeX Stack Exchange (2011-03-09; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How do I make "E" in this equation a small cap?
+>
+> ```latex
+> $x^E$
+> ```
+:::
+
+To switch fonts in math mode you often use a command like `\mathit` (for italic) or `\mathrm` (for roman).  But there's no `\mathsc` command.  So just use `\textsc`.
+
+```latex
+$x^{\textsc{e}}$
+```
+
+Note that `\textsc{E}` will give a capital **E** that is roughly the same height as the normal shape capital **E**.  In general, if you want a small capital **E**, use `\textsc{e}`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13040/small-caps-for-the-math-mode/13041#13041) on TeX Stack Exchange, 2011-03-09. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,43 @@
+---
+title: How do I calculate a double integral if the limits of one integral depend on the other variable?
+date: '2023-08-08'
+description: The first integral, the one you easily determined, is $$\int0^{2\pi} \int\beta^\alpha a^2 \sin\theta\,d\theta\,d\phi = 2\pi a^2 \left(\cos\alpha -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4749772
+se-link: https://math.stackexchange.com/questions/4749747/how-do-i-calculate-a-double-integral-if-the-limits-of-one-integral-depend-on-the/4749772#4749772
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I calculate a double integral if the limits of one integral depend on the other variable?](https://math.stackexchange.com/questions/4749747/how-do-i-calculate-a-double-integral-if-the-limits-of-one-integral-depend-on-the), asked by [agaminon](https://math.stackexchange.com/users/823167/agaminon) on Mathematics Stack Exchange (2023-08-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I came up with this question thinking about calculating the surface area of some strip around a sphere of radius $a$. If the strip has constant width (determined by the angles $\alpha$ and $\beta$) then one can easily determine that the surface area of said sphere is:
+>
+> $$S=2\pi a^2 (\cos\alpha - \cos \beta)$$
+>
+> Now, what if the width of the strip varies as you move around the azimuthal coordinate $\varphi$? That is, $\alpha = \alpha (\varphi)$ (let's keep $\beta$ constant for simplicity). Now one limit of the colatitude variable $\theta$ depends on $\varphi$. How can we solve this problem? I guess you need to parametrize it in some way, but I'm not sure how.
+:::
+
+The first integral, the one you easily determined, is
+$$\int_0^{2\pi} \int_\beta^\alpha a^2 \sin\theta\,d\theta\,d\phi
+    = 2\pi a^2 \left(\cos\alpha - \cos\beta\right)$$
+If the strip has variable width, such that $\alpha$ depends on $\phi$, then the surface area is
+$$\int_0^{2\pi} \int_\beta^{\alpha(\phi)} a^2 \sin\theta\,d\theta\,d\phi$$
+The innermost integral is with respect to the variable $\theta$, while the upper limit depends on $\phi$. Therefore this integral is a function of $\phi$. The integral of *that* function from $0$ to $2\pi$ is the surface area.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4749747/how-do-i-calculate-a-double-integral-if-the-limits-of-one-integral-depend-on-the/4749772#4749772) on Mathematics Stack Exchange, 2023-08-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

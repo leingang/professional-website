@@ -1,0 +1,61 @@
+---
+title: Find the coefficient of $x^{-2}$ in the expansion of $(x-1)^3(\frac{1}{x} +2x)^6$
+date: '2020-05-01'
+description: You have two binomial powers, so you need two separate binomial expansions. $$\begin{align} (x-1)^3\left(\frac{1}{x} + 2x\right)^6 &= \sum{r=0}^3…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3653581
+se-link: https://math.stackexchange.com/questions/3653549/find-the-coefficient-of-x-2-in-the-expansion-of-x-13-frac1x-2x6/3653581#3653581
+se-score: 0
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- binomial-coefficients
+- binomial-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the coefficient of $x^{-2}$ in the expansion of $(x-1)^3(\frac{1}{x} +2x)^6$](https://math.stackexchange.com/questions/3653549/find-the-coefficient-of-x-2-in-the-expansion-of-x-13-frac1x-2x6), asked by [rash](https://math.stackexchange.com/users/650763/rash) on Mathematics Stack Exchange (2020-05-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Find the coefficient of $x^{-2}$ in the expansion of $(x-1)^3(\frac{1}{x} +2x)^6$.
+>
+> I have tried finding out the general term of the whole expression.
+>
+> Then, I get the result as such 
+> $$[(-1)^r {3 \choose r}(x^{3-r})][q-{6 \choose r} (2x)^{6-r}(\frac{1}{x})^r]$$
+> But after solving for I get $r = 11/3$
+>
+> I think I am doing it wrong by just multiplying the general term. I don't know how else to continue. Please help.
+>
+> Thank You!
+>
+> Edit : *There was a typo in the question*
+:::
+
+You have two binomial powers, so you need two separate binomial expansions.
+$$\begin{align*}
+    (x-1)^3\left(\frac{1}{x} + 2x\right)^6
+    &= \sum_{r=0}^3 \binom{3}{r}(-1)^r x^{3-r}
+       \sum_{s=0}^6 \binom{6}{s}(2x)^{6-s}\left(\frac{1}{x}\right)^s
+  \\&= \sum_{r=0}^3\sum_{s=0}^6\binom{3}{r}\binom{6}{s}(-1)^r 2^{6-s} x^{(3-r)+(6-s)-s}
+\end{align*}$$
+If you want the coefficient of $x^{-2}$, you need to find the pairs $(r,s)$ with $0 \leq r \leq 3$ and $0 \leq s \leq 6$ such that
+$$\begin{align*}
+    (3-r)+(6-s) - s &= -2 \\
+\iff
+    9-r-2s &= -2 \\
+\iff
+    r+2s &= 11
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3653549/find-the-coefficient-of-x-2-in-the-expansion-of-x-13-frac1x-2x6/3653581#3653581) on Mathematics Stack Exchange, 2020-05-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

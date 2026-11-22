@@ -1,0 +1,57 @@
+---
+title: Proof equivalence relation checking my answer
+date: '2018-03-14'
+description: Your all-symbols argument is way too dense to read. And you have made a logical error by distributing the relation conditions across the or operation.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2691295
+se-link: https://math.stackexchange.com/questions/2691279/proof-equivalence-relation-checking-my-answer/2691295#2691295
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof equivalence relation checking my answer](https://math.stackexchange.com/questions/2691279/proof-equivalence-relation-checking-my-answer), asked by [Victor](https://math.stackexchange.com/users/517999/victor) on Mathematics Stack Exchange (2018-03-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let's define relation $\mathcal R$ in $\Bbb R$ in the followwing way:
+>
+> $x \mathcal R y \iff (x=y \space \lor \space \exists k \in \Bbb Z (x,y \in (k,k+1)))$ 
+>
+> Prove that $x \mathcal R y$ is equivalence relation.
+>
+> My answer is as follows, please check correctness of my answer:
+>
+> 1) Reflexivity
+>
+> $\forall x \in \Bbb R \space x \mathcal R x \iff (x=x \space \lor \space \exists k \in \Bbb Z (x \in (k,k+1)))$ 
+>
+> 2) Symmetry
+>
+> $\forall x,y \in \Bbb R \space \space x \mathcal R y \Rightarrow y \mathcal R x \iff ((x=y \space \Rightarrow  y=x \space) \lor ( \space \exists k \in \Bbb Z (x,y \in (k,k+1)) \Rightarrow  \space \exists k \in \Bbb Z (y,x \in (k,k+1)))$ 
+>
+> 3) Transitivity
+>
+> $\forall x,y,z \in \Bbb R \space \space x \mathcal R y \land y \mathcal R z \Rightarrow  x \mathcal R z \iff ((x=y \space \land  y=z \Rightarrow x=z) \space \lor  (\space \exists k \in \Bbb Z (x,y \in (k,k+1)) \land  \space \exists k \in \Bbb Z (y,z \in (k,k+1)) \Rightarrow \space \exists k \in \Bbb Z (x,z \in (k,k+1)) )$
+:::
+
+Your all-symbols argument is way too dense to read.  And you have made a logical error by distributing the relation conditions across the or operation.
+
+Instead, structure your argument in paragraphs like this:
+
+> We claim that $\mathcal{R}$ is symmetric.  Suppose that $x,y \in \mathbb{R}$ satisfy $x\mathcal{R}y$.  ... Therefore $y \mathcal{R} x$.  Since $x$ and $y$ were arbitrary, $\mathcal{R}$ is symmetric.
+
+What goes in the ...?  If $x\mathcal{R}$y, then $x=y$ OR $x,y \in (k,k+1)$ for some $k$.  Proceed in cases.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2691279/proof-equivalence-relation-checking-my-answer/2691295#2691295) on Mathematics Stack Exchange, 2018-03-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

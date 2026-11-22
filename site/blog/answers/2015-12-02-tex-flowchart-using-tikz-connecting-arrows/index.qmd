@@ -1,0 +1,125 @@
+---
+title: Flowchart using TiKz - connecting arrows
+date: '2015-12-02'
+description: Just summarizing the comments so this question has an actual answer (it was highlighted as unanswered in a recent newsletter). You want to use the -| path…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 281166
+se-link: https://tex.stackexchange.com/questions/280521/flowchart-using-tikz-connecting-arrows/281166#281166
+se-score: 1
+se-accepted: true
+se-tags:
+- tikz-pgf
+- tikz-arrows
+- flow-charts
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Flowchart using TiKz - connecting arrows](https://tex.stackexchange.com/questions/280521/flowchart-using-tikz-connecting-arrows), asked by [arunmoezhi](https://tex.stackexchange.com/users/33433/arunmoezhi) on TeX Stack Exchange (2015-11-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Here is flowchart drawn using TiKz. I'm trying to connect the arrows in a clean way. For instance, I want to connect `box3.west` to `retF.south` and `box2.east` to `retT.south`. I would like to have the arrow end at the midpoint of `retF.south` and `retT.south`. Is there a general way to do this?
+>
+> [![enter image description here][q-1]][q-1]
+>
+> 	\documentclass{article}
+> 	\usepackage{tikz}
+> 	\usetikzlibrary{shapes.geometric,arrows,fit,matrix,positioning,shapes.multipart}
+> 	\tikzset
+> 	{
+> 			process/.style={rectangle, minimum width=2cm, minimum height=1cm, align=center, text width=2cm, draw},
+> 			arrow/.style={thick, ->, >=stealth},
+> 			decision/.style ={diamond, draw=black, minimum width=1cm, minimum height=1cm, text badly centered, node distance=3cm, inner sep=0pt}
+> 	}
+> 	\begin{document}
+> 	\begin{figure}[htp]
+> 	\centering
+> 	{
+> 		\begin{tikzpicture}[scale=0.5, transform shape]
+> 		\node (p0) [] {foo(K)};
+> 		\node (p1) [process, below of=p0, text width=4cm] {box1};
+> 		\node (p2) [process, below of=p1, yshift=-1.5cm, text width=4.5cm] {box2};
+> 		\node (p3) [decision, below of=p2, yshift=-1.5cm, text width=2cm] {box3};
+> 		\node (retT) [process, right of=p1, xshift=4cm, text width=1cm, minimum width=1cm] {retT};
+> 		\node (retF) [process, left of=p2, xshift=-5cm, text width=1cm, minimum width=1cm] {retF};
+>
+>
+> 		\draw [arrow] (p1) -- node[anchor=west] {need more steps} (p2);
+> 		\draw [arrow] (p1) -- node[anchor=south] {no more steps} (retT);
+> 		\draw [arrow] (p2.east) -- ++(1.5,0) node[anchor=north,pos=1] {K = X}   |- (retT.west);
+> 		\draw [arrow] (p2.west) -- node[anchor=north,pos=0.5] {K \$<\$ X}  (retF.east);
+> 		\draw [arrow] (p2) -- node[anchor=east] {K \$>\$ X} (p3);
+> 		\draw [arrow] (p3.west) --+(-4.2,0)  node[anchor=north]{No} |- (retF.south);
+>
+> 		\end{tikzpicture}
+> 	}
+> 	\caption{connect box3.west to retF.south}
+> 	\end{figure}
+> 	\end{document}
+>
+>
+>   [q-1]: pCpyv.png
+:::
+
+Just summarizing the comments so this question has an actual answer (it was highlighted as unanswered in a recent newsletter).  You want to use the `-|` path operation to draw an L-shaped path.  
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows,fit,matrix,positioning,shapes.multipart}
+\tikzset
+{
+        process/.style={rectangle, minimum width=2cm, minimum height=1cm, align=center, text width=2cm, draw},
+        arrow/.style={thick, ->, >=stealth},
+        decision/.style ={diamond, draw=black, minimum width=1cm, minimum height=1cm, text badly centered, node distance=3cm, inner sep=0pt}
+}
+\begin{document}
+    \begin{tikzpicture}[scale=0.5, transform shape]
+    \node (p0) [] {foo($K$)};
+    \node (p1) [process, below of=p0, text width=4cm] {box1};
+    \node (p2) [process, below of=p1, yshift=-1.5cm, text width=4.5cm] {box2};
+    \node (p3) [decision, below of=p2, yshift=-1.5cm, text width=2cm] {box3};
+    \node (retT) [process, right of=p1, xshift=4cm, text width=1cm, minimum width=1cm] {retT};
+    \node (retF) [process, left of=p2, xshift=-5cm, text width=1cm, minimum width=1cm] {retF};
+
+
+    \draw [arrow] (p1) -- node[anchor=west] {need more steps} (p2);
+    \draw [arrow] (p1) -- node[anchor=south] {no more steps} (retT);
+    \draw [arrow] (p2.east) -| (retT.south) node[anchor=north,pos=0.5] {$K = X$}  ;
+    \draw [arrow] (p2.west) -- node[anchor=north,pos=0.5] {$K < X$}  (retF.east);
+    \draw [arrow] (p2) -- node[anchor=east] {$K > X$} (p3);
+    \draw [arrow] (p3.west) -| (retF.south);
+
+    \end{tikzpicture}
+\end{document}
+```
+
+[![sample output][1]][1]
+
+
+If you want to have multiple L-shaped paths you can do that by adding a coordinate in between.  Adding this line:
+
+```latex
+\draw [arrow] (p3.east) -| ++(1.5cm,1.5cm) node[red] {$\bullet$} -| ([xshift=1cm]p2.south);
+```
+
+will draw an L-shaped path horizontally from `p3.east` to a point 1.5cm up and to the right.  I put the red bullet there just to illustrate it; it's not necessary for your final diagram.  Then the path goes to a point 1cm to the right of `p2.south`.
+
+[![second code output][2]][2]
+
+You can fiddle with the positioning of that intermediate node any way you like.
+
+
+  [1]: fLLnX.png
+  [2]: NfbVW.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/280521/flowchart-using-tikz-connecting-arrows/281166#281166) on TeX Stack Exchange, 2015-12-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

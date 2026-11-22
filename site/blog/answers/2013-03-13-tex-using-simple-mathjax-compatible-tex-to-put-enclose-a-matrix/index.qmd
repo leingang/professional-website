@@ -1,0 +1,102 @@
+---
+title: Using simple, MathJax-compatible TeX to put enclose a matrix in braces
+date: '2013-03-13'
+description: 'This is how I would do it in regular LaTeX (though I would use \[...\] to enclose display math):'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 102213
+se-link: https://tex.stackexchange.com/questions/102198/using-simple-mathjax-compatible-tex-to-put-enclose-a-matrix-in-braces/102213#102213
+se-score: 15
+se-accepted: true
+se-tags:
+- matrices
+- braces
+- online
+- mathjax
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using simple, MathJax-compatible TeX to put enclose a matrix in braces](https://tex.stackexchange.com/questions/102198/using-simple-mathjax-compatible-tex-to-put-enclose-a-matrix-in-braces), asked by [Alexander Gruber](https://tex.stackexchange.com/users/6537/alexander-gruber) on TeX Stack Exchange (2013-03-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was trying to explain the identity matrix over at [Math StackExchange][q-1] and I wound up using the following.
+>
+> ```latex
+> $${\bf I_n} = \underbrace{
+>                 \left.\left( 
+>                       \begin{array}{ccccc}
+>                              1&0&0&\cdots &0\\
+>                              0&1&0&\cdots &0\\
+>                              0&0&1&\cdots &0\\
+>                              \vdots&&&\ddots&\\
+>                              0&0&0&\cdots &1
+>                       \end{array}
+>                 \right)\right\}
+>               }_{n\text{ columns}} 
+>               \,n\text{ rows}
+> $$
+> ```
+>
+> It came out alright, but not quite what I wanted:
+>
+> ![Identity Matrix][q-2]
+>
+> I'd like to be able to move the ends of the underbrace inside the parenthesis without having it turn into this:
+>
+> ![Identity Matrix 2][q-3]
+>
+> Now, I see there are a couple of similar questions on here (examples: [1][q-4] [2][q-5]) which deal with the same issue.  However, all of them use a bunch of fancy stuff which I can't use in online forum TeX.
+>
+> > Is there a way to enclose a matrix in braces using only commands available in MathJax?
+>
+> I am not sure exactly which commands these are, but I am guessing a good rule of thumb would be the simplest commands possible.
+>
+>   [q-1]: https://math.stackexchange.com/a/328853/12952
+>   [q-2]: LJdGA.png
+>   [q-3]: fDRuA.png
+>   [q-4]: https://tex.stackexchange.com/q/48572/6537
+>   [q-5]: https://tex.stackexchange.com/q/44330/6537
+:::
+
+This is how I would do it in regular LaTeX (though I would use `\[...\]` to enclose display math):
+
+```latex
+$$\mathbf{I}_n = \left.\left( 
+                  \vphantom{\begin{array}{c}1\\1\\1\\1\\1\end{array}}
+                  \smash{\underbrace{
+                      \begin{array}{ccccc}
+                             1&0&0&\cdots &0\\
+                             0&1&0&\cdots &0\\
+                             0&0&1&\cdots &0\\
+                             \vdots&&&\ddots&\\
+                             0&0&0&\cdots &1
+                      \end{array}
+                      }_{n\text{ columns}}}
+              \right)\right\}
+              \,n\text{ rows}
+$$
+```
+
+The `\vphantom` line creates a box whose height is equal to an nx1 array of 1's.  The `\smash` around your matrix typesets the matrix (including the underbrace) but makes its height and depth zero.  Put these together and you have a box which includes the underbrace, but whose width and height are equal to that of the matrix without the underbrace.  
+
+![sample code output][1]
+
+See ["A complement to `\smash`, `\llap`, and `\rlap`" by Alexander R. Perlis in *TUGBoat*][3] for more on all of these commands and also `\mathclap`.
+
+I pasted it into the [MathJax demo page][2] too and it seems to work.
+
+
+  [1]: tYwZG.png
+  [2]: http://www.mathjax.org/demos/
+  [3]: http://math.arizona.edu/~aprl/publications/mathclap/perlis_mathclap_24Jun2003.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/102198/using-simple-mathjax-compatible-tex-to-put-enclose-a-matrix-in-braces/102213#102213) on TeX Stack Exchange, 2013-03-13, with [edits](https://tex.stackexchange.com/posts/102213/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

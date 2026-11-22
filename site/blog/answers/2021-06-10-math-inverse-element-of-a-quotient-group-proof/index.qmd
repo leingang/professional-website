@@ -1,0 +1,49 @@
+---
+title: Inverse element of a quotient group (proof)
+date: '2021-06-10'
+description: If $H$ is a subgroup of $G$, then the cosets $\{xH \mid x \in G\}$ are subsets of $G$. But if $H$ is additionally a normal subgroup, the cosets can be treated…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4169146
+se-link: https://math.stackexchange.com/questions/4169121/inverse-element-of-a-quotient-group-proof/4169146#4169146
+se-score: 2
+se-accepted: false
+se-tags:
+- abstract-algebra
+- group-theory
+- proof-explanation
+- normal-subgroups
+- quotient-group
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Inverse element of a quotient group (proof)](https://math.stackexchange.com/questions/4169121/inverse-element-of-a-quotient-group-proof), asked by [katrin](https://math.stackexchange.com/users/732124/katrin) on Mathematics Stack Exchange (2021-06-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When we prove that the quotient group is indeed a group we have for the inverse element, if $G$ is a group and $H$ is a normal subgroup of $G$
+>
+> $$(xH)(x^{-1}H)=xx^{-1}HH=xx^{-1}H=1H$$ 
+>
+> We were told that the fact in the first equality that we can switch the places is because $H$ is a normal subgroup. I don't see the connection unfortunately. 
+>
+> For the normal subgroup we have that $xHx^{-1} \subseteq H$ but how does that relate to commutativity, if it is not given that $G$ is abelian?
+:::
+
+If $H$ is a subgroup of $G$, then the cosets $\{xH \mid x \in G\}$ are *subsets* of $G$.  But if $H$ is additionally a normal subgroup, the cosets can be treated like *objects* with their own multiplication.  The normality condition $x H x^{-1} \subseteq H$ is exactly what makes this well-defined.
+
+The set $(xH)(x^{-1} H)$ is the set of all $(xh_1)(x^{-1}h_2)$, where $h_1$ and $h_2$ range over $H$.  Since $H$ is normal, we know that $x h_1 x^{-1} \in H$.  Then by associativity, and the fact that $H$ is a closed under multiplication:
+$$(xh_1)(x^{-1}h_2) = (xh_1x^{-1}) h_2 \in H$$
+Therefore $(xH)(x^{-1} H) \subseteq H$.  On the other hand, given $h \in H$,
+$$h = e h = x x^{-1} h = xe x^{-1} h = (xe)(x^{-1} h) \in (xH)(x^{-1}H)$$
+Therefore $H \subseteq (xH)(x^{-1} H)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4169121/inverse-element-of-a-quotient-group-proof/4169146#4169146) on Mathematics Stack Exchange, 2021-06-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

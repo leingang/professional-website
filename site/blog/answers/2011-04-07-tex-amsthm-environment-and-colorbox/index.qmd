@@ -1,0 +1,116 @@
+---
+title: amsthm environment and colorbox
+date: '2011-04-07'
+description: 'Put this in the preamble:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15270
+se-link: https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox/15270#15270
+se-score: 2
+se-accepted: false
+se-tags:
+- color
+- boxes
+- theorems
+- amsthm
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[amsthm environment and colorbox](https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox), asked by [pluton](https://tex.stackexchange.com/users/371/pluton) on TeX Stack Exchange (2011-04-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'd like to customize the `amsthm` command a little bit but I cannot find the relevant lines in the (undocumented?) .sty.
+>
+> 1. How can I put a colorbox on the *name* of the environment
+>
+>         \newtheoremstyle{Coloredtheo}%
+>         {3pt}    %Space above
+>         {3pt}    %Space below
+>         {}       %Body font
+>         {}       %Indent amount
+>         {\bf \colorbox{blue}}    %Theorem head font
+>         {}       %Punctuation after theorem head
+>         {0.25em} %Space after theorem head
+>         {}       %Theorem head spec
+>
+>  where the blue box should be of the size of the theorem head.
+>
+> 2. how I can remove the brackets of the optional parameter
+>
+>  `\begin{theorem}[Schwarz inequality]...` should not be (Schwarz inequality) but Schwarz inequality.
+:::
+
+> 2 - how I can remove the brackets of the optional parameter
+> 
+>     \begin{theorem}[Schwarz inequality]... 
+> should not be (Schwarz inequality) but Schwarz inequality.
+
+Put this in the preamble:
+
+```latex
+\newtheorem*{schwarz}{Schwarz Inequality}
+```
+
+Then in the document:
+
+```latex
+\begin{schwarz}
+% ``I see your Schwarz is as big as mine.'' --- Dark Helmet, Spaceballs
+\end{schwarz}
+```
+
+**EDIT** I think I understand what you want now.  If you don't want a one-off environment, you can alter the theorem's head specification to typeset only the theorem note (optional argument) without delimiters, like so:
+
+```latex
+\documentclass{minimal}
+\usepackage{amsthm}
+
+\makeatletter
+\newtheoremstyle{namedtheorem}%
+{3pt}    %Space above
+{3pt}    %Space below
+{}   %Body font
+{}   %Indent amount
+{\bfseries}    %Theorem head font
+{.}   %Punctuation after theorem head
+{0.25em} %Space after theorem head
+{\thmname{\@ifempty{#3}{#1}\@ifnotempty{#3}{#3}}}
+\makeatother
+
+\theoremstyle{namedtheorem}
+
+% first argument here is the environment to be defined
+% second argument is the default name of the theorem.
+\newtheorem*{namedtheorem}{Theorem}
+
+\begin{document}
+
+\begin{namedtheorem}
+One is the loneliest number.
+\end{namedtheorem}
+
+\begin{namedtheorem}[Schwarz Inequality]
+For $x$ and $y$ in a Hilbert space $H$, 
+\[
+	|(x,y) | \leq \Vert x \Vert \cdot \Vert y \Vert
+\]
+\end{namedtheorem}
+
+\end{document}
+```
+
+![enter image description here][1]
+
+
+  [1]: YSP2s.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox/15270#15270) on TeX Stack Exchange, 2011-04-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

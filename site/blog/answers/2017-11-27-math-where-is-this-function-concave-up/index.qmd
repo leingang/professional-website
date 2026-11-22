@@ -1,0 +1,77 @@
+---
+title: Where is this function concave up?
+date: '2017-11-27'
+description: You should have $$f''(x) = 12(x^2-16)^4(11x^2-16)$$ You're right that $f'(x) = 0$ when $x = \pm4$ and $\pm\frac{4}{\sqrt{11}}$. But these are not necessarily…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2539764
+se-link: https://math.stackexchange.com/questions/2539739/where-is-this-function-concave-up/2539764#2539764
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Where is this function concave up?](https://math.stackexchange.com/questions/2539739/where-is-this-function-concave-up), asked by [sktsasus](https://math.stackexchange.com/users/483971/sktsasus) on Mathematics Stack Exchange (2017-11-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The function is:
+>
+> $(x^2-16)^6$
+>
+> So I did all the relevant calculations and all my others answers about inflexion points, critical points, extreme points, concave down, increasing and decreasing intervals were correct. But my interval for concave up keeps coming up as wrong. 
+>
+> This is the interval I calculated:
+>
+>
+> $(-\infty, -4) \cup \left(-4, -\frac{4\sqrt{11}}{11}\right) \cup \left(\frac{4\sqrt{11}}{11}, 4\right) \cup (4, \infty)$
+>
+> I also tried various alternative ones like:
+>
+> $\left(-\infty,-\frac{4\sqrt{11}}{11}\right)\cup\left(\frac{4\sqrt{11}}{11},\infty\right)$
+>
+> My work:
+>
+> This was my calculated second derivative:
+>
+> $12\left(11x^{10}-720x^8+17920x^6-204800x^4+983040x^2-1048576\right)$
+>
+> $x$-values of Inflexion points:
+>
+> $-\frac{4\sqrt{11}}{11}$, $\frac{4\sqrt{11}}{11}$, $4$ and $-4$
+>
+> I then tested the derivative at all these points to come up with the interval.
+>
+> Does anyone know where I have went wrong in either of these cases? I have been stuck on this problem for a while now.
+>
+> Thank you!
+:::
+
+You should have 
+$$f''(x) = 12(x^2-16)^4(11x^2-16)$$
+You're right that $f'(x) = 0$ when $x = \pm4$ and $\pm\frac{4}{\sqrt{11}}$.  But these are **not** necessarily inflection points.  An inflection point is not just any zero of the second derivative, but any point where the second derivative changes sign. Since $f''(x) > 0$ to the left and right of either $4$ or $-4$, these two are not inflection points.  
+
+Also, when you say
+> I then tested the derivative at all these points to come up with the interval.
+
+I'm not sure what you're doing.  Are you saying you evaluate $f'(x)$ at each $x$ where $f''(x) = 0$?  That doesn't tell you anything about concavity.  You may be confused with the second derivative test, where you can evaluate $f''(x)$ at each $x$ where $f'(x) = 0$ to classify critical points as local maxima or minima.
+
+No, you really just want to find the intervals where $f''(x) \geq 0$ and $f''(x) \leq 0$ to find concavity.  The first two factors of $f''(x)$ are always nonnegative.  It all depends on $11x^2-16$.  This is positive if $x > \frac{4}{\sqrt{11}}$ and if $x < - \frac{4}{\sqrt{11}}$.  In between those two, $f'' <0$.  So $f$ is concave up on $\left(-\infty,-\frac{4}{\sqrt{11}}\right] \cup \left[\frac{4}{\sqrt{11}},\infty\right)$, and concave down on $\left[-\frac{4}{\sqrt{11}},\frac{4}{\sqrt{11}}\right]$.   A [graph](http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=second+derivative+of+(x%5E2-16)%5E6) confirms this:
+
+[![sample image][1]][1] 
+
+
+  [1]: ckglC.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2539739/where-is-this-function-concave-up/2539764#2539764) on Mathematics Stack Exchange, 2017-11-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

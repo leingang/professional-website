@@ -1,0 +1,52 @@
+---
+title: Understanding limits and exact solutions
+date: '2023-07-31'
+description: There's no need to bring calculus into this purely algebraic question.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4745308
+se-link: https://math.stackexchange.com/questions/4745296/understanding-limits-and-exact-solutions/4745308#4745308
+se-score: 4
+se-accepted: false
+se-tags:
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Understanding limits and exact solutions](https://math.stackexchange.com/questions/4745296/understanding-limits-and-exact-solutions), asked by [Anon](https://math.stackexchange.com/users/1205460/anon) on Mathematics Stack Exchange (2023-07-31; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the following equation:
+>
+> $\left(x^{2}-1\right)y=1-x$
+>
+> Setting $y{=}0$ forces the LHS equal to zero, so $x$ must be 1 for the RHS to be zero too. However, if we now rearrange the equation as,
+>
+> $y=\frac{1-x}{x^2 - 1}$,
+>
+> and we apply L'Hopital's rule, we see that when $x{=}1$, $y{=}{-}1/2$. We see also, that y is never equal to zero. So which is it? This seems contradictory to me. Please try to be thorough with your answer for me to understand.
+:::
+
+There's no need to bring calculus into this purely algebraic question.
+
+Dividing both sides of an equation by an expression is only valid when that expression is nonzero. So your rearrangement loses one of the solutions.
+
+I suggest setting one side of the equation to zero and factoring:
+$$(x^2-1)y = 1-x \iff (x-1)(xy + y + 1) = 0$$
+To satisfy this equation, one of the factors must be zero. If $x=1$, the equation is satisfied for any $y$ (including $y=0$). The second factor is zero if $y = - \frac{1}{x+1}$, which works as long as $x \neq -1$. The solution set is plotted below.
+
+[![plot of solution set][1]][1]
+
+
+  [1]: Qji7u.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4745296/understanding-limits-and-exact-solutions/4745308#4745308) on Mathematics Stack Exchange, 2023-07-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

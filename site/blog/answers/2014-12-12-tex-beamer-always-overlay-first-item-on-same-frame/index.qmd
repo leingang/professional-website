@@ -1,0 +1,83 @@
+---
+title: 'Beamer: always overlay first item on same frame'
+date: '2014-12-12'
+description: The default overlay specifications use the \uncover method. This means if it they are not “on” the current slide they are invisible, but take up the same…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 217631
+se-link: https://tex.stackexchange.com/questions/217628/beamer-always-overlay-first-item-on-same-frame/217631#217631
+se-score: 7
+se-accepted: true
+se-tags:
+- beamer
+- itemize
+- overlays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer: always overlay first item on same frame](https://tex.stackexchange.com/questions/217628/beamer-always-overlay-first-item-on-same-frame), asked by [Andrea Aloi](https://tex.stackexchange.com/users/67546/andrea-aloi) on TeX Stack Exchange (2014-12-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've read and tried to follow instructions from similar questions but I can't seem to get my slide to work the way it should. I basically have an `itemize` block and I want my list `item`s to show overlaid, but always remain top-aligned. My code is:
+>
+> ```latex
+> \begin{frame}[fragile]
+> \begin{itemize}
+> \item<1-1> a really long item, which takes up almost the entire page
+> \item<2-2> another item
+> \item<3-3> yet another one
+> \end{itemize}
+> \end{frame}
+> ```
+>
+> Currently, items 2 and 3 correctly show up by themselves, but there is a huge blank space where the first item was. Hope I made my issue clear. Cheers.
+:::
+
+The default overlay specifications use the `\uncover` method.  This means if it they are not “on” the current slide they are invisible, but take up the same amount of space as if they were there.  
+
+It sounds like you want material not on the current slide to be skipped altogether, which means you want `\only` instead.  You can add this into the overlay spec like so:
+
+```latex
+\begin{frame}{Only}
+\begin{itemize}
+\item<only@1> a really long item, which takes up almost the entire page
+\item<only@2> another item
+\item<only@3> yet another one
+\end{itemize}
+\end{frame}
+```
+
+You don't need start and end slides if those slide numbers are the same.  In fact, you can further optimize using the `+` token to indicate “increment one”:
+
+```latex
+\begin{frame}{Only}
+\begin{itemize}
+\item<only@+> a really long item, which takes up almost the entire page
+\item<only@+> another item
+\item<only@+> yet another one
+\end{itemize}
+\end{frame}
+```
+
+And now that all the specs are the same you can make it an argument to the `itemize` environment.
+
+```latex
+\begin{frame}{Only}
+\begin{itemize}[<only@+>]
+\item a really long item, which takes up almost the entire page
+\item another item
+\item yet another one
+\end{itemize}
+\end{frame}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/217628/beamer-always-overlay-first-item-on-same-frame/217631#217631) on TeX Stack Exchange, 2014-12-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

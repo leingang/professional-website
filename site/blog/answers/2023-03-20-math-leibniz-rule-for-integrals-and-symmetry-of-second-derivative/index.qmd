@@ -1,0 +1,54 @@
+---
+title: Leibniz rule for integrals and symmetry of second derivative
+date: '2023-03-20'
+description: It seems to me like you're overthinking it. If $\dot x(t) = \dot y(t)$, then $y(t) = x(t) + C$ for some constant $C$. So $\frac{dy}{dx} = 1$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4662777
+se-link: https://math.stackexchange.com/questions/4662478/leibniz-rule-for-integrals-and-symmetry-of-second-derivative/4662777#4662777
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Leibniz rule for integrals and symmetry of second derivative](https://math.stackexchange.com/questions/4662478/leibniz-rule-for-integrals-and-symmetry-of-second-derivative), asked by [Richard Grayson](https://math.stackexchange.com/users/1161679/richard-grayson) on Mathematics Stack Exchange (2023-03-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given two real valued functions $x(t), y(t)$, such that $\dot{y}(t) = \dot{x}(t)$, I need to compute $\frac{\partial y}{\partial x}$. One approach is: 
+>
+> $$\begin{equation}
+> \dfrac{\partial y}{\partial x}(t) = \dfrac{\partial}{\partial x} \int \dot{x} \ dt 
+>  = \dfrac{\partial}{\partial x} (x(t) + C) = 1
+> \end{equation}$$
+>
+> On the other hand, using the symmetry of second derivative and taking $F(x,t) = \dot{x}(t)$, it follows that:  
+>
+> $$\begin{equation} 
+> \dfrac{\partial F(x,t)}{\partial x} = \dfrac{\partial \dot{x}(t)}{\partial x} = \dfrac{\partial }{\partial x} \dfrac{dx}{dt} = \dfrac{d}{dt} \dfrac{\partial x}{\partial x} = \dfrac{d}{dt} 1 = 0
+> \end{equation}$$
+>
+> Therefore, using Leibniz rule for integrals, 
+>
+> $$\begin{equation}
+> \dfrac{\partial y}{\partial x}(t) = \int \dfrac{\partial \dot{x}(t)}{\partial x} \ dt = \int 0 \ dt = C
+> \end{equation}$$
+>
+> With the first approach, we get $\frac{\partial y}{\partial x}$ = 1. With the second, $\frac{\partial y}{\partial x}$ = C $\in \mathbb{R}$. Which of them is correct? Or neither?
+:::
+
+It seems to me like you're overthinking it. If $\dot x(t) = \dot y(t)$, then $y(t) = x(t) + C$ for some constant $C$. So $\frac{dy}{dx} = 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4662478/leibniz-rule-for-integrals-and-symmetry-of-second-derivative/4662777#4662777) on Mathematics Stack Exchange, 2023-03-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

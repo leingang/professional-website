@@ -1,0 +1,80 @@
+---
+title: Prove that A is similar to B and what is the multiplicity of $0$ as characteristics root of $A$?
+date: '2018-10-02'
+description: In your $2\times 2$ case, let $v1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ and $v2 = \begin{bmatrix}1 \\ - 1\end{bmatrix}$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2939752
+se-link: https://math.stackexchange.com/questions/2939730/prove-that-a-is-similar-to-b-and-what-is-the-multiplicity-of-0-as-characterist/2939752#2939752
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that A is similar to B and what is the multiplicity of $0$ as characteristics root of $A$?](https://math.stackexchange.com/questions/2939730/prove-that-a-is-similar-to-b-and-what-is-the-multiplicity-of-0-as-characterist), asked by [jasmine](https://math.stackexchange.com/users/557708/jasmine) on Mathematics Stack Exchange (2018-10-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Prove that  the $n \times n$ matrix
+>  $$A=\left(\begin{matrix} 
+>   1 & 1 &  ... & 1\\
+>   1 & 1 & ... & 1 \\
+>   .& .& . &  .\\
+>   .& . & . & .\\
+>   . & .&  & . \\1 & 1 & ... & 1
+> \end{matrix}\right)$$  is similar  to $$B= \left(\begin{matrix} 
+>   n & 0 &  ... & 0\\
+>   0 & 0 & ... & 0 \\
+>   .& .& . &  .\\
+>   .& . & . & .\\
+>   . & .&  & . \\0& 0 & ... & 0\end{matrix}\right)$$
+>
+> If  the characteristics of $\mathbb{F}$ is $0$ or if it is $p$ and $p \nmid n$. what is the multiplicity of $0$ as characteristics  root of $A$ ?
+>
+>
+> My trial : I was taking $n= 2$ ,$A = \begin{bmatrix}  1 &1 \\ 1& 1\end{bmatrix}$ and $B=\begin{bmatrix}  2 &0 \\ 0& 0\end{bmatrix}$
+>
+> Here I did not find A  is  similar matrix to B because  A is symmetric. But B is not, as both ranks are also not the same...
+>
+>
+> I don't  know  how to tackle this question 
+>
+> Any hints/solution
+>
+> thanks u
+:::
+
+In your $2\times 2$ case, let $v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ and $v_2 = \begin{bmatrix}1 \\ - 1\end{bmatrix}$.  
+
+Then
+$$\begin{align*}
+    A v_1 &= \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix}
+             \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+           = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
+           =2\begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+    A v_2 &= \begin{bmatrix}1 & 1 \\ 1 & 1 \end{bmatrix}
+             \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+           = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+           =0\begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+\end{align*}$$
+So if 
+$$P = \begin{bmatrix} v_1 & v_2 \end{bmatrix}
+      = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$$
+then
+$$AP = PB$$
+So $P^{-1}AP = B$ and the two are similar.
+
+This has pretty much everything you need to answer the general case.  You are looking for one eigenvector with eigenvalue $n$, and $n-1$ linearly independent eigenvectors with eigenvalue $0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2939730/prove-that-a-is-similar-to-b-and-what-is-the-multiplicity-of-0-as-characterist/2939752#2939752) on Mathematics Stack Exchange, 2018-10-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

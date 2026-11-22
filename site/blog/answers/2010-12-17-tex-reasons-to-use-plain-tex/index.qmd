@@ -1,0 +1,39 @@
+---
+title: Reasons to use plain TeX
+date: '2010-12-17'
+description: LaTeX does 90% of what I need, but there are times when I just need to get under the hood. It's the whole leaky abstraction thing. So although I don't…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7280
+se-link: https://tex.stackexchange.com/questions/7278/reasons-to-use-plain-tex/7280#7280
+se-score: 49
+se-accepted: false
+se-tags:
+- plain-tex
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Reasons to use plain TeX](https://tex.stackexchange.com/questions/7278/reasons-to-use-plain-tex), asked by user2265 on TeX Stack Exchange (2010-12-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Given the active development in LaTeX and ConTeXt, and how LaTeX *insulates the writer from typographical details* and ConTeXt *gives the user extensive control over formatting* thus taking useful complementary approaches (see *[ConTeXt wiki][q-1]*), are there any reasons to use plain TeX?
+>
+>
+>   [q-1]: http://wiki.contextgarden.net/What_is_ConTeXt
+:::
+
+LaTeX does 90% of what I need, but there are times when I just need to get under the hood. It's the whole [leaky abstraction][1] thing. So although I don't recommend learning plain TeX the format, I think learning the core TeX language can make you a much better LaTeX or ConTeXt user. 
+
+
+  [1]: http://www.joelonsoftware.com/articles/LeakyAbstractions.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7278/reasons-to-use-plain-tex/7280#7280) on TeX Stack Exchange, 2010-12-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

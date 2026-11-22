@@ -1,0 +1,49 @@
+---
+title: Why do we pick $\epsilon=1$ when trying to prove that every convergent sequence is bounded?
+date: '2017-09-22'
+description: Prove what? If we want to show that $\lim{n\to\infty} an$ exists, then yes, something needs to be shown true for every $\epsilon > 0$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2440493
+se-link: https://math.stackexchange.com/questions/2440483/why-do-we-pick-epsilon-1-when-trying-to-prove-that-every-convergent-sequence/2440493#2440493
+se-score: 4
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why do we pick $\epsilon=1$ when trying to prove that every convergent sequence is bounded?](https://math.stackexchange.com/questions/2440483/why-do-we-pick-epsilon-1-when-trying-to-prove-that-every-convergent-sequence), asked by [Miguel Duran Diaz](https://math.stackexchange.com/users/441653/miguel-duran-diaz) on Mathematics Stack Exchange (2017-09-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I'm looking to the proof for the theorem "every convergent sequence is bounded". I was studying from both Lima's book and Rudin's book. In their proofs, both use $\epsilon=1$. The proof is:
+>
+> Suppose $||a_k||\rightarrow L$. Put $\epsilon=1$. Then, there exists an integer $n>N$ such that 
+> $$||a_k-L||<1$$
+> We know that $||a_k-L||\geq ||a_k||-||L||$. Therefore,
+> $$||a_k||\leq 1+||L||$$
+> For all $n>N$. Now,consider
+> $$r=max\{||a_1||,\dots,||a_N||\}$$
+> Then, for $k\in \{1,\dots,N\}$ $r\geq ||a_k||$. Finally, it follows that if we pick $r'=max\{1+||L||,r\}$ we have $||a_k||\leq r'$. 
+>
+> So, there it comes the doubt: why do they pick  $\epsilon=1$. Aren't we supposed to prove for any $\epsilon$?
+:::
+
+> why do they pick $\epsilon=1$. Aren't we supposed to prove for any $\epsilon$?
+
+Prove what?  If we want to *show* that $\lim_{n\to\infty} a_n$ exists, then yes, something needs to be shown true for every $\epsilon > 0$.
+
+In this case, though, we are *given* that $\lim_{n\to\infty} a_n$ exists.  So we can use the “for all $\epsilon > 0$, there exists ...” property to our advantage. 
+
+As for “why set $\epsilon = 1$?”, try a different $\epsilon$ and you will see that the proof still works. You'll still be able to show that the sequence is bounded.  It's just a matter of style which positive number is the most generic, and 1 seems like a good choice.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2440483/why-do-we-pick-epsilon-1-when-trying-to-prove-that-every-convergent-sequence/2440493#2440493) on Mathematics Stack Exchange, 2017-09-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

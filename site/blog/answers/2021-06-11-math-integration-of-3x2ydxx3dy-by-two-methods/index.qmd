@@ -1,0 +1,74 @@
+---
+title: Integration of $3x^2ydx+x^3dy$ by two methods
+date: '2021-06-11'
+description: Essentially, you're asking what's wrong with this (obviously wrong) “identity:” $$\color{red}{ f = \int df = \int \left(\frac{\partial f}{\partial x}\,dx +…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4170057
+se-link: https://math.stackexchange.com/questions/4169996/integration-of-3x2ydxx3dy-by-two-methods/4170057#4170057
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- derivatives
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integration of $3x^2ydx+x^3dy$ by two methods](https://math.stackexchange.com/questions/4169996/integration-of-3x2ydxx3dy-by-two-methods), asked by [aarbee](https://math.stackexchange.com/users/87430/aarbee) on Mathematics Stack Exchange (2021-06-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Find $\int(3x^2ydx+x^3dy)$
+>
+> $\int(3x^2ydx+x^3dy)=\int d(x^3y)=x^3y+c$
+>
+> Or, $\int(3x^2ydx+x^3dy)=\int3x^2ydx+\int x^3dy=x^3y+x^3y+c=2x^3y+c$
+>
+> Why am I getting different answers from the two methods?
+>
+> I am certain that the first method is correct.
+>
+> About the second, I took one variable as constant while integrating. Is this wrong? Is this leading to the wrong answer? If yes, how to get the correct answer from this method? i.e. without the exact differential form, can we integrate to get the answer?
+>
+> Thanks.
+>
+> **EDIT:** With the help of the comments, I am able to do this now:
+>
+> $\int(3x^2ydx+x^3dy)=\int3x^2ydx+\int x^3dy=x^3y+f(y)+x^3y+g(x)$
+>
+> Can you guide how to proceed next? Thanks.
+:::
+
+Essentially, you're asking what's wrong with this (obviously wrong) “identity:”
+$$\color{red}{
+    f = \int df = \int \left(\frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy\right) = \int \frac{\partial f}{\partial x}\,dx + \int \frac{\partial f}{\partial y}\,dy = f + f = 2f
+}$$
+
+I think it's in the step where you identify $\int \frac{\partial f}{\partial x}\,dx  = f$.  Consider a curve $C$ parametrized by $(x(t),y(t))$ over an interval $a \leq t \leq b$.  Then
+$$\begin{align*}
+    \int_C \frac{\partial f}{\partial x}\,dx
+    &= \int_a^b \frac{\partial f}{\partial x}(x(t),y(t))x'(t)\,dt
+\end{align*}$$
+We can't integrate this to $\left.f(x(t),y(t))\right|^b_a$ unless $y'(t) = 0$.
+
+On the other hand, we can substitute for $C$ an $L$-shaped path $C_1+C_2$, where $C_1$ is the horizontal line from $(x(a),y(a))$ to $(x(b),y(a))$, and $C_2$ is the vertical line from $(x(b),y(a))$ to $(x(b),y(b))$.  
+$$\begin{align*}
+    \int_{C_1} \frac{\partial f}{\partial x}\,dx
+    &= \int_a^b f(x(t),y(a))x'(t)\,dt 
+    \\&= f(x(b),y(a)) - f(x(a),y(a))
+    \\\int_{C_2} \frac{\partial f}{\partial y}\,dx
+    &= \int_a^b f(x(b),y(t))y'(t)\,dt 
+    \\&= f(x(b),y(b)) - f(x(b),y(a))
+\end{align*}$$
+The two of these add up to $f(x(b),y(b)) - f(x(a),y(a)) = \int_C df$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4169996/integration-of-3x2ydxx3dy-by-two-methods/4170057#4170057) on Mathematics Stack Exchange, 2021-06-11, with [edits](https://math.stackexchange.com/posts/4170057/revisions) by [Integreek](https://math.stackexchange.com/users/1361661/integreek). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

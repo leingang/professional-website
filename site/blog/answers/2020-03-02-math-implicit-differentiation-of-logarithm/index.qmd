@@ -1,0 +1,50 @@
+---
+title: Implicit Differentiation of logarithm
+date: '2020-03-02'
+description: An alternative derivation avoids implicit differentiation altogether. Note that $$y = \loga x = \frac{\ln x}{\ln a} = \frac{1}{\ln a} \cdot \ln x$$ Since $a$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3566991
+se-link: https://math.stackexchange.com/questions/3566979/implicit-differentiation-of-logarithm/3566991#3566991
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- logarithms
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Implicit Differentiation of logarithm](https://math.stackexchange.com/questions/3566979/implicit-differentiation-of-logarithm), asked by [Lex_i](https://math.stackexchange.com/users/593685/lex-i) on Mathematics Stack Exchange (2020-03-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Differentiate $y=\log_a(x)$ with respect to $x$
+>
+> I see that $a^y=x$.
+> My textbook says implicit differentiation gets us $$\begin{align*}a'(\ln a)\frac{dy}{dx}&=1 \\\implies \frac{dy}{dx}&=\frac{1}{a'\ln a} \\ \frac{dy}{dx}&=\frac{1}{x\ln a}\end{align*}$$
+>
+> What I don't understand is why $\frac{d}{dx}[a^y]=a'(\ln a)\cfrac{dy}{dx}$ and why $a'=x$
+> When I try this using a base of $e$ with the chain rule, I get $$\begin{align*}\frac{d}{dx}[e^{y\ln a}]&=\frac{d}{dx}[x] \\ &\boxed{u=y\ln a, du=\frac{dy}{dx}\ln a+\frac1ay; \\ f=e^u, df=e^u \\ df/du*du/dx=e^{y\ln a}\frac{dy}{dx}\ln a+\frac1ay} \\ \implies x\frac{dy}{dx}\ln a+\frac1ay&=1 \\ \frac{dy}{dx}&=\frac{1}{\ln a}\biggr(\frac1x-\frac{y}{a}\biggr)\end{align*}$$
+>
+> I see here that if I distribute, I get $\cfrac{1}{x\ln a}-\cfrac{y}{a\ln a}$ which implies $y$ must be zero! But I don't know how to show that, either. Can someone fill the gaps I'm missing in my textbooks solution?
+>
+> **UPDATE: I just realized the mistake I made in my differentiation was forgetting that ln (a) is a constant! Once I took out the constant or allowed the constant to be differentiated to $0$ I got the correct answer. 
+> I will mark the best answer correct soon enough, though, thanks everyone**
+:::
+
+An alternative derivation avoids implicit differentiation altogether.  Note that
+$$y = \log_a x = \frac{\ln x}{\ln a} = \frac{1}{\ln a} \cdot \ln x$$
+Since $a$ is constant,
+$$y' = \frac{1}{\ln a} \cdot \frac{1}{x} = \frac{1}{x \ln a}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3566979/implicit-differentiation-of-logarithm/3566991#3566991) on Mathematics Stack Exchange, 2020-03-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

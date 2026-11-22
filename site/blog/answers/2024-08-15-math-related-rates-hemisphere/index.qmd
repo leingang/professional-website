@@ -1,0 +1,63 @@
+---
+title: Related Rates (Hemisphere)
+date: '2024-08-15'
+description: As I said in my comment, you are assuming that the body of water is a hemisphere. But your drawing shows that it's not.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4958924
+se-link: https://math.stackexchange.com/questions/4958912/related-rates-hemisphere/4958924#4958924
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- related-rates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Related Rates (Hemisphere)](https://math.stackexchange.com/questions/4958912/related-rates-hemisphere), asked by [Flash](https://math.stackexchange.com/users/831609/flash) on Mathematics Stack Exchange (2024-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Help me with the following problem:
+>
+> A hemispherical sphere of radius 10cm is filled with water at a rate such that the water level is rising 0.4cm/min. Determine the rate at which the bowl is being filled when the height of the water = 5cm.
+>
+> The answer according to my professor was $30\pi$ $cm^3/min$. I have tried the following but to no avail.
+>
+> Using the formula for hemisphere's volume: $V=\frac{2}{3}\pi r^3$
+>
+> I related the height of the hemisphere with the radius using the Pythagorean theorem:
+> $(r-h)^2+x^2=r^2$ where r is the radius of the sphere, h is the depth of water, and x is the radius of the sphere's cross-section at depth h (see figure below).
+>
+> [![Hemisphere illustration][q-1]][q-1]
+>
+> Now, using the constant depth h = 5cm and r = 10cm. I calculated x to be $x = \sqrt75$. Also, solving for r using the same relation, I got $r=\frac{h^2+75}{2h}$. This is what I plugged into the volume equation above. Calculating the derivative, I got the final expression for $\frac{dV}{dt}$.
+>
+> $\frac{dV}{dt}=2\pi(\frac{h^2+75}{2h})^2(\frac{4h^2-2(h^2+75)}{4h^2})(\frac{dh}{dt})$
+>
+> Plugging in h = 5 and dh/dt = 0.4, I am getting $-80\pi cm^3/min$. Where did I go wrong with my solution?
+>
+>   [q-1]: 650NzQyB.png
+:::
+
+As I said in my comment, you are assuming that the body of water is a hemisphere. But your drawing shows that it's not.
+
+Choose coordinates so that the circular top of the tank is in the $xz$-plane and the $y$-axis is vertical. The bottom of the tank is at $z=-r$. A cross-section of the water at position $y$ is in the shape of a disk of radius $x$, where $x^2 + y^2 = r^2$. This means that if the tank is full to a level $h$ from the bottom, the volume of water is:
+$$V(h) = \int_{-r}^{-r+h} \pi (r^2-y^2)\,dy$$
+By the chain rule,
+$$\frac{dV}{dt} = \frac{dV}{dh} \frac{dh}{dt}$$
+We know $r=10\,\text{cm}$, and at the given moment, $h=5\,\text{cm}$ and $\frac{dh}{dt} = 0.4\,\text{cm}/\text{min}$. We don't need to evaluate the integral to take its derivative. The fundamental theorem of calculus says that
+$$\frac{dV}{dh} = \pi (r^2-(r-h)^2)$$
+Therefore,
+$$\frac{dV}{dt} = \pi (10^2 - 5^2)(0.4) = 30 \pi \,\text{cm}^3/\text{min}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4958912/related-rates-hemisphere/4958924#4958924) on Mathematics Stack Exchange, 2024-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

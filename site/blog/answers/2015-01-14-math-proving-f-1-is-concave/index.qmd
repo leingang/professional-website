@@ -1,0 +1,48 @@
+---
+title: Proving $f^{-1}$ is concave.
+date: '2015-01-14'
+description: Here is a proof that is probably not the most useful for the OP and requires extra assumptions. But it's a neat chain rule application.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1104281
+se-link: https://math.stackexchange.com/questions/1104245/proving-f-1-is-concave/1104281#1104281
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving $f^{-1}$ is concave.](https://math.stackexchange.com/questions/1104245/proving-f-1-is-concave), asked by [Meitar ](https://math.stackexchange.com/users/203149/meitar) on Mathematics Stack Exchange (2015-01-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f:(a,b)\to \mathbb R$ be an invertible, non-decreasing convex function. Prove $f^{-1}$ is concave. There are all these theorems and rules but I can't make it there... Would appreciate your help.
+:::
+
+Here is a proof that is probably not the most useful for the OP and requires extra assumptions.  But it's a neat chain rule application.
+
+Suppose additionally that $f$ is twice-differentiable.  Since the graph of $f$ is convex, we have $f''(x) > 0$ for all $x$ within in the domain of $f$.  Since $f$ is non-decreasing, $f'(x) > 0$ for all $x$ too.
+
+(I think the convexity and monotonicity assumptions together rule out $f'(x) = 0$. The canonical counterexample $f(x) = x^3$ doesn't satisfy the concavity assumption.  In case I am wrong, we can go ahead and assume $f'(x) > 0$ for all $x$.)
+
+The inverse function theorem tells us that for all $y$ in the range of $f$,
+$$(f^{-1})'(y) = \frac{1}{f'(f^{-1}(y))}$$
+Take another derivative, and apply the chain rule:
+$$\begin{align*}
+    (f^{-1})''(y) &= \frac{-1}{(f'(f^{-1}(y)))^2} \cdot f''(f^{-1}(y)) \cdot (f^{-1})'(y) \\
+&= \frac{-1}{(f'(f^{-1}(y)))^2} \cdot f''(f^{-1}(y)) \cdot \frac{1}{f'(f^{-1}(y))} \\
+&= \frac{- f''(f^{-1}(y))}{(f'(f^{-1}(y)))^3}
+\end{align*}$$
+Since $f'$ and $f''$ are positive, we have $(f^{-1})''(y) < 0$.  So the graph of $f^{-1}$ is concave.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1104245/proving-f-1-is-concave/1104281#1104281) on Mathematics Stack Exchange, 2015-01-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

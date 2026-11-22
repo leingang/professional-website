@@ -1,0 +1,68 @@
+---
+title: homeomorphism between union of intervals and reals
+date: '2016-09-21'
+description: 'Let''s go back to your first problem:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 1935639
+se-link: https://math.stackexchange.com/questions/1935614/homeomorphism-between-union-of-intervals-and-reals/1935639#1935639
+se-score: 3
+se-accepted: false
+se-tags:
+- general-topology
+- metric-spaces
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[homeomorphism between union of intervals and reals](https://math.stackexchange.com/questions/1935614/homeomorphism-between-union-of-intervals-and-reals), asked by [Mathematicing](https://math.stackexchange.com/users/227967/mathematicing) on Mathematics Stack Exchange (2016-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Question:
+> >
+> >Show that $\left ( 0,1 \right )$ and $\mathbb{R}$ are homeomorphic.
+> >
+> >Proposition:If $a,b,c,d \in \mathbb{R}$, $a<b$ and $c<d$ then $\left ( a,b \right )$ is homeomorphic to $\left ( c,d \right )$.
+>
+> For any point $x \in \mathbb{R}$, we have that $x \in \left ( c,d \right )$ where $c<d$
+>
+> Hence, $\left ( 0,1 \right )$ is homeomorphic to $\mathbb{R}$
+>
+> Now,
+>
+> >Question: 
+> >Show that $\left ( 0,1 \right ) \cup \left ( 2,3 \right )$ is not homeomorphic to $\mathbb{R}$.
+>
+> $\textbf{Hint}$: any two points in $\mathbb{R}$ are joined by a continuous curve.
+>
+> I'll like a hint as to the second question.
+>
+> Any help is appreciated.
+>
+> Thanks in advance.
+:::
+
+Let's go back to your first problem:
+
+> For any point $x \in \mathbb{R}$, we have that $x \in \left ( c,d \right )$ where $c<d$
+>
+> Hence, $\left ( 0,1 \right )$ is homeomorphic to $\mathbb{R}$
+
+One point that's confusing for a reader is that you say "hence" as if the second sentence follows from the first.  But the two don't seem to have much to do with each other.  
+
+The first statement looks like you've jumbled up the quantifiers.  You're asked to prove that **for all** $a$, $b$, $c$, and $d$ with $a<b$ and $c<d$, that $(a,b)$ is homeomorphic to $(c,d)$.  You assert that for all $x \in \mathbb{R}$, that **there exist** $c$ and $d$ such that $c<x<d$.  This is true, but it's not relevant to the problem.
+
+First, try to show that $(0,1)$ is homeomorphic to $\mathbb{R}$.  Then, generalize your proof to show that $(a,b)$ is homeomorphic to $\mathbb{R}$, for any $a<b$.  This shows that $(a,b)$ is homeomorphic to $(c,d)$, by transitivity.
+
+To look for a continuous, invertible map that sends $(0,1)$ to $(-\infty,\infty)$, think of rational functions.  Can you construct a function $f(x)$ which is monotone increasing on $(0,1)$, has $\lim_{x\to 0^+} f(x) =-\infty$, and $\lim_{x\to 1^-}f(x) = +\infty$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1935614/homeomorphism-between-union-of-intervals-and-reals/1935639#1935639) on Mathematics Stack Exchange, 2016-09-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

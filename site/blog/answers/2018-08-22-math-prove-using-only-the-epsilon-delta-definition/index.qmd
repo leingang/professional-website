@@ -1,0 +1,68 @@
+---
+title: Prove using only the epsilon , delta - definition
+date: '2018-08-22'
+description: You're starting in the wrong place. Since you are responsible for establishing that the definition is satisfied, you're not allowed to just conjure up the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2891018
+se-link: https://math.stackexchange.com/questions/2890998/prove-using-only-the-epsilon-delta-definition/2891018#2891018
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove using only the epsilon , delta - definition](https://math.stackexchange.com/questions/2890998/prove-using-only-the-epsilon-delta-definition), asked by [Almot1960](https://math.stackexchange.com/users/403529/almot1960) on Mathematics Stack Exchange (2018-08-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Prove using only the epsilon , delta - definition 
+>
+> That :
+>
+>  $$\lim_{x\to 3} \dfrac{\left( \dfrac{1}{x} - \dfrac{1}{3} \right)}{x-3}=L \in \mathbb{R}$$
+>
+> * * *
+>
+> My Try :
+>
+> Given $\epsilon > 0$, there exists a delta such that 
+>
+> $$0<|x-3|< \delta$$  implies $$\left|\dfrac{\left( \dfrac{1}{x} - \dfrac{1}{3} \right)}{x-3} – L\right| < \epsilon \ \ \ \$$  Or $$\ \ \ \ \left|\dfrac{-(x-3)}{3x (x-3)}-L\right|< \epsilon$$ .
+>
+> Now what ?
+:::
+
+> My Try :
+>
+> Given $\epsilon > 0$, there exists a delta such that $0<|x-3|< \delta$  implies $|\dfrac{( \dfrac{1}{x} - \dfrac{1}{3} )}{x-3} – L| < \epsilon$
+
+You're starting in the wrong place.  Since you are responsible for establishing that the definition is satisfied, you're not allowed to just conjure up the $\delta$.  You need to *find* the $\delta$ that matches a given $\epsilon$.
+
+You also haven't given a value to $L$.  Notice that the definition requires you to say what $L$ is.  We sometimes think about limits as a property of a function, but it's more like a statement about a function, a point, and a value.  
+
+The good news is that although you are required to prove the limit with the definition, you can guess the value of the limit with any method you want.  
+
+So here is an outline for the process of proving $\lim_{x\to a}f(x) = L$ by definition
+
+ 1. Find the value of $L$.
+
+ 2. Use algebra to express $|f(x) - L|$ in terms of $|x-a|$.  
+
+ 3. Use the fact that $|x-a|$ can be assumed to be as small as we like (smaller than any $\delta$ we want), to prove that $|f(x)-L|$ can be made as small as necessary (smaller than any $\epsilon$ given us).  
+
+But that is just the scratch work.  Your proof should follow an outline like this:
+
+> We claim $\lim_{x\to 3} \dfrac{( \dfrac{1}{x} - \dfrac{1}{3} )}{x-3}  = -\dfrac{1}{9}$. [using the answer from mfl].  Given $\epsilon > 0$, let $\delta = \dots$ [here is where you have to insert the $\delta$ you found in scratch work].  Suppose that $0 < |x-3| < \delta$ for some $x$.  Then $|f(x) - (-\frac{1}{9})| = \dots < \epsilon$. [Again, what goes in place of $\dots$ is the work you've already done.]
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2890998/prove-using-only-the-epsilon-delta-definition/2891018#2891018) on Mathematics Stack Exchange, 2018-08-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

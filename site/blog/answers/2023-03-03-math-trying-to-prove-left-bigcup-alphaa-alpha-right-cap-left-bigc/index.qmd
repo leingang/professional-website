@@ -1,0 +1,53 @@
+---
+title: Trying to prove $\left(\bigcup_{\alpha}A_\alpha\right)\cap\left(\bigcup_{\beta}B_\beta\right)=\bigcup_{(\alpha,\beta)}A_\alpha\cap B_\beta$
+date: '2023-03-03'
+description: I find proofs written with this much symbolic density non-idiomatic and hard to read. Instead, I suggest you explain in words why any element of the set on the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4651491
+se-link: https://math.stackexchange.com/questions/4651484/trying-to-prove-left-bigcup-alphaa-alpha-right-cap-left-bigcup-betab/4651491#4651491
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trying to prove $\left(\bigcup_{\alpha}A_\alpha\right)\cap\left(\bigcup_{\beta}B_\beta\right)=\bigcup_{(\alpha,\beta)}A_\alpha\cap B_\beta$](https://math.stackexchange.com/questions/4651484/trying-to-prove-left-bigcup-alphaa-alpha-right-cap-left-bigcup-betab), asked by [jc426](https://math.stackexchange.com/users/1089995/jc426) on Mathematics Stack Exchange (2023-03-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Hi I am not sure about my approach of proving the following definition of index sets (distributivity)
+> $$\left(\bigcup_{\alpha}A_\alpha\right)\cap\left(\bigcup_{\beta}B_\beta\right)=\bigcup_{(\alpha,\beta)}A_\alpha\cap B_\beta.$$
+>
+> I started out with
+> $$\text{Let }\{A_\alpha \colon \alpha \in \mathfrak{A}\}\text{ and }\{B_\beta \colon \beta \in \mathfrak{B}\}\text{ be family of subsets of a set.}$$
+>
+> I then proceeded with
+> $$\begin{aligned}
+> &\left(\bigcup_{\alpha}A_\alpha\right)\cap\left(\bigcup_{\beta}B_\beta\right)\\
+> =&\left\{ x: \exists\alpha \in\mathfrak{A} \text{ such that } x \in A_\alpha \right\} \cap\left\{x: \exists \beta  \in\mathfrak{B} \text{ such that } x  \in B_\beta \right\}  \\
+> =&  \left\{ x: \exists\alpha \in\mathfrak{A} \text{ such that } x \in A_\alpha \right\} \wedge  \left\{x: \exists \beta  \in\mathfrak{B} \text{ such that } x  \in B_\beta \right\}\\
+> =& \left\{x: \exists \alpha  \in\mathfrak{A}, \exists \beta  \in\mathfrak{B} \text{ such that }x  \in A_\alpha \wedge x  \in B_\beta \right\} \\
+> =& \left\{x: \exists (\alpha,\beta )  \in\mathfrak{A} \text{ such that } x  \in A_\alpha \cap B_\beta \right\}  \\
+> =&  \bigcup_{(\alpha,\beta)} A_\alpha \cap B_\beta.
+> \end{aligned}$$
+> with $(\alpha,\beta)\in\mathfrak{A}\times\mathfrak{B}$.
+>
+>
+> Does this proof seem fine to you or is there something missing?
+:::
+
+I find proofs written with this much symbolic density non-idiomatic and hard to read. Instead, I suggest you explain in words why any element of the set on the left must also be an element of the set on the right, and vice versa.
+
+> Suppose $x \in \left(\bigcup_{\alpha\in\mathfrak{A}} A_\alpha \right) \cap \left(\bigcup_{\beta\in\mathfrak{B}} B_\beta \right)$. Then $x \in \left(\bigcup_{\alpha\in\mathfrak{A}} A_\alpha \right)$ and $x \in \left(\bigcup_{\beta\in\mathfrak{B}} B_\beta \right)$. This means that there exists $\alpha \in \mathfrak{A}$ such that $x \in A_\alpha$, and $\beta \in \mathfrak{B}$ such that $x \in B_\beta$. Therefore, $x \in A_\alpha \cap B_\beta$. ...
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4651484/trying-to-prove-left-bigcup-alphaa-alpha-right-cap-left-bigcup-betab/4651491#4651491) on Mathematics Stack Exchange, 2023-03-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

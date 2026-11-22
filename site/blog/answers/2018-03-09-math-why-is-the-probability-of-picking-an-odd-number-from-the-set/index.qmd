@@ -1,0 +1,48 @@
+---
+title: Why is the probability of picking an odd number from the set of natural numbers not $\frac{1}{2}$?
+date: '2018-03-09'
+description: The trouble with probability is that it's not as intuitive as it seems.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2684287
+se-link: https://math.stackexchange.com/questions/2679757/why-is-the-probability-of-picking-an-odd-number-from-the-set-of-natural-numbers/2684287#2684287
+se-score: 1
+se-accepted: false
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is the probability of picking an odd number from the set of natural numbers not $\frac{1}{2}$?](https://math.stackexchange.com/questions/2679757/why-is-the-probability-of-picking-an-odd-number-from-the-set-of-natural-numbers), asked by [mrnobody](https://math.stackexchange.com/users/491638/mrnobody) on Mathematics Stack Exchange (2018-03-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Why is the probability of picking an odd number from the set of natural numbers not $\dfrac{1}{2}$?
+>
+> Could anyone explain it to me in simple terms?
+>
+> I am only curious about the reason why and that's the reason why I asked for a "simple" explanation. I remember my teacher mentioning that it is because the set is infinite. Is that right? can someone elaborate?
+:::
+
+The trouble with probability is that it's not as intuitive as it seems.
+
+If you roll a six-sided die, there are six outcomes, and it's fair to assume they're all equally likely.  In that case, the probability of getting a 3 is $\frac{1}{6}$, and the probability of getting an odd number is $\frac{3}{6} = \frac{1}{2}$.
+
+Certainly this doesn't depend depend too much on the number of sides to the die.  If it has $2n$ sides, numbered $1$ through $2n$, the probability of getting a 3 is $\frac{1}{2n}$, and the probability of an odd-numbered side is $\frac{n}{2n} = \frac{1}{2}$.
+
+Now what if you have a die with one face for each natural number?  What is the probability of getting a 3 now?  Since there are infinitely many possible outcomes, you can't just count them and consider them equally likely.  Instead, you need, for each natural number $k$ a nonnegative probability $p_k$ which is the probability of getting a $k$.  Since the possible outcomes are the set of natural  numbers, we require
+$$p_0 + p_1 + p_2 + p_3 + \dots = 1$$
+Even so, there's no guarantee that
+$$p_1 + p_3 + p_5 + \dots = \frac{1}{2}$$
+
+This is why your teacher said that the problem isn't well-defined when the full infinite set of natural numbers is concerned.  You need to know the probability function before you can answer the question.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2679757/why-is-the-probability-of-picking-an-odd-number-from-the-set-of-natural-numbers/2684287#2684287) on Mathematics Stack Exchange, 2018-03-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

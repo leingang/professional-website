@@ -1,0 +1,47 @@
+---
+title: The difference between indeterminate and undefined operation.
+date: '2015-08-18'
+description: 'These statements are about limits. When your prof says that $\infty + \infty$ is undefined, what he means is this: If $\lim{x\to a} f(x) = \infty$ and…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1401941
+se-link: https://math.stackexchange.com/questions/1401901/the-difference-between-indeterminate-and-undefined-operation/1401941#1401941
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The difference between indeterminate and undefined operation.](https://math.stackexchange.com/questions/1401901/the-difference-between-indeterminate-and-undefined-operation), asked by user262920 on Mathematics Stack Exchange (2015-08-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to know the difference between these two terms. My prof told me they are different.
+:::
+
+These statements are about limits.  When your prof says that $\infty + \infty$ is undefined, what he means is this: If $\lim_{x\to a} f(x) = \infty$ and $\lim_{x\to a} g(x) = \infty$, then $\lim_{x\to a} (f(x) + g(x))$ does not exist (that is, is undefined).  In this case, we can be a little more precise and say $\lim_{x\to a} (f(x) + g(x))=\infty$.  The very fast and loose way to write this statement is: $\infty + \infty = \infty$.  But again, this is a statement about limits, not about arithmetic with $\infty$, which is after all not a number.
+
+Suppose now that $\lim_{x\to a} f(x) = \infty$ and $\lim_{x\to a} g(x) = \infty$.
+What can you say about $\lim_{x\to a} (f(x) - g(x))$?  You might guess the limit must be zero.  It turns out the answer is **nothing**.  Consider each of the cases (let $a=\infty$):
+
+* If $f(x) = x^2$ and $g(x) = x$, then the limit is $\infty$. 
+* If $f(x) = x$ and $g(x) = x^2$, then the limit is $-\infty$.
+* If $f(x) = x^2$ and $g(x) = x^2$, then the limit is $0$.
+* If $f(x) = x+1$ and $g(x) = x$, then the limit is $1$.  You can see how this case can be modified to make the limit any real number.
+* If $f(x) = x + \sin x$ and $g(x) = x$, then $\lim_{x\to\infty}(f(x)-g(x))$ does not exist, nor is it even infinite.
+
+So although we have a shorthand statement “$\infty + \infty = \infty$”, there's no analogous shorthand statement for “$\infty - \infty = \Box$.”  This is what it means for a limit to be in indeterminate form—there's no limit theorem that allows us to evaluate it in its current form.
+
+But as you can see in the examples above, *indeterminate* is not the same thing as *undefined*.  A limit in indeterminate form could be finite, infinite, or neither.  It also doesn't mean the limit is unknown or unknowable.  It just means we have to work a bit before we can find if the limit exists and what it might be.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1401901/the-difference-between-indeterminate-and-undefined-operation/1401941#1401941) on Mathematics Stack Exchange, 2015-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

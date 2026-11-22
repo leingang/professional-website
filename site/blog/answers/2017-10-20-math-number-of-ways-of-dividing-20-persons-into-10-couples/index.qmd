@@ -1,0 +1,42 @@
+---
+title: Number of ways of dividing 20 persons into 10 couples
+date: '2017-10-20'
+description: Here's a simplified version of the problem to illustrate the meaning of "order does not matter." Suppose we had only four people $\{A,B,C,D\}$ and we needed to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2481423
+se-link: https://math.stackexchange.com/questions/2481417/number-of-ways-of-dividing-20-persons-into-10-couples/2481423#2481423
+se-score: 14
+se-accepted: true
+se-tags:
+- combinatorics
+- combinations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Number of ways of dividing 20 persons into 10 couples](https://math.stackexchange.com/questions/2481417/number-of-ways-of-dividing-20-persons-into-10-couples), asked by [Aditi](https://math.stackexchange.com/users/469884/aditi) on Mathematics Stack Exchange (2017-10-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Here the first thing that we do is we choose 2 people from 20 then 2 from the remaining 18 then 2 from the remaining 16 ..... till 2 from the remaining 2 in 
+> $[\binom{20}{2}][q-\binom{18}{2}][\binom{16}{2}].....[\binom{14}{2}]$ ways.
+> i.e. $\frac{20!}{2^{10}}$ ways. However we divide the final answer by $10!$ because ‘order does not matter’ 
+> What does ‘order not matter’ mean in this context ?
+:::
+
+Here's a simplified version of the problem to illustrate the meaning of "order does not matter."  Suppose we had only four people $\{A,B,C,D\}$ and we needed to couple them.
+
+ 1. Couple 1: $A$ and $B$, Couple 2: $C$ and $D$
+ 2. Couple 1: $C$ and $D$, Couple 2: $A$ and $B$
+
+Your process of choosing two among four, then two more among the remaining two, would treat these two couplings as different.  But the problem only asks to divide the people into (indistinct) couples, so these should be treated the same.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2481417/number-of-ways-of-dividing-20-persons-into-10-couples/2481423#2481423) on Mathematics Stack Exchange, 2017-10-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

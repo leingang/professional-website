@@ -1,0 +1,63 @@
+---
+title: Gradient of a function as the direction of steepest ascent/descent
+date: '2016-09-03'
+description: I think something missing in the accepted answer to the linked question is the connection between gradient and directional derivative. For a function $f(x,y)$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1912697
+se-link: https://math.stackexchange.com/questions/1912660/gradient-of-a-function-as-the-direction-of-steepest-ascent-descent/1912697#1912697
+se-score: 4
+se-accepted: false
+se-tags:
+- linear-algebra
+- gradient-descent
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Gradient of a function as the direction of steepest ascent/descent](https://math.stackexchange.com/questions/1912660/gradient-of-a-function-as-the-direction-of-steepest-ascent-descent), asked by [novice](https://math.stackexchange.com/users/148136/novice) on Mathematics Stack Exchange (2016-09-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to really understand why the gradient of a function gives the direction of steepest ascent intuitively.
+>
+> Assuming that the function is differentiable at the point in question,  
+> a) I had a look at a few resources online and also looked at this 
+> https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent , a popular question on this stackexchange site.  
+> The accepted answer basically says that we multiply the gradient with an arbitrary vector and then say that the product is maximum when the vector points in the same direction as the gradient? This to me really does not answer the question, but it has 31 upvotes so can someone please point out what I am obviously missing?
+>
+> b) Does the gradient of a function tell us a way to reach the maxima or minima? if yes, then how and which one - maxima or minima or both?  
+> Edit: I read the gradient descent algorithm and that answers this part of my question.
+>
+> c) Since gradient is a feature of the function at some particular point - am I right in assuming that it can only point to the local maxima or minima?
+:::
+
+I think something missing in the accepted answer to the linked question is the connection between gradient and directional derivative.  For a function $f(x,y)$ defined at $P=(x_0,y_0)$, and unit a vector $\mathbf{u}=\left<a,b\right>$, we define the **directional derivative of $f$ in the direction $\mathbf{u}$ at $P$** to be 
+$$D_{\mathbf{u}}f(P) = \lim_{t\to 0} \frac{f(x_0 + ta,y_0+tb)-f(x_0,y_0)}{t}$$
+I've written it in two variables but the notion carries to any number of variables.
+
+So the question “What is the direction of steepest ascent of $f$ at $P$?” can be translated to: “For which $\mathbf{u}$ is $D_{\mathbf{u}}f(P)$ maximized?”
+
+It turns out there is an easy way to compute $D_{\mathbf{u}}f(P)$ without taking the limit.  If you let $g(t) = f(x_0 + ta,y_0 + tb)$, then $D_{\mathbf{u}}f(P)=g'(0)$.  And by the Chain Rule,
+$$\begin{align*}
+g'(t) &=\frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} =\frac{\partial f}{\partial x} a + \frac{\partial f}{\partial y} b\\
+\implies g'(0)&= \left<\frac{\partial f}{\partial x}(x_0,y_0),\frac{\partial f}{\partial y}(x_0,y_0)\right>\cdot \left<a,b\right>
+= \nabla f(x_0,y_0) \cdot \left<a,b\right>
+\end{align*}$$
+To summarize:
+$$D_{\mathbf{u}}f(P) = \nabla f(P) \cdot \mathbf{u}$$
+
+What was the question again?  That's right: for which $\mathbf{u}$ is $D_{\mathbf{u}}f(P)$ the greatest?  Using the identity we just proved, and the law of cosines/dot product formula, we know:
+$$D_{\mathbf{u}}f(P) = \left\Vert \nabla f(P) \right\Vert \left\Vert \mathbf{u} \right\Vert \cos\theta = \left\Vert \nabla f(P) \right\Vert \cos\theta$$
+where $\theta$ is the measure of the angle between the vectors $\nabla f(P)$ and $\mathbf{u}$.  Remember that $\mathbf{u}$ is a *unit* vector (otherwise $D_{\mathbf{u}}f(P)$ would depend on the length of $\mathbf{u}$, and we really only want it to measure $f$), so $\left\Vert \mathbf{u} \right\Vert=1$. 
+
+Now $\cos\theta$ has maximum value $1$, achieved when $\theta = 0$. If the angle between  $\nabla f(P)$ and $\mathbf{u}$ has zero measure, the vectors are actually pointing in the same direction.  That is: the maximum value of $D_{\mathbf{u}}f(P)$ is $\left\Vert \nabla f(P) \right\Vert$, achieved when $\mathbf{u}$ points in the same direction as $\nabla f(P)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1912660/gradient-of-a-function-as-the-direction-of-steepest-ascent-descent/1912697#1912697) on Mathematics Stack Exchange, 2016-09-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

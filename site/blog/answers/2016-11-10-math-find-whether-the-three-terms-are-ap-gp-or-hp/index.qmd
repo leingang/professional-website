@@ -1,0 +1,65 @@
+---
+title: Find whether the three terms are AP,GP or HP.
+date: '2016-11-10'
+description: I came up with several proofs, but this is the one I like the best.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2008062
+se-link: https://math.stackexchange.com/questions/2007936/find-whether-the-three-terms-are-ap-gp-or-hp/2008062#2008062
+se-score: 1
+se-accepted: true
+se-tags:
+- sequences-and-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find whether the three terms are AP,GP or HP.](https://math.stackexchange.com/questions/2007936/find-whether-the-three-terms-are-ap-gp-or-hp), asked by [Abhishek Mhatre](https://math.stackexchange.com/users/143976/abhishek-mhatre) on Mathematics Stack Exchange (2016-11-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Question:**
+>
+> If a,b,c are in a GP and the following expression is true $$a^{\frac{1}{x}}=b^{\frac{1}{y}}=c^{\frac{1}{z}}$$Then x,y,z will be in a GP,AP or HP.
+>
+> **My attempt:**
+> Since a,b,c are in a GP, we can say that $b=(ac)^{\frac{1}{2}}$.
+>
+> Further 
+> $$b^{\frac{1}{y}}=a^{\frac{1}{x}}$$
+>
+> $$((ac)^{\frac{1}{2}})^{\frac{1}{y}}=a^{\frac{1}{x}}$$
+> $$(ac)^{\frac{1}{2y}}=a^{\frac{1}{x}}$$
+> Similary 
+> $$(ac)^{\frac{1}{2y}}=c^{\frac{1}{z}}$$
+> Multiplying $(ac)^{\frac{1}{2y}}$$(ac)^{\frac{1}{2y}}=a^{\frac{1}{x}}c^{\frac{1}{z}}$
+>
+> $(a)^{\frac{1}{y}}(c)^{\frac{1}{y}}=a^{\frac{1}{x}}c^{\frac{1}{z}}$
+>
+> Equating the exponents of a and c terms we get:-
+>
+> $$\frac{1}{y}=\frac{1}{x}$$and$$\frac{1}{y}=\frac{1}{z}$$Hence$$x=y=z$$ Therefore a,b,c are AP, GP and HP. But the book says they are in an AP.
+:::
+
+I came up with several proofs, but this is the one I like the best.
+
+We are given that $a$, $b$, and $c$ are in geometric progression.  Therefore $\frac{b}{a} = \frac{c}{b}$, or equivalently, $b^2 = ac$.
+
+We want to show that $x$, $y$, and $z$ are in arithmetic progression.  It is enough to show that $y-x=z-y$, or equivalently, $2y = x+z$.
+
+We have
+$$\begin{align*}
+    b^2 &= ac = (a^{1/x})^x(c^{1/z})^z \\
+        &= (b^{1/y})^x(b^{1/y})^z \\
+        &= b^{x/y + z/y} = b^{(x+z)/y}
+\end{align*}$$
+Therefore $2 = \dfrac{x+z}{y}$, or $x+z = 2y$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2007936/find-whether-the-three-terms-are-ap-gp-or-hp/2008062#2008062) on Mathematics Stack Exchange, 2016-11-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

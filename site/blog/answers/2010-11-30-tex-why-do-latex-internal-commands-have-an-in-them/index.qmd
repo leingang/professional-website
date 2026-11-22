@@ -1,0 +1,35 @@
+---
+title: Why do LaTeX internal commands have an @ in them?
+date: '2010-11-30'
+description: Some TeX internal commands have @ in them, too. IMO the idea is not so much to break when used "externally" as to keep the space of regularly available control…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6242
+se-link: https://tex.stackexchange.com/questions/6240/why-do-latex-internal-commands-have-an-in-them/6242#6242
+se-score: 15
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why do LaTeX internal commands have an @ in them?](https://tex.stackexchange.com/questions/6240/why-do-latex-internal-commands-have-an-in-them), asked by [eje211](https://tex.stackexchange.com/users/2118/eje211) on TeX Stack Exchange (2010-11-30; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Does the @ mean anything specific? For example, is it substituted? Does it split the command into parts, like `\s@foo` could internally mean "foo of type s"? Is the purpose of the @ only to make internal commands break when used outside a class definition or a package? If so, how is that a Good Thing?
+:::
+
+Some TeX internal commands have `@` in them, too.  IMO the idea is not so much to break when used "externally" as to keep the space of regularly available control sequences free for users.  
+
+Some of the original authors used `@` in place of vowels, but more often nowadays people seem to use it as a word separator much like `_` is used in Perl, C, PHP, Python, etc.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6240/why-do-latex-internal-commands-have-an-in-them/6242#6242) on TeX Stack Exchange, 2010-11-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

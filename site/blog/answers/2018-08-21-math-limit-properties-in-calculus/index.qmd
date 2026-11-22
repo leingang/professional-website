@@ -1,0 +1,90 @@
+---
+title: Limit Properties In Calculus
+date: '2018-08-21'
+description: Functions can be combined using algebra, creating new functions.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2889839
+se-link: https://math.stackexchange.com/questions/2889810/limit-properties-in-calculus/2889839#2889839
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- self-learning
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Limit Properties In Calculus](https://math.stackexchange.com/questions/2889810/limit-properties-in-calculus), asked by user577730 on Mathematics Stack Exchange (2018-08-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am currently learning about limits in Khan academy. I've attached a screenshot below on the section that confuses me: 
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: IctF6.png
+>
+> What confuses me is 3 things:
+>
+>  1. What does it mean $\lim_{x\to c} f(x)+ g(x)$? Does it mean we add the values function f(x) and g(x) at c, and that the $\lim_{x\to c} f(x)+ g(x)$ would be L + M? 
+>
+>  2. What does it mean $\lim_{x\to c} f(x)$ + $\lim_{x\to c} g(x)$ = L+M? I don't understand what this means intuitively at all. How can we just add 2 separate functions? And what would the result be; especially because we aren't adding numbers, but numbers that are getting infinitely close to a number! 
+>
+>  3. What's the difference between $\lim_{x\to c} f(x)^r$ and ($\lim_{x\to c} fx$)$^r$? Aren't they the same thing? And again, what would the result be? What would a limit to the power r be? I can't make sense of it intuitively. Can someone please explain?
+:::
+
+Functions can be combined using algebra, creating new functions.
+
+> How can we just add 2 separate functions?
+
+If $f$ and $g$ are functions, we can create a new function $h$ by the rule $h(x) = f(x)+g(x)$.  We might call this new function $f+g$.
+
+[Note: Before we evaluate $f(x)$ and $g(x)$, we do have to assume that $x$ is in both the domain of $f$ and that of $g$.  But I won't dwell on that because I don't think it's what you're confused about.]
+
+A natural question is: If $f$ and $g$ each have a limit at a point $c$, does $h$?  And would that limit depend on the limits of $f$ and $g$?  
+
+If you have an intuitive understanding of limit, you can work through this: If values of $f$ are close to $3$ (for instance), and values of $g$ are close to $7$, then values of $h$ ought to be close to $10$.  To be a bit more precise, if values of $f$ can be made arbitrarily close to $L$ by taking $x$ sufficiently close to $c$, and values of $g$ can be mare arbitrarily close to $M$ by taking $x$ sufficiently close to $c$, then values of $h$ can be made arbitrarily close to $L+M$ by taking $x$ sufficiently close to $c$.
+
+What this means is: If $\lim_{x\to c} f(x) = L$ and $\lim_{x\to c} g(x) = M$, then $\lim_{x\to c} h(x) = L+M$.  Now if we just replace $h$ with $f+g$, we get
+$$\lim_{x\to c}(f(x)+g(x)) = \lim_{x\to c} f(x) + \lim_{x\to c} g(x)$$
+In other words, *the limit of a sum of functions is the sum of the limits of those functions, provided the limits of the individual functions exist*.
+
+Similarly, we can create new functions from old by subtraction, multiplication, division, and exponentiation.  The limit laws show that (with a few exceptions, like you can't divide by zero), limits play nicely with algebra.
+
+> Why would anyone want to add together, divide, and square functions and limits though?
+
+Fair question.  Many, *many* functions can be expressed in terms of a few basic functions and these limit laws.  For instance, think about these two basic limit statements.  
+$$\begin{align*}
+    \lim_{x\to c} x &= c \\
+    \lim_{x\to c} 1 &= 1
+\end{align*}$$
+
+Now what is $\lim_{x\to 3}(x^2-7)$?  Using the limit laws, we can say:
+$$\begin{align*}
+    \lim_{x\to3}(x^2-7) 
+    &= \lim_{x\to 3}(x^2+(-7))
+  \\&= \lim_{x\to 3}(x^2) + \lim_{x\to 3}(-7) 
+  \\&= \lim_{x\to 3}(x\cdot x) + \lim_{x\to 3}(-7)\cdot 1 
+  \\&= \left(\lim_{x\to 3} x \right)\left(\lim_{x\to 3} x \right) + (-7)\lim_{x\to 3} 1
+  \\&= 3 \cdot 3 + (-7)\cdot 1 = 2
+\end{align*}$$
+You see how we didn't need anything other than the basic facts about the limits of $x$ and $1$, and the limit laws from the screenshot.  And it feels right that the final limit is $(3)^2 - 7$; that is, the value of $f(x) = x^2-7$ at $x=3$.  As we sometimes say, “plug in $3$” and you have the limit.
+
+The functions that can be built from $x$, $1$, addition, scaling (multiplying by constants), and multiplication of functions is the set of polynomials.  Using arguments generalizing the one above, we can now say that
+$$\lim_{x\to c}f(x) = f(c)$$
+when $f$ is any polynomial function.  Cool trick!
+
+We can throw in division with a slight caveat.  A quotient of polynomials is called a *rational function*.  We have to exclude from the domain of such a function any point which makes the denominator polynomial zero.  But otherwise, we can use the limit laws again, and say $\lim_{x\to c}f(x) = f(c)$ when $f$ is any rational function and $c$ is in the domain of $f$.  
+
+This is a bit of a stretch, but one can argue that the rest of calculus is about limits of functions that can't be determined so easily with these limit laws.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2889810/limit-properties-in-calculus/2889839#2889839) on Mathematics Stack Exchange, 2018-08-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

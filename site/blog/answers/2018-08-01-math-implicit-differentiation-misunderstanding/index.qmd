@@ -1,0 +1,54 @@
+---
+title: Implicit Differentiation Misunderstanding.
+date: '2018-08-01'
+description: 1) You're right that the equation $x^2+y^2=1$ does not define $y$ as a function of $x$ globally. However, if you zoom in on certain points of the curve, what…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2869386
+se-link: https://math.stackexchange.com/questions/2869355/implicit-differentiation-misunderstanding/2869386#2869386
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Implicit Differentiation Misunderstanding.](https://math.stackexchange.com/questions/2869355/implicit-differentiation-misunderstanding), asked by [Pianoman1234](https://math.stackexchange.com/users/330745/pianoman1234) on Mathematics Stack Exchange (2018-08-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Say we are given the unit circle, defined by all real numbers $x,y$ such that $x^2+y^2=1$. Now, if one tried to solve explicitly for $y$, one would get that $y=\pm{\sqrt{1-x^2}}$ and this is obviously not a function, so traditional calculus techniques cannot be used. As $x^2+y^2=1$ defines our curve, we can take the derivative of all terms with respect to $x$ to get that $2x+2y\frac{dy}{dx}=0$, as by the chain rule $\frac{d(y^2)}{dx}=\frac{d(y^2)}{dy}\frac{dy}{dx}$, and one can therefore do some algebraic manipulation to get that $\frac{dy}{dx}=-\frac{x}{y}$. However, I have a few questions:
+>
+> 1) I thought the whole point was that $y$ is not a function, and so $\frac{dy}{dx}$ does not make sense as this notation is defined only when $y$ is a function (or am I wrong in this regard?)
+>
+> 2) Why are we allowed to take the derivative with respect to $x$ on both sides of the equation, but not for example to solve $x^2=1$ to get $2x=0$ which would produce the wrong answer that $x=0$ (my inkling tells me that this is because $x^2=1$ is not an identity but an equation, but I just want to check up on this...)
+:::
+
+Good question!  
+
+1) You're right that the equation $x^2+y^2=1$ does not define $y$ as a function of $x$ globally.  However, if you zoom in on certain points of the curve, what you see does look like the graph of a function.  Because zooming in will allow you to ignore that “other” branch of the circle.  
+
+The fancy way to say this is that for most points on the curve, we can find a neighborhood of the point for which the intersection of the curve and the neighborhood is the graph of a function.  And the derivative of *that* function is what's predicted by the implicit differentiation process.
+
+But not necessarily every point on the curve.  For instance, on the circle near $(-1,0)$, no amount of zooming in will make that look the like the graph of a function.  And it's no coincidence that the tangent line is vertical there.  
+
+I have some [slides with pictures][1] up on this topic from several years ago.
+
+2) The equations $x^2+y^2=1$ and $x^2=1$ are much different than they appear.  The first equation relates two *variables* $x$ and $y$: for any value of $x$ we can find (“solve for”) all related values of $y$.  
+
+The second equation is not a relation among variables; there's only one variable after all.  It's an equation describing specific, *unknown* numbers $x$.  We can only differentiate functions (or implicitly differentiate certain relations).  Since $x^2=1$ is not an equation of functions, differentiating doesn't apply.  To give an even more ludicrous example:  Suppose we have the equation $2x=4$.  If we differentiate both sides, we get $2=0$, a contradiction, which would indicate there was no solution at all.  Of course this is wrong since $x=2$ satisfies the equation.
+
+
+  [1]: https://www.slideshare.net/leingang/lesson-11-implicit-differentiation-slides
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2869355/implicit-differentiation-misunderstanding/2869386#2869386) on Mathematics Stack Exchange, 2018-08-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

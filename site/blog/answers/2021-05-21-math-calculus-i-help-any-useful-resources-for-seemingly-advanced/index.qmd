@@ -1,0 +1,50 @@
+---
+title: Calculus I help - any useful resources, for seemingly "Advanced Calc I"
+date: '2021-05-21'
+description: The study guide seems to be pretty thorough. For instance, the notes for the section on absolute value talk about the important applications of the function…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4146550
+se-link: https://math.stackexchange.com/questions/4146510/calculus-i-help-any-useful-resources-for-seemingly-advanced-calc-i/4146550#4146550
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- advice
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculus I help - any useful resources, for seemingly "Advanced Calc I"](https://math.stackexchange.com/questions/4146510/calculus-i-help-any-useful-resources-for-seemingly-advanced-calc-i), asked by [Saahir](https://math.stackexchange.com/users/930236/saahir) on Mathematics Stack Exchange (2021-05-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Disclaimer: I am not looking for anyone to provide in depth solutions (or any solutions for that matter) to any of the questions. The sample worksheets have just been posted to give an idea of what standards I am talking about. I would like resources where this work can be learnt, because my university is not willing to help their students in this regard.
+>
+> I watched Professor Leonard's videos and he helped a lot, but it seems like the level of work he teaches is somehow nowhere near the level of my Calculus I course, which makes no sense. It's almost as though they've taken the Calculus I course of the textbook(amazon.com/Calculus-James-Stewart/dp/1285740629), but then added much deeper content to it.
+>
+> I have attached a sample of our questions below. If anyone could advise me on where I can find resources to help me, that would really and truly be appreciated!
+>
+> Thank you
+>
+> Our course information: https://www.up.ac.za/yearbooks/2020/modules/view/WTW%20114
+>
+> Our study guide: https://1drv.ms/b/s!Aum4yyXWXkX3gesY5D6WRcQZOnUnXg
+>
+> Samples of our worksheets: https://1drv.ms/u/s!Aum4yyXWXkX3goBMIO411IGhUzue5g?e=lfCzFO
+:::
+
+The study guide seems to be pretty thorough.  For instance, the notes for the section on absolute value talk about the important applications of the function, some tips for reasoning with it, and strong advice to commit the proof of the triangle inequality to memory.  As an instructor, I think that's more than enough bridge material between the text and the problem set (especially some of the absolute value problems you highlighted).
+
+I noticed you remarked on the problem set that you can solve some of the problems, but you're worried about the time it takes to solve them, especially since exams are timed.  University instructors are probably not going to be focused on the skill of solving routine problems quickly, and maybe that's leading to your impression that the university "is not willing to help students."  
+
+If you want to be able to solve calculus problems quickly, focus first on solving them at all—speed will come with experience and practice.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4146510/calculus-i-help-any-useful-resources-for-seemingly-advanced-calc-i/4146550#4146550) on Mathematics Stack Exchange, 2021-05-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,82 @@
+---
+title: How to find the ratio of a length command (e.g., \textwidth) to a reference value (e.g., 6cm) ?
+date: '2010-12-02'
+description: 'TeX doesn''t have a data type for decimal numbers and can''t natively divide dimensions (for the mathematicians: TeX''s dimensions form a one-dimensional vector…'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6421
+se-link: https://tex.stackexchange.com/questions/6417/how-to-find-the-ratio-of-a-length-command-e-g-textwidth-to-a-reference-valu/6421#6421
+se-score: 6
+se-accepted: false
+se-tags:
+- calculations
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find the ratio of a length command (e.g., \textwidth) to a reference value (e.g., 6cm) ?](https://tex.stackexchange.com/questions/6417/how-to-find-the-ratio-of-a-length-command-e-g-textwidth-to-a-reference-valu), asked by [Display Name](https://tex.stackexchange.com/users/2099/display-name) on TeX Stack Exchange (2010-12-02; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How to find the ratio of a length command (e.g., `\textwidth`) to a reference value (e.g., `6cm`) ? Actually I want to use the ratio for the `\scalebox` argument, e.g., `\scalebox{<ratio>}`.
+>
+>
+>
+> ```latex
+> \documentclass{article}
+> \usepackage[showframe=true]{geometry}
+> \usepackage{pst-node}
+> \usepackage{graphicx}
+>
+> \usepackage{fp}
+> \usepackage{pgf}
+> \pgfmathsetmacro{\ratio}{\the\textwidth/(6cm)}
+>
+> \makeatletter
+>   \FPdiv\thecm{6}{2.54} %72.27
+>   \FPmul\thecminpoints{\thecm}{72.27}
+>   \FPdiv\thescale{\strip@pt\textwidth}{\thecminpoints}%
+> \makeatother
+>
+> \begin{document}
+> \noindent%
+> %\scalebox{\thescale}{%
+> \scalebox{\ratio}{%
+> \begin{pspicture}(6,4)
+> \pnode(2,2){A}\psframe(A)
+> \pnode(4,2){B}\pscircle(B){2}
+> \end{pspicture}}
+> \uput[-135](A){$A$}
+> \rput(B){$B$}
+> \end{document}
+> ```
+>
+> ![alt text][q-1]
+>
+>
+>   [q-1]: nTCZt.png
+:::
+
+TeX doesn't have a data type for decimal numbers and can't natively divide dimensions (for the mathematicians: TeX's dimensions form a one-dimensional vector space over the field of rational numbers, but not a field by themselves).  You can use `pgfmath` to do it:
+
+```latex
+\documentclass{article}
+\usepackage{pgf}
+\begin{document}
+
+\pgfmathsetmacro{\ratio}{\the\textwidth/(6cm)}
+\scalebox{\ratio}{\fbox{stuff}}
+
+\end{document}
+```
+
+But the confused questions and presumptive answers are saying that there might be a better way to get what you really want.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6417/how-to-find-the-ratio-of-a-length-command-e-g-textwidth-to-a-reference-valu/6421#6421) on TeX Stack Exchange, 2010-12-02. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

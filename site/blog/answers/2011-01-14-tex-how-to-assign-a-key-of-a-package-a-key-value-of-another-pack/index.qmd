@@ -1,0 +1,92 @@
+---
+title: How to assign a key of a package a key value of another package?
+date: '2011-01-14'
+description: Use the source, Luke. Look in listings.sty and see what happens when the tabsize key is encountered. It sets a macro \lst@tabsize. So this should work.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 8966
+se-link: https://tex.stackexchange.com/questions/8965/how-to-assign-a-key-of-a-package-a-key-value-of-another-package/8966#8966
+se-score: 4
+se-accepted: true
+se-tags:
+- key-value
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to assign a key of a package a key value of another package?](https://tex.stackexchange.com/questions/8965/how-to-assign-a-key-of-a-package-a-key-value-of-another-package), asked by [Display Name](https://tex.stackexchange.com/users/2099/display-name) on TeX Stack Exchange (2011-01-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Scenario 1
+> =======
+>
+> Actually I can do like this:
+>
+> In `mylistings.sty`, I define
+>
+> ```latex
+> \def\tabsize{3}
+>
+> \RequirePackage{listings}
+> \lstset{tabsize=\tabsize}
+> ```
+>
+> and in `mytable.sty`, I define
+>
+> ```latex
+> \RequirePackage{mylistings}
+> \RequirePackage{fancyvrb}
+> \fvset{tabsize=\tabsize}
+> ```
+>
+>
+> * * *
+>
+>
+> Scenario 2
+> =======
+>
+> For some reasons, I don't like the scenario 1 above.
+>
+> Instead I want to do as follows (of course it does not work now)
+>
+> In `mylistings.sty`, I define
+>
+>
+> ```latex
+> \RequirePackage{listings}
+> \lstset{tabsize=3}%example
+> ```
+>
+> and in `mytable.sty`, I define
+>
+> ```latex
+> \RequirePackage{mylistings}
+> \RequirePackage{fancyvrb}
+> \fvset{tabsize=listingstabsize}% I don't know the correct syntax. :-)
+> ```
+>
+>
+> * * *
+> The question is how to implement the scenario 2?
+:::
+
+Use the source, Luke.  Look in `listings.sty` and see what happens when the `tabsize` key is encountered.  It sets a macro `\lst@tabsize`.  So this should work.
+
+```latex
+\makeatletter
+\fvset{tabsize=\lst@tabsize}
+\makeatother
+```
+
+But internals of a package aren't usually guaranteed to behave the same way in future versions.  So there's a chance that this workaround can be broken in future versions.  This is why Scenario 1 is the safer way to go.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/8965/how-to-assign-a-key-of-a-package-a-key-value-of-another-package/8966#8966) on TeX Stack Exchange, 2011-01-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

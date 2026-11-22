@@ -1,0 +1,48 @@
+---
+title: $x\in a\cap b \implies x\in c$ and $y\in b\cap c \implies y\in a$ show that $a\cap b = b\cap c$
+date: '2019-08-15'
+description: 'Here is another way to write it. You have: $a \cap b \subseteq c$, and $b \cap c \subseteq a$. So: $$a \cap b \supseteq (b \cap c) \cap b = b \cap c$$ and: $$b…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3324222
+se-link: https://math.stackexchange.com/questions/3324188/x-in-a-cap-b-implies-x-in-c-and-y-in-b-cap-c-implies-y-in-a-show-that-a-c/3324222#3324222
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-number-theory
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$x\in a\cap b \implies x\in c$ and $y\in b\cap c \implies y\in a$ show that $a\cap b = b\cap c$](https://math.stackexchange.com/questions/3324188/x-in-a-cap-b-implies-x-in-c-and-y-in-b-cap-c-implies-y-in-a-show-that-a-c), asked by [AgentS](https://math.stackexchange.com/users/168854/agents) on Mathematics Stack Exchange (2019-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> While looking at a proof of euclidean gcd algorithm, it seems they're using below fact as obvious but I feel stuck :   
+>
+> Given.  
+> $x\in a\cap b \implies x\in c$  
+> and  
+> $y\in b\cap c \implies y\in a$  
+> show that $a\cap b = b\cap c$  
+>
+>
+> * * *
+> Using venn diagrams it is easy to see they're the same. I'm looking for other ways to better understand this so that my head begins to accept this as obvious... Any help?
+:::
+
+Here is another way to write it.  You have: $a \cap b \subseteq c$, and $b \cap c \subseteq a$.  So:
+$$a \cap b \supseteq (b \cap c) \cap b = b \cap c$$
+and:
+$$b \cap c \supseteq b \cap (a \cap b) = a \cap b$$
+So each set includes the other.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3324188/x-in-a-cap-b-implies-x-in-c-and-y-in-b-cap-c-implies-y-in-a-show-that-a-c/3324222#3324222) on Mathematics Stack Exchange, 2019-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

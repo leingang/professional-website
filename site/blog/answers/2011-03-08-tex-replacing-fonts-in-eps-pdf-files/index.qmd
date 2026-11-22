@@ -1,0 +1,60 @@
+---
+title: Replacing fonts in EPS/PDF files
+date: '2011-03-08'
+description: To do this you will need to edit the eps file, and TeX doesn't do that. The only thing TeX does when it encounters \includegraphics{myfile.eps} is read the…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12936
+se-link: https://tex.stackexchange.com/questions/12932/replacing-fonts-in-eps-pdf-files/12936#12936
+se-score: 3
+se-accepted: false
+se-tags:
+- fonts
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Replacing fonts in EPS/PDF files](https://tex.stackexchange.com/questions/12932/replacing-fonts-in-eps-pdf-files), asked by [Malone](https://tex.stackexchange.com/users/4053/malone) on TeX Stack Exchange (2011-03-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to have a vector graphic with the font I'm using for my captions in my PDF file.
+>
+> I normally create my graphics in DIA and save them as `.eps` files. In my `.tex` file I use following
+>
+> ```latex
+> \usepackage{ifpdf}
+> \usepackage{graphicx, epstopdf}
+> \ifpdf
+>   \DeclareGraphicsExtensions{.pdf,.jpg,.png}
+> \else
+>   \DeclareGraphicsExtensions{.eps}
+> \fi
+> ```
+>
+> and
+>
+> ```latex
+> \includegraphics[width=\linewidth]{my_image.eps}
+> ```
+>
+> to include images (and auto generate PDF files).
+>
+> I'm using Windows 7 (64-bit), miktex 2.9 and pdflatex
+:::
+
+To do this you will need to edit the eps file, and TeX doesn't do that.  The only thing TeX does when it encounters `\includegraphics{my_file.eps}` is read the file to determine what size box to reserve.  The graphic is inserted by a separate process. 
+
+Either use Dia to include the right fonts, or create the diagrams in TeX (for instance with [`TikZ`](http://sourceforge.net/projects/pgf/) or [`PSTricks`](http://www.ctan.org/tex-archive/help/Catalogue/entries/pstricks.html).  See also questions tagged [tag:tikz-pgf] and [tag:pstricks].
+
+**Edit** I forgot about [`psfrag`](http://ctan.org/pkg/psfrag) and [`psfragx`](http://ctan.org/pkg/psfragx). It's a way to make substitutions in the eps file. It might do what you want though it may require you to retype all the text.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12932/replacing-fonts-in-eps-pdf-files/12936#12936) on TeX Stack Exchange, 2011-03-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,57 @@
+---
+title: Having trouble to understand real life applications of surface integrals
+date: '2023-07-05'
+description: Several good questions in your post. One question is about what the surface integral of a function computes. As TheHoneyCat says, it helps to consider the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4731036
+se-link: https://math.stackexchange.com/questions/4729695/having-trouble-to-understand-real-life-applications-of-surface-integrals/4731036#4731036
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Having trouble to understand real life applications of surface integrals](https://math.stackexchange.com/questions/4729695/having-trouble-to-understand-real-life-applications-of-surface-integrals), asked by user641883 on Mathematics Stack Exchange (2023-07-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have been revising some maths and in particular I have been focusing on vector calculus. Today I have just finished looking at surface integrals. 
+> I do understand how we parametrize a surface integral starting from a region R, but I am having troubles actually understanding how these integrals are put in context when having a scalar function or a vector function.
+>
+> For instance, a popular example is that you have a surface (for instance a metal sheet) and then you have a function which gives the density of each point of this metal sheet (if I were to plot this function, would it have the same shape of the surface?)
+> Further, I dont understand why calculating the surface integral of the density function gives me the mass (isn't the definition of density mass/volume and hence I would need some kind of volume?)
+>
+> Thank you for whoever can explain this in simple terms
+:::
+
+Several good questions in your post. One question is about what the surface integral of a function computes. As TheHoneyCat says, it helps to consider the integrand as the density of some quantity.
+
+Very often density (for instance, mass density) is measured per unit of volume, but a surface is only two-dimensional. So densities are given per unit of area. No real-world surface is literally infinitesimally thin, but substituting this limit makes the total quantity easier to calculate.
+
+Another twist is that mass is normally positive, so using mass density as a metaphor breaks down when the integrand has negative values. But [electric charge](https://en.wikipedia.org/wiki/Electric_charge) is a signed quantity, so we can use that instead. If the integrand represents the charge density (per unit of area) at a point on the surface, the integral is the total charge on the surface.
+
+Because the definite integral is introduced as (and was invented for) a way to compute the area of a curved region, students often get stuck in a "integral=area" or "integral=volume" rut. But really, any product law can become an application of the definite integral. With surfaces, "charge = density times area" is the applicable product law that helps the most with intuition (in my opinion). 
+
+Your other question is in this paragraph:
+
+> For instance, a popular example is that you have a surface (for instance a metal sheet) and then you have a function which gives the density of each point of this metal sheet (**if I were to plot this function, would it have the same shape of the surface?**)
+
+I think you're mixing up domains and codomains here. The density function's domain is the surface, and its codomain is real numbers. We don't usually plot or graph functions whose domain is a curved surface. I think there is a way to do that (maybe as a section of the [normal bundle](https://en.wikipedia.org/wiki/Normal_bundle)), but I don't think it's what you're thinking of.
+
+It is often possible to represent a surface as the graph of some function of two variables (or the union of several such graphs). But the surface is now the _image_ of that parametrization function.
+
+When you compute a surface integral of a function $f$ defined on a surface $S$ parametrized by a function $g$ over a region $R$, you are basically integrating $f(g(x,y))$ over $R$. Points $(x,y)$ in $R$ can locate points on $S$, so we can evaluate $f$ at those points. But this composition alone doesn't take into account the curviness of $S$. The extra terms in the integral make this correction.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4729695/having-trouble-to-understand-real-life-applications-of-surface-integrals/4731036#4731036) on Mathematics Stack Exchange, 2023-07-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

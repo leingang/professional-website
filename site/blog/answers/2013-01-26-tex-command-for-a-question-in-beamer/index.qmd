@@ -1,0 +1,130 @@
+---
+title: Command for a question in Beamer
+date: '2013-01-26'
+description: 'Have a look at incremental overlay specifications (section 9.6.4 of the beamer manual). You could do something like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 95450
+se-link: https://tex.stackexchange.com/questions/95448/command-for-a-question-in-beamer/95450#95450
+se-score: 6
+se-accepted: true
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Command for a question in Beamer](https://tex.stackexchange.com/questions/95448/command-for-a-question-in-beamer), asked by [F. Tusell](https://tex.stackexchange.com/users/750/f-tusell) on TeX Stack Exchange (2013-01-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I like to include a "feedback question" at the end of each slide, to check that my students are following me. For that, I include code such as:
+>
+> ```latex
+> \begin{overlayarea}{\textwidth}{1cm}
+> \only<5>{\hfill\beamerbutton{How do we get last expression?}}
+> \only<6>{\hfill\begin{beamercolorbox}[rounded=true,right]{solucion}
+>          Using a Taylor series expansion
+>          $e^t = 1 + t + t^2/2! + t^3/3! + \ldots$
+> ```
+> 	     \end{beamercolorbox}}
+>     \end{overlayarea}
+>
+> The problem with this is that I have to set manually the level of the overlay; for instance, the question above comes from a slide with four previous items.
+>
+> I would like to have a new command to simplify this. I have tried,
+>
+>
+> ```latex
+> \newcommand{\pregunta}[4]{%
+> \begin{overlayarea}{\textwidth}{1cm}
+> \only<#1>{{\hfill\beamerbutton} #3 }}}
+> \only<#2>{{\hfill
+> \begin{beamercolorbox}[rounded=true,right]{solucion}
+>  #4
+>  \end{beamercolorbox}}}
+> \end{overlayarea}}
+> ```
+>
+> but it just doesn't work. Ideally, I would like a command that frees me from having to pass as arguments the two overlay levels (#1, #2), so it works at the end of a slide irrespective of how many items it has (and continues to work if an item is added or removed!).
+:::
+
+Have a look at incremental overlay specifications (section 9.6.4 of the beamer manual).  You could do something like this:   
+
+```latex
+\documentclass{beamer}
+
+\newcommand{\pregunta}[2]{%
+\begin{overlayarea}{\textwidth}{1cm}
+  \only<+>{\hfill\beamerbutton{#1}}%
+  \only<+>{\hfill\begin{beamercolorbox}[rounded=true,right]{solucion}#2
+  \end{beamercolorbox}}%
+\end{overlayarea}}
+
+\begin{document}
+\begin{frame}{original implementation}
+\begin{enumerate}
+\item<1-> foo
+\item<2-> bar
+\item<3-> baz
+\item<4-> buzz
+\end{enumerate}
+\begin{overlayarea}{\textwidth}{1cm}
+\only<5>{\hfill\beamerbutton{How do we get last expression?}}
+\only<6>{\hfill\begin{beamercolorbox}[rounded=true,right]{solucion}
+         Using a Taylor series expansion
+         $e^t = 1 + t + t^2/2! + t^3/3! + \ldots$
+     \end{beamercolorbox}}
+\end{overlayarea}
+\end{frame}
+
+
+\begin{frame}{macro implementation}
+\begin{enumerate}[<+->]
+\item foo
+\item bar
+\item baz
+\item buzz
+\end{enumerate}
+\pregunta{How do we get last expression?}
+  {Using a Taylor series expansion $e^t = 1 + t + t^2/2! + t^3/3! + \ldots$}
+\end{frame}
+
+\end{document}
+```
+
+Then if you use the same style of overlay specification in your slides this will automatically add two more in sequence.
+
+If it were me I would create two overlay-specification-aware environments so I could have something a bit more semantic in the markup (sorry, this doesn't exactly work right now.  I'll have to come back to it later):
+
+```latex
+\newenvironment<>{pregunta}[1]{%
+  \begin{onlyenv}#1\hfill\beamerbutton}{%
+  \end{onlyenv}
+  }
+\newenvironment<>{solucion}[1]{%
+  \begin{beamercolorbox}#1[rounded=true,right]{solucion}}{%
+  \end{beamercolorbox}}
+
+\begin{overlayarea}{\textwidth}{1cm}
+\begin{pregunta}<+>
+  How do we get last expression?
+\end{pregunta}
+\begin{solucion}<+>
+  Using a Taylor series expansion $e^t = 1 + t + t^2/2! + t^3/3! + \ldots$
+\end{solucion}
+\end{overlayarea}
+```
+
+Then you can also use beamer's theme mechanism to style them consistently.
+
+I had thought that you could still hard-code your slide numbers by using the `beamerpauses` counter.  But it seems that this counter is only used when incremental overlay specifcations are.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/95448/command-for-a-question-in-beamer/95450#95450) on TeX Stack Exchange, 2013-01-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

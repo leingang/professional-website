@@ -1,0 +1,58 @@
+---
+title: proof that $\frac{d}{dx}e^x = e^x$
+date: '2015-02-06'
+description: 'A meta-answer: Each of the three answers so far are coming from a different definition of the exponential function. They are all equivalent. But in each…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1136852
+se-link: https://math.stackexchange.com/questions/1136763/proof-that-fracddxex-ex/1136852#1136852
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[proof that $\frac{d}{dx}e^x = e^x$](https://math.stackexchange.com/questions/1136763/proof-that-fracddxex-ex), asked by [peanut_butter](https://math.stackexchange.com/users/190452/peanut-butter) on Mathematics Stack Exchange (2015-02-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am working on proving different mathematical formulas. I am currently working on proving that $\frac{d}{dx} e^x = e^x$ . This is my proof so far:
+>
+> $$\frac{d}{dx} e^x = \lim_{h \to0}\frac{e^{x+h} - e^{x}}{h} =$$
+> $$\lim_{h \to 0} \frac{e^x(e^h-1)}{h} = e^x \cdot\lim_{h \to 0} \frac{(e^h-1)}{h}$$
+> Need to prove that $\lim_{h \to 0} \frac{(e^h-1)}{h} = 1$.
+>
+> Using substitution: $h = \ln(t+1)$
+>
+> $$\lim_{t \to 0}\frac{t}{\ln(t+1)}$$
+>
+> $$\lim_{t \to 0}\frac{t \cdot \frac{1}{t}}{\ln(t+1)\cdot \frac{1}{t}}$$
+>
+> $$\lim_{t \to 0}\frac{1}{\ln(t+1)^{\frac{1}{t}}}$$
+>
+> $$\frac{1}{\ln(e)} = \frac{1}{1} = 1$$
+>
+> $\blacksquare$
+>
+>
+> * * *
+>
+>
+> Am I allowed to say $t \to 0$ in a proof when it is actually $\ln(t+1) \to 0$?
+> Do you have any corrections on the proof?
+:::
+
+A meta-answer: Each of the three answers so far are coming from a different definition of the exponential function.  They are all equivalent.  But in each course, only one of them is the definition.  
+
+So it's important to understand what the definitions are in your course before you can prove this statement yourself.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1136763/proof-that-fracddxex-ex/1136852#1136852) on Mathematics Stack Exchange, 2015-02-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

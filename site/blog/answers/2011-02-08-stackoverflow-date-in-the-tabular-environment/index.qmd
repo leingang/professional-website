@@ -1,0 +1,55 @@
+---
+title: \date{} in the tabular environment!
+date: '2011-02-08'
+description: '\date doesn''t get the date, it sets the date of the document. If you browse the latex.ltx source code you find:'
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 4933960
+se-link: https://stackoverflow.com/questions/4932910/date-in-the-tabular-environment/4933960#4933960
+se-score: 5
+se-accepted: true
+se-tags:
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[\date{} in the tabular environment!](https://stackoverflow.com/questions/4932910/date-in-the-tabular-environment), asked by [Karsten Lentfer](https://stackoverflow.com/users/608094/karsten-lentfer) on Stack Overflow (2011-02-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to make a table using the tabular environment, and in one of the cells in my table I need to include the actual date. A clever approach would then be using the \date{} command - but I cannot make it work to include the \date{} command inside the tabular environment...is that not possible??
+>
+> Cheers, 
+>
+> Karsten
+:::
+
+`\date` doesn't get the date, it sets the date of the document.  If you browse the `latex.ltx` source code you find:
+
+```latex
+\def\date#1{\gdef\@date{#1}}
+```
+
+So if the date of the document is set in the preamble, you can get it by using `\@date`.  Unfortunately (for you) that macro has an `@` in it so you can't use it directly in regular document text.  So you would have to put this in your preamble:
+
+```latex
+\makeatletter
+\let\insertdate\@date
+\makeatother
+```
+
+Then `\insertdate` is an alias to `\@date` and will insert the date specified in the preamble into the current text.
+
+But you also mentioned the "actual" date, which may mean the *current* date as of the compilation of the document.  That information is stored by TeX in `\today`.
+
+BTW, You can find an entire community on the [TeX StackExchange](https://tex.stackexchange.com/), where no TeX-related question is too small.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4932910/date-in-the-tabular-environment/4933960#4933960) on Stack Overflow, 2011-02-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,80 @@
+---
+title: How does one perform induction on integers in both directions?
+date: '2024-02-22'
+description: Any nonempty set $A$ of integers which contains $k+1$ and $k-1$ whenever it contains $k$ is the entire set of integers. So yes, you can do induction over all…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4867762
+se-link: https://math.stackexchange.com/questions/4867269/how-does-one-perform-induction-on-integers-in-both-directions/4867762#4867762
+se-score: 3
+se-accepted: false
+se-tags:
+- logic
+- proof-writing
+- induction
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does one perform induction on integers in both directions?](https://math.stackexchange.com/questions/4867269/how-does-one-perform-induction-on-integers-in-both-directions), asked by [June Richardson](https://math.stackexchange.com/users/865977/june-richardson) on Mathematics Stack Exchange (2024-02-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> On a recent assignment, I had a question where I had to prove a certain statement to be true for all $n\in\mathbb{Z}$. The format of my proof looked like this:
+>
+>  - Statement is true when $n=0$
+>  - "Assume statement is true for some $k\in\mathbb{Z}$"
+>  - Statement must be true for $k+1$
+>  - Statement must be true for $k-1$
+>
+> My professor said the logic is flawed because of my second bullet point above. She says that since mathematical induction relies on the well-ordering principle and since $\mathbb{Z}$ has no least or greatest element, that using induction is invalid. 
+>
+> Instead, she says my argument should be structured like this:
+>
+>  - Statement is true when $n=0$
+>  - "Assume statement is true for some integer $k\geq0$"
+>  - Statement must be true for $k+1$
+>  - "Assume statement is true for some integer $k\leq0$"
+>  - Statement must be true for $k-1$
+>
+> I am failing to understand where my logic fails and why I need to split the assumptions like she is suggesting. Could someone explain why relying on the well-ordering principle makes the structure of my proof logically unsound?
+:::
+
+Any nonempty set $A$ of integers which contains $k+1$ and $k-1$ whenever it contains $k$ is the entire set of integers. So yes, you can do induction over all the integers.
+
+But it's not *often* done that way. It seems more frequent to:
+
+ - Prove the the statement for all nonnegative integers, possibly by induction
+ - Reduce the negative case to the nonnegative case
+
+For example, I'm teaching discrete mathematics from a textbook that proves the theorem “every integer is either even or odd” this way:
+
+* * *
+
+**Lemma 1:** For all integers $n$, if $n$ is even or odd, then  $n+1$ is even or odd.
+
+**Lemma 2:** For all integers $n$, $n$ is even if and only if $|n|$ is even, and $n$ is odd if and only if $|n|$ is odd.
+
+The proofs are left to the reader.
+
+**Proposition:** All natural numbers are either even or odd.
+
+_Proof:_ By induction on $n$. The base case $n=0$ is apparent by the definition of even. For the inductive case, suppose $k$ is either even or odd. By Lemma 1, $k+1$ is either even or odd. So by induction all natural numbers are either even or odd. QED.
+
+**Theorem:** All integers are either even or odd.
+
+_Proof:_ Consider an integer $x$. If $x \geq 0$, the proposition already shows that $x$ is either even or odd. If $x < 0$, the proposition shows that $|x|$ is either even or odd. By Lemma 2, $x$
+is either even or odd. QED
+
+* * *
+
+To me, this is more readable than going forwards and backwards at the same time. When people read a lot of induction proofs, they expect them to follow an idiomatic pattern, and this follows that pattern. Also, reducing the negative case to a nonnegative one is a pretty standard trick.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4867269/how-does-one-perform-induction-on-integers-in-both-directions/4867762#4867762) on Mathematics Stack Exchange, 2024-02-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,60 @@
+---
+title: Prove by induction that $ 2^{n+2}|(2n+3)! $ is true for all positive integers n
+date: '2018-01-30'
+description: You're confusing the division operation $\div$ with the divisibility relation $|$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2627489
+se-link: https://math.stackexchange.com/questions/2627481/prove-by-induction-that-2n22n3-is-true-for-all-positive-integers-n/2627489#2627489
+se-score: 1
+se-accepted: true
+se-tags:
+- proof-writing
+- induction
+- factorial
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove by induction that $ 2^{n+2}|(2n+3)! $ is true for all positive integers n](https://math.stackexchange.com/questions/2627481/prove-by-induction-that-2n22n3-is-true-for-all-positive-integers-n), asked by [Mr.SrJenea](https://math.stackexchange.com/users/526290/mr-srjenea) on Mathematics Stack Exchange (2018-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to prove that 
+>
+> $$2^{n+2}|(2n+3)!$$
+>
+> Is true for all all positive integers $n$.
+>
+> I started proving it by induction and shown that the base case $n = 1$ is true. Then I proceeded to $k$:
+> $$2^{k+2}|(2k+3)! \implies (2k+3)! = m2^{k+2} \implies 2^{k+2} =  \frac{(2k+3)!}m$$, for some integer $m$.
+>
+> Now the inductive step:
+> $2^{k+1+2} = 2^{k+2}2 = \frac{(2k+5)!}m$ for some integer $m$.
+>
+> I got stuck on this step. How would I continue to solve this?
+:::
+
+You're confusing the division operation $\div$ with the divisibility relation $|$.
+
+> $$2^{k+2}|(2k+3)! \implies (2k+3)! = m2^{k+2}$$
+
+This is true, except you forgot to quantify $m$.  It's better to say that $2^{k+1} \mathrel| (2k+3)!$ implies *there exists* $m$ such that $(2k+3)! = m2^{k+2}
+
+> $$ (2k+3)! = m2^{k+2} \implies 2^{k+2} =  (2k+3)!|m$$No.  I think you mean $\frac{(2k+3)!}{m}$ on the right-hand side of the second equation above.  But I'm not sure that helps anyway.
+
+You want to show that $(2(k+1)+3)! = (2k+5)!$ is a multiple of $2^{(k+1)+2} = 2^{k+3}$.  That is, you want to show that $(2k+5)! = n2^{k+3}$ for some integer $n$.
+
+Observe that$$
+    (2k+5)! = (2k+5)(2k+4)(2k+3)! = (2k+5)(2k+4)2^{k+2}m
+$$
+and you want to show the right-hand side is a multiple of $2^{k+3}$.  Can you do that?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2627481/prove-by-induction-that-2n22n3-is-true-for-all-positive-integers-n/2627489#2627489) on Mathematics Stack Exchange, 2018-01-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

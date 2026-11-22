@@ -1,0 +1,48 @@
+---
+title: Geometric intuition behind an n-dimensional rotation matrix
+date: '2018-08-20'
+description: Suppose $Q$ is an $n\times n$ matrix that preserves distance. Heuristically, that would mean that $$\Vert Qx-Qy \Vert = \Vert x - y \Vert$$ for all $n$-vectors…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2888904
+se-link: https://math.stackexchange.com/questions/2888868/geometric-intuition-behind-an-n-dimensional-rotation-matrix/2888904#2888904
+se-score: 5
+se-accepted: true
+se-tags:
+- linear-algebra
+- matrices
+- linear-transformations
+- rotations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Geometric intuition behind an n-dimensional rotation matrix](https://math.stackexchange.com/questions/2888868/geometric-intuition-behind-an-n-dimensional-rotation-matrix), asked by [Christian](https://math.stackexchange.com/users/28462/christian) on Mathematics Stack Exchange (2018-08-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How do I derive an n-dimensional rotation matrix from a geometric perspective? I have read on wikipedia that it preserves distance so that $Q^TQ = I$ but the explanation to be honest isn't very clear. I've had a thorough look on Google and can't find a decent explanation that starts from the geometry first. Also, on Wikipedia (see here: https://en.wikipedia.org/wiki/Rotation_matrix) it says that $det(Q) = 1$ but it isn't clear at all why! Thanks.
+:::
+
+Suppose $Q$ is an $n\times n$ matrix that preserves distance.  Heuristically, that would mean that
+$$\Vert Qx-Qy \Vert = \Vert x - y \Vert$$
+for all $n$-vectors $x$ and $y$.  Now if you use the polarization identity
+$$\left<x,y\right> = \frac{1}{4}\left(\Vert x+y \Vert^2 - \Vert x-y\Vert^2\right)$$
+you can show that preserving distances is equivalent to preserving the inner product.  So $Q$ preserves distances if and only if
+$$\left<Qx,Qy\right> = \left<x,y\right>$$
+for all $x$ and $y$.  Using the defining property of the transpose, we can move it over:
+$$\left<Qx,Qy\right> = \left<x,y\right> \implies \left<x,Q^TQy\right> = \left<x,y\right>$$
+for all $x$ and $y$.  From this follows that $Q^TQ = I$.  A nice consequence is that if treat the columns of $Q$ as vectors, they form an *othonormal* set: each has unit length, and each pair are orthogonal (perpendicular).
+
+Now using determinant properties, you have that $\det Q^2 = \det I = 1$.  So $\det Q = \pm 1$.  
+
+But this all comes from the distance-preserving property of $Q$.  If you consider $\mathbb{R}^n$ as an *oriented* vector space, you can determine if distance-preserving matrices preserve or reverse the orientation.  The condition of preserving the orientation is equivalent to the determinant of $Q$ being $1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2888868/geometric-intuition-behind-an-n-dimensional-rotation-matrix/2888904#2888904) on Mathematics Stack Exchange, 2018-08-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

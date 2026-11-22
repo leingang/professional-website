@@ -1,0 +1,59 @@
+---
+title: Finding extrema of a continuous, univariate function.
+date: '2015-01-30'
+description: A qualitative approach would be to use David's hints about the size and shape of the graph of $f(x)$, and proceed on a case-by-base basis.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1126737
+se-link: https://math.stackexchange.com/questions/1126664/finding-extrema-of-a-continuous-univariate-function/1126737#1126737
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding extrema of a continuous, univariate function.](https://math.stackexchange.com/questions/1126664/finding-extrema-of-a-continuous-univariate-function), asked by [thisisourconcerndude](https://math.stackexchange.com/users/197045/thisisourconcerndude) on Mathematics Stack Exchange (2015-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Problem:** Let $f:[0,1]\to\mathbb{R}$ be given by $f(x)=a(x-b)^2+c$, where $a,b,c$ are parameters. Find the minimum and maximum of $f$ depending on the values of $a,b,c$.
+>
+> * * *
+>
+> I understand how to do this, for the most part, as it's basic univariate calculus. What I'm not sure about is my solution, i.e. if it's sufficient.
+>
+> I simply differentiated the function in question, and set it equal to $0$, giving me $2a(x-b) = 0$.
+>
+> This means that $2a = 0$ and $(x-b) = 0$, implying that $a$ vanishes, and $x = b$.
+>
+> So, I evaluated the function at the points $0, 1$, and $b$, giving me
+>
+> $f(0) = a(0-b)^2 + c = ab^2 + c$
+>
+> $f(1) = a(1-b)^2 + c = ab^2 - 2ab + c$
+>
+> $f(b) = a(b-b)^2 + c = c$
+>
+> But that's as far as I can get. How do I determine whether these are maxima or minima without numerical values for $a, b$, and $c$?
+:::
+
+A qualitative approach would be to use David's hints about the size and shape of the graph of $f(x)$, and proceed on a case-by-base basis.
+
+ - If $a=0$, the graph is a horizontal line.  
+
+ - If $a>0$, the graph of $f$ over all real numbers is a parabola that has vertex at $(b,c)$ and opens upward.  Now compare $b$ to $0$ and $1$.  If $b < 0$, then $f(b) < f(0) < f(1)$.  Likewise if $b > 1$, then $f(0) > f(1) > f(b)$.  If $0 < b < 1$, you need to compare $f(0)  ab^2 + c$ with $f(1) = a(b-1)^2 + c$ and $f(b) = c$.
+
+ - If $a<0$, the graph of $f$ over all real numbers is a parabola that has vertex at $(b,c)$ and opens downward.  You can proceed similarly to the previous case.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1126664/finding-extrema-of-a-continuous-univariate-function/1126737#1126737) on Mathematics Stack Exchange, 2015-01-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

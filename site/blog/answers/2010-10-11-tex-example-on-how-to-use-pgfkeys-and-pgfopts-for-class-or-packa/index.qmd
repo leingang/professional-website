@@ -1,0 +1,43 @@
+---
+title: Example on how to use pgfkeys and pgfopts for class or package
+date: '2010-10-11'
+description: I assume you read the section of the pgf manual that documents pgfkeys. If you haven't, read it. Many times.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 3992
+se-link: https://tex.stackexchange.com/questions/2699/example-on-how-to-use-pgfkeys-and-pgfopts-for-class-or-package/3992#3992
+se-score: 1
+se-accepted: true
+se-tags:
+- tikz-pgf
+- pgfkeys
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Example on how to use pgfkeys and pgfopts for class or package](https://tex.stackexchange.com/questions/2699/example-on-how-to-use-pgfkeys-and-pgfopts-for-class-or-package), asked by [Martin H](https://tex.stackexchange.com/users/632/martin-h) on TeX Stack Exchange (2010-09-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is there a tutorial on how to create a package or class with pgfkeys/pgfopts that goes beyond this pdf? [keyval.pdf][q-1]
+>
+> In particular I would be interested on how I can create package/class options and new commands that pass options to tikz-drawings (such as colours, line length/width, shape). 
+>
+>
+>   [q-1]: http://tug.org/TUGboat/tb30-1/tb94wright-keyval.pdf
+:::
+
+I assume you read the section of the pgf manual that documents pgfkeys.  If you haven't, read it.  Many times.  
+
+But knowing what the commands do isn't the same as knowing how to use them.  Try looking at some source code for best practices.  Maybe Christian Feuersänger's pgfplots package?  
+
+I'm trying to use pgfkeys for my packages, too, and I think the idea is to create a style for your objects and add your initial keys to those styles for defaults.  Then if other keys are to change styles of other objects they can append to those styles.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/2699/example-on-how-to-use-pgfkeys-and-pgfopts-for-class-or-package/3992#3992) on TeX Stack Exchange, 2010-10-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,59 @@
+---
+title: amsthm environment and colorbox
+date: '2011-04-07'
+description: Take a look at the thmtools package. It gives a nice key-val interface to declaring all kinds of beautiful theorem-like environments.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 15271
+se-link: https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox/15271#15271
+se-score: 3
+se-accepted: false
+se-tags:
+- color
+- boxes
+- theorems
+- amsthm
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[amsthm environment and colorbox](https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox), asked by [pluton](https://tex.stackexchange.com/users/371/pluton) on TeX Stack Exchange (2011-04-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'd like to customize the `amsthm` command a little bit but I cannot find the relevant lines in the (undocumented?) .sty.
+>
+> 1. How can I put a colorbox on the *name* of the environment
+>
+>         \newtheoremstyle{Coloredtheo}%
+>         {3pt}    %Space above
+>         {3pt}    %Space below
+>         {}       %Body font
+>         {}       %Indent amount
+>         {\bf \colorbox{blue}}    %Theorem head font
+>         {}       %Punctuation after theorem head
+>         {0.25em} %Space after theorem head
+>         {}       %Theorem head spec
+>
+>  where the blue box should be of the size of the theorem head.
+>
+> 2. how I can remove the brackets of the optional parameter
+>
+>  `\begin{theorem}[Schwarz inequality]...` should not be (Schwarz inequality) but Schwarz inequality.
+:::
+
+> 1 - How can I put a colorbox under the
+> name of the environment ... where the
+> blue box should be of the size of the
+> theorem head.
+
+Take a look at the [`thmtools`](http://ctan.org/pkg/thmtools) package.  It gives a nice key-val interface to declaring all kinds of beautiful theorem-like environments.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15267/amsthm-environment-and-colorbox/15271#15271) on TeX Stack Exchange, 2011-04-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,61 @@
+---
+title: Formula of 1 form in R3
+date: '2019-04-23'
+description: One the other properties of $d$ is that it is a derivation. Suppose $\omega = f(x,y,z)\,dx$. Then $$\begin{align} d\omega &= df \wedge dx =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3198914
+se-link: https://math.stackexchange.com/questions/3198893/formula-of-1-form-in-r3/3198914#3198914
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Formula of 1 form in R3](https://math.stackexchange.com/questions/3198893/formula-of-1-form-in-r3), asked by [David](https://math.stackexchange.com/users/638333/david) on Mathematics Stack Exchange (2019-04-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to solve the following problem: Given $d ◦ d = 0$, d acting on $0$-form and $1$-form, I want to show that both $1$-form and $0$-form yield $0$.
+>
+> I finished in the case of $0$-form using that the following equation; 
+> $df =(∂f/∂x)dx + (∂f/∂y)dy + (∂f/∂z)dz$.
+>
+> But I have no clue whatsoever in the case of 1$$-form.
+>
+> Does 1$$-form looks like $fdx\land dy\land dz$?
+:::
+
+One the other properties of $d$ is that it is a derivation. 
+Suppose $\omega = f(x,y,z)\,dx$.  Then
+$$\begin{align*}
+    d\omega &= df \wedge dx = \left(\frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz\right)\wedge dx \\
+&= \frac{\partial f}{\partial y}dy\wedge dx + \frac{\partial f}{\partial z}dz \wedge dx
+\end{align*}$$
+So
+$$\begin{align*}
+    d^2 \omega &= d\left(\frac{\partial f}{\partial y}\right) \wedge dy \wedge dx
+               +d\left(\frac{\partial f}{\partial z}\right) \wedge dz \wedge dx \\
+    &= \left(\frac{\partial^2 f}{\partial x\,\partial y}dx +\frac{\partial^2 f}{\partial y^2}dy + \frac{\partial^2 f}{\partial z\,\partial y}dz\right) \wedge dy \wedge dx
+               +\left(\frac{\partial^2 f}{\partial x\,\partial z}dx + \frac{\partial^2 f}{\partial y\,\partial z}dy + \frac{\partial^2 f}{\partial z^2}dz\right) \wedge dz \wedge dx \\
+    &= \frac{\partial^2 f}{\partial z\,\partial y}dz\wedge dy \wedge dx
+      +\frac{\partial^2 f}{\partial y\,\partial z}dy\wedge dz \wedge dx
+\end{align*}$$
+If $f$ is $C^2$, then the two partial derivatives above are equal.  Since
+$$\begin{align*}
+    dz \wedge dy \wedge dx &= - dx\wedge dy \wedge dz \\
+    dy \wedge dz \wedge dx &=   dx\wedge dy \wedge dz
+\end{align*}$$
+the two terms sum to zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3198893/formula-of-1-form-in-r3/3198914#3198914) on Mathematics Stack Exchange, 2019-04-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

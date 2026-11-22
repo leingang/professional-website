@@ -1,0 +1,64 @@
+---
+title: Let A, B, and C be sets. Prove that (A-B) - C = (A-C) - (B-C)
+date: '2019-09-24'
+description: You might also just try to prove this in words. Suppose $x \in (A-B)-C$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3368418
+se-link: https://math.stackexchange.com/questions/3368402/let-a-b-and-c-be-sets-prove-that-a-b-c-a-c-b-c/3368418#3368418
+se-score: 0
+se-accepted: false
+se-tags:
+- proof-verification
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let A, B, and C be sets. Prove that (A-B) - C = (A-C) - (B-C)](https://math.stackexchange.com/questions/3368402/let-a-b-and-c-be-sets-prove-that-a-b-c-a-c-b-c), asked by [Andrew Ryan](https://math.stackexchange.com/users/705347/andrew-ryan) on Mathematics Stack Exchange (2019-09-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am utilizing set identities to prove (A-C)-(B-C).
+>
+> $\begin{array}{|l}(A−B)− C = \{ x | x \in ((x\in (A \cap \bar{B})) \cap \bar{C}\} \quad \text{Def. of Set Minus}
+> \\ 
+> \quad \quad \quad \quad \quad =\{ x | ((x\in A) \wedge (x\in\bar{B})) \wedge (x\in\bar{C})\} \quad \text{Def. of intersection}
+> \\  \quad \quad \quad \quad \quad =\{ x | (A\wedge\overline{C}\wedge\overline{B})\vee(\overline{C}\wedge\overline{B}\wedge C)\} \quad \text{Association Law}
+> \\
+> \quad \quad \quad \quad \quad =\{ x | ((x\in A) \wedge (x\in\bar{C})) \wedge ((x\in \bar{B}) \wedge (x\in\bar{C}))\} \quad \text{Idempotent Law}
+> \\ 
+> \quad \quad \quad \quad \quad =\{ x | (((x\in (A\cap\bar{C})) \cap (x\in (\bar{B} \cap\bar{C})))\} \quad \text{Def. of union}
+> \\ 
+> \quad \quad \quad \quad \quad =\{ x | (((x\in (A\cap \bar{C})) \cap \overline{(x\in (B\cup C)))} \} \quad \text{DeMorgan's Law}
+> \\ 
+> \quad \quad \quad \quad \quad =\{ x | x \in (A - C) - (B \cup C) \} \quad \text{Def. Set Minus}
+> \\
+> =(A-C)-(B-C)
+> \end{array}$
+>
+>
+> So it looks like I screwed up on the final step. Is there something that I am forgetting to do properly or where am I supposed to go from that final step?
+:::
+
+You might also just try to prove this in words.  Suppose $x \in (A-B)-C$.
+
+* Then $x \in (A-B)$ and $x \notin C$.
+* Since $x \in (A-B)$, we know $x \in A$ and $x \notin B$.
+* Since $x \in A$ and $x \notin C$, we know $x \in (A-C)$.
+* Since $x \notin B$, we know $x \notin (B-C)$.
+* Since $x \in (A-C)$ and $x \notin (B-C)$, we know $x \in ((A-C)-(B-C))$.
+
+Since this is true for all $x \in (A-B)-C$, we know 
+$$(A-B)-C \subseteq ((A-C)-(B-C))$$
+
+Now do it the other way around.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3368402/let-a-b-and-c-be-sets-prove-that-a-b-c-a-c-b-c/3368418#3368418) on Mathematics Stack Exchange, 2019-09-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

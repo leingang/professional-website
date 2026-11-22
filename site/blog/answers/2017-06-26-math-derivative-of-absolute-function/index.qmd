@@ -1,0 +1,66 @@
+---
+title: Derivative of absolute function
+date: '2017-06-26'
+description: I know you've already accepted an answer on how to find the derivatives of these functions using the definition, but you also have an interesting question on…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2336237
+se-link: https://math.stackexchange.com/questions/2331163/derivative-of-absolute-function/2336237#2336237
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derivative of absolute function](https://math.stackexchange.com/questions/2331163/derivative-of-absolute-function), asked by [ilovetolearn](https://math.stackexchange.com/users/9832/ilovetolearn) on Mathematics Stack Exchange (2017-06-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In the video lecture that I am watching, the instructor compared an example of finding the derivative of the $f(x) = |x|$ vs $f(x) = x|x|$, where $f(x) = x|x|$, derivative is $0$, whereas $f(x) = |x|$, does not have a derivative.
+>
+> The instructor highlighted that the absolute value function does not have a derivative compared to $f(x) = x|x|$.
+>
+> If I would to apply the power rule: $f(x) = nx^{n-1}$, where $f(0) = 1*0^{1-1}$. Because 0 to the power of 0 is undefined.
+>
+> Is it because $0$ to the power of $0$ is undefined, therefore the absolute value function does not has a derivative?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: YT0Fp.png
+:::
+
+I know you've already accepted an answer on how to find the derivatives of these functions using the definition, but you also have an interesting question on the power rule and how it relates.  You asked in the comments above if we could write $f(x) = x^1 |x^1|$ and apply the power rule.
+
+Starting with a more basic function, look at $x \mapsto x$, which you can write as $x\mapsto x^1$.  The power rule applied to this function gives
+$$\frac{d}{dx} x^1 = 1 \cdot x^0 = 1 \cdot 1 = 1$$
+This comports with our by-the-definition computation.  The two things that prevent applying the power rule directly to $f(x) = x^1 |x^1|$ are the product rule and the chain rule.
+
+I don't know if you've learned these yet.  In case not: the product rule is the rule by which we can compute derivatives of products of functions.  If $f(x) = g(x) h(x)$, you might hope that $f'(x) = g'(x) h'(x)$.  If that were true, differentiating products would be as simple as differentiating sums.  But that is not the case.  Instead:
+$$f'(x) = g'(x)h(x) + g(x) h'(x)$$
+So even on a product of power functions you can't just take the derivative of each factor.  The chain rule is for differentiating a composition function.  If $h(x) = k(\ell(x))$, you might try $h'(x) = k(\ell'(x))$, but in fact that's not true.  Instead:
+$$h'(x) = k'(\ell(x)) \ell'(x)$$
+
+So if you want to write $f(x) = x^1 |x^1|$, you can, but it's still not a power function.  It's a product of two functions.  The first is a power function, but the second is the composition of the absolute value function with a power function.  If $g(x) = \ell (x) = x$, and $k(x) = |x|$, then
+$$f(x) = g(x)\cdot k(\ell(x))$$
+
+We need the derivative of the absolute value function $k(x) = |x|$.  
+As you have seen from the definition:
+$$k'(x) = \frac{d}{dx} |x| = \begin{cases} 1 & \text{if $x>0$;}\\ -1 & \text{if $x<0$.} \end{cases}     = \frac{|x|}{x}$$
+For the rest of the derivative, we need the product and chain rules:
+$$f'(x) = g'(x) k(\ell(x)) + g(x) k'(\ell(x)) \ell'(x)$$
+We know $g'(x) = \ell'(x) = 1$, so
+$$g'(x) = 1\cdot |x| + x \cdot \left(\frac{|x|}{x}\right) \cdot 1
+    = 2 |x|$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2331163/derivative-of-absolute-function/2336237#2336237) on Mathematics Stack Exchange, 2017-06-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

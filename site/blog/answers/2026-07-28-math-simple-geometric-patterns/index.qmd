@@ -1,0 +1,67 @@
+---
+title: Simple Geometric Patterns
+date: '2026-07-28'
+description: The term I am familiar with for these patterns is frieze, and they are classified by their symmetries. Once you identify all the symmetries, you'll find that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5145295
+se-link: https://math.stackexchange.com/questions/5145283/simple-geometric-patterns/5145295#5145295
+se-score: 4
+se-accepted: false
+se-tags:
+- definition
+- transformation
+- pattern-recognition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Simple Geometric Patterns](https://math.stackexchange.com/questions/5145283/simple-geometric-patterns), asked by [Reuben](https://math.stackexchange.com/users/700617/reuben) on Mathematics Stack Exchange (2026-07-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So I am having a hard time understanding exactly what defines a pattern. I am not sure if a pattern needs to transform from one motif to the next or simply within a motif.
+>
+> **Example1**: this is a translation pattern
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Each arrow is translated onto the next arrows position.
+>
+> **Example2**: This is a reflection pattern
+>
+> [![enter image description here][q-2]][q-2]
+>
+> Each arrow is reflected horizontally onto the next arrows position
+>
+> **Example3**: This is a glide reflection pattern (or a rotationpattern)
+>
+> [![enter image description here][q-3]][q-3]
+>
+> **Question**: will it be accurate to simply say that example3 is a reflection pattern due to the fact the arrows do reflect vertically? Or do the "rules" require us to land on the next "position"? From what I understand, if example 1 is a translation pattern and not a "nothing pattern", then it seems to follow that we need to include the transformation between motifs. By this I would assume that if someone was asked to draw a refelction pattern as presented Example3 it would be correct
+>
+>
+>
+>   [q-1]: TMrH1mNJ.png
+>   [q-2]: 2K61wQM6.png
+>   [q-3]: M6CJYu8p.png
+:::
+
+The term I am familiar with for these patterns is [*frieze*](https://en.wikipedia.org/wiki/Frieze_group), and they are classified by their symmetries. Once you identify all the symmetries, you'll find that there are relations between them. Meaning that some of the symmetries are redundant.
+
+All of the patterns have translational symmetry, and the symmetries you found. But there are some that you missed.
+
+* Pattern 1 also has a vertical reflection symmetry (parallel to the arrow through its point). The symmetry group is called p1m1. 
+
+* Pattern 2 has a horizontal reflection, a vertical reflection, and a 180° rotation (around the point midway between the tips of the arrows). The two reflections generate the rotation. Translation and one of the reflections generate a glide reflection. The symmetry group is called p2mm.
+
+* Pattern 3 has a vertical reflection, a 180° rotation, and a glide reflection. The symmetry group is called p2mg.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5145283/simple-geometric-patterns/5145295#5145295) on Mathematics Stack Exchange, 2026-07-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

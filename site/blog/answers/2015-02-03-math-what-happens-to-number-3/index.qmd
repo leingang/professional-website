@@ -1,0 +1,41 @@
+---
+title: What happens to number 3?
+date: '2015-02-03'
+description: By changing the $3^n$ to $z^n$. This is a typo.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1131182
+se-link: https://math.stackexchange.com/questions/1131178/what-happens-to-number-3/1131182#1131182
+se-score: 3
+se-accepted: true
+se-tags:
+- power-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What happens to number 3?](https://math.stackexchange.com/questions/1131178/what-happens-to-number-3), asked by [paranoidhominid](https://math.stackexchange.com/users/147261/paranoidhominid) on Mathematics Stack Exchange (2015-02-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm reviewing a text on Maclaurin series. This is more of an algebraic question, anyway. How do we go from here:
+>
+> $$z^2e^{3z} = \sum\limits_{n=0}^\infty \frac{z^2(3z)^n}{n!}$$ 
+>
+> to here:
+>
+> $$z^2e^{3z} = \sum\limits_{n=0}^\infty \frac{z^n}{n!}z^{n+2}$$ 
+>
+> It looks like 3^n became z^n. Is this possible?
+:::
+
+By changing the $3^n$ to $z^n$.  This is a typo.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1131178/what-happens-to-number-3/1131182#1131182) on Mathematics Stack Exchange, 2015-02-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

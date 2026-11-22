@@ -1,0 +1,137 @@
+---
+title: some \newcommand instructions not working
+date: '2013-05-05'
+description: David and Ulrike have told you why it doesn't work for align. Quoting from the link Ulrike provided, “Technical notes on the amsmath package”
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 112565
+se-link: https://tex.stackexchange.com/questions/112558/some-newcommand-instructions-not-working/112565#112565
+se-score: 17
+se-accepted: false
+se-tags:
+- macros
+- align
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[some \newcommand instructions not working](https://tex.stackexchange.com/questions/112558/some-newcommand-instructions-not-working), asked by [Md Kutubuddin Sardar](https://tex.stackexchange.com/users/26385/md-kutubuddin-sardar) on TeX Stack Exchange (2013-05-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have  created some new short command using `\newcommand` in the following example:
+>
+>
+> ```latex
+> \documentclass[12pt,twoside,a4paper]{book}      
+> \usepackage{enumerate,amsmath}  
+>
+> \newcommand{\ba}{\begin{array}}     
+> \newcommand{\ea}{\end{array}}  
+>
+> \newcommand{\ben}{\begin{enumerate}}      
+> \newcommand{\een}{\end{enumerate}}  
+>
+> \newcommand{\bal}{\begin{align}}      
+> \newcommand{\eal}{\end{align}}  
+>
+> \newcommand{\bc}{\begin{center}}     
+> \newcommand{\ec}{\end{center}}  
+>
+> \newcommand{\de}{^\circ}  
+>
+> \begin{document}     
+>
+> \bc      
+> $5\de$      
+> \ec  
+>
+> \ben      
+> \item Text  
+> \item Text  
+> \een  
+>
+>
+> $\ba{cc}    
+> a & b\\   
+> c & d    
+> \ea$  
+>
+>
+> \bal      
+> & r\\      
+> & f      
+> \eal  
+>
+>
+> But   
+>
+> \begin{align}     
+> & r\\      
+> & f     
+> \end{align}  
+>
+> is working.     
+> \end{document}
+> ```
+>
+> All `\newcommand`s are working well except  `\bal` and `\eal`. I don't know why it is not working.
+:::
+
+David and Ulrike have told you why it doesn't work for `align`.  Quoting from the link Ulrike provided, “[Technical notes on the `amsmath` package][1]”
+
+> 6 Why can't I use abbreviations for `\begin{align} . . . \end{align}`?
+> =
+> ... An attempt to define `\bal`...`\eal` as shorthand for `\begin{align}`...`\end{align}` will fail with a puzzling error message. *This has to do with unfortunately nontrivial technical complications: the given environments must read their contents as a delimited macro argument because they do multipass processing of the contents using algorithms inherited from Spivak's `amstex.tex`*. The obvious solution—substitution of different algorithms that do box shuffling instead of token shuffling for the multipass calculations—would require rewriting these display environments from the ground up; while that is a worthy goal, it was beyond the original scope of the AmS-LaTeX project. [Emph. added]
+
+For my own part, here is why I think in general this is a bad idea, puzzling errors notwithstanding.  Quickly tell me what this code is supposed to produce.
+
+```latex
+\bc  
+
+$5\de$  
+
+\ec  
+
+\ben  
+
+\item Text  
+
+\item Text  
+
+\een  
+```
+
+If this took you more then 10 seconds you're wasting time.  Now think about posting code looking like that to a forum asking for help troubleshooting it.  Others trying to read it will quickly stumble and not bother.
+
+Compare to:
+
+
+```latex
+\[
+    5^\circ
+\]
+
+\begin{enumerate}
+   \item Text
+   \item Text
+\end{enumerate}
+```
+
+Much more readable and conventional.  
+
+I think that zero-argument, zero-logic macros, unless they add syntactic sugar, represent optimization of the the wrong thing: keystrokes, at a cost of readability and portability.  If you really want to type less, use text-expansion software like [TextExpander][2] or [AutoHotKey][3].
+
+
+  [1]: http://ctan.mirrorcatalogs.com/macros/latex/required/amslatex/math/technote.pdf
+  [2]: http://smilesoftware.com/TextExpander/index.html
+  [3]: http://www.autohotkey.com/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/112558/some-newcommand-instructions-not-working/112565#112565) on TeX Stack Exchange, 2013-05-05, with [edits](https://tex.stackexchange.com/posts/112565/revisions) by [pluton](https://tex.stackexchange.com/users/371/pluton). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

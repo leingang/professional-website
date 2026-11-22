@@ -1,0 +1,56 @@
+---
+title: Is $\lim_{n\to \infty}f(x_n)=f(\lim_{n\to \infty}x_n)$ always true?
+date: '2020-04-01'
+description: Here's a counter-example to show why you need continuity. Let $f(x)$ be $0$ if $x$ is rational, and $1$ otherwise. Let $xn = \frac{\pi}{n}$. Then…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3605295
+se-link: https://math.stackexchange.com/questions/3605280/is-lim-n-to-inftyfx-n-f-lim-n-to-inftyx-n-always-true/3605295#3605295
+se-score: 7
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- sequences-and-series
+- limits
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is $\lim_{n\to \infty}f(x_n)=f(\lim_{n\to \infty}x_n)$ always true?](https://math.stackexchange.com/questions/3605280/is-lim-n-to-inftyfx-n-f-lim-n-to-inftyx-n-always-true), asked by [thornsword](https://math.stackexchange.com/users/638278/thornsword) on Mathematics Stack Exchange (2020-04-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was studying about sequences of numbers and their limits. My book states the standard rules for algebra of limits involving sums, differences, products and quotients of convergent sequences.
+>
+> But the author, while solving an example problem implicitly used the fact that
+> $$\lim_{n\to \infty}\sqrt{\frac{1}{n+1}} = \frac{1}{\sqrt{\lim_{n\to \infty}(n)+1}}=0$$ 
+>
+> But my question is can we generalise this result to be applicable to all types of functions...
+>
+> I found this answer for composite functions - https://math.stackexchange.com/questions/3190706/limit-of-composite-function-underlying-principles-and-special-cases
+>
+> But since the definitions of limits of number sequences and limit of a function are different, how do we formally prove the following result (this is not a composite function as such..)?
+> $$\lim_{n\to \infty}{f(x_n)}=f(\lim_{n\to \infty}{x_n})\ \ where  \ \ n\in \mathbb N$$
+> Here $x_n$ is a sequence of real numbers and its range is contained in the domain of $f$. Also, is this result applicable in all cases..if not...when can it be used..
+>
+> I am specifically looking for a formal proof of the statement..in those cases where it is applicable
+>
+> Thanks for any answers!!
+:::
+
+Here's a counter-example to show why you need continuity.  Let $f(x)$ be $0$ if $x$ is rational, and $1$ otherwise.  Let $x_n = \frac{\pi}{n}$.  Then
+$$\begin{align*}
+    \lim_{n\to\infty} f(x_n) &= \lim_{n\to\infty} 1 = 1 \\
+    f\left(\lim_{n\to\infty}x_n\right) &= f(0) = 0
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3605280/is-lim-n-to-inftyfx-n-f-lim-n-to-inftyx-n-always-true/3605295#3605295) on Mathematics Stack Exchange, 2020-04-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

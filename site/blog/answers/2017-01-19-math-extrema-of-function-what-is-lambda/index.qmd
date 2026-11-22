@@ -1,0 +1,86 @@
+---
+title: Extrema of function - What is $\lambda$?
+date: '2017-01-19'
+description: The fact that your problem mentions $\lambda$ says to me that Lagrange multipliers are the preferred solution method. Let $g(x1,x2,x3) = 2x1 + x2 + x3$. You…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2104710
+se-link: https://math.stackexchange.com/questions/2103721/extrema-of-function-what-is-lambda/2104710#2104710
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Extrema of function - What is $\lambda$?](https://math.stackexchange.com/questions/2103721/extrema-of-function-what-is-lambda), asked by [Mary Star](https://math.stackexchange.com/users/80708/mary-star) on Mathematics Stack Exchange (2017-01-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> We have the function $f(x_1, x_2, x_3)=9x_1\cdot x_2\cdot x_3$ and we want to find possible extremas under the constraint $2x_1+x_2+x_3=m, m>0$ and $x_1, x_2, x_3>0$. 
+>
+> I have done the following: 
+>
+> $$\begin{equation*}2x_1+x_2+x_3=m \Rightarrow x_3=m-2x_1-x_2\end{equation*}$$ 
+>
+> $$\begin{equation*}\tilde{f}(x_1, x_2)=9x_1\cdot x_2\cdot (m-2x_1-x_2)=9mx_1\cdot x_2-18x_1^2\cdot x_2-9x_1\cdot x_2^2\end{equation*}$$ 
+>
+> $$\begin{align*}\tilde{f}_{x_1}=9m x_2-36x_1\cdot x_2-9 x_2^2 \\ \tilde{f}_{x_1x_1}=-36x_1\cdot x_2 \\ \tilde{f}_{x_2}=9mx_1-18x_1^2-18x_1\cdot x_2 \\ \tilde{f}_{x_2x_2}=-18x_1 \\ \tilde{f}_{x_1x_2}=9m -36x_1-18 x_2\end{align*}$$ 
+>
+> $$\begin{equation*}\tilde{f}_{x_1}=0 \Rightarrow 9m x_2-36x_1\cdot x_2-9 x_2^2=0\Rightarrow x_2=0 \text{ or } x_2=m-4x_1\end{equation*}$$ 
+>
+> $$\begin{equation*}\tilde{f}_{x_1}=0 \Rightarrow 9m x_2-36x_1\cdot x_2-9 x_2^2=0\Rightarrow x_2=0 \text{ or } x_2=m-4x\end{equation*}$$ 
+>
+> So we get the following: 
+> $$\begin{equation*} \tilde{f}_{x_1x_1}(x_1, m-4x_1)=-36x_1\cdot (m-4x_1), \tilde{f}_{x_2x_2}(x_1,m-4x_1)=-18x_1, \tilde{f}_{x_1x_2}(x_1,m-4x_1)=9m -36x_1-18 (m-4x_1)\end{equation*}$$ 
+> So, it holds that $$\begin{equation*}\tilde{f}_{x_1x_1}(x_1, m-4x_1)\tilde{f}_{x_2x_2}(x_1, m-4x_1) - \tilde{f}^2_{x_1x_2}(x_1, m-4x_1)=18\cdot 36x_1^2(m-4x_1)-(9m -36x_1-18 (m-4x_1))^2\end{equation*}$$ 
+> For some specific  $m$ it is $>0$, then the function has extrema, right? 
+>
+> $$$$ 
+>
+> Then we have to calculate $x_1^{\star}(m), x_2^{\star}(m), \lambda^{\star}(m)$. 
+>
+> What is $\lambda$ ?
+:::
+
+The fact that your problem mentions $\lambda$ says to me that Lagrange multipliers are the preferred solution method.  Let $g(x_1,x_2,x_3) = 2x_1 + x_2 + x_3$.  You are asked to find the maximum of $f$ on the set constrained by $g=m$, $x_1>0$, $x_2>0$, $x_3>0$.  The Lagrange multiplier equations are $\nabla f = \lambda \nabla g$, or
+$$\begin{align}
+    9x_2 x_3 &= 2\lambda \tag{1}\label{1} \\
+    9x_1 x_3 &= \lambda \tag{2}\label{2} \\
+    9x_1 x_2 &= \lambda \tag{3}\label{3} \\
+\end{align}$$
+along with the constraint equation
+$$2x_1 + x_2 + x_3 = m \tag{4}\label{4}$$
+Comparing the left-hand sides of \eqref{2} and \eqref{3}, we get $9x_1x_3 = 9x_1 x_2$.  Since $x_1 > 0$, we can cancel it and get $x_2 = x_3$.  Similarly, comparing the left-hand sides of \eqref{1} and \eqref{2}, we get $9x_2 x_3 = 2(9x_1 x_3)$, so $x_2 = 2x_1$.  Hence $x_3 = 2x_1$ as well.  Substituting these into \eqref{4} gives 
+$$2x_2 + 2x_1 + 2x_1 = m \implies x_1 = \frac{m}{6}$$
+and therefore $x_2 = x_3 = \frac{m}{3}$.  In the notation of your problem:
+$$\begin{align*}
+    x_1^\star(m) &= \frac{m}{6} \\
+    x_2^\star(m) &= \frac{m}{3} \\
+    x_3^\star(m) &= \frac{m}{3} \\
+    \lambda^\star(m) &= 9 x_1^\star(m) x_2^\star(m) = 9\cdot \frac{m}{6} \cdot\frac{m}{3} = \frac{m^2}{2}
+\end{align*}$$
+
+You asked:
+>What is $\lambda$?
+
+and I think you meant, what is $\lambda$ in terms of $m$ in this problem?  You have your answer to that.  But the *deeper* question is whether this seemingly arbitrary variable inserted into the solution method has any meaning.  And it does.
+
+Let $f^\star(m)$ be the constrained maximum value of $f$, as a function of $m$.  We know
+$$f^\star(m) = f(x_1^\star(m),x_2^\star(m),x_3^\star(m))
+    = 9 \cdot \frac{m}{6}\cdot \frac{m}{3} \cdot \frac{m}{3} = \frac{m^3}{6}$$
+Notice that
+$$\frac{df^\star}{dm} = \frac{m^2}{2} = \lambda$$
+This is true in general.  In words, the Lagrange multiplier is the change in the constrained maximum as the constraint level changes.  In economics, a lot of times $f$ is a utility function and $g$ is a cost function.  Then $\lambda$ is the marginal utility of money.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2103721/extrema-of-function-what-is-lambda/2104710#2104710) on Mathematics Stack Exchange, 2017-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

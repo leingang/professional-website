@@ -1,0 +1,42 @@
+---
+title: Deriving the Area of a Circle with an Integral in Cartesian Coordinates
+date: '2022-06-01'
+description: Your error is in the assumption that $$\color{red}{\int \sqrt{r^2-x^2}\,dx = -\frac{1}{3x}(r^2-x^2)^{3/2}+C}$$ This isn't true because differentiating the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4463568
+se-link: https://math.stackexchange.com/questions/4463040/deriving-the-area-of-a-circle-with-an-integral-in-cartesian-coordinates/4463568#4463568
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- geometry
+- circles
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Deriving the Area of a Circle with an Integral in Cartesian Coordinates](https://math.stackexchange.com/questions/4463040/deriving-the-area-of-a-circle-with-an-integral-in-cartesian-coordinates), asked by [ArthD21](https://math.stackexchange.com/users/1051016/arthd21) on Mathematics Stack Exchange (2022-06-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was wondering how we can derive the area of a circle with radius $r$ by taking an integral over $x$ in the coordinate plane. If we graph a quarter-circle, it would just be on the first quadrant, and would be the integrable function:$$y=\sqrt{r^2-x^2}$$Integrating this from $x=0$ to $x=r$ should give us one-fourth of the area of a circle with radius $r$, or ${{\pi}r^2}/{4}$. So, we get:$$\int_0^r\sqrt{r^2-x^2}dx$$I know this can be integrated with trigonometric substitution, but if we use the inverse power rule (with the power being $1/2$), we get:$$[{(-{1/(3x)})(r^2-x^2)^{3/2}}]^r_0$$But, evaluating the bounds, we get $0$ for the first term, and $-r^3/0$ for the second term, and that’s a problem. This is where I am stuck. Could someone please explain my mistake or the next step?
+:::
+
+Your error is in the assumption that
+$$\color{red}{\int \sqrt{r^2-x^2}\,dx = -\frac{1}{3x}(r^2-x^2)^{3/2}+C}$$
+This isn't true because differentiating the right-hand side would give one extra term by the product rule:
+$$\frac{d}{dx}\left(-\frac{1}{3x}(r^2-x^2)^{3/2}\right)
+    = \sqrt{r^2-x^2} + \frac{1}{3x^2}(r^2-x^2)^{3/2}$$
+[Read more on Sympy Gamma](https://gamma.sympy.org/input/?i=diff%28%28r%5E2-x%5E2%29%5E%283%2F2%29%2F%28-3*x%29%2Cx%29).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4463040/deriving-the-area-of-a-circle-with-an-integral-in-cartesian-coordinates/4463568#4463568) on Mathematics Stack Exchange, 2022-06-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

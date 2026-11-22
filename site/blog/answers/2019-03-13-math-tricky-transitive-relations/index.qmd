@@ -1,0 +1,55 @@
+---
+title: Tricky transitive relations
+date: '2019-03-13'
+description: I like to graph relations to see their properties. If $R$ is a relation on a set $A$, draw a vertex for each $a \in A$. If $a \mathrel{R} b$, draw a directed…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3145939
+se-link: https://math.stackexchange.com/questions/251605/tricky-transitive-relations/3145939#3145939
+se-score: 0
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tricky transitive relations](https://math.stackexchange.com/questions/251605/tricky-transitive-relations), asked by [badjr](https://math.stackexchange.com/users/50296/badjr) on Mathematics Stack Exchange (2012-12-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a set $A = \{1, 2, 3\}$.
+>
+> Relation $S = \{(1, 1), (1, 2), (3, 1) \}$
+>
+> Relation $T = \{(1, 1), (3, 2), (3, 1) \}$
+>
+> $S$ is not transitive, but $T$ is transitive. Why is that?
+>
+> > A relation $R$ transitive if $(a,b),(b,c)\in R\Rightarrow (a,c)\in R$.
+>
+> In $S$, we have $(1, 1), (1, 2)$, and we also have $(1, 2)$. And we have $(3, 1), (1, 1)$, and also $(3, 1)$.
+>
+> In $T$, we have $(3, 1), (1, 1)$, and we also have $(3, 1)$.
+>
+> It seems like we have the same kind of situations in both $S$ and $T$, except $S$ has another $a, b, c$ triplet. What makes T transitive but S not?
+:::
+
+I like to graph relations to see their properties.  If $R$ is a relation on a set $A$, draw a vertex for each $a \in A$.  If $a \mathrel{R} b$, draw a directed edge from $a$ to $b$.  The relations $S$ and $T$ above are graphed like this (I used [webgraphviz](http://www.webgraphviz.com/)):
+
+[![Graph of relation S][1]][1] [![enter image description here][2]][2]
+
+A relation is transitive if the graph doesn't have any length-two walks that can't be shortened to length-one walks with the same start and end.  For instance, $S$ has the walk $3 \to 1 \to 1$, and that can be shortened to $3 \to 1$.  Same for $T$, as a matter of fact.  But $3\to 1\to 1$ is the *only* length-two walk in $T$, whereas in $S$ we also have $3 \to 1 \to 2$.  Since there is no edge from $3$ to $1$, $S$ is not transitive.
+
+  [1]: NXorZ.png
+  [2]: JA8t8.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/251605/tricky-transitive-relations/3145939#3145939) on Mathematics Stack Exchange, 2019-03-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

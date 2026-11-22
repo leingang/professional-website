@@ -1,0 +1,85 @@
+---
+title: To have differentiabilility, do we have to obtain $\epsilon_1=0$ as $h, k \to 0$ and also $\epsilon_2=0$ as $h, k \to 0$.
+date: '2016-11-09'
+description: I'm not really sure what your question it, but let me restate the facts as you know them, inserting some explanations.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2007000
+se-link: https://math.stackexchange.com/questions/2006978/to-have-differentiabilility-do-we-have-to-obtain-epsilon-1-0-as-h-k-to-0/2007000#2007000
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[To have differentiabilility, do we have to obtain $\epsilon_1=0$ as $h, k \to 0$ and also $\epsilon_2=0$ as $h, k \to 0$.](https://math.stackexchange.com/questions/2006978/to-have-differentiabilility-do-we-have-to-obtain-epsilon-1-0-as-h-k-to-0), asked by [izaag](https://math.stackexchange.com/users/104847/izaag) on Mathematics Stack Exchange (2016-11-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A function $f(x,y)$ is differentiable  at $(a,b)$ if $f_x(a,b)$ and $f_y(a,b)$ exist and satisfies equation 
+> $f(a+h,b+k)=f(a,b)+hf_x(a,b)+k_y(a,b)+h\epsilon_1+k\epsilon_2$
+> in which $\epsilon_1, \epsilon_2 \to 0$ as both $h,k \to 0$. 
+> According to this definition, $f(x,y)=\sqrt{xy}$ at $(0,0)$  is not differentiable. As a result  we have  $\sqrt{xy}=h\epsilon_1 + k\epsilon_2$ by applying the differentiability equation above. When $h=k$, 
+>
+> $\lim_{k\to 0}(\epsilon_1, \epsilon_2)=1 \;\text{or } -1$ 
+>
+> so $\epsilon_1, \epsilon_2$ cannot be $0$. Hence it is not differentiable. Here we have another example which is differentiable at $(0,0)$
+>
+> $$\begin{align}
+> f(x,y)=
+> \begin{cases}
+> (x^2+y^2)\sin\frac{1}{\sqrt{x^2+y^2}}&, (x,y)\neq (0,0),\\
+> 0,&   (x,y)=(0,0) 
+> \end{cases}
+> \end{align}$$
+>  In this example we have $\lim_{h \to 0} \epsilon_1 +\epsilon_2=0$ when $h=k$. I am confused here. This example is differentiable at $(0,0)$. To have differentiability, do we have to obtain $\epsilon_1=0$ as $h, k \to 0$ and also $\epsilon_2=0$ as $h, k \to 0$. 
+>
+> Thank you for your help
+:::
+
+I'm not really sure what your question it, but let me restate the facts as you know them, inserting some explanations.
+
+> A function $f(x,y)$ is **differentiable** at $(a,b)$ if $f_x(a,b)$ and $f_y(a,b)$ exist, and there exist functions $\epsilon_1(h,k)$ and $\epsilon_2(h,k)$ such that
+$$f(a+h,b+k)=f(a,b)+hf_x(a,b)+k_y(a,b)+h\epsilon_1+k\epsilon_2$$
+and 
+$$\lim_{(h,k) \to (0,0)} \epsilon_1(h,k) = \lim_{(h,k) \to (0,0)} \epsilon_2(h,k) = 0$$
+
+**Fact 1.** The function $f(x,y) = \sqrt{xy}$ is not differentiable at $(0,0)$.
+
+*Proof.*  From the definition of partial derivative we have $f_x(0,0) = f_y(0,0)=0$.  If $f$ is differentiable at $(0,0)$, the exists functions $\epsilon_1$ and $\epsilon_2$ as in the definition, satisfying
+$$\sqrt{hk} = h \epsilon_1(h,k) + k \epsilon_2 (h,k)$$
+Setting $h=k$ gives
+$$|h| = h(\epsilon_1(h,h) + \epsilon_2(h,h))
+    \implies \epsilon_1(h,h) + \epsilon_2(h,h) = \frac{|h|}{h}$$ 
+As $h\to 0^+$, the expression on the left tends to $0+0 = 0$, while the one on the right is $1$.  This is a contradiction.  $\Box$
+
+**Fact 2.** The function $f(x,y) = (x^2+y^2)\sin \frac{1}{\sqrt{x^2+y^2}}$ *is* differentiable at $(0,0)$.
+
+*Proof.*  Again from the definition we can see $f_x(0,0) = f_y(0,0) = 0$.  We must find functions $\epsilon_1(h,k)$ and $\epsilon_2(h,k)$ such that
+$$(h^2+k^2)\sin \frac{1}{\sqrt{h^2+k^2}} = h\epsilon_1(h,k) + k\epsilon_2(h,k)
+\tag{$*$}$$
+Let's try:
+$$\begin{align*}
+    \epsilon_1(h,k) &= h\sin \frac{1}{\sqrt{h^2+k^2}} \\
+    \epsilon_2(h,k) &= k\sin \frac{1}{\sqrt{h^2+k^2}} \\
+\end{align*}$$
+You can see this satisfies ($*$).  It remains to show the epsilons tend to zero.
+But
+$$\begin{align*}
+    \left|\epsilon_1(h,k)\right| &\leq |h| \cdot 1 = |h| \to 0 \\
+    \left|\epsilon_2(h,k)\right| &\leq |k| \cdot 1 = |k| \to 0
+\end{align*}$$
+as $(h,k) \to 0$.  So 
+$$\lim_{(h,k) \to (0,0)} \epsilon_1(h,k) = \lim_{(h,k) \to (0,0)} \epsilon_2(h,k) = 0
+\qquad\Box$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2006978/to-have-differentiabilility-do-we-have-to-obtain-epsilon-1-0-as-h-k-to-0/2007000#2007000) on Mathematics Stack Exchange, 2016-11-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

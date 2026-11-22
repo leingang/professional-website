@@ -1,0 +1,59 @@
+---
+title: Center figure which spans over whole page
+date: '2010-11-30'
+description: It's not centering because your tikzpicture is wider than than the text width, resulting in an overfull \hbox. You can use the geometry package to change the…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6272
+se-link: https://tex.stackexchange.com/questions/6268/center-figure-which-spans-over-whole-page/6272#6272
+se-score: 2
+se-accepted: false
+se-tags:
+- horizontal-alignment
+- floats
+- margins
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Center figure which spans over whole page](https://tex.stackexchange.com/questions/6268/center-figure-which-spans-over-whole-page), asked by [Douglass](https://tex.stackexchange.com/users/2198/douglass) on TeX Stack Exchange (2010-11-30; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to get this to center with 5pt margins on left, right, and top.
+> So the picture will cover nearly the whole page with room at the bottom for captions.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \usepackage{caption}
+>
+> \begin{document}
+> \begin{centering}
+> \begin{figure}[ht]
+>
+>
+> \begin{tikzpicture}[scale=(3/10)]
+>
+>   \draw[help lines] (0,0) grid (600mm,500mm);
+>
+> \end{tikzpicture}
+>
+> \caption{some caption here}
+> \end{figure}
+> \clearpage
+> \end{centering}
+> \end{document}
+> ```
+:::
+
+It's not centering because your tikzpicture is wider than than the text width, resulting in an overfull `\hbox`.  You can use the `geometry` package to change the margins.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6268/center-figure-which-spans-over-whole-page/6272#6272) on TeX Stack Exchange, 2010-11-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

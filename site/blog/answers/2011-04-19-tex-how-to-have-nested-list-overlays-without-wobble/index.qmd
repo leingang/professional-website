@@ -1,0 +1,82 @@
+---
+title: How to have nested list overlays without wobble
+date: '2011-04-19'
+description: The problem is that the height of the second-level itemize environment is smaller than that of the second item in the first-level itemize environment. I was…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16175
+se-link: https://tex.stackexchange.com/questions/16168/how-to-have-nested-list-overlays-without-wobble/16175#16175
+se-score: 4
+se-accepted: true
+se-tags:
+- beamer
+- lists
+- overlays
+- nesting
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to have nested list overlays without wobble](https://tex.stackexchange.com/questions/16168/how-to-have-nested-list-overlays-without-wobble), asked by [uckelman](https://tex.stackexchange.com/users/1585/uckelman) on TeX Stack Exchange (2011-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to use overlays to reveal successive bullet points in an `itemize` environment. Each `item` contains its own second-level `itemize` environment, which will also be revealed one `item` at a  time.
+>
+> What I would like to happen after advancing past the last `item` in any second-level `itemize` is for that second-level `itemize` to become invisible and take up no space, without causing any wobbling.
+>
+> Here's what I have now:
+>
+> ```latex
+> \begin{frame}[t]
+>   \frametitle{Solutions to the Liar.}
+>   \begin{itemize}
+>     \item<2-> \textit{secundum quid et simpliciter}. \uncover<4->{\textbf{Solution.} Unclear.}
+>       \only<3>{\begin{itemize}
+>         \item Mentioned by Aristotle (\textit{Sophistici Elenchi}, 180b2-3).
+>       \end{itemize}}
+>     \item<5-> \textit{transcasus}. \uncover<9->{\textbf{Solution.} The Liar sentence is false.}
+>       \only<6-8>{\begin{itemize}
+>         \item<6-8> Derives from the Stoic \textit{metaptosis}: differing truth-values over time.
+>         \item<7-8> When I say ``I am speaking a falsehood'' I am referring to what I said immediately preceding to that sentence. 
+>         \item<8> If I didn't say anything before that, then the sentence is just false.
+>       \end{itemize}}
+>   \end{itemize}
+> \end{frame}
+> ```
+>
+> If you page through the frame, you can see that once each second-level
+> `itemize` is shown, its parent `item` shifts upwards a small amount, and then
+> shifts back down when the second-level `itemize` is hidden.
+>
+> How can I get rid of this wobbling?
+:::
+
+The problem is that the height of the second-level itemize environment is smaller than that of the second item in the first-level itemize environment.  I was able to work around it this way:
+
+```latex
+\begin{frame}[t]
+  \frametitle{Solutions to the Liar 2}
+  \begin{itemize}
+    \item<2-> \textit{secundum quid et simpliciter}. \uncover<4->{\textbf{Solution.} Unclear.}
+      \begin{itemize}
+        \item<only@3> Mentioned by Aristotle (\textit{Sophistici Elenchi}, 180b2-3).
+      \end{itemize}
+    \item<5-> \textit{transcasus}. \uncover<9->{\textbf{Solution.} The Liar sentence is false.}
+      \begin{itemize}
+        \item<6-8> Derives from the Stoic \textit{metaptosis}: differing truth-values over time.
+        \item<7-8> When I say ``I am speaking a falsehood'' I am referring to what I said immediately preceding to that sentence. 
+        \item<8> If I didn't say anything before that, then the sentence is just false.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16168/how-to-have-nested-list-overlays-without-wobble/16175#16175) on TeX Stack Exchange, 2011-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

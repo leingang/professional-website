@@ -1,0 +1,61 @@
+---
+title: Differentiating Heaviside Function times modulus
+date: '2017-10-08'
+description: Assume $t\to 0^+$. Since $f{\lambda,\sigma}(x) = 0$ if $x< \lambda$, the second term $f{\lambda,\sigma}(\lambda - t) = 0$. So $$\lim{t\to 0^+}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2462706
+se-link: https://math.stackexchange.com/questions/2462691/differentiating-heaviside-function-times-modulus/2462706#2462706
+se-score: 1
+se-accepted: true
+se-tags:
+- functional-analysis
+- proof-verification
+- dirac-delta
+- fake-proofs
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiating Heaviside Function times modulus](https://math.stackexchange.com/questions/2462691/differentiating-heaviside-function-times-modulus), asked by [man_in_green_shirt](https://math.stackexchange.com/users/224185/man-in-green-shirt) on Mathematics Stack Exchange (2017-10-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Define $f_{\lambda,\sigma}(x):[0,1]\to\mathbb{R}$ as
+> $$f_{\lambda,\sigma}(x)= \Theta(x-\lambda)|x-\lambda|^{\sigma},$$
+> where $\Theta$ is the Heaviside Function and $\lambda,\sigma\in (0,1)$.
+> Then [here][q-1], on page 8, it is claimed that
+> > $$\lim_{t\to 0}\frac{|f_{\lambda,\sigma}(\lambda+t)-f_{\lambda,\sigma}(\lambda-t)|}{|2t|^{\sigma}}=\frac{1}{2^{\sigma}}.$$
+>
+> How did they evualuate this limit? Substituting $t=0$, we get $\frac{0}{0}$. So I've tried noticing that
+> $$f_{\lambda,\sigma}'(\lambda-t) = \lim_{t\to 0}\frac{f_{\lambda,\sigma}(\lambda+t)-f_{\lambda,\sigma}(\lambda-t)}{2t}.$$
+>
+> Working out the derivative of $f_{\lambda,\sigma}$, I get
+> $$f_{\lambda,\sigma}'(x)=\delta(x-\lambda)|x-\lambda|^{\sigma}+\Theta(x-\lambda)\sigma|x-\lambda|^{\sigma-1}.$$
+>
+> Substituting above,
+> $$\lim_{t\to 0}\frac{|f_{\lambda,\sigma}(\lambda+t)-f_{\lambda,\sigma}(\lambda-t)|}{|2t|^{\sigma}}=\lim_{t\to 0}\frac{|f_{\lambda,\sigma}(\lambda+t)-f_{\lambda,\sigma}(\lambda-t)|}{|2t|}\frac{1}{|2t|^{\sigma}}=\frac{\sigma |t|^{\sigma-1}}{|2t|^{\sigma-1}}=\frac{\sigma}{2^{\sigma-1}}.$$
+>
+> Where have I gone wrong?
+>
+>   [q-1]: https://www.scribd.com/document/261583443/CV-Non-Separability-of-the-Holder-Spaces#
+:::
+
+Assume $t\to 0^+$.  Since $f_{\lambda,\sigma}(x) = 0$ if $x< \lambda$, the second term $f_{\lambda,\sigma}(\lambda - t) = 0$.  So
+$$\lim_{t\to 0^+} \frac{|f_{\lambda,\sigma}(\lambda + t) - f_{\lambda,\sigma}(\lambda - t)|}{|2t|^\sigma} = \lim_{t\to 0^+}\frac{f_{\lambda,\sigma}(\lambda + t)}{(2 t)^\sigma}= \lim_{t\to 0^+}\frac{t^\sigma}{2^\sigma t^\sigma} = \frac{1}{2^\sigma}$$
+If $t \to 0^-$, the first term is zero but the absolute value of the difference is the same.
+
+Actually, if you just check the cases, I think you'll notice that
+$$|f_{\lambda,\sigma}(\lambda + t) - f_{\lambda,\sigma}(\lambda - t)| = |t|^\sigma$$
+for all $t$.  So the limit is straightforward.
+
+I am not sure how your derivative argument is supposed to work (are you aiming to apply L'Hôpital's rule?) but I see you wrote $|2t|^\sigma = |2t| \cdot |2t|^\sigma$, and you should probably have a $\sigma - 1$ power there.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2462691/differentiating-heaviside-function-times-modulus/2462706#2462706) on Mathematics Stack Exchange, 2017-10-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,48 @@
+---
+title: Is 1/n gradually approaching 0 when n approaches infinity.
+date: '2023-07-19'
+description: Series and sequence are synonyms in everyday English, but in math they have different meanings.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4739031
+se-link: https://math.stackexchange.com/questions/4739007/is-1-n-gradually-approaching-0-when-n-approaches-infinity/4739031#4739031
+se-score: 5
+se-accepted: false
+se-tags:
+- sequences-and-series
+- convergence-divergence
+- harmonic-functions
+- divergent-series
+- geometric-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is 1/n gradually approaching 0 when n approaches infinity.](https://math.stackexchange.com/questions/4739007/is-1-n-gradually-approaching-0-when-n-approaches-infinity), asked by [Ili a](https://math.stackexchange.com/users/1153060/ili-a) on Mathematics Stack Exchange (2023-07-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> According to the definition of **Convergent series**, "the series is said to be Convergent when **n** approaches infinite **a**n=L, where L is a constant." And when we prove that n/(n+1) will approach 1, we convert it to 1/(1+1/n) because 1/n will gradually approach 0. But in the P series, when P=1, it is a divergent (I know its proof process). Isn't the nth item here close to 0? Does this mean that I have any misunderstandings about the definition of convergent series. Or is the definition of harmonic series not applicable to general conversion series?
+>
+> Thanks
+:::
+
+_Series_ and _sequence_ are synonyms in everyday English, but in math they have different meanings.
+
+The sequence whose $n$th term is $\frac{1}{n}$ does in fact converge to zero. But the *series* whose $n$th term is $\frac{1}{n}$ is the same as the *sequence* whose $n$th term is $\sum_{k=1}^n \frac{1}{k}$. That sequence does not converge, so the series $\sum_{n=1}^\infty \frac{1}{n}$ does not converge.
+
+Because the phrases and notations around limits and sums are cumbersome, they often (unfortunately) get omitted in conversation. This can lead to some contradictory abbreviations:
+
+* Because $\displaystyle\lim_{n\to \infty} \frac{1}{n} = 0$, one might say “$\frac{1}{n}$ converges”. This is sloppy, but I think conventionally understood to mean the sequence converges.
+* Because $\displaystyle\lim_{N\to \infty} \sum_{n=1}^N \frac{1}{n} = \infty$, one might be tempted to say “$\frac{1}{n}$ diverges.” You see the ambivalence, which is what brought you to this question. 
+
+Try to avoid these abbreviations, or each time you see them, get some clarity: “Do you mean the *sequence* $\frac{1}{n}$ or the *series* of the terms in that sequence?”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4739007/is-1-n-gradually-approaching-0-when-n-approaches-infinity/4739031#4739031) on Mathematics Stack Exchange, 2023-07-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

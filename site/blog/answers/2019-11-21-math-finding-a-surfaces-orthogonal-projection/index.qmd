@@ -1,0 +1,50 @@
+---
+title: Finding a surface's orthogonal projection
+date: '2019-11-21'
+description: Basically, the answer is yes, but it's important to understand why.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3445047
+se-link: https://math.stackexchange.com/questions/3445030/finding-a-surfaces-orthogonal-projection/3445047#3445047
+se-score: 0
+se-accepted: true
+se-tags:
+- euclidean-geometry
+- elliptic-curves
+- projection
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding a surface's orthogonal projection](https://math.stackexchange.com/questions/3445030/finding-a-surfaces-orthogonal-projection), asked by [DrLeprikon](https://math.stackexchange.com/users/716112/drleprikon) on Mathematics Stack Exchange (2019-11-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm solving the problem of finding the surface area of a cone and an ellipsoid's intersection and for the surface integral I need to find the projection of an arbitrary surface onto the XY plane.
+>
+> At this moment I have a system of equations:
+>
+> $$\begin{cases}
+> z-ctg(\theta)*\sqrt {x^2+y^2}=0,  & \text{cone equation} \\
+> x^2/a+y^2/a+z^2/b=1, & \text{ellipsoid equation}
+> \end{cases}$$
+>
+> Would the equation I get by substituting $z$ in the second equation with $z$ from the first be the equation of my projection?
+:::
+
+Basically, the answer is yes, but it's important to understand why.  
+
+> finding the surface area of a cone and an ellipsoid's intersection
+
+The cone and ellipsoid intersect in a curve, not a surface, so it's a little bit ambiguous what you mean by “intersection” here.  Possibly you mean the portion of the ellipsoid that is “inside” the cone?  Or vice versa?  Or the union of both of these?
+
+But all of those surfaces share the fact that if you project them onto the $xy$-plane, the region is bounded by that curve of intersection.  To find that intersection curve, you need to reduce the *system* of the two equations simultaneously.  That's why you can isolate one of the variables ($z$) from the first equation and substitute it into the second equation.  The resulting equation relates $x$ and $y$ alone, so it's a curve in the $xy$-plane.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3445030/finding-a-surfaces-orthogonal-projection/3445047#3445047) on Mathematics Stack Exchange, 2019-11-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

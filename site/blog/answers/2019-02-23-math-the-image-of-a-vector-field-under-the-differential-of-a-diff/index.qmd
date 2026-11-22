@@ -1,0 +1,56 @@
+---
+title: The image of a vector field under the differential of a diffeomorphism is a vector field
+date: '2019-02-23'
+description: As long as $\varphi \colon M \to N$ is differentiable, the map $d\varphip$ is a vector space homomorphism from $TpM$ to $T{\varphi(p)}N$ for any $p \in M$. So…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3123939
+se-link: https://math.stackexchange.com/questions/3123878/the-image-of-a-vector-field-under-the-differential-of-a-diffeomorphism-is-a-vect/3123939#3123939
+se-score: 4
+se-accepted: true
+se-tags:
+- differential-geometry
+- vector-fields
+- tangent-bundle
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The image of a vector field under the differential of a diffeomorphism is a vector field](https://math.stackexchange.com/questions/3123878/the-image-of-a-vector-field-under-the-differential-of-a-diffeomorphism-is-a-vect), asked by [MSDG](https://math.stackexchange.com/users/447520/msdg) on Mathematics Stack Exchange (2019-02-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm learning about vector fields on manifolds, and I'm slightly confused about the following result.
+>
+> > Let $M$ and $N$ be differentiable manifolds, $\varphi:M\to N$ a diffeomorphism, and $\mathrm d\varphi: TM \to TN$ its differential. 
+> If $X \in \mathfrak{X}(M)$, then $\mathrm d\varphi(X) \in \mathfrak{X}(N)$.
+>
+> Here $\mathfrak{X}(M)$ denotes the space of differentiable vector fields $X:M\to TM$.
+> Of course, $\mathrm d\varphi(X)$ is a slight abuse of notation, and should be understood as the map
+> $$\mathrm d\varphi(X) : \varphi(p) \mapsto (\varphi(p), \mathrm d\varphi_p(X_p)).$$
+>
+> Now my problem is that I don't see why we must require $\varphi$ to be a diffeomorphism. I can see that we need $\varphi$ to be bijective in order for the map above to even be well-defined on the whole $N$, and of course $\varphi$ must be differentiable to be able to perform the differentiation,
+> but what is the point of the inverse being differentiable (or even continuous for that matter)?
+:::
+
+As long as $\varphi \colon M \to N$ is differentiable, the map $d\varphi_p$ is a vector space homomorphism from $T_pM$ to $T_{\varphi(p)}N$ for any $p \in M$.  So $\phi$ pushes tangent vectors forward without needing invertibility.
+
+But if a vector field $X$ on $M$ is to push forward to a vector field $\varphi_* X$ on $N$, we need a vector $(\varphi_* X)_q$ in every $T_qN$.  There's no way to do this unless $q$ is in the image of $\varphi$.  So we require $\varphi$ to be surjective.  Then if $\phi(q) = q$, we can define $(\varphi_* X)_q = d\varphi(X)_p$  In order for this to be well-defined, we need for $\varphi$ to be one-to-one.  So we can say
+$$(\varphi_* X)_q = d\varphi(X)_{\varphi^{-1}(q)}$$
+I assume you need $\varphi^{-1}$ to be differentiable in order for $\varphi_*X$ to be smooth.
+
+As examples, consider $M = \mathbb{R}^2$ with coordinates $(x_1,x_2)$, $N = \mathbb{R}$ with coordinate $y$, and $\varphi(x_1,x_2) = x_1$.  Then clearly $d\varphi$ takes $\frac{\partial}{\partial x_1}$ to $\frac{\partial}{\partial y}$ and $\frac{\partial}{\partial x_2}$ to $0$.  What should $\varphi_*\left(x_2 \frac{\partial}{\partial x_1}\right)$ be though?  You'd have to choose a lifting $\psi\colon N \to M$ (in other words, a function $x_2(y)$), which seems problematic from a naturality standpoint.
+
+Or $M = N = \mathbb{R}$ with $\varphi(x) = x^3$.  Let $X = \frac{\partial}{\partial x}$. 
+ Then $d\varphi(x,\frac{\partial}{\partial x}) = (x^3,3x^2\frac{\partial}{\partial y})$  To define $\varphi_*x X$ at a point $y \in N$, you'd need to take $d\varphi(y^{1/3},\frac{\partial}{\partial x}) = (y,3y^{2/3}\frac{\partial}{\partial y})$.  This isn't going to be smooth at $y=0$.  
+
+You can read more about this on [Wikipedia](https://en.wikipedia.org/wiki/Pushforward_(differential)).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3123878/the-image-of-a-vector-field-under-the-differential-of-a-diffeomorphism-is-a-vect/3123939#3123939) on Mathematics Stack Exchange, 2019-02-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

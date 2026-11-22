@@ -1,0 +1,77 @@
+---
+title: Persistent random steps decorations during beamer \uncover
+date: '2011-03-16'
+description: 'You can set the random seed each time you draw the ellipse, like so:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13583
+se-link: https://tex.stackexchange.com/questions/13580/persistent-random-steps-decorations-during-beamer-uncover/13583#13583
+se-score: 14
+se-accepted: true
+se-tags:
+- tikz-pgf
+- beamer
+- decorations
+- pgfmath
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Persistent random steps decorations during beamer \uncover](https://tex.stackexchange.com/questions/13580/persistent-random-steps-decorations-during-beamer-uncover), asked by [Derek](https://tex.stackexchange.com/users/4199/derek) on TeX Stack Exchange (2011-03-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm using a random steps decoration with a path that appears through several uncover transitions.  Currently the decoration is redrawn in each instance of the slide.  How can I change this behavior.  A minimal example follows.  Thanks.
+>
+> ```latex
+> \documentclass[presentation]{beamer}  
+> \usepackage{tikz, pgf}  
+> \usetikzlibrary{decorations.pathmorphing}  
+> \begin{document}  
+> \begin{frame}  
+> \begin{center}  
+> \begin{tikzpicture}  
+> \uncover<1-3>{  
+> \fill [decorate, decoration={random steps,segment length=2pt,amplitude=2pt}] (0,0) ellipse (0.5cm and 0.4cm);  
+> }  
+> \end{tikzpicture}  
+> \end{center}  
+> \end{frame}  
+> \end{document} 
+> ```
+:::
+
+You can set the random seed each time you draw the ellipse, like so:
+
+```latex
+\documentclass[presentation]{beamer}
+\usepackage{tikz, pgf}
+\usetikzlibrary{decorations.pathmorphing}
+\begin{document}
+
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}
+\uncover<1-3>{
+\pgfmathsetseed{1234} % Choose a four-digit number here
+\fill [decorate, decoration={random steps,segment length=2pt,amplitude=2pt}] (0,0) ellipse (0.5cm and 0.4cm);
+}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\end{document} 
+```
+
+The best part is that `\pgfmathsetseed` is local so outside this tikzpicture environment the pseudo-random number generator will behave as usual.
+
+And by the way [random.org](http://www.random.org/) is a cool place to get random numbers to use as seeds.  [Here's](http://www.random.org/integers/?num=1&min=1000&max=9999&col=5&base=10&format=html&rnd=new) one just for you.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13580/persistent-random-steps-decorations-during-beamer-uncover/13583#13583) on TeX Stack Exchange, 2011-03-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

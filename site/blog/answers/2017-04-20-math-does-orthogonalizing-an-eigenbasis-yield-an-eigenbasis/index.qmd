@@ -1,0 +1,135 @@
+---
+title: Does orthogonalizing an eigenbasis yield an eigenbasis?
+date: '2017-04-20'
+description: A linear combination of eigenvectors corresponding to the same eigenvalue is still an eigenvector. But a linear combination of eigenvectors corresponding to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2243439
+se-link: https://math.stackexchange.com/questions/2243410/does-orthogonalizing-an-eigenbasis-yield-an-eigenbasis/2243439#2243439
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Does orthogonalizing an eigenbasis yield an eigenbasis?](https://math.stackexchange.com/questions/2243410/does-orthogonalizing-an-eigenbasis-yield-an-eigenbasis), asked by [user438666](https://math.stackexchange.com/users/438666/user438666) on Mathematics Stack Exchange (2017-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a 6x6 real symmetric matrix T, of which I (more precisely, Mathematica) already calculated the eigenvalues and eigenvectors. I want to obtain the orthogonal matrix which diagonalises T, to do that i just take the matrix formed with the eigenvectors of T and orthogonalize that using Mathematica's Orthogonalize command, which I assume does something like the Gram-Schmidt process on the initial set of eigenvectors.
+>
+> I do obtain the right matrix (i.e. I can verify that $P^TTP$ does yield the diagonal matrix I'm looking for), nonetheless, I notice that the orthogonalized "eigenvectors" are not eigenvectors anymore. More precisely, one of the vectors that was previously associated with a 0 eigenvalues now seems to not be an eigenvector at all.
+>
+> I'm asking this here because I think it is more of a linear algebra problem than a Mathematica one.
+> Resuming: if I orthogonalize an eigenbasis of a symmetric matrix, the orthogonal vectors are not eigenvectors anymore, why?
+>
+> Thank you
+>
+>
+> EDIT---
+>
+> I tried orthogonalizing the eigenspaces one at the time (I have the eigenvalue $\frac{3}{m}$ with multiplicity one, $\frac{3}{2m}$ with multiplicity two and $0$ with multiplicity three) and it did not solve the problem, here's the code in Mathematica
+>
+> ```
+>     W = Eigenvectors[T];
+> R1 = Orthogonalize[{W[[2]], W[[3]]}];
+> R2 = Orthogonalize[{W[[4]], W[[5]], W[[6]]}];
+> R = {Normalize[W[[1]]], R1[[1]], R1[[2]], R2[[1]], R2[[2]], 
+>   R2[[3]]}
+> P = Transpose[R];
+> Unprotect[P];
+> Omega = FullSimplify[Transpose[P].T.P, Assumptions -> m > 0]
+> T.P[[All, 1]]
+> T.P[[All, 2]]
+> T.P[[All, 3]]
+> T.P[[All, 4]]
+> T.P[[All, 5]]
+> T.P[[All, 6]]
+> ```
+>
+>
+> And the output is
+>
+> ```
+> {{3/m, 0, 0, 0, 0, 0}, {0, 3/(2 m), 0, 0, 0, 0}, {0, 0, 3/(2 m), 0, 0,
+>    0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}}
+> ```
+>
+> for $P^TTP$, as you can see it is diagonal
+>
+> and
+>
+> ```
+> {-(3/(2 m)), -(Sqrt[3]/(2 m)), 3/(
+>  2 m), -(Sqrt[3]/(2 m)), 0, Sqrt[3]/m}
+>
+> {3/(4 m), -(Sqrt[3]/(4 m)), -(3/(4 m)), -(Sqrt[3]/(4 m)), 0, Sqrt[3]/(
+>  2 m)}
+>
+> {-(Sqrt[3]/(4 m)), -(3/(4 m)), -(Sqrt[3]/(4 m)), 3/(4 m), Sqrt[3]/(
+>  2 m), 0}
+>
+> {0, 0, 0, 0, 0, 0}
+>
+> {Sqrt[3/77]/(2 m) - Sqrt[11/21]/(4 m) + 5/(4 Sqrt[231] m), 0, 
+>  Sqrt[3/77]/(2 m) - Sqrt[11/21]/(4 m) + 5/(
+>   4 Sqrt[231] m), 0, -(Sqrt[(3/77)]/m) + Sqrt[11/21]/(2 m) - 5/(
+>   2 Sqrt[231] m), 0}
+>
+> {0, 0, 0, 0, 0, 0}
+> ```
+>
+> As you can see the fifth vector is wrong, and finally, "true" for the OrthogonalMatrixQ
+>
+> EDIT 2---
+>
+> Here's how the matrix $T$ is constructed in the code, it is the Hessian matrix of a potential, that can assure you that it is symmetric
+>
+> ```
+> V = 1/2*((Norm[a1 - a2] - l)^2 + (Norm[a1 - a3] - 
+>         l)^2 + (Norm[a2 - a3] - l)^2);
+> C = D[V, {{x1, y1, x2, y2, x3, y3}, 2}];
+> Unprotect[C];
+> B = C /. {x1 -> 0, y1 -> 0, x2 -> l, y2 -> 0, x3 -> l/2, 
+>     y3 -> Sqrt[3] l/2};
+> K = FullSimplify[B, Assumptions -> l > 0];
+> M = DiagonalMatrix[{1/Sqrt[m], 1/Sqrt[m], 1/Sqrt[m], 1/Sqrt[m], 
+>     1/Sqrt[m], 1/Sqrt[m]}];
+> A = M.K.M;
+> T = FullSimplify[A, Assumptions -> m > 0];
+> ```
+>
+> and explicitly
+>
+> ```
+> {{5/(4 m), Sqrt[3]/(4 m), -(1/m), 
+>   0, -(1/(4 m)), -(Sqrt[3]/(4 m))}, {Sqrt[3]/(4 m), 3/(4 m), 0, 
+>   0, -(Sqrt[3]/(4 m)), -(3/(4 m))}, {-(1/m), 0, 5/(
+>   4 m), -(Sqrt[3]/(4 m)), -(1/(4 m)), Sqrt[3]/(4 m)}, {0, 
+>   0, -(Sqrt[3]/(4 m)), 3/(4 m), Sqrt[3]/(
+>   4 m), -(3/(4 m))}, {-(1/(4 m)), -(Sqrt[3]/(4 m)), -(1/(4 m)), Sqrt[
+>   3]/(4 m), 1/(2 m), 0}, {-(Sqrt[3]/(4 m)), -(3/(4 m)), Sqrt[3]/(
+>   4 m), -(3/(4 m)), 0, 3/(2 m)}}
+> ```
+:::
+
+A linear combination of eigenvectors corresponding to *the same eigenvalue* is still an eigenvector.  But a linear combination of eigenvectors corresponding to *different* eigenvalues is probably not an eigenvector at all.
+
+However, remember that eigenvectors of a symmetric matrix corresponding to different eigenvalues are guaranteed to be orthogonal.  So to find an orthonormal basis of eigenvectors, you can:
+
+ 1. Find an eigenbasis in the usual way.
+ 2. For each eigenvalue of multiplicity one, divide the corresponding eigenvector by its length to make it a unit vector.
+ 3. For each eigenvalue of multiplicity more than one, use Gram-Schmidt on the set of eigenvectors you found corresponding to that eigenvalue.  
+
+This gives you an orthonormal basis for each eigenspace, which (since all the eigenspaces are orthogonal) can all be collected to an orthonormal basis of the domain space.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2243410/does-orthogonalizing-an-eigenbasis-yield-an-eigenbasis/2243439#2243439) on Mathematics Stack Exchange, 2017-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

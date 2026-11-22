@@ -1,0 +1,63 @@
+---
+title: Set-theoretic argument from Lang's book, revisited
+date: '2026-06-15'
+description: 'Combining some of the comments into an answer: Like Andreas said, $S$ was chosen to have the same cardinality as $F \setminus \sigma k$. So there is implied a…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5140690
+se-link: https://math.stackexchange.com/questions/5140631/set-theoretic-argument-from-langs-book-revisited/5140690#5140690
+se-score: 1
+se-accepted: false
+se-tags:
+- field-theory
+- extension-field
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Set-theoretic argument from Lang's book, revisited](https://math.stackexchange.com/questions/5140631/set-theoretic-argument-from-langs-book-revisited), asked by [s123](https://math.stackexchange.com/users/1765904/s123) on Mathematics Stack Exchange (2026-06-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This is from Chapter V of *Algebra* by Serge Lang. Earlier in the text, he defines $\sigma$ as the natural surjection from $k[X]$ onto $k[X]/(p(X))$. 
+>
+> > **Proposition 2.3.** Let $k$ be a field and $f$ a polynomial in $k[X]$ of degree $\geq 1$. Then there exists an extension $E$ of $k$ in which
+> > $f$ has a root.
+> > 
+> > *Proof.* We may assume that $f=p$ is irreducible. We have shown that there exists a field $F$ and an embedding $\sigma:k\to F$ such that
+> > $p^{\sigma}$ has a root $\xi$ in $F$. Let $S$ be a set whose
+> > cardinality is the same as that of $F\setminus \sigma k$ (=the
+> > complement of $\sigma k$ in $F$) and which is disjoint from $k$. Let
+> > $E=k\sqcup S$. We can extend $\sigma:k\to F$ to a bijection of $E$ on
+> > $F$. We now define a field structure on $E$. If $x,y\in E$ we define
+> > $$xy=\sigma^{-1}(\sigma(x)\sigma(y)), \
+>  x+y=\sigma^{-1}(\sigma(x)+\sigma(y)).$$ Restricted to $k$, our
+> > addition and multiplication coincide with the given addition and
+> > multiplication of our original field $k$, and it is clear that $k$ is
+> > a subfield of $E$. We let $\alpha=\sigma^{-1}(\xi)$. Then it is also
+> > clear that $p(\alpha)=0$, as desired.
+>
+> There is already a [question regarding the construction of such an $S$](https://math.stackexchange.com/q/5044871/2785) on the website. My question is: How can we define $\sigma$ on an arbitrary element of $E$? Does the author mean that $S$ is a subset of $k[X]$?
+:::
+
+Combining some of the comments into an answer: Like Andreas said, $S$ was chosen to have the same cardinality as $F \setminus \sigma k$. So there is implied a bijection $b \colon S \to (F \setminus \sigma k)$. 
+
+The components of $E$ are $k$ and $S$ with no overlap. We define $\hat\sigma \colon E \to F$ (Dermot's suggestion) by
+$$\hat \sigma (x) = \begin{cases}
+    \sigma(x) & \text{if $x \in k$} \\
+    b(x) & \text{if $x \in S$}
+  \end{cases}$$
+Since $\sigma$ and $b$ are injections, $\hat\sigma$ is an injection. To show that $\hat\sigma$ is surjective, choose $y \in F$. If $y \in \sigma k$, then $y$ is in the image of $\sigma$. If $y \notin \sigma k$, then $y$ is in the image of $b$. Either way, $y$ is in the image of $\hat\sigma$. So $\hat\sigma$ is a surjection.
+
+Now we use $\hat \sigma$ to create the ring structure on $E$. To operate on (add, respectively multiply) two elements of $E$, use $\hat\sigma$ to put them in $F$, do the corresponding ring operation in $F$, then apply $\hat\sigma^{-1}$ to the result to bring it back to $E$. By definition, $\hat\sigma$ is now a ring homomorphism.
+
+Set $\alpha = \hat\sigma^{-1}(\xi)$. By construction, $p(\alpha) = p^\sigma(\xi) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5140631/set-theoretic-argument-from-langs-book-revisited/5140690#5140690) on Mathematics Stack Exchange, 2026-06-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

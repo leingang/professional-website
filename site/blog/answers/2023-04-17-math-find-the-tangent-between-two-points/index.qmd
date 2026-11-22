@@ -1,0 +1,48 @@
+---
+title: Find the tangent between two points
+date: '2023-04-17'
+description: Your explanation is intuitive, and could be plausible with accompanying illustrations, but it isn't rigorous or convincing. If one of my students had answered…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4680831
+se-link: https://math.stackexchange.com/questions/4680500/find-the-tangent-between-two-points/4680831#4680831
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- algebra-precalculus
+- derivatives
+- solution-verification
+- tangent-line
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the tangent between two points](https://math.stackexchange.com/questions/4680500/find-the-tangent-between-two-points), asked by [Need_MathHelp](https://math.stackexchange.com/users/1135253/need-mathhelp) on Mathematics Stack Exchange (2023-04-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $f(x) = x^3$. Show that for every point $P = (x_0, y_0) \in\mathbb R^2$ there is a tangent to the graph of $f(x)$ that passes through $P$.
+>
+> I said in order for this to be true $f'(x)$ needs to be defined for all $f(x)$ and for all $x$'s. If this is true then we will have a value for all $f'(x)$. This means that $f(x)$ will be able to give us all types of straight lines that both grows and decreases. So I differentiated $f(x)$ to $3x^2$ and here we can see that $f'(x)$ is defined for all x's and thus there is a line for every $(x_0, y_0)$ that passes through the point $p$. 
+>
+> But in the answers they used mean value theorem etc, but I was wondering if my explanation was totally wrong because I got $0$ point on it.
+:::
+
+Your explanation is intuitive, and could be plausible with accompanying illustrations, but it isn't rigorous or convincing. If one of my students had answered that question that way, I would have given some credit for understanding the statement.
+
+Every point on the graph of $f(x) = x^3$ will already have a tangent line through it, because the function is differentiable. If $P = (x_0,y_0)$ is *not* on the the graph, and $(x,x^3)$ *is* on the graph, then the line between them has slope $\frac{x^3-y_0}{x-x_0}$. That line is tangent to the graph of $f$ if the slope equals $f'(x) = 3x^2$.
+
+So you are looking for a real number $x$ such that
+$$\frac{x^3-y_0}{x-x_0} = 3x^2 \iff x^3 - y_0 = 3x^2(x-x_0)
+    \iff 2x^3 - 3x^2 x_0 + y_0 = 0$$
+Every cubic polynomial has a real root, so we know some $x$ satisfies the equation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4680500/find-the-tangent-between-two-points/4680831#4680831) on Mathematics Stack Exchange, 2023-04-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

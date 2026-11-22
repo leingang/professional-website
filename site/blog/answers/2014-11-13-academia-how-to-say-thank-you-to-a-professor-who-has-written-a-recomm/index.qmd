@@ -1,0 +1,34 @@
+---
+title: How to say “thank you” to a professor who has written a recommendation letter for me?
+date: '2014-11-13'
+description: Recommenders also like to hear the results of the process. So one way to thank them (in addition to a written or emailed thank-you note) is to let them know…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 31678
+se-link: https://academia.stackexchange.com/questions/31672/how-to-say-thank-you-to-a-professor-who-has-written-a-recommendation-letter-fo/31678#31678
+se-score: 9
+se-accepted: false
+se-tags:
+- etiquette
+- recommendation-letter
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to say “thank you” to a professor who has written a recommendation letter for me?](https://academia.stackexchange.com/questions/31672/how-to-say-thank-you-to-a-professor-who-has-written-a-recommendation-letter-fo), asked by [user24263](https://academia.stackexchange.com/users/24263/user24263) on Academia Stack Exchange (2014-11-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I recently asked two of my professors to write me recommendation letters and they promptly and kindly accepted to do that. It is now two weeks since then. I want to send “thank you” notes to them. Is it enough to send e-mails? I have heard that it is more polite to send a written letter by US post, but it is a little bit weird when we are all in the same building! Isn’t it? Can I send them some kind of gift on a special occasion?
+:::
+
+Recommenders also like to hear the results of the process.  So one way to thank them (in addition to a written or emailed thank-you note) is to let them know which programs/jobs/schools you got into on account of their recommendation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/31672/how-to-say-thank-you-to-a-professor-who-has-written-a-recommendation-letter-fo/31678#31678) on Academia Stack Exchange, 2014-11-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

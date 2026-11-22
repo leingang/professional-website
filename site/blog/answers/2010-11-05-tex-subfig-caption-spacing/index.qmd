@@ -1,0 +1,49 @@
+---
+title: subfig caption spacing
+date: '2010-11-05'
+description: You can read about customizing subfigure layout in Section 4 of the <a…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4983
+se-link: https://tex.stackexchange.com/questions/4980/subfig-caption-spacing/4983#4983
+se-score: 10
+se-accepted: true
+se-tags:
+- floats
+- captions
+- subfloats
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[subfig caption spacing](https://tex.stackexchange.com/questions/4980/subfig-caption-spacing), asked by [carlosdc](https://tex.stackexchange.com/users/1534/carlosdc) on TeX Stack Exchange (2010-11-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How do I reduce the vertical space between a caption of a subfigure and the image of that subfigure?
+>
+> I tried:
+>
+> ```latex
+> \subfigure[\vspace{-0.2in} caption words]
+> ```
+>
+> doesn't seem to do anything.
+:::
+
+Try
+
+```latex
+\addtolength{\subfigcapskip}{-0.2in}
+```
+
+You can read about customizing subfigure layout in Section 4 of the <a href="http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/subfigure.pdf">subfigure manual</a>.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4980/subfig-caption-spacing/4983#4983) on TeX Stack Exchange, 2010-11-05. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

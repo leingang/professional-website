@@ -1,0 +1,58 @@
+---
+title: Induction step completion
+date: '2017-11-15'
+description: 'The inductive step starts: >Let $n\geq 1$ be given such that $$2 + 4 + 6 + \dots + 2n = n^2 + n$$ We wish to show that $$2 + 4 + 6 + \dots + 2n + 2(n+1) =…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2521819
+se-link: https://math.stackexchange.com/questions/2521817/induction-step-completion/2521819#2521819
+se-score: 0
+se-accepted: false
+se-tags:
+- induction
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Induction step completion](https://math.stackexchange.com/questions/2521817/induction-step-completion), asked by user503376 on Mathematics Stack Exchange (2017-11-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am confused how to go about the inductive step of the this given problem..
+>
+> For all natural numbers $n, 2+4+6+....+2n =(n^2+n)$
+>
+> I got the base case but now I am confused. Any help is greatly appreciated!
+>
+> ```
+> Proof: We proceed by induction.
+>           Base case: Set n = 1. Then 2 = (1)^2 + 1. Thus the 
+>           claim holds when n = 1.
+>
+>        Inductive step: Let n>=1 be given.
+> ```
+:::
+
+The inductive step starts: 
+>Let $n\geq 1$ be given such that
+$$2 + 4 + 6 + \dots + 2n = n^2 + n$$
+We wish to show that
+$$2 + 4 + 6 + \dots + 2n + 2(n+1) = (n+1)^2 + (n+1)$$
+
+Now you try to use the first equation to prove the second.  Can you do that?
+
+* * *
+OP asks about the appearance of $2n$ in the second equation.  If you infer the pattern from the $\cdots$, then
+$$2 + 4 + 6 + \dots + 2(n+1) = 2 + 4 + 6 + \dots + 2n + 2(n+1)$$
+In both cases, you double all the numbers between $1$ and $n+1$, and add up those doubles.  I just decided to explicitly write not only the *last* term in the series, but also the *next-to-last* term.
+
+Why would I do that?  It emphasizes that the left-hand side of the second equation is the same as the left-hand side of the first equation, with an additional term added on: $2(n+1)$.  That is a hint for how to show the second equation is satisfied.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2521817/induction-step-completion/2521819#2521819) on Mathematics Stack Exchange, 2017-11-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

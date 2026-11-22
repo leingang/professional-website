@@ -1,0 +1,88 @@
+---
+title: How does this answer work?
+date: '2010-11-30'
+description: I figured this out before I noticed Harald's answer, which is probably better, but here is my stab at it. Say the TeX file has
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6239
+se-link: https://tex.stackexchange.com/questions/6224/how-does-this-answer-work/6239#6239
+se-score: 6
+se-accepted: false
+se-tags:
+- hyphenation
+- expansion
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does this answer work?](https://tex.stackexchange.com/questions/6224/how-does-this-answer-work), asked by [Colin Fraizer](https://tex.stackexchange.com/users/2110/colin-fraizer) on TeX Stack Exchange (2010-11-30; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> [Harald Hanche-Olsen](https://tex.stackexchange.com/users/1424/harald-hanche-olsen) posted some interesting code in answer to [this question](https://tex.stackexchange.com/questions/6171/wrapping-long-lines-that-contain-no-spaces).
+>
+> Could someone explain how it works?
+>
+> I understand (I think) the futurelet and the expansions. I don't understand:
+>
+> 1. Where does the `<null>` character come from in `\ifcat\next9`?
+> 2. How does the expanded text actually get broken into the `\hbox`'s?  (Pages 98-99 of the TeXbook didn't really help me understand the trace output in this case, so I'm hoping someone can clarify.)
+>
+> Thanks!
+>
+> Here is the code reproduced from the referenced answer:
+>
+> ```latex
+> \def\breaknumberanywhere{\hskip0pt\futurelet\next\breaknumberi}
+> \def\breaknumberi{\ifcat\next9\expandafter\breaknumberii\fi}
+> \def\breaknumberii#1{#1\breaknumberanywhere}
+>
+> \def\foo#1#2{\vtop{\hsize=#1\rightskip=0pt plus 1fil \leftskip=0pt\noindent\breaknumberanywhere#2}}
+>
+> Here is a long number:
+> \foo{2in}
+> {17823941237490812347123904712389407123408917234890123748912034712985712389012351}
+> \bye
+> ```
+:::
+
+I figured this out before I noticed Harald's answer, which is probably better, but here is my stab at it.  Say the TeX file has 
+
+```latex
+\breaknumberanywhere 178239
+```
+
+in it.
+
+ 1. `\breaknumberanywhere` is replaced with `\hskip0pt\futurelet\next\breaknumberi`.  So the line becomes
+
+        \hskip0pt\futurelet\next\breaknumberi 178239
+
+ 2. `\futurelet\a\b\c` is equivalent to `\let\a\c\b\c`, so you have something like
+
+        \hskip0pt\let\next1\breaknumberi 178239
+
+ 3. Now `\breaknumberi` is expanded, resulting in
+
+        \hskip0pt\let\next1\ifcat\next9\expandafter\breaknumberii\fi 178239
+
+ 4. Now `\ifcat` compares the category codes of the next two tokens, which are `\next` (that is, `1`) and `9`.  (It does **not** check if the category code of `\next` is 9, the ignored or `<null>` character, which is what you might be thinking based on your first question).  These do have the same category codes, so the true text is expanded, but actually it's delayed by the `\expandafter` allowing the conditional to finish up.  The result is  
+
+        \hskip0pt\breaknumberii 178239
+
+ 5. `\breaknumberii` takes the next token (`1`) as its argument and replaces it, resulting in
+
+        \hskip0pt1\breaknumberanywhere78239
+
+ 6.  Now we go back to step 1! 
+
+The result is `\hskip0pt` inserted between every two digits of the long number, which allows TeX to break lines anywhere.  The token `<tok>`coming after the `9` will not have the same category code as a digit, so `\breaknumberi <tok>` will just result in `<tok>` by itself instead of `\breaknumberii <tok>`
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6224/how-does-this-answer-work/6239#6239) on TeX Stack Exchange, 2010-11-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

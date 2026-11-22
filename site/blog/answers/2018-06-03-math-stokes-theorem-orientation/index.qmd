@@ -1,0 +1,59 @@
+---
+title: Stokes Theorem orientation
+date: '2018-06-03'
+description: An orientation on a curve is a “forward” direction. The induced orientation on $\partial S1$ is the one that keeps $S1$ on the left as you walk around it with…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2807126
+se-link: https://math.stackexchange.com/questions/2807114/stokes-theorem-orientation/2807126#2807126
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- vectors
+- surfaces
+- stokes-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Stokes Theorem orientation](https://math.stackexchange.com/questions/2807114/stokes-theorem-orientation), asked by [user3427042](https://math.stackexchange.com/users/376892/user3427042) on Mathematics Stack Exchange (2018-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> A weird thing about Stokes’ theorem is that if $S_1$ and $S_2$ are two oriented surfaces in $R^3$
+> that share the
+> same boundary $∂S$ with the same induced orientation on $∂S$, then $\iint_{S_1}
+> \operatorname{curl}F \cdot dS = \iint_{S_2}
+> \operatorname{curl}F \cdot dS$
+> for any $C^1$ vector field $F$.
+>
+> How do I check that $S_1$ and $S_2$ induce the same orientation on $∂S$,
+> and how does this change if the induced orientations are not the same?
+>
+> Also, when they induce the same orientation, why do the two integrals have to be the same in that case?
+:::
+
+> How do I check that $S_1$ and $S_2$ induce the same orientation on $∂S$,
+and how does this change if the induced orientations are not the same?
+
+An orientation on a curve is a “forward” direction.  The induced orientation on $\partial S_1$ is the one that keeps $S_1$ on the left as you walk around it with your head pointed in the direction of the normal vector on $S_1$.  So if both $S_1$ and $S_2$ are on the left as you walk around their shared boundary curve, the surfaces induce the same orientation.  Otherwise, they induce opposite orientations, and the integrals differ by a factor of $-1$.
+
+> Also, when they induce the same orientation, why do the two integrals have to be the same in that case?
+
+The reason for that is Stokes's Theorem.  We have both
+$$\begin{align*}
+    \iint_{S_1} \operatorname{curl}\vec F \cdot d\vec S &= \oint_{\partial S_1} \vec F \cdot d\vec s \\
+    \iint_{S_2} \operatorname{curl}F \cdot dS &= \oint_{\partial S_2} \vec F \cdot d\vec s
+\end{align*}$$
+If $\partial S_1 = \partial S_2$ as oriented curves, the integrals on the right are the same.  So the integrals on the left are equal.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2807114/stokes-theorem-orientation/2807126#2807126) on Mathematics Stack Exchange, 2018-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

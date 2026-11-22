@@ -1,0 +1,53 @@
+---
+title: LaTeX beamer fixed vertical alignment
+date: '2010-12-20'
+description: If the text is below the image, this shouldn't be to much of a problem.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7437
+se-link: https://tex.stackexchange.com/questions/7436/latex-beamer-fixed-vertical-alignment/7437#7437
+se-score: 2
+se-accepted: false
+se-tags:
+- beamer
+- vertical-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LaTeX beamer fixed vertical alignment](https://tex.stackexchange.com/questions/7436/latex-beamer-fixed-vertical-alignment), asked by [willeM_ Van Onsem](https://tex.stackexchange.com/users/2601/willem-van-onsem) on TeX Stack Exchange (2010-12-20; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am building a presentation in Beamer.
+>
+> The presentation contains a slide where an image should be displayed on the top of the frame. Underneath some text should be displayed containing information about the image. The text should change frame by frame (other information, no overlays). Therefore the image needs to stay on it's initial place of course.
+>
+> Are there any ways to do this, or is there some workaround (elegant solution)?
+:::
+
+If the text is below the image, this shouldn't be to much of a problem.
+
+```latex
+\begin{frame}
+  \begin{center}
+    \includegraphics{foo.pdf}
+  \end{center}
+
+  \uncover<+>{text on first slide}%
+  \uncover<+>{text on second slide}%
+  \uncover<+>{text on third slide}
+
+\end{frame}
+```
+
+What's more challenging is a situation where the static material is below the dynamic material.  Then you have to put the dynamic material in a box that is the same size on each slide.  The most common ways to do that are with the `overlay` and `overprint` environments (see the beamer manual).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7436/latex-beamer-fixed-vertical-alignment/7437#7437) on TeX Stack Exchange, 2010-12-20. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

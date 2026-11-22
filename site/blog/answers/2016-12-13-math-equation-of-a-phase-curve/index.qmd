@@ -1,0 +1,65 @@
+---
+title: Equation of a phase curve
+date: '2016-12-13'
+description: 'Maybe you can eliminate $e^{-t}$ instead: $$\frac{y}{c2} = e^{-3t} = \left(e^{-t}\right)^3 = \left(\frac{x}{c1}\right)^3$$ By plugging in the initial…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2056996
+se-link: https://math.stackexchange.com/questions/2056985/equation-of-a-phase-curve/2056996#2056996
+se-score: 4
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Equation of a phase curve](https://math.stackexchange.com/questions/2056985/equation-of-a-phase-curve), asked by [Andy Grey](https://math.stackexchange.com/users/316158/andy-grey) on Mathematics Stack Exchange (2016-12-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've been given the problem $$\dot{x}=-x$$ $$\dot{y}=-3y$$
+>
+> I've sketched the phase portrait and calculated $$x(t)=c_1e^{-t}$$ $$y(t)=c_2e^{-3t}$$
+>
+> I'm now asked to give the equation of the phase curve by eliminating t. I feel totally lost at this point. How should I approach it?
+>
+> I'm guessing it's not too complicated and that I've just missed something.
+:::
+
+Maybe you can eliminate $e^{-t}$ instead:
+$$\frac{y}{c_2} = e^{-3t} = \left(e^{-t}\right)^3 = \left(\frac{x}{c_1}\right)^3$$
+By plugging in the initial conditions $(x(0),y(0)) = (x_0,y_0)$, we see $c_1 = x_0$ and $c_2 = y_0$.
+Thus $y = \frac{y_0}{x_0^3} x^3$ is an equation for the solution curve.  If $x_0$ is positive, the actual orbit is the right half of the curve (excluding the origin), and if $x_0$ is negative, the left half.
+
+If $x_0 = 0$ and $y_0 \neq 0$, the equations are $x = 0$, $y=y_0 e^{-3t}$.  The orbit is the positive $y$-axis if $y_0 > 0$, and the negative $y$-axis if $y_0 < 0$.
+
+If $y_0 = 0$ and $x_0 \neq 0$, the equations are $x = x_0 e^{-t}$.  The orbit is the positive $x$-axis if $x_0 > 0$, and the negative $x$-axis if $x_0 < 0$.
+
+If both $x_0=0$ and $y_0 = 0$, the orbit is the origin.
+
+
+
+* * *
+Your solution 
+> $$\frac{dy}{dx}=  \frac{-3y}{-x} = c \implies y = \frac{c}{3} x$$
+
+does not make sense to me.  How do you know $\frac{3y}{x}$ is constant?  From the differential equation with $y$ and $x$, I would separate the variables:
+$$\begin{align*}
+    \frac{dy}{y} &= \frac{3\,dx}{x} 
+\end{align*}$$
+Integrating each side, we have
+$$\begin{align*}
+    \ln y &= 3 \ln x + C \\\implies
+        y &= e^{3\ln x + C} = e^C e^{3\ln x} = C' x^3
+\end{align*}$$
+We have assumed $x$ and $y$ were positive, but those other cases can be accounted for.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2056985/equation-of-a-phase-curve/2056996#2056996) on Mathematics Stack Exchange, 2016-12-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

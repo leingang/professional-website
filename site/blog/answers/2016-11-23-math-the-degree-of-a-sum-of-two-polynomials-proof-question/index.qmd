@@ -1,0 +1,57 @@
+---
+title: The degree of a sum of two polynomials (proof question)
+date: '2016-11-23'
+description: Shortcuts like these can be hard to understand, but once you do, they make life easier.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2027326
+se-link: https://math.stackexchange.com/questions/2027287/the-degree-of-a-sum-of-two-polynomials-proof-question/2027326#2027326
+se-score: 3
+se-accepted: false
+se-tags:
+- abstract-algebra
+- polynomials
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The degree of a sum of two polynomials (proof question)](https://math.stackexchange.com/questions/2027287/the-degree-of-a-sum-of-two-polynomials-proof-question), asked by [Miriam](https://math.stackexchange.com/users/290985/miriam) on Mathematics Stack Exchange (2016-11-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Let $R$ be a ring and let $f = (a_0,a_1,a_2,...)$ and $g = (b_0,b_1,b_2,...)$ be arbitrary polynomials and let $\deg f = m$, $\deg g = n$.
+> Then $\deg(f+g) = \max\{m,n\}$, if $m\neq n$ or $\deg(f+g) \leq m$, in case $m = n$.
+>
+> The proof itself is quite easy, but it's a little detail I don't quite understand.
+> The author proves three cases: $m < n$, $n < m$ and $m = n$. At the end of the proof he asks why one could not have just dropped the second case $n < m$ and just regarded the first two cases as one $m < n$ without loss of generality.
+>
+> This is exactly something I would have done and that's why I have no clue what he's referring to. :)
+>
+> Can somebody help?
+:::
+
+Shortcuts like these can be hard to understand, but once you do, they make life easier.
+
+The original set of cases are: $m < n$, $m > n$, and $m=n$.  But notice that the proposition's statement is symmetric in $f$ and $g$. That is, switching the role of $f$ and $g$ in the statement creates an equivalent statement.  Basically, $\max\{m,n\} = \max\{n,m\}$, and if $m=n$, $\deg(f+g) \leq m \iff \deg(f+g)\leq n$.
+
+Which means there are really only *two* cases: either $m=n$ or $m\neq n$.  If $m=n$, use the same argument as in the “trichotomous” (three-case) proof.  If $m \neq n$, well, one of them must be less than the other.  Let's call the lesser one $m$ and the greater one $n$.  The symmetry of the proposition says that it's OK to do this.  Now we use the $m<n$ case from the trichotomous proof.
+
+Another way to see the symmetry in the proposition is to rewrite it without naming the variables:
+
+> 1. If two polynomials have the same degree, the degree of the sum is at most this common degree.
+> 2. If two polynomials have different degrees, the degree of the sum is the maximum of the degrees of each polynomial.
+
+But of course, you need to name them to do anything.  To prove case 1, you need to name two generic polynomials of the same degree.  Call them $f$ and $g$ and their degree $n$.  To prove case 2, you need to name two generic polynomials of different degree.  Call the one with lesser degree $f$ (and its degree $m$), and the one with greater degree $g$ (and its degree $n$).   
+
+When using simplications like this in proofs, we write the idiom “*without loss of generality*”.  It means that this extra assumption does not actually skip cases of the proof.
+
+After posting, I noticed @mfl's comment to the same effect.  His additional remark is also worth fleshing out.  The lecturer was recognizing that this may be the first time you've seen a WLOG argument like this.  But like I said at the top, it may take a couple of explanations before this sinks in.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2027287/the-degree-of-a-sum-of-two-polynomials-proof-question/2027326#2027326) on Mathematics Stack Exchange, 2016-11-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

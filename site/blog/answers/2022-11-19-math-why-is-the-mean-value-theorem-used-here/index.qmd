@@ -1,0 +1,73 @@
+---
+title: Why is the mean value theorem used here?
+date: '2022-11-19'
+description: To me, the Mean Value Theorem is important because it allows you to use facts about the derivative of a function to infer facts about the function itself.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4580261
+se-link: https://math.stackexchange.com/questions/4580148/why-is-the-mean-value-theorem-used-here/4580261#4580261
+se-score: 7
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- geometry
+- analysis
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Why is the mean value theorem used here?](https://math.stackexchange.com/questions/4580148/why-is-the-mean-value-theorem-used-here), asked by [random0620](https://math.stackexchange.com/users/474610/random0620) on Mathematics Stack Exchange (2022-11-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am really struggling to understand the mean value theorem. I have taken calculus up through advanced calculus, and a bunch of analysis courses. I don't "get" it though. Sure, I know the statement, but I don't know how to use it.  Here is an example. 
+>
+> >2.47 Theorem. Suppose that $\Omega$ is an open set in $\mathbb{R}^n$ and $G: \Omega \rightarrow \mathbb{R}^n$ is a $C^1$ diffeomorphism.
+> >
+> > a. If $f$ is a Lebesgue measurable function on $G(\Omega)$, then $f \circ G$ is Lebesgue measurable on $\Omega$. If $f \geq 0$ or $f \in L^1(G(\Omega), m)$, then
+> $$\int_{G(\Omega)} f(x) d x=\int_{\Omega} f \circ G(x)\left|\operatorname{det} D_x G\right| d x .$$
+> b. If $E \subset \Omega$ and $E \in \mathcal{L}^n$, then $G(E) \in \mathcal{L}^n$ and $m(G(E))=\int_E\left|\operatorname{det} D_x G\right| d x$.
+> >
+> > Proof. It suffices to consider Borel measurable functions and sets. Since $G$ and $G^{-1}$ are both continuous, there are no measurability problems in this case, and the general case follows as in the proof of Theorem $2.42$.
+> A bit of notation: For $x \in \mathbb{R}^n$ and $T=\left(T_{i j}\right) \in G L(n, \mathbb{R})$, we set
+> $$\|x\|=\max _{1 \leq j \leq n}\left|x_j\right|, \quad\|T\|=\max _{1 \leq i \leq n} \sum_{j=1}^n\left|T_{i j}\right|$$
+> We then have $\|T x\| \leq\|T\|\|x\|$, and $\{x:\|x-a\| \leq h\}$ is the cube of side length $2 h$ centered at $a$.
+> >
+> > Let $Q$ be a cube in $\Omega$, say $Q=\{x:\|x-a\| \leq h\}$. By **the mean value theorem**, $g_j(x)-g_j(a)=\sum_j\left(x_j-a_j\right)\left(\partial g / \partial x_j\right)(y)$ for some $y$ on the line segment joning $x$ and $a$, so that for $x \in Q,\|G(x)-G(a)\| \leq h\left(\sup _{y \in Q}\left\|D_y G\right\|\right)$. In other words, $G(Q)$ is contained in a cube of side length $\sup _{y \in Q}\left\|D_y G\right\|$ times that of $Q$, so that by Theorem $2.44, m(G(Q)) \leq\left(\sup _{y \in Q}\left\|D_y G\right\|\right)^n m(Q)$. If $T \in G L(n, \mathbb{R})$, we can apply this formula with $G$ replaced by $T^{-1} \circ G$ together with Theorem $2.44$ to obtain
+> $$\begin{aligned}
+> m(G(Q)) &=|\operatorname{det} T| m\left(T^{-1}(G(Q))\right) \\
+> & \leq|\operatorname{det} T|\left(\sup _{y \in Q}\left\|T^{-1} D_y G\right\|\right)^n m(Q)
+> \end{aligned}$$
+>
+> Could someone help intuitively understand why the mean value theorem is used here? I want to understand the application of the theorem deeply and chew on it until it becomes an obvious clear application. It must be a very fundamental and powerful result if it is the reason Taylor's theorem works. Could someone please share with me their intuition for it?
+:::
+
+To me, the Mean Value Theorem is important because it allows you to use facts about the derivative of a function to infer facts about the function itself.
+
+For instance: if a function is constant, its derivative is zero. That follows from the definition. But the converse requires the MVT. The proof is that $f(x) - f(a) = f'(c)(x-a)$ for some $c$ between $x$ and $a$, so if $f'(c) = 0$ for all $c$, $f(x) = f(a)$ for all $x$. This proof also reveals that this fact is only a partial converse: $f$ is constant *on every component of the domain*. We tacitly assumed that for each $x$, $f$ was continuous and differentiable between $x$ and $a$. 
+
+In this proof, the author wants to say that the measure of $G(Q)$ (facts about a function) is controlled by the measure of $Q$ and the supremum over $Q$ of $\Vert D_yG \Vert$ (facts about the derivative). Here some of the details that are skipped: Given $x$ and $a$, define $\gamma(t) = (1-t)a + tx$. Then $\gamma(0) = a$, $\gamma(1) = x$, and $\gamma'(t) = x-a$ for all $t$. Let $h = g_j(\gamma(t))$. Then $h(1) - h(0) = h'(c)$ for some $c$ between $0$ and $1$. Let $y = \gamma(c)$. By the chain rule,
+$$g_j(x) - g_j(a) = h(1) - h(0) = h'(c) = \sum_{k} \frac{\partial g_j}{\partial x_k}(y)(x_k-a_k)$$
+Therefore,
+$$\begin{align*}
+    |g_j(x) - g_j(a)| &= \left|  \sum_{k} \frac{\partial g_j}{\partial x_k}(y)(x_k-a_k) \right|
+    \\&\leq \sum_{k} \left|  \frac{\partial g_j}{\partial x_k}(y)(x_k-a_k) \right|
+      = \sum_{k} \left|  \frac{\partial g_j}{\partial x_k}(y)\right| \left|x_k-a_k \right|
+    \\&\leq \sum_{k}\left|  \frac{\partial g_j}{\partial x_k}(y)\right| \, \left\Vert x-a \right\Vert
+     \leq h \sum_{k}\left|  \frac{\partial g_j}{\partial x_k}(y)\right|
+    \\&\leq h \left\Vert D_y G \right\Vert 
+    \\&\leq h \sup_{y \in Q} \left\Vert D_y G \right\Vert 
+\end{align*}$$
+The $y$ in the penultimate line is the specific $y$ satisfying the MVT equation in the $j$th coordinate; the $y$ in the last line is a generic $y$ ranging over all of $Q$. This makes the last bound independent of $j$; therefore
+$$\left\Vert G(x) - G(a) \right\Vert \leq h \sup_{y \in Q} \left\Vert D_y G \right\Vert$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4580148/why-is-the-mean-value-theorem-used-here/4580261#4580261) on Mathematics Stack Exchange, 2022-11-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

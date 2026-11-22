@@ -1,0 +1,61 @@
+---
+title: Derivation of multivariable functions
+date: '2015-02-04'
+description: 1) The norm sign is removed after derivation because you would expect $\nabla f$ to be a vector, and $\Vert g(x)\Vert2$ is a scalar.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1133227
+se-link: https://math.stackexchange.com/questions/1133203/derivation-of-multivariable-functions/1133227#1133227
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- analysis
+- multivariable-calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derivation of multivariable functions](https://math.stackexchange.com/questions/1133203/derivation-of-multivariable-functions), asked by [user1](https://math.stackexchange.com/users/145173/user1) on Mathematics Stack Exchange (2015-02-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know that the derivative of $f(x)$ defined as: $\, f(x)=\dfrac{1}{2} \cdot \left|\left|g(x) \right|\right|^2_2$ 
+>
+> is $\nabla f(x) = J_g(X)^T \cdot g(x)$
+>
+> where $g:\mathbb{R}^n \rightarrow \mathbb{R}^m$, $f:\mathbb{R}^n \rightarrow \mathbb{R}$, and $\left|\left|x \right|\right|_p$ is the $p$-norm of $x$ : $\left|\left|x \right|\right|_p=\left( \sum\limits_{i=1}^n \left|x_i \right|^p \right)^\frac{1}{p}$
+>
+> First of all why is the norm sign removed after derivation?
+>
+> Secondly, what is the derivative in for example this case where the norm and exponent differ: 
+>
+> $f(x)=\dfrac{1}{2} \cdot \left|\left|g(x) \right|\right|^8_3$
+>
+> Could you please explain the reason behind the two cases?
+:::
+
+1) The norm sign is removed after derivation because you would expect $\nabla f$ to be a vector, and $\Vert g(x)\Vert_2$ is a scalar.
+
+You might think about it this way: Let $n\colon \mathbb{R}^m$ be the (square of the) norm function: 
+$$n(y) = \Vert y \Vert_2^2 = \sum_{i=1}^m y_i^2$$
+Then for each $j$,
+$$\frac{\partial n}{\partial y_j} = 2 y_j$$
+which tells you that $\nabla n(y) = 2y$.
+
+Your function is $f(x) = \frac{1}{2} n(g(x))$, so by the Chain Rule,
+$$\nabla f(x) = \frac{1}{2} \nabla n(g(x)) \cdot J_g(x) = \frac{1}{2} \cdot 2 g(x) \cdot J_g(x) = g(x) \cdot J_g(x)$$
+modulo transpositions that's what you want.
+
+2) This is harder than I originally thought, partly because the $p$-norm isn't a differentiable function for all $y$.  But whatever you can work out is still due to the Chain Rule.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1133203/derivation-of-multivariable-functions/1133227#1133227) on Mathematics Stack Exchange, 2015-02-04, with [edits](https://math.stackexchange.com/posts/1133227/revisions) by [user1](https://math.stackexchange.com/users/145173/user1). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

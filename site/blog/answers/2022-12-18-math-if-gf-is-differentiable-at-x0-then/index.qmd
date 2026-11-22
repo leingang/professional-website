@@ -1,0 +1,44 @@
+---
+title: If g*f is differentiable at x0, then
+date: '2022-12-18'
+description: The chain rule says that if $f$ is differentiable at $x0$, and $g$ is differentiable at $y0 = f(x0)$, then $g \circ f$ is differentiable at $x0$ and $$(g \circ…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4601172
+se-link: https://math.stackexchange.com/questions/4601159/if-gf-is-differentiable-at-x0-then/4601172#4601172
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- chain-rule
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If g*f is differentiable at x0, then](https://math.stackexchange.com/questions/4601159/if-gf-is-differentiable-at-x0-then), asked by [Rimita Goni](https://math.stackexchange.com/users/998357/rimita-goni) on Mathematics Stack Exchange (2022-12-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > **True or False**: If $g \circ f$ is differentiable at $x_0$, then $f$ is differentiable at $x_0$, and $g$ is differentiable at $y=f(x_0)$.
+>
+> I don't understand why if $(g\circ f)(x_0)$ is differentiable, then the following is not true: $f$ is differentiable at $x_0$ and $g$ is differentiable at $y_0=f(x_0)$.
+>
+> Will the first statement not be true and why?
+:::
+
+The chain rule says that if $f$ is differentiable at $x_0$, and $g$ is differentiable at $y_0 = f(x_0)$, then $g \circ f$ is differentiable at $x_0$ and $$(g \circ f)'(x_0) = g'(y_0) f'(x_0)$$ This question is about reversing some of the implications in that statement.
+
+If you compose a misbehaving function with a constant function, you can cover up its misbehaving. Try $f(x) = |x|$ and $x_0 = 0$. You know $f$ is not differentiable at $x_0$. 
+
+Now let $g(x) = 0$ for all $x$. Then $g'(0) = 0$. But also, $(g \circ f)(x) = 0$ for all $x$. This means $(g \circ f)'(x_0) = 0$, as well.
+
+So here we have a situation where the composition is differentiable, but one of the components is not.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4601159/if-gf-is-differentiable-at-x0-then/4601172#4601172) on Mathematics Stack Exchange, 2022-12-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

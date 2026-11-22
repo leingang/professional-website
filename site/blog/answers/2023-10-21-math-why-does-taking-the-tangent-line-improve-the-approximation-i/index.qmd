@@ -1,0 +1,50 @@
+---
+title: Why does taking the tangent line improve the approximation in Newton's method?
+date: '2023-10-21'
+description: The linked Wikipedia page also gives the analytic argument, recapitulated here. Suppose the root is at $x\ast$ and the original guess is at $x0$. Make a Taylor…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4791239
+se-link: https://math.stackexchange.com/questions/4791116/why-does-taking-the-tangent-line-improve-the-approximation-in-newtons-method/4791239#4791239
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- roots
+- newton-raphson
+- linear-approximation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does taking the tangent line improve the approximation in Newton's method?](https://math.stackexchange.com/questions/4791116/why-does-taking-the-tangent-line-improve-the-approximation-in-newtons-method), asked by [Nijat Hamidov](https://math.stackexchange.com/users/983611/nijat-hamidov) on Mathematics Stack Exchange (2023-10-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have gained a comprehension of the operational process through the discussion located at https://math.stackexchange.com/questions/350740/why-does-newtons-method-work/2093447#2093447. Nevertheless, there is one aspect that remains unclear to me.
+>
+> To initiate, we choose a pair of values, $(x_0, f(x_0))$, where $x_0$ is in proximity to the true root of $f(x)$ that I am seeking. Subsequently, we determine the linearization of $f(x)$ at this point, denoted as $L_{x0}(x)$. In favorable conditions, I can identify the root of $L_{x0}(x)$, which I will refer to as $x_1$. It seems reasonable to anticipate that $x_1$ will provide a more accurate approximation to the true root of $f(x)$, which is the one I actually require.
+>
+> However, I am uncertain about how creating a tangent line at the point $(x_1, f(x_1))$ will result in a more precise approximation, which we can designate as $x_2$, to the true root of $f(x)$ in comparison to $x_1$.
+>
+> My explanation is that, for the same reason $x_1$ provided a superior approximation to the true root of $f(x)$ compared to $x_0$, $x_2$ offers a better approximation than $x_1$. Nonetheless, I am still unsure about my own response and remain open to any clarifications or insights on this matter.
+:::
+
+The linked Wikipedia page also gives the analytic argument, recapitulated here. Suppose the root is at $x_\ast$ and the original guess is at $x_0$. Make a Taylor expansion of $f$ around $x_0$:
+$$f(x_\ast) = f(x_0) + f'(x_0)(x_\ast - x_0) + \frac{1}{2} f''(t) (x_\ast-x_0)^2$$
+where $t$ is some number between $x_0$ and $x_\ast$. Now $f(x_\ast) = 0$, so 
+$$x_0 -\frac{f(x_0)}{f'(x_0)} = x_\ast - \frac{f''(t)}{2f'(x_0)}(x_\ast - x_0)^2$$
+The left-hand side is $x_1$. So
+$$x_\ast - x_1 = -\frac{f''(t)}{2f'(x_0)}(x_\ast - x_0)^2$$
+
+The fraction is a bit tricky, but if there's an upper bound $C$ for it, you get that $|x_1 - x_\ast| \leq C |x_0 - x_\ast|^2$. So it's even better than a contraction mapping. Basically the number of decimal points of accuracy double each time.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4791116/why-does-taking-the-tangent-line-improve-the-approximation-in-newtons-method/4791239#4791239) on Mathematics Stack Exchange, 2023-10-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

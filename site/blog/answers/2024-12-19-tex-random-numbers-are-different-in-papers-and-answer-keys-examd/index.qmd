@@ -1,0 +1,290 @@
+---
+title: Random numbers are different in papers and answer keys - examdesign package
+date: '2024-12-19'
+description: I wouldn't recommend this random random snippet (with all due respect to its author). I suggest you work instead with well-maintained packages on CTAN that…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 733227
+se-link: https://tex.stackexchange.com/questions/733064/random-numbers-are-different-in-papers-and-answer-keys-examdesign-package/733227#733227
+se-score: 1
+se-accepted: true
+se-tags:
+- random
+- examdesign
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Random numbers are different in papers and answer keys - examdesign package](https://tex.stackexchange.com/questions/733064/random-numbers-are-different-in-papers-and-answer-keys-examdesign-package), asked by [Mehmet OZC](https://tex.stackexchange.com/users/151983/mehmet-ozc) on TeX Stack Exchange (2024-12-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am generating random numbers using the examdesign package, but the random numbers appear differently in the exam paper and the answer key. How can I generate the same random numbers in both the exam paper and the answer key?
+>
+> ```latex
+> \documentclass[10pt]{examdesign}
+> \usepackage{amsmath}
+> \usepackage[utf8]{inputenc}
+> \usepackage{pifont}
+>
+>
+> \newcount\stud
+> \include{random}
+>
+> \newcount\ioffa
+> \newcount\eoffa
+>
+> \stud=1
+> \rand=\stud
+>
+> %\SectionFont{\large\sffamily}
+> \ConstantBlanks{2cm}
+> \Fullpages
+> \ContinuousNumbering
+> %\ShortKey
+>
+> \def\namedata{Name: \hrulefill \\
+> No: \hrulefill \\
+> Date: \hrulefill}
+>
+> \SectionPrefix{\textbf{Section  \Roman{sectionindex}.} \space}
+>
+> \DefineAnswerWrapper{}{}
+> \NumberOfVersions{4}
+>
+> \class{{\Large University}\\ Department\\
+> Course Name}
+> \examname{Exam}
+>
+> \begin{document}
+>
+>
+> \begin{fillin}[title={Fill in the blanks. (5pts each)}]
+> \begin{question}
+>
+> \random\ioffa {30} {60}
+> \random\eoffa {10} {29}
+> Nominal interest rate is $0.\the\ioffa $. Inflation rate is $0.\the\eoffa $ effective rate? \blank{$1-\frac{(1+0.\the\ioffa)}{(1+0.\the\eoffa)}$}
+> \end{question}
+> \end{fillin}
+> \end{document}
+> ```
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Random number creation procedure is derived from [Dr Amit K Awasthi][q-2] in the answer following [link][q-3]
+>
+> the code is as follows:
+> ```latex
+> %Time = \the\time \par
+>
+> \newcount\rand
+> \newcount\randa
+> \rand=\stud
+>
+> % The following needed for pseudo-random algorithm
+> \newcount\den % denominator
+> \newcount\sub % whole part to be subtracted
+> \newcount\res % result
+>
+> \newcount\ctwo
+> \newcount\cthree
+> \newcount\cfour
+> \newcount\cfive
+> \newcount\csix
+> \newcount\pom
+> \newcount\forneg
+> \newcount\forsumpr
+>
+> \def\random#1#2#3{%
+> \global\multiply \rand by 121
+> \randa=\rand
+> \divide \randa by 1237
+> \multiply \randa by 1237
+> \global\advance \rand by -\randa % a pseudo-random number from 0 to 1236
+> \den=#3
+> \advance \den by -#2
+> \advance \den by 1     % now \den=#3-#2+1 = number of integers between #2 and #3 inclusive
+> \res=\rand
+> \sub=\rand
+> \divide \sub by \den
+> \multiply \sub by \den
+> \advance\res by -\sub % now \res = remainder of dividing \rand over \den
+> \advance\res by #2
+> #1=\res
+> }
+>
+>
+> \def\randomtwo#1#2{%
+> \random \ctwo 1 2
+> \ifnum \ctwo=1 #1 \ #2 \else #2 \ #1 \fi
+> }
+>
+> \def\randomthree#1#2#3{%
+> \random \cthree 1 3
+> \ifnum \cthree=1 #1 \randomtwo{#2}{#3} \fi
+> \ifnum \cthree=2 #2 \randomtwo{#1}{#3} \fi
+> \ifnum \cthree=3 #3 \randomtwo{#1}{#2} \fi
+> }
+>
+> \def\randomfour#1#2#3#4{%
+> \random \cfour 1 4
+> \ifnum \cfour=1 #1 \randomthree{#2}{#3}{#4} \fi
+> \ifnum \cfour=2 #2 \randomthree{#1}{#3}{#4} \fi
+> \ifnum \cfour=3 #3 \randomthree{#1}{#2}{#4} \fi
+> \ifnum \cfour=4 #4 \randomthree{#1}{#2}{#3} \fi
+> }
+>
+> \def\randomfive#1#2#3#4#5{%
+> \random \cfive 1 5
+> \ifnum \cfive=1 #1 \randomfour{#2}{#3}{#4}{#5} \fi
+> \ifnum \cfive=2 #2 \randomfour{#1}{#3}{#4}{#5} \fi
+> \ifnum \cfive=3 #3 \randomfour{#1}{#2}{#4}{#5} \fi
+> \ifnum \cfive=4 #4 \randomfour{#1}{#2}{#3}{#5} \fi
+> \ifnum \cfive=5 #5 \randomfour{#1}{#2}{#3}{#4} \fi
+> }
+>
+> \def\randomsix#1#2#3#4#5#6{%
+> \random \csix 1 6
+> \ifnum \csix=1 #1 \randomfive{#2}{#3}{#4}{#5}{#6} \fi
+> \ifnum \csix=2 #2 \randomfive{#1}{#3}{#4}{#5}{#6} \fi
+> \ifnum \csix=3 #3 \randomfive{#1}{#2}{#4}{#5}{#6} \fi
+> \ifnum \csix=4 #4 \randomfive{#1}{#2}{#3}{#5}{#6} \fi
+> \ifnum \csix=5 #5 \randomfive{#1}{#2}{#3}{#4}{#6} \fi
+> \ifnum \csix=6 #6 \randomfive{#1}{#2}{#3}{#4}{#5} \fi
+> }
+>
+> \def\choosetwo#1#2#3{%
+> \random\ctwo 1 2
+> \ifnum \ctwo=1 #1=#2 \else #1=#3 \fi
+> }
+>
+> \def\choosethree#1#2#3#4{%
+> \random\cthree 1 3
+> \ifnum \cthree=1 #1=#2 \fi
+> \ifnum \cthree=2 #1=#3 \fi
+> \ifnum \cthree=3 #1=#4 \fi
+> }
+>
+> \def\choosefour#1#2#3#4#5{%
+> \random\cfour 1 4
+> \ifnum \cfour=1 #1=#2 \fi
+> \ifnum \cfour=2 #1=#3 \fi
+> \ifnum \cfour=3 #1=#4 \fi
+> \ifnum \cfour=4 #1=#5 \fi
+> }
+>
+> \def\choosefive#1#2#3#4#5#6{%
+> \random\cfive 1 5
+> \ifnum \cfive=1 #1=#2 \fi
+> \ifnum \cfive=2 #1=#3 \fi
+> \ifnum \cfive=3 #1=#4 \fi
+> \ifnum \cfive=4 #1=#5 \fi
+> \ifnum \cfive=5 #1=#6 \fi
+> }
+>
+> \def\choosesix#1#2#3#4#5#6#7{%
+> \random\csix 1 6
+> \ifnum \csix=1 #1=#2 \fi
+> \ifnum \csix=2 #1=#3 \fi
+> \ifnum \csix=3 #1=#4 \fi
+> \ifnum \csix=4 #1=#5 \fi
+> \ifnum \csix=5 #1=#6 \fi
+> \ifnum \csix=6 #1=#7 \fi
+> }
+>
+> \def\sign#1{%
+> \ifnum #1<0 \the#1 \else +\the#1 \fi
+> }
+>
+> \def\choosepom{%
+> \random\ctwo 1 2
+> \ifnum \ctwo=1 \pom=1 \else \pom=-1 \fi
+> }
+>
+> \def\randompom#1#2#3{%
+> \random #1{#2}{#3}
+> \choosepom
+> \multiply #1 by \pom
+> }
+>
+> \def\sumprod#1#2#3#4#5{%    #1 = #2*#3 + #4*#5
+> #1=#2
+> \multiply #1 by #3
+> \forsumpr=#4
+> \multiply \forsumpr by #5
+> \advance #1 by \forsumpr
+> }
+> ```
+>
+>
+>   [q-1]: QSW6oM9n.png
+>   [q-2]: https://tex.stackexchange.com/users/59204/dr-amit-k-awasthi
+>   [q-3]: https://www.sharelatex.com/project/52e3f06d3cf27e7a050000ee
+:::
+
+I wouldn't recommend this random `random` snippet (with all due respect to its author). I suggest you work instead with well-maintained packages on CTAN that implement the same algorithms. Or maybe switch to LuaTeX so that you can access its scripting layer. The main feature you need for predictability is the option of setting the random seed once per exam version.
+
+But the main issue here is that `examdesign` typesets each question twice, once as the student form and once as the answer key, and you need the same “random” number on each consecutive pair of runs. Since the number of versions is limited to 26 anyway, it may be better to generate a parameter list externally and let each version choose its parameter from that list.
+
+That's what I did with the `randomlist` package. I'm really only using it for its list features, not its randomization.
+
+```latex
+\documentclass[10pt]{examdesign}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{pifont}
+
+\usepackage{pgfmath}
+\usepackage{randomlist}
+
+\ConstantBlanks{2cm}
+\Fullpages
+\ContinuousNumbering
+
+\def\namedata{Name: \hrulefill \\
+No: \hrulefill \\
+Date: \hrulefill}
+
+\SectionPrefix{\textbf{Section  \Roman{sectionindex}.} \space}
+
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{4}
+
+\class{{\Large University}\\ Department\\
+Course Name}
+\examname{Exam}
+
+\NewList{ioffas}
+\SetList{ioffas}{NULL,56,37,56,57,30,50,44,47,30,39}
+\NewList{eoffas}
+\SetList{eoffas}{NULL,13,10,29,29,25,19,13,26,21,26}
+\begin{document}
+
+
+\begin{fillin}[title={Fill in the blanks. (5pts each)}]
+\begin{question}
+\GetItem{ioffas}{\arabic{version}}{ioffa}
+\GetItem{eoffas}{\arabic{version}}{eoffa}
+\pgfmathsetmacro{\myanswer}{(1 - (1+\ioffa*0.01)/(1+\eoffa*0.01)}
+Nominal interest rate is $0.\ioffa$. Inflation rate is $0.\eoffa $ effective rate? \blank{$\myanswer$}
+\end{question}
+\end{fillin}
+\end{document}
+```
+
+I used [random.org][1] to generate the parameter lists in the intervals you wanted. The `examdesign` class has a `version` counter, which loops from 1 up to the number you declare with `\NumberOfVersions`. The `randomlist` package indexes its lists from zero, which is why I put that `NULL` at the beginning of the list.
+
+The `\GetItem` lines set the `\ioffa` and `\eoffa` commands to be the `versionth` item from the corresponding lists. The rest of the math is done with the `pgfmath` package.
+
+
+  [1]: https://www.random.org/integers/?num=10&min=30&max=60&col=1&base=10&format=html&rnd=new
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/733064/random-numbers-are-different-in-papers-and-answer-keys-examdesign-package/733227#733227) on TeX Stack Exchange, 2024-12-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

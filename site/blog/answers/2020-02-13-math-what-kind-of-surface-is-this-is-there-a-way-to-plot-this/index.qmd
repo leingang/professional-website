@@ -1,0 +1,48 @@
+---
+title: What kind of surface is this? Is there a way to plot this?
+date: '2020-02-13'
+description: The surface is a “spherical cap”. Like you said, the equation $x^2+y^2 + z^2 = 4$ defines the sphere of radius $2$ centered at the origin. The surface $x^2+y^2…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3545533
+se-link: https://math.stackexchange.com/questions/3545520/what-kind-of-surface-is-this-is-there-a-way-to-plot-this/3545533#3545533
+se-score: 3
+se-accepted: true
+se-tags:
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What kind of surface is this? Is there a way to plot this?](https://math.stackexchange.com/questions/3545520/what-kind-of-surface-is-this-is-there-a-way-to-plot-this), asked by [qmd](https://math.stackexchange.com/users/197849/qmd) on Mathematics Stack Exchange (2020-02-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am given the surface:
+>
+> $$S=\{ \vec{x} \in \mathbb R^3: {\|\vec{x} \|}_2^2=4, x^2+y^2 \le 1, z >0 \}$$
+>
+> and I want to calculate the Mass of $S$ given a density $\rho$. It sort of looks like the upper half of a sphere. The problem I have is that the first equation ${\| \vec{x} \|}_2^2=4$ means that the radius of this sphere is $R=2$. 
+>
+> However, the condition $x^2+y^2 \le1$ would mean that it is some kind of half sphere with a smaller "base". I tried to plot this in Wolfram Alpha but I couldn't get it to work.
+>
+> Is there any way I can parameterize/transform this surface in spherical coordinates?
+:::
+
+The surface is a “spherical cap”.  Like you said, the equation $x^2+y^2 + z^2 = 4$ defines the sphere of radius $2$ centered at the origin.  The surface $x^2+y^2 =1$ defines an infinite cylinder of radius $1$ centered along the $z$-axis.  If you think of this cylinder as a straw and run it through the sphere, it punches out two portions of the sphere at the top and bottom.  The third condition $z>0$ keeps the top one of these cutouts.
+
+The sphere and cylinder intersect when $x^2+y^2+z^2 = 4$ and $x^2+y^2 = 1$, so $z^2 = 3$.  This circle can be described in spherical coordinates as
+$$\cos \phi = \frac{z}{\rho} = \frac{\sqrt{3}}{2} \implies \phi = \frac{\pi}{6}$$
+Therefore you can parametrize the entire surface as 
+$(\rho,\theta,\phi)$, where $\rho = 2$, $0 \leq \theta \leq 2\pi$, $0 \leq \phi \leq \frac{\pi}{6}$.  
+
+You could also use cylindrical coordinates, because the shadow this surface makes on the $xy$-plane is the disk of radius $1$.  The surface is represented as $(r,\theta,z)$, where $0 \leq r \leq 1$, $0 \leq \theta \leq 2\pi$, and $z=\sqrt{4-r^2}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3545520/what-kind-of-surface-is-this-is-there-a-way-to-plot-this/3545533#3545533) on Mathematics Stack Exchange, 2020-02-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,55 @@
+---
+title: Limits Definition
+date: '2026-10-30'
+description: The difference is the order of the quantifiers and the extra variable $\delta$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5153210
+se-link: https://math.stackexchange.com/questions/5153204/limits-definition/5153210#5153210
+se-score: 8
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Limits Definition](https://math.stackexchange.com/questions/5153204/limits-definition), asked by [API_ DAiFUKu](https://math.stackexchange.com/users/1785163/api-daifuku) on Mathematics Stack Exchange (2026-10-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> First, this is the definition of limits I've been taught.
+>
+> > Let $f:D\rightarrow\mathbb{R}$ where $D\subseteq\mathbb{R}$ and $a$ is a limit point of $D$. $\lim_{x\rightarrow a} f(x) = L$ if and only if for all $\varepsilon > 0$, there exists $\delta  > 0$ s.t. if $0 < |x-a| < \delta$, then $|f(x) - L| < \varepsilon$, for all $x\in D$.
+>
+> I, as a high school student who is interested in real analysis, saw a theorem which states:
+>
+> > If $x\in\mathbb{R}$ s.t. $0 \le x < \varepsilon$ for all $\varepsilon > 0$, then $x=0$.
+>
+> My question is that does the theorem implies $|f(x) - L| = 0$ or $f(x) = L$, which I think it doesn't make sense - I took $\lim_{x\rightarrow 0} \left(\dfrac{x}{x}\right)$ as an example.
+:::
+
+The difference is the order of the quantifiers and the extra variable $\delta$.
+
+The definition of $\lim_{x\to a}f(x) = L$ means
+
+> $\forall \epsilon > 0,\ \exists \delta > 0,\ \forall x \in D,\ (|x-a| < \delta \implies |f(x) - L| < \epsilon)$
+
+The admissible values of $x$ depend on $\delta$, which depends on $\epsilon$.
+
+The second theorem, in this context, reads
+
+> $\forall x \in D,\ (\forall \epsilon > 0,\ |f(x) - L| < \epsilon \implies f(x) = L)$
+
+In this case, $\epsilon$ is independent of $x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5153204/limits-definition/5153210#5153210) on Mathematics Stack Exchange, 2026-10-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

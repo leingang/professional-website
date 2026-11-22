@@ -1,0 +1,90 @@
+---
+title: Trouble solving exercise
+date: '2021-06-16'
+description: I got nerdsniped and ended up solving the problem. Hope it helps you.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4175050
+se-link: https://math.stackexchange.com/questions/4174677/trouble-solving-exercise/4175050#4175050
+se-score: 1
+se-accepted: true
+se-tags:
+- complex-analysis
+- improper-integrals
+- curves
+- residue-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trouble solving exercise](https://math.stackexchange.com/questions/4174677/trouble-solving-exercise), asked by [xyz](https://math.stackexchange.com/users/908975/xyz) on Mathematics Stack Exchange (2021-06-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Exercise.** Evaluate
+> $$\begin{equation*}
+> \int_{-\infty}^{+\infty}\frac{x^{2k}}{1+x^{2n}}dx
+> \end{equation*}$$
+> , where $0\leq k < n$ and $n,k \in \mathbb{N_0}$
+>
+> **My attempt.** I have tried to solve the integral through the residues method,i.e., completing the segment $[-R,R]$ with a curve $C_R$ such that $|z| = R, Im(z)\geq 0$ and then declaring that 
+> $$\begin{equation*}
+> \int_D \dots = \int_{-R}^{R}\dots + \int_{C_R} \dots
+> \end{equation*}$$
+> , where 
+> $$\begin{equation*}
+> \int_D f(x)dx= 2\pi i \sum_{a_j \in int(D)}Res(f,a_j)
+> \end{equation*}$$
+> By calculating $f$ singularities I've that $x=\sqrt[n]{i}$ is a pole of order $n$.
+>
+> But how I am stuck calculating the associated residues. Is there some alternative method to solve this? Thanks for ali the helpin advance.
+:::
+
+I got [nerdsniped](https://xkcd.com/356/) and ended up solving the problem.  Hope it helps you.
+
+Let $f(z) = \dfrac{z^{2k}}{z^{2n}+1}$.  If $\omega$ is any $2n$th root of $-1$, then $f$ has simple pole at $\omega$ and 
+$$\begin{align*}
+    \operatorname{Res}(f,\omega)
+    &= \lim_{z\to\omega} \frac{z^{2k}(z-\omega)}{z^{2n} - \omega^{2n}}
+    \\&= \frac{\omega^{2k}}{2n\omega^{2n-1}} = - \frac{\omega^{2k+1}}{2n}
+\end{align*}$$
+Set $\omega = \exp\left(\frac{\pi i}{2n}\right)$.  The $2n$th roots of $-1$ that are in the upper half-plane are $\omega, \omega^3, \omega^5, \dots, \omega^{2n-1}$.  Using your contour notation and assuming $R > 1$,
+$$\begin{align*}
+    \int_D f(z)\,dz 
+    &= 2\pi i \sum_{j=0}^{n-1} \operatorname{Res}(f,\omega^{2j+1})
+    \\&= -\frac{\pi i}{n} \sum_{j=0}^{n-1} (\omega^{2j+1})^{2k+1}
+    \\&= -\frac{\pi i}{n} \sum_{j=0}^{n-1} (\omega^{2k+1})^{2j+1}
+\end{align*}$$
+Let $\zeta = \omega^{2k+1}$.  Then
+$$\begin{align*}
+    \int_D f(z)\,dz 
+    &= -\frac{\pi i}{n} \sum_{j=0}^{n-1} \zeta^{2j+1}
+    = -\frac{\pi i \zeta}{n} \sum_{j=0}^{n-1} (\zeta^2)^j
+    \\&= - \frac{\pi i\zeta}{n} \left(\frac{1 - \zeta^{2n}}{1-\zeta^2}\right)
+    = -\frac{2\pi i}{n} \cdot \frac{\zeta}{1-\zeta^2}
+\end{align*}$$
+(since $\zeta^{2n} = (\omega^{2k+1})^{2n} = (\omega^{2n})^{2k+1} = 1$).
+
+Since $|\zeta| = 1$, $\zeta^{-1} = \bar\zeta$.  So
+$$\begin{align*}
+    \frac{\zeta}{1-\zeta^2}
+    &= \frac{\zeta}{1-\zeta^2} \cdot \frac{\bar\zeta}{\bar\zeta}
+    \\&= \frac{1}{\bar\zeta - \zeta} = \frac{i}{2}\cdot \frac{1}{\Im(\zeta)}
+\end{align*}$$
+Therefore,
+$$\int_D f(z)\,dz  = \frac{\pi}{n \Im(\zeta)}$$
+The integral over $C_R$ is bounded by $\pi R^{2(k-n)+1}$, which (since $0 \leq k < n$) tends to zero as $R\to\infty$.  Also, by Euler's formula,
+$$\zeta = \exp\left(\frac{(2k+1)\pi i}{2n}\right)
+    = \cos \left(\frac{(2k+1)\pi}{2n}\right) 
+      + i \sin \left(\frac{(2k+1)\pi}{2n}\right)$$
+Therefore,
+$$\int_{-\infty}^\infty \frac{x^{2k}\,dx}{1+x^{2n}} = \frac{\pi}{n} \csc \left(\frac{(2k+1)\pi}{2n}\right)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4174677/trouble-solving-exercise/4175050#4175050) on Mathematics Stack Exchange, 2021-06-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

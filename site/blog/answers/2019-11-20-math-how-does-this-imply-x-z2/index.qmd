@@ -1,0 +1,50 @@
+---
+title: How does this imply $x = z^2$?
+date: '2019-11-20'
+description: 'If you clear out the denominators: $$\begin{align} x + \frac{1}{x} &= z^2 + \frac{1}{z^2} \\\implies \frac{x^2+1}{x} &= \frac{z^4+z^2}{z^2} \\\implies z^2x^2 +…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3442970
+se-link: https://math.stackexchange.com/questions/3442963/how-does-this-imply-x-z2/3442970#3442970
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+- algebra-precalculus
+- fractions
+- partial-fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does this imply $x = z^2$?](https://math.stackexchange.com/questions/3442963/how-does-this-imply-x-z2), asked by [Link L](https://math.stackexchange.com/users/480470/link-l) on Mathematics Stack Exchange (2019-11-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I read that given the equation:
+>
+> $$x + \frac{1}{x} = z^2 + \frac{1}{z^2}$$
+>
+> , we can imply that $x=z^2$. 
+>
+> But that $x=z^2$ is not obvious to me... I know we can match the variables on the left hand side to the right hand side, but how do we show that this holds in general?
+:::
+
+If you clear out the denominators:
+$$\begin{align*}
+    x + \frac{1}{x} &= z^2 + \frac{1}{z^2} 
+\\\implies  \frac{x^2+1}{x} &= \frac{z^4+z^2}{z^2}
+\\\implies  z^2x^2 + z^2 &= z^4 x + x 
+\\\implies  z^2x^2 + z^2 - z^4 x - x &= 0 
+\\\implies (z^2x-1)(x-z^2) &= 0
+\end{align*}$$
+So $x=z^2$ or $x = \frac{1}{z^2}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3442963/how-does-this-imply-x-z2/3442970#3442970) on Mathematics Stack Exchange, 2019-11-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

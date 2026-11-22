@@ -1,0 +1,40 @@
+---
+title: Notation of inf
+date: '2014-12-20'
+description: The subscript gives context to the infimum. You could also write it as $$\inf\left\{\frac{\partial V}{\partial x} f(x,u)\ \bigg| \ u \in R\right\}$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1075980
+se-link: https://math.stackexchange.com/questions/1075979/notation-of-inf/1075980#1075980
+se-score: 2
+se-accepted: false
+se-tags:
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Notation of inf](https://math.stackexchange.com/questions/1075979/notation-of-inf), asked by [Pietair](https://math.stackexchange.com/users/75415/pietair) on Mathematics Stack Exchange (2014-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In [this paper][q-1] (equation 4.1) the following formula is listed:
+>
+> $\inf_{u \in R} \left \{ \frac{\partial V}{\partial \boldsymbol{x}}f(\boldsymbol{x},u)  \right \} < 0, \quad \forall \boldsymbol{x} \neq \boldsymbol{0}$
+>
+> Now I don't understand what the term $\inf_{u \in R}$ indicates. I know that inf stands for infimum, but I can not make any sense out of this notation.
+>
+>   [q-1]: http://www.sciencedirect.com/science/article/pii/0362546X83900494#
+:::
+
+The subscript gives context to the infimum.  You could also write it as
+$$\inf\left\{\frac{\partial V}{\partial x} f(x,u)\ \bigg| \ u \in R\right\}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1075979/notation-of-inf/1075980#1075980) on Mathematics Stack Exchange, 2014-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

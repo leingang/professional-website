@@ -1,0 +1,91 @@
+---
+title: Good way to make \textcircled numbers?
+date: '2010-12-13'
+description: 'PGF is overkill for this one application, but if you already have it loaded, you can use it:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7047
+se-link: https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers/7047#7047
+se-score: 22
+se-accepted: false
+se-tags:
+- tikz-pgf
+- symbols
+- circles
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Good way to make \textcircled numbers?](https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers), asked by [Martin Tapankov](https://tex.stackexchange.com/users/711/martin-tapankov) on TeX Stack Exchange (2010-12-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> > **This question led to a new package:**  
+> > [`circledsteps`](http://www.ctan.org/pkg/circledsteps)
+>
+> I'm trying to make some good-looking numbers in a circle, using the simple command:
+>
+> ```latex
+> \textcircled{1}
+> ```
+>
+> However, the circle is misaligned vertically with the number, and look a bit sloppy:
+>
+> ![alt text][q-1]
+>
+> Any suggestions how can I adjust the vertical alignment so that the numbers look more centered w.r.t to the circles? Or, if that's not an option, what other ways to achieve the same results are possible?
+>
+> I will use those only for numbers, and in very few places, so manual adjustment per glyph is an option.
+>
+> I'm using `pdfLaTeX` with Computer Modern, if that matters.
+>
+>   [q-1]: V5KtM.png
+:::
+
+PGF is overkill for this one application, but if you already have it loaded, you can use it:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\pgftextcircled}[1]{
+	\setbox0=\hbox{#1}%
+	\dimen0\wd0%
+	\divide\dimen0 by 2%
+	\begin{tikzpicture}[baseline=(a.base)]%
+	    \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
+	    \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
+	\end{tikzpicture}
+}
+
+\newcommand{\pangram}{\noindent{The \textcircled{0} quick \textcircled{1} brown \textcircled{2} fox \textcircled{3} jumps \textcircled{4} over \textcircled{5} the \textcircled{6} lazy \textcircled{7} dog.}
+}
+\begin{document}
+
+\begin{minipage}{0.5\textwidth}
+\pangram
+\bigskip
+
+\let\textcircled=\pgftextcircled
+\pangram
+\end{minipage}
+
+\end{document}
+```
+
+![snippet output][1]
+
+As you can see there's some extra space around the circles compared to `\textcircled` but it's not bad.
+
+  [1]: DtKVk.png
+
+pre-post edit: I see Stefan and morbusg have beat me to the punch.  Oh well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers/7047#7047) on TeX Stack Exchange, 2010-12-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,41 @@
+---
+title: How to prove that div (fv) =grad f * v + div v f without coordinates?
+date: '2022-10-08'
+description: Gradient and divergence rely on a metric. If $M$ is a Riemannian manifold, the metric induces isomorphisms between vector fields and one-forms. If $V$ is a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4548222
+se-link: https://math.stackexchange.com/questions/4548202/how-to-prove-that-div-fv-grad-f-v-div-v-f-without-coordinates/4548222#4548222
+se-score: 4
+se-accepted: false
+se-tags:
+- vector-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to prove that div (fv) =grad f * v + div v f without coordinates?](https://math.stackexchange.com/questions/4548202/how-to-prove-that-div-fv-grad-f-v-div-v-f-without-coordinates), asked by [Kugutsu-o](https://math.stackexchange.com/users/470286/kugutsu-o) on Mathematics Stack Exchange (2022-10-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Here f is a scalar and v a vector field. 
+>
+>
+> If there is no standard proof can this be proved in geometric algebra without a basis?
+:::
+
+Gradient and divergence rely on a metric. If $M$ is a Riemannian manifold, the metric induces isomorphisms between vector fields and one-forms. If $V$ is a vector field, let $V^\sharp$ be the corresponding one-form, and if $\alpha$ is a one-form, let $\alpha^\flat$ be the corresponding vector field. They are defined by $V^\sharp(X) = (V,X)$ and $(\alpha^\flat,X) = \alpha(X)$ for any vector field $X$.
+
+The metric produces a volume form $\omega$, and [Hodge star operator](https://en.wikipedia.org/wiki/Hodge_star_operator) $\star$, which takes $k$-forms to $(n-k)$-forms. Then we can define:
+$$\begin{aligned} \operatorname{grad} f &= (df)^\flat \\ \operatorname{div} V &= \mathop\star d \mathop\star V^\sharp \end{aligned}$$
+
+Using these definitions, the product rule that you are seeking comes from the fact that $d$ is a derivation.  But the fact that all of this relies on on a metric makes it no more general than the version which uses a basis.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4548202/how-to-prove-that-div-fv-grad-f-v-div-v-f-without-coordinates/4548222#4548222) on Mathematics Stack Exchange, 2022-10-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

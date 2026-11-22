@@ -1,0 +1,173 @@
+---
+title: Is it possible to clear tikz/pgf options?
+date: '2010-11-04'
+description: This seems to work. Is it preferable?
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4912
+se-link: https://tex.stackexchange.com/questions/4907/is-it-possible-to-clear-tikz-pgf-options/4912#4912
+se-score: 21
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to clear tikz/pgf options?](https://tex.stackexchange.com/questions/4907/is-it-possible-to-clear-tikz-pgf-options), asked by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey) on TeX Stack Exchange (2010-11-04; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> According to the pgfmanual, setting options on a clipping path is Not Allowed, so
+>
+> ```latex
+> \clip[fill=red] (0,0) circle (1);
+> ```
+>
+> doesn't work.  That's all very well, and the above is certainly avoidable.
+>
+> However, what also doesn't work is when these options are set _implicitly_, say by providing an `every path/.style={fill=red}` on the encompassing scope.
+>
+> Is there some way to have my path and clip it?  That is, is there some way to clear the current global settings on an individual path?
+>
+> Here's an example of the sort of thing I'd like to be able to do (but can't):
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \begin{document}
+> \begin{tikzpicture}[every path/.style={fill=red}]
+> \clip (0,0) -- (1,0) -- (1,1) -- (0,0);
+> \draw (0,0) rectangle (1,1);
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> (I should emphasise that this is a **minimal** example: in the actual case, I have lots of paths and lots of different layers and scopes, and would really like to be able to specify the default path style on the main `tikzpicture` environment.  Even doing this:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \begin{document}
+> \begin{tikzpicture}
+> \clip (0,0) -- (1,0) -- (1,1) -- (0,0);
+> \begin{scope}[every path/.style={fill=red}]
+> \draw (0,0) rectangle (1,1);
+> \end{scope}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> would, in the resulting Real World implementation, be irritating.)
+>
+> In case it helps, I'm using TeXLive 2010 but with pgf dated 2010-07-25.
+:::
+
+This seems to work.  Is it preferable?
+
+```latex
+\begin{tikzpicture}[every path/.style={fill=red}]
+{
+  \tikzset{every path/.style={}}
+  \clip (0,0) -- (1,0) -- (1,1) -- (0,0);
+}
+\draw (0,0) rectangle (1,1);
+\end{tikzpicture}
+```
+
+* * *
+
+*Edited 2012-12-27 by Andrew Stacey* An issue with the above is how `clip` interacts with setting the bounding box.  When a clip is in force, the clipping path should set the bounding box and all clipped paths should not be taken into account when computing the bounding box.  Unfortunately, while a clip lasts until the end of a scope, the method by which subsequent paths are ignored (for bounding box computations) only lasts to the end of the current group.  I (Andrew Stacey) would actually class this as a TikZ bug: since the clip lasts to the end of the scope the restriction on the bounding box computation should equally last to the end of the scope.  There are various ways to fix this:
+
+1. Since it is usual to restrict a clip to within a scope, put `every path/.append style={overlay}` on the relevant scope:
+
+        \begin{tikzpicture}[every path/.style={fill=red}]
+        \begin{scope}[every path/.append style={overlay}]
+        {
+          \tikzset{every path/.style={}}
+          \clip (0,0) -- (1,0) -- (1,1) -- (0,0);
+        }
+        \draw (-1,-1) rectangle (2,2);
+        \end{scope}
+        \end{tikzpicture}
+
+    The `overlay` is removed from the clip path as its options are cleared, but it is retained on all other paths in the scope.
+
+2. For a little more intuitive control, the `overlay` key can be augmented to take `true` or `false` (though due to implementation the value of `true/false` needs inverting).  Then:
+
+        \documentclass{article}
+        \usepackage{tikz}
+        
+        \def\invertTFtrue{false}
+        \def\invertTFfalse{true}
+        \tikzoption{overlay}[true]{\csname pgf@relevantforpicturesize\csname
+        invertTF#1\endcsname\endcsname}
+        
+        \begin{document}
+        
+        \fbox{%
+        \begin{tikzpicture}[every path/.style={fill=red}]
+        \begin{scope}[overlay]
+        {
+          \tikzset{every path/.style={}}
+          \clip[overlay=false] (0,0) -- (1,0) -- (1,1) -- (0,0);
+        }
+          \draw (-1,-1) rectangle (2,2);
+        \end{scope}
+        \end{tikzpicture}}
+        \end{document}
+
+3. Lastly, the overlay/clip mechanism can be fixed so that it works with scopes rather than groups.  To do this properly and elegantly would require fixing the underlying code a little, the following uses the available hooks to achieve the same end.
+
+        \documentclass{article}
+        \usepackage{tikz}
+        
+        \makeatletter
+        
+        \def\invertTFtrue{false}
+        \def\invertTFfalse{true}
+        
+        \tikzset{
+          fix clips to scope/.style={%
+            every scope/.append style={%
+              execute at end scope={%
+                \expandafter\global\csname               pgf@relevantforpicturesize\savescopeoverlay\endcsname
+              },
+              execute at begin scope={%
+                \edef\savescopeoverlay{\ifpgf@relevantforpicturesize true\else                   false\fi}%
+              }
+            },
+            globalise overlays,
+            clip/.append code={\aftergroup\globaloverlay}
+          },
+          globalise overlays/.code={%
+            \tikzoption{overlay}[true]{\expandafter\global\csname       pgf@relevantforpicturesize\csname invertTF#1\endcsname\endcsname}
+          }
+        }
+        
+        \def\globaloverlay{\global\pgf@relevantforpicturesizefalse}
+        \makeatletter
+        
+        \begin{document}
+        
+        \fbox{%
+        \begin{tikzpicture}[fix clips to scope,every path/.style={fill=red}]
+        \begin{scope}
+        {
+          \tikzset{every path/.style={}}
+          \clip (0,0) -- (1,0) -- (1,1) -- (0,0);
+        }
+          \draw (-1,-1) rectangle (2,2);
+        \end{scope}
+        \draw (-1,1) rectangle (2,2);
+        \end{tikzpicture}}
+        \end{document}
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4907/is-it-possible-to-clear-tikz-pgf-options/4912#4912) on TeX Stack Exchange, 2010-11-04, with [edits](https://tex.stackexchange.com/posts/4912/revisions) by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

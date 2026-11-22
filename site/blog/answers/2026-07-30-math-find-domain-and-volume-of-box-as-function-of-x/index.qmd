@@ -1,0 +1,68 @@
+---
+title: Find domain and volume of box as function of $x$
+date: '2026-07-30'
+description: I'll summarize the comments and add my two cents so this question can have an answer.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5145557
+se-link: https://math.stackexchange.com/questions/5145405/find-domain-and-volume-of-box-as-function-of-x/5145557#5145557
+se-score: 1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- functions
+- solution-verification
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find domain and volume of box as function of $x$](https://math.stackexchange.com/questions/5145405/find-domain-and-volume-of-box-as-function-of-x), asked by [Elizabeth](https://math.stackexchange.com/users/1676847/elizabeth) on Mathematics Stack Exchange (2026-07-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> At each corner of carboard we must cut squares, so we can folded the sides and make card box.
+> Cardboard dimensions are $16" \times 30"$.
+>
+> I must find domain and volume of box as function of $x$.
+>
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+> My attempt:
+>
+> Volume $=$ base $\times$ height.
+>
+> The base sides are: $16-2x$ and $30-2x$, while the height is $x$. Then, displaying volume as a function of $x$,
+>
+> $$V(x) = (16-2x)(30-2x)x = 4x^3 - 92x^2 + 480x.$$
+>
+> As for the domain, the sides must be positive, so:
+> $$0 < x < 8.$$
+>
+> $x$ can't be zero because then is no cut, and can't be $8$ because we can’t fold the cardboard into a box.
+>
+> However, the domain is written as $0 \le x \le 8$ [here][q-2], including $0$ and $8$ as opposed to my domain. Is my answer still correct?
+>
+>
+>   [q-1]: kEjN7iyb.png
+>   [q-2]: https://youtu.be/XQDvXds8MTk?si=g4QDbQEPeFv1Qg3B&t=245
+:::
+
+I'll summarize the comments and add my two cents so this question can have an answer.
+
+The point of this problem is to practice modeling a relationship between variables (not to learn how boxes are made, because this is not how they are made in real life). The question of whether to include the practical limits of the model may depend on the context.
+
+The lecturer makes a good point where he holds the uncut sheet of cardboard flat and asks “Is this a box?” Not really, but it may make sense to call it a box with no volume, for the purposes of answering another question.
+
+When optimizing functions in calculus, it is slightly more convenient when the domain is a closed, bounded interval. Then, you need only check the values at the endpoints of the domain and any critical points in the interior of the domain. So if that is the goal, I would indeed use $0 \leq x \leq 8$ as the domain.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5145405/find-domain-and-volume-of-box-as-function-of-x/5145557#5145557) on Mathematics Stack Exchange, 2026-07-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

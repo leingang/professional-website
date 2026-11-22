@@ -1,0 +1,41 @@
+---
+title: Difference between 2D and 3D graphics packages
+date: '2010-12-15'
+description: TikZ is not really a 3D package. It provides a third dimension but in the plane of the other two. You can give drawings some perspective to make it look like…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7165
+se-link: https://tex.stackexchange.com/questions/7163/difference-between-2d-and-3d-graphics-packages/7165#7165
+se-score: 14
+se-accepted: true
+se-tags:
+- diagrams
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Difference between 2D and 3D graphics packages](https://tex.stackexchange.com/questions/7163/difference-between-2d-and-3d-graphics-packages), asked by user2265 on TeX Stack Exchange (2010-12-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I read that TikZ, PSTricks and MetaPost are 2D vector graphics packages while Asymptote is considered 3D. However I also know that you can specify 3D coordinates in say TikZ so that drawing a 3D diagram in TikZ is not merely drawing its projection onto 2D. Given these considerations, what really is meant by 2D or 3D graphics and what is the difference between them?
+:::
+
+TikZ is not really a 3D package.  It provides a third dimension but in the plane of the other two.  You can give drawings some perspective to make it look like they're 3D, but that's really up to the user.  I wouldn't call something truly 3D unless I can change the viewing point in one place and have the diagram render from that point of view automatically.
+
+Here's a problem: take four points in three-space and draw the tetrahedron that they define.  How would you do that in TikZ?  It's easy to connect the four vertices, but depending on the viewer's perspective, some vertices and/or edges are going to be hidden by other ones.  So they should be rendered differently or not at all.  
+
+How do you determine which parts are hidden?  In this example it's probably just a linear algebra problem based on the vertices and the perspective.  But if you add something to the diagram you might occlude stuff you've already drawn.  So a systematic 3D rendering can't be done until the whole diagram is defined.
+
+There are programs like [Sketch 3D](http://www.frontiernet.net/~eugene.ressler/) which allow you to define the figures, makes the calculations and outputs TikZ code.  But it doesn't come built into TikZ.
+
+**Edit:** Herbert notified me of the [`pst-solides3d`](http://ctan.org/pkg/pst-solides3d) package, which does 3D drawing with any viewport in PSTricks.  That means it's possible in TikZ as well, and at the rate of TikZ growth it might be built-in or provided with TikZ someday soon.  But it is a pretty complicated undertaking.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7163/difference-between-2d-and-3d-graphics-packages/7165#7165) on TeX Stack Exchange, 2010-12-15. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

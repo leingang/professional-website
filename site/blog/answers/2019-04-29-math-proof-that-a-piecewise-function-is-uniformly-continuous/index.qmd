@@ -1,0 +1,50 @@
+---
+title: Proof that a piecewise function is uniformly continuous
+date: '2019-04-29'
+description: Suppose there exists $M$ such that $|f'(t)| \leq M$ for all $t \in \mathbb{R}$. Then for all $x,y\in\mathbb{R}$, $$f(x) - f(y) = f'(z)(x-y)$$ for some $z$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3207514
+se-link: https://math.stackexchange.com/questions/3204687/proof-that-a-piecewise-function-is-uniformly-continuous/3207514#3207514
+se-score: 3
+se-accepted: false
+se-tags:
+- limits
+- continuity
+- uniform-continuity
+- piecewise-continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof that a piecewise function is uniformly continuous](https://math.stackexchange.com/questions/3204687/proof-that-a-piecewise-function-is-uniformly-continuous), asked by [souad bou chahine](https://math.stackexchange.com/users/641601/souad-bou-chahine) on Mathematics Stack Exchange (2019-04-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let the function $f : \Bbb{R} \to \Bbb{R}$ be denoted by:
+>
+> $$f(x) = \begin{cases} \dfrac13 \sin(3x) + x^4 \sin\dfrac{1}{x^3}, \quad & x \ne 0 \\ 0, & x = 0 \end{cases}$$
+>
+> Prove that $f$ is uniformly continuous on $\Bbb{R}$
+>
+> Should I prove this using the definition of uniform continuity? How can this be proved
+:::
+
+Suppose there exists $M$ such that $|f'(t)| \leq M$ for all $t \in \mathbb{R}$.
+Then for all $x,y\in\mathbb{R}$,
+$$f(x) - f(y) = f'(z)(x-y)$$
+for some $z$ between $x$ and $y$.  Therefore,
+$$|f(x) - f(y)| \leq |f'(z)||x-y| \leq M |x-y|$$
+(so $f$ is [Lipschitz](http://mathworld.wolfram.com/LipschitzFunction.html)).  Given $\epsilon > 0$, choose $\delta = \frac{\epsilon}{M}$. $\Box$
+
+* * *
+It remains to show that in this particular problem that $f'(x)$ is bounded, but that's a simple calculus problem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3204687/proof-that-a-piecewise-function-is-uniformly-continuous/3207514#3207514) on Mathematics Stack Exchange, 2019-04-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

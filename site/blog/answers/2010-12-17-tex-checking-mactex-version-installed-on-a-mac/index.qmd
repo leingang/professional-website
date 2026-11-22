@@ -1,0 +1,37 @@
+---
+title: Checking MacTeX version installed on a Mac
+date: '2010-12-17'
+description: Create a "hello world" latex file and compile it. Look at the console or .log file and see what files are being loaded. On my machine I see
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7302
+se-link: https://tex.stackexchange.com/questions/7295/checking-mactex-version-installed-on-a-mac/7302#7302
+se-score: 2
+se-accepted: false
+se-tags:
+- mactex
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Checking MacTeX version installed on a Mac](https://tex.stackexchange.com/questions/7295/checking-mactex-version-installed-on-a-mac), asked by [prosseek](https://tex.stackexchange.com/users/379/prosseek) on TeX Stack Exchange (2010-12-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I can use `latex -v` to check the version of LaTeX. Is there a way to check what version of MacTeX (MacTeX 2008, 2009 or 2010) is installed?
+:::
+
+Create a "hello world" latex file and compile it.  Look at the console or `.log` file and see what files are being loaded.  On my machine I see
+
+`(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls...`
+
+So you can guess it's TL 2010.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7295/checking-mactex-version-installed-on-a-mac/7302#7302) on TeX Stack Exchange, 2010-12-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

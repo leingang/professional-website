@@ -1,0 +1,55 @@
+---
+title: Why is the determinant of an orthogonal matrix always $1 or -1$?
+date: '2022-10-07'
+description: To answer the question in the title, the fact that the determinant of an orthogonal matrix $A$ is $\pm1$ comes from the fact that $AA^T = I$ and $\det A = \det…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4547528
+se-link: https://math.stackexchange.com/questions/4547518/why-is-the-determinant-of-an-orthogonal-matrix-always-1-or-1/4547528#4547528
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- solution-verification
+- determinant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is the determinant of an orthogonal matrix always $1 or -1$?](https://math.stackexchange.com/questions/4547518/why-is-the-determinant-of-an-orthogonal-matrix-always-1-or-1), asked by [math  forever](https://math.stackexchange.com/users/879009/math-forever) on Mathematics Stack Exchange (2022-10-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was asked to find the value of $|A|$ for any orthogonal matrix
+> to do this, I considered the simplest orthogonal matrix
+>
+> $$n
+> \begin{bmatrix}
+> 1 & 0 \\
+> 0 &1\\
+> \end{bmatrix}$$
+> which gives 
+>
+> $|A|=n$, as $n|I|=n$ 
+> however, my book solves this by using the fact that $AA^T=I$
+> which gives $|A|= 1 or -1$
+>
+> why is my answer wrong?
+:::
+
+To answer the question in the title, the fact that the determinant of an orthogonal matrix $A$ is $\pm1$ comes from the fact that $AA^T = I$ and $\det A = \det A^T$.  You get $\det(A)^2 = \det(I) = 1$, so $\det A = \pm 1$.
+
+Scaling a matrix by a constant does not usually preserve orthogonality. This is because the transpose of $\alpha A$ is $\alpha A^T$ So if $A$ is orthogonal, $(\alpha A)(\alpha A)^T = \alpha^2 AA^T = \alpha^2 I$.
+
+Good comment from Ben Grossman above: an orthogonal matrix is characterized by *orthonormal* columns, not just orthogonal columns. That might be the source of the confusion.
+
+Also: orthogonal matrices preserve distance. Scaling usually doesn't.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4547518/why-is-the-determinant-of-an-orthogonal-matrix-always-1-or-1/4547528#4547528) on Mathematics Stack Exchange, 2022-10-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

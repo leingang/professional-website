@@ -1,0 +1,85 @@
+---
+title: How can I insert a subject line in a letter?
+date: '2024-08-12'
+description: Here is a modification of the original letter.cls that provides a \subject command. In a document, \subject{foo} will typeset a subject line between the inside…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 724293
+se-link: https://tex.stackexchange.com/questions/152327/how-can-i-insert-a-subject-line-in-a-letter/724293#724293
+se-score: 5
+se-accepted: false
+se-tags:
+- formatting
+- positioning
+- letters
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I insert a subject line in a letter?](https://tex.stackexchange.com/questions/152327/how-can-i-insert-a-subject-line-in-a-letter), asked by [Karlo](https://tex.stackexchange.com/users/36500/karlo) on TeX Stack Exchange (2014-01-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am writing a `letter` and I would like to insert a subject line above or below the `\opening`. How should I do this? I prefer not to use `scrlttr2` or `KOMA`.
+:::
+
+Here is a modification of the original `letter.cls` that provides a `\subject` command. In a document, `\subject{foo}` will typeset a subject line between the inside address and opening.
+
+## Usage
+
+```latex
+\documentclass{letter}
+\usepackage{lipsum}% for filler text
+
+\usepackage{etoolbox}
+\newcommand{\subjectname}{Subject}
+\newcommand{\subject}[1]{\def\thesubject{#1}}
+\let\insertsubject\cc
+\patchcmd{\insertsubject}{\ccname}{\subjectname}{}{\PatchFailed}
+\patchcmd{\opening}{#1}{
+    \ifdefined\thesubject%
+    \insertsubject{\thesubject}%
+    \vspace{\parskip}%
+    \fi%
+    #1}{}{\PatchFailed}
+
+\signature{Your Name}
+\address{Your Address \\ City, State ZIP \\ Country}
+\date{\today}
+
+\begin{document}
+
+\begin{letter}{Recipient's Name \\ Recipient's Address \\ City, State ZIP \\ Country}
+\subject{Foo bar baz quux}
+\opening{Dear [Recipient's Name],}
+\lipsum[1-2]
+\closing{Sincerely,}
+\ps{P.S. Here is a postscript.}
+\encl{Enclosures: List here}
+\end{letter}
+
+\end{document}
+```
+
+## Implementation
+
+The tricky part of implementing this is that the recipient's name and address are declared by the argument of the `letter` environment, but are not typeset until the `\opening` command, before the opening is typeset. So the subject's declaration and typesetting must also be done separately.
+
+
+* The `\subjectname` command is initialized to `Subject`, but it can be customized with `\renewcommand` to, for example, `Re`.
+* The `\subject` command saves its argument in a command `\thesubject`. Each `letter` environment can have its own subject, or the subject can be globally declared in the preamble.
+* The command `\insertsubject` is a clone of the `\cc` command (for the carbon copy list used after the letter's signature), but replaces `\ccname` with `\subjectname`. This is to maintain the look and feel of the document. It could be customized to typeset the subject another way.
+* Finally, the `\opening` command is patched to insert the subject (if it exists) before the opening.
+
+## Comparison
+
+The other answers abuse the document's schema by adding the subject to either the address or the opening, and furthermore, add presentation elements like font selection and vertical space. I prefer this solution because it maintains the separation of markup and presentation. This is why I decided to exhume this ancient question and add an answer.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/152327/how-can-i-insert-a-subject-line-in-a-letter/724293#724293) on TeX Stack Exchange, 2024-08-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,54 @@
+---
+title: Is $\frac{1}{n}\sum_{k=1}^nf(x_k)f'(c_k)$ a Riemann Sum?
+date: '2018-03-08'
+description: Intuitively speaking, the difference between $f(xk)$ and $f(ck)$ should be neglible as $n\to\infty$, so these sums should have the same limit…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2682459
+se-link: https://math.stackexchange.com/questions/2682402/is-frac1n-sum-k-1nfx-kfc-k-a-riemann-sum/2682459#2682459
+se-score: 2
+se-accepted: true
+se-tags:
+- integration
+- riemann-sum
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is $\frac{1}{n}\sum_{k=1}^nf(x_k)f'(c_k)$ a Riemann Sum?](https://math.stackexchange.com/questions/2682402/is-frac1n-sum-k-1nfx-kfc-k-a-riemann-sum), asked by [user528021](https://math.stackexchange.com/users/528021/user528021) on Mathematics Stack Exchange (2018-03-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f$ be a differentiable function. If we have $x_k \in \left[\frac{k-1}{n},\frac{k}{n}\right]$ and $c_k \in \left[\frac{k-1}{n},\frac{k}{n}\right]$. 
+>
+> Does it mean that the sum $$\frac{1}{n}\sum_{k=1}^nf(x_k)f'(c_k)\rightarrow \int_0^1f(x)f'(x)dx$$ as $n \to \infty ?$
+:::
+
+Intuitively speaking, the difference between $f(x_k)$ and $f(c_k)$ should be neglible as $n\to\infty$, so these sums should have the same limit:
+$$\lim_{n\to\infty}\sum_{k=1}^nf(x_k) f'(c_k) \frac{1}{n}
+    = \lim_{n\to\infty}\sum_{k=1}^nf(c_k) f'(c_k) \frac{1}{n}
+    = \int_0^1 f(x)f'(x)\,dx$$
+More formally, for each $k$ there exists a point $t_k$ between $x_k$ and $c_k$ such that
+$$f(c_k) - f(x_k) = f'(t_k)(c_k-x_k)$$
+this is by the Mean Value Theorem.
+If we assume additionally that $f'$ is continuous (and therefore bounded) on $[a,b]$, then we can say
+$$|f(c_k) - f(x_k)| \leq M |c_k - x_k| \leq M \frac{1}{n}$$
+for some $M$.
+This means that the difference between $\sum_{k=1}^n f(x_k) f'(c_k) \frac{1}{n}$ and $\sum_{k=1}^n f(c_k) f'(c_k) \frac{1}{n}$ is bounded by a multiple of $\frac{1}{n}$:
+$$\begin{align*}
+    \left|\sum_{k=1}^n f(x_k) f'(c_k) \frac{1}{n}-\sum_{k=1}^n f(c_k) f'(c_k) \frac{1}{n}\right|
+    &\leq \sum_{k=1}^n\left|f(x_k) - f(c_k)\right|f'(c_k)\frac{1}{n} \\
+    &\leq\sum_{k=1}^n\frac{M}{n}\frac{1}{n} = \frac{M}{n} \\
+\end{align*}$$
+and this tends to zero as $n\to\infty$.
+
+You might be able to dispense with the assumption that $f'$ is continuous, if you use [Duhamel's Theorem](https://books.google.com/books?id=6kg7AQAAIAAJ&lpg=PA301&ots=ZgxzL0Xg2R&dq=duhamel's%20theorem%20surface%20of%20revolution&pg=PA301#v=onepage&q=duhamel's%20theorem&f=false).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2682402/is-frac1n-sum-k-1nfx-kfc-k-a-riemann-sum/2682459#2682459) on Mathematics Stack Exchange, 2018-03-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,75 @@
+---
+title: solve equilibrium points and the equation from given derivatives
+date: '2016-09-16'
+description: With a little bit of arithmetic we can rewrite the equation as $$\frac{dN}{dt} = -\frac{N^2 - 225N + 3150}{900}$$ Where $N$ is just shorthand for $N(t)$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1929062
+se-link: https://math.stackexchange.com/questions/1928927/solve-equilibrium-points-and-the-equation-from-given-derivatives/1929062#1929062
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[solve equilibrium points and the equation from given derivatives](https://math.stackexchange.com/questions/1928927/solve-equilibrium-points-and-the-equation-from-given-derivatives), asked by [user365442](https://math.stackexchange.com/users/365442/user365442) on Mathematics Stack Exchange (2016-09-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The question shows this:
+> >$$\frac{dN}{dt} = \frac{1}{4} N(t) \left( 1 - \frac{N(t)}{225}\right) - \frac{7}{2}$$
+>
+> How can we solve the equation as we don't know what is the power of t present in the function N?
+:::
+
+With a little bit of arithmetic we can rewrite the equation as
+$$\frac{dN}{dt} = -\frac{N^2 - 225N + 3150}{900}$$
+Where $N$ is just shorthand for $N(t)$.
+
+The question title asks about *equilibrium points*.  Those are the constant solutions to this differential equation.  If $N(t)$ is constant, $\frac{dN}{dt} = 0$.  This is equivalent to
+$$N^2 - 225N+3150 = 0 \implies (N-15)(N-210) = 0$$
+So there are two equilibria: $N(t) \equiv 15$ and $N(t) \equiv 210$.
+
+In the question you wondered how to solve for $N(t)$ “when we don't know the power of $t$ present in $N$.”  Differential equations are, in general, hard to solve.  There's no guarantee that $N(t)$ is a power function to begin with.  But notice that we found the equilibria without finding $N(t)$ explicitly.  In DE you can say a lot *about* the solutions without knowing their closed-form expression.
+
+As it turns out, this DE is what we call *separable* and can be solved explicitly.  We write
+$$\frac{dN}{(N-15)(N-210)} = - \frac{1}{900} \,dt
+    \implies
+    \int\frac{dN}{(N-15)(N-210)} = - \int\frac{1}{900} \,dt$$
+At first blush, this looks like voodoo math but it is grounded in rigor.  In any case, the right-hand side is easily integrated but the left-hand side requires partial fractions:
+$$\frac{1}{(N-15)(N-210)} = \frac{1}{195}\left(\frac{1}{N-210} - \frac{1}{N-15}\right)$$
+Moving the constant to the other side, we now have
+$$\int\left(\frac{1}{N-210} - \frac{1}{N-15}\right)\,dN
+= -\int\frac{195}{900}\,dt = - \int \frac{13}{60} \,dt$$
+Now we can integrate!
+$$\ln\left|\frac{N-210}{N-15}\right| = -\frac{13t}{60} + C$$
+where $C$ is some constant depending on the initial conditions of $N(t)$.
+Exponentiating,
+$$\frac{N-210}{N-15} = e^{-13t/60 + C} = e^C e^{-13t/60} = C_1   e^{-13t/60}$$
+This can be solved for $N$ in terms of $t$:
+$$\begin{align*}
+    N-210 &= C_1 e^{-13t/60}(N-15)\\\implies
+    e^{13t/60}N - 210 e^{13t/60} &= C_1 N - 15 C_1 \\\implies
+    N\left(e^{13t/60}-C_1\right) &= 210 e^{13t/60}- 15 C_1 \\\implies
+    N(t) &= \frac{210 e^{13t/60}- 15 C_1}{e^{13t/60}-C_1}
+\end{align*}$$
+(acknowledgements to [Wolfram Alpha](http://bit.ly/2cOeHG3))
+
+Now that we have the explicit form for $N(t)$, notice that
+$$\begin{align*}
+    \lim_{t\to+\infty} N(t) &= 210 \\
+    \lim_{t\to-\infty} N(t) &= 15
+\end{align*}$$
+and these are our two equilibrium solutions.  This means 210 is a stable equilibrium and 15 is unstable.  But again, most of the question can be answered *without* solving the equation explicitly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1928927/solve-equilibrium-points-and-the-equation-from-given-derivatives/1929062#1929062) on Mathematics Stack Exchange, 2016-09-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,68 @@
+---
+title: Is the identity true?
+date: '2019-06-25'
+description: 'In the equations you''ve written:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3274060
+se-link: https://math.stackexchange.com/questions/3273986/is-the-identity-true/3274060#3274060
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- functions
+- definite-integrals
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the identity true?](https://math.stackexchange.com/questions/3273986/is-the-identity-true), asked by [Joe](https://math.stackexchange.com/users/419536/joe) on Mathematics Stack Exchange (2019-06-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Is the following identity true:
+>
+> $$\lim\limits_{\Delta x \to 0}  \dfrac{\displaystyle \int_0^{\Delta x} f(x)\ dx}{\displaystyle \int_0^{\Delta x} g(x)\ dx}
+> =\dfrac{\lim\limits_{\Delta x \to 0} \displaystyle \int_0^{\Delta x} f(x)\ dx}{\lim\limits_{\Delta x \to 0} \displaystyle \int_0^{\Delta x} g(x)\ dx}
+> =\dfrac{f(x) \lim\limits_{\Delta x \to 0} \displaystyle\int_0^{\Delta x}  dx}
+>        {g(x) \lim\limits_{\Delta x \to 0} \displaystyle\int_0^{\Delta x}  dx}
+> =\dfrac{f(x)}{g(x)}$$
+>
+> If yes:
+>
+> $(1)$ How is taking $f(x)$ and $g(x)$ out of the integral *mathematically* justifyable?
+>
+> $(2)$ Can we extend this integral to higher integrals (surface and volume integrals)? For example:
+>
+> $$\lim\limits_{\Delta V \to 0}  \dfrac{\displaystyle \int_{\Delta V} f(x,y,z)\ dV}{\displaystyle \int_{\Delta V} g(x,y,z)\ dV}$$
+:::
+
+In the equations you've written:
+
+* The first equality is unjustified as the limits in the numerator and denominator are both zero.  So this would be one of those “indeterminate forms” for a limit.
+
+* The second equality is unjustified as well.  In the integral, $x$ is a dummy variable so $\int_0^{\Delta x} f(x)\,dx$ is a real number for each $\Delta x$.  But $f(x)\int_0^{\Delta x}\,dx$ is a function of $x$; in fact, it's equal to $f(x)\,\Delta x$.
+
+But you can use L'Hôpital's rule and the Fundamental Theorem of Calculus here.  Assume that $f$ is continuous on an open interval containing $0$, and $g(0) \neq 0$.  Let $F(z) = \int_0^z f(x)\,dx$ and $G(z) = \int_0^z g(x)\,dx$.  Then:
+$$\begin{align*}
+    \lim_{\Delta x\to 0} F(\Delta x) &= 0 \\
+    \lim_{\Delta x\to 0} G(\Delta x) &= 0 \\
+    \lim_{\Delta x\to 0} F'(\Delta x) &= \lim_{\Delta x \to 0} f(\Delta x) = f(0) \\
+    \lim_{\Delta x\to 0} G'(\Delta x) &= \lim_{\Delta x \to 0} g(\Delta x) = g(0) \\
+\end{align*}$$
+Therefore, the quotient $\frac{F'(\Delta x)}{G'(\Delta x)}$ tends to $\frac{f(0)}{g(0)}$ as $\Delta x\to 0$.  So by L'Hôpital's rule, $\frac{F(\Delta x)}{G(\Delta x)}$ has the same limit.  In summary,
+$$\lim_{\Delta x \to 0} \frac{\int_0^{\Delta x}f(x)\,dx}{\int_0^{\Delta x} g(x)\,dx}
+    = \frac{f(0)}{g(0)}.$$
+
+The multivariable analogue is a bit trickier.  By the integral mean value theorem, the integral of a (continuous) function over a region is equal to the volume of that region times the value of a function at some point in the region.  But with two integrals over the same region, it's not always possible to use the same point.  So the quotient may not have a well-defined limit.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3273986/is-the-identity-true/3274060#3274060) on Mathematics Stack Exchange, 2019-06-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

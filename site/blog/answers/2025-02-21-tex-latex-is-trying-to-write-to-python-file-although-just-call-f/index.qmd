@@ -1,0 +1,126 @@
+---
+title: LaTeX is trying to write to python file although just call file to be read
+date: '2025-02-21'
+description: Expanding my comment to an answer, it seems like the setting the listing file key for a \tcblisting-listing command writes to rather than reads from the…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 737630
+se-link: https://tex.stackexchange.com/questions/737626/latex-is-trying-to-write-to-python-file-although-just-call-file-to-be-read/737630#737630
+se-score: 1
+se-accepted: true
+se-tags:
+- python
+- lstdefinestyle
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[LaTeX is trying to write to python file although just call file to be read](https://tex.stackexchange.com/questions/737626/latex-is-trying-to-write-to-python-file-although-just-call-file-to-be-read), asked by [Joe](https://tex.stackexchange.com/users/36270/joe) on TeX Stack Exchange (2025-02-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For some reason, in the code below, LaTeX is overwriting my `.py` file although I am just trying to call the `.py` file.  Here is the contents of the `pycode_batch_noreg.py` file:
+>
+> ```python
+> import network3
+> from network3 import Network
+> from network3 import ConvPoolLayer, FullyConnectedLayer, SoftmaxLayer
+> training_data, validation_data, test_data = network3.load_data_shared()
+> mini_batch_size = 10
+> net = Network([
+>         FullyConnectedLayer(n_in=784, n_out=100),
+>         SoftmaxLayer(n_in=100, n_out=10)], mini_batch_size)
+> net.SGD(training_data, 60, mini_batch_size, 0.1, 
+>             validation_data, test_data)
+> ```
+>
+> And here is the contents of the LaTeX file:
+>
+> ```latex
+> \documentclass{article}
+>
+> \usepackage{calc}
+> \usepackage{listings}
+> \usepackage{pdfpages,graphicx}
+> \usepackage{mdframed}
+> \usepackage[most]{tcolorbox}
+> \usepackage[numbered,framed]{matlab-prettifier}
+> \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+> \definecolor{light-gray}{gray}{0.92}
+> \definecolor{mygray}{RGB}{243,243,244}
+>
+> \renewcommand\lstlistingname{Python Code}
+>
+> \lstdefinestyle{pycode}{
+>     language=Python,
+>     numbers=left,
+>     numbersep= 7mm,
+>     numberstyle=\color{Black},
+>     stepnumber=1,
+>     tabsize=3,
+>     breakatwhitespace=false,
+>     breaklines=true,
+>     captionpos=b,
+>     basicstyle=\color{Black}\ttfamily,
+>     commentstyle=\color{LimeGreen},
+>     stringstyle=\color{WildStrawberry},
+>     frame=leftline,
+>     framesep=0mm,
+>     xleftmargin=3mm,
+>     framesep=2mm,
+>     framerule=0mm,
+>     abovecaptionskip=5mm,
+>     aboveskip=\baselineskip,
+>     belowskip=\baselineskip,
+>     basicstyle=\ttfamily\scriptsize,
+>     classoffset=1,
+>     morekeywords={var, func, extends, import, as,from},
+>     keywordstyle=\color{BurntOrange}\bfseries,
+>     classoffset=2,
+>     morekeywords={network3},
+>     keywordstyle=\color{blue}\bfseries,
+> }
+>
+> \newcounter{pylst}
+> \newtcblisting[use counter=pylst]{pycode}[3][]{%
+>         enhanced,noparskip,breakable,colback=light-gray,colframe=gray,opacitybacktitle=.8,%
+>         fonttitle=\bfseries,before upper={\hspace*{-1em}\includegraphics[height=\baselineskip]{example-image-a}~#2},%
+>         title after break={\centering\footnotesize\itshape\strut Python Code~\thetcbcounter--~continued},%
+>         listing only,listing options={style=pycode, xleftmargin=-1mm},%
+>         after upper={\par\centering Python Code~\thesection.\thetcbcounter},
+>         arc=0pt,outer arc=0pt,boxrule=0pt,leftrule=1mm,
+>         listing file = {#3}, #1}
+>
+> \newenvironment{brokenlst}{\addvspace\baselineskip}{\addvspace\baselineskip}
+>
+> \begin{document}
+>
+> \begin{pycode}{Baseline Python Code.py}{./python/pycode_batch_noreg.py}
+> \end{pycode}
+>
+> \end{document}
+> ```
+>
+> Can you tell me how not to overwrite my py file?  Thanks!
+:::
+
+Expanding my comment to an answer, it seems like the setting the `listing file` key for a `\tcblisting`-listing command *writes to* rather than *reads from* the indicated file. 
+
+To list and pretty-print the contents of a file, you want a command like `\tcbinputlisting`. So change `\newtcblisting` to `\newtcbinputlisting`.
+
+The other thing is that commands like `\newtcbinputlisting` create *commands*, not environments. So the first mandatory argument to `\newtcbinputlisting` needs to be a command name like `\pycode` and not a plain string like `pycode`.
+
+Once you've made those changes, you can change the invocation to:
+
+```latex
+ \pycode{Baseline Python Code.py}{pycode_batch_noreg.py}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/737626/latex-is-trying-to-write-to-python-file-although-just-call-file-to-be-read/737630#737630) on TeX Stack Exchange, 2025-02-21, with [edits](https://tex.stackexchange.com/posts/737630/revisions) by [mbert](https://tex.stackexchange.com/users/208544/mbert). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

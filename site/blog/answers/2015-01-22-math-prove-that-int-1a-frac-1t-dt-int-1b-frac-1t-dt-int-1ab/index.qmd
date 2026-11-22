@@ -1,0 +1,47 @@
+---
+title: Prove that $\int_{1}^{a} \frac 1t dt + \int_{1}^{b} \frac 1t dt = \int_{1}^{ab} \frac 1t dt$
+date: '2015-01-22'
+description: Following the hint, you want to show that $$\begin{align} U(f,P) &= U(f,P') \\ L(f,P) &= L(f,P') \end{align}$$ Therefore $$\int1^a \frac{1}{t}\,dt = \intb^{ab}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114540
+se-link: https://math.stackexchange.com/questions/1114512/prove-that-int-1a-frac-1t-dt-int-1b-frac-1t-dt-int-1ab/1114540#1114540
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\int_{1}^{a} \frac 1t dt + \int_{1}^{b} \frac 1t dt = \int_{1}^{ab} \frac 1t dt$](https://math.stackexchange.com/questions/1114512/prove-that-int-1a-frac-1t-dt-int-1b-frac-1t-dt-int-1ab), asked by [Senya](https://math.stackexchange.com/users/209146/senya) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove that
+> $$\int_{1}^{a} \frac 1t dt + \int_{1}^{b} \frac 1t dt = \int_{1}^{ab} \frac 1t dt$$
+>
+> Useful facts:  $\int_{1}^{a}  \frac 1t dt$ can be written as $\int_{b}^{ab} \frac 1t dt$
+> <br/>
+> <br/>
+> Every partition $P=${$t_0,...,t_n$} on $[1,a]$ gives rise to a partition $P'=${$bt_0,...,bt_n$} on $[b,ab]$, and conversely.
+>
+> I have to do the question without actually integrating it, since the Fundamental Theorem of Calculus was not proven yet.
+:::
+
+Following the hint, you want to show that
+$$\begin{align}
+U(f,P) &= U(f,P') \\  L(f,P) &= L(f,P')
+\end{align}$$
+Therefore
+$$\int_1^a \frac{1}{t}\,dt = \int_b^{ab} \frac{1}{t}\,dt$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114512/prove-that-int-1a-frac-1t-dt-int-1b-frac-1t-dt-int-1ab/1114540#1114540) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

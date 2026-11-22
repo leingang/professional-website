@@ -1,0 +1,50 @@
+---
+title: 'Visualizing the flow of a constant vector field: shouldn''t all the flow lines (integral curves) be in the same direction as the vector field?'
+date: '2019-10-16'
+description: I agree with you. The flow line through $(x0,y0)$ has equations $x(t) = x0$, $y(t) = y0 + x0t$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3395610
+se-link: https://math.stackexchange.com/questions/3395589/visualizing-the-flow-of-a-constant-vector-field-shouldnt-all-the-flow-lines-i/3395610#3395610
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- vectors
+- vector-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Visualizing the flow of a constant vector field: shouldn't all the flow lines (integral curves) be in the same direction as the vector field?](https://math.stackexchange.com/questions/3395589/visualizing-the-flow-of-a-constant-vector-field-shouldnt-all-the-flow-lines-i), asked by [James Ronald](https://math.stackexchange.com/users/598227/james-ronald) on Mathematics Stack Exchange (2019-10-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> A question in my text proposes the vector field $\vec v = x\vec j$. It shows that this: 
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+> as being the field itself; this makes sense. It also shows $\vec v$
+> 's flow as being this:
+>
+> [![enter image description here][q-2]][q-2]
+>
+>
+>   [q-1]: tequq.png
+>   [q-2]: klSF7.png
+>
+> Why is it that all the flow lines are in the same direction? Shouldn't the ones in quadrants $2$ and $3$, where $x$ is negative, be pointing/flowing downwards?
+:::
+
+I agree with you.  The flow line through $(x_0,y_0)$ has equations $x(t) = x_0$, $y(t) = y_0 + x_0t$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3395589/visualizing-the-flow-of-a-constant-vector-field-shouldnt-all-the-flow-lines-i/3395610#3395610) on Mathematics Stack Exchange, 2019-10-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

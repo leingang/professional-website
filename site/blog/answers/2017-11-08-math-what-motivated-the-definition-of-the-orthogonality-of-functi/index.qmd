@@ -1,0 +1,66 @@
+---
+title: What Motivated the Definition of the Orthogonality of Functions?
+date: '2017-11-08'
+description: Yes, it's no coincidence that vectors are called orthogonal if their dot product is zero, and the functions you're considering are called orthogonal if the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2510937
+se-link: https://math.stackexchange.com/questions/2510901/what-motivated-the-definition-of-the-orthogonality-of-functions/2510937#2510937
+se-score: 3
+se-accepted: false
+se-tags:
+- functions
+- inner-products
+- orthogonality
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What Motivated the Definition of the Orthogonality of Functions?](https://math.stackexchange.com/questions/2510901/what-motivated-the-definition-of-the-orthogonality-of-functions), asked by [Rax Adaam](https://math.stackexchange.com/users/179404/rax-adaam) on Mathematics Stack Exchange (2017-11-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am curious to know why the orthogonality of two (real) functions $f(x)$, $g(x)$ is given by:
+>
+> $$\int_{-L}^{L} f(x) \,g(x) \; \text{d}x = 0$$
+>
+> I see a kind of similarity between this definition and the orthogonality of vectors $\vec{v}$, $\vec{w}$ $\in$ $\mathbb{R}^n$, $\,$ _viz._  $\vec{v} \cdot \vec{w} = v_i \, w_i = 0$. It even makes sense to me that the domain of integration should play an important role in this result. However, I'm at a loss to imagine 
+>
+>  a) the context that would've prompted such an extension;
+>
+>  b) the meaning of orthogonality (i.e. is there any way of thinking of this that is as intuitive as the geometric orthogonality of the vector version, where we can intuitively understand the meaning of orthogonality for vectors in $\mathbb{R}^2$ and $\mathbb{R}^3$ and extend the concept to higher dimensions?).
+>
+> Perhaps the most concise way of asking my question would be **is there an alternative way of viewing the definition of orthogonality of functions that is analogous to the _geometric_ definition of the vector dot product** (i.e. $\vec{v} \cdot \vec{w} = |\vec{v}|\, |\vec{w}| \cos\theta$)?
+>
+> I looked at [this question][q-1], but it doesn't really get at what I'm after. 
+>
+>
+>   [q-1]: https://math.stackexchange.com/questions/919019/orthogonality-of-functions-in-function-space
+:::
+
+Yes, it's no coincidence that vectors are called orthogonal if their dot product is zero, and the functions you're considering are called orthogonal if the integral of their product is zero.  Both of them are examples of an **inner product** on a vector space.
+
+If $V$ is a vector space over $\mathbb{R}$, an inner product on $V$ is a map $(\_,\_) \colon V \times V \to \mathbb{R}$ which is
+
+* *symmetric:* $(v,w) = (w,v)$ for all $v$ and $w$ in $V$
+* *bilinear:* $(c_1 v_1 + c_2 v_2,w) = c_1 (v_1,w) + c_2 (v_2,w)$ and $(v,c_1w_1 + c_2 w_2) = c_1(v,w_1) + c_2(v,w_2)$ for all $v, w, v_1, v_2, w_1, w_2$ in $V$ and $c_1,c_2$ in $\mathbb{R}$
+* *positive-definite*: $(v,v) \geq 0$ for all $v \in V$. Furthermore, $(v,v) = 0 \iff v=0$.
+
+If $V$ has an inner product, we can call vectors orthogonal if their inner product is zero.
+
+In linear algebra, you often try to diagonalize a linear operator.  That makes it very easy to study because you just have to look at scalar multiples.  When the vector space has an inner product and the operator is *normal*, then it's diagonalizable with an orthogonal basis.  
+
+I guess what motivates the extension of inner product to infinite dimensional vector spaces is that there are important linear operators on those spaces.   For instance, the derivative.  With the inner product you mentioned, and assuming the values are the same at $\pm L$, the derivative is skew-adjoint, in particular normal.  
+
+As for a geometric motivation for this inner product, or the associated orthogonality, you know that an integral is a limit of Riemann sums over finer and finer partitions.  For each $n$, we can set $\Delta x_n = \frac{2L}{n}$, $x_0 = -L$, $x_1 = -L + \Delta x$, $x_2 = -L + 2 \Delta x$, et cetera, until $x_n = L$.  Then
+$$\int_{-L}^L f(x)g(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^n f(x_i)g(x_i)\Delta x$$
+In other words, this integral inner product is a limit of finite dimensional inner products formed by sampling $f$ and $g$ at a regular set of points.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2510901/what-motivated-the-definition-of-the-orthogonality-of-functions/2510937#2510937) on Mathematics Stack Exchange, 2017-11-08, with [edits](https://math.stackexchange.com/posts/2510937/revisions) by [Rax Adaam](https://math.stackexchange.com/users/179404/rax-adaam). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

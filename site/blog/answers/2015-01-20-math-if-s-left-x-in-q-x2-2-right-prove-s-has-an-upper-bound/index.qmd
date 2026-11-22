@@ -1,0 +1,60 @@
+---
+title: if $S=\left\{ x \in Q | x^2 < 2\right\}$ Prove $S$ has an upper bound
+date: '2015-01-20'
+description: 'The germ of your argument is correct but the words you are connecting the statements with are fogging it up. Let me read this as a grader would:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1111372
+se-link: https://math.stackexchange.com/questions/1111349/if-s-left-x-in-q-x2-2-right-prove-s-has-an-upper-bound/1111372#1111372
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[if $S=\left\{ x \in Q | x^2 < 2\right\}$ Prove $S$ has an upper bound](https://math.stackexchange.com/questions/1111349/if-s-left-x-in-q-x2-2-right-prove-s-has-an-upper-bound), asked by [Jessy White](https://math.stackexchange.com/users/185728/jessy-white) on Mathematics Stack Exchange (2015-01-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I claim that it is true because our professor believes so, and here is my proof, 
+>  Suppose there is a number $x'> 2$ such that $x'^2 > 4$ however $x'^2 < 2$ therefore contradiction and hence $x$ has an upperbound.  
+> I have a feeling it is wrong, can someone explain to me why.
+:::
+
+The germ of your argument is correct but the words you are connecting the statements with are fogging it up.  Let me read this as a grader would:
+
+> Suppose there is a number $x′>2$ such that $x′^2>4$ 
+
+OK, no problem there.  *Any* number $x'>2$ will satisfy $x'^2>4$.  
+
+> however $x′^2<2$
+
+Wait, why?  Are you also assuming $x' \in S$?  Now we really have a problem because no $x' \in S$ has $x^2> 4$.  Or is this what you were trying to prove?
+
+> therefore contradiction and hence x has an upperbound.
+
+**What is the upper bound?**
+
+Let's try that again.  What is the definition of *upper bound*?
+
+>> Let $S$ be a set of real numbers.  The number $M$ is an *upper bound* of $S$ if $x \leq M$ for all $x \in S$.
+
+To show $M$ has an upper bound, the easiest way is to name a number $M$ and show $x \leq M$ for all $x$ in $M$.
+
+It looks like you want to say that $2$ is an upper bound.  So say it, and prove it:
+
+> We claim $2$ is an upper bound of $S$.  To show this, suppose $x \in S$.  Then $x^2 < 2$.  If $x < 0$, then $x < 2$ already.  If $x > 0$, then $x^2 < 2 \implies x < \sqrt{2}$.  Since $\sqrt{2} < 2$, we know $x < 2$.  Therefore $2$ is an upper bound of $S$.
+
+In general, to show $X$ is a $Y$, look up the definition of $Y$ and show that $X$ satisfies it!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1111349/if-s-left-x-in-q-x2-2-right-prove-s-has-an-upper-bound/1111372#1111372) on Mathematics Stack Exchange, 2015-01-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

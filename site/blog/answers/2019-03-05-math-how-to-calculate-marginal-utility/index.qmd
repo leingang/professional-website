@@ -1,0 +1,72 @@
+---
+title: How to calculate marginal utility?
+date: '2019-03-05'
+description: You can estimate these partial derivatives from the graph by reading the change in $P$ (respectively, $M$) required to reach the next highest labeled…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3136194
+se-link: https://math.stackexchange.com/questions/3136174/how-to-calculate-marginal-utility/3136194#3136194
+se-score: 0
+se-accepted: true
+se-tags:
+- utility
+- marginal-distribution
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to calculate marginal utility?](https://math.stackexchange.com/questions/3136174/how-to-calculate-marginal-utility), asked by [Giulia Della Rosa](https://math.stackexchange.com/users/568209/giulia-della-rosa) on Mathematics Stack Exchange (2019-03-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am having some difficulties understanding the calculations of marginal utility. 
+>
+> On this problem 𝑈(𝑃,𝑀)= square root of PM
+>
+> I know that MRS is equal to MUp/MUm but i do not understand how its possible that :
+>
+> MUp=1 / square root of 10 and
+>
+> MUm=2.5/ square root of 10
+>
+> I have some learning disabilities and any clear and simple answer on how to get this values would be greatly appreciated.
+>
+> I know that MUp is calculated by finding the partial derivative of U with respect to p but where do i get these values to do these calculations? Thanks!!
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: HPojB.jpg
+:::
+
+You can estimate these partial derivatives from the graph by reading the change in $P$ (respectively, $M$) required to reach the next highest labeled indifference curve.  Then
+$$\frac{\partial U}{\partial P} \approx \frac{\Delta U}{\Delta P}
+    \text{ and }
+    \frac{\partial U}{\partial M} \approx \frac{\Delta U}{\Delta M}$$
+
+There isn't enough information in the diagram to show that $\frac{\partial U}{\partial P}(A) = \frac{1}{\sqrt{10}}$ and $\frac{\partial U}{\partial M}(A) = \frac{5}{2\sqrt{10}}$, though.  Since $U(2,5) = \sqrt{10}$, I am guessing that $U(M,P) = \sqrt{MP}$ as a definition on another slide.  
+
+If that is the case, then you can compute the partial derivatives with the power rule.  $U(M,P) = P^{1/2} M^{1/2}$, so
+$$\begin{align*}
+    \frac{\partial U}{\partial M} &= \frac{1}{2} P^{1/2} M^{-1/2} = \frac{\sqrt{P}}{2\sqrt{M}} \\
+    \frac{\partial U}{\partial P} &= \frac{1}{2} P^{-1/2} M^{1/2} = \frac{\sqrt{M}}{2\sqrt{P}} \\
+\end{align*}$$
+So at $A = (2,5)$, we have
+$$\begin{align*}
+    \frac{\partial U}{\partial M}(2,5) &= \frac{\sqrt{5}}{2\sqrt{2}} 
+    = \frac{\sqrt{5}}{2\sqrt{2}} \cdot \frac{\sqrt{5}}{\sqrt{5}}
+    = \frac{5}{2\sqrt{10}} = \frac{2.5}{\sqrt{10}}\\
+    \frac{\partial U}{\partial P}(2,5) &= \frac{\sqrt{2}}{2\sqrt{5}} 
+    = \frac{\sqrt{2}}{2\sqrt{5}}\cdot \frac{\sqrt{2}}{\sqrt{2}}
+    = \frac{1}{\sqrt{10}}
+\\
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3136174/how-to-calculate-marginal-utility/3136194#3136194) on Mathematics Stack Exchange, 2019-03-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

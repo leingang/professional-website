@@ -1,0 +1,43 @@
+---
+title: What isn't a vector space?
+date: '2017-10-02'
+description: Lots of good non-examples already, but let me add $$C = \left\{(x,y) \in \mathbb{R}^2 \mid x\geq 0,\ y \geq 0 \right\}$$ In words, $C$ is the set of all…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2454533
+se-link: https://math.stackexchange.com/questions/2454364/what-isnt-a-vector-space/2454533#2454533
+se-score: 6
+se-accepted: false
+se-tags:
+- vector-spaces
+- big-list
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What isn't a vector space?](https://math.stackexchange.com/questions/2454364/what-isnt-a-vector-space), asked by [Aleksandr Hovhannisyan](https://math.stackexchange.com/users/287621/aleksandr-hovhannisyan) on Mathematics Stack Exchange (2017-10-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm really confused about vector spaces. We're learning about them in Linear Algebra, and my book doesn't give good examples of what a vector space is. I understand sets and vectors, but I don't understand vector spaces. From the definitions they've provided so far, it seems anything can be a vector space.
+>
+> Can someone provide a simple example of what *isn't* a vector space so I can make a distinction?
+:::
+
+Lots of good non-examples already, but let me add
+$$C = \left\{(x,y) \in \mathbb{R}^2 \mid x\geq 0,\ y \geq 0 \right\}$$
+In words, $C$ is the set of all ordered pairs of real numbers with both coordinates nonnegative.
+Addition and scalar multiplication are defined as they usually are in $\mathbb{R}^2$.
+
+The set $C$ is closed under addition, because if two pairs have nonnegative coordinates, their sum has nonnegative coordinates.  It also contains the zero element $(0,0)$.  
+
+But $C$ is not closed under scalar multiplication.  For instance $(1,1) \in C$, but $(-1)(1,1) = (-1,-1) \notin C$.  It is closed under positive scalar multiplication, though.  This is an example of what is called a *convex cone* in linear algebra.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2454364/what-isnt-a-vector-space/2454533#2454533) on Mathematics Stack Exchange, 2017-10-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

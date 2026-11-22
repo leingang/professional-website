@@ -1,0 +1,38 @@
+---
+title: Using proof by contradiction and a counter example.
+date: '2017-07-13'
+description: What you're describing sounds more to me like a proof by counterexample than a proof by contradiction. For instance, in Mauro's proof that the statement "every…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2357162
+se-link: https://math.stackexchange.com/questions/2357148/using-proof-by-contradiction-and-a-counter-example/2357162#2357162
+se-score: 1
+se-accepted: false
+se-tags:
+- logic
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using proof by contradiction and a counter example.](https://math.stackexchange.com/questions/2357148/using-proof-by-contradiction-and-a-counter-example), asked by [user401855](https://math.stackexchange.com/users/401855/user401855) on Mathematics Stack Exchange (2017-07-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a vague question about proof by contradiction. The main goal of proofs by contradiction is to show that if some statement was true, then we would end up by a logical contradiction. My question would: in order to achieve the logical contradiction, would it be enough to just show a counter-example? That is we suppose the false statement, and then just give an example where the statement gives an illogical/absurd result. Would that be correct?
+:::
+
+What you're describing sounds more to me like a proof by counterexample than a proof by contradiction.  For instance, in Mauro's proof that the statement "every natural number is even," he didn't need to assume for the sake of contradiction that not every number is even.  He just pointed to the number 3.
+
+Some so-called proofs by contradiction are proofs by contrapositive instead.  To prove $A\implies B$, some writers will assume $A$ and $\neg B$, then derive $\neg A$, and say $A$ and $\neg A$ is a contradiction.  But what they have actually done is proven $\neg B \implies \neg A$, which is the contrapositive of $A\implies B$.
+
+A real proof by contradiction will arrive at some kind of internal contradiction.  A very good example is the proof that $\sqrt{2}$ is irrational.  You assume it is rational, then write it in lowest terms as $\frac{a}{b}$.  From $a^2 = 2b^2$, you derive that both $a$ and $b$ are divisible by $2$, so $\frac{a}{b}$ can't be in lowest terms after all.  So you see, the contradiction doesn't have to do with the statement in the theorem, so much as something that would follow from that statement being false.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2357148/using-proof-by-contradiction-and-a-counter-example/2357162#2357162) on Mathematics Stack Exchange, 2017-07-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

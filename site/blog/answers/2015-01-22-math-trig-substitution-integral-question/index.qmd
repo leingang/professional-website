@@ -1,0 +1,62 @@
+---
+title: Trig Substitution Integral Question
+date: '2015-01-22'
+description: If you insist on using trigonometric substitution, the correct one would be $x=5\sec\theta$. $$\begin{align} \int \frac{dx}{x^2-25} &=…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114397
+se-link: https://math.stackexchange.com/questions/1114382/trig-substitution-integral-question/1114397#1114397
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- trigonometry
+- indefinite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trig Substitution Integral Question](https://math.stackexchange.com/questions/1114382/trig-substitution-integral-question), asked by [Sherbs](https://math.stackexchange.com/users/138002/sherbs) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My class is going over trig substitution, but I can't figure this one out, mostly because it's not in the correct form. Could someone help explain how to set up this problem?
+>
+> $$\int \frac {1}{x^2-25} dx$$
+:::
+
+If you insist on using trigonometric substitution, the correct one would be $x=5\sec\theta$.
+$$\begin{align*}
+\int \frac{dx}{x^2-25} &= \int\frac{\color{red}{5}\sec\theta\color{red}{\tan\theta}\,d\theta}{\color{red}{25\tan^2\theta}} = \frac{1}{5}\int\frac{\sec\theta}{\tan\theta}\,d\theta \\
+&= \frac{1}{5}\int \csc\theta\,d\theta \\
+&= -\frac{1}{5}\ln\left|\csc\theta + \cot\theta\right| + C \\
+\end{align*}$$
+Drawing a right triangle with base angle $\theta$, hypotenuse $x$ and adjacent side $5$ (so that $\sec\theta = \frac{x}{5})$, we see that the opposite side must have length $\sqrt{x^2-25}$, so $\csc\theta = \frac{x}{\sqrt{x^2-25}}$ and $\cot\theta = \frac{5}{\sqrt{x^2-25}}$  
+Therefore
+$$\begin{align*}
+-\frac{1}{5}\ln\left|\csc\theta + \cot\theta\right| + C
+&= -\frac{1}{5}\ln\left|\frac{x}{\sqrt{x^2-25}} + \frac{5}{\sqrt{x^2-25}}\right| + C \\
+&= -\frac{1}{5}\ln\left|\frac{x+5}{\sqrt{x^2-25}}\right| + C \\
+&= -\frac{1}{5}\left(\ln\left|{x+5}\right|-\ln\left|{\sqrt{x^2-25}}\right|\right) + C \\
+\\
+&= -\frac{1}{5}\left(\ln\left|x+5\right|-\ln\left|\sqrt{x-5}\sqrt{x+5}\right|\right) + C \\
+\\
+&= -\frac{1}{5}\left(\ln\left|x+5\right|-\ln\left|\sqrt{x-5}\right|-\ln\left|\sqrt{x+5}\right|\right) + C \\
+\\
+&= -\frac{1}{5}\left(\ln\left|x+5\right|-\frac{1}{2}\ln\left|{x-5}\right|-\frac{1}{2}\ln\left|{x+5}\right|\right) + C \\
+\\
+&= -\frac{1}{5}\left(\frac{1}{2}\ln\left|x+5\right|-\frac{1}{2}\ln\left|{x-5}\right|\right) + C \\
+\\
+&= \frac{1}{10}\left(\ln|x-5| - \ln|x+5|\right) +C
+\end{align*}$$
+
+This is definitely not the most straightforward solution but it's nice to know there's so inconsistency with the choice.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114382/trig-substitution-integral-question/1114397#1114397) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

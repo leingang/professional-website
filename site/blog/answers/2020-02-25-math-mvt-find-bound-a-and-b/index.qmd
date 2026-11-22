@@ -1,0 +1,53 @@
+---
+title: MVT Find bound A and B
+date: '2020-02-25'
+description: By the Mean Value Theorem, $$f(4) = f(0) + f'(t)\cdot 4$$ where $t$ is some number in the open interval $(0,4)$. Since $f'(x) = \frac{1}{2+x}$, we know that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3560307
+se-link: https://math.stackexchange.com/questions/3560277/mvt-find-bound-a-and-b/3560307#3560307
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- indefinite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[MVT Find bound A and B](https://math.stackexchange.com/questions/3560277/mvt-find-bound-a-and-b), asked by user733699 on Mathematics Stack Exchange (2020-02-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My friend threw this problem a few days ago, I don't recall the MVT ... could someone help me?
+>
+> Suppose that  $f'(x)=\frac{1}{2+x}$  and  $f(0)=2$.
+>
+> What bounds A and B, $A<f(4)<B$ come directly from the **MVT**?
+>
+> (Answers should be written as fractions)
+>
+> PD: I know I have been posting a lot of stuff, these questions have been sitting on my desk some months know and I am just excited to use this platform
+:::
+
+By the Mean Value Theorem,
+$$f(4) = f(0) + f'(t)\cdot 4$$
+where $t$ is some number in the open interval $(0,4)$.  Since $f'(x) = \frac{1}{2+x}$, we know that for all $t\in (0,4)$,
+$$\frac{1}{6} < f'(t) < \frac{1}{2}$$
+Therefore,
+$$2 + \frac{1}{6} \cdot 4 < f(4)  < 2 + \frac{1}{2} \cdot 4 
+\implies \frac{8}{3} < f(4) < 4$$
+
+* * *
+
+I kind of agree with Fareed; the MVT is not the right tool for this job since $f(x)$ can be found directly from $f'(x)$.  But this is the technique used to estimate $f(x)$ when you know information about (e.g., upper and lower bounds of)  $f'(x)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3560277/mvt-find-bound-a-and-b/3560307#3560307) on Mathematics Stack Exchange, 2020-02-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

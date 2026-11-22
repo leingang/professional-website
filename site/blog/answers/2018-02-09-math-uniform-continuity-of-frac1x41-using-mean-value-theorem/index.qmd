@@ -1,0 +1,44 @@
+---
+title: Uniform continuity of $\frac{1}{x^4+1}$ using mean value theorem
+date: '2018-02-09'
+description: For every pair $x,y$, there is a point $s$ between them such that $$g(x) - g(y) = g'(s)(x-y) \implies |g(x)-g(y)| = |g'(s)| |x-y|$$ If you can show that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2643672
+se-link: https://math.stackexchange.com/questions/2643658/uniform-continuity-of-frac1x41-using-mean-value-theorem/2643672#2643672
+se-score: 4
+se-accepted: false
+se-tags:
+- real-analysis
+- uniform-continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Uniform continuity of $\frac{1}{x^4+1}$ using mean value theorem](https://math.stackexchange.com/questions/2643658/uniform-continuity-of-frac1x41-using-mean-value-theorem), asked by [SABOY](https://math.stackexchange.com/users/512018/saboy) on Mathematics Stack Exchange (2018-02-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $g: \mathbb R \to \mathbb R$ and $g(x)=\frac{1}{x^4+1}$.
+>
+> I am required to prove that $g$ is uniformly continuous on $\mathbb R$ using the mean value theorem.
+>
+> My path: Let $x,y \in \mathbb R, x<y$ and using the MVT we find an $s\in ]x,y[$ so that $|f'(s)|=|\frac{f(y)-f(x)}{y-x}|$. This then turns into:
+>
+> $$\left|-\frac{4s^3}{(1+s^4)^2}\right||y-x|=\left|\frac{x^4-y^4}{(y^4+1)(x^4+1)}\right|$$
+>
+> and this is where I am stuck, I cannot seem to find an appropriate inequality that leads into $|y-x|<\delta$. Any help would be greatly appreciated.
+:::
+
+For every pair $x,y$, there is a point $s$ between them such that
+$$g(x) - g(y) = g'(s)(x-y) \implies |g(x)-g(y)| = |g'(s)| |x-y|$$
+If you can show that $|g'(t)| \leq M$ for all $t \in \mathbb{R}$, for some $M$, then $\delta = \frac{\epsilon}{M}$ will do.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2643658/uniform-continuity-of-frac1x41-using-mean-value-theorem/2643672#2643672) on Mathematics Stack Exchange, 2018-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

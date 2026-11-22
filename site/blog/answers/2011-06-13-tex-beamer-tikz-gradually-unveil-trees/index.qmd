@@ -1,0 +1,64 @@
+---
+title: 'beamer & TikZ: gradually unveil trees'
+date: '2011-06-13'
+description: 'My correspondent''s advice is the best workaround that I can think of:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 20604
+se-link: https://tex.stackexchange.com/questions/20597/beamer-tikz-gradually-unveil-trees/20604#20604
+se-score: 4
+se-accepted: false
+se-tags:
+- tikz-pgf
+- beamer
+- trees
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[beamer & TikZ: gradually unveil trees](https://tex.stackexchange.com/questions/20597/beamer-tikz-gradually-unveil-trees), asked by [Fred](https://tex.stackexchange.com/users/6095/fred) on TeX Stack Exchange (2011-06-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Imagine a simple tree:
+>
+> ```latex
+> \begin{tikzpicture}
+>     \node {Selbstregulation}
+>     [edge from parent fork down]
+>     child {node {Kognition}}
+>     child {node {Metakognition}
+>       child {node {Planung}}
+>       child {node {Monotoring}}
+>       child {node {Regulation}}
+>     }
+> \end{tikzpicture}
+> ```
+>
+> Is it possible to unveil the child nodes step by step using overlays in beamer? I tried with the `\onslide` command at several positions around `child`, but it doesn't work...
+>
+> Any hints? - Thanks.
+:::
+
+[I have been told this is not possible][1].  [The package author wrote in 2005 that it wasn't][2].  If the ability has been added I do not know of it.
+
+  [1]: http://osdir.com/ml/tex.latex.beamer.general/2007-02/msg00029.html
+  [2]: http://comments.gmane.org/gmane.comp.tex.latex.beamer.general/432
+
+My correspondent's advice is the best workaround that I can think of:
+
+> To get the same effect, you may want
+> to try drawing the final figure and
+> then work backwards, making this
+> invisible by making them have the same
+> color as the background or
+> transparent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/20597/beamer-tikz-gradually-unveil-trees/20604#20604) on TeX Stack Exchange, 2011-06-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

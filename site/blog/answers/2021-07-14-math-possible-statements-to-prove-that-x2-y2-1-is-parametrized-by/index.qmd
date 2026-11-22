@@ -1,0 +1,37 @@
+---
+title: Possible statements to prove that $x^2 + y^2 =1$ is parametrized by $f(t) = \langle \cos t, \sin t \rangle$
+date: '2021-07-14'
+description: In many courses, the circle functions are defined by this very relation. For any $t$ between $0$ and $2\pi$, $\cos t$ is the $x$-coordinate of the point on the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4198488
+se-link: https://math.stackexchange.com/questions/4198473/possible-statements-to-prove-that-x2-y2-1-is-parametrized-by-ft-lan/4198488#4198488
+se-score: 1
+se-accepted: false
+se-tags:
+- analytic-geometry
+- circles
+- parametrization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Possible statements to prove that $x^2 + y^2 =1$ is parametrized by $f(t) = \langle \cos t, \sin t \rangle$](https://math.stackexchange.com/questions/4198473/possible-statements-to-prove-that-x2-y2-1-is-parametrized-by-ft-lan), asked by [shintuku](https://math.stackexchange.com/users/755010/shintuku) on Mathematics Stack Exchange (2021-07-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to find a meaningful mathematical statement to prove that would correspond to what we intuitively mean when we say "the graph of $x^2 + y^2 =1$ is identical to the graph of $f(t) = \langle \cos t, \sin t \rangle$", or "any point in the former's graph is also a point in the latter's graph". I'm wondering if establishing the following statement would indeed tell us that there is a perfect correspondence between the two: $\{ x,y: \forall t \in \mathbb{R}, x = \cos t \land y = \sin t \}$ is a solution for $x^2 + y^2 = 1$. 
+>
+> Is this properly stated? Would there be another way to state it more exactly to achieve the aim of establishing an "identity" between $x^2 + y^2 = 1$ and $f(t) = \langle \cos t, \sin t \rangle$, e.g. do we usually mean something else by "is parametrized by"? Any tips and help on this question are highly appreciated!
+:::
+
+In many courses, the circle functions are defined by this very relation.  For any $t$ between $0$ and $2\pi$, $\cos t$ is the $x$-coordinate of the point on the unit circle measuring $t$ radians counterclockwise from $(1,0)$, and $\sin t$ is the $y$-coordinate of the same point.  In this situation, the only justification I would look for is “By definition.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4198473/possible-statements-to-prove-that-x2-y2-1-is-parametrized-by-ft-lan/4198488#4198488) on Mathematics Stack Exchange, 2021-07-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

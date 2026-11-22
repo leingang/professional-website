@@ -1,0 +1,175 @@
+---
+title: Representing linguistic text annotations in LaTeX
+date: '2011-05-11'
+description: I love this question and spent far too much time thinking about how to answer it. I think what you need are some good symbols to use in place of the…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17974
+se-link: https://tex.stackexchange.com/questions/17913/representing-linguistic-text-annotations-in-latex/17974#17974
+se-score: 10
+se-accepted: false
+se-tags:
+- highlighting
+- overlays
+- examples
+- text-manipulation
+- linguistics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Representing linguistic text annotations in LaTeX](https://tex.stackexchange.com/questions/17913/representing-linguistic-text-annotations-in-latex), asked by [Ken Bloom](https://tex.stackexchange.com/users/1846/ken-bloom) on TeX Stack Exchange (2011-05-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm writing a document describing the semantics of opinion phrases in English, and in order to do so, I'm annotating particular spans of text as having particular semantic functions within the opinion. So far, my results look something like this (with the TeX code that typesets each one underneath).
+>
+> ![Example #31][q-1]
+>
+> ```latex
+> \enumsentence{
+>     \target{The Lost World}
+>     was a 
+>     \comparator{\attitude{better}}
+>     \superordinate[1]{book}
+>     \comparatorthan{than}
+>     \superordinate[2]{movie}.
+> }
+> ```
+>
+> ![Example #34][q-2]
+>
+> ```latex
+> \enumsentence{
+>     \evaluator{I} thought
+>     \target[1]{they} were 
+>     \comparator{less} \attitude{controversial} \comparatorthan{than}
+>     \target[2]{the ones I mentioned above}.
+> }
+> ```
+>
+>
+> ![Example #42][q-3]
+>
+> ```latex
+> \enumsentence{
+>     \target{A real rav muvhak ends up knowing you very well,
+>     very intimately one might say} 
+>     - in a way that I am not sure is actually 
+>     \attitude{very appropriate} 
+>     or easy to negotiate 
+>     \aspect{when the sexes differ}.
+> }
+> ```
+>
+>
+>   [q-1]: nNp9b.png
+>   [q-2]: qU659.png
+>   [q-3]: GYN4n.png
+>
+>
+> The different annotation commands `\target`, `\attitude`, `\aspect`, `\superordinate`, and `\comparatorthan` are all defined to set the formatting to italic or bold-italic text, surround the text that's annotated in brackets and place the annotation name in subscript outside the brackets.
+>
+> The problem is that I don't really like this notation. The subscript annotation names make it hard to easily identify the words in the sentence, and long annoation names have the tendency to cause overfull hboxes. Overlapping annotations are also not as nice as they could be.
+>
+> So here's my request. Can you all think of more creative, nicer ways to present the same information?
+>
+> Note: preferably I'd like to do this by only redefining the annotation commands (and not changing the commands found in the 100 or so examples that are in this document already). Also, annotations are supposed to overlap in some cases, like in example 31, so any solution needs to account for that. Also note that in example 42, one of the annotations has to wrap.
+:::
+
+I love this question and spent far too much time thinking about how to answer it.  I think what you need are some good symbols to use in place of the annotations. Then you can subscript with them instead.  Also, I think underlining rather than bracketing will set off the annotated text a little better.
+
+I found a wavy underline under an `\attitude` made sense, and everything else a regular underline.  Having graphed these comparison statements, it seems that the attitude is really the central thing in the statement.  Also, if the attitude is included in the comparator as in *better* (which is our way of saying "more good"), the two decorations live together in peace.
+
+For `\target`, I thought about a circle with a dot (like a target symbol).  In the case of multiple targets, the optional argument can go inside the circle instead of the dot.
+
+For `\superordinate` I thought a box looked nice, modified as `\target` in the case of an optional argument.
+
+It seems that `\comparator` and `\comparatorthan` go hand in hand, and together denote a comparison, so I chose `<` for one and `>` for the other.
+
+For `\evaluator` I chose a smiley to mean a person, but any symbol indicating an “agent” could work. 
+
+For `\aspect` I originally had `?` because the aspect seems to be the answer to a question like *when?* or *how?*  Then I changed it to `*` because of it use in footnotes to make a qualification.
+
+I don't have to change the interface you've already used.  Here's my implementation:
+
+```latex
+\documentclass{article}
+% TEX.SE \url{http://tex.stackexchange.com/q/17913/1402}
+\usepackage{ulem}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathabx}
+\usepackage{wasysym}
+
+\newdimen\supsymwidth
+\newdimen\supsymheight
+\newdimen\tgtsymwidth
+\setbox0=\hbox{$_\bigboxvoid$}
+\supsymwidth=\wd0
+\supsymheight=\ht0
+\setbox0=\hbox{$_\bigovoid$}
+\tgtsymwidth=\wd0
+
+\newcommand{\supsym}[1]{%
+  \mathrlap{\bigboxvoid}
+  \raisebox{0.5pt}{\hbox to \supsymwidth{\hfill{\tiny#1}\hfill}}
+}
+
+\newcommand{\tgtsym}[1]{
+  \mathrlap{\bigovoid}
+  \raisebox{0.5pt}{\hbox to \supsymwidth{\hfill{\tiny#1}\hfill}}
+}
+
+\newcommand{\enumsentence}[1]{\begin{quotation}#1\end{quotation}}
+\newcommand{\evaluator}[1]{\uline{#1}$_{\smiley}$}
+\newcommand{\target}[2][\relax]{\uline{#2}$_{\ifx#1\relax\bigodot\else\tgtsym{#1}\fi}$}
+\newcommand{\comparator}[1]{#1$_{<}$}
+\newcommand{\comparatorthan}[1]{#1$_{>}$}
+\newcommand{\superordinate}[2][\relax]{#2$_{\ifx#1\relax\bigovoid\else\supsym{#1}\fi}$}
+\newcommand{\attitude}[1]{\uwave{#1}}
+\newcommand{\aspect}[1]{\uline{#1}$_{\ast}$}
+
+\begin{document}
+
+\enumsentence{
+    \target{The Lost World}
+    was a 
+    \comparator{\attitude{better}}
+    \superordinate[1]{book}
+    \comparatorthan{than}
+    \superordinate[2]{movie}.
+}
+
+\enumsentence{
+    \evaluator{I} thought
+    \target[1]{they} were 
+    \comparator{less} \attitude{controversial} \comparatorthan{than}
+    \target[2]{the ones I mentioned above}.
+}
+
+\enumsentence{
+    \target{A real rav muvhak ends up knowing you very well,
+    very intimately one might say}---in a way that I am not sure is actually 
+    \attitude{very appropriate} 
+    or easy to negotiate 
+    \aspect{when the sexes differ}.
+}
+
+\end{document}
+```
+
+![sample code output][1]
+
+  [1]: tl4IC.png
+
+I've also thought about using `tikz` to graph these opinion phrases, but that's not what you asked for.  Maybe another answer at another time. `:-)`
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17913/representing-linguistic-text-annotations-in-latex/17974#17974) on TeX Stack Exchange, 2011-05-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

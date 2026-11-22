@@ -1,0 +1,49 @@
+---
+title: Does this uncountable set of $\mathbb{R}\times\mathbb{R}$ contain a dense set?
+date: '2017-11-02'
+description: I would appeal to the major theorems about continuous functions on closed and bounded intervals. For instance, there must be points $a$ and $b$ with $a < b$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2501817
+se-link: https://math.stackexchange.com/questions/2501794/does-this-uncountable-set-of-mathbbr-times-mathbbr-contain-a-dense-set/2501817#2501817
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- metric-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does this uncountable set of $\mathbb{R}\times\mathbb{R}$ contain a dense set?](https://math.stackexchange.com/questions/2501794/does-this-uncountable-set-of-mathbbr-times-mathbbr-contain-a-dense-set), asked by [user398623](https://math.stackexchange.com/users/398623/user398623) on Mathematics Stack Exchange (2017-11-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I tried to find a different solution of the following problem:
+> If $f$ is a function from $\mathbb{R}$ to $\mathbb{R}$, such that $f$ attains every value exactly twice, $f$ cannot be continuous.
+>
+> **My attempt:** $f:\mathbb{R} \to \mathbb{R}$, let $g:\mathbb{R}\times\mathbb{R} \to \mathbb{R}$, $g(x,y)=f(x)-f(y)$. Let $f$ is continuous, then so is $g$. As $f$ attains every value exactly twice $f$ can't be constant, and as $f$ is continuous, $f$ is uncountable. Thus there are uncountably many pairs of points $(x,y)$ such that $f(x)=f(y)$. Thus $g$ sends uncountably many points of $\mathbb{R}\times\mathbb{R}$ to $0$. Now if every uncountable set of $\mathbb{R}$ contains a dense set, then $g$ sends a dense set to $\{0\}$. Thus $g$ is $0$. But then $f$ is constant, contradiction. Thus $f$ isn't continuous.
+>
+> **So the real problem**: Is it true that this uncountable set contains a set, dense in $\mathbb{R}\times\mathbb{R}$?
+:::
+
+I would appeal to the major theorems about continuous functions on closed and bounded intervals.  For instance, there must be points $a$ and $b$ with $a < b$ and $f(a) = f(b) = 0$.  Let $M$ and $m$ be the maximum and minimum values of $f$ on $[a,b]$.  Either $M > 0$ or $m < 0$ (otherwise $f$ is constant, which would be a contradiction); assume without loss of generality that $M > 0$.
+
+There exists $c$ in $(a,b)$ such that $f(c) = M$.  Then there exist $d$ and $e$ such that $a < d < c < e < b$ and $f(d) = f(e) = M/2$.
+
+There must be a second point $p$ with $f(p) = M$.  Cases:
+
+1. If $p < a$, then there is a third point $q$ with $p < q < a$ and $f(q) = M/2$.
+2. If $p > b$, then there is a third point $q$ with $b < q < p$ and $f(q) = M/2$.
+3. If $a < p < b$ <s>then $f$ is constant on the interval between $c$ and $p$</s>, $f$ has a minimum $m'$ between $c$ and $p$.  Assume $p < c$; then we can find four points $r_1$, $r_2$, $r_3$, and $r_4$ such that $a < r_1 < p < r_2 < r_3 < c < r_4$ and $f(r_i) = (M+m')/2$.
+
+These all contradict the assumption that each value has exactly two points in its preimage.  OK, that's ugly; but perhaps you can simplify it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2501794/does-this-uncountable-set-of-mathbbr-times-mathbbr-contain-a-dense-set/2501817#2501817) on Mathematics Stack Exchange, 2017-11-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,85 @@
+---
+title: Is it possible to make a macro sensitive to \\?
+date: '2011-03-13'
+description: 'I''m not sure if you''re still interested in an answer, but assuming the following things about your question:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13303
+se-link: https://tex.stackexchange.com/questions/13284/is-it-possible-to-make-a-macro-sensitive-to/13303#13303
+se-score: 8
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to make a macro sensitive to \\?](https://tex.stackexchange.com/questions/13284/is-it-possible-to-make-a-macro-sensitive-to), asked by [kloop](https://tex.stackexchange.com/users/1970/kloop) on TeX Stack Exchange (2011-03-12; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have the following macro:
+>
+> ```latex
+>    \newcommand{\INFERRULE}[3][]{%
+>    \ensuremath{\inferrule{\mathstrut #2}{\mathstrut #3}\ifx\\#1\\\else\enskip(#1)\fi}}
+> ```
+>
+> I want to make it sensitive to `\\` so that I can write commands such as:
+>
+> ```latex
+>    \[
+>    \INFERRULE[i \to j]{[i, i, j, k] \\ [i, k, j, j]}{[i, i, k, j]}
+>    \]
+> ```
+>
+> However, the way I defined the macro, it is ignoring the `\\`. Is there a way to fix it?
+:::
+
+I'm not sure if you're still interested in an answer, but assuming the following things about your question:
+
+ - You are using the [`mathpartir`](http://cristal.inria.fr/~remy/latex/) package which provides the `\inferrule` macro
+
+ - You would like to have multi-line premises
+
+it seems easy to do.  The `mathpartir` documentation says
+
+> A newline can be forced by adding an empty line `\\\\`
+>
+>     \inferrule {aa \\\\ bb} {dd \\ ee \\ ff}
+> 
+
+Since your `\INFERRULE` is a just a wrap-around for `\inferrule` you can do the same thing.  Here is a working example:
+
+```latex
+\documentclass{article}
+\usepackage{mathpartir}
+\newcommand{\INFERRULE}[3][]{%
+\ensuremath{\inferrule{\mathstrut #2}{\mathstrut #3}\ifx\\#1\\\else\enskip(#1)\fi}}
+\begin{document}
+\[
+   \INFERRULE[i \to j]
+   		{[i, i, j, k] \\ [i, k, j, j]}
+		{[i, i, k, j]}
+\]
+\[
+	\INFERRULE[i \to j]
+		{[i, i, j, k] \\\\ [i, k, j, j]}
+		{[i, i, k, j]}
+\]    
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: AOqZF.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13284/is-it-possible-to-make-a-macro-sensitive-to/13303#13303) on TeX Stack Exchange, 2011-03-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

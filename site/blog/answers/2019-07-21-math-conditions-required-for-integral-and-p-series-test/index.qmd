@@ -1,0 +1,41 @@
+---
+title: Conditions required for integral and p-series test
+date: '2019-07-21'
+description: 1. The series can start at any number. One of my calculus teachers used to say “convergence is a tail phenomenon.” What really matters is what happens on the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3299403
+se-link: https://math.stackexchange.com/questions/3299402/conditions-required-for-integral-and-p-series-test/3299403#3299403
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Conditions required for integral and p-series test](https://math.stackexchange.com/questions/3299402/conditions-required-for-integral-and-p-series-test), asked by [Carlos Bacca](https://math.stackexchange.com/users/565964/carlos-bacca) on Mathematics Stack Exchange (2019-07-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> to use the integral test on a series $$\sum_{}^{} a_n$$
+>
+> then if $f(n)=a_n$ and $f(x)$ is a positive continuous function and eventually decreasing then you can you the integral test. These are the conditions i found for this test, my question is does the series have to start at $n=1$ for you to apply it or can it start at any point as long as the function is positive and continuous on that interval and eventually decreasing?
+>
+> Secondly, for the p-series test, to apply this does the series have to start at positive n because $1/x^p$ will be undefined when the series goes through 0?
+>
+> Thanks
+:::
+
+1. The series can start at any number.  One of my calculus teachers used to say “convergence is a tail phenomenon.”  What really matters is what happens on the infinite side.  The word *eventually* in your paraphrase of the integral test is there for the same reason.
+
+2. You can't sum a series if one of its terms is undefined, so yes, the series $\sum \frac{1}{n^p}$ must skip $n=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3299402/conditions-required-for-integral-and-p-series-test/3299403#3299403) on Mathematics Stack Exchange, 2019-07-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,42 @@
+---
+title: Bijection between sets and complements
+date: '2019-09-27'
+description: Based on the comments I think the question has been answered collectively by fleablood, CoffeeArabica, and me.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3372351
+se-link: https://math.stackexchange.com/questions/3371274/bijection-between-sets-and-complements/3372351#3372351
+se-score: 2
+se-accepted: false
+se-tags:
+- functions
+- elementary-set-theory
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Bijection between sets and complements](https://math.stackexchange.com/questions/3371274/bijection-between-sets-and-complements), asked by user643073 on Mathematics Stack Exchange (2019-09-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose $f: A\rightarrow B$ is a bijection. For $A,B \subseteq C$. Show that a bijective map $h: C\setminus A \rightarrow C\setminus B$ exists.
+>
+> I'm not sure how to proceed, may I have a hint please?
+:::
+
+Based on the comments I think the question has been answered collectively by fleablood, CoffeeArabica, and me.
+
+**If $C$ is finite, the conjecture is true.** To show that a bijection exists between $C \setminus A$ and $C \setminus B$, it suffices to show the sets have the same cardinality.  Since $A$ and $B$ are bijective, $|A| = |B|$.  Therefore
+$$\left|C \setminus A\right| = |C| - |A| = |C| - |B| = \left|C \setminus B\right|$$
+
+**If $C$ is infinite, the conjecture is false.**  For a counterexample, let $A = 2\mathbb{Z}$ and $B=C=\mathbb{Z}$.  Let $f \colon A \to B$ be the map $x \mapsto \frac{1}{2}x$, a bijection.    Then $C \setminus A$ is the set of odd integers (which is infinite), and $C \setminus B$ is the empty set.  Therefore a bijection between these complements is impossible.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3371274/bijection-between-sets-and-complements/3372351#3372351) on Mathematics Stack Exchange, 2019-09-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

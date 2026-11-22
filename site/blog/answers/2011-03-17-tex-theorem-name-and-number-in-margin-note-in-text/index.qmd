@@ -1,0 +1,205 @@
+---
+title: Theorem name and number in margin, note in text
+date: '2011-03-17'
+description: Thanks to Phil and Gonzalo for their answers. I took aspects from both, so don't vote my answer up without voting theirs up too.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13741
+se-link: https://tex.stackexchange.com/questions/13578/theorem-name-and-number-in-margin-note-in-text/13741#13741
+se-score: 4
+se-accepted: false
+se-tags:
+- theorems
+- amsthm
+- thmtools
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Theorem name and number in margin, note in text](https://tex.stackexchange.com/questions/13578/theorem-name-and-number-in-margin-note-in-text), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2011-03-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm using `thmtools` to make ultra-fancy theorems.  I would like the Theorem name and number (e.g., "Theorem 1") to jut out into the left margin of the text, and the note (e.g., "The Fundamental Theorem of Calculus" be in the regular text.  But I can't get the alignment quite right.  Here is a minimal example:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{amsmath}
+> \usepackage{amsthm}
+> \usepackage{amssymb}
+> \usepackage{thmtools}
+>
+> \pagestyle{empty}
+>
+> \declaretheoremstyle[
+> 	headfont=\bfseries,
+> 	notefont=\normalfont,
+>  	bodyfont=\itshape,
+> 	headpunct=\newline,
+> 	headformat={%
+> 		\makebox[0pt][r]{\NAME\ \NUMBER\ }{\NOTE}%
+> 	},
+> ]{theorem}
+>
+> \declaretheorem[style=theorem]{theorem}
+>
+>
+> % I need to undeclare the proof environment that amsthm provides but I can't use \renewenvironment
+> \let\proof\relax
+> \let\endproof\relax
+>
+> \declaretheoremstyle[
+> 	headfont=\scshape,
+> 	notefont=\itshape
+>  	bodyfont=\normalfont,
+> 	headpunct=\relax,
+> 	headformat={%
+> 		\makebox[0pt][r]{\NAME\ }\NOTE},
+> ]{proof}
+>
+> \declaretheorem[
+> 	style=proof,
+> 	qed=\qedsymbol]{proof}
+>
+>
+>
+> \begin{document}
+>
+> \begin{theorem}[The Fundamental Theorem of Calculus]
+> Let $f$ be an integrable function on $[a,b]$ and define
+> \[
+> 	g(x) = \int_a^x f(t) \,dt.
+> \]
+> If $f$ is continuous at $x$ in $(a,b)$, then $g$ is differentiable at $x$ and
+> \[
+> 	g'(x) = f(x).
+> \] 
+> \end{theorem}
+>
+> \begin{proof}
+> Let $h>0$ be given so that $x+h < b$ (The case $h<0$ is treated similarly).  We have
+> \[
+> 	\frac{g(x+h) - g(x)}{h} =   \frac{1}{h} \int_x^{x+h} f(t)\,dt.
+> \]
+> Let $M_h$ be the maximum value of $f$ on $[x,x+h]$, and let $m_h$ the minimum value of $f$ on $[x,x+h]$.  We have
+> \[
+> 	m_h \cdot h \leq \int_x^{x+h}f(t)\,dt \leq M_h \cdot h
+> \]
+> So
+> \[
+> 	m_h \leq \frac{g(x+h) - g(x)}{h} \leq M_h.
+> \]
+> Since $f$ is continuous at $x$, as $h\to 0$, both $m_h$ and $M_h$ tend to $f(x)$. 
+> \end{proof}
+>
+>
+> \end{document}
+> ```
+>
+> ![sample code output][q-1]
+>
+> As you can see, the note is too far to the right. And in the `proof` environment, there is no note, but the text begins too far to the right as well.
+>
+> What's putting the extra space in there and how can I get rid of it?
+>
+> **Edit** Scroll down to my answer to see how I solved it.  I accepted Phil's answer because it's less hacky than Gonzalo's (did not involve `@`) and got me closest to the result I wanted.
+>
+>   [q-1]: FpJvg.png
+:::
+
+Thanks to Phil and Gonzalo for their answers.  I took aspects from both, so *don't vote my answer up without voting theirs up too*.
+
+I used both Gonzalo's suggestion to adjust `postheadspace` (to `0pt`) in the `proof` environment, and Phil's suggestion to “backspace.”  Rather than use a global variable as Phil did, I used a temporary box so that the negative interword space would be the same width as the interword space in the theorem's head font.  If there is another way or existing macro which does the same thing, let me know.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{thmtools}
+
+\pagestyle{empty}
+
+
+\declaretheoremstyle[
+	headfont=\bfseries,
+	notefont=\normalfont,
+ 	bodyfont=\itshape,
+	headpunct=\newline,
+	headformat={%
+		\makebox[0pt][r]{\NAME\ \NUMBER\ }\setbox0\hbox{\ }\hspace{-\the\wd0}\NOTE%
+	},
+]{theorem}
+
+\declaretheorem[style=theorem]{theorem}
+
+
+% I need to undeclare the proof environment that amsthm provides but I can't use \renewenvironment
+\let\proof\relax
+\let\endproof\relax
+
+
+\declaretheoremstyle[
+	headfont=\scshape,
+	notefont=\itshape,
+ 	bodyfont=\normalfont,
+	headpunct={},
+	postheadspace={0pt},
+	headformat={%
+		\makebox[0pt][r]{\NAME\ }\setbox0\hbox{\ }\hspace{-\the\wd0}\NOTE},
+]{proof}
+
+\declaretheorem[
+	style=proof,
+	qed=\qedsymbol
+]{proof}
+
+
+
+\begin{document}
+
+\begin{theorem}[The Fundamental Theorem of Calculus]
+Let $f$ be an integrable function on $[a,b]$ and define
+\[
+	g(x) = \int_a^x f(t) \,dt.
+\]
+If $f$ is continuous at $x$ in $(a,b)$, then $g$ is differentiable at $x$ and
+\[
+	g'(x) = f(x).
+\] 
+\end{theorem}
+
+\begin{proof}
+Let $h>0$ be given so that $x+h < b$ (The case $h<0$ is treated similarly).  We have
+\[
+	\frac{g(x+h) - g(x)}{h} =   \frac{1}{h} \int_x^{x+h} f(t)\,dt.
+\]
+Let $M_h$ be the maximum value of $f$ on $[x,x+h]$, and let $m_h$ the minimum value of $f$ on $[x,x+h]$.  We have
+\[
+	m_h \cdot h \leq \int_x^{x+h}f(t)\,dt \leq M_h \cdot h
+\]
+So
+\[
+	m_h \leq \frac{g(x+h) - g(x)}{h} \leq M_h.
+\]
+Since $f$ is continuous at $x$, as $h\to 0$, both $m_h$ and $M_h$ tend to $f(x)$. 
+\end{proof}
+\end{document}
+```
+
+![solved output][2]
+
+It still doesn't look great with notes in the `proof` environment.  I think there's another hard-coded space.  
+
+I'm looking forward to Ulrich's update. :-)
+
+  [2]: KCkIT.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13578/theorem-name-and-number-in-margin-note-in-text/13741#13741) on TeX Stack Exchange, 2011-03-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

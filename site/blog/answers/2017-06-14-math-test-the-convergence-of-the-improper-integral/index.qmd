@@ -1,0 +1,40 @@
+---
+title: Test the convergence of the improper integral
+date: '2017-06-14'
+description: 'Your solution is correct. Let me describe some intuition: As $x\to 1^-$, the numerator of the integrand tends to $1$ while the denominator tends to zero. Since…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2322310
+se-link: https://math.stackexchange.com/questions/2322296/test-the-convergence-of-the-improper-integral/2322310#2322310
+se-score: 2
+se-accepted: true
+se-tags:
+- integration
+- convergence-divergence
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Test the convergence of the improper integral](https://math.stackexchange.com/questions/2322296/test-the-convergence-of-the-improper-integral), asked by [Shiladitya Bose](https://math.stackexchange.com/users/74476/shiladitya-bose) on Mathematics Stack Exchange (2017-06-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to test the convergence of the integral $$\int_{0}^{1} \frac{x^n}{1-x} dx$$
+>
+> Now, $f(x) = \frac{x^n}{1-x}$ and it has point of infinite discontinuity at $x = 1$ .
+> If we do the $\mu$ test, then, $$\lim_{x\to1} (1-x)^{1} \frac{x^n}{1-x} = 1$$ which is finite and non-zero. Here, $\mu = 1$ but the condition of convergence of the integral is $0<\mu<1$ , and here, since $\mu = 1$ , the integral diverges. I do not have a solution and this is all that I derived. Is my approach correct? If not, then what is?
+:::
+
+Your solution is correct.  Let me describe some intuition:  As $x\to 1^-$, the numerator of the integrand tends to $1$ while the denominator tends to zero.  Since the denominator is $1-x$ and $x\to 1^-$, the fraction blows up at the same rate that $\frac{1}{u}$ does as $u\to 0^+$.  So we should use the divergence of $\int_0^1 \frac{1}{u}\,du$ to decide the divergence of $\int_0^1 \frac{x^n}{1-x}\,dx$.
+
+Now, to be more formal: Make the substitution $u=1-x$.  This transforms $\int_0^1 \frac{x^n}{1-x}\,dx$ to $\int_0^1 \frac{(1-u)^n}{u}\,du$.  Using the binomial theorem, the integrand simplifies to a polynomial in $u$, plus $\frac{1}{u}$.  There is no question that the polynomial part is integrable on $0 \leq u \leq 1$.  So the convergence of $\int_0^1 \frac{(1-u)^n}{u}\,du$ is equivalent to the convergence of $\int_0^1 \frac{1}{u}\,du$, and we know that this integral diverges.  Thus $\int_0^1 \frac{(1-u)^n}{u}\,du$ diverges, meaning that $\int_0^1 \frac{x^n}{1-x}\,dx$ diverges.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2322296/test-the-convergence-of-the-improper-integral/2322310#2322310) on Mathematics Stack Exchange, 2017-06-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

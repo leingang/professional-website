@@ -1,0 +1,121 @@
+---
+title: Ratio of the expression and the corresponding description fix in Beamer
+date: '2013-03-20'
+description: 'Here''s a working example:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103404
+se-link: https://tex.stackexchange.com/questions/103373/ratio-of-the-expression-and-the-corresponding-description-fix-in-beamer/103404#103404
+se-score: 5
+se-accepted: true
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Ratio of the expression and the corresponding description fix in Beamer](https://tex.stackexchange.com/questions/103373/ratio-of-the-expression-and-the-corresponding-description-fix-in-beamer), asked by [Jdbaba](https://tex.stackexchange.com/users/27653/jdbaba) on TeX Stack Exchange (2013-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to modify the display of my equation little bit. Below is the code which I used to show the ratio of two expressions and use a pointer for the descrption of the items. 
+>
+> I was able to show the expressions but I was wondering if it is possible to use them as a real fraction just like the expression we get while using `\frac` function.
+>
+> ```latex
+> \tikzstyle{na} = [baseline=-.5ex]
+>
+>
+> \begin{equation*}
+> a_i(t,x) =
+>         \tikz[baseline]{
+>             \node[fill=blue!20,anchor=base] (t1)
+>             {$ \tau C_i(t,x,\tau )\partial \tau$};
+>         } /
+>         \tikz[baseline]{
+>             \node[fill=red!20, ellipse,anchor=base] (t2)
+>             {$C_i(t,x,\tau) \partial \tau$};
+>         } 
+> \end{equation*}
+>
+>
+> \begin{itemize}[<+-| alert@+>]
+>  \item Coriolis acceleration
+>         \tikz[na] \node[coordinate] (n1) {};
+>     \item Transversal acceleration
+>         \tikz[na]\node [coordinate] (n2) {};
+> \end{itemize}
+>
+> % Now it's time to draw some edges between the global nodes. Note that we
+> % have to apply the 'overlay' style.
+> \begin{tikzpicture}[overlay]
+>         \path[->]<1-> (n1) edge [bend right] (t1);
+>         \path[->]<2-> (n2) edge [bend right] (t2);
+>
+> \end{tikzpicture}
+> ```
+>
+> The output of the above code is as follows:
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: fGmS0.png
+:::
+
+Here's a working example:
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\tikzstyle{na} = [baseline=-.5ex]
+\tikzstyle{every picture}=[remember picture]
+
+\begin{document}
+\begin{frame}
+\begin{equation*}
+a_i(t,x) =
+        \frac{
+        \tikz[baseline]{
+            \node[fill=blue!20,anchor=base] (t1)
+            {$ \tau C_i(t,x,\tau )\partial \tau$};
+        }}{
+        \tikz[baseline]{
+            \node[fill=red!20, ellipse,anchor=base] (t2)
+            {$C_i(t,x,\tau) \partial \tau$};
+        }} 
+\end{equation*}
+
+
+\begin{itemize}[<+-| alert@+>]
+ \item Coriolis acceleration
+        \tikz[na] \node[coordinate] (n1) {};
+    \item Transversal acceleration
+        \tikz[na]\node [coordinate] (n2) {};
+\end{itemize}
+
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+\begin{tikzpicture}[overlay]
+        \path[->]<1-> (n1) edge [bend left] (t1);
+        \path[->]<2-> (n2) edge [bend right] (t2);
+
+\end{tikzpicture}
+\end{frame}
+\end{document}
+```
+
+![sample image output][2]
+
+
+  [2]: PSmGD.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103373/ratio-of-the-expression-and-the-corresponding-description-fix-in-beamer/103404#103404) on TeX Stack Exchange, 2013-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

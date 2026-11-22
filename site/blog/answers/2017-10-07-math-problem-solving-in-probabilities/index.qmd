@@ -1,0 +1,90 @@
+---
+title: Problem solving in probabilities
+date: '2017-10-07'
+description: One the red box is matched, there is a probability of $\frac{1}{2}$ that the black box is also matched. So $$P(A1 \cap A2) =P (A2 \mid A1) P(A1) = \frac{1}{2}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2461400
+se-link: https://math.stackexchange.com/questions/2461385/problem-solving-in-probabilities/2461400#2461400
+se-score: 1
+se-accepted: true
+se-tags:
+- probability
+- probability-theory
+- problem-solving
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problem solving in probabilities](https://math.stackexchange.com/questions/2461385/problem-solving-in-probabilities), asked by [iamulya](https://math.stackexchange.com/users/488620/iamulya) on Mathematics Stack Exchange (2017-10-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a problem and a solution to it that I don't quite understand.
+>
+> Question: A monkey is to demonstrate that she recognizes colors by tossing one red, one black,
+> and one white ball into boxes of the same respective colors, one ball to a box. If the
+> monkey has not learned the colors and merely tosses one ball into each box at random,
+> find the probabilities of the following results:
+>
+> a. There are no color matches.
+>
+> b. There is exactly one color match.
+>
+> Solution:
+> This problem can be solved by listing sample points because only three balls are involved, but
+> a more general method will be illustrated. Define the following events: 
+>
+> A1: A color match occurs in the red box. 
+>
+> A2: A color match occurs in the black box. 
+>
+> A3: A color match occurs in the white box. 
+>
+> There are 3! = 6 equally likely ways of randomly tossing the balls into the
+> boxes with one ball in each box. Also, there are only 2! = 2 ways of tossing the balls into the
+> boxes if one particular box is required to have a color match. Hence,
+>
+> $P(A1) = P(A2) = P(A3)$ = 2/6 = 1/3
+>
+> Similarly it follows that,
+>
+> $P(A1 \cap\ A2) = P(A2 \cap\ A3) = P(A3 \cap\ A3) = P(A1 \cap\ A2 \cap\ A3)$ = 1/6 **(How?)**
+>
+> $\vdots$
+>
+> $P(exactly\,one\,match) = P(A1) + P(A2) + P(A3)−2[P(A1 \cap\ A2) + P(A1 \cap\ A3) + P(A2 \cap\ A3)] +3[P(A1 \cap\ A2 \cap\ A3)]$ 
+> **(How?)**
+>
+> Any explanation would be greatly appreciated!
+:::
+
+One the red box is matched, there is a probability of $\frac{1}{2}$ that the black box is also matched.  So
+$$P(A_1 \cap A_2) =P (A_2 \mid A_1) P(A_1) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$$
+
+The second line is an application of the [inclusion-exclusion principle][1] to three sets.  The event that exactly one of $A$ and $B$ occurs is $A \mathrel{\triangle} B = (A \cup B) \setminus(A\cap B)$.  First, prove that
+$$P(A \mathrel{\triangle} B) = P(A)+P(B)-2P(A\cap B)$$
+This is like 
+$$P(A \cup B) = P(A)+P(B)-P(A\cap B)$$
+where we subtract $P(A\cap B)$ to correct that fact that we over-counted the intersection by 1.  However, with $P(A \mathrel{\triangle} B)$ we don't want to count the intersection at all, so we subtract double the probability of the intersection.
+
+Apply this to three sets:
+$$\begin{align*}
+    P(A \mathrel{\triangle} (B\mathrel{\triangle} C))
+    &= P(A) + P(B \mathrel{\triangle} C) - 2 P(A \cap (B\mathrel{\triangle}C)) \\
+    &= P(A) + P(B) + P(C) - 2 P(B \cap C) - 2 P((A \cap B) \mathrel{\triangle} (A \cap C)) \\
+    &=  P(A) + P(B) + P(C) - 2 P(B \cap C) - 2 P(A \cap B) - 2 P(A \cap C) + 4 P(A \cap B \cap C)
+\end{align*}$$
+OK, except for three events, $A \mathrel{\triangle} (B \mathrel{\triangle} C)$ overcounts the three-fold intersection.  So we subtract it off again, giving the correct coefficient of $+3$ for $P(A \cap B \cap C)$.
+
+
+  [1]: https://math.stackexchange.com/questions/939279/proof-about-inclusion-exclusion-formula
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2461385/problem-solving-in-probabilities/2461400#2461400) on Mathematics Stack Exchange, 2017-10-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

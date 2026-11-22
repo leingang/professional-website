@@ -1,0 +1,57 @@
+---
+title: Can we stop looking at recommendation letters and rely purely on "objective" measurements during the admission process?
+date: '2017-10-04'
+description: The PageRank algorithm ranks a page as more authoritative if many pages link to it, and a page as more relevant if an authoritative page links to it.
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 96892
+se-link: https://academia.stackexchange.com/questions/96847/can-we-stop-looking-at-recommendation-letters-and-rely-purely-on-objective-mea/96892#96892
+se-score: -2
+se-accepted: false
+se-tags:
+- graduate-admissions
+- application
+- recommendation-letter
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Can we stop looking at recommendation letters and rely purely on "objective" measurements during the admission process?](https://academia.stackexchange.com/questions/96847/can-we-stop-looking-at-recommendation-letters-and-rely-purely-on-objective-mea), asked by [No One](https://academia.stackexchange.com/users/54886/no-one) on Academia Stack Exchange (2017-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My question has different emphases from [Why are recommendation letters highly relied upon?][q-1].
+>
+> As we know, the letter of recommendations are heavily relied upon in the process of university/graduate school applications and job market. Sometimes it is considered [the most important part of the application][q-2]. Sometimes, if a referee wants to strongly recommend someone, they may even directly make a phone call to certain departments/professors.
+>
+> However, as we know, the quality and importance of recommendation letters depends largely on the subjective opinions and the reputations of the referees. As a result, the system of recommendation letters sometimes encourages young scholars to spend more (and perhaps unnecessary) time using strategies to **gain the favor** of professional scholars (I believe there are clever ways for average students to "demonstrate" to the professors that they are strong...) or spend less time in communication to avoid bad opinions (if you can't show people that you are smart, then you'd better talk less and try not to show people that you are stupid).
+>
+> Meanwhile, writing letters seems to be a heavy burden on professors. You might want to argue that this is part of their job, but shouldn't they be given more time for their research and teaching? I heard some professors write dozens of letters every year, which costs them a lot of time (excluding the time for communication with applicants).  
+>
+> My question is, is the letter of recommendation really an indispensable part of academic application processes? Can "objective" things like GPA (well, "transcripts" or "courses and grades" might be a more accurate measurement), test and competition scores, publications alone provide enough information to evaluate the strengths and weaknesses of applicants? 
+>
+> Aside: I don't know much about the application of professional positions (postdoc and tenure-track positions). However, for university/graduate school applications, can we simply raise the difficulty of standard tests (for the information of those who think SAT and GRE general and even subject tests are too easy) to better differentiate between applicants? I heard that in China, PhD applicants need to take qualifying exams BEFORE being considered. 
+>
+>
+>   [q-1]: https://academia.stackexchange.com/questions/12874/why-are-recommendation-letters-highly-relied-upon
+>   [q-2]: http://www.math.stonybrook.edu/applying-phd-program
+:::
+
+The PageRank algorithm ranks a page as more authoritative if many pages link to it, and a page as more relevant if an authoritative page links to it.
+
+On Stackexchange, users earn a reputation from the quality of their answers, as conferred by fellow users, which lends weight to their subsequent answers.
+
+In academia, professors earn respect by the quality of their work, and the testimony of a respected expert in the field transfers respect onto whoever they recommend.  
+
+I think it's just human nature to be swayed by anecdotal arguments from authority more than statistical ones.  To wit, an anecdote: I've submitted recommendations to a system where I had to check boxes for how unique an individual was in several criteria.  The levels of uniqueness are based on how frequently I have encountered students at their level ("top 10% each year," or "top 2 or 3 in my career", etc).  The criteria are things like "oral communication," "independent thinking," "personal responsibility", "leadership", etc.  This could result in some statistical measure of the quality of an applicant.
+
+I hate these matrices!  I might have an opinion on a few of the criteria, but on others I really couldn't say.  And I've taught maybe 5000 students in my career; asking me to arrange them in increasing order of ability makes me tired just thinking about it.  So I'd much rather upload a letter, in which I give quantitative data on the student's performance, and personal qualities which show aptitude for whatever they're applying to.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/96847/can-we-stop-looking-at-recommendation-letters-and-rely-purely-on-objective-mea/96892#96892) on Academia Stack Exchange, 2017-10-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

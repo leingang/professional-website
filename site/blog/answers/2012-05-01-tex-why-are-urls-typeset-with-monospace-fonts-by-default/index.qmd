@@ -1,0 +1,39 @@
+---
+title: Why are URLs typeset with monospace fonts by default?
+date: '2012-05-01'
+description: Monospace fonts are often used to typeset "computer text", such as what you would enter at a shell prompt or programming source code (or when you mentioned the…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 53987
+se-link: https://tex.stackexchange.com/questions/53962/why-are-urls-typeset-with-monospace-fonts-by-default/53987#53987
+se-score: 4
+se-accepted: false
+se-tags:
+- typography
+- urls
+- typewriter
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are URLs typeset with monospace fonts by default?](https://tex.stackexchange.com/questions/53962/why-are-urls-typeset-with-monospace-fonts-by-default), asked by [Ingo](https://tex.stackexchange.com/users/1183/ingo) on TeX Stack Exchange (2012-05-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When typesetting URLs in LaTeX using the `url` package, they are set in a mono space font by default. While I just accepted that as a fact for a long time, I am now starting to wonder why?
+>
+> In Browsers, for example, the URL in the address bar is also not monospace. It does not make the link more readable, in my opinion rather on the contrary. The only explanation I can come up with is that it sets the link apart from the remeaining text. But honestly, even that sometimes looks a bit obstrusive.
+>
+> So is the reasons really just to set links apart from the text?
+:::
+
+Monospace fonts are often used to typeset "computer text", such as what you would enter at a shell prompt or programming source code (or when you mentioned the `url` package).  Although the browser doesn't use monospace to display the URL, I think the style of machine-readable text within human-readable text fits a URL pretty well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/53962/why-are-urls-typeset-with-monospace-fonts-by-default/53987#53987) on TeX Stack Exchange, 2012-05-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

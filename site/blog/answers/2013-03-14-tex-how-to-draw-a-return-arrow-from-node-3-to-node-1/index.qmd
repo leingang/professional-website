@@ -1,0 +1,81 @@
+---
+title: How to draw a return arrow from node-3 to node-1
+date: '2013-03-14'
+description: 'You can just add a line like:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 102389
+se-link: https://tex.stackexchange.com/questions/102385/how-to-draw-a-return-arrow-from-node-3-to-node-1/102389#102389
+se-score: 26
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to draw a return arrow from node-3 to node-1](https://tex.stackexchange.com/questions/102385/how-to-draw-a-return-arrow-from-node-3-to-node-1), asked by [Daniel](https://tex.stackexchange.com/users/14755/daniel) on TeX Stack Exchange (2013-03-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Say I have a code to draw a flow chart, I want now a arrow from node 3 to node 1, how can I do that?
+>
+> ```latex
+> 1<--|
+> |   |
+> 2   |
+> |   |
+> 3----
+> ```
+>
+> ## MWE
+>
+> ```latex
+> \documentclass[class=article,border=0pt]{standalone}
+>
+> \usepackage{tikz}
+> \usetikzlibrary{shapes,arrows}
+>
+> % Define block styles
+> \tikzset{
+>     block/.style={rectangle, draw, line width=0.5mm, black, text width=5em, text centered,
+>                   rounded corners, minimum height=2em},
+>     line/.style={draw, -latex}
+> }% <- if you insist in using this in the document add this % here.
+> \begin{document}
+> \begin{tikzpicture}[node distance = 1cm, auto]
+>     % Place nodes
+>     \node [block] (BLOCK1) {a};
+>     \node [block, below of=BLOCK1] (BLOCK2) {b};
+>     \node [block, below of=BLOCK2, node distance=1cm] (BLOCK3) {c};
+>     % Draw edges
+>     \path [line] (BLOCK1) -- (BLOCK2);
+>     \path [line] (BLOCK2) -- (BLOCK3);
+> \end{tikzpicture}
+> \end{document}
+> ```
+:::
+
+You can just add a line like:
+
+```latex
+\path [line] (BLOCK3) --++ (2cm,0cm) |- (BLOCK1);
+```
+
+This path starts at the `BLOCK3` node.  It then moves (`--`) to the point which has coordinates `(2cm,0cm)` *relative* to this point; hence one of the `+`s.  The second `+` makes the resulting point the new point of reference.  Without it the next part of the path would still be drawn "from" `BLOCK3`.
+
+The next path description `|-` draws a right-angle path (vertical first, then horizontal) to `BLOCK1`.  Had we used `-|` instead it would have been horizontal first, then vertical.  Not that you would want that; I'm just including it for clarity.
+
+![output][1]
+
+
+  [1]: vVu3V.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/102385/how-to-draw-a-return-arrow-from-node-3-to-node-1/102389#102389) on TeX Stack Exchange, 2013-03-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

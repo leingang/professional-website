@@ -1,0 +1,51 @@
+---
+title: How to say that something is a function?
+date: '2017-05-03'
+description: 'I take it you''re using this as your definition of function:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2263802
+se-link: https://math.stackexchange.com/questions/2263241/how-to-say-that-something-is-a-function/2263802#2263802
+se-score: 1
+se-accepted: true
+se-tags:
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to say that something is a function?](https://math.stackexchange.com/questions/2263241/how-to-say-that-something-is-a-function), asked by [HeMan](https://math.stackexchange.com/users/154389/heman) on Mathematics Stack Exchange (2017-05-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following writing problem: Let's say that $f,g\colon A \rightarrow B$ are given functions and I want to proof that $h = (f,g) \colon A \times A \rightarrow B \times B$ is a function. 
+>
+> Formally, I have to take $(a,b),(a,c)\in h$ and show that $b = c$. But $(a,b) ,(a,c) \in (f,g)$, then what? How can I formally conclude that $h$ is a function? I can't find the argumment. I hope that this is not a silly question.
+>
+> Thanks in advance.
+:::
+
+I take it you're using this as your definition of function: 
+
+> A subset $h \subset X \times Y$ is a function if, whenever $(x,y)$ and $(x,y')$ are in $h$, then $y=y'$.
+
+This problem is complicated by the multiple set products, but if you work through it carefully, it's just a definition chase.  [“Just” is in the eye of the beholder.  With work, this kind of argument becomes routine.] The relation $h$ between $X = A\times A$ and $Y = B\times B$ is defined by
+$$h = \left\{((a_1,a_2),(b_1,b_2)) \mid (a_1,b_1)\in f,\ (a_2,b_2)\in g\right\}$$
+or, if you want,
+$$h = \left\{((a_1,a_2),(b_1,b_2)) \mid f(a_1) = b_1,\ g(a_2) = b_2)\right\}$$
+
+Suppose that $(x,y)$ and $(x,y')$ are in $h$.  Then $x = (a_1,a_2)$, $y=(b_1,b_2)$, and $y' = (b_1',b_2')$ for suitable elements of $A$ and $B$, respectively.  Then
+$$\begin{align*}
+    (x,y) \in h &\implies (a_1,b_1) \in f \text{ and } (a_2,b_2) \in g \\
+    (x,y') \in h &\implies (a_1,b_1') \in f \text{ and } (a_2,b_2') \in g \\
+\end{align*}$$
+Since $f$ is a function, we know $b_1 = b_1'$.  Since $g$ is a function, we know $b_2 = b_2'$.  Therefore $y=y'$.  Thus $h$ also satisfies the definition of function.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2263241/how-to-say-that-something-is-a-function/2263802#2263802) on Mathematics Stack Exchange, 2017-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

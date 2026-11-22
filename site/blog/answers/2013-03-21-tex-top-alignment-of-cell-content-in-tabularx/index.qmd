@@ -1,0 +1,102 @@
+---
+title: Top alignment of cell content in tabularx
+date: '2013-03-21'
+description: Why not use a single tabularx environment instead of one inside a tabular?
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103602
+se-link: https://tex.stackexchange.com/questions/103601/top-alignment-of-cell-content-in-tabularx/103602#103602
+se-score: 10
+se-accepted: false
+se-tags:
+- tables
+- vertical-alignment
+- tabularx
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Top alignment of cell content in tabularx](https://tex.stackexchange.com/questions/103601/top-alignment-of-cell-content-in-tabularx), asked by [John](https://tex.stackexchange.com/users/11741/john) on TeX Stack Exchange (2013-03-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to align the content of each cell (of the first column) to the top. The approaches presented [here][q-1] did not apply. Maybe it has something to do with die `tabular`-environment inside the `tabularx`-environment?
+>
+> How it looks like
+>
+> ![i1][q-2]
+>
+> How I would like it to look like
+>
+> ![i2][q-3]
+>
+> **MWE**
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tabularx,booktabs} 
+>
+> \begin{document}
+>
+> 	\begin{tabularx}{\textwidth}{lX}
+> 		\toprule
+> 		Mittel    & technische Details\\
+> 		\midrule
+> 		%first row of tabularx
+> 		Laptop      &
+> 			\begin{tabular}{ll}
+> 			MacBook Pro & \\
+> 			Baujahr 2010 & \\ 
+> 			Prozessor & 2.4 GHz Intel Core 2 Duo \\
+> 			Speicher & 4 GB 1067 MHz DDR3 \\
+> 			Software & Mac OS X Lion 10.7.5 (11G63)
+> 			\end{tabular}\\[3em]
+> 		%second row of tabularx
+> 		Programmierumgebung          &
+> 			\begin{tabular}{ll}
+> 			Version & 8.0.4.0 \\
+> 			Plattform & Mac OS x86 (32-bit, 64-bit Kernel)
+> 			\end{tabular}\\
+> 		\bottomrule
+> 	\end{tabularx}
+>
+> \end{document}
+> ```
+>
+>
+>   [q-1]: https://tex.stackexchange.com/questions/23521/tabular-vertical-alignment-to-top
+>   [q-2]: n2Saf.png
+>   [q-3]: zNZAn.png
+:::
+
+Why not use a single `tabularx` environment instead of one inside a `tabular`?
+
+```latex
+\begin{tabularx}{\textwidth}{llX}
+    \toprule
+    Mittel              & technische Details & \\
+    \midrule
+    Laptop              & MacBook Pro  & \\
+                        & Baujahr 2010 & \\ 
+                        & Prozessor    & 2.4 GHz Intel Core 2 Duo \\
+                        & Speicher     & 4 GB 1067 MHz DDR3 \\
+                        & Software     & Mac OS X Lion 10.7.5 (11G63) \\[3em]
+    Programmierumgebung & Version      & 8.0.4.0 \\
+                        & Plattform    & Mac OS x86 (32-bit, 64-bit Kernel)\\
+    \bottomrule
+\end{tabularx}
+```
+
+![sample output][1]
+
+
+  [1]: xIu4E.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103601/top-alignment-of-cell-content-in-tabularx/103602#103602) on TeX Stack Exchange, 2013-03-21, with [edits](https://tex.stackexchange.com/posts/103602/revisions) by [Mico](https://tex.stackexchange.com/users/5001/mico). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

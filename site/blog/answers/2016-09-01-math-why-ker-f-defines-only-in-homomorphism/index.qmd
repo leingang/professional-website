@@ -1,0 +1,38 @@
+---
+title: Why ker f defines only in homomorphism?
+date: '2016-09-01'
+description: 'If I understand your question correctly, you''re asking: Why is it important that $f$ be a homomorphism when defining its kernel?'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1911013
+se-link: https://math.stackexchange.com/questions/1910991/why-ker-f-defines-only-in-homomorphism/1911013#1911013
+se-score: 1
+se-accepted: true
+se-tags:
+- abstract-algebra
+- group-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why ker f defines only in homomorphism?](https://math.stackexchange.com/questions/1910991/why-ker-f-defines-only-in-homomorphism), asked by [Ashu5765449](https://math.stackexchange.com/users/362764/ashu5765449) on Mathematics Stack Exchange (2016-09-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Why kernel of any map can only be defined in group homomorphism, why can't we define it on simple map. Just simply clarify my query.
+:::
+
+If I understand your question correctly, you're asking: *Why is it important that $f$ be a homomorphism when defining its kernel?*
+
+If $f \colon G \to H$ is any map between groups, you *could* call the inverse image of the identity in $H$ the “kernel” of $f$.  But it's only when $f$ is a homomorphism that $\ker f$ is a subgroup.  If it weren't a subgroup, it wouldn't be very useful in algebraic terms.
+
+For instance (since you asked for an example), let $f\colon \mathbb{Z} \to \mathbb{Z}$ be defined by $f(x) = x^2 - 4$.  The “kernel” of this map would be $\left\{-2,2\right\}$.  But this isn't a subgroup of $\mathbb{Z}$; it's not closed under addition.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1910991/why-ker-f-defines-only-in-homomorphism/1911013#1911013) on Mathematics Stack Exchange, 2016-09-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

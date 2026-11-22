@@ -1,0 +1,62 @@
+---
+title: Another examples of strictly monotone surjective function from an interval to another interval
+date: '2018-10-17'
+description: Notice that any interval $[a,b]$ can be mapped bijectively onto $[0,1]$ through $$\lambda(x) = \frac{x-a}{b-a}$$ Notice that $\lambda$ is increasing.…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2959756
+se-link: https://math.stackexchange.com/questions/2959731/another-examples-of-strictly-monotone-surjective-function-from-an-interval-to-an/2959756#2959756
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- examples-counterexamples
+- monotone-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Another examples of strictly monotone surjective function from an interval to another interval](https://math.stackexchange.com/questions/2959731/another-examples-of-strictly-monotone-surjective-function-from-an-interval-to-an), asked by [ydhhat](https://math.stackexchange.com/users/300871/ydhhat) on Mathematics Stack Exchange (2018-10-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $[a,b],[c,d]$ are two intervals in $\mathbb{R}$. I know two strictly monotone surjective functions from $[a,b]$ onto $[c,d]$:
+>
+> $$f(x)=c+\frac{x-a}{b-a} (d-c)$$
+> and
+> $$f(x)=d-\frac{x-a}{b-a} (d-c)$$
+> Could you give more examples?
+:::
+
+Notice that any interval $[a,b]$ can be mapped bijectively onto $[0,1]$ through
+$$\lambda(x) = \frac{x-a}{b-a}$$
+Notice that $\lambda$ is increasing.
+Similarly, we can bijectively map $[c,d]$ onto $[0,1]$ through
+$$\mu(x) = \frac{x-c}{d-c}$$
+Note that $\mu^{-1}(y) = c + (d-c)y$ for any $y$.
+Now if we take any monotone surjective function $g$ from $[0,1]$ to itself, we can form the composition $f = \mu^{-1} \circ g \circ \lambda$:
+$$f(x) = c + (d-c) g\left(\frac{x-a}{b-a}\right)$$
+It's not too hard to show that $f$ is monotone and surjective.  
+
+The function $g(x) = x$ gives you your first $f$, because 
+$$\mu^{-1}(\lambda(x)) = c+(d-c)\frac{x-a}{b-a}$$
+The function $g(x) = 1-x$ gives you your second $f$, because
+$$\mu^{-1}(1-\lambda(x)) = c + (d-c)\left(1-\frac{x-a}{b-a}\right)
+    = d - \frac{d-c}{b-a}(x-a)$$
+The function $g(x) = x^2$ gives you Siong Thye Goh's answer:
+$$\mu^{-1}(\lambda(x)^2) = c + (d-c)\left(\frac{x-a}{b-a}\right)^2$$
+but any positive exponent will work in place of $2$.
+
+You can also use $g(x) = \frac{t^x -1}{t-1}$ for any $t>0$.  We get
+$$f(x) = \mu^{-1}\left(\frac{t^{\lambda(x)}-1}{t-1}\right)
+    = c + \frac{d-c}{t-1}\left(t^{(x-a)/(b-a)}-1\right)$$
+For various $t$ this produces the exponential examples from Mohammad Riezi-Kermani.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2959731/another-examples-of-strictly-monotone-surjective-function-from-an-interval-to-an/2959756#2959756) on Mathematics Stack Exchange, 2018-10-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

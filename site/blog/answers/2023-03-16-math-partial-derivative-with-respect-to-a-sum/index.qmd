@@ -1,0 +1,60 @@
+---
+title: Partial derivative with respect to a sum
+date: '2023-03-16'
+description: It helps me to use variables for the intermediate derivatives in a chain rule computation, rather than the function names. Let the functions be called $f(t)$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4660259
+se-link: https://math.stackexchange.com/questions/4660239/partial-derivative-with-respect-to-a-sum/4660259#4660259
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Partial derivative with respect to a sum](https://math.stackexchange.com/questions/4660239/partial-derivative-with-respect-to-a-sum), asked by [neoglez](https://math.stackexchange.com/users/1147273/neoglez) on Mathematics Stack Exchange (2023-03-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose there are functions $J = f(\sum_k y_k)$ and $y_k = g(x)$, $k \in \mathbb{R}$. Now suppose I want to apply the chain rule to calculate the partial derivative of $J$ w.r.t. $x$. I.e.,
+>
+> $$\begin{equation}
+> \frac{\partial J}{\partial x} = \frac{\partial J}{\partial (\sum_k y_k)} \frac{\partial (\sum_k y_k)}{\partial x}.
+> \end{equation}$$
+>
+> Because the partial derivative is a linear map, we can indeed write the second term in the right as
+>
+> $$\begin{equation}
+> \frac{\partial \sum_k y_k}{\partial y} = \sum_k \frac{\partial y_k}{\partial x} 
+> \end{equation}$$
+> which is standard notation.
+>
+> But what about the first term $\frac{\partial J}{\partial (\sum_k y_k)}$ on the right?
+>
+> Does the partial derivative w.r.t. a sum make sense?
+>
+> If it does, what is the result?
+>
+> If it does not, why?
+:::
+
+It helps me to use variables for the intermediate derivatives in a chain rule computation, rather than the function names. Let the functions be called $f(t)$ and $y_k(x)$, so $J(x) = f(y_1(x) + \dots + y_n(x)$. If you write it this way, you can see a single-variable-calculus derivation of the derivative.
+
+However, let us use the multivariable chain rule to verify. We have
+$$\frac{dJ}{dx} = \sum_k \frac{df}{dt} \frac{\partial t}{\partial y_k} \frac{dy_k}{dx}$$
+If $t = y_1 + \dots y_k$, then $\frac{\partial t}{\partial y_k} = 1$. So
+$$\frac{dJ}{dx} = \frac{df}{dt} \sum_k \frac{dy_k}{dx}$$
+In Newtonian notation,
+$$J'(x) = f'(g_1(x) + \dots + g_n(x))(g_1'(x) + \dots + g_n'(x))$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4660239/partial-derivative-with-respect-to-a-sum/4660259#4660259) on Mathematics Stack Exchange, 2023-03-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

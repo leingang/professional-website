@@ -1,0 +1,54 @@
+---
+title: proving Snell's law using derivatives
+date: '2017-04-10'
+description: When you say “time is always an increasing function,” I think you're assuming that time is an independent variable. And this is usually the case in when…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2227642
+se-link: https://math.stackexchange.com/questions/2227618/proving-snells-law-using-derivatives/2227642#2227642
+se-score: 2
+se-accepted: false
+se-tags:
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[proving Snell's law using derivatives](https://math.stackexchange.com/questions/2227618/proving-snells-law-using-derivatives), asked by [mathmaniage](https://math.stackexchange.com/users/379585/mathmaniage) on Mathematics Stack Exchange (2017-04-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> While proving Snell's law with calculus, we come to statements similar to [this solution][q-1].  
+>
+> Now, we finally resolve to:  
+> $$\frac {dt}{dx}\ =\frac{sinθ_1}{c1}-\frac {sinθ_2}{c_2}$$
+>
+> Now, since the domain is restricted to $0$ to $d$ inclusive, and it is said that there is a point $x_o$ belonging to $[0, d]$, where   
+> $$\frac{dt}{dx}\ =\ 0$$  and that $dt/dx$ on $x$ is $<0$ and on $d$ is $>0$
+> *and*, that there is only one such point because $t$ is an *increasing* function of $x$.  
+>
+> Now, the biggest question is:  
+>
+> 1) since time is always an increasing function, it's monotonic, hence, how is there one point where the derivative is zero?  
+>         The only point I could think of would be $0$ where only the right hand derivative is zero, but then $$\frac{dt}{dx}\$$ would not exist.  
+>
+> Where am I misunderstanding this?
+>
+>
+>   [q-1]: https://math.stackexchange.com/questions/153775/simple-proof-for-snells-law-of-refraction
+:::
+
+When you say “time is always an increasing function,” I think you're assuming that time is an *independent* variable.  And this is usually the case in when studying quantities that change “over time.”  When a particle moves in space, its position is a function of time, and time is independent.
+
+However, in this context, “time” is shorthand for the travel time—the amount of time the light requires to travel from one point to another. It is a *dependent* variable, depending on the path chosen.  Some paths will result in a shorter travel time than others.  We are looking for the path which minimizes the travel time.
+
+The reason we are able to think of this as a single-variable calculus problem is that we can represent the path taken by a single point, the point $x$ of refraction.  Everything else is determined by this.  Thus time is a function of a single variable $x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2227618/proving-snells-law-using-derivatives/2227642#2227642) on Mathematics Stack Exchange, 2017-04-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

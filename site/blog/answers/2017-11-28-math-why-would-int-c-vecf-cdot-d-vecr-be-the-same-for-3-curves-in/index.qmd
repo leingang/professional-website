@@ -1,0 +1,54 @@
+---
+title: why would $\int_{C}\vec{F}\cdot d\vec{r}$ be the same for 3 curves in a vector field?
+date: '2017-11-28'
+description: Notice that $\mathbf{F} = \nabla f$, where $f(x,y) = x^2y$ [this is the definition of conservative vector field, that it's the gradient of a function]. So by…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2541586
+se-link: https://math.stackexchange.com/questions/2541577/why-would-int-c-vecf-cdot-d-vecr-be-the-same-for-3-curves-in-a-vector-f/2541586#2541586
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- line-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[why would $\int_{C}\vec{F}\cdot d\vec{r}$ be the same for 3 curves in a vector field?](https://math.stackexchange.com/questions/2541577/why-would-int-c-vecf-cdot-d-vecr-be-the-same-for-3-curves-in-a-vector-f), asked by [2316354654](https://math.stackexchange.com/users/115082/2316354654) on Mathematics Stack Exchange (2017-11-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The figure shows the vector field $F(x,y) = <2xy,x^2>$ and three curves that start at $(1,2)$ and end at $(3,2)$. why would $\int_{C}\vec{F}\cdot d\vec{r}$ be the same for 3 curves in a vector field? And what is the common value?
+>
+>  [![enter image description here][q-1]][q-1]
+>
+>
+> After reading the section on this problem I want to say that they all equal 0 but I'm not sure if that's true, I don't even know how to find out if its true without the vector r(t) like in my previous problems. I also know it has something to do with them having the same initial and end points, but this is only true if it is a conservative vector field. I can't really see how to tell if it is from this picture either. I'm also not sure what the common value is (unless its zero). I've been going through this section over and over but it just doesn't feel like it's making intuitive sense to me. Can someone shed light to help me understand this?
+>
+>   [q-1]: vfCBF.png
+:::
+
+Notice that $\mathbf{F} = \nabla f$, where $f(x,y) = x^2y$ [this is the definition of conservative vector field, that it's the gradient of a function].  So by the Fundamental Theorem of Line Integrals,
+$$\int_C \mathbf{F}\cdot d\mathbf{r} = \left.x^2y\right|^{(3,2)}_{(1,2)}=18-2 = 16$$
+
+If you haven't studied this theorem yet, the proof comes from the chain rule.  If $\mathbf{r}(t)$ is your parametrization of $C$ over the interval $[a,b]$, then
+$$\begin{align*}
+    \int_C \mathbf{F}\cdot d\mathbf{r}
+    &=\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt \\
+    &=\int_a^b \nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt \\ 
+    &=\int_a^b \frac{d}{dt}\left(f(\mathbf{r}(t))\right)\,dt \\ 
+    &=f(\mathbf{r}(b)) - f(\mathbf{r}(a))
+\end{align*}$$
+
+Notice how the integral only depends on $f$ at the endpoints of $C$, rather than the path it takes.  The same will be true for any conservative vector field.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2541577/why-would-int-c-vecf-cdot-d-vecr-be-the-same-for-3-curves-in-a-vector-f/2541586#2541586) on Mathematics Stack Exchange, 2017-11-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

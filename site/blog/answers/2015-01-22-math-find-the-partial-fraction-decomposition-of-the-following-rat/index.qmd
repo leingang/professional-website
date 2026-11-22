@@ -1,0 +1,42 @@
+---
+title: . Find the partial fraction decomposition of the following rational function.
+date: '2015-01-22'
+description: The second part of the denominator factors as $$(x^4 + 2x^2 + 1) = ((x^2)^2 + 2(x^2) + 1) = (x^2 + 1)^2$$ Therefore, your partial fraction decomposition is of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114375
+se-link: https://math.stackexchange.com/questions/1114364/find-the-partial-fraction-decomposition-of-the-following-rational-function/1114375#1114375
+se-score: 1
+se-accepted: false
+se-tags:
+- factoring
+- partial-fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[. Find the partial fraction decomposition of the following rational function.](https://math.stackexchange.com/questions/1114364/find-the-partial-fraction-decomposition-of-the-following-rational-function), asked by [UltraSound](https://math.stackexchange.com/users/209644/ultrasound) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Find the PFD of the folowing:
+>
+> $$\frac{x^6-x^5+48x^3-53x^2+99x+48}{x^5-2x^4+2x^3-4x^2+x-2}$$
+> Initially I used long division and got $$x+1+\frac{50(x^3-x^2+2x+1)}{x^5-2x^4+2x^3-4x^2+x-2}$$ I then used trial and error to factor the denominator as:
+> $$x+1+\frac{50(x^3-x^2+2x+1)}{x^5-2x^4+2x^3-4x^2+x-2}=x+1+\frac{50(x^3-x^2+2x+1)}{(x-2)(x^4+2x^2+1)}$$
+> How do I factor the second part of the denominator?
+:::
+
+The second part of the denominator factors as
+$$(x^4 + 2x^2 + 1) = ((x^2)^2 + 2(x^2) + 1) = (x^2 + 1)^2$$
+Therefore, your partial fraction decomposition is of the form
+$$\frac{A}{x-2} + \frac{Bx+C}{x^2+1} + \frac{Dx+E}{(x^2+1)^2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114364/find-the-partial-fraction-decomposition-of-the-following-rational-function/1114375#1114375) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

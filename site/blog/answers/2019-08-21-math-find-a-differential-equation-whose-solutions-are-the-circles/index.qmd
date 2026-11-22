@@ -1,0 +1,57 @@
+---
+title: Find a differential equation whose solutions are the circles $x^2+y^2=2ay$
+date: '2019-08-21'
+description: It's not so much that the two equations are of different orders. We could differentiate both sides of the first equation and get a second-order equation. The…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3330125
+se-link: https://math.stackexchange.com/questions/3330100/find-a-differential-equation-whose-solutions-are-the-circles-x2y2-2ay/3330125#3330125
+se-score: 1
+se-accepted: false
+se-tags:
+- ordinary-differential-equations
+- circles
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find a differential equation whose solutions are the circles $x^2+y^2=2ay$](https://math.stackexchange.com/questions/3330100/find-a-differential-equation-whose-solutions-are-the-circles-x2y2-2ay), asked by [Aditya Prakash](https://math.stackexchange.com/users/636751/aditya-prakash) on Mathematics Stack Exchange (2019-08-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I had to find differential equation of the family of circles which touch the $x$-axis at origin. Centering the variable circle at $(0,a)$, its equation will be
+> $$x^2+y^2=2ay .$$
+> Solving conventionally by differentiating once and substituting the value of a in the equation of circle, the differential equation is
+> $$(x^2-y^2)y_1=2xy$$
+> Now I might be missing some concept because I've just started with ODE, but what is wrong with the following process? Differentiating the circle equation 
+> $$x+yy_1=ay_1 ,$$ dividing both sides by $y_1$, and differentiating both sides gives the equation
+> $$y_1-xy_2+{y_1}^3=0 .$$
+> Does this not represent the family of circles? In that case the differential equations are of different orders.
+:::
+
+It's not so much that the two equations are of different orders.  We could differentiate both sides of the first equation and get a second-order equation.  The difference is that you have treated $a$ differently in the two processes. 
+
+In the first, $a$ is a parameter which depends on $x$ and $y$ (Each point on the plane, other than the origin, is on exactly one circle tangent to the $x$-axis at the origin).  In the second, you're treating $a$ like a constant.  
+
+If you solve the second equation (before you differentiate a second time) by separating variables, you get
+$$\begin{align*}
+    \frac{x}{y'} + y &= a \\
+\implies
+    x &= (a-y) y' \\
+\implies 
+    x \,dx &= (a-y)\,dy \\
+\implies
+    x^2 &= -(a-y)^2 + C \\
+\implies
+    x^2 + (a-y)^2 &= C
+\end{align*}$$
+So for each $a$, the family of solutions is the set of circles centered at $(0,a)$.  That's quite different from the family of circles tangent to the $x$-axis at $(0,0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3330100/find-a-differential-equation-whose-solutions-are-the-circles-x2y2-2ay/3330125#3330125) on Mathematics Stack Exchange, 2019-08-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

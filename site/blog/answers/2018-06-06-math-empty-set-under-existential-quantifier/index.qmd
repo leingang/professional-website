@@ -1,0 +1,50 @@
+---
+title: Empty set under existential quantifier
+date: '2018-06-06'
+description: This won't work because $\exists x\in\{\},p(x)$ is false.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2810409
+se-link: https://math.stackexchange.com/questions/2810394/empty-set-under-existential-quantifier/2810409#2810409
+se-score: 5
+se-accepted: true
+se-tags:
+- quantifiers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Empty set under existential quantifier](https://math.stackexchange.com/questions/2810394/empty-set-under-existential-quantifier), asked by [hanugm](https://math.stackexchange.com/users/98214/hanugm) on Mathematics Stack Exchange (2018-06-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $U = \{s_1, s_2, s_\cdots, s_n\}$ be the universal set and $A = \{a_1, a_2, a_3,\cdots, a_m\}$ is the set under consideration.
+>
+> Now, I am proving $\forall_{x \in \{\}} p(x) = T$  as follows
+>
+> $$\forall_{x \in A} p(x) = \forall_{x \in u} (x \in A \implies p(x))$$
+> $$= (s_1 \in A \implies p(s_1)) \land (s_2 \in A \implies p(s_2)) \land \cdots (s_n \in A \implies p(s_n))$$
+>
+> Hence if $A = \{\}$, then premise in every conditional statement becomes false and the result will be true.
+>
+> But it is not working to prove $\exists_{x \in \{\}} p(x) = T$;
+>
+> How to prove it?
+:::
+
+This won't work because $\exists x\in\{\},p(x)$ is false.
+
+Like Mauro says in the first comment,
+$\exists x\in\{\},p(x)$
+is syntactic sugar for $\exists x , (x\in\{\} \wedge p(x))$.  But $x\in\{\}$ can never be true, so $x\in\{\} \wedge p(x)$ is never true, so $\exists x , (x\in\{\} \wedge p(x))$ is false.
+
+You seem hung up on expanding quantification to the individual elements of a set.  That's not necessary, and seems to limit you logically to a finite universal set.  But these statements are true irrespective of the cardinality of $U$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2810394/empty-set-under-existential-quantifier/2810409#2810409) on Mathematics Stack Exchange, 2018-06-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

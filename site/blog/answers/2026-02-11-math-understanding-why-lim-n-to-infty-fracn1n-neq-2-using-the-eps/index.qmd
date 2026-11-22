@@ -1,0 +1,57 @@
+---
+title: Understanding why $\lim_{n \to \infty} \frac{n+1}{n} \neq 2$ using the $\epsilon$-$N$ definition
+date: '2026-02-11'
+description: Piggybacking on @thedeepdeepsky's answer, I want to point out how quantifiers and conditionals work under negation.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5124091
+se-link: https://math.stackexchange.com/questions/5124084/understanding-why-lim-n-to-infty-fracn1n-neq-2-using-the-epsilon/5124091#5124091
+se-score: 5
+se-accepted: false
+se-tags:
+- real-analysis
+- sequences-and-series
+- solution-verification
+- convergence-divergence
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Understanding why $\lim_{n \to \infty} \frac{n+1}{n} \neq 2$ using the $\epsilon$-$N$ definition](https://math.stackexchange.com/questions/5124084/understanding-why-lim-n-to-infty-fracn1n-neq-2-using-the-epsilon), asked by [Zei](https://math.stackexchange.com/users/1739664/zei) on Mathematics Stack Exchange (2026-02-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am learning sequences and need a bit of guidance. I know the sequence $a_n=\frac{n+1}{n}=1+\frac{1}{n}$ actually converges to $1$, but I want to understand rigorously why it does not converge to $2$.
+>
+> I want to attempt a standard $\varepsilon$-proof as if I were trying to show $\lim \limits_{n\to\infty} a_n = 2$.
+>
+> I know intuitively (of course) that the sequence does not converge to $2$. I also know how we can show that the limit is not $2$ by negation or contradiction, but I do not want that. I want to proceed naturally, as if I were proving that the limit is actually $2$, and see where it goes wrong. I do not want to see $10$ different ways to prove that the limit is not $2$. That is not my goal.
+>
+> I started with: “Let $\varepsilon>0$ be arbitrary. Find $N$ such that for all $n\ge N$, $|a_n-2|<\varepsilon$.”
+>
+> I computed $|a_n-2| = \bigl|1+\tfrac{1}{n}-2\bigr| = 1-\tfrac{1}{n}$, and then tried to solve $1-\tfrac{1}{n}<\varepsilon$ for $n$.
+>
+> I get stuck here, and I am not sure how to turn this into a valid $\varepsilon$-proof. I do not know how to explain this rigorously in the language of the definition of convergence.
+>
+> Any help showing how our proof fails would be helpful.
+:::
+
+Piggybacking on [@thedeepdeepsky's answer](https://math.stackexchange.com/a/5124088/2785), I want to point out how quantifiers and conditionals work under negation.
+
+We say $\lim\limits_{n\to\infty} a_n = L$ provided *for all* $\epsilon > 0$, *there exists* $N \in \mathbb{N}$ such that *for all* $n\in\mathbb{N}$, *if* $n \geq N$, *then* $|a_n - L| < \epsilon$.
+
+Students often misunderstand the negations of quantified statements. The negation of “For all $x$, $P(x)$” is “For some $x$, not $P(x)$” (**not** “For all $x$, not $P(x)$”). The negation of “If $P$, then $Q$” is “$P$ and not $Q$” (**not** “If $P$, then not $Q$”).
+
+So, $\lim\limits_{n\to\infty} a_n \neq L$ means *there exists* $\epsilon > 0$ such that *for all* $N \in \mathbb{N}$, *there exists* $n \in \mathbb{N}$ such that $n \geq N$ *and* $|a_n - L| \geq \epsilon$.
+
+As @thedeepdeepsky suggested, $\epsilon = \frac{1}{2}$ works because it separates $2$ from $1$ (the actual limit). Given $N \in \mathbb{N}$, set $n=\max(2,N)$. Then $n \geq N$ by design. Also, $n \geq 2$, so $a_n \leq \frac{3}{2}$, which means that $|a_n - 2| \geq \frac{1}{2} = \epsilon$. Q.E.D.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5124084/understanding-why-lim-n-to-infty-fracn1n-neq-2-using-the-epsilon/5124091#5124091) on Mathematics Stack Exchange, 2026-02-11, with [edits](https://math.stackexchange.com/posts/5124091/revisions) by [Indecisive](https://math.stackexchange.com/users/1151529/indecisive). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

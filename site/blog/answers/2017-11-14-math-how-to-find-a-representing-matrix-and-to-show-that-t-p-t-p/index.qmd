@@ -1,0 +1,84 @@
+---
+title: how to find a representing matrix and to show that $(T_P)^*=T_{P^*}$
+date: '2017-11-14'
+description: $\newcommand\tr{\operatorname{tr}}$ I believe the standard inner product on complex matrices is $$\left<X,Y\right> = \tr(XY^)$$ where $Y^$ is the conjugate…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2519978
+se-link: https://math.stackexchange.com/questions/2519888/how-to-find-a-representing-matrix-and-to-show-that-t-p-t-p/2519978#2519978
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- linear-transformations
+- inner-products
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to find a representing matrix and to show that $(T_P)^*=T_{P^*}$](https://math.stackexchange.com/questions/2519888/how-to-find-a-representing-matrix-and-to-show-that-t-p-t-p), asked by [BeginningMath](https://math.stackexchange.com/users/448763/beginningmath) on Mathematics Stack Exchange (2017-11-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> i can't solve this question correctly. could you help me with it please?
+>
+> a) let $V=M_{n \times n}^C$ be the standard inner product space, and $P \in V$ be an invertible matrix. we'll define a linear transformation(mapping) as following $T_p:M_{n \times n}^C \to M_{n \times n}^C$ defined by $T_pX=P^{-1}XP$ for every $X \in V$prove that $(T_P)^*=T_{P^*}$
+>
+> b)let $T_p:M_{2 \times 2}^C \to M_{2 \times 2}^C$ defined by $T_pX=P^{-1}XP$ when $P=\begin{pmatrix}i&1\\ -1&-i\end{pmatrix}$. find the matrix that defines $(T_P)^*$ in the standard base of $M_{2 \times 2}^C$
+>
+> what i did:
+>
+> a)since P follows $P*P^{-1}=P^{-1}P=I$, i put it in $T_pX=P^{-1}XP$, but i don't get that $(T_P)^*=T_{P^*}$
+>
+> b)i tried to calculate P using the given mapping(transformation),in order to find the matrix that represents $(T_P)^*$ under the basic standart of $M^C_{2 
+>  \times 2}$(since as far as i know $T_P(X)=AX$ (where A is the desired matrix), but still couldn't find it.
+>
+> please help me show $(T_P)^*=T_{P^*}$ and find the matrix that defines $(T_P)^*$
+>
+> thank you very much for helping
+:::
+
+$\newcommand\tr{\operatorname{tr}}$
+I believe the standard inner product on complex matrices is
+$$\left<X,Y\right> = \tr(XY^*)$$
+where $Y^*$ is the conjugate transpose of $Y$.  Using the identity 
+$\tr(ABA^{-1}) = \tr(B)$, we have
+$$\begin{align*}
+    \left<T_P X,Y\right>
+    &= \tr(P^{-1} X P Y^*)
+     = \tr(PP^{-1} X P Y^*P^{-1})
+     = \tr(X P Y^*P^{-1})
+  \\&= \tr(X ((P^{-1})^*Y P^*)^*)
+     = \tr(X ((P^*)^{-1}Y P^*)^*)
+  \\&= \left<X,T_{P^*} Y\right>
+\end{align*}$$
+This establishes that $(T_P)^* = T_{P^*}$.
+
+For (b), I believe the standard basis of $V$ is
+$$\begin{align*}
+    E_{11} &= \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} 
+    &E_{12} &= \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} 
+    &E_{21} &= \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} 
+    &E_{22} &= \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} 
+\end{align*}$$
+For each matrix $E$, you need to compute $T_{P^*}E$ and decompose it in the basis
+$\mathcal{B} = \left\{E_{11},E_{12},E_{21},E_{22}\right\}$.  Using a crude [Sage worksheet][1], I computed
+$$\left[T_{P^*}\right]_{\mathcal B}
+    = \frac{1}{2}\begin{bmatrix}
+         1 & -i & i & 1 \\
+         i & -1 & -1 & -i \\
+        -i & -1 & -1 & i \\
+         1 &  i & -i & 1
+    \end{bmatrix}$$
+
+
+  [1]: https://cocalc.com/projects/77102825-e295-4667-b66f-6775afeb829e/files/how%20to%20find%20a%20representing%20matrix.sagews
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2519888/how-to-find-a-representing-matrix-and-to-show-that-t-p-t-p/2519978#2519978) on Mathematics Stack Exchange, 2017-11-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

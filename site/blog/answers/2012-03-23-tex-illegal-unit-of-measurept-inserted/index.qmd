@@ -1,0 +1,86 @@
+---
+title: Illegal unit of measure(pt inserted)
+date: '2012-03-23'
+description: As written in the top-voted answer to the question "<https://tex.stackexchange.com/q/196/1402>"
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 49100
+se-link: https://tex.stackexchange.com/questions/49098/illegal-unit-of-measurept-inserted/49100#49100
+se-score: 14
+se-accepted: false
+se-tags:
+- math-mode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Illegal unit of measure(pt inserted)](https://tex.stackexchange.com/questions/49098/illegal-unit-of-measurept-inserted), asked by [Orion](https://tex.stackexchange.com/users/12875/orion) on TeX Stack Exchange (2012-03-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I can't find my fault and appreciate any help for curing the error.
+> Here is the code:
+>
+> ```latex
+> \documentclass[a4]{paper}
+> \usepackage{graphicx,slashed,color,amssymb}
+> \usepackage{xspace,colortbl,times,pause}
+> %\documentstyle[preprint,aps]{revtex}
+> \renewcommand{\baselinestretch}{1.6}
+> \begin{document}
+> \title{QFT}
+> \author{Athos\CZ}
+> \date{March 11, 2012}
+> \begin{eqnarray}
+> [\gamma^\nu,\sigma_{\alpha\beta}]w^{\alpha\beta}g_\alpha^\nu&=&4i\gamma^\mu w_\mu^\nu g_\beta^\mu\nonumber\\
+> [\gamma^\nu,\sigma_{\alpha\beta}]w^{\nu\beta}&=&4i\gamma^\mu w_\beta^\nu\\
+> \end{eqnarray}
+> ```
+>
+> I want to write two formula, but can do it.
+> However, if I set the two formula apart as:
+>
+> ```latex
+> \begin{eqnarray}
+> [\gamma^\nu,\sigma_{\alpha\beta}]w^{\alpha\beta}g_\alpha^\nu&=&4i\gamma^\mu w_\mu^\nu g_\beta^\mu\nonumber\\
+> \end{eqnarray}
+> \begin{eqnarray}
+> [\gamma^\nu,\sigma_{\alpha\beta}]w^{\nu\beta}&=&4i\gamma^\mu w_\beta^\nu\\
+> \end{eqnarray}
+> ```
+>
+> there will be no problem. I'm so confused.
+:::
+
+As written in the top-voted answer to the question "<https://tex.stackexchange.com/q/196/1402>"
+
+> Although eqnarray may seem to work "well enough", [Avoid
+> eqnarray!](http://www.tug.org/pracjourn/2006-4/madsen/) [Avoid
+> eqnarray!](http://texblog.net/latex-archive/maths/eqnarray-align-environment/)
+> [Avoid eqnarray!](http://www.math.uiuc.edu/~hildebr/tex/displays.html)
+> 
+> Use align and the rest of the ams environments. See `texdoc amsldoc`
+> ([PDF](ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf)) or the
+> [short math guide for
+> LaTeX](ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf) for
+> documentation on how to use them.
+
+Your example compiles if you simply use the `amsmath` package and substitute `align` for `eqnarray`:
+
+```latex
+\begin{align*}
+[\gamma^\nu,\sigma_{\alpha\beta}]w^{\alpha\beta}g_\alpha^\nu&=4i\gamma^\mu w_\mu^\nu g_\beta^\mu\nonumber\\
+[\gamma^\nu,\sigma_{\alpha\beta}]w^{\nu\beta}&=4i\gamma^\mu w_\beta^\nu
+\end{align*}
+```
+
+(Notice that you only need one `&` to mark the alignment point.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/49098/illegal-unit-of-measurept-inserted/49100#49100) on TeX Stack Exchange, 2012-03-23, with [edits](https://tex.stackexchange.com/posts/49100/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

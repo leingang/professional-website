@@ -1,0 +1,61 @@
+---
+title: bounded function and compact issue
+date: '2014-07-14'
+description: 'Here are some remarks and hints: First, it seems that the second statement (the greatest lower bound is achieved) implies the first statement (there is a lower…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 867006
+se-link: https://math.stackexchange.com/questions/866987/bounded-function-and-compact-issue/867006#867006
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[bounded function and compact issue](https://math.stackexchange.com/questions/866987/bounded-function-and-compact-issue), asked by [Brocolus](https://math.stackexchange.com/users/75065/brocolus) on Mathematics Stack Exchange (2014-07-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Here is the problem, i have a definite fonction on an open set and I feel that the question is asking to use a compact argument 
+>
+> let $f:\mathbb{R^n}\rightarrow\mathbb{R}$ continuous, we also admit that $\lim_{\lVert x\rVert \to\infty}f(x) =+\infty$.
+>
+> 1)Prove that $f$ is bounded lowerly.
+>
+> 2)prove that $\inf_{x\in\mathbb{R^n}}f(x)$ is reached
+>
+> So what I tried to do : $\mathbb{R^n}$ is an open set but it is known that all closed and bounded intervals of $\mathbb{R^n}$ are compacts.
+> So I decided to proceed this way : 
+>
+> let A $\subset \mathbb{R^n}$ a compact with $T_A$ its induced topology possible because $\mathbb{R^n}$ is a finite dimensional set. Basing on Tychonoff's theorem saying that a product of compacts is a compact, let's take the known set $\forall i \in \{1,..,n\}$ $\forall a_i,b_i\in\mathbb{R}$, $\prod_{i=1}^n[a_i;b_i] \subset A$ which is a compact.
+>
+> I want to prove that $f$ is lowerly bounded so I use my admitted hypothesis that $f$ is continuous on $\mathbb{R^n}$ so it would mean it is continuous on all of its closed subsets, so continuous on all of its compact because $\mathbb{R^n}$ is a finite dimensional set (I don't remember well but it seems to me that it was a necessary and sufficient condition to say that compacts are equivalent to closed and bounded sets).
+>
+> And finally because it is continuous on a compact and has its value in $\mathbb{R}$
+>  then, $f$ would be lowerly bounded and reach its infimum but not its supremum because we supposed $\lim_{x\to\infty}f(x)=+\infty$. And then answer the two questions at the same time.
+>
+>
+> **Question 1** : Can I just take a compact subset of $\mathbb{R^n}$ just the way I did and finally conclude with my $f$ function generalizing it is bounded on all $\mathbb{R^n}$ ? I just feel it isn't enough.
+>
+> **Question 2** : $\mathbb{R^n}$ is an open set, I don't understand how is it possible to just take a gathering of compacts and then "globalizing" the results to an open one.
+>
+> Thank you for your help !
+:::
+
+Here are some remarks and hints:  First, it seems that the second statement (the greatest lower bound is achieved) implies the first statement (there is a lower bound).  
+
+Secondly, for any number $c$ you can divide up the domain as
+$$\mathbb{R}^n = \left\{x\mid f(x) \leq c \right\} \cup \left\{x\mid f(x) > c\right\}$$
+Using the limit at $\infty$ you should be able to show one of these sets is compact.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/866987/bounded-function-and-compact-issue/867006#867006) on Mathematics Stack Exchange, 2014-07-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

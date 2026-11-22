@@ -1,0 +1,47 @@
+---
+title: Proving (2,5) is an open set?
+date: '2016-07-27'
+description: Understanding a proof is the first step to writing your own, so good for you in scrutinizing this.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1872727
+se-link: https://math.stackexchange.com/questions/1872722/proving-2-5-is-an-open-set/1872727#1872727
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving (2,5) is an open set?](https://math.stackexchange.com/questions/1872722/proving-2-5-is-an-open-set), asked by [mailrenegade](https://math.stackexchange.com/users/356577/mailrenegade) on Mathematics Stack Exchange (2016-07-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm given the following definition of an open set: 
+> A set $X \subseteq \mathbb{R}$ is open iff for all $x \in X$ there exists $d>0$ such that $(x-d,x+d) \subseteq X$. 
+>
+>
+> I'm given the following proof: 
+> Let $x \in (2,5)$.
+> Let $d$ be the minimum of $5-x$ and $x-2$.
+> Then $(x-d,x+d) \subseteq (2,5)$.
+> So for all $x \in (2,5)$ there exists $d>0$ such $(x-d,x+d) \subseteq (2,5)$.
+> So $(2,5)$ is an open set.
+> Q.E.D
+>
+> I understand that we have to choose $d$ so it depends on $x$, but I don't understand why we should choose the minimum of $5-x$ and $x-2$ and how this justifies the next step?
+:::
+
+Understanding a proof is the first step to writing your own, so good for you in scrutinizing this.
+
+Draw a picture of the real line and the open set $(2,5)$.  Pick a point $x$ in this interval and some generic $d > 0$.  What does the set $(x-d,x+d)$ look like?  What are the conditions on $d$ that guarantee that $(x-d,x+d)$ is contained in $(2,5)$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1872722/proving-2-5-is-an-open-set/1872727#1872727) on Mathematics Stack Exchange, 2016-07-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

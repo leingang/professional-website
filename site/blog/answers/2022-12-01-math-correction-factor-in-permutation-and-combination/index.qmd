@@ -1,0 +1,64 @@
+---
+title: Correction factor In permutation and combination
+date: '2022-12-01'
+description: The multiplication principle applies when counting lists, and lists have a distinct order to them. But sometimes we are counting objects for which certain…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4589170
+se-link: https://math.stackexchange.com/questions/4589140/correction-factor-in-permutation-and-combination/4589170#4589170
+se-score: 0
+se-accepted: false
+se-tags:
+- combinatorics
+- combinations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Correction factor In permutation and combination](https://math.stackexchange.com/questions/4589140/correction-factor-in-permutation-and-combination), asked by [πααρτθ Σαρθι](https://math.stackexchange.com/users/1081639/%cf%80%ce%b1%ce%b1%cf%81%cf%84%ce%b8-%ce%a3%ce%b1%cf%81%ce%b8%ce%b9) on Mathematics Stack Exchange (2022-12-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So It's always confusing for me where to apply the correction factor in permutation and combination. For example there is a question like find the number of ways in which 4 distinct object can be divided into 2 groups such that one group has 2 objects and other group has 2 objects. Can someone explain me how to apply correction factor to this question 
+> Thanks.
+:::
+
+The multiplication principle applies when counting *lists*, and lists have a distinct order to them. But sometimes we are counting objects for which certain orderings/rearrangements aren't important. In these situations, we divide the total number of lists by the number of rearrangements which are to be considered “equivalent."
+
+In your example, let the four objects be numbered as 1, 2, 3, 4. To partition them into two sets of two elements, we can:
+
+1. start with a list of the four objects
+2. take the first pair and assign them to the first set
+3. take the second pair and assign them to the second set.
+
+So if the list is $(1,4,3,2)$, the associated partition is $\{\{1,4\},\{3,2\}\}$.
+
+There are $4! = 24$ lists of the four objects, so you have at most $24$ partitions. However, this process will result in many lists generating the same partition! For instance, $(4,1,3,2)$, $(1,4,2,3)$, and $(2,3,4,1)$ will all generate the same partition as $(1,4,3,2)$. This is because lists are ordered and sets are not.
+
+So the next thing to count is *how many* lists generate the same partition. Given any list $(a,b,c,d)$, these are the lists which generate the same set $\{\{a,b\},\{c,d\}\}$:
+$$\begin{array}{cccc}
+    (a,b,c,d) & (b,a,c,d) & (a,b,d,c) & (b,a,d,c) \\
+    (c,d,a,b) & (c,d,b,a) & (d,c,a,b) & (d,c,b,a) 
+\end{array}$$
+
+Another solution to this question: notice that there are three permutations of the list elements that don't affect the associated partition:
+
+* swapping the first pair: $(a,b,c,d) \mapsto (b,a,c,d)$ [because $\{b,a\} = \{a,b\}$, so $\{\{b,a\},\{c,d\}\} = \{\{a,b\},\{c,d\}\}$]
+* swapping the second pair: $(a,b,c,d) \mapsto (a,b,d,c)$
+* swapping the two pairs: $(a,b,c,d) \mapsto (c,d,a,b)$
+
+We can do any combination of these three permutations too. Swap first and second, swap first then the two pairs, all three swaps, etc.
+So the number of lists equivalent to any one list (including the one we started with) is $2 \times 2 \times 2 = 8$. 
+
+Putting this together: the $24$ lists are divided into groups of $8$. Each group corresponds to one and only one partition. So the number of partitions equals the number of groups. That is, $24 \div 8 = 3$.
+
+If you let go of “permutations and combinations” and think instead about equivalences on sets of lists, you can solve more problems.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4589140/correction-factor-in-permutation-and-combination/4589170#4589170) on Mathematics Stack Exchange, 2022-12-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

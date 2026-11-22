@@ -1,0 +1,64 @@
+---
+title: Prove that $\lim_{x\rightarrow a^-} f'(x)$ and $\lim_{x\rightarrow a^+} f'(x)$ cannot both exist.
+date: '2020-04-23'
+description: There is a big difference between saying that the two one-sided limits of $f$' both cannot exist. or cannot both exist.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3640564
+se-link: https://math.stackexchange.com/questions/3640536/prove-that-lim-x-rightarrow-a-fx-and-lim-x-rightarrow-a-fx-c/3640564#3640564
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\lim_{x\rightarrow a^-} f'(x)$ and $\lim_{x\rightarrow a^+} f'(x)$ cannot both exist.](https://math.stackexchange.com/questions/3640536/prove-that-lim-x-rightarrow-a-fx-and-lim-x-rightarrow-a-fx-c), asked by [MathMan](https://math.stackexchange.com/users/66069/mathman) on Mathematics Stack Exchange (2020-04-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose that $f$ is differentiable in some interval contain $a$ but that $f'$ is discontinous at $a$. Prove that $\lim_{x\rightarrow a^-} f'(x)$ and $\lim_{x\rightarrow a^+} f'(x)$ cannot  both exist.
+>
+> >**Attempt**: I think the question should have instead been phrased as : **prove that $\lim_{x\rightarrow a^-} f'(x)$ and $\lim_{x\rightarrow a^+} f'(x)$ both cannot be equal and finite**
+>
+> If $\lim_{x\rightarrow a^-} f'(x)=l$ and $\lim_{x\rightarrow a^+} f'(x)=m~|~l \ne m$, then $f'$ is still discontinuous at $a$ because the limit itself doesn't exist. 
+>
+> On the other hand, if $\lim_{x\rightarrow a^-} f'(x)=p=\lim_{x\rightarrow a^+} f'(x)$, then, $f'(a)=p$ itself.
+>
+> Please tell me what do you think. Is the question correctly phrased?
+>
+> > If any of the one sided limit exists and other doesn't, then won't the function cease to be differentiable?
+:::
+
+There is a big difference between saying that the two one-sided limits of $f$' *both cannot exist.* or *cannot both exist*.
+
+* *both cannot exist* means that the left-hand limit cannot exist, *and* the right-hand limit cannot exist.
+
+* *cannot both exist* means it's impossible that the left-hand limit and the right-hand limit to both exist.  By De Morgan's law, it's equivalent to saying that either the left-hand limit cannot exist, *or* the right-hand limit cannot exist (or both).
+
+The first statement (*both cannot exist*) is false.  Consider
+$$f(x) = \begin{cases} 0 & x \leq 0 \\
+                        x^2 \sin\left(\frac{1}{x}\right) & x \geq 0
+\end{cases}$$
+Then $f$ is differentiable on $\mathbb R$, $f'$ is not continuous at $0$, but $\lim_{x\to 0^-} f'(x) = 0$.  The other one-sided limit $\lim_{x\to 0^+} f'(x)$ does not exist.
+
+After comments, you clarified that the second statement (*cannot both exist*) is the intended one.  In that case,  I think the question is correctly phrased.  The contrapositive statement might make more sense:
+
+> Suppose that $f$ is differentiable near $a$.  If $\lim_{x\to a^-} f'(x)$ and $\lim_{x\to a^+} f'(x)$ exist [and are finite], then $f'$ is continuous at $a$.
+
+I put *and are finite* in brackets because it's assumed that when a limit “exists” we're talking about a finite number.  An infinite limit doesn't “exist.”  This is complicated because we use (some might say abuse) the equals sign in both cases.  We say $\lim_{x\to 0} x = 0$ and $\lim_{x\to 0^+} \frac{1}{x} = \infty$, but the first limit “exists” while the second does not.
+
+To dig a bit deeper, you need to show that: if $f$ is differentiable near $a$, and $\lim_{x\to a^+} f'(x)$ exists, then
+$$\lim_{x\to a^+} \frac{f(x) - f(a)}{x-a} = \lim_{x\to a^+} f'(x)$$
+and the the same thing with $x\to a^+$ replaced by $x\to a^{-}$.  For this,
+the Mean Value Theorem is your friend.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3640536/prove-that-lim-x-rightarrow-a-fx-and-lim-x-rightarrow-a-fx-c/3640564#3640564) on Mathematics Stack Exchange, 2020-04-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

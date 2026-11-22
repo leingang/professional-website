@@ -1,0 +1,78 @@
+---
+title: Beginner in equivalence relations. Example.
+date: '2024-06-12'
+description: For the first relation, you are correct that there are two equivalence classes. They are the even integers and the odd integers.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4931598
+se-link: https://math.stackexchange.com/questions/4931568/beginner-in-equivalence-relations-example/4931598#4931598
+se-score: 2
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- equivalence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Beginner in equivalence relations. Example.](https://math.stackexchange.com/questions/4931568/beginner-in-equivalence-relations-example), asked by [Heidegger](https://math.stackexchange.com/users/539780/heidegger) on Mathematics Stack Exchange (2024-06-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm approaching the study of pure Algebra, starting from equivalence relations, sets and quotient sets. I have a background in Algebra, but it's only a bit of linear algebra and I never worked with equivalence relations, so I am gonna ask you if the two examples I am writing are correct or not. They are taken from two exercises, but there is no solution.
+>
+> **First** Be $X = \mathbb{Z}$ and define an equivalence relation between elements of $X$ such that: $x \sim y \iff x-y$ is even.
+>
+> I proved that that is indeed an equivalence relation, and then I wrote the "class elements" (are they called that way?): 
+>
+> $$[A] = \{ 0; \pm 2; \pm 4; \ldots \}$$
+> $$[B] = \{ \pm 1; \pm 3; \pm 5; \ldots \}$$
+>
+> There are no other "classes", hence I can say $X/\sim = \{ [A], [B] \}$. Is this the correct way to write? I thought that I could also write that $X/\sim = A \cup B$. Would this be correct? 
+>
+>
+> **Second** This one is a bit strange to me (or maybe it's just obvious). $X$ as before, and $x \sim y \iff |x-y| = 2$.
+>
+> For this, I started to write the class elements:
+>
+> $$[A] = \{ 0; 2 \}$$
+> $$[B] = \{ 2; 4 \}$$
+> $$[C] = \{ 4; 6 \}$$
+>
+> And so on, but also I have $[a] = \{ -2 ; 0 \}$, $[b] = \{-1; 1\}$ and so on...
+>
+> Am I right so far or is this wrong? 
+>
+> I would (if correct) then write
+>
+> $$X/\sim = A\cup B \cup C \cup \ldots \cup a \cup b ...$$
+>
+> Tell me if I'm right please.
+>
+> Also I ask you if you know some GREAT reference about those topics, quotient sets and so on.
+>
+> Thank you so much!
+>
+> **EDIT**
+>
+> I feel dumb, but I realised, thank to the comments, that the second one is not an equivalence relation. It's not transitive nor reflexive...
+:::
+
+For the first relation, you are correct that there are two _equivalence classes_. They are the even integers and the odd integers. 
+
+What students find weird about the way we denote equivalence classes is that $[a] = [b]$ iff $a \sim b$. In your first example relation, the even integers are all equivalent to $0$, so you can call this equivalence class $[0]$. The odd integers are all equivalent to $1$, so you can call this equivalence class $[1]$. Now $2 \sim 0$, so $[2]$ is just another name for $[0]$, the even integers. and $[-1] = [1]$, the odd integers. Et cetera.
+
+Since there are no other equivalence classes, you can say that $\mathbb{Z} = [0] \cup [1]$, or $\mathbb{Z}/\mathord{\sim} = \{[0],[1]\}$. But $\mathbb{Z}/\mathord{\sim} = 0 \cup 1$ would be wrong; $0$ and $1$ aren't sets so their union is undefined.
+
+As discussed in the comments to your question, the second relation is not an equivalence relation. It's symmetric but neither reflexive nor transitive. We don't consider “classes” for relations that aren't equivalence relations. The best you could say is that the smallest equivalence relation which contains this relation is the first example relation.
+
+There are lots of questions on this site about algebra textbooks. [Here's one](https://math.stackexchange.com/questions/89179/what-is-a-good-algebra-reference-text).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4931568/beginner-in-equivalence-relations-example/4931598#4931598) on Mathematics Stack Exchange, 2024-06-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,45 @@
+---
+title: Find the area between the given function , and two tangents off of the point (2,-2)
+date: '2015-08-27'
+description: 'Here is a hint: you need to find the points $(a,a^2)$ on the parabola such that the tangent line through that point also passes through $(2,-2)$.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1411924
+se-link: https://math.stackexchange.com/questions/1411913/find-the-area-between-the-given-function-and-two-tangents-off-of-the-point-2/1411924#1411924
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+- definite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the area between the given function , and two tangents off of the point (2,-2)](https://math.stackexchange.com/questions/1411913/find-the-area-between-the-given-function-and-two-tangents-off-of-the-point-2), asked by [England](https://math.stackexchange.com/users/264936/england) on Mathematics Stack Exchange (2015-08-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So here is a general graph of the first couple directions. 
+> [![graph][q-1]][q-1]
+>
+> $T_1$ and $T_2$ are supposed to be the points where the tangent line intersects the parabola. The tangent lines and points where the tangent line intersect the parabola are not exact placements, just a visual aid.
+>
+>
+>
+> I'm supposed to find the area of the yellow highlighted area. I understand how to find the area but I don't get how to find the equations of the tangent lines with the given point $(2,-2)$ to find where they intersect with $y = x^2$.
+>
+>
+>   [q-1]: ak4OR.jpg
+:::
+
+Here is a hint: you need to find the points $(a,a^2)$ on the parabola such that the tangent line through that point also passes through $(2,-2)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1411913/find-the-area-between-the-given-function-and-two-tangents-off-of-the-point-2/1411924#1411924) on Mathematics Stack Exchange, 2015-08-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

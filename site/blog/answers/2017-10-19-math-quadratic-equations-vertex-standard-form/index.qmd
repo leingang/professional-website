@@ -1,0 +1,48 @@
+---
+title: Quadratic Equations Vertex/Standard Form
+date: '2017-10-19'
+description: The cross section of the ditch will be a rectangle, lined on the vertical sides and bottom by the metal but open at the top. If the bend is made $x$ feet from…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2479769
+se-link: https://math.stackexchange.com/questions/2479220/quadratic-equations-vertex-standard-form/2479769#2479769
+se-score: 1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Quadratic Equations Vertex/Standard Form](https://math.stackexchange.com/questions/2479220/quadratic-equations-vertex-standard-form), asked by [Vincent Nguyen](https://math.stackexchange.com/users/493118/vincent-nguyen) on Mathematics Stack Exchange (2017-10-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> At the moment I'm being taught how to convert Vertex Form into Standard form and Standard Form to Vertex. Now my last assigned problem has been a problem for me, we never went over this in class(Algebra), so I'd love for you to teach me.
+>
+> >To line an irrigation ditch, a farmer will use rectangular metal
+> sheets. Each side will be bent x feet from the edge at an angle
+> of 90° to form the trough. If the sheets are 20 ft wide, how far
+> from the edge (x) should the farmer bend them to maximize
+> the area of a cross-section of the trough.
+>
+> The formulas I've learnt now are: 
+> $$y=f(x)=ax^2+bx+c$$
+> $$y=f(h)=a(b(x-h))^2+k$$
+> $$h=\frac{-b}{2a}$$
+>
+> I think I need to find x, but I don't know how to get there using everything I've learned so far, so please help me with this one.
+:::
+
+The cross section of the ditch will be a rectangle, lined on the vertical sides and bottom by the metal but open at the top.  If the bend is made $x$ feet from the edge, the two sides will have length $x$ while the bottom will have length $20-2x$.  So the area of the cross section is
+$$f(x) = x(20-2x) = 20x-2x^2$$
+The graph of $f$ is a parabola.  According to your formula, the vertex of that parabola is at $(5,50)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2479220/quadratic-equations-vertex-standard-form/2479769#2479769) on Mathematics Stack Exchange, 2017-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

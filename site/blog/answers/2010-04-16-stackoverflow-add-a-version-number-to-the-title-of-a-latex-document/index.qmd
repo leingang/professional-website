@@ -1,0 +1,89 @@
+---
+title: Add a version number to the title of a LaTeX document
+date: '2010-04-16'
+description: 'To provide a \version command like \author, you''d do:'
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2653408
+se-link: https://stackoverflow.com/questions/2633986/add-a-version-number-to-the-title-of-a-latex-document/2653408#2653408
+se-score: 1
+se-accepted: false
+se-tags:
+- latex
+- versioning
+- version
+- title
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Add a version number to the title of a LaTeX document](https://stackoverflow.com/questions/2633986/add-a-version-number-to-the-title-of-a-latex-document), asked by [physicsmichael](https://stackoverflow.com/users/51532/physicsmichael) on Stack Overflow (2010-04-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> The title section of my LaTeX documents usually look like
+>
+> ```latex
+> \title{Title}
+> \author{Me}
+> %\date{}      %// Today's date will appear when this is commented out.
+>
+> \begin{document}
+> \maketitle
+> ```
+>
+> I'd really like to add another line in the title section for a version number:
+>
+> ```latex
+> \title{Title}
+> \author{Me}
+> \version{v1.2}
+> %\date{}      %// Today's date will appear when this is commented out.
+>
+> \begin{document}
+> \maketitle
+> ```
+>
+> It doesn't necessarily have to be a command named `version`, but how can I get a version number to appear after the date (which is after the author)? I can manually set the version number.
+>
+> So:
+> # Title #
+> ## Me ##
+> ## 4/13/2010 ##
+> ## v1.2 ##
+:::
+
+To provide a `\version` command like `\author`, you'd do:
+
+```latex
+\let\theversion=\relax
+\providecommand{\version}[1]{\renewcommand{\theversion}{#1}}
+```
+    
+If you're not using a `titlepage` environment, you can redefine `\maketitle` itself.  Look in `article.cls` (or whatever class file you're using), copy-and-paste, and insert `\theversion` whereever and however you want. If you want to check for a version number before putting in the title, do something like:
+
+```latex
+\def\maketitle{%
+% ... stuff copied from original class file...
+\ifx\theversion\relax
+% do nothing if there is no version defined
+\else\bfseries\theversion% set the version
+\fi
+```
+
+If you don't need it in the title per se you could add it as a footnote to the date (both of those properties related to the freshness of the resource so it makes some sense to put them together.
+
+```latex
+\title{My article}
+\version{v1.2}
+\date{\today\thanks{\theversion}}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2633986/add-a-version-number-to-the-title-of-a-latex-document/2653408#2653408) on Stack Overflow, 2010-04-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

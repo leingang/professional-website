@@ -1,0 +1,81 @@
+---
+title: Ugly diagonal arrows using xymatrix
+date: '2013-03-29'
+description: If you would consider using TikZ instead you might have better results without installing separate fonts.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 105877
+se-link: https://tex.stackexchange.com/questions/105848/ugly-diagonal-arrows-using-xymatrix/105877#105877
+se-score: 3
+se-accepted: false
+se-tags:
+- diagrams
+- arrows
+- xymatrix
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Ugly diagonal arrows using xymatrix](https://tex.stackexchange.com/questions/105848/ugly-diagonal-arrows-using-xymatrix), asked by [042](https://tex.stackexchange.com/users/18775/042) on TeX Stack Exchange (2013-03-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have tried to create some diagrams using `xymatrix`. However, the problem I have encountered is that diagonal arrows do not look very well - they are not smooth and resemble raster graphics rather than vector graphics. I have the same problem using pdfLaTeX as well as LaTeX + dvips. 
+>
+> Here is my code:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage[utf8]{inputenc}                                    
+> \usepackage[T1]{fontenc}
+> \usepackage[all,cmtip]{xy}
+> \begin{document}
+> \begin{displaymath}
+> \xymatrixcolsep{5pc}\xymatrix{& & A & \\ B \ar[r] \ar[urr] & C \ar[r] & D \ar[r] \ar[u] & E 
+> }
+> \end{displaymath}
+> \end{document}
+> ```
+>
+> The urr-arrow is the one that does not look well. I wonder if this problem can be solved, since, e.g., in [this document](http://www.jmilne.org/not/Mxymatrix.pdf) demonstrating the use of xymatrix, there is no sign of a similar problem. Thank you in advance.
+:::
+
+If you would consider using `TikZ` instead you might have better results without installing separate fonts.
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\begin{document}
+   \begin{tikzpicture}
+      \matrix[matrix of math nodes,column sep=5pc,row sep=3em]
+      {
+                 &         & |(A)| A &            \\
+         |(B)| B & |(C)| C & |(D)| D & |(E)| E    \\
+      };
+      \begin{scope}[->]
+         \draw (B) -- (C);
+         \draw (B) -- (A);
+         \draw (C) -- (D);
+         \draw (D) -- (E);
+         \draw (D) -- (A);
+      \end{scope}
+   \end{tikzpicture}
+\end{document}
+```
+
+![sample output][1]
+
+For matrices the `TikZ` syntax can be as dense as that of `xymatrix`.  However, in the long run I found `TikZ` to be much easier to learn.
+
+
+  [1]: 8EUzr.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/105848/ugly-diagonal-arrows-using-xymatrix/105877#105877) on TeX Stack Exchange, 2013-03-29, with [edits](https://tex.stackexchange.com/posts/105877/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

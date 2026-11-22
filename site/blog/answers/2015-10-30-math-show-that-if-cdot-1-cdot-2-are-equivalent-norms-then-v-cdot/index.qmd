@@ -1,0 +1,48 @@
+---
+title: Show that if $||\cdot||_1$, $||\cdot||_2$ are equivalent norms then $(V,||\cdot||_1)$ is a banach space iff $(V,||\cdot||_2)$ is.
+date: '2015-10-30'
+description: It suffices to show that
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1505055
+se-link: https://math.stackexchange.com/questions/1505036/show-that-if-cdot-1-cdot-2-are-equivalent-norms-then-v-cdot/1505055#1505055
+se-score: 4
+se-accepted: true
+se-tags:
+- vector-spaces
+- metric-spaces
+- hilbert-spaces
+- banach-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that if $||\cdot||_1$, $||\cdot||_2$ are equivalent norms then $(V,||\cdot||_1)$ is a banach space iff $(V,||\cdot||_2)$ is.](https://math.stackexchange.com/questions/1505036/show-that-if-cdot-1-cdot-2-are-equivalent-norms-then-v-cdot), asked by [Meitar ](https://math.stackexchange.com/users/203149/meitar) on Mathematics Stack Exchange (2015-10-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Show that if $||\cdot||_1$, $||\cdot||_2$ are equivalent norms then $(V,||\cdot||_1)$ is a banach space iff  $(V,||\cdot||_2)$ is. I really didn't get it. Of course both spaces are normed spaces but there are two things I don't understand:
+>
+> 1. Why is it so important to look at "Cauchy sequences"? Why can't I look at converging sequences? Aren't those equivalent?
+>
+> 2. If those are equivalent, ones a sequence converges to a limit (which is in the space) should it be different in the other "space", that is $(V,||\cdot||_2)?
+>
+> I really didn't understand what I need to do here. I would truly appreciate your help.
+:::
+
+It suffices to show that 
+
+ 1. a sequence $\left\{v_n\right\}$ is Cauchy in $\left\Vert\cdot\right\Vert_1$ iff it is Cauchy in $\left\Vert\cdot\right\Vert_2$. 
+
+ 2. a sequence $\left\{v_n\right\}$ converges in $\left\Vert\cdot\right\Vert_1$ iff it converges in $\left\Vert\cdot\right\Vert_2$. 
+
+Why is this sufficient?  Because then the argument goes like this: Suppose $\left\Vert\cdot\right\Vert_1$ is complete; that is, $V$ is a Banach space in the $\left\Vert\cdot\right\Vert_1$ metric.  Let $\left\{v_n\right\}$ be a Cauchy sequence in $\left\Vert\cdot\right\Vert_2$.  By (1.) the sequence is Cauchy in $\left\Vert\cdot\right\Vert_1$.  Since $\left\Vert\cdot\right\Vert_1$ is complete, the sequence converges in $\left\Vert\cdot\right\Vert_1$, and by (2.) the sequence converges in $\left\Vert\cdot\right\Vert_2$.  Therefore $\left\Vert\cdot\right\Vert_2$ is complete.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1505036/show-that-if-cdot-1-cdot-2-are-equivalent-norms-then-v-cdot/1505055#1505055) on Mathematics Stack Exchange, 2015-10-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,166 @@
+---
+title: A nasty indefinite integral $ \int \frac{1}{x(x+1)(x+2)(x+3)(x+4) ... (x+m)} dx $
+date: '2019-05-19'
+description: It looks right to me [That is, I did the calculation independently and got the same answer]. For brevity/clarity purposes you really only need to include the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3232177
+se-link: https://math.stackexchange.com/questions/3232158/a-nasty-indefinite-integral-int-frac1xx1x2x3x4-xm-dx/3232177#3232177
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[A nasty indefinite integral $ \int \frac{1}{x(x+1)(x+2)(x+3)(x+4) ... (x+m)} dx $](https://math.stackexchange.com/questions/3232158/a-nasty-indefinite-integral-int-frac1xx1x2x3x4-xm-dx), asked by [Bob](https://math.stackexchange.com/users/154155/bob) on Mathematics Stack Exchange (2019-05-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Below is a problem from the book "Calculus and Analytic Geometry" by Thomas Finney. I am hoping somebody can check my work. I consider it to be a particular hard problem. 
+> Thanks,  
+> Bob
+>
+> **Problem:**  
+>
+> >We dare you to evaluate this integral.  
+> $$\int \frac{1}{x(x+1)(x+2)(x+3)(x+4) ... (x+m)} \,\, dx$$
+>
+> **Answer:**  
+> To evaluate this integral, we will consider some special cases. For $m = 0$ we have:
+> $$\begin{align*}
+>  \int \frac{1}{x} \,\, dx &= \ln|x| + C \\
+> \end{align*}$$
+>
+> * * *
+> Now for $m = 1$ we have the following integral:
+> $$\int \frac{1}{x(x+1)} \,\, dx$$
+> $$\begin{align*}
+> \frac{1}{x(x+1)} &= \frac{A}{x} + \frac{B}{x+1} \\
+> 1 &= A(x+1) + B(x) \\
+> \end{align*}$$
+> At $x = 0$ we have $1 = A(0+1)$ which yields $A = 1$.
+> $$\begin{align*}
+> A + B &=  0 \\
+> 1 + B &= 0 \\
+> B &= -1 \\
+> \frac{1}{x(x+1)} &= \frac{1}{x} - \frac{1}{x+1}  \\
+> \int \frac{1}{x(x+1)} \,\, dx &=  \ln|x| -  \ln|x+1| + C \\
+> \end{align*}$$
+>
+> * * *
+> Now for $m = 2$ we have the following integral:
+> $$\int \frac{1}{x(x+1)(x+2)} \,\, dx$$
+> $$\begin{align*}
+> \frac{1}{x(x+1)(x+2)} &= \frac{A}{x} + \frac{B}{x+1} + \frac{C}{x+2} \\
+> 1 &= A(x+1)(x+2) + B(x)(x+2) + C(x)(x+1) \\
+> \end{align*}$$
+>
+>  * At $x = 0$ we have $1 = A(0+1)(0+2)$ which yields $A = \frac{1}{2}$.
+>  * At $x = -1$ we have $1 = B(-1)(-1+2) = -B$ which yields $B = -1$.
+>  * At $x = -2$ we have $1 = C(-2)(-2+1) = 2C$ which yields $C = \frac{1}{2}$.
+> $$\begin{align*}
+> \frac{1}{x(x+1)(x+2)} &= \frac{ \frac{1}{2}}{x} - \frac{1}{x+1} + \frac{ \frac{1}{2}}{x+2} \\
+> \int \frac{1}{x(x+1)(x+2)} \,\, dx &= \frac{1}{2} \ln{|x|} - \ln{|x+1|} + \frac{1}{2} \ln{|x+2|} + C \\
+> \end{align*}$$
+>
+> * * *
+> Now for $m = 3$ we have the following integral:
+> $$\int \frac{1}{x(x+1)(x+2)(x+3)} \,\, dx$$
+> $$\begin{align*}
+> \frac{1}{x(x+1)(x+2)(x+3)} &= \frac{A}{x} + \frac{B}{x+1} + \frac{C}{x+2} + \frac{D}{x+3} \\
+> 1 &= A(x+1)(x+2)(x+3) + B(x)(x+2)(x+3) + \\
+>  & C(x)(x+1)(x+3) + D(x)(x+1)(x+2) \\
+> \end{align*}$$
+>
+>  * At $x = 0$ we have $1 = A(0+1)(0+2)(0+3) = 6A$ which yields $A = 1/6$.
+>  * At $x = -1$ we have $1 = B(-1)(-1+2)(-1+3) = -2B$ which yields $B = -1/2$.
+>  * At $x = -2$ we have $1 = C(-2)(-2+1)(-2+3) = 2C$ which yields $C = 1/2$.
+>  * At $x = -3$ we have $1 = D(-3)(-3+1)(-3+2) = -6D$ which yields $D = -1/6$.
+>
+> Hence, we have the following solution:
+> $$\int \frac{1}{x(x+1)(x+2)(x+3)} \,\, dx =
+> \frac{1}{6}\ln{|x|} - \frac{1}{2}\ln{|x+1|} + \frac{1}{2}\ln{|x+2|} - \frac{1}{6}\ln{|x+3|} + C$$
+>
+> * * *
+> Now for $m = 4$ we have the following integral:
+> $$\int \frac{1}{x(x+1)(x+2)(x+3)(x+4)} \,\, dx$$
+> $$\begin{align*}
+> \frac{1}{x(x+1)(x+2)(x+3)(x+4)} &= \frac{A}{x} + \frac{B}{x+1} + \frac{C}{x+2} + \frac{D}{x+3} + \frac{E}{x+4} \\
+> 1 &= A(x+1)(x+2)(x+3)(x+4) \\
+>   &+ B(x)(x+2)(x+3)(x+4) \\
+>   &+ C(x)(x+1)(x+3)(x+4) \\
+>   &+ D(x)(x+1)(x+2)(x+4)  \\
+>   &+ E(x)(x+1)(x+2)(x+3) \\
+> \end{align*}$$
+>
+>  * At $x = 0$ we have $1 = A(0+1)(0+2)(0+3)(0+4) = 24A$ which yields $A = 1/24$.
+>  * At $x = -1$ we have $1 = B(-1)(-1+2)(-1+3)(-1+4) = -6B$ which yields $B=-1/6$.
+>  * At $x = -2$ we have $1 = C(-2)(-2+1)(-2+3)(-2+4) = 4C$ which yields $C = 1/4$.
+>  * At $x = -3$ we have $1 = D(-3)(-3+1)(-3+2)(-3+4) = -6D$ which yields $D=-1/6$.
+>  * At $x = -4$ we have $1 = E(-4)(-4+1)(-4+2)(-4+3) = 24E$ which yields $E=1/24$.
+>
+> Hence we have the solution:  
+> Now for $m = 4$ we have the following integral:
+> $$\int \frac{1}{x(x+1)(x+2)(x+3)(x+4)} \,\, dx
+>  = \frac{\ln{|x|} - 4\ln{|x+1|} + 6\ln{|x+2|} - 4\ln{|x+3|} + \ln{|x+4|}}{24} + C$$
+>
+> * * *
+> Now let's consider the general case.
+> $$\begin{align*}
+> \frac{1}{x(x+1) \cdots (x+m)} \,\, &= \frac{C_0}{x} + \frac{C_1}{x+1} \cdots + \frac{C_m}{x+m} \\ 
+> \end{align*}$$
+> $$\begin{align*}
+> 1 &= {C_0}(x+1)(x+2) \cdots (x+m) \\
+>   &+ {C_1}(x)(x+2) \cdots (x+m) \\
+>   &+ {C_2}(x)(x+1)(x+3)(x+4) \cdots (x+m) \\
+>   &+ \cdots \\
+>   &+ C_m(x)(x+1)(x+2) \cdots (x+m-1) \\
+> \end{align*}$$
+> Now let's consider the first term. We set $x = 0$ and we get:
+> $$\begin{align*}
+> 1 &= {C_0}(0+1)(0+2) \cdots (x+m) = m! C_0 \\
+> C_0 &= \frac{1}{m!}
+> \end{align*}$$
+> Now let's consider the $C_2$ term. We set $x = 2$ and $m > 4$. We get:
+> $$\begin{align*}
+> 1 &= C_2(-2)(-2+1)(-2+3)(-2+4)(-2 + 5) \cdots (-2 + m) \\
+> 1 &= C_2 (2)(1)(2)(3)(4) \cdots (m-2) \\
+> 1 &= 2(m-2)! C_2 \\
+> C_2 &= \frac{1}{2(m-2)!} = \frac{m(m-1)}{2(m!)} \\
+> C_2 &= \frac{ \binom {m}{2} } {m!} \\
+> \end{align*}$$
+> Now let's consider the last term. We set $x = -m$ and we get:  
+> $$\begin{align*}
+> 1 &= C_m(-m)(-m+1)(-m+2) \cdots (x+m -1) \\
+> C_m &= \frac{(-1)^{m}}{m!} \\
+> \end{align*}$$
+> Now let's consider one of the middle terms. We set $x = -k$ where $0 <= k <= m$ and we get:
+> $$\begin{align*}
+> 1 &= C_k(-k)(-k+1)(-k+2) \cdots (-1) (1)(2) \cdots (-k + m - 1) \\ 
+> 1 &=  {-1}^k C_k(k-1)(k-2) \cdots  (1)(2) \cdots (-k + m - 1) \\
+> C_k &= \frac{ 1 }{ {(-1)}^k C_k(k-1)(k-2) \cdots  (1)(2) \cdots (-k + m - 1)  } \\
+> C_k &= \frac{ k! }{ {(-1)}^k C_k(k-1)(k-2) \cdots  (1)m!  } \\
+> C_k &= \frac{ \binom {m}{k} }{ {(-1)}^k m!  } \\
+> \end{align*}$$
+> Hence the answer is:
+> $$\sum_{k=0}^{k=m} \left( \frac{ \binom {m}{k} }{ {(-1)}^k m!  }\right) 
+> \ln{|x+k|} + C$$
+:::
+
+It looks right to me [That is, I did the calculation independently and got the same answer].  For brevity/clarity purposes you really only need to include the “general case”.  
+
+It would be more conventional to write
+$$C_k = \frac{(-1)^k}{k!(m-k)!}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3232158/a-nasty-indefinite-integral-int-frac1xx1x2x3x4-xm-dx/3232177#3232177) on Mathematics Stack Exchange, 2019-05-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

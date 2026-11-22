@@ -1,0 +1,51 @@
+---
+title: Describing the graph of a function
+date: '2015-07-29'
+description: First off, as Svetoslav comments, the graph is not a parabola since the expression for the function is cubic.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1378012
+se-link: https://math.stackexchange.com/questions/1377997/describing-the-graph-of-a-function/1378012#1378012
+se-score: 1
+se-accepted: false
+se-tags:
+- polynomials
+- graphing-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Describing the graph of a function](https://math.stackexchange.com/questions/1377997/describing-the-graph-of-a-function), asked by [Luke](https://math.stackexchange.com/users/257644/luke) on Mathematics Stack Exchange (2015-07-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For my Algebra II class one of the questions was:
+>
+> Describe the graph of the function $f(x) = x^3 - 18x^2 + 107x-210$. Include the $y$-intercept, $x$-intercepts, and the shape of the graph.
+>
+> And my answer was: 
+>
+> Vertex: 5.50, -0.25 <br/>
+> Root 1 = 5.00, 0.00 <br/>
+> Root 2 = 6.00, 0.00 <br/>
+> Shape: Parabola <br/>
+>
+> But she marked it wrong, What am I doing wrong? How do I get to the correct solution?
+:::
+
+First off, as Svetoslav comments, the graph is not a parabola since the expression for the function is cubic.
+
+You are correct that $f(5) = 0$ and $f(6)=0$.  But there is another zero.  Dividing $x^3-18x^2 + 107x-210$ by $x-5$ or $x-6$ will yield a quadratic that you can factor to find the third root.  That gives one more root of the polynomial, or $x$-intercept of the graph.
+
+You didn't answer the question about the $y$-intercept.  This is the point on the graph where $x=0$.  By definition that's $f(0)$.  Usually you can find that value easily—for a polynomial it's the constant term!
+
+You applied the idea of *vertex* to a cubic curve.  If you mean “bump” in the graph, then yes, this graph has them.  In fact, two.  But they don't occur evenly spaced between zeros like they do for quadratics.  In calculus you will learn how to find these points.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1377997/describing-the-graph-of-a-function/1378012#1378012) on Mathematics Stack Exchange, 2015-07-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,43 @@
+---
+title: How long should it take a potential PhD supervisor to evaluate proposal?
+date: '2014-09-15'
+description: Many academics are flooded with email from students (undergraduate and graduate), administrators, coworkers, colleagues, editors, etc. What you've asked him to…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 28547
+se-link: https://academia.stackexchange.com/questions/28545/how-long-should-it-take-a-potential-phd-supervisor-to-evaluate-proposal/28547#28547
+se-score: 13
+se-accepted: false
+se-tags:
+- phd
+- professorship
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How long should it take a potential PhD supervisor to evaluate proposal?](https://academia.stackexchange.com/questions/28545/how-long-should-it-take-a-potential-phd-supervisor-to-evaluate-proposal), asked by [Ali](https://academia.stackexchange.com/users/21893/ali) on Academia Stack Exchange (2014-09-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've contacted a potential PhD supervisor last month and gave him my PhD proposal. about a week after that I've got a response from the professor, acknowledging the receipt of my proposal and saying that he will respond as quickly as possible. I haven't received any other response since last month and I'm getting kind of anxious.
+>
+>  1. Should I write him an email again or let him contact me first with a
+>     reply?
+>
+>  2. How long does this process of proposal evaluation take?
+:::
+
+Many academics are flooded with email from students (undergraduate and graduate), administrators, coworkers, colleagues, editors, etc.  What you've asked him to do for you takes more than two minutes and he may not have available time to do it, or the energy to set aside the available time in the near future.  There are enough small things to deal with that they can can easily bury the larger things.
+
+If one method of communication is not effective you can, after a suitable delay, try another.  A phone call or visit to office hours might bump your earlier email to the top of his mind.  He may already have some preliminary feedback, or he may apologetically say that he still hasn't gotten to it, but he does plan to do it soon.  Either way this can move the process towards resolution.
+
+On the other hand, you're considering this person for one of the most important roles of your academic career.  If he does not show enthusiasm about working with you, you may want to consider other options.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/28545/how-long-should-it-take-a-potential-phd-supervisor-to-evaluate-proposal/28547#28547) on Academia Stack Exchange, 2014-09-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

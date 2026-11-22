@@ -1,0 +1,50 @@
+---
+title: Proofs With Algebraic Axioms
+date: '2019-02-18'
+description: 'This looks pretty good! A few comments:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3118149
+se-link: https://math.stackexchange.com/questions/3118122/proofs-with-algebraic-axioms/3118149#3118149
+se-score: 2
+se-accepted: false
+se-tags:
+- abstract-algebra
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proofs With Algebraic Axioms](https://math.stackexchange.com/questions/3118122/proofs-with-algebraic-axioms), asked by [k.rudin](https://math.stackexchange.com/users/645931/k-rudin) on Mathematics Stack Exchange (2019-02-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I wanted to check if my proof of this question is sufficient. This is the question:
+>
+> > Prove that for all $a \in \mathbb{R}$, $a \cdot 0 = 0$.
+>
+> And the proof:
+>
+> > Lets assume $a=a$ which implies $a-a=0$.  We must show that $a(0) = 0$.  By (A7), $a(1) = a$ and by (A9) $a(0+1) = a(1) = a$.  By (A3) $a + a(0) = a$ and therefore by subtracting $a$ from each side, $a(0) = 0$.
+>
+> The axioms are here: [field axioms][q-3]
+>
+>   [q-3]: kw0Mx.png
+:::
+
+This looks pretty good!  A few comments:
+
+* What is the purpose of your first sentence “Let's assume $a=a$ which implies $a-a=0$.”? There's no need to explicitly assume that $a=a$; it goes without saying.  Furthermore, the statement $a-a=0$ isn't needed or used anywhere else in the proof.
+
+* When you're writing your first proofs with these axioms, it helps to put each equation on its own line, citing the axiom used on that line.  For instance, you write “By (A9), $a(0+1) = a(1) = a$.”  But only the first $=$ is due to (A9); the second is due to (A7).
+
+* Henno's answer reminds me that “subtracting $a$ from both sides” is a bit too quick when you're going step by step with the field axioms.  So do as he suggests, and instead add $(-a)$ to both sides, regroup, and cancel.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3118122/proofs-with-algebraic-axioms/3118149#3118149) on Mathematics Stack Exchange, 2019-02-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

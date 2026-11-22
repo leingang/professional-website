@@ -1,0 +1,39 @@
+---
+title: Find the number of ways to arrange 8 students with restriction
+date: '2016-07-25'
+description: Use stars to represent the five non-particular students and bars to represent the three particular students. Then a feasible seating arrangement involves…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1870668
+se-link: https://math.stackexchange.com/questions/1870641/find-the-number-of-ways-to-arrange-8-students-with-restriction/1870668#1870668
+se-score: 1
+se-accepted: false
+se-tags:
+- combinatorics
+- permutations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the number of ways to arrange 8 students with restriction](https://math.stackexchange.com/questions/1870641/find-the-number-of-ways-to-arrange-8-students-with-restriction), asked by [Englandson Lim](https://math.stackexchange.com/users/356156/englandson-lim) on Mathematics Stack Exchange (2016-07-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> 8 students are arranged in a row. How many ways to arrange them if 3 particular students must be separated?
+:::
+
+Use stars to represent the five non-particular students and bars to represent the three particular students.  Then a feasible seating arrangement involves choosing three positions from the six that are either between two stars or at the end.  For instance,
+$$\star | \star \star \star | \star |$$
+The number of ways to do this is $\binom{6}{3}$.  
+
+Now keeping in mind the fact that the stars and bars are individual, distinguishable students, we can permute the stars and bars separately.  Therefore the number of arrangements is
+$$\binom{6}{3}\cdot 3! \cdot 5! = 14400$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1870641/find-the-number-of-ways-to-arrange-8-students-with-restriction/1870668#1870668) on Mathematics Stack Exchange, 2016-07-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

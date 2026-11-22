@@ -1,0 +1,87 @@
+---
+title: Nature of stationary points
+date: '2015-01-22'
+description: We have $$\begin{align} f{x1} (x1,x2) &= 2x1^4 + 2x2 +2 \\ f{x2} (x1,x2) &= 2x1 + 2(x2 + 1) \\ \end{align}$$ So if $(x1,x2)$ is a critical point we have…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114522
+se-link: https://math.stackexchange.com/questions/1114493/nature-of-stationary-points/1114522#1114522
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Nature of stationary points](https://math.stackexchange.com/questions/1114493/nature-of-stationary-points), asked by [diabloescobar](https://math.stackexchange.com/users/208811/diabloescobar) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have
+>
+> $$f(x_1,x_2) = 2x^4_1 + 2x_1x_2 + 2x_1 + (1+x_2)^2$$
+>
+> How can I **determine the nature of the stationary points**?
+>
+> I know;
+>
+> $$f_{x_1,x_1}(x) = 24x_1^2$$
+> $$f_{x_2,x_2}(x) = 2$$
+> $$f_{x_1,x_2}(x) = 2$$
+>
+> This gives me a hessian:
+>
+> $$\nabla^2 f(x) = 
+>  \left[
+>   \begin{array}{ c c }
+>      24x_1^2 & 2 \\
+>      2 & 2
+>   \end{array} \right]$$
+>
+> By examining the leading principal minors;
+> $$D_1 = \| (24x_1^2)\| \geq 0$$ and $$D_2 = 
+> \det\left|\array{24x_1^2&2\\2&2}\right|  = 48x_1^2 -4$$
+>
+> Since I have no condition on $x_1^2$ then $D_2$ can be positive, negative or even 0.
+>
+> So then does this mean this matrix is indefinite, and hence all the stationary points here are saddle points? 
+>
+> Have I made a mistake in the Hessian? I feel the $24x_1^2$ term is out of place.
+>
+> any help is VERY MUCH appreciated.
+:::
+
+We have
+$$\begin{align*}
+f_{x_1} (x_1,x_2) &= 2x_1^4 + 2x_2 +2 \\
+f_{x_2} (x_1,x_2) &= 2x_1 + 2(x_2 + 1) \\
+\end{align*}$$
+So if $(x_1,x_2)$ is a critical point we have
+$$\begin{align}
+8x_1^3 + 2x_2 +2  &= 0 \\
+2x_1 + 2x_2 + 2   &= 0 
+\end{align}$$
+Subtracting the two gives
+$$8x_1^3 - 2x_1 = 0 = 4x_1(4x_1^2-1)$$
+therefore $x_1 = 0, \pm \frac{1}{2}$.  The critical points are $(0,-1)$, $\left(\frac{1}{2},-\frac{3}{2}\right)$, and $\left(-\frac{1}{2},-\frac{1}{2}\right)$.
+
+You have already computed that that $D_1 > 0$ if $x_1 \neq 0$, and in this case $D_2 = 48 \cdot \frac{1}{4} - 4 = 8$.  So these two points are local minima.  $D_2 < 0$ at $(0,0)$ so this critical point is a saddle point.
+
+[Here is a contour plot][1] to see what's going on:
+
+![contour plot of $f$][2]
+
+
+  [1]: http://wolfr.am/2P_Y3~xK
+  [2]: fPP9v.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114493/nature-of-stationary-points/1114522#1114522) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

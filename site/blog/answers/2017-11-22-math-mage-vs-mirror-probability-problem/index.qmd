@@ -1,0 +1,46 @@
+---
+title: Mage Vs Mirror Probability problem
+date: '2017-11-22'
+description: This looks like a good candidate for a Markov chain. You simulate the battle by state pairs $(M,m)$, where $M$ is the mage's hitpoint total and $m$ the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2532369
+se-link: https://math.stackexchange.com/questions/2532339/mage-vs-mirror-probability-problem/2532369#2532369
+se-score: 4
+se-accepted: true
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Mage Vs Mirror Probability problem](https://math.stackexchange.com/questions/2532339/mage-vs-mirror-probability-problem), asked by [Andy Grey](https://math.stackexchange.com/users/316158/andy-grey) on Mathematics Stack Exchange (2017-11-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![Mage Vs Mirror][q-1]][q-1]
+>
+> I've been trying to work this out for a while now but I'm not really sure how to go about it, especially with the dodges which could go on forever!
+>
+> I've tried calculating the individual probabilities of each outcome by multiplying them together, but I don't know how to combine those results or even if I'm going about it the right way
+>
+>
+>   [q-1]: f1W0Z.png
+:::
+
+This looks like a good candidate for a [Markov chain](https://en.wikipedia.org/wiki/Markov_chain).  You simulate the battle by state pairs $(M,m)$, where $M$ is the mage's hitpoint total and $m$ the mirror's.  You then compute the transitional probabilities to all the other possible states, based on whether the attack lands or is reflected, and if reflected, lands, results in instadeath, or is dodged.  This information is organized into a matrix, with one row and column for each state pair.
+
+The states where $M$ or $m$ are zero are the absorbing states—once the process lands there the battle will end and it will stay in that state forever.  Using standard facts about absorbing Markov chains, you can compute the probability the process will land in any one of the absorbing states, and the expected number of turns it will take to land in them.  
+
+Markov chains are usually taught in an undergraduate level probability course.  You need to understand basic probability axioms (including conditional probability), and basic matrix operations (including multiplying matrices), but   beyond that, it's pretty accessible.  [Grinstead and Snell's open source textbook has a nice chapter](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/Chapter11.pdf).
+
+Since you have so many states, your matrix will be too big to solve the problem by hand.  I'd suggest using a Sage worksheet within the [CoCalc](https://cocalc.com/) platform (all free!)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2532339/mage-vs-mirror-probability-problem/2532369#2532369) on Mathematics Stack Exchange, 2017-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,57 @@
+---
+title: Surface Integral
+date: '2015-08-18'
+description: We are asked to integrate the function $$f(x,y,z) = \frac{y}{x} \sqrt{4z^2 + 1}$$ over the surface $S$ defined by $$S = \left\{(x,y,z)\mid 1 \leq x \leq e,\ 0…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1401710
+se-link: https://math.stackexchange.com/questions/1398541/surface-integral/1401710#1401710
+se-score: 0
+se-accepted: false
+se-tags:
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Surface Integral](https://math.stackexchange.com/questions/1398541/surface-integral), asked by [help123](https://math.stackexchange.com/users/262306/help123) on Mathematics Stack Exchange (2015-08-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Integrate $f=\frac{Y}{X}\sqrt{4Z^2 + 1}$ over the portion of the paraboloid $Z=X^2+Y^2$ that lies above the rectangle with the following limits:  $1\lt X\lt e , 0\lt y\lt 2$ in the $X-Y$ plane."
+>
+>
+> I know that you use the formula, but i get stuck beyond that. Can someone show me a fully worked solution please on how to do this. 
+>
+> Many thanks
+>
+> Please excuse the poor formatting. I don't know how to use this website properly just yet!
+:::
+
+We are asked to integrate the function
+$$f(x,y,z) = \frac{y}{x} \sqrt{4z^2 + 1}$$
+over the surface $S$ defined by
+$$S = \left\{(x,y,z)\mid 1 \leq x \leq e,\ 0 \leq y \leq 2,\ z = x^2 + y^2\right\}$$
+
+Stop to make sure you understand: the surface $S$ is two-dimensional.  If we are to integrate a function over $S$, it should break down to two variables.  Since, on $S$, $z=x^2+y^2$, we substitute it into the function $f(x,y,z)$.  So part of the integrand is $$f(x,y,z^2 + y^2) = \frac{y}{x}\sqrt{4x^2 + 4y^2+1}$$
+
+Now remember the surface is not flat, but curved.  That curvature is accounted for in the integral by integrating against $dS$ instead of $dA$.  But since our surface is part of a graph, this is easy:
+$$dS = \sqrt{\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2+1}\,dx\,dy
+= \sqrt{(2x)^2 + (2y)^2 + 1}\,dx\,dy$$
+Putting this together, we have
+$$\begin{split}
+    \iint_S f\,dS
+        &= \int_1^e \int_0^2\frac{y}{x}\sqrt{4x^2 + 4y^2+1}\cdot \sqrt{(2x)^2 + (2y)^2 + 1}\,dx\,dy \\
+        &= \int_1^e \int_0^2\frac{y}{x}\left(4x^2 + 4y^2+1\right)\,dy\,dx
+\end{split}$$
+
+Hopefully you can proceed from here.  If not, reread your textbook's section on double and iterated integrals.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1398541/surface-integral/1401710#1401710) on Mathematics Stack Exchange, 2015-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

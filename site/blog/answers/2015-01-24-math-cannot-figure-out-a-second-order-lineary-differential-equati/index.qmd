@@ -1,0 +1,52 @@
+---
+title: Cannot figure out a second order lineary differential equation with initial values
+date: '2015-01-24'
+description: 'Your mistake is in this line: $$y''(x) = -5C1e^{-5x} -5C2xe^{-5x} \color{red}{+C2 e^{-5x}}$$ by the product rule.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1117473
+se-link: https://math.stackexchange.com/questions/1117467/cannot-figure-out-a-second-order-lineary-differential-equation-with-initial-valu/1117473#1117473
+se-score: 2
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- systems-of-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Cannot figure out a second order lineary differential equation with initial values](https://math.stackexchange.com/questions/1117467/cannot-figure-out-a-second-order-lineary-differential-equation-with-initial-valu), asked by [Cheiron](https://math.stackexchange.com/users/64778/cheiron) on Mathematics Stack Exchange (2015-01-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I got the following question:
+>
+> Solve the following initial value problem:
+> $y(0) = 0$, $y'(0) = 1$, $$y'' + 10y' + 25y = 0$$
+>
+> So I started with getting the general solution:
+> $$y(x) = C_1e^{-5x} + xC_2e^{-5x}$$
+> And then calculating the derative while i am at it:
+> $$y'(x) = -5C_1e^{-5x} -5C_2xe^{-5x}$$
+> After filling in the conditions, the solution should be:
+> $y = xe^{-5x}$. And that is where I get stuck: I do not get that answer.
+>
+> First i fill in condition y(0) = 0
+> $$0 = C_1*1 + 0 => C_1 = 0$$
+> And then y'(0) = 1:
+> $$1 = -5C_1*1 + 0 => C_1 = -1/5$$
+> Which is, obviously incorrect. Where did I make the mistake? How do I solve this?
+:::
+
+Your mistake is in this line:
+$$y'(x) = -5C_1e^{-5x} -5C_2xe^{-5x} \color{red}{+C_2 e^{-5x}}$$
+by the product rule.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1117467/cannot-figure-out-a-second-order-lineary-differential-equation-with-initial-valu/1117473#1117473) on Mathematics Stack Exchange, 2015-01-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

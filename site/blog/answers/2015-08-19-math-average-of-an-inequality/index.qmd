@@ -1,0 +1,52 @@
+---
+title: average of an inequality
+date: '2015-08-19'
+description: I have to infer that by "$<1$" you mean the set of all real numbers less than $1$. That's more commonly written as the open interval $(-\infty,1)$. If $A$ and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1403022
+se-link: https://math.stackexchange.com/questions/1403007/average-of-an-inequality/1403022#1403022
+se-score: 1
+se-accepted: false
+se-tags:
+- inequality
+- arithmetic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[average of an inequality](https://math.stackexchange.com/questions/1403007/average-of-an-inequality), asked by [Heather](https://math.stackexchange.com/users/263151/heather) on Mathematics Stack Exchange (2015-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> what is the result of $<1 + <1$? ;
+> $<1 + <1 = <2$? or <1 + <1 = <1?
+>
+> Now what is that number divided by 2?
+> Either we have:
+> <2 / 2 = <1 or 
+> <1 / 2 = <0.5
+:::
+
+I have to infer that by "$<1$" you mean the *set* of all real numbers less than $1$.  That's more commonly written as the open interval $(-\infty,1)$.  If $A$ and $B$ are sets, then there is a well-defined set addition operation, defined by
+$$A + B = \left\{a+b \mid a \in A,\ b\in B\right\}$$
+
+If $x < 1$ and $y < 1$, then $x+y < 2$.  This tells us that $(-\infty,1) + (-\infty,1) \subseteq (-\infty,2)$.  Moreover, if $z < 2$, then $z/2 < 1$, and since $z = z/2 + z/2$, we know $(-\infty,2) \subseteq (-\infty,1) + (-\infty,1)$.  Taking the two together, we have
+$$(-\infty,1) + (\infty,1) = (-\infty,2)$$
+or "$\mathop{<}1 + \mathop{<}1 = \mathop{<}2$" as you wrote it.
+
+Similarly, we can define for a set $A$ and number $\alpha$ the set
+$$\alpha A = \left\{\alpha a \mid a \in A\right\}$$
+It's not hard to show that
+$$\frac{1}{2}(-\infty,2) = (-\infty,1)$$
+
+But to be less formal, and reading your whole question, it seems you want to know what assumptions you can make about the average of two numbers if you know their bounds.  If they are both less than one, then yes, their average is less than one.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1403007/average-of-an-inequality/1403022#1403022) on Mathematics Stack Exchange, 2015-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,55 @@
+---
+title: A function on a set
+date: '2023-09-05'
+description: 'These are the conventions that I have seen:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4764130
+se-link: https://math.stackexchange.com/questions/4764126/a-function-on-a-set/4764130#4764130
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- functions
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A function on a set](https://math.stackexchange.com/questions/4764126/a-function-on-a-set), asked by [Aditya_math](https://math.stackexchange.com/users/798141/aditya-math) on Mathematics Stack Exchange (2023-09-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Recently in an exam question, they had used the wording: *a function $f$ on set $[1,2,\ldots,n]$* , and so i assumed that this meant that the function had domain and codomain equal to $[1,2,\ldots,n]$ and I solved the question and got the correct answer but apparently we had to take the codomain as whole numbers which would give a different answer. (like I got that the answer was $p(8)$, the number of partitions of $8$, while the given answer is $p(7)$ )
+>
+>
+> I remember seeing/ reading in a lot of places that a function on set $S$ meant the function was $f: S \to S$ and that this is also pretty common notation, but now i can't remember where I read this,
+>
+> So my question is that,
+>
+> This is a common notation right? Like a function on set S means domain and codomain is $S$
+>
+> And also, more importantly, could you please give me any example of any math resource where this notation is used, the reason I am asking is that the organisers are accepting answer key challenges, so I would like to ask them to accept both $p(7)$ and $p(8)$ as answers, and I would like to ideally attach some math books/ handouts whatever where this notation is used, so that they can see that this is indeed common notation.
+>
+> I really need to get the question right to have a chance of qualifying for the next round, so I am asking for your help.
+>
+> Looking forward to any possible help, please.
+>
+> Thanks!
+:::
+
+These are the conventions that I have seen:
+
+* A *relation* on $S$ is a subset of $S \times S$
+* A *function* on $S$ is a function whose domain is $S$. The codomain is not specified from this description. In some fields, there is an implied usual codomain. For instance, in manifolds, sometimes functions are assumed to have codomain $\mathbb R$, and functions between different manifolds are called *mappings* instead. But not always.
+
+Despite the fact that functions are a special kind of relation, a function on $S$ is not a special case of a relation on $S$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4764126/a-function-on-a-set/4764130#4764130) on Mathematics Stack Exchange, 2023-09-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,39 @@
+---
+title: Is this set open or closed
+date: '2015-02-15'
+description: I don't know how the topology of $\mathbb{R}$ is defined in your course, but in a metric space (of which $\mathbb{R}$ is an example), a set is open if for each…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1149127
+se-link: https://math.stackexchange.com/questions/1149103/is-this-set-open-or-closed/1149127#1149127
+se-score: 0
+se-accepted: false
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is this set open or closed](https://math.stackexchange.com/questions/1149103/is-this-set-open-or-closed), asked by [matthew](https://math.stackexchange.com/users/215613/matthew) on Mathematics Stack Exchange (2015-02-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is $(-1,0]\cup[0,1)$ open or closed, both or neither (relative to R)?
+>
+> This set doesn't contain the limit point $1$, so it's not closed. But how can I determine whether it's open or not? The complement is $(-\infty,-1]\cup[1,\infty)$, but I can't seem to figure out whether it's closed or not. I would say it's closed because it contains every point, so that would make $(-1,0]\cup[0,1)$ an open set, but the infinity thing kinda sets me off.
+:::
+
+I don't know how the topology of $\mathbb{R}$ is defined in your course, but in a metric space (of which $\mathbb{R}$ is an example), a set is open if for each point of the set there is a ball of finite radius around the point contained within the set.
+
+So open intervals $(a,b)$ in $\mathbb{R}$ are open, because for any $x_0 \in (a,b)$, the ball of radius $\min\left(\frac{x_0-a}{2},\frac{b-x_0}{2}\right)$ is contained in $(a,b)$ (draw a picture and you'll see what this means).
+
+Then you just have to realize that $(-1,0]\cup[0,1)$ is the same set as $(-1,1)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1149103/is-this-set-open-or-closed/1149127#1149127) on Mathematics Stack Exchange, 2015-02-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

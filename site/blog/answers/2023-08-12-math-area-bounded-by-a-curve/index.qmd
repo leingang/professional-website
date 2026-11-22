@@ -1,0 +1,91 @@
+---
+title: Area bounded by a curve
+date: '2023-08-12'
+description: In addition to the sign of the definite integral, it seems you are worried about the difference between the functions $-8 \ln |\cos(x/2)|$ and $8…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4751845
+se-link: https://math.stackexchange.com/questions/4751824/area-bounded-by-a-curve/4751845#4751845
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Area bounded by a curve](https://math.stackexchange.com/questions/4751824/area-bounded-by-a-curve), asked by [user3.14](https://math.stackexchange.com/users/1201323/user3-14) on Mathematics Stack Exchange (2023-08-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Question: Find the area bounded by the curve $y$= $4$ $Tan{\frac{x}{2}}$, X-axis (or $y=0$), $x= {\frac{-π}{2}}$ and $x= {\frac{-π}{3}}$.
+>
+> I am having a slight difference in the answer and I am not able to figure out why it's happening. I hope I get it resolved through this post.
+>
+> My solution:
+>
+> Sketch the graph first. For $y$= $4$ $Tan{\frac{x}{2}}$, lets check the periodicity. 
+> Periodicity= $2π$, then for different values of x, the graph of $y$= $4$ $Tan{\frac{x}{2}}$ out to be:
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+> Since periodicity =$2π$, so lets only take the portion of the graph from $x=-π$ to $x=π$.
+>
+> [![enter image description here][q-2]][q-2]
+>
+> We need to find the shaded area from $x=-\frac{π}{2}$ to $x=-\frac{π}{3}$. The following is the required area:
+>
+>
+> [![enter image description here][q-3]][q-3]
+>
+>
+>   [q-1]: MdOMR.png
+>   [q-2]: VV2It.png
+>   [q-3]: WcONx.png
+>
+> Shaded Area is: 
+>
+> $\int _{−π/2 }^{−π/3 }$ $4$ $Tan{\frac{x}{2}}$dx
+>
+> = $8$ $ln|sec \frac{x}{2}|$ from $x=-\frac{π}{2}$ to $x=-\frac{π}{3}$
+>
+> = $8$ ($ln|sec \frac{-\frac{π}{3}}{2}|$ - $ln|sec \frac{-\frac{π}{2}}{2}|$)
+>
+> = $8$ $ln|\frac {sec \frac{-\frac{π}{3}}{2}} {sec \frac{-\frac{π}{2}}{2}}|$
+>
+> = $8$ $ln|\frac {sec \frac{-π}{6}} {sec \frac{-π}{4}}|$
+>
+> = $8$ $ln|\frac {sec \frac{π}{6}} {sec \frac{π}{4}}|$
+>
+> = $8$ $\ln \left| \frac{\frac{2}{\sqrt{3}}}{\frac{2}{\sqrt{2}}} \right|$ 
+>
+> = $8$ $\ln \left| \frac{2}{\sqrt{6}} \right|$ 
+>
+> Now, the answer mentioned in the exercise is $8$ $\ln \left| \frac{\sqrt{6}}{2}\right|$ and this is true when:
+>
+> $\int _{−π/2 }^{−π/3 }$ $4$ $Tan{\frac{x}{2}}$dx = $-8$ $ln|cos \frac{x}{2}|$ from $x=-\frac{π}{2}$ to $x=-\frac{π}{3}$
+>
+> Why does this difference in answer occur? I think that it might be because the shaded area is below the X-axis and thus should come out to be negative and ultimately the value is taken ignoring the negative sign. Thus, $\int _{−π/2 }^{−π/3 }$ $4$ $Tan{\frac{x}{2}}$dx should be equal to $-8$ $ln|cos \frac{x}{2}|$ from $x=-\frac{π}{2}$ to $x=-\frac{π}{3}$ instead of $8$ $ln|sec \frac{x}{2}|$ from $x=-\frac{π}{2}$ to $x=-\frac{π}{3}$.
+>
+> Is my interpretation and calculation correct? Please help with the problem regarding the difference in the answer. Is my reasoning correct for it? Looking forward to your response.
+>
+> Thank you.
+:::
+
+In addition to the sign of the definite integral, it seems you are worried about the difference between the functions $-8 \ln |\cos(x/2)|$ and $8 \ln|\sec(x/2)|$.
+
+Those are, in fact, equivalent since $- \ln z = \ln (z^{-1}) = \ln \frac{1}{z}$ for any $z$. Also, $\sec\theta = \frac{1}{\cos\theta}$. So 
+$$8 \ln|\sec(x/2)| = 8 \ln\left|\frac{1}{\cos(x/2)}\right|
+   =-8 \ln|\cos(x/2)|$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4751824/area-bounded-by-a-curve/4751845#4751845) on Mathematics Stack Exchange, 2023-08-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

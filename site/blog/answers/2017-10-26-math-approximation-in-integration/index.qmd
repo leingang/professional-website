@@ -1,0 +1,56 @@
+---
+title: Approximation in Integration
+date: '2017-10-26'
+description: 'Based on your examples, I''m guessing that your $f1(x)$ is a linear approximation to $f$ around $a=0$: $$f1(x) = f(0) + f''(0)x$$ Of course, we have to assume…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2491272
+se-link: https://math.stackexchange.com/questions/2491176/approximation-in-integration/2491272#2491272
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Approximation in Integration](https://math.stackexchange.com/questions/2491176/approximation-in-integration), asked by [m. bubu](https://math.stackexchange.com/users/306840/m-bubu) on Mathematics Stack Exchange (2017-10-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is it always true that for small value of c i.e $c\approx 0$  
+> $\int_0^c f(x)dx \approx \int_0^c f1(x)dx$   
+>
+> where $f1(x)$ is the approximate function for $f(x)$ when x is small?   
+> For an example:  
+> $\int_0^{0.18}(1-\sin x \cos x)dx=0.163974$.  
+> $\int_0^{0.18}(1-x)dx=0.1638$.
+>
+> In this case both are approximately same  but is it always true for any function?
+:::
+
+Based on your examples, I'm guessing that your $f1(x)$ is a linear approximation to $f$ around $a=0$:
+$$f1(x) = f(0) + f'(0)x$$
+Of course, we have to assume $f$ is differentiable at $0$ to make this approximation.  What you're asking about is equivalent to whether
+$$\int_0^c |f(x)-f1(x)|\,dx \approx 0$$
+when $c$ is small.  
+
+As long as $f$ is integrable, this seems true.  If $g$ is integrable, it must be bounded.  If $m \leq g(x) \leq M$ on $[a,b]$, then 
+$$m(b-a) \leq \int_a^b g(x)\,dx \leq M(b-a)$$
+
+Since $f-f1$ is also bounded, we must have
+$$0 \leq \int_0^c |f(x)-f1(x)|\,dx \leq Mc$$
+which tends to zero as $c\to 0$.
+
+We can say more.  We claim $\frac{1}{c}\int_0^c(f(x)-f1(x))\,dx \to 0$ as $c\to 0$.  If you define
+$$F(c) = \int_0^c (f(x)-f1(x))\,dx$$
+Then $F'(0) = \lim_{c\to 0} \frac{1}{c} \int_0^c(f(x)-f1(x))\,dx$.  But by the Fundamental Theorem of Calculus, this is $f(0) - f1(0) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2491176/approximation-in-integration/2491272#2491272) on Mathematics Stack Exchange, 2017-10-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

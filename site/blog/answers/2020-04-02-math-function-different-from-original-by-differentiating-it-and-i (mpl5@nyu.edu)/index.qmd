@@ -1,0 +1,44 @@
+---
+title: Function different from original by differentiating it and integrating it again.
+date: '2020-04-02'
+description: I graphed $x\mapsto \sin^4 x + \cos^4 x$ and $x \mapsto \frac{1}{4}\cos4x$ on the same axes, and here's what I saw.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3606789
+se-link: https://math.stackexchange.com/questions/3606771/function-different-from-original-by-differentiating-it-and-integrating-it-again/3606789#3606789
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- functions
+- derivatives
+- inequality
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Function different from original by differentiating it and integrating it again.](https://math.stackexchange.com/questions/3606771/function-different-from-original-by-differentiating-it-and-integrating-it-again), asked by [TheQuestioner](https://math.stackexchange.com/users/556133/thequestioner) on Mathematics Stack Exchange (2020-04-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let a function be defined $f(x)=sin^4x+cos^4x,$ $x\in R$.<br>Rewriting this,
+> $$f(x)=(sin^2x+cos^2x)^2-2sin^2xcos^2x$$$$\implies f(x)=1-\frac{sin^22x}{2}$$$$\implies \frac{1}{2}\leq f(x)\leq1$$
+>
+> However,upon differentiating the function,we get$$f'(x)=4sin^3x cosx-4cos^3xsinx$$$$\implies f'(x)=4cosxsinx(sin^2x-cos^2x)$$$$\implies f'(x)=-2sin2xcos2x$$$$\implies f'(x)=-sin4x$$Integrating both sides,$$f(x)=\frac{cos4x}{4}$$which lies between$\frac{-1}{4}$ and $\frac{1}{4}$and is not equal to the original function.Why is the answer different?
+:::
+
+I graphed $x\mapsto \sin^4 x + \cos^4 x$ and $x \mapsto \frac{1}{4}\cos4x$ on the same axes, and here's what I saw.
+
+[![graph of two functions.  one graph is a vertical shift of the other][1]][1]:
+
+
+  [1]: KEXky.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3606771/function-different-from-original-by-differentiating-it-and-integrating-it-again/3606789#3606789) on Mathematics Stack Exchange, 2020-04-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

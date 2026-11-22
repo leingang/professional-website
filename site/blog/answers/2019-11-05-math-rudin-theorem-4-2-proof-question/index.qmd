@@ -1,0 +1,48 @@
+---
+title: Rudin Theorem 4.2 proof question
+date: '2019-11-05'
+description: 'No. The two statements claimed to be equivalent are:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3423368
+se-link: https://math.stackexchange.com/questions/3423344/rudin-theorem-4-2-proof-question/3423368#3423368
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+- proof-explanation
+- predicate-logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Rudin Theorem 4.2 proof question](https://math.stackexchange.com/questions/3423344/rudin-theorem-4-2-proof-question), asked by [Endre Moen](https://math.stackexchange.com/users/413323/endre-moen) on Mathematics Stack Exchange (2019-11-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Refering to the question [Rudin 4.2 definition of a limit of a function](https://math.stackexchange.com/questions/2995977/rudin-4-2-definition-of-a-limit-of-a-function), I dont have enough reputation to add a comment.
+>
+> I have the same question. Is'nt the proof in $\impliedby\$ direction a logical fallacy? If $P \implies\ Q$ then all we know more is $\neg Q \implies\ \neg P$ called [modus tollens](https://en.wikipedia.org/wiki/Modus_tollens).
+>
+> Further $\neg P\implies\ \neg Q$ is called ["Denying the antecedent, or Inverse error or Fallacy of the inverse"](https://en.wikipedia.org/wiki/Denying_the_antecedent)
+>
+> Isnt that what Rudin is doing here? So the proof should'nt start by assuming (4) is false, but that (5) is false. 
+>
+> Then from $\neg (5) \land (6) \implies\ \neg (4)$ or $(5) \land \neg (6) \implies\ \neg (4)$ or (since logical and) $\neg (5) \land \neg (6) \implies\ \neg (4)$ hence a contradiction.
+:::
+
+No.  The two statements claimed to be equivalent are:
+
+* $P$: $\lim_{x \rightarrow p}f(x) = q$
+* $Q$: for every sequence $(p_n)$ in $E$ such that $p_n \neq p$ and $\lim_{n\rightarrow \infty}p_n = p$, $\lim_{n \rightarrow \infty}f(p_n) = q$.
+
+He shows first that $P \implies Q$ and then that $\neg P \implies \neg Q$.  The latter is equivalent to $Q \implies P$, which completes the proof that $P \iff Q$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3423344/rudin-theorem-4-2-proof-question/3423368#3423368) on Mathematics Stack Exchange, 2019-11-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

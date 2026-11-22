@@ -1,0 +1,50 @@
+---
+title: Basic Multivariable Limit
+date: '2017-02-20'
+description: Your “polar coordinates” method can work…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2152372
+se-link: https://math.stackexchange.com/questions/2152043/basic-multivariable-limit/2152372#2152372
+se-score: 2
+se-accepted: false
+se-tags:
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Basic Multivariable Limit](https://math.stackexchange.com/questions/2152043/basic-multivariable-limit), asked by [Leonidas Lanier](https://math.stackexchange.com/users/262519/leonidas-lanier) on Mathematics Stack Exchange (2017-02-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The other day I was asked to solve the following multivariable limit:
+>
+> $$\lim_{(x,y)\to(0,0)}\frac{x-y}{x+y}$$
+>
+> As simple as it was I was stumped. I tried some algebraic manipulation using conjugates, which got me nowhere. Then I tried defining $x$ and $y$ by their polar definitions and got stuck here:
+>
+> $$\lim_{r\to0}\frac{r\cos\theta-r\sin\theta}{r\cos\theta+r\sin\theta}$$
+>
+> $$=\frac{\cos\theta-\sin\theta}{\cos\theta+\sin\theta}$$
+>
+> But I didn't know what to do from here.
+>
+> The only other approach that struck me as a possibility was partial fractions.
+>
+> What's the best way to tackle this limits problem and ones like it?
+:::
+
+Your “polar coordinates” method can work:
+$$\lim_{r\to0}\frac{r\cos\theta-r\sin\theta}{r\cos\theta+r\sin\theta}=\frac{\cos\theta-\sin\theta}{\cos\theta+\sin\theta}$$
+If the two-variable limit existed, the expression on the right would not depend on $\theta$. But clearly it does depend on $\theta$.  If $\theta = 0$, the limit is $1$.  But if $\theta = \frac{\pi}{2}$, the limit is $-1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2152043/basic-multivariable-limit/2152372#2152372) on Mathematics Stack Exchange, 2017-02-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

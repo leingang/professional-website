@@ -1,0 +1,60 @@
+---
+title: Is this a valid proof? Discrete Mathematics
+date: '2016-03-08'
+description: There are a couple of flaws here. First, the outline of what you did is "We want to prove $R$. So assume $\neg R$. Then, blah blah blah, $R$. But we assumed…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1688962
+se-link: https://math.stackexchange.com/questions/1688945/is-this-a-valid-proof-discrete-mathematics/1688962#1688962
+se-score: 4
+se-accepted: true
+se-tags:
+- discrete-mathematics
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is this a valid proof? Discrete Mathematics](https://math.stackexchange.com/questions/1688945/is-this-a-valid-proof-discrete-mathematics), asked by [Laugh7](https://math.stackexchange.com/users/299919/laugh7) on Mathematics Stack Exchange (2016-03-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I feel like there are many solutions for some proofs, and I want to make sure I'm still getting everything correct. This is the problem:
+>
+> $$m^2 = n^2 (P)\quad\text{if and only if}\quad m = n (Q)\quad\text{or}\quad m = -n (Z)$$
+>
+> So I need to prove $P \Rightarrow (Q \lor Z)$ and $(Q \lor Z) \Rightarrow P$ because this is a bi-conditional statement, yes? This is my proof.
+>
+> Proving $P \Rightarrow (Q \lor Z)$:
+>
+> Let's assume $m$ doesn't equal $n$ (proving by contra-position). It is said that $m^2 = n^2$. Take the square root of both sides and you are left with $m = n$. However, we are assuming $m$ doesn't equal $n$ so there is a contradiction. 
+>
+> And I pretty much did the reverse for $(Q \lor Z) \Rightarrow P$ by squaring both sides to reach the contradiction.
+>
+>
+> Is this a valid proof or is something going over my head?
+:::
+
+> So I need to prove $P \to (Q \vee Z)$ and $(Q \vee Z) \to P$ because this is a bi-conditional statement, yes?
+
+Yes.
+
+> Let's assume $m$ doesn't equal $n$ (proving by contra-position). It is said that $m^2 = n^2$. Take the square root of both sides and you are left with $m = n$. However, we are assuming $m$ doesn't equal $n$ so there is a contradiction.
+
+There are a couple of flaws here.  First, the outline of what you did is "We want to prove $R$.  So assume $\neg R$.  Then, blah blah blah, $R$.  But we assumed $\neg R$.  This is a contradiction."  But you only contradicted your original assumption $\neg R$.  In the middle, you proved $R$.  So in proofs like that you don't need the proof-by-contradiction framework.  You just did a direct proof.
+
+Or did you?  You said $m^2 = n^2 \implies m = n$ “by taking the square root of both sides.”  But this isn't valid.  For $2^2 = (-2)^2$ while $2 \neq -2$. So something went wrong, and it was that you lost a solution by assuming $m$ and $n$ were both positive. 
+
+With nonlinear algebraic equations, it's often safer to set the equation equal to zero and factor.  In this case:
+$$m^2 = n^2 \implies m^2 - n^2 = 0 \implies (m-n)(m+n) = 0$$ 
+Two numbers have a product of zero if and only if one of them is zero.
+So either $m-n = 0$ (in which case $m=n$) or $m+n=0$ (in which case $m=-n$).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1688945/is-this-a-valid-proof-discrete-mathematics/1688962#1688962) on Mathematics Stack Exchange, 2016-03-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

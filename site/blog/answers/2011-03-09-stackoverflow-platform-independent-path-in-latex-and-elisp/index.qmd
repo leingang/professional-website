@@ -1,0 +1,48 @@
+---
+title: Platform-independent path (in LaTex and Elisp)?
+date: '2011-03-09'
+description: 'For LaTeX, see: “How to add an extra searchable dir with personal style files to TeXLive, NOT under ~/Library/texmf?” on the TeX SE. It might help.'
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 5249789
+se-link: https://stackoverflow.com/questions/5249321/platform-independent-path-in-latex-and-elisp/5249789#5249789
+se-score: 0
+se-accepted: false
+se-tags:
+- emacs
+- latex
+- path
+- cross-platform
+- elisp
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Platform-independent path (in LaTex and Elisp)?](https://stackoverflow.com/questions/5249321/platform-independent-path-in-latex-and-elisp), asked by [Thorsten](https://stackoverflow.com/users/783306/thorsten) on Stack Overflow (2011-03-09; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I run Emacs on Win7 and Ubuntu and try to share most of my configuration via dropbox.com. I still could not figure out how to write the path to load-files or images (for example) in a platform independent way. 
+>
+> I mirrored my directory structure on both machines so that inside the home directory the relative path should work out. Is there a way to achieve this with a single path without if-clauses (if system ... else ...) everywhere? 
+>
+> I tried ~/  and it worked sometimes, sometimes not. 
+>
+> 'home' is set on Win7, but it must be addressed as %home% on Win7 and as \$HOME on ubuntu (right?).
+>
+> I need a solution for:
+>
+> - elisp code
+> - latex files  (adress images, listings)
+:::
+
+For LaTeX, see: [“How to add an extra searchable dir with personal style files to TeXLive, NOT under ~/Library/texmf?”](https://tex.stackexchange.com/questions/5162) on the TeX SE.  It might help.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/5249321/platform-independent-path-in-latex-and-elisp/5249789#5249789) on Stack Overflow, 2011-03-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,68 @@
+---
+title: Suggestions for Including Confidence Rating in a Citation
+date: '2010-12-31'
+description: I think the interface I would look for would be an optional key to the \cite suite of commands. Something like \cite[confidence=low]{Foo:1942} or…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 8057
+se-link: https://tex.stackexchange.com/questions/8039/suggestions-for-including-confidence-rating-in-a-citation/8057#8057
+se-score: 3
+se-accepted: true
+se-tags:
+- macros
+- citing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Suggestions for Including Confidence Rating in a Citation](https://tex.stackexchange.com/questions/8039/suggestions-for-including-confidence-rating-in-a-citation), asked by [mankoff](https://tex.stackexchange.com/users/360/mankoff) on TeX Stack Exchange (2010-12-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> As I write, edit, and review my document, I'd like to flag how related a claim and the supporting citation are. For example, if a reference `Foo` speculates on a topic (and therefore I give it a low confidence), and reference `Bar` goes in depth and proves another topic (earning high), I would like the (draft) document to reflect this.
+>
+> I'm seeking suggestions how to implement this both from the editing and display sides. 
+>
+> * * *
+>
+> For editing, I could picture doing this in a custom cite command:
+>
+> ```latex
+> As shown by \cite{Foo:1942}{lo} and others \citep{Bar:1924}{hi}, blah blah.
+> ```
+>
+> Or outside with a custom command (again using {lo,mid,hi} or {1,2,...,10}):
+>
+> ```latex
+> As shown by \cite{Foo:1942}\conf{3} and others \citep{Bar:1924}\conf{10}, blah blah.
+> ```
+>
+> * * *
+>
+> For rendering, it could be simple:
+>
+> ```latex
+> As shown by Foo (1942) {lo} and others [Bar, 1924]{hi}, blah blah.
+> ```
+>
+> But I could also picture a more involved macro such that things rated `hi`, `9`, or `10` do not display at all, and things are more noticeable as the rating decreases (using red or bold font for `1`, `2`, `3`, or `lo` confidence ratings). The rating could follow the citation (as shown above) if using a separate command, or if using a custom cite command, the rating could influence the display of the citation itself.
+>
+> * * *
+>
+> Any suggestions on existing packages, or implementation suggestions, would be much appreciated. I know enough LaTeX to create a simple `\conf{}` command that implements a basic version, and perhaps that is enough, but I thought I would seek community input on the idea and implementation.
+:::
+
+I think the *interface* I would look for would be an optional key to the `\cite` suite of commands.  Something like `\cite[confidence=low]{Foo:1942}` or `\citep[confidence=10]{Bar:1924}`.  Then if it were omitted behavior would default to the unenhanced `\cite`.
+
+For *implementation* try the [`xkeyval`](http://ctan.org/pkg/xkeyval) package.  There are others which do this kind of thing (also [`pgfkeys`](http://ctan.org/pkg/pgfkeys)), but this one is pretty good.  The wrinkle is that `\cite` already takes an optional argument, so care has to be taken to get that passed to the original command.
+
+The biggest remaining question to me would be the *rendering* of these fuzzy references.  I don't think you want to change the font weight or color—that might just emphasize it.  What about decorating the reference with a certain number of tildes, with more tildes meaning lower confidence?  (Tildes are used in physics derivations to indicate vague identity.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/8039/suggestions-for-including-confidence-rating-in-a-citation/8057#8057) on TeX Stack Exchange, 2010-12-31. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

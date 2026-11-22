@@ -1,0 +1,38 @@
+---
+title: Position and scaling with graphicx package
+date: '2011-02-25'
+description: You won't find many friends of PowerPoint here; basically if that is your drawing program than the only method to get it into LaTeX documents is via an…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11996
+se-link: https://tex.stackexchange.com/questions/11995/position-and-scaling-with-graphicx-package/11996#11996
+se-score: 3
+se-accepted: false
+se-tags:
+- graphics
+- embedding
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Position and scaling with graphicx package](https://tex.stackexchange.com/questions/11995/position-and-scaling-with-graphicx-package), asked by [Fixee](https://tex.stackexchange.com/users/3643/fixee) on TeX Stack Exchange (2011-02-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> In the good ol' days I drew figures with xfig and generated LaTeX source to directly include in my papers.  But I now find powerpoint to be a faster drawing tool and sufficient for most of my needs.  What's the best way to embed the resulting image in LaTex?
+>
+> I current output to pdf, then include using the **graphicx** package. But the resulting scaling and positioning trial-and-error session is often extremely frustrating, and the documentation on the package is quite sparse and unhelpful.  Is there a better way?
+:::
+
+You won't find many friends of PowerPoint here; basically if that is your drawing program than the only method to get it into LaTeX documents is via an exported-and-included PDF.
+
+But if you used `xfig` to generate LaTeX code (I'm guessing within the `picture` environment?) then you might appreciate `tikz`.  It allows you to make (and thereby control) all your graphics with a TeX syntax.  That or `pstricks` would probably be considered by most here to be "The LaTeX way" to do graphics.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11995/position-and-scaling-with-graphicx-package/11996#11996) on TeX Stack Exchange, 2011-02-25. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

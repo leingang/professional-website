@@ -1,0 +1,46 @@
+---
+title: '*Any* function from $E \to E^{\prime}$ is continuous at $p_0$ if $p_0$ is not a cluster point. Can someone help me conceptualize this?'
+date: '2018-03-20'
+description: There's no break or hole because there's no limit at which to be near $p0$. Instead, $p0$ is separated from the rest of $E$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2700420
+se-link: https://math.stackexchange.com/questions/2700395/any-function-from-e-to-e-prime-is-continuous-at-p-0-if-p-0-is-not-a/2700420#2700420
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[*Any* function from $E \to E^{\prime}$ is continuous at $p_0$ if $p_0$ is not a cluster point. Can someone help me conceptualize this?](https://math.stackexchange.com/questions/2700395/any-function-from-e-to-e-prime-is-continuous-at-p-0-if-p-0-is-not-a), asked by [Nicklovn](https://math.stackexchange.com/users/240697/nicklovn) on Mathematics Stack Exchange (2018-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Full statement: Let $E$,$E^{\prime}$ be metric spaces, let $p_0 \in E$, let $\{p_0\}^c$ be the completement of $\{p_0\}$ in E, and let $f:\{p_0\} \to E^{\prime}$
+>
+> My textbook explains that any function is continuous at $p_0$ if $p_0$ is not a cluster point. I see how the math works out since we know that $d(p,p_0) < \delta$ since $p=p_0$.
+>
+> Therefore $d^{\prime}(f(p),f(p_0)) = 0$
+>
+> But conceptually, doesn't $p_0$ not being a cluster point imply that there is a break in the function? I'm envisioning some function in $\Bbb{R}^2$ where there is a hole at the limit but the function is defined for some different value of y (on a standard x,y plane). 
+>
+> Sorry if my confusion isn't entirely clear.
+:::
+
+> But conceptually, doesn't $p_0$ not being a cluster point imply that there is a break in the function? I'm envisioning some function in $\Bbb{R}^2$ where there is a hole at the limit.
+
+There's no break or hole because there's no limit at which to be near $p_0$.  Instead, $p_0$ is separated from the rest of $E$.  
+
+An example of $E$ might be $(0,1) \cup \{2\}$, as a subspace of $\mathbb{R}$.  Here $p_0 = 2$ is a point of $E$ which is not a cluster point of $E$.  A function $f \colon E \to \mathbb{R}$ can take any value it likes at $2$, without interfering with the values on $(0,1) = \{2\}^c$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2700395/any-function-from-e-to-e-prime-is-continuous-at-p-0-if-p-0-is-not-a/2700420#2700420) on Mathematics Stack Exchange, 2018-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

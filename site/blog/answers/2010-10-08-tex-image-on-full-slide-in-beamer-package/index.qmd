@@ -1,0 +1,85 @@
+---
+title: Image on full slide in beamer package
+date: '2010-10-08'
+description: \begin{frame} \maketitle Notice the fancy presentation theme. \end{frame}
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 3927
+se-link: https://tex.stackexchange.com/questions/3915/image-on-full-slide-in-beamer-package/3927#3927
+se-score: 116
+se-accepted: true
+se-tags:
+- beamer
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Image on full slide in beamer package](https://tex.stackexchange.com/questions/3915/image-on-full-slide-in-beamer-package), asked by [Alexandru](https://tex.stackexchange.com/users/1412/alexandru) on TeX Stack Exchange (2010-10-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to make a slide of only one image without any borders or any other beamer specific element.
+>
+> I tried :
+>
+> ```latex
+> \begin{frame}[plain]
+> \includegraphics[keepaspectratio=true,width=1\paperwidth]{kernel-panic.png}
+> \end{frame}
+> ```
+>
+> But I still get a border on the left, top and bottom.
+>
+> Later edit: `width=1.2\paperwidth` seems to remove top and bottom borders. I still have a left border and some navigation elements on bottom right.
+:::
+
+This works:
+
+```latex
+\documentclass{beamer}
+\title{test of full size graphic}
+\usepackage{tikz}
+\usetheme{AnnArbor}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+    Notice the fancy presentation theme.
+\end{frame}
+
+{ % all template changes are local to this group.
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}<article:0>[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[at=(current page.center)] {
+                \includegraphics[keepaspectratio,
+                                 width=\paperwidth,
+                                 height=\paperheight]{yourimage}
+            };
+        \end{tikzpicture}
+     \end{frame}
+}
+
+\begin{frame}
+    symbols should be back now
+\end{frame}
+
+\end{document}
+```
+
+You have to run beamer twice to get the image centered in the right place.  But if you have any other aux-file tricks (e.g., table of contents) you need to do that anyway.
+
+If you're not already using tikz, you can save your image as a pdf and then use `\includepdf` (part of the <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/pdfpages/pdfpages.pdf">`pdfpages`</a> package).  This will get you into trouble if you want to print your slides as an article or handout, though.
+
+If you use article mode with your slides, you'll get the image on a full page of the article PDF too.  You probably don't want this.  The `<article:0>` mode specification keeps this frame from being included in any article mode documents.  You could also make a separate `\includegraphics` line for article mode that would format it properly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/3915/image-on-full-slide-in-beamer-package/3927#3927) on TeX Stack Exchange, 2010-10-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

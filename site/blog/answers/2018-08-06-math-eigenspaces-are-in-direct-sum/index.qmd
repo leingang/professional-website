@@ -1,0 +1,45 @@
+---
+title: Eigenspaces are in direct sum
+date: '2018-08-06'
+description: The flaw in your proof is that you assumed for the sake of contradiction that the vectors $v1, \dots, vn$ are linearly dependent ($v1 + \dots + vn = 0$), and…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2873937
+se-link: https://math.stackexchange.com/questions/2873901/eigenspaces-are-in-direct-sum/2873937#2873937
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Eigenspaces are in direct sum](https://math.stackexchange.com/questions/2873901/eigenspaces-are-in-direct-sum), asked by [Henri](https://math.stackexchange.com/users/579904/henri) on Mathematics Stack Exchange (2018-08-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $V$ a vector space of finite dimension. Let $E_1,...,E_n$ Eigenspace associate to the eigen value $\lambda _1,...,\lambda _n$. I want to prove that $$E_1+\cdots+E_n=E_1\oplus\cdots\oplus E_n.$$
+>
+> Let $v_1\in E_1,...,v_n\in E_n$ s.t. $v_1+\cdots +v_n=0$. I have to prove that $v_i=0$ for all $i$. I know that if $v_1\in E_1,...,v_n\in E_n$ are non zero vector, then they are free. So if I suppose that there is $v_i\neq 0$ (suppose WLOG $v_1=0$), then $$v_1=-v_2-...-v_n,$$
+> and thus, there is at least an other vector (let say $v_2$) that is non zero. Therefore $v_1=-v_2$ which is a contradiction. 
+>
+>
+> Question 1 : Is my proof working ? If not, what's wrong ?
+>
+> Question 2 : I find my proof not elegant at all. Is there a more elegant proof ?
+:::
+
+The flaw in your proof is that you assumed for the sake of contradiction that the vectors $v_1, \dots, v_n$ are linearly dependent ($v_1 + \dots + v_n = 0$), and used it to derive the consequence that the vectors are linearly dependent ($v_1 = -v_2$).  So you didn't really prove anything.
+
+When reviewing your own proofs, you can ask yourself where you used each of the hypotheses given.  For instance, as other commenters have pointed out, you didn't use at all the fact that the vectors $v_i$ are eigenvectors for some linear transformation.  That's a red flag that you're skipping something important.
+
+Like xarles says, the proof comes down to the essential fact that *eigenvectors of a linear transformation corresponding to distinct eigenvalues are linearly independent.*  Can you show that?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2873901/eigenspaces-are-in-direct-sum/2873937#2873937) on Mathematics Stack Exchange, 2018-08-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

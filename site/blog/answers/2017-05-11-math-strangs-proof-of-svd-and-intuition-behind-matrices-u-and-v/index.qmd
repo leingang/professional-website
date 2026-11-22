@@ -1,0 +1,62 @@
+---
+title: Strang's proof of SVD and intuition behind matrices $U$ and $V$
+date: '2017-05-11'
+description: Apologies that this turned out a little long.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2276493
+se-link: https://math.stackexchange.com/questions/2276374/strangs-proof-of-svd-and-intuition-behind-matrices-u-and-v/2276493#2276493
+se-score: 33
+se-accepted: true
+se-tags:
+- linear-algebra
+- matrices
+- svd
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Strang's proof of SVD and intuition behind matrices $U$ and $V$](https://math.stackexchange.com/questions/2276374/strangs-proof-of-svd-and-intuition-behind-matrices-u-and-v), asked by [samlaf](https://math.stackexchange.com/users/438738/samlaf) on Mathematics Stack Exchange (2017-05-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In [lecture 29][q-1] of MIT 18.06, Professor Gilbert Strang "proves" the singular value decomposition (SVD) by assuming that we can write $A = U\Sigma V^T$ and then deriving what $U$, $\Sigma$, and $V$ must be based on the eigendecomposition of
+> $$AA^T = U\Sigma ^2 U^T$$
+> and
+> $$A^TA = V\Sigma ^2 V^T$$
+>
+> My intuition tells me there's something wrong with first assuming that we can write $A$ in this form. As in, we are finding $U$, $\Sigma$ and $V$ for those matrices that have this form, but what if some matrices couldn't be written in this form in the first place?
+>
+> Also, is there some intuition to be found about $U$ and $V$ by only thinking about them as eigenvectors of $AA^T$ and $A^TA$? In the sense that we should be able to know why $V$ will have its properties (be mapped orthogonally by $A$) by just looking at it as an eigenvector of $A^TA$ (which somehow implicitly "encodes" the basis $U$). Not sure if this intuition makes sense either.
+>
+>
+>   [q-1]: https://youtu.be/Nx0lRBaXoz4?t=13m4s
+:::
+
+*Apologies that this turned out a little long.*
+
+I haven't seen the lectures but I've just taught through the book.  So I understand what you're feeling.  Strang is going for a more intuitive than axiomatic style in his exposition.  So you're right; he assumes that the SVD exists and then derives what the data have to be.
+
+But if you read the section backwards you can get a more deductive version.  First, $A^TA$ is symmetric and positive semi-definite (previous two sections of the book).  Therefore $A^TA$ is diagonalizable by an orthonormal matrix, and its nonzero eigenvalues are all positive.  *This is the key fact that allows the SVD to happen.* Order them as $\sigma_1^2 \geq \sigma_2^2 \geq \dotsm \geq \sigma_r^2 > 0$.  Notice $r = \operatorname{rank}(A^TA)$, which is equal to $\operatorname{rank}(A)$ (this is proven in Chapter 3 somewhere).  Let $v_1, \dots, v_r$ be an orthonormal set of eigenvectors for these positive eigenvalues, and $v_{r+1}, \dots, v_{n}$ an orthonormal basis for the zero-eigenspace, i.e., the nullspace of $A^TA$.  
+
+Then he shows that if $v$ is a unit eigenvector of $A^TA$ with eigenvalue $\sigma^2$, then $u = \frac{1}{\sigma}Av$ is a unit eigenvector of $AA^T$ with eigenvalue $\sigma^2$.  *This is the key relation in the SVD.*  So if $V$ is the $n \times n$ matrix whose $i$th column is $v_i$, $V_r$ the first $r$ columns of $V$, $\Sigma_r$ the $r \times r$ diagonal matrix whose $i$th entry is $\sigma_i$, and $U_r$ the $m\times r$ matrix whose $i$th column is $u_i = \frac{1}{\sigma_i} A V_i$, we have
+$$U_r = AV_r \Sigma_r^{-1} \implies U_r \Sigma_r = AV_r$$
+Multiplying both sides by the transpose of $V_r$ and noting its columns are orthonormal, we have
+$$U_r \Sigma_r V_r^T = A V_r V_r^T = A I_r = A$$
+
+*But wait, there's more!* as Strang might say.  The vectors $v_{r+1},\dots,v_n$ span the nullspace of $A^TA$.  But the nullspace of $A^TA$ is the same as the nullspace of $A$.  The vectors $u_1, \dots, u_r$ are $r$ (remember, this is the rank of $A$) orthonormal vectors in the column space of $A$, so they span the column space (a subspace of $\mathbb{R}^m$).  We can complete the set $u_1, \dots, u_r$ with orthonormal vectors $u_{r+1},\dots,u_{m}$ to create a full orthonormal basis of $\mathbb{R}^m$.
+
+We now have $r$ triples $(v_i,u_i,\sigma_i)$, where $Av_i = \sigma_i u_i$, and $n-r$ vectors $v_{r+1},\dots v_{n}$, where $A v_i = 0$.  So if we let $\Sigma$ be the diagonal matrix $\Sigma_r$ augmented by $n-r$ columns of zeros and $m-r$ rows of zeros, and $U$ be the full $m\times m$ matrix whose $i$th column is $u_i$, it's still true that $AV = U\Sigma$.  So again,
+$$A = U \Sigma V^T$$
+but now $U$ is an orthogonal $m\times m$ matrix, $V$ is an orthogonal $n\times n$ matrix, and $\Sigma$ is the sparse $m\times n$ matrix whose $(i,i)$-th entry is $\sigma_i$, with all other entries zero.
+
+The final beautiful fact comes from taking orthogonal complements.  We have an orthonormal basis $u_1, \dots, u_m$ of $\mathbb{R}^m$, the first $r$ of which span the column space of $A$.  Therefore the remaining $m-r$ vectors $u_{r+1},\dots,u_m$ span the $C(A)^\perp = N(A^T)$.  Likewise, $v_1,\dots,v_n$ is an orthonormal basis of $\mathbb{R}^n$, the last $n-r$ of which span the nullspace of $A$.  Therefore the first $r$ of them span $N(A)^\perp = C(A^T)$.  Thus the SVD produces not just the singular values and this nice factorization, but simultaneously a set of orthonormal bases for the four subspaces.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2276374/strangs-proof-of-svd-and-intuition-behind-matrices-u-and-v/2276493#2276493) on Mathematics Stack Exchange, 2017-05-11, with [edits](https://math.stackexchange.com/posts/2276493/revisions) by [Yoav Sternberg](https://math.stackexchange.com/users/552973/yoav-sternberg). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

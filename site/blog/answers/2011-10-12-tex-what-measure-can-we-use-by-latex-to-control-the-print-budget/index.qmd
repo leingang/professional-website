@@ -1,0 +1,44 @@
+---
+title: What measure can we use by LaTeX to control the print budget
+date: '2011-10-12'
+description: 'You can use Ecofont Vera Sans, which has tiny holes cut out of the glyph strokes to use less ink:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 31272
+se-link: https://tex.stackexchange.com/questions/31268/what-measure-can-we-use-by-latex-to-control-the-print-budget/31272#31272
+se-score: 3
+se-accepted: false
+se-tags:
+- formatting
+- typography
+- printing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What measure can we use by LaTeX to control the print budget](https://tex.stackexchange.com/questions/31268/what-measure-can-we-use-by-latex-to-control-the-print-budget), asked by [pythonee](https://tex.stackexchange.com/users/7848/pythonee) on TeX Stack Exchange (2011-10-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I found there are so much excellent answer to questions about how to product high quality typesetting output. But I wonder how to save ink with LaTeX. What we need to think about to manage cost. page layout or something else?
+:::
+
+You can use [Ecofont Vera Sans][1], which has tiny holes cut out of the glyph strokes to use less ink:
+
+![ecofont][2]
+
+Ecofont is part of a software package that creates this effect on all your fonts.  But it only works in MS Office on Windows.  
+
+Century Gothic is another light font that uses less toner per glyph than average.
+
+  [1]: http://www.ecofont.com/en/products/green/font/download-the-ink-saving-font.html
+  [2]: Xvj0u.jpg
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/31268/what-measure-can-we-use-by-latex-to-control-the-print-budget/31272#31272) on TeX Stack Exchange, 2011-10-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

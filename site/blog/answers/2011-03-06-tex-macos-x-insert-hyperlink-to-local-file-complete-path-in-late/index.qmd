@@ -1,0 +1,75 @@
+---
+title: 'MacOS X: insert hyperlink to local file (complete path) in LaTeX? (only working with relative path)'
+date: '2011-03-06'
+description: 'I poked around and found the same information as you:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12794
+se-link: https://tex.stackexchange.com/questions/12787/macos-x-insert-hyperlink-to-local-file-complete-path-in-latex-only-working/12794#12794
+se-score: 4
+se-accepted: false
+se-tags:
+- hyperref
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[MacOS X: insert hyperlink to local file (complete path) in LaTeX? (only working with relative path)](https://tex.stackexchange.com/questions/12787/macos-x-insert-hyperlink-to-local-file-complete-path-in-latex-only-working), asked by [MostlyHarmless](https://tex.stackexchange.com/users/4009/mostlyharmless) on TeX Stack Exchange (2011-03-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want to add hyperlinks to external pdfs (which are saved in the local file system) and to specific pages of these pdfs to a LaTeX document on MacOS X and opening them with Skim.app (default).
+>
+> My problem is: it works, if the pdf is in the same path as the latex document and I use a `\href{./filename.pdf}` (However, the `[page=2]` option does not work then.)
+>
+> **But** if I try to use an asolute path like `\href{/Users/myaccount/folder/test.pdf}` or `{/Volumes/Data/folder/folder/test.pdf}`, a click on the link in the pdf created by LaTeX does not open the linked file.
+>
+> I also tried to use "`file:///Volumes/..`" and "`run:///volumes..`", but it does not work.
+> However, I can successfully open a link like "`file:///Volumes/Data/Folder/file.pdf`" in Safari!
+>
+> How can I fix that?
+>
+> I'm using TeXLive 2010 on OS X 10.6.5 and `pdflatex` for compiling.
+>
+> minimal example:
+>
+> ```latex
+> \documentclass[11pt]{scrreprt}
+>
+> \usepackage{hyperref}
+> \hypersetup{bookmarksopenlevel={2}, bookmarksopen = true, 
+> colorlinks= false, linkbordercolor = 0 1 0.5, urlbordercolor = 0 0 1
+> }
+>
+> \begin{document}
+>
+>
+> that works, but it opens on page 1 and not on page 3
+> \href[page=3]{run://test.pdf}{relative path}
+>
+> that does not work:
+> \href[]{/Volumes/Daten/test.pdf}{absolute path}
+>
+>
+> \end{document}
+> ```
+:::
+
+I poked around and found the same information as you:
+
+ * `\href{run:file.pdf}{file}` will open the pdf in the default application for pdfs
+ * `\href{run:///global/path/to/file.pdf}` will attempt to open a file at the path point given by the *current* directory with `///global/path/to/file.pdf` appended.  Obviously this file doesn't exist, so you get an error.
+ * `\href{file:///global/path/to/file.pdf}` creates a file link in the PDF with location "Macintosh HD:Volumes:global:path:to:file.pdf" Note the colons.  I'm not sure if this is the correct path, though, since in POSIX style paths the Volumes comes first, then Macintosh HD.  In any case, the link doesn't open anything.  
+
+   **Edit:** I opened the PDF in Acrobat (Pro) to verify the link's location.  When I manually edited the link in Acrobat to have it open the file I wanted, the location was changed to "Macintosh HD:global:path:to:file.pdf" (no Volumes).  So some agent is miswriting or misreading that location.  
+
+No solution from me, but one workaround is to make a symbolic link of the target file into your document's directory.  Then you can use the `\href{run:test.pdf}{local}` syntax you describe above.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12787/macos-x-insert-hyperlink-to-local-file-complete-path-in-latex-only-working/12794#12794) on TeX Stack Exchange, 2011-03-06. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

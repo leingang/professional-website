@@ -1,0 +1,54 @@
+---
+title: Proof request for finding the area of a rectangle using an ellipse and an integral.
+date: '2017-12-08'
+description: To evaluate $\int{-a}^a \frac{b}{a}\sqrt{a^2-x^2}\,dx$, I recommend a trigonometric substitution $x= a \sin \theta$. Then $dx = a \cos\theta\,d\theta$ and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2557693
+se-link: https://math.stackexchange.com/questions/2557578/proof-request-for-finding-the-area-of-a-rectangle-using-an-ellipse-and-an-integr/2557693#2557693
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- geometry
+- proof-verification
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof request for finding the area of a rectangle using an ellipse and an integral.](https://math.stackexchange.com/questions/2557578/proof-request-for-finding-the-area-of-a-rectangle-using-an-ellipse-and-an-integr), asked by [Christopher](https://math.stackexchange.com/users/426355/christopher) on Mathematics Stack Exchange (2017-12-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$\frac{\int_{-a}^a (-\frac ba \sqrt{a^2-x^2} + b\;)\mathrm{d}x + \frac{\pi ab}2}2=ab$$
+> The above equation finds the area of a rectangle given A and B (both > 0). I wrote this myself as a challenge. Using desmos I verified that it was true ([the desmos](https://www.desmos.com/calculator/ljqlfk5lgb)). I was wondering if someone could write a proof for that because I <s> suck at proofs</s> have tried and failed to write one. The main issue is dealing with the square root part of the equation. If anyone would write a proof with a description of the process I would be very thankful.
+>
+> ## Note:
+> This is not for homework, I am just making challenges for myself to find area of objects in new ways. I also wrote one for finding the area of a square using integrals and message me on chat or something if you want to see it. 
+>
+> ### How I found it:
+> I found the above equation by making a inscribed ellipse in a rectangle. I then found the area under the bottom half of the ellipse if you translate it to be tangent to the x axis. I added the area of the ellipse divided by 2 and divided the sum by 2 (why I did this is fuzzy because I had to tweak the formula to get it to be correct I am planning on asking about why it is like this later).
+:::
+
+To evaluate $\int_{-a}^a \frac{b}{a}\sqrt{a^2-x^2}\,dx$, I recommend a trigonometric substitution $x= a \sin \theta$.  Then $dx = a \cos\theta\,d\theta$ and $\sqrt{a^2-x^2} = a \cos\theta$.  When $x=-a$, $\sin\theta = -1$, so $\theta =-\frac{\pi}{2}$.  When $x=a$, $\sin\theta = 1$, so $\theta = \frac{\pi}{2}$.  So
+$$\begin{align*}
+    \int_{-a}^a \frac{b}{a}\sqrt{a^2-x^2}\,dx
+    &= \int_{-\pi/2}^{\pi/2} \frac{b}{a} (a \cos\theta)(a \cos\theta\,d\theta)
+     = ab \int_{-\pi/2}^{\pi/2} \cos^2\theta\,d\theta
+\end{align*}$$
+For this integral, we use a trig identity:
+$$ab \int_{-\pi/2}^{\pi/2} \cos^2\theta\,d\theta
+    = \frac{ab}{2}\int_{-\pi/2}^{\pi/2} (1+\cos2\theta)\,d\theta$$
+Over the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, $\cos2\theta$ makes a full period.  So the integral of this piece is zero.  What's left is $\int_{-\pi/2}^{\pi/2} 1\,d\theta$, which is clearly $\pi$.  So 
+$$\frac{ab}{2}\int_{-\pi/2}^{\pi/2} (1+\cos2\theta)\,d\theta = \frac{\pi ab}{2}$$
+and we are done.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2557578/proof-request-for-finding-the-area-of-a-rectangle-using-an-ellipse-and-an-integr/2557693#2557693) on Mathematics Stack Exchange, 2017-12-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,119 @@
+---
+title: Derive the surface of a sphere using integration
+date: '2020-03-20'
+description: You're assuming that you can approximate the surface with a bunch of thin ribbons wrapped in circles and standing vertically, like short fat cylinders. Using…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3588306
+se-link: https://math.stackexchange.com/questions/3588257/derive-the-surface-of-a-sphere-using-integration/3588306#3588306
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- geometry
+- definite-integrals
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derive the surface of a sphere using integration](https://math.stackexchange.com/questions/3588257/derive-the-surface-of-a-sphere-using-integration), asked by [AleWolf](https://math.stackexchange.com/users/669951/alewolf) on Mathematics Stack Exchange (2020-03-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let's consider this picture:
+>
+> [![enter image description here][q-1]][q-1]
+>
+> By the Pythagorean theorem, we know that
+>
+> $x^2+z^2=r^2$
+>
+> so solving for x we have
+>
+> $x=\sqrt{r^{2}-z^{2}}$
+>
+> Then the circumference of the shadowed circle is
+>
+> $2\pi\sqrt{r^{2}-z^{2}}$
+>
+> And the surface of the whole sphere is:
+>
+> $\int_{-r}^{r}2\pi\sqrt{r^{2}-z^{2}}\,dz$
+>
+> However this integral is equal to $\pi^{2}r^{2}$ not $4\pi r^{2}$.
+>
+> But why ? Why am i wrong ?
+>
+>
+>
+>   [q-1]: IYrlZ.png
+>   [q-2]: 3eDhm.png
+:::
+
+You're assuming that you can approximate the surface with a bunch of thin ribbons wrapped in circles and standing vertically, like short fat cylinders.  Using the notation in your picture, the circumference of each ribbon is $2\pi x$, the height is $\Delta z$, so the surface area is approximately $\sum_i 2\pi x_i \,\Delta z$, which converges to $\int_{-r}^r 2\pi \sqrt{r^2-z^2}\,dz$.
+
+But in fact you need to take into account the “slanting” of the surface.  To see why, look one dimension lower at arc length.  If you tried to approximate the diagonal line from $(0,0)$ to $(1,1)$ with a bunch of horizontal line segments, the sum of the lengths is $1$ no matter how short the line segments are.  But the distance between the points is $\sqrt{2}$, not $1$.
+
+So instead of a cylinder to approximate a slice of the surface, you need a [conical frustum](https://mathworld.wolfram.com/ConicalFrustum.html).  This is what you get when you take a cone and cut a ribbon off the open end.  If it has radii $x_1$ and $x_2$, and height $\Delta z$, its surface area is
+$$\Delta S = 2 \pi \bar x \sqrt{\Delta x^2 + \Delta z^2}$$
+where $\Delta x = x_2 - x_1$ and $\bar x = \frac{x_1 + x_2}{2}$.  That extra $\Delta x^2$ under the radical is what accounts for the slanting.  
+
+We need to put this into a form suitable for integrating with respect to $z$.  So write
+$$\Delta S = 2\pi \left(\frac{x + (x+\Delta x)}{2}\right) \sqrt{1 + \left(\frac{\Delta x}{\Delta z}\right)^2}\,\Delta z$$
+As $\Delta z\to 0$, $\Delta x \to 0$, and $\frac{\Delta x}{\Delta z} \to \frac{dx}{dz}$.  
+So the surface area is exactly
+$$S = \int_{-r}^r 2\pi x\sqrt{1 + \left(\frac{dz}{dx}\right)^2}\,dz$$
+
+* * *
+
+> **OP asks**: why can $\Delta x$ be replaced with $0$ and not with $dx$, while $\Delta z$ has to be replaced with $dz$ and not $0$?
+
+Good question.  We aren't replacing so much as taking a limit.  Since $\Delta z$ and $\Delta x$ are related by the equation $x^2+z^2=r^2$, we know that $\lim_{\Delta z \to 0} \Delta x = 0$.  So
+$$\lim_{\Delta z \to 0} \frac{x+(x+\Delta x)}{2} = \frac{x + (x+0)}{2} = x$$
+But if we tried replacing (or substituting) with the fraction $\frac{\Delta x}{\Delta z}$, we would get
+$$\lim_{\Delta z\to 0} \frac{\Delta x}{\Delta z} \color{red}{\stackrel{?}=} \frac{0}{0}$$
+But that doesn't make any sense.  $\frac{0}{0}$ isn't defined.  One might say, “well, since $\Delta z$ and $\Delta x$ are both reaaaally small, they're basically equal, so their quotient should tend to $1$.”  But that's wrong too.  This limit is, by definition, the derivative $\frac{dx}{dz}$.
+
+* * *
+
+
+Since $x^2+z^2 = r^2$, you know $x = \sqrt{r^2-z^2}$.
+Differentiating, 
+$$\frac{dx}{dz} = - \frac{z}{x} = - \frac{z}{\sqrt{r^2-z^2}}$$
+So
+$$\sqrt{1 + \left(\frac{dx}{dz}\right)^2} = \sqrt{1 + \frac{z^2}{r^2-z^2}} = \frac{r}{\sqrt{r^2-z^2}}$$
+Therefore
+$$\begin{align*}
+    S &= \int_{-r}^{r} 2\pi \sqrt{r^2-z^2} \cdot \frac{r}{\sqrt{r^2-z^2}}\,dz = \int_{-r}^r 2\pi r\,dz = 4\pi r^2
+\end{align*}$$
+
+* * *
+> **OP:** If we have to take the slant of the surface into account when computing surface area, why don't we have to do that when computing volume? 
+
+Also a good question!  The volume of a conical frustum with radii $x$ and $x + \Delta x$, and height $\Delta z$, is 
+$$\begin{align*}
+    \Delta V_f &= \frac{1}{3}\pi \Delta z\left(x^2 + x(x+\Delta x) + (x + \Delta x)^2\right)
+\\&= \frac{1}{3}\pi \Delta z\left(3x^2 + 3x\Delta x + \Delta x^2\right)
+\\&= \pi x^2 \Delta z + \pi x\Delta x\,\Delta z + \frac{1}{3}\pi\Delta x^2\,\Delta z
+\end{align*}$$
+You'll recognize the first term as the volume of a cylinder with radius $x$ and height $\Delta x$.  Call that $\Delta V_c$.  The other terms are all a multiple of $\Delta x$.  So 
+$$\Delta V_f = \Delta V_c + \epsilon \Delta z,$$
+where $\lim_{\Delta z \to 0} \epsilon = 0$.  For this reason, the extra $\epsilon$ doesn't contribute to the integral.
+
+* * *
+> **OP:** Do you know a book or something else that could help me understand this principle?
+> 
+> Literally every calculus book discusses this, but everybody's got their own favorite.  Are you currently a student in a calculus course?  Look in that course's textbook.  If not, you might try James Stewart's.
+
+* * *
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3588257/derive-the-surface-of-a-sphere-using-integration/3588306#3588306) on Mathematics Stack Exchange, 2020-03-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

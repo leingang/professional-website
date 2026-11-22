@@ -1,0 +1,69 @@
+---
+title: Area of shaded curve integral negative thus incorrect
+date: '2024-12-08'
+description: The integral is correct, but it doesn't compute the area of the shaded region. If $f(x) \geq 0$, then $\inta^b f(x)\,dx$ computes the area of region satisfying…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5008977
+se-link: https://math.stackexchange.com/questions/5008975/area-of-shaded-curve-integral-negative-thus-incorrect/5008977#5008977
+se-score: 11
+se-accepted: true
+se-tags:
+- integration
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area of shaded curve integral negative thus incorrect](https://math.stackexchange.com/questions/5008975/area-of-shaded-curve-integral-negative-thus-incorrect), asked by [Sara Jönsson](https://math.stackexchange.com/users/1472781/sara-j%c3%b6nsson) on Mathematics Stack Exchange (2024-12-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Find the area of the shaded figure, integral.
+>
+> [![enter image description here][q-1]][q-1]
+>
+> **Integral:**
+>
+> $$\int_{a}^{b} (x^2-4) \, dx$$
+>
+> **Limitations:**
+>
+> $y=x^2-4$
+>
+> $x^2-4=0$
+>
+> $x^2=4$
+>
+> $x = \pm \sqrt{4} = 2$
+>
+> The limitation I am able to find from the figure,$\left[-2, 2\right]$.
+>
+> **Integrating:**
+>
+> $\int_{-2}^{2} (x^2-4) \, dx = \left[\frac{x^3}{3} - 4x\right]_{-2}^{2}$
+>
+> **Applying:**
+>
+> $F(2)-F(-2) = -\frac{16}{3} - \frac{16}{3}$
+>
+> $=-\frac{32}{3}$
+>
+> My answer was wrong, according to the back of the book the correct solution is: **$\frac{32}{3}$**, mine is negative.
+>
+>
+>   [q-1]: LhXtrNdr.jpg
+:::
+
+The integral is correct, but it doesn't compute the area of the shaded region. If $f(x) \geq 0$, then $\int_a^b f(x)\,dx$ computes the area of region satisfying $a\leq x \leq b$ and $0 \leq y \leq f(x)$. 
+
+In general, if $f(x) \leq g(x)$ on $[a,b]$, then $\int_a^b (g(x)-f(x))\,dx$ measures the area of the region satisfying $0 \leq x \leq b$ and $f(x) \leq y \leq g(x)$. If you set $g(x) = 0$ you will get the right area.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5008975/area-of-shaded-curve-integral-negative-thus-incorrect/5008977#5008977) on Mathematics Stack Exchange, 2024-12-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,48 @@
+---
+title: Example of Javascript form within pdflatex
+date: '2011-10-06'
+description: You might try the manual to the eforms package. eforms is another interface (other than hyperref) for creating PDF forms in TeX. The manual includes many…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 30709
+se-link: https://tex.stackexchange.com/questions/30706/example-of-javascript-form-within-pdflatex/30709#30709
+se-score: 8
+se-accepted: true
+se-tags:
+- pdftex
+- javascript
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Example of Javascript form within pdflatex](https://tex.stackexchange.com/questions/30706/example-of-javascript-form-within-pdflatex), asked by [Mayer Goldberg](https://tex.stackexchange.com/users/2193/mayer-goldberg) on TeX Stack Exchange (2011-10-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> 1. Can someone please show me an example of how to include a simple Javascript form within a pdflatex document? 
+>
+> 2. Can someone please show me an example of accessing and modifying the PDF file's DOM from Javascript within a pdflatex document?
+>
+> 3. Is there some reasonably friendly document to describe how to intermix PDF and Javascript?
+:::
+
+You might try the [manual to the `eforms` package][1].  `eforms` is another interface (other than `hyperref`) for creating PDF forms in TeX.  The manual includes many simple examples.  
+
+There is no DOM in PDF.  If you want parts of the PDF to change based on form events, you pretty much have to make those changing things read-only text fields.
+
+For intermixing JavaScript and your TeX code see this [demo of the `insDLJS` package][2]
+
+Both of the docs (and the packages they document) are written by D.P. Story, who is extremely prolific in this area.  His `acrotex` bundle has many more examples.
+
+
+  [1]: http://www.math.uakron.edu/~dpstory/acrotex/eformman.pdf
+  [2]: http://www.math.uakron.edu/~dpstory/acrotex/examples/execjstst.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/30706/example-of-javascript-form-within-pdflatex/30709#30709) on TeX Stack Exchange, 2011-10-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

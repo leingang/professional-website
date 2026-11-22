@@ -1,0 +1,42 @@
+---
+title: Why do the limits in multi variable integrals have to be in increasing order of variables.
+date: '2016-11-08'
+description: How would you make sense of $$\int{2x}^{3x^2} \sin(x)\,dx?$$ The variable in the integral is a “dummy” variable while the variable in the limits is not. So…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2005193
+se-link: https://math.stackexchange.com/questions/2005174/why-do-the-limits-in-multi-variable-integrals-have-to-be-in-increasing-order-of/2005193#2005193
+se-score: 0
+se-accepted: false
+se-tags:
+- integration
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why do the limits in multi variable integrals have to be in increasing order of variables.](https://math.stackexchange.com/questions/2005174/why-do-the-limits-in-multi-variable-integrals-have-to-be-in-increasing-order-of), asked by [AspiringMat](https://math.stackexchange.com/users/286445/aspiringmat) on Mathematics Stack Exchange (2016-11-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Why is it that in multivariable integration, the limits have to be in this order: $\displaystyle \int_{a}^{b}\displaystyle \int_{g_1(x)}^{g_2(x)}\displaystyle \int_{h_1(x,y)}^{h_2(x,y))}f(x,y,z)dzdydx$. Why is it that $g_1,g_2$ have to be functions of only $x$ and $h_1,h_2$ have to be functions of $x,y$. Why can't $g_1$ be a function of $x,y$ for instance? In other words, why is the order important here when it is not when we are integrating over a regular rectangular block.
+:::
+
+How would you make sense of
+$$\int_{2x}^{3x^2} \sin(x)\,dx?$$
+The variable in the integral is a “dummy” variable while the variable in the limits is not.  So this expression does not compute.
+
+By the same token, we cannot evaluate an integral like
+$$\int_{x-y}^{x+3y} \sin(xy)\,dy$$
+because the same variable $y$ is both integrated over and in the limits.  
+
+So in each of the iterated integrals, the limits of integration can only be functions of the variables that haven't been integrated over yet.  In the innermost integral $\int_{h_1(x,y)}^{h_2(x,y)} f(x,y,z)\,dz$, we integrate over $z$ between two functions of $x$ and $y$.  That results in some function $F(x,y)$.  The next integral is $\int_{g_1(x)}^{g_2(x)} F(x,y)\,dy$, so we integrate with respect to $y$ between limits that depend on $x$.  The result is a function $G(x)$ of $x$ alone.  We integrate *that* between two limits which are functions of *no* variables—i.e., constants.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2005174/why-do-the-limits-in-multi-variable-integrals-have-to-be-in-increasing-order-of/2005193#2005193) on Mathematics Stack Exchange, 2016-11-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

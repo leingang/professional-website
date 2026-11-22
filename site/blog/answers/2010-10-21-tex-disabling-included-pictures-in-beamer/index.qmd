@@ -1,0 +1,51 @@
+---
+title: Disabling included pictures in Beamer
+date: '2010-10-21'
+description: 'Not related to \includegraphics but something that will speed up your typesetting in development mode: \includeonlyframes. If you label the frames you''re…'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4382
+se-link: https://tex.stackexchange.com/questions/4370/disabling-included-pictures-in-beamer/4382#4382
+se-score: 4
+se-accepted: false
+se-tags:
+- beamer
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Disabling included pictures in Beamer](https://tex.stackexchange.com/questions/4370/disabling-included-pictures-in-beamer), asked by [Tomik](https://tex.stackexchange.com/users/1547/tomik) on TeX Stack Exchange (2010-10-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am preparing a huge document with tons of pictures and Tikz drawings (based on Beamer package). Is there a command for NOT including all the pictures inserted by \includegraphics? This might speed up the typesetting.
+:::
+
+Not related to `\includegraphics` but something that will speed up your typesetting in development mode: `\includeonlyframes`.  If you label the frames you're "working" on, you can typeset just those without disturbing the auxiliary files, very similar to `\includeonly`.
+
+Example:
+
+```latex
+\documentclass{beamer}
+\includeonlyframes{foo}
+\begin{document}
+\begin{frame}[label=foo]
+    First frame
+\end{frame}
+\begin{frame}[label=bar]
+    Second frame, which will not be seen.
+\end{frame}
+\end{document}
+```
+
+The beamer manual documents this feature as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4370/disabling-included-pictures-in-beamer/4382#4382) on TeX Stack Exchange, 2010-10-21. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

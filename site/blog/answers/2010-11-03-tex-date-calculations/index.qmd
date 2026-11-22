@@ -1,0 +1,107 @@
+---
+title: Date calculations
+date: '2010-11-03'
+description: See the <a href="http://www.ctan.org/pkg/advdate">advdate</a> package.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4878
+se-link: https://tex.stackexchange.com/questions/4873/date-calculations/4878#4878
+se-score: 25
+se-accepted: true
+se-tags:
+- calculations
+- datetime
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Date calculations](https://tex.stackexchange.com/questions/4873/date-calculations), asked by [microspino](https://tex.stackexchange.com/users/633/microspino) on TeX Stack Exchange (2010-11-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm building a LaTeX document that helps me to formulate quotations for my customers.
+> Since I decided to offer monthly recurring payments I'd like to have payment dates calculated automatically starting from a specific one.
+> Say, for example, that you have:
+>
+> `\today{}`
+>
+> then I need to have:
+>
+>  - `\today` +30 days 
+>  - `\today` +60 days
+>  - `\today` +180 days 
+>
+> and so on...
+>
+> Is that possible?
+>
+> **EDIT**: I ended up using the package `advdate` because I obtained a more compact result to do this:
+>
+> ```latex
+> % Payment starts in 4 months.
+> \AdvMonth{4}
+>
+> % 1 chunk per month -> due date:
+> \begin{enumerate*}
+> 	\AdvMonth{1} \item due date: \textbf{\today}
+>         ...
+> \end{enumerate*}
+> ```
+:::
+
+See the <a href="http://www.ctan.org/pkg/advdate">advdate</a> package.
+
+**Edit** Six years later, I am finally getting around to adding an example.  It does what the package says it does.
+
+> `\AdvanceDate` Advances date the specified number of days [an argument in square brackets, defaulting to 1] and sets the result to `\today`
+
+Two things to notice there:
+
+ - To advance by 30 days, for instance, the syntax is `\AdvanceDate[30]`.
+
+ - The package effectively uses `\today` as a variable.  Which means if you are recording several dates relative to today, you need to advance incrementally.  If you want 30 days, then 60 days, you need to call `\AdvanceDate[30]` twice.
+
+ - Of course, TeX's scoping rules are still in effect.  So if you advance `\today` in a group, the changes end when the group ends.  So if you make a table your increments are forgotten at the end of each cell.
+
+Here is an example document, showing both of these:
+
+```latex
+\documentclass{article}
+\usepackage{advdate}
+\begin{document}
+Today is: \today
+
+Tomorrow is: \DayAfter
+
+30 days from today is \AdvanceDate[30]\today.
+
+60 days from today is \AdvanceDate[30]\today.
+
+180 days from today is \AdvanceDate[120]\today.
+\AdvanceDate[-180]
+\bigskip
+
+\begin{tabular}{|cc|}\hline
+    Relative description & Date \\\hline
+    today & \today \\
+    tomorrow & \DayAfter \\
+    30 days from today & \AdvanceDate[30]\today\\
+    60 days from today & \AdvanceDate[60]\today\\
+    180 days from today & \AdvanceDate[180]\today\\\hline
+\end{tabular}
+\end{document}
+```
+
+[![mwe output][1]][1]
+
+
+  [1]: e27x1.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4873/date-calculations/4878#4878) on TeX Stack Exchange, 2010-11-03, with [edits](https://tex.stackexchange.com/posts/4878/revisions) by [davethegr8](https://tex.stackexchange.com/users/4433/davethegr8). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

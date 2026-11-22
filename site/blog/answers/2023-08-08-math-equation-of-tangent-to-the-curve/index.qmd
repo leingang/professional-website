@@ -1,0 +1,72 @@
+---
+title: Equation of tangent to the curve
+date: '2023-08-08'
+description: I think your mistake is here. Since the tangent line to the curve at $(x1,y1)$ passes through the origin, we know $y-y1 = \frac{dy}{dx}(x1,y1)(x-x1)$ is…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4749619
+se-link: https://math.stackexchange.com/questions/4749591/equation-of-tangent-to-the-curve/4749619#4749619
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Equation of tangent to the curve](https://math.stackexchange.com/questions/4749591/equation-of-tangent-to-the-curve), asked by [user3.14](https://math.stackexchange.com/users/1201323/user3-14) on Mathematics Stack Exchange (2023-08-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The equation of the curve is:
+>
+> $$x=\frac{\left(y-2\right)^{2}}{y}$$
+>
+> The tangent to the curve is passing through the origin. Find the equation of the tangent.
+>
+> My solution:
+>
+> $xy=(y-2)^2$
+>
+> ⇒ $x=\frac{(y-2)^2}{y}$ 
+>
+> Now, differentiating both sides with respect to y, we get,
+>
+> $\frac{dx}{dy}= \frac{(y-2)(y+2)}{y^2}$
+>
+> Therefore, $\frac{dy}{dx}= \frac{y^2}{(y-2)(y+2)}$
+>
+> The equation of tangent is given by, $y-y_1$= $\frac{dy}{dx}(x-x_1)$.
+>
+> Since, tangent passes through origin, so at $(0,0)$, $\frac{dy}{dx}=0$
+>
+> Thus, the equation of tangent is: $y-0= 0(x-0)$
+>
+> ⇒ $y$=$0$  (i.e X-axis)
+>
+> My confusion: Tangent exists at a point on the curve, but looking at the graph of $xy=(y-2)^{2}$, we can see that X-axis is the asymptote, so how can the tangent be $y=0$ i.e. X-axis when curve doesn't even touch it?
+>
+> Following is the graph of $x=\frac{\left(y-2\right)^{2}}{y}$
+>
+> [![enter image description here][q-1]][q-1]
+>
+>   [q-1]: YVAus.gif
+:::
+
+> The equation of tangent is given by, $y-y_1$= $\frac{dy}{dx}(x-x_1)$.
+>
+> Since, tangent passes through origin, so at $(0,0)$, $\frac{dy}{dx}=0$
+
+I think your mistake is here. Since the tangent line to the curve at $(x_1,y_1)$ passes through the origin, we know $y-y_1 = \frac{dy}{dx}(x_1,y_1)(x-x_1)$ is satisfied by $x=0$ and $y=0$. That tells you something about $(x_1,y_1)$: namely, that $\frac{dy}{dx}(x_1,y_1) = \frac{y_1}{x_1}$. So you want to find solutions to $\frac{dy}{dx} = \frac{y}{x}$. 
+
+Another possibility is a vertical tangent line. If this vertical tangent line passes through the origin, it must be the $y$-axis. So look for points $(0,y_1)$ on the curve with $\frac{dx}{dy}(0,y_1) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4749591/equation-of-tangent-to-the-curve/4749619#4749619) on Mathematics Stack Exchange, 2023-08-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

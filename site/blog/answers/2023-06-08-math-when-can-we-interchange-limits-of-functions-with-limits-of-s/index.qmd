@@ -1,0 +1,43 @@
+---
+title: When can we interchange limits of functions with limits of sequences?
+date: '2023-06-08'
+description: Restricting a function of a real variable to its values on a discrete set can lose information. So we can't swap one for the other willy-nilly.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4715123
+se-link: https://math.stackexchange.com/questions/4715116/when-can-we-interchange-limits-of-functions-with-limits-of-sequences/4715123#4715123
+se-score: 6
+se-accepted: true
+se-tags:
+- real-analysis
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When can we interchange limits of functions with limits of sequences?](https://math.stackexchange.com/questions/4715116/when-can-we-interchange-limits-of-functions-with-limits-of-sequences), asked by [Anonymous73648](https://math.stackexchange.com/users/1120880/anonymous73648) on Mathematics Stack Exchange (2023-06-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I just noticed how the definitions for $\lim\limits_{x\to\infty}f(x) = L$, and $\lim\limits_{n\to\infty}s_n = s$ are essentially the same thing.
+>
+> Because of this, are we allowed to "swap out" $\lim\limits_{x\to\infty}f(x)$ with $\lim\limits_{n\to\infty}s_n$ if {$s_n$} is the equivalent sequence of $f(x)$, regardless of whether or not the limit exists? For instance, if we wanted to evaluate $\lim\limits_{x\to\infty}$sin(x), is it okay to instead consider $\lim\limits_{n\to\infty}s_n$, where $s_n$ = sin(n)?
+:::
+
+Restricting a function of a real variable to its values on a discrete set can lose information. So we can't swap one for the other willy-nilly.
+
+By “equivalent sequence” I guess you mean setting $s_n = f(n)$. Here are some things you can say:
+
+* If $\lim_{x\to\infty} f(x) = L$, then $\lim_{n\to\infty} s_n = L$.
+* Contrapositively, if $\lim_{n\to\infty} s_n$ does not exist, then $\lim_{x\to\infty} f(x)$ does not exist.
+
+But now consider the function $f(x) = \sin \pi x$. Setting $s_n = f(n)$, we see that $\lim_{n\to\infty} s_n = \lim_{n\to\infty} 0 = 0$. But $\lim_{x\to\infty} f(x)$ does not exist. So it is possible for the sequence to have a limit while the function does not.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4715116/when-can-we-interchange-limits-of-functions-with-limits-of-sequences/4715123#4715123) on Mathematics Stack Exchange, 2023-06-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

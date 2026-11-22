@@ -1,0 +1,72 @@
+---
+title: Finding the region bounded by a circle and rosetta leaf
+date: '2018-01-10'
+description: If the second curve has equation $r=2a\cos\theta$, it's a circle. [][1] The two circles intersect when $$2a \cos\theta = a \implies \cos\theta = \frac{1}{2}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2599736
+se-link: https://math.stackexchange.com/questions/2599561/finding-the-region-bounded-by-a-circle-and-rosetta-leaf/2599736#2599736
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the region bounded by a circle and rosetta leaf](https://math.stackexchange.com/questions/2599561/finding-the-region-bounded-by-a-circle-and-rosetta-leaf), asked by [Ninja](https://math.stackexchange.com/users/201094/ninja) on Mathematics Stack Exchange (2018-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to find the following region:
+> $R$ is the region bounded by the circle of radius $a$ and and the center at the origin and the rosetta leaf $r=2a\cos(\theta)$ with $x \ge 0$ and $r \ge a$.
+>
+>  So, I draw the region. There are two parts,  one is above and the other one is below the $x-$axis. I try to write one integral and then multiply it by $2$ to find solution.
+>
+>  Here is what I wrote: 
+>
+> $\displaystyle 2\int_{0}^{\frac{arc\cos(1/2)}{2}} \int_a^{2a\cos(2\theta)}rdrd\theta$
+>
+>
+>
+> Is it correct, any hints would be helpful. Thank you.
+:::
+
+If the second curve has equation $r=2a\cos\theta$, it's a circle.  
+[![Intersection of circles][1]][1]
+The two circles intersect when
+$$2a \cos\theta = a \implies \cos\theta = \frac{1}{2} \implies \theta = \pm\frac{\pi}{3}$$
+Therefore the area of the region is
+$$\begin{align*}
+    \int_{-\pi/3}^{\pi/3} \int_a^{2 a\cos\theta} r\,dr\,d\theta
+    &= 2 \int_{0}^{\pi/3} \int_a^{2 a\cos\theta} r\,dr\,d\theta \\
+    &= \int_{0}^{\pi/3}\left. r^2 \right|_a^{2 a\cos\theta} \,d\theta \\
+    &= \int_{0}^{\pi/3}\left(4a^2\cos^2\theta - a^2\right)\,d\theta \\
+    &= a^2 \int_{0}^{\pi/3}\left(2(1+\cos2\theta) - 1\right)\,d\theta \\
+    &= a^2 \int_{0}^{\pi/3}\left(1+2\cos2\theta\right)\,d\theta \\
+    &= a^2 \left[\theta+\sin 2\theta\right]_{0}^{\pi/3}\\
+    &= a^2 \left(\frac{\pi}{3} + \frac{\sqrt{3}}{2}\right)
+\end{align*}$$
+
+If the second curve has equation $r=2a\cos2\theta$, it's a *rose* of four leaves. 
+[![intersection of rose and circle][2]][2] The curves intersect when
+$$a = 2a \cos2 \theta \implies \cos2 \theta = \frac{1}{2}$$
+The portion in the right half-plane has three components.  Let's find the area of the largest component.  That is the portion with $-\frac{\pi}{6} \leq \theta \leq \frac{\pi}{6}$.  Its area is
+$$A = 2 \int_0^{\pi/6}\int_0^{2a\cos2 \theta} r\,dr\,d\theta$$
+Substituting $\phi = 2\theta$ and $d\phi = 2d\theta$ transforms this integral into the previous one.  So
+$$A = \frac{1}{2}\cdot a^2 \left(\frac{\pi}{3} + \frac{\sqrt{3}}{2}\right)
+      = a^2 \left(\frac{\pi}{6} + \frac{\sqrt{3}}{4}\right)$$
+
+
+  [1]: PVPPL.png
+  [2]: 2gKIq.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2599561/finding-the-region-bounded-by-a-circle-and-rosetta-leaf/2599736#2599736) on Mathematics Stack Exchange, 2018-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

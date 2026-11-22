@@ -1,0 +1,45 @@
+---
+title: how to ensure formatting in tex doc remains same once it's compiled
+date: '2011-03-15'
+description: It sounds like you are forcing LaTeX to place floats (figures and tables) when you should be using its own float-placing algorithms. Use an optional argument…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 13538
+se-link: https://tex.stackexchange.com/questions/13536/how-to-ensure-formatting-in-tex-doc-remains-same-once-its-compiled/13538#13538
+se-score: 1
+se-accepted: false
+se-tags:
+- sectioning
+- floats
+- positioning
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to ensure formatting in tex doc remains same once it's compiled](https://tex.stackexchange.com/questions/13536/how-to-ensure-formatting-in-tex-doc-remains-same-once-its-compiled), asked by user4245 on TeX Stack Exchange (2011-03-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Using `\clearpage` or `\newpage` will work sometimes or will ensure that the figure stays in the same section, but I cannot always get the heading of a subsection and the introduction to it to appear before a data table/graphic etc. Is there any particular package or formatting that should be included to ensure that the order I write it in will be the same it is compiled in?
+:::
+
+It sounds like you are forcing LaTeX to place floats (figures and tables) when you should be using its own float-placing algorithms.  Use an optional argument to make recommendations to that algorithm.  
+
+```latex
+\begin{figure}[h] % to place "here"
+% stuff ...
+\end{figure}
+```
+
+You can also use `t` for "top of the next page", `b` for "bottom of the next page, or `p` for "on a separate page of floats only".  You can give preferences like `[ht]` for "here, but if not possible on the top of the next page."  You can use an exclamation point to make more urgent recommendations.
+
+See also https://tex.stackexchange.com/questions/1511/h-float-specifier-changed-to-ht-warning-when-not-attempting-to-specify-a-floa/1527#1527, in which Stefan gives a good answer describing float placement in general.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13536/how-to-ensure-formatting-in-tex-doc-remains-same-once-its-compiled/13538#13538) on TeX Stack Exchange, 2011-03-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

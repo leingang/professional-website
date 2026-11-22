@@ -1,0 +1,44 @@
+---
+title: Is $\frac{x}{2}$ an algebraic fraction? If yes, isn't it improper? Then how to turn it proper?
+date: '2016-02-27'
+description: This is an interesting question. I didn't see any explicit mention of whether a rational function with constant denominator should be considered improper. If…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1674493
+se-link: https://math.stackexchange.com/questions/1673970/is-fracx2-an-algebraic-fraction-if-yes-isnt-it-improper-then-how-to-t/1674493#1674493
+se-score: 1
+se-accepted: true
+se-tags:
+- algebra-precalculus
+- fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is $\frac{x}{2}$ an algebraic fraction? If yes, isn't it improper? Then how to turn it proper?](https://math.stackexchange.com/questions/1673970/is-fracx2-an-algebraic-fraction-if-yes-isnt-it-improper-then-how-to-t), asked by [reflectionalist](https://math.stackexchange.com/users/308324/reflectionalist) on Mathematics Stack Exchange (2016-02-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> According to [Wikipedia on algebraic fractions](https://en.wikipedia.org/wiki/Algebraic_fraction), $\frac{x}{2}$ seems an algebraic fraction.  Then by definition, as the degree of the numerator $1$ ($x^1$) is larger than the degree of the denominator $0$ ($x^0$), it is an _improper_ algebraic fraction.  Now how can I turn it to a _proper_ one?  Long division gives either $x - \frac{x}{2}$, $x - x + \frac{x}{2}$, $x - x + x - \frac{x}{2}$, $x - x + x - x + \frac{x}{2}$, ..., which suggests impossibility.  Should we exclude $\frac{x}{2}$ as an algebraic fraction?
+:::
+
+This is an interesting question.  I didn't see any explicit mention of whether a rational function with constant denominator should be considered improper.  If you apply the strict definition then it would seem to be.
+
+But I think there is a way out.  Quoting from the [Wikipedia article][1] you linked to:
+>Any improper rational fraction can be expressed as the sum of a polynomial (possibly constant) and a proper rational fraction.
+
+In this case we have
+$$\frac{x}{2} = \frac{1}{2}x$$
+So the “polynomial part” of $\frac{x}{2}$ is $\frac{1}{2}x$, and the “proper rational fraction part” is $0$.
+
+
+  [1]: https://en.wikipedia.org/wiki/Algebraic_fraction
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1673970/is-fracx2-an-algebraic-fraction-if-yes-isnt-it-improper-then-how-to-t/1674493#1674493) on Mathematics Stack Exchange, 2016-02-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

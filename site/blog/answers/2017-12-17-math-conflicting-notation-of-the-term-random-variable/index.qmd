@@ -1,0 +1,45 @@
+---
+title: Conflicting notation of the term random variable
+date: '2017-12-17'
+description: You have the definition of random variable right. But I always found it confusing to think of a random variable as a measurable function. Instead, it's a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2570345
+se-link: https://math.stackexchange.com/questions/2570333/conflicting-notation-of-the-term-random-variable/2570345#2570345
+se-score: 2
+se-accepted: true
+se-tags:
+- probability
+- notation
+- random-variables
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Conflicting notation of the term random variable](https://math.stackexchange.com/questions/2570333/conflicting-notation-of-the-term-random-variable), asked by [mdcq](https://math.stackexchange.com/users/454513/mdcq) on Mathematics Stack Exchange (2017-12-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm kind of confused how the notation of a random variable $X$ is used. As I understand it, a random variable $X$ is a function
+>
+> $$X: \Omega \to \mathbb{R}$$
+>
+> which maps every possible outcome $\omega \in \Omega$ to a unique value in set, with which we can work with better mathematically (which is usually $\mathbb{R}$). So far so good.
+>
+> Now for probabilites the usual way of writing them is "$P(X)$". But what should that mean? "The probability of a function" doesn't make sense to me. Does it actually mean "$P(X(\Omega))$"? Then what do $P(X = x)$ or $P(X \le x)$ mean?
+>
+> I came across this while trying to understand the definitions of the different probability distributions. Every definition I can find seems to have this weird notation usage. Can somebody explain to me in a really clear way how the notation is used here?
+:::
+
+You have the definition of random variable right.  But I always found it confusing to think of a random variable as a measurable function. Instead, it's a variable that you don't know the value of for sure, but only that you know the *probablity* of it taking certain values (or having a value in a certain interval).
+
+But to be strict, when the probabilists write $P(X=x)$, they mean $P(X^{-1}(x))$, and $P(X\leq x)$ means $P(X^{-1}(-\infty,x])$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2570333/conflicting-notation-of-the-term-random-variable/2570345#2570345) on Mathematics Stack Exchange, 2017-12-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

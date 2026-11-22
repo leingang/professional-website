@@ -1,0 +1,42 @@
+---
+title: What do the three dots mean in this problem? (Concrete Mathematics, ex. 1.9)
+date: '2026-10-30'
+description: Yes, it denotes multiplication. As I wrote in my comment three years ago, the part after “This is true when $n=2$, since...” has $x1x2$ multiplied. And the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5153232
+se-link: https://math.stackexchange.com/questions/4774742/what-do-the-three-dots-mean-in-this-problem-concrete-mathematics-ex-1-9/5153232#5153232
+se-score: 3
+se-accepted: false
+se-tags:
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What do the three dots mean in this problem? (Concrete Mathematics, ex. 1.9)](https://math.stackexchange.com/questions/4774742/what-do-the-three-dots-mean-in-this-problem-concrete-mathematics-ex-1-9), asked by [Noah J](https://math.stackexchange.com/users/1086124/noah-j) on Mathematics Stack Exchange (2023-09-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Exercise 1.9 in Concrete Mathematics (Knuth et al.):
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: rYmyr.png
+>
+> What does '...' between $x_1$ and $x_n$ mean? If it's multiplication, I would expect the dots to be centered. If it's saying that the inequality holds for each $x_a$ with a between $1$ and $n$ (inclusive), then I would expect commas.
+:::
+
+Yes, it denotes multiplication. As I wrote in my comment three years ago, the part after “This is true when $n=2$, since...” has $x_1x_2$ multiplied. And the statement to be proven in the exercise is the [AM-GM inequality](https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality), which has a product.
+
+I did some exploration with the [fonts](https://ctan.org/pkg/concmath), and Misha Lavrov looked into the [TeX macros](https://ctan.org/pkg/gkpmac) used to typeset the book. It appears that the authors indeed intended an ellipsis along the baseline (`\ldots`), even though we now normally write it above the baseline (`\cdots`) in these contexts.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4774742/what-do-the-three-dots-mean-in-this-problem-concrete-mathematics-ex-1-9/5153232#5153232) on Mathematics Stack Exchange, 2026-10-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

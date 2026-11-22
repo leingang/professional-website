@@ -1,0 +1,61 @@
+---
+title: LinkedIn logo in Latex
+date: '2014-07-10'
+description: I think the simplest path is to use the EPS logos provided. With pdflatex you will have to convert the EPS file to PDF, but there are many ways to do that (see…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 190950
+se-link: https://tex.stackexchange.com/questions/190927/linkedin-logo-in-latex/190950#190950
+se-score: 10
+se-accepted: false
+se-tags:
+- logos
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LinkedIn logo in Latex](https://tex.stackexchange.com/questions/190927/linkedin-logo-in-latex), asked by [texfan](https://tex.stackexchange.com/users/28569/texfan) on TeX Stack Exchange (2014-07-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How could I get a LinkedIn logo (like those found in http://press.linkedin.com/Media-Resources?SubjectID=644) in Latex?
+>
+> I found some tikz code somewhere, but that was not for one in blue, and it didn't look quite the same.
+>
+> Example:
+>
+> ![Enter image description here][q-1]
+>
+>   [q-1]: t0C80.jpg
+:::
+
+I think the simplest path is to use the EPS logos provided.  With `pdflatex` you will have to convert the EPS file to PDF, but there are many ways to do that (see https://tex.stackexchange.com/q/2872/1402) including “automatically” as in my installation.  If you download the [LinkedIn logo “bug” as EPS](https://brand.linkedin.com/downloads), you get a file `LinkedIn-InBug-2C.eps`.  Then use something like this document:
+
+```latex
+\documentclass{standalone}
+\usepackage{graphicx}
+% https://tex.stackexchange.com/q/190927/1402
+\begin{document}
+\raisebox{-0.35ex}{\includegraphics[width=2.5ex]{LinkedIn-InBug-2C}}%
+linked.in/johndoe
+\end{document}
+```
+
+and you get this:
+
+![sample code output][1]
+
+I had to manually adjust the `width` and `\raisebox` arguments to get the size and vertical placement right.  There might be other ways.  
+
+
+
+  [1]: 8NSEp.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/190927/linkedin-logo-in-latex/190950#190950) on TeX Stack Exchange, 2014-07-10, with [edits](https://tex.stackexchange.com/posts/190950/revisions) by [Tasdik Rahman](https://tex.stackexchange.com/users/104471/tasdik-rahman). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

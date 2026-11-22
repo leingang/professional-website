@@ -1,0 +1,67 @@
+---
+title: Does the diagonal proof lack rigor?
+date: '2018-06-01'
+description: As the prover, you don't get to “let” row $2^n$ be anything. You are supposing for the sake of contradiction that the real numbers can be arranged in a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2804422
+se-link: https://math.stackexchange.com/questions/2804393/does-the-diagonal-proof-lack-rigor/2804422#2804422
+se-score: 0
+se-accepted: false
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Does the diagonal proof lack rigor?](https://math.stackexchange.com/questions/2804393/does-the-diagonal-proof-lack-rigor), asked by [Ivan Hieno](https://math.stackexchange.com/users/369757/ivan-hieno) on Mathematics Stack Exchange (2018-06-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Cantor's proof represented the set of real numbers as a matrix like so...
+>
+> $1 \to 0. d_{1,1} d_{1,2} d_{1,3} \dots$
+>
+> $2 \to 0. d_{2,1} d_{2,2} d_{2,3} \dots$
+>
+> $3 \to 0. d_{3,1} d_{3,2} d_{3,3} \dots$
+>
+> $\dots$
+>
+> where each $d_{x,y}$ is a binary digit $0 \lor 1$ 
+>
+> then the proof created a real number from the diagonal by flipping a bit in each row
+>
+> $diagonal = 0. \sim d_{1,1} \sim d_{2,2} \sim d_{3,3} \dots$
+>
+> This $diagonal$ could not be in row $1$ or $2$ or $3$ or any row $n$ where $n \in \mathbb N$
+>
+> But, we can look at this from a different perspective. 
+>
+> If we let row $2^n = 0. \sim d_{1,1} \sim d_{2,2} \sim d_{3,3} \dots \sim d_{n,n} r_1r_2r_3 \dots$
+>
+> where the first $n$ digits is the first $n$ digits of the diagonal flipped. Followed by random bits $r_1r_2r_3 \dots$ then for every value $n$ where $n \in \mathbb N$ we can rule out our diagonal number being in rows $1$ to $n$ but we can't rule out row $2^n$ as the first $n$ digits of this row is the same as the first $n$ digits of the diagonal.
+>
+> My question is, what rigorous method allowed Cantor's proof to use that version of the diagonal proof, rather than this inconclusive version of the proof? 
+>
+> My own thoughts on this problem is, of course we can rule row $2^n$, because the $2^n$th digit of the diagonal can't be the same as the  $2^n$th digit of row $2^n$ but it can't rule out row $2^{2^n}$ or  $4^n$.
+> If we rule out $4^n$, we can't rule out $8^n$.
+> If we rule out $8^n$, we can't rule out $16^n$ and so on forever.
+>
+> As we look further and further along the diagonal, we will be getting closer to looking at an infinite number of digits in the diagonal $(n \to \infty)$ which will be the same as the same near infinite number of digits in our row $2^{(n \to \infty)}$. So as we approach infinity, the two numbers seem to converge, and if they do converge, then the impossible diagonal could be in the list, and Cantor's proof would fail.
+:::
+
+> If we let row $2^n = 0. \sim d_{1,1} \sim d_{2,2} \sim d_{3,3} \dots \sim d_{n,n} r_1r_2r_3 \dots$
+
+As the prover, you don't get to “let” row $2^n$ be anything.  You are supposing for the sake of contradiction that the real numbers can be arranged in a sequence. The entire sequence is provided, and once the diagonal number is constructed, you can't go back and rearrange the sequence. 
+
+Maybe you're asking “what if”, for each $n$, row $2^n$ agreed with the diagonal number in each of the first $n$ positions.  That would be very coincidental, would not represent a logical gap in the proof.  The diagonal number, by construction, disagrees with the number in row $2^n$ at the $2^n$th position.  So the diagonal number is not in row $2^n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2804393/does-the-diagonal-proof-lack-rigor/2804422#2804422) on Mathematics Stack Exchange, 2018-06-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

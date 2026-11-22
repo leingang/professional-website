@@ -1,0 +1,101 @@
+---
+title: Verify the Divergence Theorem
+date: '2017-11-17'
+description: The iterated integral $$\int{-1}^1 \int{-1}^1 \vec F \cdot (Fx \times Fy) \, dx\,dy$$ doesn't make sense. I think you're confusing the vector field be…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2525038
+se-link: https://math.stackexchange.com/questions/2524979/verify-the-divergence-theorem/2525038#2525038
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Verify the Divergence Theorem](https://math.stackexchange.com/questions/2524979/verify-the-divergence-theorem), asked by [MAS](https://math.stackexchange.com/users/417353/mas) on Mathematics Stack Exchange (2017-11-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The vector field $\ \large \vec F=(xy,yz,zx) \$ , on the closed cylinder $\ x^2+y^2 \leq 1 , \ \ z=0 , \ \ z \leq 1$. 
+>
+> Verify the Divergence Theorem. 
+>
+> **Answer:**
+>
+> $(i)$ we have to calculate here $\iint_S F \cdot n \ dS$ 
+>
+> Let $z=1-x^2-y^2 \$
+>
+> Then $\vec F=(xy,y(1-x^2-y^2) , x(1-x^2-y^2)) \$
+>
+> Now , 
+>
+> $$F_x=(y,-2xy, 1-3x^2) , \ \ F_y=(x, 1-x^2-3y^2, -2xy)$$
+>
+> Then, 
+>
+> $$F_x \times F_y=(13x^2y^2+3x^4+2x^2-3y^2, \ 2xy^2+x-3x^3, \  x^2y+y-3y^3)$$
+>
+> Then, 
+>
+> $$\iint_S F \cdot n \, dS= \int_{-1}^1 \int_{-1}^1 \vec F \cdot (F_x \times F_y) \, dx\,dy$$
+>
+> But this becomes complicated .
+>
+> I am confused . 
+>
+> **Am I right so far .** 
+>
+> Help me out
+:::
+
+The iterated integral
+$$\int_{-1}^1 \int_{-1}^1 \vec F \cdot (F_x \times F_y) \, dx\,dy$$
+doesn't make sense.  I think you're confusing the vector field be integrated with a vector function that parametrizes the solid.  If $D$ is a region in the $uv$-plane, and $\vec r \colon D \to S$ parametrizes the solid $S$, then 
+$$\iint_S \vec F \cdot \vec n\,dS = \iint_{D} \vec F(\vec r(u,v))\cdot (\vec r_u \times \vec r_v) \,dA$$
+But your solid is both more simple and more complicated than that.  
+
+It's more complicated because it has three faces: the flat top and bottom, and the curved sides.  So to set up $\iint_S \vec F \cdot \vec n\,dS$ by parametrizing the surface requires three separate integrals.
+
+It's more simple because the faces are nice and have easy normals.  On the top face, $\vec n = \vec k$, on the bottom face, $\vec n = - \vec k$.  Around the curved sides of the cylinder, the normal at $\vec x$ is $\vec x$ itself.  So
+$$\begin{align*}
+    \iint_S \vec F\cdot\vec n\,dS
+    &=\iint_{\text{top}}(xy,yz,zx)\cdot \vec k\,dS
+    +\iint_{\text{bottom}}(xy,yz,zx)\cdot (-\vec k)\,dS
+    +\iint_{\text{sides}}(xy,yz,zx)\cdot (x,y,z)\,dS
+\end{align*}$$
+On the top face, $z=1$, and on the bottom face, $z=0$.  So
+$$\iint_S \vec F\cdot\vec n\,dS
+    = \iint_{\text{top}}x\,dS + 0 + \iint_{\text{sides}}(x^2y + y^2 z +
+ z^2 x)\,dS$$
+By symmetry, everything vanishes except
+$$\iint_S \vec F\cdot\vec n\,dS
+    = \iint_{\text{sides}}y^2 z\,dS$$
+**Edit** to address the concern OP brought up in the first comment.  The first integral $\iint_{\text{top}}x\,dS$ is essentially the integral of $x$ over the unit disk.  For every point in the disk with a positive $x$ coordinate, the point's reflection in the $y$-axis is also in the disk and has the opposite $x$ coordinates.  So you can cancel all the points on one side with their reflections on the other side.  
+
+The same thing works with $\iint_{\text{sides}}x^2y\,dS$ and $\iint_{\text{sides}}z^2 x\,dS$, using either the $y$ or $x$ coordinate to cancel.  But the remaining term $\iint_{\text{sides}}y^2z\,dS$ does not have that symmetry.
+
+On the sides, $dS = d\theta \,dz$.  So
+$$\iint_{\text{sides}}y^2 z\,dS 
+    = \int_0^{2\pi} \int_0^1 \sin^2\theta\,d\theta\,dz = \frac{\pi}{2}$$
+
+
+On the other hand $\nabla\cdot(xy,yz,zx) = y + z + x$.
+Let $E$ be the solid cylinder enclosed by $S$.  Then
+$$\iiint_E \nabla\cdot\vec F\,dV = \iiint_E (x+y+z)\,dV
+    = \iiint_E z \,dV$$
+Again by symmetry, the $x$ and $y$ integrals evaluate to zero.
+
+Within the cylinder, $dV = r \,dr\,d\theta\,dz$.  So
+$$\iiint_E z \,dV = \int_0^{2\pi} \int_0^1 \int_0^1 z r \,dr\,d\theta\,dz = \frac{\pi}{2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2524979/verify-the-divergence-theorem/2525038#2525038) on Mathematics Stack Exchange, 2017-11-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

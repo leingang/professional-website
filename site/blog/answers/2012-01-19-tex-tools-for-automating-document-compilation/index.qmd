@@ -1,0 +1,55 @@
+---
+title: Tools for automating document compilation
+date: '2012-01-19'
+description: For completeness, I will mention autolatex (project page). I have not used it. It's implemented with a combination of perl scripts and makefiles.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 41541
+se-link: https://tex.stackexchange.com/questions/64/tools-for-automating-document-compilation/41541#41541
+se-score: 6
+se-accepted: false
+se-tags:
+- compiling
+- automation
+- tools
+- big-list
+- makefile
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tools for automating document compilation](https://tex.stackexchange.com/questions/64/tools-for-automating-document-compilation), asked by [Phil Miller](https://tex.stackexchange.com/users/60/phil-miller) on TeX Stack Exchange (2010-07-26; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> A lot of people write makefiles that say something like
+>
+> ```latex
+> paper.pdf: paper.tex
+>         pdflatex paper
+>         bibtex paper
+>         pdflatex paper
+>         pdflatex paper
+> ```
+>
+> To handle re-running TeX to get new/changed references and so forth. Is there a better way to do this?
+:::
+
+For completeness, I will mention [`autolatex`](http://tug.ctan.org/tex-archive/support/autolatex) ([project page](http://freecode.com/projects/autolatex)).  I have not used it.  It's implemented with a combination of perl scripts and makefiles.
+
+With `autolatex` you can execute on the command line:
+
+```latex
+$ autolatex -f mydoc.tex
+```
+
+This generates the makefiles in the current directory and makes the default targets.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/64/tools-for-automating-document-compilation/41541#41541) on TeX Stack Exchange, 2012-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

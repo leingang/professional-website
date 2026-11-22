@@ -1,0 +1,76 @@
+---
+title: Define a new evironment by an existed environment, with its optional argument
+date: '2011-04-21'
+description: 'If you don''t want to do anything to the optional argument of myenv you can write it without the argument and let existingenv take care of it:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16323
+se-link: https://tex.stackexchange.com/questions/16317/define-a-new-evironment-by-an-existed-environment-with-its-optional-argument/16323#16323
+se-score: 1
+se-accepted: false
+se-tags:
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Define a new evironment by an existed environment, with its optional argument](https://tex.stackexchange.com/questions/16317/define-a-new-evironment-by-an-existed-environment-with-its-optional-argument), asked by [Stufazi Hoqckt](https://tex.stackexchange.com/users/5006/stufazi-hoqckt) on TeX Stack Exchange (2011-04-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Suppose there is an existed environment say, `existedenv`, with an optional argument, that is, 
+>
+> ```latex
+> \begin{existedenv}[argument]
+> ....
+> \end{existedenv}
+> ```
+>
+> I want to define a new environment, say, `myenv`, which is a copy of `existedenv`, that is,
+>
+> ```latex
+> \begin{myenv}[argument]
+> ....
+> \end{myenv}
+> ```
+>
+> behavior is exactly like
+>
+> ```latex
+> \begin{existedenv}[argument]
+> ....
+> \end{existedenv}
+> ```
+>
+> How to write the code?
+:::
+
+If you don't want to do anything to the optional argument of `myenv` you can write it without the argument and let `existingenv` take care of it:
+
+```latex
+\newenvironment{myenv}{
+  % stuff of your own...
+  \existingenv
+}{
+  \endexistingenv
+}
+```
+
+Then `\begin{myenv}[foo]` will expand to `\begin{existingenv}[foo]` before `foo` is expanded.  
+
+But if this is all you want to do you might consider using some the macros in the [`etoolbox`](http://ctan.org/pkg/etoolbox) package to just patch the environment.  For instance,
+
+```latex
+\pretocmd{\A}{stuff of your own}{}{}
+```
+
+will just insert the code you want before the begin-code of `A`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16317/define-a-new-evironment-by-an-existed-environment-with-its-optional-argument/16323#16323) on TeX Stack Exchange, 2011-04-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

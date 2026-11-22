@@ -1,0 +1,59 @@
+---
+title: In what directory should I store my new LaTeX template?
+date: '2015-08-19'
+description: 'Each distribution should have a local texmf directory. Within that, use the TeX Directory Structure:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 262244
+se-link: https://tex.stackexchange.com/questions/262242/in-what-directory-should-i-store-my-new-latex-template/262244#262244
+se-score: 1
+se-accepted: false
+se-tags:
+- installing
+- document-classes
+- directory
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[In what directory should I store my new LaTeX template?](https://tex.stackexchange.com/questions/262242/in-what-directory-should-i-store-my-new-latex-template), asked by [abcd](https://tex.stackexchange.com/users/85086/abcd) on TeX Stack Exchange (2015-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I just downloaded the [elsarticle](http://www.latextemplates.com/template/elseviers-elsarticle-document-class) document class.  In the unzipped directory, there are `.bst` files, `.tex` files, a `.sty` file, a `.pdf` file, and a very unhelpful `README`.
+>
+> Where should I put these files in order to use them system-wide in my documents?
+>
+> In reading a [very similar post](https://tex.stackexchange.com/q/10498/85086), I've realized that which version of LaTeX I'm using (one of which is apparently MiKTeX) is relevant here.  How do I figure out what I'm using?  I create LaTeX documents in Emacs, and use `C-c c` to generate PDFs from my `.tex` files.
+>
+> In reading an [answer to another similar post](https://tex.stackexchange.com/a/1138/85086), I see that I should put my files in the directory returned by
+>
+> ```latex
+> kpsewhich -var-value=TEXMFHOME
+> ```
+>
+> For me, this returns
+>
+> ```latex
+> /home/daniel/texmf
+> ```
+>
+> a directory which *does not exist on my computer*.  What's the deal?
+:::
+
+Each distribution should have a local `texmf` directory. Within that, use the [TeX Directory Structure](http://tug.ctan.org/tds/tds.html): 
+
+* `.cls` files go in `tex/latex/elsarticle`
+* `.bst` files go in `bibtex/bst/elsarticle`
+* the README and `.pdf` go in `doc/elsarticle`
+
+Templates aren't a special kind of file; they are just sample documents to fill in. Some TeX IDE's have a place to put them. For instance in TeXShop they can be put in `/Library/TeXShop/Templates`.  The TDS specifications suggest they can go in `/doc/elsarticle`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/262242/in-what-directory-should-i-store-my-new-latex-template/262244#262244) on TeX Stack Exchange, 2015-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

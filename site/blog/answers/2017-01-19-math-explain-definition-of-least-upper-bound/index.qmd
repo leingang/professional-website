@@ -1,0 +1,51 @@
+---
+title: Explain definition of least upper bound .
+date: '2017-01-19'
+description: Condition (1) says that $s$ is an upper bound. Condition (2) says that $s$ is less than or equal to any other upper bound. Hence, least upper bound.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2104767
+se-link: https://math.stackexchange.com/questions/2104756/explain-definition-of-least-upper-bound/2104767#2104767
+se-score: 0
+se-accepted: true
+se-tags:
+- sequences-and-series
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Explain definition of least upper bound .](https://math.stackexchange.com/questions/2104756/explain-definition-of-least-upper-bound), asked by user405401 on Mathematics Stack Exchange (2017-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The text that I have says something like this, <br/>
+> A real number *s* is the *least upper bound* for a set $A \subseteq R$ if it meets the following two criteria:<br/>
+> (1) *s* is an upper bound of *A* <br/>
+> (2) if *b* is any upper bound for A, then $s \le b$
+> <br/>
+> Its the second statement that creates a confusion. I read answers to same question and the people have explained it with an example, <br/>
+> Ex: Let $[0,1]\subset \mathbb{R}$. Then we'd like to say that $1$ is the least upper bound. But as per the second definition you have, we find that $2$ is an upper bound and since $2$ is not not an upper bound the second condition you have is vacuous. Hence $2$ is a least upper bound. Which is not at all true.
+>
+> But consider the statement it says, "if *b* is any upper bound for A" and if *A* is a set $[0,1]$ then 2, 3, any number above 1 is not a part of set *A*. <br/>
+> Can anyone explain how the second statement is true and what exactly it wants to convey regarding least upper bound?
+:::
+
+Condition (1) says that $s$ is an upper bound.  Condition (2) says that $s$ is less than or equal to any *other* upper bound.  Hence, *least* upper bound.
+
+The second condition or guarantees that the least upper bound, if it exists, is unique. Suppose if ${s_1}$ and ${s_2}$ are both least upper bounds for a set $A$, then part (2) of the definition says that both
+${s_1} \le {s_2}$ and ${s_2} \le {s_1}$.  Thus $s_1 = s_2$.
+So there can be infinite number of upper bounds to a set, but it can only have one least upper bound.
+
+In your example, $2$ is an upper bound of $[0,1]$.  Condition (1) is satisfied by $s=2$.  But since $1.5$ is also an upper bound of $[0,1]$, and $1.5 < 2$, condition (2) is not satisfied.  So $2$ is not the least upper bound of $[0,1]$.
+
+Now $1$ is an upper bound of $[0,1]$.  And in contrast to $2$, any number less than $1$ is not an upper bound of $[0,1]$ (being less than $1$ precludes it from also being $\geq 1$).  So $1$ is the least upper bound of $[0,1]$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2104756/explain-definition-of-least-upper-bound/2104767#2104767) on Mathematics Stack Exchange, 2017-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

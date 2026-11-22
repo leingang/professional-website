@@ -1,0 +1,52 @@
+---
+title: Confusion About a Counterexample to a Statement
+date: '2023-10-02'
+description: Subsets and elements are two different things. $S$ is a subset of itself, which means that $S$ is an element of its own power set. Maybe your professor's…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4779473
+se-link: https://math.stackexchange.com/questions/4779464/confusion-about-a-counterexample-to-a-statement/4779473#4779473
+se-score: 3
+se-accepted: true
+se-tags:
+- discrete-mathematics
+- elementary-set-theory
+- proof-writing
+- examples-counterexamples
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confusion About a Counterexample to a Statement](https://math.stackexchange.com/questions/4779464/confusion-about-a-counterexample-to-a-statement), asked by [Ameer786](https://math.stackexchange.com/users/910749/ameer786) on Mathematics Stack Exchange (2023-10-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am currently facing a bit of confusion regarding a counterexample I provided for a statement in my mathematics class. My professor assigned us the task of proving the following statement false by providing a counterexample:
+>
+> **Statement:** For all sets $S: S \not\subseteq \mathcal{P}(S)$
+>
+> Here's the counterexample I came up with:
+>
+> **Counterexample:** Let $S = \{1, 2\}$. In this case, the power set of $S$, denoted as $\mathcal{P}(S)$, is $\{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$.
+>
+> Now, if we look at $S$ and $\mathcal{P}(S)$, we can see that $S = \{1, 2\}$ is indeed a subset of its power set, i.e., $S \subseteq \mathcal{P}(S)$.
+>
+> However, my professor provided the following remark: $\{1,2\}$ is an element of $\mathcal{P}(S)$ but not a subset, keep looking."
+>
+> I'm puzzled by this remark because I thought that every set is a subset of its own power set by definition. Could you please help me understand whether my counterexample is incorrect, or if there's something more subtle that I'm missing here? Is my professor mistaken in this case?
+>
+> I appreciate any clarification or insights you can provide. Thank you
+:::
+
+Subsets and elements are two different things. $S$ is a *subset* of itself, which means that $S$ is an *element* of its own power set. Maybe your professor's remark will be clearer once you understand that distinction.
+
+But there is one set which is a subset of all sets, including the power set of some other set. Can you guess it?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4779464/confusion-about-a-counterexample-to-a-statement/4779473#4779473) on Mathematics Stack Exchange, 2023-10-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

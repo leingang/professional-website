@@ -1,0 +1,42 @@
+---
+title: Bundle packages with a document
+date: '2011-03-30'
+description: Take a look at Scott Pakin's scripts on CTAN under bundledoc. bundledoc is a perl script that gathers all the dependent files to processing a single file and…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14533
+se-link: https://tex.stackexchange.com/questions/14520/bundle-packages-with-a-document/14533#14533
+se-score: 12
+se-accepted: true
+se-tags:
+- packages
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Bundle packages with a document](https://tex.stackexchange.com/questions/14520/bundle-packages-with-a-document), asked by [Hooked](https://tex.stackexchange.com/users/352/hooked) on TeX Stack Exchange (2011-03-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'd like to have my LaTeX document be self-contained, that is, if I move to another computer I'd like all of my non-standard packages to work without first installing them. For simple enough packages I can put the `.sty` files into the base directory, but this seems like a clunky solution. I can put the packages in a subdirectory but I sometimes than I get dependency errors like
+>
+> ```latex
+>  LaTeX Warning: You have requested package style_files/placeins
+>  but the package provides `placeins'.
+>
+>  (/usr/share/texmf-texlive/tex/latex/tools/array.sty)
+> ```
+>
+> Is there a right way (tm) to do this, or should I install every package I need on every computer I use?
+:::
+
+Take a look at Scott Pakin's scripts on CTAN under [`bundledoc`](http://www.ctan.org/tex-archive/support/bundledoc/).  `bundledoc` is a perl script that gathers all the dependent files to processing a single file and puts them in a single directory, then zips it up for easy transport.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14520/bundle-packages-with-a-document/14533#14533) on TeX Stack Exchange, 2011-03-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

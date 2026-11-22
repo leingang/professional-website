@@ -1,0 +1,96 @@
+---
+title: Darker fonts for TeX output to PDF
+date: '2011-03-10'
+description: You might try “A Survey of Free Math Fonts for TeX and LaTeX” by Steven J. Hartke to see what's out there.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13149
+se-link: https://tex.stackexchange.com/questions/13144/darker-fonts-for-tex-output-to-pdf/13149#13149
+se-score: 4
+se-accepted: false
+se-tags:
+- fonts
+- math-mode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Darker fonts for TeX output to PDF](https://tex.stackexchange.com/questions/13144/darker-fonts-for-tex-output-to-pdf), asked by user4112 on TeX Stack Exchange (2011-03-10; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Sources for darker fonts for math fonts and AMS math symbols for PDF output via, say, dvipdfm.exe?
+>
+> * * *
+> (1st response -- copied from by moderator)
+>
+> Many thanks for the help.
+>
+> I'm just using TeX and not LaTeX.
+>
+> Yes, I should have said "heavier" fonts instead of "darker" fonts.
+>
+> The fonts I am using are just the standard Computer Modern as in Knuth's 'The TeXBook' except occasionally I get a symbol from an AMS collection of symbols.  I also occasionally make use of the Euler fonts from the AMS for math symbols.
+>
+> My screen preview program is YAP, and it has an option to make the fonts on the screen heavier.  That option saves me.
+>
+> If Adobe's Acrobat had an option like that, then I would not have asked this question or be concerned about fonts.
+>
+> For printing on paper, I use an old HP 4p 600 dot per inch laser printer:  On paper, the characters ('glyphs'?) from TeX are reasonably heavy.
+>
+> The main problem is that when using the program DVIPDFM.EXE to convert TeX dvi output to PDF, the characters are not heavy enough as displayed on my screen by Adobe's Acrobat reader.  So, Acrobat could use a darker option like YAP has.
+>
+> I looked at 'A Survey of Free Math Fonts for TeX and LaTeX' by Steven J. Hartke at
+>
+> http://www.ctan.org/tex-archive/info/Free_Math_Font_Survey/survey.pdf
+>
+> and on page 3 saw the footnote:
+>
+> "When on screen, the fonts are usually anti-aliased, often into a gray blur because the stems are not thick enough to fill a pixel.  When printed with a high-resolution laser printer, the fonts are shown accurately, but I think are too thin.  With a medium-resolution printer like an inkjet, there’s enough resolution to show the form of the letters (unlike on screen), but the low-resolution "bulks up" the letters compared to a highresolution laser printer, with the letters thus appearing darker."
+>
+> That paragraph explains well what I am seeing and the cause of the problem I'm trying to solve.
+>
+> That is, my question was not really asking to change from the Computer Modern fonts in TeX but to change how these fonts are displayed when converted to PDF and viewed with Acrobat.  That is, it would appear that I could just leave everything about TeX alone, get DVI files as at present, and just have DVIPDFM.EXE use slightly heavier Adobe Type 1 fonts for what TeX is using.
+>
+> My TeX setup is ProTeX 1.2.  I tried a more recent version, but it seemed to want to go directly to PDF and have me use Acrobat for screen preview instead of going to just to DVI and using YAP for screen preview.  I would much rather use YAP for screen preview.  So, after some days of struggle trying to make it work, I removed the later version of ProTeX and installed ProTeX 1.2 from the ZIP file I still had.
+>
+> So, that's where I am:  Just TeX, just the standard TeX fonts, just the old ProTeX 1.2, YAP for screen preview, fonts heavy enough when printed on paper, but as in Hartke's footnote fonts too light as the Adobe Type 1 versions are displayed on a computer screen with Adobe Acrobat.
+>
+> Maybe a solution could be obtained just by adjusting some 'hints' or some such in the Adobe Type 1 definitions?
+>
+> From Hartke's footnote, it appears that my problem is from common up to nearly universal:  Any font will look lighter on a computer screen in Acrobat than on 600 dot per inch paper.  So, there should be enough interest for a solution.
+>
+> * * *
+> (2nd response -- copied from by moderator)
+>
+> The responses were good and showed a lot of effort.
+>
+> It was time for me to respond.
+>
+> From the reference in your response, I extracted a quote that showed that the problem I was trying to solve will have to be nearly universal among users of TeX and LaTeX.
+>
+> While you did not like my response, in fact I responded in the only way permitted by the software at the Web site.  In particular, your:
+>
+> "The space below each answer is for comments on those answers."
+>
+> does not correspond to anything I see on my screen from my recent copies of Internet Explorer and Firefox.
+>
+> For the question, net, I don't really need to change fonts in TeX and, instead, just change the Adobe Type 1 versions of the standard TeX fonts and used by Acrobat.  That actually was essentially the way my question was stated.
+>
+> For my response, I responded as needed the only way permitted on the Web site.
+>
+> But you or someone voted down my careful, clear, illuminating response thanking everyone.
+>
+> So, in this response I will omit a "Thank you".  And I will minimize my use of Stack Exchange in the future.
+:::
+
+You might try [“A Survey of Free Math Fonts for TeX and LaTeX”](http://www.ctan.org/tex-archive/info/Free_Math_Font_Survey/survey.pdf) by Steven J. Hartke to see what's out there.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13144/darker-fonts-for-tex-output-to-pdf/13149#13149) on TeX Stack Exchange, 2011-03-10. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

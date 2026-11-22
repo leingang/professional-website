@@ -1,0 +1,153 @@
+---
+title: 'LaTeX Beamer: How to get distinct page numbers when using overlays?'
+date: '2010-10-11'
+description: Good question. There seems to be no built-in functionality to do what you want. There must be a counter that holds the slide number, but the manual doesn't…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4012
+se-link: https://tex.stackexchange.com/questions/4009/latex-beamer-how-to-get-distinct-page-numbers-when-using-overlays/4012#4012
+se-score: 10
+se-accepted: true
+se-tags:
+- beamer
+- page-numbering
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[LaTeX Beamer: How to get distinct page numbers when using overlays?](https://tex.stackexchange.com/questions/4009/latex-beamer-how-to-get-distinct-page-numbers-when-using-overlays), asked by [fuenfundachtzig](https://tex.stackexchange.com/users/1442/fuenfundachtzig) on TeX Stack Exchange (2010-10-11; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> ##The question##
+> When I create slides for presentations in LaTeX with the Beamer class, I like to use constructions with `overprint` like this:
+>
+> ```latex
+> \begin{frame}
+>   \begin{block}{}
+>     \begin{itemize}
+>       \item Some general remarks about ALL plots
+>     \end{itemize}
+>   \end{block}
+>   \begin{block}{}
+>     \begin{center}
+>       \begin{overprint}
+>         \only<+>{
+>           \incgraphics{width=7cm}{plot1.pdf}\\
+>           Explanation of Figure 1
+>         }
+>         \only<+>{
+>           \incgraphics{width=7cm}{plot2.pdf}\\
+>           Explanation of Figure 2
+>         }
+>         % maybe more plots...
+>       \end{overprint}
+>     \end{center}
+>   \end{block}
+> \end{frame}
+> ```
+>
+> The problem is that like this *all slides created from one `frame` are assigned the same page number* which makes people complain that it's difficult to follow which slide I am on (when giving the talk via phone etc.).
+>
+> How can I change this?
+>
+> ##A minimal example to reproduce the problem##
+>
+> ```latex
+> \documentclass{beamer}
+>
+> \usetheme{Madrid}
+>
+> \begin{document}
+>
+> \begin{frame}
+>   Common text\\
+>   \begin{overprint}
+>     \only<+>{
+>       Figure 1 and explanation of Figure 1
+>     }
+>     \only<+>{
+>       Figure 2 and explanation of Figure 2
+>     }
+>   \end{overprint}
+> \end{frame}
+>
+> \end{document}
+> ```
+>
+>
+> ##Partial answer##
+>
+> One can mess around with `\setbeamertemplate` and use `\insertpagenumber{}` instead of `\insertframenumber{}`, but like this you lose generality (e.g. you cannot switch between themes easily). 
+>
+> Maybe there is a better solution?
+:::
+
+Good question.  There seems to be no built-in functionality to do what you want.  There must be a counter that holds the slide number, but the manual doesn't seem to expose it and I don't want to delve into the source.
+
+My solution might be classified as "messing around", but here goes:
+
+```latex
+\documentclass{beamer}
+\usetheme{Madrid}
+\newcounter{slidenumber}
+
+\defbeamertemplate*{footline}{infolines theme frame plus slide}{
+    \setcounter{slidenumber}{\insertpagenumber}%
+    \addtocounter{slidenumber}{-\insertframestartpage}%
+    \addtocounter{slidenumber}{1}%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+            \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber.\arabic{slidenumber}{}/ \inserttotalframenumber\hspace*{2ex} 
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+
+\setbeamertemplate{footline}[infolines theme frame plus slide]
+
+\begin{document}
+\begin{frame}
+    Common text\\
+    \begin{overprint}
+        \only<+>{
+            Figure 1 and explanation of Figure 1
+        }
+        \only<+>{
+            Figure 2 and explanation of Figure 2
+        }
+    \end{overprint}
+\end{frame}
+
+\begin{frame}
+    Common text on frame 2\\
+    \begin{overprint}
+        \only<+>{
+            Figure 1 and explanation of Figure 1
+        }
+        \only<+>{
+            Figure 2 and explanation of Figure 2
+        }
+    \end{overprint}
+\end{frame}
+
+\end{document}
+```
+    
+Any theme which uses the infolines inner theme can thus be modified.  If you didn't want to touch any templating, you *could* redefine `\insertframenumber` to return the frame number . slide number, but I don't know if that's going to break anything else.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4009/latex-beamer-how-to-get-distinct-page-numbers-when-using-overlays/4012#4012) on TeX Stack Exchange, 2010-10-11, with [edits](https://tex.stackexchange.com/posts/4012/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

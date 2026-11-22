@@ -1,0 +1,51 @@
+---
+title: How to include audio file in PDF
+date: '2010-12-21'
+description: Try the multimedia package, which is part of the beamer distribution. It's documented in Section 14.2 of the beamer 2.10 manual, and it does provide the…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7507
+se-link: https://tex.stackexchange.com/questions/7502/how-to-include-audio-file-in-pdf/7507#7507
+se-score: 6
+se-accepted: false
+se-tags:
+- pdf
+- include
+- audio
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to include audio file in PDF](https://tex.stackexchange.com/questions/7502/how-to-include-audio-file-in-pdf), asked by user1996 on TeX Stack Exchange (2010-12-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How do I include audio file, or should I say, link to audio file in PDF?
+>
+>  1. Audio should be playable "from
+>     PDF directly", without opening
+>     any additional window.
+>  2. Is it possible to attach audios to PDF
+>         then so I can manipulate only with
+>         that file, without being bothered
+>         with copying folders where those
+>         audio files would reside?
+>
+> I saw that 1. is definitely doable (but don't know how) and I'm interested if second one is also possible (while compiling `.tex` file) since I know that some files (like graphs and tables) can be attached in PDF, but after it's generated.
+>
+> ![alt text][q-1] Button for playing audio from document that uses this trick.
+>
+>
+>   [q-1]: o8wfa.png
+:::
+
+Try the `multimedia` package, which is part of the `beamer` distribution.  It's documented in Section 14.2 of the beamer 2.10 manual, and it does provide the ability to embed sound files into the pdf.  Not all sound formats are supported, and I'm sure not all pdf viewers can play sounds natively.  So YMMV.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7502/how-to-include-audio-file-in-pdf/7507#7507) on TeX Stack Exchange, 2010-12-21. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

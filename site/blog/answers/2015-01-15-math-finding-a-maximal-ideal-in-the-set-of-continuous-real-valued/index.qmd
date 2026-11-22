@@ -1,0 +1,51 @@
+---
+title: Finding a maximal ideal in the set of continuous real-valued functions on $\mathbb{R}$
+date: '2015-01-15'
+description: (2) implies (1), for an ideal is maximal iff its quotient ring is a field. As for (2), the map $e\alpha \colon X \to \mathbb{R}$, $e\alpha(f) = f(\alpha)$, is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1105168
+se-link: https://math.stackexchange.com/questions/1105164/finding-a-maximal-ideal-in-the-set-of-continuous-real-valued-functions-on-math/1105168#1105168
+se-score: 2
+se-accepted: true
+se-tags:
+- abstract-algebra
+- ring-theory
+- ideals
+- maximal-and-prime-ideals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding a maximal ideal in the set of continuous real-valued functions on $\mathbb{R}$](https://math.stackexchange.com/questions/1105164/finding-a-maximal-ideal-in-the-set-of-continuous-real-valued-functions-on-math), asked by [muffel](https://math.stackexchange.com/users/10890/muffel) on Mathematics Stack Exchange (2015-01-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Let $X$ be the set of all continuous and real-valued functions on $\mathbb{R}$. X is a commutative ring with pointwise addition and multiplication.
+> Let $\alpha \in \mathbb{R}$ be arbitrary.
+>
+> > (1) Show that $I = \left\{f \in X \ \big\vert \  f(\alpha) = 0\right\}$ is a maximal ideal of $X$.
+>
+> > (2) Show that $X/I$ is isomorphic to $\mathbb{R}$
+>
+> (1)
+>
+> I tried to visualize this task. The only reason $I \neq X$ is position $\alpha$, where I cannot create another value than 0 using translation or rotation. If I take any function $f'$ for which $f'(\alpha) \neq 0$ applies, I can use the fact that $X$ contains all functions except for the ones being not 0 at $\alpha$, and can therefore create any continuous, real-valued function on $\mathbb{R}$. 
+>
+> While this seems clear visualized at the paper, I have no clue how to formally write this down, can you please help me to formalize it? I'm especially stuck because I don't know how to formally write down *all continuous, real-valued functions on $\mathbb{R}$*.
+>
+> (2) 
+>
+> I need to find a bijection between $X/I$ and $\mathbb{R}$, but don't understand why this is possible. As far as I understand $X/I$ are all continuous real-valued functions on $\mathbb{R}$ that are not $0$ at position $\alpha$. But I can find more than one of those functions for each $r \in \mathbb{R}$ which is in $X/I$. So how could I find a bijection? Where is my mistake?
+:::
+
+(2) implies (1), for an ideal is maximal iff its quotient ring is a field.  As for (2), the map $e_\alpha \colon X \to \mathbb{R}$, $e_\alpha(f) = f(\alpha)$, is a ring homomorphism with kernel $I$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1105164/finding-a-maximal-ideal-in-the-set-of-continuous-real-valued-functions-on-math/1105168#1105168) on Mathematics Stack Exchange, 2015-01-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

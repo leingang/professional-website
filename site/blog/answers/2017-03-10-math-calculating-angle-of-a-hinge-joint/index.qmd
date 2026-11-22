@@ -1,0 +1,54 @@
+---
+title: Calculating angle of a hinge joint
+date: '2017-03-10'
+description: It seems like you want the angle between the second columns of the two body-to-world rotation matrices. The second column is the image of a unit vector in the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2180823
+se-link: https://math.stackexchange.com/questions/2180764/calculating-angle-of-a-hinge-joint/2180823#2180823
+se-score: 0
+se-accepted: false
+se-tags:
+- matrices
+- 3d
+- rotations
+- quaternions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculating angle of a hinge joint](https://math.stackexchange.com/questions/2180764/calculating-angle-of-a-hinge-joint), asked by [apeman](https://math.stackexchange.com/users/424255/apeman) on Mathematics Stack Exchange (2017-03-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have two motion capturing sensors that are worn above and below the knee as shown in the image below:
+>
+> [![Image showing sensor placement and coordinates][q-1]][q-1]
+>
+> Each sensor can stream its own rotation as a body-to-world frame rotation matrix and/or body-to-world frame quaternion. Can anyone advise how I calculate the angle $\Theta$ as shown in the drawing below:
+>
+> [![Drawing showing required angle][q-2]][q-2]
+>
+> I think I need the relative rotation in the $y$ coordinate but I'm not sure where to start. I've tried using the relative orientation like so:
+>
+>  `relativeOrientation = upperSensorQuaternion * inverse(lowerSensorQuaternion)`
+>
+> Extracting the Euler value of $y$ from the resultant quaternion seems to work when a person is standing up but not when lying down because there is additional rotation about the $x$ and $z$ as well. Could anyone advise on how to correctly calculate $\Theta$? Many thanks.
+>
+>
+>   [q-1]: EG5Ja.jpg
+>   [q-2]: zsFNV.png
+:::
+
+It seems like you want the angle between the second columns of the two body-to-world rotation matrices.  The second column is the image of a unit vector in the direction of the $y$-axis.  The dot product of the two columns is the cosine of the angle between the vectors (we would normally divide the dot product by the lengths of the vectors, but they are unit vectors).  So you want the arccosine of the dot product of those two columns.  
+
+The only twist is that the angle you drew is the *supplement* the angle of rotation.  With the knee extended, the rotation from one sensor's $y$-axis to the other is zero, but the $\theta$ you drew is a straight angle of 180 degrees.  So just subtract the angle returned by the arccosine from 180.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2180764/calculating-angle-of-a-hinge-joint/2180823#2180823) on Mathematics Stack Exchange, 2017-03-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

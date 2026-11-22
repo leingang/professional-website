@@ -1,0 +1,73 @@
+---
+title: Area with double integral in polar coordinates
+date: '2024-07-15'
+description: (This answer is essentially the same as @zkutch's; I'm just trying to fill in some details.)
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4946339
+se-link: https://math.stackexchange.com/questions/4946235/area-with-double-integral-in-polar-coordinates/4946339#4946339
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- definite-integrals
+- area
+- polar-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area with double integral in polar coordinates](https://math.stackexchange.com/questions/4946235/area-with-double-integral-in-polar-coordinates), asked by [a_i_r](https://math.stackexchange.com/users/843686/a-i-r) on Mathematics Stack Exchange (2024-07-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Determine the area interior to $y^2=2ax-x^2$ and exterior to $y^2=ax$.
+>
+> The area in artesian coordinates is $$\int_{0}^{a}\int_{\sqrt{ax}}^{\sqrt{2ax-x^2}} dydx$$. To convert it into polar coordinates with the jacobian $r$,we need to find the limits of $r$ and $\theta$. How to find the limits in our desired region?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: 3KSWHrsl.jpg
+>
+> I have some confusion about the limits of the angle which the answers confirm to be $45$ and $90$. The way areas are added in polar coordinates is by adding differential sectors of circles or little triangles which I have marked in blue. If the lower limit is $45$,then any small sector will have an unintended area which is not the same as our desired area(which is marked in violet). So don't we have to subtract the areas?
+:::
+
+(This answer is essentially the same as @zkutch's; I'm just trying to fill in some details.)
+
+To find the limits of integration in polar coordinates, it helps to convert the equations of the bounding curves.
+
+The first curve has equation 
+$$\begin{aligned}
+    r^2\sin^2\theta &= 2a r\cos \theta - r^2 \cos^2 \theta
+\\\implies r^2\sin^2\theta + r^2 \cos^2 \theta &= 2a r\cos \theta
+\\\implies r^2 &= 2ar\cos\theta
+\\\implies r &= 2a\cos\theta
+\end{aligned}$$
+The second curve has equation
+$$\begin{aligned}
+    r^2 \sin^2\theta &= a r \cos\theta
+\\\implies    r &= a \frac{\cos\theta}{\sin^2\theta} = a \cot \theta \csc \theta
+\end{aligned}$$
+(We're ignoring the trivial $r=0$ solutions.)
+
+Where do these curves intersect? Since you have $r$ in terms of $\theta$, set the two expressions of $\theta$ equal to each other:
+$$2a \cos\theta = a \frac{\cos\theta}{\sin^2\theta}
+    \implies a\cos\theta(2 \sin^2\theta -1) = 0$$
+This is satisfied when $\cos\theta = 0$ or $\sin^2\theta = \frac{1}{2}$.
+The first implies $\theta = \frac{\pi}{2}$ (and $r=0$), and the second implies that $\theta = \frac{\pi}{4}$ or $\theta = \frac{7\pi}{4}$ (and $r=a\sqrt{2}$). In cartesian coordinates, these points are $(0,0)$ and $(a,\pm a)$. By symmetry, we can restrict to the first quadrant and double the result. This gives us the limits $\frac{\pi}{4} \leq \theta \leq \frac{\pi}{2}$. Therefore the area is
+$$2\int_{\pi/4}^{\pi/2} \int_{a \cot\theta\csc\theta}^{2a\cos\theta} r\,dr\,d\theta = \left(\frac{\pi}{2} - \frac{4}{3}\right)a^2$$
+([Wolfram Alpha link](https://www.wolframalpha.com/input?i2d=true&i=2Integrate%5BIntegrate%5Br%2C%7Br%2Ca+cot%5C%2840%29%CE%B8%5C%2841%29csc%5C%2840%29%CE%B8%5C%2841%29%2C2a+cos%5C%2840%29%CE%B8%5C%2841%29%7D%5D%2C%7B%CE%B8%2CDivide%5B%CF%80%2C4%5D%2CDivide%5B%CF%80%2C2%5D%7D%5D))
+
+The lower limit of the $\theta$ integral is what prevents us from counting that “unintended area” you shaded in blue. You could write the area as a difference of integrals as in
+$$2 \left(\int_{\pi/4}^{\pi/2} \int_{0}^{2a\cos\theta} r\,dr\,d\theta - \int_{\pi/4}^{\pi/2} \int_{0}^{a \cot\theta\csc\theta} r\,dr\,d\theta\right)$$
+But that evaluates to the same thing. In general, whenever $a < c < b$, then $\int_b^c f(x)\,dx = \int_a^c f(x)\,dx - \int_a^b f(x)\,dx$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4946235/area-with-double-integral-in-polar-coordinates/4946339#4946339) on Mathematics Stack Exchange, 2024-07-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

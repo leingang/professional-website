@@ -1,0 +1,68 @@
+---
+title: Using align in beamer with overlays
+date: '2011-04-19'
+description: \pause is the only overlay command that really gives me trouble. I am usually able to workaround with the overlay-aware \only, \uncover, \alt, etc. Just make…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16150
+se-link: https://tex.stackexchange.com/questions/16148/using-align-in-beamer-with-overlays/16150#16150
+se-score: 6
+se-accepted: true
+se-tags:
+- beamer
+- align
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using align in beamer with overlays](https://tex.stackexchange.com/questions/16148/using-align-in-beamer-with-overlays), asked by [evencoil](https://tex.stackexchange.com/users/1931/evencoil) on TeX Stack Exchange (2011-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How can I get the align environment to play nicely with `beamer` overlays? As a simple example I would like
+>
+> ```latex
+> \begin{align*}  
+>     a = \frac{bc}{c}  
+> \end{align*}
+> ```
+>
+> on the first overlay and then
+>
+> ```latex
+> \begin{align*}  
+>     a = b  
+> \end{align*}
+> ```
+>
+> on the second, but I want the equal signs to line up for both. Using `beamer`'s `\overprint` environment, for example, the equal sign shifts between the two lines I guess because they are of different length.
+:::
+
+`\pause` is the only overlay command that really gives me trouble.  I am usually able to workaround with the overlay-aware `\only`, `\uncover`, `\alt`, etc.  Just make sure you don't put the alignment character `&` inside one of their arguments.  
+
+In this case we use a standard trick for alignment: make the smaller thing overlap and the larger thing invisible.
+
+```latex
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\begin{document}
+
+\begin{frame}
+\begin{align*}
+	a &= \mathrlap{\alt<2->{b}{\frac{bc}{c}}}\phantom{\frac{bc}{c}}
+\end{align*}
+\end{frame}
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16148/using-align-in-beamer-with-overlays/16150#16150) on TeX Stack Exchange, 2011-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,40 @@
+---
+title: max and min of $f(x,y)=\frac{xy+y^2}{x^2+y^2}$
+date: '2017-11-01'
+description: By the arithmetic mean-geometric mean inequality $$|xy| \leq \tfrac{1}{2}(x^2 + y^2)$$ so $$\left|\frac{xy + y^2}{x^2 + y^2}\right| \leq \frac{|xy|}{x^2 + y^2}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2499963
+se-link: https://math.stackexchange.com/questions/2499942/max-and-min-of-fx-y-fracxyy2x2y2/2499963#2499963
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[max and min of $f(x,y)=\frac{xy+y^2}{x^2+y^2}$](https://math.stackexchange.com/questions/2499942/max-and-min-of-fx-y-fracxyy2x2y2), asked by [Giulia B.](https://math.stackexchange.com/users/198038/giulia-b) on Mathematics Stack Exchange (2017-11-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The function is symmetric because $f(x,y)=f(-x,-y)$. It's defined in $\mathbb{R}^2-\{{(0,0)}\}$.If I calculate the gradient , it's null in the origin. Have I to prove $f$ is limited in $\mathbb{R}^2$?
+:::
+
+By the arithmetic mean-geometric mean inequality
+$$|xy| \leq \tfrac{1}{2}(x^2 + y^2)$$
+so
+$$\left|\frac{xy + y^2}{x^2 + y^2}\right| \leq \frac{|xy|}{x^2 + y^2} + \frac{|y|^2}{x^2 + y^2} \leq \frac{1}{2} + 1 = \frac{3}{2}$$
+Since $|f(x,y)| \leq \frac{3}{2}$, we know
+$$-\frac{3}{2} \leq f(x,y) \leq \frac{3}{2}$$
+and $f$ is bounded both above and below.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2499942/max-and-min-of-fx-y-fracxyy2x2y2/2499963#2499963) on Mathematics Stack Exchange, 2017-11-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

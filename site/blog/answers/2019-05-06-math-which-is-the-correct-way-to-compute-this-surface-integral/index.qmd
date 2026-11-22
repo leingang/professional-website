@@ -1,0 +1,65 @@
+---
+title: Which is the correct way to compute this surface integral?
+date: '2019-05-06'
+description: Your limits of $\theta$ are wrong in the second integral. Because you want $x \geq 0$, you need to integrate over $-\frac{\pi}{2} \leq \theta \leq…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3216463
+se-link: https://math.stackexchange.com/questions/3216409/which-is-the-correct-way-to-compute-this-surface-integral/3216463#3216463
+se-score: 3
+se-accepted: true
+se-tags:
+- integration
+- multivariable-calculus
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which is the correct way to compute this surface integral?](https://math.stackexchange.com/questions/3216409/which-is-the-correct-way-to-compute-this-surface-integral), asked by [dlp](https://math.stackexchange.com/users/524170/dlp) on Mathematics Stack Exchange (2019-05-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to find a surface integral $$\iint_Syz\ dS$$
+> of a cylinder segment  where $S$ is the portion of $x^2 + y^2 = 1$ with $x ≥ 0$
+> and $z$ between $z = 2$ and $z = 5 − y$.
+>
+> I thought that there should be two ways to do this. The first is to use rectangular coordinates, and do this
+>
+> $$x=f(y,z)$$
+>
+> $$||n||=\sqrt{(f_y)^2+(f_z)^2+1}$$
+>
+> $$={1\over \sqrt{1-y^2}}$$
+>
+> $$\int_{-1}^1\int_2^{5-y}\ {yz\over \sqrt{1-y^2}} \, dz \, dy =-\frac{5\pi}{2} \approx -7.854$$
+>
+> I also tried parameterizing the cylinder with
+>
+> $$r_z(z,\theta)=\left<0,0,1\right>$$
+> $$r_{\theta}(z,\theta)=\left<-\sin\theta,\cos\theta,0\right>$$
+> $$||n||=\sqrt{(-\sin\theta)^2+(\cos\theta)^2+0^2}=1$$
+> $$\int_{0}^\pi\int_2^{5-\sin\theta}\ z\sin\theta \, dz \, d\theta \approx 13.813$$
+>
+> Why am I getting different solutions? I though it might have to do with the fact that the first approach is taking into account the negative parts of $y$, 
+> and indeed when I circumvent this I get the same solution as the parametrization:
+>
+> $$2\int_{0}^1\int_2^{5-y}\ {yz\over \sqrt{1-y^2}} \, dz \, dy \approx 13.813$$
+>
+> But it is still unclear to me which is the correct approach, and why.
+:::
+
+Your limits of $\theta$ are wrong in the second integral.  Because you want $x \geq 0$, you need to integrate over $-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}$ instead of $0 \leq \theta \leq \pi$.
+
+Indeed,
+$$\int_{-\pi/2}^{\pi/2} \int_0^{5-\sin\theta} z \sin\theta\,dz\,d\theta = -\frac{5\pi}{2} \approx -7.854$$
+(according to [Wolfram Alpha](https://www.wolframalpha.com/input/?i=integrate+z+sin(theta)+from+theta%3D-pi%2F2+to+pi%2F2+and+z%3D2+to+5-sin(theta)))
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3216409/which-is-the-correct-way-to-compute-this-surface-integral/3216463#3216463) on Mathematics Stack Exchange, 2019-05-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

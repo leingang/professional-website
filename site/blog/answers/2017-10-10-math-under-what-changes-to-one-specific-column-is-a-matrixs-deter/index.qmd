@@ -1,0 +1,45 @@
+---
+title: Under what changes to one specific column, is a matrix's determinant invariant?
+date: '2017-10-10'
+description: Suppose $$\det([u, v2, \dots, vn]) = \det([v1, \dots, vn])$$ Since $A = [v1, \dots, vn]$ is fully-ranked, we know $$u = c1 v1 + c2 v2 + \dots + cn vn$$ for…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465369
+se-link: https://math.stackexchange.com/questions/2465360/under-what-changes-to-one-specific-column-is-a-matrixs-determinant-invariant/2465369#2465369
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- determinant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Under what changes to one specific column, is a matrix's determinant invariant?](https://math.stackexchange.com/questions/2465360/under-what-changes-to-one-specific-column-is-a-matrixs-determinant-invariant), asked by [fhy](https://math.stackexchange.com/users/73705/fhy) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given a fully-ranked, square matrix of columns $A =[v_1, v_2,...v_n]$. Can someone help me get some intuitive understanding of the set of vectors $u$ such that $det(A) = det( [u, v_2,...v_n] )$? Is there a way to describe this set? Is there a class of linear transformations that given $v_1$, produce those vectors $u$ that maintain the same determinant of A?
+:::
+
+Suppose
+$$\det([u, v_2, \dots, v_n]) = \det([v_1, \dots, v_n])$$
+Since $A = [v_1, \dots, v_n]$ is fully-ranked, we know
+$$u = c_1 v_1 + c_2 v_2 + \dots + c_n v_n$$
+for some constants $c_1, \dots, c_n$.  Then
+$$\begin{align*}
+    \det([u, v_2, \dots, v_n]) &= \det([c_1 v_1 + c_2 v_2 + \dots + c_n v_n,v_2,\dots, v_n]) \\
+&= c_1 \det([v_1,v_2,\dots,v_n]) + c_2\det([v_2,v_2,\dots,v_n]) + \dots +c_n \det([v_n,v_2,\dots,v_n])
+\end{align*}$$
+since the determinant is multilinear.  All but the first determinant in the right-hand side above repeat one of the vectors.  Since the determinant is skew-symmetric, each of those determinants is zero.  Therefore
+$$\det([u, v_2, \dots, v_n]) = c_1 \det([v_1,v_2,\dots,v_n])$$
+and this is satisfied as long as $c_1 =1$.  Therefore it is necessary and sufficient that $v_1-u$ be a linear combination of $v_2, \dots v_n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465360/under-what-changes-to-one-specific-column-is-a-matrixs-determinant-invariant/2465369#2465369) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

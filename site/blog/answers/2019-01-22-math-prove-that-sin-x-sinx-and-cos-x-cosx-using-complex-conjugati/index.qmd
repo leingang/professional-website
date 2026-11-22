@@ -1,0 +1,74 @@
+---
+title: Prove that $\sin(-x)=-\sin(x)$ and $\cos(-x)=\cos(x)$ using complex conjugation
+date: '2019-01-22'
+description: 'Usually that first equation is a theorem (Euler''s formula) rather than a definition. But if you start from there, notice: $$e^{-ix} = e^{i(-x)} = \cos(-x) + i…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3083728
+se-link: https://math.stackexchange.com/questions/3083719/prove-that-sin-x-sinx-and-cos-x-cosx-using-complex-conjugation/3083728#3083728
+se-score: 1
+se-accepted: false
+se-tags:
+- complex-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\sin(-x)=-\sin(x)$ and $\cos(-x)=\cos(x)$ using complex conjugation](https://math.stackexchange.com/questions/3083719/prove-that-sin-x-sinx-and-cos-x-cosx-using-complex-conjugation), asked by [RM777](https://math.stackexchange.com/users/562492/rm777) on Mathematics Stack Exchange (2019-01-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The Definition of $\sin$ and $\cos$ is given by the complex function,
+>
+> $$f:\mathbb{C}\rightarrow\mathbb{C},\qquad
+> f(x)=e^{\text{i}x}=\cos(x)+\text{i}\sin(x)$$
+>
+> I.e. cos is the real part of $e^{ix}$ and sin denotes the immaginary part of $e^{ix}$.
+>
+> Now we know that $\forall z_i\in\mathbb{C}$
+>
+> $$\overline{\sum_{i\in I}z_i}=\sum_{i\in I}\bar{z_i}$$
+>
+> therefore since $e^x:=\sum_{k=0}^{\infty}\frac{x^k}{k!}$
+>
+> $$\overline{e^{ix}}=e^{\overline{ix}}$$
+>
+> for the left side I would get
+>
+> $\cos(x)-\text{i}\sin(x)$
+>
+> **Can someone explain** why we have for the right side
+>
+> $\cos(-x)+ \text{i}\sin(x)$
+>
+> **And also** how do we derive from the Formula 
+> $$\cos(-x)+ \text{i}\sin(x)=\cos(x)-\text{i}\sin(x)$$ 
+> that we got from above that
+>
+>
+>
+> $\sin(-x)=\sin(x)$
+>
+> The equation
+>
+> $\cos(-x)=\cos(x)$ 
+>
+> is clear
+:::
+
+Usually that first equation is a theorem (Euler's formula) rather than a definition.  But if you start from there, notice:
+$$e^{-ix} = e^{i(-x)} = \cos(-x) + i \sin(-x)$$
+From the power series formula $e^z = \sum_{k=0}^\infty \frac{z^k}{k!}$, we see that
+$$e^{-ix} = \sum_{k=0}^\infty \frac{(-ix)^k}{k!} = \sum_{k=0}^\infty \frac{(\overline{ix})^k}{k!} = \overline{e^{ix}}$$
+Therefore
+$$e^{-ix} = \overline{e^{ix}} = \overline{\cos(x) + i \sin(x)} = \cos(x) - i \sin(x)$$
+Now you just equate real and imaginary parts.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3083719/prove-that-sin-x-sinx-and-cos-x-cosx-using-complex-conjugation/3083728#3083728) on Mathematics Stack Exchange, 2019-01-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

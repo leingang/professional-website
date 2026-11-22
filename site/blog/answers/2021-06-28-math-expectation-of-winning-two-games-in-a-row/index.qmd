@@ -1,0 +1,76 @@
+---
+title: Expectation of winning two games in a row
+date: '2021-06-28'
+description: 'To summarize this: $P((AB)^k) = \left(\frac{2}{9}\right)^k$. That''s correct.'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4185238
+se-link: https://math.stackexchange.com/questions/4183851/expectation-of-winning-two-games-in-a-row/4185238#4185238
+se-score: 0
+se-accepted: true
+se-tags:
+- statistics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Expectation of winning two games in a row](https://math.stackexchange.com/questions/4183851/expectation-of-winning-two-games-in-a-row), asked by [Danilo](https://math.stackexchange.com/users/924315/danilo) on Mathematics Stack Exchange (2021-06-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> A and B play against each other chess. It is not possible the result of the game to be draw. A to win has probabiliy $\frac{2}{3}$ and B to win $\frac{1}{3}$.The game continues until someone wins 2 games in a row. Let $X$ be the variable number of played games. Find the distribution and $E[X]$ of X.
+>
+> What I have tried:
+> Let $2k$ games have been played so we must have A win then B win then A win then B win ....
+> this makes $(\frac{2}{9})^k$ probability now the $2k+1$ game , either B loses or A loses so the total
+> probability should be $(\frac{2}{9})^k * \frac{1}{3} + (\frac{2}{9})^k + \frac{2}{3}$ which is $\frac{7}{9}$ for k going to infinity, however the answer is $\frac{20}{7}$ , what am I doing wrong ?
+:::
+
+> Let $2k$ games have been played so we must have A win then B win then A win then B win ....
+this makes $(\frac{2}{9})^k$ probability
+
+To summarize this: $P((AB)^k) = \left(\frac{2}{9}\right)^k$.  That's correct.
+
+> now the $2k+1$ game , either B loses or A loses
+
+Yes, but if A wins, they've only won one game in a row, so the match isn't over.  If B wins, they've won two in a row and the match is over.  The other outcome that results in $k$ alternating pairs and A winning is $(BA)^k A$.  This means that
+$$P(X=2k+1) = \left(\frac{2}{9}\right)^k \cdot \frac{2}{3} + \left(\frac{2}{9}\right)^k \cdot \frac{1}{3} = \left(\frac{2}{9}\right)^k$$
+
+> so the total
+probability should be $(\frac{2}{9})^k \cdot \frac{1}{3} + (\frac{2}{9})^k \cdot \frac{2}{3}$ which is $\frac{7}{9}$ for k going to infinity
+
+Two problems here.  One is that you've skipped the matches involving an even number of games.  But also, it sounds like (*) you're summing probabilities to determine an expectation, when you should be summing *weighted* probabilities.
+
+Lulu points out the sequences which terminate after an even number of games:
+$$\begin{align*}
+    P((BA)^{k-1} AA) &= \left(\frac{2}{9}\right)^{k-1} \cdot \frac{4}{9} \\
+    P((BA)^{k-1} BB) &= \left(\frac{2}{9}\right)^{k-1} \cdot \frac{1}{9}
+\end{align*}$$
+We use the exponent $k-1$ to make sure we have $2k$ games instead of $2k+2$.  So
+$$P(X=2k) = \left(\frac{2}{9}\right)^{k-1} \cdot \frac{5}{9}$$
+Therefore,
+$$\begin{align*}
+    E(X) &= \sum_{k=1}^\infty (2k) P(X=2k) + \sum_{k=1}^\infty (2k+1) P(X=2k+1) \\
+    &= \sum_{k=1}^\infty (2k) \left(\frac{2}{9}\right)^{k-1} \cdot \frac{5}{9}
+     + \sum_{k=1}^\infty (2k+1) \left(\frac{2}{9}\right)^k \\
+\end{align*}$$
+For these, if you expand and apply the identities
+$$\begin{align*}
+    \sum_{k=0}^\infty r^k &= \frac{1}{1-r} \\
+    \sum_{k=1}^\infty kr^{k-1} &= \frac{1}{(1-r)^2} \\
+\end{align*}$$
+(when $|r|<1$), you will see they sum to $\frac{20}{7}$.
+
+* * *
+(*) One thing about probability, and in fact a lot of math past calculus, is that there are many different objects that have to be considered at the same time.  In this question you have outcomes (individual elements of the sample space), events (subsets of the sample space), probabilities (real numbers attached to outcomes or events), a random variable (functions on the sample space), and an expectation (a real number summarizing a random variable).  
+
+In the work you showed, you have a single run-on sentence in which you join all these different objects by vague verbs: (an event) “makes” (a probability) “which is” (a sum of probabilities), etc.  You may begin to understand the subject better if you try to write your thoughts in simple sentences, keeping in mind what the various objects are and how exactly they are related.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4183851/expectation-of-winning-two-games-in-a-row/4185238#4185238) on Mathematics Stack Exchange, 2021-06-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

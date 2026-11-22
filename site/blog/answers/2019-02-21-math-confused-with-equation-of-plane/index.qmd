@@ -1,0 +1,50 @@
+---
+title: Confused with equation of plane
+date: '2019-02-21'
+description: I like to think of it in terms of orthogonality. Let $(x0,y0,z0)$ be a point on the plane, and consider the position vector $\vec r0 = x0 \hat\imath + y0…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3121519
+se-link: https://math.stackexchange.com/questions/3121500/confused-with-equation-of-plane/3121519#3121519
+se-score: 2
+se-accepted: true
+se-tags:
+- geometry
+- vectors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confused with equation of plane](https://math.stackexchange.com/questions/3121500/confused-with-equation-of-plane), asked by [khaled014z](https://math.stackexchange.com/users/433588/khaled014z) on Mathematics Stack Exchange (2019-02-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The equation of plane:
+>
+> $Ax + By + Cz = d$
+>
+> Where $A \hat i + B \hat j + C \hat k$ is the normal vector $\vec n$ perpendicular to the plane.
+>
+> The position vector $\vec r = x \hat i + y \hat j + z \hat k$
+>
+> Then,
+>
+> $\vec r \cdot \vec n = d$
+>
+> This last equation says that a position vector to any point on the plane has the same projection along $\vec n$ because $d$ is a constant.
+>
+> But I can't see that graphically. Different position vectors to the plane have different slopes, while the normal vector of the plane is always perpendicular and doesn't change, so how does every position vector to any point on the plane have the same projection along $\vec n$? Thank you.
+:::
+
+I like to think of it in terms of orthogonality.  Let $(x_0,y_0,z_0)$ be a point on the plane, and consider the position vector $\vec r_0 = x_0 \hat\imath + y_0 \hat\jmath + z_0 \hat k$.  Since the point is on the plane $\vec r_0 \cdot \vec n = d$ too.  So the plane equation becomes
+$$\vec r \cdot \vec n = \vec r_0 \cdot \vec n \implies (\vec r-\vec r_0)\cdot \vec n = 0$$
+This says that the vector drawn from $(x_0,y_0,z_0)$ to $(x,y,z)$ is perpendicular to $\vec n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3121500/confused-with-equation-of-plane/3121519#3121519) on Mathematics Stack Exchange, 2019-02-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

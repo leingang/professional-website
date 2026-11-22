@@ -1,0 +1,56 @@
+---
+title: Proof by minimal counter example
+date: '2020-03-19'
+description: You are very nearly done. You know that $4^{n-1} -1 = 3k$ for some $k$, which means $4^n-4 = 12k$, which means $4^n - 1 = 12k+3 = 3(4k+1)$. So $3$ does divide…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3587336
+se-link: https://math.stackexchange.com/questions/3587330/proof-by-minimal-counter-example/3587336#3587336
+se-score: 1
+se-accepted: true
+se-tags:
+- discrete-mathematics
+- induction
+- examples-counterexamples
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof by minimal counter example](https://math.stackexchange.com/questions/3587330/proof-by-minimal-counter-example), asked by [hyphenFG](https://math.stackexchange.com/users/757170/hyphenfg) on Mathematics Stack Exchange (2020-03-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So I'm trying to solve the following question:<br />
+> Prove by the smallest (minimal) counter example that for every nonnegative $n,3\mid (2^{2n}-1)$<br />
+>
+> I know the first step is to plug $0$ in for n:<br />
+> $2^{2(0)}-1 = 0$<br />
+> and 0 is divisible by 3 because $0$ is divisible by everything<br />
+>
+> Then you assume $3\mid (2^{2n}-1)$ is false<br />
+> But this is the part where I can't figure out how to solve it, what I've done so far is:<br />
+>
+> So you take n-1 and plug that in instead of n, because if the statement $3\mid (2^{2n}-1)$<br /> is the smallest possible counterexample then using n-1 the statement should be true.<br />
+> $2^{2(n-1)} -1 = 3k$ (k is some integer) <br />
+> $4^{n-1} = 3k + 1$  <br />
+>
+> Then I think you're supposed to multiply both sides by 4 because that would make $4^{n-1}$ just $4^{n}$ which we assume to not be divisible by 3<br/>
+> $4(4^{n-1} = 3k + 1)$  <br />
+>
+> The problem is if you simplify it the left side "match up" to the original equation<br/>
+> $4^{n}-4=12k$ While the right side IS a multiple of 3k which means it's divisible by 3 and thus the original statement is false, the left side isn't $(2^{2n}-1)$<br/>
+>
+> I'm just confused on where I'm going wrong with this proof? I'm like 80% positive that the left side in the n-1 function has to match the original left side equation, but I can't figure out a way of manipulating the equation for that to be true (with my current work as shown above)
+:::
+
+You are *very nearly* done.  You know that $4^{n-1} -1 = 3k$ for some $k$, which means $4^n-4 = 12k$, which means $4^n - 1 = 12k+3 = 3(4k+1)$.  So $3$ does divide $4^n-1$ after all, which is a contradiction since $n$ was assumed to be counterexample.  As a consequence, the set of counterexamples is empty.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3587330/proof-by-minimal-counter-example/3587336#3587336) on Mathematics Stack Exchange, 2020-03-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

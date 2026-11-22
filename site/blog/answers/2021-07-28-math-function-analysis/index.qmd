@@ -1,0 +1,74 @@
+---
+title: Function Analysis
+date: '2021-07-28'
+description: I found a solution which is a little bit tedious but less than some of the others.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4209314
+se-link: https://math.stackexchange.com/questions/4208318/function-analysis/4209314#4209314
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- maxima-minima
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Function Analysis](https://math.stackexchange.com/questions/4208318/function-analysis), asked by [curious_dino](https://math.stackexchange.com/users/910670/curious-dino) on Mathematics Stack Exchange (2021-07-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![This is a problem I Found on the Internet][q-1]][q-1]
+>
+>
+>   [q-1]: lzuX5.png
+>
+> I tried to differentiate the function and set the value at =0 in order to find x in terms of a and b. Then, I also tried to plug the value of x into in and set the value of y into 1 and 4. At the end, I was struggling since it became more tedious. So anyone can suggest a nicer way to solve this? Thanks in advance
+:::
+
+I found a solution which is a little bit tedious but less than some of the others.
+
+The equation $f(x)=1$ is equivalent to:
+$$\begin{align*}
+    ax^2 + 4x + b &= x^2 + 2
+\\\iff (a-1)x^2 + 4x + (b-2) &= 0
+\end{align*}$$
+This is a quadratic equation in $x$.  If $f$ has a minimum at $x$ too, then we can assume the equation has one double solution.  Therefore the discriminant of the quadratic polynomial must be zero:
+$$\begin{align*}
+    0 &= 4^2 - 4(a-1)(b-2) = 4(2a+b + 2 - ab)
+\end{align*}$$
+In a similar way, the equation $f(x) = 4$ gives
+$$\begin{align*}
+    ax^2 + 4x + b &= 4(x^2 + 2)
+\\\iff (a-4)x^2 + 4x + (b-8) &= 0
+\end{align*}$$
+Since $4$ is the maximum value, we expect a double solution, so the discriminant is zero as well:
+$$\begin{align*}
+    0 &= 4^2 - 4(a-4)(b-8) = 4(8a+4b - 28 - ab)
+\end{align*}$$
+Putting these together, we have two equations in the two unknowns $a$ and $b$:
+$$\begin{align*}
+    2a+b - ab &= -2 \tag{1}
+\\  8a + 4b - ab &=28 \tag{2}
+\end{align*}$$
+Subtracting ($1$) from ($2$) gives
+$$6a+3b = 30 \implies 2a+b = 10 \tag{3}$$
+Subtracting $4$ times ($1$) from ($2$) gives
+$$3ab = 36 \implies ab = 12 \tag{4}$$
+We can substitute ($3$) into ($4$) to get
+$$\begin{align*}
+    a(10-2a) = 12 \implies
+    a^2 - 5a + 6 = 0 
+\end{align*}$$
+The solutions are $a = 2$ (yielding $b=6$) and $a=3$ (yielding $b=4$).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4208318/function-analysis/4209314#4209314) on Mathematics Stack Exchange, 2021-07-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

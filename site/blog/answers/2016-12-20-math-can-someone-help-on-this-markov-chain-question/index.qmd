@@ -1,0 +1,44 @@
+---
+title: Can someone help on this Markov Chain question?
+date: '2016-12-20'
+description: I guess you would want to use the fact that $$\operatorname{Pr}\left\{X{n+1}=1\right\} = \operatorname{Pr}\left\{X{n+1}=1 \mid…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2065869
+se-link: https://math.stackexchange.com/questions/2065864/can-someone-help-on-this-markov-chain-question/2065869#2065869
+se-score: 1
+se-accepted: true
+se-tags:
+- probability
+- markov-chains
+- markov-process
+- transition-matrix
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can someone help on this Markov Chain question?](https://math.stackexchange.com/questions/2065864/can-someone-help-on-this-markov-chain-question), asked by [Eoin](https://math.stackexchange.com/users/262423/eoin) on Mathematics Stack Exchange (2016-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Consider a general chain with state space $S = \left\{1, 2\right\}$ and write the
+> transition matrix as
+> $$P = \begin{pmatrix} 1-a & a \\ b & 1-b \end{pmatrix}$$
+> Use the Markov property to show that
+> $$\operatorname{Pr}\left\{X_{n+1} = 1\right\} − \frac{b}{a+b} 
+>     = (1 − a − b)\left[\operatorname{Pr}\left\{X_n = 1\right\} − \frac{b}{a+b}\right]$$
+> I'm using the fact that $p(1,1)=1-a$ and trying to equate this to $\operatorname{Pr}\left\{X_{n+1}=1\mid X_n=1\right\}$ to try and get $\operatorname{Pr}\left\{X_{n+1}=1\right\}$ and $\operatorname{Pr}\left\{X_n=1\right\}$ individually but I cant work it out.
+:::
+
+I guess you would want to use the fact that
+$$\operatorname{Pr}\left\{X_{n+1}=1\right\} = \operatorname{Pr}\left\{X_{n+1}=1 \mid X_n=1\right\}\operatorname{Pr}\left\{X_n=1\right\}+\operatorname{Pr}\left\{X_{n+1} = 1 \mid X_n = 2\right\}(1-\operatorname{Pr}\left\{X_n=1)\right\}$$
+and fill in the conditional probabilities from the transition matrix.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2065864/can-someone-help-on-this-markov-chain-question/2065869#2065869) on Mathematics Stack Exchange, 2016-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

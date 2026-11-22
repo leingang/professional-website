@@ -1,0 +1,52 @@
+---
+title: Are polynomial fractions and their reductions really equal?
+date: '2016-07-27'
+description: To reiterate what Eff said, a function is more than a formula; it requires a domain. The domain of $f$ and the domain of $g$ are different, so they are not the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1872766
+se-link: https://math.stackexchange.com/questions/1872749/are-polynomial-fractions-and-their-reductions-really-equal/1872766#1872766
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- functions
+- polynomials
+- graphing-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Are polynomial fractions and their reductions really equal?](https://math.stackexchange.com/questions/1872749/are-polynomial-fractions-and-their-reductions-really-equal), asked by [Carser](https://math.stackexchange.com/users/132859/carser) on Mathematics Stack Exchange (2016-07-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm reading Larson's AP Calculus textbook and in the section on limits (1.3) it suggests finding functions that "agree at all but one point" in order to evaluate limits analytically.  For example, given 
+> $$f(x) = \frac{x^3-1}{x-1}$$
+> we can factor and reduce to get
+> $$\frac{x^3-1}{x-1} = \frac{(x-1)(x^2+x+1)}{x-1} = \frac{\require{cancel} \bcancel{(x-1)}(x^2+x+1)}{\require{cancel} \bcancel{(x-1)}}=x^2+x+1$$
+> But it then refers to this reduced expression as 
+> $$g(x) = x^2+x+1$$
+> suggesting that $f(x) \neq g(x)$ (also implied by the figure below).  
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Is it true that $f(x) \neq g(x)$?  I realize that $f(x)$ as originally expressed is indeterminate at $x=1$, but doesn't the cancellation of $(x-1)$ allow us to calculate the "true" value of $f(1)$?  If so, I believe the graph of $f(x)$ in the figure is misleading at best by drawing the plot as being undefined at $x=1$.  
+>
+>   [q-1]: JrETP.png
+:::
+
+To reiterate what Eff said, a function is more than a formula; it requires a domain.  The domain of $f$ and the domain of $g$ are different, so they are not the same function.  
+
+> doesn't the cancellation of $(x-1)$ allow us to calculate the “true” value of $f(1)$?
+
+I think that your notion of “true value” is exactly what the concept of *limit* is supposed to encapsulate.  As constructed, $f$ is undefined at $1$, but *if it were, what should the value be?* If we try to use nearby values of $f(x)$ to infer a value for $f(1)$, and if $f(x) = g(x)$ for all $x\neq 1$, then the best answer for $f(1)$ would be $g(1)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1872749/are-polynomial-fractions-and-their-reductions-really-equal/1872766#1872766) on Mathematics Stack Exchange, 2016-07-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

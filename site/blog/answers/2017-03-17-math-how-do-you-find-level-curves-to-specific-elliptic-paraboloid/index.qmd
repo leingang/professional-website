@@ -1,0 +1,48 @@
+---
+title: How do you find level curves to specific elliptic paraboloids???
+date: '2017-03-17'
+description: Because a paraboloid is a parabola rotated about its axis, you can reduce this question to one about parabolas. It seems to me the question you're asking is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2190973
+se-link: https://math.stackexchange.com/questions/2190868/how-do-you-find-level-curves-to-specific-elliptic-paraboloids/2190973#2190973
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- tangent-line
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How do you find level curves to specific elliptic paraboloids???](https://math.stackexchange.com/questions/2190868/how-do-you-find-level-curves-to-specific-elliptic-paraboloids), asked by [Lego Man](https://math.stackexchange.com/users/426560/lego-man) on Mathematics Stack Exchange (2017-03-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I'm trying to build myself a cardboard (I know don't judge lol) parabolic reflector but math is Not my specialty so I'm running into some problems. My idea on how to build this reflector is to first figure out the depth of the paraboloid then the rim diameter. Next I was hopping to use this information somehow to find the circumference of enough circular level curves of this specific paraboloid. Next I was planning to divide each of the circumferences of the level curves by the number of cardboard sections I want to use to build my reflector. So let's say I want to make it out of 10 pieces, then I'd divide all the circumferences by 10 to get a length which I can draw out on paper in order to get the rough shape of the pieces I need to cut out. 
+>
+> According to the internet, finding the circumference of paraboloid level curves seemed a tad too easy. It said to simply plug in the z value or the height level into the formula c = x^2 + y^2 or something like that, square root the c value to get the level curve circles radius. For example at z = 1 the circles radius would be square root 1 aka 1. For z = 2 the radius would be about 1.4 and for z = 3 the radius would be about 1.7 and so on. This theoretically is supposed to turn into the level set of your standard elliptic paraboloid. 
+>
+> My issue is that for practical uses we use different parts of the paraboloids. For Dish TV antenas we use the very bottom portion of a big paraboloid which has a gentle curve to it, for flashlights we might use smaller deeper paraboloids with a steep curve to it. This has caused me to have trouble understanding how one would determine the radius of level curves of a specific paraboloid. For example if I wanted a paraboloid with a diameter of one inch and a depth of one inch I can't be having radius of 1.7 and such like in the previous example- because that's already bigger than the whole dish lol. 
+>
+> Any help will be greatly appreciated!
+> Your slightly mathematically handicapped friend,
+> Pat
+:::
+
+Because a paraboloid is a parabola rotated about its axis, you can reduce this question to one about parabolas.  It seems to me the question you're asking is: *Given a parabolic curve of a specified width and depth, what is the equation for that parabola?*
+
+If we put the vertex of the parabola at $(0,0)$, then the equation of the parabola will be $y=cx^2$ for some constant $c$.  If the width of the parabola is $2r$ and the depth $h$, then the point $(r,h)$ will be on the parabola.  Therefore
+$$h = cr^2 \implies c = \frac{h}{r^2}$$
+
+Something I don't quite understand from your question yet is how you plan to assemble the cardboard into a 3D model.  Are you cutting rings out of corrugated cardboard and laying them one on top of the other?  If so, you really want the radius ($x$) in terms of the height ($y$).  So you would invert $y = \frac{h}{r^2}x^2$ to get $x =  r\sqrt{y/h}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2190868/how-do-you-find-level-curves-to-specific-elliptic-paraboloids/2190973#2190973) on Mathematics Stack Exchange, 2017-03-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,47 @@
+---
+title: Curve/Graph tracing
+date: '2017-11-16'
+description: Calculus is a wonderful tool for analyzing functions. The derivative and second derivative of a function can be used to sketch its graph pretty accurately. If…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2523590
+se-link: https://math.stackexchange.com/questions/2523502/curve-graph-tracing/2523590#2523590
+se-score: 1
+se-accepted: false
+se-tags:
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Curve/Graph tracing](https://math.stackexchange.com/questions/2523502/curve-graph-tracing), asked by [Tanuj](https://math.stackexchange.com/users/438329/tanuj) on Mathematics Stack Exchange (2017-11-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Okay so I have to solve this question which requires me to find whether a function is one-one, onto, both, or neither.
+>
+> The function is : $f(x) = \frac{x^2}{1+x^4}$.
+>
+> I know I can solve this instantly without any fuss if I have its graph. The problem is, how can I mathematically draw its graph? That is, draw the graph with proper technique and logic, a method that would work for other similar problems as well.
+>
+> Thanks for giving this your time!
+:::
+
+Calculus is a wonderful tool for analyzing functions.  The derivative and second derivative of a function can be used to sketch its graph pretty accurately.  If you really want to know how to use math to graph functions, that's the answer.
+
+But I don't think that's necessary for this problem.  The function is defined by a formula, so the one-to-one and onto questions can be answered by solving equations.
+
+For instance, the question of whether $f$ is onto $\mathbb{R}$ amounts to asking: Does the equation
+$$\frac{x^2}{1+x^4} = y$$
+have a solution $x$ for every real number $y$?  That equation is quadratic in $x^2$ so it can be solved definitively.  
+
+The question of whether $f$ is one-to-one amounts to asking: are there two different points of $x_1$ and $x_2$ such that $f(x_1) = f(x_2)$.  Notice this function is even; that's a big clue.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2523502/curve-graph-tracing/2523590#2523590) on Mathematics Stack Exchange, 2017-11-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

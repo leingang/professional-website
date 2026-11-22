@@ -1,0 +1,43 @@
+---
+title: What purpose does the adjective "monotonically" serve in the context of a "monotonically increasing/decreasing function"?
+date: '2023-02-17'
+description: I would use monotone increasing function instead of “monotonically increasing function.”
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4641335
+se-link: https://math.stackexchange.com/questions/4641049/what-purpose-does-the-adjective-monotonically-serve-in-the-context-of-a-monot/4641335#4641335
+se-score: 2
+se-accepted: true
+se-tags:
+- functions
+- terminology
+- monotone-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What purpose does the adjective "monotonically" serve in the context of a "monotonically increasing/decreasing function"?](https://math.stackexchange.com/questions/4641049/what-purpose-does-the-adjective-monotonically-serve-in-the-context-of-a-monot), asked by [Osmium](https://math.stackexchange.com/users/946446/osmium) on Mathematics Stack Exchange (2023-02-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Why employ the adjective "monotonically" when referring to an "increasing" or "decreasing" function? Forsooth, if the function is indeed exhibiting an upward or downward trend, it is inherently "monotonic". Thus, it would seem that the term "monotonically" serves no purpose but to belabor the point, leading one to question its necessity.
+:::
+
+I would use *monotone increasing function* instead of “monotonically increasing function.” 
+
+*Monotone* is an adjective, so it modifies the noun *function*. Same for *increasing*. Thus, a *monotone increasing function* is one that is increasing, and also monotone. It's redundant, yes, but unambiguous.
+
+*Monotonically* is an adverb, so it modifies the adjective *increasing*. So a *monotonically increasing function* is one that is increasing in a monotonic fashion. That might be considered ambiguous.
+
+I looked in Courant's calculus text and found the former, and Apostol's calculus text and found the latter. Stewart uses either “increasing,” “decreasing,” or “monotonic” to mean one or the other. Spivak doesn't use “monotonic” at all, just “increasing” or “decreasing.”
+
+If the Wikipedia page bothers you, just edit it. I read the talk history, and it could use some work.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4641049/what-purpose-does-the-adjective-monotonically-serve-in-the-context-of-a-monot/4641335#4641335) on Mathematics Stack Exchange, 2023-02-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

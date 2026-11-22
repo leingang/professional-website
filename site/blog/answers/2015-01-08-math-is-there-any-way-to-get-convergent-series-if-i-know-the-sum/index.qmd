@@ -1,0 +1,46 @@
+---
+title: Is there any way to get convergent series if I know the sum?
+date: '2015-01-08'
+description: If you want a series that sums to $a$, let $a0=a$ and $an = 0$ for all other $n$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1096742
+se-link: https://math.stackexchange.com/questions/1096736/is-there-any-way-to-get-convergent-series-if-i-know-the-sum/1096742#1096742
+se-score: 2
+se-accepted: false
+se-tags:
+- sequences-and-series
+- convergence-divergence
+- summation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there any way to get convergent series if I know the sum?](https://math.stackexchange.com/questions/1096736/is-there-any-way-to-get-convergent-series-if-i-know-the-sum), asked by [Viacheslav Kondratiuk](https://math.stackexchange.com/users/48996/viacheslav-kondratiuk) on Mathematics Stack Exchange (2015-01-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If I am given the limit of a convergent series is there any way that I can find the series?
+>
+> Is it possible that for any given limit there are infinitely many or no solutions at all?
+:::
+
+If you want a series that sums to $a$, let $a_0=a$ and $a_n = 0$ for all other $n$.
+
+If you want a series of *nonzero* terms that sums to $a$, let $a_n = \frac{a}{2^n}$ for $n\geq 1$.  Since 
+$$\sum_{n=1}^\infty \frac{1}{2^n} = 1$$
+we must have 
+$$\sum_{n=1}^\infty \frac{a}{2^n} = a$$
+
+Suppose a series $\sum b_n$ converges to $b$.  Let $a_n = \frac{a}{b} b_n$.  Then $\sum a_n$ converges to $a$:  
+$$\sum a_n = \sum \frac{a}{b} b_n = \frac{a}{b} \sum b_n = \frac{a}{b}\,b = a$$
+Since there are infinitely many convergent series, there are infinitely many convergent series converging to $a$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1096736/is-there-any-way-to-get-convergent-series-if-i-know-the-sum/1096742#1096742) on Mathematics Stack Exchange, 2015-01-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

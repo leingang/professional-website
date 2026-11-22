@@ -1,0 +1,39 @@
+---
+title: Switching limits of integration
+date: '2016-07-15'
+description: 'If you write the equation with sums instead of differences, it reads: $$\int{\alpha \epsilon}^{\alpha N} \dfrac{f(u)}{u}du +\int{\alpha N}^{\beta N}…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1860358
+se-link: https://math.stackexchange.com/questions/1860356/switching-limits-of-integration/1860358#1860358
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Switching limits of integration](https://math.stackexchange.com/questions/1860356/switching-limits-of-integration), asked by [Puzzled417](https://math.stackexchange.com/users/297795/puzzled417) on Mathematics Stack Exchange (2016-07-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The solution in my textbook wrote $$\int_{\alpha \epsilon}^{\alpha N} \frac{f(u)}{u} \, du-\int_{\beta \epsilon}^{\beta N} \frac{f(u)}{u} \, du = \int_{\alpha \epsilon}^{\beta \epsilon} \frac{f(u)}{u} \, du-\int_{\alpha N}^{\beta N} \frac{f(u)}{u} \, du.$$ How can the limits of integration be switched like that?
+:::
+
+If you write the equation with sums instead of differences, it reads:
+$$\int_{\alpha \epsilon}^{\alpha N} \dfrac{f(u)}{u}du
++\int_{\alpha N}^{\beta N} \dfrac{f(u)}{u}du
+= \int_{\alpha \epsilon}^{\beta \epsilon} \dfrac{f(u)}{u}du
+   +\int_{\beta \epsilon}^{\beta N} \dfrac{f(u)}{u}du$$
+Now if you use the additive rule for integrals over adjacent intervals, you see that each of these is equal to 
+$$\int_{\alpha \epsilon}^{\beta N} \dfrac{f(u)}{u}du$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1860356/switching-limits-of-integration/1860358#1860358) on Mathematics Stack Exchange, 2016-07-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

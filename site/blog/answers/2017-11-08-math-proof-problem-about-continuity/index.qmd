@@ -1,0 +1,53 @@
+---
+title: Proof problem about continuity
+date: '2017-11-08'
+description: 'Using the definition you''re given:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2511266
+se-link: https://math.stackexchange.com/questions/2511235/proof-problem-about-continuity/2511266#2511266
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof problem about continuity](https://math.stackexchange.com/questions/2511235/proof-problem-about-continuity), asked by [RockChalk](https://math.stackexchange.com/users/478730/rockchalk) on Mathematics Stack Exchange (2017-11-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Problem: A function $f$ is defined on the interval $[0,5]$ by the rule $f(x)=1/x$ and $f(0)=100$. Prove $f$ is not continuous at $(0,100)$.
+>
+> I know that a function is continuous at a point $p=(x,y)$ based off this definition if and only if
+>
+> p is a point on $f$ and
+> if $ϵ>0,$ then there is a $δ>0$ so that if $t$ is in the domain of $f$ and $|t−x|<δ,$ then $|f(t)−f(x)|<ϵ.$
+>
+> How would I justify this in a formal proof?
+:::
+
+Using the definition you're given: 
+
+> $f$ is continuous at $x$ if for all $\epsilon > 0$ there exists $\delta > 0$ such that, for all $t$ in the domain of $f$, $|t-x| < \delta \implies |f(t) - f(x)| < \epsilon$.
+
+The negation is:
+
+> $f$ is **not** continuous at $x$ if there exists $\epsilon > 0$ such that for all $\delta > 0$, there exists $t$ in the domain of $f$ with $|t-x| < \delta$ but $|f(t) - f(x)| \geq \epsilon$.
+
+For your particular problem,
+
+> $f$ is not continuous at $0$ if there exists $\epsilon > 0$ such that for all $\delta > 0$, there exists $t$ with $0 < t < \delta$ but $|f(t) - 100| \geq \epsilon$.
+
+Intuitively, we know $\lim_{x\to0^+}f(x) = +\infty$, so use that to your advantage.  Set $\epsilon=1$.  It would be sufficient to show that for all $\delta > 0$ there exists $t$ with $0 < t < \delta$ but $f(t) \geq 101$.  Can you show that?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2511235/proof-problem-about-continuity/2511266#2511266) on Mathematics Stack Exchange, 2017-11-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

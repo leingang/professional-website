@@ -1,0 +1,138 @@
+---
+title: How to use an environment defined by the versions-package inside another environment
+date: '2012-04-20'
+description: 'I''m not sure what your actual use case is, but it seems like your MWE is supposed to conditionally color some text based on the version. This works for me:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 52686
+se-link: https://tex.stackexchange.com/questions/52679/how-to-use-an-environment-defined-by-the-versions-package-inside-another-environ/52686#52686
+se-score: 1
+se-accepted: false
+se-tags:
+- environments
+- versions
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to use an environment defined by the versions-package inside another environment](https://tex.stackexchange.com/questions/52679/how-to-use-an-environment-defined-by-the-versions-package-inside-another-environ), asked by [Stephen](https://tex.stackexchange.com/users/6865/stephen) on TeX Stack Exchange (2012-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When I use the [versions][q-1] package to conditionally exclude content like this:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{color}% just as example
+>
+> \usepackage[tracing]{versions}
+> \excludeversion{vers}% opposite to \includeversion{vers}
+>
+> \newenvironment{test}{%
+> START%
+> \vers%
+> \color{red}%
+> }{%
+> \endvers%
+> END% is excluded but should not be excluded 
+> }
+>
+> \begin{document}
+> before
+>
+> \begin{test}
+> % content is excluded for \excludeversion{vers}
+> %        and included for \includeversion{vers} above
+> inside
+> \end{test}
+>
+> after
+> \end{document}
+> ```
+>
+> I can exclude the content of the `vers` environment, as intended by the use of the `versions` package. But also `END` gets excluded (after `\endvers`), opposed to my intention. With `\includeversion{vers}` also `END` gets included (as intended). What do I do wrong, and how do I fix it?
+>
+> It is possible to define
+>
+> ```latex
+> \newcommand{\afterendvers}{%
+> END% and all other stuff I want to have executed here
+> }
+> ```
+> and replace `\end{test}` by `\end{test}\afterendvers` in the whole document, but a more "TeXnical" solution would be nice.
+>
+> Related issue: With `\includeversion{vers}` `END` is printed in red, although 
+> > environments processed as if `\begin{<version>}` and `\end{<version>}`
+> > just were not present, however they form groups like
+> > `\begin{relax} <code> \end{relax}` or `\begingroup  <code>  \endgroup`
+>
+> (from the versions manual), but 
+>
+> ```latex
+> \vers%
+> \bgroup%
+> \color{red}%
+> }{%
+> \egroup%
+> \endvers%
+> END%
+> ```
+>
+> leads to `END` being written in black, as expected. I.e.: `\vers` and `\endvers` do not appear to act as `\begingroup` and `\endgroup` in this case.
+>
+>   [q-1]: http://ctan.org/pkg/versions
+:::
+
+I'm not sure what your actual use case is, but it seems like your MWE is supposed to conditionally color some text based on the version.  This works for me:
+
+```latex
+\documentclass{article}
+\usepackage{color}% just as example
+\usepackage[tracing]{versions}
+\excludeversion{vers}
+
+\def\colorbyversion{\normalcolor}
+\begin{vers}
+\gdef\colorbyversion{\color{red}}
+\end{vers}
+
+\newenvironment{test}{
+START
+\bgroup\colorbyversion}{%
+\egroup
+END% should not be excluded
+}
+
+\begin{document}
+before
+
+\begin{test}
+inside
+\end{test}
+
+after
+\end{document}
+```
+
+With `\includeversion{vers}`:
+
+![sample document with vers included][1]
+
+With `\excludeversion{vers}`:
+
+![sample document with vers excluded][2]
+
+The `\gdef` is needed to make the redefinition of `\colorbyversion` global.  Otherwise, the definition inside the `vers` environment dies at `\end{vers}`.
+
+
+  [1]: 6NAdE.png
+  [2]: h3okZ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/52679/how-to-use-an-environment-defined-by-the-versions-package-inside-another-environ/52686#52686) on TeX Stack Exchange, 2012-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

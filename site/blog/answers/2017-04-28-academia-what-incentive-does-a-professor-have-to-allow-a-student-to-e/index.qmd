@@ -1,0 +1,44 @@
+---
+title: What incentive does a professor have to allow a student to enroll in a course that is already full?
+date: '2017-04-28'
+description: Faculty may not always have the ability to admit students into full courses. We don't have the staff in our department to meet the student demand. So our…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 88665
+se-link: https://academia.stackexchange.com/questions/88595/what-incentive-does-a-professor-have-to-allow-a-student-to-enroll-in-a-course-th/88665#88665
+se-score: 3
+se-accepted: false
+se-tags:
+- undergraduate
+- administration
+- required-course
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What incentive does a professor have to allow a student to enroll in a course that is already full?](https://academia.stackexchange.com/questions/88595/what-incentive-does-a-professor-have-to-allow-a-student-to-enroll-in-a-course-th), asked by [Red Dwarf](https://academia.stackexchange.com/users/67185/red-dwarf) on Academia Stack Exchange (2017-04-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm hoping trying to register for a course I need that is currently full, and am told that I can try contacting the professor for permission to enroll. Under what circumstances are such requests typically granted? More students = more work for the professor, so I'm trying to figure out why a professor might agree to allow me in.
+>
+> My best guess is that I should:
+>
+>  - Convince them that since I'm a good student, I won't create very much extra work for them.
+>  - Convince them that since I'm a good student, allowing me into the course will raise the average grade for the term and make them look good.
+>
+> What else can I say that they might find compelling?
+:::
+
+Faculty may not always have the ability to admit students into full courses.  We don't have the staff in our department to meet the student demand.  So our administrators normally set the roster size to the be the legal limit of people in the classroom.  The only way to enlarge the class is to find a larger classroom; and classroom space is another thing we are short on.
+
+All this to say, no matter how nicely you ask, you still may not get in even if the instructor wants to let you in.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/88595/what-incentive-does-a-professor-have-to-allow-a-student-to-enroll-in-a-course-th/88665#88665) on Academia Stack Exchange, 2017-04-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

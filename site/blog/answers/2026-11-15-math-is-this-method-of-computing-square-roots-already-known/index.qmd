@@ -1,0 +1,75 @@
+---
+title: Is this method of computing square roots already known?
+date: '2026-11-15'
+description: Yes, this is known. You have $N{ct} = Vk + 10^{-Nc}$ and $Qn = N{ct}^2$. Your equation is equivalent to $$N{ct}^2 = Vk^2 + (N{ct}^2 - Vk^2) = Vk^2 + (N{ct} +…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5154400
+se-link: https://math.stackexchange.com/questions/5154387/is-this-method-of-computing-square-roots-already-known/5154400#5154400
+se-score: 2
+se-accepted: false
+se-tags:
+- numerical-methods
+- roots
+- radicals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Is this method of computing square roots already known?](https://math.stackexchange.com/questions/5154387/is-this-method-of-computing-square-roots-already-known), asked by [Pietro De Freitas Grando](https://math.stackexchange.com/users/1786743/pietro-de-freitas-grando) on Mathematics Stack Exchange (2026-11-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This is a method for calculating the square roots of positive, non-zero rational numbers, digit by digit.
+>
+> $$V_k^2 + \frac{V_k + N_{ct}}{10^{N_c}} = Q_n$$
+>
+> where:
+>
+> - $V_k^2$ is the square whose square root is already known, and which is closest to the square of the number for which we wish to find the root.
+>
+> - $V_k$ is the square root of that known, nearest square.
+>
+> - $N_{ct}$ is an "estimated" number, formed by adding a value at a specific decimal or integer place relative to $V_k$. 
+>
+> For example, if $V_k$ is $6$, $N_{ct}$ could be: $106, 16, 7, 6.1, 6.01,$ etc.
+>
+> $N_c$ represents the positional place where the value was added. For instance, if $V_k$ is $6$ and the chosen $N_{ct}$ is $7$, then $N_c$ equals $0$. If the chosen $N_{ct}$ were $16$, $N_c$ would be $-1$; if the chosen $N_{ct}$ were $6.1$, $N_c$ would be $1$. You always begin counting from the units place (where $N_c$ equals $0$). If the value is added to a position greater than the units place, the indexing works as follows: tens $= -1$, hundreds $= -2$, thousands $= -3$, and so on. If the value is added to a position less than the units place, it works as follows: tenths $= 1$, hundredths $= 2$, thousandths $= 3$, and so on. 
+>
+> $Q_n$ is $N_{ct}$ squared, which, for instance, we still don't know.
+>
+> As an example of the method in use, suppose you want to find the square root of $37.21$. You identify the nearest square you know the square root, $36$, and its square root, which is $6$. The calculation would look like this:
+>
+> $$36 + \frac{6 + 6.1}{10^1} = 37.21$$
+>
+> Therefore, the square root of $37.21$ is $6.1$ ($6.1$ is $N_{ct}$, the number you "guessed").
+>
+> If the result is not reached, simply repeat the process.
+>
+> If $V_k^2$ or $Q_n$ is greater than the square for which you are trying to find the square root, use this version of the formula instead:
+>
+> $$V_k^2 - \frac{V_k + N_{ct}}{10^{N_c}} = Q_n$$
+>
+> In this case, instead of "guessing" an $N_{ct}$ value that is greater than $V_k$, you "guess" an $N_{ct}$ value that is smaller than $V_k$.
+>
+> Simply repeat the process until you arrive at the desired result.
+>
+> Now, here is my question: Is this method of computing square roots already known?
+:::
+
+Yes, this is known. You have $N_{ct} = V_k + 10^{-N_c}$ and $Q_n = N_{ct}^2$. Your equation is equivalent to 
+$$N_{ct}^2 = V_k^2 + (N_{ct}^2 - V_k^2)
+  = V_k^2 + (N_{ct} + V_k)(N_{ct} - V_k)
+  = V_k^2 + (N_{ct} + V_k)10^{-N_c}$$
+So your squaring calculation is equivalent to the difference-of-squares factorization formula.
+
+I still don't understand the recursive part of the algorithm, but it seems to me that you're making a guess $N_{ct}$, computing $N_{ct}^2$ in a roundabout way, then using intuition to make another guess.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5154387/is-this-method-of-computing-square-roots-already-known/5154400#5154400) on Mathematics Stack Exchange, 2026-11-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

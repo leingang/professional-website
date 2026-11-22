@@ -1,0 +1,65 @@
+---
+title: Use Taylor's theorem to derive an expression for $\log\left(1-\frac{1}{(n+1)^\alpha}\right)-\log\left(1-\frac{1}{n^\alpha}\right)$
+date: '2022-12-01'
+description: Taylor's theorem refers to the fact that the difference between a function $f(x)$ and its $k$th degree Taylor polynomial centered at $a$ tends to zero as $x…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4588941
+se-link: https://math.stackexchange.com/questions/4588872/use-taylors-theorem-to-derive-an-expression-for-log-left1-frac1n1-al/4588941#4588941
+se-score: 1
+se-accepted: true
+se-tags:
+- logarithms
+- taylor-expansion
+- analytic-number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use Taylor's theorem to derive an expression for $\log\left(1-\frac{1}{(n+1)^\alpha}\right)-\log\left(1-\frac{1}{n^\alpha}\right)$](https://math.stackexchange.com/questions/4588872/use-taylors-theorem-to-derive-an-expression-for-log-left1-frac1n1-al), asked by [Aaron Andersen](https://math.stackexchange.com/users/1125389/aaron-andersen) on Mathematics Stack Exchange (2022-12-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In [*Some asymptotic expressions in the theory of numbers*](https://www.jstor.org/stable/1988773#metadata_info_tab_contents), the author asserts on p.119 that
+>
+> $\log\left(1-\frac{1}{(n+1)^\alpha}\right)-\log\left(1-\frac{1}{n^\alpha}\right)=\frac{\alpha}{n^{1+\alpha}-n}-\frac{1}{2}*\frac{\alpha}{(\xi^{\alpha+1}-\xi)^2}\bigg((\alpha+1)\xi^{\alpha}-1\bigg)$
+>
+> where $n$ is an integer, $0<\alpha<1$, and $\xi$ is some real number between $n$ and $n+1$. How is this expression derived? The author says this is due to Taylor's theorem, so I presume the expression on the right is either a difference of two Taylor series or a difference of two Taylor polynomials, but I am still confused as to how they're obtaining this result. Some manipulation of the logarithms on the left hand side produces
+>
+> $$\log\bigg(\frac{((n+1)^{\alpha}-1) \, n^{\alpha}}{(n+1)^{\alpha} \, (n^{\alpha}-1)}\bigg)$$
+>
+> but it's unclear to me whether a Taylor expansion of this produces the result we're looking for.
+:::
+
+**Taylor's theorem** refers to the fact that the difference between a function $f(x)$ and its $k$th degree Taylor polynomial centered at $a$ tends to zero as $x \to a$. There are [explicit forms](https://en.wikipedia.org/wiki/Taylor%27s_theorem#Explicit_formulas_for_the_remainder) for the remainder. The Lagrange form of the remainder says that there exists $\xi$ between $a$ and $x$ such that (using $T_{k,a}(x)$ for the $k$th degree Taylor polynomial centered at $a$)
+$$f(x) - T_{k,a}(x) = \frac{f^{(k+1)}(\xi)(x-a)^{k+1}}{(k+1)!}$$
+The author applies this to $f(x) = \log\left(1 - \frac{1}{x^\alpha}\right)$, $a=n$, $x=n+1$, and $k=1$.
+
+To see why, first write
+$$f(x) = \log\left(\frac{x^\alpha -1}{x^\alpha}\right) = \log(x^\alpha -1) - \alpha \log x$$
+So that
+$$f'(x) = \frac{\alpha x^{\alpha - 1}}{x^\alpha -1} - \frac{\alpha}{x}
+= \frac{\alpha x^{\alpha} - \alpha(x^\alpha - 1)}{x^{\alpha + 1}-a}
+= \frac{\alpha}{x^{\alpha +1} - x}$$
+
+Furthermore,
+$$f''(x) = - \frac{\alpha}{\left(x^{\alpha+1}-x\right)^2}((\alpha+1)x^\alpha -1)$$
+By Taylor's theorem, there exists $\xi$ such that $n \leq \xi \leq n+1$ and 
+$$\begin{align*}
+    f(n+1) &= f(n) + f'(n)(1) + \frac{1}{2} f''(\xi)(1)^2 
+\\\implies
+    \log\left(1 - \frac{1}{(n+1)^\alpha}\right)
+    &= \log\left(1 - \frac{1}{n^\alpha}\right)
+      + \frac{\alpha}{n^{\alpha +1} - n}
+      - \frac{1}{2} \frac{\alpha}{\left(\xi^{\alpha+1}-\xi\right)^2}((\alpha+1)\xi^\alpha -1)
+\end{align*}$$
+as claimed.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4588872/use-taylors-theorem-to-derive-an-expression-for-log-left1-frac1n1-al/4588941#4588941) on Mathematics Stack Exchange, 2022-12-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

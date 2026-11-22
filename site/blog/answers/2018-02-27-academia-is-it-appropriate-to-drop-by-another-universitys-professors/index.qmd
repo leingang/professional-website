@@ -1,0 +1,35 @@
+---
+title: Is it appropriate to drop by another university's professor's lecture to talk about research afterwards?
+date: '2018-02-27'
+description: It sounds to me like this professor is not interested in working with you. She may be too busy to take on new projects, or she may feel she needs to prioritize…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 104636
+se-link: https://academia.stackexchange.com/questions/104611/is-it-appropriate-to-drop-by-another-universitys-professors-lecture-to-talk-ab/104636#104636
+se-score: 3
+se-accepted: false
+se-tags:
+- etiquette
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it appropriate to drop by another university's professor's lecture to talk about research afterwards?](https://academia.stackexchange.com/questions/104611/is-it-appropriate-to-drop-by-another-universitys-professors-lecture-to-talk-ab), asked by [nara](https://academia.stackexchange.com/users/83029/nara) on Academia Stack Exchange (2018-02-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> There is a professor at a university different from the one I study in, who I like to do some research with. I emailed her and did not receive any answer even after sending a follow-up email (a week after the first email). I knew her class schedule, but not her office hours. I thought about going to where the class meets to talk to her after her lecture (introduce myself, try to remind her of the email and express my interest in working with her over and ask her to read my CV that I emailed to her, or arrange some time to meet me and discuss about possible opportunities) .
+>
+> Since I am not a student at the institution where she works and given the nature of my inquiry and the fact that she didn't answer my emails, I thought this might not be appropriate. I wanted to ask your opinion on whether you think there is a way for me to go and talk to her without it being inappropriate. (I thought about emailing the TA of the class and asking about the office hours of the professor, but I doubt if that's any better.)
+:::
+
+It sounds to me like this professor is not interested in working with you.  She may be too busy to take on new projects, or she may feel she needs to prioritize working with students currently enrolled in her own university.  Either way, I think you have an answer to your inquiry.  I'm sorry it's not the one you were looking for.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/104611/is-it-appropriate-to-drop-by-another-universitys-professors-lecture-to-talk-ab/104636#104636) on Academia Stack Exchange, 2018-02-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

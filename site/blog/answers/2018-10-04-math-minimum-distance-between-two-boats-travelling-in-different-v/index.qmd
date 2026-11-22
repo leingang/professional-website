@@ -1,0 +1,40 @@
+---
+title: Minimum distance between two boats travelling in different velocities
+date: '2018-10-04'
+description: When doing optimization problems, first identify the quantity that is to be optimized. Usually you can find it by looking for a superlative like “most” or…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2942787
+se-link: https://math.stackexchange.com/questions/2942780/minimum-distance-between-two-boats-travelling-in-different-velocities/2942787#2942787
+se-score: 1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- maxima-minima
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Minimum distance between two boats travelling in different velocities](https://math.stackexchange.com/questions/2942780/minimum-distance-between-two-boats-travelling-in-different-velocities), asked by [pi3.14](https://math.stackexchange.com/users/479098/pi3-14) on Mathematics Stack Exchange (2018-10-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Question:** Boat $A$ was $100$ km south of boat $B$ at $9:00$ AM. If boat $A$ travels towards the north with the speed of $20$ km/h, and boat $B$ travels towards the east with the speed of $15$ km/h, when were they nearest to each other?
+>
+> **PS:** I don't need the answer to the problem, I just need someone to guide me on how to answer this. Any leads appreciated!
+:::
+
+When doing optimization problems, first identify the quantity that is to be optimized.  Usually you can find it by looking for a superlative like “most” or “best” or some other “-est”.  In this case, the superlative is *nearest*.  *Nearest* means minimum *distance*.  So distance between the boats is our dependent variable.
+
+To find the independent variable, look again at the question: “*when* were the boats nearest to each other?  That describes a moment of *time*.  
+
+Therefore, express the distance between the boats as a function of time.  Use calculus to minimize that function.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2942780/minimum-distance-between-two-boats-travelling-in-different-velocities/2942787#2942787) on Mathematics Stack Exchange, 2018-10-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

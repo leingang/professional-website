@@ -1,0 +1,37 @@
+---
+title: What operator is used when Rubik's cube is modeled as a group?
+date: '2023-05-20'
+description: The operator in the second representation is concatenation of “generator sequences” as you call them. The way you show that one sequence equals another is to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4703265
+se-link: https://math.stackexchange.com/questions/4703263/what-operator-is-used-when-rubiks-cube-is-modeled-as-a-group/4703265#4703265
+se-score: 6
+se-accepted: false
+se-tags:
+- group-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What operator is used when Rubik's cube is modeled as a group?](https://math.stackexchange.com/questions/4703263/what-operator-is-used-when-rubiks-cube-is-modeled-as-a-group), asked by [user1153980](https://math.stackexchange.com/users/202469/user1153980) on Mathematics Stack Exchange (2023-05-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When I earned about groups, a group was taken to be a set of elements that operated on each other to produce another member of the set, along with the properties of closure, unit element, inverse and associativity. 
+>
+> I have seen a different definition used for Rubik's cube.  By this definition, a group is formed by a set of generators whose combinations generate the rest of the group with appropriate restrictions for identity, inverse and associativity.  For the Rubik's cube, the generators are the 6 face rotations.
+>
+> How can these two definitions be reconciled? In particular, what is the operator for the second definition?  It seems that the only way to determine if two elements (generator sequences) are identical, would be to check that each of the little cubies on the cube ended up in the same spot.  How does this get incorporated into the group definition?
+:::
+
+The operator in the second representation is concatenation of “generator sequences” as you call them. The way you show that one sequence equals another is to use relations among the sequences. For instance, any face rotation to the fourth power equals the identity.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4703263/what-operator-is-used-when-rubiks-cube-is-modeled-as-a-group/4703265#4703265) on Mathematics Stack Exchange, 2023-05-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

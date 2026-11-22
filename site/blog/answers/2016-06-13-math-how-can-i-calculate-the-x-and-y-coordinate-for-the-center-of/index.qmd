@@ -1,0 +1,60 @@
+---
+title: How can I calculate the $x$ and $y$ coordinate for the center of mass of a bounded region?
+date: '2016-06-13'
+description: Let $D$ be the region described. Since the density is uniform, can assume it's constantly one. The “mass” of the region $D$ is the same as its area, $$m =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1824539
+se-link: https://math.stackexchange.com/questions/1824528/how-can-i-calculate-the-x-and-y-coordinate-for-the-center-of-mass-of-a-bound/1824539#1824539
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I calculate the $x$ and $y$ coordinate for the center of mass of a bounded region?](https://math.stackexchange.com/questions/1824528/how-can-i-calculate-the-x-and-y-coordinate-for-the-center-of-mass-of-a-bound), asked by [bluemoon](https://math.stackexchange.com/users/257639/bluemoon) on Mathematics Stack Exchange (2016-06-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Consider the region bounded by the three curves:
+>
+> $$\begin{aligned} &y=\frac{2x}{5}\\ &y=1\\ & x=x_0 \end{aligned}$$
+>
+> Assuming a homogenous distribution of mass, the formula for the coordinates of the center of mass that I was given are: $$\begin{aligned}& x_s=\frac{1}{A}\int_A x \space dA \\ & y_s=\frac{1}{A} \int _A y \space dA\end{aligned}$$
+>
+> >1. Calculate the center of mass for $x=-0.5$
+> 2. For what $x_0$ is the center of mass on the $x$-axis. What is $x_s$ in this case?
+>
+> **My attempt:**
+>
+> I tried to sketch the curves and the bounded region first:
+>
+> [![enter image description here][q-1]][q-1]
+>
+> So I am trying to find the coordinates of the center of mass of the triangle. But how do I use those formulas? Are $x$ and $y$ in the integral functions?
+>
+>
+>   [q-1]: yTHsg.jpg
+:::
+
+Let $D$ be the region described.  Since the density is uniform, can assume it's constantly one.  The “mass” of the region $D$ is the same as its area,
+$$m = \iint_D 1\,dA = \int_{x_0}^{5/2} \int_{2x/5}^1 1\,dy\,dx$$
+The $x$-coordinate of the center of mass is
+$$\bar x =\frac{1}{m} \iint_D x\,dA = \frac{1}{m}\int_{x_0}^{5/2} \int_{2x/5}^1 x\,dy\,dx$$
+and the $y$-coordinate is
+$$\bar y =\frac{1}{m} \iint_D y\,dA = \frac{1}{m}\int_{x_0}^{5/2} \int_{2x/5}^1 y\,dy\,dx$$
+
+To answer one of your questions: yes, the $x$ and $y$ in the integrals are functions.  You can antidifferentiate a function of two variables with respect to one of them just like you can differentiate a function of two variables with respect to one of them.  That is, you treat the “other” variable as a constant.
+
+Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1824528/how-can-i-calculate-the-x-and-y-coordinate-for-the-center-of-mass-of-a-bound/1824539#1824539) on Mathematics Stack Exchange, 2016-06-13, with [edits](https://math.stackexchange.com/posts/1824539/revisions) by [Ian Miller](https://math.stackexchange.com/users/278461/ian-miller). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

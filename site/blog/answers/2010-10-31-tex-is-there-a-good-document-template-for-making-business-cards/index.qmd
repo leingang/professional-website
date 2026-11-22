@@ -1,0 +1,34 @@
+---
+title: Is there a good document template for making business cards?
+date: '2010-10-31'
+description: You could also just roll your own by making the whole document a tikzpicture and placing the text with \node commands.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4744
+se-link: https://tex.stackexchange.com/questions/4693/is-there-a-good-document-template-for-making-business-cards/4744#4744
+se-score: 7
+se-accepted: false
+se-tags:
+- templates
+- business-cards
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a good document template for making business cards?](https://tex.stackexchange.com/questions/4693/is-there-a-good-document-template-for-making-business-cards), asked by [Neil G](https://tex.stackexchange.com/users/512/neil-g) on TeX Stack Exchange (2010-10-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is there a good document template for making business cards?
+:::
+
+You could also just roll your own by making the whole document a `tikzpicture` and placing the text with `\node` commands.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4693/is-there-a-good-document-template-for-making-business-cards/4744#4744) on TeX Stack Exchange, 2010-10-31. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

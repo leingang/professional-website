@@ -1,0 +1,43 @@
+---
+title: The divergence as flux density
+date: '2018-03-20'
+description: You are right that by the divergence theorem, $$\lim{\epsilon\to 0^+} \frac{3}{4\pi\epsilon^3}\oint{S\epsilon(x,y,z)} F \cdot\hat{N}dS=\frac{\partial…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2700498
+se-link: https://math.stackexchange.com/questions/2700465/the-divergence-as-flux-density/2700498#2700498
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- vector-analysis
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The divergence as flux density](https://math.stackexchange.com/questions/2700465/the-divergence-as-flux-density), asked by [novo](https://math.stackexchange.com/users/477187/novo) on Mathematics Stack Exchange (2018-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $S_\epsilon$ be the sphere with center in $(0,0,0)$ and radius $\epsilon$, and the vectorfield $F(x,y,z) = (yx^2, xyz, x^2y^2)$. Let $\hat{N}$ be the unit-normal vector for $S_\epsilon$ pointing outwards. Evalute the limit 
+> $$\lim_{\epsilon\to 0^+} \frac{3}{4\pi\epsilon^3}\oint_{S_\epsilon} F \cdot\hat{N}dS$$
+>
+> I've swapped the original vectorfield in the task with a random one just to clarify if I understand this correctly. I read about this limit in my calculus book which was simply defined as the divergence (as flux density) **div F**. Does evaluating this limit mean to simply find the divergence, which is very easy for my vectorfield; **div F** $= x(2y+z)$. Or have i misunderstood the meaning of this limit and how it correlates to divergence itself?
+:::
+
+You are right that by the divergence theorem,
+$$\lim_{\epsilon\to 0^+} \frac{3}{4\pi\epsilon^3}\oint_{S_\epsilon(x,y,z)} F \cdot\hat{N}dS=\frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}$$
+However, which side of that equation is the definition of the divergence depends on the text.  It sounds like you are given the left-hand side for the definition.  This means you can't just substitute the right-hand side unless the theorem is already proved.
+
+Since the question is asking about a specific point, it could be that you are expected to explicitly calculate the integral on the left-hand side and verify that the indicated limit is $0$ (that is, $x(2y+z)$ when $x=y=z=0$).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2700465/the-divergence-as-flux-density/2700498#2700498) on Mathematics Stack Exchange, 2018-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

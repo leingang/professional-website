@@ -1,0 +1,89 @@
+---
+title: How do I reuse a command name two or more times?
+date: '2013-03-14'
+description: You can avoid \expandafter if you use the etoolbox package. This requires the e-TeX extensions to your TeX executable, but chances are extremely high that this…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 102386
+se-link: https://tex.stackexchange.com/questions/102381/how-do-i-reuse-a-command-name-two-or-more-times/102386#102386
+se-score: 5
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I reuse a command name two or more times?](https://tex.stackexchange.com/questions/102381/how-do-i-reuse-a-command-name-two-or-more-times), asked by [nplatis](https://tex.stackexchange.com/users/6480/nplatis) on TeX Stack Exchange (2013-03-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I found out how to [reuse a command name][q-1].
+>
+> But how can I reuse a command more times, each time using the previous definition? If I simply try something like
+>
+> ```latex
+> \newcommand{\aaa}{a}
+> \let\oldaaa\aaa
+> \renewcommand{\aaa}{\oldaaa b} % now \aaa is ab
+> \let\oldaaa\aaa
+> \renewcommand{\aaa}{\oldaaa c} % now \aaa should be abc
+> ```
+>
+> I get *TeX capacity exceeded* error.
+>
+> This is a very simplified example. The problem came up when I was trying to write a command that would accomplish a similar task, ie. concatenate its arguments when called repetitively; so, ideally the code should be similar for each repetition.
+>
+>
+>   [q-1]: https://tex.stackexchange.com/a/85211/6480
+:::
+
+You can avoid `\expandafter` if you use the [`etoolbox`](http://ctan.org/pkg/etoolbox) package.  This requires the e-TeX extensions to your TeX executable, but chances are extremely high that this is default in your installation.
+
+```latex
+\documentclass{article}
+\usepackage{etoolbox}
+\begin{document}
+\newcommand{\aaa}{a}
+\show\aaa
+\apptocmd{\aaa}{b}{\message{aaa successfully patched}}{\message{aaa not successfully patched}}
+\show\aaa
+\apptocmd{\aaa}{c}{\message{aaa successfully patched}}{\message{aaa not successfully patched}}
+\show\aaa
+\end{document}
+```
+
+The arguments to `\apptocmd` are macro name, stuff to add to the definition, then what to do on success or failure.  I'm using the last to just to report to the console/log file that the patching succeeded or failed.  `\show` will pause compilation and write the current value of the macro to the console.  You have to hit enter to continue each time.  The result is:
+
+```latex
+...
+> \aaa=\long macro:
+->a.
+l.6 \show\aaa
+
+? [ENTER]
+aaa successfully patched
+> \aaa=macro:
+->ab.
+l.8 \show\aaa
+
+? [ENTER]
+aaa successfully patched
+> \aaa=macro:
+->abc.
+l.10 \show\aaa
+
+? [ENTER]
+(./aaa.aux) )
+No pages of output.
+...
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/102381/how-do-i-reuse-a-command-name-two-or-more-times/102386#102386) on TeX Stack Exchange, 2013-03-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

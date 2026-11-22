@@ -1,0 +1,68 @@
+---
+title: How is the action of a vector field on a function defined?
+date: '2017-05-18'
+description: You might be used to thinking of a vector field as a map from an open neighborhood $U$ of $M$ to $\mathbb{R}^n$. For instance, if $M = \mathbb{R}^3$ (the US…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2286516
+se-link: https://math.stackexchange.com/questions/2286476/how-is-the-action-of-a-vector-field-on-a-function-defined/2286516#2286516
+se-score: 8
+se-accepted: false
+se-tags:
+- differential-geometry
+- definition
+- riemannian-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How is the action of a vector field on a function defined?](https://math.stackexchange.com/questions/2286476/how-is-the-action-of-a-vector-field-on-a-function-defined), asked by [user405156](https://math.stackexchange.com/users/405156/user405156) on Mathematics Stack Exchange (2017-05-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Questions of definition:
+>
+> 1) How do we make sense of $X(f)$ with $X$ a vector field on $M$ and $f$ a smooth function on $M$?
+>
+> One idea I have is that it is not actually $X(f)$ where we apply the vector field on $f$ but actually the canonically associated derivation. That is $X(f)$ is the following function $$X(f):M\rightarrow \mathbb{R}:x\rightarrow X_x(f)$$
+>
+> 2) How do we make sense of $Xg(Y,Z)$ where $g$ is a riemanian metric and $X,Y,Z$ vector fields.
+>
+> One idea is that $Xg(Y,Z)$ is the fonction defined as follows $$Xg(Y,Z):M\rightarrow \mathbb{R}:x\rightarrow X_x\cdot g_x(X_x,Y_x)$$
+:::
+
+You might be used to thinking of a vector field as a map from an open neighborhood $U$ of $M$ to $\mathbb{R}^n$.  For instance, if $M = \mathbb{R}^3$ (the US "Calc III" setting), we write
+$$\mathbf{F}(x,y,z) = P(x,y,z) \mathbf{i} + Q(x,y,z) \mathbf{j} + R(x,y,z) \mathbf{k}$$
+In the modern setting, we associate $\mathbf{i}$ to $\frac{\partial}{\partial x}$, $\mathbf{j}$ to $\frac{\partial}{\partial y}$, and $\mathbf{k}$ to $\frac{\partial}{\partial z}$.  So the vector field above becomes
+$$X = P\frac{\partial}{\partial x} + Q\frac{\partial}{\partial y} + R\frac{\partial}{\partial z}$$
+$X$ maps functions to functions by
+$$X(f) = P\frac{\partial f}{\partial x} + Q\frac{\partial f}{\partial y} + R\frac{\partial f}{\partial z}$$
+and is a derivation by the product rule.  On the level of points, it is, as you guessed,
+$$X(f)(x,y,z) = P(x,y,z) \frac{\partial f}{\partial x}(x,y,z) + Q(x,y,z) \frac{\partial f}{\partial y}(x,y,z) + R(x,y,z) \frac{\partial f}{\partial z}(x,y,z)$$ 
+
+For your second question, let's pass to $M = \mathbb{R}^n$, or, $U$ is a coordinate patch of $M$ with coordinates $x^1, \dots, x^n$.  Then given three vector fields $X$, $Y$, and $Z$ on $U$, we can write
+$$\begin{align*}
+   X &= P^i \frac{\partial}{\partial x^i} \\
+   Y &= Q^i \frac{\partial}{\partial x^i} \\
+   Z &= R^i \frac{\partial}{\partial x^i} \\
+\end{align*}$$
+where the $P$'s, $Q$'s and $R$'s are functions, and we use the Einstein summation convention.  Also, $g$ can be decomposed as $g_{ij} dx^i \,dx^j$.  So
+$$g(Y,Z) = g_{ij} Q^i R^j$$
+This is a sum of products of functions.  If we hit this with $X$, then, we have
+$$\begin{align*}
+    Xg(Y,Z) &= P^k\frac{\partial}{\partial x^k}\left(g_{ij} Q^i R^j\right)\\
+    &= P^k\left(\frac{\partial g_{ij}}{\partial x^k}Q^i R^j
+      + g_{ij} \frac{\partial Q^i}{\partial x^k} R^j 
+      + g_{ij} Q^i \frac{\partial R^j}{\partial x^k}\right)
+\end{align*}$$
+
+I don't think it's valid to think of $g$ evaluated at $x$, then paired with $Y_x$ and $Z_x$, then acted upon by $X_x$.  Because, as you can see from the above, the components of $g$ itself get differentiated.  The proper order is that the tensor $g$ gets paired with the vector fields $Y$ and $Z$, resulting in a function, which is acted upon by $X$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2286476/how-is-the-action-of-a-vector-field-on-a-function-defined/2286516#2286516) on Mathematics Stack Exchange, 2017-05-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

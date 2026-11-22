@@ -1,0 +1,88 @@
+---
+title: Evaluating $\int_C F\cdot dr$, where $F=ye^{x^2}\mathbf{i}+x^3\mathbf{j}$ and $C$ is the curve $r=\sin(t)\mathbf{i}+\sin(2t)\mathbf{j}$
+date: '2024-07-22'
+description: Here is a pure Green's theorem solution that handles the orientation a little differently, and shows how the integrals over the separate lobes of the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4949234
+se-link: https://math.stackexchange.com/questions/4948994/evaluating-int-c-f-cdot-dr-where-f-yex2-mathbfix3-mathbfj-and-c/4949234#4949234
+se-score: 1
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- vector-analysis
+- greens-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Evaluating $\int_C F\cdot dr$, where $F=ye^{x^2}\mathbf{i}+x^3\mathbf{j}$ and $C$ is the curve $r=\sin(t)\mathbf{i}+\sin(2t)\mathbf{j}$](https://math.stackexchange.com/questions/4948994/evaluating-int-c-f-cdot-dr-where-f-yex2-mathbfix3-mathbfj-and-c), asked by [Akash Arjun](https://math.stackexchange.com/users/659785/akash-arjun) on Mathematics Stack Exchange (2024-07-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Sketch the plane curve $C: r = \sin(t)\mathbf{i} + \sin(2t)\mathbf{j}$, $(0 \leq t \leq 2\pi)$.
+> Evaluate $\int_C F \cdot dr$, where $F = ye^{x^2} \mathbf{i} + x^3 \mathbf{j}$.
+>
+> My initial approach to this question was to use Green's theorem and thereby use symmetry to find the area of one region and multiply it by 4. However, that did not work as I got an integral too complicated to solve. So I checked the solution from the book which said the following:
+>
+> * * *
+> Book solution
+>
+> [![Graph of Curve][q-1]][q-1]
+>
+> $$\text{curl} \, 
+> F = (3x^2e^y -e^{x^2})\mathbf{k}$$
+>
+> For $R_1$, $N = k$; for $R_2$, $N = -k$. Since $R_1$ and $R_2$ are congruent regions with opposite orientations Since $R_1$ and $R_2$ are mirror images of each other in the y-axis, and since curl F
+> is an even function of x, we have 
+> $$\oint_{R_1} curl F \cdot N dS = -\oint_{R_2} curl F \cdot N dS$$
+> Hence,
+> $\oint_{C} curl F \cdot N dr = \oint_{R_1} curl F \cdot N dS + \oint_{R_2} curl F \cdot N dS= 0$
+>
+> * * *
+>
+> Now I have a few questions about this :
+>
+> 1. Why do they take a clockwise direction of the curve in Green's theorem we take the positively oriented curve and in this case, it would have been anticlockwise,
+> 2. Also, how do they  determine the normal is $\mathbf{k}$, $\mathbf{-k}$ in Regions $r_1$ and $r_2$
+> 3. Lastly I know Green's theorem tells us to take the double integral over $\frac{\partial{F_2}}{\partial{x}}- \frac{\partial{F_1}}{\partial{y}}$. Now, I understand how taking the curl of the 2d vector field and multiplying (dot product) it with the normal vectors gives us the same form but if the normal vector is not $(0,0,1)$ but $(0,0,-1)$ shouldn't we get the answer with the opposite sign.
+>
+> Thanks for reading and any kind of insight would be really good.
+>
+>
+>   [q-1]: JEZDqX2C.png
+:::
+
+Here is a pure Green's theorem solution that handles the orientation a little differently, and shows how the integrals over the separate lobes of the lemniscate cancel.
+
+Let $C_2$ be the image of $r(t)$ over the interval $0 \leq t \leq \pi$, and $C_1$ the image of $r(t)$ over the interval $\pi \leq t \leq 2\pi$. Then $C$ is the concatenation of $C_2$ and $C_1$: $C = C_2 + C_1$. Furthermore, $C_1$ encloses the region $R_1$ and, and $C_2$ encloses $R_2$. (I would have liked to have switched the names of $C_1$ and $C_2$, but then they would enclose $R_2$ and $R_1$, and that would be confusing!)
+
+When applying Green's theorem, the boundary of a region is oriented in the counterclockwise direction. The orientation on $\partial R_1$ is the same as that on $C_1$. But the orientation on $\partial R_2$ is _opposite_ the one on $C_2$.  So we can say $C_1 = \partial R_1$ and $C_2 = -\partial R_2$ as oriented curves.
+
+Now we have
+$$\begin{aligned}
+\int_C \left(ye^{x^2}\,dx + x^3 \,dy \right)
+&= \int_{C_2} \left(ye^{x^2}\,dx + x^3 \,dy \right)
+
+ + \int_{C_1} \left(ye^{x^2}\,dx + x^3 \,dy \right)
+\\&= \int_{-\partial R_2} \left(ye^{x^2}\,dx + x^3 \,dy \right)
+ + \int_{\partial R_1} \left(ye^{x^2}\,dx + x^3 \,dy \right)
+\\&= \int_{\partial R_1} \left(ye^{x^2}\,dx + x^3 \,dy \right)- \int_{\partial R_2} \left(ye^{x^2}\,dx + x^3 \,dy \right)
+\\&= \iint_{R_1} \left(3x^2-e^{x^2}\right)\,dA
+    -\iint_{R_2} \left(3x^2-e^{x^2}\right)\,dA 
+\end{aligned}$$
+We used Green's theorem on the last line. We are done with orientation issues and just have two double integrals over plane regions to consider.
+
+Now consider the symmetry. The $y$-axis is a mirror reflecting $R_1$ into $R_2$ and vice versa. Every point $(x,y)$ in $R_2$ corresponds to a point $(-x,y)$ in $R_1$, and furthermore, if $f(x)$ denotes the integrand, $f(-x) = f(x)$. Therefore, 
+$$\iint_{R_1} \left(3x^2-e^{x^2}\right)\,dA
+    =\iint_{R_2} \left(3x^2-e^{x^2}\right)\,dA$$
+and the difference is zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4948994/evaluating-int-c-f-cdot-dr-where-f-yex2-mathbfix3-mathbfj-and-c/4949234#4949234) on Mathematics Stack Exchange, 2024-07-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

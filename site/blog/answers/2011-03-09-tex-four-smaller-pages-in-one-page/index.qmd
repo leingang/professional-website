@@ -1,0 +1,35 @@
+---
+title: Four smaller pages in one page
+date: '2011-03-09'
+description: The most flexible solution to this problem that I know of is pgfpages. It's an interface to TeX's shipout algorithms. You can place as many pages of any size…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13072
+se-link: https://tex.stackexchange.com/questions/13055/four-smaller-pages-in-one-page/13072#13072
+se-score: 4
+se-accepted: false
+se-tags:
+- positioning
+- printing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Four smaller pages in one page](https://tex.stackexchange.com/questions/13055/four-smaller-pages-in-one-page), asked by [user1227](https://tex.stackexchange.com/users/1227/user1227) on TeX Stack Exchange (2011-03-09; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to style my document in such a way that the page is divided into four equal parts and then the text is printed in those pages: it is similar to `twocolumn` but I also want to have, say two rows. The reason is that I would like to cut the page into four smaller pieces, so it would be very convenient if LaTeX can do this.
+> Thank you in advance for help!
+:::
+
+The most flexible solution to this problem that I know of is `pgfpages`.  It's an interface to TeX's shipout algorithms.  You can place as many pages of any size you want on each page.  It's documented in the PGF manual, albeit lightly.  Have a look at the source files that come with `beamer` to see how it's used and also this very popular post from Guido Diepen's blog: [“Creating latex-beamer handouts with notes”](http://www.guidodiepen.nl/2009/07/creating-latex-beamer-handouts-with-notes/)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13055/four-smaller-pages-in-one-page/13072#13072) on TeX Stack Exchange, 2011-03-09. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

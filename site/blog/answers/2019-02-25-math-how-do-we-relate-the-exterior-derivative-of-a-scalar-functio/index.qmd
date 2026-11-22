@@ -1,0 +1,54 @@
+---
+title: How do we relate the exterior derivative of a scalar function to the "differential?"
+date: '2019-02-25'
+description: I don't think you want to think of $df$ as the dot product of $\nabla f$ with a vector of differentials $\left<dx,dy\right>$. Instead, think of $dx$ and $dy$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3125574
+se-link: https://math.stackexchange.com/questions/3123149/how-do-we-relate-the-exterior-derivative-of-a-scalar-function-to-the-differenti/3125574#3125574
+se-score: 2
+se-accepted: false
+se-tags:
+- manifolds
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do we relate the exterior derivative of a scalar function to the "differential?"](https://math.stackexchange.com/questions/3123149/how-do-we-relate-the-exterior-derivative-of-a-scalar-function-to-the-differenti), asked by [user49404](https://math.stackexchange.com/users/212682/user49404) on Mathematics Stack Exchange (2019-02-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So Munkres' *Analysis on Manifolds* says that the exterior derivative of a $0$-form (scalar function) $f$ is a $1$-form, 
+> $$df_x (v) = \nabla f \cdot v\tag{1}$$
+> which is just a functional, and the domain is that $v$ must be in the tangent space about $x$.
+>
+> But back in the regular multivariate calculus world, I see people define the "differential" of $f$ by $$df = \frac{df}{dx}dx + \frac{df}{dy}dy = \nabla f \cdot \left<dx,dy\right>\tag{2}$$
+>
+> I'm having trouble understanding the relationship between (1) and (2). In (1), $v$ can be any element of the tangent space, whereas in (2) it seems that people are restricting $v$ to be some kind of differential step...?
+>
+> Any thoughts?
+>
+> Thanks!
+:::
+
+I don't think you want to think of $df$ as the dot product of $\nabla f$ with a vector of differentials $\left<dx,dy\right>$.  Instead, think of $dx$ and $dy$ as the dual basis to the standard basis vectors $\mathbf{i}$ and $\mathbf{j}$.  In other words,
+$$\begin{align*}
+    dx(a\mathbf{i} + b\mathbf{j}) &= a \\
+    dy(a\mathbf{i} + b\mathbf{j}) &= b
+\end{align*}$$
+Then $df_{(x,y)}$ is a dual vector whose coefficients are $\frac{\partial f}{\partial x}(x,y)$ and $\frac{\partial f}{\partial y}(x,y)$.  It acts on vectors $v=a\mathbf{i} + b\mathbf{j}$ as
+$$df(v) = \left(\frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy\right)(a\mathbf{i} + b\mathbf{j}) = \frac{\partial f}{\partial x}a + \frac{\partial f}{\partial y}b$$
+So you see that this is really the same thing as $\nabla f \cdot v$.  
+
+The differential one is the more “natural” of the two because it uses dual vectors rather than the dot product.  On a general Riemannian manifold with inner product $g$, the gradient operator can be *defined* by the equation
+$$df(v) = g(\nabla f,v)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3123149/how-do-we-relate-the-exterior-derivative-of-a-scalar-function-to-the-differenti/3125574#3125574) on Mathematics Stack Exchange, 2019-02-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

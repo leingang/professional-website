@@ -1,0 +1,86 @@
+---
+title: Is there an alternative to LaTeX which isn't whitespace sensitive?
+date: '2013-05-10'
+description: The conversion of two consecutive newlines to a \par token comes from TeX's parser and so all formats of TeX (plain, LaTeX, ConTeXt) observe it too.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 113630
+se-link: https://tex.stackexchange.com/questions/113628/is-there-an-alternative-to-latex-which-isnt-whitespace-sensitive/113630#113630
+se-score: 17
+se-accepted: true
+se-tags:
+- spacing
+- line-breaking
+- paragraphs
+- code
+- sourcecode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there an alternative to LaTeX which isn't whitespace sensitive?](https://tex.stackexchange.com/questions/113628/is-there-an-alternative-to-latex-which-isnt-whitespace-sensitive), asked by [Joey Eremondi](https://tex.stackexchange.com/users/16965/joey-eremondi) on TeX Stack Exchange (2013-05-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have been using LaTeX for about a year now, and I quite like it.
+>
+> However, I like to space out my source code. In most languages, this doesn't cause an issue,
+> as extra newlines don't affect meaning.
+>
+> However, in LaTeX, two newlines in fact changes the document, by creating a new paragraph.
+>
+> I'm wondering, is there a way to turn this feature off in latex, and require me to specify new paragraphs manually? If not, is there an alternative to LaTeX (preferably similar i.e. still TeX based) which isn't so sensitive?
+:::
+
+The conversion of two consecutive newlines to a `\par` token comes from TeX's parser and so all formats of TeX (plain, LaTeX, ConTeXt) observe it too.  
+
+Note that `\par` gobbles all whitespace until the next non-whitespace token, so three or more consecutive newlines have the same effect as two: one new paragraph.  So if you want to have three blank lines before every `\section` and four before every `\chapter` you won't get multiple blank paragraphs.
+
+The usual way to avoid unintentional whitespace is to use comment characters (`%`).  A comment character ignores all whitespace until the end of the line.  So lines that start with comment characters insert no whitespace.
+
+```latex
+Look
+%
+%
+ma,
+%
+%
+no
+%
+new
+%
+paragraphs!
+```
+
+![sample code output][1]
+
+The only spaces in the above come from the newlines.  If you added comments at the end of the rest of the lines you would have no whitespace at all!
+
+```latex
+Look%
+%
+%
+ma,%
+%
+%
+no%
+%
+white%
+%
+spaces!
+```
+
+![sample code output][2]
+
+
+  [1]: mQWKX.png
+  [2]: ZTvRi.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/113628/is-there-an-alternative-to-latex-which-isnt-whitespace-sensitive/113630#113630) on TeX Stack Exchange, 2013-05-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,54 @@
+---
+title: Asymptotical equivalence vs zero difference between functions
+date: '2020-01-28'
+description: 'The conditions $\lim{x\to \infty} \frac{f(x)}{g(x)} = 1$ and $\lim{x\to\infty} (f(x) - g(x)) = 0$ are independent from each other:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3526112
+se-link: https://math.stackexchange.com/questions/3526084/asymptotical-equivalence-vs-zero-difference-between-functions/3526112#3526112
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- asymptotics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Asymptotical equivalence vs zero difference between functions](https://math.stackexchange.com/questions/3526084/asymptotical-equivalence-vs-zero-difference-between-functions), asked by [John](https://math.stackexchange.com/users/75829/john) on Mathematics Stack Exchange (2020-01-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have been solving some exercises in Apostol, where he proves the asymptotes of the hyperbola. And I got the following question. When proving that the hyperbola approaches the asymptotes I used the definition of the equivalence: 
+>
+> $$\lim\limits_{x \rightarrow \infty} \frac{f(x)}{g(x)} = 1$$
+>
+> The intuition tells me that since $\exists r$, s.t. $\lvert \frac{f(x)}{g(x)} - 1 \rvert < \epsilon, \forall x>r$, the functions are essentially equal. 
+>
+> However, Apostol shows the result differently, using the limit of the difference: 
+>
+> $$\lim\limits_{x \rightarrow \infty} f(x) - g(x) = 0$$
+>
+> What is the difference between the two approaches? I tried to prove the equivalence of statements, but I could not transform $\lvert \frac{f(x)}{g(x)} - 1 \rvert < \epsilon$ to $\lvert f(x)- g(x) \rvert < \epsilon$ easily. 
+>
+> Can someone show this equivalance, or tell me what is wrong? My intuition tells me that there is no difference between approaches, and pretty much each one shows that two functions are the same as x grows. 
+>
+> If these are different statements, why Apostol chose the latter approach?
+:::
+
+The conditions $\lim_{x\to \infty} \frac{f(x)}{g(x)} = 1$ and $\lim_{x\to\infty} (f(x) - g(x)) = 0$ are independent from each other:
+
+* [from my comment] Let $f(x) = x+1$ and $g(x) = x$.  then $\frac{f(x)}{g(x)} \to 1$ as $x \to\infty$.  but $f(x) - g(x) = 1$ for all $x$.
+* Let $f(x) = \frac{1}{x}$ and $g(x) = \frac{1}{2x}$.  Then $f(x) - g(x) \to 0$ as $x \to \infty$, but $\frac{f(x)}{g(x)} = 2$ for all $x$.
+
+As for why Apostol prefers the limit of the difference, consider the heuristic idea of asymptote: a line the curve becomes arbitrarily close to.  The “closeness” is measured in terms of distance in the plane, so we should be looking at the difference $|f(x)-g(x)|$.  Whereas, if you used the quotient definition, then every line $y= x+ c$ would fit the definition of “asymptote” for $y=x + \frac{1}{x}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3526084/asymptotical-equivalence-vs-zero-difference-between-functions/3526112#3526112) on Mathematics Stack Exchange, 2020-01-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

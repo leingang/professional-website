@@ -1,0 +1,33 @@
+---
+title: Is LaTeX outdated?
+date: '2011-03-29'
+description: One big factor in the future-proofness of TeX is its use in the academic environment. The apprenticeship of young scholars under established ones passes down…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14494
+se-link: https://tex.stackexchange.com/questions/14473/is-latex-outdated/14494#14494
+se-score: 16
+se-accepted: false
+se-tags:
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is LaTeX outdated?](https://tex.stackexchange.com/questions/14473/is-latex-outdated), asked by [alexyorke](https://tex.stackexchange.com/users/4515/alexyorke) on TeX Stack Exchange (2011-03-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Word processors are getting better these days, and I'm wondering if LaTeX was a solution in the past for a buggy Microsoft Word, and it programmatically gave you the options to do formatting.  I'm just starting out with LaTeX, and I find it quite good.  I don't want to be working or learning an outdated technology (if it is).
+:::
+
+One big factor in the future-proofness of TeX is its use in the academic environment.  The apprenticeship of young scholars under established ones passes down not just the scientific methods but the technological ones.  I realized this when emceeing a recent undergraduate mathematics research symposium. The talks in more biological fields were done in PowerPoint, but the ones in theoretical physics, combinatorics, knot theory, etc., were in LaTeX beamer.  Between talks I remarked that it was good to see TeX is safe for another generation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14473/is-latex-outdated/14494#14494) on TeX Stack Exchange, 2011-03-29. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

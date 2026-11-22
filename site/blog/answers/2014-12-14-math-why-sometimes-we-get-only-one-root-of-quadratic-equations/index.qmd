@@ -1,0 +1,50 @@
+---
+title: Why sometimes we get only one root of quadratic equations?
+date: '2014-12-14'
+description: The logic is that every positive number has two square roots, but zero only has one.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1068126
+se-link: https://math.stackexchange.com/questions/1068124/why-sometimes-we-get-only-one-root-of-quadratic-equations/1068126#1068126
+se-score: 8
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- quadratics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why sometimes we get only one root of quadratic equations?](https://math.stackexchange.com/questions/1068124/why-sometimes-we-get-only-one-root-of-quadratic-equations), asked by [Sufyan Naeem](https://math.stackexchange.com/users/199112/sufyan-naeem) on Mathematics Stack Exchange (2014-12-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What is logic behind getting (sometimes) only one root of a quadratic equation which satisfies the equation?
+:::
+
+The logic is that every positive number has two square roots, but zero only has one.
+
+The quadratic equation comes from the algebraic process known as *completing the square.*  Given an equation $ax^2 + bx + c = 0$, divide by $a$:
+$$x^2 + \frac{b}{a}x + \frac{c}{a} = 0$$
+Then add $\left(\frac{b}{2a}\right)^2$ and to both sides:
+$$x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 + \frac{c}{a} = \left(\frac{b}{2a}\right)^2$$
+Then subtract $\frac{c}{a}$:
+$$x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a}$$
+The left-hand side is a perfect square (by design).  We rearrange the right-hand side at the same time:
+$$\left(x + \frac{b}{2a}\right)^2 = \frac{b^2-4ac}{4a^2}$$
+
+At this point we would take the square root of both sides.  Since the denominator is positive, the number of roots depends only on the numerator.  If the numerator is positive, there are two roots.  If the number is negative, there are zero (real) roots.  If the numerator is *zero* there is only one.
+
+Now you see why $b^2-4ac$ is called the *discriminant* of a quadratic equation.  It detects the number of roots (or the type of roots if you allow complex ones).  To finish up, we have
+$$x+\frac{b}{2a} = \pm \frac{\sqrt{b^2-4ac}}{2a}$$
+so
+$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1068124/why-sometimes-we-get-only-one-root-of-quadratic-equations/1068126#1068126) on Mathematics Stack Exchange, 2014-12-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

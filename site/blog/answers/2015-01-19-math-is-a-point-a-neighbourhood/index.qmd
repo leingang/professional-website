@@ -1,0 +1,40 @@
+---
+title: Is a point a neighbourhood?
+date: '2015-01-19'
+description: 'If points are open, the topology is called discrete: every subset is open. Therefore, every function on a discrete topological space is continuous.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1110453
+se-link: https://math.stackexchange.com/questions/1110428/is-a-point-a-neighbourhood/1110453#1110453
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is a point a neighbourhood?](https://math.stackexchange.com/questions/1110428/is-a-point-a-neighbourhood), asked by [Quantum spaghettification](https://math.stackexchange.com/users/203397/quantum-spaghettification) on Mathematics Stack Exchange (2015-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In this question https://math.stackexchange.com/questions/474746/can-a-neighbourhood-of-a-point-be-an-singleton-set The answers indicate that a point is a neigbourhood. But would this therefore not mean that every (continuous) function is analytic? Since the definition of an analytic function is one where the taylor series converges to $f(x)$ for $x$ in a neighbourhood of $x_0$ (the point we are considering). But a taylor series around $x_0$ will always converge on to $f(x_0)$ (if done as we are assuming around the point $x_0$) at $x=x_0$. Since $x_0$ is itself a neighbourhood then every function should be analytic.
+:::
+
+If points are open, the topology is called *discrete*: every subset is open. Therefore, every function on a discrete topological space is continuous.  
+
+But that's about as far as you can go and still say something interesting.  If $Y$ is a normed linear space (you need that or some similar structure in order to take a derivative), then $f\colon X \to Y$ is differentiable in the sense that
+$$\lim_{x\to a} \frac{\Vert f(x) - f(a)\Vert}{d(x,a)}$$
+exists.  On the other hand, the numerator tends to zero, while the denominator is one whenever $x\neq a$.  Therefore this limit is 0 for any $f$.
+
+So yes, every function is differentiable, but every derivative is zero, which makes it not a very useful object.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1110428/is-a-point-a-neighbourhood/1110453#1110453) on Mathematics Stack Exchange, 2015-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

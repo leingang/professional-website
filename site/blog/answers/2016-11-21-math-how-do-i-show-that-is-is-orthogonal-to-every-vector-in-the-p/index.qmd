@@ -1,0 +1,67 @@
+---
+title: How do I show that is is orthogonal to every vector in the plane?
+date: '2016-11-21'
+description: If $\begin{pmatrix} x \\ y \\ z \end{pmatrix}$ is in the plane $\pi$, the only thing you know about it is that $x-2y+2z = 0$. What is the dot product of such a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2024723
+se-link: https://math.stackexchange.com/questions/2024695/how-do-i-show-that-is-is-orthogonal-to-every-vector-in-the-plane/2024723#2024723
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I show that is is orthogonal to every vector in the plane?](https://math.stackexchange.com/questions/2024695/how-do-i-show-that-is-is-orthogonal-to-every-vector-in-the-plane), asked by [bjp409](https://math.stackexchange.com/users/379981/bjp409) on Mathematics Stack Exchange (2016-11-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Looking for some help with the following question. I have found the answer to question a) Let $\pi$ be a plane with the equation $x-2y+2z=0$. I need to find the matrix $P$ such that $\mbox{proj}_{\pi}(u)=Pu$ for all $u$ in $\mathbb{R}^3$.
+>
+> $P =
+> \begin{pmatrix}
+> 1 - n_x n_x & -n_y n_x  & -n_z n_x \\
+> -n_x n_y & 1-n_y n_y  & -n_z n_y \\
+> -n_x n_z & -n_y n_z  & 1-n_z n_z \\
+> \end{pmatrix}
+> =
+> \begin{pmatrix}
+> 8/9 & 2/9  & -2/9 \\
+> 2/9 & 5/9  & 4/9 \\
+> -2/9 & 4/9  & 5/9 \\
+> \end{pmatrix}$
+>
+> However I am having some trouble with question b) Find the projection of $b=\begin{pmatrix}
+> 1
+> \\1
+> \\1
+> \end{pmatrix}$ onto the plane in (a) and verify that $b−Pb$ is orthogonal to
+> every vector in the plane. 
+>
+> My solution to b so far:  
+>
+> $Pb=\begin{pmatrix}
+> 8/9
+> \\11/9
+> \\7/9
+> \end{pmatrix}$ and when I calculated $b - Pb$ I got $\begin{pmatrix}
+> 1/9
+> \\-2/9
+> \\2/9
+> \end{pmatrix}$ but How do I show that is is orthogonal to every vector in the plane?
+:::
+
+If $\begin{pmatrix} x \\ y \\ z \end{pmatrix}$ is in the plane $\pi$, the only thing you know about it is that $x-2y+2z = 0$.  What is the dot product of such a vector with $\begin{pmatrix} 1/9 \\ -2/9 \\ 2/9 \end{pmatrix}$?
+
+From your comments, it seems like you assumed $(x,y,z) = (1,-2/9,2/9)$, but that vector is not in $\pi$.  Instead, you need a **generic** vector $(x,y,z)$.  You cannot assign values to those variables, but since the vector is in $\pi$ you do know that they satisfy the one equation $x-2y + 2z=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2024695/how-do-i-show-that-is-is-orthogonal-to-every-vector-in-the-plane/2024723#2024723) on Mathematics Stack Exchange, 2016-11-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

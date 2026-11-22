@@ -1,0 +1,67 @@
+---
+title: What is the meaning of the set $\mathbb R^{-n}$?
+date: '2018-04-04'
+description: The equation $\mathbb{R}^{a} \times \mathbb{R}^b = \mathbb{R}^{a+b}$ is only defined for nonnegative $a$ and $b$. That doesn't automatically extend to negative…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2722203
+se-link: https://math.stackexchange.com/questions/2722188/what-is-the-meaning-of-the-set-mathbb-r-n/2722203#2722203
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- analysis
+- functions
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the meaning of the set $\mathbb R^{-n}$?](https://math.stackexchange.com/questions/2722188/what-is-the-meaning-of-the-set-mathbb-r-n), asked by [JDoeDoe](https://math.stackexchange.com/users/342995/jdoedoe) on Mathematics Stack Exchange (2018-04-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In the system of ODEs below, I have (if I'm correct) the function 
+> $$f:\mathbb R^{n(k-1)}\times \mathbb R^n \times \mathbb R\rightarrow \mathbb R^n \tag 1$$
+>
+> From the cartesian product I can write $\mathbb R^{n(k-1)}=\mathbb R^{nk}\times \mathbb R^{-n}$. 
+>
+> But what is the meaning of the set $\mathbb R^{-n}$?
+>
+> Bakground:
+> >I found $f$ from the following system of ODEs:
+> $$\begin{align}
+> x_1^{(k)}&=f_1(t,x,x^{(1)},\dots, x^{(k-1)})\\
+> & \,\,\, \vdots \\
+> x_n^{(k)}&=f_n(t,x,x^{(1)},\dots, x^{(k-1)}),\\
+> \end{align}$$
+> where $x:\mathbb R\rightarrow \mathbb R^n$ and $t\in \mathbb R$.
+>
+> *My work:*
+>
+> Because $x:\mathbb R\rightarrow \mathbb R^n$, I also have $x^{(1)},\dots, x^{(k-1)}, x^{(k)}:\mathbb R \rightarrow \mathbb R^n$.
+>
+> And for each component $f_i$, $i=1, \dots, n$, I have:
+>
+> $x^{(1)},\dots, x^{(k-1)}$ are $(k-1 )$ functions with $n$ components each, so $n(k-1)$ and therefore $\mathbb R^{n(k-1)}$.
+>
+> $x$ is a function with $n$ components, so $\mathbb R^n$ and $t$ is a scalar, $t\in \mathbb R$. 
+>
+> Thus,
+> $$f:\mathbb R^{n(k-1)}\times \mathbb R^n \times \mathbb R\rightarrow \mathbb R^n$$
+>
+> Is the domain of the function correct? If so, what is the meaning of $\mathbb R^{-n}$?
+:::
+
+The equation $\mathbb{R}^{a} \times \mathbb{R}^b = \mathbb{R}^{a+b}$ is only defined for nonnegative $a$ and $b$.  That doesn't automatically extend to negative “exponents” in a meaningful way.
+
+If there were such a set $\mathbb{R}^{-n}$, then $\mathbb{R}^n \times \mathbb{R}^{-n}$ would have to be $\mathbb{R}^0$.  But $\mathbb{R}^n$ is infinite, and $\mathbb{R}^0$ has cardinality one, making the equation impossible.  For if $\mathbb{R}^{-n}$ is nonempty, then $\mathbb{R}^n \times \mathbb{R}^{-n}$ is infinite, and if $\mathbb{R}^n$ is empty, then $\mathbb{R}^n \times \mathbb{R}^{-n}$ is empty.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2722188/what-is-the-meaning-of-the-set-mathbb-r-n/2722203#2722203) on Mathematics Stack Exchange, 2018-04-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

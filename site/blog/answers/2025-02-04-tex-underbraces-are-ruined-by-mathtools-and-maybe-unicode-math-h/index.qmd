@@ -1,0 +1,103 @@
+---
+title: Underbraces are ruined by mathtools (and maybe unicode-math?). How do I keep both?
+date: '2025-02-04'
+description: 'Google brought me here and Lars'' comment helped me solve the problem. Just so that the question has an answer:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 736498
+se-link: https://tex.stackexchange.com/questions/552864/underbraces-are-ruined-by-mathtools-and-maybe-unicode-math-how-do-i-keep-bot/736498#736498
+se-score: 4
+se-accepted: true
+se-tags:
+- unicode-math
+- mathtools
+- underbrace
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Underbraces are ruined by mathtools (and maybe unicode-math?). How do I keep both?](https://tex.stackexchange.com/questions/552864/underbraces-are-ruined-by-mathtools-and-maybe-unicode-math-how-do-i-keep-bot), asked by [Iris](https://tex.stackexchange.com/users/121289/iris) on TeX Stack Exchange (2020-07-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In writing my thesis (using XeLaTeX) I use multiple math-related packages, all for different reasons. Since introducing unicode-math and mathtools, the underbraces I applied earlier are ruined. I included unicode-math to get proper bold math symbols (I'm using `\symbfit{}`) and I included mathtools for the `\vdotswithin{}` command. One example of a ruined underbrace in my thesis is:
+>
+> [![Underbrace in thesis report][q-1]][q-1]
+>
+> All other underbraces look more or less like this. I created the same equation in a MWE. I realise the MWE could be even more minimal by writing a more minimal equation, but I think it is minimal and clear enough to illustrate the problem and in this way, the equation is the same as in my thesis. I left in the physics package and the `\pqty{}` command to verify that this is not the cause of my problem:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{amsmath}
+> \usepackage{physics}
+> \usepackage{unicode-math}
+> \usepackage{mathtools}
+>
+> \newcommand{\bi}[1]{\symbfit{#1}}
+>
+> \begin{document}
+> $\underbrace{q\pqty{\bi{x}}}_{\text{R-density}}\qquad\qquad\underbrace{p\qty(\bi{x},\bi{y})}_{\text{G-density}} = \underbrace{p\pqty{\bi{y}|\bi{x}}}_{\text{likelihood}}\underbrace{p\pqty{\bi{x}}}_{\text{prior}}$
+> \end{document}
+> ```
+>
+> In both the thesis and the MWE, I get these warnings:
+>
+> > Using \overbracket and \underbracket from(unicode-math) `mathtools'
+> > package.
+> > 
+> > I'm going to overwrite the following commands(unicode-math) from the
+> > `mathtools' package:(unicode-math)(unicode-math) \dblcolon, \coloneqq,
+> > \Coloneqq, \eqqcolon.
+>
+> When I don't include the mathtools package, I don't get the warning. In the MWE, the underbraces look fine in both cases, despite the warning:
+>
+> [![Underbraces in MWE][q-2]][q-2]
+>
+> I've also excluded mathtools in my thesis, which gives me back the underbraces. However, I then cannot use `\vdotswithin{}` in an entirely different part of my thesis. Is there a solution that allows me to use the underbraces, bold math from unicode-math and `\vdotswithin{}` from mathtools? Or another solution that gives me these (or similar results)?
+>
+> EDIT: After some comments I realised my MWE doesn't use the .cls file that my thesis report does. When I change the documentclass in the MWE, I can reproduce the problem (like in the first image). Not including the mathtools package then again `solves' the problem. The .cls for my thesis uses the Cambria font for math.. I don't know if the font is the problem, since the underbraces work fine without the mathtools package.
+>
+>   [q-1]: ObYM3.png
+>   [q-2]: oAoWj.png
+:::
+
+Google brought me here and Lars' comment helped me solve the problem. Just so that the question has an answer:
+
+1. Make sure the `mathtools` package is loaded before `unicode-math`. Usually that means putting the `\usepackage{mathtools}` line in the preamble before `\usepackage{unicode-math}` or before any package that requires it. The log file will tell you when one package loads another. If `unicode-math` is loaded by your *class* file, you can put `\RequirePackage{mathtools}` before `\documentclass{…}` and the packages will still be loaded in the right order.
+2. That's it. It doesn't seem the saving and reloading of `\underbrace` is necessary (now).
+
+Here is a minimal example showing the problem.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{mathtools}
+
+\newcommand{\bi}[1]{\symbfit{#1}}
+
+\begin{document}
+$\underbrace{q\pqty{\bi{x}}}_{\text{R-density}}\qquad\qquad\underbrace{p\qty(\bi{x},\bi{y})}_{\text{G-density}} = \underbrace{p\pqty{\bi{y}|\bi{x}}}_{\text{likelihood}}\underbrace{p\pqty{\bi{x}}}_{\text{prior}}$
+\end{document
+```
+
+In this version, you get the ruined underbraces as in the OP's image. If you swap the loading of the two packages, everything works fine. You do get one warning:
+
+```
+Package unicode-math Warning: Using \overbracket and \underbracket from `mathtools' package. Use \Uoverbracket and \Uunderbracket for original `unicode-math' definition.
+```
+
+It seems that similarly, `\underbrace` isn't disturbed by `unicode-math`. 
+
+If you use `unicode-math` *without `\setmathfont`*, it also works fine in either order. And I believe that's because the default math font (Latin Modern Math) isn't loaded until `\begin{document}`. In that situation, it does happen after `mathtools` is loaded.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/552864/underbraces-are-ruined-by-mathtools-and-maybe-unicode-math-how-do-i-keep-bot/736498#736498) on TeX Stack Exchange, 2025-02-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

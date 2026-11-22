@@ -1,0 +1,43 @@
+---
+title: What are basis function and how do we use them to find matrix representation of a group?
+date: '2016-10-19'
+description: Physicists talk about math in a slightly different way than mathematicians, so I sympathize with your confusion. I think what's going on here is that the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1975760
+se-link: https://math.stackexchange.com/questions/1975752/what-are-basis-function-and-how-do-we-use-them-to-find-matrix-representation-of/1975760#1975760
+se-score: 3
+se-accepted: false
+se-tags:
+- representation-theory
+- physics
+- characters
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What are basis function and how do we use them to find matrix representation of a group?](https://math.stackexchange.com/questions/1975752/what-are-basis-function-and-how-do-we-use-them-to-find-matrix-representation-of), asked by [Math Lover](https://math.stackexchange.com/users/366404/math-lover) on Mathematics Stack Exchange (2016-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In a lecture note(written for **physics** graduate student) i found the following exercise:
+>
+> Recall that $V=R^2$ is a $2$ dimensional representation of $D_3$(symmetries of triangle),hence $V \otimes V$ is also a representation of $D_3$,in particular consider the completely symmetric tensor product of $k$ copies of $V$.Each vector in $V$ is labeled by the coordinates $(x_1,x_2)$ of position vectors.
+>
+> >For $k=1$ we can take the the basis functions to be $x_1,x_2$ then for $k=2$ one can take the three basis functions $\phi_1=x_1^2,\phi_2=x_2^2,\phi_3= \sqrt2 x_1x_2$.Use $\phi_i$ to find $3$ dimensional matrix representation of $D_3$.
+>
+> In my Representation theory course (for pure maths students)if i recall correctly i never heard about basis functions so i am wondering what are these basis functions and how do we use them to construct a matrix representation?
+:::
+
+Physicists talk about math in a slightly different way than mathematicians, so I sympathize with your confusion.  I think what's going on here is that the original representation $V$ is a vector space of functions.  You're saying $V=\mathbb{R}^2$, but an isomorphic version would be the *dual* of $\mathbb{R}^2$, or linear functions on $\mathbb{R}^2$.  It's spanned by the coordinate functions $x_1$ and $x_2$.  The symmetric tensor powers of $V^*$ are polynomials in two variables.
+
+So the author is using *basis functions* to mashup these structures of $S^kV^*$.  The use of *basis* comes from its nature as a vector space; the use of *function* because they are in in fact functions on $\mathbb{R}^2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1975752/what-are-basis-function-and-how-do-we-use-them-to-find-matrix-representation-of/1975760#1975760) on Mathematics Stack Exchange, 2016-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

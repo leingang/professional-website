@@ -1,0 +1,64 @@
+---
+title: Area under curve, infinite rectangles
+date: '2017-02-22'
+description: Following up on my comment, you need $$Rn = \sum{i=1}^n \left(1 + \frac{2i}{n}\right)^2 \cdot \frac{2}{n}$$ Expand the square and collect the sums of powers…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2156685
+se-link: https://math.stackexchange.com/questions/2156646/area-under-curve-infinite-rectangles/2156685#2156685
+se-score: 1
+se-accepted: true
+se-tags:
+- riemann-sum
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area under curve, infinite rectangles](https://math.stackexchange.com/questions/2156646/area-under-curve-infinite-rectangles), asked by [SmhConfused](https://math.stackexchange.com/users/396212/smhconfused) on Mathematics Stack Exchange (2017-02-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to calculate the area under the curve of $y=x^2$ between $x=1$ and $x = 3$ and above $y=0$ using the sum of infinitely many rectangles.
+>
+> So far I've tackled it by first defining the width of every rectangle to be $\Delta x = \frac{3-1}{n} = \frac{2}{n}$.
+>
+> After that I proceeded by stating that the area of every rectangle under the curve combined is
+>
+> $\sum_{i=1}^n (\frac{2i}{n})^2*(\frac{2}{n})$
+>
+> I'm told that $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$ which I then used in my calculations:
+>
+> $\sum_{i=1}^n (\frac{2}{n})^2*i^2*(\frac{2}{n}) = \frac{8}{n^3}*(\frac{n(n+1)(2n+1)}{6})$
+>
+> Simplifying to:
+>
+> $8 * \frac{(n+1)(2n+1)}{6n^2} = \frac{8n^2+12n+4}{3n^2}$
+>
+> Proceeding by calculating the limit as $x$ approaches infinity:
+>
+> $\lim _{x\to \infty }\left(\frac{\left(8n^2+12n+4\right)}{3n^2}\right) = \frac{8}{3}$.
+>
+> However, the answer should be $\frac{26}{3}$ which is indeed very close to what I have, but I have no idea where the problem lies. Any ideas?
+:::
+
+Following up on my comment, you need
+$$R_n = \sum_{i=1}^n \left(1 + \frac{2i}{n}\right)^2 \cdot \frac{2}{n}$$
+Expand the square and collect the sums of powers:
+$$\begin{align*}
+   R_n &= \sum_{i=1}^n \left(1 + \frac{4i}{n} + \frac{4i^2}{n^2}\right)\cdot \frac{2}{n} \\
+       &= \frac{2}{n} \sum_{i=1}^n 1
+         + \frac{8}{n^2} \sum_{i=1}^n i
+         + \frac{8}{n^3} \sum_{i=1}^n i^2 \\
+       &= \frac{2}{n} \cdot n + \frac{8}{n^2} \cdot \frac{n(n+1)}{2} 
+            + \frac{8}{n^3} \frac{n(n+1)(2n+1)}{6}
+\end{align*}$$
+As $n\to \infty$, this tends to $2 + 4 + \frac{8}{3} = \frac{26}{3}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2156646/area-under-curve-infinite-rectangles/2156685#2156685) on Mathematics Stack Exchange, 2017-02-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

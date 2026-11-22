@@ -1,0 +1,43 @@
+---
+title: How to apply the distributive law on this logic statement?
+date: '2022-10-01'
+description: 'You may recognize the identity if we write it this way: $$[\color{blue}{(\lnot p)\land} ((\lnot q) \lor q))] \equiv [(\color{blue}{(\lnot p )\land}(\lnot…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4543216
+se-link: https://math.stackexchange.com/questions/4543195/how-to-apply-the-distributive-law-on-this-logic-statement/4543216#4543216
+se-score: 1
+se-accepted: true
+se-tags:
+- logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to apply the distributive law on this logic statement?](https://math.stackexchange.com/questions/4543195/how-to-apply-the-distributive-law-on-this-logic-statement), asked by [InnerSpeaker](https://math.stackexchange.com/users/1054964/innerspeaker) on Mathematics Stack Exchange (2022-10-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am working through simplifying statements and am stuck on this example. 
+>
+> $[((\lnot p )\land(\lnot q))\lor((\lnot p)\land q)] \equiv [(\lnot p)\land ((\lnot q) \lor q))]$
+>
+> Going from the left to the right, the author claimed to use the distributive law. Could someone please explain or write out how did they do that? 
+>
+> I tried distributing the $[((\lnot p )\land(\lnot q))$ into the $((\lnot p)\land q)$ but did not get anywhere. 
+> Thank you!
+:::
+
+You may recognize the identity if we write it this way:
+$$[\color{blue}{(\lnot p)\land} ((\lnot q) \lor q))] 
+\equiv [(\color{blue}{(\lnot p )\land}(\lnot q))\lor(\color{blue}{(\lnot p)\land}q)]$$
+Applied in the direction you have it, you might think of it as “factoring out” rather than “distributing over.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4543195/how-to-apply-the-distributive-law-on-this-logic-statement/4543216#4543216) on Mathematics Stack Exchange, 2022-10-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

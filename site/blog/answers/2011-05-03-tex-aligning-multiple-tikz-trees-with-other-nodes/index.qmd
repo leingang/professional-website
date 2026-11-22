@@ -1,0 +1,126 @@
+---
+title: Aligning multiple TikZ trees with other nodes
+date: '2011-05-03'
+description: 'There are two problems: one is that none of your trees is placed a particular coordinate. So they are all rooted at (0,0) making them overlap. The other is…'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17259
+se-link: https://tex.stackexchange.com/questions/17256/aligning-multiple-tikz-trees-with-other-nodes/17259#17259
+se-score: 3
+se-accepted: true
+se-tags:
+- tikz-pgf
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Aligning multiple TikZ trees with other nodes](https://tex.stackexchange.com/questions/17256/aligning-multiple-tikz-trees-with-other-nodes), asked by [Ludovic Kuty](https://tex.stackexchange.com/users/4735/ludovic-kuty) on TeX Stack Exchange (2011-05-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This question is directly related to https://tex.stackexchange.com/q/16491/4735 that I asked some time ago. By the time I asked the question I didn't realize that aligning multiple trees was not the same as aligning one tree. Indeed, the answer proposed by Dmitry F. Volosnykh demands that the tree is created first, before the other nodes it has to be aligned with. Thus, that question should have been named "Aligning one TikZ tree with other nodes".
+>
+> However, when you have to align multiple trees, they can't be in first position all together at the same time. Some have to appear after others.
+>
+> I have completed the example given in the previous question to be the full example I need to solve and to expose the problem I am talking about. Note that the three fitting nodes used to contain the three trees are at the right positions. But all the trees are at the same coordinates and are superimposed on the "transformation" box.
+>
+> Here is the graphic I get: ![enter image description here][q-1]
+>
+> Of course, I would like to be able to position them in their respective box.
+>
+> Here is the code:
+>
+> 	\documentclass{article}
+>
+> 	\usepackage{tikz,nicefrac,amsmath,pifont,graphicx}
+> 	\usetikzlibrary{arrows,snakes,backgrounds,patterns,matrix,shapes,fit,calc,positioning,trees}
+>
+> 	\usepackage[graphics,tightpage,active]{preview}
+> 	\PreviewEnvironment{tikzpicture}
+> 	\newlength{\imagewidth}
+> 	\newlength{\imagescale}
+>
+> 	\graphicspath{{/Users/ludo/Documents/cours/xml/slides/gfx/}{/Users/ludo/Documents/cours/xml/slides/src/gfx/}}
+>
+> 	\begin{document}
+>
+> 	\begin{tikzpicture}[
+> 		 >=stealth', semithick, node distance=1cm, level distance=7mm, level/.style={sibling distance=10mm/#1},
+> 		block/.style = {draw, rectangle, rounded corners, minimum height=1cm},
+> 		every node/.style={circle, draw, fill=none, anchor=north}
+> 	]
+> 	\node  [block] (transfo) {\parbox{2.5cm}{\centering transformation}};
+>
+> 	\node (source tree root) {}
+> 		child { node {} }
+> 		child { node {}
+> 			child { node {} }
+> 			child { node {} }
+> 		};
+> 	\node (source tree) [draw, rectangle, fit=(source tree root) (source tree root-1) (source tree root-2-2), left=of transfo] {};
+>
+> 	\node [block] (source document) [left=of source tree] {\parbox{2cm}{\centering source document}};
+>
+> 	\node (stylesheet tree root) {}
+> 		child { node {}
+> 			child { node {} }
+> 			child { node {} }
+> 		}
+> 		child { node {}
+> 			child { node {} }
+> 			child { node {} }
+> 		};
+> 	\node (stylesheet tree) [draw, rectangle, fit=(stylesheet tree root) (stylesheet tree root-1-1) (stylesheet tree root-2-2), above=of transfo] {};
+>
+> 	\node [block] (stylesheet document) [above=of stylesheet tree] {stylesheet};
+>
+> 	\node (result tree root) {}
+> 		child { node {}
+> 			child { node {} }
+> 			child { node {} }
+> 		}
+> 		child { node {}
+> 			child { node {} }
+> 			child { node {} }
+> 		};
+> 	\node (result tree) [draw, rectangle, fit=(result tree root) (result tree root-1-1) (result tree root-2-2), right=of transfo] {};
+>
+> 	\node [block] (result document) [right=of result tree] {\parbox{2cm}{\centering result document}};
+>
+> 	\begin{scope}[shorten >=1pt]
+> 	\draw [->] (source document) edge (source tree);
+> 	\draw [->] (source tree) edge (transfo);
+> 	\draw [->] (transfo) edge (result tree);
+> 	\draw [->] (result tree) edge (result document);
+> 	\draw [->] (stylesheet document) edge (stylesheet tree);
+> 	\draw [->] (stylesheet tree) edge (transfo);
+> 	\end{scope}
+> 	\end{tikzpicture}
+>
+>
+> 	\end{document}
+>
+>
+>
+>   [q-1]: 1ZpSG.png
+:::
+
+There are two problems: one is that none of your trees is placed a particular coordinate.  So they are all rooted at (0,0) making them overlap.   The other is that the positioning options (`left=of transfo` etc.) for your tree-bounding nodes override the fitting options for them.
+
+I can think of two ways out: 
+
+  1. Put the tree code inside a `\tikz{}` command inside the tree-bounding nodes like `source tree`.  You have to pass the options to the larger `tikzpicture` environment that you want to persist.  Named `\tikzstyle`s might help here.  Then use only the positioning options for the tree-bounding nodes.
+
+  2. Place the roots of the trees with `\node (source tree root) at (someplace)`, then use only the fitting options for the tree-bounding nodes.  
+
+I couldn't decide which approach you ought to take.  I think the former because it helps with the positioning of the tree-bounding nodes.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17256/aligning-multiple-tikz-trees-with-other-nodes/17259#17259) on TeX Stack Exchange, 2011-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

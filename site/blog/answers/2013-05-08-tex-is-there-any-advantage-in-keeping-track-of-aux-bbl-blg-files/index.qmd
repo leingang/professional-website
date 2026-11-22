@@ -1,0 +1,64 @@
+---
+title: Is there any advantage in keeping track of aux bbl blg files in a git repository
+date: '2013-05-08'
+description: The files that you are talking about (.log, .aux., .bbl., .blg, .toc, etc.) are created by LaTeX (or BibTeX, or any other auxiliary program) “on the fly.” They…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 113137
+se-link: https://tex.stackexchange.com/questions/113124/is-there-any-advantage-in-keeping-track-of-aux-bbl-blg-files-in-a-git-repository/113137#113137
+se-score: 29
+se-accepted: true
+se-tags:
+- auxiliary-files
+- git
+- archiving
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there any advantage in keeping track of aux bbl blg files in a git repository](https://tex.stackexchange.com/questions/113124/is-there-any-advantage-in-keeping-track-of-aux-bbl-blg-files-in-a-git-repository), asked by [antmw1361](https://tex.stackexchange.com/users/22790/antmw1361) on TeX Stack Exchange (2013-05-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> As question says, I am just interested to know the pros and cons of keeping track of auxiliary files of a LaTeX project in every commit of git repository.
+:::
+
+The files that you are talking about (`.log`, `.aux`., `.bbl`., `.blg`, `.toc`, etc.) are created by LaTeX (or BibTeX, or any other auxiliary program) “on the fly.”  They are usually dependent on the source `.tex` file.  Since there's no information in those files that's unique to them (i.e., that can't be recovered from the source `.tex` file) and you would never edit them manually, there's no advantage to versioning them.  At best, you commit a file that can be replicated byte-for-byte from another process, which is redundant.  At worst, as mbork points out, if you commit the `.tex` file without compiling (and producing new auxiliary files), you are committing out-of-date information.
+
+On the contrary, I would exclude those files from version control.  In git you can do this by creating a file `.gitignore` in the repository directory (`.git`).  In that file put patterns of the auxiliary files you want to ignore.  Here is a list that I typically use:
+
+
+```latex
+# TeX, snapshot, and latexmk generated files
+*.aux
+*.dep
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+*.log
+*.fls
+```
+
+(Habi provides a nice link to an [expansive `.gitignore` file on github][1].) You can also put these patterns in the git directory within the repository `.git/info/exclude`.  I have a git template that has such an `exclude` file in it, then when I want to gitify a new document I run
+
+```latex
+$ git init --template=/path/to/template
+```
+
+and I'm done.
+
+You can also do this globally.  See [Ignoring Files][2] from GitHub Help.
+
+
+  [1]: https://github.com/github/gitignore/blob/master/TeX.gitignore
+  [2]: https://help.github.com/articles/ignoring-files
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/113124/is-there-any-advantage-in-keeping-track-of-aux-bbl-blg-files-in-a-git-repository/113137#113137) on TeX Stack Exchange, 2013-05-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

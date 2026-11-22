@@ -1,0 +1,51 @@
+---
+title: 'Tikz Diagram: Block Diagram'
+date: '2014-12-03'
+description: This doesn't look too complicated. There might even be some examples in the TikZ manual to get you started.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 215233
+se-link: https://tex.stackexchange.com/questions/215229/tikz-diagram-block-diagram/215233#215233
+se-score: 2
+se-accepted: true
+se-tags:
+- tikz-pgf
+- diagrams
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikz Diagram: Block Diagram](https://tex.stackexchange.com/questions/215229/tikz-diagram-block-diagram), asked by [user67382](https://tex.stackexchange.com/users/67382/user67382) on TeX Stack Exchange (2014-12-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm looking to create the following block diagram in Tikz. Any suggestions? Tips?
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: Tbz1K.jpg
+:::
+
+This doesn't look *too* complicated.  There might even be some examples in the TikZ manual to get you started.  
+
+Here's how I might go about it:
+
+ 1. Create `\node`s for the rectangles and rounded rectangles.  Also for the text in the right column, just with no rectangles.  Give them names so you can draw the arrows between them.  Use the `positioning` TikZ library to position the nodes relative to each other.  You might also try the `matrix` library to create and space out the blocks of nodes that look similar.
+
+ 2. Use the `fit` library TikZ library to draw the dotted line around the four nodes at the top left.
+
+ 2. You might need to create `\coordinate` nodes to mark the intersections and turning points of your arrows.
+
+ 3. Draw the arrows with `\draw[->]` paths.  You might cut down on the number of intermediate coordinates with `-|` and `|-` instead of `--`.  These will make L-shaped paths instead of straight line paths. 
+
+ 4. Don't worry about styling until the end.  Create styles with `\tikzset` so that you can alter and update styles quickly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/215229/tikz-diagram-block-diagram/215233#215233) on TeX Stack Exchange, 2014-12-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

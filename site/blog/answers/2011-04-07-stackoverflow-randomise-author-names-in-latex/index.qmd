@@ -1,0 +1,40 @@
+---
+title: Randomise Author names in Latex
+date: '2011-04-07'
+description: The pgfmath package allows you to create some list data structures. Then you can implement a knuth shuffle on them. See this post on pgf-users from 2009.
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 5582945
+se-link: https://stackoverflow.com/questions/5582566/randomise-author-names-in-latex/5582945#5582945
+se-score: 0
+se-accepted: false
+se-tags:
+- random
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Randomise Author names in Latex](https://stackoverflow.com/questions/5582566/randomise-author-names-in-latex), asked by [Joe](https://stackoverflow.com/users/170243/joe) on Stack Overflow (2011-04-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I use latex to write papers and am often annoyed by the process of working out the order that names should appear in the list of authors - it causes too may arguments early on, just when you don't need them. 
+>
+> I'd like to know if there is a latex feature/snippit, they will let me enter the authors and their details, but randomise the order every time the latex is compiled. So my name might be first on one version, and then when I recompile, it would be someone else's name first.  
+>
+> how would I start?
+:::
+
+The `pgfmath` package allows you to create some list data structures.  Then you can implement a knuth shuffle on them.  See [this post on pgf-users from 2009](http://old.nabble.com/Random-permutation-of-a-list-td23374057.html).
+
+`pgfmath` is part of `tikz` but works independently of it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/5582566/randomise-author-names-in-latex/5582945#5582945) on Stack Overflow, 2011-04-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

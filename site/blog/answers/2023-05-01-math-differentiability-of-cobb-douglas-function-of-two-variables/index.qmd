@@ -1,0 +1,64 @@
+---
+title: Differentiability of Cobb-Douglas function of two variables
+date: '2023-05-01'
+description: You are correct that $\lim{t\to0} t^{\alpha + \beta - 1}$ does not exist if $\alpha + \beta < 1$ (the limit is $+\infty$). So $f$ is not differentiable if…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4689884
+se-link: https://math.stackexchange.com/questions/4689879/differentiability-of-cobb-douglas-function-of-two-variables/4689884#4689884
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- economics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiability of Cobb-Douglas function of two variables](https://math.stackexchange.com/questions/4689879/differentiability-of-cobb-douglas-function-of-two-variables), asked by [Pekisch](https://math.stackexchange.com/users/735184/pekisch) on Mathematics Stack Exchange (2023-05-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to see whether the Cobb-Douglas function $f(x,y) = x^\alpha y^\beta$ is differentiable at $(x,y)=(0,0)$. Both partial derivatives are zero $f^\prime_x(0,0) = f^\prime_y(0,0)= 0$. I need to check if the following limit is zero
+> $$\lim_{(x,y)\rightarrow (0,0)} \frac{f(x,y)-f(0,0) - f^\prime_x(0,0) x - f^\prime_y(0,0) y}{\sqrt{x^2 + y^2}} = 0$$
+> then the function is differentiable at the origin.
+>
+> Replacing I get
+> $$\lim_{(x,y)\rightarrow (0,0)} \frac{x^\alpha y^\beta}{\sqrt{x^2 + y^2}}$$
+>
+> If $g(x,y) = \frac{x^\alpha y^\beta}{\sqrt{x^2 + y^2}}$ then
+> $$\lim_{t \rightarrow 0} g(t,0)= \lim_{t \rightarrow 0} \frac{0}{t} = 0$$
+> But
+> $$\lim_{t \rightarrow 0} g(t,t)= \frac{1}{\sqrt{2}} \lim_{t \rightarrow 0} t^{\alpha+\beta-1}$$
+>
+> And this last expression is not defined for $\alpha+\beta=1$, and is not equal to zero for $\alpha+\beta<1$
+>
+> Is this okay? How about $\alpha+\beta>1$? Can someone help me prove that it is not differentiable?
+:::
+
+You are correct that $\lim_{t\to0} t^{\alpha + \beta - 1}$ does not exist if $\alpha + \beta < 1$ (the limit is $+\infty$). So $f$ is not differentiable if $\alpha + \beta < 1$.
+
+You are not correct in the case that $\alpha+\beta = 1$. In this case $t^{\alpha + \beta - 1} = 1$, so the limit exists. But it's not equal to zero, which means $f$ is not differentiable at $(0,0)$.
+
+Now if $\alpha + \beta > 1$, then $\lim_{t\to 0} \frac{1}{\sqrt{2}} t^{\alpha + \beta - 1} = 0$. That isn't enough to say that $\lim_{(x,y) \to (0,0)} \frac{x^\alpha y^\beta}{\sqrt{x^2+y^2}} = 0$, however.
+
+If $\alpha + \beta > 1$, we can prove that $f$ is differentiable at $(0,0)$ with the squeeze theorem. Note that for all real $x$ and $y$,
+$$0 \leq |x| \leq \sqrt{x^2+y^2} \qquad \text{and} \qquad 0 \leq |y| \leq \sqrt{x^2+y^2}$$
+This means that if $(x,y) \neq (0,0)$,
+$$\begin{aligned}
+    0 &\leq \left| \frac{x^\alpha y^\beta}{\sqrt{x^2+y^2}} \right|
+    = \frac{|x|^\alpha |y|^\beta}{\sqrt{x^2+y^2}}
+    \\&\leq \frac{(x^2+y^2)^{\alpha/2}(x^2+y^2)^{\beta/2}}{(x^2+y^2)^{1/2}}
+    \\&= (x^2+y^2)^{(\alpha + \beta -1)/2}
+\end{aligned}$$
+Since $\lim_{(x,y) \to (0,0)} (x^2+y^2)^{(\alpha + \beta -1)/2} = 0$, the term in between must also tend to zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4689879/differentiability-of-cobb-douglas-function-of-two-variables/4689884#4689884) on Mathematics Stack Exchange, 2023-05-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

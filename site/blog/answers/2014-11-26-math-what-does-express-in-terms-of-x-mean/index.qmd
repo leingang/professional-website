@@ -1,0 +1,51 @@
+---
+title: What does 'express in terms of $x$' mean?
+date: '2014-11-26'
+description: Good question. This is a phrase mathematicians and mathematics teachers use a lot, and it has a specific meaning that isn't entirely clear to the learner.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1039558
+se-link: https://math.stackexchange.com/questions/1039488/what-does-express-in-terms-of-x-mean/1039558#1039558
+se-score: 6
+se-accepted: false
+se-tags:
+- functions
+- quadratics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What does 'express in terms of $x$' mean?](https://math.stackexchange.com/questions/1039488/what-does-express-in-terms-of-x-mean), asked by [user36278](https://math.stackexchange.com/users/195607/user36278) on Mathematics Stack Exchange (2014-11-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For the following question : 
+>
+> $f(x) = 2x^2 + 4x$
+>
+> It asks me to express the following in terms of $x$:
+>
+> $f(-2x)$
+>
+>
+> What does the question mean by this?
+>
+>  - Does it mean make $x$ the subject?
+:::
+
+Good question.  This is a phrase mathematicians and mathematics teachers use a lot, and it has a specific meaning that isn't entirely clear to the learner.
+
+Idiomatically speaking, to write a function “in terms of” a given variable or variables means to write an algebraic expression using only that variable or variables.
+
+So for instance, given an equation $x+2y-3z = 0$, we can solve for $z$ in terms of $x$ and $y$ as $z=\frac{1}{3}(x+2y)$.
+
+Literally speaking, *terms* are the pieces that compose an expression.  So in the expression $8x^2-8x$, $8x^2$ and $8x$ are terms combined by the subtraction function.  The expression is *in terms of $x$* since each term in the expression has only the variable $x$ (and constants) in it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1039488/what-does-express-in-terms-of-x-mean/1039558#1039558) on Mathematics Stack Exchange, 2014-11-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

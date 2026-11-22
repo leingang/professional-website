@@ -1,0 +1,65 @@
+---
+title: Enumerate with different first line?
+date: '2013-04-29'
+description: Use \textbf{...} around text that you want to embolden and \\ to break a line.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 111330
+se-link: https://tex.stackexchange.com/questions/111325/enumerate-with-different-first-line/111330#111330
+se-score: 1
+se-accepted: true
+se-tags:
+- formatting
+- lists
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Enumerate with different first line?](https://tex.stackexchange.com/questions/111325/enumerate-with-different-first-line), asked by [Stat Tistician](https://tex.stackexchange.com/users/26844/stat-tistician) on TeX Stack Exchange (2013-04-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to do an enumeration, but the first line should be bolded, see e.g. this picture:
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: wnavF.png
+>
+> What is blue I want to have in bold. In addition, I don't know how to generate a new line for the other text in the enumerate environment, should I just use `\\` ?
+:::
+
+Use `\textbf{...}` around text that you want to embolden and `\\` to break a line.
+
+```latex
+\documentclass{article}
+\usepackage{enumerate}
+\begin{document}
+\begin{enumerate}[\bfseries1.]
+\item \textbf{Specify a mean equation for the returns}\\
+by testing for serial dependence of $r_t$ an, if necessary, building an ARMA model
+\item \textbf{Test for ARCH Effects}\\
+using the residuals of the mean equation
+\item \textbf{Specify a volatility model} (if necessary)
+\item \textbf{Estimate the complete model}\\
+via joint estimation of mean an volatility parameters 
+\item \textbf{Check the fitted model}\\
+and refine if necessary.
+\end{enumerate}
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: CYpWa.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/111325/enumerate-with-different-first-line/111330#111330) on TeX Stack Exchange, 2013-04-29, with [edits](https://tex.stackexchange.com/posts/111330/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

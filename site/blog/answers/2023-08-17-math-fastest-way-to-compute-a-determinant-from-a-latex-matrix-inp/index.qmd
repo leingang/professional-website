@@ -1,0 +1,55 @@
+---
+title: Fastest way to compute a determinant from a LaTeX matrix input
+date: '2023-08-17'
+description: Wolfram Alpha reads LaTeX input syntax.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4754504
+se-link: https://math.stackexchange.com/questions/2650941/fastest-way-to-compute-a-determinant-from-a-latex-matrix-input/4754504#4754504
+se-score: 0
+se-accepted: false
+se-tags:
+- matrices
+- determinant
+- math-software
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Fastest way to compute a determinant from a LaTeX matrix input](https://math.stackexchange.com/questions/2650941/fastest-way-to-compute-a-determinant-from-a-latex-matrix-input), asked by [Basj](https://math.stackexchange.com/users/109021/basj) on Mathematics Stack Exchange (2018-02-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have this input, coming from a LaTeX document:
+>
+> ```
+> \begin{pmatrix}
+> 1 & 2 & 3 & 4 \\ 
+> -2 & 2 & 3 & 4 \\ 
+> -1 & 2 & -1 & 3 \\ 
+> 0 & 1 & 3 & 1
+> \end{pmatrix}
+> ```
+>
+> What's the shortest path to get its determinant, with a PC/Windows?
+>
+> 1. Use an online service (which one) ?
+>
+> 2. Import it to Maple (my Maple 7 doesn't seem to recognize it when I copy/paste this LaTeX)
+>
+> 3. Another software available on this platform? (that can do this in a few clicks: import from LaTeX, compute determinant, display result)
+>
+>
+> Note: I don't want to have to manually copy each coefficient into a new Maple matrix / don't want to manually copy each coefficient into an online tool; I was looking for something that would work with a copy/paste of the LaTeX definition of the matrix.
+:::
+
+[Wolfram Alpha reads LaTeX input syntax](https://www.wolframalpha.com/input?i2d=true&i=%5Cbegin%5C%28123%29pmatrix%5C%28125%29%0A1+%26+2+%26+3+%26+4+%5C%5C+%0A-2+%26+2+%26+3+%26+4+%5C%5C+%0A-1+%26+2+%26+-1+%26+3+%5C%5C+%0A0+%26+1+%26+3+%26+1%0A%5Cend%5C%28123%29pmatrix%5C%28125%29).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2650941/fastest-way-to-compute-a-determinant-from-a-latex-matrix-input/4754504#4754504) on Mathematics Stack Exchange, 2023-08-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

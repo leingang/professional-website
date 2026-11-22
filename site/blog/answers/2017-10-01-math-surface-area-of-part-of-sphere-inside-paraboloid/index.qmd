@@ -1,0 +1,37 @@
+---
+title: Surface area of part of sphere inside paraboloid
+date: '2017-10-01'
+description: I think your azimuthal range is incorrect. Take cross-sections in the $xz$-plane for simplicity. The curves $x^2 + z^2 =4z$ and $z=x^2$ intersect when $$x^2 +…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2453430
+se-link: https://math.stackexchange.com/questions/2453398/surface-area-of-part-of-sphere-inside-paraboloid/2453430#2453430
+se-score: 0
+se-accepted: false
+se-tags:
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Surface area of part of sphere inside paraboloid](https://math.stackexchange.com/questions/2453398/surface-area-of-part-of-sphere-inside-paraboloid), asked by [ogirkar](https://math.stackexchange.com/users/409319/ogirkar) on Mathematics Stack Exchange (2017-10-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Question was to find the surface area of part of sphere $x^2+y^2+z^2=4z$ that lies inside paraboloid $z=x^2+y^2$. I solve problem by taking range of azimuthal angle from 0 to 30 and taking parameters that we take for sphere centered at origin. I am doing mistake somewhere because actual answer is different. What mistake am I making?
+:::
+
+I think your azimuthal range is incorrect.  Take cross-sections in the $xz$-plane for simplicity.  The curves $x^2 + z^2 =4z$ and $z=x^2$ intersect when
+$$x^2 + (x^2)^2  = 4(x^2) \implies x^4 -3x^2 = 0$$
+So $x=0$ or $x=\pm\sqrt{3}$.  
+
+If you translate the sphere with radius $2$ back down to the origin, a point with $x$-coordinate $\sqrt{3}$ has $\sin\phi = \frac{\sqrt{3}}{2}$.  So $\phi = \frac{\pi}{3}$, or $60^\circ$, not $30^\circ$ as you were calculating.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2453398/surface-area-of-part-of-sphere-inside-paraboloid/2453430#2453430) on Mathematics Stack Exchange, 2017-10-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

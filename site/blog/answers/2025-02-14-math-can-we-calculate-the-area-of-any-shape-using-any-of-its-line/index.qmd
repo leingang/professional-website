@@ -1,0 +1,62 @@
+---
+title: Can we calculate the area of any shape using any of its line segment squared? Does it apply to all 2d shapes?
+date: '2025-02-14'
+description: 'I think you want to keep scrolling down to:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5035328
+se-link: https://math.stackexchange.com/questions/5035325/can-we-calculate-the-area-of-any-shape-using-any-of-its-line-segment-squared-do/5035328#5035328
+se-score: 3
+se-accepted: false
+se-tags:
+- geometry
+- area
+- curves
+- square-numbers
+- pythagorean-triples
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can we calculate the area of any shape using any of its line segment squared? Does it apply to all 2d shapes?](https://math.stackexchange.com/questions/5035325/can-we-calculate-the-area-of-any-shape-using-any-of-its-line-segment-squared-do), asked by [Jim](https://math.stackexchange.com/users/541513/jim) on Mathematics Stack Exchange (2025-02-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am reading the following from the BetterExplained note ["Surprising Uses of the Pythagorean Theorem" (via betterexplained.com)][q-1]  
+>
+> > The area of any shape can be computed from any line segment squared....We can pick any line segment and figure out area from it: every line segment has an "area factor" in this universal equation:
+>
+> Even though the statement is about *any* shape, the only examples mentioned are about a square and circle. 
+>
+> E.g. if I take the case of a triangle of type e.g. 3/4/5 then we can't express base as a multiple of height to achieve the claim. I am also unsure about other shapes e.g. does it apply to 3d shapes?
+>
+>
+>   [q-1]: https://betterexplained.com/articles/surprising-uses-of-the-pythagorean-theorem/
+:::
+
+I think you want to keep scrolling down to:
+
+> **Can we pick any shape?**
+>
+> Sort of. A given area formula works for all similar shapes, where "similar" means "zoomed versions of each other". For example:
+> * All squares are similar (area always $s^2$)
+> * All circles are similar, too (area always $\pi r^2$)
+> * Triangles are **not similar**: Some are fat and others skinny -- every "type" of triangle has its own area factor based on the line segment you are using. Change the shape of the triangle and the equation changes.
+>
+> Yes, every triangle follows the rule "area = 1/2 base * height". 
+> But the relationship between base and height depends on the type of triangle (base = 2 * height, base = 3 * height, etc.), so even then the area factor will be different.
+
+The way I learned this in high school was with ratios. If you have two similar polygons such that the ratio of corresponding lengths is $a:b$, then the ratio of their areas is $a^2 : b^2$.
+
+To the question you raised in the comments: The author is *not* claiming that the area of a right triangle can be found from the length of one of its sides. He's saying if you know the area of one right triangle, and you are given a similar right triangle, you can find its area by squaring the length of one of its sides and multiplying an appropriate constant. 
+
+Note that [*similar*](https://en.wikipedia.org/wiki/Similarity_(geometry)) in this context means not only that the shapes have the same number of sides, but that the ratio of the lengths of the corresponding sides is the same.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5035325/can-we-calculate-the-area-of-any-shape-using-any-of-its-line-segment-squared-do/5035328#5035328) on Mathematics Stack Exchange, 2025-02-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

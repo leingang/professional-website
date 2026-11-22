@@ -1,0 +1,80 @@
+---
+title: How can I find the critical points for multivariable polynomial?
+date: '2026-01-25'
+description: 'Critical points occur where both partial derivatives are equal to zero. So you need to solve the system: $$\begin{aligned} y(1+y)(2x+y) &= 0 \\ x^2 +…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5121408
+se-link: https://math.stackexchange.com/questions/5121401/how-can-i-find-the-critical-points-for-multivariable-polynomial/5121408#5121408
+se-score: 2
+se-accepted: true
+se-tags:
+- derivatives
+- partial-differential-equations
+- partial-derivative
+- maxima-minima
+- hessian-matrix
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I find the critical points for multivariable polynomial?](https://math.stackexchange.com/questions/5121401/how-can-i-find-the-critical-points-for-multivariable-polynomial), asked by [Sivaraj C](https://math.stackexchange.com/users/1708932/sivaraj-c) on Mathematics Stack Exchange (2026-01-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have went through the question from wikipedia ([https://en.wikipedia.org/wiki/Second_partial_derivative_test][q-1]) in order to compute the critical and saddle points. 
+>
+> $z= f(x,y) = (x+y) (xy + xy^2)$
+>
+> In order to compute the critical points, I have started taking first order derivatives with respect to x and y. 
+>
+> $\frac{\partial f(x,y)}{\partial x} = y(1+y)(2x+y)$
+>
+> $\frac{\partial f(x,y)}{\partial y} = x^2 + 2x^2y+2xy+3xy^2$
+>
+> As per my understanding in the extrema points slope will be $0$.
+>
+> After that, when we solve $\frac{\partial f(x,y)}{\partial x} = 0$, I can get $y=0, y= -1,y = -2x$.
+>
+> Now, in wikipedia they substitute these 3 $y$ values into $\frac{\partial f(x,y)}{\partial y}$ in order to get the $x$ values? is that how it works?
+>
+> Why I cannot substitute those $y$ values into $\frac{\partial f(x,y)}{\partial x}$ ?
+>
+> I am new to this second order derivative test. The reason am asking this question is because am confused with single variable function extrema computation where it's pretty straightforward.
+>
+> After computing those critical points I think I can compute the maxima and minima based on the second order derivatives from Hessian Matrix. 
+>
+> It would be very much helpful if somebody explain it for understanding. Thanks :)
+>
+>
+>   [q-1]: https://en.wikipedia.org/wiki/Second_partial_derivative_test
+:::
+
+Critical points occur where both partial derivatives are equal to zero. So you need to solve the system:
+$$\begin{aligned}
+   y(1+y)(2x+y) &= 0 \\
+   x^2 + 2x^2y+2xy+3xy^2 &= 0 \\
+\end{aligned}$$
+
+The system has two equations in two variables. You can use one of the equations to isolate (“solve for”) one of the variables in terms of the other, then substitute (“plug in”) those into the other equation. The result will be one equation in one variable, which is much easier to solve.
+
+You have already used the first equation to get three options: $y=0$, $y=-1$, or $y=2x$.
+
+* If you set $y=0$ in the second equation, you get $x^2 = 0$. This only has one solution: $x=0$. So $(0,0)$ is a critical point.
+* If you set $y=-1$ in the second equation, you get $x^2-2x^2-2x+3x = 0$, or $x-x^2 = 0$. This has two solutions $x=0$ and $x=1$. So you have two more critical points: $(0,-1)$ and $(1,-1)$.
+* If you set $y=-2x$ in the second equation, you get 
+$$\begin{aligned}
+0 &= x^2 + 2x^2 (-2x) + 2x(-2x) + 3x(-2x)^2
+\\&= x^2-4x^3-4x^2+12x^3
+\\&= 8x^3-3x^2 = x^2(8x-3)
+\end{aligned}$$
+So $x=0$ or $x=\frac{3}{8}$. Using the fact that $y=-2x$, you get $y=0$ in the first case, or $y = - \frac{3}{4}$. So one more critical point (you already found $(0,0)$): $\left(\frac{3}{8},-\frac{3}{4}\right)$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5121401/how-can-i-find-the-critical-points-for-multivariable-polynomial/5121408#5121408) on Mathematics Stack Exchange, 2026-01-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

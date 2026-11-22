@@ -1,0 +1,45 @@
+---
+title: Pythagorean Triple where $a=b$?
+date: '2017-11-02'
+description: Yes, it does revolve around the fact that $\sqrt{2}$ is irrational.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2501299
+se-link: https://math.stackexchange.com/questions/2501295/pythagorean-triple-where-a-b/2501299#2501299
+se-score: 15
+se-accepted: true
+se-tags:
+- geometry
+- elementary-number-theory
+- pythagorean-triples
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Pythagorean Triple where $a=b$?](https://math.stackexchange.com/questions/2501295/pythagorean-triple-where-a-b), asked by [Hatefiend](https://math.stackexchange.com/users/354896/hatefiend) on Mathematics Stack Exchange (2017-11-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I cannot find even a single webpage mentioning this topic. I'm a programmer and I'm looking for a 45-45-90 triangle where all of the sides are **whole numbers**. In the video I am watching, they say to use $a = 10$, $a = 10$, $c = 14$ because $10 \sqrt{2}$ is close enough to $14$. In my program I am worried this could have serious consequences because it's not accurate. 
+>
+>
+>
+>
+> Does there exist a case where $2 a^2 = c^2$ where *a and c are whole numbers*? 
+>
+>
+> If it does not exist, why? Does it revolve around the fact that $\sqrt{2}$ is irrational?
+:::
+
+Yes, it does revolve around the fact that $\sqrt{2}$ is irrational.
+
+For if there were integers $a$ and $c$ such that $a^2 + a^2 = c^2$, then $2a^2 = c^2$, or $2 = \left(\frac{c}{a}\right)^2$.  Therefore $\sqrt{2}$ is rational $\Rightarrow\Leftarrow$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2501295/pythagorean-triple-where-a-b/2501299#2501299) on Mathematics Stack Exchange, 2017-11-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

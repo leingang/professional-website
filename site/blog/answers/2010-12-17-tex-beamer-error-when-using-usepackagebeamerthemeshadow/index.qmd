@@ -1,0 +1,64 @@
+---
+title: Beamer error when using '\usepackage{beamerthemeshadow}'
+date: '2010-12-17'
+description: Shadow is an old style theme, and the manual suggests using Warsaw instead. The file you're citing is dated 2007, which means maybe the original author was…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7298
+se-link: https://tex.stackexchange.com/questions/7294/beamer-error-when-using-usepackagebeamerthemeshadow/7298#7298
+se-score: 6
+se-accepted: true
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer error when using '\usepackage{beamerthemeshadow}'](https://tex.stackexchange.com/questions/7294/beamer-error-when-using-usepackagebeamerthemeshadow), asked by [prosseek](https://tex.stackexchange.com/users/379/prosseek) on TeX Stack Exchange (2010-12-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm testing some examples with Beamer, and when I run <a href="http://www.informatik.uni-freiburg.de/~frank/ENG/beamer/example/beamer-class-example-en-7.html">this example</a>, I have this error message.
+>
+> ```latex
+> > \ProvidesPackageRCS=macro:
+> ->\def \pgfrcs@marshal {\ProvidesPackage {\pgf@rcsfile }}\pgfrcs@parserest .
+> l.1 \show\ProvidesPackageRCS
+> ```
+>
+> I just ignore it, and return to get the pdf file anyway.
+>
+> This line causes the problem
+>
+> ```latex
+> \usepackage{beamerthemeshadow}
+> ```
+>
+> As replacing with this line, I have no error message at all.
+>
+> ```latex
+> \usetheme{Warsaw}
+> ```
+>
+> * What's wrong with this beamerthemeshadow?
+> * What's the difference between using \usepackage{} and \usetheme{} in Beamer?
+>
+> I use MacTeX 2009.
+:::
+
+Shadow is an old style theme, and the manual suggests using Warsaw instead.  The file you're citing is dated 2007, which means maybe the original author was used to the old conventions of `\usepackage` versus `\usetheme`.
+
+However, the message you quote is not an error.  The first line of whatever file you're actually compiling must have `\show\ProvidesPackageRCS` in it, and the normal behavior of `\show` is to interrupt compiling and output the next token's definition.  As you note, ignoring the message doesn't cause any further compile problems.
+
+I have MacTeX 2009 installed as well, and my `beamerthemeshadow.sty` doesn't have that in it, but maybe the one you're reading does.
+
+Anyway, long story short, don't worry about a non-error when using an obsolescent theme.  Just use Warsaw and go about your business. `:-D`
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7294/beamer-error-when-using-usepackagebeamerthemeshadow/7298#7298) on TeX Stack Exchange, 2010-12-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

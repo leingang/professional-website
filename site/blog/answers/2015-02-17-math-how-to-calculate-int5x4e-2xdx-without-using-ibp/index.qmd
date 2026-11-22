@@ -1,0 +1,54 @@
+---
+title: How to calculate $\int(5x)^4e^{-2x}dx$ without using IBP?
+date: '2015-02-17'
+description: You are so close! Notice that since $w=2x$, $$\frac{5^4}{2^4}\int{x=0}^\infty w^4 e^{-w}{dw} = \frac{5^4}{2^4}\int{{\color{green}w}=0}^\infty w^4 e^{-w}{dw}$$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1153413
+se-link: https://math.stackexchange.com/questions/1151144/how-to-calculate-int5x4e-2xdx-without-using-ibp/1153413#1153413
+se-score: 0
+se-accepted: false
+se-tags:
+- integration
+- definite-integrals
+- gamma-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to calculate $\int(5x)^4e^{-2x}dx$ without using IBP?](https://math.stackexchange.com/questions/1151144/how-to-calculate-int5x4e-2xdx-without-using-ibp), asked by [Richard](https://math.stackexchange.com/users/214154/richard) on Mathematics Stack Exchange (2015-02-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How do I integrate this? 
+>
+> (UPDATE: Sorry, I should have clarified that I've been told to use the gamma function and not just integration by parts, also that this is a definite integral.)
+>
+> $$\int_{x=0}^\infty (5x)^4e^{-2x}dx$$
+>
+> I know that that  $\displaystyle\int_0^\infty w^se^{-w}dw = s!=\Gamma(s+1)$, and I've been told to apply this fact, but I can't figure out how to apply this second equation to the first equation above. 
+>
+> I can simplify the first equation as follows:
+>
+> $$= 5^4\int_{x=0}^\infty x^4e^{-2x}\,dw$$
+>
+> Then if I let $w = 2x$, I can get to:
+>
+> $$= \frac{5^4}{2^4} \int_{x=0}^\infty w^4  e^{-w} \, dw$$
+>
+> But I'm not sure what to do next!
+:::
+
+You are so close!  Notice that since $w=2x$,
+$$\frac{5^4}{2^4}\int_{x=0}^\infty w^4 e^{-w}{dw} = \frac{5^4}{2^4}\int_{{\color{green}w}=0}^\infty w^4 e^{-w}{dw}$$
+And now you substitute your known fact
+$$\frac{5^4}{2^4}\int_{w=0}^\infty w^4 e^{-w}{dw} = \frac{5^4}{2^4}4!$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1151144/how-to-calculate-int5x4e-2xdx-without-using-ibp/1153413#1153413) on Mathematics Stack Exchange, 2015-02-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

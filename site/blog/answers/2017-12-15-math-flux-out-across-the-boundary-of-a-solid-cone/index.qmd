@@ -1,0 +1,66 @@
+---
+title: Flux out across the boundary of a solid cone
+date: '2017-12-15'
+description: The reason we take the downward unit normal on $R2$ is that that is the direction “outward” from the surface.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2567373
+se-link: https://math.stackexchange.com/questions/2567346/flux-out-across-the-boundary-of-a-solid-cone/2567373#2567373
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- vector-analysis
+- vector-fields
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Flux out across the boundary of a solid cone](https://math.stackexchange.com/questions/2567346/flux-out-across-the-boundary-of-a-solid-cone), asked by [Ninja](https://math.stackexchange.com/users/201094/ninja) on Mathematics Stack Exchange (2017-12-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following problem:
+>
+> >  Let $F=y.\hat{i}+z.\hat{k}$ be a vector field out across the boundary of the solid cone $0\le z \le 1 -\sqrt{x^2 +y^2}$.  Then, find the flux of $F$.
+>
+>  The question has a solution but I did not understand it much because it is not detailed. So I need help to understand as much as I can. Here is what I have done:
+>
+>  There are two regions; hat of the cone $R_1$ and base of the cone $R_2$.
+>
+> $\displaystyle \int \int _{R}F.\hat{N}dS = \displaystyle \int \int _{R_1}F.\hat{N}dS +\int \int _{R_2}F.\hat{N}dS$.
+>
+>  I write $\hat{N}=(-\cfrac{\partial{f}}{\partial{x}}.\hat{i} -\cfrac{\partial{f}}{\partial{y}}.\hat{j} +\hat{k})$ where $f(x,y) =z = 1 -\sqrt{x^2+y^2}$ If I am not wrong.
+>
+>  So, for $\displaystyle \int \int _{R_1}F.\hat{N}dS$, we have $\hat{N}=(\cfrac{x.\hat{i}+y.\hat{j}}{\sqrt{x^2+y^2}}+\hat{k}).$ Also, $F.N = \cfrac{xy}{\sqrt{x^2+y^2}} + z = \cfrac{xy}{\sqrt{x^2+y^2}} + 1 - \sqrt{x^2 +y^2 }$.
+>
+> Again, if I am not wrong, we can write $dS = dxdy$, so
+>
+> $\displaystyle \int \int _{R_1}F.\hat{N}dS = \int \int _{R_1}( \cfrac{xy}{\sqrt{x^2+y^2}} + 1 - \sqrt{x^2 +y^2 })dxdy$.
+>
+> I am not sure about the boundaries. After we find the boundaries, we may use polar coordinates and find out the value of the integral. The book says it is $\frac{\pi}{3}$.
+>
+> For $\displaystyle \int \int _{R_2}F.\hat{N}dS$, for some reason, the book says $\hat{N} = -\hat{k}$. I think that it is because our cones base lie on the $xy-plane$ so any vector in the $-z$ direction may work. Then, it says $z=0$ and concludes that $F.\hat{N} = 0$. Thus, the second integral is $0$ and the answer is $\cfrac{\pi}{3}$.
+:::
+
+The reason we take the downward unit normal on $R_2$ is that that is the direction “outward” from the surface.
+
+If you switch to polar coordinates, then
+$$\iint _{R_1}\left( \cfrac{xy}{\sqrt{x^2+y^2}} + 1 - \sqrt{x^2 +y^2 }\right)\,dx\,dy
+= \int_0^{2\pi}\int_0^1\left(r\sin\theta\cos\theta + 1 - r\right)r\,dr\,d\theta$$
+The integral $\int_0^{2\pi} \sin\theta\cos\theta\,d\theta = 0$ by periodicity, so we are left with
+$$2\pi \int_0^1(r-r^2)\,dr = 2\pi \left(\frac{1}{2} - \frac{1}{3}\right) = 2\pi \cdot \frac{1}{6} = \frac{\pi}{3}$$
+
+As an alternative to your solution, you could use the divergence theorem.  Notice that $\nabla\cdot F = 1$.  So if $S$ is the surface of the cone, and $E$ the solid cone, then
+$$\iint_{S} F \cdot \hat N \,dS = \iiint_E 1 \,dV = \text{Vol}(E)$$
+Now just use your high-school geometry formulas for the volume of the cone.  Its radius and height are $1$, so its volume is $\frac{1}{3}\pi \cdot 1^2 \cdot 1= \frac{\pi}{3}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2567346/flux-out-across-the-boundary-of-a-solid-cone/2567373#2567373) on Mathematics Stack Exchange, 2017-12-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

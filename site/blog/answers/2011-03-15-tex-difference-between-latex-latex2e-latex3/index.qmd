@@ -1,0 +1,40 @@
+---
+title: Difference between LaTeX, LaTeX2e, LaTeX3 ?
+date: '2011-03-15'
+description: LaTeX2e is the latest stable release of LaTeX. When people say LaTeX they usually mean LaTeX2e, not an earlier version.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 13549
+se-link: https://tex.stackexchange.com/questions/13541/difference-between-latex-latex2e-latex3/13549#13549
+se-score: 89
+se-accepted: true
+se-tags:
+- expl3
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Difference between LaTeX, LaTeX2e, LaTeX3 ?](https://tex.stackexchange.com/questions/13541/difference-between-latex-latex2e-latex3), asked by [y2p](https://tex.stackexchange.com/users/3444/y2p) on TeX Stack Exchange (2011-03-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I was wondering, what is the difference between `LaTeX`, `LaTeX2e` and `LaTeX3`. Are the 2 higher versions available for use? I use LaTeX. How can I use the other 2 on Windows 7?
+:::
+
+LaTeX2e is the latest stable release of LaTeX. When people say LaTeX they usually mean LaTeX2e, not an earlier version. 
+
+LaTeX3 is a massive refactoring of the LaTeX2e code base, which is [currently in development](https://tex.stackexchange.com/questions/953/why-is-latex3-taking-so-long-to-come-out).  Some of the developers are frequent contributors here and will probably chime in. You can follow the development at [LaTeX3](https://github.com/latex3/latex3) GitHub repository.
+
+The difference to end users between LaTeX2e and LaTeX3 will be many more functionalities included "out of the box" rather than requiring packages.  
+
+The programmer's interface to LaTeX3 for class and package writers will include lots of enhancements like built-in data structures and methods to control expansion without so many `\expandafter`s.  Some current packages use the [`expl3`](http://ctan.org/pkg/expl3) package already to implement their features.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13541/difference-between-latex-latex2e-latex3/13549#13549) on TeX Stack Exchange, 2011-03-15, with [edits](https://tex.stackexchange.com/posts/13549/revisions) by [Anton Kochkov](https://tex.stackexchange.com/users/59155/anton-kochkov). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

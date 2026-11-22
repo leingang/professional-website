@@ -1,0 +1,36 @@
+---
+title: Définition of density in metric space.
+date: '2019-10-28'
+description: To rephrase the definition given, $$\forall x0 \in B,\ \forall \varepsilon > 0,\ \exists a \in A,\ d(x0,a) < \varepsilon$$ where $d$ is the metric. If $x0 \in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3412702
+se-link: https://math.stackexchange.com/questions/3412690/d%c3%a9finition-of-density-in-metric-space/3412702#3412702
+se-score: 0
+se-accepted: false
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Définition of density in metric space.](https://math.stackexchange.com/questions/3412690/d%c3%a9finition-of-density-in-metric-space), asked by [Herman](https://math.stackexchange.com/users/714065/herman) on Mathematics Stack Exchange (2019-10-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My definition of $A\subset B$ dense in $B$ if $$\forall x_0\in B, \forall \varepsilon >0, \mathcal B(x_0 ,\varepsilon )\cap A\neq \emptyset.$$
+> In this definition, shouldn't we rather take $$\mathcal B(x_0,\varepsilon )\setminus \{x_0\}\neq\emptyset \ \ ?$$
+:::
+
+To rephrase the definition given,
+$$\forall x_0 \in B,\ \forall \varepsilon > 0,\ \exists a \in A,\ d(x_0,a) < \varepsilon$$
+where $d$ is the metric.  If $x_0 \in A$ already, then that's fine.  But what's more interesting is that points of $B \setminus A$ also have points of $A$ arbitrarily close to them.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3412690/d%c3%a9finition-of-density-in-metric-space/3412702#3412702) on Mathematics Stack Exchange, 2019-10-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

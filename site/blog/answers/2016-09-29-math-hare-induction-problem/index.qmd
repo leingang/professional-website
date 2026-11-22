@@ -1,0 +1,40 @@
+---
+title: Hare induction problem
+date: '2016-09-29'
+description: How many hares are there after $n$ cycles?
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1946891
+se-link: https://math.stackexchange.com/questions/1946874/hare-induction-problem/1946891#1946891
+se-score: 1
+se-accepted: false
+se-tags:
+- induction
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Hare induction problem](https://math.stackexchange.com/questions/1946874/hare-induction-problem), asked by [Dylan](https://math.stackexchange.com/users/371155/dylan) on Mathematics Stack Exchange (2016-09-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Jovian hares are hermaphrodite. Each mature Jovian hare produces one
+> leveret during each breeding cycle. Each leveret takes two breeding cycles to mature into a fully-grown hare, and then lives for ever. Starting with a single newly-born Jovian leveret,how many hares (including leverets) are there after 47 breeding cycles?
+>
+> This is the question that I am being asked to consider. I have found the equation to calculate the number of hares and leverets after $n$ breeding cycles. It is $M_n = M_{n-1}+M_{n-3}$ and have found the number of hares and leverets that will present after 47 breeding cycles. I am just a little iffy on how to write a proof of the recurrence relation. Can someone enlighten me on how to do this for this problem?
+:::
+
+How many hares are there after $n$ cycles?
+
+ - All the hares that were alive last cycle, because they live forever.  This is $M_{n-1}$ hares.
+
+ - One leveret for each fully-grown hare; that is, one for each hare that is at least three cycles old.  This is $M_{n-3}$ hares.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1946874/hare-induction-problem/1946891#1946891) on Mathematics Stack Exchange, 2016-09-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

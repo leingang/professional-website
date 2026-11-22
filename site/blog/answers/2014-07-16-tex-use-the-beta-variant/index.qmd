@@ -1,0 +1,68 @@
+---
+title: Use the beta variant
+date: '2014-07-16'
+description: 'You can with XeLaTeX and the mathspec package:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191764
+se-link: https://tex.stackexchange.com/questions/191759/use-the-beta-variant/191764#191764
+se-score: 8
+se-accepted: true
+se-tags:
+- math-mode
+- unicode-math
+- greek
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use the beta variant](https://tex.stackexchange.com/questions/191759/use-the-beta-variant), asked by [z̫͋](https://tex.stackexchange.com/users/59186/z%cc%ab%cd%8b) on TeX Stack Exchange (2014-07-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is it possible to use the curled beta: ϐ (U+03D0) in a formula?
+>
+> There are variants available for `\epsilon`, `\theta`, `\phi`, `\rho`, `\sigma` and `\phi` with `\varepsilon`, `\vartheta`, etc... but there is no `\varbeta`. Why is that?
+:::
+
+You can with XeLaTeX and the [`mathspec`](http://ctan.org/pkg/mathspec) package:
+
+```latex
+\documentclass{article}
+\usepackage{mathspec}
+\setmathfont(Greek){Cambria Math}
+
+\begin{document}
+$\alpha^2 + \varbeta^2 =\gamma^2$
+\end{document}
+```
+
+![sample code output][1]
+
+Here `Cambria Math` can be replaced by any font on your filesystem that supports this character.  Fileformat.info has a [list of all known fonts supporting it][2] and a [list of locally installed fonts that support it][3].
+
+As egreg notes, you can also do it with the [`unicode-math`](http://ctan.org/pkg/unicode-math) package:
+
+```latex
+\documentclass{standalone}
+\usepackage{unicode-math}
+\setmathfont[math-style=TeX]{Cambria Math}
+\newcommand{\varbeta}{ϐ}
+\begin{document}
+$\alpha^2 + \varbeta^2 =\gamma^2$
+\end{document}
+```
+
+
+  [1]: abW49.png
+  [2]: http://www.fileformat.info/info/unicode/char/3d0/fontsupport.htm
+  [3]: http://www.fileformat.info/info/unicode/font/fontlist.htm?text=%CF%90%20-%20GREEK%20BETA%20SYMBOL%20%28U%2B03D0%29
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/191759/use-the-beta-variant/191764#191764) on TeX Stack Exchange, 2014-07-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

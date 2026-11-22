@@ -1,0 +1,75 @@
+---
+title: Area of a Sinus Curve using Pythagoras trigonometry
+date: '2018-04-02'
+description: Using calculus, we see that the area under half a period of the sinusoidal function $f(x) = a \sin \omega x$ is $$\int0^{\pi/\omega}a \sin(\omega x)\,dx =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2719128
+se-link: https://math.stackexchange.com/questions/2718762/area-of-a-sinus-curve-using-pythagoras-trigonometry/2719128#2719128
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- area
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area of a Sinus Curve using Pythagoras trigonometry](https://math.stackexchange.com/questions/2718762/area-of-a-sinus-curve-using-pythagoras-trigonometry), asked by [Radar Blue](https://math.stackexchange.com/users/548118/radar-blue) on Mathematics Stack Exchange (2018-04-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Good day.
+>
+> I have devised a method for obtaining the Area of a Sinus curve using Pythagoras trigonometric formulas. Are anyone familiar with this method. Take a look.
+>
+> By transforming the sinus into a paper cylinder, I can calculate the circumference of the cylinder by using the Radius, that is equal to the Amplitude. The wavlenght of one period is therefore the lenght of the cylinder. Making a paper model I see that the lenght of the Sinus curce is equal to the Diameter of the cylinder rolled up into a plane square area.
+>
+> $$f = 3 \sin ( 4\pi x )$$
+>
+> Anatomy.
+>
+> $3 \sin$ = Amplitude, Radius
+>
+> $x$ = wave is along the $x$ axis
+>
+> $x\pi = 1$ half wave is $1$ grid unit long
+>
+> $4$ = four half waves per grid unit.
+>
+> I can with one line of code, calculate the area of half a wave, the entire period, or any lenght of the North and South polarisations .
+>
+> $$f = 3 \sin ( 4\pi x )$$
+> Radius = $3$ cm
+>
+> Limit_end = I want 1 period = $\frac{1}{4} \cdot 2 = 0.5$ cm
+>
+> Formula Area Curve = Lim * 2PiR / Pi^2
+>
+> Area Curve = $\frac{(0.5)(2)(\pi)(3)}{\pi^2}$
+>
+> Area Curve = $\frac{(0.5)(2)(3)}{\pi} = 0.954 cm^2$ .
+>
+> X_lim_start = 0 . X_lim_end = 0.5
+>
+> Im not too familiar with calculus. And This method described I presume only works for Sinus, and functions with Radius. Not oddly shaped geometries or other functions .
+:::
+
+Using calculus, we see that the area under half a period of the sinusoidal function $f(x) = a \sin \omega x$ is 
+$$\int_0^{\pi/\omega}a \sin(\omega x)\,dx = \frac{2a}{\omega}$$
+This agrees with your calculations.  
+
+But I'm having a hard time understanding this paragraph:
+
+> By transforming the sinus into a paper cylinder, I can calculate the circumference of the cylinder by using the Radius, that is equal to the Amplitude. The wavelength of one period is therefore the length of the cylinder. Making a paper model I see that the length of the Sinus curve is equal to the Diameter of the cylinder rolled up into a plane square area.
+
+Working backwards, it sounds like you're deriving a formula that the area under a half-period is equal to $\frac{2\pi a}{\omega \pi}$.  But without more details about how you “transform” the sine curve into a cylinder, it's hard to verify that process.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2718762/area-of-a-sinus-curve-using-pythagoras-trigonometry/2719128#2719128) on Mathematics Stack Exchange, 2018-04-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

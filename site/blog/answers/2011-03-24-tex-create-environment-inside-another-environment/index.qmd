@@ -1,0 +1,78 @@
+---
+title: Create environment inside another environment?
+date: '2011-03-24'
+description: The tabular extensions are all based on hacking TeX's alignment system which requires some expansion intricacies (that's as much as I understand about it). One…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 14176
+se-link: https://tex.stackexchange.com/questions/14175/create-environment-inside-another-environment/14176#14176
+se-score: 11
+se-accepted: true
+se-tags:
+- tables
+- environments
+- tabularx
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Create environment inside another environment?](https://tex.stackexchange.com/questions/14175/create-environment-inside-another-environment), asked by [Andriy Drozdyuk](https://tex.stackexchange.com/users/4415/andriy-drozdyuk) on TeX Stack Exchange (2011-03-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Why can't I define an environment, that encloses another `tabularx` environment inside it?
+>
+> For example, why can't I do this:
+>
+> ```latex
+> \newenvironment{customTabular}{
+>     % This is the begin code
+>     \begin{tabularx}{\linewidth}{l l X}
+> }
+> {
+>     % This is the end code
+>     \end{customTabular}
+> }
+> ```
+>
+> and then use it like:
+>
+> ```latex
+> \begin{customTabular}
+>         Blah & Blah & Blah\\
+> \end{customeTabular}
+> ```
+:::
+
+The `tabular` extensions are all based on hacking TeX's alignment system which requires some expansion intricacies (that's as much as I understand about it).  One trick which sometimes works is to use the control sequences one level below the LaTeX abstraction.  This works:
+
+```latex
+\documentclass{article}
+\usepackage{tabularx}
+\newenvironment{customTabular}{
+    % This is the begin code
+    \begingroup
+    \tabularx{\linewidth}{l l X}
+}
+{
+    % This is the end code
+    \endtabularx
+    \endgroup
+}
+\begin{document}
+\begin{customTabular}
+        Blah & Blah & Blah\\
+\end{customTabular}
+\end{document}
+```
+
+**Edit**: The `\begingroup`...`\endgroup` are in there because `\begin{tabularx}` begins a group *then* expands `\tabularx`.  But since `\begin{customTabular}` begins its own group you don't need it for this simple case.  I suppose if you wanted to have extra code after `\endtabular` that would not be affected by the contents of the environment you would need it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14175/create-environment-inside-another-environment/14176#14176) on TeX Stack Exchange, 2011-03-24, with [edits](https://tex.stackexchange.com/posts/14176/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

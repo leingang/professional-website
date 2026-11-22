@@ -1,0 +1,77 @@
+---
+title: Derivatives without limits
+date: '2019-04-22'
+description: This is very creative, but I think it's overly complicated. You could do something very similar by using lines instead of circles.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3197422
+se-link: https://math.stackexchange.com/questions/3197399/derivatives-without-limits/3197422#3197422
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Derivatives without limits](https://math.stackexchange.com/questions/3197399/derivatives-without-limits), asked by [TurlocTheRed](https://math.stackexchange.com/users/397318/turlocthered) on Mathematics Stack Exchange (2019-04-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Update:** H/t David K for pointing out that my assumption that I can force $a^2+b^2=r^2$ is wrong. This led to analyzing a cubic equation which is now moot, but I think the bulk of the question remains sensible. 
+>
+> I think I'm making some mistakes in the below, but I'm not sure where. Even if there are mistakes, I'm thinking there might not be any practical point to it, but I'm curious. 
+>
+> I think it's possible to find the slope of a tangent line without using limits in some cases. Further it's possible to generalize the procedure to many common curves. I am having trouble with a proof of this and I'm not sure where I am going wrong.
+>
+> Proof we can find the slope of a tangent line to a parabola without taking a limit:
+>
+> 1) First we consider a circle. If we know the center of a circle and we know a point on that circle, we know the equation of a line connecting the center to that point. The slope of the line perpendicular to this line is the slope of the tangent line to the circle at that point. So we have already proven the thesis in the case of a circle.
+>
+> 2) A circle is tangent to some other curve if it only intersects that curve at a single point. 
+>
+> 3) A circle can be constructed to be tangent to certain points on certain curves. Tangent circles share tangent lines with the curves to which they are tangent. So the procedure above can find tangents to those curves by constructing the correct tangent circle.
+>
+> __________________________________
+> Parabola case:
+> Consider $y=x^2$. 
+>
+> We want a circle such that $(x-a)^2+(x^2-b)^2=r^2$
+>
+> So:
+> $$x^4+(1-2b)x^2-2ax+(a^2+b^2-r^2)=0$$
+>
+> We either have 2 complex roots or no real solutions. Assuming we have any real solutions, having a unique one requires that we have a repeated root. 
+>
+> So to find the tangent to the curve at $x_0$ we want to divide the quartic by $(x-x_0)^2$. We'd want to have the remainder terms be zero and the discriminant of the resulting quotient to be negative. 
+>
+> EDIT:
+>
+> Turns out Descartes developed this method centuries ago bearing some fruit. It's algebraically more intense than Newton's and Leibniz's approach to finding slopes of tangent lines, so fell by the wayside. It's called [Descartes' Method of Normals][q-1]
+>
+>
+>   [q-1]: https://en.wikipedia.org/wiki/Method_of_normals
+:::
+
+This is very creative, but I think it's overly complicated.  You could do something very similar by using lines instead of circles.
+
+Consider the point $P=(a,a^2)$ on the parabola $y=x^2$.  Which lines through $P$ only intersect the parabola once?  The line is determined by its slope, so it has equation $y=m(x-a)+a^2$.  This intersects $y=x^2$ where
+$$\begin{gather*}
+    x^2 = m(x-a)+a^2 \\
+\iff x^2 -mx + (am-a^2) = 0
+\end{gather*}$$ 
+The last equation is quadratic in $x$ and has discriminant
+$$\Delta = m^2 - 4(1)(am-a^2) = m^2-4am + 4a^2 = (m-2a)^2$$
+So there is a single solution if and only if $m=2a$.  Thus the line is tangent to the parabola when $m=2a$.
+
+For a general polynomial curve $y=f(x)$, you'd look for slopes $m$ such that the equation $f(x) = m(x-a) + f(a)$ (an equation in $x$) has multiple roots.  You can probably also extend it to algebraic curves in the plane, too.  However, I'm not sure it provides any more insight than ordinary calculus.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3197399/derivatives-without-limits/3197422#3197422) on Mathematics Stack Exchange, 2019-04-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

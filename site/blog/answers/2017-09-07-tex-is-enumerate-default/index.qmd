@@ -1,0 +1,57 @@
+---
+title: Is Enumerate default?
+date: '2017-09-07'
+description: Just for the sake of completeness, the enumerate environment is not available in the standalone document class. This MWE
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 390297
+se-link: https://tex.stackexchange.com/questions/390197/is-enumerate-default/390297#390297
+se-score: 1
+se-accepted: false
+se-tags:
+- packages
+- environments
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is Enumerate default?](https://tex.stackexchange.com/questions/390197/is-enumerate-default), asked by [rb612](https://tex.stackexchange.com/users/142886/rb612) on TeX Stack Exchange (2017-09-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm relatively new to TeX and I'm wondering why I'm able to use ``\begin{enumerate}`` without importing the package for the article, beamer, and letter document classes. But most users seem to add `\usepackage{enumerate}`. So I'm wondering if the document class imports these automatically (along with other packages), and if so, how I can tell if the packages are imported to avoid redundancy.
+:::
+
+Just for the sake of completeness, the enumerate environment is not available in the [`standalone`](http://ctan.org/pkg/standalone) document class.  This MWE
+
+```latex
+\documentclass{standalone}
+\begin{document}
+\begin{enumerate}
+\item foo
+\end{enumerate}
+\end{document}
+```
+
+produces a curious error:
+
+>     ! LaTeX Error: Something's wrong--perhaps a missing \item.
+>     
+>     See the LaTeX manual or LaTeX Companion for explanation.
+>     Type  H <return>  for immediate help.
+>      ...                                              
+>                                                       
+>     l.4 \item f
+>                oo
+
+But standalone is more for documents that produce diagrams, and enumerate isn't needed.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/390197/is-enumerate-default/390297#390297) on TeX Stack Exchange, 2017-09-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

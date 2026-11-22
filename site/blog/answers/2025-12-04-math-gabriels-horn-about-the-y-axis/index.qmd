@@ -1,0 +1,41 @@
+---
+title: Gabriel's horn about the y-axis
+date: '2025-12-04'
+description: OP wanted to use the shell method on this problem. user65203's comment is the right answer. The volume would be $$\int1^\infty 2\pi x \cdot \frac{1}{x} \,dx…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5112287
+se-link: https://math.stackexchange.com/questions/713755/gabriels-horn-about-the-y-axis/5112287#5112287
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Gabriel's horn about the y-axis](https://math.stackexchange.com/questions/713755/gabriels-horn-about-the-y-axis), asked by [user3407266](https://math.stackexchange.com/users/134727/user3407266) on Mathematics Stack Exchange (2014-03-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to figure out if there is a solution to finding the volume of the shape that is formed by rotating $f(x) = \frac 1x$ about the y-axis. Not the x-axis as in Gabriel's horn, but the same problem about the y-axis on the interval $x \ge 1$.
+>
+> Using the shell method and improper integrals, I end up with $\pi$($\infty$ - 1) where b $\to \infty$.
+>
+> Is the volume on this infinite? If so, what is the correct way to prove that it is infinite?
+:::
+
+OP wanted to use the shell method on this problem. user65203's comment is the right answer. The volume would be
+$$\int_1^\infty 2\pi x \cdot \frac{1}{x} \,dx
+    =\int_1^\infty 2\pi\,dx$$
+and this diverges.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/713755/gabriels-horn-about-the-y-axis/5112287#5112287) on Mathematics Stack Exchange, 2025-12-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

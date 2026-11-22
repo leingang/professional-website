@@ -1,0 +1,54 @@
+---
+title: What is not the second derivative of a parametric equation?
+date: '2015-02-10'
+description: 'I''m ready to fill out my second comment to an answer: Consider the parametric curve with equations $x=t^3$, $y=t^6$. This curve has equation $y=x^2$. Therefore…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1142436
+se-link: https://math.stackexchange.com/questions/1142004/what-is-not-the-second-derivative-of-a-parametric-equation/1142436#1142436
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- education
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is not the second derivative of a parametric equation?](https://math.stackexchange.com/questions/1142004/what-is-not-the-second-derivative-of-a-parametric-equation), asked by [Amir Asghari](https://math.stackexchange.com/users/83875/amir-asghari) on Mathematics Stack Exchange (2015-02-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> 1142004    
+> Consider the parametric equations $x=f(t)$ and $y=g(t)$. To "find" $\frac{d^2y}{dx^2}$, there are three ways to go: (1) the correct one, that is, $\frac{\frac{d^2y}{{dt}{dx}}}{\frac{dx}{dt}}$, and two wrong ones that are (2) $\frac{\frac{d^2y}{dt^2}}{\frac{d^2x}{dt^2}}$, and (3) taking the derivative of the result of $\frac{dy}{dx}$ in terms of $t$, that is, $\frac{
+> \frac{d^2y}{dt^2}·\frac{dx}{dt}-\frac{d^2x}{dt^2}·\frac{dy}{dt}
+> }{\left(\frac{dx}{dt}\right)^2}$.
+>
+> Most textbooks warn students to avoid the second one, and to illustrate, work with a concrete example and show the result gained from the second one differs from the first! That is obviously not a constructive approach, to say the least. But, interesting, it is the third approach that is most common, though it looks messy at the first glance. Consider that when working with a concrete example, it is very natural to take the derivative of the result of $\frac{dy}{dx}$ (usually written at the right of the equal sign in terms of $t$) and consider it as $\frac{d^2y}{dx^2}$.
+>
+> The question: Is there any interesting constructive way to convince students that the second and the third is wrong without referring to the first?
+:::
+
+I'm ready to fill out my second comment to an answer: Consider the parametric curve with equations $x=t^3$, $y=t^6$.  This curve has equation $y=x^2$.  Therefore we know $\frac{dy}{dx} = 2x$ and $\frac{d^2y}{dx^2} = 2$.
+
+Let's find the derivative $\frac{dy}{dx}$ using the parametrization.  We have $\frac{dy}{dt} = 6t^5$ and $\frac{dx}{dt} = 3t^2$.  Therefore
+$$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{6t^5}{3t^2} = 2t^3$$
+And this makes sense because $2t^3 = 2x$.
+
+Now apply the proposed second derivative formulas:
+$$\frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}} = \frac{6t^2}{3t^2} = 2
+\tag{1}$$
+$$\frac{\frac{d^2y}{dt^2}}{\frac{d^2x}{dt^2}} = \frac{30t^4}{6t} = 5t^3
+\tag{2}$$
+$$\frac{d}{dt}\left(\frac{dy}{dx}\right) = 6t^2
+\tag{3}$$
+Only equation (1) provides a second derivative agreeing with our non-parametric result.  So (2) and (3) can't be the right formula.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1142004/what-is-not-the-second-derivative-of-a-parametric-equation/1142436#1142436) on Mathematics Stack Exchange, 2015-02-10, with [edits](https://math.stackexchange.com/posts/1142436/revisions) by [dustin](https://math.stackexchange.com/users/78317/dustin), [Senex Ægypti Parvi](https://math.stackexchange.com/users/89020/senex-%c3%86gypti-parvi). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

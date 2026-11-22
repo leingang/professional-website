@@ -1,0 +1,49 @@
+---
+title: Prove $\sin^6x = \frac1{32}(10 − 15\cos2x + 6\cos4x − \cos6x)$
+date: '2016-03-18'
+description: ''
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1703119
+se-link: https://math.stackexchange.com/questions/1703110/prove-sin6x-frac13210-%e2%88%92-15-cos2x-6-cos4x-%e2%88%92-cos6x/1703119#1703119
+se-score: 1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $\sin^6x = \frac1{32}(10 − 15\cos2x + 6\cos4x − \cos6x)$](https://math.stackexchange.com/questions/1703110/prove-sin6x-frac13210-%e2%88%92-15-cos2x-6-cos4x-%e2%88%92-cos6x), asked by [Zero Cipher](https://math.stackexchange.com/users/323979/zero-cipher) on Mathematics Stack Exchange (2016-03-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Im trying to prove the following equation:
+>
+> $$\sin^6x = \frac1{32}(10 − 15\cos2x + 6\cos4x − \cos6x)$$
+>
+> I have tried to do it several times now but get stuck at different places. I don't know if it's a calculation error or the question is defective. It would be really helpful if someone could point out the method.
+>
+> we are to use $$z - \frac1{z} = 2i\sin x$$
+> $$z^n + (\frac1{z})^n = 2\cos nx$$
+:::
+
+[Wolfram Alpha][1] corroborates the identity so I think the question is not defective.  You probably want to apply the identities
+$$\begin{align*}
+    \sin^2(\theta) &= \frac{1}{2}\left(1-\cos 2\theta\right) \\
+    \cos^2(\theta) &= \frac{1}{2}\left(1+\cos 2\theta\right)
+\end{align*}$$
+several times.
+
+
+  [1]: http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=sin%5E6(x)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1703110/prove-sin6x-frac13210-%e2%88%92-15-cos2x-6-cos4x-%e2%88%92-cos6x/1703119#1703119) on Mathematics Stack Exchange, 2016-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,60 @@
+---
+title: Is it possible to change the size of an arrowhead in TikZ/PGF?
+date: '2010-11-16'
+description: 'Here is a sample of the outward-pointing triangular tips in PGF/TikZ 2.10 (see Section 24 "Arrow Tip Library" of the 2.10 manual):'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 5467
+se-link: https://tex.stackexchange.com/questions/5461/is-it-possible-to-change-the-size-of-an-arrowhead-in-tikz-pgf/5467#5467
+se-score: 73
+se-accepted: false
+se-tags:
+- tikz-pgf
+- arrows
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to change the size of an arrowhead in TikZ/PGF?](https://tex.stackexchange.com/questions/5461/is-it-possible-to-change-the-size-of-an-arrowhead-in-tikz-pgf), asked by [yegor256](https://tex.stackexchange.com/users/1449/yegor256) on TeX Stack Exchange (2010-11-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to draw an arrow with a bigger head than normal. Is it possible without changing the style of the line itself?
+:::
+
+Here is a sample of the outward-pointing triangular tips in PGF/TikZ 2.10 (see Section 24 "Arrow Tip Library" of [the 2.10 manual][2]):
+
+```latex
+\documentclass{minimal}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\begin{document}
+\newcounter{tmp}
+\begin{tikzpicture}
+\foreach \s in {latex,latex',stealth,triangle 90,triangle 45,angle 90, angle 60} {
+    \stepcounter{tmp}
+	\begin{scope}[yshift=-\thetmp cm]
+	    \node[anchor=west] (0,0) {\texttt{\s}};	    
+	    \draw[arrows={\s-\s}] (3,0) --++ (1,0);
+	\end{scope}
+}
+\end{tikzpicture}
+\end{document}
+```
+
+![arrows][1]
+
+If you want something more customized or more specific, read Section 82 "Arrow Tips" of  [the 2.10 manual of pgf][2].  How much bigger and in what direction are you looking for?
+
+
+  [1]: 6all8.png
+  [2]: http://www.texample.net/media/pgf/builds/pgfmanualCVS2012-11-04.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5461/is-it-possible-to-change-the-size-of-an-arrowhead-in-tikz-pgf/5467#5467) on TeX Stack Exchange, 2010-11-16, with [edits](https://tex.stackexchange.com/posts/5467/revisions) by [loved.by.Jesus](https://tex.stackexchange.com/users/71473/loved-by-jesus), [Rayllum](https://tex.stackexchange.com/users/217396/rayllum). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

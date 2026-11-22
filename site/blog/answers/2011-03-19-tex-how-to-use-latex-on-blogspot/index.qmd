@@ -1,0 +1,55 @@
+---
+title: How to use LaTeX on blogspot?
+date: '2011-03-19'
+description: I would say use MathJax. It's a AJAX engine for LaTeX syntax that now is distributed by a CDN so you don't have to upload a single file to your blogspot…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 13868
+se-link: https://tex.stackexchange.com/questions/13865/how-to-use-latex-on-blogspot/13868#13868
+se-score: 87
+se-accepted: true
+se-tags:
+- online
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to use LaTeX on blogspot?](https://tex.stackexchange.com/questions/13865/how-to-use-latex-on-blogspot), asked by [roxrook](https://tex.stackexchange.com/users/4322/roxrook) on TeX Stack Exchange (2011-03-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to use LaTeX on my blog, but I could not figure out how. Has anyone done it before? Any feedback or related information would be greatly appreciated.
+:::
+
+I would say use [MathJax](http://www.mathjax.org/).  It's a AJAX engine for LaTeX syntax that now is distributed by a CDN so you don't have to upload a single file to your blogspot account.
+
+To enable MathJax, just drop in
+
+```html
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/latest/MathJax.js">
+MathJax.Hub.Config({
+ extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+ jax: ["input/TeX", "output/HTML-CSS"],
+ tex2jax: {
+     inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+ },
+ "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+```
+
+after the header (`<head>`) in the Blogger template (Design→Edit HTML→Edit Template). 
+
+Googling "install mathjax blogspot" led me to a page on the Web Applications StackExchange: [MathJax on Blogger](https://webapps.stackexchange.com/questions/13053/mathjax-on-blogger).
+
+See the MathJax pages for more information about configuring and using it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13865/how-to-use-latex-on-blogspot/13868#13868) on TeX Stack Exchange, 2011-03-19, with [edits](https://tex.stackexchange.com/posts/13868/revisions) by [doncherry](https://tex.stackexchange.com/users/4012/doncherry), [Phelype Oleinik](https://tex.stackexchange.com/users/134574/phelype-oleinik), [still_learning](https://tex.stackexchange.com/users/94424/still-learning). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,90 @@
+---
+title: 'Take 2: How do automatic overlay specifications work in Beamer (in a nested situation)'
+date: '2010-12-03'
+description: In answer to your last question, I do not think there is a public counter that holds the slide number. Otherwise I would expect a command like…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 6466
+se-link: https://tex.stackexchange.com/questions/6459/take-2-how-do-automatic-overlay-specifications-work-in-beamer-in-a-nested-situ/6466#6466
+se-score: 1
+se-accepted: false
+se-tags:
+- beamer
+- overlays
+- nesting
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Take 2: How do automatic overlay specifications work in Beamer (in a nested situation)](https://tex.stackexchange.com/questions/6459/take-2-how-do-automatic-overlay-specifications-work-in-beamer-in-a-nested-situ), asked by [Yossi Farjoun](https://tex.stackexchange.com/users/117/yossi-farjoun) on TeX Stack Exchange (2010-12-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I had previous asked a [question][q-1] about this, but I feel that it wasn't focused enough and the answers got a little confused...so instead of editing that question, I've opted to start a new one....I hope people do not object.
+>
+> * * *
+>
+> I'm having trouble understanding what Beamer does when one uses **nested** automatic overlay specification. Consider the following example:
+>
+> ```latex
+> \documentclass[10pt,a4paper]{beamer}
+>
+> \begin{document}
+> \begin{frame}
+> \Huge
+> \only<1-+(3)>{\alert<-+>{foo} \alert<-+>{bar}}
+> \only<+>{a}\only<+>{b}\only<+>{c}\only<+>{d}\only<+>{e}
+> \only<1>{1}\only<2>{2}\only<3>{3}\only<4>{4}\only<5>{5}\only<6>{6}
+> \end{frame}
+> \end{document}
+> ```
+>
+> Which gives: 
+> ![alt text][q-2]
+>
+> I would say that the foo and bar appear as expected, but outside of the \only  between slide 4 and 5 something strange happens. In particular where are b and c? I would expect that there would be a nice correspondance between the letters and the numbers...wouldn't you? Sure, there would be an offset, but I would not expect that this offset would change at slide 5. 
+>
+> >Also, is there a variable/counter that holds the slide number?
+>
+> * * *
+>
+> To give some weight to my suggestion that \beamerpauses should only be calculated once I would say the there are two completely non-intuitive lines in the following frame: 
+>
+> ```latex
+> \begin{frame}
+> \alt<1-2>{
+> \begin{itemize}[<+->]
+> \item a
+> \item b
+> \end{itemize}}{
+> \addtocounter{beamerpauses}{2} %why should I need this?
+> \begin{itemize}[<+->]
+> \item A
+> \item B
+> \item C
+> \item D
+> \end{itemize}
+> }
+> \action<6>{} %this lines is really annoying because of the 6
+> %\action<+>{} %this gives an extra slide at the end.
+> %\action<.>{} %this doesn't work.
+>
+> \end{frame}
+> ```
+>
+>  I would write the whole thing without those extra lines and expect it to Just Work (TM)....
+>
+>   [q-1]: https://tex.stackexchange.com/questions/6399/how-do-automatic-overlay-specification-work-in-beamer
+>   [q-2]: i3wom.png
+:::
+
+In answer to your last question, I do not think there is a public counter that holds the slide number.  Otherwise I would expect a command like `\insertslidenumber` and there isn't one.  See [this question](https://tex.stackexchange.com/questions/4009/latex-beamer-how-to-get-distinct-page-numbers-when-using-overlays) where we hacked up a workaround subtracting `\insertframestartpage` from `\insertpagenumber`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6459/take-2-how-do-automatic-overlay-specifications-work-in-beamer-in-a-nested-situ/6466#6466) on TeX Stack Exchange, 2010-12-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

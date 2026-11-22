@@ -1,0 +1,61 @@
+---
+title: Given $\frac{dx}{dt} = f(x)$, find $x(t)$
+date: '2018-08-23'
+description: This kind of ordinary differential equation ($x' = f(x)$) is called homogeneous. It is a special case of separable equations ($x'(t)= f(x)g(t)$).
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2892250
+se-link: https://math.stackexchange.com/questions/2892237/given-fracdxdt-fx-find-xt/2892250#2892250
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- discrete-mathematics
+- derivatives
+- physics
+- kinematics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Given $\frac{dx}{dt} = f(x)$, find $x(t)$](https://math.stackexchange.com/questions/2892237/given-fracdxdt-fx-find-xt), asked by [polortiz4](https://math.stackexchange.com/users/586613/polortiz4) on Mathematics Stack Exchange (2018-08-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a phase plot of velocity vs position in 1D. I don't, however, have an equation for it--as this one can change for different applications. I want to find the corresponding function x(t).
+>
+> For my particular application, what I have is a table of discrete values for x and $\frac{dx}{dt}$, so if you can think of a way to approximate x(t) discretely (instead of analytically), it would solve my problem too.
+:::
+
+This kind of ordinary differential equation ($x' = f(x)$) is called homogeneous.  It is a special case of separable equations ($x'(t)= f(x)g(t)$).  
+
+When $f(x)$ is known for all $x$, the standard trick for integrating an equation like this is called *[separation of variables][2]*.  It looks kind of like hocus-pocus, but bear with me for a minute.
+
+If $\frac{dx}{dt} = f(x)$, write it as:
+$$\frac{dx}{f(x)} = dt$$
+Both sides of the above are differentials (you might call it a “differential equation” or something).  Slap on an integral sign and you have
+$$\int\frac{dx}{f(x)} = \int dt$$
+The left-hand side is a function of $x$, and the right-hand side is a function of $t$.  Yes, there's a constant of integration which must be included.  But after that is done, we can (hopefully) solve for $x$ in terms of $t$.
+
+As an example, suppose $f(x) = 2x$.  The equation $x' = 2x$ models a constant relative growth rate, such as those found in bacteria cultures, bank accounts, etc.  The separation of variables technique gives
+$$\frac{dx}{2x} = dt \implies \frac{dx}{x} = 2\,dt \implies \ln|x| = 2t + C$$
+Now we can solve for $x$ in terms of $t$:
+$$x = e^{2t+C} = e^C e^{2t} = Ae^{2t}$$
+where $C$ is an arbitrary constant.  $A$ is also a constant that has to be determined by initial conditions.
+
+There are some important theoretical points about when and why this technique works.  After all, we are taught to never treat the $dx$ and $dt$ in a derivative as separate quantities, and think of $\frac{dx}{dt}$ as a monolithic symbol.  But it does work.
+
+After I wrote this answer I saw that you added that $f(x)$ is only known for certain *discrete* values of $x$.  In that case, a different method needs to be applied. 
+
+
+  [1]: https://en.wikipedia.org/wiki/Homogeneous_differential_equation
+  [2]: https://en.wikipedia.org/wiki/Separation_of_variables
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2892237/given-fracdxdt-fx-find-xt/2892250#2892250) on Mathematics Stack Exchange, 2018-08-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

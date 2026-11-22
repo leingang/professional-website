@@ -1,0 +1,90 @@
+---
+title: How can I keep a clean document folder with custom .cls, .sty, .bst files in a separate subfolder?
+date: '2012-04-05'
+description: I use latexmk for some document building, and I've wanted something like this for a long time. Especially when I have document and class under version control.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 50847
+se-link: https://tex.stackexchange.com/questions/50697/how-can-i-keep-a-clean-document-folder-with-custom-cls-sty-bst-files-in-a-s/50847#50847
+se-score: 23
+se-accepted: false
+se-tags:
+- texmf
+- build-system
+- makefile
+- environment-variables
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How can I keep a clean document folder with custom .cls, .sty, .bst files in a separate subfolder?](https://tex.stackexchange.com/questions/50697/how-can-i-keep-a-clean-document-folder-with-custom-cls-sty-bst-files-in-a-s), asked by [Hotschke](https://tex.stackexchange.com/users/8917/hotschke) on TeX Stack Exchange (2012-04-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am using a Makefile for generating a document from its tex source. The whole project consisting of own input files (`.tex`, `.bib`, `.eps`, ...) and non-pre-installed static input files (`.cls`, `.sty`, `.bst`) is kept under version control (git) for colloborative writing. I try to avoid messing up the main folder and use subdirectories for output and different kinds of input files.
+> All files which are not available within TeX Live should be in the repository to allow everyone a simple `git clone` and `make` to create the document. My question is: is there any convenient way which allows me to place all `.cls`, `.sty`, `.bst` into a `./texmf` folder with in the document tree:
+>
+> ```latex
+> document-folder
+> ├── .git/...
+> ├── graphics/fig1-<...>.eps
+> ├── graphics/fig2-<...>.eps
+> ├── graphics/...
+> ├── output/docname.pdf
+> ├── output/docname.aux
+> ├── output/...
+> ├── texmf/docclass.cls
+> ├── texmf/custom-package.sty
+> ├── texmf/...
+> ├── docname.tex
+> ├── docname.bib
+> └── Makefile
+> ```
+>
+>
+> The Makefile looks like this
+>
+> ```latex
+> LATEX    := pdflatex
+> ODIR     := ./output
+> LATEXOPTS:= --output-dir=$(ODIR)
+>
+>     $(TEXFILE).pdf: $(TEXFILE).tex $(TEXFILE).bib
+> ```
+> 	         \$(LATEX) \$(LATEXOPTS) \$(TEXFILE).tex
+>
+> Following solution works but as colloborators have to adjust environment variables every time or their `.bashrc` for this project, I am not really happy about it:
+>
+> ```latex
+> $ export TEXINPUTS=".:./texmf:~/texmf:$TEXINPUTS"
+> $ make
+> ```
+>
+> Changing environment variables within a Makefile is not possible as far as I know.
+:::
+
+I use [`latexmk`][1] for some document building, and I've wanted something like this for a long time.  Especially when I have document *and* class under version control.  
+
+I discovered that you can configure `latexmk` with a local `latexmkrc` file in the document's directory.  `latexmkrc` files are just perl code.  
+
+So in this workflow, if the class files are in `./texmf` you can add the following line to a local `latexmkrc`:
+
+```latex
+$ENV{'TEXINPUTS'}='./texmf//:' . $ENV{'TEXINPUTS'};
+```
+
+This works on my Mac, and I assume on any unix machine that uses environment variables this way.  For windows, and indeed for any platform, `latexmk`'s author John Collins has a solution at [his answer][2] to [a similar question][3].
+
+
+  [1]: https://www.ctan.org/pkg/latexmk
+  [2]: https://tex.stackexchange.com/a/474915/1402
+  [3]: https://tex.stackexchange.com/q/474756/1402
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/50697/how-can-i-keep-a-clean-document-folder-with-custom-cls-sty-bst-files-in-a-s/50847#50847) on TeX Stack Exchange, 2012-04-05, with [edits](https://tex.stackexchange.com/posts/50847/revisions) by [Leone](https://tex.stackexchange.com/users/142706/leone). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

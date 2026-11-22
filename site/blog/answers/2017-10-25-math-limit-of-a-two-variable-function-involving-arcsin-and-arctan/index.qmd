@@ -1,0 +1,73 @@
+---
+title: Limit of a two variable function involving arcsin and arctan
+date: '2017-10-25'
+description: First, we claim that $$\lim{t\to 0} \frac{\arcsin{t}}{t} = 1$$ This comes from L'Hôpital's rule, or if you like, the inverse function theorem (this limit is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2489422
+se-link: https://math.stackexchange.com/questions/2489382/limit-of-a-two-variable-function-involving-arcsin-and-arctan/2489422#2489422
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- multivariable-calculus
+- trigonometry
+- inverse-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Limit of a two variable function involving arcsin and arctan](https://math.stackexchange.com/questions/2489382/limit-of-a-two-variable-function-involving-arcsin-and-arctan), asked by [Subhanjan Saha](https://math.stackexchange.com/users/406853/subhanjan-saha) on Mathematics Stack Exchange (2017-10-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I recently came across this problem of finding the limit of a function in two variables as we approach the origin, defined as follows:
+>
+> $$\lim_{(x,y)\to (0,0)} \frac{\arcsin(x+2y)}{\arctan(2x+4y)}$$
+>
+> This was on the mid-term test on our course of Multivariable Calculus. While, all the paths that pass through the origin I have tested, seems to give the limit $\frac{1}{2}$, which seems reasonable through recognizing the fact that the argument of arctan is twice as that of arcsin and the logic of single variable limit: $\lim_{x\to 0} \frac{\arcsin(x)}{\arctan(2x)}$. It is, however, not sufficient to prove that the limit is indeed, $\frac{1}{2}$ since the two-path test is a test for the non-existence of limit and not the existence of one. I have even tried Sandwich Theorem and evaluating the limit by converting to polar coordinates but have reached to no conclusion, of course.
+>
+> I am wondering if setting (x+2y) as some parameter t followed by tending t to zero would work, but then again that would be the same as testing along the path x=-2y.
+>
+> I am truly dumbfounded by this problem and after long efforts at solving it, I have no answer. Any kind of hint towards which direction I should be proceeding or a solution would be highly appreciated.
+:::
+
+First, we claim that 
+$$\lim_{t\to 0} \frac{\arcsin{t}}{t} = 1$$
+This comes from L'Hôpital's rule, or if you like, the inverse function theorem (this limit is the definition of the derivative of arcsin at $t=0$).  
+
+Given $\epsilon>0$, there exists a $\delta_1 > 0$ such that
+$$0 < |t| < \delta_1 \implies \left|\frac{\arcsin t}{t} -1 \right| < \epsilon$$
+Let $\delta = \frac{\delta_1}{3}$, and suppose $0<\sqrt{x^2 + y^2} < \delta$.  Then each of $|x|$ and $|y|$ are also $< \delta$, so
+$$0 < |x+2y| \leq |x| + 2|y| < 3\delta = \delta_1$$
+Since $0 < |x+2y| < \delta_1$, we know
+$$\left|\frac{\arcsin(x+2y)}{x+2y}-1\right| < \epsilon$$
+Since this works for any $\epsilon > 0$, we know
+$$\lim_{(x,y) \to (0,0)} \frac{\arcsin(x+2y)}{x+2y} = 1$$
+
+In a very similar fashion, you can prove that
+$$\lim_{(x,y) \to (0,0)} \frac{2x+4y}{\arctan(2x+4y)} = 1$$
+Putting these together,
+$$\begin{align*}
+    \lim_{(x,y) \to (0,0)} \frac{\arcsin(x+2y)}{\arctan(2x+4y)}
+   &=\lim_{(x,y) \to (0,0)} \left(\frac{\arcsin(x+2y)}{x+2y}\cdot\frac{2x+4y}{\arctan(2x+4y)}\cdot\frac{1}{2}\right) \\
+   &=\lim_{(x,y) \to (0,0)} \frac{\arcsin(x+2y)}{x+2y}
+        \cdot \lim_{(x,y) \to (0,0)}\frac{2x+4y}{\arctan(2x+4y)}
+        \cdot\frac{1}{2} \\
+    &=1 \cdot 1 \cdot \frac{1}{2} = \frac{1}{2}
+\end{align*}$$
+
+* * *
+Come to think of it, you can probably start with
+$$\lim_{t\to 0} \frac{\arcsin t}{\arctan 2t} = \frac{1}{2}$$
+and save a step.  But oh well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2489382/limit-of-a-two-variable-function-involving-arcsin-and-arctan/2489422#2489422) on Mathematics Stack Exchange, 2017-10-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

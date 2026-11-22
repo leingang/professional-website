@@ -1,0 +1,37 @@
+---
+title: Convergence of Cauchy's sequence
+date: '2019-07-23'
+description: The condition that every Cauchy sequence in $X$ converges to a point in $X$ is the definition of complete metric space.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3301712
+se-link: https://math.stackexchange.com/questions/3301702/convergence-of-cauchys-sequence/3301712#3301712
+se-score: 0
+se-accepted: false
+se-tags:
+- convergence-divergence
+- metric-spaces
+- cauchy-sequences
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convergence of Cauchy's sequence](https://math.stackexchange.com/questions/3301702/convergence-of-cauchys-sequence), asked by [Vamshi Kumar Kurva](https://math.stackexchange.com/users/688895/vamshi-kumar-kurva) on Mathematics Stack Exchange (2019-07-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I understood that every convergent sequence is a Cauchy sequence. It seems that the converse is not necessarily true. An example given is the sequence $\{x_n\}$, where $x_n = (0.1)^n$ is a Cauchy sequence, but not convergent in (0,1). So, Can I safely say that every Cauchy sequence actually converges to some limit and it is said to be convergent only if the limit point is a part of the given metric space? Because the same sequence is convergent on $\mathbb R$, but not in (0,1)
+:::
+
+The condition that every Cauchy sequence in $X$ converges to a point in $X$ is the definition of *complete* metric space.
+
+A closed subset of a complete space is a complete space in its subspace topology.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3301702/convergence-of-cauchys-sequence/3301712#3301712) on Mathematics Stack Exchange, 2019-07-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

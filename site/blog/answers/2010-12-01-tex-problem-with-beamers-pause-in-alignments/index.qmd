@@ -1,0 +1,91 @@
+---
+title: Problem with beamer's \pause in alignments
+date: '2010-12-01'
+description: 'From the beamer manual, in the middle of a use case:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6352
+se-link: https://tex.stackexchange.com/questions/6348/problem-with-beamers-pause-in-alignments/6352#6352
+se-score: 41
+se-accepted: false
+se-tags:
+- beamer
+- align
+- pause
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problem with beamer's \pause in alignments](https://tex.stackexchange.com/questions/6348/problem-with-beamers-pause-in-alignments), asked by [Hendrik Vogt](https://tex.stackexchange.com/users/1235/hendrik-vogt) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have the following code, (**edit:**) now without `aligned`.
+>
+> ```latex
+> \documentclass{beamer}
+> \mode<presentation> { \setbeamercovered{transparent} }
+>
+> \begin{document}
+> \begin{frame}
+> \[
+>   \begin{cases}
+>   %\begin{aligned}
+>   v(t,x) &= g(t,x), \\
+>   \pause
+>   u(x) &= f(x) %& (x\in\mathbb R)
+>   %\end{aligned}
+>   \end{cases}
+> \]
+> \end{frame}
+> \end{document}
+> ```
+>
+> (In the first version of the question, nothing was commented out.)
+>
+> It compiles nicely, but everything except "u(x)" already shows up on the first slide if I use beamer.cls `v 1.70 2007/03/11 18:50:44`. On another computer at work we have an older version installed, namely `v 1.55 2004/10/11 16:09:50`; there everything works as expected: On the first slide, the full second line is shown in transparent style.
+>
+> The same happens if I use plain TeX's `\halign`, so `cases` is not the culprit. Moreover, if I don't use `\setbeamercovered{transparent}`, then everything works as expected. In other words, `\pause` doesn't work together with `\setbeamercovered{transparent}` and `\halign`.
+>
+> Is this a bug in `beamer` introduced between versions `1.55` and `1.70`? (If yes, then I'm surprised since it'd regard it quite a serious one.) Does anyone know a workaround that doesn't involve as much markup as Matthew's answer to my original question?
+:::
+
+From the beamer manual, in the middle of a use case:
+
+> Euclid finds that he can also add a `\pause` between the definition and the example. So, `\pause`s seem to
+transcede environments, which Euclid finds quite useful. After some experimentation he finds that *`\pause` only does not work in `align` environments*. He immediately writes an email about this to beamer’s author, but receives a polite answer stating that the implementation of *`align` does wicked things and there is no fix for this*. Also, Euclid is pointed to the last part of the user’s guide, where a workaround is described.  (emphasis added)
+
+Here is my workaround, using `\action`:
+
+```latex
+\documentclass{beamer}
+\mode<presentation> { \setbeamercovered{transparent} }
+
+\begin{document}
+\begin{frame}
+\[
+  \begin{cases}
+  \begin{aligned}
+  \action<+->{v(t,x) &= g(t,x), \\}
+  \action<+->{u(x)} &\action<.->{=f(x)} & \action<.->{(x\in\mathbb R)}
+  \end{aligned}
+  \end{cases}
+\]
+\end{frame}
+\end{document}
+```
+
+It's surprising that the second line has to have each cell of the align enclosed in an action specification while the first line can go in a single one (maybe that has something to do with the fact that it's shown by default on all slides).  But I remember Till's advice to Euclid:
+
+>`align` does wicked things and there is no fix for this.
+
+**Added**: `\action` is a generic `\only` if I recall correctly.  And the incremental overlay specifications like `<+->` are very much worth learning.  See Section 8 of the beamer manual, or at least it's Section 8 of my 3.06 manual: "Creating Overlays."
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6348/problem-with-beamers-pause-in-alignments/6352#6352) on TeX Stack Exchange, 2010-12-01, with [edits](https://tex.stackexchange.com/posts/6352/revisions) by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

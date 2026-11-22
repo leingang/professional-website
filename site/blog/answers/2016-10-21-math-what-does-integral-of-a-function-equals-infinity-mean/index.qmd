@@ -1,0 +1,35 @@
+---
+title: What does integral of a function equals infinity mean
+date: '2016-10-21'
+description: It means $$\lim{b\to\infty} \int0^b f(x)\,dx = \infty$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1978905
+se-link: https://math.stackexchange.com/questions/1978896/what-does-integral-of-a-function-equals-infinity-mean/1978905#1978905
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What does integral of a function equals infinity mean](https://math.stackexchange.com/questions/1978896/what-does-integral-of-a-function-equals-infinity-mean), asked by [srip](https://math.stackexchange.com/users/346394/srip) on Mathematics Stack Exchange (2016-10-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> what does a function $f(x)>=0$ for $x>=0$ satisfying $\int_0^{\infty}f(x)=\infty$ mean
+:::
+
+It means
+$$\lim_{b\to\infty} \int_0^b f(x)\,dx = \infty$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1978896/what-does-integral-of-a-function-equals-infinity-mean/1978905#1978905) on Mathematics Stack Exchange, 2016-10-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

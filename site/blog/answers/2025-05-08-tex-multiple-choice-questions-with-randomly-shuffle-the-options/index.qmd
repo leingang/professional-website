@@ -1,0 +1,83 @@
+---
+title: Multiple-choice questions with randomly shuffle the options
+date: '2025-05-08'
+description: I use the exam class and the exam-randomizechoices package. The class has a lot of features for formatting the exam, questions, parts, marks, etc. It works…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 742267
+se-link: https://tex.stackexchange.com/questions/740343/multiple-choice-questions-with-randomly-shuffle-the-options/742267#742267
+se-score: 1
+se-accepted: false
+se-tags:
+- itemize
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Multiple-choice questions with randomly shuffle the options](https://tex.stackexchange.com/questions/740343/multiple-choice-questions-with-randomly-shuffle-the-options), asked by [Irreversible](https://tex.stackexchange.com/users/94003/irreversible) on TeX Stack Exchange (2025-04-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Imagine I want to write a question with 6 options in a text format:
+>
+> a) Option one b) Option two c) Option three d) Option four e) Option five f) Option  six
+>
+> In other words, a 6-choice question.
+>
+> ```latex
+> \documentclass{article}
+>  \usepackage{amssymb}
+>
+> \begin{document}
+> ```
+>
+> 	\noindent Question
+> 	 \begin{enumerate}
+> 		\item[a)] Option one
+> 		\item[b)] Option two
+> 		\item[c)] Option three
+> 		\item[d)] Option four
+> 		\item[e)] Option five
+> 		\item[f)] Option six
+> 	\end{enumerate}
+>
+> ```latex
+> \end{document}
+> ```
+>
+> Now, consider the same question as before. I want to write another question where the structure remains the same, but the order of the options changes randomly. For example, the first option moves to the last option, the third sentence becomes option (a), and so on, with the options shuffled randomly.
+>
+> What command should I use to accomplish this?
+:::
+
+I use the [`exam`][1] class and the [`exam-randomizechoices`](https://ctan.org/pkg/exam-randomizechoices) package. The class has a lot of features for formatting the exam, questions, parts, marks, etc. It works very well for me. The latter adds a randomization feature.
+
+```latex
+\documentclass{exam}
+\usepackage{exam-randomizechoices}
+\setrandomizerseed{2025050721}
+\begin{document}
+\begin{questions}
+    \question Question
+     \begin{randomizechoices}
+        \CorrectChoice Option one
+        \choice Option two 
+        \choice Option three
+        \choice Option four
+        \choice Option five
+        \choice Option six
+    \end{randomizechoices}
+\end{questions}
+\end{document}
+```
+
+  [1]: https://ctan.org/pkg/exam?lang=en
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/740343/multiple-choice-questions-with-randomly-shuffle-the-options/742267#742267) on TeX Stack Exchange, 2025-05-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

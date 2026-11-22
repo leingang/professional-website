@@ -1,0 +1,57 @@
+---
+title: How do I prove that a function decreases/increases on an interval?
+date: '2016-09-21'
+description: 'The big theorem connecting the derivative to monotonicity is:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1935854
+se-link: https://math.stackexchange.com/questions/1935842/how-do-i-prove-that-a-function-decreases-increases-on-an-interval/1935854#1935854
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I prove that a function decreases/increases on an interval?](https://math.stackexchange.com/questions/1935842/how-do-i-prove-that-a-function-decreases-increases-on-an-interval), asked by [bp99](https://math.stackexchange.com/users/368362/bp99) on Mathematics Stack Exchange (2016-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I had to determine where the following function is increasing and where it's decreasing. I can figure those out, but how do I write it down with correct notation and how could I prove it?
+>
+> $$f:\mathbb{R}\to\ \mathbb{R} \qquad x\mapsto(x-3)^4$$
+>
+> I know that I can calculate the extremum/extrema by taking the second derivative:
+>
+> $$f''(x)=((x-3)^4)''=(4(x-3)^3)'=12(x-3)^2$$
+>
+> and taking finding its root(s):
+>
+> $$12(x-3)^2=0 \\
+> (x-3)^2=0 \\
+> x-3=0 \\
+> x=3$$
+>
+> I know of course, that $\mathit{f}$ has an extremum, more specifically a minimum at this point ($x=3$)
+>
+> And I can see from it's graph and by substituting values that it decreases on $]-\infty,3[$ and increases on $]3,+\infty[$
+>
+> But how do I write this down and prove it? I was thinking about using sequences to prove, maybe?
+:::
+
+The big theorem connecting the derivative to monotonicity is:
+
+> If $f'$ is positive on an open interval, then $f$ is increasing on that interval (in fact, the closure of that interval).  Likewise, if $f'$ is negative on an interval, then $f$ is decreasing on that interval.
+
+In your case, the derivative is $f'(x) = 4(x-3)^3$.  This is negative on $-\infty < x < 3$ and positive on $3 < x < \infty$.  So $f$ is decreasing on $(-\infty,3]$ and increasing on $[3,\infty)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1935842/how-do-i-prove-that-a-function-decreases-increases-on-an-interval/1935854#1935854) on Mathematics Stack Exchange, 2016-09-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,67 @@
+---
+title: How to insert "footline"-style page number into "headline"
+date: '2010-12-01'
+description: 'Sure, it''s not installed by default, but you do something like this:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6322
+se-link: https://tex.stackexchange.com/questions/6291/how-to-insert-footline-style-page-number-into-headline/6322#6322
+se-score: 5
+se-accepted: true
+se-tags:
+- beamer
+- sectioning
+- page-numbering
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to insert "footline"-style page number into "headline"](https://tex.stackexchange.com/questions/6291/how-to-insert-footline-style-page-number-into-headline), asked by [Li Wang](https://tex.stackexchange.com/users/2015/li-wang) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> When inserting page numbers into beamer slides, I usually use:
+>
+> ```latex
+> \setbeamertemplate{footline}[page number]
+> ```
+> Is it possible to do this for headline, something like:
+>
+> ```latex
+> \setbeamertemplate{headline}[page number]
+> ```
+:::
+
+Sure, it's not installed by default, but you do something like this:
+
+```latex
+\defbeamertemplate{headline}{page number}{%
+    \vskip1pt%
+    \setbeamertemplate{footline}[page number]%
+    \usebeamertemplate{footline}%
+}
+\setbeamertemplate{headline}[page number]
+```
+
+Since the footline template is set inside the group it's not affected by your global theme.  You can have a regular footline that's something else like `infolines`--although I assume you don't want that one because it's already got the page number in it.  
+
+This does seem to clobber the headline in some of the fancier themes.  So you might try instead `\addtobeamertemplate`:
+
+```latex
+\addtobeamertemplate{headline}{%
+    \vskip1pt%
+    \setbeamertemplate{footline}[page number]%
+    \setbeamercolor{page number in head/foot}{use=headline,fg=headline.fg,bg=headline.bg}
+    \usebeamertemplate{footline}%    
+}{% don't add anything after
+}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6291/how-to-insert-footline-style-page-number-into-headline/6322#6322) on TeX Stack Exchange, 2010-12-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

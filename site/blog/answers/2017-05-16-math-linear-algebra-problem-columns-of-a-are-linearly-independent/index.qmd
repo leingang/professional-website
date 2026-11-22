@@ -1,0 +1,43 @@
+---
+title: Linear Algebra Problem - columns of $A$ are linearly independent $\Rightarrow$ $A^TA$ non-singular
+date: '2017-05-16'
+description: Notice that $$A^TA v\cdot v = Av \cdot Av = \Vert Av \Vert^2$$ So if $A^TA v= 0$, what does this tell you about $Av$?
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2283411
+se-link: https://math.stackexchange.com/questions/2283360/linear-algebra-problem-columns-of-a-are-linearly-independent-rightarrow/2283411#2283411
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Linear Algebra Problem - columns of $A$ are linearly independent $\Rightarrow$ $A^TA$ non-singular](https://math.stackexchange.com/questions/2283360/linear-algebra-problem-columns-of-a-are-linearly-independent-rightarrow), asked by [PhysicsMathsLove](https://math.stackexchange.com/users/413179/physicsmathslove) on Mathematics Stack Exchange (2017-05-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to go in this direction only. Is this proof correct? ($A$ is an $m \times n$ matrix). 
+>
+> I am considering the contrapositive of the statement:
+>
+>
+>
+> Suppose $A^TA$ is singular. 
+> Then $\det (A^TA) =0$. 
+> $\det(A^TA) = \det(A^T) \det(A)$ and since $\det (A^T) = \det(A)$, we must have $det(A) = 0$. In other words, the columns of $A$ are linearly dependent.   $\blacksquare$
+:::
+
+Notice that
+$$A^TA v\cdot v = Av \cdot Av = \Vert Av \Vert^2$$
+So if $A^TA v= 0$, what does this tell you about $Av$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2283360/linear-algebra-problem-columns-of-a-are-linearly-independent-rightarrow/2283411#2283411) on Mathematics Stack Exchange, 2017-05-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

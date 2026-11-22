@@ -1,0 +1,54 @@
+---
+title: Orthogonal trajectory of $ xy = 2$
+date: '2016-10-01'
+description: 'I''m not sure what you mean by "give the correct ans". So I''ll solve both equations:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1949372
+se-link: https://math.stackexchange.com/questions/1949337/orthogonal-trajectory-of-xy-2/1949372#1949372
+se-score: 2
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Orthogonal trajectory of $ xy = 2$](https://math.stackexchange.com/questions/1949337/orthogonal-trajectory-of-xy-2), asked by [jonsno](https://math.stackexchange.com/users/310635/jonsno) on Mathematics Stack Exchange (2016-10-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have to find orthogonal trajectory of $xy = 2$ hyperbola.
+>
+> Differentiating wrt x:
+>
+> $$x\dfrac{dy}{dx}+y = 0$$
+>
+> $$\dfrac{dy}{dx} = \dfrac{-y}{x} \ \ \ \ \ ... (1) \ \ \ \ \ \ \\=\dfrac{-2}{x^2}\ \ \ \ \ ...(2)$$
+>
+> Now we replace $\dfrac{dy}{dx}$ with $\dfrac{-dx}{dy}$ and solve. 
+>
+> <strike>The problem is that eqn (1) gives wrong curve but eqn  (2) gives correct curve.</strike> 
+>
+> **Edit:**
+> From **1** and **2**  here we get two **different** answers. Are they both correct?
+:::
+
+I'm not sure what you mean by "give the correct ans".  So I'll solve both equations:
+
+(1) If $\frac{dy}{dx} = -\frac{y}{x}$, then the orthogonal trajectory satisfies $\frac{dy}{dx} = \frac{x}{y}$.  So
+$$x \,dx = y\, dy \implies \frac{1}{2} x^2 = \frac{1}{2} y^2 + K$$
+for some constant $K$.  Renaming the constant $k=2K$, we see the orthogonal trajectories have equation $x^2-y^2 = k$.
+
+(2) If $\frac{dy}{dx} = -\frac{2}{x^2}$, then the orthogonal curve has equation $\frac{dy}{dx} = \frac{x^2}{2}$.  Then $y = \frac{x^3}{6}+C$.  
+
+As long as $xy=2$ and $y = x^{3}/6 +C$ intersect at some point $(a,b)$, then their tangents are orthogonal.  But we usually talk about orthogonal *families* of curves.  For *any* point $(a,b)$ in the plane, there is a curve of the form $xy=c$ through it, *and* a curve of the form $x^2-y^2 = k$ through it, and those two curves have orthogonal tangents at $(a,b)$.  This is the stronger result, and what I would call the expected answer.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1949337/orthogonal-trajectory-of-xy-2/1949372#1949372) on Mathematics Stack Exchange, 2016-10-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

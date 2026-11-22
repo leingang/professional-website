@@ -1,0 +1,57 @@
+---
+title: How do I show that a fixed point p is orthogonal to a point q on a curve using differentiation?
+date: '2017-01-10'
+description: You are close. Remember that $f'(t)$ is a vector for each $t$. We have $$\varphi'(t) = -2 f'(t)\cdot (\mathbf{p} - f(t))$$ So $\varphi'(t0) = -2 f'(t0) \cdot…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2091759
+se-link: https://math.stackexchange.com/questions/2091738/how-do-i-show-that-a-fixed-point-p-is-orthogonal-to-a-point-q-on-a-curve-using-d/2091759#2091759
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I show that a fixed point p is orthogonal to a point q on a curve using differentiation?](https://math.stackexchange.com/questions/2091738/how-do-i-show-that-a-fixed-point-p-is-orthogonal-to-a-point-q-on-a-curve-using-d), asked by [Daniel](https://math.stackexchange.com/users/405701/daniel) on Mathematics Stack Exchange (2017-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $f: \mathscr{R} \rightarrow \mathscr{R}^n$ be a differentiable mapping with $f'(t) \neq \textbf{0}$ for all $t \in \mathscr{R}$.  Let **p** be a fixed point not on the image curve of $f$ as in Fig. 2.4 [below].  If $\textbf{q} = f(t_0)$ is the point of the curve closest to **p**, that is, if $|\textbf{p} - \textbf{q}| \leqq |\textbf{p} - f(t)|$ for all $t \in \mathscr{R}$, show that the vector $\textbf{p} - \textbf{q}$ is orthogonal to the curve at **q**. 
+>
+> >*Hint:* Differentiate the function $\varphi(t) = |\textbf{p} - f(t)|^2.$
+>
+>
+> >*Source: [Advanced Calculus of Several Variables][q-2]* 
+>
+> [![Figure 2.4: see problem statement for description][q-1]][q-1]
+>
+> This problem is somewhat similar perhaps to [this one][q-3], but different enough for me to still be confused.
+>
+> In order to show that $\textbf{p} - \textbf{q}$ is orthogonal to $f'(t_0)$, I would think the easiest way to do that would be to show that their dot product is zero.  The hint suggests that we differentiate $\varphi(t) = |\textbf{p} - f(t)|^2$, which I think is $-2f'(t)|\textbf{p} - f(t)|$.  It seems like the next step would be to evaluate this expression at $t_0$ giving $-2f'(t_0)|\textbf{p} - \textbf{q}|$, but I'm not sure where to go from there. Sadly, the book has no answer key.
+>
+>
+>   [q-1]: ZecFv.png
+>   [q-2]: https://play.google.com/store/books/details?id=sZIFcJ8DJAIC
+>   [q-3]: https://math.stackexchange.com/questions/1180920/let-q-be-a-point-not-on-the-line-lpa-pta-prove-that-q-xt-0-is-ort
+:::
+
+You are close.  Remember that $f'(t)$ is a vector for each $t$.  We have
+$$\varphi'(t) = -2 f'(t)\cdot (\mathbf{p} - f(t))$$
+So $\varphi'(t_0) = -2 f'(t_0) \cdot (\mathbf{p} - \mathbf{q})$.
+
+ 1. What does the fact that $\mathbf{q}$ is the point on the curve closest to $\mathbf{p}$ tell you about $\varphi'(t_0)$ on the left?
+
+ 2. What vectors are being dotted on the right?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2091738/how-do-i-show-that-a-fixed-point-p-is-orthogonal-to-a-point-q-on-a-curve-using-d/2091759#2091759) on Mathematics Stack Exchange, 2017-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

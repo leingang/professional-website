@@ -1,0 +1,43 @@
+---
+title: what is the mathematical term for what laymen would call "space" or "spatial"?
+date: '2016-10-03'
+description: As you point out, the laymen's concept of “space” is going to be ambiguous. In some contexts it will be assumed euclidean, others not; in some…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1952019
+se-link: https://math.stackexchange.com/questions/1952012/what-is-the-mathematical-term-for-what-laymen-would-call-space-or-spatial/1952019#1952019
+se-score: 1
+se-accepted: false
+se-tags:
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[what is the mathematical term for what laymen would call "space" or "spatial"?](https://math.stackexchange.com/questions/1952012/what-is-the-mathematical-term-for-what-laymen-would-call-space-or-spatial), asked by [user56834](https://math.stackexchange.com/users/360475/user56834) on Mathematics Stack Exchange (2016-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When laymen (including most physicists) use the word "space" they generally refer to the kind of space we live in, through which objects can move, etc. This space can be non-Euclidian and higher-dimensional, in which case people would generally still refer to this as "spatial", (e.g. 4D space is still called "space"). But there are a lot of sets that mathematicians would call "spaces", which are not spatial in the layman's sense. What is the mathematical term that coincides with the layman's understanding of "space"?
+>
+> **Metric space** is not a good candidate, because there are metric spaces that no one would generally refer to as "spatial" in the layman's sense. For example, the space of possible words with the 26-letter alphabet is a metric space, since we can define a distance function $D(A,B)$ to denote the minimum amount of symbol changes needed to change from word $A$ to $B$. No one would call this "spatial" though, in the layman's sense of the term.
+>
+> **Topological space** is not a good candidate either, since no distance  function is defined. Would "topological metric space" be enough to exclude all such examples as "the space of words"?
+>
+>
+>
+> **So my question is:** is there a mathematical term that coincides with the layman's understanding of the word "space"?
+:::
+
+As you point out, the laymen's concept of “space” is going to be ambiguous.  In some contexts it will be assumed euclidean, others not; in some three-dimensional, others not.
+
+If a mathematician wants to say something about a space, these ambiguities will probably matter a lot.  So rather than use an imprecise term, the mathematician will use a precise one.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1952012/what-is-the-mathematical-term-for-what-laymen-would-call-space-or-spatial/1952019#1952019) on Mathematics Stack Exchange, 2016-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

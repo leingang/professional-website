@@ -1,0 +1,203 @@
+---
+title: How to add copyright information to PDF metadata
+date: '2012-01-18'
+description: As egreg notes, rights information is not part of the document information directory. But it can be included in the document's extensible metadata profile.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 41492
+se-link: https://tex.stackexchange.com/questions/41461/how-to-add-copyright-information-to-pdf-metadata/41492#41492
+se-score: 25
+se-accepted: true
+se-tags:
+- metadata
+- copyright
+- hyperxmp
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to add copyright information to PDF metadata](https://tex.stackexchange.com/questions/41461/how-to-add-copyright-information-to-pdf-metadata), asked by [Brent.Longborough](https://tex.stackexchange.com/users/344/brent-longborough) on TeX Stack Exchange (2012-01-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> # The Last(?) Word
+>
+> I have now accepted @MatthewLeingang's answer. This directs me to the `hyperxmp` package, which appears to be the simplest solution (for me as a very-end user). The fact that this doesn't work in *my*  workflow and environment isn't Matthew's fault.
+>
+> To chase the rest of my problem, which appears to involve a conflict with `memoir`, readers may be interested in [this spin-off question][q-1].
+>
+> Thank you all again for your help. 
+>
+> * * *
+> # Progress Update 1:
+>
+> First, flouting convention, my sincere thanks to all who have answered or commented (duly upvoted). Special thanks to @diabonas, whose sample PDF does indeed contain a copyright notice.
+>
+> However, there may be a clue here: while his PDF says this:
+>
+> > PDF Producer: XeTeX 0.9997
+>
+> mine says this:
+>
+> > PDF Producer: xdvipdfmx (0.7.8)
+>
+> Now, I'm processing it with XeLaTeX *via* `latexmk`, but to keep myself honest, I re-did it with just XeLaTeX, with the same result. 
+>
+> * * *
+> # Progress Update 2:
+>
+> Here's an MWE that fails, and gives "PDF Producer: xdvipdfmx (0.7.8)":
+>
+> ```latex
+> % !TEX TS-program = XeLaTeX
+> % !TEX encoding = UTF-8 Unicode
+> \documentclass{memoir}
+> \usepackage{lipsum}
+> \usepackage{hyperref}
+> \usepackage{hyperxmp}
+> \hypersetup{
+>     pdfauthor={Brent Longborough},
+>     pdftitle={O Hai},
+>     pdfcopyright=Copyright © 2012 by Brent Longborough. All rights reserved.}
+> \begin{document}
+> \lipsum[1]
+> \end{document}
+> ```
+>
+> By just changing the document class to article, we get "PDF Producer: XeTeX 0.9997", and the copyright notice appears!
+>
+> * * *
+> # Original Question: 
+>
+> Using XeLaTeX. I want to add two pieces of metadata to a PDF: copyrighted status and the copyright notice.
+>
+> I'm already using `hyperref` in the document, and I have no special worries about "overheads", only about keeping the workflow simple.
+>
+> On the principle of "monkey see, monkey do", I tried this to no avail:
+>
+> ```latex
+> \hypersetup{%
+>     pdfinfo={%
+>         CopyrightStatus={Copyrighted},
+>         CopyrightNotice={Copyright © 2012 by Brent Longborough}
+>         }
+>     }
+> ```
+>
+> So far, I have been unable to find the correct tag names, or to discover even whether I have a chance.
+>
+> All suggestions are welcome, but I'd especially like a pointer to the book of tag names for PDF metadata.
+>
+> * * *
+> The answers and comments from Martin and EGreg deserve some additional explanation on my part.
+>
+> My PDF reader is PDF Xchange Viewer from Tracker Software. When I view the Document Properties, and select the "Additional Metadata..." button, a [third] window appears in which there appear a dropdown labelled "Copyright Status:", with options "Unknown", "Copyrighted", and "Public Domain"; and a text box labelled "Copyright Notice:":
+>
+> ![screenshot of PDF Xchange Viewer's windows][q-2]
+>
+> So you can see the source of my half-blind groping for metadata tags...
+>
+> So, I guess what I'm *really* asking is "What tag names should I be using to fill in these fields?"
+>
+> * * *
+> After hacking at the PDF (using @egreg's tip and then the viewer itself), I found the Copyright stuff in some RDF dc: namespace. I have since tried using [the hyperxmp package][q-3], but without success (nothing shows up in the PDF), and I suspect that may be because it only works for pdfLaTeX.
+>
+> * * *
+> I have also tried @MatthewLeingang's answer, but can confirm that it definitely requires pdfLaTeX, and I really don't want to go back. 
+>
+>
+>
+>   [q-1]: https://tex.stackexchange.com/questions/46068/is-there-a-poisonous-interaction-between-memoir-hyperref-and-hyperxmp
+>   [q-2]: xK8vg.png
+>   [q-3]: http://www.ctan.org/pkg/hyperxmp
+:::
+
+As egreg notes, rights information is not part of the document information directory.  But it can be included in the document's extensible metadata profile.  
+
+Here are two solutions that work with Adobe Acrobat and `pdflatex`.  I don't know if you will see the metadata in the same place as you do with Acrobat; PDF XChange Viewer is a Windows app and I have a Mac so I can't test it.  
+
+Also (*potential showstopper, wish I had noticed this earlier*) neither solutions works with `xetex`.  Perhaps they could be cajoled but that would require patching the package.
+
+xmpincl
+=======
+
+ 1. Make sure you have the [`xmpincl`](http://ctan.org/pkg/xmpincl) package.  It's in TeX-live.
+
+ 2. Create a basic XMP file like this:
+
+
+```xml
+    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        ">
+       <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about=""
+                xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/">
+             <xmpRights:Marked>True</xmpRights:Marked>
+          </rdf:Description>
+          <rdf:Description rdf:about=""
+                xmlns:dc="http://purl.org/dc/elements/1.1/">
+             <dc:rights>
+                <rdf:Alt>
+                   <rdf:li xml:lang="x-default">Copyright (C) 2012 by Brent Longborough.  All rights reserved.</rdf:li>
+                </rdf:Alt>
+             </dc:rights>
+          </rdf:Description>
+       </rdf:RDF>
+    </x:xmpmeta>
+```
+
+Let's call it `copyright.xmp`.  If you want to grant more rights you can; you just need something more detailed.  Creative Commons has a page to help you [generate an XMP file](http://www.creativecommons.org/choose/).
+
+ 3. Include this license file in your document like this:
+
+        \documentclass{article}
+        \title{My article}
+        \author{Brent Longborough}
+        \usepackage{xmpincl}
+        \includexmp{copyright}
+        \usepackage{lipsum}
+    
+        \begin{document}
+        \maketitle
+        \lipsum
+        \end{document}
+
+That's it!  When I open the document in Adobe Acrobat I can see the copyright information in the expected place.  If I select File > Properties ... and click on "Additional Metadata..." it's there.
+
+![enter image description here][1]
+
+
+  [1]: mdmjd.png
+
+hyperxmp
+========
+
+The [`hyperxmp`](http://ctan.org/pkg/hyperxmp) implements extra document information keys `pdfcopyright` and `pdfcopyrighturl` that can be declared in much the same way as `\pdfinfo` keys.  Under the hood it creates the XMP file for you.  So you only need a file like this: 
+
+```latex
+\documentclass{article}
+\title{My article}
+\author{Brent Longborough}
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+\hypersetup{
+	pdfauthor={Brent Longborough},
+	pdfcopyright={Copyright (C) 2012 by Brent Longborough.  All rights reserved.}
+}
+\usepackage{lipsum}
+
+\begin{document}
+\maketitle
+\lipsum
+\end{document}
+```
+
+Also doesn't work in `xetex`, though.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/41461/how-to-add-copyright-information-to-pdf-metadata/41492#41492) on TeX Stack Exchange, 2012-01-18, with [edits](https://tex.stackexchange.com/posts/41492/revisions) by [doncherry](https://tex.stackexchange.com/users/4012/doncherry). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

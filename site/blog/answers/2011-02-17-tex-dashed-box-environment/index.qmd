@@ -1,0 +1,92 @@
+---
+title: Dashed box environment
+date: '2011-02-17'
+description: Welcome, and good question. I don't know of a LaTeX package that can easily do what you want out of the box. The fancybox package does a lot of fancy boxes…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11296
+se-link: https://tex.stackexchange.com/questions/11291/dashed-box-environment/11296#11296
+se-score: 11
+se-accepted: true
+se-tags:
+- environments
+- boxes
+- punctuation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Dashed box environment](https://tex.stackexchange.com/questions/11291/dashed-box-environment), asked by [Weslei](https://tex.stackexchange.com/users/3660/weslei) on TeX Stack Exchange (2011-02-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am new to LaTeX and I'm having a hard time trying to create a dashed box environment without success. Can someone please share a code for a dashed box environment such as the one in the image?
+>
+> ![][q-1]
+>
+> I would like to use it the following way:
+>
+> ```latex
+> My Elaboration
+> \begin{elaboration}{My item list is shown below:}
+>   \item dummy item
+>   \item dummy item 2
+>   \item dummy item 3
+> \end{elaboration}
+> ```
+>
+> By the way, how could be the code for the same environment but with a continuous box (not dashed)?
+> Thanks in advance!
+>
+>   [q-1]: J0ja4.png
+:::
+
+Welcome, and good question.  I don't know of a LaTeX package that can easily do what you want out of the box.  The [`fancybox`](http://ctan.org/pkg/fancybox) package does a lot of fancy boxes (naturally) but not dashed lines around them.  
+
+The reason might be that TeX doesn't have native mechanisms for drawing dashed/dotted lines, only solid ones.  So to create dashed lines one needs to calculate the number of dashes and draw each one.  
+
+LaTeX's built-in `picture` environment can do this, but I never learned too much about it.  TikZ can do it:
+
+```latex
+\documentclass{article}
+\usepackage{environ}
+\usepackage{tikz}
+
+\NewEnviron{elaboration}{
+\par
+\begin{tikzpicture}
+\node[rectangle,minimum width=0.9\textwidth] (m) {\begin{minipage}{0.85\textwidth}\BODY\end{minipage}};
+\draw[dashed] (m.south west) rectangle (m.north east);
+\end{tikzpicture}
+}
+
+
+\begin{document}
+My Elaboration
+\begin{elaboration}
+{My item list is shown below:}
+\begin{itemize}
+  \item dummy item
+  \item dummy item 2
+  \item dummy item 3
+\end{itemize}
+\end{elaboration}
+
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: ixX9Y.png
+
+There is probably an improvement to the TikZ code that can be made by using a decoration to draw the shape's border, thereby reducing it to one line of TikZ.  But since all you want is a dashed line this will do the trick.  You can play around with the settings to get the separation you want or make it customizable.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11291/dashed-box-environment/11296#11296) on TeX Stack Exchange, 2011-02-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,53 @@
+---
+title: Negation, Contrapositive of (¬a ∧ b) → c
+date: '2021-06-09'
+description: The negation of “If it is raining, then I will bring my umbrella” is not “If is not raining, then I will not bring my umbrella.” The latter is equivalent to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4168127
+se-link: https://math.stackexchange.com/questions/4168116/negation-contrapositive-of-%c2%aca-%e2%88%a7-b-%e2%86%92-c/4168127#4168127
+se-score: 1
+se-accepted: true
+se-tags:
+- solution-verification
+- propositional-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Negation, Contrapositive of (¬a ∧ b) → c](https://math.stackexchange.com/questions/4168116/negation-contrapositive-of-%c2%aca-%e2%88%a7-b-%e2%86%92-c), asked by [Python_newbie](https://math.stackexchange.com/users/939045/python-newbie) on Mathematics Stack Exchange (2021-06-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Need to find the negation and contrapositive of (¬a ∧ b) → c 
+>
+> Negation of  ¬a∧b,  using De Morgan’s law is  a∨¬b. and the negation of an implication is the conjunction of its antecedent and the negation of its consequent. 
+>
+> So am I correct in understanding the negation of  (¬a ∧ b)→ c  is  ¬a ∧ b ∧ ¬ c. 
+>
+> and the contrapositive of  (¬a ∧ b)→ c  =  ¬c→(a∨¬b).
+>
+> Similarly, for the statement "If it is raining then I will bring my umbrella."
+>
+> Are the following correct?
+> Negation: If it is not raining then I will not bring my umbrella. 
+> Contrapositive: If I do not bring my umbrella, then it is not raining
+:::
+
+The negation of “If it is raining, then I will bring my umbrella” is not “If is not raining, then I will not bring my umbrella.”  The latter is equivalent to the **converse** of the former.  
+
+In symbols,
+$$\neg(p \rightarrow q) = \neg((\neg p) \lor q) = p \land \neg q$$
+while
+$$(\neg p) \rightarrow (\neg q) = (\neg(\neg p)) \lor (\neg q) =  (\neg q) \lor p = q \rightarrow p$$
+
+Back into words, the negation of “If it is raining, then I will bring my umbrella” is “It is raining and I won't bring my umbrella.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4168116/negation-contrapositive-of-%c2%aca-%e2%88%a7-b-%e2%86%92-c/4168127#4168127) on Mathematics Stack Exchange, 2021-06-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

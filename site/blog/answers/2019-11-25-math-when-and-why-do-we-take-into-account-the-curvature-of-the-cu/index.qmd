@@ -1,0 +1,61 @@
+---
+title: When and why do we take into account the curvature of the curve at infinitesimal scale in calculus?
+date: '2019-11-25'
+description: Let's take the revolution part out of it and just consider length of a curve. What is the length of the line segment from $(0,0)$ to $(1,1)$?, If we follow…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3450461
+se-link: https://math.stackexchange.com/questions/3450416/when-and-why-do-we-take-into-account-the-curvature-of-the-curve-at-infinitesimal/3450461#3450461
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[When and why do we take into account the curvature of the curve at infinitesimal scale in calculus?](https://math.stackexchange.com/questions/3450416/when-and-why-do-we-take-into-account-the-curvature-of-the-curve-at-infinitesimal), asked by [Mihail](https://math.stackexchange.com/users/383878/mihail) on Mathematics Stack Exchange (2019-11-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Background**
+>
+> We know that the integral $\int f(x)~dx$ represents the area under the curve, where the area is represented by the sum of individual areas of elemental strips of the width $dx$ and height $f(x)$. As $dx$ is infinitesimal, we can ignore the error due to the curvature of the curve, and treat the elemental strips as almost 1-dimensional. As the curvature disappears at infinitesimal scale, the area becomes that of a perfect rectangle, $dx \times f(x)$.
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Similarly, this can be extended to working out the volume of revolution, which consists of elemental "disks" of the face area $\pi f^2(x)$ and length $dx$. The name "disk" used in textbooks is really a cylinder with a large face area relative to a small (really, infinitesimal) length. The volume of a cyliner is equal to a face area $\times$ length, so the volume of revolution is $\int \pi f^2(x)~dx$. Again, this ignores the curvature of the original curve $f(x)$ and assumes that at each $dx$ the elemental unit is perfectly cylindrical.
+>
+> The above are uncontroversial established textbook results.
+>
+> **Question**
+>
+> Why can't we extend the same principles in deriving the surface of revolution? If we take the cylinder as the elemental shape, the surface of revolution of the whole curve could be represented by the sum of lateral surfaces of the elemental cylinders, each equal to $2\pi f(x)\times dx$. So the whole surface would be equal to $\int 2\pi f(x)~dx$. But apparently this is wrong.
+>
+> Instead, here, the textbook derivations ([example][q-2]) **do** take account of the curvature in $f(x)$, and use the elemental surface area equal to $2\pi f(x) \times ds$, where $ds$ is the curved length of the curve in each interval of $dx$. Hence, the elemental shape assumed is that of a tube, instead of a cylinder.
+>
+> Why is it not acceptable to ignore the curvature here, but is acceptable in the calculations of area under the curve and volume of revolution?
+>
+>
+>   [q-1]: gro2F.png
+>   [q-2]: pMi3K.png
+:::
+
+Let's take the revolution part out of it and just consider length of a curve.  What is the length of the line segment from $(0,0)$ to $(1,1)$?, If we follow your method, we should be able to do this:
+
+* For each n, divide the interval $[0,1]$ into $n$ pieces of equal width $\Delta x = \frac{1}{n}$.
+* For each $i$ from $0$ to $n$, approximate the curve over the interval $\left[\frac{i-1}{n},\frac{i}{n}\right]$ by the horizontal line segment connecting $\left(\frac{i-1}{n},\frac{i-1}{n}\right)$ to $\left(\frac{i}{n},\frac{i-1}{n}\right)$.  The length of this line segment is $\frac{1}{n}$.
+* The length of the curve is approximately
+$$\frac{1}{n} + \frac{1}{n} + \dots + \frac{1}{n} = 1$$
+Since the approximating sum does not depend on $n$, the length is precisely $1$.
+
+But we know the actual length of this line segment is $\sqrt{1+1} = \sqrt{2}$.  We must take the vertical displacement into account as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3450416/when-and-why-do-we-take-into-account-the-curvature-of-the-curve-at-infinitesimal/3450461#3450461) on Mathematics Stack Exchange, 2019-11-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

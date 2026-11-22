@@ -1,0 +1,73 @@
+---
+title: Directional derivative confusion - why does independently evaluating partial changes, then adding them, work?
+date: '2019-02-12'
+description: This is a good question! Keep in mind the directional derivative is defined first in terms of a limit. If $f$ is defined near $P$ and $\mathbf{u}$ is a unit…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3109590
+se-link: https://math.stackexchange.com/questions/3109545/directional-derivative-confusion-why-does-independently-evaluating-partial-cha/3109590#3109590
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- derivatives
+- partial-derivative
+- gradient-descent
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Directional derivative confusion - why does independently evaluating partial changes, then adding them, work?](https://math.stackexchange.com/questions/3109545/directional-derivative-confusion-why-does-independently-evaluating-partial-cha), asked by [John P](https://math.stackexchange.com/users/643886/john-p) on Mathematics Stack Exchange (2019-02-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I apologize for both my crude math grammar, and what is probably an obvious question - I am a novice.
+>
+> I am confused as to why, when taking the directional derivative, the gradient is evaluated by plugging in a **fixed** set of dependent variables, and this gradient is then dotted with the desired unit direction; as opposed to only the FIRST component in the gradient being evaluated by plugging in the fixed set of dependent variables, and then subsequent partial derivative components being evaluated at the **new position/modified set of dependent variables**, e.g. for a 2-d gradient, partial x being evaluated at (x,y) and partial y evaluated at (x+dx,y)?
+>
+> In more detail:
+>
+> As I understand it, the directional derivative for a function z=f(x,y) is calculated by the gradient dotted with a unit vector in the desired direction. Each component of the gradient is the ratio, **at a point (x,y)**, of the change in z to an “extremely small” independent change in x, or y. Dotting the x-component of the gradient with the x-component of our unit direction vector thus gives the change in z from taking an independent step in the x-direction by “ratio of change in z to extremely small change in x, scaled down by x-component of unit direction vector”. The same is independently done for y. The two are then added together to get the result of the dot product, apparently the ratio of the change in z to an “extremely small change” in the desired direction.
+>
+> My confusion lies in why the two partial derivatives that make up the gradient are evaluated at (x,y) before dotting with the desired unit direction, instead of partial x being evaluated at (x,y), and partial y being evaluated at (**x+(dx*x-component of unit direction vector)**, y) (or vice versa) ?
+>
+> What if independent changes in x and y at a given point (x,y) would each result in increases in z, but changed together result in a decrease in z? Geometrically I can simply imagine a slope that increases in the positive x and y directions over a “small distance”, but drops into a pit when moving diagonally in <“small x \* sqrt(2)/2”, “small y\*sqrt(2)/2”> direction. The only way to reach this pit would be by first moving in one direction, then subsequently in the next direction, aka first evaluating the change in z from (x, y) to (x+dx\*sqrt(2)/2, y), and then adding the change from (x+dx\*sqrt(2)/2, y) to (x+dx\*sqrt(2)/2, y+dy\*sqrt(2)/2).
+>
+> This seems like an very obvious and trivial observation. Am I misunderstanding the directional derivative? Or is this issue simply “circumvented” by pointing to the partial changes in x and y being “infinitely small”? If so, how does that work when applied in the real, discrete world?
+>
+> Thank you very much for your time.
+:::
+
+This is a good question! Keep in mind the directional derivative is defined first in terms of a limit.  If $f$ is defined near $P$ and $\mathbf{u}$ is a unit vector, the directional derivative of $f$ at $P$ in the direction $\mathbf{u}$ is
+$$D_{\mathbf{u}}f(P) = \lim_{h \to 0} \frac{f(P + h\mathbf{u}) - f(P)}{h}$$
+So at the outset we are measuring displacement from $P$.
+
+But you make a good point about worrying if partial derivatives require moving incrementally in each coordinate.  Does it matter?  Here is a case where it does: Let
+$$f(x,y) = \begin{cases} x & \text{if $|x| \geq |y|$} \\ -x & \text{if $|x| < |y|$} \end{cases}$$
+Let $\mathbf{u} = \left<\frac{3}{5},\frac{4}{5}\right>$.  Then
+$$\begin{align*}
+    D_{\mathbf{u}}f(0,0) = \lim_{h \to 0} \frac{f(3h/5,4h/5)}{h} = \lim_{h\to 0} \frac{-3h/5}{h} = -\frac{3}{5}
+\end{align*}$$
+However,
+$$\begin{align*}
+    \frac{\partial f}{\partial x}(0,0) &= \lim_{h \to 0} \frac{f(h,0)}{h} = \lim_{h\to 0} \frac{h}{h} = 1 \\
+    \frac{\partial f}{\partial y}(0,0) &= \lim_{h \to 0} \frac{f(0,h)}{h} = \lim_{h\to 0} \frac{-0}{h} = 0
+\end{align*}$$
+So $\nabla f(0,0) = \left<1,0\right>$, and
+$$\nabla f(0,0) \cdot \mathbf{u} = \frac{3}{5}$$
+So this is problematic.
+
+We “circumvent” this issue by assuming that $f$ is *differentiable* at $P$.  In several variables, differentiable is more than just having partial derivatives.  The linear approximation formed by the partial derivatives needs to be a good approximation to $f$ near $P$.  This can be expressed precisely in terms of limits.  The function above is not differentiable at $(0,0)$.
+
+The Chain Rule holds only for differentiable functions.  With that extra assumption, it is always true that
+$$D_{\mathbf{u}}(P) = \nabla f(P) \cdot \mathbf{u}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3109545/directional-derivative-confusion-why-does-independently-evaluating-partial-cha/3109590#3109590) on Mathematics Stack Exchange, 2019-02-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

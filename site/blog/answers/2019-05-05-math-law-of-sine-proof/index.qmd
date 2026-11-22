@@ -1,0 +1,61 @@
+---
+title: Law of Sine proof
+date: '2019-05-05'
+description: 'Maybe it''s more intuitive this way: let $D$ be the point where the altitude meets $BC$. Then $\triangle ABD$ and $\triangle CDA$ are both similar to $\triangle…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3214872
+se-link: https://math.stackexchange.com/questions/3214858/law-of-sine-proof/3214872#3214872
+se-score: 1
+se-accepted: false
+se-tags:
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Law of Sine proof](https://math.stackexchange.com/questions/3214858/law-of-sine-proof), asked by [Rijndael](https://math.stackexchange.com/users/93748/rijndael) on Mathematics Stack Exchange (2019-05-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Below is the _Law of Sines_ formula:
+>
+> $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$
+>
+> [![][q-1]][q-1]
+>
+> And the proof is derived along the lines of:
+>
+> $\sin B = \frac{h}{c}$ & $\sin C = \frac{h}{b}$ 
+>
+> $c \sin B = h$ & $b \sin C = h$
+>
+> $c \sin B = b \sin C$
+>
+> and so on ..
+>
+> Mathematically, I can understand this formula, but visually, it makes no intuitive sense to me.
+>
+> How can "$c \sin B$" be equal to "$b \sin C$" when visually they have completely different proportions ?
+>
+>
+>   [q-1]: qtrsm.gif
+:::
+
+Maybe it's more intuitive this way: let $D$ be the point where the altitude meets $BC$.  Then $\triangle ABD$ and $\triangle CDA$ are both similar to $\triangle CBA$.  In particular, $\angle B = \angle DAC$.
+
+Now $\sin\angle B = \frac{h}{c}$ and $\cos\angle DAC = \frac{h}{b}$  So
+$$c \sin\angle B = b \cos\angle DAC$$
+But the *co*-sine of an angle is the *sine* of its *co*-mplement.  So $\cos\angle DAC = \sin\angle C$, which means that
+$$c \sin\angle B = b \cos\sin\angle C$$
+whence
+$$\frac{c}{\sin\angle C} = \frac{b}{\sin\angle B}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3214858/law-of-sine-proof/3214872#3214872) on Mathematics Stack Exchange, 2019-05-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

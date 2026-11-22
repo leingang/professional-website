@@ -1,0 +1,53 @@
+---
+title: Can I consider isomophism in graph theory as the term "mapping" as isomorphism in Abstract Algebra?
+date: '2017-09-24'
+description: There is already a notion from graph theory related to the thing you are trying to do. The degree of a vertex is defined to be the number of edges that contain…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2442924
+se-link: https://math.stackexchange.com/questions/2442884/can-i-consider-isomophism-in-graph-theory-as-the-term-mapping-as-isomorphism-i/2442924#2442924
+se-score: 1
+se-accepted: false
+se-tags:
+- graph-theory
+- proof-writing
+- graph-isomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can I consider isomophism in graph theory as the term "mapping" as isomorphism in Abstract Algebra?](https://math.stackexchange.com/questions/2442884/can-i-consider-isomophism-in-graph-theory-as-the-term-mapping-as-isomorphism-i), asked by [Lingnoi401](https://math.stackexchange.com/users/353503/lingnoi401) on Mathematics Stack Exchange (2017-09-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I just start studying graph theory as found it's weird mathematics area
+> I want to learn from math point view ,but when I try to find clip in youtube,mostly mention from com sci point view  ok that is not problem in this question
+>
+> This question ask about Isomorphism in Graph theory [![this picture][q-1]][q-1]
+>
+>
+>   [q-1]: ZgZuV.gif
+>
+> I just start read a few page of graph theory book I don't know to prove in graph theory term.
+> But I borrow the term from group theory(even I don't know operation or the elenment that i define is group or not)
+> define group G has order 3 (e,c,d) has operation "draw a line to each element" and do nothing is identity of this group
+> and H as order 2 (C',D') as the "do notthing" each elemnt (in this case the i don't know how to define idenitiy)
+>
+> since order is not equal it can't mapping bijective to each group therefore it's not isomorphism 
+> Can I use this similiar proof in isomorphism proof in graph theory ?
+:::
+
+There is already a notion from graph theory  related to the thing you are trying to do.  The *degree* of a vertex is defined to be the number of edges that contain that vertex.  A graph isomorphism preserves the degree of each vertex.
+
+In your graphs, $A$ and $B$ have degree 2, while $A'$ and $B'$ have degree 3.  So a mapping which sends $A$ to $A'$, $B$ to $B'$, etc., cannot be an isomorphism.
+
+A more interesting question is whether there exists *any* isomorphism between the two graphs.  For that, I would look at the quadrilateral of degree-3 vertices within the righthand graph.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2442884/can-i-consider-isomophism-in-graph-theory-as-the-term-mapping-as-isomorphism-i/2442924#2442924) on Mathematics Stack Exchange, 2017-09-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

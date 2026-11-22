@@ -1,0 +1,68 @@
+---
+title: Wrapfigure not wrapping a description list
+date: '2010-11-07'
+description: I'm not familiar with wrapfigure, but if it were me I'd use minipages.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5031
+se-link: https://tex.stackexchange.com/questions/5030/wrapfigure-not-wrapping-a-description-list/5031#5031
+se-score: 4
+se-accepted: true
+se-tags:
+- lists
+- description
+- wrapfigure
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Wrapfigure not wrapping a description list](https://tex.stackexchange.com/questions/5030/wrapfigure-not-wrapping-a-description-list), asked by Helen on TeX Stack Exchange (2010-11-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want to write my CV in LaTeX. I would like to wrap the figure of my photo with the text that describe my personal information. I would like to wrapfigure with a description text. I'm using the following code:
+>
+>
+> ```latex
+> \begin{wrapfigure}{r}{1cm}
+>   \includegraphics[height=20mm]{Foto-CV.jpg}
+> \end{wrapfigure}
+>
+> \begin{description}
+>   \item[Surname] \emph{my surname}
+>   \item[Name] \emph{my name}
+>   \item[Date of Birth:] aa/bb/cccc 
+> \end{description} 
+> ```
+>
+> When I do this, LaTeX wraps the figure with the text following the description not with the description itself.
+>
+> Is there something am I missing? Or maybe there is another package better suited for this...
+>
+> Thanks in advance for your help!
+:::
+
+I'm not familiar with wrapfigure, but if it were me I'd use [minipage](http://www.emerson.emory.edu/services/latex/latex_43.html)s.
+
+```latex
+\begin{minipage}{0.6\textwidth}
+\begin{description}
+  \item[Surname] \emph{my surname}
+  \item[Name] \emph{my name}
+  \item[Date of Birth:] aa/bb/cccc 
+\end{description} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+  \includegraphics[height=20mm]{Foto-CV.jpg}
+\end{minipage}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5030/wrapfigure-not-wrapping-a-description-list/5031#5031) on TeX Stack Exchange, 2010-11-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

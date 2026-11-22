@@ -1,0 +1,98 @@
+---
+title: If document class is equal to something then do not use package
+date: '2012-02-29'
+description: \begin{document} \maketitle
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 46253
+se-link: https://tex.stackexchange.com/questions/46223/if-document-class-is-equal-to-something-then-do-not-use-package/46253#46253
+se-score: 3
+se-accepted: false
+se-tags:
+- packages
+- conditionals
+- document-classes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If document class is equal to something then do not use package](https://tex.stackexchange.com/questions/46223/if-document-class-is-equal-to-something-then-do-not-use-package), asked by [Atilla Ozgur](https://tex.stackexchange.com/users/3976/atilla-ozgur) on TeX Stack Exchange (2012-02-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to create a file which includes common packages and macros I use. It is something like this. 
+>
+> commonDefinitions.tex
+>
+> ```latex
+>  \interdisplaylinepenalty=2500
+>  \usepackage{algorithmic}
+>
+>  \usepackage{cite} 
+>  \usepackage{appendix}
+>  ... other packages and macros
+> ```
+>
+> But some packages clash with each other in combinations. For example when I try to use 
+>
+> ```latex
+>  \documentclass[journal]{IEEEtran}
+>  \usepackage{appendix}
+> ```
+>
+> It gives error since IEEEtran already created command appendix. 
+>
+> I would like to get some solution to this problem something like below.
+>
+> ```latex
+> if document class is not IEEEtran 
+>    \usepackage{appendix}
+> end if
+> ```
+:::
+
+[I was advised once to test on functionality rather than on class name][1].  The problem is that both `appendix.sty` and `IEEEtran.cls` defines `\appendices`.  So only load the `appendix` package if there isn't already a command `\appendices` defined.  Here is a working example:
+
+```latex
+\documentclass{IEEEtran}
+\title{Test of conditional use of the appendix package}
+\usepackage{lipsum} % just for dummy text
+\ifcsname appendices\endcsname
+  % do nothing
+\else
+  \usepackage{appendix}
+\fi
+
+\begin{document}
+\maketitle
+
+\section{Foo}
+
+\lipsum
+
+\section{Bar}
+
+\lipsum
+
+\appendix
+
+\section{Appendix}
+
+\lipsum
+
+\end{document}
+```
+
+`\ifcsame` is available on all e-TeX builds and is documented (along with other ways to check if a command is defined) [here](https://texfaq.org/FAQ-isdef).
+
+
+  [1]: https://stackoverflow.com/questions/2524614/detect-latex-class-name
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/46223/if-document-class-is-equal-to-something-then-do-not-use-package/46253#46253) on TeX Stack Exchange, 2012-02-29, with [edits](https://tex.stackexchange.com/posts/46253/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,83 @@
+---
+title: If pagestyle equal to... -- How should I ask it?
+date: '2011-05-09'
+description: You can patch the page style declarations \pagestyle and \thispagestyle to record the page style in a macro.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17796
+se-link: https://tex.stackexchange.com/questions/17787/if-pagestyle-equal-to-how-should-i-ask-it/17796#17796
+se-score: 9
+se-accepted: true
+se-tags:
+- conditionals
+- header-footer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If pagestyle equal to... -- How should I ask it?](https://tex.stackexchange.com/questions/17787/if-pagestyle-equal-to-how-should-i-ask-it), asked by [Daniel](https://tex.stackexchange.com/users/3097/daniel) on TeX Stack Exchange (2011-05-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to use (or define) an If-statement for pagestyle.
+> <br/>I have no idea :(
+>
+> Update:
+> <br/> I'm using in my document about 4 pagestyles. Just as a little example I wish to have at the border of my document informations about jobname, date, time, lastsheet and sheetsequence AND size of the actual page. The size of the actual page is not everytime the same. That is why I thought, if I could define easy an if statement, it could be a great solution.
+>
+> What I mean:
+>
+> ```latex
+> \ifthenelse{\equal{pagestyle}{numberone}}{size: $210 \times 297 $}{size: $420 \times 297$}
+> ```
+>
+> I hope it is clear now
+:::
+
+You can patch the page style declarations `\pagestyle` and `\thispagestyle` to record the page style in a macro.  
+
+```latex
+\documentclass{report}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+
+\makeatletter
+\pretocmd{\pagestyle}{%
+  \gdef\@regularpagestyle{#1}%
+  \gdef\thepagestyle{\if@specialpage\@specialstyle\else\@regularpagestyle\fi}
+  }
+{\message{(patching of \string\pagestyle\ succeeded)}}
+{\message{(patching of \string\pagestyle\ failed)}}
+\makeatother
+
+%\pagestyle{empty}
+
+\begin{document}
+
+\chapter{Chapter One}
+
+%\thepagestyle
+
+\lipsum
+
+\ifdef{\thepagestyle}{
+  The page style is `\thepagestyle'.%
+}{%
+  There is no page style declared.
+}
+
+\end{document}
+```
+
+The commands `\pretocmd` and `\ifdef` require the e-TeX extensions.  But not to fear; your TeX engine probably uses them.  If not, there are workarounds.
+
+**EDIT** Fixed to handle @Caramdir's observation.  Now `\thispagestyle` expands to something which evaluates to the string input to `\pagestyle` or `\thispagestyle`.  Testing against that string is going to be harder because you have to expand one more step.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17787/if-pagestyle-equal-to-how-should-i-ask-it/17796#17796) on TeX Stack Exchange, 2011-05-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,66 @@
+---
+title: Newenvironment and floating figures
+date: '2010-11-25'
+description: It's hard to wrap around figures when lists are involved. The floatflt package has a workaround which uses a command \fltitem instead of \item.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5942
+se-link: https://tex.stackexchange.com/questions/5938/newenvironment-and-floating-figures/5942#5942
+se-score: 4
+se-accepted: true
+se-tags:
+- floats
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Newenvironment and floating figures](https://tex.stackexchange.com/questions/5938/newenvironment-and-floating-figures), asked by [Chris](https://tex.stackexchange.com/users/752/chris) on TeX Stack Exchange (2010-11-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want to create an environment for a list of items, that should look like this for each item:
+>
+>
+> ```latex
+>  Name     Image
+>  .......  Image
+>  ..............
+>  ..............
+> ```
+>
+> with this environment
+> `\begin{cuitem}{Name}
+>        ......
+>      \end{cuitem}`
+>
+> and this definition:
+>
+> ```latex
+> \newenvironment{cuitem}[1]
+> {
+>  \textbf{#1} 
+>  \input{imagefile}
+> }{
+> }
+> ```
+>
+> where imagefile is a .tex that contains a tikzpicture wrapped inside a `\begin{wrapfigure}{r}{0.5\textwidth}`.
+>
+> This works fine if I use only one of these `cuitem`. As soon as I use more than one they start being rendered into each other with the text overlaying the figure. What is the correct way to ensure the separation of two consecutive environments and is the wrapfigure the best solution for this problem?
+:::
+
+It's hard to wrap around figures when lists are involved. The [`floatflt`][1] package has a workaround which uses a command `\fltitem` instead of `\item`.
+
+  [1]: http://ctan.org/pkg/floatflt
+
+Try floatflt instead of wrapfig.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5938/newenvironment-and-floating-figures/5942#5942) on TeX Stack Exchange, 2010-11-25, with [edits](https://tex.stackexchange.com/posts/5942/revisions) by [Stefan Kottwitz](https://tex.stackexchange.com/users/213/stefan-kottwitz), [lockstep](https://tex.stackexchange.com/users/510/lockstep). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

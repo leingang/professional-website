@@ -1,0 +1,48 @@
+---
+title: What is this letter?
+date: '2018-09-05'
+description: It's an uppercase in a script or calligraphic font. It looks like the document was prepared with LaTeX, and in MathJax you can write $\mathcal{G}$ to get…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2906523
+se-link: https://math.stackexchange.com/questions/2906518/what-is-this-letter/2906523#2906523
+se-score: 1
+se-accepted: true
+se-tags:
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is this letter?](https://math.stackexchange.com/questions/2906518/what-is-this-letter), asked by [Jiho Choi](https://math.stackexchange.com/users/570783/jiho-choi) on Mathematics Stack Exchange (2018-09-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What is the highlighted letter and how do I pronounce it?  
+> (When I copy and past it to a text editor, I came out as 'G')
+>
+> [![temporal order in cascade $C$ as $\mathcal{G}$, we call each diffusion tree a *diffusion scenario* $G \in \mathcal{G}$....][q-1]][q-1]
+>
+>
+> I am currently studying an ICWSM 2018 paper: "DEBATENIGHT: The Role and Influence of Socialbots on Twitter During the First 2016 U.S. Presidential Debate"
+>
+> An unknown character came out while I was reading section 3.1
+>
+>
+>   [q-1]: wdUkR.png
+:::
+
+It's an uppercase in a script or calligraphic font.  It looks like the document was prepared with LaTeX, and in MathJax you can write `$\mathcal{G}$` to get $\mathcal{G}$.
+
+Your excerpt is:
+
+> temporal order as cascade $C \in \mathcal{G}$, we call each diffusion tree a *diffusion scenario* $G \in \mathcal{G}$.  Fig. 1a contains a cascade...
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2906518/what-is-this-letter/2906523#2906523) on Mathematics Stack Exchange, 2018-09-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

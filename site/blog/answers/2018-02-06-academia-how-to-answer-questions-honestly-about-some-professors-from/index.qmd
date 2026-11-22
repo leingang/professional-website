@@ -1,0 +1,48 @@
+---
+title: How to answer questions *honestly* about some professors from Visit Days students?
+date: '2018-02-06'
+description: Rather than give advice about specific faculty, try to give advice on how to choose an advisor. Then it's up to the prospective student to make their own…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 103388
+se-link: https://academia.stackexchange.com/questions/103276/how-to-answer-questions-honestly-about-some-professors-from-visit-days-student/103388#103388
+se-score: 4
+se-accepted: false
+se-tags:
+- visiting
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to answer questions *honestly* about some professors from Visit Days students?](https://academia.stackexchange.com/questions/103276/how-to-answer-questions-honestly-about-some-professors-from-visit-days-student), asked by user42273 on Academia Stack Exchange (2018-02-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> We are having Visit Days soon, and we (current grads) are expected to have one-on-one conversations with visiting students with research interests closest to ours. One typical question we get, "How is Prof. X? What is it like working with them?". 
+>
+> As a current grad, I can see the names of the visiting students along with the professors who are their top choices for advisor, and several students have listed two professors I've tried to work with in the past (they had been my top choices when I joined this university). 
+>
+> These professors are great researchers, but, in my opinion, not good at all as advisors. I am not going into details because that'll end up being a rant, which isn't the point here. But my view is strongly shared by *all* my group peers who had, at some point, tried to work with these professors (due to their fame as researchers). 
+>
+> Because nobody had warned me before  I started working with these professors, I ended up wasting two years in grad school, in my opinion, a very, very high price to pay. I would like to be very honest with the visiting students. At the same time, my field is quite close-knit, with all top professors collaborating with those at other places. If these visiting students end up not joining us, I'd not want them to remember me as the person who bad-mouthed these famous researchers. 
+>
+> How can I honestly answer questions about these professors without coming across as bitter (which I admittedly still am)? If I just state the facts, well, even those are going to be coloured by my viewpoint, and will therefore be biased.
+:::
+
+Rather than give advice about specific faculty, try to give advice on how to choose an advisor.  Then it's up to the prospective student to make their own 
+valuation of how much it matters.  
+
+For instance, if you want to advise against a certain professor because they don't spend much time with their students, you can say: “When choosing an advisor, you should ask yourself: ‘will I do better with an advisor that expects to see me once a week?  Or once a month?  Or once every six months?’”
+
+These (and others) are questions that prospective students don't know to think about.  You're giving them advice that's valuable not just for avoiding a specific professor, but types of professors.  It can be helpful even if the prospective student lands somewhere else.  
+
+The prospective may feel you've already adequately answered the question, simply by the fact that you *didn't* say, “Prof. X is amazing! You should definitely work with them.”  But if they demands to know which of these Prof. X belongs to, you can say “I found Prof. X was a six-month person with me, and I'm more of the once-a-month person, so I ended up working with someone else.  But you should talk to some of his current students to get more information.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/103276/how-to-answer-questions-honestly-about-some-professors-from-visit-days-student/103388#103388) on Academia Stack Exchange, 2018-02-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,37 @@
+---
+title: Is every number compared with infinity virtually zero?
+date: '2017-10-20'
+description: Yes. Every finite number is small compared to $\infty$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2480844
+se-link: https://math.stackexchange.com/questions/2480837/is-every-number-compared-with-infinity-virtually-zero/2480844#2480844
+se-score: 1
+se-accepted: false
+se-tags:
+- infinity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is every number compared with infinity virtually zero?](https://math.stackexchange.com/questions/2480837/is-every-number-compared-with-infinity-virtually-zero), asked by [Andres Romero](https://math.stackexchange.com/users/431464/andres-romero) on Mathematics Stack Exchange (2017-10-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When thinking about infinity people think that a great number like googolplex or a googolplexian is closer to infinity, but infinity never ends every huge number that I can think off is closer to zero than to infinity does that make every number virtually zero ?.
+:::
+
+Yes.  Every finite number is small compared to $\infty$.  
+
+It's kind of hard to say more without defining “virtually,” but if you give me any positive number $n$ which you might call large, and positive number $\epsilon$ which you might call small, I can find a number $N$ such that $0 < \frac{n}{N} < \epsilon$.  In other words,
+$$\lim_{x\to\infty} \frac{n}{x} = 0$$
+for any number $n$, no matter how large.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2480837/is-every-number-compared-with-infinity-virtually-zero/2480844#2480844) on Mathematics Stack Exchange, 2017-10-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

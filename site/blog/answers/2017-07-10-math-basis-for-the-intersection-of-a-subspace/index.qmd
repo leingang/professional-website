@@ -1,0 +1,61 @@
+---
+title: Basis for the intersection of a subspace
+date: '2017-07-10'
+description: As Itay says, you are looking for linear combinations of the form $$\alpha a + \beta b = \gamma c + \delta d \iff \alpha a + \beta b - \gamma c - \delta d =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2353901
+se-link: https://math.stackexchange.com/questions/2353834/basis-for-the-intersection-of-a-subspace/2353901#2353901
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Basis for the intersection of a subspace](https://math.stackexchange.com/questions/2353834/basis-for-the-intersection-of-a-subspace), asked by [Kkumar Tanwar](https://math.stackexchange.com/users/447856/kkumar-tanwar) on Mathematics Stack Exchange (2017-07-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $V=\mathbb{R}^{3}$ and $a=(1,1,2)$, $b = (0,1,3)$, $c=(2,4,5)$ and $d=(-1,0,-1)$ be the elements of $V.$ Find a basis for the intersection of the           subspace spanned by $\{a,b\}$ and $\{c,d\}$ and also find its dimension.
+>
+>
+>
+> What I have done it till now is row reduced to echelon form but how do I proceed further?
+:::
+
+As Itay says, you are looking for linear combinations of the form 
+$$\alpha a + \beta b = \gamma c + \delta d \iff \alpha a  + \beta b - \gamma c - \delta d = 0$$
+Let $A$ be the matrix whose *columns* are $a$, $b$, $c$, and $d$.  Then a quadruple $(\alpha,\beta,\gamma,\delta)$ as above gives rise to a vector $x = (\alpha,\beta,-\gamma,-\delta)$ in the nullspace of $A$.  For this reason, we seek the RREF of $A$:
+$$A = \begin{bmatrix}
+    1 & 0 & 2 & -1 \\
+    1 & 1 & 4 & 0 \\
+    2 & 3 & 5 & -1 \\
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+    1 & 0 & 0 & -9/5 \\
+    0 & 1 & 0 & 1/5 \\
+    0 & 0 & 1 & 2/5
+\end{bmatrix}$$
+Let $R$ be the matrix on the right-hand side above.  Since $A$ and $R$ are row-equivalent, any relations among the columns of $R$ also hold among the columns of $A$, and vice-versa.  Since evidently:
+$$\begin{gather}
+     r_4 = -\frac{9}{5}r_1 + \frac{1}{5} r_2 + \frac{2}{5}r_3\\
+\iff
+     5r_4 = -9r_1 + r_2 + 2r_3\\
+\iff
+    -9r_1 + r_2 = -2r_3 + 5 r_4
+\end{gather}$$
+we must have
+$$-9a+b = -2c +5d$$
+Indeed, both the left- and right-hand sides evaluate to $(-9,-8,-15)$.  This is one nonzero vector in the intersection of the span of $\left\{a,b\right\}$ and the span of $\left\{c,d\right\}$.  I'll leave it to you to show that this is the only (independent) one.  So the intersection is spanned by this vector.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2353834/basis-for-the-intersection-of-a-subspace/2353901#2353901) on Mathematics Stack Exchange, 2017-07-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

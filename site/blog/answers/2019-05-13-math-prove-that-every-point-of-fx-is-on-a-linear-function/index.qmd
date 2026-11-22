@@ -1,0 +1,38 @@
+---
+title: Prove that every point of $f(x)$ is on a linear function
+date: '2019-05-13'
+description: 'Your problem is essentially equivalent to this one:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3224674
+se-link: https://math.stackexchange.com/questions/3224655/prove-that-every-point-of-fx-is-on-a-linear-function/3224674#3224674
+se-score: 0
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that every point of $f(x)$ is on a linear function](https://math.stackexchange.com/questions/3224655/prove-that-every-point-of-fx-is-on-a-linear-function), asked by [Ori](https://math.stackexchange.com/users/671368/ori) on Mathematics Stack Exchange (2019-05-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> $f(x)$ is continuous on [0,1]. Every point $(x,f(x)), x\in \Bbb Q$ is on the linear function $y=(f(1)-f(0))x+f(0)$.
+> Prove that every point $(r,f(r))$ (when $r$ is irrational) is on this linear function.
+:::
+
+Your problem is essentially equivalent to this one:
+
+> Let $f$ and $g$ be continuous functions with $f(x) = g(x)$ for all $x \in \mathbb{Q}$. Show that $f(x) = g(x)$ for all $x \in \mathbb{R}$.
+
+Obviously, the continuity condition is really important.  The other property that's used is the [density](https://math.stackexchange.com/questions/1027970/what-does-it-mean-for-rational-numbers-to-be-dense-in-the-reals) of $\mathbb{Q}$ in $\mathbb{R}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3224655/prove-that-every-point-of-fx-is-on-a-linear-function/3224674#3224674) on Mathematics Stack Exchange, 2019-05-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

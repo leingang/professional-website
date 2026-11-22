@@ -1,0 +1,45 @@
+---
+title: If $\omega=x dy - y dx$ is a $1$-form, how do I compute $d\omega$?
+date: '2018-03-19'
+description: 'Good. You may also know that the differential of a function (zero-form) is a one-form: $$dF = \frac{\partial F}{\partial x} \,dx + \frac{\partial F}{\partial…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2699030
+se-link: https://math.stackexchange.com/questions/2699002/if-omega-x-dy-y-dx-is-a-1-form-how-do-i-compute-d-omega/2699030#2699030
+se-score: 4
+se-accepted: false
+se-tags:
+- real-analysis
+- vector-analysis
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $\omega=x dy - y dx$ is a $1$-form, how do I compute $d\omega$?](https://math.stackexchange.com/questions/2699002/if-omega-x-dy-y-dx-is-a-1-form-how-do-i-compute-d-omega), asked by [user5826](https://math.stackexchange.com/users/86425/user5826) on Mathematics Stack Exchange (2018-03-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >If $\omega=x dy - y dx$ is a $1$-form, how do I compute $d\omega$?
+>
+> I am having trouble understanding the definition of $1$-form and computing $d\omega$.
+>
+> I know a $1$-form is an expression of the form $F(x,y)dx+G(x,y)dy$.
+:::
+
+> I know a $1$-form is an expression of the form $F(x,y)dx+G(x,y)dy$.
+
+Good.  You may also know that the differential of a function (zero-form) is a one-form:
+$$dF = \frac{\partial F}{\partial x} \,dx + \frac{\partial F}{\partial y}\,dy$$
+and that you can differentiate a basic one-form like so:
+$$d(F\,dx) = dF \wedge dx$$
+If you combine the previous two equations, and the two similar ones for $d(G\,dy)$, **and** the fact that the wedge product is skew-symmetric, you have all you need.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2699002/if-omega-x-dy-y-dx-is-a-1-form-how-do-i-compute-d-omega/2699030#2699030) on Mathematics Stack Exchange, 2018-03-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

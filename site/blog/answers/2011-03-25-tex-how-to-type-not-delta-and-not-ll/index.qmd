@@ -1,0 +1,70 @@
+---
+title: How to type NOT \delta and NOT \ll
+date: '2011-03-25'
+description: 'I think you want the macro \mathrlap to overlap the slash on the symbol you are negating:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 14211
+se-link: https://tex.stackexchange.com/questions/14208/how-to-type-not-delta-and-not-ll/14211#14211
+se-score: 5
+se-accepted: false
+se-tags:
+- symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to type NOT \delta and NOT \ll](https://tex.stackexchange.com/questions/14208/how-to-type-not-delta-and-not-ll), asked by [Justin J Stark](https://tex.stackexchange.com/users/4432/justin-j-stark) on TeX Stack Exchange (2011-03-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> In proximity theory, we use `\delta` and `\ll` as binary relations on the power set of a set X.  How can one display NOT `\delta` or NOT `\ll` similar to how we can do `\not\in`.  Using `\not\delta` and `\not\ll` place the strike-through in bad positions over the `\delta` and `\ll`.
+>
+> For NOT `\delta`, I am currently using
+>
+>  - `\!\!\not\!\delta`
+>
+> For NOT `\ll`, I am using
+>
+>  - `\hskip 0.4mm \not \hskip -0.4mm \ll`
+>
+> There are a few problems here.  Sometimes the placement of the "not" over the "delta" is a little off but it varies throughout the pages.  Also, at the end of the line, I may get the `\not` appearing at the end of the current line and the `\delta` appearing at the beginning of the next line.  I have not noticed this issue with my defininition of NOT `\ll`.
+>
+> What is the best way to define these symbols?  How can one make sure that the "not" is on the same line as the "delta"?
+:::
+
+I think you want the macro `\mathrlap` to overlap the slash on the symbol you are negating:
+
+```latex
+\documentclass{article}
+\usepackage{mathtools}
+\newcommand{\NOTDelta}{\!\!\not\!\Delta}
+\newcommand{\NOTll}{\hskip 0.4mm \not \hskip -0.4mm \ll}
+\newcommand{\notDelta}{\mathrel{\mathrlap{\not}\Delta}}
+\newcommand{\notll}{\mathrel{\mathrlap{\;\;\not}\ll}}
+\begin{document}
+
+\begin{align*}
+	A &\not\Delta B     & A &\not\ll B \\
+    A &\NOTDelta  B     & A &\NOTll  B \\
+    A &\notDelta  B     & A &\notll  B
+\end{align*}
+
+\end{document}
+```
+
+![sample code][1]
+
+The `\mathrel` command spaces your symbol as if it were a binary relation.  Without it your symbols get pushed too close together.  And the `\mathrlap` command sets its contents in a box of width zero, with the rest overlapping to the right.   
+
+
+  [1]: AbqxP.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14208/how-to-type-not-delta-and-not-ll/14211#14211) on TeX Stack Exchange, 2011-03-25, with [edits](https://tex.stackexchange.com/posts/14211/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

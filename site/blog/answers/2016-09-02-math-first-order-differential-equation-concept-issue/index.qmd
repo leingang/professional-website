@@ -1,0 +1,82 @@
+---
+title: First order differential equation concept issue
+date: '2016-09-02'
+description: To your first point about “how is this a solution?”—this exercise is not a usual one. Usually we are given a differential equation and asked to find a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1911635
+se-link: https://math.stackexchange.com/questions/1911614/first-order-differential-equation-concept-issue/1911635#1911635
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[First order differential equation concept issue](https://math.stackexchange.com/questions/1911614/first-order-differential-equation-concept-issue), asked by [Jack](https://math.stackexchange.com/users/250002/jack) on Mathematics Stack Exchange (2016-09-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Find differential equation  $y^{\prime} = f(t, y)$ satisfied by $y(t) = 4 \, e^{2 t} + 3$.
+>
+> **Solution**:
+>
+> Compute derivative of $y$,
+>
+> $y^{\prime} = 8 \, e^{2 t}$
+>
+>
+> Write right hand side above, in terms of the original function $y$, that is,
+>
+> $y = 4 \, e^{2 t} +3$ ----> $y - 3 = 4 \, e^{2 t}$ ----> $2(y-3)= 8 \, e^{2 t}$
+>
+> Get a differential equation satisfied by $y$, namely
+>
+> $y^{\prime} = 2y - 6$
+>
+>
+> So my issue with that last answer. How is this a solution? Does it mean that if you somehow take an integral of $2y - 6$ you should end up with the original $y(t) = 4 \, e^{2 t} + 3$ ???
+>
+>
+> It seems that there two different derivatives of $y(t)$
+>
+> one is:
+>
+> $y^{\prime} = 8 \, e^{2 t}$
+>
+>
+> the other is:
+>
+> $y^{\prime} = 2y - 6$
+>
+>
+> and I don't get it, can someone explain?
+>
+> * * *
+>
+>
+> Also a bit offtopic, but the way $y^{\prime} = f(t, y)$ is written kinda bugs me.
+>
+> Shouldn't it be written like $y^{\prime} = f(t, y(t))$ to show that the function $f$ contains t as an independent variable and the function y(t) which contains variable t as an input to itself (dependent variable t) ??? That's kinda an essential information, so surprised it's omitted in the writings.
+:::
+
+To your first point about “how is this a solution?”—this exercise is not a usual one.  Usually we are given a differential equation and asked to find a solution.  In this case you are given a function and asked to find an equation it is the solution for.
+
+Here is a version of the same exercise from algebraic equations: 
+
+> Find a polynomial $P(x)$ with rational coefficients such that $P(x) = 0$ is satisfied by $a = \sqrt{2}$.
+
+Solution: if $a =\sqrt{2}$, then $a^2 = 2$, so $a^2-2 = 0$, so $P(x) = x^2-2$ works.  
+
+So is $x^2-2=0$ a “solution”?  Not in the usual sense.  Only to this exercise.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1911614/first-order-differential-equation-concept-issue/1911635#1911635) on Mathematics Stack Exchange, 2016-09-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

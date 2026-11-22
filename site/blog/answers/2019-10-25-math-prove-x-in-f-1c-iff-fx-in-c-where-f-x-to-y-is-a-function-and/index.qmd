@@ -1,0 +1,51 @@
+---
+title: 'Prove $x \in f^{-1}(C) \iff f(x) \in C$ where $f: X \to Y$ is a function and $A \subseteq X, \ C \subseteq Y$'
+date: '2019-10-25'
+description: Is the $x$ in the first part of the sentence (“Since $f(x)$ is defined”) the same $x$ that appears in the second part of the sentence? (“there must be $x \in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3408694
+se-link: https://math.stackexchange.com/questions/3408678/prove-x-in-f-1c-iff-fx-in-c-where-f-x-to-y-is-a-function-and-a/3408694#3408694
+se-score: 0
+se-accepted: true
+se-tags:
+- discrete-mathematics
+- proof-verification
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $x \in f^{-1}(C) \iff f(x) \in C$ where $f: X \to Y$ is a function and $A \subseteq X, \ C \subseteq Y$](https://math.stackexchange.com/questions/3408678/prove-x-in-f-1c-iff-fx-in-c-where-f-x-to-y-is-a-function-and-a), asked by [user718653](https://math.stackexchange.com/users/718653/user718653) on Mathematics Stack Exchange (2019-10-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a question about the red line below. Is it correct? If it's correct, does the whole proof hold? Thank you.
+>
+>  Suppose $x \in f^{-1}(C).$ By definition of $f, \ x \in X \implies f(x) \in C.$ But $f^{-1}(C) \subseteq X$ and so $x \in f^{-1}(C) \implies f(x) \in C$. Now assume $f(x) \in C. \ \color{red}{\text{Since$f(x)$is defined, there must be$x \in X$that maps to this$f(x)$}}.$ Then by definition of $f^{-1}(C)$, it follows that $x \in f^{-1}(C)$.
+>
+> edit:
+>
+> The given definition of preimage in the book is as follows
+>
+> Let $f: A \to B$ be a function. Let $T \subseteq B$. Then the preimage of $T$ under $f$ is $f^{-1}(T) = \{x \in A: f(x) \in T\}.$
+:::
+
+> Since $f(x)$ is defined, there must be $x \in X$ that maps to this $f(x)$
+
+Is the $x$ in the first part of the sentence (“Since $f(x)$ is defined”) the same $x$ that appears in the second part of the sentence? (“there must be $x \in X$ ...”)?
+
+* If not, it needs to have a new name, like $x'$.  Then you're saying that there exists $x' \in X$ such that $f(x') = f(x)$.  Which is at least grammatically correct.
+
+* If so, then you don't need to assert its existence.  The $x$ at the start of the paragraph is already supposed to be an element of $f^{-1}(C)$.
+
+My main question is why are you proving this?  Most texts I am familiar with *define* $f^{-1}(C)$ to be the set of all $x \in X$ such that $f(x) \in C$.  If that's the same definition you're working with, then there's nothing to prove.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3408678/prove-x-in-f-1c-iff-fx-in-c-where-f-x-to-y-is-a-function-and-a/3408694#3408694) on Mathematics Stack Exchange, 2019-10-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

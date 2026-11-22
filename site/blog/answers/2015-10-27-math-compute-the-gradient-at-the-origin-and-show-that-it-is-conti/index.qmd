@@ -1,0 +1,43 @@
+---
+title: Compute the gradient at the origin and show that it is continuous at the origin
+date: '2015-10-27'
+description: 'Let $u$ be a unit vector. You can compute $Duf(0)$, the derivative of $f$ in the direction of $u$ at the origin, by the definition: $$Duf(0) = \lim{h\to 0}…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1499407
+se-link: https://math.stackexchange.com/questions/1499365/compute-the-gradient-at-the-origin-and-show-that-it-is-continuous-at-the-origin/1499407#1499407
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Compute the gradient at the origin and show that it is continuous at the origin](https://math.stackexchange.com/questions/1499365/compute-the-gradient-at-the-origin-and-show-that-it-is-continuous-at-the-origin), asked by [john kurrs](https://math.stackexchange.com/users/284044/john-kurrs) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f(x) = |x|^{p}, x \in \mathbb{R}^n$ with $p\geq2$. I have no idea of how to compute the gradient of this function at the origin. The only idea that I had is the computation of the limit of the partial derivatives , but I don't see how to compute the limit. Someone could give me a help? The intuition says that the gradient is zero at the origin.
+:::
+
+Let $u$ be a unit vector.  You can compute $D_uf(0)$, the derivative of $f$ in the direction of $u$ at the origin, by the definition:
+$$D_uf(0) = \lim_{h\to 0} \frac{f(hv)}{h} 
+= \lim_{h\to0} \frac{|hv|^p}{h}
+= \lim_{h\to0} \frac{|h|^p|v|^p}{h}
+= \lim_{h\to0} h^{p-1} |v|
+= 0$$
+The last limit is zero since $p\geq 2 \implies p-1 \geq 1$.
+
+The gradient vector $\nabla f(0)$ is characterized by the property that $\nabla f(0) \cdot u = D_u f(0)$ for all unit vectors $u$.  But the only vector whose dot product with every unit vector is zero, is the zero vector.  Thus $\nabla f(0) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1499365/compute-the-gradient-at-the-origin-and-show-that-it-is-continuous-at-the-origin/1499407#1499407) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

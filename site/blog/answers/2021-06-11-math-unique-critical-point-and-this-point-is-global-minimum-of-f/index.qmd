@@ -1,0 +1,57 @@
+---
+title: Unique critical point and this point is global minimum of $f$.
+date: '2021-06-11'
+description: It's not too hard to directly compute the Hessian matrix of $f$ and use the result you linked to. $$\mathscr{H}f(x1,x2) = \left[\begin{matrix}2 \left(6 a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4170016
+se-link: https://math.stackexchange.com/questions/4169345/unique-critical-point-and-this-point-is-global-minimum-of-f/4170016#4170016
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- optimization
+- convex-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Unique critical point and this point is global minimum of $f$.](https://math.stackexchange.com/questions/4169345/unique-critical-point-and-this-point-is-global-minimum-of-f), asked by [PaulichenT](https://math.stackexchange.com/users/829738/paulichent) on Mathematics Stack Exchange (2021-06-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I've been working on the following exercise:
+>
+> Consider constants $a, b \in \mathbb{R}$, with $a>0$. Show that the function $f:\mathbb R^2 \rightarrow \mathbb R$ given by $f(x_1, x_2)=ax_1^4+bx_2+e^{x_1^2+x^2_2}$ has a unique critical point and this is global minimum of $f$.
+>
+> I tried to solve it in a practical way, taking $c= (c_1, c_2)$ a critical point and trying to show that it is unique using operations. In the end I found that $c_1=0$ and $c_2= -\displaystyle{\sqrt{\frac{W\left(\frac{b^2}{2}\right)}{2}}}$ if $b>0$, $c_2= \displaystyle{\sqrt{\frac{W\left(\frac{b^2}{2}\right)}{2}}}$ if $b<0$ and $c_2 =0$ if $b=0$, where $W$ is the product log function. 
+>
+> Based on this, I have two questions:
+>
+> - I know that $c_2$ is unique depending on the choice of $b$, but for this to be true $W$ must be injective, am I right?
+>
+> - It seems to me that the $f$ function is a convex function, mainly because of the graph:
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+> I could prove the result by showing that each of the components of the function $f$, ie $4ax_1^4$, $bx_2$ and $e^{x_1^2+x_2^2}$ are convex, and using that the sum of convex functions is convex? (and then use this result https://math.stackexchange.com/q/2586267/829738) 
+>
+>
+>   [q-1]: K26CK.png
+:::
+
+It's not too hard to directly compute the Hessian matrix of $f$ and use the result you linked to.
+$$\mathscr{H}f(x_1,x_2) = \left[\begin{matrix}2 \left(6 a x_{1}^{2} + 2 x_{1}^{2} e^{x_{1}^{2} + x_{2}^{2}} + e^{x_{1}^{2} + x_{2}^{2}}\right) & 4 x_{1} x_{2} e^{x_{1}^{2} + x_{2}^{2}}\\4 x_{1} x_{2} e^{x_{1}^{2} + x_{2}^{2}} & 2 \left(2 x_{2}^{2} + 1\right) e^{x_{1}^{2} + x_{2}^{2}}\end{matrix}\right]$$
+Its determinant is:
+$$\det \mathscr{H}f(x_1,x_2) = 48 a x_{1}^{2} x_{2}^{2} e^{x_{1}^{2} + x_{2}^{2}} + 24 a x_{1}^{2} e^{x_{1}^{2} + x_{2}^{2}} + 8 x_{1}^{2} e^{2 x_{1}^{2} + 2 x_{2}^{2}} + 8 x_{2}^{2} e^{2 x_{1}^{2} + 2 x_{2}^{2}} + 4 e^{2 x_{1}^{2} + 2 x_{2}^{2}}$$
+This is clearly positive for all $x_1$ and $x_2$, as is the trace of $\mathscr{H}f(x_1,x_2)$  So both eigenvalues of $\mathscr{H}f(x_1,x_2)$ are positive, which means that $\mathscr{H}f(x_1,x_2)$ is positive-definite.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4169345/unique-critical-point-and-this-point-is-global-minimum-of-f/4170016#4170016) on Mathematics Stack Exchange, 2021-06-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

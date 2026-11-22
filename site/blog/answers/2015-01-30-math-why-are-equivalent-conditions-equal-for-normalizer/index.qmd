@@ -1,0 +1,47 @@
+---
+title: Why are equivalent conditions equal for normalizer
+date: '2015-01-30'
+description: What you want to show is that $$hA = Ah \iff \forall a \in A,\ h a h^{-1} \in A$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1126921
+se-link: https://math.stackexchange.com/questions/1126910/why-are-equivalent-conditions-equal-for-normalizer/1126921#1126921
+se-score: 0
+se-accepted: true
+se-tags:
+- abstract-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are equivalent conditions equal for normalizer](https://math.stackexchange.com/questions/1126910/why-are-equivalent-conditions-equal-for-normalizer), asked by user111750 on Mathematics Stack Exchange (2015-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Hello so I need to proof that Center is subgroup of normalizer which I did but I did it using the following definition of $N_G(A) = \{h \in G : hA = Ah\}$.
+>
+> But the definition that I was given is $N_G(A) = \{ h \in G : hah^{-1} \in A \;\forall a \in A\}$.
+>
+>   I can see that the following conditions are equivalent intuitively but I want to prove it.
+:::
+
+What you want to show is that
+$$hA = Ah \iff \forall a \in A,\ h a h^{-1} \in A$$
+
+Suppose $hA = Ah$, and let $a \in A$.  Since $hA = Ah$, and $ha \in hA$, we have $ha = a'h$ for some $a'\in A$.  Then
+$$ha = a'h \implies hah^{-1} =a',$$
+evidently in $A$.
+
+On the other hand, suppose $h a h^{-1} \in A$ for all $a \in A$.
+Let $x \in hA$.  Then $x = ha$ for some $a \in A$.  Since $hah^{-1} \in A$, we must have
+$$hah^{-1} = a' \implies x = ha = a'h$$
+So $x \in Ah$ too.  This shows $hA \subseteq Ah$.  We can similarly show $Ah \subseteq hA$; hence $hA = Ah$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1126910/why-are-equivalent-conditions-equal-for-normalizer/1126921#1126921) on Mathematics Stack Exchange, 2015-01-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

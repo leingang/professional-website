@@ -1,0 +1,61 @@
+---
+title: What are good programs for writing expressions?
+date: '2015-01-10'
+description: I still think LaTeX is the way to go. Once you start having to write several mathematical expressions, any kind of mouse-driven system for specifying them is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1098437
+se-link: https://math.stackexchange.com/questions/1098435/what-are-good-programs-for-writing-expressions/1098437#1098437
+se-score: 7
+se-accepted: true
+se-tags:
+- soft-question
+- math-software
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What are good programs for writing expressions?](https://math.stackexchange.com/questions/1098435/what-are-good-programs-for-writing-expressions), asked by [Kelmikra](https://math.stackexchange.com/users/203217/kelmikra) on Mathematics Stack Exchange (2015-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> By writing expressions, I mean intermediate expressions to "show your work," such as the ones in the below image. LaTex would seem like overkill for such problems.
+>
+> ![Expressions][q-1]
+>
+>
+>   [q-1]: j0xb2.gif
+:::
+
+I still think LaTeX is the way to go.  Once you start having to write several mathematical expressions, any kind of mouse-driven system for specifying them is going to become very frustrating.  LaTeX is extremely efficient for doing exactly what you want to do.
+
+```
+\begin{align*}
+    c_1x + a     &= c_2 x + b \\
+    c_1x + a - a &= c_2x + b - a\\ 
+    c_1x         &= c_2x + b - a \\
+    c_1x - c_2 x &= c_2x + b - a - c_2 x \\
+    c_1x - c_2 x &= b - a \\
+    x            &= \frac{b-a}{c_1 - c_2}
+\end{align*}
+```
+
+$$\begin{align*}
+    c_1x + a     &= c_2 x + b \\
+    c_1x + a - a &= c_2x + b - a\\ 
+    c_1x         &= c_2x + b - a \\
+    c_1x - c_2 x &= c_2x + b - a - c_2 x \\
+    c_1x - c_2 x &= b - a \\
+    x            &= \frac{b-a}{c_1-c_2}
+\end{align*}$$
+
+See [Getting started with LaTeX](https://www.tug.org/begin.html) for some pointers.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1098435/what-are-good-programs-for-writing-expressions/1098437#1098437) on Mathematics Stack Exchange, 2015-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

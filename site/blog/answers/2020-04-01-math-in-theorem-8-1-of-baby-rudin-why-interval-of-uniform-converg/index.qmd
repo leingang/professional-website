@@ -1,0 +1,51 @@
+---
+title: In Theorem 8.1 of Baby Rudin, why interval of uniform convergence must be closed subset of (-R,R)?
+date: '2020-04-01'
+description: The difference is the word uniform and the placement of quantifiers. If $(fn)$ is a sequence of functions on an interval $I$, we say $(fn)$ converges to $f$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3604902
+se-link: https://math.stackexchange.com/questions/3604843/in-theorem-8-1-of-baby-rudin-why-interval-of-uniform-convergence-must-be-closed/3604902#3604902
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[In Theorem 8.1 of Baby Rudin, why interval of uniform convergence must be closed subset of (-R,R)?](https://math.stackexchange.com/questions/3604843/in-theorem-8-1-of-baby-rudin-why-interval-of-uniform-convergence-must-be-closed), asked by [seunghwan oh](https://math.stackexchange.com/users/417785/seunghwan-oh) on Mathematics Stack Exchange (2020-04-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In Theorem of Baby Rudin 8.1, Rudin said that  
+>
+> > If series $\sum_{n=0}^\infty c_nx^n$ converges for $|x|<R$
+>
+> >then $\sum_{n=0}^\infty c_nx^n$ converges uniformly on $[-R+\epsilon, R-\epsilon]$, no matter which $\epsilon > 0$ is chosen.
+>
+>
+>
+> and I don't know why I can't use the open interval (-R, R) instead of $[-R+\epsilon, R-\epsilon]$
+:::
+
+The difference is the word *uniform* and the placement of quantifiers.  If $(f_n)$ is a sequence of functions on an interval $I$, we say $(f_n)$ *converges to $f$ pointwise* if:
+$$\forall x \in I,\forall \eta > 0, \exists N\in \mathbb N, \forall n \in \mathbb{N}, n > N \implies |f_n(x) - f(x) | < \eta$$
+We say $(f_n)$ *converges to $f$ uniformly on $I$* if:
+$$\forall \eta > 0, \exists N \in \mathbb{N},\forall x \in I,\forall n \in\mathbb{N}, n > N \implies  |f_n(x) - f(x)| < \eta$$
+In the first convergence, $N$ may depend on $x$ and $\eta$.  But in the second, $N$ needs to work for all $x$ simultaneously (or “uniformly”).  
+
+As an example, consider the sequence of functions $f_n(x) = x^n$ on the interval $(-1,1)$.  The pointwise limit of the sequence is $0$.
+
+We claim that $(f_n)$ does not converge uniformly to $0$ on $(-1,1)$.  To show this, let $\eta = \frac{1}{2}$.  Given $N \in \mathbb{N}$, let $x$ be any number in the interval $(\eta^{1/(N+1)},1)$.  Then $|f_{N+1}(x)| = |x^{N+1}| > \eta$.  
+
+However, for any $\epsilon > 0$ $(f_n)$ does converge to $0$ uniformly on $(1-\epsilon,1-\epsilon)$.  Given $\eta > 0$, choose $N$ such that $(1-\epsilon)^N < \eta$.  Then for any $x$ with $|x| < 1-\epsilon$, and any $n > N$, $$|x|^{n} < (1-\epsilon)^n < (1-\epsilon)^N < \eta$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3604843/in-theorem-8-1-of-baby-rudin-why-interval-of-uniform-convergence-must-be-closed/3604902#3604902) on Mathematics Stack Exchange, 2020-04-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

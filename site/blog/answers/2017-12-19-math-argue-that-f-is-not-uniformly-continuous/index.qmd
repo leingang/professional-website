@@ -1,0 +1,45 @@
+---
+title: Argue that $f$ is not uniformly continuous
+date: '2017-12-19'
+description: 'The first part is just the Binomial Theorem: $$\left(n + \frac{1}{n}\right)^3 = n^3 + 3 n^2 \cdot \frac{1}{n} + 3 n \frac{1}{n^2} + \frac{1}{n^3} = n^3 + 3n +…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2572737
+se-link: https://math.stackexchange.com/questions/2572729/argue-that-f-is-not-uniformly-continuous/2572737#2572737
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- limits
+- continuity
+- uniform-continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Argue that $f$ is not uniformly continuous](https://math.stackexchange.com/questions/2572729/argue-that-f-is-not-uniformly-continuous), asked by [rover2](https://math.stackexchange.com/users/432062/rover2) on Mathematics Stack Exchange (2017-12-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f(x)=x^3$. We want to show that $f$ is not uniformly continuous. [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: TfPF1.png
+>
+> Can someone please explain from $|f(x_n)-f(y_n)=\big|(n+\frac{1}{n})^3 - n^3)\big| = 3n+\displaystyle\frac{3}{n}$? How does $\big|(n+\frac{1}{n})^3-n^3\big|$ yield $3n+\displaystyle\frac{3}{n}$? ${}{}{}{}$
+:::
+
+The first part is just the Binomial Theorem:
+$$\left(n + \frac{1}{n}\right)^3 = n^3 + 3 n^2 \cdot \frac{1}{n} + 3 n \frac{1}{n^2} + \frac{1}{n^3} = n^3 + 3n + \frac{3}{n} + \frac{1}{n^3}$$
+So
+$$\left(n + \frac{1}{n}\right)^3 - n^3 = 3n + \frac{3}{n} + \frac{1}{n^3}$$
+The author seems to skip the $\frac{1}{n^3}$ term, but no matter.  The expression is still $>3$, which is the point.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2572729/argue-that-f-is-not-uniformly-continuous/2572737#2572737) on Mathematics Stack Exchange, 2017-12-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

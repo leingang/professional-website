@@ -1,0 +1,73 @@
+---
+title: Evaluation of some integrals
+date: '2019-08-19'
+description: it seems like your difficulty is first in sketching the regions and finding the correct bounds for $x$ and $y$. So I'll leave the integration to you.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3328337
+se-link: https://math.stackexchange.com/questions/3328320/evaluation-of-some-integrals/3328337#3328337
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Evaluation of some integrals](https://math.stackexchange.com/questions/3328320/evaluation-of-some-integrals), asked by [George](https://math.stackexchange.com/users/625509/george) on Mathematics Stack Exchange (2019-08-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have to calculate some double integrals, as:
+>
+> $$\iint_{D} x^2y dxdy$$
+>
+> where $D$ is the bounded region between $C={[(x,y)\in R^2:x^2+y^2=4,y\ge0]}$ and $x$-axis. I am not sure about the domain $D$, I think that it would be $-2 \le x \le 2$ and $0 \le y \le \sqrt {4-x^2}$ [or $-2 \le x \le 2$ and $0 \le y \le 2?$]
+>
+> I have the same problem for the double integral $\iint_{D} [\frac{1}{x}+xy] dxdy$ where $D$ is the bounded region between $D={[(x,y)\in R^2:1 \le xy \le4,x \le y \le4x,x > 0]}$
+>
+> and $\iint_{D} 2xy dxdy$ where $D$ is the bounded region between $y^2=x, y^2=-x+4, y=0$ for $x,y \ge 0$ 
+>
+> I can't do the sketches of $D$
+>
+> Any help?
+:::
+
+it seems like your difficulty is first in sketching the regions and finding the correct bounds for $x$ and $y$.  So I'll leave the integration to you.
+
+Try to think on each bit of information given to you—it is going to be step in finding the right representation.
+
+First one:
+
+> $D$ is the bounded region between $C=\{(x,y)\in R^2:x^2+y^2=4,y\ge0\}$ and $x$-axis.
+
+The curve $C$ is contained in the circle of radius $2$ centered at the origin.  This comes from its equation $x^2+y^2=4$.  But since $y \geq 0$, $C$ is only the upper semicircle.  Another equation for $C$, which we can find by isolating $y$ in the previous equation, is $y=\sqrt{4-x^2}$.
+
+The region between $C$ and the $x$-axis is also within the *disk* of radius $2$ centered at the origin, and above the $x$-axis.  For each $x$, the lower $y$-limit is on the $x$-axis ($y=0$), and the upper $y$-limit is on $C$ ($y = \sqrt{4-x^2}$).  You now have a representation of $D$ that lends itself to an iterated integral:
+$$\iint_D xy^2 \,dA = \int_{-2}^{2} \int_0^{\sqrt{4-x^2}} xy^2\,dx\,dy$$
+
+> [or $-2 \le x \le 2$ and $0 \le y \le 2$?]
+
+This is a common mistake students make: they look at the maximum and minimum values of both $x$ and $y$ overall and use them as limits of integration.  *This is only correct when the region of integration is a rectangle*.  Instead, we look at the maximum and minimum values of *one* of the variables first (in this case, $x$), and then, for each value of that first variable, find the maximum and minimum values of the other variable (in this case $y$) *in terms of that first variable*.
+
+Next example:
+
+> $D$ is the bounded region $\{(x,y)\in R^2:1 \le xy \le4,x \le y \le4x,x > 0\}$
+
+By swapping the inequalities for equalities at the edges, we discover that $D$ is bounded by the curves $xy=1$, $xy=4$, $y=x$, and $y=4x$.  We also know that $D$ is the right half of the plane since $x> 0$.
+
+To sketch these curves, solve for $y$ in terms of $x$: $xy=1 \implies y=\frac{1}{x}$.  Similarly, $xy=4 \implies y = \frac{4}{x}$.  So $D$ is bounded by $y=\frac{1}{x}$, $y=\frac{4}{x}$, $y=x$, and $y=4x$, all in the first quadrant.  You can find the intersections of those boundary curves pretty easily (at least you can in this particular case).  Then (by splitting it up into two pieces), you can find the top and bottom curves for each value of $x$.
+
+Lastly,
+> $D$ is the bounded region between $y^2=x, y^2=-x+4, y=0$ for $x,y \ge 0$ 
+
+The same approach will work here (mostly). The fact that the curves describing the edges of $D$ are graphs of functions of $y$ (not $x$), indicates that we should look for constant bounds on $y$, followed by bounds on $x$ in terms of $y$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3328320/evaluation-of-some-integrals/3328337#3328337) on Mathematics Stack Exchange, 2019-08-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

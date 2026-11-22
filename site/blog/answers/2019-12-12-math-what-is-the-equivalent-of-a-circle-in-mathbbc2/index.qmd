@@ -1,0 +1,50 @@
+---
+title: What is the equivalent of a circle in $\mathbb{C}^2$?
+date: '2019-12-12'
+description: Like I said in my comment, this is highly dependent on what you're trying to “extend.” As a differential geometer, I vote for $S^3$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3473827
+se-link: https://math.stackexchange.com/questions/3473325/what-is-the-equivalent-of-a-circle-in-mathbbc2/3473827#3473827
+se-score: 1
+se-accepted: false
+se-tags:
+- complex-numbers
+- complex-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the equivalent of a circle in $\mathbb{C}^2$?](https://math.stackexchange.com/questions/3473325/what-is-the-equivalent-of-a-circle-in-mathbbc2), asked by [A. Kriegman](https://math.stackexchange.com/users/649089/a-kriegman) on Mathematics Stack Exchange (2019-12-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> One natural way to generalize the circle from the real plane $\mathbb{R}^2$ to the complex equivalent $\mathbb{C}^2$ is to use the same defining equation:
+>
+> $$z^2+w^2=1$$
+>
+> Where in this case the "radius" is 1 and the "center" is $(0,0)$. Of course if you think of $\mathbb{C}^2$ as $\mathbb{R}^4$, then geometrically this set looks nothing like a circle. It is unbounded and has no clear radius or center. It does have a lot of the same properties as the circle however. Any line intersects it at most twice, but unlike the real circle almost every line does intersect it twice. This is the kind of thing we tend to see when we take a real concept and extend it to the complexes: the same properties apply except nicer.
+>
+> On the other hand we could argue that the natural extension of the circle is this set:
+>
+> $$|z|^2+|w|^2=1$$
+>
+> Geometrically viewing $\mathbb{C}^2$ as $\mathbb{R}^4$ again this set has the shape of the hypersphere $S^3$, which does feel more circle like. However it is uncirclelike in some other ways. For example, the first "circle" I gave can be parameterized as $(\sin(\theta),\cos(\theta)),\theta\in\mathbb{C}$ much like the real circle. On the other hand the second "circle" cannot be parameterized in a complex variable, and in fact is not even a complex manifold since it has 3 real dimensions.
+>
+> My question is what is the name of each of these sets, and which one is the most natural extension of a circle to the complexes?
+:::
+
+Like I said in my comment, this is highly dependent on what you're trying to “extend.”  As a differential geometer, I vote for $S^3$.
+
+One interesting property of the circle is that it is a [Lie group](https://en.wikipedia.org/wiki/Lie_group); that is, a manifold with a smooth group action.  Algebraically, it is the group of all complex numbers with modulus $1$.
+
+There is a four-dimensional real division algebra called the [quaternions](https://en.wikipedia.org/wiki/Quaternion) ($\mathbb{H}$), which looks like the complex numbers but has two additional imaginary units $j$ and $k$ (which do not commute; the  rule is $ij = k = -ji$).  There is a modulus on quaternions, too, and the group of unit quaternions is diffeomorphic to $S^3$ as a manifold.  It's also algebraically isomorphic to the group $SU(2)$ of $2\times 2$ complex matrices $A$ such that $AA^*=I$ and $\det(A) = 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3473325/what-is-the-equivalent-of-a-circle-in-mathbbc2/3473827#3473827) on Mathematics Stack Exchange, 2019-12-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

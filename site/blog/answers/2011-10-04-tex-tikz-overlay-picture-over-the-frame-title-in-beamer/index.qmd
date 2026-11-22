@@ -1,0 +1,87 @@
+---
+title: Tikz overlay picture over the frame title in Beamer
+date: '2011-10-04'
+description: Beamer evaluates a frame's contents in a nonstandard way. The frame's body is evaluated before the frame's title.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 30424
+se-link: https://tex.stackexchange.com/questions/30420/tikz-overlay-picture-over-the-frame-title-in-beamer/30424#30424
+se-score: 9
+se-accepted: true
+se-tags:
+- tikz-pgf
+- beamer
+- overlays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikz overlay picture over the frame title in Beamer](https://tex.stackexchange.com/questions/30420/tikz-overlay-picture-over-the-frame-title-in-beamer), asked by [Little Bobby Tables](https://tex.stackexchange.com/users/1527/little-bobby-tables) on TeX Stack Exchange (2011-10-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to put a tikz overlay picture - A nice, thick red 'X' over a word - On the frame title of a Beamer frame.  However, the overlay tikz picture in the frame does not recognize the nodes given in the title.
+>
+> For example, I try:
+>
+> ```latex
+> \newcommand{\crd}[1]{\tikz[overlay, remember picture, baseline=.5ex]\coordinate (#1);}
+> \begin{frame}
+>   \frametitle{Some \crd{p}Crossthis\crd{q} Title}
+>   \begin{tikzpicture}[overlay, remember picture]
+>     \draw[red, thick] (p) -- (q);
+>   \end{tikzpicture}
+> \end{frame}
+> ```
+>
+> And I get:
+>
+> ```latex
+> ERROR: Package pgf Error: No shape named q is known.
+> ```
+>
+> How can I put an overlay on the title?
+:::
+
+Beamer evaluates a frame's contents in a nonstandard way.  The frame's body is evaluated before the frame's title.  
+
+Here is an adaptation of your MWE that puts the effect in the title and demonstrates the order of evaluation:
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{lipsum}
+\begin{document}
+
+\newcounter{n}
+
+\newcommand{\crd}[1]{\tikz[overlay, remember picture, baseline=.5ex]\coordinate (#1);}
+\begin{frame}{%
+	\stepcounter{n}($n=\then$)% 
+	Some \crd{p}Crossthis\crd{q} Title%
+	\begin{tikzpicture}[overlay, remember picture]
+    		\draw[red, thick] (p) -- (q);
+	\end{tikzpicture}%
+}
+\stepcounter{n}($n=\then$)% 
+\lipsum[1]
+\end{frame}
+
+\end{document}
+```
+
+![sample code output][1]
+
+You have to run this twice to get the underline effect.
+
+
+  [1]: 1sD0M.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/30420/tikz-overlay-picture-over-the-frame-title-in-beamer/30424#30424) on TeX Stack Exchange, 2011-10-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

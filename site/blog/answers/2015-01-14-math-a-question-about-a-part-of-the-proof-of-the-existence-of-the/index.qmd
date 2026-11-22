@@ -1,0 +1,91 @@
+---
+title: A question about a part of the proof of the existence of the exterior derivate.
+date: '2015-01-14'
+description: Yes, there is an expression for $d\omega$ without reference to coordinate systems.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1104396
+se-link: https://math.stackexchange.com/questions/1104333/a-question-about-a-part-of-the-proof-of-the-existence-of-the-exterior-derivate/1104396#1104396
+se-score: 2
+se-accepted: true
+se-tags:
+- differential-geometry
+- differential-topology
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A question about a part of the proof of the existence of the exterior derivate.](https://math.stackexchange.com/questions/1104333/a-question-about-a-part-of-the-proof-of-the-existence-of-the-exterior-derivate), asked by [somebody](https://math.stackexchange.com/users/181401/somebody) on Mathematics Stack Exchange (2015-01-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $M$ a differentiable manifold, $(U;x_1,\ldots,x_n)$ a coordinated system and $\omega$ a differential form which domain intersects $U$. In $U \cap \operatorname{Dom} \omega$, $\omega$ can be written as $\sum a_\phi \, dx_\phi$, with $\phi \in \cal{P}(\{1,\ldots,n\})$ ($a_\phi \in \cal{C}^\infty(U \cap \operatorname{Dom} \omega))$. For each $p \in U \cap \operatorname{Dom} \omega$, define $d\omega|_p=\sum da_\phi |_p \wedge \, dx_\phi |_p$. It is possible to prove that $d\omega|_p$ is well defined: changing the coordinated system does not change the result. It is possible to define, for each form $\omega$, the application $d\omega$ that sends every element $p \in U \cap \operatorname{Dom} \omega$ to $d\omega|_p$. I want to prove thar $d\omega$ is a form. It is enough to show that is a differentiable aplication. My question is: can it be shown without using charts explicitly, just  reasoning which  the expresion of $d\omega|_p$ is?
+:::
+
+Yes, there is an expression for $d\omega$ without reference to coordinate systems.
+
+If $\omega$ is a $k$-form, it “eats” $k$ vector fields at once and produces a function on $M$.  The derivative $d\omega$ can be determined by what it does to a $(k+1)$-tuple of vectors.  Remember also that vector fields on $M$ are derivations of functions on $M$.  
+
+The coordinate-free equation for $d\omega$ is 
+$$\begin{multline*}
+    d\omega(X_0,X_1,\dots,X_k)
+    = \sum_{i=0}^k (-1)^i X_i \omega \left (X_0, \ldots, \hat X_i, \ldots,X_k \right ) \\
+     +\sum_{i<j}(-1)^{i+j}\omega \left (\left [X_i, X_j \right ], X_0, \ldots, \hat X_i, \ldots, \hat X_j, \ldots, X_k \right )
+\end{multline*}$$
+Here $\hat X_i$ means that this vector field is skipped in this term of the sum.  
+
+Essentially we do two things: take turns feeding $\omega$ every $k$-tuple taken from $X_0,\dots,X_k$, and letting the remaining vector act on that function; and use Lie brackets to reduce the $k+1$ vector fields to $k$ vector fields, then feed that to $\omega$.
+
+For instance, if $\theta$ is a one-form, then
+$$d\theta(X,Y) = X \theta(Y) - Y\theta(X) - \theta([X,Y])$$
+Let $x^1,\dots x^n$ be a coordinate patch on $M$
+Let $X = v^i \frac{\partial}{\partial x^i}$ and $Y = w^j \frac{\partial}{\partial x^j}$ be two vector fields on this patch.  Then
+$$\begin{align*}
+    [X,Y]f &= X(Yf) - Y(Xf) \\
+    &= v^i \frac{\partial}{\partial x^i}\left(w^j \frac{\partial f}{\partial x^j}\right) 
+      -w^j \frac{\partial}{\partial x^j}\left(v^i \frac{\partial f}{\partial x^i}\right) \\
+    &= v^i \left(\frac{\partial w^j}{\partial x^i}\frac{\partial f}{\partial x^j} + w^j \color{red}{\frac{\partial^2 f}{\partial x^i x^j}}\right)
+      -w^j \left(\frac{\partial v^i}{\partial x^j}\frac{\partial f}{\partial x^i} + v^i \color{red}{\frac{\partial^2 f}{\partial x^j x^i}}\right) \\
+    &= v^i \frac{\partial w^j}{\partial x^i}\frac{\partial f}{\partial x^j} - w^j \frac{\partial v^i}{\partial x^j}\frac{\partial f}{\partial x^i} \\
+    &= \left(v^j \frac{\partial w^i}{\partial x^j}- w^j \frac{\partial v^i}{\partial x^j}\right)\frac{\partial f}{\partial x^i}
+\end{align*}$$
+The cancellation is due to Clairaut's theorem.
+
+Suppose now that $\theta = f_k\,dx^k$ in these coordinates.  Then 
+$$\begin{align*}
+    \theta(Y) &= (f_k\, dx^k)\left(w^j \frac{\partial f}{\partial x^j}\right) = f_k w^k \\
+\implies
+    X\theta(Y) &= v^i \frac{\partial}{\partial x^i}(f_k w^k)
+                = v^i \frac{\partial f_k}{\partial x^i}w^k + v^i f_k \frac{\partial w^k}{\partial x^i} \\
+    \theta(X)  &= (f_k \,dx^k)\left(v^i \frac{\partial f}{\partial x^i}\right) = f_i v^i \\
+\implies
+    Y\theta(X) &= w^j\frac{\partial}{\partial x^j}(f_i v^i) \\
+               &= w^j\frac{\partial f_i}{\partial x^j}v^i + w^j f_i \frac{\partial v^i} {\partial x^j} \\
+    \theta([X,Y]) &= f_i \left(v^j \frac{\partial w^i}{\partial x^j}- w^j \frac{\partial v^i}{\partial x^j}\right)
+\end{align*}$$
+After renaming dummy indices and subtracting, you get
+$$d\theta([X,Y]) = (w^iv^j-v^iw^j)\frac{\partial f_i}{\partial x^j}$$
+
+On the other hand,
+$$\begin{align*}
+    \left(\frac{\partial f_i}{\partial x^j} dx^j \wedge dx^i\right)
+    \left(v^k \frac{\partial}{\partial x^k},w^\ell \frac{\partial}{\partial x^\ell}\right)
+    &= \frac{\partial f_i}{\partial x^j}\left[dx^j\left(v^k \frac{\partial}{\partial x^k}\right)dx^i\left(w^\ell \frac{\partial}{\partial x^\ell}\right)
+
+- dx^i\left(v^k \frac{\partial}{\partial x^k}\right)dx^j\left(w^\ell \frac{\partial}{\partial x^\ell}\right)
+\right] \\
+    &= \frac{\partial f_i}{\partial x^j}\left(v^jw^i - v^i w^j\right)
+\end{align*}$$
+These are the same thing.
+
+So if you can show that this expression for $d\omega$ works out to your expression in local coordinates, you have shown the local expression is well-defined.  It's no more complicated than the above, just with more indices!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1104333/a-question-about-a-part-of-the-proof-of-the-existence-of-the-exterior-derivate/1104396#1104396) on Mathematics Stack Exchange, 2015-01-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

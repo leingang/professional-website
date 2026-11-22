@@ -1,0 +1,53 @@
+---
+title: basic difference between canonical isomorphism and isomorphims
+date: '2019-04-26'
+description: Great question. Canonical is more a term of art than a word with a strict mathematical definition. It's sometimes used as a synonym for “natural” or “obvious,”…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3203049
+se-link: https://math.stackexchange.com/questions/3203028/basic-difference-between-canonical-isomorphism-and-isomorphims/3203049#3203049
+se-score: 42
+se-accepted: true
+se-tags:
+- group-isomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[basic difference between canonical isomorphism and isomorphims](https://math.stackexchange.com/questions/3203028/basic-difference-between-canonical-isomorphism-and-isomorphims), asked by [MAS](https://math.stackexchange.com/users/417353/mas) on Mathematics Stack Exchange (2019-04-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What is the basic difference between canonical isomorphism and isomorphims?
+>
+> I need some basic analysis.
+>
+> As far as I consider on canonical isomorphism means a similarity between two geometric object having same kind of configuration and structure.
+>
+> While isomorphism means a map between two algebraic object or group or fields etc.
+>
+> But I am not satisfied with my own analysis.
+>
+> Can someone help me understanding these two definitions ?
+:::
+
+Great question.  *Canonical* is more a term of art than a word with a strict mathematical definition.  It's sometimes used as a synonym for “natural” or “obvious,” although *natural* is yet another idiom and *obvious* is in the eye of the beholder.  You might think of it as meaning *independent of any choices*.
+
+It sounds like you're in an abstract algebra class now, but hopefully this linear algebra example will make sense.  Let $V$ be a vector space over $\mathbb{R}$ of dimension $n$.  By choosing a basis $(v_1,\dots,v_n)$, $V$ is isomorphic to $\mathbb{R}^n$.  What is the isomorphism?  It takes $v\in V$, decomposes it into $\alpha_1 v_1 + \dots + \alpha_n v_n$, and assigns to $v$ the $n$-tuple $(\alpha_1,\dots,\alpha_n)$. 
+
+Through the isomorphism to $\mathbb{R}^n$, all vector spaces of the same dimension are isomorphic to each other, but not for any good reason, and not in any natural way.  The isomorphism depends on the choice of basis.  
+
+Let $V^*$ be the dual space to $V$, that is, the vector space of linear functions $V \to \mathbb{R}$.  Once you choose a basis of $(v_1,\dots,v_n)$, you can form a dual basis $(\lambda_1,\dots,\lambda_n)$ of $V^*$, such that $\lambda_i(v_j) = \delta_{ij}$.  So $V$ and $V^*$ are isomorphic, but not canonically so.
+
+Now let $V^{**}$ be the dual space of $V^*$.  Elements of $V^{**}$ are linear functions from $V^*$ to $\mathbb{R}$.  One way to create such a map is to select $v \in V$ and send $\lambda \in V^*$ to $\lambda(v)$.  This association extends to a linear map
+$$f \colon V \to V^{**},\ f(v)(\lambda) = \lambda(v)$$
+By a dimension count, this map has to be an isomorphism.  And, we didn't have to choose a basis to create it.  For this reason, we say that $V$ and $V^{**}$ are *canonically* isomorphic.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3203028/basic-difference-between-canonical-isomorphism-and-isomorphims/3203049#3203049) on Mathematics Stack Exchange, 2019-04-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

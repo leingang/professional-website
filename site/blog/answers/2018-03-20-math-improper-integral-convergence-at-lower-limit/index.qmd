@@ -1,0 +1,45 @@
+---
+title: improper integral convergence at lower limit
+date: '2018-03-20'
+description: First, look at the zero end. Let $f(x) = \sin^{m-1} (x) \cos^{n-1}(x)$, and let $g(x) = x^{m-1}$. Notice that $$\lim{x\to 0} \frac{f(x)}{g(x)} = 1$$ so…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2700439
+se-link: https://math.stackexchange.com/questions/2700431/improper-integral-convergence-at-lower-limit/2700439#2700439
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[improper integral convergence at lower limit](https://math.stackexchange.com/questions/2700431/improper-integral-convergence-at-lower-limit), asked by [Raushan Yadav](https://math.stackexchange.com/users/513499/raushan-yadav) on Mathematics Stack Exchange (2018-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> what should be the condition on *m* and *n* for the function to converge?
+> $$\int_0^{\pi/2} \sin^{m-1}x\cos^{n-1}xdx\,.$$
+>
+> For the given question, I chose a number $c$ in between $0-\pi/2$ and considered $m-1<0$ and tried to find the solution by dividing the function with 
+> $$\frac{1}{x^{m-1}},$$
+> which gave the condition for $m<0$, but the true solution is $m>0$ as per the answer key.
+:::
+
+First, look at the zero end.  Let $f(x) = \sin^{m-1} (x) \cos^{n-1}(x)$, and let $g(x) = x^{m-1}$.  Notice that
+$$\lim_{x\to 0} \frac{f(x)}{g(x)} = 1$$
+so $\int_0^{\pi/2} f(x)\,dx$ converges at zero iff $\int_0^{\pi/2} g(x)\,dx$ converges.  
+
+Now $\int_0^{\pi/2} g(x)\,dx$ is a $p$-integral with exponent $p=m-1$.  We know those converge at $0$ whenever $p>-1$, equivalently $m>0$.
+
+Now, look at the $\pi/2$ end.  Since $\lim_{x\to \pi/2^-} \cos(x) = 0$, there is a discontinuity if $n < 0$.  You can use a similar argument to show that $n>0$ is necessary and sufficient.  Note $\cos(x-\pi/2) = \sin x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2700431/improper-integral-convergence-at-lower-limit/2700439#2700439) on Mathematics Stack Exchange, 2018-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

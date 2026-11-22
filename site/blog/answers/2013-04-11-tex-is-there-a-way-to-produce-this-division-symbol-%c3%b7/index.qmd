@@ -1,0 +1,44 @@
+---
+title: Is there a way to produce this division symbol? ÷
+date: '2013-04-11'
+description: 'Werner''s and egreg''s comments are correct: you should still use \div, but inside of math mode.'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 108046
+se-link: https://tex.stackexchange.com/questions/108035/is-there-a-way-to-produce-this-division-symbol-%c3%b7/108046#108046
+se-score: 74
+se-accepted: true
+se-tags:
+- symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way to produce this division symbol? ÷](https://tex.stackexchange.com/questions/108035/is-there-a-way-to-produce-this-division-symbol-%c3%b7), asked by [lawlist](https://tex.stackexchange.com/users/26911/lawlist) on TeX Stack Exchange (2013-04-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is there a way to produce this division symbol?  ÷
+>
+> The term `\div` gives an error of `Missing $ inserted`.
+>
+> `\÷` is not working either.
+:::
+
+Werner's and egreg's comments are correct: you should still use `\div`, but inside of math mode.
+
+So: `$6 \div 3 = 2$`.
+
+![\$6 \div 3 = 2\$][1]
+
+
+  [1]: HF4XR.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/108035/is-there-a-way-to-produce-this-division-symbol-%c3%b7/108046#108046) on TeX Stack Exchange, 2013-04-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,78 @@
+---
+title: Proof of Cauchy-Schwartz Inequality
+date: '2019-10-05'
+description: '[This is mostly the same answer as Surb; I started writing one with a few more details before he posted his.]'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3381521
+se-link: https://math.stackexchange.com/questions/3381469/proof-of-cauchy-schwartz-inequality/3381521#3381521
+se-score: 1
+se-accepted: false
+se-tags:
+- cauchy-schwarz-inequality
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof of Cauchy-Schwartz Inequality](https://math.stackexchange.com/questions/3381469/proof-of-cauchy-schwartz-inequality), asked by [Soumee](https://math.stackexchange.com/users/394202/soumee) on Mathematics Stack Exchange (2019-10-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Cauchy-Schwartz Inequality:** 
+>
+> I am trying to prove Question 2 of Problem 2.9:
+>
+> > Question
+>
+> [![enter image description here][q-1]][q-1]
+>
+> I have the following difficulties:
+>
+> 1) I am not able to understand how (1) in the figure is arrived at.
+>
+> 2) I am not able to understand how (2) in the figure is arrived at.
+>
+> 3) How is $| \sum _{i=1}^{n} z_i | \le \sum _{i=1}^{n} |z_i|$ equivalent to $| \sum _{i=1}^{n} x_iy_i^* | \le \sum _{i=1}^{n} |x_iy_i^*|$ (Equation 3) ?
+>
+> > Solution
+>
+> [![enter image description here][q-2]][q-2]
+>
+>
+>   [q-1]: RDwjM.png
+>   [q-2]: BNqE1.png
+:::
+
+*[This is mostly the same answer as Surb; I started writing one with a few more details before he posted his.]*
+
+Equation (1) follows from the distributive property of addition over multiplication:
+$$\left(\sum_{i=1} z_{i,R}\right)^2
+    = \left(\sum_{i=1} z_{i,R}\right)\left(\sum_{m=1} z_{m,R}\right)
+    = \sum_{i=1} \sum_{m=1} z_{i,R} z_{m,R}$$
+That last step is a summation form (with  more terms) of the “[FOIL](https://en.wikipedia.org/wiki/FOIL_method)” identity
+$$(a+b)(c+d) = ac + ad + dc + bd$$
+If you do the same thing with $\left(\sum_{i=1} z_{i,I}\right)^2$ you get (1).
+
+Equation (2) follows from the observation that the square of any real number is nonnegative.  We have
+$$\begin{align*}
+    (ac+bd)^2 &= a^2c^2 + 2abcd + b^2d^2 \\
+  0 \leq (ad-bc)^2 &= a^2d^2 - 2abcd + b^2 c^2  
+\end{align*}$$
+So if you add both sides of the two together, you get
+$$(ac+bd)^2 \leq a^2c^2 + a^2 d^2 + b^2 d^2 + b^2 c^2 = (a^2+b^2)(c^2+d^2)$$
+So (2) now follows from setting $a=a_{i,R}$, $b=z_{i,I}$ $c=z_{m,R}$, $d=z_{m,I}$ over and over for each pair $(i,m)$.
+
+For (3), this is nothing more than a substitution.  If $z_i = x_i y_i^*$, then
+$$\begin{align*}
+    \left|\sum_{i=1}^{m} z_i\right| &= \left|\sum_{i=1^m} x_i y_i^*\right| \\
+    \sum_{i=1}^m |z_i| &= \sum_{i=1}^m |x_i y^*_i| = \sum_{i=1}^m |x_i| |y^*_i|
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3381469/proof-of-cauchy-schwartz-inequality/3381521#3381521) on Mathematics Stack Exchange, 2019-10-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

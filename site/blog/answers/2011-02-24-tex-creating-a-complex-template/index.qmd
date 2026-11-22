@@ -1,0 +1,49 @@
+---
+title: Creating a complex template
+date: '2011-02-24'
+description: You might try the textpos package or some of the other solutions described on the TeX FAQ page "Putting things at fixed positions on the page".
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 11938
+se-link: https://tex.stackexchange.com/questions/11937/creating-a-complex-template/11938#11938
+se-score: 4
+se-accepted: false
+se-tags:
+- document-classes
+- templates
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Creating a complex template](https://tex.stackexchange.com/questions/11937/creating-a-complex-template), asked by [ipavlic](https://tex.stackexchange.com/users/1688/ipavlic) on TeX Stack Exchange (2011-02-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to create a complex template for documentation as a document class. 
+>
+> I should be able to define my `text` fields (for instance, `\documentNumber`, `\projectTitle`). My class should be flexible enough to accomodate landscape pages as well. `XeTeX` is preferrable.
+>
+> This is a sketch of how the document template should look like:
+>
+> ![Layout sketch][q-1]
+>
+> The only idea I had was to [create a tikzpicture on every page,  as described in my other question][q-2]. I got recommendations for using `everypage`, `everyshi` and such. I was hoping for more specific answers. Code snippets or just outlined concepts for coding are most welcome.
+>
+> [q-1]: AWjAt.png
+>   [q-2]: https://tex.stackexchange.com/questions/4930/tikzpicture-on-every-page
+:::
+
+You might try the [`textpos`](http://ctan.org/pkg/textpos) package or some of the other solutions described on the TeX FAQ page ["Putting things at fixed positions on the page"](https://texfaq.org/FAQ-abspos).
+
+If you are comfortable using TikZ to do this kind of thing don't be afraid to.  Yes, it's a lot of "overhead" but it works.
+
+Although I know very little about it I hear ConTeXt does this kind of thing well.  So we should be getting an answer from one of their users soon.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11937/creating-a-complex-template/11938#11938) on TeX Stack Exchange, 2011-02-24, with [edits](https://tex.stackexchange.com/posts/11938/revisions) by [barbara beeton](https://tex.stackexchange.com/users/579/barbara-beeton). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

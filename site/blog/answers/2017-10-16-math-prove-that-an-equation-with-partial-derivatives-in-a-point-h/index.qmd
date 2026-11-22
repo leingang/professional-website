@@ -1,0 +1,42 @@
+---
+title: Prove that an equation with partial derivatives in a point holds
+date: '2017-10-16'
+description: The first thing you should try to establish is that $$\left.\frac{\partial z}{\partial x}\right|{x=x0,y=y0,z=z0} = - \frac{\partial F/\partial…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2475556
+se-link: https://math.stackexchange.com/questions/2475537/prove-that-an-equation-with-partial-derivatives-in-a-point-holds/2475556#2475556
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- partial-derivative
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that an equation with partial derivatives in a point holds](https://math.stackexchange.com/questions/2475537/prove-that-an-equation-with-partial-derivatives-in-a-point-holds), asked by [Marcelo](https://math.stackexchange.com/users/487716/marcelo) on Mathematics Stack Exchange (2017-10-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $x=x(y,z)$, $y=y(x,z)$, $z=z(x,y)$ be implicit defined by the equation $F(x,y,z)=0$. Suppose $x_0=x(y_0,z_0), y_0=y(x_0,z_0), z_0=(x_0,y_0)$ and that at the point $(x_0,y_0,z_0)$ the partial derivatives of $F$ are different from zero.
+>
+> Show that: $$\dfrac{\partial x}{\partial y}{\big|}_{{y=y_0}\\{z=z_0}}\cdot \dfrac{\partial y}{\partial z}{\big|}_{{x=x_0}\\{z=z_0}}\cdot \dfrac{\partial z}{\partial x}{\big|}_{{x=x_0}\\{y=y_0}}= -1$$
+>
+> I tried just to calculate the partial derivatives and see what happens, but I couldn't get anywhere.
+:::
+
+The first thing you should try to establish is that
+$$\left.\frac{\partial z}{\partial x}\right|_{x=x_0,y=y_0,z=z_0}
+    = - \frac{\partial F/\partial x(x_0,y_0,z_0)}{\partial F/\partial z(x_0,y_0,z_0)}$$
+From there, your equation can by proved by cycling the $x$, $y$, and $z$ variables.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2475537/prove-that-an-equation-with-partial-derivatives-in-a-point-holds/2475556#2475556) on Mathematics Stack Exchange, 2017-10-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

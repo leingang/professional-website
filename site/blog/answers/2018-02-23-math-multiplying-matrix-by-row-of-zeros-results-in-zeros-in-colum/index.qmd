@@ -1,0 +1,51 @@
+---
+title: Multiplying matrix by row of zeros results in zeros in column
+date: '2018-02-23'
+description: When you multiply matrices $A$ and $B$, the $i$th column of the product is $A$ times the $i$th column vector of $B$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2662735
+se-link: https://math.stackexchange.com/questions/2662725/multiplying-matrix-by-row-of-zeros-results-in-zeros-in-column/2662735#2662735
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Multiplying matrix by row of zeros results in zeros in column](https://math.stackexchange.com/questions/2662725/multiplying-matrix-by-row-of-zeros-results-in-zeros-in-column), asked by [user12888](https://math.stackexchange.com/users/526266/user12888) on Mathematics Stack Exchange (2018-02-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If I have a matrix $A$ which is $n\times n$ and I have another matrix $I$ which is almost the identity matrix but has some zeros in it’s diagonal entries, then the rows of zeros in $I$ make the columns of $A$ zeros. 
+>
+> For a concrete example see these two WA links:
+> [Link 1][q-1]
+> [Link 2][q-2]
+>
+> Why is this true (proof perhaps)? I'm not really sure how to word my Question since I don't really now what is happening.
+>
+>
+>   [q-1]: http://www.wolframalpha.com/input/?i=%7B%7B1,2%7D,%7B4,5%7D,%7B7,8%7D%7D%7B%7B1,2%7D,%7B4,5%7D,%7B7,8%7D%7D%5ET
+>   [q-2]: http://www.wolframalpha.com/input/?i=%7B%7B1,2,3%7D,%7B4,5,6%7D,%7B7,8,9%7D%7D*%7B%7B1,0,0%7D,%7B0,1,0%7D,%7B0,0,0%7D%7D*%7B%7B1,2,3%7D,%7B4,5,6%7D,%7B7,8,9%7D%7D%5ET
+:::
+
+When you multiply matrices $A$ and $B$, the $i$th column of the product is $A$ times the $i$th column vector of $B$.  
+
+If that column is a “standard basis vector” $\vec{e}_j$, that is, a vector with all zeros except for one $1$ in the $j$th position, the result is the $j$th column of $A$.  
+
+This means that if $B$ is a diagonal matrix, $AB$ is the same as $A$ after scaling each column by diagonal entry in the corresponding column of $B$:
+$$\begin{bmatrix} \vec{a}_1 & \vec{a}_2 & \cdots & \vec{a}_n\end{bmatrix}
+    \begin{bmatrix} \lambda _1 \\ & \lambda _2 \\ && \ddots \\ &&&\lambda_n \end{bmatrix}
+   =\begin{bmatrix} \lambda_1\vec{a}_1 & \lambda_2\vec{a}_2 & \cdots & \lambda_n\vec{a}_n\end{bmatrix}$$
+So if one of those $\lambda_i$'s is zero, the product $\lambda_i\vec{a}_i$ is the zero vector.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2662725/multiplying-matrix-by-row-of-zeros-results-in-zeros-in-column/2662735#2662735) on Mathematics Stack Exchange, 2018-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

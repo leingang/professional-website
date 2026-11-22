@@ -1,0 +1,41 @@
+---
+title: Why did he take out the $i$ from this equation?
+date: '2017-11-14'
+description: The imaginary part is the coefficient of $i$ in a complex number. So by itself it's a real number.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2519890
+se-link: https://math.stackexchange.com/questions/2519883/why-did-he-take-out-the-i-from-this-equation/2519890#2519890
+se-score: 2
+se-accepted: true
+se-tags:
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why did he take out the $i$ from this equation?](https://math.stackexchange.com/questions/2519883/why-did-he-take-out-the-i-from-this-equation), asked by [fpsshubham](https://math.stackexchange.com/users/480896/fpsshubham) on Mathematics Stack Exchange (2017-11-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If he wants the imaginary part then why did he remove the $i$ symbol from the last part?
+>
+> [![derivation][q-1]][q-1]
+>
+>
+>
+>   [q-1]: 2u3gJ.jpg
+:::
+
+The imaginary part is the coefficient of $i$ in a complex number.  So by itself it's a real number.
+
+If $z=x+iy$ is a complex number, then the imaginary part of $z$ is $y$, not $yi$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2519883/why-did-he-take-out-the-i-from-this-equation/2519890#2519890) on Mathematics Stack Exchange, 2017-11-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,66 @@
+---
+title: Find the point on an ellipse closest to given points
+date: '2016-11-12'
+description: 'You almost had it. To recap: you want to minimize $g(x,y) = (x-1)^2 + y^2$ subject to the constraint that $\frac{x^2}{4}+ y^2 = r^2$. I used the square of the…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2009942
+se-link: https://math.stackexchange.com/questions/2009750/find-the-point-on-an-ellipse-closest-to-given-points/2009942#2009942
+se-score: 2
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- lagrange-multiplier
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the point on an ellipse closest to given points](https://math.stackexchange.com/questions/2009750/find-the-point-on-an-ellipse-closest-to-given-points), asked by [Khan Saab](https://math.stackexchange.com/users/374532/khan-saab) on Mathematics Stack Exchange (2016-11-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to find the points on ellipse $\frac{x^2}{4} + y^2 = r^2$ that are nearest to $(1,0)$.Where r is given value.
+> I am not getting right answer with Lagrange technique, I tried $g(x,y) = \sqrt[]{(x-1)^2+(y-0)^2}$ and I tried to compute the equation for $f(x,y)$ and $g(x,y)$ by taking derivate and solved for stationary points but I get wrong answer.  Is this the correct approach?
+>
+> $\lambda(2x -2) = \frac{x}{2}$ 1st equation, $\lambda(2y) = 2y$ second equation, where I get $\lambda$ from first equation equals to $\lambda = \frac{x}{(4x-4)}$ and second equation $\lambda = \frac{2y}{2y}$ (here is something wrong, I don't know what I do wrong) so I cross multiply them by setting both lambdas equal $\frac{x}{(x-4)} = 2y/2y$(which is 1) :( then solve for value $x$ and that value I put in $\frac{x^2}{4} + y^2 = r^2$.
+:::
+
+You almost had it.  To recap: you want to minimize $g(x,y) = (x-1)^2 + y^2$ subject to the constraint that $\frac{x^2}{4}+ y^2 = r^2$.  I used the square of the distance function because it has extrema at the same points, but is easier to differentiate. 
+
+The Lagrange multiplier equations are:
+$$\begin{align*}
+    \frac{1}{2} x &= 2\lambda(x-1) \tag{1}\\
+    2y &= 2\lambda y \tag{2} \\
+\frac{x^2}{4} + y^2 &= r^2 \tag{3}
+\end{align*}$$
+
+Equation (2) has *two* possible solutions.  It might be better to write it as
+$$0 = 2y - 2\lambda y = 2y(1-\lambda)$$
+Now you can see that either $\lambda = 1$ (which you discovered) or $y=0$ (which you forgot).  We take each case at a time.
+
+Suppose $\lambda = 1$.  Then (1) becomes 
+$$\frac{1}{2}x=2x-2 \implies x = 4x-4 \implies 4=3x \implies x = \frac{4}{3}$$
+Substituting this into (3) gives
+$$\frac{1}{4}\left(\frac{16}{9}\right) + y^2 = r^2
+\implies \frac{4}{9} + y^2 = r^2
+\implies y = \pm\sqrt{r^2-\frac{4}{9}}$$
+As Jean-Marie pointed out, this is a solution only if $r > \frac{3}{4}$.  The critical value is
+$$f\left(\frac{4}{3},\pm\sqrt{r^2-\frac{4}{9}}\right) 
+    = \left(\frac{1}{3}\right)^2 + r^2 - \frac{4}{9} = r^2-\frac{1}{3}$$
+
+Now suppose $y=0$.  Then $x=\pm 2r$ by (3).  The critical values are $f(2r,0) = (2r-1)^2$ and $f(-2r,0) = (2r+1)^2$.  Notice that if $(2r-1)^2 < (2r+1)^2$ for any $r > 0$.
+
+If $r < \frac{3}{4}$, then we only have the two critical points $(\pm 2r,0)$.  The closer is $(2r,0)$, and the further is $(-2r,0)$.
+
+If $r > \frac{3}{4}$, We have to compare $(2r-1)^2$ and $r^2-\frac{1}{3}$.  But
+$$(2r-1)^2 - \left(r^2 - \frac{1}{3}\right) = 3r^2 -4r + \frac{4}{3} = 3\left(r-\frac{2}{3}\right)^2$$
+which is positive.  So the two points off the $x$-axis are closer than $(2r,0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2009750/find-the-point-on-an-ellipse-closest-to-given-points/2009942#2009942) on Mathematics Stack Exchange, 2016-11-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

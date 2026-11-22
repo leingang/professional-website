@@ -1,0 +1,80 @@
+---
+title: includegraphics - Problem with compiling
+date: '2011-04-07'
+description: 'Following Seamus and Ulrike this is all you need:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 15230
+se-link: https://tex.stackexchange.com/questions/15228/includegraphics-problem-with-compiling/15230#15230
+se-score: 4
+se-accepted: false
+se-tags:
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[includegraphics - Problem with compiling](https://tex.stackexchange.com/questions/15228/includegraphics-problem-with-compiling), asked by [Thomas Connor](https://tex.stackexchange.com/users/4224/thomas-connor) on TeX Stack Exchange (2011-04-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am actually writing a latex file in which I would like to insert pictures. I have the following preambule:
+>
+> ```latex
+> \documentclass[a4paper, french]{book}
+> \usepackage[utf8]{inputenc}
+> \usepackage[T1]{fontenc}
+> \usepackage[french]{babel}
+> \usepackage{graphicx}
+> \usepackage{xspace}
+> ```
+>
+> In my text, I tried to insert a picture with the following code:
+>
+> ```latex
+> \begin{figure}
+>  \begin{picture}
+>   \includegraphics[scale=0.5]{Deltoidalicositetrahedron.jpg}
+>  \end{picture}
+> \end{figure}
+> ```
+>
+> I am using TexShop version 2.38 and I tried to compile with LaTeX. It worked on the computer of a friend using the same TexShop version. However on my computer it doesn't work. Here is what the console complains about:
+>
+> ```latex
+> ./bio mol adn.tex:57: Use of \pictur@ doesn't match its definition.
+> <argument> \includegraphics 
+>
+> l.57   \includegraphics
+>                        [scale=0.5]{Deltoidalicositetrahedron.jpg}
+>
+> ? 
+> ```
+>
+>
+> Has anyone ever encounter the same problem?
+>
+> As usual, thanks in advance.
+:::
+
+Following Seamus and Ulrike this is all you need:
+
+```latex
+\documentclass{book}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{figure}
+  \includegraphics[scale=0.5]{Deltoidalicositetrahedron.jpg}
+\end{figure}
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15228/includegraphics-problem-with-compiling/15230#15230) on TeX Stack Exchange, 2011-04-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

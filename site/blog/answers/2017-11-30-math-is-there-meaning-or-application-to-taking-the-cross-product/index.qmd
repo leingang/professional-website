@@ -1,0 +1,52 @@
+---
+title: Is there meaning or application to taking the cross product of the first and the second derivative of a vector valued function?
+date: '2017-11-30'
+description: 'The first of these quantities is proportional to the derivative of speed (squared): $$\frac{d}{dt}|r''|^2 = \frac{d}{dt} r''\cdot r'' = r'''' \cdot r'' + r'' \cdot…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2544858
+se-link: https://math.stackexchange.com/questions/2544825/is-there-meaning-or-application-to-taking-the-cross-product-of-the-first-and-the/2544858#2544858
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there meaning or application to taking the cross product of the first and the second derivative of a vector valued function?](https://math.stackexchange.com/questions/2544825/is-there-meaning-or-application-to-taking-the-cross-product-of-the-first-and-the), asked by [Daniel](https://math.stackexchange.com/users/508682/daniel) on Mathematics Stack Exchange (2017-11-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In my multivariable calculus class we have several practice problems where given a vector valued function r(t):
+> we need to find $$r'(t) \cdot r''(t)$$
+>
+> and
+>
+> $$r'(t) \times r''(t)$$
+>
+> For example, using the given function 
+> $r(t) = cos(t)i +sin(t)j +2tk$
+> which is from Larson 10e section 12.2 example 2.
+>
+> The book seems to emphasize this calculation in the exercises and because of the frequency with which it appears, I wonder if this calculation has any significance.  Is this just a convenient way for the authors to practice dot products, cross products, and derivatives of vector functions, or is there a meaning in math or any other field to taking the dot or cross product of a first derivative with a second derivative.  I know how to solve the calculation, my question is whether there is any meaning to it.
+:::
+
+The first of these quantities is proportional to the derivative of speed (squared):
+$$\frac{d}{dt}|r'|^2 = \frac{d}{dt} r'\cdot r' = r'' \cdot r' + r' \cdot r'' = 2 r' \cdot r''$$
+I need to be a bit more hand-wavy about the second one.  Remember that
+$|u \times v|$
+is the area of the parallelogram spanned by $u$ and $v$.  So $r'\times r''$ is a vector quantity whose length is proportional to $|r'|$, $|r''|$ and the sine of the angle between them.  If the angle between $r'$ and $r''$ is large (i.e., close to a right angle), there's a lot of curving to the curve.  
+
+The curvature formula
+$$\kappa = \frac{|r' \times r''|}{|r'|^3}$$
+comes from reparametrizing $r$ so that its speed is constant, and normalizing $r'$ to a *unit* tangent vector field $T= \frac{r'}{|r'|}$.  If $s$ is the arc length as a coordinate, then $\kappa = |T'(s)|$.  When you compute this derivative carefully, the $r'\times r''$ pops out, not for any mystical reason other than [BAC-CAB](http://mathworld.wolfram.com/BAC-CABIdentity.html).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2544825/is-there-meaning-or-application-to-taking-the-cross-product-of-the-first-and-the/2544858#2544858) on Mathematics Stack Exchange, 2017-11-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

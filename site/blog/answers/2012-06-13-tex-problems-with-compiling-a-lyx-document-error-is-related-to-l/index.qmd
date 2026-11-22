@@ -1,0 +1,60 @@
+---
+title: Problems with compiling a lyx document (error is related to limits of sum)
+date: '2012-06-13'
+description: To me it seems more often than not that TeX's error messages are not that useful per se. I often tune out their content and scan the code line with the error…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 59700
+se-link: https://tex.stackexchange.com/questions/59696/problems-with-compiling-a-lyx-document-error-is-related-to-limits-of-sum/59700#59700
+se-score: 2
+se-accepted: true
+se-tags:
+- lyx
+- compiling
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problems with compiling a lyx document (error is related to limits of sum)](https://tex.stackexchange.com/questions/59696/problems-with-compiling-a-lyx-document-error-is-related-to-limits-of-sum), asked by [Belgi](https://tex.stackexchange.com/users/13769/belgi) on TeX Stack Exchange (2012-06-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am having problems compiling a lyx document I created, the problem seem to be with the limits on the summation I made, can someone please tell me how can I fix this problem ?
+>
+> The problems are in two areas: 
+>
+> ```latex
+> The LHS: $(A(t)B(t))_{i,j}=\sum\limits _{k=1}^{n}a_{ik}(t)b_{kj}(t)$,
+> since each element in the matrices is in $C^{1}(\mathbb{R})$ it holds
+> that: $\forall k\in[n]:\,(a_{ik}(t)b_{kj}(t))'=a'_{ik}(t)b_{kj}(t)+a_{ik}(t)b'_{kj}(t)$
+> hence $(A(t)B(t))'_{i,j}=\sum(\limits _{k=1}^{n}a_{ik}(t)b_{kj}(t))'=\sum\limits _{k=1}^{n}(a'_{ik}(t)b_{kj}(t)+a_{ik}(t)b'_{kj}(t))$.
+> ```
+>
+> and:
+>
+> ```latex
+> The RHS: $(A'(t)B(t))_{ij}=\sum\limits _{k=1}^{n}a'_{ik}(t)b_{kj}(t),\,(A(t)B'(t))_{ij}=\sum\limits _{k=1}^{n}a{}_{ik}(t)b'_{kj}(t)$
+> hence $(A'(t)B(t)+A(t)B'(t))_{ij}=(A'(t)B(t))_{ij}+(A(t)B'(t))_{ij}=\sum\limits _{k=1}^{n}a'_{ik}(t)b_{kj}(t)+\sum\limits _{k=1}^{n}a{}_{ik}(t)b'_{kj}(t)=\sum(\limits _{k=1}^{n}a{}_{ik}'(t)b{}_{kj}(t)+a{}_{ik}(t)b'{}_{kj}(t))$.
+> ```
+:::
+
+To me it seems more often than not that TeX's error messages are not that useful *per se*.  I often tune out their content and scan the code line with the error in it to see what looks wrong.
+
+But in this case the error message points out the problem exactly:
+
+```latex
+! Limit controls must follow a math operator.
+l.9 hence $(A(t)B(t))'_{i,j}=\sum(\limits
+                                          _{k=1}^{n}a_{ik}(t)b_{kj}(t))'=\su...
+```
+
+You can't put `\limits` on a `(` delimiter; they have to go on a math operator.  You probably meant to put them on the `\sum`.  So just delete the `(` between `\sum` and `\limits` in both snippets.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/59696/problems-with-compiling-a-lyx-document-error-is-related-to-limits-of-sum/59700#59700) on TeX Stack Exchange, 2012-06-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

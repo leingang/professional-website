@@ -1,0 +1,53 @@
+---
+title: Intermediate value theorem to show real number solution
+date: '2016-09-20'
+description: 'Here is the Intermediate Value Theorem:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1934622
+se-link: https://math.stackexchange.com/questions/1934577/intermediate-value-theorem-to-show-real-number-solution/1934622#1934622
+se-score: 1
+se-accepted: false
+se-tags:
+- real-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Intermediate value theorem to show real number solution](https://math.stackexchange.com/questions/1934577/intermediate-value-theorem-to-show-real-number-solution), asked by [Mike](https://math.stackexchange.com/users/370733/mike) on Mathematics Stack Exchange (2016-09-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Use IVT to show there's a real number solution
+>
+>
+> 1) sinx = x^2 - x - 1  where x ∈ ℝ    (x is an arbitrary real number)
+>
+>
+> 2) cosx = x^4          where x ∈ ℝ    (x is an arbitrary real number)
+>
+>
+> 3) ∜x = 1 - x          where x ∈ ℝ    (x is an arbitrary real number)
+> Thank you so much
+:::
+
+Here is the Intermediate Value Theorem:
+
+> Let $f$ be a continuous function on the closed interval $[a,b]$, and let $N$ be a number between $f(a)$ and $f(b)$.  Then there exists a number $c$ in the open interval $(a,b)$ such that $f(c) = N$.
+
+In other words, every **intermediate** number between $f(a)$ and $f(b)$ is in fact a **value** of $f$.
+
+The statements in your homework are all equations, and you want to assert they have solutions.  The IVT doesn't mention equations, except for this one: $f(x) = N$, where $N$ is a constant.  So you want to rework the given equations into that form: (function of $x$) = (constant).
+
+Having done that, you need to find two numbers whose $f$-values are on opposite sides of that constant.  For instance, to show that $f(x)=0$ has a solution, it suffices to show that there exist $a$ and $b$ such that $f(a) < 0$ and $f(b) > 0$ (or vice versa).  Be lazy and choose numbers that are easy to plug in, and you can usually find what you need.  If this doesn't work, try using technology to graph the function.  That should help you find decent numbers to plug in.
+
+Don't forget to make sure the function $f(x)$ you use is continuous!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1934577/intermediate-value-theorem-to-show-real-number-solution/1934622#1934622) on Mathematics Stack Exchange, 2016-09-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,49 @@
+---
+title: Convergence of $\sum\limits_{n=1}^{\infty} \frac{(n!)^2}{(2n)!}x^n$
+date: '2024-07-15'
+description: Stirling's approximation (good for intuition, even if it's not acceptable for an explanation) gives you $$\frac{4^n(n!)^2}{(2n)!} \approx \frac{4^n(\sqrt{2\pi…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4946411
+se-link: https://math.stackexchange.com/questions/4946405/convergence-of-sum-limits-n-1-infty-fracn22nxn/4946411#4946411
+se-score: 3
+se-accepted: false
+se-tags:
+- sequences-and-series
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convergence of $\sum\limits_{n=1}^{\infty} \frac{(n!)^2}{(2n)!}x^n$](https://math.stackexchange.com/questions/4946405/convergence-of-sum-limits-n-1-infty-fracn22nxn), asked by [Johann Carl Friedrich Gauß](https://math.stackexchange.com/users/586042/johann-carl-friedrich-gau%c3%9f) on Mathematics Stack Exchange (2024-07-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was given the following question :
+>
+> Determine the radius of convergence of the following series : $\displaystyle\sum\limits_{n=1}^{\infty} \frac{(n!)^2}{(2n)!}x^n$
+>
+> I was able to determine using the Cauchy–Hadamard formula that $R = 4$, but I still need to determine whether the series converges for $x = 4$ or $x=-4$.
+>
+> I tried using the ratio test (for $x = 4$) but the result is $1$, so I can't really do anything with it. Any ideas on how I could approach this? Thanks!
+:::
+
+Stirling's approximation (good for intuition, even if it's not acceptable for an explanation) gives you
+$$\frac{4^n(n!)^2}{(2n)!} \approx \frac{4^n(\sqrt{2\pi n} n^n e^{-n})^2}
+    {\sqrt{2\pi(2n)} (2n)^{2n} e^{-2n}}
+= \frac{4^n(2\pi n) n^{2n} e^{-2n}}{2\sqrt{\pi n} 2^{2n} n^{2n} e^{-2n}}
+= \sqrt{\pi n}$$
+Which would tell you the terms diverge individually and the series can't converge. [Wolfram Alpha seems to agree](https://www.wolframalpha.com/input?i2d=true&i=Divide%5BPower%5B4%2Cn%5DPower%5B%5C%2840%29n%21%5C%2841%29%2C2%5D%2C%5C%2840%292n%5C%2841%29%21%5D).
+
+It looks like the terms increase, in fact, and you can show this with the ratio of consecutive terms:
+$$\frac{\frac{4^{n+1}((n+1)!)^2}{(2(n+1))!}}{\frac{4^n(n!)^2}{(2n)!}}
+    = \frac{4(n+1)^2}{(2n+2)(2n+1)} = \frac{2n+2}{2n+1} > 1$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4946405/convergence-of-sum-limits-n-1-infty-fracn22nxn/4946411#4946411) on Mathematics Stack Exchange, 2024-07-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

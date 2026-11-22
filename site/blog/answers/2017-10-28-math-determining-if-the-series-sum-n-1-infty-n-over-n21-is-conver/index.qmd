@@ -1,0 +1,63 @@
+---
+title: Determining if the series $\sum_{n=1}^\infty {n\over {n^2+1}}$ is convergent or divergent
+date: '2017-10-28'
+description: You're right that step 3 is the way to go. You'd like to compare to $$bn = \frac{n}{n^2} = \frac{1}{n}$$ Then $an < bn$, and $\sum bn$ is a $p$-series. But…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2494119
+se-link: https://math.stackexchange.com/questions/2494106/determining-if-the-series-sum-n-1-infty-n-over-n21-is-convergent-or/2494119#2494119
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- sequences-and-series
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining if the series $\sum_{n=1}^\infty {n\over {n^2+1}}$ is convergent or divergent](https://math.stackexchange.com/questions/2494106/determining-if-the-series-sum-n-1-infty-n-over-n21-is-convergent-or), asked by user467999 on Mathematics Stack Exchange (2017-10-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to solve the problem above, but I have gotten stuck. I can't use p-series test easily to check it. Maybe the integral test? 
+>
+> Here are some rules for the test:
+>
+> * * *
+>
+> 1. A p-series has the form $\sum1/n^p$ and is convergent if $p > 1$ and divergent if $p \le 1$
+> 2. A series with form $\sum ar^{n-1}$ or $\sum ar^n$ is geometric and converges when $|r|\ge1$
+> 3. Use comparison test if the series looks like a p or geometric series.
+> 4. If $lim_{n->\infty}{a_n}\ne0$ the divergence test can be used
+> ---
+>
+> Going by those rules, step 3 seems to be my only option. Going by that, $$a_n={n\over{n^2+1}}\;\;and\;\;b_n={n\over{n^2}}$$ Since $P=2$ that means $P>1$ and it converges. So, by the comparison test, ${n\over{n^2+1}}$ converges. Does that seem correct? I feel like that is way to easy, but I don't know.
+>
+> Thank you.
+:::
+
+You're right that step 3 is the way to go.  You'd *like* to compare to
+$$b_n = \frac{n}{n^2} = \frac{1}{n}$$
+Then $a_n < b_n$, and $\sum b_n$ is a $p$-series.  But $p=1$, so the series $\sum b_n$ *diverges*.  This means our regular comparison test won't work.  It's not useful to say a series is less than a divergent one—it's like saying the sum of the series is less than or equal to $\infty$.  
+
+There are two options:
+
+1. Compare $a_n$ to $b_n = \frac{1}{2n}$.  Hopefully for all $n$, or at least for all $n$ past some number $n_n$, $a_n > b_n$.  And $\sum b_n$ still diverges since all we did is scale by a constant.  So the comparison test gives you what you want: $\sum a_n$ diverges.
+
+2. Use the Limit Comparison Test (this may be something you have covered, or it may not be).  Let $b_n = \frac{1}{n}$ as before.  Then since 
+$$\lim_{n\to\infty} \frac{a_n}{b_n} = \lim_{n\to\infty} \frac{n^2}{n^2+1} = 1$$
+the series $\sum a_n$ and $\sum b_n$ either both converge or both diverge.  Since $\sum b_n$ diverges, we know $\sum a_n$ diverges too.
+
+* * *
+
+A word from the math grammar police:  Please be sure to distinguish between a series and the sequence of its terms.  We sometimes say things like “$b_n$ diverges” when we mean the *series* $\sum b_n$ diverges.  The *sequence* $b_n$ actually converges (to zero).  The $\sum$ operator is an important part of the expression.  Skipping over it is like confusing a function and a definite integral.  It's at best sloppy, and at worst confusing.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2494106/determining-if-the-series-sum-n-1-infty-n-over-n21-is-convergent-or/2494119#2494119) on Mathematics Stack Exchange, 2017-10-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

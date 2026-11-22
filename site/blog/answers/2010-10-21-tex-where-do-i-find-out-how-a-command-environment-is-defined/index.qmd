@@ -1,0 +1,38 @@
+---
+title: Where do I find out how a command/environment is defined?
+date: '2010-10-21'
+description: Reading source code is a great way to learn TeX programming but it's not for the weak of stomach. If you just want to modify an environment you can try the <a…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 4363
+se-link: https://tex.stackexchange.com/questions/4327/where-do-i-find-out-how-a-command-environment-is-defined/4363#4363
+se-score: 7
+se-accepted: false
+se-tags:
+- macros
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Where do I find out how a command/environment is defined?](https://tex.stackexchange.com/questions/4327/where-do-i-find-out-how-a-command-environment-is-defined), asked by [Seamus](https://tex.stackexchange.com/users/215/seamus) on TeX Stack Exchange (2010-10-20; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Say I want to redefine the `itemize` environment, or make a modified version of it. I want to know how it is currently defined. Where do I find this information? If it's some particular package command, I can just look at the `.sty` file for that package, but if it's something more basic, I don't know where to look...
+>
+> Is there a reference manual of where all this stuff is explained? Or is there a file in the depths of my texmf tree I should poke around in?
+:::
+
+Reading source code is a great way to learn TeX programming but it's not for the weak of stomach.  If you just want to modify an environment you can try the <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/etoolbox.html">etoolbox package</a> or some of the other <a href="https://texfaq.org/FAQ-patch">answers on the TeX FAQ</a>.
+
+Oh, and one more thing: `\show\cmd` in a TeX file will interrupt processing to tell you the definition of `\cmd`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4327/where-do-i-find-out-how-a-command-environment-is-defined/4363#4363) on TeX Stack Exchange, 2010-10-21, with [edits](https://tex.stackexchange.com/posts/4363/revisions) by [barbara beeton](https://tex.stackexchange.com/users/579/barbara-beeton). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

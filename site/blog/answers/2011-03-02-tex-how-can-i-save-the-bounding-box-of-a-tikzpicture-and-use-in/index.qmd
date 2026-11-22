@@ -1,0 +1,47 @@
+---
+title: How can I save the bounding box of a TikZpicture and use in other TikZpicture
+date: '2011-03-02'
+description: 'Another way to do it is to use a single tikzpicture environment and one scope environment:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12478
+se-link: https://tex.stackexchange.com/questions/12473/how-can-i-save-the-bounding-box-of-a-tikzpicture-and-use-in-other-tikzpicture/12478#12478
+se-score: 5
+se-accepted: false
+se-tags:
+- tikz-pgf
+- vertical-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I save the bounding box of a TikZpicture and use in other TikZpicture](https://tex.stackexchange.com/questions/12473/how-can-i-save-the-bounding-box-of-a-tikzpicture-and-use-in-other-tikzpicture), asked by [Fernando Nadal](https://tex.stackexchange.com/users/2154/fernando-nadal) on TeX Stack Exchange (2011-03-02; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I need 2 different TikZpictures with the same bounding box (the one of the first TikZpicture) because I need a perfect vertical alignment of the subfigures side by side.
+>
+> Please, how can I handle this?
+:::
+
+Another way to do it is to use a single tikzpicture environment and one scope environment:
+
+```latex
+\begin{tikzpicture}
+% TikZ code for first picture
+\begin{scope}[xshift=5cm]
+% TikZ code for second picture
+\end{scope}
+\end{tikzpicture}
+```
+
+Then the points plotted at (x,y) in each scope will be exactly 5cm apart.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12473/how-can-i-save-the-bounding-box-of-a-tikzpicture-and-use-in-other-tikzpicture/12478#12478) on TeX Stack Exchange, 2011-03-02. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

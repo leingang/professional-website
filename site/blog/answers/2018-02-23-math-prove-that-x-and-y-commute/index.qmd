@@ -1,0 +1,49 @@
+---
+title: Prove that x and y commute
+date: '2018-02-23'
+description: You're right that you should do the proof from right to left and then left to right. But make sure you know what “left” and “right” are.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2663554
+se-link: https://math.stackexchange.com/questions/2663537/prove-that-x-and-y-commute/2663554#2663554
+se-score: 0
+se-accepted: false
+se-tags:
+- abstract-algebra
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that x and y commute](https://math.stackexchange.com/questions/2663537/prove-that-x-and-y-commute), asked by [Bad at algebra and proofs](https://math.stackexchange.com/users/455681/bad-at-algebra-and-proofs) on Mathematics Stack Exchange (2018-02-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Suppose G is a group with x and y as elements. Show that $(xy)^2 = x^2 y^2$ if and only if x and y commute.
+>
+> My very basic thought is that we expand such that $xxyy = xxyy$, then multiply each side by $x^{-1}$ and $y^{-1}$, such that $x^{-1} y^{-1} xxyy = xxyy x^{-1}$ , and therefore $xy=xy$.
+>
+> I realize that this looks like a disproportionate amount of work for such a simple step, but that is what past instruction has looked like and that is perhaps why I am confused. Moreover, "if and only if" clauses have always been tricky for me since I took Foundations of Math years ago, but if I remember correctly, the goal here should be to basically do the proof from right to left and then left to right, so to speak. Anyhow, I think that I am overthinking this problem.
+:::
+
+You're right that you should do the proof from right to left and then left to right.  But make sure you know what “left” and “right” are.
+
+“left” is the equation $(xy)^2=x^2y^2$, while “right” is the statement “$x$ and $y$ commute.”  You can write the last statement as the equation $xy=yx$.  
+
+This means you want to show:
+
+1. $(xy)^2 = x^2y^2 \implies xy =yx$
+2. $xy=yx \implies (xy)^2 = x^2y^2$
+
+For the first, you can expand *so that* (better word choice than *such that*, in  my opinion) $xyxy = xxyy$.  Multiply on the left by $x^{-1}$ and on the right by $y^{-1}$, so that $yx=xy$.
+
+For the second, $xy=yx$ means that you can swap $x$ and $y$ in $xxyy$.  So $x^2y^2=xyxy=(xy)^2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2663537/prove-that-x-and-y-commute/2663554#2663554) on Mathematics Stack Exchange, 2018-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

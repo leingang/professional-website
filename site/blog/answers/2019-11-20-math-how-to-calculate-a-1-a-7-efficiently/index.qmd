@@ -1,0 +1,45 @@
+---
+title: How to calculate $A^{-1}$, $A^{-7}$ efficiently
+date: '2019-11-20'
+description: If $A$ is diagonalizable, then $A = P \Lambda P^{-1}$ for a diagonal matrix $\Lambda$. Then $A^n = P \Lambda^n P^{-1}$ for any positive integer $n$. If none of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3444319
+se-link: https://math.stackexchange.com/questions/3444300/how-to-calculate-a-1-a-7-efficiently/3444319#3444319
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+- inverse
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to calculate $A^{-1}$, $A^{-7}$ efficiently](https://math.stackexchange.com/questions/3444300/how-to-calculate-a-1-a-7-efficiently), asked by [user2272600](https://math.stackexchange.com/users/727401/user2272600) on Mathematics Stack Exchange (2019-11-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> excuse me for maybe misstating the question. I studied linear algebra about a year ago in university. I remember learning how to easily calculate
+>
+>    $$A^{-7}$$
+>
+> or any larger number instead of $-7$. (or simply calculating $A^{-1}$ inverse of an $n \times n$ square matrix efficiently without really inverting it)
+>
+> I learnt it in the section about diagnolizability. I think it had to do with upper and lower triangular matrices.
+>
+> I didn't think I'd have to use this knowledge of linear algebra ever again, but turns out I do now because I am using a computer and need to do it efficiently, and I vaguely remember learning about this in university. Anyone know what I am talking about?
+:::
+
+If $A$ is diagonalizable, then $A = P \Lambda P^{-1}$ for a diagonal matrix $\Lambda$.  Then $A^n = P \Lambda^n P^{-1}$ for any positive integer $n$.  If none of the eigenvalues are zero, the diagonal entries in $\Lambda$ are nonzero, so $\Lambda^{-1}$ exists; its entries are the reciprocals of the entries in $\Lambda$.  Therefore $A^{-1} = P \Lambda^{-1} P^{-1}$, and $A^{-n} = P (\Lambda^{-1})^n P^{-1}$.
+
+That having been said, if you're writing code and efficiency is important, find a library that does the computation for you!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3444300/how-to-calculate-a-1-a-7-efficiently/3444319#3444319) on Mathematics Stack Exchange, 2019-11-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

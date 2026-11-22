@@ -1,0 +1,55 @@
+---
+title: Prove the following inequality using Mean Value Theorem
+date: '2018-06-28'
+description: 'When using the Mean Value Theorem to prove inequalities, remember the conclusion of the MVT: $$\frac{f(b)-f(a)}{b-a} = f''(t)$$ for some $t$ between $a$ and…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2834921
+se-link: https://math.stackexchange.com/questions/2834903/prove-the-following-inequality-using-mean-value-theorem/2834921#2834921
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- inequality
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove the following inequality using Mean Value Theorem](https://math.stackexchange.com/questions/2834903/prove-the-following-inequality-using-mean-value-theorem), asked by [chilliefiber](https://math.stackexchange.com/users/499334/chilliefiber) on Mathematics Stack Exchange (2018-06-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> First off, I've seen a couple questions similar to this one (different inequalities, same principle) but didn't really understand the answers. 
+> Here are a couple of those questions: 
+>
+> https://math.stackexchange.com/questions/2783360/prove-inequality-using-mean-value-theorem-2 
+>
+> https://math.stackexchange.com/questions/2308466/prove-inequality-using-mean-value-theorem https://math.stackexchange.com/questions/618525/mean-value-theorem-probleminequality
+>
+> $$1 + 2x < e^{2x} < (1-2x)^{-1}, \ \forall \  \textrm{x} \in \ \ ] 0,1/2 [$$
+:::
+
+When using the Mean Value Theorem to prove inequalities, remember the conclusion of the MVT:  
+$$\frac{f(b)-f(a)}{b-a} = f'(t)$$
+for some $t$ between $a$ and $b$.  Replacing $b$ by a variable $x$, and applying some algebra, we get
+$$f(x) = f(a) + f'(t)(x-a)$$
+The case $a=0$ is particularly useful; it says:
+$$f(x) = f(0) + f'(t)x$$
+for some $t$ with $0 < t < x$.  If you can give upper and/or lower bounds for $f'(t)$, then you have an equality for $f(x)$ in terms of $x$.
+
+Your example suggests $f(x) = e^{2x}$.  Since $f'(t) = 2e^{2t}$, and $e^{2t} \geq 1$ for all $t\geq 0$, we know $f'(t) \geq 2$.  So
+$e^{2x} > 1 + 2x$.
+
+What about the other part of the inequality?  $e^{2x} < (1-2x)^{-1}$ doesn't look like it fits the pattern above.  But again with some algebra,
+$$e^{2x} < \frac{1}{1-2x} \implies e^{-2x} > 1 - 2x$$
+and now you might see how to adapt the previous case.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2834903/prove-the-following-inequality-using-mean-value-theorem/2834921#2834921) on Mathematics Stack Exchange, 2018-06-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

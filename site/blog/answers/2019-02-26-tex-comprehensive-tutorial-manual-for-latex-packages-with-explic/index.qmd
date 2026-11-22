@@ -1,0 +1,45 @@
+---
+title: Comprehensive Tutorial/Manual for LaTeX/Packages with explicit example and shown results instead of pure codes like document center of mathematica
+date: '2019-02-26'
+description: No, such a site doesn't exist, and nobody's going to create it for you just because you find the manual boring.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 476681
+se-link: https://tex.stackexchange.com/questions/476678/comprehensive-tutorial-manual-for-latex-packages-with-explicit-example-and-shown/476681#476681
+se-score: 4
+se-accepted: false
+se-tags:
+- tutorials
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Comprehensive Tutorial/Manual for LaTeX/Packages with explicit example and shown results instead of pure codes like document center of mathematica](https://tex.stackexchange.com/questions/476678/comprehensive-tutorial-manual-for-latex-packages-with-explicit-example-and-shown), asked by [maplemaple](https://tex.stackexchange.com/users/182256/maplemaple) on TeX Stack Exchange (2019-02-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to use some packages in latex, then I find the manual for that package. However I find all these manual are purely codes and explanation without any explicit examples and shown results. I'm not a computer scientist. It's fairly boring and inefficient for me to read all plain texts to understand how to use this package. Is there any place where I can find the manual for every package for amateurs like me? I want this manual/note(certainly not necessarily written by packages' authors) has such properties: 
+>
+> 1. Not too sketchy like just choosing few easy examples to introduce the framework. I want it's comprehensive and can tell me all details of every function or method or parameter in that package.
+>
+> 2. The most important for me is that every function/method/parameter should have explicit examples and shown results. Therefore I can fast explore the shown results and aha, this is what I want it looks like. 
+>
+> PS: I certainly understand that LaTeX is not a paid software. The authors of packages have right to write anyway as they like. I wonder whether there are some good instructors who digest the original dry manual and feed amateurs who don't just want to scratch the surface by a friendly way. A good example of what I want is like [document center of Wolfram Mathematica](https://reference.wolfram.com/language/ref/Eigensystem.html).
+:::
+
+No, such a site doesn't exist, and nobody's going to create it for you just because you find the manual boring.
+
+Mathematica is a proprietary application and they're able to control how their packages are documented.  Python is open source, but has a strong community ethic where they pretty much all agree that “there should be one—and preferably only one—way to do it.”  So good documentation is part of the culture.  LaTeX is neither of those things.  
+
+I agree with the commenters that some package documentation is quite good.  `tikz` and `pgfplots` are among my favorites.  And most documentation isn't *bad*; it just may not spell out every single possible thing you might want to do with it.
+
+But if you are looking for a vast resource of answered questions for various LaTeX (and ConTeXt, and core TeX) use cases, you may have already found it.  Questions on TeX.SE are tagged by packages used so you can browse and search for lots of examples.  Pages on TeX.SE are highly findable.  Usually I just google "latex (thing I want to do)" and the top result is usually a page from this site.  And if you don't find what you want—ask!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/476678/comprehensive-tutorial-manual-for-latex-packages-with-explicit-example-and-shown/476681#476681) on TeX Stack Exchange, 2019-02-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

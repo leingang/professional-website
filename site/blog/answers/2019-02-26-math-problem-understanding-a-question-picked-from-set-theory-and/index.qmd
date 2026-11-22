@@ -1,0 +1,52 @@
+---
+title: Problem understanding a question (picked from **Set Theory and Matrices** by I.Kaplansky)
+date: '2019-02-26'
+description: 'Here is how to start. First, write down the properties you need to show about $\sim$:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3127734
+se-link: https://math.stackexchange.com/questions/3127703/problem-understanding-a-question-picked-from-set-theory-and-matrices-by-i-k/3127734#3127734
+se-score: 1
+se-accepted: true
+se-tags:
+- equivalence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problem understanding a question (picked from **Set Theory and Matrices** by I.Kaplansky)](https://math.stackexchange.com/questions/3127703/problem-understanding-a-question-picked-from-set-theory-and-matrices-by-i-k), asked by user615771 on Mathematics Stack Exchange (2019-02-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose that a set X is expressed as a union of disjoint subsets. For $j, \, k \in X$ define $j \sim k$ that $j$ and $k$ lie in the same subset. Prove equivalency. 
+>
+> How do I start?
+>
+> * * *
+>
+> My attempt:
+>
+> I would write $X=\bigcup_{i}A_i$ [where $A_j \neq A_k$] [fault]
+>
+> Then, I would let $B \subset X$. Therefore, if $k$ or $j$ $\in B$ then they would also have to lie within $X$. But hereafter, I am stuck...
+>
+> Does anyone have any suggestions?
+:::
+
+Here is how to start.  First, write down the properties you need to show about $\sim$:
+
+ 1. $\sim$ is **reflexive**: That is, $x \sim x$ for all $x \in X$.
+ 2. $\sim$ is **symmetric**: That is, whenever $x_1,x_2 \in X$ satisfy $x_1 \sim x_2$, then also $x_2 \sim x_1$.
+ 3. $\sim$ is **transitive**: That is, whenever $x_1,x_2,x_3 \in X$ satisfy $x_1 \sim x_2$ and $x_2 \sim x_3$, then also $x_1 \sim x_3$.
+
+Now prove them.  The first two are really just translations of the definition of $\sim$. 
+ The hardest is transitivity, and for it you need to use the fact that the sets in the partition given are not just *disjoint* but *pairwise disjoint.*
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3127703/problem-understanding-a-question-picked-from-set-theory-and-matrices-by-i-k/3127734#3127734) on Mathematics Stack Exchange, 2019-02-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,73 @@
+---
+title: Relation between basis vectors and unit vectors
+date: '2017-06-30'
+description: 'The term unit vector is well-defined: a vector of length one. The term basis vector is taken out of context, and doesn''t make sense on its own.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2341355
+se-link: https://math.stackexchange.com/questions/2341335/relation-between-basis-vectors-and-unit-vectors/2341355#2341355
+se-score: 9
+se-accepted: true
+se-tags:
+- linear-algebra
+- vectors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Relation between basis vectors and unit vectors](https://math.stackexchange.com/questions/2341335/relation-between-basis-vectors-and-unit-vectors), asked by [Edward](https://math.stackexchange.com/users/458997/edward) on Mathematics Stack Exchange (2017-06-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Preamble**
+>
+> I know from linear algebra that any vector in a vector space can be written as a linear combination of basis vectors. However, in physics, unit vectors are used as basis vectors, which brings me to my question. **Note**: I do not have the math tools to formally prove any of this... I just need an explanation
+>
+> **The question**
+>
+> Which is correct (and why): 
+>
+> - Are all unit vectors basis vectors? 
+> - Are all basis vector unit vectors?
+> - Are unit vectors a subset of basis vectors? 
+> - Are basis vectors a subset of unit vectors? 
+>
+>
+> In a nutshell if the set of all basis vectors was __b__ and the set of all unit vectors was __u__, what is the relation between the two sets? (i.e. b ___ u)
+:::
+
+The term *unit vector* is well-defined: a vector of length one.  The term *basis vector* is taken out of context, and doesn't make sense on its own.
+
+A *basis* of a vector space $V$ is a set of vectors $\left\{v_1,\dots, v_n\right\}$ such each vector $v\in V$ can be written uniquely as a linear combination of $v_1,\dots, v_n$.  So if you read “basis vector”, it means “member of the aforementioned basis,” and which basis is being referenced comes from the context.
+
+* **Are all unit vectors basis vectors?** No.  The vector $e_1 = (1,0,0)$ in $\mathbb{R}^3$ is a unit vector.  But on its own it's not a “basis vector.”  There is a basis of $\mathbb{R}^3$ which contains $e_1$—for instance $\left\{e_1, e_2, e_3\right\}$.  In general, for any unit vector $v$ we can find a basis of $V$ that has $v$ as a member.
+
+* **Are all basis vectors unit vectors?** The best way to interpret this question is: *Does every basis consist of unit vectors?*  The answer is no.  For instance $\left\{e_1, e_2, e_1+e_3\right\}$ is a basis of $\mathbb{R}^3$ too, and not all of its elements are unit vectors.
+
+* **Are unit vectors a subset of basis vectors?**  No.  However, there is an additional property of vectors that's related.  Vectors $v$ and $w$ are *orthogonal* if their inner (dot) product $v\cdot w= 0$.  A set of vectors is *orthonormal* if every single vector in the set is a unit vector, and any pair of vectors in the set are orthogonal.  An orthonormal set of $n$ vectors in an $n$-dimensional vector space is automatically a basis.
+
+* **Are basis vectors a subset of unit vectors**?  No.  However, if you start with a basis $v_1, \dots, v_n$, there exists an orthonormal basis $u_1, \dots, u_n$ such that for each $k$ between $1$ and $n$, the span of $u_1, \dots, u_k$ is the same as the span of $v_1, \dots, v_k$.  The algorithm which constructs $u_1, \dots, u_n$ is called the *Gram-Schmidt process.* Because of this property, the physicists might assume that any given basis is orthonormal.
+
+I hope that clarifies some of these terms.
+
+**Edit** You asked for some more explanation on the third point.  The standard basis $\hat{\mathbf x}, \hat{\mathbf y}, \hat{\mathbf z}$ (using your notation) of $\mathbb{R}^n$ is orthonormal.  Put your hand in the right-hand-rule position with these three vectors, and rotate your hand.  The vectors change, but not the property that each of them is unit length, and that each pair are perpendicular/orthogonal.
+
+Now let $\mathbf{v}$ be any vector.  If $\mathbf{v}$ can be written as a linear combination $a \hat{\mathbf x} + b \hat{\mathbf y} + c \hat{\mathbf z}$, then what are $a$, $b$, and $c$?  Use the orthonormality property:
+$$\begin{align*}
+    \mathbf{v}\cdot\hat{\mathbf x}
+    &= (a \hat{\mathbf x} + b \hat{\mathbf y} + c \hat{\mathbf z})\hat{\mathbf x}\\
+    &= a  \hat{\mathbf x}\cdot \hat{\mathbf x} + b  \hat{\mathbf y}\cdot \hat{\mathbf x} + c  \hat{\mathbf z}\cdot \hat{\mathbf x} \\
+    &=  a (1) + b(0) + c(0) = a 
+\end{align*}$$
+[Since $\hat{\mathbf x}$ is a unit vector, $\hat{\mathbf x}\cdot\hat{\mathbf x} = \left\Vert\hat{\mathbf x}\right\Vert^2 = 1$.]  You can do the same for $\hat{\mathbf y}$ and $\hat{\mathbf z$}$. Therefore the coefficients of$\mathbf{v}$can be recovered by the dot products:$$
+    \mathbf{v} = (\mathbf{v}\cdot\hat{\mathbf x})\hat{\mathbf x} + (\mathbf{v}\cdot\hat{\mathbf y})\hat{\mathbf x} + (\mathbf{v}\cdot\hat{\mathbf z})\hat{\mathbf x}
+$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2341335/relation-between-basis-vectors-and-unit-vectors/2341355#2341355) on Mathematics Stack Exchange, 2017-06-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

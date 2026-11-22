@@ -1,0 +1,44 @@
+---
+title: 'Prove $H=\lbrace x \in G: x^n =e \rbrace$ is a subgroup of group G.'
+date: '2016-09-20'
+description: Notice that $(x^{-1})^n$ is the $n$th power of $x^{-1}$, while $(x^n)^{-1}$ is the inverse of $x^n$. Those aren't a priori identical objects. To show that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1933753
+se-link: https://math.stackexchange.com/questions/1933745/prove-h-lbrace-x-in-g-xn-e-rbrace-is-a-subgroup-of-group-g/1933753#1933753
+se-score: 5
+se-accepted: false
+se-tags:
+- group-theory
+- normal-subgroups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $H=\lbrace x \in G: x^n =e \rbrace$ is a subgroup of group G.](https://math.stackexchange.com/questions/1933745/prove-h-lbrace-x-in-g-xn-e-rbrace-is-a-subgroup-of-group-g), asked by [Ddbb1994](https://math.stackexchange.com/users/292954/ddbb1994) on Mathematics Stack Exchange (2016-09-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove $H=\lbrace x \in G: x^n =e \rbrace$ is a subgroup of group G if n is a fixed integer. (G is abelian)
+>
+> I understand the basis of this proof however my professor has asked that I make a small revision to my proof. I proved that H is closed, nonempty and contains the identity however I am having trouble proving the existence of inverses. My for inverses argument is as follows...
+>
+> Let $x \in H$, then $x^n=e$ and $$((x^{-1})^n)=((x^n)^{-1})=e^{-1}=e$$
+>
+> I have been asked to prove why $((x^{-1})^n)=((x^n)^{-1})$. Any suggestions?
+:::
+
+Notice that $(x^{-1})^n$ is the $n$th power of $x^{-1}$, while $(x^n)^{-1}$ is the inverse of $x^n$.  Those aren't *a priori* identical objects.  To show that $(x^{-1})^n$ is the inverse of $x^n$, show that it satisfies the characteristic property of $x^n$: after multiplying by $x^n$, you get $e$.
+
+Now
+$$(x^{-1})^nx^n = \underbrace{x^{-1} x^{-1} \cdots x^{-1}}_{\text{$n$ times}} \cdot \underbrace{x \cdot x \cdots x}_{\text{$n$ times}}$$
+You can see that the $x^{-1} x$ in the middle is $e$, so it drops out.  But then the same thing happens with the other $n-1$ copies of $x^{-1}$ and $x$, in pairs.  So in the end you are left with $e^n = e$.  Thus $(x^{-1})^n = (x^n)^{-1}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1933745/prove-h-lbrace-x-in-g-xn-e-rbrace-is-a-subgroup-of-group-g/1933753#1933753) on Mathematics Stack Exchange, 2016-09-20, with [edits](https://math.stackexchange.com/posts/1933753/revisions) by [Alexis Olson](https://math.stackexchange.com/users/11246/alexis-olson). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

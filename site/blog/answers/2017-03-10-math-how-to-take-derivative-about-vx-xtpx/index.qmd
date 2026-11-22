@@ -1,0 +1,64 @@
+---
+title: How to take derivative about $V(x)=x^{T}Px$?
+date: '2017-03-10'
+description: Using the product rule and abbreviating $\frac{d}{dt}$ with a dot, we have $$\dot V = \dot x^T P x + x^T P \dot x$$ Each of the terms on the right is a scalar…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2180611
+se-link: https://math.stackexchange.com/questions/2180604/how-to-take-derivative-about-vx-xtpx/2180611#2180611
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to take derivative about $V(x)=x^{T}Px$?](https://math.stackexchange.com/questions/2180604/how-to-take-derivative-about-vx-xtpx), asked by [lopedoes](https://math.stackexchange.com/users/371960/lopedoes) on Mathematics Stack Exchange (2017-03-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Consider the quadratic function $V(x(t))=x(t)^{T}Px(t)$, where $P$ is a positive symmetric matrix.
+>
+> How do I calculate its time-derivative, that is,
+> $$\frac{\mathrm{d}}{\mathrm{d} t}V(x(t))?$$
+:::
+
+Using the product rule and abbreviating $\frac{d}{dt}$ with a dot, we have
+$$\dot V = \dot x^T P x + x^T P \dot x$$
+Each of the terms on the right is a scalar, hence symmetric.  So
+$$\dot x^T Px = (\dot x^T P x)^T = x^T P^T \dot x = x^T P \dot x$$
+Therefore $\dot V = 2x^T P \dot x$.
+
+If you prefer working in indices, write $x = (x^1,x^2,\dots,x^n)$ and $V = x^i p_{ij} x^j$ (we use the Einstein summation notation convention, so that the sigma is understood).  Then
+$$\begin{align*}
+    \dot V = \dot x^i p_{ij}  x^j + x^i p_{ij} \dot x^j
+\end{align*}$$
+Swapping the names of the indices on the first term, and using the fact that $P$ is symmetric, we have
+$$\dot V = \dot x^j p_{ji} x^i + x^i p_{ij} \dot x^j
+    = 2 x^i p_{ij} \dot x^j$$
+
+
+To illustrate in the case $n=2$, try $P = \begin{bmatrix} 2 & 1 \\ 1 & 1\end{bmatrix}$.  Then 
+$$\begin{align*}
+    V &= \begin{bmatrix} x & y \end{bmatrix}\begin{bmatrix} 2 & 1 \\ 1 & 1\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}
+       = \begin{bmatrix} x & y \end{bmatrix}\begin{bmatrix} 2x+y \\ x+y \end{bmatrix}
+      \\&= 2x^2 + xy + yx + y^2 = 2x^2 + 2xy + y^2
+\end{align*}$$
+Therefore
+$$\begin{align*}
+ \dot V &= 4x\dot x + 2(\dot x y + x \dot y)  + 2 y\dot y
+      \\&= 2(2x\dot x + x\dot y + y \dot x + y\dot y) 
+      \\&= 2 \begin{bmatrix} x & y \end{bmatrix}\begin{bmatrix} 2 & 1 \\ 1 & 1\end{bmatrix}\begin{bmatrix} \dot x \\ \dot y \end{bmatrix}
+\end{align*}$$
+
+Commenter Aaron is right that the product rule works for just about any bilinear operation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2180604/how-to-take-derivative-about-vx-xtpx/2180611#2180611) on Mathematics Stack Exchange, 2017-03-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

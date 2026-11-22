@@ -1,0 +1,93 @@
+---
+title: Determine flow curve for vector field
+date: '2020-05-05'
+description: The equation for $y(t)$ is $y'(t) = 3y(t)$. The general solution is $y(t) = Ce^{3t}$. The initial condition $y(0) = 2$ require that $C=2$. So that takes care…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3660333
+se-link: https://math.stackexchange.com/questions/3658762/determine-flow-curve-for-vector-field/3660333#3660333
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- linear-algebra
+- vector-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determine flow curve for vector field](https://math.stackexchange.com/questions/3658762/determine-flow-curve-for-vector-field), asked by [Carl](https://math.stackexchange.com/users/556673/carl) on Mathematics Stack Exchange (2020-05-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have the following problem:
+>
+> > We have the vector field $V(x,y,z)=\bigg(3x+3z,3y,-3x+3z \bigg)$. Let $r(t)$ denote the flow curve for $V$. At $t=0$ the flow curve passes through the point $(1,2,3)$.
+> >
+> > Determine the coordinates for $r(t)$ to the times $t=1$ and $t=3$.
+>
+> **My try**
+>
+> Okay, so let's say our flow curve is in the form: $r(t)=\bigg(x(t),y(t),z(t) \bigg)$. By definition, the flow curve fullfils following.
+>
+> $$V(r(t))=r'(t)$$
+>
+> which with our vector field can be written as:
+>
+> $$\bigg(x'(t),y'(t),z'(t) \bigg)=V(x,y,z) =\bigg(3x(t)+3z(t),3y(t),-3x(t)+3z(t) \bigg)$$
+>
+> We now have 3 differential equations:
+>
+> $$x'(t)=3x(t)+3z(t)$$
+>
+> $$y'(t)=3y(t)$$
+>
+> $$z'(t)=-3x(t)+3z(t)$$
+>
+> Including the starting conditions and solving this with Maple gives me: $x(t)=e^{3t}(3\sin(3t)+ \cos(3t)$, 
+>
+> $y(t)=2e^{3t}$, 
+>
+> $z(t)=-3e^{3t}(\sin(3t)-3 \cos(3t))$.
+>
+> Inserting $t=1$ and $t=3\:$ yields the coordinates:
+>
+> $$r(1)=\begin{bmatrix}e^3(3\sin(3)+\cos(3))\\2e^3 \\ -e^3(\sin(3)-3\cos(3))= \end{bmatrix}$$
+>
+> $$r(3)=\begin{bmatrix}e^9(3\sin(9)+\cos(9))\\2e^9 \\ -e^9(\sin(9)-3\cos(9))= \end{bmatrix}$$
+>
+> However, these aren't very nice results, and I'm starting to doubt my answers. Can anyone confirm my answer, or maybe tell me where I messed up?
+:::
+
+The equation for $y(t)$ is $y'(t) = 3y(t)$.  The general solution is $y(t) = Ce^{3t}$.  The initial condition $y(0) = 2$ require that $C=2$.  So that takes care of the $y$ coordinate of the integral curve.
+
+As for the other two coordinates, we decouple them by differentiating and re-substituting.
+$$\begin{align*}
+     x'' &= 3x' + 3z' \\
+         &= 3x' + 3(-3x+3z) \\
+         &= 3x' + 3(-3x + (x'-3x)) \\
+         &= 6x'-18x
+\end{align*}$$
+If $x(t) = e^{rt}$ were a solution, then $r$ would satisfy the characteristic equation
+$$r^2 - 6r + 18 = 0$$
+This has solutions $r = 3 \pm 3i$.  So the general solution to the $x$ equation is either
+$$x(t) = C_1 e^{(3+3i)t} + C_2 e^{(3-3i)t}$$
+or, using Euler's identity $e^{i\theta} = \cos \theta + i \sin \theta$,
+$$x(t) = A e^{3t} \cos 3t + B e^{3t} \sin 3t$$
+The initial condition $x(0) = 1$ requires $A = 1$.  We don't know what $B$ is yet.  But
+$$z = \frac{1}{3}(x-3x') = B e^{3t}\cos 3t + (2-B) e^{3t} \sin 3t$$
+Since $z(0) = 3$, we know $B=3$.  Putting this together, we have
+$$r(t) = \begin{bmatrix} x(t) \\ y(t) \\ z(t) \end{bmatrix}
+        = \begin{bmatrix} e^{3t} \cos 3t + 3 e^{3t} \sin 3t \\
+                         2e^{3t} \\
+                         3e^{3t} \cos 3t - e^{3t} \sin 3t
+          \end{bmatrix}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3658762/determine-flow-curve-for-vector-field/3660333#3660333) on Mathematics Stack Exchange, 2020-05-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

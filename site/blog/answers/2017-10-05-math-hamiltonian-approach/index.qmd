@@ -1,0 +1,39 @@
+---
+title: Hamiltonian Approach
+date: '2017-10-05'
+description: '"of motion" is a physics idiom, and I''m not sure what it adds to the statement. You want to show $$\frac{dH}{dt} = \frac{\partial H}{\partial \theta}\dot…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2459277
+se-link: https://math.stackexchange.com/questions/2459249/hamiltonian-approach/2459277#2459277
+se-score: 1
+se-accepted: false
+se-tags:
+- classical-mechanics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Hamiltonian Approach](https://math.stackexchange.com/questions/2459249/hamiltonian-approach), asked by [user1611542](https://math.stackexchange.com/users/360341/user1611542) on Mathematics Stack Exchange (2017-10-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Solve the plane pendulum problem using the Hamiltonian approach and show that H is a constant of motion.
+>
+> **Approach :**  Assuming it means simple pendulum by plane pendulum, I have calculated Hamiltonian as a function of $\theta , l$ (Length of pendulum) ,$\ p_\theta$
+>
+> But what does it mean by H is a constant of motion ?
+:::
+
+"of motion" is a physics idiom, and I'm not sure what it adds to the statement.  You want to show
+$$\frac{dH}{dt} = \frac{\partial H}{\partial \theta}\dot \theta
+                   +\frac{\partial H}{\partial p_{\theta}}\dot p_\theta = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2459249/hamiltonian-approach/2459277#2459277) on Mathematics Stack Exchange, 2017-10-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

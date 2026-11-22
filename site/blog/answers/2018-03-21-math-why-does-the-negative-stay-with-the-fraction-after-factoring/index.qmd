@@ -1,0 +1,52 @@
+---
+title: Why does the negative stay with the fraction after factoring out a -1 when dealing with opposite factors?
+date: '2018-03-21'
+description: What you've done here is not “factored out the negative”; you've just multiplied by $-1$. Factoring an expression creates an equal expression, while…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2702313
+se-link: https://math.stackexchange.com/questions/2702304/why-does-the-negative-stay-with-the-fraction-after-factoring-out-a-1-when-deali/2702313#2702313
+se-score: 1
+se-accepted: false
+se-tags:
+- fractions
+- negative-binomial
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does the negative stay with the fraction after factoring out a -1 when dealing with opposite factors?](https://math.stackexchange.com/questions/2702304/why-does-the-negative-stay-with-the-fraction-after-factoring-out-a-1-when-deali), asked by [SunGone](https://math.stackexchange.com/users/543850/sungone) on Mathematics Stack Exchange (2018-03-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So, I understand what I'm *supposed* to do when coming across opposite factors when simplifying rational expressions.  For example:
+>
+> $\dfrac{4-w}{w^2-8w+16}$ simplifies to $\dfrac{4-w}{(w-4)(w-4)}$
+>
+> So I know you're supposed to factor out the negative from $4-w$, and 
+> when you do that you get $-1(4-w)$ which equals $(w-4)$.
+>
+> So, the $w-4$ cancels out and you're left with one $\dfrac{1}{w-4}$, but the negative is still there, so it would be $\dfrac{-1}{w-4}$.
+>
+> I don't get why the negative is still there, though, since I distributed it to the $4-w$ to get $w-4$.  Can someone explain why I'm supposed to keep 
+> the negative sign?  
+>
+> I'm really sorry my writing is kind of confusing, I have been trying to figure out how my make fractions on this website and I still can get it to work.
+:::
+
+>So I know you're supposed to factor out the negative from $4-w$, and when you do that you get $\color{red}{(-1)(4-w)}$ which equals $(w-4)$
+
+What you've done here is not “factored out the negative”; you've just multiplied by $-1$.  Factoring an expression creates an equal expression, while multiplying by $-1$ doesn't.
+
+In order to factor out the negative, you need to write
+$$4-w = (-1)(-4+w) = (-1)(w-4)$$
+Then, after cancellation, the $-1$ remains.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2702304/why-does-the-negative-stay-with-the-fraction-after-factoring-out-a-1-when-deali/2702313#2702313) on Mathematics Stack Exchange, 2018-03-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

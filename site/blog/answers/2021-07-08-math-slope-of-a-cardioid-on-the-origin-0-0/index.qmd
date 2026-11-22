@@ -1,0 +1,77 @@
+---
+title: Slope of a cardioid on the origin (0,0)
+date: '2021-07-08'
+description: The point $(0,0)$ is a singular point of the cardioid. Furthermore, it can be classified as a cusp.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4193612
+se-link: https://math.stackexchange.com/questions/4193082/slope-of-a-cardioid-on-the-origin-0-0/4193612#4193612
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- polar-coordinates
+- slope
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Slope of a cardioid on the origin (0,0)](https://math.stackexchange.com/questions/4193082/slope-of-a-cardioid-on-the-origin-0-0), asked by [Ever AB](https://math.stackexchange.com/users/948180/ever-ab) on Mathematics Stack Exchange (2021-07-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I just started calculus and got this problem stuck in my head. It seems, in my case, a problem of bad understanding or definition. 
+>
+> The cardioid:
+>
+> $r=1+\cos(θ)$
+>
+> Derivative:
+>
+> $\frac{dy}{dx}=\frac{\cosθ+\cos^2θ−\sin^2θ}{−\sinθ−2\sinθ\cosθ}$
+>
+>
+> When trying to calculate the derivative of the cardioid on the origin ($θ=\pi$), an indetermination shows
+>
+> ¿Does that means that the derivative does not exist on that point? I read in some site that this is not conclusive; instead, we should try to do the limit of the derivative function on that point.
+>
+> $L'Hopital:$
+>
+> $$\lim_{θ\to \pi}\frac{d(\cosθ+\cos^2θ−\sin^2θ)/dθ}{d(−\sinθ−2\sinθ\cosθ)/dθ}=\lim_{θ\to \pi}\frac{-\sinθ-2\sin2θ}{−\cosθ−2\cos2θ}=0$$
+>
+> Following that procedure, the answer should be an horizontal line, slope $0$, which seems reasonable if you remember the graph of a cardioid.
+>
+> The solution seems to imply (for me) that the derivative function is, actually, like this (something I could not find anywhere, so I assume I am somehow wrong):
+>
+> Derivative of $f(x)$ at the x point:                               
+> $$\lim_{h\to x}f'(h)$$ 
+>
+> Is "$0$" the right answer to this problem, or the cardioid is not differentiable on the origin point?
+:::
+
+The point $(0,0)$ is a *singular point* of the cardioid.  Furthermore, it can be classified as a *cusp*.
+
+In fact, the cardioid itself is a kind of singular “curve“ within the family of limaçons with equation $(x^2+y^2-x)^2 = b^2(x^2+y^2)$.  If $b < 1$, the limaçon has a “dimple,” if $b > 1$, the limaçon has a loop through the origin, and if $b=1$, the curve is a cardioid.
+
+In each case, the curve is the zero level-set of the function
+$$f(x,y) = b^2 (x^2+y^2) + (x^2+y^2-x)^2$$
+Following the discussion on [Wikipedia](https://en.wikipedia.org/wiki/Singular_point_of_a_curve), we can substitute $y=mx$ to find tangent lines through the origin:
+$$\begin{align*}
+    f(x,mx) &= b^2(x^2+m^2x^2) - (x^2 + m^2x^2-x)^2 
+    \\&= [b^2m^2+(b^2-1)]x^2 + 2(1+m^2)x^3 + (1+m^2)^2 x^4
+\end{align*}$$
+The origin is a double point if the coefficient of $x^2$ is zero.  
+
+* In the case that $b > 1$, there are two real numbers $m$ which satisfy $b^2 m^2 + (b^2-1) = 0$.  This means that the origin is a *crunode*.
+* In the case that $b < 1$, there are no real solutions for $m$, but two imaginary solutions.  The origin is called an *acnode*.
+* In the case that $b=1$, then $m=0$ is a double solution.  The origin is a cusp.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4193082/slope-of-a-cardioid-on-the-origin-0-0/4193612#4193612) on Mathematics Stack Exchange, 2021-07-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

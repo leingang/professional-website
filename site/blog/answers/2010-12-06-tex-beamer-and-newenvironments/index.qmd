@@ -1,0 +1,70 @@
+---
+title: Beamer and newenvironments
+date: '2010-12-06'
+description: I'm not sure if this is the cause of the unexpected behavior, but you can eliminate the extra counter with incremental overlay specifications.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6616
+se-link: https://tex.stackexchange.com/questions/6610/beamer-and-newenvironments/6616#6616
+se-score: 0
+se-accepted: false
+se-tags:
+- beamer
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer and newenvironments](https://tex.stackexchange.com/questions/6610/beamer-and-newenvironments), asked by [Chris](https://tex.stackexchange.com/users/752/chris) on TeX Stack Exchange (2010-12-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to combine beamer overlays and newenvironments:
+>
+> ```latex
+> \newcounter{scount}
+> \setcounter{scount}{0}
+> \newenvironment{sitem}[1]
+>    {%before
+>    \def\data{#1}
+>    \stepcounter{scount}
+>    \onslide<\value{scount}->{\item \data}
+>    \comment
+>    }{
+>    \endcomment
+>    }
+> ```
+>
+> and:
+>
+> ```latex
+> \begin{itemize}
+>   \begin{sitem}{data}asdf1\end{sitem}
+>   \begin{sitem}{data}asdf2\end{sitem}
+>   \begin{sitem}{data}asdf3\end{sitem}
+> \end{itemize}
+> ```
+>
+> But beamer seems to ignore the \onslide command and shows all data values at once instead of data for asdf1, asdf2, asdf3 after each other.
+:::
+
+I'm not sure if this is the cause of the unexpected behavior, but you can eliminate the extra counter with incremental overlay specifications.
+
+```latex
+\newenvironment{sitem}[1]
+   {%before
+     \item<+-> #1
+     \comment
+   }{
+     \endcomment
+   }
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6610/beamer-and-newenvironments/6616#6616) on TeX Stack Exchange, 2010-12-06. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

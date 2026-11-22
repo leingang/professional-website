@@ -1,0 +1,77 @@
+---
+title: Deriving $x^n-1=(x-1)(x^{n-1}+x^{n-2}+...+x+1)$
+date: '2017-10-27'
+description: Sure, this is valid. It looks like you are essentially doing long division of polynomials without the tableau. Very nice!
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2492186
+se-link: https://math.stackexchange.com/questions/2492171/deriving-xn-1-x-1xn-1xn-2-x1/2492186#2492186
+se-score: 0
+se-accepted: false
+se-tags:
+- proof-verification
+- polynomials
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Deriving $x^n-1=(x-1)(x^{n-1}+x^{n-2}+...+x+1)$](https://math.stackexchange.com/questions/2492171/deriving-xn-1-x-1xn-1xn-2-x1), asked by [Rumata](https://math.stackexchange.com/users/411998/rumata) on Mathematics Stack Exchange (2017-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When I first saw that **$x^n-1=(x-1)(x^{n-1}+x^{n-2}+...+x+1)$** I wondered how does one find/derive something like that (not just prove it by induction), now that I have some very basic knowledge about polynomials I gave it a try.   
+>
+> Im asking if there are mistakes in the following. Thanks in advance to anyone who will bother checking that.
+> ___
+> Let $n$ be positive integer, then:  
+> $x^n-1$ is polynomial of degree $n$ where the coefficients of the terms between $x^n$ and $-1$ (the constant term) are equal to $0$.  
+>
+> $$f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$$ 
+> where $a_n=1, a_0=-1$ $\,$ and $\,$ $a_i=0$ for every   $i=n-1,...,1$
+>
+>
+>
+> If $n$ is even we have two roots, $1$ and $-1$  
+> If $n$ is odd, $1$ is the only root.   
+>
+> In both cases we can rewrite it as   
+>
+> $$f(x)=x^n-1=(x-1)(b_{n-1}x^{n-1}+...+b_1x+b_0)=\\ x(b_{n-1}x^{n-1}+...+b_0)-(b_{n-1}x^{n-1}+...+b_0)=\\ (b_{n-1}x^n+b_{n-2}x^{n-1}+...+b_1x^2+b_0x)-b_{n-1}x^{n-1}-b_{n-2}x^{n-2}...-b_1x-b_0\tag{A}$$
+>
+> After rearranging we get:
+>
+>   $$f(x)=b_{n-1}x^n+(b_{n-2}-b_{n-1})x^{n-1}+(b_{n-3}-b_{n-2})x^{n-2}+...+(b_0-b_1)x+(-b_0)$$
+>
+> The highest term, namely $a_nx^n$ comes from multiplying $x$ with $b_{n-1}x^{n-1}$, that is 
+> $$a_nx^n=x(b_{n-1}x^{n-1})=b_{n-1}x^n$$
+> We can conclude that $a_n=b_{n-1}=1$   
+>
+> $f(0)=-1=(-1)(0+...+0+b_0)$, hence $b_0=1$.  
+> Then the constant term $(-b_0)=a_0=-1$
+>
+> Then the coefficients $(b_{i-1}-b_{i})=a_{i}=0$ for every $i=n-1,...,1$
+>
+> We observe the following, $\, b_{n-2}-b_{n-1}=b_{n-2}-1=0,\,$ then $\, b_{n-2}=1$  
+> the next coefficient,  $b_{n-3}-b_{n-2}=b_{n-3}-1=0,\,$ then  $\,b_{n-3}=1$  
+> We can keep going like that with the other coefficients. From that we conclude that $b_i=1$ for every $i=n-1,...,1$   
+>
+> Hence  $$f(x)=x^n-1=(x-1)(x^{n-1}+...+x+1)$$
+>
+> ___   
+>
+> At $(A)$ I use the *Polynomial remainder theorem* to get $(x-1)$ as factor.  
+> I wasnt able to find something like that for $x^n+1$ when $n$ is even, there are no real roots.   
+> Prabably could be writen like that:  
+>  $x^n+c=(x^n-1)+c+1\;$ where $c$ is some integer.
+:::
+
+Sure, this is valid.  It looks like you are essentially doing [long division of polynomials](http://www.mesacc.edu/~scotz47781/mat120/notes/divide_poly/long_division/long_division.html) without the tableau.  Very nice!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2492171/deriving-xn-1-x-1xn-1xn-2-x1/2492186#2492186) on Mathematics Stack Exchange, 2017-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

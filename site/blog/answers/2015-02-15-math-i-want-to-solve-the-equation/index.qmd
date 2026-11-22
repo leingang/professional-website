@@ -1,0 +1,37 @@
+---
+title: I want to solve the equation
+date: '2015-02-15'
+description: The angle-addition formula $$\sin(x-\alpha) = \sin(x)\cos(\alpha) - \cos(x)\sin(\alpha)$$ will help you set up a system of equations for $r$ and $\alpha$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1149135
+se-link: https://math.stackexchange.com/questions/1149126/i-want-to-solve-the-equation/1149135#1149135
+se-score: 1
+se-accepted: false
+se-tags:
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I want to solve the equation](https://math.stackexchange.com/questions/1149126/i-want-to-solve-the-equation), asked by [VihangaAW](https://math.stackexchange.com/users/195616/vihangaaw) on Mathematics Stack Exchange (2015-02-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How to show the equation $4 \sin(x) +3 \cos (x)$ as $r \sin (x-\alpha)$
+>
+> I tried to solve this using $a \cos(x)+b \sin(x) = c$. But there aren't any to use as $c$
+:::
+
+The angle-addition formula
+$$\sin(x-\alpha) = \sin(x)\cos(\alpha) - \cos(x)\sin(\alpha)$$
+will help you set up a system of equations for $r$ and $\alpha$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1149126/i-want-to-solve-the-equation/1149135#1149135) on Mathematics Stack Exchange, 2015-02-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

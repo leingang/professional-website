@@ -1,0 +1,37 @@
+---
+title: 'Latex: Trouble with \label and \ref in texmaker'
+date: '2010-11-22'
+description: 'Two things: (a) \usepackage{hyperref} and (b) you can find lots of tex users at tex.stackexchange.com'
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 4249510
+se-link: https://stackoverflow.com/questions/4248045/latex-trouble-with-label-and-ref-in-texmaker/4249510#4249510
+se-score: 3
+se-accepted: true
+se-tags:
+- latex
+- label
+- ref
+- texmaker
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Latex: Trouble with \label and \ref in texmaker](https://stackoverflow.com/questions/4248045/latex-trouble-with-label-and-ref-in-texmaker), asked by [kame](https://stackoverflow.com/users/237934/kame) on Stack Overflow (2010-11-22; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I think I know how to use \label{...} and \ref{...}
+> But after changing the tex-file to pdf I have no possibility to click the refers. Once I get it. There were red frames around the clickable words, but i forget how I did this. There are to many possibilies to transform the tex-file. Which should I use to get the correct output? (I hope you understand the question)
+:::
+
+Two things: (a) `\usepackage{hyperref}` and (b) you can find lots of tex users at [tex.stackexchange.com](https://tex.stackexchange.com/)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4248045/latex-trouble-with-label-and-ref-in-texmaker/4249510#4249510) on Stack Overflow, 2010-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,54 @@
+---
+title: Drawing stars/similar with Tikz
+date: '2011-02-18'
+description: 'Jake''s answer is very good. Here''s the extra half star:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11407
+se-link: https://tex.stackexchange.com/questions/11390/drawing-stars-similar-with-tikz/11407#11407
+se-score: 6
+se-accepted: false
+se-tags:
+- tikz-pgf
+- symbols
+- diagrams
+- asymptote
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Drawing stars/similar with Tikz](https://tex.stackexchange.com/questions/11390/drawing-stars-similar-with-tikz), asked by [Robbie](https://tex.stackexchange.com/users/3351/robbie) on TeX Stack Exchange (2011-02-18; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm writing a review for a book at the moment, and I thought I'd be clever and show off what LaTeX is capable of by adding a x-out-of-y stars graphic. Tikz can do many things so I would have thought that a trick like this would be fairly trivial, however it seems that I cannot figure out a macro to draw the shapes at the right size, let alone fancy tricks such as half-filled stars or something similar. I think the code I have so far might be headed in the right direction:
+>
+> ```latex
+> \usepackage{tikz}
+> \usetikzlibrary{shapes.geometric}
+> \usetikzlibrary{calc,shadows}
+>
+> \newcommand*\starfill{%
+>   \tikz[baseline=(key.base),scale=-3]
+>   \node[star, star points=5, star point ratio=2.25, fill=black, draw](key) {S};  
+> }
+> ```
+>
+> I've tried to start by drawing a single star shape, but ideally I'd like to define like `\starsranking{number}{total}` that will output the appropriate shaded `number` of stars out of `total`. Is this doable? It doesn't sound particularly difficult.
+:::
+
+Jake's answer is very good.  Here's the extra half star:
+
+```latex
+\node[scorestars,fill=gray] {};
+\path node[scorestars,fill=yellow] (s) {} [clip] (s.south west) rectangle (s.north);
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11390/drawing-stars-similar-with-tikz/11407#11407) on TeX Stack Exchange, 2011-02-18. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

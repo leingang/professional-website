@@ -1,0 +1,107 @@
+---
+title: Finding value of $K$ when applying the error bound
+date: '2019-05-17'
+description: It seems like you're missing where the $K$ comes from in general. One form of Taylor's theorem is that, for all $x$ there is some $z$ between $a$ and $x$ such…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3229930
+se-link: https://math.stackexchange.com/questions/3229896/finding-value-of-k-when-applying-the-error-bound/3229930#3229930
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- taylor-expansion
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding value of $K$ when applying the error bound](https://math.stackexchange.com/questions/3229896/finding-value-of-k-when-applying-the-error-bound), asked by [Friedrich](https://math.stackexchange.com/users/540415/friedrich) on Mathematics Stack Exchange (2019-05-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The problem is asking to use the error bound to find a value of $n$ for which the given inequality is satisfied. 
+> $$\left|\sqrt{1.3}-T_{n}(1.3) \right| \leq 10^{-6}, \quad a=1$$
+>
+> Now this is how I started my attempt to solve this, we use the error bound, where,
+> $$\left|\sqrt{1.3}-T_{n}(1.3) \right| \leq K \frac{\left|1.3-1\right|^{n+1}}{(n+1)!}= K \frac{\left|0.3\right|^{n+1}}{(n+1)!}$$
+>
+> What I am struggling with is how to find the value of $K$, this is how the solution manual found $K$:
+>
+> > For $f(x)=\sqrt{x}$, $|f^{(n+1)}(x)|$ is decreasing for $x>1$, hence the maximum value of $|f^{(n+1)}(x)|$ occurs at $x=1$:
+> $$\begin{align*}
+> K=|f^{(n+1)}(1)|&=\frac{1\cdot 3 \cdot 5 \cdots (2n+1)}{2^{n+1}}\\&
+> =\frac{1\cdot 3 \cdot 5 \cdots (2n+1)}{2^{n+1}} \times \frac{2\cdot 4 \cdot 6 \cdots (2n+2)}{2\cdot 4 \cdot 6 \cdots (2n+2)}\\
+> &=\frac{(2n+2)!}{(n+1)!2^{(2n+2)}}
+> \end{align*}$$
+>
+> I have no idea why it choose $K$ to be this, I am only stuck on this I know how to continue on with the problem but I don't understand how the value of $K$ became this
+:::
+
+It seems like you're missing where the $K$ comes from in general.  One form of Taylor's theorem is that, for all $x$ there is *some* $z$ between $a$ and $x$ such that
+$$f(x) - T_n(x) = \frac{f^{(n+1)}(z)}{(n+1)!}(x-a)^{n+1}$$
+Therefore, if you can find $K$ such that
+$$|f^{(n+1)}(z)| \leq K$$
+for *all* $z$ in the interval $[a,x]$, then you can conclude that
+$$|f(x) - T_n(x)| \leq \frac{K}{(n+1)!}|x-a|^{(n+1)}$$
+
+Let's take derivatives and look for a pattern.
+$$\begin{align*}
+    f(x) &= x^{1/2} &
+    f(1) &= 1 \\
+    f'(x) &= \frac{1}{2}x^{-1/2} &
+    f'(1) &= \frac{1}{2} \\
+    f''(x) &= \left(-\frac{1}{2}\right)\left(\frac{1}{2}\right) x^{-3/2} &
+    f''(1) &= \frac{(-1)}{2^2}\\
+    f'''(x) &= \left(-\frac{3}{2}\right)\left(-\frac{1}{2}\right)\left(\frac{1}{2}\right) x^{-5/2} &
+    f'''(1) &= \frac{(-1)^2 1 \cdot 3}{2^3}\\
+    f^{(4)}(x) &= \left(-\frac{5}{2}\right)\left(-\frac{3}{2}\right)\left(-\frac{1}{2}\right)\left(\frac{1}{2}\right) x^{-7/2} &
+    f^{(4)}(1) &= \frac{(-1)^3 1 \cdot 3 \cdot 5}{2^4} \\
+\end{align*}$$
+So each derivative $f^{(k)}(1)$ has:
+
+* a power of $(-1)$ in the numerator,
+* the product of odd numbers up to a certain point, and
+* a power of $2$ in the denominator.
+
+Furthermore, $f^{(k)}(x)$ is $f^{(k)}(1)$ times a fractional power of $x$
+
+To determine the dependence of each of these terms on $k$, just check the first few terms we've already counted.  The exponent on $(-1)$ is $k-1$; the exponent on $2$ is $k$, and all odd numbers up through $2k-3$ are multiplied together.
+The power on $x$ is $-(2k-1)/2$.
+$$f^{(k)}(1) = \frac{(-1)^{k-1} 1 \cdot 3 \cdot 5 \cdots (2k-3)}{2^k}$$
+as long as $k \geq 2$.  Therefore
+$$f^{(n+1)}(1) = \frac{(-1)^n 1\cdot 3 \cdot 5 \cdots (2(n+1)-3)}{2^{n+1}}
+    = \frac{(-1)^n 1\cdot 3 \cdot 5 \cdots (2n-1)}{2^{n+1}}$$
+This is what the solution author did to get to the first line there.  Actually, we disagree there on the form of the final odd factor in the numerator.  Is is $2n-1$ or $2n+1$? I showed my work so I think I'm right.
+
+Now what?  It would be good to represent that product of odd numbers in terms of factorials.  We can do this by multiplying and dividing by all those missing even factors:
+$$\begin{align*}
+\frac{(-1)^n 1\cdot 3 \cdot 5 \cdots (2n-1)}{2^{n+1}}
+&= \frac{(-1)^n 1\cdot 3 \cdot 5 \cdots (2n-1)}{2^{n+1}}
+\times \frac{2 \cdot 4 \cdot 6 \cdots 2n}{2 \cdot 4 \cdot 6 \cdots 2n}\\
+&= \frac{(-1)^n (2n)!}{(2 \cdot 4 \cdot 6 \cdots 2n)2^{n+1}}
+\end{align*}$$
+As for the denominator, each of those even factors is a multiple of two, and when you factor out the twos, you get another factorial:
+$$\begin{align*}
+\frac{(-1)^n (2n)!}{(2 \cdot 4 \cdot 6 \cdots 2n)2^{n+1}}
+&= \frac{(-1)^n (2n)!}{(2 \cdot 1 \cdot 2 \cdot 2 \cdot 2 \cdot 3 \cdots 2 \cdot n)2^{n+1}} \\
+&= \frac{(-1)^n (2n)!}{2^n (\cdot 1 \cdot 2 \cdot 3 \cdot n)2^{n+1}} \\
+&= \frac{(-1)^n (2n)!}{2^n \cdot n!\cdot 2^{n+1}} \\
+&= \frac{(-1)^n (2n)!}{n!\cdot 2^{2n+1}} \\
+\end{align*}$$
+
+Therefore,
+$$\begin{align*}
+    |f^{(n+1)}(x)| &= \left|\frac{(-1)^n (2n)!}{n!\cdot 2^{2n+1}} x^{-(2n-1)/2}\right| \\
+    &= \frac{(2n)!}{n!\cdot 2^{2n+1}} x^{-(2n-1)/2} \\
+    &\leq \frac{(2n)!}{n!\cdot 2^{2n+1}} 
+\end{align*}$$ 
+As long as $x \geq 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3229896/finding-value-of-k-when-applying-the-error-bound/3229930#3229930) on Mathematics Stack Exchange, 2019-05-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

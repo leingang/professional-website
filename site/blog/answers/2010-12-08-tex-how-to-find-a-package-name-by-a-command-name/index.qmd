@@ -1,0 +1,54 @@
+---
+title: How to find a package name by a command name?
+date: '2010-12-08'
+description: 'Succinctly: Go back to where you learned about the command for the first time (be it a person or a web page) and see if he/she/it can tell you.'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 6737
+se-link: https://tex.stackexchange.com/questions/3777/how-to-find-a-package-name-by-a-command-name/6737#6737
+se-score: 0
+se-accepted: false
+se-tags:
+- packages
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find a package name by a command name?](https://tex.stackexchange.com/questions/3777/how-to-find-a-package-name-by-a-command-name), asked by [fiktor](https://tex.stackexchange.com/users/475/fiktor) on TeX Stack Exchange (2010-10-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Often I'm trying to use a command in my document and it doesn't compile, because I haven't included the package I need for it. Of course, I know, that I can try to google it, but Google often finds some manuals and usage examples without package information (but this is probably because I don't know, how to google better). In all the cases I've succeeded in determining of the package name, but wasted more than 30 minutes in many of them.
+>
+> Which ways would you advise to search for package name? Which hints would you suggest?
+:::
+
+*Succinctly*: Go back to where you learned about the command for the first time (be it a person or a web page) and see if he/she/it can tell you.
+
+*More verbosely* (since I got a downvote on this answer I'm guessing it's because I came off as glib, sorry): you put that command in the document for a reason.  Either somebody suggested it or you found a code snippet on a web page somewhere.  That same person/page should also know what package needs to be included to make it work.
+
+**Example 1** You are following the advice of your colleague, let's call him...Martin.  But because the conversation took place in the hallway you couldn't write down the actual code required.
+
+"Hey, Martin, you remember how you told me I could use `\snarfbbf` to snarf the bumblefrack?"
+
+"Yeah."
+
+"Well, it doesn't work.  It says the control sequence is undefined."
+
+"Did you include the `bbfrack` package?"
+
+"Oh, I get it.  Thanks."
+
+**Example 2** Somebody (let's call him...Stefan) writes a blog post about snarfing bumblefracks in TeX documents.  You copied-and-pasted a code snippet from part of the post.  But because you didn't copy the preamble you have missed the required packages.
+
+Go back to that web page, where either the complete document or a note about which packages are required should be there.  If not, ask the blogger.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/3777/how-to-find-a-package-name-by-a-command-name/6737#6737) on TeX Stack Exchange, 2010-12-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

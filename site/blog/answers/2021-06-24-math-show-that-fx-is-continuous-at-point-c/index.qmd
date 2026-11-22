@@ -1,0 +1,45 @@
+---
+title: Show that $f(x)$ is continuous at point $c$
+date: '2021-06-24'
+description: 'Recall the definition of continuity: $f$ is continuous at $c$ if for all $\epsilon > 0$, there exists $\delta > 0$ such that for all $x$, if $|x-a| < \delta$…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4182146
+se-link: https://math.stackexchange.com/questions/4182095/show-that-fx-is-continuous-at-point-c/4182146#4182146
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that $f(x)$ is continuous at point $c$](https://math.stackexchange.com/questions/4182095/show-that-fx-is-continuous-at-point-c), asked by [mathcomp guy](https://math.stackexchange.com/users/606888/mathcomp-guy) on Mathematics Stack Exchange (2021-06-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a function $f(x) = 0$ on $[a,b]$ except for $c \in [a,b]$ where $f(c) = 1$.  I am asked to show $f(x)$ is continuous at point $c$.
+>
+> Thus I have for the definition of continuity:
+>
+> if $\;|x-c|<\delta\;$ then $\;|f(x)-f(c)|<\varepsilon\;,$ 
+>
+> if $\;|x-c|<\delta\;$ then $\;|1|<\varepsilon\;.$
+>
+> However given that the definition has to hold for all $\varepsilon>0$ then I'm not sure how this applies given that $\varepsilon>1$ by the above and thus there exist some values for which the definition does not hold.
+:::
+
+Recall the definition of continuity: $f$ is continuous at $c$ if _for all_ $\epsilon > 0$, _there exists_ $\delta > 0$ such that _for all_ $x$, if $|x-a| < \delta$, then $|f(x) - f(c)| < \epsilon$.
+
+I'm emphasizing the quantifiers.  When you negate a statement, the quantifiers flip and the negation moves down the line.  So $f$ is **not** continuous at $c$ if _there exists_ $\epsilon > 0$ such that _for all_ $\delta > 0$, _there exists_ $x$ such that $|x-a| < \delta$ but $|f(x) - f(c)| \geq \epsilon$.
+
+If you draw a graph of $f$ and inspect each of these definitions, I think you'll see which one is satisfied, and how.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4182095/show-that-fx-is-continuous-at-point-c/4182146#4182146) on Mathematics Stack Exchange, 2021-06-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

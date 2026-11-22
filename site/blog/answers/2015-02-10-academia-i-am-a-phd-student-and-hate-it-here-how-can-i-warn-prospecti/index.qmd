@@ -1,0 +1,49 @@
+---
+title: I am a PhD student and hate it here. How can I warn prospective students during admit weekend without ruining my reputation?
+date: '2015-02-10'
+description: You'll probably end up in conversations with the prospectives about the other schools they're considering. Then you can highlight differences between your…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 38604
+se-link: https://academia.stackexchange.com/questions/38591/i-am-a-phd-student-and-hate-it-here-how-can-i-warn-prospective-students-during/38604#38604
+se-score: 13
+se-accepted: false
+se-tags:
+- phd
+- graduate-admissions
+- visiting
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I am a PhD student and hate it here. How can I warn prospective students during admit weekend without ruining my reputation?](https://academia.stackexchange.com/questions/38591/i-am-a-phd-student-and-hate-it-here-how-can-i-warn-prospective-students-during), asked by [bitter student](https://academia.stackexchange.com/users/29135/bitter-student) on Academia Stack Exchange (2015-02-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> On the one hand, I want to warn students not to come to my program.  On the other hand, I don't want to be "that one," and I also don't want to tarnish the reputation of the specific people I worked with (who I mostly like).
+>
+> More specifically:
+>
+> I want to warn students about lack of funding, administration being uncaring towards students, certain PhD requirements being a lot more onerous than they say they are, general departmental atmosphere and culture among the grad students, general culture of the school, poor location, etc etc.
+>
+> Also my school is the only top school in my field that has a "rotation system" for picking advisors, and that is generally framed as a benefit, and a reason to choose the school.  But I don't think students really realize how much rotations suck until after they've come here.
+:::
+
+You'll probably end up in conversations with the prospectives about the other schools they're considering.  Then you can highlight differences between your school and the other school without making (too) overt judgements on which you consider to be better.
+
+For instance, with the rotating advisor feature, you could say, “Here advisors are assigned to students on a rotating basis, whereas at Other University you would have the option to choose an advisor that best meets your needs as a young scholar.”  
+
+If you don't have information about Other University, you can suggest they research it. “You should look into how graduate students are supported at Other University.  I know that here it's harder than it would seem.”
+
+Or if you want to contrast the locations, say, “I imagine the weather's a lot better near Other University.”
+
+In short, be subtle, and grown-up.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/38591/i-am-a-phd-student-and-hate-it-here-how-can-i-warn-prospective-students-during/38604#38604) on Academia Stack Exchange, 2015-02-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

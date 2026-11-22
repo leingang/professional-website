@@ -1,0 +1,46 @@
+---
+title: dimension of an intersection of subspaces
+date: '2015-01-27'
+description: 'Your intuition is correct: $\dim(W1 \cap W2) =15$.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1122287
+se-link: https://math.stackexchange.com/questions/1122233/dimension-of-an-intersection-of-subspaces/1122287#1122287
+se-score: 5
+se-accepted: true
+se-tags:
+- linear-algebra
+- vector-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[dimension of an intersection of subspaces](https://math.stackexchange.com/questions/1122233/dimension-of-an-intersection-of-subspaces), asked by [Ramdev](https://math.stackexchange.com/users/196037/ramdev) on Mathematics Stack Exchange (2015-01-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $V$ be the vector space of all polynomials in one variable with real coefficients having degree at most 20. Define the subspaces 
+> $$\begin{align*}
+>     W_1 &=\{p \in V; p(1)=0,p(1/2)=0, p(5)=0,p(7)=0\} \\
+>     W_2 &=\{p \in V; p(3)=0,p(1/2)=0, p(4)=0,p(7)=0\}
+> \end{align*}$$
+> then the dimension of $W_1 \cap W_2$
+:::
+
+Your intuition is correct: $\dim(W_1 \cap W_2) =15$.
+
+One way to see this is to set up a linear mapping $T\colon V \to \mathbb{R}^6$, 
+$$T(p) = \begin{bmatrix} p(1) \\ p(1/2) \\ p (5) \\ p(7) \\ p(3) \\ p(4) \end{bmatrix}$$
+Then $T$ is surjective and $W_1 \cap W_2 = \ker T$.  By the rank-nullity theorem,
+$$\dim(\ker T) + \dim(\operatorname{im}T) = \dim V$$
+Since $\dim V = 21$ and $\dim(\operatorname{im}T) = \dim \mathbb{R}^6 = 6$, we have
+$$\dim(W_1 \cap W_2) = \dim(\ker T) = 21 - 6 = 15$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1122233/dimension-of-an-intersection-of-subspaces/1122287#1122287) on Mathematics Stack Exchange, 2015-01-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

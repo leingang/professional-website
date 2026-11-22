@@ -1,0 +1,55 @@
+---
+title: optimization more than one variable one constraint
+date: '2016-09-29'
+description: You can use the method of Lagrange multipliers. Let $g(x,y,z) = \frac{1}{x} + \frac{1}{y} + \frac{4}{z}$. Then the extreme points $(x,y,z)$ of $\ell(x,y,z)$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1946986
+se-link: https://math.stackexchange.com/questions/1946807/optimization-more-than-one-variable-one-constraint/1946986#1946986
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[optimization more than one variable one constraint](https://math.stackexchange.com/questions/1946807/optimization-more-than-one-variable-one-constraint), asked by user302538 on Mathematics Stack Exchange (2016-09-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: WoA91.jpg
+>
+> Hi.
+> My question is how to show that the existens of the minimum value which I found to be **4**.
+>
+> Thanks in advance
+:::
+
+You can use the method of Lagrange multipliers.  Let $g(x,y,z) = \frac{1}{x} + \frac{1}{y} + \frac{4}{z}$.  Then the extreme points $(x,y,z)$ of $\ell(x,y,z)$ subject to the constraint that $g(x,y,z) = 4$ satisfy $\nabla \ell = \lambda \nabla g$ for some $\lambda$.  Therefore
+$$\begin{align*}
+    1 &= -\frac{1}{x^2}\lambda &\implies -\lambda &= x^2\\
+    1 &= -\frac{1}{y^2}\lambda &\implies -\lambda &= y^2\\
+    1 &= -\frac{4}{z^2}\lambda &\implies -\lambda &= \frac{z^2}{4}\\
+\end{align*}$$
+So
+$$x^2 = y^2 = \frac{z^2}{4}$$
+Since all of $x$, $y$, and $z$ are positive, we can take square roots and get
+$$x= y = \frac{z}{2}$$
+Now remembering that $\frac{1}{x} + \frac{1}{y} + \frac{4}{z} = 4$, we have
+$$\frac{2}{z} + \frac{2}{z} + \frac{4}{z} = 4 \implies z=2$$
+Therefore $x=y=1$ and $z=2$.  The critical value is $1+1+2=4$.
+
+It's a little bit trickier to show definitively that this is a global minimum.  There are second-order conditions, or you can use pictures, or you can evaluate at nearby points to show that they have larger values.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1946807/optimization-more-than-one-variable-one-constraint/1946986#1946986) on Mathematics Stack Exchange, 2016-09-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,38 @@
+---
+title: Does $P(X\leq a) = P(X^2\leq a^2)$ if $X$ is a positive random variable and $a>0$?
+date: '2015-01-15'
+description: 'If $X(\omega) > 0$ for all $\omega$, and $a>0$, then $$X(\omega)^2 \leq a^2 \iff X(\omega) \leq a$$ So as sets, $$\{\omega : X(\omega)^2 \leq a^2\} = \{\omega…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1104828
+se-link: https://math.stackexchange.com/questions/1104818/does-px-leq-a-px2-leq-a2-if-x-is-a-positive-random-variable-and-a0/1104828#1104828
+se-score: 2
+se-accepted: true
+se-tags:
+- probability-theory
+- probability-distributions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does $P(X\leq a) = P(X^2\leq a^2)$ if $X$ is a positive random variable and $a>0$?](https://math.stackexchange.com/questions/1104818/does-px-leq-a-px2-leq-a2-if-x-is-a-positive-random-variable-and-a0), asked by [Laimond](https://math.stackexchange.com/users/186742/laimond) on Mathematics Stack Exchange (2015-01-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The answer looks positive to me, since $$P(\omega:X(\omega) \leq a) = P(\omega:X(\omega)^2\leq a^2)$$
+> Am I right?
+:::
+
+If $X(\omega) > 0$ for all $\omega$, and $a>0$, then
+$$X(\omega)^2 \leq a^2 \iff X(\omega) \leq a$$
+So as sets,
+$$\{\omega : X(\omega)^2 \leq a^2\} = \{\omega :  X(\omega) \leq a\}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1104818/does-px-leq-a-px2-leq-a2-if-x-is-a-positive-random-variable-and-a0/1104828#1104828) on Mathematics Stack Exchange, 2015-01-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

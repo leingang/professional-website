@@ -1,0 +1,50 @@
+---
+title: \Longrightarrow doesn't look good in 12pt
+date: '2010-10-29'
+description: 'Another faux solution: use tikz to draw the arrow for you:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 4687
+se-link: https://tex.stackexchange.com/questions/4684/longrightarrow-doesnt-look-good-in-12pt/4687#4687
+se-score: 3
+se-accepted: false
+se-tags:
+- math-mode
+- symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[\Longrightarrow doesn't look good in 12pt](https://tex.stackexchange.com/questions/4684/longrightarrow-doesnt-look-good-in-12pt), asked by [Hendrik Vogt](https://tex.stackexchange.com/users/1235/hendrik-vogt) on TeX Stack Exchange (2010-10-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm using the standard CM fonts in 12pt (and amsmath if this is relevant). My problem is that `\Longrightarrow` gives something like this ![](KwGvD.png) output, which I find a bit annoying. I know that it's a composed symbol, but in 10pt and in 11pt it looks perfect, so why doesn't it also work in 12pt?
+>
+> By the way, I produced the image by typing `\Huge\Longrightarrow` on [mathurl.com](http://mathurl.com), so it's not an artefact of my TeX system (and it tells us that mathurl uses 12pt ...). Moreover, it's not just something on the screen, I also see it on a printout (where I don't know which LaTeX distribution was used for typesetting).
+>
+> I think I've first seen this when I was still using LaTeX 2.09 a long time ago!
+:::
+
+Another faux solution: use tikz to draw the arrow for you:
+
+```latex
+\usepackage{tikz}
+
+\newcommand{\tikzLongrightarrow}{%
+ \mathbin{\tikz{\draw[arrows={-latex},line width=1.2pt,double=white] (0,0) -- (3em,0);}}
+}
+\let\oldLongrightarrow=\Longrightarrow
+\def\Longrightarrow{\tikzLongrightarrow}
+```
+
+One disadvantage is that tikz is a lot to include just for one symbol.  Not a problem if you're already including tikz.  Another disadvantage is that it will take more work to make it look like the regular `\Longrightarrow`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4684/longrightarrow-doesnt-look-good-in-12pt/4687#4687) on TeX Stack Exchange, 2010-10-29, with [edits](https://tex.stackexchange.com/posts/4687/revisions) by [2xMax](https://tex.stackexchange.com/users/97528/2xmax). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

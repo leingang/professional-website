@@ -1,0 +1,41 @@
+---
+title: Symmetry of the domain?
+date: '2017-03-06'
+description: This is because $$\iiintD z\,dV = 0$$ Why is that? If $(a,b,c)$ is in $D$, then so is $(a,b,-c)$ (both inequalities have $z^2$ in them). So each point $P$ in…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2174549
+se-link: https://math.stackexchange.com/questions/2174541/symmetry-of-the-domain/2174549#2174549
+se-score: 3
+se-accepted: false
+se-tags:
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Symmetry of the domain?](https://math.stackexchange.com/questions/2174541/symmetry-of-the-domain), asked by [Eiraus](https://math.stackexchange.com/users/375273/eiraus) on Mathematics Stack Exchange (2017-03-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For the tiple integral 
+> $$\iiint_D (z^2+z) \,dx\,dy\,dz$$
+> over the domain $D:x^2+y^2+z^2\leq4,\quad z^2\leq x^2+y^2$
+>
+> The textbook states that by symmetry of the domain the integral simplifies to
+> $$\iiint_D z^2 \,dx\,dy\,dz.$$
+> How exactly do they arrive at that conclusion?
+:::
+
+This is because 
+$$\iiint_D z\,dV = 0$$
+Why is that? If $(a,b,c)$ is in $D$, then so is $(a,b,-c)$ (both inequalities have $z^2$ in them).  So each point $P$ in $D$ has a mirror-image point $P'$ on the opposite side of the $xy$-plane.  If $f(x,y,z) = z$, then $f(P') = -f(P)$.  Accumulating all the points $P$ above the $xy$-plane, their $f$-values cancel in pairs with their corresponding points $P'$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2174541/symmetry-of-the-domain/2174549#2174549) on Mathematics Stack Exchange, 2017-03-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,100 @@
+---
+title: Alternatives or Successor for TeX
+date: '2011-05-16'
+description: The alternative to TeX is Microsoft Word. Good luck with that.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 18358
+se-link: https://tex.stackexchange.com/questions/18349/alternatives-or-successor-for-tex/18358#18358
+se-score: 19
+se-accepted: false
+se-tags:
+- tex-core
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Alternatives or Successor for TeX](https://tex.stackexchange.com/questions/18349/alternatives-or-successor-for-tex), asked by [Aaron Digulla](https://tex.stackexchange.com/users/489/aaron-digulla) on TeX Stack Exchange (2011-05-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > **Possible Duplicate:**  
+> > [Why are there no alternatives to TeX, or, why is TeX still used?](https://tex.stackexchange.com/questions/13370/why-are-there-no-alternatives-to-tex-or-why-is-tex-still-used)  
+>
+> <!-- End of automatically inserted text -->
+>
+> My problem with the current version of (La-)TeX is that it's pretty brittle. Some documents run well on different systems, others don't work at all. It's hard to make sure the necessary fonts and macros are available. Some flavors of TeX support TTF fonts, others don't. Installing fonts for TeX either works or it doesn't - if it doesn't work, there is little that John Doe can do.
+>
+> Distributions like [MiKTeX][q-1] and [TeX Live][q-2] try to make this a little bit less painful but they also don't auto-heal (like automatically downloading macros needed by a document), error messages are often completely useless to anyone but a TeX pro.
+>
+> So I understand that this is a heretical question here but: Is there a successor for TeX? Or an alternative?
+>
+> There was an effort to rewrite TeX in a more model programming language like Java. What happened to that? Or to use XML as input format to get rid of the odd bugs introduced by escaping and quoting?
+>
+>
+>   [q-1]: http://miktex.org/
+>   [q-2]: http://www.tug.org/texlive/
+:::
+
+The alternative to TeX is Microsoft Word.  Good luck with that.
+
+> My problem with the current version of
+> (La-)TeX is that it's pretty brittle.
+> Some documents run well on different
+> systems, others don't work at all.
+
+Backwards compatibility of Word documents breaks after a few release cycles.  LaTeX has been stable for 25+ years.
+
+> It's hard to make sure the necessary
+> fonts and macros are available.
+
+Word doesn't search for fonts either.  That's a operating system issue.
+
+It's *not* hard to make macros available.  At the very least all you have to do is put the package file in the same directory as the document file.  Every distribution also comes with a default user location to put macro files.
+
+> Some
+> flavors of TeX support TTF fonts,
+> others don't. 
+
+So...use the ones which do?
+
+> Installing fonts for TeX
+> either works or it doesn't - if it
+> doesn't work, there is little that
+> John Doe can do.
+
+On my machine I double-click a TTF font and the OS installs it in my font library.  XeLaTeX finds that font with zero problem.  
+
+> Distributions like MiKTeX and TeX Live
+> try to make this a little bit less
+> painful but they also don't auto-heal
+> (like automatically downloading macros
+> needed by a document),
+
+There aren't macros in word files like in TeX files, but Word doesn't auto-heal either.  If the file uses fonts that aren't on the machine, it won't get them automatically.
+
+> error messages
+> are often completely useless to anyone
+> but a TeX pro.
+
+The `h` command at a message provides the best possible guess to the source of an error.  But the same objection could be given to many languages.
+
+> There was an effort to rewrite TeX in
+> a more model programming language like
+> Java. What happened to that? Or to use
+> XML as input format to get rid of the
+> odd bugs introduced by escaping and
+> quoting?
+
+By "odd bugs introduced by escaping and quoting" you mean in users' input files?  That's not the fault of TeX, and changing the input file format is not going to fix PEBKAC errors.  The TeX developers have fixed [9 bugs in 10 years](ftp://tug.ctan.org/pub/tex-archive/systems/knuth/dist/errata/tex82.bug).
+
+Maybe this is a bit of a strawman argument since you didn't propose Word as a substitute, but I don't think your objections are unique to *TeX or warrant replacement.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/18349/alternatives-or-successor-for-tex/18358#18358) on TeX Stack Exchange, 2011-05-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

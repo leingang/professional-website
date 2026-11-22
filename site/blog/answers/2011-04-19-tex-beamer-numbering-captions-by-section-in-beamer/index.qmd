@@ -1,0 +1,51 @@
+---
+title: (Beamer) Numbering captions by section in beamer
+date: '2011-04-19'
+description: 'It''s actually very easy, though I had to read the manual for a while. Add these lines to your preamble:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16125
+se-link: https://tex.stackexchange.com/questions/16124/beamer-numbering-captions-by-section-in-beamer/16125#16125
+se-score: 9
+se-accepted: true
+se-tags:
+- beamer
+- floats
+- captions
+- numbering
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[(Beamer) Numbering captions by section in beamer](https://tex.stackexchange.com/questions/16124/beamer-numbering-captions-by-section-in-beamer), asked by [Nick Loughlin](https://tex.stackexchange.com/users/4979/nick-loughlin) on TeX Stack Exchange (2011-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm writing-up a lecture course in LaTeX with an essentially identical set of slides in `beamer`. I'd like to have the figure numbering in the `beamer` slides to match those of the lecture notes, for the sake of consistency in cross-referencing.
+>
+> The lecture notes are written in the article document style (in particular there are no chapters), and have figures numbered by section (i.e. `\section`.`\figure`). Is there some simple preamble-trick or workaround that will change the way that the captions are produced in `beamer` to number them consistently with the lecture notes?
+>
+> I'm trying to avoid having to write a new macro to use in the main body, since I'm compiling the notes and slides from the same set of source-files using `\input`.
+:::
+
+It's actually very easy, though I had to read the manual for a while.  Add these lines to your preamble:
+
+```latex
+\setbeamertemplate{caption}[numbered]
+\numberwithin{figure}{section}
+```
+
+The first line uses another template for captions, one that inserts the figure's number.  Luckily this functionality is already built into beamer.
+
+The second line declares that the `figure` counter is subordinate to the `section` counter, so resets for each new `\section` and labels figures 1.1, 1.2, ..., 2.1, 2.2, ....  This is built into LaTeX.
+
+That's it!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16124/beamer-numbering-captions-by-section-in-beamer/16125#16125) on TeX Stack Exchange, 2011-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

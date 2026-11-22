@@ -1,0 +1,66 @@
+---
+title: What software that properly calculate asymptote?
+date: '2016-09-23'
+description: The number $3^{-8.83}-1$ is within $6\times 10^{-5}$ of $-1$. The scale of your image looks like about $1$ centimeter per unit. So to separate the graph of the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1938461
+se-link: https://math.stackexchange.com/questions/1938453/what-software-that-properly-calculate-asymptote/1938461#1938461
+se-score: 3
+se-accepted: true
+se-tags:
+- math-software
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What software that properly calculate asymptote?](https://math.stackexchange.com/questions/1938453/what-software-that-properly-calculate-asymptote), asked by [user23139](https://math.stackexchange.com/users/371637/user23139) on Mathematics Stack Exchange (2016-09-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am pretty sure I can ask about software that mathematicians use.
+>
+> I have been exploring offline and online software to make a simple graph :
+>
+> > $$y=3^x - 1$$
+>
+> However most of them crossed the asymptotes when it isn't supposed to.
+> because $y\ne -1$. If $-1=3^x - 1$, then  $3^x=0$, which is never true.
+>
+> So when I generate the graph, it will always result in some points to be $y=-1$.
+>
+> * * *
+> **So which software(s) that can properly avoid cutting asymptote $(y=-1)$**
+>
+>
+> * * *
+>
+>
+> **Software I have tried:**
+>
+>  1. Microsoft Mathematics
+>
+>  2. Some cheapo online tools that come first in google search(es).
+>
+>  3. Famous online graphing tool, Desmos, which gives an unwanted result:
+>
+> [![enter image description here][q-1]][q-1]
+>
+>   [q-1]: zmDPD.png
+:::
+
+The number $3^{-8.83}-1$ is within $6\times 10^{-5}$ of $-1$.  The scale of your image looks like about $1$ centimeter per unit.  So to separate the graph of the function from the asymptote, a resolution on the other of $10{,}000$ pixels per centimeter, or $25{,}400$ pixels per inch, is necessary.
+
+[Wikipedia][1] says the spatial resolution of standard computer monitors is $72$–$100$ pixels per inch.
+
+
+  [1]: https://en.wikipedia.org/wiki/Image_resolution
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1938453/what-software-that-properly-calculate-asymptote/1938461#1938461) on Mathematics Stack Exchange, 2016-09-23, with [edits](https://math.stackexchange.com/posts/1938461/revisions) by [Darío A. Gutiérrez](https://math.stackexchange.com/users/353218/dar%c3%ado-a-guti%c3%a9rrez), [Daniel R](https://math.stackexchange.com/users/83553/daniel-r). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

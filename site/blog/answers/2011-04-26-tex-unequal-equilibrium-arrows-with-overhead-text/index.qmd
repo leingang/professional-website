@@ -1,0 +1,57 @@
+---
+title: Unequal equilibrium arrows with overhead text
+date: '2011-04-26'
+description: 'A good trick is the \phantom command which typesets things invisibly:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16661
+se-link: https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text/16661#16661
+se-score: 4
+se-accepted: false
+se-tags:
+- arrows
+- mhchem
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Unequal equilibrium arrows with overhead text](https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text), asked by [ptrcao](https://tex.stackexchange.com/users/5107/ptrcao) on TeX Stack Exchange (2011-04-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ```latex
+> \documentclass[12pt]{article}
+> \usepackage[version=3]{mhchem}
+> \begin{document}
+>    \ce{CH2OH + ATP <=>>[\text{Hexokinase}] + \text{glucose 6-phosphate} + ADP + H+} \\
+>    \ce{CH2OH + ATP <=>> + \text{glucose 6-phosphate} + ADP + H+}
+> \end{document}
+> ```
+>
+> See the resulting Latex output, and compare.  In [1] the difference between the two arrows of the unequal equilibrium sign becomes less perceptible because the sign has been stretched by the text.  Compare to the same sign without the text [2].  I want the the differences between the upper and lower arrows to be exacerbated a bit more.  How can I achieve this in LaTEX?
+:::
+
+A good trick is the `\phantom` command which typesets things invisibly:
+
+```latex
+\documentclass[12pt]{article}
+\usepackage[version=3]{mhchem}
+\begin{document}
+   \ce{CH2OH + ATP <=>>[\text{Hexokinase}] + \text{glucose 6-phosphate} + ADP + H+} \\
+   \ce{CH2OH + ATP <=>>[\phantom{\text{Hexokinase}}] + \text{glucose 6-phosphate} + ADP + H+}
+\end{document}
+```
+
+![enter image description here][1]
+
+
+  [1]: FJ2gf.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text/16661#16661) on TeX Stack Exchange, 2011-04-26, with [edits](https://tex.stackexchange.com/posts/16661/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

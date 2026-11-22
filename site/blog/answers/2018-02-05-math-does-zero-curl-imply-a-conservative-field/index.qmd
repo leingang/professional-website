@@ -1,0 +1,37 @@
+---
+title: Does zero curl imply a conservative field?
+date: '2018-02-05'
+description: You have to keep in mind that a vector field is not just a set of functions, but also a domain. For instance, the vector field $\mathbf{F} =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2637176
+se-link: https://math.stackexchange.com/questions/2635850/does-zero-curl-imply-a-conservative-field/2637176#2637176
+se-score: 11
+se-accepted: false
+se-tags:
+- vector-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does zero curl imply a conservative field?](https://math.stackexchange.com/questions/2635850/does-zero-curl-imply-a-conservative-field), asked by [John A. ](https://math.stackexchange.com/users/426411/john-a) on Mathematics Stack Exchange (2018-02-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A field that is conservative must have a curl of zero everywhere. However, I was wondering whether the opposite holds for functions continuous everywhere: if the curl is zero, is the field conservative? Can someone please give me an intuitive explanation and insight into this, and if it is true, why? Also, please try to not be too rigorous (only in grade 9).
+:::
+
+You have to keep in mind that a vector field is not just a set of functions, but also a domain.  For instance, the vector field $\mathbf{F} = \left<-\frac{y}{x^2+y^2},\frac{x}{x^2+y^2}\right>$ on the set $U = \left\{(x,y) \neq (0,0)\right\}$ has a curl of zero.  But it's not conservative, because integrating it around the unit circle results in $2\pi$, not zero as predicted by path-independence.
+
+On the other hand, the same vector field restricted to $U' = \left\{x>0\right\}$ is conservative.  A potential function is $f(x,y) = \arctan\left(\frac{y}{x}\right)$.
+
+The difference is that $U'$ is simply connected, while $U$ is not.  In fact, this is an symbolic version of M. Winter's graphical example.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2635850/does-zero-curl-imply-a-conservative-field/2637176#2637176) on Mathematics Stack Exchange, 2018-02-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,66 @@
+---
+title: Product of two equal Quaternions = -1, from Hamilton?
+date: '2026-07-21'
+description: I took my own advice and read the beginning of Chapter II. This is an old text, and Hamilton isn't aware with abstract notions of ring, field, vector space…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5144470
+se-link: https://math.stackexchange.com/questions/5144456/product-of-two-equal-quaternions-1-from-hamilton/5144470#5144470
+se-score: 4
+se-accepted: true
+se-tags:
+- geometry
+- quaternions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Product of two equal Quaternions = -1, from Hamilton?](https://math.stackexchange.com/questions/5144456/product-of-two-equal-quaternions-1-from-hamilton), asked by [burriedingiza](https://math.stackexchange.com/users/1766675/burriedingiza) on Mathematics Stack Exchange (2026-07-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm reading [Hamilton's Elements of Quaternions][q-1] page 130 about squaring an identical quaternion and it's result.  $q^2 = -1$ and he has some geometric diagrams showing it.  Can anyone explain how he obtains this result?
+>
+> I didn't know if I needed to use the definition of a quaternion being $q = a_1 + a_2 i + a_3 j + a_4 k$, where $i, j, k$ are imaginary and $a_n$ are scalars, then use the product of 4 squares and $ijk=-1=i^2=j^2=k^2$ to obtain this result.  He doesn't get into these discussions yet using the suggested reading list he has for beginners in his table of contents.  Also, if $ijk=-1$ are used here can anyone explain the background where he got the idea for this identity? 
+>
+> [![hamilton page 130 excerpt][q-2]][q-2]
+>
+>
+>   [q-1]: https://archive.org/details/elementsofquater00hamirich/page/n5/mode/2up
+>   [q-2]: jOByXeFd.png
+:::
+
+I took my own advice and read the beginning of Chapter II. This is an old text, and Hamilton isn't aware with abstract notions of ring, field, vector space, module, etc. But he constructs the quaternions from basic algebraic and geometric ideas.
+
+In paragraph 101, Hamilton defines a quaternion as the formal quotient (fraction) of two non-parallel (also non-opposite) vectors, intended to extend the quotient of parallel or opposite vectors which results in a scalar. In paragraph 103, he claims that we can develop a multiplication operation that this formal division will be the inverse operation to. 
+
+In paragraph 106, he defines addition and division of quaternions with a common denominator, just as they would be defined for rational numbers. In particular, he says 
+$$\frac{\frac{\gamma}{\alpha}}{\frac{\beta}{\alpha}} = \frac{\gamma}{\beta}$$
+(he uses lowercase greek letters for vectors).
+In paragraph 107, he says that “cancellation” of vectors in the numerator and denominator should be allowed:
+$$\frac{\gamma}{\beta}\cdot \frac{\beta}{\alpha} = \frac{\gamma}{\alpha}$$
+
+In Section 2, he starts to nail down what it takes to describe a quaternion. In paragraph 108, he shows that such a quotient of vectors cannot be a scalar in general. In paragraph 109, he explains how this quotient of non-parallel (and non-opposite) vectors is to generalize the scalar quotient of two vectors which are either parallel or opposite: in the second case, the result is comprised by a positive scalar (ratio of their lengths) and a sign (to indicate if the vectors are parallel or opposite). To properly generalize this quotient, the ratio of lengths is maintained, but the sign is replaced by an angle of rotation. 
+
+In paragraph 110, he remarks that an angle of rotation requires a scalar (amount of rotation) and a plane through which the rotation happens. In paragraph 111, he sets up a right-hand rule for assigning signs to the magnitude of rotation, and says that a plane is defined by two angular coordinates. In paragraph 112, he summarizes that quaternions are four-dimensional: one coordinate for the magnitude, one for the amount of rotation, and two for the plane of rotation.
+
+Having made these claims, Hamilton says two quaternions $\frac{\beta}{\alpha}$ and $\frac{\delta}{\gamma}$ are equal when (1) the ratio of the length of $\beta$ to the length of $\alpha$ equals the ratio of the length of $\delta$ to the length of $\gamma$, and (2) the angles between $\alpha$ to $\beta$ and between $\delta$ and $\gamma$ have the same magnitude, direction, and plane.
+
+Hamilton calls a quaternion $q = \frac{\beta}{\alpha}$ a *right radial* quaternion when $\alpha$ and $\beta$ have equal lengths, and the angle between them is a right angle. Now he claims that for such a quaternion $q$, $q^2 = -1$. 
+
+His proof is in the paragraph you highlighted. In his Figure 41, $q = OB:OA$ (we might use $/$ or $\div$ in place of $:$; in any case, he's referring to the formal quotient of the vector $OB$ by the vector $OA$). If $A'$ is the point opposite $A$ on the line through $O$ and $A$, equidistant from $O$ as $A$, then *$OA':OB$ is the same quaternion as $OB:OA$*. Why? The ratio of lengths is the same ($1$), and the angle of rotation has the same magnitude and is in the same plane. So
+$$q^2 = q q = \left(\frac{OA'}{OB}\right)\left(\frac{OB}{OA}\right) \stackrel{(*)}{=} \frac{OA'}{OA} \stackrel{(**)} =-1$$
+The $(*)$ step comes from paragraph 107, and the $(**)$ step comes from paragraph 101.
+
+It's interesting to note that this geometric construction doesn't require any coordinates or basis. It's all geometric. The letters $i$, $j$, and $k$ don't even appear until a footnote on page 131, where he uses them to refer to any three right radial quaternions in mutually perpendicular planes. 
+
+You might find the [Wikipedia article on Hamilton's construction](https://en.wikipedia.org/wiki/Classical_Hamiltonian_quaternions) to be a helpful companion.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5144456/product-of-two-equal-quaternions-1-from-hamilton/5144470#5144470) on Mathematics Stack Exchange, 2026-07-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

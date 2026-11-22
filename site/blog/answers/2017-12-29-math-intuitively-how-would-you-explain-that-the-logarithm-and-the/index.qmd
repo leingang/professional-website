@@ -1,0 +1,52 @@
+---
+title: Intuitively, how would you explain that the logarithm and the number $e$ are related to the function $\frac{1}{x}$ in particular?
+date: '2017-12-29'
+description: It depends on how you define $e$. One definition, the one that Mohammad alludes to, defines $F(x) = \ln x$ as the antiderivative of $f(x) = \frac{1}{x}$ which…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2584659
+se-link: https://math.stackexchange.com/questions/2584623/intuitively-how-would-you-explain-that-the-logarithm-and-the-number-e-are-rel/2584659#2584659
+se-score: 6
+se-accepted: false
+se-tags:
+- logarithms
+- euler-mascheroni-constant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Intuitively, how would you explain that the logarithm and the number $e$ are related to the function $\frac{1}{x}$ in particular?](https://math.stackexchange.com/questions/2584623/intuitively-how-would-you-explain-that-the-logarithm-and-the-number-e-are-rel), asked by [Idris Cheikh](https://math.stackexchange.com/users/478611/idris-cheikh) on Mathematics Stack Exchange (2017-12-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Why does the integral of the function $\frac{1}{x}$ from 1 to $e$ have to be equal to 1 ?  
+> Why does it mathematically make sense?
+>
+> How come a number related to instantaneous, continuous growth has to appear under the curve of $\frac{1}{x}$ in particular?  
+> Why is the area under this curve related to exponentiation?
+>
+> Thank you.
+>
+> EDIT : I do not mind formal mathematics as long as the answer conveys the intuition that would help answering these questions.
+:::
+
+It depends on how you define $e$.  One definition, the one that Mohammad alludes to, defines $F(x) = \ln x$ as the antiderivative of $f(x) = \frac{1}{x}$ which satisfies $F(1) = 0$.  Then, because $F$ is increasing, it must assume the value $1$ at some point, so we define $e$ to be that number such that $F(e) = 1$.  This doesn't help with intuition, though, in my opinion.
+
+Another definition starts from the fact that any continuous function $g(x)$ satisfying $g(x+y) = g(x)g(y)$ must also satisfy $g(x) = g(1)^x$.  So functions which “turn addition into multiplication” are exponential functions.  This includes any function of time that exhibits constant relative growth.  
+
+If the function is differentiable at $0$, it's differentiable anywhere and $g'(x) = g'(0) g(x)$.  That's also notable; the derivative of such a function is a constant multiple of itself.  By experimentation, this constant is less than one if the “base” $g(1)$ is $2$, and it's greater than one if $g(1) = 3$.  So assuming some kind of continuity in the base, there should be a number $e$ such that if $g(x) = e^x$, then $g'(0) = 1$.  In other words, $e$ is defined by the equation $\lim_{h\to 0} \frac{e^h -1}{h} = 1$.
+
+Now assume $g(x) = e^x$.  Its derivative is positive, so it's increasing and has a differentiable inverse $G(x)$, which we call $\ln x$.  By the inverse function theorem, 
+$$G'(x) = \frac{1}{g'(G(x))} = \frac{1}{g'(0) g(G(x))} = \frac{1}{1 \cdot x} = \frac{1}{x}$$
+So the derivative of $\ln x$ must be $\frac{1}{x}$.
+
+That's the basics of the story (borrowed heavily from Michael Spivak's *Calculus*).  I don't know if any of it's intuitive, but other than the inverse function theorem I think it stems from the fact that $g(x+y) = g(x)g(y)$ for all $x$ and $y$ implies that $g(x) = g(1)^x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2584623/intuitively-how-would-you-explain-that-the-logarithm-and-the-number-e-are-rel/2584659#2584659) on Mathematics Stack Exchange, 2017-12-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

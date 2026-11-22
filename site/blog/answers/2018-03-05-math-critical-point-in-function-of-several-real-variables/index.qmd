@@ -1,0 +1,55 @@
+---
+title: Critical point in function of several real variables
+date: '2018-03-05'
+description: 'Intuitively, this is true because the gradient of $f$ points in the direction that increases $f$ the fastest. Formally, using Taylor''s theorem: $$f(\vec a + h…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2677828
+se-link: https://math.stackexchange.com/questions/2677763/critical-point-in-function-of-several-real-variables/2677828#2677828
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Critical point in function of several real variables](https://math.stackexchange.com/questions/2677763/critical-point-in-function-of-several-real-variables), asked by [Mr.O](https://math.stackexchange.com/users/476043/mr-o) on Mathematics Stack Exchange (2018-03-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I got problem proving this statement:
+>
+> >Let $f:U\to R$, $U\subseteq R^n$ is open. if  $\vec{a}\in U$ is local Maxima or local minima, then $\vec{a}$ is a critical point.
+> > 
+>
+> The definition I got for critical point is:
+>
+> > Let $f:U\to R$, $U\subseteq R^n$ is open. $\vec{a}\in U$ is called critical point if:
+> > 
+> > (1) $f$ doesn't differentiable at the point $\vec{a}$
+> > 
+> > (2)$f$ differentiable at the point $\vec{a}$ and $(\nabla f)(\vec{a})=\vec{0}^{\ t}$
+>
+> I saw a proof which assumes $(\nabla f)(\vec{a})\ne\vec{0}^{\ t}$, and therefore for small enough $h\in R$, $h>0$ we get:
+> $$f(\vec{a}+h((\nabla f)(\vec{a}))^{t})>f(\vec{a})$$ which is in contradiction to maxima.
+>
+> But I don't understand why is have to be larger the $f(\vec{a})$.
+:::
+
+Intuitively, this is true because the gradient of $f$ points in the direction that *increases* $f$ the fastest.  Formally, using Taylor's theorem:
+$$f(\vec a + h ((\nabla f)(\vec a))^t)
+    = f(\vec a)
+      + h \Vert (\nabla f)(\vec a) \Vert^2
+      + R_2(\vec a,h ((\nabla f)(\vec a))^t)$$
+where $\frac{R_2(\vec a,\vec x)}{\Vert \vec x\Vert^2} \to 0$ as $\vec x\to 0$.  Because of the vanishing remainder,  you can choose $h$ small enough so that the right-hand side is larger than $f(\vec a)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2677763/critical-point-in-function-of-several-real-variables/2677828#2677828) on Mathematics Stack Exchange, 2018-03-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

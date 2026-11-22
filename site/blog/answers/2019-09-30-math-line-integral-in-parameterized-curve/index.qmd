@@ -1,0 +1,87 @@
+---
+title: Line integral in parameterized curve
+date: '2019-09-30'
+description: So you were able to find $$\frac{1}{2\pi}\ointC \frac{x\,dy-y\, dx}{x^2+y^2} = \dfrac{2\tan^{-1}\left(\frac{b\tan(2n\pi)}{a}\right)\vert a b\vert -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3375765
+se-link: https://math.stackexchange.com/questions/3375542/line-integral-in-parameterized-curve/3375765#3375765
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- multiple-integral
+- line-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Line integral in parameterized curve](https://math.stackexchange.com/questions/3375542/line-integral-in-parameterized-curve), asked by [engineerstudent](https://math.stackexchange.com/users/702401/engineerstudent) on Mathematics Stack Exchange (2019-09-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> $a,b\gt 0$ and $n \in \mathbb Z$ \ {$0$}. Parameterized curve $C: x=a\cos nt, y= b\sin nt$
+>
+> where $0 \le t \le2\pi$ and n is how many times that goes around origo.
+>
+> I want to calculate line integral:
+>
+> $\omega(C) = \frac{1}{2\pi}\oint_C \frac{x\,dy-y\, dx}{x^2+y^2}$
+>
+> I have calculated:
+>
+> $dx=-a\sin( nt)n$
+>
+> $dy = b\cos(nt)n$
+>
+> then after that I put the values in "right" places and:
+>
+> $\frac{a\,b\,n}{(a^2+b^2)(\cos^2(nt))+b^2}$
+>
+> Then next step is integration and the limit values are $[0,2\pi]$.
+>
+> $\omega(C) = \frac{1}{2\pi}\int_0^{2\pi}\frac{a\,b\,n}{(a^2+b^2)(\cos^2(nt))+b^2} dt$
+>
+> I get some random answer for that so I know that is wrong. I think the problem is in the integration but I don't know where is the problem.
+>
+> Answer what I got:
+>
+> $\frac{2\tan^{-1}(\frac{b\tan(2n\pi}{a})\vert a b\vert - ab(mod(4n-1,2)-4n-1)\pi}{4\vert ab \vert\pi}$
+:::
+
+So you were able to find
+$$\frac{1}{2\pi}\oint_C \frac{x\,dy-y\, dx}{x^2+y^2}
+= \dfrac{2\tan^{-1}\left(\frac{b\tan(2n\pi)}{a}\right)\vert a b\vert - ab(\mod(4n-1,2)-4n-1)\pi}{4\vert ab \vert\pi}$$
+That looks pretty complicated, but:
+
+* $\tan(2n\pi) = 0$ for any integer $n$.  Therefore
+$$\tan^{-1}\left(\frac{b}{a}\tan(2n\pi)\right) = 0$$
+* $4n-1$ is odd, so $(4n-1) \bmod 2 = 1$.  Therefore
+$$-ab((4n-1)\bmod 2 -(4n+1))\pi = 4\pi nab$$
+
+So the expression simplifies to:
+$$\frac{1}{2\pi}\oint_C \frac{x\,dy-y\, dx}{x^2+y^2} = \frac{4\pi n ab}{4|ab|\pi} = \frac{ab}{|ab|} n = \pm n$$
+where the $+$ is taken when $a$ and $b$ have the same sign, and $-$ otherwise.
+
+* * *
+
+But you can approach this another way.  Notice that $C$ is the same ellipse $C_0$ traversed $n$ times.  So
+$$\frac{1}{2\pi}\oint_C \frac{x\,dy-y\, dx}{x^2+y^2}
+   =\frac{n}{2\pi}\oint_{C_0} \frac{x\,dy-y\, dx}{x^2+y^2}$$
+Also, setting $P=\frac{-y}{x^2+y^2}$ and $Q = \frac{x}{x^2+y^2}$, we see that $P_y = Q_x$ away from the origin.  The ellipse $C_0$ is homologous to either the unit circle $S^1$, or its reverse, depending on whether $ab>0$  or $ab < 0$.  So by Green's Theorem,
+$$\oint_{C_0} \frac{x\,dy-y\, dx}{x^2+y^2} = \pm \oint_{S^1} \frac{x\,dy-y\, dx}{x^2+y^2}$$
+
+If you parametrize the unit circle with $x=\cos t$ and $y=\sin t$, then you'll see
+$$\oint_{S^1} \frac{x\,dy-y\, dx}{x^2+y^2}
+= \int_0^{2\pi} 1 \,dt  = 2\pi$$
+and this matches your previous computation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3375542/line-integral-in-parameterized-curve/3375765#3375765) on Mathematics Stack Exchange, 2019-09-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,149 @@
+---
+title: Decorating a path's edge with a hatch pattern in TikZ
+date: '2014-07-11'
+description: 'It''s not hard to use TikZ decorations for this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191065
+se-link: https://tex.stackexchange.com/questions/188717/decorating-a-paths-edge-with-a-hatch-pattern-in-tikz/191065#191065
+se-score: 10
+se-accepted: false
+se-tags:
+- tikz-pgf
+- pgfplots
+- decorations
+- pgf-decorations
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Decorating a path's edge with a hatch pattern in TikZ](https://tex.stackexchange.com/questions/188717/decorating-a-paths-edge-with-a-hatch-pattern-in-tikz), asked by [Ingo](https://tex.stackexchange.com/users/1183/ingo) on TeX Stack Exchange (2014-07-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ## Problem 
+> I would like to indicate an infeasible region in one of my `pgfplot`s by manually drawing a path in the canvas. This should be a hatched pattern that is decorated on the path, something like  `north east lines` from `\usepgflibrary{patterns}`.
+>
+> ## MWE
+>
+> ```latex
+> \documentclass{standalone}
+>
+> \usepackage{pgfplots}
+>     \pgfplotsset{compat=1.10}
+>
+> \begin{document}
+>
+> \begin{tikzpicture}
+>     \begin{axis}[
+>         % axis equal image,
+>         xlabel = {$x$},
+>         ylabel = {$y$},
+>         grid,
+>         xmin = 0, xmax = 3000,
+>         ymin=400, xmax = 2200,
+>         width=0.5\textwidth,
+>         every node near coord/.append style={font=\tiny\scshape},
+>         nodes near coords align={vertical},
+>         ]
+>         \addplot+[only marks, nodes near coords, point meta=explicit symbolic]
+>         table[meta=label] {
+>             x    y    label
+>             2500 1500 a
+>             1306 1655 b
+>              200 1000 c
+>             1600 1570 d
+>             1500 2000 e
+>         };
+>         % path to be decorated
+>         \draw (axis cs:1000, 500) -- (axis cs:2750,500) -- (axis cs:2750, 2000)
+>         -- (axis cs: 1000, 2000) -- cycle;
+>     \end{axis}
+> \end{tikzpicture}
+>
+> \end{document}
+> ```
+>
+> ## Challenges
+>
+> Unfortunately I have no idea how to approach this. Can you help out?
+>
+> Here are some challenges:
+>
+> * Maybe this can be done by decorating the path, but I don't know how this works.
+>
+> * It is important that the pattern is bounded by the actual path and "bulges outwards". The pattern must not replace the path, but be "on the edge". Bonus: to indicate inverse problems, the pattern could also "bulge inwards".
+>
+> * `north east lines` sometimes looks better than `north west lines`, based on the orientation. Can this choice be automated?
+>
+> ## Illustration
+> By "bulging outwards", I mean the following:
+>
+> ![Bulging outwards][q-1]
+>
+> "Inwards" would be the inverse:
+>
+> ![Bulging inwards][q-2]
+>
+> I apologize for this sacrilege of a drawing. Because it looks terrible we need Tikz!
+>
+>
+>   [q-1]: 1jQfn.png
+>   [q-2]: odG0v.png
+:::
+
+It's not hard to use TikZ decorations for this:
+
+```latex
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        % axis equal image,
+        xlabel = {$x$},
+        ylabel = {$y$},
+        grid,
+        xmin = 0, xmax = 3000,
+        ymin=400, ymax = 2200,
+        width=0.5\textwidth,
+        every node near coord/.append style={font=\tiny\scshape},
+        nodes near coords align={vertical},
+        ]
+        \addplot+[only marks, nodes near coords, point meta=explicit symbolic]
+        table[meta=label] {
+            x    y    label
+            2500 1500 a
+            1306 1655 b
+             200 1000 c
+            1600 1570 d
+            1500 2000 e
+        };
+        % path to be decorated
+        \draw[
+            decoration={border,segment length=1mm,amplitude=5mm,angle=-135},
+            postaction={decorate,draw}
+        ]  (axis cs:1000, 500) -- (axis cs:2750,500) -- (axis cs:2750, 2000)
+        -- (axis cs: 1000, 2000) -- cycle;
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+For the inverse problem use a positive `angle` so the lines point inwards.
+
+
+  [1]: CpIbl.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/188717/decorating-a-paths-edge-with-a-hatch-pattern-in-tikz/191065#191065) on TeX Stack Exchange, 2014-07-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

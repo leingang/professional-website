@@ -1,0 +1,52 @@
+---
+title: Simplifying $\dfrac{{\sqrt 2}({x^3})}{\sqrt{32/x^2}}$
+date: '2016-10-01'
+description: There isn't a universal notion of when an expression is “fully simplified,” but you generally want to have a simple fraction (not a complex one, where…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 1949441
+se-link: https://math.stackexchange.com/questions/1949436/simplifying-dfrac-sqrt-2x3-sqrt32-x2/1949441#1949441
+se-score: -1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Simplifying $\dfrac{{\sqrt 2}({x^3})}{\sqrt{32/x^2}}$](https://math.stackexchange.com/questions/1949436/simplifying-dfrac-sqrt-2x3-sqrt32-x2), asked by [Zochonis](https://math.stackexchange.com/users/327551/zochonis) on Mathematics Stack Exchange (2016-10-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How would I simplify fully the following expression?
+>
+> $$\frac{\;{\sqrt 2}\,(x^3)\;}{\sqrt{\dfrac {32}{x^2}}}$$
+>
+> So far I have got this
+>
+> $$\frac{\;\sqrt{2}\,x^3\;}{\dfrac{\sqrt{32}}{\sqrt{x^2}}} = \frac{\;\sqrt{2}\,x^3\;}{{\dfrac{4\sqrt 2}{x}}}$$
+>
+> I am not quite sure if this is correct, however. Could someone help explain how I would simplify this expression?
+:::
+
+There isn't a universal notion of when an expression is “fully simplified,” but you generally want to have a simple fraction (not a complex one, where numerator or denominator are themselves functions).  In this expression I would also try to combine all the square roots into a single radical, and put that radical in the numerator.
+
+First, make the fraction simple:
+$$\frac{\sqrt{2} x^3}{\sqrt{32/x^2}}
+   = \frac{\sqrt{2} x^3}{\sqrt{32}/\sqrt{x^2}}
+   = \frac{\sqrt{2}\sqrt{x^2} x^3}{\sqrt{32}}$$
+You are probably expected to simplify $\sqrt{x^2} = x$, although this is only true when $x\geq0$.  You might want to ask your teacher if you are supposed to assume $x$ is positive. Without this assumption, we can only say $\sqrt{x^2} = |x|$.
+
+Combining the $\sqrt{2}$ in the numerator with $\sqrt{32}$ in the denominator gives
+$$\frac{x^3|x|}{\sqrt{16}} = \frac{x^3|x|}{4}$$
+If $x\geq0$ is assumed, this further simplifies to $\frac{x^4}{4}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1949436/simplifying-dfrac-sqrt-2x3-sqrt32-x2/1949441#1949441) on Mathematics Stack Exchange, 2016-10-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

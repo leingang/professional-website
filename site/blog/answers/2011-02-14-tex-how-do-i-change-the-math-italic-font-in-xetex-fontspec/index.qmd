@@ -1,0 +1,56 @@
+---
+title: How do I change the math italic font in XeTeX/fontspec?
+date: '2011-02-14'
+description: 'Thanks to Will and Leo for pointing out the mathspec package. So now I use:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11062
+se-link: https://tex.stackexchange.com/questions/11058/how-do-i-change-the-math-italic-font-in-xetex-fontspec/11062#11062
+se-score: 7
+se-accepted: false
+se-tags:
+- fonts
+- math-mode
+- fontspec
+- italic
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I change the math italic font in XeTeX/fontspec?](https://tex.stackexchange.com/questions/11058/how-do-i-change-the-math-italic-font-in-xetex-fontspec), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2011-02-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a document where the main font is Gotham Book.  So in my preamble I have:
+>
+> ```latex
+> \usepackage{fontspec}
+> \setmainfont{Gotham Book}
+> ```
+>
+> As the fontspec manual describes, this sets the math roman font to also be Gotham Book.  But the math *italic* font remains from the Computer Modern family.  
+>
+> I know that `\setmathrm` will change the math roman font, and there are cousins `\setmathtt`, `\setmathsf`, and `\setboldmathrm`.  But there's no `\setmathit`.
+>
+> What am I missing?
+:::
+
+Thanks to Will and Leo for pointing out the [`mathspec`](http://ctan.org/pkg/mathspec) package.  So now I use:
+
+```latex
+\usepackage{mathspec} %loads fontspec as well
+\setmainfont{Gotham Book}
+\setmathrm{Gotham Book}
+\setmathfont(Digits,Latin){Gotham Book}
+```
+
+This snippet may need optimization, but works.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11058/how-do-i-change-the-math-italic-font-in-xetex-fontspec/11062#11062) on TeX Stack Exchange, 2011-02-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

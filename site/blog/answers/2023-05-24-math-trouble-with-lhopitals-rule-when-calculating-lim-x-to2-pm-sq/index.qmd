@@ -1,0 +1,39 @@
+---
+title: Trouble with L'Hopitals rule when calculating $\lim_{x\to2\pm\sqrt3}\frac{e^{-x}}{-x^2+4x-1}$
+date: '2023-05-24'
+description: This is a good question. You're basically saying, my eyes tell me one thing (from the graph), but L'Hopital's rule tells me another. What am I missing?
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4705727
+se-link: https://math.stackexchange.com/questions/4705640/trouble-with-lhopitals-rule-when-calculating-lim-x-to2-pm-sqrt3-frace-x/4705727#4705727
+se-score: 1
+se-accepted: false
+se-tags:
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trouble with L'Hopitals rule when calculating $\lim_{x\to2\pm\sqrt3}\frac{e^{-x}}{-x^2+4x-1}$](https://math.stackexchange.com/questions/4705640/trouble-with-lhopitals-rule-when-calculating-lim-x-to2-pm-sqrt3-frace-x), asked by [user1184477](https://math.stackexchange.com/users/1184477/user1184477) on Mathematics Stack Exchange (2023-05-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was asked to find the limit of $$\frac{e^{-x}}{-x^2+4x-1}$$ as $x$ tends to $2 + \sqrt{3}$ and $2 - \sqrt{3}$.
+>
+> I tried to use L'Hôpital's rule as the denominator would otherwise be $0$. After differentiating twice, I got $\frac{e^{-x}}{-2}$. However, when I take the limits, I get a value, which is incorrect as I can see from the graph of the function that the limit is $+\infty$ or $-\infty$. I would really appreciate if someone could explain to me what I am doing wrong here. Thank you!
+:::
+
+This is a good question. You're basically saying, *my eyes tell me one thing (from the graph), but L'Hopital's rule tells me another. What am I missing?*
+
+The answer, as I said in my comment, is that you're missing one of the hypotheses of L'Hopital's rule. It is not sufficient that the denominator tend to zero; both the numerator and denominator must tend to zero in order to substitute the limit of the quotient of the derivatives. So L'Hopital is out of the question here.
+
+The graph shows you that there are vertical asymptotes at the two zeros of the denominator, with limits of $\pm\infty$ on each side. To verify this rigorously, it's hard to find the right balance between manual dexterity (i.e., hand waving), and epsilon-delta. As an instructor, I would be looking for something like this: As $x\to (2-\sqrt{3})^-$, the numerator tends to a positive number, while the denominator tends to zero but remains positive. So the limit from the left is $+\infty$. And so on.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4705640/trouble-with-lhopitals-rule-when-calculating-lim-x-to2-pm-sqrt3-frace-x/4705727#4705727) on Mathematics Stack Exchange, 2023-05-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

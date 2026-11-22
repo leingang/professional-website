@@ -1,0 +1,48 @@
+---
+title: Any good way to tell a faculty candidate "We don't want you"?
+date: '2018-02-09'
+description: I understand the desire to add information and soften the blow. But there's the potential for every word in the letter get pored over and clung to. If the…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 103549
+se-link: https://academia.stackexchange.com/questions/103498/any-good-way-to-tell-a-faculty-candidate-we-dont-want-you/103549#103549
+se-score: 8
+se-accepted: false
+se-tags:
+- job-search
+- faculty-application
+- interpersonal-issues
+- rejection
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Any good way to tell a faculty candidate "We don't want you"?](https://academia.stackexchange.com/questions/103498/any-good-way-to-tell-a-faculty-candidate-we-dont-want-you), asked by [Nicole Hamilton](https://academia.stackexchange.com/users/9553/nicole-hamilton) on Academia Stack Exchange (2018-02-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I serve on a faculty search committee at a large university here in the US.  The part of the job none of us enjoys is informing a candidate who's visited and given a teaching demonstration that we've decided not to recommend a hire.  We do it in three pretty bare sentences thanking them for coming, telling them that unfortunately, we cannot offer a position (without giving any reasons), and wishing them well.  This is the best we could come up with.
+>
+> Is there any better/best way to do this?  How do other search committees communicate rejections?  How much, if anything, do they tell the applicant about the reasons for the rejection?  Do they try to do more to soften the bad news?  And would they send the rejection by mail or email (including PDF attachment)?
+:::
+
+I understand the desire to add information and soften the blow.  But there's the potential for every word in the letter get pored over and clung to.  If the applicant knows they finishes second, do they feel better or worse?
+
+I think you can be polite and complimentary, while at the same time not sugar-coating the message.  For instance,
+
+> Thank you for visiting our department last week.  It was a pleasure to meet you in person, and I very much enjoyed your talk. Unfortunately, we are unable to offer you a position.
+>
+> You are a very strong candidate, and I am sure you will find a position that fits you.  Good luck with your search, and in your career.
+
+You can cut out the parts that aren't honest, like *it was a pleasure to meet you* if they were a jerk, or *I enjoyed your talk* if it was terrible, or *you are a strong candidate* if they really flopped.  
+
+I would not offer any constructive feedback, or details on what sealed the decision, unless invited after an initial message such as the above.  It might be better to deliver those kinds of remarks over the phone, again, to avoid creating a permanent record of a painful event.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/103498/any-good-way-to-tell-a-faculty-candidate-we-dont-want-you/103549#103549) on Academia Stack Exchange, 2018-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

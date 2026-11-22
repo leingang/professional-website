@@ -1,0 +1,55 @@
+---
+title: Showing a that the derivative exists on every $x$ but is not continuous at $x=0$
+date: '2017-12-03'
+description: 'There are several helpful comments and answers already, but I want to point out this line:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2549615
+se-link: https://math.stackexchange.com/questions/2549586/showing-a-that-the-derivative-exists-on-every-x-but-is-not-continuous-at-x-0/2549615#2549615
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Showing a that the derivative exists on every $x$ but is not continuous at $x=0$](https://math.stackexchange.com/questions/2549586/showing-a-that-the-derivative-exists-on-every-x-but-is-not-continuous-at-x-0), asked by [Aliasa Zarowny Pseudonymia](https://math.stackexchange.com/users/506023/aliasa-zarowny-pseudonymia) on Mathematics Stack Exchange (2017-12-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So the question goes as following: 
+>
+> Let $f(x)=x^2\sin(1/x)$ if $x\not=0$
+>
+> show that $f'(x)$ exist at every $x$ but $f'$ is not continous at $x=0$.
+>
+> I'm not really sure how to show it. 
+>
+> Usually I would show that when x approaches 0 from either side it will have different limits, but this is clearly not the case here.
+>
+> All help is welcomed!
+:::
+
+There are several helpful comments and answers already, but I want to point out this line:
+
+> Usually I would use show that when $x$ approaches $0$ from either side **it** will have different limits, but this is clearly not the case here.
+
+Beware of pronouns! What you mean by *it* here?  Based on what you write next, it sounds like you're looking at 
+$$\lim_{x\to 0} x^2 \sin(1/x) = \lim_{x\to 0} f(x)$$
+You are right that his limit does exist (it equals zero).  But that just tells you the function is continuous at $0$.  
+
+You want to show $f'(x)$ is not continuous at $0$.  That means you are looking at the limit
+$$\lim_{x\to 0} f'(x)$$
+Once you calculate what $f'(x)$ is away from zero, you will see why the limit above does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2549586/showing-a-that-the-derivative-exists-on-every-x-but-is-not-continuous-at-x-0/2549615#2549615) on Mathematics Stack Exchange, 2017-12-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

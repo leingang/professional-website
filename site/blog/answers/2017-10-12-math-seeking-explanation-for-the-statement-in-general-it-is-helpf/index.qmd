@@ -1,0 +1,53 @@
+---
+title: 'Seeking explanation for the statement: "in general, it is helpful to think of an n-vector as a function whose domain is the set {1, . . . , n}"'
+date: '2017-10-12'
+description: So I think I would come at this in the opposite direction. For any set $S$, let $\mathbb{R}^S$ denote the set of functions from $S$ to $\mathbb{R}$. Such a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2469857
+se-link: https://math.stackexchange.com/questions/2469713/seeking-explanation-for-the-statement-in-general-it-is-helpful-to-think-of-an/2469857#2469857
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- vectors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Seeking explanation for the statement: "in general, it is helpful to think of an n-vector as a function whose domain is the set {1, . . . , n}"](https://math.stackexchange.com/questions/2469713/seeking-explanation-for-the-statement-in-general-it-is-helpful-to-think-of-an), asked by [Yandle](https://math.stackexchange.com/users/490687/yandle) on Mathematics Stack Exchange (2017-10-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> From [this book](https://www.math.ucdavis.edu/~linear/linear-guest.pdf), I'm lost as to what the author is trying to present in section 4.4 (start at Page 94), in particular the part I clipped below:
+>
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: TjeTM.png
+>
+>
+> I don't understand how $a$ went from being an element in a vector to a function, how that's equivalent to looking at vectors as a ordered series of numbers, and what the advantage of this is. 
+>
+> I'm also confused on the definition for $R^{S}$, it supposedly denotes a set of functions but I don't know what functions they are referring to.
+>
+> The last part talks about situations where $S$ does not have natural ordering. If we are working with vectors which are always ordered, under what circumstances would $S$ not be ordered?
+:::
+
+So I think I would come at this in the opposite direction.  For any set $S$, let $\mathbb{R}^S$ denote the set of functions from $S$ to $\mathbb{R}$.  Such a function just assigns a value to every element of $S$.  $S$ could be a set of numbers, or a subset of the plane, or even just a finite set of symbols like $\{\star,*, \#\}$.  It doesn't really matter what $S$ is.  Any function on $S$ can be scaled by a real number, and any two functions on the same set $S$ can be added.  In that way, functions on $S$ behave just like the vectors in $\mathbb{R}^n$ that you are familiar with.
+
+If $S$ is a finite set with order on it, you could line them up like $s_1, s_2, \dots, s_n$, and then a function on $S$ would correspond to a list $(f(s_1),f(s_2),\dots,f(s_n))$.  In this way, all functions on $S$ correspond to all $n$-tuples of real numbers, or just $\mathbb{R}^n$.  But if $S$ isn't ordered (or isn't countable, for that matter), there's no good way to write $f$ out as a list.  You just have to think of it as a symbol $f$ such that $f(s)$ is a number for all $s\in S$.
+
+This seems complex, but it does include our previous notion of vector.  If $S = \{1,2,\dots,n\}$, then functions on $S$ are just $n$-tuples, by associating $f$ with $(f(1),f(2),\dots,f(n))$.  In the more usual vector-like notation, $f^i= f(i)$ for each $i$ from $1$ to $n$.  So the function space $\mathbb{R}^{\{1,\dots,n\}}$ is the same thing as $\mathbb{R}^n$.
+
+To be honest, I don't think it's “helpful” to think of an $n$-tuple as a function on a finite, ordered set.  Rather, it's more helpful to think of functions as a generalization of $n$-tuples.  The point is to learn to look beyond the idea of vector as $n$-tuple.  You're being prepared for the abstract idea of “vector space” as any set whose elements can be added and scaled in some well-behaved ways.  Recognizing vector spaces, and using what you've learned already in linear algebra on those spaces, is what makes linear algebra so powerful.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2469713/seeking-explanation-for-the-statement-in-general-it-is-helpful-to-think-of-an/2469857#2469857) on Mathematics Stack Exchange, 2017-10-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

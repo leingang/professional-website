@@ -1,0 +1,54 @@
+---
+title: How to redefine the \emph command in Beamer?
+date: '2011-03-17'
+description: 'If all you want to do is have \emph embolden its text, you could do:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13743
+se-link: https://tex.stackexchange.com/questions/13726/how-to-redefine-the-emph-command-in-beamer/13743#13743
+se-score: 5
+se-accepted: false
+se-tags:
+- macros
+- beamer
+- emphasis
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to redefine the \emph command in Beamer?](https://tex.stackexchange.com/questions/13726/how-to-redefine-the-emph-command-in-beamer), asked by [Ulrik Nielsen](https://tex.stackexchange.com/users/4294/ulrik-nielsen) on TeX Stack Exchange (2011-03-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am using the Beamer class and would like to redefine `\emph` to use `\bfseries` instead of `\itshape`. I have tried the following command:
+>
+> ```latex
+> \renewcommand<>{\emph}[1]{{\only#2{\bfseries}#1}}
+> ```
+>
+> but I get the following error
+>
+> ```latex
+> ! LaTeX Error: Command \beamerx@\emph already defined.
+>           Or name \end... illegal, see p.192 of the manual.
+> ```
+>
+> I cannot understand: Why is it a problem that `\emph` already is defined when I am using <code>\<i>re</i>newcommand</code>?
+:::
+
+If all you want to do is have `\emph` embolden its text, you could do:
+
+```latex
+\let\emph\textbf
+```
+
+Each macro is overlay-specification aware and has the same “signature.”  So just alias one for the other.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13726/how-to-redefine-the-emph-command-in-beamer/13743#13743) on TeX Stack Exchange, 2011-03-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

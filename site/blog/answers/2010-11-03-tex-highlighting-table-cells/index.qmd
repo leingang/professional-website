@@ -1,0 +1,34 @@
+---
+title: Highlighting table cells
+date: '2010-11-03'
+description: I think replacing the matrix with a TiKZ matrix would allow you to fit paths around groups of cells.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4868
+se-link: https://tex.stackexchange.com/questions/4850/highlighting-table-cells/4868#4868
+se-score: 3
+se-accepted: false
+se-tags:
+- tables
+- highlighting
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Highlighting table cells](https://tex.stackexchange.com/questions/4850/highlighting-table-cells), asked by [carlosdc](https://tex.stackexchange.com/users/1534/carlosdc) on TeX Stack Exchange (2010-11-02; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a large (13x13) table in which I need to highlight a subset of cells. I know that I can set a background color to those cells using `colortbl` or `xcolor`. But I need to highlight the table without using color (it is a scientific paper, and the table should communicate its purpose without assuming the reader will have access to a color printer). Is there a way to do so? For example a circle around the cell?
+:::
+
+I think replacing the matrix with a TiKZ matrix would allow you to fit paths around groups of cells.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4850/highlighting-table-cells/4868#4868) on TeX Stack Exchange, 2010-11-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

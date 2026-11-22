@@ -1,0 +1,58 @@
+---
+title: How does this equality work
+date: '2022-07-14'
+description: To answer your other question about
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4492674
+se-link: https://math.stackexchange.com/questions/4487347/how-does-this-equality-work/4492674#4492674
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does this equality work](https://math.stackexchange.com/questions/4487347/how-does-this-equality-work), asked by [SteveRodgers43](https://math.stackexchange.com/users/888366/steverodgers43) on Mathematics Stack Exchange (2022-07-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In this book I have the equality 
+> F(x) = F($\bar{x}$) + $\int^{1}_{0}\frac{\partial F(\bar{x}+t(x-\bar{x})}{\partial t}$
+>
+> Then this is equal to (and I’m unclear why it’s by the chain rule)
+>
+> F($\bar{x}$) + $\int^{1}_{0}\nabla F(\bar{x}+t(x-\bar{x}))^T (x-\bar{x}) dt$ 
+>
+> Can someone explain this to me?
+:::
+
+To answer your other question about
+
+> $$\frac{\partial F}{\partial t} F(\bar x + t(x - \bar x)) = \nabla F(\bar x + t(x - \bar x))^T(x - \bar x)$$
+
+try to think about what the left-hand side is expressing. As $t$ varies, $\bar x + t(x-\bar x)$ traverses the line between $\bar x$ and $x$. We can evaluate $F$ along that line, and we want to know the derivative of that function of $t$.
+
+But as $t$ varies, every coordinate of $\bar x + t(x - \bar x)$ changes, and each one of those coordinates is an input to $F$. So to find the derivative of $F$ along the line, we need to combine the partial derivatives of $F$ with respect to each of these coordinates, with the derivatives of these coordinates with respect to $t$. That's the chain rule.
+
+With a bit more explicit notation, let $x = (x_1,\dots, x_n)$ and $\bar x = (\bar x_1,\dots,\bar x_n)$. Then
+$$\begin{aligned}
+    \frac{\partial F}{\partial t} F(\bar x + t(x - \bar x))
+    &= \sum_{i=1}^n \frac{\partial F}{\partial x_i} F(\bar x + t(x - \bar x))
+        \frac{\partial}{\partial t}(\bar x_i + t(x_i - \bar x_i))
+    \\&= \sum_{i=1}^n \frac{\partial F}{\partial x_i} F(\bar x + t(x - \bar x))(x_i - \bar x_i)
+    \\&=  \nabla F(\bar x + t(x - \bar x))^T(x - \bar x)
+\end{aligned}$$
+
+It is a common abuse of notation to let $x_i$ be the name of one of the input variables of $F$, and also one of the output variables of $t \mapsto \bar x + t(x-\bar x)$. That can complicate fully understanding the formula.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4487347/how-does-this-equality-work/4492674#4492674) on Mathematics Stack Exchange, 2022-07-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

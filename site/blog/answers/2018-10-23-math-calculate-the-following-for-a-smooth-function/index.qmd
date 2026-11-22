@@ -1,0 +1,37 @@
+---
+title: Calculate the following for a smooth function...
+date: '2018-10-23'
+description: You should be able to show formally that ∇f(r) = f'(r)ṟ. This is reasonable since the level sets of f are spheres ṟ=constant, and ∇f should point in a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2966944
+se-link: https://math.stackexchange.com/questions/2966393/calculate-the-following-for-a-smooth-function/2966944#2966944
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculate the following for a smooth function...](https://math.stackexchange.com/questions/2966393/calculate-the-following-for-a-smooth-function), asked by [Anonymous](https://math.stackexchange.com/users/607171/anonymous) on Mathematics Stack Exchange (2018-10-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For a smooth function f(r) where r = |ṟ| and ṟ = xi̱ + yj̱ + zḵ is the radius-vector, calculate ∇f(r) x ṟ 
+>
+> I tried calculating the curl for this question, but I'm told that's not right. I know that ∇f(r) is the gradient, but I don't know how to work out the gradient of this particular function. Someone please help
+:::
+
+You should be able to show formally that ∇f(r) = f'(r)ṟ.  This is reasonable since the level sets of f are spheres ṟ=constant, and ∇f should point in a direction normal to them.
+
+Can you take it from here?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2966393/calculate-the-following-for-a-smooth-function/2966944#2966944) on Mathematics Stack Exchange, 2018-10-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

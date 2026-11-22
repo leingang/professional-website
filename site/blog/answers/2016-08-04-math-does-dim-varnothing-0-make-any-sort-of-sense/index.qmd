@@ -1,0 +1,52 @@
+---
+title: Does $\dim(\varnothing) <0 $ make any sort of sense?
+date: '2016-08-04'
+description: 'The quoted passage is being prosaic, rather than precise, and I think you''re inferring the wrong formalization of it. It could be rephrased something like this:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1882596
+se-link: https://math.stackexchange.com/questions/1882530/does-dim-varnothing-0-make-any-sort-of-sense/1882596#1882596
+se-score: 0
+se-accepted: false
+se-tags:
+- manifolds
+- fractals
+- dimension-theory-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does $\dim(\varnothing) <0 $ make any sort of sense?](https://math.stackexchange.com/questions/1882530/does-dim-varnothing-0-make-any-sort-of-sense), asked by [Kuifje](https://math.stackexchange.com/users/273220/kuifje) on Mathematics Stack Exchange (2016-08-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am currently exploring the world of fractals in F*ractal Geometry - Mathematical Foundations and Applications (Falconer)*.
+>
+> In Chapter $8$ (Intersection of fractals), it says:
+>
+> > In $\mathbb{R}^n$, if smooth manifolds $E$ and $F$ intersect at all, then in general they intersect in a sub-manifold of dimension $\dim E +\dim F-n\;$  unless this number is negative, in which case they typically do not intersect.
+>
+> For example, in $\mathbb{R}^2$, let $E$ be a point and $F$ a line that do not intersect (i.e., $E\cap F =\varnothing$). Applying the above equation yields
+> $$\dim \varnothing = 0+1 -2 = -1<0$$
+>
+> This is consistent as we assumed $E$ and $F$ do not intersect. But does $\dim \varnothing <0$ make any sort of sense? Is there a way to interpret this, or is it complete non sense coming from the fact $E$ and $F$ do not intersect and therefore the above equation shouldn't even be considered?
+:::
+
+The quoted passage is being prosaic, rather than precise, and I think you're inferring the wrong formalization of it.  It could be rephrased something like this:
+
+> Let $e$, $f$, and $n$ be nonnegative integers.
+>
+> 1. If $e+f≥n$, then if $E$ and $F$ are smooth submanifolds of $\mathbb{R}^n$ of dimension $e$ and $f$ respectively, and if $E$ and $F$ intersect transversely, then $\dim (E\cap F) = e+f-n$.
+>
+> 2. If $e+f<n$, then if $E$ and $F$ are smooth submanifolds of $\mathbb{R}^n$ of dimension $e$ and $f$ respectively, which are in general position, then $E \cap F = \varnothing$.
+
+The devil is in the details (“transversely”...“general position”...), but the important thing is that $\dim(E\cap F)$ is referred to only when $e+f\geq n$, *and* $E$ and $F$ are assumed to intersect in the first place.  So your second statement that the equation shouldn't be considered in the case of an empty intersection is the right way to think about it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1882530/does-dim-varnothing-0-make-any-sort-of-sense/1882596#1882596) on Mathematics Stack Exchange, 2016-08-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

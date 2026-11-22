@@ -1,0 +1,77 @@
+---
+title: 'xy diagram: set height of a specific row'
+date: '2011-10-11'
+description: This is the best that I could do with Xy-pic. The idea is to make the c and b special (off-matrix) targets à la Section 3.3 of xyguide.pdf.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 31233
+se-link: https://tex.stackexchange.com/questions/31231/xy-diagram-set-height-of-a-specific-row/31233#31233
+se-score: 5
+se-accepted: false
+se-tags:
+- spacing
+- diagrams
+- xy-pic
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[xy diagram: set height of a specific row](https://tex.stackexchange.com/questions/31231/xy-diagram-set-height-of-a-specific-row), asked by [Leo](https://tex.stackexchange.com/users/4990/leo) on TeX Stack Exchange (2011-10-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm using the `xy` package. In the diagram 
+>
+> ```latex
+> $$\xymatrix@R=8mm@C=8mm{  
+>     & 1\ar@{-}[ddl]\ar@{-}[dr] &  \\
+>     & & c\ar@{-}[dd]\\
+>   a & & \\
+>     & & b\\
+>     & 0\ar@{-}[uul]\ar@{-}[ur] &  \\}$$
+> ```
+>
+> ![enter image description here][q-1],
+>
+> How can I set the row height between `c` and `a` and between `a` and `b` to be smaller. I want to create this diagram:
+>
+> ![enter image description here][q-2]
+>
+> `\\[2mm]` doesn't make any change, and `\xymatrix@R=8mm@C=8mm{...` only makes global changes.
+>
+>
+>   [q-1]: ZkYnU.jpg
+>   [q-2]: T1mU2.jpg
+:::
+
+This is the best that I could do with `Xy-pic`.  The idea is to make the c and b special (off-matrix) targets *à la* Section 3.3 of [`xyguide.pdf`][1]. 
+
+```latex
+\documentclass{article}
+\usepackage[matrix,arrow]{xy}
+\begin{document}
+\[\xymatrix @R=12mm @C=8mm {
+& 1\ar@{-}[dl] 
+& \save[]+<0mm,-8mm>*{c} \ar@{-}[l] \restore  \\
+a & 
+& \save[]+<0mm,-8mm>*{d} \ar@{-}[ld] \ar@{-}+<0mm,12mm> \restore  \\
+& 0\ar@{-}[ul] & \\
+}\]
+\end{document}
+```
+
+![sample code output][2]
+
+The fact that you got two good TikZ answers in the time that it took to get one bad Xy-pic answer indicates the ease of crafting TikZ code.  If you're still persuadable I would encourage you to learn TikZ.
+
+  [1]: http://mirrors.med.harvard.edu/ctan/macros/generic/diagrams/xypic/xy/doc/xyguide.pdf
+  [2]: HqyHx.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/31231/xy-diagram-set-height-of-a-specific-row/31233#31233) on TeX Stack Exchange, 2011-10-11, with [edits](https://tex.stackexchange.com/posts/31233/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,45 @@
+---
+title: Confusion regarding a step to solve a limit using Squeeze Theorem.
+date: '2023-08-15'
+description: You can only “square all three parts of an inequality” if the parts are nonnegative. Instead, observe that $$-1 \leq \sin z \leq 1 \iff 0 \leq |\sin z| \leq…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4753538
+se-link: https://math.stackexchange.com/questions/4753532/confusion-regarding-a-step-to-solve-a-limit-using-squeeze-theorem/4753538#4753538
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confusion regarding a step to solve a limit using Squeeze Theorem.](https://math.stackexchange.com/questions/4753532/confusion-regarding-a-step-to-solve-a-limit-using-squeeze-theorem), asked by [Anthony](https://math.stackexchange.com/users/1209276/anthony) on Mathematics Stack Exchange (2023-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to find the following limit using the Squeeze Theorem:
+>
+> $$\lim_{x\to0^+} \sqrt[3]x\left(3-\sin^2\left(\frac\pi x\right)\right)$$
+> I began by writing down the range of $\sin:$
+> $$-1\leq\sin{x}\leq1$$
+>
+> But here is where I'm confused, since it is $\sin^2x$ in the original limit, is the next step to square all three parts of the inequality? Or, do you begin with the range of $\sin^2x$?
+:::
+
+You can only “square all three parts of an inequality” if the parts are nonnegative. Instead, observe that
+$$-1 \leq \sin z \leq 1 \iff 0 \leq |\sin z| \leq 1$$
+This means that
+$$0 \leq |\sin z|^2 \leq 1$$
+Since $|\sin z|^2 = |\sin^2 z| = \sin^2 z$, you have that $0 \leq \sin^2 z \leq 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4753532/confusion-regarding-a-step-to-solve-a-limit-using-squeeze-theorem/4753538#4753538) on Mathematics Stack Exchange, 2023-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

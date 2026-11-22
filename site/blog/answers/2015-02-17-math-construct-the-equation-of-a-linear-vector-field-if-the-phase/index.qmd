@@ -1,0 +1,59 @@
+---
+title: Construct the equation of a linear vector field if the phase portrait is given
+date: '2015-02-17'
+description: Let $A$ be the matrix of this vector field, so $$\begin{bmatrix} \dot x \\ \dot y \end{bmatrix} = A \begin{bmatrix} x \\ y \end{bmatrix}$$ There isn't enough…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1153557
+se-link: https://math.stackexchange.com/questions/1153398/construct-the-equation-of-a-linear-vector-field-if-the-phase-portrait-is-given/1153557#1153557
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+- ordinary-differential-equations
+- dynamical-systems
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Construct the equation of a linear vector field if the phase portrait is given](https://math.stackexchange.com/questions/1153398/construct-the-equation-of-a-linear-vector-field-if-the-phase-portrait-is-given), asked by [Lunarfield](https://math.stackexchange.com/users/217166/lunarfield) on Mathematics Stack Exchange (2015-02-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ![Vector Field][q-1]
+>
+>
+>   [q-1]: KOW3q.jpg
+>
+>
+> I already know that since that $0$ is a repulsor singular point over $x$-axis and $-x$ also  works as a repulsor point in opposite direction. Can anyone help me out by finding  the equation of this vector field given the phase portrait on picture? Thanks.
+:::
+
+Let $A$ be the matrix of this vector field, so 
+$$\begin{bmatrix} \dot x \\ \dot y \end{bmatrix}
+= A \begin{bmatrix} x \\ y \end{bmatrix}$$
+There isn't enough on the photograph to tell so let me make some additional assumptions.  
+
+ 1. $A \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix}1 \\ 0 \end{bmatrix}$.  If that's not true, $A \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ is at least a positive multiple of $\begin{bmatrix}1 \\ 0 \end{bmatrix}$, but let's keep it simple.
+
+ 2. $A \begin{bmatrix} 1 \\ -\mu \end{bmatrix} = \begin{bmatrix}0 \\ -1 \end{bmatrix}$.  Again, this is from the picture, modulo positive multiples.
+
+If that's true then
+$$\begin{align*}
+A \begin{bmatrix} 0 \\ 1 \end{bmatrix} 
+&= A \left(\begin{bmatrix} -1/\mu \\ 1 \end{bmatrix} + \begin{bmatrix} 1/\mu \\ 0 \end{bmatrix} \right)\\
+&= \begin{bmatrix} 0 \\ 1/\mu \end{bmatrix} + \begin{bmatrix} 1/\mu \\ 0 \end{bmatrix} 
+ = \begin{bmatrix} 1/\mu \\ 1/\mu \end{bmatrix}
+\end{align*}$$
+So from this we know that
+$$A = \begin{bmatrix} 1 & 1/\mu \\ 0 & 1/\mu \end{bmatrix}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1153398/construct-the-equation-of-a-linear-vector-field-if-the-phase-portrait-is-given/1153557#1153557) on Mathematics Stack Exchange, 2015-02-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

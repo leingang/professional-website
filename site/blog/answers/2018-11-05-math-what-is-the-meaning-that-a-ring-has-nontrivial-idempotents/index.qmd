@@ -1,0 +1,48 @@
+---
+title: What is the meaning that a ring has nontrivial idempotents?
+date: '2018-11-05'
+description: An idempotent is an element $r$ such that $r^2=r$ (idem is latin for self, and potent for power. So an idempotent has itself as a power.)
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2986082
+se-link: https://math.stackexchange.com/questions/2986076/what-is-the-meaning-that-a-ring-has-nontrivial-idempotents/2986082#2986082
+se-score: 2
+se-accepted: true
+se-tags:
+- abstract-algebra
+- idempotents
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the meaning that a ring has nontrivial idempotents?](https://math.stackexchange.com/questions/2986076/what-is-the-meaning-that-a-ring-has-nontrivial-idempotents), asked by [jasmine](https://math.stackexchange.com/users/557708/jasmine) on Mathematics Stack Exchange (2018-11-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > If $\,{\rm char}(F) \ne 2\$ then $\,F[x]/(x^2-1)\, \cong\, F[x]/(x-1) \oplus F[x]/(x+1)\, \cong\, F^2$ has nontrivial  idempotents, e.g. $\,(0,1),\,$ but $F[x]/(x^2)$ does not (as one easily verifies).
+>
+> I do not  understand  the  sentence  that  it  has  nontrivial  idempotents (from [this answer](https://math.stackexchange.com/a/106712/242)).
+:::
+
+An idempotent is an element $r$ such that $r^2=r$ (*idem* is latin for *self*, and *potent* for *power*.  So an idempotent has itself as a power.)
+
+In any ring with unit, the elements $0$ and $1$ are idempotents (just like they are in $\mathbb{Z}$).  So to say a ring has *non-trivial* idempotents is saying that it has idempotents *besides the obvious ones*.
+
+In $R = F[x]/(x^2-1)$, let $y=x+1$ (more precisely, the equivalence class of $x+1$ modulo multiples of $x^2-1$).  Then
+$$y^2 = (x+1)^2 = x^2 + 2x + 1 = 2x+2 = 2(x+1) = 2y$$
+This isn't quite an idempotent since we got a multiple of $y$ instead of just $y$.  But remember the assumption that $\operatorname{char} F \neq 2$.  This means we can divide by $2$.
+
+Let $u = \frac{y}{2}$.  Then
+$$u^2 = \frac{y^2}{4} = \frac{2y}{4} = \frac{y}{2} = u$$
+so $u = \frac{x+1}{2}$ is an idempotent.
+
+As JonathanZ points out in the comments, $\frac{x-1}{-2} = \frac{1-x}{2}$ is another idempotent, for the same reason.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2986076/what-is-the-meaning-that-a-ring-has-nontrivial-idempotents/2986082#2986082) on Mathematics Stack Exchange, 2018-11-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,54 @@
+---
+title: Shortest distance between parabola and point
+date: '2020-10-07'
+description: A reply to an old comment brought me back here, and I noticed that no one had offered a Lagrange multiplier solution. You're looking for the minimum of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3855355
+se-link: https://math.stackexchange.com/questions/2815493/shortest-distance-between-parabola-and-point/3855355#3855355
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- optimization
+- conic-sections
+- maxima-minima
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Shortest distance between parabola and point](https://math.stackexchange.com/questions/2815493/shortest-distance-between-parabola-and-point), asked by [Po Chen Liu](https://math.stackexchange.com/users/427093/po-chen-liu) on Mathematics Stack Exchange (2018-06-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Find the shortest distance between the parabola defined by $y^2 = 2x$ and a point $E:= (1.5, 0)$.
+>
+> I can't use the distance formula because I'm missing a set of points $(x, y)$ to plug into. So, instead, I have a normal that passes through the point $E$ from the parabola. Which is the definition of the shortest distance to a point.
+>
+> $$y - y_1 = m(x - x_1)$$
+>
+> The slope of the normal is $\frac{1}{y_1}$ by using implicit differentiation and that's where I'm stuck, because I plug the point E into it and I get
+>
+> $$y_1^2=x_1-1.5$$
+>
+> How do I prove the shortest distance is $\sqrt{2}$?
+:::
+
+A reply to an old comment brought me back here, and I noticed that no one had offered a Lagrange multiplier solution.  You're looking for the minimum of
+$$f(x,y) = (x-1.5)^2 +y^2$$
+subject to the constraint that $g(x,y) = 0$, where
+$$g(x,y) = y^2-2x$$
+The critical points satisfy $\nabla f(x,y) = \lambda \nabla g(x,y)$ for some $\lambda$.  Or,
+$$\begin{align*}
+    2x-3 &= -2\lambda \\ 2y &= 2 \lambda y
+\end{align*}$$
+The second of these implies either $y=0$ or $\lambda = 1$.  If $y=0$, then $x=0$ and $f(0,0) = \frac{9}{4}$.  If $\lambda = 1$, we can substitute it into the first equation and get $x = \frac{1}{2}$.  If $x =\frac{1}{2}$, then $y = \pm 1$, and $f(\frac{1}{2},\pm1) = 2$.  So the minimum value of $f$ is at these two points, and the shortest distance is $\sqrt{2}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2815493/shortest-distance-between-parabola-and-point/3855355#3855355) on Mathematics Stack Exchange, 2020-10-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

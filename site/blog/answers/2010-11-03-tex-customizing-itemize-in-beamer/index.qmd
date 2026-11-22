@@ -1,0 +1,51 @@
+---
+title: Customizing itemize in beamer?
+date: '2010-11-03'
+description: 'If your itemize is inside an enumerate, the nested level increases by one and a different template/color is used. So add:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4867
+se-link: https://tex.stackexchange.com/questions/4860/customizing-itemize-in-beamer/4867#4867
+se-score: 12
+se-accepted: true
+se-tags:
+- beamer
+- lists
+- itemize
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Customizing itemize in beamer?](https://tex.stackexchange.com/questions/4860/customizing-itemize-in-beamer), asked by [Arin Chaudhuri](https://tex.stackexchange.com/users/1645/arin-chaudhuri) on TeX Stack Exchange (2010-11-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have the following in the preamble :   
+>
+> ```latex
+> \setbeamercolor{enumerate item}{fg=red}  
+> \setbeamercolor{itemize item}{fg=red}  
+> \setbeamertemplate{itemize item}[triangle]  
+> \newenvironment{myenumerate}{\begin{enumerate}[(1)]}{\end{enumerate}} . 
+> ```
+>
+> Itemize works as intended when it is not called inside any other environment, however if I have an itemize inside `myenumerate`, I see blue circles instead of red triangles as the symbols marking the item elements: how can I get red triangles instead?
+:::
+
+If your `itemize` is inside an `enumerate`, the nested level increases by one and a different template/color is used.  So add:
+
+```latex
+\setbeamercolor{itemize subitem}{fg=red}
+\setbeamertemplate{itemize subitem}[triangle]
+```
+
+and you should be all set.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4860/customizing-itemize-in-beamer/4867#4867) on TeX Stack Exchange, 2010-11-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,203 @@
+---
+title: Custom list of environments (per section)
+date: '2011-09-15'
+description: I had tried your approach but had two problems. One is that it's not really compatible with using \include and \includeonly to fragment the document and only…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 28490
+se-link: https://tex.stackexchange.com/questions/23219/custom-list-of-environments-per-section/28490#28490
+se-score: 2
+se-accepted: false
+se-tags:
+- spacing
+- table-of-contents
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Custom list of environments (per section)](https://tex.stackexchange.com/questions/23219/custom-list-of-environments-per-section), asked by [cmhughes](https://tex.stackexchange.com/users/6621/cmhughes) on TeX Stack Exchange (2011-07-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to have a list of my custom environments at the start of each section. I read [this post][q-1], but wasn't able to get the titletoc to help me. The given response worked for floats, but I couldn't see how to adapt it to (non-floating) environments.
+>
+> Here is a MWE of what I have so far; it works the way I want to, except for the spacing issues between the commas. It follows along the lines of the discussion in the above post, by creating a file for each section (hacked from the ntheorem package).
+>
+> So, my questions are: how could I fix the spacing issues between the commas? Is it bad to create lots of auxiliary files (.prb1, .prb2, etc)? Have I re-invented a wheel? I'd also welcome any other feedback.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{ifthen}
+>
+> \newcounter{probfilecounter}
+> \setcounter{probfilecounter}{0}
+> \newcounter{index}
+> \newcounter{linecount}
+> \newread\File
+>
+> \let\stdsection\section
+> \renewcommand\section{\stepcounter{probfilecounter}\stdsection}
+>
+> \makeatletter
+>
+> \def\listproblems{%
+> \openin\File=\jobname.prb\thesection%
+> %\@input{\jobname .prb\thesection}%
+> \setcounter{linecount}{0}%
+> \loop\unless\ifeof\File%
+> \stepcounter{linecount}%
+> \read\File to\fileline %
+> \repeat%
+> \closein\File%
+> % re-open the file
+> \setcounter{index}{0}%
+> \openin\File=\jobname.prb\thesection%
+> \loop\unless\ifeof\File%
+> \stepcounter{index}% 
+> \read\File to\fileline%
+> %\fileline
+>     \ifthenelse{\theindex=1}%
+>     {Problems in this section: \fileline}%
+>     {%
+>     \ifthenelse{\theindex<\thelinecount}%
+>     {, \fileline}%
+>     {}%
+>     }%
+> \repeat%
+> \closein\File%
+> }%
+>
+> \def\prb@enablelistofproblems{%
+> \begingroup%
+> \makeatletter%
+> \if@filesw%
+> \setcounter{index}{0}%
+> \whiledo{\value{index}<\theprobfilecounter}{%
+> \stepcounter{index}% 
+> \expandafter\newwrite\csname tf@prb\theindex\endcsname%
+> \immediate\openout \csname tf@prb\theindex\endcsname \jobname.prb\theindex\relax%
+>  }%
+> \fi%
+> \@nobreakfalse%
+> \endgroup}%
+>
+> \AtEndDocument{\prb@enablelistofproblems}
+>
+> \makeatother
+>
+> % define the problem environment
+> \newcounter{problem}
+> \newenvironment{problem}{
+>     \refstepcounter{problem}%
+>     \textbf{Problem \theproblem} \par
+>     \addtocontents{prb\theprobfilecounter}{\theproblem}
+> }{}
+>
+> \begin{document}
+>
+> \section{intro}
+> \listproblems
+>
+> \begin{problem}
+>  second problem
+> \end{problem}
+>
+> \begin{problem}
+>  another problem
+> \end{problem}
+>
+> \section{another section}
+> \listproblems
+>
+> \begin{problem}
+>  another problem
+> \end{problem}
+>
+> \begin{problem}
+>  another problem
+> \end{problem}
+>
+> \end{document}
+> ```
+>
+>   [q-1]: https://tex.stackexchange.com/questions/12510/how-do-i-create-custom-list-of-s-on-a-section-level
+:::
+
+I had tried your approach but had two problems.  One is that it's not really compatible with using `\include` and `\includeonly` to fragment the document and only compile parts of it at a time.  If you have Section 1 and Section 2 in different files, and have problem files `foo.prb1` and `foo.prb2`, then exclude the first section's file, you need to also tell the second section (which is now the first section read) to look in file `foo.prb2`.  Or something like that.  I ended up with lists in the wrong section.
+
+The other thing is that TeX has a limit to the number of files it can have open at once.  I believe that number is 16.  So unless you close each of the `.prb<n>` files you will quickly run out (my document has 15 chapters and close to 100 sections).  
+
+Here's how I adapted [Leo's answer to the linked question][1] to my document and your example:
+
+```latex
+\documentclass{article}
+\usepackage{titletoc}
+
+
+\newcounter{problem}
+\newenvironment{problem}{
+    \refstepcounter{problem}%
+    \noindent\textbf{Problem \theproblem} \par
+    \addcontentsline{prb}{subsection}{Problem \theproblem}
+}{}
+
+\makeatletter%\begin{hack}
+\def\ttl@partialprb{ppr}
+\def\ttl@writepartial#1#2{%
+  \ttl@topartial{toc}{#1}{#2}%
+  \ttl@topartial{lof}{#1}{#2}%
+  \ttl@topartial{lot}{#1}{#2}%
+  \ttl@topartial{prb}{#1}{#2}%
+  \ttl@writefile{#1}{#2}}
+\makeatother%\end{hack}
+
+
+\newcommand{\listproblems}{
+  \startlist{prb}%
+  \printlist{prb}{}{\subsection*{Problems in this section}}}
+
+\begin{document}
+
+\section{intro}
+\listproblems
+
+\begin{problem}
+ first problem
+\end{problem}
+
+
+\begin{problem}
+ second problem
+\end{problem}
+
+\begin{problem}
+ another problem
+\end{problem}
+
+\section{another section}
+\listproblems
+
+\begin{problem}
+ another problem
+\end{problem}
+
+\begin{problem}
+ another problem
+\end{problem}
+
+\end{document}
+```
+
+It works for me.
+
+  [1]: https://tex.stackexchange.com/questions/12510/how-do-i-create-custom-list-of-s-on-a-section-level/12514#12514
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/23219/custom-list-of-environments-per-section/28490#28490) on TeX Stack Exchange, 2011-09-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,44 @@
+---
+title: Function for determining difference between and start and end military time
+date: '2017-07-15'
+description: You can represent your military times as pairs $(h,m)$, where $h$ is an integer between 0 and 23, and $m$ is an integer between $0$ and $59$. Then set…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2359868
+se-link: https://math.stackexchange.com/questions/2359843/function-for-determining-difference-between-and-start-and-end-military-time/2359868#2359868
+se-score: 2
+se-accepted: true
+se-tags:
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Function for determining difference between and start and end military time](https://math.stackexchange.com/questions/2359843/function-for-determining-difference-between-and-start-and-end-military-time), asked by [Zack Macomber](https://math.stackexchange.com/users/463743/zack-macomber) on Mathematics Stack Exchange (2017-07-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My apologies if this is the wrong place to post this question and/or it's stupid and I'm fine with it being closed/downvoted if it is.
+>
+> I would like to know if there is a function that could be used to determine the difference between a start and end military time.
+>
+> Something that could be applied generically to satisfy these equations:<br>
+> 1455 - 1450 = 5<br>
+> 1501 - 1450 = 11<br>
+> 1601 - 1450 = 71
+:::
+
+You can represent your military times as pairs $(h,m)$, where $h$ is an integer between 0 and 23, and $m$ is an integer between $0$ and $59$.  Then set
+$$\Delta((h_1,m_1),(h_2,m_2)) = 60(h_1-h_2)+(m_1-m_2)$$
+This fits your three test cases, at least.  Another way to write this is
+$$\Delta((h_1,m_1),(h_2,m_2)) = (60h_1+m_1)-(60h_2+m_2)$$
+which is the smart way to think about the process: convert to a “quantity” (seconds elapsed since midnight) and subtract.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2359843/function-for-determining-difference-between-and-start-and-end-military-time/2359868#2359868) on Mathematics Stack Exchange, 2017-07-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

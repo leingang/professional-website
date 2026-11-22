@@ -1,0 +1,59 @@
+---
+title: Multivariant Calculus, Kronecker Delta identity
+date: '2017-11-02'
+description: First, $\delta{mm} = 3$ because $\delta{mm} = 1$ for any index $m$, and the Einstein summation convention is in force.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2501911
+se-link: https://math.stackexchange.com/questions/2501904/multivariant-calculus-kronecker-delta-identity/2501911#2501911
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- summation
+- notation
+- index-notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Multivariant Calculus, Kronecker Delta identity](https://math.stackexchange.com/questions/2501904/multivariant-calculus-kronecker-delta-identity), asked by [Vaas](https://math.stackexchange.com/users/291134/vaas) on Mathematics Stack Exchange (2017-11-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> im calculating the curl of a vector field which is the cross product of two vectors. and i've hit a snag in understanding. i'm assuming the end result will be the dimension i'm working in but id rather not make assumptions so if anyone can affirm or correct me that would be great.
+>
+> $$\text{let } \vec{v(r)}=\vec{\omega} \times \vec{r} \text{ where } \vec{\omega} = (\omega_1,\omega_2,\omega_3) \text{ (fixed vectors) and } \vec{r} = (r_1,r_2,r_3)$$
+>
+> then
+> $$\left[\nabla \times \vec{v}\right]_i = \epsilon_{ijk}\partial_jv_k = \epsilon_{ijk}\partial_j(\epsilon_{klm}\omega_lr_m) = \epsilon_{ijk}\epsilon_{klm}\partial_{j}w_{l}r_{m} = \epsilon_{ijk}\epsilon_{klm}w_{l}\delta_{jm}$$
+>
+> this leads to
+> $$\epsilon_{ijk}\epsilon_{klm}w_{l}\delta_{jm} = \epsilon_{imk}\epsilon_{klm}w_{l} = \epsilon_{kim}\epsilon_{klm}w_{l} = (\delta_{il}\delta_{mm}-\delta_{im}\delta_{ml})w_l$$
+>
+> i'm unsure why this last step becomes
+> $(3\delta_{il}-\delta_{il})w_l$
+>
+> now. i understand for the second half of the subtraction that we impose the restriction on $\delta_{im}\delta_{ml} = \delta_{il}$
+> but $\delta_{mm} = 3$ has me stumped.
+>
+> my assumption is this.
+>
+> $$\delta_{ij}= \left\{\begin{matrix} 1 \text{ if }i=j\\ 0 \text{ if } i \neq j\end{matrix}\right.$$ and we sum over the dimension of the vectors correct? which because we're working in $\mathbb{R^3}$ then 
+> correct? yeilding the result of 3.
+>
+> then again...when your brain is trying to figure something out sometimes it makes illogical arguements which start looking nice and logical. any help would be very much appreciated.
+:::
+
+First, $\delta_{mm} = 3$ because $\delta_{mm} = 1$ for any index $m$, and the Einstein summation convention is in force.
+
+Secondly, $\delta_{im} \delta_{ml} = \delta_{il}$, because for any index $m$, the only way $\delta_{im} \delta_{ml}$ can be nonzero is if both $i=m$ and $m=l$.  This happens at most once as we sum over $m$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2501904/multivariant-calculus-kronecker-delta-identity/2501911#2501911) on Mathematics Stack Exchange, 2017-11-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

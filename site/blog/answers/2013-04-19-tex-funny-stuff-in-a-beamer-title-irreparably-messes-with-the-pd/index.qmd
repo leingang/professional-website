@@ -1,0 +1,139 @@
+---
+title: Funny stuff in a Beamer title irreparably messes with the PDF metadata
+date: '2013-04-19'
+description: I guess I'm answering the broader question “How can I alter the display of the title in beamer?”. In my comment I said that I think “the right way” to do this…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109613
+se-link: https://tex.stackexchange.com/questions/109607/funny-stuff-in-a-beamer-title-irreparably-messes-with-the-pdf-metadata/109613#109613
+se-score: 1
+se-accepted: false
+se-tags:
+- beamer
+- titles
+- metadata
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Funny stuff in a Beamer title irreparably messes with the PDF metadata](https://tex.stackexchange.com/questions/109607/funny-stuff-in-a-beamer-title-irreparably-messes-with-the-pdf-metadata), asked by [Sean Allred](https://tex.stackexchange.com/users/17423/sean-allred) on TeX Stack Exchange (2013-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following `beamer` presentation:
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{hyperref}
+>
+> \title{%
+> \parbox{.25\textwidth}{funny}%
+> \parbox{.5\textwidth}{Real Title}%
+> \parbox{.25\textwidth}{stuff}}
+>
+> \hypersetup{pdftitle={Real Title}}
+>
+> \begin{document}
+> Hello, World!
+> \end{document}
+> ```
+>
+> and no matter what I try (removing `hyperref` and using `\pdfinfo`, for example), the title always comes out as the entire ASCII portion of the `\title`, less control sequences:
+>
+> > .25funny.5Real Title.25stuff
+>
+> Is there no way to *absolutely* set the title of the PDF using only LaTeX?  (I know metadata editors exist, but this could be considered a bug in some lines of thought.)
+>
+> * * *
+>
+> I should note that the problem is not reproducible in `article`.
+:::
+
+I guess I'm answering the broader question “How can I alter the display of the title in beamer?”.  In my comment I said that I think “the right way” to do this is to alter the formatting macros (i.e., `\maketitle`) instead of the metadata-declaration macros (i.e., `\title`).  
+
+Here is an example.  Explanation follows.
+
+```latex
+\documentclass{beamer}
+\usepackage{etoolbox}
+\usetheme{AnnArbor}
+
+\title{Real Title}
+
+\makeatletter
+\addtobeamertemplate{title page}{%
+	\let\beamerorig@inserttitle\inserttitle%
+	\renewcommand{\inserttitle}{%
+	   \makebox[0.20\textwidth][c]{funny}
+	   \makebox[0.5 \textwidth][c]{\beamerorig@inserttitle}
+	   \makebox[0.20\textwidth][c]{stuff}
+	}
+}{}
+\makeatother
+
+\begin{document}
+\begin{frame}
+\maketitle
+Hello, World!
+\end{frame}
+\end{document}
+```
+
+![sample code output][1]
+
+I used the fancy `AnnArbor` theme so you can see that the display of “Real Title” in the footer isn't affected.
+
+The titling macros (which I found with `grep`) are found in `beamerbasetitle.sty`:
+
+```latex
+\def\maketitle{\ifbeamer@inframe\titlepage\else\frame{\titlepage}\fi}
+%...
+\def\titlepage{\usebeamertemplate*{title page}\@thanks}
+```
+
+We see that for flexibility `\maketitle` uses beamer's templating system.  The `title page` template is usually defined in an *inner* theme.  Here is the one from `beamerinnerthemedefault.sty` (again, found with `grep`):
+
+```latex
+\defbeamertemplate*{title page}{default}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+  \vfill
+}
+```
+
+The part that is inside the `{beamercolorbox}[...]{title}` environment is where the title goes.  At this point you have to decide if you want to create a new `title page` template with `\defbeamertemplate`, similar to that template but with alterations inside the title beamercolorbox, and invoke it with `\usebeamertemplate`, or hack the way that `\inserttitle` displays the title.  I chose the latter, because (a) you don't have to know which template is used, and (b) beamer provides commands to locally alter templates.
+
+So my code uses `\addtobeamertemplate` to preprend to the current `title page` template (whichever is in use) a patch to the `\inserttitle` command.  However you want the title really displayed should go there.
+
+  [1]: nNMHb.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109607/funny-stuff-in-a-beamer-title-irreparably-messes-with-the-pdf-metadata/109613#109613) on TeX Stack Exchange, 2013-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

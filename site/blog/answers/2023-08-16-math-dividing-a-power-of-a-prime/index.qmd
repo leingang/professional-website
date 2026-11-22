@@ -1,0 +1,42 @@
+---
+title: Dividing a Power of a Prime
+date: '2023-08-16'
+description: We can prove this using induction on $n$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4754067
+se-link: https://math.stackexchange.com/questions/1994881/dividing-a-power-of-a-prime/4754067#4754067
+se-score: 0
+se-accepted: false
+se-tags:
+- elementary-number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Dividing a Power of a Prime](https://math.stackexchange.com/questions/1994881/dividing-a-power-of-a-prime), asked by [user193319](https://math.stackexchange.com/users/193319/user193319) on Mathematics Stack Exchange (2016-11-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Suppose that the positive integer $a$ divides $p^n$, where $n$ is a positive integer and $p$ is a prime. I want to conclude that $a = p^m$ for some $m \le n$, but I am having trouble. I would appreciate some hints.
+:::
+
+We can prove this using induction on $n$. 
+
+The base case is $n=0$ (I know your problem assumed $n>0$. But this base case is cleaner and the result is a stronger claim). The only positive factors of $p^0 =1$ are $1=p^0$, so the claim is satisfied.
+
+Now suppose there exists $n$ such that every positive factor of $p^{n-1}$ is a power of $p$, and consider a factor $a$ of $p^n$. Write $p^n = ab$. Since $p$ divides the left-hand side, it divides the right-hand side, and so by [Euclid's lemma](https://en.wikipedia.org/wiki/Euclid%27s_lemma#:~:text=Euclid's%20lemma%20%E2%80%94%20If%20a%20prime,those%20integers%20a%20or%20b.), either $p \mid a$ or $p \mid b$.
+
+* If $p \mid a$, write $a = pa'$. Then $p^n = pa'b$. Canceling $p$, we have $p^{n-1} = a'b$. By the inductive hypothesis, $a'$ is a power of $p$, which means that $a$ is a power of $p$.
+* If $p \mid b$, write $b = pb'$. Then $p^n = pab'$. Canceling $p$, we have $p^{n-1} = ab'$. By the inductive hypothesis, $a$ is a power of $p$. 
+
+So the claim is satisfied again, and therefore by induction the claim is true for all $n\geq 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1994881/dividing-a-power-of-a-prime/4754067#4754067) on Mathematics Stack Exchange, 2023-08-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

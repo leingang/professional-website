@@ -1,0 +1,114 @@
+---
+title: Solving hypersurface integral
+date: '2021-06-07'
+description: 'Yes, you can follow the process you proposed: parametrize the surface, calculate the hypervolume form, then integrate.'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4166190
+se-link: https://math.stackexchange.com/questions/4166010/solving-hypersurface-integral/4166190#4166190
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- integration
+- surface-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Solving hypersurface integral](https://math.stackexchange.com/questions/4166010/solving-hypersurface-integral), asked by [principal-ideal-domain](https://math.stackexchange.com/users/131887/principal-ideal-domain) on Mathematics Stack Exchange (2021-06-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Can you help me to compute the following integral over a hypersurface in $\mathbb R^4$?
+>
+> $$\int_{x_1^2 + x_2^2 - x_3^2 - x_4^2 = 1} ||x||^{-2s} d\mu$$
+>
+> So here we have
+> $$||x||^2 := x_1^2 + x_2^2 + x_3^2 + x_4^2.$$
+>
+> The measure $d\mu$ is the inherited Lebesgue messure from $\mathbb R^4$. So how do I proceed? Parametrize the hypersurface and then use appropriate formulas involving the first fundamental form?
+>
+> I'm not only interested in the value of the integral but also for which $s \in \mathbb C$ it exists. I would guess for ${\rm Re}(s)>1$.
+:::
+
+Yes, you can follow the process you proposed: parametrize the surface, calculate the hypervolume form, then integrate.
+
+## The parametrization
+
+*I'll include some of my thought process.*  Let the hypersurface be called $S$.  Intersecting $S$ with the planes $x_3=h$ and $x_4 = k$ gives a circle with equation $x_1^2 +x_2^2 = 1 + h^2 + k^2$.  Intersecting with planes $x_1 = h$ and $x_2 = k$ gives a circle with equation $x_3^2 + x_4^2 = h^2+k^2 - 1$.  And intersecting with the plane $x_2 = x_4 = 0$ gives a hyperbola $x_1^2-x_3^2 = 1$.  So I thought about parametrizing the two circles and the hyperbola separately.
+
+I know that to parametrize a circle of radius $r$ in the $xy$-plane, $x = r\cos\theta$ and $y=r \sin\theta$ will work.  We can do this in the $x_1x_2$-plane, and again in the $x_3x_4$-plane.  The two radii 
+ lie on the hyperbola $r_1^2-r_2^2=1$.  There are many ways to parametrize the hyperbola; I chose $\psi \mapsto (\sec\psi,\tan\psi)$ since I already had trigonometric functions of the other coordinates.  I suppose $\cosh$ and $\sinh$ would also work, and might be a bit cleaner.
+
+Based on this, we see that the coordinate functions
+$$\begin{align*}
+    x_1 &= \sec\psi \cos\theta \\
+    x_2 &= \sec\psi \sin\theta \\
+    x_3 &= \tan\psi \cos\phi \\
+    x_4 &= \tan\psi \sin\phi
+\end{align*}$$
+land in $S$.  We still need to know the domain on which this function is bijective.
+
+Given $(x_1,x_2,x_3,x_4) \in S$, let $r_1 = \sqrt{x_1^2+x_2^2}$ and $r_2 = \sqrt{x_3^2 + x_4^2}$. Then both $r_1$ and $r_2$ are nonnegative, and $r_1^2-r_2^2 = 1$.  So there exists a unique $\psi$ with $0 \leq \psi < \frac{\pi}{2}$ such that $r_1 = \sec\psi$ and $r_2 = \tan\psi$. 
+
+Since $r_1^2-r_2^2 =1$, $r_1 > 0$, and so there exists a unique $\theta$ such that $-\pi < \theta \leq \pi$ and
+$$\cos\theta = \frac{x_1}{r_1}
+    \qquad
+    \sin\theta = \frac{x_2}{r_1}$$
+Now $r_2 > 0$ is not guaranteed, but if it is true, there exists a unique $\phi$ such that
+$$\cos\phi  = \frac{x_3}{r_2}
+    \qquad
+    \sin\phi  = \frac{x_4}{r_2}$$
+
+So if we restrict to the intervals $-\pi \leq \theta\leq \pi$, $-\pi\leq\phi\leq\pi$, $0 \leq \psi < \frac{\pi}{2}$, the mapping will be surjective, and only fail to be injective on the domain's boundary.  This will be good enough.
+
+## The integrand
+
+The matrix of partial derivatives of this parametrization is:
+$$J = \frac{\partial(x_1,x_2,x_3,x_4)}{\partial(\psi,\theta,\phi)}
+     = \begin{bmatrix}
+           \sec\psi\tan\psi\cos\theta
+                & \sec\psi\tan\psi\sin\theta
+                    & \sec^2\psi \cos\phi
+                         & \sec^2\psi \sin\phi \\
+           -\sec\psi\sin\theta
+                & \sec\psi\cos\theta & 0 & 0 \\
+           0 & 0 & -\tan\psi\sin\phi & \tan\psi\cos\phi
+       \end{bmatrix}^T$$
+In these coordinates, $dS = \sqrt{\det J^TJ}\,d\psi\,d\theta\,d\phi$. Since
+$$J^TJ = \begin{bmatrix}
+    \sec^2\psi\tan^2\psi + \sec^4\psi & 0 & 0 \\
+    0 & \sec^2\psi & 0 \\
+    0 & 0 & \tan^2\psi \end{bmatrix}$$
+So
+$$dS = \sec^2 \psi \tan \psi \sqrt{\sec^2\psi + \tan^2 \psi}\,d\psi\,d\theta\,d\phi$$
+($\tan\psi \geq 0$ since $0 \leq \psi < π/2$.)
+In these coordinates, the function to be integrated is:
+$$\begin{align*} 
+    f(x_1,x_2,x_3,x_4) &= \left\Vert x \right\Vert^{-2s}
+    \\&= \left[\left(x_1^2 + x_2^2 + x_3^2 + x_4^2\right)^{1/2}\right]^{-2s}
+    \\&= \left(\sec^2\psi + \tan^2\psi\right)^{-s}
+\end{align*}$$
+
+## The integral
+
+Putting these together, we see that:
+$$\begin{align*}
+    I &= \iiint_S f\,dS
+    \\&= \int_{-π}^π \int_{-π}^π \int_0^{π/2} \sec^2\psi \tan \psi  \left(\sec^2\psi + \tan^2\psi\right)^{1/2-s} \,d\psi\,d\theta\,d\phi
+    \\&= 4π^2 \int_0^{π/2} \sec^2\psi \tan \psi  \left(\sec^2\psi + \tan^2\psi\right)^{1/2-s} \,d\psi
+\end{align*}$$
+Let $v = \sec^2\psi + \tan^2 \psi$, so that $dv = 4\tan \psi \sec^2\psi\,d\psi$.  Then
+$$I = π^2\int_1^\infty v^{1/2-s}\,dv$$
+This converges if $\Re(s) > \frac{3}{2}$.  In that case,
+$$I = -\frac{π^2}{\frac{3}{2} - s} = \frac{2π^2}{2s-3}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4166010/solving-hypersurface-integral/4166190#4166190) on Mathematics Stack Exchange, 2021-06-07, with [edits](https://math.stackexchange.com/posts/4166190/revisions) by [principal-ideal-domain](https://math.stackexchange.com/users/131887/principal-ideal-domain). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

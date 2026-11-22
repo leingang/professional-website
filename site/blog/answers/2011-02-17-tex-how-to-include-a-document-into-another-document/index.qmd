@@ -1,0 +1,61 @@
+---
+title: How to include a document into another document?
+date: '2011-02-17'
+description: Cut the content (the part between \begin{document}...\end{document} of B.tex into a new file B-content.tex.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11316
+se-link: https://tex.stackexchange.com/questions/11311/how-to-include-a-document-into-another-document/11316#11316
+se-score: 43
+se-accepted: true
+se-tags:
+- include
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to include a document into another document?](https://tex.stackexchange.com/questions/11311/how-to-include-a-document-into-another-document), asked by [RoflcoptrException](https://tex.stackexchange.com/users/3316/roflcoptrexception) on TeX Stack Exchange (2011-02-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have two documents A and B. Both of them are separate documents. But document A also has to include document B. 
+>
+> Now if I use `\include{B}` i get the following error:
+>
+> ```latex
+> ! LaTeX Error: Can be used only in preamble.
+>
+> See the LaTeX manual or LaTeX Companion for explanation.
+> Type  H <return>  for immediate help.
+>  ...                                              
+>
+> l.1 \documentclass
+>                   [11pt]{article}
+> ? 
+> ```
+>
+> So how can I force to include document B with the "style" and "template" of document A?
+:::
+
+Cut the content (the part between `\begin{document}...\end{document}` of `B.tex` into a new file `B-content.tex`.
+
+Change `B.tex` to be:
+
+```latex
+\documentclass{...}
+% your preamble here
+\begin{document}
+\include{B-content}
+\end{document}
+```
+
+Then put `\include{B-content}` into `A.tex`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11311/how-to-include-a-document-into-another-document/11316#11316) on TeX Stack Exchange, 2011-02-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

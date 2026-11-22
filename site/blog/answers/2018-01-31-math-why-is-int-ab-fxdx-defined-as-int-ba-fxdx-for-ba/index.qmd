@@ -1,0 +1,39 @@
+---
+title: Why is $\int_a^b f(x)dx$ defined as $-\int_b^a f(x)dx$ for $b<a$?
+date: '2018-01-31'
+description: You're right, the “area metaphor” for the integral doesn't justify this convention that well. Negative area is kind of dubious.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2630231
+se-link: https://math.stackexchange.com/questions/2630225/why-is-int-ab-fxdx-defined-as-int-ba-fxdx-for-ba/2630231#2630231
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- definite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is $\int_a^b f(x)dx$ defined as $-\int_b^a f(x)dx$ for $b<a$?](https://math.stackexchange.com/questions/2630225/why-is-int-ab-fxdx-defined-as-int-ba-fxdx-for-ba), asked by [fiat_lux](https://math.stackexchange.com/users/526886/fiat-lux) on Mathematics Stack Exchange (2018-01-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know with this definition "mathematics doesn't break" (sorry I don't know how to express it better, I mean that calculations and proofs work out), but is there a way you can interprete it? I figured that visually it would mean that $\int_a^b f(x)dx$ is equal to the area above the graph of f mirrored about the x-axis in the intervall $(b,a)$, which is not very insightful to me. How can you make sense of it? Thanks in advance.
+:::
+
+You're right, the “area metaphor” for the integral doesn't justify this convention that well.  Negative area is kind of dubious.
+
+You might try instead the “displacement metaphor” for the integral.  If $v(t)$ is the velocity of a particle at time $t$, then $\int_{a}^b v(t)\,dt$ is the displacement between the particle at time $a$ and time $b$.  I say *displacement* instead of *distance* to allow for direction.  If positive displacement were measured to the right, then negative displacement would go to the left.
+
+What would $\int_b^a v(t)\,dt$ be?  One way to think about it is the same displacement result, but instead running time *backwards* from $b$ to $a$.  And the displacement from $t=b$ to $t=a$ (backwards) should be the *opposite* of the displacement from $t=a$ to $t=b$.  Meaning, same magnitude but opposite sign.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2630225/why-is-int-ab-fxdx-defined-as-int-ba-fxdx-for-ba/2630231#2630231) on Mathematics Stack Exchange, 2018-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

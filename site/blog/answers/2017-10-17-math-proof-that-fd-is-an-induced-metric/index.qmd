@@ -1,0 +1,60 @@
+---
+title: proof that f*d is an induced metric
+date: '2017-10-17'
+description: This sentence doesn't make any sense. To what is the “which” referring to? The only possible antecedent in the sentence is the number $f^d(x,y)=d(m1,m2)$. A…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2476075
+se-link: https://math.stackexchange.com/questions/2476059/proof-that-fd-is-an-induced-metric/2476075#2476075
+se-score: 1
+se-accepted: true
+se-tags:
+- metric-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[proof that f*d is an induced metric](https://math.stackexchange.com/questions/2476059/proof-that-fd-is-an-induced-metric), asked by [excalibirr](https://math.stackexchange.com/users/288164/excalibirr) on Mathematics Stack Exchange (2017-10-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let X be a set and (M, d) be a metric space. Let f : X → M be an injective map. Then we define
+> f∗d := d ◦ (f × f): X × X →(o,infinity] 
+>
+> i.e.
+> f∗d(x, y) = d(f(x), f(y)) for x, y ∈ X .
+>
+> I want to prove that f∗d is a distance function on X (“induced metric”). here's what ive tried so far ...
+>
+> taking all of the above as fact ;
+>
+> f is injective therefore f(x)=m1 and f(y)=m2  where m1 does not equal m2 and m1,m2 are elements of M. 
+>
+> => f*d(x,y)=d(m1,m2) which is defined already as a metric space X C(M,d) therefore f*d is also a distance function.
+>
+> ...I feel like thats too easy and i must be missing something obvious ? any tips would be much appreciated but please dont answer the full question as i want to learn this on my own :)
+:::
+
+> $f^*d(x,y)=d(m_1,m_2)$ which is defined already as a metric space ... therefore $f^*d$ is also a distance function.
+
+This sentence doesn't make any sense.  To what is the “which” referring to?  The only possible antecedent in the sentence is the *number* $f^*d(x,y)=d(m_1,m_2)$.  A number isn't defined as a metric space.
+
+If you're asserting that the facts that $d$ is a metric and $f^*d$ is defined in terms of $d$, make $f^*d$ a metric on $X$—well, that's exactly what you need to prove.
+
+Go back to the definitions of metric:
+
+1. You must show $f^*d(x,y) \geq 0$ for all $x,y \in X$, and if $f^*d(x,y) = 0$, then $x=y$.
+2. You must show $f^*d(x,y) = f^*d(y,x)$ for all $x,y \in X$.
+3. You must show the triangle inequality: For all $x$, $y$, $z\in X$, 
+$$f^*d(x,y) + f^*d(y,z) \geq f^*d(x,z)$$
+
+Each of those statements can be expressed in terms of $f$ and $d$. You'll know you're doing it right when you find that you need to use each of the requirements that must be satisfied for $d$ to be a metric, and the assumption that $f$ is injective.....
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2476059/proof-that-fd-is-an-induced-metric/2476075#2476075) on Mathematics Stack Exchange, 2017-10-17, with [edits](https://math.stackexchange.com/posts/2476075/revisions) by [excalibirr](https://math.stackexchange.com/users/288164/excalibirr). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

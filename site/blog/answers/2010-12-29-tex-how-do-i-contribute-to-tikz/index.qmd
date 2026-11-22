@@ -1,0 +1,44 @@
+---
+title: How do I contribute to TikZ?
+date: '2010-12-29'
+description: You can also join the mailing list and send it there.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7920
+se-link: https://tex.stackexchange.com/questions/7900/how-do-i-contribute-to-tikz/7920#7920
+se-score: 4
+se-accepted: false
+se-tags:
+- tikz-pgf
+- circuitikz
+- contribute
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I contribute to TikZ?](https://tex.stackexchange.com/questions/7900/how-do-i-contribute-to-tikz), asked by [Kit](https://tex.stackexchange.com/users/791/kit) on TeX Stack Exchange (2010-12-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Stemming from this [question][q-1] and with due credits to [@morbusg's answer][q-2], I was able to create a very fundamental symbol for the `circuits.ee.IEC` TikZ library, the AC voltage source. I call it the `ac source`. The code for it is [here][q-3].  
+> ![alt text][q-4]
+>
+> I'd like it to be added to the abovementioned TikZ library, but I don't know how. I don't have a SourceForge account. I'm not familiar with SVN, or any source control system for that matter. My idea is to contact Till Tantau or Mark Wibrow so that they can refactor it to their coding style, but I don't see their e-mail addresses in the `pgfmanual`. Any ideas?
+>
+>
+>   [q-1]: https://tex.stackexchange.com/q/7438/791
+>   [q-2]: https://tex.stackexchange.com/questions/7438/ac-source-symbol-in-tikz-circuits-ee-iec-library/7495#7495
+>   [q-3]: https://tex.stackexchange.com/questions/7438/ac-source-symbol-in-tikz-circuits-ee-iec-library/7898#7898
+>   [q-4]: JIt2x.png
+:::
+
+You can also join the [mailing list](http://sourceforge.net/mailarchive/forum.php?forum_name=pgf-users) and send it there.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7900/how-do-i-contribute-to-tikz/7920#7920) on TeX Stack Exchange, 2010-12-29. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

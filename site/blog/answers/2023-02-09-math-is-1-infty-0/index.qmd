@@ -1,0 +1,69 @@
+---
+title: Is $(-1)^{\infty}=0$?
+date: '2023-02-09'
+description: 'You have proven: > If $\displaystyle\sum{n=1}^\infty (-1)^n$ converges, then $\displaystyle\lim{n\to\infty}(-1)^n = 0$.'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4636027
+se-link: https://math.stackexchange.com/questions/4636023/is-1-infty-0/4636027#4636027
+se-score: 3
+se-accepted: true
+se-tags:
+- sequences-and-series
+- infinity
+- infinite-product
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is $(-1)^{\infty}=0$?](https://math.stackexchange.com/questions/4636023/is-1-infty-0), asked by user1070658 on Mathematics Stack Exchange (2023-02-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was recently working across the [ADT Queue][q-1] when I thought that such a scenario can be defined by the Grandi series. It is [given][q-2] that:
+> $$\sum_{n=0}^k (-1)^n = \frac{1}{2}\big((-1)^k + 1\big)$$
+> It is seemingly visible that both are divergent series, and as $k \rightarrow \infty$ it can be said that:
+> $$\sum_{n=0}^\infty (-1)^n = \frac{1}{2}\big((-1)^\infty + 1\big)$$
+> It can be now said that:
+> $$2\sum_{n=0}^\infty (-1)^n = (-1)^\infty + 1$$
+> The LHS gives us the infinite series:
+> ```
+> 2-2+2-2+2...
+> ```
+> It can now be solved on LHS, treating it as divergent series:
+> $$\begin{gather}
+> S = 2-2+2-2+2...\\
+> 2-S = 2-(2-2+2-2+2...)\\
+> 2-S=S\\
+> S=2S\\
+> S=1\\
+> \end{gather}$$
+> Continuing where we left above solving the LHS, it can be said,
+> $$1 = (-1)^{\infty} + 1$$
+> $$(-1)^{\infty}=0$$
+> My question is:
+>
+>  - Is $(-1)^{\infty}$ actually determinate?
+>  - Is the proof I wrote here correct?
+>
+> Disclaimer: I am newly 16 years old elementary math student with no expertise (in formal ways) in the subject. I did not write this question simply to waste others' time. I hope the question stays here, with a criticism/appreciation of the proof I presented.
+>
+>   [q-1]: https://github.com/AitzazImtiaz/ADT-Queue
+>   [q-2]: https://www.wolframalpha.com/input?i=%5Csum_%7Bn%3D0%7D%5Ek+%28-1%29%5En
+:::
+
+You have proven:
+> If $\displaystyle\sum_{n=1}^\infty (-1)^n$ converges, then $\displaystyle\lim_{n\to\infty}(-1)^n = 0$.
+
+There is a quicker way to get there: The terms in *any* convergent series must tend to zero as a sequence.
+
+While the conditional statement is true, its hypothesis is not satisfied: Grandi's series does not converge. So no conclusion can be drawn from the statement.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4636023/is-1-infty-0/4636027#4636027) on Mathematics Stack Exchange, 2023-02-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

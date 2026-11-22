@@ -1,0 +1,65 @@
+---
+title: Proving that $\lim\limits_{h \to 0}\frac{|x+h|-|x|}{h}$ does not exist at $x=0$
+date: '2016-12-10'
+description: You basically did two things in the opposite order as expected, and that allowed a fallacy to creep in. You were asked first to substitute $x=0$, then evaluate…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2052335
+se-link: https://math.stackexchange.com/questions/2052286/proving-that-lim-limits-h-to-0-fracxh-xh-does-not-exist-at-x-0/2052335#2052335
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- derivatives
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving that $\lim\limits_{h \to 0}\frac{|x+h|-|x|}{h}$ does not exist at $x=0$](https://math.stackexchange.com/questions/2052286/proving-that-lim-limits-h-to-0-fracxh-xh-does-not-exist-at-x-0), asked by [Wilhelm](https://math.stackexchange.com/users/397852/wilhelm) on Mathematics Stack Exchange (2016-12-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In our exam, we are tasked to prove that $U(0)$ does not exist where,
+>
+>
+>
+> $$U(x) = \lim\limits_{h \to 0}\frac{|x+h|-|x|}{h}$$
+>
+> <br>
+>
+> What I did was to simplify the function first, so I initially performed the limit operation. That function above is essentially the derivative of $|x|$, so I got,
+>
+> $$U(x) = \frac{x}{|x|}$$
+>
+> And after doing $U(0)$, it became
+>
+> $$U(0) = undefined$$
+>
+> This completed my proof. My teacher marked it wrong. What is the incorrect step in what I did and what could be the right proof?
+:::
+
+You basically did two things in the opposite order as expected, and that allowed a fallacy to creep in.  You were asked first to substitute $x=0$, then evaluate the limit as $h\to 0$.  This is
+$$U(0) = \lim_{h\to 0} \frac{|0+h| - |0|}{h} = \lim_{h\to 0} \frac{|h|}{h}$$
+which does not exist.
+
+Instead, you took the limit as $h\to0$, (which does, as you say, compute the derivative at $x$), then asserted that this expression was not defined at $x=0$.  But this line of reasoning is not valid to show that the the original limit does not exist.  For instance, in your problem, replace $|x|$ by $$f(x) = \begin{cases} x^2 \sin\left(\frac{1}{x}\right) & \text{if $x\neq 0$} \\ 0 & \text{$x=0$}\end{cases}$$  Then if $x\neq0$
+$$\begin{align*}
+    f'(x) &= 2x \sin\left(\frac{1}{x}\right) + x^2 \cos\left(\frac{1}{x}\right)\cdot \left(-\frac{1}{x^2}\right)\\
+    &= 2x \sin\left(\frac{1}{x}\right) - \cos\left(\frac{1}{x}\right)
+\end{align*}$$
+Not only is this undefined at $0$, $\lim_{x\to 0} f'(x)$ does not exist.  But if you first set $x=0$, then take the limit, you get
+$$\lim_{h\to 0} \frac{f(h) - 0}{h}
+    = \lim_{h\to 0} h \sin\left(\frac{1}{h}\right)
+    = 0$$
+So $f'(0) =0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2052286/proving-that-lim-limits-h-to-0-fracxh-xh-does-not-exist-at-x-0/2052335#2052335) on Mathematics Stack Exchange, 2016-12-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

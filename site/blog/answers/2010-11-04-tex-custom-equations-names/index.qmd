@@ -1,0 +1,47 @@
+---
+title: Custom equations' names
+date: '2010-11-04'
+description: If you use the amsmath package you can do
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4928
+se-link: https://tex.stackexchange.com/questions/4925/custom-equations-names/4928#4928
+se-score: 37
+se-accepted: true
+se-tags:
+- math-mode
+- equations
+- cross-referencing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Custom equations' names](https://tex.stackexchange.com/questions/4925/custom-equations-names), asked by [Abramo](https://tex.stackexchange.com/users/1552/abramo) on TeX Stack Exchange (2010-11-04; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Do you know how I can call a reference to an equation using `\ref` or `\eqref` and obtain the `(name of the equation)` instead of the standard counter?
+:::
+
+If you use the `amsmath` package you can do
+
+```latex
+\begin{equation}
+  \tag{*}
+  \int_{\partial\Omega} \omega = \int_\Omega d\omega
+  \label{eqn:Stokes}
+\end{equation}
+
+By \eqref{eqn:Stokes} ...
+```
+
+Is that what you want?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4925/custom-equations-names/4928#4928) on TeX Stack Exchange, 2010-11-04, with [edits](https://tex.stackexchange.com/posts/4928/revisions) by [Khaled Hosny](https://tex.stackexchange.com/users/729/khaled-hosny), [Seamus](https://tex.stackexchange.com/users/215/seamus). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

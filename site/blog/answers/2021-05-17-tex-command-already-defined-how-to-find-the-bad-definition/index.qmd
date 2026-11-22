@@ -1,0 +1,122 @@
+---
+title: Command already defined. How to find the bad definition?
+date: '2021-05-17'
+description: Since your \text is only used inside the checklist environment, you could redefine it from the amsmath version within that environment.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 597451
+se-link: https://tex.stackexchange.com/questions/597386/command-already-defined-how-to-find-the-bad-definition/597451#597451
+se-score: 3
+se-accepted: true
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Command already defined. How to find the bad definition?](https://tex.stackexchange.com/questions/597386/command-already-defined-how-to-find-the-bad-definition), asked by [Stewart](https://tex.stackexchange.com/users/205379/stewart) on TeX Stack Exchange (2021-05-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have `atm1.tex` which used to compile ok.  It hasn't changed since last time I compiled it, but its base classes have changed:
+>
+> ```latex
+> ! LaTeX Error: Command \text already defined.
+>                Or name \end... illegal, see p.192 of the manual.
+> ```
+>
+> How can I find where `\text` was already defined?
+>
+> `atm1.tex` contains: 
+>
+> ```latex
+> \documentclass[a4paper]{atm}
+> ...
+> \begin{checklist} % Makes a table where we can add \text, \result, or \action lines
+>   \text{This line contains text}
+>   ...
+> ```
+> `atm.cls` contains: 
+> ```latex
+> \NeedsTeXFormat{LaTeX2e}
+> \ProvidesClass{atm}[acceptance test manual template]
+>
+> \LoadClass{simdoc}
+> \DeclareOption*{\PassOptionsToClass{\CurrentOption}{simdoc}}
+> \ProcessOptions\relax
+>
+> \RequirePackage{textcomp} % Allows use of degree symbol
+> \RequirePackage[clock]{ifsym} % Brings in \StopWatchStart
+> ...
+> \newcommand{\text}[1]{& #1 & &\\}
+> ...
+> ```
+> and `simdoc.cls` contains:
+> ```latex
+> \NeedsTeXFormat{LaTeX2e}
+> \ProvidesClass{simdoc}[Sim International document template]
+>
+> \LoadClass{report}
+> \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+> \ProcessOptions\relax
+>
+> \RequirePackage[margin=3cm]{geometry}
+> \RequirePackage{longtable,array}
+> \RequirePackage{titlesec}
+> \RequirePackage[dvipsnames]{xcolor}
+> \RequirePackage{colortbl}
+> \RequirePackage{graphicx}
+> \RequirePackage{fancyhdr}
+> \RequirePackage{etoolbox}
+> \RequirePackage[hidelinks]{hyperref}
+> \RequirePackage{textcomp, booktabs}
+> \RequirePackage{url}
+> \RequirePackage{xparse}
+> \RequirePackage{caption}
+> \RequirePackage{xcolor}
+> \RequirePackage{soul}
+> \RequirePackage [most]{tcolorbox}
+> \tcbuselibrary{skins}
+> \usepackage[toc,page]{appendix}
+> ...
+> ```
+>
+> Clearly `\text` is defined in `atm1.cls`, and that's the only one I expected would exist.  I suspect someone added a new `\RequirePackage` to `simdoc.cls` which introduces a new definition for `\text`. I could rename `\text` to something else, but I have hundreds of documents which inherit from this class (all broken) and thousands of uses of `\text`, so I'd rather not change all of them.
+>
+> I tried changing `\newcommand{\text}` to `\providecommand{\text}`.  It compiles, but it doesn't seem to use `atm.cls`'s definition of `\text` (instead of a `\text{Hello}` taking up a line in the table, it overlaps the next line of the table).
+>
+> I also tried: `\let\text\undefined\newcommand{\text}...`.  This works, but is it safe?  I'm scared about unintended consequences.
+>
+> If the above idea is not safe, then my question is "how do I know which `\RequirePackage` defined `\text`?".  Knowing this will help me search for alternatives.
+:::
+
+[![Dangerous bend sign][1]][1]
+
+Since your `\text` is only used inside the `checklist` environment, you _could_ redefine it from the `amsmath` version within that environment.  
+
+In `atm.cls`:
+
+```latex
+\newcommand{\atm@text}[1]{& #1 & &\\}
+
+\newenvironment{checklist}{%
+   \let\text\atm@text%
+   % rest of environment begin code
+}{% environment end code }
+```
+
+The `\let` control sequence will override LaTeX's redefinition prevention mechanisms.  Because each environment is contained in its own TeX group, once the environment ends, `\text` will snap back to its `amsmath` definition.
+
+The drawback is that you will not be able to use the `amsmath` version of `\text` inside the `checklist` environment.  You could give it another name with the same `\let` pattern, but that won't be enough if some other command uses it indirectly.
+
+
+  [1]: 5w21d.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/597386/command-already-defined-how-to-find-the-bad-definition/597451#597451) on TeX Stack Exchange, 2021-05-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

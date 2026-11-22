@@ -1,0 +1,44 @@
+---
+title: single valued function and multi valued function
+date: '2018-01-06'
+description: Yes, that is correct.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2594412
+se-link: https://math.stackexchange.com/questions/2594410/single-valued-function-and-multi-valued-function/2594412#2594412
+se-score: 3
+se-accepted: false
+se-tags:
+- real-analysis
+- complex-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[single valued function and multi valued function](https://math.stackexchange.com/questions/2594410/single-valued-function-and-multi-valued-function), asked by [Rajesh kushwaha](https://math.stackexchange.com/users/488673/rajesh-kushwaha) on Mathematics Stack Exchange (2018-01-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> square root function is a multi valued function. for example 16 have two square root 4 and -4. but it is violation of the definition of function that each element of domain has one and only one image. then how it is a function. please clear my dout.
+:::
+
+> for example 16 have two square root 4 and -4.
+
+Yes, that is correct.
+
+> square root function is a multi valued function.
+
+Not quite.  Square roots are different from the square root function.  The definition of $\sqrt{x}$ is not *all* numbers $y$ satisfying $y^2=x$, but the unique nonnegative number $y$ such that $y^2=x$.  
+
+Thus $\sqrt{16} = 4$, not $4$ and $-4$.  
+
+With this restriction, $f(x) = \sqrt{x}$ is a function with domain $[0,\infty)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2594410/single-valued-function-and-multi-valued-function/2594412#2594412) on Mathematics Stack Exchange, 2018-01-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::
