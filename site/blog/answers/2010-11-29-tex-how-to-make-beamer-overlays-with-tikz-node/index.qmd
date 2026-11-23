@@ -1,11 +1,10 @@
 ---
-title: How to make beamer overlays with Tikz node
+title: How to make beamer overlays with TikZ nodes
 date: '2010-11-29'
-description: 'Edit 2026-11-13: This answer led to the aobs-tikz package and the overlay-beamer-styles TikZ library. I recommend you use one of those.'
+description: Combining beamer overlay specifications with TikZ keys to create incremental reveals of picture elements
 categories:
 - tex.se
 license: CC BY-SA 4.0
-draft: true
 se-site: tex
 se-answer-id: 6155
 se-link: https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node/6155#6155
@@ -45,16 +44,21 @@ se-tags:
 >   \end{figure}
 > ```
 >
-> How can I in a second slide "highlight" one of the nodes, like I can do with `<alert@n>` for a item in a list?
+> How can I in a second slide “highlight” one of the nodes, like I can 
+> do with `<alert@n>` for a item in a list?
 >
 > With highlighting I mean for example giving a color and thickening the lines.
 :::
 
-**Edit 2026-11-13: This answer led to the [`aobs-tikz` package](https://ctan.org/pkg/aobs-tikz?lang=en)** and the `overlay-beamer-styles` TikZ library. I recommend you use one of those.
-
 * * *
 
-I used to do this according to Andrew's solution until I read his note #2, and it reminded me that PGF's keys can do pretty much anything.  The key (excuse the pun) is to create a key that processes other keys conditional on the slide number:
+The key system provided by PGF and TikZ is extremely powerful. One killer 
+feature is that the argument specification as with an ordinary TeX macro. So we can declare that a TikZ key take a beamer overlay specification argument, delimited as it is in beamer by angle brackets.
+
+If we want the rest of the key to be processed conditional on the overlay
+specification returning true, we use `\pgfkeysalso`. 
+
+All we need is one command:
 
 ```latex
 \tikzset{onslide/.code args={<#1>#2}{%
@@ -74,7 +78,10 @@ causes the the following code to be expanded:
 \only<overlay specification>{\pgfkeysalso{keys}}
 ```
 
-Then you can use the key `onslide=<overlay specification>{keys}` to set keys only on specific slides.  The slightly inelegant twist is that if your overlay specification contains commas the entire pair of overlay spec and keys has to be embraced.  
+Then you can use the key `onslide=<overlay specification>{keys}` to set keys
+only on specific slides.  The slightly inelegant twist is that if your overlay
+specification contains commas the entire pair of overlay spec and keys has to be
+embraced.  
 
 Here is a complete example:
 
@@ -117,9 +124,14 @@ Here is a complete example:
 \end{document}
 ```
 
+![The four overlays of this example, one per second.](overlays.gif){fig-alt="Animation cycling through four beamer slides of a block diagram (Feature Extraction, Acoustic Model, Language Model, Decoder). Slide 1: Language Model is blue. Slide 2: Acoustic Model turns green. Slide 3: Feature Extraction and Language Model are thick and red. Slide 4: Feature Extraction stays red; Acoustic Model and Language Model are green."}
+
 You will be disappointed about the jiggling of your picture when the line thickness keys are applied.  You might have to avoid relative positioning to make that go away.  
 
 For more on key handlers like `.code args`, see the `pgfkeys` section of the TikZ-PGF manual.
+
+This answer led to the [`aobs-tikz` package](https://ctan.org/pkg/aobs-tikz?lang=en) and the `overlay-beamer-styles` TikZ library. I revisited this example with that library in 2026: [Beamer overlays on TikZ nodes, revisited](/blog/posts/2026-11-23-beamer-overlays-tikz-revisited/).
+
 
 ::: {.se-attribution}
 Originally posted as [an answer](https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node/6155#6155) on TeX Stack Exchange, 2010-11-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

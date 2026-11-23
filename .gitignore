@@ -8,3 +8,20 @@ __pycache__/
 tools/se_cache/
 drafts/_site/
 drafts/**/index_files/
+
+# LaTeX build files (e.g. a post's example .tex compiled to make a figure)
+*.aux
+*.log
+*.toc
+*.nav
+*.snm
+*.out
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.dvi
+*.xdv
+# PDFs compiled next to a post's .tex (site/files/ PDFs are unaffected)
+site/blog/**/*.pdf
+drafts/**/*.pdf
