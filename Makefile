@@ -33,7 +33,7 @@ office: office/assets/headshot.jpg
 	$(QUARTO) render office
 
 site: site/images/headshot.jpg
-	$(QUARTO) render site
+	$(QUARTO) render site --profile production
 
 preview-office: office/assets/headshot.jpg
 	cd office && $(QUARTO) preview index.qmd

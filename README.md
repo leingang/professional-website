@@ -34,7 +34,9 @@ categories: [teaching, calculus]
 ---
 ```
 Math works as usual: `$x^2$`, `$$\int f$$`. `make preview-site` to see it; push to publish.
-Add `draft: true` to keep a post out of the build.
+Add `draft: true` to keep a post off the live site. Drafts still show (marked as drafts)
+when previewing, including the editor's Preview button. Publishing builds use
+`--profile production` (`site/_quarto-production.yml`), which leaves them out.
 
 ### Import Stack Exchange answers
 `tools/import_stackexchange.py` turns my Stack Exchange answers (Math.SE, TeX.SE, Stack Overflow, …) into draft posts in

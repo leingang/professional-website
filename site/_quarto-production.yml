@@ -1,0 +1,4 @@
+# Used when publishing: `quarto render site --profile production`
+# (the GitHub Pages workflow and `make site`). Drafts are left out entirely.
+website:
+  draft-mode: gone
