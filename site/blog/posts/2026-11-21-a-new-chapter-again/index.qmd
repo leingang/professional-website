@@ -3,11 +3,17 @@ title: "Back to writing"
 date: 2026-11-21
 description: "After a long quiet stretch, I'm writing here again about teaching, training instructors, and tools."
 categories: [meta]
-draft: true   # TODO: edit, then remove this line to publish
 ---
 
-<!-- DRAFT. A short re-introduction post is a good first piece: what you've
-     been doing for the past decade (coordinating calculus, TA training,
-     student affairs) and what you'll write about here. -->
+A while back I spent a summer rewriting my website. I changed from a dynamic, database-backed platform to a static site generated from text files. I migrated my Drupal and Wordpress sites to the new platform. I tweaked a theme until I was satsfied with its style. I learned a lot of Python and [Mako](https://www.makotemplates.org/) along the way. It was a worthwhile summer project.
 
-It has been a while.
+Once the academic year started, I lost energy, and kept my focus on my day job of teaching,
+training teachers, and student affairs. Not long after that the COVID-19 pandemic hit, and lots of priorities shifted.
+
+I stepped down from departmental leadership in 2025. The position of Vice Chair for Undergraduate Affairs was retired in 2023 fand split into two Assistant Directors for Undergraduate Studies (no wonder I was too busy to write!). The two posts are on staggered four-year terms. I took the first half-term as a transition to the new organization.
+
+Now I am “only” a Clinical Professor. I teach a full load of three courses per semester, advise students, and serve on a few committees. I have been enjoying the authority without responsibility that my veteran status confers. And I also find I have more time to focus on my own students, and personal professional development. In the meantime, the nest has emptied: my youngest child has entered college, and my oldest has graduated. 
+
+I switched to the [Quarto](https://quarto.org/) platform. It seems to facilitate easy publication of lots of different documents, including Jupyter notebooks. Also, I can keep everything in one GitHub repository while publishing two websites: this one along with my [office page](https://cims.nyu.edu/~leingang/) for my current students and colleagues. Incredibly, Claude facilitated this migration in a matter of hours, instead of the months it took me to set up my Nikola site. 
+
+I'm looking forward to sharing more of the things I've been doing, now that I have the time to write about it.
