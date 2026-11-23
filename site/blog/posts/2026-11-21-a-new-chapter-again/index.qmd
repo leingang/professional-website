@@ -3,14 +3,18 @@ title: "Back to writing"
 date: 2026-11-21
 description: "After a long quiet stretch, I'm writing here again about teaching, training instructors, and tools."
 categories: [meta]
+image: typewriter.jpg
+image-alt: "A black vintage Favorit typewriter seen from above on a white background, with a blank sheet of paper loaded."
 ---
 
-A while back I spent a summer rewriting my website. I changed from a dynamic, database-backed platform to a static site generated from text files. I migrated my Drupal and Wordpress sites to the new platform. I tweaked a theme until I was satsfied with its style. I learned a lot of Python and [Mako](https://www.makotemplates.org/) along the way. It was a worthwhile summer project.
+![Photo by [Florian Klauer](https://commons.wikimedia.org/wiki/File:Vintage_typewriter_(Unsplash).jpg), public domain (CC0).](typewriter.jpg){fig-alt="A black vintage Favorit typewriter seen from above on a white background, with a blank sheet of paper loaded."}
+
+A while back I spent a summer rewriting my website. I changed from a dynamic, database-backed platform to a static site generated from text files. I migrated my Drupal and WordPress sites to the new platform. I tweaked a theme until I was satisfied with its style. I learned a lot of Python and [Mako](https://www.makotemplates.org/) along the way. It was a worthwhile summer project.
 
 Once the academic year started, I lost energy, and kept my focus on my day job of teaching,
 training teachers, and student affairs. Not long after that the COVID-19 pandemic hit, and lots of priorities shifted.
 
-I stepped down from departmental leadership in 2025. The position of Vice Chair for Undergraduate Affairs was retired in 2023 fand split into two Assistant Directors for Undergraduate Studies (no wonder I was too busy to write!). The two posts are on staggered four-year terms. I took the first half-term as a transition to the new organization.
+I stepped down from departmental leadership in 2025. The position of Vice Chair for Undergraduate Affairs was retired in 2023 and split into two Assistant Directors for Undergraduate Studies (no wonder I was too busy to write!). The two posts are on staggered four-year terms. I took the first half-term as a transition to the new organization.
 
 Now I am “only” a Clinical Professor. I teach a full load of three courses per semester, advise students, and serve on a few committees. I have been enjoying the authority without responsibility that my veteran status confers. And I also find I have more time to focus on my own students, and personal professional development. In the meantime, the nest has emptied: my youngest child has entered college, and my oldest has graduated. 
 
