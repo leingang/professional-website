@@ -3,6 +3,7 @@ title: "About"
 pagetitle: "Matthew Leingang"
 title-block-style: none
 page-layout: article
+image: images/social-card.png
 ---
 
 ::: {.hero}
