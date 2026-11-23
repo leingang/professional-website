@@ -1,0 +1,69 @@
+---
+title: Math biology proof by induction question
+date: '2017-10-06'
+description: 'Here is how you might formulate the answer: Let $xn(t) = \sum{k=0}^n \frac{(t-(k-1))^k}{k!}$. Then $x(t) = xn(t)$ where $n - 1 < t \leq n$. Just to be…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2460361
+se-link: https://math.stackexchange.com/questions/2460304/math-biology-proof-by-induction-question/2460361#2460361
+se-score: 2
+se-accepted: false
+se-tags:
+- ordinary-differential-equations
+- biology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Math biology proof by induction question](https://math.stackexchange.com/questions/2460304/math-biology-proof-by-induction-question), asked by [Mackie](https://math.stackexchange.com/users/437311/mackie) on Mathematics Stack Exchange (2017-10-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am stuck on this question:
+>
+> Consider the delay-differential equation
+> $\frac{d}{
+> dt}x(t) = x(t − 1)$,
+> with $x(t) = 1$ for $t \in [−1, 0]$. The solution is given by
+> $x(t) = \sum^{n}_{0}{\frac{[t − (k − 1)]^k}{k!}}$
+> for $n − 1 \leq t \leq n$,
+> where $n$ is a non-negative integer.
+> Use proof by induction (i.e., method of steps) to find the solution
+>
+>
+> I have tried to use the sum of a geometric series on the series and then differentiating this and setting it equals to $x(t-1)$ also in the geometric series however when i tried to the basis case $k=1$ I ended up with $\frac{1-t^n}{t-1}=\frac{1+t^2(t-1)^n-nt^3(t-1)^{n-1}}{t^2}$ which I am unable to prove is true, can anyone see where I have gone wrong or suggest a better method of approach this?
+>
+>
+> -edited so that n is the upper limit
+:::
+
+Here is how you might formulate the answer:  Let $x_n(t) = \sum_{k=0}^n \frac{(t-(k-1))^k}{k!}$.  Then $x(t) = x_n(t)$ where $n - 1 < t \leq n$.  Just to be explicit,
+$$x(t) = 
+    \begin{cases}
+        1   & \text{if $0 < x \leq 1$} \\
+        1+t & \text{if $1 < x \leq 2$} \\
+        1+t+\frac{1}{2}(t-1)^2 & \text{if $2 < x \leq 3$} \\
+        1+t+\frac{1}{2}(t-1)^2 + \frac{1}{6}(t-2)^3 & \text{if $3 < x \leq 4$} \\
+        \dots & \dots
+    \end{cases}$$
+
+You need to show $x'(t) = x(t-1)$ for all $t \geq 0$.  On the interval $n-1 < t \leq n$, we have $x(t) = x_n(t)$ and $x(t-1) = x_{n-1}(t-1)$.  So it suffices to show that $x_n'(t) = x_{n-1}(t-1)$ for each $n$.
+
+For this, I'm not even sure you need induction.  For
+$$\begin{align*}
+    x_n'(t) &= \sum_{k=1}^n \frac{k(t-(k-1))^{k-1}}{k!}
+             = \sum_{k=1}^n \frac{(t-(k-1))^{k-1}}{(k-1)!}
+             = \sum_{k=0}^{n-1} \frac{(t-k)^{k}}{k!} \\
+    x_{n-1}(t-1)
+            &= \sum_{k=0}^{n-1} \frac{((t-1)-(k-1))^{k}}{k!}
+             = \sum_{k=0}^{n-1} \frac{(t-k)^{k}}{k!}
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2460304/math-biology-proof-by-induction-question/2460361#2460361) on Mathematics Stack Exchange, 2017-10-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

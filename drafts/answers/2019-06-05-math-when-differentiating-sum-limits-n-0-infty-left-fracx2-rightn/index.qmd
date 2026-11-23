@@ -1,0 +1,62 @@
+---
+title: When differentiating $\sum\limits_{n=0}^{\infty} \left(\frac{x}{2}\right)^n$
+date: '2019-06-05'
+description: When in doubt, write it out. You don't need to memorize formulas for how the limits change in differentiation of series. There are too many cases to consider…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3252133
+se-link: https://math.stackexchange.com/questions/3252115/when-differentiating-sum-limits-n-0-infty-left-fracx2-rightn/3252133#3252133
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When differentiating $\sum\limits_{n=0}^{\infty} \left(\frac{x}{2}\right)^n$](https://math.stackexchange.com/questions/3252115/when-differentiating-sum-limits-n-0-infty-left-fracx2-rightn), asked by [Hellowhatsup](https://math.stackexchange.com/users/657337/hellowhatsup) on Mathematics Stack Exchange (2019-06-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When differentiating $\sum\limits_{n=0}^{\infty}  \left(\frac{x}{2}\right)^n$, gives $\sum\limits_{n=1}^{\infty}  \left(\frac{nx^{n-1}}{2^n}\right)$. so, $n =0$ , becomes $n = 1$. Then, if we were to differentiate $\sum\limits_{n=1}^{\infty}  \left(\frac{x}{2}\right)^n$, does it become $\sum\limits_{n=2}^{\infty}  \left(\frac{nx^{n-1}}{2^n}\right)$? (from $n= 1$, to $n= 2$?) 
+>
+> If this is how it works, [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: GlW2B.png  
+> is the above equation false? and how could we solve $\sum\limits_{n=1}^{\infty}  \left(\frac{n^2x^n}{2^n}\right)$?
+:::
+
+*When in doubt, write it out.*  You don't need to memorize formulas for how the limits change in differentiation of series.  There are too many cases to consider anyway.  Just look at the first few terms to match the lowest index.
+
+For instance:
+$$\sum_{n=0}^{\infty}  \left(\frac{x}{2}\right)^n
+= \sum_{n=0}^{\infty}  \frac{x^n}{2^n}
+= 1 + \frac{x}{2} + \frac{x^2}{4} + \frac{x^3}{8} + \cdots$$
+Differentiating the series is going to “kill” the $n=0$ term.  So if we differentiate term-by-term, the first nonzero term is $n=1$:
+$$\frac{d}{dx}\sum_{n=0}^{\infty}  \frac{x^n}{2^n}
+    = \sum_{n=1}^{\infty}  \frac{nx^{n-1}}{2^n}
+    = \frac{1}{2} + \frac{2x}{4} + \frac{3x^2}{8} + \cdots$$
+With the first few terms written out, we can see that this series can also be written as
+$$\frac{1}{2} + \frac{2x}{4} + \frac{3x^2}{8} + \cdots
+    = \sum_{n=0}^\infty \frac{(n+1)x^n}{2^{n+1}}$$
+This re-indexing trick comes in handy when combining power series: If you can make the exponents match, you can combine like terms.
+
+But in contrast:
+$$\sum_{n=1}^{\infty}  \frac{x^n}{2^n}
+    = \frac{x}{2} + \frac{x^2}{4} + \frac{x^3}{8} + \cdots$$
+Differentiating this series does *not* kill off the first term since it's not constant.
+Instead,
+$$\frac{d}{dx}\sum_{n=1}^{\infty}  \frac{x^n}{2^n}
+    = \sum_{n=1}^{\infty}  \frac{nx^{n-1}}{2^n}
+    = \frac{1}{2} + \frac{2x}{4} + \frac{3x^2}{8} + \cdots$$
+So there's no change to the lower limit.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3252115/when-differentiating-sum-limits-n-0-infty-left-fracx2-rightn/3252133#3252133) on Mathematics Stack Exchange, 2019-06-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

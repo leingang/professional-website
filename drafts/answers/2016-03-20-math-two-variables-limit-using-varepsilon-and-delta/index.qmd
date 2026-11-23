@@ -1,0 +1,61 @@
+---
+title: Two variables limit using $\varepsilon$ and $\delta$
+date: '2016-03-20'
+description: These two-variable limits are tricky, but you can get a handle on them by looking at a contour plot.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1706104
+se-link: https://math.stackexchange.com/questions/1706078/two-variables-limit-using-varepsilon-and-delta/1706104#1706104
+se-score: 2
+se-accepted: true
+se-tags:
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Two variables limit using $\varepsilon$ and $\delta$](https://math.stackexchange.com/questions/1706078/two-variables-limit-using-varepsilon-and-delta), asked by [mvfs314](https://math.stackexchange.com/users/136318/mvfs314) on Mathematics Stack Exchange (2016-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to solve this limit
+> $$\lim_{(x,y)\to(0,0)}\frac{xy}{y-x^{3}}$$
+> I know the answer is $0$ ([Wolfram told me][q-1]). I tried to see some limited function to solve it, but I couldn't.
+>
+> I mean, I tried both:
+> $$\frac{x}{y-x^{3}}$$
+> and
+> $$\frac{y}{y-x^{3}}$$
+> and they are not limited.
+>
+> I really don't know how to use $\varepsilon$ and $\delta$ to prove it. From James Stewart's calculus book, I know I have to try to use $\sqrt{x^{2}+y^{2}}<\delta$ to limit $|f(x,y)-0|$ and get a link between $\varepsilon$ and $\delta$, but I really didn't get it.
+>
+>
+>   [q-1]: http://www.wolframalpha.com/input/?t=crmtb01&i=limit%20as%20(x,y)%20-%3E%20(0,0)%20of%20x%20y%20%2F%20(y-x%5E3)
+:::
+
+These two-variable limits are tricky, but you can get a handle on them by looking at a contour plot.
+
+Let $f(x,y) = \frac{xy}{y-x^3}$.  If $f(x,y) = k$ for some constant $k$, then
+$$xy = ky - k x^3 \implies y = \frac{kx^3}{k-x}$$
+As $k$ varies, the curves with this equation will all intersect at $(0,0)$.  But that is a Bad Thing for a function.  It means we cannot define a value for $f$ at $(0,0)$ that would result in a continuous function.  The point $(0,0)$ would have to simultaneously be on the level curve for all constants $k$.
+
+We can also use this to show that $\lim_{(x,y) \to (0,0)} \frac{xy}{y-x^3}$ does not exist.  Use two of the curves with $k=0$ and $k=1$ (for instance).
+
+ 1. Let $x=t$ and $y=0$.  Then
+$$\lim_{t\to 0} f(t,0) = \lim_{t\to 0} 0 = 0$$
+
+ 2. Let $x=t$ and $y = \frac{t^3}{1-t}$.  Then
+$$\lim_{t\to 0} f\left(t,\frac{t^3}{1-t}\right) = \lim_{t\to 0} 1 = 1$$
+
+Therefore the two-variable limit does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1706078/two-variables-limit-using-varepsilon-and-delta/1706104#1706104) on Mathematics Stack Exchange, 2016-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

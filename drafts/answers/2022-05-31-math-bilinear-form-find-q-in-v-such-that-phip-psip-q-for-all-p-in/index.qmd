@@ -1,0 +1,40 @@
+---
+title: Bilinear form Find q $\in\ V$ such that $\phi(p)=\psi(p,q)$ for all $p\in V$
+date: '2022-05-31'
+description: You are looking for a polynomial $q(x) \in V$ such that $$\int0^1 p(x) q(x) = p(0)$$ for all $p(x) \in V$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4462791
+se-link: https://math.stackexchange.com/questions/4462770/bilinear-form-find-q-in-v-such-that-phip-psip-q-for-all-p-in-v/4462791#4462791
+se-score: 3
+se-accepted: false
+se-tags:
+- bilinear-form
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Bilinear form Find q $\in\ V$ such that $\phi(p)=\psi(p,q)$ for all $p\in V$](https://math.stackexchange.com/questions/4462770/bilinear-form-find-q-in-v-such-that-phip-psip-q-for-all-p-in-v), asked by [Lunnnniii17289](https://math.stackexchange.com/users/1063156/lunnnniii17289) on Mathematics Stack Exchange (2022-05-31; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $V$ be the $\mathbb{R}$-Vector space of polynomials with degree $\leq$ 2. Let $\psi\colon V \times V \rightarrow \mathbb{R}$ be the bilinear form $$(p,q) \mapsto \int_{0}^{1}p(x)q(x)dx$$
+> Let $\phi$ be a linear form $p \mapsto p(0)$. Find a $q \in V$, such that $\phi(p)=\psi(p,q)$ for all $p\in V$
+>
+> I still have trouble understanding, what this $q$ that I'm looking for actually is and especially how I would manage to find it.
+:::
+
+You are looking for a polynomial $q(x) \in V$ such that
+$$\int_0^1 p(x) q(x) = p(0)$$
+for all $p(x) \in V$.
+
+The element $q \in V$ is determined by its coefficients: $q(x) = b_0 + b_1 x + b_2 x^2$, for some $b_0, b_1, b_2 \in \mathbb{R}$. Using some clever choices of $p(x)$ you should be able to determine equations satisfied by those coefficients.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4462770/bilinear-form-find-q-in-v-such-that-phip-psip-q-for-all-p-in-v/4462791#4462791) on Mathematics Stack Exchange, 2022-05-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

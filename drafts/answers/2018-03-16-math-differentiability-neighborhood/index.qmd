@@ -1,0 +1,53 @@
+---
+title: differentiability - neighborhood
+date: '2018-03-16'
+description: I would call this is proof by contraposition rather than contradiction. You wanted to prove “If $A$, then $B$.” You assumed (not $B$), and derived (not $A$)…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2693948
+se-link: https://math.stackexchange.com/questions/2693936/differentiability-neighborhood/2693948#2693948
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[differentiability - neighborhood](https://math.stackexchange.com/questions/2693936/differentiability-neighborhood), asked by [funmath](https://math.stackexchange.com/users/527556/funmath) on Mathematics Stack Exchange (2018-03-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Could someone let me know if I'm on the right track? And if not give me a hint or let me know what doesn't make sense? Thanks in advance!!
+>
+> > Suppose $f\colon \mathbb{R}\ \to \mathbb{R}$ is differentiable at
+> > $x_{0}$ $\in$ $(a,b)$ and $f'(x_{0})>0$. Prove $\exists$ a
+> > neighborhood $I$ of $x_{0}$ s.t. $\forall x \in I$ we have $x<x_{0}
+>  \implies f(x_{})<f(x_{0})$ and $x>x_{0} \implies f(x_{})>f(x_{0})$.
+>
+> This is what I was thinking:
+>
+> Suppose there doesn't exist such an interval $I$. Then $\forall n \in \mathbb{N}$ we can find an $x_{n} \in (x_{0}-\frac{1}{n},x_{0}+\frac{1}{n})$ s.t. if $x_{n}<x_{0} \implies f(x_{n})\ge f(x_{0})$ and if $x_{n}>x_{0} \implies f(x_{n})\le f(x_{0})$.
+> <br><br> This defines a sequence $\{x_{n}\}$, where $x_{n} \ne x_{0} \space \forall n \in \mathbb{N}$, with $\{x_{n}\} \to x_{0}$.
+> <br><br> Choose $\{x_{n_{k}}\}$ to be the subsequence of $\{x_{n}\}$ s.t. $x_{n_{k}} \lt x_{0} \space\forall n_{k}\in \mathbb{N}$. Note $\{x_{n_{k}}\} \to x_{0}$.
+> <br><br> We know $f$ is differentiable at $x_{0}$. So we have that $\{\frac{f(x_{n_{k}})-f(x_{0})}{x_{n_{k}}-x_{0}}\}$ $\le 0$ so that $f'(x_{0})$ $\le 0$. Contradiction - since by hypothesis $f'(x_{0})$ $\gt 0$. Thus, there does exist such an interval.
+>
+>
+>
+>
+>
+> Edit: Also, I don't understand where the interval $(a,b)$ comes to play. Why are we given it? We are given the domain of $f$ is $\mathbb{R}$ so I feel like its redundant information?
+:::
+
+I would call this is proof by contraposition rather than contradiction.  You wanted to prove “If $A$, then $B$.” You assumed (not $B$), and derived (not $A$), but you didn't use $A$ in your proof at all.  So essentially you proved “If not $B$, then not $A$,” which is the contrapositive of the original statement.  That's more a matter of style than a logical flaw.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2693936/differentiability-neighborhood/2693948#2693948) on Mathematics Stack Exchange, 2018-03-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

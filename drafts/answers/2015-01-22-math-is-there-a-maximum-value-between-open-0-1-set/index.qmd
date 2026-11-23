@@ -1,0 +1,65 @@
+---
+title: Is there a maximum value between open $(0,1)$ set?
+date: '2015-01-22'
+description: That's a very creative answer, but infinity is tricky. If $$1 - \frac{1}{10^\infty} < 1$$ would you not have to admit that $$1 - \frac{1}{10^\infty} < 1 -…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114832
+se-link: https://math.stackexchange.com/questions/1114821/is-there-a-maximum-value-between-open-0-1-set/1114832#1114832
+se-score: 16
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- infinity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a maximum value between open $(0,1)$ set?](https://math.stackexchange.com/questions/1114821/is-there-a-maximum-value-between-open-0-1-set), asked by [ramazan polat](https://math.stackexchange.com/users/135596/ramazan-polat) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This question came up in my interview for a job application(you won't believe it but it was a C# programmer job application).
+>
+> Let's say we have a open set $(0,1)$.
+>
+> Can we say that there is a maximum value between $(0,1)$ or it is considered as undefined?
+>
+> I answered that there is and it is 
+>
+> $$1 - \frac{1}{10^\infty}$$ 
+>
+> But they said there isn't any max value. I still think my answer is correct.
+>
+> **Edit**:
+>
+> In some answers, it is basically said that:
+>
+> $$\frac{1}{10^\infty} >  \frac{1}{2\cdot10^\infty}$$ 
+>
+> Is this equation valid since there are infinite values in each side?
+> I thought 
+> $$2\cdot\infty = \infty$$
+> and 
+> $$\frac{\infty}{2} = \infty$$
+> So it doesn't matter how much you multiply or divide infinity, it is still infinity?
+>
+> Sorry if the question is silly but I am a computer programmer, not mathematician.
+:::
+
+That's a very creative answer, but infinity is tricky.  If 
+$$1 - \frac{1}{10^\infty} < 1$$ 
+would you not have to admit that
+$$1 - \frac{1}{10^\infty} < 1 - \frac{1}{2} \cdot \frac{1}{10^\infty} < 1$$
+as well?  This would contradict your assertion that $1 - \frac{1}{10^\infty}$ was the maximum value of $(0,1)$.
+
+You are right that this seems fishy, and this is the whole problem with treating infinity like a number. The only reasonable real number value of $\frac{1}{10^\infty}$ would be zero, so your number is $1$, and $1$ is not in the set.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114821/is-there-a-maximum-value-between-open-0-1-set/1114832#1114832) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

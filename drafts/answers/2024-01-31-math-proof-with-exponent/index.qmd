@@ -1,0 +1,45 @@
+---
+title: Proof with exponent
+date: '2024-01-31'
+description: Consider the function $f(x) = e^x$ on the interval $[0,b]$. By the mean value theorem there exists $c$ such that $0 < c < b$ and $$\frac{f(b)-f(0)}{b-0} =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4854166
+se-link: https://math.stackexchange.com/questions/4854151/proof-with-exponent/4854166#4854166
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof with exponent](https://math.stackexchange.com/questions/4854151/proof-with-exponent), asked by [Maya](https://math.stackexchange.com/users/1242454/maya) on Mathematics Stack Exchange (2024-01-31; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How do I prove that
+>
+> $$1+be^b \leq e^b$$
+>
+> If I know that $b\geq0$.
+>
+> My idea:
+>
+> I thought writing it as $f(x) = 1+be^b - e^b$. Derivative of this function is $f'(x) = be^b$. We have minima at $b=0$.
+:::
+
+Consider the function $f(x) = e^x$ on the interval $[0,b]$. By the mean value theorem there exists $c$ such that $0 < c < b$ and $$\frac{f(b)-f(0)}{b-0} = f'(c)$$
+
+The left-hand side is $\frac{e^b-1}{b}$ and the right-hand side is $e^c$, which is $\leq e^b$. Therefore,
+$$\frac{e^b-1}{b} \leq e^b \implies e^b - 1 \leq be^b \implies e^b \leq 1 + be^b$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4854151/proof-with-exponent/4854166#4854166) on Mathematics Stack Exchange, 2024-01-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

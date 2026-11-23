@@ -1,0 +1,47 @@
+---
+title: Finding a limit for a multiple variable function
+date: '2017-01-10'
+description: Approaching zero along those paths is not sufficient to conclude that $f(x,y) \to 0$ as $(x,y) \to 0$. The statement that $f(x,y) \to 0$ as $(x,y) \to 0$ is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2091976
+se-link: https://math.stackexchange.com/questions/2091959/finding-a-limit-for-a-multiple-variable-function/2091976#2091976
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding a limit for a multiple variable function](https://math.stackexchange.com/questions/2091959/finding-a-limit-for-a-multiple-variable-function), asked by [Sande](https://math.stackexchange.com/users/405731/sande) on Mathematics Stack Exchange (2017-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've been asked to show that the limit $$\lim \limits_{(x,y) \to (0,0)}\frac{x^2y^2}{2x^2+y^2}$$ exists. So far I have managed to deduce that the function will $\to 0$ as $(x,y)\to0$. This is because letting $y=0, x=0, y=x,$ etc will yield $0$ as the limit. However, I'm still having problems proving the limit exists as the fore mentioned method really isn't proof.. 
+>
+> If someone has an idea how to prove this say using the epsilon-delta-method, any help would be greatly appreciated. Thanks!
+:::
+
+> So far I have managed to deduce that the function will $\to 0$ as $(x,y)\to0$. This is because letting $y=0, x=0, y=x,$ etc will yield $0$ as the limit.
+
+Approaching zero along those paths is not sufficient to conclude that $f(x,y) \to 0$ as $(x,y) \to 0$.  The statement that $f(x,y) \to 0$ as $(x,y) \to 0$ is equivalent to $\lim_{(x,y)\to(0,0)} f(x,y) = 0$.
+
+Here is one way to show the limit is zero.  Since
+$$0 < x^2 < 2 x^2 < x^2 + y^2 < 2x^2 + y^2$$
+for all $(x,y)\neq (0,0)$, we have
+$$0 < \frac{x^2}{2x^2 + y^2} < 1$$
+Therefore
+$$\left|\frac{x^2y^2}{2x^2 + y^2}\right| = \left|\frac{x^2}{2x^2 + y^2}\right|\left|y^2\right| < 1 \cdot |y^2| = y^2$$
+Since $y^2 \to 0$, the two-variable limit is zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2091959/finding-a-limit-for-a-multiple-variable-function/2091976#2091976) on Mathematics Stack Exchange, 2017-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

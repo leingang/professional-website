@@ -1,0 +1,54 @@
+---
+title: First and second $r$-derivatives in terms of $x,y$
+date: '2023-02-20'
+description: 'You have done the harder part already. Here''s an outline to the second part:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4643069
+se-link: https://math.stackexchange.com/questions/4642818/first-and-second-r-derivatives-in-terms-of-x-y/4643069#4643069
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[First and second $r$-derivatives in terms of $x,y$](https://math.stackexchange.com/questions/4642818/first-and-second-r-derivatives-in-terms-of-x-y), asked by [RiverX15](https://math.stackexchange.com/users/935059/riverx15) on Mathematics Stack Exchange (2023-02-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > For a differentiable function $f(x, y)$ with continuous second partial derivatives, $x=r\cos\theta$ and $y=r\sin\theta$, show that $f_r=f_x\cos\theta+f_y\sin\theta$ and $f_{rr}=f_{xx}\cos^2\theta+2f_{xy}\cos\theta\sin\theta+f_{yy}\sin^2\theta$. [Note that $f_x=\frac{\partial f}{\partial x}$ and $f_{xx}=\left(f_x\right)_x=\frac{\partial^2f}{\partial x^2}$]
+>
+>
+> **My attempt:**
+>
+> I was able to prove the first part of the question. Here's what I did:
+>
+> $$\begin{align}
+> f_x&=\frac{\partial f}{\partial r}\times\frac{\partial r}{\partial x}+\frac{\partial f}{\partial \theta}\times\frac{\partial \theta}{\partial x}\\
+> &=f_r\times\frac1{\cos\theta}-f_{\theta}\times r\sin\theta\\
+> f_y&=\frac{\partial f}{\partial r}\times\frac{\partial r}{\partial y}+\frac{\partial f}{\partial \theta}\times\frac{\partial \theta}{\partial y}\\
+> &=f_r\times\frac1{\sin\theta}+f_{\theta}\times r\sin\theta
+> \end{align}$$
+> I eliminated $f_\theta$ from these two equations and got the first part. But I am stuck on the second part. Any hints will be appreciated.
+:::
+
+You have done the harder part already. Here's an outline to the second part:
+
+ - Apply the first part to $g=f_r$. You will get an expression for $f_{rr} = g_r$ in terms of $f_{rx} = g_x$ and $f_{ry} = g_y$.
+
+ - Since $f$ has continuous second derivatives, $f_{rx} = f_{xr}$ and $f_{ry} = f_{yr}$. 
+
+ - Use the first part again on $f_x$ and $f_y$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4642818/first-and-second-r-derivatives-in-terms-of-x-y/4643069#4643069) on Mathematics Stack Exchange, 2023-02-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

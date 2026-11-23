@@ -1,0 +1,48 @@
+---
+title: Finding the equation of a parabola - where is the right triangle for the distance formula here?
+date: '2017-12-22'
+description: You don't need to draw a right triangle to use the distance formula. But if you did draw one, the one being measured has the line segment $(x,y)$ to $(a,b)$ as…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2576589
+se-link: https://math.stackexchange.com/questions/2576584/finding-the-equation-of-a-parabola-where-is-the-right-triangle-for-the-distanc/2576589#2576589
+se-score: 1
+se-accepted: true
+se-tags:
+- algebra-precalculus
+- geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the equation of a parabola - where is the right triangle for the distance formula here?](https://math.stackexchange.com/questions/2576584/finding-the-equation-of-a-parabola-where-is-the-right-triangle-for-the-distanc), asked by [BMBM](https://math.stackexchange.com/users/389088/bmbm) on Mathematics Stack Exchange (2017-12-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I was watching a [video on Khan academy][q-1] that explains how to find the equation of a parabola, given we have a focus and a directrix.
+>
+> He draws a picture like this, the focus is at $(a, b)$ and we pick a random point on the parabola at $(x, y)$, the directrix is at $y = k$
+>
+> The instructor indicates that we want to use the distance formula to help us with that.
+>
+> [![enter image description here][q-2]][q-2]
+>
+> What I don't understand, how can we apply the distance formula here? Where is the right triangle in that picture he drew? 
+>
+>
+>   [q-1]: https://www.khanacademy.org/math/algebra2/intro-to-conics-alg2/focus-and-directrix-of-a-parabola-alg2/v/equation-for-parabola-from-focus-and-directrix
+>   [q-2]: 8ynY8.png
+:::
+
+You don't *need* to draw a right triangle to use the distance formula.  But if you did draw one, the one being measured has the line segment $(x,y)$ to $(a,b)$ as its hypotenuse.  The right angle would be at $(a,y)$ (Draw a vertical line through $(a,b)$, a horizontal line through $(x,y)$, and mark the intersection).
+
+The expression on the left is the distance from the point $(x,y)$ to $(x,k)$.  There's no right triangle to draw there, because one of its legs would have zero length.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2576584/finding-the-equation-of-a-parabola-where-is-the-right-triangle-for-the-distanc/2576589#2576589) on Mathematics Stack Exchange, 2017-12-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

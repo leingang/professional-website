@@ -1,0 +1,53 @@
+---
+title: A difficulty in understanding the proof of theorem 4.1 in chapter3 in Israel Gohberg.
+date: '2018-01-04'
+description: 'It''s the old multiply-and-divide-the-same thing trick: $$\left<A(x+y),x+y\right> =\left<A\left(\frac{x+y}{\Vert x+y\Vert}\right),\frac{x+y}{\Vert…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2592089
+se-link: https://math.stackexchange.com/questions/2592061/a-difficulty-in-understanding-the-proof-of-theorem-4-1-in-chapter3-in-israel-goh/2592089#2592089
+se-score: 1
+se-accepted: true
+se-tags:
+- operator-theory
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A difficulty in understanding the proof of theorem 4.1 in chapter3 in Israel Gohberg.](https://math.stackexchange.com/questions/2592061/a-difficulty-in-understanding-the-proof-of-theorem-4-1-in-chapter3-in-israel-goh), asked by [Emptymind](https://math.stackexchange.com/users/417020/emptymind) on Mathematics Stack Exchange (2018-01-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The proof is given in the following pictures:
+>
+> [![enter image description here][q-1]][q-1]
+> [![enter image description here][q-2]][q-2]
+> [![enter image description here][q-3]][q-3]
+>
+> Could not calculate the details of how equation(1) come, could anyone help me in doing so please? 
+>
+>
+>
+>   [q-1]: mlHHf.png
+>   [q-2]: 7Iidt.png
+>   [q-3]: N0uHz.png
+:::
+
+It's the old multiply-and-divide-the-same thing trick:
+$$\left<A(x+y),x+y\right>
+   =\left<A\left(\frac{x+y}{\Vert x+y\Vert}\right),\frac{x+y}{\Vert x+y\Vert}\right>\Vert x+y\Vert^2$$
+The inner product is of the form $\left<Au,u\right>$ with $\Vert u \Vert =1$, so it's $\leq m$.  So
+$$\left<A(x+y),x+y\right> \leq m \Vert x+y\Vert^2$$
+Similarly,
+$$\left<A(x-y),x-y\right> \leq m \Vert x-y\Vert^2$$
+Add them together and use the parallelogram law.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2592061/a-difficulty-in-understanding-the-proof-of-theorem-4-1-in-chapter3-in-israel-goh/2592089#2592089) on Mathematics Stack Exchange, 2018-01-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

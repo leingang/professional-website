@@ -1,0 +1,45 @@
+---
+title: If $u$ and $w$ belongs to the same connected components, does there exist any $u-w$ path containing $v$?
+date: '2018-09-04'
+description: You ask, “what happens if $u$ and $w$ lie in the same connected component of $G-v$?”
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2905347
+se-link: https://math.stackexchange.com/questions/2905297/if-u-and-w-belongs-to-the-same-connected-components-does-there-exist-any-u/2905347#2905347
+se-score: 3
+se-accepted: true
+se-tags:
+- graph-theory
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $u$ and $w$ belongs to the same connected components, does there exist any $u-w$ path containing $v$?](https://math.stackexchange.com/questions/2905297/if-u-and-w-belongs-to-the-same-connected-components-does-there-exist-any-u), asked by [Math geek](https://math.stackexchange.com/users/585505/math-geek) on Mathematics Stack Exchange (2018-09-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: gvaHj.png
+>
+> If $u$ and $w$ belongs to the same connected components, does there exist any $u-w$ path containing $v$?
+:::
+
+> If $v$ is a cut vertex of $G$, then $G-v$ is disconnected and has at least two components , $G_1$ and $G_2$.  Take $u \in G_1$ and $w \in G_2$.
+
+You ask, “what happens if $u$ and $w$ lie in the same connected component of $G-v$?”
+
+If $u$ and $w$ were in the same component of $G-v$, let's say $G_1$, there would be a path in $G_1$ connecting $u$ to $w$.  This path would **not** contain $v$, because $G_1$ is a component of $G-v$.  It might happen that some paths in $G$ connecting $u$ to $w$ contain $v$, but not all of them.
+
+But notice that $u$ and $w$ aren't arbitrary vertices—far from it.  We only need to show that such vertices exist somewhere in $G$.  So we carefully **require** that $u$ and $w$ come from different components of $G-v$.  Now we know there *is* a path connecting $u$ to $w$ in $G$ (because $G$ is connected), but there is *no* path connecting $u$ to $w$ in $G-v$ (because $G-v$ is not connected, and $u$ and $w$ are in different components), so every path from $u$ to $w$ in $G$ must not be a path in $G-v$.  That is, every  path from $u$ to $w$ in $G$ must contain $v$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2905297/if-u-and-w-belongs-to-the-same-connected-components-does-there-exist-any-u/2905347#2905347) on Mathematics Stack Exchange, 2018-09-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

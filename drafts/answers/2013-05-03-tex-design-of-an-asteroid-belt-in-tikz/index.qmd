@@ -1,0 +1,106 @@
+---
+title: Design of an asteroid belt in TikZ
+date: '2013-05-03'
+description: TikZ Decorations ================
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 112043
+se-link: https://tex.stackexchange.com/questions/111962/design-of-an-asteroid-belt-in-tikz/112043#112043
+se-score: 15
+se-accepted: false
+se-tags:
+- tikz-pgf
+- diagrams
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Design of an asteroid belt in TikZ](https://tex.stackexchange.com/questions/111962/design-of-an-asteroid-belt-in-tikz), asked by [dustin](https://tex.stackexchange.com/users/27081/dustin) on TeX Stack Exchange (2013-05-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How can I construct an asteroid belt in TikZ? That is my question: I get everything right, but I do not know how to make the asteroid belt. 
+>
+> I have no code to add besides the preamble with TikZ package since I don't know where to start.
+>
+> ![enter image description here][q-1]
+>
+>   [q-1]: W9QzX.jpg
+:::
+
+TikZ Decorations
+================
+
+When I saw this question I thought of using the tikz `decoration` methods to answer it.  After several hours poring over Chapters 21 and 30 of the manual I figured out how to do it in a few lines.  
+
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{backgrounds}
+
+\pgfkeys{
+   /pgf/decoration/asteroids/.style={
+      markings,
+      mark=between positions 0 and 1 step \pgfdecorationsegmentlength with {
+         \draw[each asteroid] (0pt,rand*\pgfdecorationsegmentamplitude) circle[
+            radius=((1/\pgfdecorationsegmentaspect-\pgfdecorationsegmentaspect)*rnd+\pgfdecorationsegmentaspect)*
+            \pgfmetadecorationsegmentamplitude
+         ];
+      },
+      aspect=0.618,       % minimum aspect of asteroid (sort of)
+      amplitude=5mm,      % maximum distance from asteroid to path
+      meta-amplitude=1pt, % radius of each asteroid
+      segment length=1pt, % separation along path between asteroids
+   },
+   /tikz/each asteroid/.style={draw}
+}
+
+\begin{document}
+\begin{tikzpicture}[
+   show background rectangle,
+   background rectangle/.style={fill=black},
+   each asteroid/.style={draw=none,fill=white},
+   decoration={asteroids}
+]
+   \draw[gray,postaction=decorate] (0,0) circle [radius=4cm];
+\end{tikzpicture}
+\end{document}
+```
+
+
+![sample code output][1]
+
+The `aspect` key is used to define the eccentricity of each asteroid.  If the aspect is *a*, then each radius (`x` and `y`) of the asteroid is set to be a random number between *a* and *1/a* times the value of the `meta-amplitude` key.  So the aspect could end up being as much as *a*^2.
+
+The nice thing about this code is it can be customized for other asteroids along other paths:
+
+```latex
+\begin{tikzpicture}[
+   each asteroid/.style={draw=red,fill=green,opacity=0.5},
+   decoration={asteroids,
+      meta-amplitude=5mm,
+      segment length=1cm,
+      aspect=1
+   }
+]
+   \draw[postaction=decorate] (0,0) -- ++(4,0) -- ++(-4,4)--cycle;
+\end{tikzpicture}
+```
+
+![sample code output 2][2]
+
+
+  [1]: 4GTFE.png
+  [2]: fpOpk.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/111962/design-of-an-asteroid-belt-in-tikz/112043#112043) on TeX Stack Exchange, 2013-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

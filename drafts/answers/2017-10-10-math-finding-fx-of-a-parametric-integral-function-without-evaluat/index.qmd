@@ -1,0 +1,41 @@
+---
+title: finding f'(x) of a parametric integral function without evaluating it
+date: '2017-10-10'
+description: What is $G(x)$? I presume you mean, an antiderivative of $g(x)$. If $G$ is an antiderivative of $g$, what would $\frac{d}{dx}G(x)$ be?
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465352
+se-link: https://math.stackexchange.com/questions/2465273/finding-fx-of-a-parametric-integral-function-without-evaluating-it/2465352#2465352
+se-score: 1
+se-accepted: false
+se-tags:
+- derivatives
+- taylor-expansion
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[finding f'(x) of a parametric integral function without evaluating it](https://math.stackexchange.com/questions/2465273/finding-fx-of-a-parametric-integral-function-without-evaluating-it), asked by [K.T.](https://math.stackexchange.com/users/489633/k-t) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >$$f(x)=\int_0^x \sqrt{1-sin(\pi t)} dt$$
+> Find $f'(x)$ without doing the integral.
+>
+> I tried using the fundamental law of calculus with the inner function as $g(t)$
+> and evaluated it to $f'(x)= \frac d{dx} (G(x)-G(0))$ but I don't think I can do that without first evaluating the integral.
+:::
+
+>I tried using the fundamental law of calculus with the inner function as $g(t)$
+and evaluated it to $f'(x)= \frac d{dx} (G(x)-G(0))$ but I don't think I can do that without first evaluating the integral.
+
+What is $G(x)$?  I presume you mean, an antiderivative of $g(x)$.  If $G$ is an antiderivative of $g$, what would $\frac{d}{dx}G(x)$ be?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465273/finding-fx-of-a-parametric-integral-function-without-evaluating-it/2465352#2465352) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

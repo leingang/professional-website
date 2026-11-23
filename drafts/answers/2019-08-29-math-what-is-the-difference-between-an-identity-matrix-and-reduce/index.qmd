@@ -1,0 +1,43 @@
+---
+title: What is the difference between an identity matrix and reduced row echelon form?
+date: '2019-08-29'
+description: 'An identity matrix must be square, but that''s not required for reduced row echelon form. All of these $2\times 4$ matrices are in RREF: $$\begin{bmatrix} 1 & 0…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3338391
+se-link: https://math.stackexchange.com/questions/3338372/what-is-the-difference-between-an-identity-matrix-and-reduced-row-echelon-form/3338391#3338391
+se-score: 4
+se-accepted: true
+se-tags:
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the difference between an identity matrix and reduced row echelon form?](https://math.stackexchange.com/questions/3338372/what-is-the-difference-between-an-identity-matrix-and-reduced-row-echelon-form), asked by [Jamminermit](https://math.stackexchange.com/users/665586/jamminermit) on Mathematics Stack Exchange (2019-08-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have been learning about matrices recently and have come across the terms reduced row echelon form and identity matrix. At first glance, they seem to be identical - a row of ones on the diagonal, with the other entries being zero.
+>
+> My question is whether there is a difference between reduced row echelon form and an identity matrix?
+:::
+
+An identity matrix must be square, but that's not required for reduced row echelon form.  All of these $2\times 4$ matrices are in RREF:
+$$\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}\qquad
+    \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix}\qquad
+    \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \end{bmatrix}$$
+Also, keep in mind that a matrix can have entries other than zeroes and ones and still be in RREF.  For instance:
+$$\begin{bmatrix} 1 & 0 & 2 & 0 & 3 \\ 0 & 1 & 4 & 0 & 5 \\ 0 & 0 & 0 & 1 & 6 \end{bmatrix}$$
+is in RREF.
+
+You might find the [Wikipedia article on REF](https://en.wikipedia.org/wiki/Row_echelon_form) useful.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3338372/what-is-the-difference-between-an-identity-matrix-and-reduced-row-echelon-form/3338391#3338391) on Mathematics Stack Exchange, 2019-08-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

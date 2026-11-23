@@ -1,0 +1,57 @@
+---
+title: Why is $\mathrm{arctan}(0)$ not infinity?
+date: '2015-01-30'
+description: You've hit on the big notational ambiguity in the notation for trigonometric functions. Usually $\tan^n(x)$ means $(\tan(x))^n$. This includes negative powers…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1126875
+se-link: https://math.stackexchange.com/questions/1126863/why-is-mathrmarctan0-not-infinity/1126875#1126875
+se-score: 10
+se-accepted: true
+se-tags:
+- trigonometry
+- reference-request
+- notation
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is $\mathrm{arctan}(0)$ not infinity?](https://math.stackexchange.com/questions/1126863/why-is-mathrmarctan0-not-infinity), asked by [bodokaiser](https://math.stackexchange.com/users/39557/bodokaiser) on Mathematics Stack Exchange (2015-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\arctan x$ is defined as:
+>
+> $$\arctan x = \frac{1}{\tan(x)} = \frac{1}{\frac{\sin(x)}{\cos(x)}}$$
+>
+> if I now have $x = 0$ I should get:
+>
+> $$\frac{1}{\frac{\sin(0)}{\cos(0)}} = \frac{1}{\frac{0}{1}} = \frac{1}{0} = \infty$$
+>
+> but actually it is defined as $\mathrm{arctan}(0) = 0$.
+>
+> What did I not get?
+>
+> Bodo
+:::
+
+You've hit on the big notational ambiguity in the notation for trigonometric functions.  Usually $\tan^n(x)$ means $(\tan(x))^n$.  This includes negative powers:
+$$\tan^{-2}(x) = (\tan(x))^{-2} = \frac{1}{\tan(x)^2}$$
+etc.  **The exception is the exponent $-1$**.  We reserve $\tan^{-1}(x)$ to mean the inverse to the tangent function.  So $\tan^{-1}(0)$ is the angle whose tangent is zero, namely zero.
+
+I try to avoid that ambiguity by never writing $\tan^{-1}$.  I'll use $\arctan$ for the inverse tangent and $\cot$ for $\frac{1}{\tan}$.  But the trap is so attractive it sometimes surpasses this measure.  I see students write things like:
+$$\color{red}{\arctan(x) = \tan^{-1}(x) = \frac{1}{\tan x} = \cot x}
+\qquad\text{(Wrong!)}$$
+all the time.  The first and third equal signs are correct, but *not* the one in the middle.
+
+I myself did this on a high school calculus exam 25 years ago.  Welcome to the club!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1126863/why-is-mathrmarctan0-not-infinity/1126875#1126875) on Mathematics Stack Exchange, 2015-01-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

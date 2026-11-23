@@ -1,0 +1,51 @@
+---
+title: How to do root test on this power series?
+date: '2022-10-08'
+description: You are correct that $$\lim{n\to\infty} \left|\frac{x^n}{\ln x}\right|^{1/n} = |x|$$To show that $(\ln n)^{1/n} \to 1$, start with the fact that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4548272
+se-link: https://math.stackexchange.com/questions/4548269/how-to-do-root-test-on-this-power-series/4548272#4548272
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- calculus
+- power-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to do root test on this power series?](https://math.stackexchange.com/questions/4548269/how-to-do-root-test-on-this-power-series), asked by [Hamsa Ahmed Mohamed](https://math.stackexchange.com/users/866312/hamsa-ahmed-mohamed) on Mathematics Stack Exchange (2022-10-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have this power series,
+>
+> $$\sum_{n=2}^{\infty} \frac{x^{n}}{\ln (n)}, \quad x \in \mathbb{R},$$
+>
+> I apply the root test as such,
+> $$\sum_{n=2}^{\infty} \frac{x^{n}}{\ln (n)}=\lim_{n \to \infty } \left(  \frac{x^{n}}{\ln (n)} \right)^{\frac{1}{n}}= \frac{x}{\ln(n)^{\frac{1}{n}}}$$
+>
+> And Wolfram tells me when,
+>
+> $$\lim_{n \to \infty } \sqrt[n]{\ln(n)} = 1$$
+> Firstly how do I prove that's true?
+> Secondly How I interpet this?
+> $$\sum_{n=2}^{\infty} \frac{x^{n}}{\ln (n)}=\lim_{n \to \infty } \left(  \frac{x^{n}}{\ln (n)} \right)^{\frac{1}{n}}= \frac{x}{1}= x$$
+:::
+
+You are correct that $$\lim_{n\to\infty} \left|\frac{x^n}{\ln x}\right|^{1/n} = |x|$$To show that $(\ln n)^{1/n} \to 1$, start with the fact that $$\lim_{n\to\infty} \frac{\ln n}{n} = 0$$ to show that $1 < \ln n < n$ eventually for all $n$. Then take $n$th roots and limits.
+
+The [root test](https://en.wikipedia.org/wiki/Root_test) says that the series converges absolutely if this limit is less than $1$, and diverges if the limit is greater than $1$.
+
+So now you know the series converges absolutely if $|x|<1$, and diverges if $|x|>1$. That is, the radius of convergence of this power series is $1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4548269/how-to-do-root-test-on-this-power-series/4548272#4548272) on Mathematics Stack Exchange, 2022-10-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

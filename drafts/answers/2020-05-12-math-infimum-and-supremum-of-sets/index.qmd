@@ -1,0 +1,46 @@
+---
+title: Infimum and Supremum of sets
+date: '2020-05-12'
+description: The number $bn = \inf{k \geq n} ak$ has the property that
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3670452
+se-link: https://math.stackexchange.com/questions/3670447/infimum-and-supremum-of-sets/3670452#3670452
+se-score: 1
+se-accepted: true
+se-tags:
+- measure-theory
+- supremum-and-infimum
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Infimum and Supremum of sets](https://math.stackexchange.com/questions/3670447/infimum-and-supremum-of-sets), asked by [dp1221](https://math.stackexchange.com/users/743498/dp1221) on Mathematics Stack Exchange (2020-05-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In one of my textbooks - A Probability Path, Resnick - the author defines $\inf_{k \ge n}A_k = \cap_{k=n}^\infty A_k$ and $\sup_{k \ge n}A_k = \cup_{k=n}^\infty A_k$. I'm having a hard time understanding the intuition behind these definitions. I believe the $\inf_{k \ge n}a_k$ where $a_n$ is a sequence of real numbers can be interpreted as the greatest lower bound of this sequence after an integer $n$. How does this interpretation relate to $\{\omega \in \Omega: \omega \in \cap_{k=n}^\infty A_k\}$ which means that $\omega$ is found in all events $A_k$? Also for the supremum- how does the union of $A_k$ translate to the least upper bound?
+:::
+
+> I believe the $\inf_{k \ge n}a_k$ where $a_n$ is a sequence of real numbers can be interpreted as the greatest lower bound of this sequence after an integer $n$.
+
+The number $b_n = \inf_{k \geq n} a_k$ has the property that
+
+1. $b_n \leq a_k$ for all $k \geq n$; (i.e., $b_n$ is a lower bound for $a_n, a_{n+1}, a_{n+2}, \dots$)
+2. If $c \leq a_k$ for all $k \geq n$, then $c \leq b_n$. (i.e., there is no greater lower bound.)
+
+The set $B_n = \bigcap_{k=n}^\infty A_k$ has the property that 
+
+1. $B_n \subseteq A_k$ for all $k \geq n$;
+2. If $C \subseteq A_k$ for all $k \geq n$, then $C \subseteq B_n$.
+
+In other words, $B_n$ satisfies the same conditions in terms of the relation $\subseteq$ that regular infimum does in terms of $\leq$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3670447/infimum-and-supremum-of-sets/3670452#3670452) on Mathematics Stack Exchange, 2020-05-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

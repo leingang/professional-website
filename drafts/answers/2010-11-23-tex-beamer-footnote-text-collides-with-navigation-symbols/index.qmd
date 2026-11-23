@@ -1,0 +1,112 @@
+---
+title: 'beamer: footnote text collides with navigation symbols'
+date: '2010-11-23'
+description: 'The more I learn about beamer''s template mechanism, the more I like it. Try this in the preamble:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5856
+se-link: https://tex.stackexchange.com/questions/5852/beamer-footnote-text-collides-with-navigation-symbols/5856#5856
+se-score: 31
+se-accepted: false
+se-tags:
+- beamer
+- footnotes
+- positioning
+- navigation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[beamer: footnote text collides with navigation symbols](https://tex.stackexchange.com/questions/5852/beamer-footnote-text-collides-with-navigation-symbols), asked by [lockstep](https://tex.stackexchange.com/users/510/lockstep) on TeX Stack Exchange (2010-11-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Footnotes in presentations are *"usually not a good idea"* (`beamer` manual, p. 130). Suppose, however, I have a valid reason to use the `\footnote` command in a `beamer` document (e.g., for printing a full citation similar to a bibliography entry). Many `beamer` themes include navigation symbols, and to my dismay I noticed that footnotes will be placed at the very bottom of a frame where they are likely to collide with any navigation symbols present. I tried to put the contents of a frame inside a minipage, but this will make footnotes (too) closely aligned to the text.
+>
+> ```latex
+> \documentclass{beamer}
+>
+> \useoutertheme{infolines}
+>
+> \author{Author}
+> \institute{Institute}
+> \date{\today}
+>
+> % Remove footnote rule
+> \renewcommand*{\footnoterule}{}
+>
+> \begin{document}
+>
+> \begin{frame}{Frame 1}
+>
+> Some text.\footnote{A long footnote that partially overwrites the navigation symbols.}
+>
+> \end{frame}
+>
+> \begin{frame}{Frame 2}
+>
+> \begin{minipage}{\textwidth}
+>
+> Some text.\footnote{A footnote that is closely aligned to the text.}
+>
+> \end{minipage}
+>
+> \end{frame}
+>
+> \end{document}
+> ```
+>
+> How can I place footnotes at the bottom of a frame excluding the vertical space claimed by navigation symbols?
+>
+> EDIT: Stefan's answer made me realize that the problem is more complicated. I'm looking for a solution that also works with `beamer` themes which include information about author, institute etc. in the footline (and the navigation symbols immediately above this information). I edited my code example accordingly.
+>
+> EDIT2: Following Stefan's suggestion to "just insert the navigation symbols", this is what I came up with (to be added to the preamble of my code example):
+>
+> ```latex
+> \makeatletter
+> \setbeamertemplate{sidebar right}{}
+> \setbeamertemplate{footline}
+> {
+>   \leavevmode%
+> % Begin of additions - note that this is pure guesswork
+>   \vskip2pt%
+>   \begin{beamercolorbox}[wd=0.9925\paperwidth,right]{}
+>   \usebeamertemplate***{navigation symbols}%
+>   \end{beamercolorbox}
+>   \vskip2pt%
+> % End of additions
+>   \hbox{%
+>   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+>     \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+>   \end{beamercolorbox}%
+>   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+>     \usebeamerfont{title in head/foot}\insertshorttitle
+>   \end{beamercolorbox}%
+>   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+>     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+>     \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+>   \end{beamercolorbox}}%
+>   \vskip0pt%
+> }
+> \makeatother
+> ```
+>
+> To rephrase my original question once more: Is there a solution that doesn't depend on which `beamer` themes are used? E.g., adding vertical space after the last (!) footnote on a frame if navigation symbols are present?
+:::
+
+The more I learn about beamer's template mechanism, the more I like it.  Try this in the preamble:
+
+```latex
+\addtobeamertemplate{footnote}{}{\vspace{2ex}}
+```
+
+This just adds some space to the footnote so it doesn't overwrite the navigation symbols.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5852/beamer-footnote-text-collides-with-navigation-symbols/5856#5856) on TeX Stack Exchange, 2010-11-23. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

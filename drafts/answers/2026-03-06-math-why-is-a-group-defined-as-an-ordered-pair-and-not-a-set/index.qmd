@@ -1,0 +1,44 @@
+---
+title: Why is a group defined as an ordered pair and not a set?
+date: '2026-03-06'
+description: There are of plenty of good points in the comments, so let me summarize them into a semblance of an answer.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5127620
+se-link: https://math.stackexchange.com/questions/5127605/why-is-a-group-defined-as-an-ordered-pair-and-not-a-set/5127620#5127620
+se-score: 29
+se-accepted: true
+se-tags:
+- abstract-algebra
+- group-theory
+- elementary-set-theory
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is a group defined as an ordered pair and not a set?](https://math.stackexchange.com/questions/5127605/why-is-a-group-defined-as-an-ordered-pair-and-not-a-set), asked by [Mayo](https://math.stackexchange.com/users/1590299/mayo) on Mathematics Stack Exchange (2026-03-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I just started learning abstract algebra and I immediately got stuck once the book I was reading stated that:
+>
+> > "A group is an ordered pair $(G,*)$ where $G$ is a set and $*$ is a binary operation...". 
+>
+> I fail to see why we can't define it as a set $\{G,*\}$. Why does it matter so much that there is an order, and that $G$ comes first in that order?
+:::
+
+There are of plenty of good points in the comments, so let me summarize them into a semblance of an answer.
+
+1. That's just how it's done. The standard way to define an object as a set “plus some stuff” is with a list, where the first element is a set and the rest are functions/operations/relations/collections of subsets/etc., on that set.
+
+2. If it were $\{G,\ast\}$ instead of $(G,\ast)$, one would technically need to know how to determine which was the set and which was the operation. The operation is a subset of $G \times G \times G$, so I guess it's possible. But there's no benefit to giving up the order, as far as I can tell. See point #1.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5127605/why-is-a-group-defined-as-an-ordered-pair-and-not-a-set/5127620#5127620) on Mathematics Stack Exchange, 2026-03-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

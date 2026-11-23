@@ -1,0 +1,39 @@
+---
+title: Starting mathematical education late
+date: '2015-02-10'
+description: Degreeless autodidacts are viewed with suspicion because the Ramanujans form a set of measure zero among them. Sorry, but if you look at the bulletin boards of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1142467
+se-link: https://math.stackexchange.com/questions/1142444/starting-mathematical-education-late/1142467#1142467
+se-score: 5
+se-accepted: true
+se-tags:
+- soft-question
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Starting mathematical education late](https://math.stackexchange.com/questions/1142444/starting-mathematical-education-late), asked by [martin](https://math.stackexchange.com/users/101417/martin) on Mathematics Stack Exchange (2015-02-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> (Math)degreeless people who are self taught are doubtless viewed with at best suspicion, having countless holes in their mathematical knowledge, questionable methods, whose lack of academic qualifications understandably inspire little confidence in their ability. As someone who did well in the subject at school, but chose another path (degrees in other subjects), approaching middle age, I find myself drawn back to mathematics. Is this viable, or am I too old to start (I am 38). Is it necessary to pursue the academic path (masters, phd, etc.), or could I get anywhere "going it alone", submitting papers to journals, and writing to others re collaboration. What is the protocol regarding the latter?
+:::
+
+Degreeless autodidacts are viewed with suspicion because the Ramanujans form a set of measure zero among them.  Sorry, but if you look at the bulletin boards of universities' math departments you'll see dozens of letters from people claiming to have three-line proofs of Fermat's Last Theorem or constructions which square the circle.  They write things of the form "Ramunujan was misunderstood and he was a genius.  I am misunderstood.  Therefore I am a genius!"  So the probabilistic outlook is to insulate oneself from outsiders like this.
+
+So you need to establish your bona fides.  Sending an article you've written is probably not the best way to go, because mathematicians are best at reading articles written by mathematicians and if you don't know how to write like a mathematician they will find it hard to read.
+
+But if you were to take a class, you would be able to interact with at least one faculty member regularly, learn something new (or better than before), and get back in the mathematical swing of things.  You could "gain rep" by doing well in the class.  Once you've impressed the instructor you can start asking about further directions.
+
+My university allows nondegree students to take lots of classes.  Maybe one near you does the same.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1142444/starting-mathematical-education-late/1142467#1142467) on Mathematics Stack Exchange, 2015-02-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

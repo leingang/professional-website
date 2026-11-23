@@ -1,0 +1,42 @@
+---
+title: When should I add comments to my code?
+date: '2010-04-17'
+description: You gave a lot of cases in your question. I think it depends on what you're doing at the time.
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2658200
+se-link: https://stackoverflow.com/questions/2657961/when-should-i-add-comments-to-my-code/2658200#2658200
+se-score: 0
+se-accepted: false
+se-tags:
+- coding-style
+- comments
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When should I add comments to my code?](https://stackoverflow.com/questions/2657961/when-should-i-add-comments-to-my-code), asked by [ongoso](https://stackoverflow.com/users/319156/ongoso) on Stack Overflow (2010-04-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> - When I'm writing it?
+> - After I got a part done (Single class/function/if-elses)?
+> - After I got the whole thing working?
+:::
+
+You gave a lot of cases in your question.  I think it depends on what you're doing at the time.
+
+If you're writing a function or a class, comments are a way to declare what's supposed to happen with the function.  Things like input variables, output type, special behavior, exceptions, etc.  IMHO that kind of comment should be written before the actual code is started, in your "code design" phase.  Most languages have packages which process those kind of comments into documentation (javadoc, epydoc, POD, etc, so that stuff will be read by users.
+
+If you're making a bit of code work, I think it's OK to wait until you've got it working to put in a comment triumphantly describing your working solution.  That kind of comment is only going to get read by a code reviewer.
+
+Then, as others have said, you want to avoid WTF moments, by yourself or others.  I once got an attaboy for a comment I made once in an open-source project.  The comment was "Yes, I really do want = and not == on that line."
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2657961/when-should-i-add-comments-to-my-code/2658200#2658200) on Stack Overflow, 2010-04-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

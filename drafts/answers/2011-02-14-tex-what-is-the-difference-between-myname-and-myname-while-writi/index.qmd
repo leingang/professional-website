@@ -1,0 +1,50 @@
+---
+title: What is the difference between \myname and \my@name while writing a .cls file?
+date: '2011-02-14'
+description: The difference is that a user is less likely to redefine and clobber \my@name because @'s in control sequences are usually not allowed within regular TeX files.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11080
+se-link: https://tex.stackexchange.com/questions/11078/what-is-the-difference-between-myname-and-myname-while-writing-a-cls-file/11080#11080
+se-score: 7
+se-accepted: false
+se-tags:
+- macros
+- documentclass-writing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the difference between \myname and \my@name while writing a .cls file?](https://tex.stackexchange.com/questions/11078/what-is-the-difference-between-myname-and-myname-while-writing-a-cls-file), asked by [Vahid Damanafshan](https://tex.stackexchange.com/users/885/vahid-damanafshan) on TeX Stack Exchange (2011-02-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What is the difference between `\myname` and `\my@name` while writing a .cls file? Are they equivalent?  
+> Please let me know if it is necessary to post a minimal example.  
+> **Edit:**  
+> Let me ask my question more clearly:  
+> What is the difference between the two following lines?
+>
+> ```latex
+> ‎‎\def\myname#1{\gdef\@myname{#1}}‎‎
+> ‎\newcommand*{\myname}[1]{\gdef\my@myname{#1}}‎‎
+> ```
+> I am a bit confused with these lines. I know exactly the difference between `\myname` and `\@myname`, however I don't know the difference between `\myname` and `\my@name` in a **`.cls`** file.
+:::
+
+The difference is that a user is less likely to redefine and clobber `\my@name` because @'s in control sequences are usually not allowed within regular TeX files.
+
+This is the purpose of using @; it marks the control sequence as "internal" and not for end-user use.  Users should not expect that an @-macro persist from version to version or work the same way.  
+
+This namespacing is not automatic; if two packages define `\my@name` one will overwrite the other.  This is why it's a better idea to choose a (hopefully, relatively) unique "namespace" and prefix your internal macros with that plus the @.  So if your package is called `baz`, call your internal macros `\baz@foo`, etc.  
+
+I say "usually" above because a LaTeX use *can* put `\makeatletter`...`\makeatother` in his/her TeX file and use @ as a letter.  But users who do so know what they're doing and/or assume the risks of it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11078/what-is-the-difference-between-myname-and-myname-while-writing-a-cls-file/11080#11080) on TeX Stack Exchange, 2011-02-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

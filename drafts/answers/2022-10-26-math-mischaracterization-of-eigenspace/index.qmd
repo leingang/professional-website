@@ -1,0 +1,43 @@
+---
+title: Mischaracterization of eigenspace
+date: '2022-10-26'
+description: The first reference you cite is not a definition. It just states that if $x{i,1}, x{i,2}, \dots, x{i,ni}$ are eigenvectors, so is $a{i,1} x{i,1} + a{i,2}…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4561741
+se-link: https://math.stackexchange.com/questions/4561731/mischaracterization-of-eigenspace/4561741#4561741
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Mischaracterization of eigenspace](https://math.stackexchange.com/questions/4561731/mischaracterization-of-eigenspace), asked by [Josh Lunger](https://math.stackexchange.com/users/965189/josh-lunger) on Mathematics Stack Exchange (2022-10-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Proof 4.2.5 in *A Course in Linear Algebra* fixes $k$ sets of $n_i$ eigenvectors to prove the linear independence of $s = \{x_{1,1}\ldots, x_{1,n_1}\} \cup \ldots \cup \{x_{k,1},\ldots,x_{k,n_k}\}.$
+>
+> However it's stated later for each $1 \leq i \leq k$ the sum $a_{i,1}x{i,1}+\ldots+a_{i,n_i}x_{i,n_i}$ is an element of the eigenspace $E_{\lambda_i}.$
+>
+> Earlier $E_\lambda$ is defined as the union of eigenvectors with eigenvalue $\lambda$ and 0. 
+>
+> Is this not two different definitions of $E_\lambda$? One is a linear combination of eigenvectors and the other is a union.
+>
+> The textbook uses dim($E_\lambda$), which leads me to think it is a linear combination and the given definition is incorrect.
+:::
+
+The first reference you cite is not a definition. It just states that if $x_{i,1}, x_{i,2}, \dots, x_{i,n_i}$ are eigenvectors, so is $a_{i,1} x_{i,1} + a_{i,2} x_{i,2} + \dots + a_{i,n_i} x_{i,n_i}$ for any scalars $\{a_{i,j} \}$. You can test this by applying the linear transformation that these are eigenvectors of
+
+The second reference, that is the definition: $E_\lambda$ is the set of all eigenvectors with eigenvalue $\lambda$, and also the zero vector. We have to throw in the zero vector because it's not counted as an eigenvector.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4561731/mischaracterization-of-eigenspace/4561741#4561741) on Mathematics Stack Exchange, 2022-10-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,65 @@
+---
+title: Intuition behind Lagrangian multiplier in this problem
+date: '2018-05-02'
+description: If you consider the problem of maximizing or minimizing $f$ subject to a constraint of the form $g=c$, but vary $c$, then you get a function $f^(c)$. You can…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2763870
+se-link: https://math.stackexchange.com/questions/2763703/intuition-behind-lagrangian-multiplier-in-this-problem/2763870#2763870
+se-score: 1
+se-accepted: true
+se-tags:
+- intuition
+- lagrange-multiplier
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Intuition behind Lagrangian multiplier in this problem](https://math.stackexchange.com/questions/2763703/intuition-behind-lagrangian-multiplier-in-this-problem), asked by [Ravi Shankar](https://math.stackexchange.com/users/170692/ravi-shankar) on Mathematics Stack Exchange (2018-05-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What shape should a rectangular box with a specific volume be in order to minimize its surface area?
+>
+> Let the lengths of the box's edges be x, y, and z. Then the constraint of constant volume is simply g(x,y,z) = xyz - V = 0, and the function to minimize is f(x,y,z) = 2(xy+xz+yz).
+>
+> Now applying lagrangian method (making differntial of the lagrangian equal to zero), (using L as the lagrangian multiplier)
+> we get these 4 equations,
+>
+> 2y + 2z - Lyz = 0
+>
+> 2x + 2z - Lxz = 0
+>
+> 2y + 2x - Lxy = 0
+>
+> xyz = V
+>
+> Solving these, I get 
+>
+> x = y = z = 4/L
+>
+> I understand that x = y = z is the minimum of our surface area minimization problem. But what does the L mean here, in terms of volume and surface area?
+:::
+
+If you consider the problem of maximizing or minimizing $f$ subject to a constraint of the form $g=c$, but vary $c$, then you get a function $f^*(c)$.  You can ask yourself: what is the derivative of this function?  How much extra $f$ do we get by increasing the level of $g$?  In your case, how does the minimum surface area of the box change if we change the volume?
+
+Suppose the constrained critical point for the value $c$ occurs at $(x(c),y(c),z(c))$.  So $f^*(c) = f(x(c),y(c),z(c))$.  By the chain rule:
+$$\frac{df^*}{dc} = \frac{\partial f}{\partial x}\frac{dx}{dc} + \frac{\partial f}{\partial x}\frac{dy}{dc} + \frac{\partial f}{\partial z}\frac{dz}{dc}$$
+By the Lagrange multiplier theorem, and again the chain rule:
+$$\begin{align*}
+    \frac{df^*}{dc} &= \lambda\frac{\partial g}{\partial x}\frac{dx}{dc} + \lambda\frac{\partial g}{\partial x}\frac{dy}{dc} + \lambda\frac{\partial g}{\partial z}\frac{dz}{dc}  \\
+    &= \lambda \frac{d}{dc}g(x(c),y(c),z(c))
+\end{align*}$$
+But now $g(x(c),y(c),z(c)) = c$, by design.  So the derivative on the right-hand side is $1$.  In summary, the derivative of the extreme value, as a function of the constraint level, is the multiplier.
+$$\frac{df^*}{dc} = \lambda$$
+
+It makes a lot of sense in economics problems where the decision variables are a mix of goods, the objective function is utility, and the constraint function is total costs.  Assuming we continually adjust consumption to maximize utility subject to a fixed budget, the multiplier is the marginal utility of money.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2763703/intuition-behind-lagrangian-multiplier-in-this-problem/2763870#2763870) on Mathematics Stack Exchange, 2018-05-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

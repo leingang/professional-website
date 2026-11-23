@@ -1,0 +1,112 @@
+---
+title: Using set list with pgfplotstable
+date: '2014-07-12'
+description: I am still a trial-and-error programmer when it comes to \expandafter. But one thing to keep in mind is it expands tokens which are either characters or…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191142
+se-link: https://tex.stackexchange.com/questions/191136/using-set-list-with-pgfplotstable/191142#191142
+se-score: 4
+se-accepted: false
+se-tags:
+- macros
+- pgfplots
+- pgfplotstable
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using set list with pgfplotstable](https://tex.stackexchange.com/questions/191136/using-set-list-with-pgfplotstable), asked by [John Kormylo](https://tex.stackexchange.com/users/34505/john-kormylo) on TeX Stack Exchange (2014-07-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to create a new column in a table using the set list option, but it will not expand the list when stored in a macro.  I've tried \expandafter in various locations with no joy so far.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{pgfplotstable}
+> \begin{document}
+>
+> \noindent This works.
+> \pgfplotstableset{create on use/first/.style={create col/set list={a,b,c,d,e,f}}}
+> \pgfplotstablenew[columns={first}]{6}\mytable
+> \pgfplotstabletypeset[string type]\mytable
+>
+> \noindent This also works.
+> \pgfplotstablecreatecol[set list={a,b,c,d,e,f}]{second}\mytable
+> \pgfplotstabletypeset[string type]\mytable
+>
+> \noindent This doesn't.
+> \edef\names{a,b,c,d,e,f}
+> \pgfplotstablecreatecol[set list={\names}]{third}\mytable
+> \pgfplotstabletypeset[string type]\mytable
+> \end{document}
+> ```
+>
+> ![tables][q-1]
+>
+>
+> * * *
+>
+> Based on Matthew Leingang's answer I figured out how to handle an environment as well.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{pgfplotstable}
+> \begin{document}
+>
+> \edef\names{A,B,C,D}
+> \edef\parms{symbolic x coords={\names},xtick=data}
+> \def\environ{\begin{axis}}
+>
+> \begin{tikzpicture}
+> \expandafter\environ\expandafter[\parms]
+> \addplot coordinates {(A,0) (B,1) (C,1) (D,2)};
+> \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+>   [q-1]: xVmVO.png
+:::
+
+I am still a trial-and-error programmer when it comes to `\expandafter`.  But one thing to keep in mind is it expands *tokens* which are either characters or control sequences.  So if you want to expand a bunch of tokens at once, out of order, it's easiest to put them in a macro.  In this case you want to expand the entire optional argument `setlist={\names}` at once.  This will do it.
+
+```latex
+\documentclass{standalone}
+\usepackage{pgfplotstable}
+\begin{document}
+
+This works.
+\pgfplotstableset{create on use/first/.style={create col/set list={a,b,c,d,e,f}}}
+\pgfplotstablenew[columns={first}]{6}\mytable
+\pgfplotstablecreatecol[set list={a,b,c,d,e,f}]{second}\mytable
+
+\def\names{a,b,c,d,e,f}
+\edef\myargs{set list={\names}}
+\expandafter\pgfplotstablecreatecol\expandafter[\myargs]{third}\mytable
+\pgfplotstabletypeset[string type]\mytable
+\end{document}
+```
+
+The `\edef\myargs{set list={\names}}` makes `\myargs` expand to `set list={a,b,c,d,e,f}`.  The next line has two `\expandafter`s in it.  The first one hops over `\pgfplotstablecreatecol`, only to find another `\expandafter` to hop over the `[`.  So the first expanded token is `\myargs`, inserting the optional argument.  Then the `[` is put back in place, and finally `\pgfplotstablecreatecol` is expanded.  By that time the token list looks like
+
+```latex
+\pgfplotstablecreatecol[set list={a,b,c,d,e,f}]{third}\mytable
+```
+
+which is exactly what you want.
+
+![sample code output][1]
+
+
+  [1]: HVYXu.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/191136/using-set-list-with-pgfplotstable/191142#191142) on TeX Stack Exchange, 2014-07-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

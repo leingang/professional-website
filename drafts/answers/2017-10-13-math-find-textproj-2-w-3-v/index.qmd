@@ -1,0 +1,57 @@
+---
+title: Find $\text{proj}_{-2 {w}} (3 {v})$.
+date: '2017-10-13'
+description: Try to think of $\operatorname{proj}w v$ as not just an operation you do with vectors $w$ and $v$ but as its own vector. If you scale $v$, how does the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2469888
+se-link: https://math.stackexchange.com/questions/2469866/find-textproj-2-w-3-v/2469888#2469888
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find $\text{proj}_{-2 {w}} (3 {v})$.](https://math.stackexchange.com/questions/2469866/find-textproj-2-w-3-v), asked by [ninjagirl](https://math.stackexchange.com/users/459630/ninjagirl) on Mathematics Stack Exchange (2017-10-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let ${v}$ and ${w}$ be vectors such that
+> $\text{proj}_{{w}} {v} = \begin{pmatrix} 4 \\ -7 \end{pmatrix}$.
+> Find $\text{proj}_{-2 {w}} (3 {v})$.  
+> I don't understand where to start. I can't just find $w$ & $v$ so...  
+> Help is appreciated!!
+:::
+
+Try to think of $\operatorname{proj}_w v$ as not just an operation you do with vectors $w$ and $v$ but as its own vector.  If you scale $v$, how does the projection change?  If you scale $w$, how does the projection change?
+
+First, let's scale $v$ and see what happens.  Let $c$ be any scalar:
+$$\begin{align*}
+    \operatorname{proj}_w(cv) &= \frac{w\cdot(cv)}{w\cdot w} w \\
+    &= \frac{c(w\cdot v)}{w\cdot w} w = c \frac{w\cdot v}{w\cdot w} w \\
+    &= c \operatorname{proj}_w(v)
+\end{align*}$$
+Now, let's scale $w$:
+$$\begin{align*}
+    \operatorname{proj}_{cw}v &= \frac{(cw)\cdot v}{(cw)\cdot (cw)} (cw) \\
+    &= \frac{c(w\cdot v)}{c^2 (w\cdot w)} (cw) = \frac{c^2}{c^2} \frac{w\cdot v}{w\cdot w} w \\
+    &=  \operatorname{proj}_w(v)
+\end{align*}$$
+So scaling $v$ scales the projection by the same amount, while scaling $w$ doesn't change the projection at all.  This makes sense with the geometric description: we project onto a *line* rather than a vector, and scaling the direction vector of a line doesn't change the particular line it generates.
+
+In your case, you need to scale both, but you can do one at a time:
+$$\operatorname{proj}_{2w}(3v) = \operatorname{proj}_{w}(3v) 
+    = 3\operatorname{proj}_{w}v
+    = 3\begin{pmatrix} 4 \\ -7 \end{pmatrix}
+    = \begin{pmatrix} 12 \\ -21 \end{pmatrix}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2469866/find-textproj-2-w-3-v/2469888#2469888) on Mathematics Stack Exchange, 2017-10-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

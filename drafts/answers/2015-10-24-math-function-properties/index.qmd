@@ -1,0 +1,69 @@
+---
+title: Function Properties
+date: '2015-10-24'
+description: You cannot assume that $g$ is injective because that's an additional hypothesis to the statement. It's like breaking the rules of the game.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1495320
+se-link: https://math.stackexchange.com/questions/1495311/function-properties/1495320#1495320
+se-score: 0
+se-accepted: true
+se-tags:
+- functions
+- discrete-mathematics
+- elementary-set-theory
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Function Properties](https://math.stackexchange.com/questions/1495311/function-properties), asked by [opheliaxo](https://math.stackexchange.com/users/283432/opheliaxo) on Mathematics Stack Exchange (2015-10-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The question is as follows:
+>
+>  - Let $f$ be a function $f : U → V$ , where $U$ and $V$ are non-empty
+>    sets. Prove or refute that $f$ is injective iff there is a function
+>    $g : V → U$ with $g ◦ f = Id_U$ .
+>
+> Apparently I **cannot** assume that $g$ is injective while proving this because $U$ can be greater than $V$ which would mean that $g$ is injective. 
+>
+> Why can I not do this?
+>
+> Also, how do I then prove this? The answer given by my TA isn't clear, neither is the one given by my professor. 
+>
+> Thanks in advance! :)
+>
+> **Note: I've already received a grade on this/this is a past assignment question!**
+:::
+
+You cannot assume that $g$ is injective because that's an additional hypothesis to the statement.  It's like breaking the rules of the game.
+
+Here is a proof: Suppose $g$ exists.
+We want to show that
+$$f(x) = f(y) \implies x=y$$
+for all $x$ and $y$ in $U$
+(this is equivalent to the definition of injective function).
+Given $x$ and $y$ in $U$ with $f(x) = f(y)$, apply $g$ to both sides:
+$$\begin{align*}
+    g(f(x)) &= g(f(y)) \\
+\implies \operatorname{Id}_U x &= \operatorname{Id}_U y \\
+\implies x &= y
+\end{align*}$$
+So $f$ is injective.
+
+(See if you can prove this interesting addition: $g$ must be a surjection.)
+
+On the other hand, suppose $f$ is injective.  We have to construct $g$.  Choose an arbitrary point $u_0 \in U$.  Given $v \in V$, either $v = f(u)$ for some $u\in U$, or it isn't.  If it is, set $g(v) = u$.  If it isn't, set $g(v) = u_0$.  Since $f$ is injective, $g$ is a function (fill in the details if this isn't obvious to you). By construction, $g(f(u)) = u$ for all $u \in U$.
+
+(Again, the $g$ constructed here must be a surjection.  Can you see why?)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1495311/function-properties/1495320#1495320) on Mathematics Stack Exchange, 2015-10-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

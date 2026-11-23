@@ -1,0 +1,53 @@
+---
+title: Finding function for capital interest
+date: '2016-03-17'
+description: 'This is a good question. The way you read it makes sense to me: the change in $B$ over time is $0.07B$, or 7% of $B$.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1701942
+se-link: https://math.stackexchange.com/questions/1701923/finding-function-for-capital-interest/1701942#1701942
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding function for capital interest](https://math.stackexchange.com/questions/1701923/finding-function-for-capital-interest), asked by [Eric Johnson](https://math.stackexchange.com/users/318281/eric-johnson) on Mathematics Stack Exchange (2016-03-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Haven't fully grasped derivatives and I believe this question really holds the gist of it
+>
+> Your bank account has a continuous capital interest rate of 7%.
+>
+> The formula for this is
+>
+> $$\frac{dB}{dt} = 0.07B$$
+>
+> where B stands for balance. 
+>
+> I'm probably reading this wrong, but here's what I read: *The change in your balance over time is 0.07B*
+>
+> Shouldn't there be a $t$ factor on the RHS? i.e. $$0.07Bt$$
+:::
+
+This is a good question.  The way you read it makes sense to me: *the change in $B$ over time is $0.07B$, or 7% of $B$.*
+
+To see why there shouldn't be any explicit $t$ dependence in $\frac{dB}{dt}$, think about it this way: Suppose you and I have the same bank balance and same interest rate, but my account has been open for 10 years longer than yours.  Should we get the same interest payment, or should I get more?
+
+>!We should get the same interest payment, because the bank only cares how much money is in the account, not for how long it has been there.  
+
+The same is true for any growth-law differential equation.  Usually there isn't any dependence on $t$ because the system only depends on what's happening right now.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1701923/finding-function-for-capital-interest/1701942#1701942) on Mathematics Stack Exchange, 2016-03-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

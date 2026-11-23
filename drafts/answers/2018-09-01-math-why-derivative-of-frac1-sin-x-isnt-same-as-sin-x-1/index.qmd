@@ -1,0 +1,47 @@
+---
+title: Why derivative of $\frac{1}{\sin\:x}$ isn't same as $\sin\:x^{-1}$?
+date: '2018-09-01'
+description: It looks like you are confusing the expressions $\sin(x^{-1})$ and $(\sin x)^{-1}$. Basically, you are composing the sine function and the reciprocal function…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2901822
+se-link: https://math.stackexchange.com/questions/2901807/why-derivative-of-frac1-sin-x-isnt-same-as-sin-x-1/2901822#2901822
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why derivative of $\frac{1}{\sin\:x}$ isn't same as $\sin\:x^{-1}$?](https://math.stackexchange.com/questions/2901807/why-derivative-of-frac1-sin-x-isnt-same-as-sin-x-1), asked by [Student](https://math.stackexchange.com/users/585957/student) on Mathematics Stack Exchange (2018-09-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> According to $x^{-1}$ is same as $1/x$, therefore $\frac{1}{\sin\:x}$ should be same as $\sin\:x^{-1}$. Finding derivative of: 
+> $$f(x)=\frac{1}{\sin\:x}=\frac{0\cdot \sin x-1\cdot \left(-\cos x\right)}{\sin x^2}=f^{'}(x)=\frac{\cos x}{\sin x^{2}}$$.
+> $$f(x)=\sin\:x^{-1}=-\sin x^{-2}=f^{'}(x)=-\frac{1}{\sin x^{2}}$$
+> I got 2 different answers. Can u help me?
+:::
+
+It looks like you are confusing the expressions $\sin(x^{-1})$ and $(\sin x)^{-1}$.  Basically, you are composing the sine function and the reciprocal function in both, but the order matters.
+
+You are also misapplying the chain rule.
+
+To find the derivative of the first:
+$$\frac{d}{dx}(\sin x)^{-1} = (-1)(\sin x)^{-2} \frac{d}{dx} \sin x = - (\sin x)^{-2} \cos x = -\frac{\cos x}{\sin^2 x}$$
+And for the second:
+$$\frac{d}{dx}\sin(x^{-1}) = \cos(x^{-1}) \frac{d}{dx}(x^{-1}) = \cos(x^{-1})(-x^{-2})$$
+
+One last thing: you are writing an equals sign between a function and its derivative.  Only use an *equals* sign between quantities that are *equal*.  A function and its derivative are generally not.  It would be better to write
+$$f(x) = \sin(x^{-1}) \color{blue}{\implies} f'(x) = -\cos(x^{-1})x^{-2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2901807/why-derivative-of-frac1-sin-x-isnt-same-as-sin-x-1/2901822#2901822) on Mathematics Stack Exchange, 2018-09-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

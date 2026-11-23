@@ -1,0 +1,75 @@
+---
+title: Use (or redefine a) \tag command in text mode
+date: '2011-03-14'
+description: 'Here is a \TAG macro that sets its content (assumed to be text) in a parbox of a specifiable width as a tag between customizable delimiters:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13373
+se-link: https://tex.stackexchange.com/questions/13347/use-or-redefine-a-tag-command-in-text-mode/13373#13373
+se-score: 3
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use (or redefine a) \tag command in text mode](https://tex.stackexchange.com/questions/13347/use-or-redefine-a-tag-command-in-text-mode), asked by user4169 on TeX Stack Exchange (2011-03-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> In some times I have to set a tag in front of a text math formula. It seems better to define a command `\TAG`, as `$\TAG{Pythagoras' Equation}a^2+b^2=c^2$` to get `<Pythagoras' Equation> a^2+b^2=c^2`. The `\TAG` command need fit several conditions:
+>
+> 1. give a convenience to change the l(r)angle globally;
+> 2. the content could be broken down, but do not at left angle;
+> 3. it'd better be put in math mode.
+>
+> Of course the amsmath `\tag` command might be modified to suit my demand, but I don't know how to do.
+>
+>
+> @ TH.: O.K. 
+>
+> 1. Think about an onerous editor who likes green color than black or a pair of parenthese than a pair of angle.
+> 2. When the content of \TAG is very long, it cannot overlap the right margin, and its suitable break line point mustn't at the left delimiter as most of people want.
+> 3. The command is in math mode, so it can be affected by \mathsurround, \everymath, etc.
+>
+> add an image
+> https://i.sstatic.net/ZUgVk.png
+:::
+
+Here is a `\TAG` macro that sets its content (assumed to be text) in a parbox of a specifiable width as a tag between customizable delimiters: 
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\newlength{\tagwidth}
+\setlength{\tagwidth}{1in}
+\newcommand{\tagldelim}{\langle}
+\newcommand{\tagrdelim}{\rangle}
+\newcommand{\TAG}[1]{\tag*{$\left\tagldelim\parbox{\tagwidth}{#1}\right\tagrdelim$}}
+\begin{document}
+\[
+\TAG{Pythagoras' Equation}a^2+b^2=c^2
+\]
+\setlength{\tagwidth}{2in}
+\renewcommand{\tagrdelim}{\rbrack}
+\[
+\TAG{Theory of life, the universe, and everything}
+6 \times 9 = 42
+\]
+\end{document}
+```
+
+![enter image description here][1]
+
+
+  [1]: PGVeQ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13347/use-or-redefine-a-tag-command-in-text-mode/13373#13373) on TeX Stack Exchange, 2011-03-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

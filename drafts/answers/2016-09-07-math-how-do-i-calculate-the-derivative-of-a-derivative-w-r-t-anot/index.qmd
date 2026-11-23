@@ -1,0 +1,60 @@
+---
+title: How do I calculate the derivative of a derivative w.r.t. another derivative?
+date: '2016-09-07'
+description: In general, this is not true. For instance, suppose the curve is parametrized by $x=t^2$, $y=t$. Then $$\frac{dy}{dx} = \frac{\dot y}{\dot x} = \frac{1}{2t} =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1917947
+se-link: https://math.stackexchange.com/questions/1917909/how-do-i-calculate-the-derivative-of-a-derivative-w-r-t-another-derivative/1917947#1917947
+se-score: 3
+se-accepted: true
+se-tags:
+- derivatives
+- euler-lagrange-equation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I calculate the derivative of a derivative w.r.t. another derivative?](https://math.stackexchange.com/questions/1917909/how-do-i-calculate-the-derivative-of-a-derivative-w-r-t-another-derivative), asked by [Hermitian_hermit](https://math.stackexchange.com/users/797461/hermitian-hermit) on Mathematics Stack Exchange (2016-09-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The question is a bit of a mouthful. In Classical Mechanics by Goldstein I have seen the use of the following:
+>
+> $$\frac{d\dot{F}}{d\dot{q}_i} = \frac{dF}{dq_i}$$
+>
+> where $F = F(q_1,q_2,...,q_n;t)$, $\dot{F} = \frac{dF}{dt}$ and $\dot{q_i} = \frac{dq_i}{dt}$ . How would I show this?
+>
+> The use of this result is used on page 17 of the PDF solutions guide (Page 10 within the derivations chapter) by showing that the transformation $L'(q,\dot{q},t) = L(q,\dot{q},t) + \frac{dF(q,t)}{dt}$ keeps the form of the Euler-Lagrange equation invariant:
+>
+> http://www.slideshare.net/venuatsrr/solution-manual-classical-mechanics-goldstein
+:::
+
+In general, this is not true.  For instance, suppose the curve is parametrized by $x=t^2$, $y=t$.  Then
+$$\frac{dy}{dx} = \frac{\dot y}{\dot x} = \frac{1}{2t} = \frac{1}{2y}$$
+But $\dot y$ is constant, so
+$$\frac{d\dot y}{d\dot x} = 0$$
+
+I looked at your reference, and as far as I can tell, your question is about this statement: If $F = F(q_1,q_2,\dots,q_n;t)$, then
+$$\frac{\partial \dot F}{\partial \dot q} = \frac{\partial F}{\partial q}$$
+The reason for this is the chain rule.
+
+For each $i$, the expression $\dfrac{\partial \dot F}{\partial \dot q_i}$ stands for $\dfrac{\partial}{\partial \dot q_i}\dfrac{dF}{dt}$.  By the chain rule:
+$$\begin{align*}
+    \frac{dF}{dt} &= \frac{\partial F}{\partial q_1}\frac{dq_1}{dt}+\dots
+                   +\frac{\partial F}{\partial q_n}\frac{dq_n}{dt} 
+                   +\frac{\partial F}{\partial t} \\
+&=  \frac{\partial F}{\partial q_1}\dot q_1+\dots
+                   +\frac{\partial F}{\partial q_n}\dot q_n 
+                   +\frac{\partial F}{\partial t} \\
+\end{align*}$$
+Then take $\dfrac{\partial}{\partial \dot q_i}$ of each side.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1917909/how-do-i-calculate-the-derivative-of-a-derivative-w-r-t-another-derivative/1917947#1917947) on Mathematics Stack Exchange, 2016-09-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

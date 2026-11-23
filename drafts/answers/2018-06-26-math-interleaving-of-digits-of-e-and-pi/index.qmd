@@ -1,0 +1,36 @@
+---
+title: Interleaving of digits of $e$ and $\pi$
+date: '2018-06-26'
+description: You get a new number. Like almost all numbers, it's probably transcendental.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2832651
+se-link: https://math.stackexchange.com/questions/2832643/interleaving-of-digits-of-e-and-pi/2832651#2832651
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- transcendental-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Interleaving of digits of $e$ and $\pi$](https://math.stackexchange.com/questions/2832643/interleaving-of-digits-of-e-and-pi), asked by [TorsionSquid](https://math.stackexchange.com/users/202777/torsionsquid) on Mathematics Stack Exchange (2018-06-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What happens if we form a number by taking every other digit of, say, $\pi$? Has this type of construction been studied? Also, what if we interleave the digits of $e$ and $\pi$?
+:::
+
+You get a new number.  Like almost all numbers, it's probably transcendental.
+
+Any construction involving digits depends on the radix (or base) in which you're representing the numbers.  So it's nothing really intrinsic to the number or numbers involved.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2832643/interleaving-of-digits-of-e-and-pi/2832651#2832651) on Mathematics Stack Exchange, 2018-06-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

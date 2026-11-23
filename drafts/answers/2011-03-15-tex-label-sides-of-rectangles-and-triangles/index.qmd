@@ -1,0 +1,68 @@
+---
+title: Label sides of rectangles and triangles
+date: '2011-03-15'
+description: I usually use nodes placed along the path that draws the polygon.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13551
+se-link: https://tex.stackexchange.com/questions/13539/label-sides-of-rectangles-and-triangles/13551#13551
+se-score: 17
+se-accepted: true
+se-tags:
+- tikz-pgf
+- labels
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Label sides of rectangles and triangles](https://tex.stackexchange.com/questions/13539/label-sides-of-rectangles-and-triangles), asked by [student](https://tex.stackexchange.com/users/4011/student) on TeX Stack Exchange (2011-03-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What is the easiest way to label the sides of rectangles and triangles in TikZ?
+:::
+
+I usually use nodes placed along the path that draws the polygon.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+% Rectangle with labeled edges
+\draw (0,0)  -| (5,3) 
+	node[pos=0.25,below] {$\ell$} 
+	node[pos=0.75,right] {$w$}
+	-| (0,0);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[rotate=30] (0,0)  -| (5,3) 
+	node[pos=0.25,below] {$\ell$} 
+	node[pos=0.75,right] {$w$}
+	-| (0,0);	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (0,0) -- (4,0) node[midway,below] {$a$}
+   -- (2,4) node[midway,right] {$b$}
+   -- (0,0) node[midway,left] {$c$};
+\end{tikzpicture}
+
+\end{document}
+```
+
+![sample code output][1]
+
+  [1]: XbS33.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13539/label-sides-of-rectangles-and-triangles/13551#13551) on TeX Stack Exchange, 2011-03-15. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

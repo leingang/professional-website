@@ -1,0 +1,54 @@
+---
+title: Proving orthogonal matrices are a subgroup
+date: '2017-10-25'
+description: Yes, you are supposed to show $On(\mathbb{R})$ is a subgroup. Not a subgroup “of all $n\times n$ matrices,” since that's not actually a group. Rather, you are…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2488474
+se-link: https://math.stackexchange.com/questions/2488468/proving-orthogonal-matrices-are-a-subgroup/2488474#2488474
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- abstract-algebra
+- matrices
+- group-theory
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving orthogonal matrices are a subgroup](https://math.stackexchange.com/questions/2488468/proving-orthogonal-matrices-are-a-subgroup), asked by [blueberry](https://math.stackexchange.com/users/495370/blueberry) on Mathematics Stack Exchange (2017-10-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Recall that the transpose of an $m \times n$ matrix $B = [b_{ij}]$, denoted by $B^\top$,  is the $n \times m$ matrix whose $(i,j)$-entry is $a_{ji}$. Show that 
+> $$O_n (\mathbb{R}):= \left\{ Q \in GL_n (\mathbb{R}) : Q^\top Q = Q Q^\top = I_n \right\} \leq GL_n (\mathbb{R}),$$
+> where $I_n$ denotes the $n \times n$ identity matrix.
+>
+> My I have 3 questions here.  The first being, is I don't really understand  what I am trying to prove. I think I need to prove that $O_{n}(\mathbb{R})$ is a subgroup of all n by n matrixes. And $O_{n}(\mathbb{R})$ is a set of all n by n matrices whose transpose times themselves is the identity matrix. **Is my understanding correct?** my second question is **could I use either the one step subgroup test or the two step subgroup test ?** My final question is if I cannot use the subgroup tests to prove this what should I do instead?
+>
+> My title was horrid, but I could not think of a better one, you any of you can please change my title. Thanks
+:::
+
+Yes, you are supposed to show $O_n(\mathbb{R})$ is a subgroup.  Not a subgroup “of all $n\times n$ matrices,” since that's not actually a group.  Rather, you are asked to show $O_n(\mathbb{R})$ is a subgroup of $GL_n(\mathbb{R})$, the group of all *invertible* $n\times n$ matrices.
+
+I looked up the one-step and two-step subgroup tests.  Either of them will work.  For the one-step test, you need to show that for all $Q_1$ and $Q_2$ in $O_n(\mathbb{R})$, $Q_1Q_2^{-1} \in O_n(\mathbb{R})$.  For the two-step process, you would need to know that $O_n(\mathbb{R})$ is closed under matrix multiplication and matrix inversion.
+
+For either test, the following facts are essential:  If $A$ and $B$ are invertible $n\times n$ matrices, then
+$$\begin{align*}
+    (AB)^{-1} &= B^{-1} A^{-1} \\
+    (AB)^T    &= B^T A^T \\
+    (A^{-1})^T &= (A^T)^{-1} \\
+\end{align*}$$
+
+I hope this helps you with your problem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2488468/proving-orthogonal-matrices-are-a-subgroup/2488474#2488474) on Mathematics Stack Exchange, 2017-10-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

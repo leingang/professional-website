@@ -1,0 +1,43 @@
+---
+title: When the imaginary part of a function is zero?
+date: '2015-01-22'
+description: Just take its conjugate. If $\overline{f(z,\bar z)} = f(z,\bar z)$ it is real-valued. Since conjugate is a ring homomorphism it distributes over sums and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1115474
+se-link: https://math.stackexchange.com/questions/1115446/when-the-imaginary-part-of-a-function-is-zero/1115474#1115474
+se-score: 2
+se-accepted: true
+se-tags:
+- functions
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When the imaginary part of a function is zero?](https://math.stackexchange.com/questions/1115446/when-the-imaginary-part-of-a-function-is-zero), asked by [Leox](https://math.stackexchange.com/users/97339/leox) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $z_k=x_k+ i y_k, x_i,y_i \in \mathbb{R}$ are the complex variables. Consider a polynomial of $z_k$ and  its conjugates $f(z_1,\ldots,z_n, \bar{z}_1, \ldots,\bar{z}_n).$
+>
+> **Question**:Is there any simple criterion to check out if the imaginary part  of $f(z_1,\ldots,z_n, \bar{z}_1, \ldots,\bar{z}_n)$ is  zero  for arbitrary $z_k.$?
+>
+> Since $\mathfrak{Im}(z_k+\bar{z}_k)=\mathfrak{Im}(z_k\bar{z}_k)=0$  we may assume that the $f$ can be represented as a function of the variables $z_k+\bar{z}_k$  and $z_k\bar{z}_k.$ It it the complete answer on the question?
+:::
+
+Just take its conjugate. If $\overline{f(z,\bar z)} = f(z,\bar z)$ it is real-valued. Since conjugate is a ring homomorphism it distributes over sums and products.
+
+For instance:
+$$\overline{(z_1+\bar z_1)z_2 \bar z_2}
+= (\bar z_1 + z_1) \bar z_2 z_2$$
+so you know it's real-valued.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1115446/when-the-imaginary-part-of-a-function-is-zero/1115474#1115474) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

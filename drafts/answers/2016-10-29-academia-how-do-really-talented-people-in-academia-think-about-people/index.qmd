@@ -1,0 +1,45 @@
+---
+title: How do really talented people in academia think about people who are less capable than them?
+date: '2016-10-29'
+description: A friend of mine got some advice from his dad that he passed on to me once.
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 79026
+se-link: https://academia.stackexchange.com/questions/78918/how-do-really-talented-people-in-academia-think-about-people-who-are-less-capabl/79026#79026
+se-score: 11
+se-accepted: false
+se-tags:
+- graduate-school
+- academic-life
+- emotional-responses
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do really talented people in academia think about people who are less capable than them?](https://academia.stackexchange.com/questions/78918/how-do-really-talented-people-in-academia-think-about-people-who-are-less-capabl), asked by [Robert](https://academia.stackexchange.com/users/63920/robert) on Academia Stack Exchange (2016-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> To be more specific, how do really top professors think about students who are much less smart than them, the students can be their Ph.D. students or just students who were taking his/her class.
+>
+> This is a main problem I am concerned about when I have something I don't understand, and because of this, I am often hesitant to ask my professors or other friends, because I am afraid that they would look down upon me and think I am too stupid/useless/incapable, etc?
+>
+> Can someone who know this give me some advice to overcome this unhealthy attitude?
+:::
+
+A friend of mine got some advice from his dad that he passed on to me once.
+
+> Don't worry about what other people are thinking of you. Most people are mostly thinking about themselves. 
+
+I mean, each of us thinks that life's a movie and we're the star, and internally interprets everyone else's actions as part of the plot of our lives.  But everybody else is doing the same thing.  
+
+To be more specific, many professors are introverts and may seem intimidating, but usually they are passionate about their discipline. It may be the one thing they love to talk about.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/78918/how-do-really-talented-people-in-academia-think-about-people-who-are-less-capabl/79026#79026) on Academia Stack Exchange, 2016-10-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

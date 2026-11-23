@@ -1,0 +1,62 @@
+---
+title: Convergence of $\sum_{n=0}^{+ \infty} \frac{3}{2n² -1}$
+date: '2017-12-12'
+description: How about $$\frac{3}{2n^2-1} \leq \frac{3}{n^2}$$ for all $n \geq 1$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2563556
+se-link: https://math.stackexchange.com/questions/2563548/convergence-of-sum-n-0-infty-frac32n%c2%b2-1/2563556#2563556
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- sequences-and-series
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convergence of $\sum_{n=0}^{+ \infty} \frac{3}{2n² -1}$](https://math.stackexchange.com/questions/2563548/convergence-of-sum-n-0-infty-frac32n%c2%b2-1), asked by user370967 on Mathematics Stack Exchange (2017-12-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Does $$\sum_{n=0}^{+ \infty} \frac{3}{2n² -1}$$
+> > 
+> > converge?
+>
+> I did the following:
+>
+> $$\frac{3}{2n²-1} = \frac{3}{2n²}\left(\frac{1}{1-\frac{1}{2n²}}\right)$$
+>
+> and because $$\frac{1}{1-\frac{1}{2n²}} \to 1$$
+>
+> the sequence is bounded, and hence, there exists $M \in \mathbb{R}^{+}$
+>
+> such that:
+>
+> $$\left|\frac{1}{1-\frac{1}{2n²}}\right| = \frac{1}{1-\frac{1}{2n²}} < M$$
+>
+> Hence:
+>
+> $$\frac{3}{2n²-1} < \frac{3M}{2n²}$$
+>
+> and because $\sum n^{-2}$ converges, by the comparison test it follows that the given sequence converges.
+>
+> Is this correct? Is there an easier approach?
+>
+> Thanks in advance.
+:::
+
+How about
+$$\frac{3}{2n^2-1} \leq \frac{3}{n^2}$$
+for all $n \geq 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2563548/convergence-of-sum-n-0-infty-frac32n%c2%b2-1/2563556#2563556) on Mathematics Stack Exchange, 2017-12-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

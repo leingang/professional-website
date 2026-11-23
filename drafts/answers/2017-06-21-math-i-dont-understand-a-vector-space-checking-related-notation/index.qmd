@@ -1,0 +1,56 @@
+---
+title: 'I don''t understand a vector space checking related notation:'
+date: '2017-06-21'
+description: You're overthinking it. When we say $\mathbb{R}^n$ is the set of all $n$-dimensional vectors $(x1,\dots, xn)$, then $x1,\dots,xn$ are just scalars. They're not…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2331265
+se-link: https://math.stackexchange.com/questions/2331164/i-dont-understand-a-vector-space-checking-related-notation/2331265#2331265
+se-score: 3
+se-accepted: true
+se-tags:
+- vector-spaces
+- notation
+- vectors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I don't understand a vector space checking related notation:](https://math.stackexchange.com/questions/2331164/i-dont-understand-a-vector-space-checking-related-notation), asked by [Ando Jurai](https://math.stackexchange.com/users/456814/ando-jurai) on Mathematics Stack Exchange (2017-06-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have questions about checking whether or not a space is a vector subspace of $E$, a $n$-dimensional real vector space.
+>
+> I understand the rules for defining a vector space (commutativity, distributivity, stability under linear combination, presence of $0$ and so on),
+> **but** I can't really figure out how to apply these when presented such case:
+>
+> if $E = R^n$ , check that $F = \{ x = ( x_1 ,\dots, x_n ) :  \sum_{i=1}^n x_i = 0 \}$ is a vector subspace of $E$. 
+>
+> Also check case of $G = \{ x = ( x_1 ,\dots, x_n ) :  \sum_{i=1}^n x_i = 1 \}$ 
+>
+> My problem is that $x_n$ are vectors in the $n$-th dimension, so how can they sum up to a scalar. Also, how can I test a singleton (like $\{0\}$) presence's  for such a sum?  
+>
+> For what i understand of this, in any case, any $x_n$ could be a $\{0\}$ in its own dimension and not change anything to the sum.
+>
+> Also, I know actually the answers ($F$ is a subspace and $G$ not, I can relate it to the presence of $0$ and the fact that for a vector space, you should have cancelled each vector by an opposite, but yet, I can't understand the notation of a scalar to something that is obviously not one as it is a sum of $n$-dimensional vectors (actually, unidimensional vectors in multidimensional space, so that the $k$-th dimension of vector $(u_1, \dots, u_n)$ is equal to a scalar and the others to $0$.
+>
+> Would someone enlighten me, please?
+:::
+
+You're overthinking it.  When we say $\mathbb{R}^n$ is the set of all $n$-dimensional vectors $(x_1,\dots, x_n)$, then $x_1,\dots,x_n$ are *just scalars*.  They're not one-dimensional vectors or subvectors or anything like that.  As such, you can combine them just like any elements of a field.
+
+For instance, if $n=3$, then $F$ contains the vector $(1,0,-1)$ and $(2,-1,-1)$. This is because $1+0+(-1) = 0$ and $2+(-1)+(-1) = 0$. If you add these two together, you get $(3,-1,-2)$.  Notice that this vector is still in $F$.  That is some evidence that $F$ might be a subspace.
+
+On the other hand, $G$ contains $(1,1,-1)$ and $(3,-1,-1)$.  If you add these together, you get $(4,0,-2)$, which is not in $G$.  This means that $G$ can't be a subspace.  
+
+In general, if $(x_1,\dots,x_n) \in F$, you know that $x_1 + \dots + x_n = 0$.  Is this relation preserved by scalar multiplication?  Is the zero vector $(0,\dots,0) \in E$ also in $F$?  These are the things you need to show.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2331164/i-dont-understand-a-vector-space-checking-related-notation/2331265#2331265) on Mathematics Stack Exchange, 2017-06-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

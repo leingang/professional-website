@@ -1,0 +1,34 @@
+---
+title: How to obtain an evidence of teacher effectiveness when I never was evaluated?
+date: '2017-10-02'
+description: If someone is asking you to teach classes before you've had any experience doing it, then I'm going to guess that they don't expect you to produce a full…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 96796
+se-link: https://academia.stackexchange.com/questions/95867/how-to-obtain-an-evidence-of-teacher-effectiveness-when-i-never-was-evaluated/96796#96796
+se-score: 3
+se-accepted: false
+se-tags:
+- application
+- teaching
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to obtain an evidence of teacher effectiveness when I never was evaluated?](https://academia.stackexchange.com/questions/95867/how-to-obtain-an-evidence-of-teacher-effectiveness-when-i-never-was-evaluated), asked by [Angela](https://academia.stackexchange.com/users/79794/angela) on Academia Stack Exchange (2017-09-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have spent my career working in the field and have recently been approached to teach some classes that are specific to what I do. I have been asked to turn in an “evidence of teacher effectiveness.” I do not have any evaluations or proof that I would be a good teacher. I have guest-lectured a few times and can probably get a few quotes about how I did. Apart from this, what could I use to fulfill this requirement?
+:::
+
+If someone is asking you to teach classes before you've had any experience doing it, then I'm going to guess that they don't expect you to produce a full dossier.  In that case, letters of recommendation from the people that invited you to give guest lectures, or people who saw them, might be sufficient.  You might get some clarification on what's expected by asking the person who's asking you to teach the classes.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/95867/how-to-obtain-an-evidence-of-teacher-effectiveness-when-i-never-was-evaluated/96796#96796) on Academia Stack Exchange, 2017-10-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

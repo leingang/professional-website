@@ -1,0 +1,47 @@
+---
+title: Graphing systems of linear equations.
+date: '2015-08-18'
+description: The table is telling you about two linear equations $$\begin{align} yA &= mA x + bA \\ yB &= mB x + bB \end{align}$$ A solution to the system would be a point…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1401740
+se-link: https://math.stackexchange.com/questions/1401732/graphing-systems-of-linear-equations/1401740#1401740
+se-score: 0
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Graphing systems of linear equations.](https://math.stackexchange.com/questions/1401732/graphing-systems-of-linear-equations), asked by [Madison](https://math.stackexchange.com/users/251617/madison) on Mathematics Stack Exchange (2015-08-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm currently finishing the unit systems of linear equations and I ran into trouble while attempting to read the the table of values. I am able to graph systems of equations and find solutions on a graph quite easily but for some reason I get lost when it comes to tables, I think its because I've never really done it before. With the following table of values I have to state whether or not it includes a solution to the system of linear equations it represents.[![enter image description here][q-1]][q-1]
+>
+>
+> I'm confused as to how each column would look in slope intercept form.
+> However, when there is only a x and y column I'm assuming you can just plot the points and find the slope to then determine if there is a solution to the system. Here is an example of what I'm talking about:[![enter image description here][q-2]][q-2]
+>
+>
+>
+>   [q-1]: JQOMr.png
+>   [q-2]: BKeFt.png
+:::
+
+The table is telling you about two linear equations
+$$\begin{align*}
+    y_A &= m_A x + b_A \\
+    y_B &= m_B x + b_B
+\end{align*}$$
+A solution to the system would be a point $(x,y)$ satisfying both equations.  In other words, $y_A = y_B$.  Do you see any information in the table like that?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1401732/graphing-systems-of-linear-equations/1401740#1401740) on Mathematics Stack Exchange, 2015-08-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

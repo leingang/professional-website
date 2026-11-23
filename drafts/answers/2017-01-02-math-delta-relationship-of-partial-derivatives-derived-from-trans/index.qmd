@@ -1,0 +1,64 @@
+---
+title: Delta relationship of partial derivatives derived from transformation of coordinates
+date: '2017-01-02'
+description: 'To elaborate on my comment: for each $i$, you have an equation of the form: $$x^i = x^i(\hat x^1(x^1,\dots,x^n),\hat x^2(x^1,\dots,x^n),\dots,\hat…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2080875
+se-link: https://math.stackexchange.com/questions/2080848/delta-relationship-of-partial-derivatives-derived-from-transformation-of-coordin/2080875#2080875
+se-score: 0
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- partial-derivative
+- tensors
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Delta relationship of partial derivatives derived from transformation of coordinates](https://math.stackexchange.com/questions/2080848/delta-relationship-of-partial-derivatives-derived-from-transformation-of-coordin), asked by [Bull](https://math.stackexchange.com/users/400688/bull) on Mathematics Stack Exchange (2017-01-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The book Goreux, Introduction to Tensor Calculus (p.21) gives the following
+> explanation of this rule (which I'll call the delta relationship):
+> $$\frac{\partial x^i}{\partial \hat{x}^j} \frac{\partial \hat{x}^j}{\partial x^k} = \delta_k^i$$
+>
+> The equation involves original coordinates $x^i$ and new (transformed) coordinates
+> $\hat{x}^i$.
+>
+> The explanation starts by expressing the original coordinates in terms of the new (eq1),
+> $$x^i = x^i( \hat{x}^1,  \hat{x}^2, \cdots, \hat{x}^n )$$
+> and vice-versa (eq2)
+> $$\hat{x}^i = \hat{x}^i( x^1, x^2, \cdots, x^n )$$
+> which is possible if the transform between the coordinates is not singular
+> at the point being considered.
+>
+> Then, the book suggests substituting the second equation into the first,
+> i.e. expressing the $\hat{x}^i$ on the right hand side of the first equation
+> in terms of the $x^i$ using the second equation.
+> The book says
+> "Since these coordinates are independent, this expression of $x^i$ must reduce to $x^i$ itself".
+>  So far, this is obvious to me. 
+>
+> The next sentence is the puzzle:  "We deduce that
+> $$\frac{\partial x^i}{\partial \hat{x}^j} \frac{\partial \hat{x}^j}{\partial x^k} = \delta_k^i$$
+> "
+>
+> I don't see how this follows.
+:::
+
+To elaborate on my comment: for each $i$, you have an equation of the form:
+$$x^i = x^i(\hat x^1(x^1,\dots,x^n),\hat x^2(x^1,\dots,x^n),\dots,\hat x^n(x^1,\dots,x^n))$$
+For any $k$, take the derivative with respect to $x^k$ of each side of the above.  The left-hand side is $\delta^i_k$, and for the right-hand side, we use the chain rule with each $\hat x^j$ as an intermediate variable.  Thus
+$$\delta^i_k = \frac{\partial x^i}{\partial \hat x^j}\frac{\partial \hat x^j}{\partial x^k}$$
+(I assume you know about the Einstein summation convention—the repeated $j$ index means that index is summed over.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2080848/delta-relationship-of-partial-derivatives-derived-from-transformation-of-coordin/2080875#2080875) on Mathematics Stack Exchange, 2017-01-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,33 @@
+---
+title: Test if a command has been defined by another package
+date: '2011-03-01'
+description: No, \def is a TeX primitive and is destructive. And this is one reason LaTeX has \newcommand. If you and other package authors use \newcommand, then you will…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12364
+se-link: https://tex.stackexchange.com/questions/12362/test-if-a-command-has-been-defined-by-another-package/12364#12364
+se-score: 5
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Test if a command has been defined by another package](https://tex.stackexchange.com/questions/12362/test-if-a-command-has-been-defined-by-another-package), asked by [yannisl](https://tex.stackexchange.com/users/963/yannisl) on TeX Stack Exchange (2011-03-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I normally use the LaTeX `\newcommand` to define macros. However, when using delimited macros I use `\def`. Is there a way that I can get LaTeX to trigger an error if the command defined by `\def` is being re-defined by another package, i.e, if someone tries to re-define the command a LaTeX error message is triggered.
+:::
+
+No, `\def` is a TeX primitive and is destructive.  And this is one reason LaTeX has `\newcommand`.  If you and other package authors use `\newcommand`, then you will be warned against redefining each other's code.  But even then, there is `\renewcommand` to get around that problem if you know what you're doing.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12362/test-if-a-command-has-been-defined-by-another-package/12364#12364) on TeX Stack Exchange, 2011-03-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

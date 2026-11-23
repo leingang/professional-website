@@ -1,0 +1,46 @@
+---
+title: Why are these vectors linearly dependent?
+date: '2021-05-21'
+description: You see that two of the vectors are parallel—lying one on top of the other. Call the shorter one $v1$ and the longer one $v2$. Call the other one $v3$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4146801
+se-link: https://math.stackexchange.com/questions/4146775/why-are-these-vectors-linearly-dependent/4146801#4146801
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are these vectors linearly dependent?](https://math.stackexchange.com/questions/4146775/why-are-these-vectors-linearly-dependent), asked by [Ng Lok Chun](https://math.stackexchange.com/users/885039/ng-lok-chun) on Mathematics Stack Exchange (2021-05-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I got it from [Wikipedia](https://en.wikipedia.org/wiki/Linear_independence), but why are they dependent?
+>
+> [![three vectors in space.  One is a multiple of another, while the third has a different direction][q-1]][q-1]
+>
+>   [q-1]: oPGxX.png
+>
+> ([Image](https://en.wikipedia.org/wiki/Linear_independence#/media/File:Vec-dep.png) by Wikimedia user Schnelliboy, cropped.  Used under a Creative Commons license ([CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0))
+:::
+
+You see that two of the vectors are parallel—lying one on top of the other.  Call the shorter one $v_1$ and the longer one $v_2$.  Call the other one $v_3$.
+
+Since $v_2$ and $v_1$ are parallel, there exists a scalar  $\lambda$ such that $v_2 = \lambda v_1$.  From the picture, it appears $\lambda \approx 1.5$.
+
+Let $c_1 = \lambda$, $c_2 = -1$, and $c_3 = 0$.  These three scalars are not all zero.  Yet
+$$c_1 v_1 + c_2 v_2 + c_3 v_3 = 
+   \lambda v_1 - v_2 + \vec 0 = \vec 0$$
+So the three vectors $\{v_1,v_2,v_3\}$ are linearly dependent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4146775/why-are-these-vectors-linearly-dependent/4146801#4146801) on Mathematics Stack Exchange, 2021-05-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

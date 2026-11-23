@@ -1,0 +1,44 @@
+---
+title: If $0\leq f(x)\leq g(x)$, and $\int^{\infty}_{a}g(x)dx$ diverges, so does $\int_a^\infty f(x)\,dx$?
+date: '2017-02-23'
+description: L. Lhier's second answer ($g(x) = 1$ and $f(x) = 0$) is probably the minimal one. But you could look at $p$-integrals too. Let $f(x) = \frac{1}{x^2}$ and $g(x)…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2158401
+se-link: https://math.stackexchange.com/questions/2158349/if-0-leq-fx-leq-gx-and-int-infty-agxdx-diverges-so-does-int/2158401#2158401
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- convergence-divergence
+- improper-integrals
+- examples-counterexamples
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $0\leq f(x)\leq g(x)$, and $\int^{\infty}_{a}g(x)dx$ diverges, so does $\int_a^\infty f(x)\,dx$?](https://math.stackexchange.com/questions/2158349/if-0-leq-fx-leq-gx-and-int-infty-agxdx-diverges-so-does-int), asked by [K Split X](https://math.stackexchange.com/users/381431/k-split-x) on Mathematics Stack Exchange (2017-02-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > If $0\leq f(x)\leq g(x)$, and $\int^{\infty}_{a}g(x)dx$ diverges, so does $\int_a^\infty f(x)\,dx$?
+>
+> I need to find a counterexample for this statement since it is False. 
+>
+> * * *
+> The divergent theorem is actually the other way around, if $\int_a^\infty f(x)\,dx$ diverges, then $\int_a^\infty g(x)\,dx$ diverges. Thus, the statement in the question is False. I cannot think of any counterexamples. How should I proceed?
+:::
+
+L. Lhier's second answer ($g(x) = 1$ and $f(x) = 0$) is probably the minimal one.  But you could look at $p$-integrals too.  Let $f(x) = \frac{1}{x^2}$ and $g(x) = \frac{1}{x}$.  Then $0 \leq f(x) \leq g(x)$ for all $x \geq 1$, and $\int_1^\infty g(x)\,dx$ diverges, but $\int_1^\infty f(x)\,dx$ converges.
+
+Intuitively speaking, an improper integral (at least for a nonnegative function) is attempting to measure the area of an infinite region: the region under the graph, above the $x$-axis, and to the right of $x=a$.  If $0 \leq f(x) \leq g(x)$, the region below the graph of $f$ is *contained in* the region below the graph of $g$.  Therefore, if the region below the graph of $g$ has finite area (the integral converges), the region below the graph of $f$ must also have finite area.  Contrapositively, if the region below the graph of $f$ has infinite area (the integral diverges), the region below the graph of $g$ must have infinite area.  But if the region below the graph of $g$ has infinite area, the region below the graph of $f$ could have finite *or* infinite area.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2158349/if-0-leq-fx-leq-gx-and-int-infty-agxdx-diverges-so-does-int/2158401#2158401) on Mathematics Stack Exchange, 2017-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

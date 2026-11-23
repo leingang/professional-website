@@ -1,0 +1,103 @@
+---
+title: Creating Multiple-State Models (rectangular nodes)
+date: '2014-07-24'
+description: One way to do this is with the calc TikZ library.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 193088
+se-link: https://tex.stackexchange.com/questions/193069/creating-multiple-state-models-rectangular-nodes/193088#193088
+se-score: 2
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Creating Multiple-State Models (rectangular nodes)](https://tex.stackexchange.com/questions/193069/creating-multiple-state-models-rectangular-nodes), asked by [Clarinetist](https://tex.stackexchange.com/users/31941/clarinetist) on TeX Stack Exchange (2014-07-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to replicate the following image for my work:
+>
+> ![enter image description here][q-1]
+>
+> I now have the following MWE:
+>
+> ```latex
+> \documentclass[12pt]{article}
+> \usepackage[margin=2cm]{geometry}
+> \usepackage [english]{babel}
+> \usepackage{amsmath, amssymb}
+> \usepackage{tikz}
+> \usetikzlibrary{positioning}
+> \usetikzlibrary{arrows}
+> \usetikzlibrary{shapes.multipart}
+> \begin{document}
+> \begin{center}
+> \begin{tikzpicture}[sharp corners=2pt,inner sep=7pt,node distance=.8cm,every text node part/.style={align=center}]
+>
+> % Draw rectangular nodes (switch sharp to smooth for different corners)
+> \node[draw, minimum height = 1cm, minimum width = 3cm] (healthy){healthy $(h)$};
+> \node[draw,below = 1.5cm of healthy, minimum height = 1cm, minimum width = 3cm](dead){dead $(d)$};
+> \node[draw,right=3cm of healthy, minimum height = 1cm, minimum width = 3cm](sick){sick $(s)$};
+>
+> \end{tikzpicture}\end{center}
+> \end{document}
+> ```
+>
+> ![enter image description here][q-3]
+>
+>
+>   [q-1]: ASO6w.png
+>   [q-2]: yI73D.png
+>   [q-3]: 7IMaZ.png
+>
+> Is there any way I can horizontally center the "dead (d)" node (as in the image)?
+:::
+
+One way to do this is with the `calc` TikZ library.
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\begin{document}
+\begin{tikzpicture}[
+    sharp corners=2pt,
+    inner sep=7pt,
+    node distance=3cm,
+    >=latex]
+\tikzstyle{my node}=[draw,minimum height=1cm,minimum width=3cm]
+\node[my node] (healthy){healthy $(h)$};
+\node[my node,right=of healthy](sick){sick $(s)$};
+\node[my node] at ($(healthy)!0.5!(sick)-(0pt,1.5cm)$) (dead) {dead $(d)$};
+\draw[->] (healthy) -- (dead);
+\draw[->] (sick) -- (dead);
+\draw[->] (healthy.5) -- (sick.175);
+\draw[<-] (healthy.355) -- (sick.185);
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+The key bit is the `($(healthy)!0.5!(sick)-(0pt,1.5cm)$)` coordinate specification.  It first finds the midpoint between the `healthy` and `sick` nodes, then moves down by 1.5cm.  
+
+The arrows from `healthy` and `sick` to `dead` are pretty straightforward.  TikZ places them along the lines connecting the centers, but starting and ending at the edges of the nodes.
+
+Drawing the double arrows is a bit more complicated.  The `(healthy.5)` coordinate is at the intersection of the outer edge of the `healthy` node and a ray making an angle of 5 degrees from the center of that node.  Same for `(sick.175)`.  Since both nodes have the same width, rotating up 5 degrees is the same for both nodes.  The result is a line from center to center nudged up by a bit.  Same for the arrow from `(healthy.355)` to `(sick.185)`.
+
+
+  [1]: hAvnw.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/193069/creating-multiple-state-models-rectangular-nodes/193088#193088) on TeX Stack Exchange, 2014-07-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

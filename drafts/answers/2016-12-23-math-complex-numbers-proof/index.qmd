@@ -1,0 +1,38 @@
+---
+title: 'Complex Numbers : Proof'
+date: '2016-12-23'
+description: Breaking it down into components $w = a+bi$ and $z=c+di$ is going to be extremely tedious. Like Fib1123 says, you want to show that $\frac{w+z}{1+wz}$ is its…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2069790
+se-link: https://math.stackexchange.com/questions/2069778/complex-numbers-proof/2069790#2069790
+se-score: 1
+se-accepted: true
+se-tags:
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Complex Numbers : Proof](https://math.stackexchange.com/questions/2069778/complex-numbers-proof), asked by [Oran2013](https://math.stackexchange.com/users/400083/oran2013) on Mathematics Stack Exchange (2016-12-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove that if $w,z$ are complex numbers such that $|w|=|z|=1$ and $wz\ne -1$, then $\frac{w+z}{1+wz}$ is a real number.
+>
+> Do I substitute $w$ and $z$ for $a+bi$ and $c+di?$ How do I do this?
+:::
+
+Breaking it down into components $w = a+bi$ and $z=c+di$ is going to be extremely tedious.  Like Fib1123 says, you want to show that $\frac{w+z}{1+wz}$ is its own conjugate.  In general,
+$$\overline{\frac{w+z}{1 + wz}} = \frac{\bar w+ \bar z}{1 + \bar w \bar z}$$
+Now multiply by $1=\frac{wz}{wz}$ and use the fact that 
+$$|w| = w \bar w = |z| = z \bar z = 1$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2069778/complex-numbers-proof/2069790#2069790) on Mathematics Stack Exchange, 2016-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

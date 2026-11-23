@@ -1,0 +1,45 @@
+---
+title: Difference between these two limits
+date: '2015-06-10'
+description: Good question. We often think of the limit of a function as an object, but it's really a statement about the function and a point. It tells you the behavior of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1320197
+se-link: https://math.stackexchange.com/questions/1320058/difference-between-these-two-limits/1320197#1320197
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- algebra-precalculus
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Difference between these two limits](https://math.stackexchange.com/questions/1320058/difference-between-these-two-limits), asked by [Stella](https://math.stackexchange.com/users/113097/stella) on Mathematics Stack Exchange (2015-06-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to know the difference between the following limits:
+> $$\lim_{x\to 1^{+}} \frac{1}{\lfloor{x}\rfloor-1},$$
+> $$\lim_{x\to 1^{+}} \frac{1}{x-1}$$
+> Is the answer to both infinite?
+> What is the difference between undefined and infinite?
+:::
+
+Good question.  We often think of the limit of a function as an *object*, but it's really a *statement* about the function and a point.  It tells you the behavior of the function near that point.  
+
+We say that $\lim_{x\to 1^+} \frac{1}{x-1} = \infty$ because values of $\frac{1}{x-1}$ can be made arbitrarily large by taking $x$ sufficiently close to $1$ but greater than $1$.
+
+However, there are *no* values of $f(x) = \frac{1}{\lfloor x\rfloor -1}$ when $x$ is close to $1$ but greater than $1$, for the reasons explained in other answers.  So it is meaningless to say anything about the function near $1$.  
+
+Some will say $\lim_{x\to 1^+}\frac{1}{\lfloor x\rfloor -1}$ “is undefined,” but I think that can enforce the misconception that “undefined” is some kind of value a limit can take.  I think it's better to say that $\lim_{x\to 1^+}\frac{1}{\lfloor x\rfloor -1}$ does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1320058/difference-between-these-two-limits/1320197#1320197) on Mathematics Stack Exchange, 2015-06-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

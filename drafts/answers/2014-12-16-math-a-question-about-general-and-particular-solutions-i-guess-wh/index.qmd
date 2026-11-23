@@ -1,0 +1,57 @@
+---
+title: A question about "General and Particular Solutions" (I guess) which I'm not sure what they mean
+date: '2014-12-16'
+description: You seem to think that since the question requires a solution without examples, you may not use examples to solve the problem. Not true! Playing with an…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1070534
+se-link: https://math.stackexchange.com/questions/1069126/a-question-about-general-and-particular-solutions-i-guess-which-im-not-sure/1070534#1070534
+se-score: 1
+se-accepted: false
+se-tags:
+- homogeneous-equation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A question about "General and Particular Solutions" (I guess) which I'm not sure what they mean](https://math.stackexchange.com/questions/1069126/a-question-about-general-and-particular-solutions-i-guess-which-im-not-sure), asked by [Kerem](https://math.stackexchange.com/users/201346/kerem) on Mathematics Stack Exchange (2014-12-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> We have a $3\times 6$ matrix $A$ with rank $3$ (this is all the information we have, no matrix given). Here comes the questions: 
+>
+> What is the number of free variables in the solution to the system $Ax = 0$? 
+>
+> (Well, it must be 3. Although I think I know the answer, I didn't exclude this part of question because I think there must be somebody who can explain better.) 
+>
+> For a given $b$, are we guaranteed to have a solution to $Ax = b$? 
+>
+> If we have a solution, what is the dimension of the solution space? 
+>
+> (The asker wants us to explain without using an example.)
+:::
+
+You seem to think that since the question requires a solution without examples, you may not use examples to solve the problem.  Not true! Playing with an example can give you the insight to understand the concept behind the problem.
+
+The simplest $3 \times 6$ matrix that I can think of with rank 3 is
+$$A = \begin{bmatrix}
+    1 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    \end{bmatrix}$$
+Then any vector of the form $x_0 = \begin{bmatrix} 0 & 0 & 0 & x_4 & x_5 & x_6 \end{bmatrix}^T$ is a solution to $Ax=0$.  We see three free variables.  
+
+Given a vector $b$ in $\mathbb{R}^3$, the system $Ax=b$ has a solution if $b$ can be written as a linear combination of columns of $A$.  If $b = \begin{bmatrix} c_1 & c_2 & c_3 \end{bmatrix}^T$, then $x_p = \begin{bmatrix} c_1 & c_2 & c_3 & 0 & 0 & 0 \end{bmatrix}^T$ will do (try it).  In fact, $\begin{bmatrix} c_1 & c_2 & c_3 & x_4 & x_5 & x_6 \end{bmatrix}^T$ is also a solution for any values of $x_4$, $x_5$, and $x_6$.  Therefore, solution space is an affine space of dimension 3.
+
+In general, the *rank-nullity theorem* says the rank plus the nullity (dimension of the kernel) of a matrix equals the number of columns in the matrix.  If $A$ is of rank 3, its columns span $\mathbb{R}^3$.  Finally, if $x_0$ is a solution to $Ax=0$, and $x_p$ is a solution to $Ax=b$, what can you say about $x_0 + x_p$?
+
+PS In your question title you ask about the terms *general* and *particular solution*.  In a system of equations of the form $Ax=b$, a particular solution is a single solution, and the general solution is a description of all solutions.  What this problem is illustrating is that once one particular solution is found, any solution can be found by adding to the particular solution a solution to the homogeneous system $Ax=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1069126/a-question-about-general-and-particular-solutions-i-guess-which-im-not-sure/1070534#1070534) on Mathematics Stack Exchange, 2014-12-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

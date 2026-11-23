@@ -1,0 +1,55 @@
+---
+title: Compute the volume of the body restricted with $z^2=x^2+y^2; z=0; (x^2+y^2)^2=2xy$
+date: '2017-12-20'
+description: First of all, I would say, why try to do it without the picture? Pictures are really important to understand what's going on. In this case, the plane curve…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2574507
+se-link: https://math.stackexchange.com/questions/2574210/compute-the-volume-of-the-body-restricted-with-z2-x2y2-z-0-x2y22-2x/2574507#2574507
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- definite-integrals
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Compute the volume of the body restricted with $z^2=x^2+y^2; z=0; (x^2+y^2)^2=2xy$](https://math.stackexchange.com/questions/2574210/compute-the-volume-of-the-body-restricted-with-z2-x2y2-z-0-x2y22-2x), asked by [ioleg19029700](https://math.stackexchange.com/users/401694/ioleg19029700) on Mathematics Stack Exchange (2017-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Compute the volume of the body restricted with $z^2=x^2+y^2; z=0; (x^2+y^2)^2=2xy$ surfaces
+>
+> I used cylindric coordinates and got:  
+> $z=z; z=0; r=\sqrt{\sin 2t}$  
+> So my problem is that I can’t find out bounds. Could you please explain in detail how can I do that without the picture
+:::
+
+First of all, I would say, why try to do it without the picture?  Pictures are really important to understand what's going on.  In this case, the plane curve $(x^2+y^2)^2 = 2xy$, or $r^2 = \sin 2\theta$, is a lemniscate.[![lemniscate][1]][1]
+If $D$ is the region enclosed by that lemniscate, the volume you seek is
+$$V = \iint_D \sqrt{x^2+y^2}\,dA$$
+To simplify, first let's just use the symmetry to integrate over the first quadrant and double it.  Then we don't have to worry about $\sin 2t$ going negative.  We can say $r = \sqrt{\sin 2\theta}$ on this region.  So
+$$\begin{align*}
+    V &= 2\int_{0}^{\pi/2} \int_0^{\sqrt{2\sin 2\theta}}(r)r\,dr\,d\theta
+    \\&= \frac{2}{3}\int_{0}^{\pi/2}\left.r^3\right|_{r=0}^{r=\sqrt{2\sin 2\theta}} \,d\theta
+    \\&= \frac{2}{3}\int_{0}^{\pi/2} \sin^{3/2}2\theta\,d\theta
+\end{align*}$$
+The integrand cannot be antidifferentiated in elementary terms, however.  [Wolfram][2] says the answer is about 0.582679.
+
+If the surface under which this solid lies were different, we might have an elementary integral.  For instance, if it were $z=x^2+y^2$ instead of $z^2=x^2+y^2$, the sine exponent would be $2$ instead of a fraction, and we could integrate that with a trig identity.
+
+
+  [1]: 7iYGi.png
+  [2]: http://www.wolframalpha.com/input/?i=integral%20of%202%2F3%20sin(2theta)%5E(3%2F2)%20from%20theta%3D0%20to%20pi%2F2
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2574210/compute-the-volume-of-the-body-restricted-with-z2-x2y2-z-0-x2y22-2x/2574507#2574507) on Mathematics Stack Exchange, 2017-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

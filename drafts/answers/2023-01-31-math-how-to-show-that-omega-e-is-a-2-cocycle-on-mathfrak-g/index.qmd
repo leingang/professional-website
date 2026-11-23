@@ -1,0 +1,62 @@
+---
+title: How to show that $\omega (e)$ is a $2$-cocycle on $\mathfrak g\ $?
+date: '2023-01-31'
+description: 'First prove this lemma: If $\omega$ is a left-invariant differential $2$-form on $G$, and $X$ and $Y$ are left-invariant vector fields on $G$, with $Xe = \xi$…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4629748
+se-link: https://math.stackexchange.com/questions/4621160/how-to-show-that-omega-e-is-a-2-cocycle-on-mathfrak-g/4629748#4629748
+se-score: 0
+se-accepted: false
+se-tags:
+- lie-groups
+- lie-algebras
+- differential-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to show that $\omega (e)$ is a $2$-cocycle on $\mathfrak g\ $?](https://math.stackexchange.com/questions/4621160/how-to-show-that-omega-e-is-a-2-cocycle-on-mathfrak-g), asked by [ACB](https://math.stackexchange.com/users/778190/acb) on Mathematics Stack Exchange (2023-01-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Let $G$ be a Lie group with Lie algebra $\mathfrak {g}.$ Let $\omega$ be a left-invariant non-degenerate closed $2$-form on $G.$ Then $\omega (e)$ is a $2$-cocycle on $\mathfrak {g}$ i.e. $$\omega (e) ([a,b], c) + \omega(e) ([b,c], a) + \omega (e) ([c,a], b) = 0$$ for all $a,b,c \in \mathfrak {g},$ where $[\cdot, \cdot]$ is the Lie bracket on $\mathfrak {g}.$
+>
+> How to prove it? Any help in this regard would be warmly appreciated.
+>
+> Thanks for your time.
+:::
+
+First prove this lemma: If $\omega$ is a left-invariant differential $2$-form on $G$, and $X$ and $Y$ are left-invariant vector fields on $G$, with $X_e = \xi$ and $Y_e = \eta$ in $\mathfrak{g}$, then
+$$\omega(X,Y)_g = \omega(X,Y)_e = \omega_e(\xi,\eta)$$
+To clarify the notation:
+
+* $\omega$ is a differential $2$-form, while $X$ and $Y$ are vector fields, so $\omega(X,Y)$ is a function on $G$. 
+* $\omega(X,Y)_g$ denotes the value of that function at a point $g \in G$.
+* $\omega_e$ is an element of $\left(\bigwedge^2 T_e G\right)^* = \left(\bigwedge^2 \mathfrak{g}\right)^*$. 
+* $\omega_e(\xi,\eta)$ is the value of $\omega_e$ on $\xi \wedge \eta$
+
+In particular, notice that *$\omega(X,Y)$ is a constant function on $G$.*
+
+The proof of this lemma requires carefully writing out the definitions of left-invariant, both for vector fields and for differential forms.
+
+Now to prove the main statement: let $\xi$, $\eta$, and $\zeta\in\mathfrak{g}$. There are unique left-invariant vector fields $X$, $Y$, and $Z$ on $G$ such that $X_e = \xi$, etc. Observe that
+$$d\omega(X,Y,Z) = X \omega(Y,Z) - Y \omega(X,Z) + Z \omega(X,Y) - \omega([X,Y],Z) + \omega([X,Z],Y) - \omega([Y,Z],X)$$
+Once again, to clarify the notation: $\omega(Y,Z)$ (etc.) is a function on $G$, and $X$ is a vector field on $G$. $X \omega(Y,Z)$ means the derivative of $\omega(Y,Z)$ in the direction of $Z$. This is a function on $G$.
+
+Since $\omega$, $Y$, and $Z$ are left-invariant, $\omega(Y,Z)$ is constant. Therefore $X\omega(Y,Z) = 0$. The same for the next two terms in the expansion of $d\omega(X,Y,Z)$.
+
+In light of the fact that $d\omega = 0$, we have
+$$\omega([X,Y],Z) + \omega([Z,X],Y) + \omega([Y,Z],X) = 0$$
+as functions on $G$. Evaluating at $g=e$ gives
+$$\omega_e([\xi,\eta],\zeta) + \omega_e([\zeta,\xi],\eta) + \omega_e([\eta,\zeta],\xi) = 0$$
+QED
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4621160/how-to-show-that-omega-e-is-a-2-cocycle-on-mathfrak-g/4629748#4629748) on Mathematics Stack Exchange, 2023-01-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,60 @@
+---
+title: 'Self-Studying Analysis: Direction'
+date: '2018-06-08'
+description: If I understand correctly, you're still an undergraduate student? In that case, I would suggest either a study group or an independent (supervised) reading…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2812780
+se-link: https://math.stackexchange.com/questions/2812743/self-studying-analysis-direction/2812780#2812780
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- self-learning
+- education
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Self-Studying Analysis: Direction](https://math.stackexchange.com/questions/2812743/self-studying-analysis-direction), asked by [Alea](https://math.stackexchange.com/users/490979/alea) on Mathematics Stack Exchange (2018-06-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have just completed a first course in real analysis (studied construction of real numbers, supremum/infimum, sequences, series, limits, continuity, differentiability and very little point set topology). 
+>
+> My goal is to be better at analysis, to reach a point where proof-writing comes naturally to me and to fully understand and appreciate the beauty it entails. 
+>
+> Right now, what I want to be able to do is:
+>
+> 1) Polish the material I've already covered. While studying, I felt there were a lot of proofs of theorems (classical ones) which I didn't fully understand and had to take them for granted(due to limited time, I had to both, understand as well as practice so to be able to attempt quizzes, assignments and mid/final).
+>
+> 2) Cover further material: I want to do integration (Reiman integration, Darboux integration and Lebesgue integration) as well as move on to metric spaces and cover that as well.
+>
+> My questions are:
+>
+>  1. How should I go about self-studying so the aforementioned goals are
+>     met? Should I start all over again, from scratch, or if anyone can
+>     give me a detailed plan as to studying these, that would be great!
+>
+>  2. The other question I have is related to the importance and
+>     understanding of the classical 'BIG' proofs. They are quite hard for
+>     a beginner as myself(or at least that is what I think!). I feel as
+>     if I can never approach them on my own and even understanding them
+>     is a challenge! What should I do about this? Since the ultimate goal
+>     is to become better and understand the material in a really good
+>     manner, I do want to be able to absorb the proofs for such big
+>     theorems!
+>
+> Thank you!!
+:::
+
+If I understand correctly, you're still an undergraduate student?  In that case, I would suggest either a study group or an independent (supervised) reading course.  I don't think you can learn to prove things by reading proofs over and over by yourself.  Find some people to work with, make sure there's an expert among you, and progress through the material together.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2812743/self-studying-analysis-direction/2812780#2812780) on Mathematics Stack Exchange, 2018-06-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

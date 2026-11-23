@@ -1,0 +1,51 @@
+---
+title: Proof of limit of function in absolute value
+date: '2016-12-10'
+description: If $L = 0$, the statement is true. This is built into the definition of limit. Because saying $f(x)$ is close to $0$ is the same thing as saying $|f(x) - 0|$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2052314
+se-link: https://math.stackexchange.com/questions/2052302/proof-of-limit-of-function-in-absolute-value/2052314#2052314
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- absolute-value
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof of limit of function in absolute value](https://math.stackexchange.com/questions/2052302/proof-of-limit-of-function-in-absolute-value), asked by [GuD](https://math.stackexchange.com/users/396330/gud) on Mathematics Stack Exchange (2016-12-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following question, and not sure if its a true or false statement. Couldn't construct a proof but couldn't construct a counter example either...
+>
+> > If $\lim \limits_{x \to a} |f(x)| = L$ for some $L≥0$ then either $\lim \limits_{x \to a} f(x) = L$ or $\lim \limits_{x \to a} f(x) = -L$ .
+>
+> Any help would be appreciated!
+:::
+
+If $L = 0$, the statement is true.  This is built into the definition of limit.  Because saying $f(x)$ is close to $0$ is the same thing as saying $|f(x) - 0|$ is small, which is the same thing as saying $|f(x)|$ is small, which is the same thing as saying $|f(x)|$ is close to $0$.
+
+If $L > 0$, the statement is false.  You can picture a function that is “undecided” between $L$ and $-L$ as a limit.  But then if you apply the absolute value, you get a function that has a limit of $L$.  And example would be
+$$f(x) = \begin{cases} 1 & \text{if $x$ is rational} \\ -1 & \text{if $x$ is irrational} \end{cases}$$
+Then $|f(x)| = 1$, so $\lim_{x\to 0}f(x) = 1$.  But $\lim_{x\to 0} f(x)$ cannot be $1$ because there are infinitely many irrational numbers arbitrarily close to $0$, and cannot be $-1$ because there are infinitely many rational numbers arbitrarily close to $0$.  So $f$ has no limit at $0$.
+
+**EDIT** re your your question
+
+> $L$ is said to be positive, isn't that a contradiction? $L=-1$ is not positive.
+
+I'm not sure what you mean by *contradiction.*  If you mean that this example is not a counterexample to the given statement (that is, evidence of the statement's falsehood), remember that $L$ has to be the same throughout the statement.  
+
+When we say “The statement ‘If $\lim_{x\to a} |f(x)| = L$, then $\lim_{x\to a} f(x) = L$ or $\lim_{x\to a} f(x) =-L$’ is false,” what we mean is: “there exists a function $f$ such that $\lim_{x\to a}f(x) = L$, but neither $\lim_{x\to a} f(x) = L$ nor $\lim_{x\to a} f(x) = -L$ are true”.  Substitute $L$ for $1$ (which is positive) and my function satisfies this.  I'm not changing $L$ to $-1$ anywhere; $-L$ is just another way of saying $-1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2052302/proof-of-limit-of-function-in-absolute-value/2052314#2052314) on Mathematics Stack Exchange, 2016-12-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

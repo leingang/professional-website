@@ -1,0 +1,60 @@
+---
+title: exam class - permute mc answer choices, generate answer key
+date: '2011-05-11'
+description: 'I know this problem well. I have my own package that does it, along with several documents full of crufty code. I can tell you my implementation:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 18006
+se-link: https://tex.stackexchange.com/questions/17979/exam-class-permute-mc-answer-choices-generate-answer-key/18006#18006
+se-score: 12
+se-accepted: true
+se-tags:
+- exam
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[exam class - permute mc answer choices, generate answer key](https://tex.stackexchange.com/questions/17979/exam-class-permute-mc-answer-choices-generate-answer-key), asked by [Jason](https://tex.stackexchange.com/users/5470/jason) on TeX Stack Exchange (2011-05-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I happily use the `exam` document class to create exams and quizzes. I often make at least part of my exams multiple choice, and I'd like to be able to   
+>
+>  1. generate multiple versions of the exam by permuting the answer choices (automatically, rather than by hand as I do now), and  
+>  2. generate an answer key for each version when compiling the exam with answers on.   
+>
+> Do any of you do that or have suggestions about how I might be able to implement that?
+:::
+
+I know this problem well.  I have my own package that does it, along with several documents full of crufty code.  I can tell you my implementation:
+
+Permuting answer choices:
+
+ * Use a `pgfmath` list to store the answer choices
+ * Do a Knuth shuffle on that list to permute them
+ * Walk over the list printing out each choice
+
+You might find the `\pgfmathsetseed` command useful because you want randomized choices but the same randomized choices each time you compile!  You might also find http://random.org/ good for getting sufficiently random seeds.  
+
+For generating multiple versions and answer keys I use `docstrip`.  My main file is a docstrip file like `exam.dtx` and I use guards like
+
+```latex
+%<A>\pgfmathsetseed{1001} % seed for A version
+%<B>\pgfmathsetseed{1010} % seed for B version
+%<*key>
+    % commands that alter whether the key is shown
+%</key>
+```
+
+to `\generate` files like `exam-A.tex`, `exam-A-key.tex`, etc.  Then you have one document per file without manually repeating code.
+
+I don't use the `exam` class but I think this could work in that.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17979/exam-class-permute-mc-answer-choices-generate-answer-key/18006#18006) on TeX Stack Exchange, 2011-05-11, with [edits](https://tex.stackexchange.com/posts/18006/revisions) by [Stefan Kottwitz](https://tex.stackexchange.com/users/213/stefan-kottwitz). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,33 @@
+---
+title: USPS Postnet barcodes
+date: '2010-11-18'
+description: The envlab package does envelopes, labels, and barcodes.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5593
+se-link: https://tex.stackexchange.com/questions/5591/usps-postnet-barcodes/5593#5593
+se-score: 9
+se-accepted: true
+se-tags:
+- barcodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[USPS Postnet barcodes](https://tex.stackexchange.com/questions/5591/usps-postnet-barcodes), asked by [Kent](https://tex.stackexchange.com/users/928/kent) on TeX Stack Exchange (2010-11-18; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> After searching on-and-off for several weeks I haven't found an answer to this. Is there a LaTeX package to generate USPS zip+4 barcodes on an envelope?
+:::
+
+The [envlab](http://www.ctan.org/tex-archive/macros/latex/contrib/envlab/) package does envelopes, labels, and barcodes.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5591/usps-postnet-barcodes/5593#5593) on TeX Stack Exchange, 2010-11-18. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

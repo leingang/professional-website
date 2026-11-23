@@ -1,0 +1,40 @@
+---
+title: How to backup TeX documents efficiently?
+date: '2010-11-21'
+description: Windows and Mac now have backup built into the OS, as a program that periodically backs up parts of the hard drive. I don't know the name of the unix service…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5752
+se-link: https://tex.stackexchange.com/questions/5746/how-to-backup-tex-documents-efficiently/5752#5752
+se-score: 2
+se-accepted: false
+se-tags:
+- best-practices
+- revision-control
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to backup TeX documents efficiently?](https://tex.stackexchange.com/questions/5746/how-to-backup-tex-documents-efficiently), asked by [pixel](https://tex.stackexchange.com/users/1164/pixel) on TeX Stack Exchange (2010-11-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Currently I'm finishing my master thesis. During time I was systematically copying entire file (TeX, bibitex etc.) on external drive. 
+>
+> Are there any better ways than that?
+>
+> What ways of backup you can recommend based on your experience? 
+>
+> I don't want to set up my own repository on external server or buy a RAID. What I'm looking for is a rather easy solution.
+:::
+
+[Windows](http://www.microsoft.com/windows/windows-7/features/backup-and-restore.aspx) and [Mac](http://www.apple.com/macosx/what-is-macosx/time-machine.html) now have backup built into the OS, as a program that periodically backs up parts of the hard drive.  I don't know the name of the unix service which does this but I'm sure it exists.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5746/how-to-backup-tex-documents-efficiently/5752#5752) on TeX Stack Exchange, 2010-11-21. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

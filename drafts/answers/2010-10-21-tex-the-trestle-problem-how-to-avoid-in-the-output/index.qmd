@@ -1,0 +1,50 @@
+---
+title: 'The trestle problem: how to avoid >=< in the output'
+date: '2010-10-21'
+description: What about using a <a href="http://en.wikipedia.org/wiki/Regularexpression">regular expression</a> replace in an editor?
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4381
+se-link: https://tex.stackexchange.com/questions/2003/the-trestle-problem-how-to-avoid-in-the-output/4381#4381
+se-score: 1
+se-accepted: false
+se-tags:
+- math-mode
+- symbols
+- spacing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The trestle problem: how to avoid >=< in the output](https://tex.stackexchange.com/questions/2003/the-trestle-problem-how-to-avoid-in-the-output), asked by [jvarilly](https://tex.stackexchange.com/users/796/jvarilly) on TeX Stack Exchange (2010-08-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> TeX puts no space between `\mathrel` characters, so one can type := to make a definition.
+> But careless authors often type stuff like  
+>
+> ```latex
+> < a, b > = < c, d >  
+> ```
+>
+> to indicate that two scalar products are equal, and get the central three characters stuck together with no space around the equality sign. (I do tell them to use `\langle` and `\rangle`, fat lot of good it does.) Is there any clever way to override the `\mathrel` convention, at least in this instance, so that the equality sign is separated from the others, but remains a math relation character?
+:::
+
+What about using a <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expression</a> replace in an editor?  
+
+```latex
+s/<\([^<]*\),\([^>]*\)>/\\langle\1,\2\\rangle/g
+```
+
+This converts `< a, b > = < c, d >` to `\langle a, b \rangle = \langle c, d \rangle`.  
+
+There are bound to be exceptions, without a better regexp that could detect things like whether the string was in a math/displaymath mode.  But used interactively (that is, manually confirming each replacement) this could make the job easier.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/2003/the-trestle-problem-how-to-avoid-in-the-output/4381#4381) on TeX Stack Exchange, 2010-10-21, with [edits](https://tex.stackexchange.com/posts/4381/revisions) by [Charles Stewart](https://tex.stackexchange.com/users/175/charles-stewart). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

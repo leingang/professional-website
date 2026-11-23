@@ -1,0 +1,59 @@
+---
+title: Characterization of the number $e$
+date: '2017-01-10'
+description: 'Here is a table of the sequence $\left(1 + \frac{1}{n}\right)^n$ from Wolfram Alpha%5En):'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2091723
+se-link: https://math.stackexchange.com/questions/2091711/characterization-of-the-number-e/2091723#2091723
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Characterization of the number $e$](https://math.stackexchange.com/questions/2091711/characterization-of-the-number-e), asked by [learningMachine](https://math.stackexchange.com/users/354960/learningmachine) on Mathematics Stack Exchange (2017-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The number $e$ is characterized in calculus as: 
+>
+> $$e:=\lim_{n\to\infty}\left(1+\frac1n\right)^n$$
+>
+> My question is this:
+> As $n$ heads to infinity, $1/n$ gets closer and closer to zero. So what we're really doing is to add $1$ to a number that's getting closer and closer to zero and then raising that expression to an increasingly large number. 
+>
+> So, the limit as $n$ moves towards infinity is $1$. Why is it $e$?
+:::
+
+Here is a table of the sequence $\left(1 + \frac{1}{n}\right)^n$ from [Wolfram Alpha](http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=(1+%2B+1%2Fn)%5En):
+
+[![table][1]][1]
+
+You can see the sequence starts at $2$ and *increases*.  So its limit cannot be $1$.
+
+You write:
+
+> So what we're really doing is to add 1 to a number that's getting closer and closer to zero and then raising that expression to an increasingly large number.
+
+This is basically what you're saying:
+$$\color{red}{
+\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^n
+= \lim_{n\to\infty} 1^n
+= 1}
+\qquad\text{(false)}$$
+But in this argument, you split the $n$ in the base and the $n$ in the exponent, and took the limit as they tended to $\infty$ separately.  But that's not allowed; it's the same variable in both, so we can only take the limit once.
+
+  [1]: 8dCcl.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2091711/characterization-of-the-number-e/2091723#2091723) on Mathematics Stack Exchange, 2017-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

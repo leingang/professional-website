@@ -1,0 +1,46 @@
+---
+title: Inclusion and Element of in Set theory
+date: '2018-01-31'
+description: When $\mathbb{B}$ is a set and $\mathbb{A}$ is one of its elements. It's would be unusual to style a set and one of its elements in the same way. Still, you…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2630114
+se-link: https://math.stackexchange.com/questions/2630100/inclusion-and-element-of-in-set-theory/2630114#2630114
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Inclusion and Element of in Set theory](https://math.stackexchange.com/questions/2630100/inclusion-and-element-of-in-set-theory), asked by [Bachelier](https://math.stackexchange.com/users/148834/bachelier) on Mathematics Stack Exchange (2018-01-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Not a duplicate. This deals with sets that are elements of other sets. In other words, sets of sets. The other question deals with elements of sets and subsets of sets. The key difference in here is that the sets are the elements.
+> Besides the other question only asks if $A \subset A$ which is trivial. 
+>
+> When it comes to sets of sets, $\subset$ and $\in$ always confuse me in set theory. Could someone explain in detail with **an example**? I greatly appreciate it.
+>
+> In other words, when do we say $\mathbb{A} \in \mathbb{B}$ and when do we say $\mathbb{A} \subset \mathbb{B}$ (besides the definition that every element in  $\mathbb{A}$ ought to be in  $\mathbb{B}$)
+>
+> Thank you
+:::
+
+> when do we say $\mathbb{A} \in \mathbb{B}$
+
+When $\mathbb{B}$ is a set and $\mathbb{A}$ is one of its elements.  It's would be unusual to style a set and one of its elements in the same way.  Still, you can have sets with sets as elements: let $\mathbb A = \{1,2\}$, and $\mathbb B = \{3,\{1,2\}\}$.  Then you could say $\mathbb A \in \mathbb B$.  
+
+> when do we say $\mathbb{A} \subset \mathbb{B}$ (besides the definition that every element in  $\mathbb{A}$ ought to be in  $\mathbb{B}$)
+
+Well, never, *other* than the definition.  The statement $\mathbb{A} \subset \mathbb{B}$ is defined to mean that every element of $\mathbb A$ is an element of $\mathbb B$.  If $\mathbb A$ and $\mathbb B$ are as defined above, then $\mathbb A \not\subset \mathbb B$.  If you set $\mathbb B = \{3,1,2\}$ instead, then yes, $\mathbb A \subset \mathbb B$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2630100/inclusion-and-element-of-in-set-theory/2630114#2630114) on Mathematics Stack Exchange, 2018-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

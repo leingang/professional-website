@@ -1,0 +1,38 @@
+---
+title: Suppose that for any two sets B and C in X , B ⊆ C or C ⊆ B. Prove that there is a set A ∈ X such that A ⊆ B for all B ∈ X.
+date: '2018-10-10'
+description: You've gotten pretty far! Notice that $X' = X-\{L\}$ is a collection of $n$ sets, and still has the property that for any $B, C \in X'$, $B \subseteq C$ or $C…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2949314
+se-link: https://math.stackexchange.com/questions/2949301/suppose-that-for-any-two-sets-b-and-c-in-x-b-%e2%8a%86-c-or-c-%e2%8a%86-b-prove-that-there-is/2949314#2949314
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Suppose that for any two sets B and C in X , B ⊆ C or C ⊆ B. Prove that there is a set A ∈ X such that A ⊆ B for all B ∈ X.](https://math.stackexchange.com/questions/2949301/suppose-that-for-any-two-sets-b-and-c-in-x-b-%e2%8a%86-c-or-c-%e2%8a%86-b-prove-that-there-is), asked by [Mary Joe ](https://math.stackexchange.com/users/602445/mary-joe) on Mathematics Stack Exchange (2018-10-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let X be a nonempty finite collection of sets. Suppose that for any two sets B and C in X , B ⊆ C or C ⊆ B. Prove that there is a set A ∈ X such that A ⊆ B for all B ∈ X.
+>
+> I was able to start the proof by induction. For the base case, when X is a collection of sets with only 1 set, by the given property (B ⊆ C or C ⊆ B), any 2 sets in X must be equal. Thus P(n) is true.
+> For P(n+1): I let X be a set with n+1 elements and suppose that for any 2 sets B and C in X, B ⊆ C or C ⊆ B. I let L∈X and those subsets that don't contain L are those subsets of X-{L}. 
+>
+> After this is where I'm stuck. How do I show that there is a set A∈X such that A is a subset of B, for all B∈X?
+:::
+
+You've gotten pretty far!  Notice that $X' = X-\{L\}$ is a collection of $n$ sets, and still has the property that for any $B, C \in X'$, $B \subseteq C$ or $C \subseteq B$.  So by the inductive hypothesis, there exists an $A' \in X'$ such that $A' \subseteq B$ for all $B \in X'$.  Can you finish?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2949301/suppose-that-for-any-two-sets-b-and-c-in-x-b-%e2%8a%86-c-or-c-%e2%8a%86-b-prove-that-there-is/2949314#2949314) on Mathematics Stack Exchange, 2018-10-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

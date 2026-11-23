@@ -1,0 +1,51 @@
+---
+title: Good explanation why $ \lim_{x\to 0^+}\frac{x}{\vert x\vert} $ is $1$ and not "$0/0$"
+date: '2025-03-01'
+description: I think a graphical argument is most convincing here.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5040890
+se-link: https://math.stackexchange.com/questions/5040854/good-explanation-why-lim-x-to-0-fracx-vert-x-vert-is-1-and-not/5040890#5040890
+se-score: 3
+se-accepted: false
+se-tags:
+- limits
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Good explanation why $ \lim_{x\to 0^+}\frac{x}{\vert x\vert} $ is $1$ and not "$0/0$"](https://math.stackexchange.com/questions/5040854/good-explanation-why-lim-x-to-0-fracx-vert-x-vert-is-1-and-not), asked by [Salamo](https://math.stackexchange.com/users/190174/salamo) on Mathematics Stack Exchange (2025-03-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> A student asked me why the result of
+> $$\lim_{x\to 0^+}\frac{x}{\vert x\vert}$$
+> is $1$ and not $0/0$.
+>
+> Of course, my answer was that, for $x>0$, we have $\vert x\vert=x$ so that
+> $$\lim_{x\to 0^+}\frac{x}{\vert x\vert}=\lim_{x\to 0^+}\frac{x}{x}=\lim_{x\to 0^+} 1=1.$$
+> I also explained that "$0/0$" is an indeterminate form and that unlike the cases for which the algebraic limit theorem applies, certain combinations of particular limiting values cannot be computed in this way, and knowing the limit of each function separately does not suffice to determine the limit of the combination.
+>
+> However, I did not convince the student ("But in other situations one also computes the limit this way! Why is it different here?") and now I do not know how to explain it differently and maybe better.
+>
+> Do you have any ideas how I might explain it better?
+:::
+
+I think a graphical argument is most convincing here. 
+
+[![Graph of the function f(x) = x/|x| for positive x. It's equal to 1][1]][1]
+
+But I would also say *there is no such thing as $\frac{0}{0}$,* and this is why we have limits.
+
+
+  [1]: FyqcI9TV.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5040854/good-explanation-why-lim-x-to-0-fracx-vert-x-vert-is-1-and-not/5040890#5040890) on Mathematics Stack Exchange, 2025-03-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

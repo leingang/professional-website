@@ -1,0 +1,52 @@
+---
+title: Is the speed at which someone does math inborn, or can it be increased through practice?
+date: '2018-08-29'
+description: Well, if you practice anything, you get better at it, don't you?
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2898592
+se-link: https://math.stackexchange.com/questions/2898544/is-the-speed-at-which-someone-does-math-inborn-or-can-it-be-increased-through-p/2898592#2898592
+se-score: 4
+se-accepted: false
+se-tags:
+- education
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the speed at which someone does math inborn, or can it be increased through practice?](https://math.stackexchange.com/questions/2898544/is-the-speed-at-which-someone-does-math-inborn-or-can-it-be-increased-through-p), asked by [Bar Akiva](https://math.stackexchange.com/users/530838/bar-akiva) on Mathematics Stack Exchange (2018-08-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Is there scientific evidence (or at least personal experience) that shows that daily practice of math problems increases the speed at which those problems are solved?
+>
+> Mind you I am not talking about being "better" at math as in being able to do harder problems. I am talking about being more efficient. As in being able to solve 555+666 in 20 seconds instead of 30 after doing a month of math addition problems each morning.
+>
+>
+> I wonder if there is such a thing as a "math muscle" that improves the speed at which one does math, because I am myself slow in math.
+:::
+
+Well, if you practice *anything,* you get better at it, don't you?
+
+I did a google search for “research arithmetic speed practice” and I found a Ed.D. thesis that studied a problem pretty close to what you're asking:
+
+[The relationship between timed drill practice and the increase of automaticity of basic multiplication facts for regular education sixth graders][1] by Nelly P. Knowles (Walden University Ed.D. thesis, 2010).  From the abstract:
+
+> This 8-week quasi-experimental quantitative study, based in cognitive development and theories of the construction of memory, used a 3-level independent variable experimental design to determine if there was a relationship between teachers’ implementation of timed drill practices and the students’ level of automaticity with regard to basic multiplication facts in 9 sixth-grade, regular education math classes. The control group received no intervention, the first treatment group received weekly timed drill practice for 3 minutes, and a second treatment group received daily timed drill practice for 3 minutes. Analysis of variance (ANOVA) procedures were used to measure the differences in pretest and posttest scores among the 3 treatment groups. Although no significant difference was found among the 3 groups’ pretest performance, a significant difference among posttest performance was
+found. Scheffe’ post hoc analysis revealed that the **students who were administered daily
+timed practice drills performed statistically higher on the posttest than did the control
+group and first treatment group**. Similarly, students in the weekly timed practice drill
+group had statistically significant higher gain scores than did students in the no treatment group.
+
+The abstract doesn't mention it, but the concept of *automaticity* seems to measure what you're interested in: speed of recalling facts to perform arithmetic algorithms.
+
+  [1]: https://scholarworks.waldenu.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&httpsredir=1&article=1824&context=dissertations
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2898544/is-the-speed-at-which-someone-does-math-inborn-or-can-it-be-increased-through-p/2898592#2898592) on Mathematics Stack Exchange, 2018-08-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

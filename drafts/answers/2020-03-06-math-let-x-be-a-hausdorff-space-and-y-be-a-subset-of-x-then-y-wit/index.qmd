@@ -1,0 +1,48 @@
+---
+title: Let X be a Hausdorff space and Y be a subset of X. Then, Y with the subspace topology is a Hausdorff space.
+date: '2020-03-06'
+description: Everything that needs to be there is there, so it's a valid proof. My only comments are about the style.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3571015
+se-link: https://math.stackexchange.com/questions/3571007/let-x-be-a-hausdorff-space-and-y-be-a-subset-of-x-then-y-with-the-subspace-top/3571015#3571015
+se-score: 4
+se-accepted: false
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let X be a Hausdorff space and Y be a subset of X. Then, Y with the subspace topology is a Hausdorff space.](https://math.stackexchange.com/questions/3571007/let-x-be-a-hausdorff-space-and-y-be-a-subset-of-x-then-y-with-the-subspace-top), asked by [Math_Is_Fun](https://math.stackexchange.com/users/590763/math-is-fun) on Mathematics Stack Exchange (2020-03-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: xuSfe.png
+>
+> Question: Let X be a Hausdorff space and Y be a subset of X. Then, Y with the subspace topology is a Hausdorff space. 
+>
+> This is what I did, can someone verify this and let me know if I am correct or wrong? Also, kindly let me know if my proof need some changes or modifications due to bad notations. 
+>
+> Any help will be greatly appreciated.
+:::
+
+Everything that needs to be there is there, so it's a valid proof.  My only comments are about the style.
+
+* The line where you recall the definition of the subspace topology on $Y$ is out of place.  You've already used this definition once; either you should state it at the top before you use it the first time, or leave it out altogether.
+
+* “Hence a set containing $x$ in $Y$ is $U' = U \cap Y$, which is open in $Y$” might read better if it were written as “Hence $U' = U \cap Y$ is open in $Y$ and contains $x$.”  You're defining $U'$ in this sentence, so I feel like that definition should come first, and its properties later.
+
+Otherwise good job!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3571007/let-x-be-a-hausdorff-space-and-y-be-a-subset-of-x-then-y-with-the-subspace-top/3571015#3571015) on Mathematics Stack Exchange, 2020-03-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

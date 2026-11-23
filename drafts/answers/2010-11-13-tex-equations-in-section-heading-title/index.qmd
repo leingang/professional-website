@@ -1,0 +1,61 @@
+---
+title: Equations in section heading/title
+date: '2010-11-13'
+description: Welcome! This is maybe not the answer you want, but I think if you can avoid math expressions in section titles you should. First, arguments to \section move…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5315
+se-link: https://tex.stackexchange.com/questions/5314/equations-in-section-heading-title/5315#5315
+se-score: 6
+se-accepted: false
+se-tags:
+- math-mode
+- sectioning
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Equations in section heading/title](https://tex.stackexchange.com/questions/5314/equations-in-section-heading-title), asked by [Olumide](https://tex.stackexchange.com/users/1857/olumide) on TeX Stack Exchange (2010-11-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> For reasons that are beyond me, the following MWE
+>
+> ```latex
+> \documentclass{scrreprt}
+> \usepackage{classicthesis-ldpkg}
+> \usepackage{bm}
+> \usepackage{amsmath}
+>
+> \begin{document}
+>
+> \section{The values of $\beta$ for which $\omega_i \mid \bm{\omega}
+> \mid^{-\beta}$ is defined at the origin}
+>
+> \end{document}
+> ```
+>
+> fails to compile with the following error:
+>
+> ```latex
+> ! TeX capacity exceeded, sorry [input stack size=5000].
+> <to be read again>
+>                    \HyPsd@@LetCommand
+> l.9 ...a} \mid^{-\beta}$ is defined at the origin}
+> ```
+>
+> I've tried increasing the amount of memory available to pdfLatex but
+> that doesn't solve the problem. I've also googled to no avail. Is
+> there a workaround for this problem.
+:::
+
+Welcome!  This is maybe not the answer you want, but I think if you can avoid math expressions in section titles you should.  First, arguments to `\section` move around which makes `\section` one of the so-called *fragile* commands.  Also, fonts usually change between regular text, section headers, and TOC text, which could make it a headache to select the right math fonts.  Finally, if your notation is defined in the previous section, someone scanning the TOC would not have any idea what that section is about.  So I would just write it out in English if you can.  "The best notation is no notation," says Halmos.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5314/equations-in-section-heading-title/5315#5315) on TeX Stack Exchange, 2010-11-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

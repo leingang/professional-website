@@ -1,0 +1,44 @@
+---
+title: Proof $x\in R^\times \wedge b\in R^\times \Rightarrow ab\in R^\times$
+date: '2018-11-27'
+description: 'Here''s a beginning: “Suppose that $a,b \in R^\times$.”'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3016217
+se-link: https://math.stackexchange.com/questions/3016216/proof-x-in-r-times-wedge-b-in-r-times-rightarrow-ab-in-r-times/3016217#3016217
+se-score: 1
+se-accepted: false
+se-tags:
+- algebraic-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof $x\in R^\times \wedge b\in R^\times \Rightarrow ab\in R^\times$](https://math.stackexchange.com/questions/3016216/proof-x-in-r-times-wedge-b-in-r-times-rightarrow-ab-in-r-times), asked by [kjwemke13](https://math.stackexchange.com/users/620358/kjwemke13) on Mathematics Stack Exchange (2018-11-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Let $R$ be a communitative ring. Prove $a\in R^\times \wedge b\in R^\times >\Rightarrow ab\in R^\times$ with $R^\times := \{x\in R\ |\ x\ \text{ >invertible}\}.$
+>
+> Do you have any ideas and tips on how I could prove this? 
+> I know that this isn't really difficult but as so often in
+> proofs concerning algebraic groups you need the right beginning
+> and I can't get it...
+>
+> Thanks!
+:::
+
+Here's a beginning: “Suppose that $a,b \in R^\times$.”
+
+Here's the end: “Therefore, $ab \in R^\times$.
+
+The middle is up to you.  For inspiration, you might try examples with $R=\mathbb{Z}$ or $\mathbb{Q}$.  What is the inverse of a product of numbers?  Is it expressible in terms of the inverses of the factors?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3016216/proof-x-in-r-times-wedge-b-in-r-times-rightarrow-ab-in-r-times/3016217#3016217) on Mathematics Stack Exchange, 2018-11-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

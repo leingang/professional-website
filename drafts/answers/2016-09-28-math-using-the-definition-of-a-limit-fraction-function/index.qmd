@@ -1,0 +1,118 @@
+---
+title: Using the definition of a limit; fraction function
+date: '2016-09-28'
+description: I appreciate you changing the problem from your homework problem rather than just pasting it in. Epsilon/delta proofs require a two-stage process. First you…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1945012
+se-link: https://math.stackexchange.com/questions/1944956/using-the-definition-of-a-limit-fraction-function/1945012#1945012
+se-score: 1
+se-accepted: true
+se-tags:
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using the definition of a limit; fraction function](https://math.stackexchange.com/questions/1944956/using-the-definition-of-a-limit-fraction-function), asked by [Skylineblue](https://math.stackexchange.com/users/373130/skylineblue) on Mathematics Stack Exchange (2016-09-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have looked around the forums trying to find a question similar to my own, but to no avail. I really struggle to grasp the epsilon-delta proofs, and my assignment calls for one. I have tried to use the epsilon-delta proof and have failed quite miserably, I won't bother posting my working of it as it's a complete mess. I have made up a similar equation to my assignment for ethical reasons: 
+>
+> > Using the definition of a limit, show that $\frac{9x-14}{3x^2 +7}$ approaches $\frac{2}{5}$ as $x$ approaches $3.5$.
+:::
+
+I appreciate you changing the problem from your homework problem rather than just pasting it in.
+Epsilon/delta proofs require a two-stage process. First you estimate in scratch work, and then you write it up so your estimations work out exactly right.
+
+Scratch work
+------------------
+
+Let $f(x) = \frac{9x-4}{3x^2+7}$ and $a = \frac{7}{2} = 3.5$.  Given $\epsilon > 0$, we want to find $\delta > 0$ such that $|f(x) - f(a)| < \epsilon$ whenever $|x-a| < \delta$.  In this case:
+$$\begin{align*}
+|f(x) - f(a)| 
+&= \left| \frac{9x-14}{3x^2+7} - \frac{2}{5} \right|
+ = \left| \frac{5(9x-14)-2(3x^2+7)}{5(3x^2+7)}\right| 
+\\&= \left| \frac{45x-70-6x^2-14}{5(3x^2+7)}\right|
+   = \left| \frac{45x-6x^2-84}{5(3x^2+7)}\right|
+\\&= \left| \frac{(-3)(x-4)(2x-7)}{5(3x^2+7)}\right|
+   = \frac{6}{5} \cdot |x-4| \cdot \frac{1}{3x^2+7} \cdot \left|x-\frac{7}{2}\right|
+\end{align*}$$
+When doing limit proofs with rational functions and simplifying $|f(x)-f(a)|$, you should always end up with a factor of $|x-a|$.  That factor is the one part we can control directly; and controlling it can affect estimates of the other factors.
+
+For instance, suppose we know that $\left|x-\frac{7}{2}\right| \leq 1$.  Then
+$$\begin{gather*}
+    - 1 \leq x- \frac{7}{2} \leq 1 
+\\\implies \frac{5}{2} \leq x \leq \frac{9}{2} 
+\\\implies -\frac{3}{2} \leq x-4 \leq \frac{1}{2}
+\end{gather*}$$
+This gives upper and lower bounds for $x-4$, and we want an upper bound for $|x-4|$.  The inequality $|x-4| \leq M$ is equivalent to $-M \leq x-4 \leq M$.  We can't say $|x-4| \leq\frac{1}{2}$, because that would be equivalent to $-\frac{1}{2} \leq x-4 \leq \frac{1}{2}$, and that's not guaranteed by the work above (it's not true at $x=3$, for instance).  But 
+$$-\frac{3}{2} \leq x-4 \leq \frac{1}{2}
+    \implies -\frac{3}{2} \leq x-4 \leq \frac{3}{2}
+    \implies |x-4| \leq \frac{3}{2}$$
+
+For the other factor,
+$$\begin{gather*}
+\frac{5}{2} \leq x \leq \frac{9}{2}
+\\\implies \frac{25}{4} \leq x^2 \leq \frac{81}{4} 
+\\\implies \frac{75}{4} \leq 3x^2 \leq \frac{343}{4} 
+\\\implies \frac{103}{4} \leq 3x^2 + 7 \leq \frac{371}{4}
+\\\implies \frac{4}{103} \geq \frac{1}{3x^2 + 7} \geq \frac{4}{371}
+\end{gather*}$$
+So we have an upper bound for $\frac{1}{3x^2 + 7}$, namely $\frac{4}{103}$.
+
+If *additionally* $\left|x-\frac{7}{2}\right| < \delta$ for some $\delta$, then
+$$|f(x) - f(a)| < \frac{6}{5} \cdot \frac{3}{2} \cdot \frac{4}{103} \cdot \delta
+    = \frac{36}{515}\delta$$
+OK, that's a nasty fraction, but it is just a constant multiple of $\delta$.  Now we remember that we can choose $\delta$ as small as we like to make sure the difference above is $< \epsilon$.  For instance, if $\delta \leq \frac{515}{36}\epsilon$, it seems like we're done.
+
+Except for one small point: we had to assume $\left|x-\frac{7}{2}\right| \leq 1$ to get started.  So we had also make sure that $\delta \leq 1$ in order to guarantee that $\left|x-\frac{7}{2}\right| \leq 1$.  We can't let $\delta$ be both $\frac{515}{36}\epsilon$ and $1$, but we can let it be the **minimum** of those two.  Then both $\delta \leq  \frac{515}{36}\epsilon$ and $\delta \leq 1$ are guaranteed.
+
+Writeup
+-------
+
+Given $\epsilon > 0$, let $\delta = \min\left\{1,\frac{515}{36}\epsilon\right\}$.  Notice that for any $x$, 
+$$\left| \frac{9x-14}{3x^2+7} - \frac{2}{5} \right|
+    = \dots = \frac{6}{5} \cdot |x-4| \cdot \frac{1}{3x^2+7} \cdot \left|x-\frac{7}{2}\right|$$
+(where $\cdots$ is, you want to substitute the work you did to get there)
+
+Suppose $\left|x-\frac{7}{2}\right| < \delta$.  Then
+$$\left|x-\frac{7}{2}\right| \leq 1 \implies \dots \implies |x-4| < \frac{3}{2}$$
+Furthermore,
+$$\left|x-\frac{7}{2}\right| \leq 1 \implies \dots \implies \frac{1}{3x^2 + 7} \leq \frac{4}{103}$$
+Therefore,
+$$\frac{6}{5} \cdot |x-4| \cdot \frac{1}{3x^2+7} \cdot \left|x-\frac{7}{2}\right|
+    < \frac{6}{5} \cdot \frac{3}{2} \cdot \frac{4}{103} \cdot \delta
+    < \frac{6}{5} \cdot \frac{3}{2} \cdot \frac{4}{103} \cdot \frac{515}{36}\epsilon = \epsilon$$
+QED
+
+* * *
+
+This trick of first estimating $\delta \leq 1$ will work in a lot of these rational function limit proofs.  You can estimate any expression in $x$ if you have an estimate of $x$.
+
+Are we done?  Why?
+------------------
+
+How does this actually establish the limit?  Remember the definition:
+
+> $\lim_{x\to a} f(x) = L$ if **for every** $\epsilon > 0$ **there exists** a $\delta > 0$ such that (**for all** $x$) **if** $0<|x-a| < \delta$ **then** $|f(x) - L|< \epsilon$.
+
+The bolded phrases are the universal (“for all/every”) and existential (“there exists ... such that”) quantifiers.  In a more conversational tone, $\lim_{x\to a} f(x) = L$ means that no matter what $\epsilon$ you give me, I can find a $\delta$ such that any $x$ that is within $\delta$ of $a$ (with the possible exception of $a$) satisfies the inequality $|f(x) - L| < \epsilon$.
+
+The outline of our proof is:
+
+> **Given** $\epsilon > 0$, **let** $\delta = \dots$.  **Suppose** $\left|x-\frac{7}{2}\right| < \delta$ (for some $x$).  **Then** *...yada yada yada...*  $\left|f(x) - \frac{2}{5}\right| < \epsilon$.
+
+The definition says “for every $\epsilon > 0$, there exists a $\delta > 0$” and the proof reads “Given $\epsilon>0$, let $\delta =$(this thing).” In other words, the prover dares you to give him any positive $\epsilon$, no matter how small, and is able to produce a corresponding $\delta$.
+
+Such a $\delta$ is admissible if the inequality $|f(x) - L| <\epsilon$ can be derived from the inequality $|x-a|<\delta$ alone.  The prover sets out to do this, first showing that $\left|x-\frac{7}{2}\right| < \delta\implies \left|x-4\right|< \frac{3}{2}$, then that $\left|x-\frac{7}{2}\right| < \delta\implies \frac{1}{3x^2 + 7} <\frac{4}{103}$, and finally, by comparing each factor, that $\left|x-\frac{7}{2}\right| < \delta\implies \left| \frac{9x-14}{3x^2+7} - \frac{2}{5} \right| < \epsilon$.  That is what is needed to be demonstrated (*quod erat demonstratum* in Latin, abbreviated QED) to show that the definition is satisfied.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1944956/using-the-definition-of-a-limit-fraction-function/1945012#1945012) on Mathematics Stack Exchange, 2016-09-28, with [edits](https://math.stackexchange.com/posts/1945012/revisions) by [Skylineblue](https://math.stackexchange.com/users/373130/skylineblue). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

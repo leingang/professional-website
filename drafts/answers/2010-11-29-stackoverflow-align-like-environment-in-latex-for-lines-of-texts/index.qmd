@@ -1,0 +1,68 @@
+---
+title: align-like environment in LaTeX for lines of texts
+date: '2010-11-29'
+description: Is this what you're looking for?
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 4307185
+se-link: https://stackoverflow.com/questions/4302931/align-like-environment-in-latex-for-lines-of-texts/4307185#4307185
+se-score: 2
+se-accepted: true
+se-tags:
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[align-like environment in LaTeX for lines of texts](https://stackoverflow.com/questions/4302931/align-like-environment-in-latex-for-lines-of-texts), asked by [Manny](https://stackoverflow.com/users/377875/manny) on Stack Overflow (2010-11-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am looking for a LaTeX environment, that is capable of formatting given paragraph(s) with a slight indentation and increasing line counters within parenthesis, e.g.:
+>
+> > (1) Lorem Ipsum
+> >
+> > (2) Dolor Sit
+>
+> These numbers should continue to increase throughout the document, i.e. there should be no number used twice. It would behave almost like the align environment- including the possibility to `\ref` to individual lines, except that I do not wish to use it for math but rather for text snippets.
+>
+> Unfortunately, I am not that LaTeX savvy, so I cannot really define such an environment myself.
+:::
+
+Is this what you're looking for?
+
+```latex
+\documentclass{article}
+\usepackage{lipsum} % just for blind text
+\usepackage{enumitem}
+\newlist{masterlist}{enumerate}{1}
+\setlist[masterlist]{label=(\arabic*),resume}
+
+
+\begin{document}
+
+\lipsum[1]
+
+\begin{masterlist}
+\item foo
+\item bar
+\end{masterlist}
+
+\lipsum[2-3]
+
+\begin{masterlist}
+\item baz
+\item boo
+\end{masterlist}
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4302931/align-like-environment-in-latex-for-lines-of-texts/4307185#4307185) on Stack Overflow, 2010-11-29. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

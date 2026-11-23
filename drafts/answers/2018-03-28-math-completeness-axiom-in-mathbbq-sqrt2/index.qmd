@@ -1,0 +1,38 @@
+---
+title: Completeness axiom in $\mathbb{Q} (\sqrt2 )$??
+date: '2018-03-28'
+description: The completeness axiom says that every subset that's bounded above has a least upper bound. A typical counterexample showing that the rational numbers do not…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2712151
+se-link: https://math.stackexchange.com/questions/2712143/completeness-axiom-in-mathbbq-sqrt2/2712151#2712151
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Completeness axiom in $\mathbb{Q} (\sqrt2 )$??](https://math.stackexchange.com/questions/2712143/completeness-axiom-in-mathbbq-sqrt2), asked by [Camilo Ceballos](https://math.stackexchange.com/users/546634/camilo-ceballos) on Mathematics Stack Exchange (2018-03-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to prove that $\mathbb{Q} (\sqrt2 )$ is a field that not satisfy the completeness axiom but i'm not sure how to atack this problem.
+> I already showed that $\mathbb{Q} (\sqrt2 )$ is a field.
+:::
+
+The completeness axiom says that every subset that's bounded above has a least upper bound.  A typical counterexample showing that the rational numbers do not satisfy it is
+$$A = \left\{x \in \mathbb{Q} \mid x^2 \leq 2 \right\}$$
+This set is bounded above (for instance, by $2$), but it has no least upper bound in $\mathbb{Q}$.  Such a least upper bound, if it existed, would need to be the square root of $2$, and we know that's not in $\mathbb{Q}$.
+
+This counterexample obviously won't work with your field $K = \mathbb{Q}\left(\sqrt{2}\right)$, since in fact $\sqrt{2}\in K$.  But maybe you could adapt it?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2712143/completeness-axiom-in-mathbbq-sqrt2/2712151#2712151) on Mathematics Stack Exchange, 2018-03-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

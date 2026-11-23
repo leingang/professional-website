@@ -1,0 +1,164 @@
+---
+title: Itemize inside longtable
+date: '2013-05-18'
+description: 'I thought you could achieve this effect without having to hack an itemize. Just use multiple rows of the table:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 114860
+se-link: https://tex.stackexchange.com/questions/114822/itemize-inside-longtable/114860#114860
+se-score: 4
+se-accepted: false
+se-tags:
+- tables
+- lists
+- longtable
+- itemize
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Itemize inside longtable](https://tex.stackexchange.com/questions/114822/itemize-inside-longtable), asked by [Mario S. E.](https://tex.stackexchange.com/users/27833/mario-s-e) on TeX Stack Exchange (2013-05-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following (Non-working) example.
+>
+> ```latex
+> \renewcommand*{\arraystretch}{1.8}
+> \begin{longtable}{lcl}
+> 	\caption{Summary of proven determinants for falling}\\ \toprule
+> 	\label{tab:FallPredictionVariables}
+> 	\textbf{Author} &\textbf{Subject count (M:F)} & \textbf{Determinants}\\
+> 	\midrule
+>
+> 	\noindent Author 1 &
+> 	1780 (?) & 
+> 	\begin{itemize}%[label={--},noitemsep,leftmargin=*,topsep=0pt,partopsep=0pt]
+> 		\item Recent falls (last 2 months)
+> 		\item Agitation
+> 		\item Frequent toileting
+> 		\item Visual impairment
+> 	\end{itemize}\\
+>
+> 	\noindent Author 2 &
+> 	311 (?) &
+> 	\begin{itemize}%[label={--},noitemsep,leftmargin=*,topsep=0pt,partopsep=0pt]
+> 		\item Posture sway
+> 		\item Two or more falls in previous year
+> 		\item Low hand grip strength
+> 		\item Depressive state of mind
+> 	\end{itemize}\\
+> 		\bottomrule
+>
+> \end{longtable}
+> ```
+>
+> However, it works OK outside a `longtable` environment:
+>
+> ```latex
+> \renewcommand*{\arraystretch}{1.8}
+> \begin{table}
+> \centering
+> 	\caption{Summary of proven determinants for falling} 
+> 	\label{tab:FallPredictionVariables}
+> 	\begin{tabular}{lcp{60mm}}
+> 	\toprule
+> 	\textbf{Author} &\textbf{Subject count (M:F)} & \textbf{Determinants}\\
+> 	\midrule
+>
+> 	\noindent Author 1 &
+> 	1780 (?) & 
+> 	\begin{itemize}[label={--},noitemsep,leftmargin=*,topsep=0pt,partopsep=0pt]
+> 		\item Recent falls (last 2 months)
+> 		\item Agitation
+> 		\item Frequent toileting
+> 		\item Visual impairment
+> 	\end{itemize}\\
+>
+> 	\noindent Author 2 &
+> 	311 (?) &
+> 	\begin{itemize}[label={--},noitemsep,leftmargin=*,topsep=0pt,partopsep=0pt]
+> 		\item Posture sway
+> 		\item Two or more falls in previous year
+> 		\item Low hand grip strength
+> 		\item Depressive state of mind
+> 	\end{itemize}\\
+> 		\bottomrule
+>
+> 		\end{tabular}
+>
+> \end{table}
+> ```
+>
+> As you can see in the picture below, it does what I'm expecting (except there is some vertical space over the first item that I would like to remove, and the solutions posted in https://tex.stackexchange.com/questions/114280/how-to-reduce-vertical-space-itemize-environment-inside-table only seem to work for `tabularx` environments).
+>
+> ![enter image description here][q-1]
+>
+> I'm unable to make my code work inside `longtable`, and I really need it (the complete table is very long).
+>
+> Any ideas for both things:
+>
+> 1. To be able to have itemize inside `longtable` environment
+> 2. Eliminate the extra space for the first item
+>
+> PS: This is the preamble for both examples:
+>
+> ```latex
+> \documentclass[a4paper,twoside,11pt,openright]{report}
+> \usepackage[T1]{fontenc}
+> \usepackage[utf8]{inputenc}
+> \usepackage{longtable}	
+> \usepackage[inline]{enumitem}	
+> \usepackage{booktabs}
+>
+> \begin{document}
+> ...
+> \end{document}
+> ```
+>
+>
+>   [q-1]: ACjik.png
+:::
+
+I thought you could achieve this effect without having to hack an `itemize`.  Just use multiple rows of the table:
+
+```latex
+\documentclass{report}
+\usepackage{longtable}% http://ctan.org/pkg/longtable
+\usepackage{array,booktabs}
+
+\begin{document}
+
+\begin{longtable}{p{4cm}p{4cm}>{-- }p{6cm}}
+  \caption{Summary of proven determinants for falling}\label{tab:FallPredictionVariables} \\
+  \toprule
+  \textbf{Author} &\textbf{Subject count (M:F)} & \multicolumn{1}{l}{\textbf{Determinants}} \\
+  \midrule
+
+  \noindent 
+  Author 1 & 1780 (?) & Recent falls (last 2 months) \\
+           &          & Agitation                    \\
+           &          & Frequent toileting           \\ 
+           &          & Visual impairment            \\[1.8\baselineskip]
+
+  Author 2 & 311 (?)  & Posture sway                 \\
+           &          & Two or more falls in previous year \\
+           &          & Low hand grip strength \\
+           &          & Depressive state of mind \\               
+\end{longtable}
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: udtpl.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/114822/itemize-inside-longtable/114860#114860) on TeX Stack Exchange, 2013-05-18, with [edits](https://tex.stackexchange.com/posts/114860/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

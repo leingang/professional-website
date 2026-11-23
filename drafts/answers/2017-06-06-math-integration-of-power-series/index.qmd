@@ -1,0 +1,61 @@
+---
+title: Integration of power series
+date: '2017-06-06'
+description: The improper integral $\int0^\infty e^{-x}\,dx$ is equal to $$\begin{align} \lim{t\to\infty} \int0^t e^{-x}\,dx &= \lim{t\to\infty} \int0^t \sum{k=0}^\infty…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2312510
+se-link: https://math.stackexchange.com/questions/2312452/integration-of-power-series/2312510#2312510
+se-score: 11
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- power-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integration of power series](https://math.stackexchange.com/questions/2312452/integration-of-power-series), asked by [outlaw](https://math.stackexchange.com/users/372198/outlaw) on Mathematics Stack Exchange (2017-06-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to find an approximate solution of:
+> $$\begin{equation}
+> \int_{0}^{+\infty} e^{-x}dx \ (=1)
+> \end{equation}$$
+> from the power series expansion of :
+> $$\begin{equation}
+> e^{-x}= 1-x+(1/2)\cdot x^2-(1/6)\cdot x^3+(1/24)\cdot x^4-(1/120)\cdot x^5+O(x^6)
+> \end{equation}$$
+> My Problem is that when I integrate the series term by term, the polynomials wont behave well with the $\infty$ term..
+> Can you help me please
+:::
+
+The improper integral $\int_0^\infty e^{-x}\,dx$ is equal to 
+$$\begin{align*}
+    \lim_{t\to\infty} \int_0^t e^{-x}\,dx 
+    &= \lim_{t\to\infty} \int_0^t \sum_{k=0}^\infty \frac{(-1)^k x^k}{k!}\,dx \\
+    &= \lim_{t\to\infty} \int_0^t \lim_{n\to\infty} \sum_{k=0}^n \frac{(-1)^k x^k}{k!}\,dx \\
+    &= \lim_{t\to\infty} \lim_{n\to\infty} \int_0^t \sum_{k=0}^n \frac{(-1)^k x^k}{k!}\,dx \\
+    &= \lim_{t\to\infty} \lim_{n\to\infty} \left. \sum_{k=0}^n \frac{(-1)^k x^{k+1}}{(k+1)!}\right|^t_0 \\
+    &= \lim_{t\to\infty} \lim_{n\to\infty} \sum_{k=1}^n \frac{(-1)^{k+1} t^{k}}{k!} \\
+\end{align*}$$
+
+What you are trying to do is swap the $\lim_{t\to\infty}$ and $\lim_{n\to\infty}$ operations.  But this doesn't make any sense, because for a fixed $n$,
+$$\lim_{t\to\infty} \sum_{k=1}^n \frac{(-1)^{k+1} t^{k}}{k!} = 
+    \begin{cases}
+        +\infty & \text{if $n$ is odd} \\
+        -\infty & \text{if $n$ is even}
+    \end{cases}$$
+
+It's always dangerous to cavalierly interchange infinite processes.  If it's allowed, it's because of a theorem with certain hypotheses, and there are counterexamples when those hypotheses aren't met.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2312452/integration-of-power-series/2312510#2312510) on Mathematics Stack Exchange, 2017-06-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

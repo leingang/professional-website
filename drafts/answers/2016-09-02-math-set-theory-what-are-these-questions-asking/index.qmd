@@ -1,0 +1,73 @@
+---
+title: Set theory - what are these questions asking?
+date: '2016-09-02'
+description: 'For a) I am with you up to here:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1911624
+se-link: https://math.stackexchange.com/questions/1911609/set-theory-what-are-these-questions-asking/1911624#1911624
+se-score: -1
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- proof-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Set theory - what are these questions asking?](https://math.stackexchange.com/questions/1911609/set-theory-what-are-these-questions-asking), asked by [Dominic Farolino](https://math.stackexchange.com/users/214976/dominic-farolino) on Mathematics Stack Exchange (2016-09-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For my Discrete structures class in school, we have the following homework problem:
+>
+> ![](https://s3.postimg.io/rkx8dfz2r/joint.jpg)
+>
+> Preface: I naturally associate the word `and` with the intersection operator $\cap$, for example: $x \in A \text{ and } x \in B \iff x \in A\cap B$.
+>
+> ###a.)
+> To me a.) can be translated to the following:
+>
+> $$A\cap B  = \emptyset \iff B\cap A  = \emptyset$$
+>
+> I'm inclined to make my proof say that this implies $A\cap B = B\cap A$ which we can prove by stating the commutative law of set theory. I can't tell if it wants me to go beyond that statement and actually prove the commutative law though?
+>
+> ###b.)
+> I thought this problem was going to have me show the distributive law of set theory which in this case would be $(A\cup B)\cap C = (A\cap C)\cup(B\cap C)$ HOWEVER I translate b.) to the following:
+>
+> $$(A\cup B)\cap C = \emptyset \iff A\cap  C = \emptyset \land  B\cap C = \emptyset$$ Now, because statement 1 `and` statement 2 must be true I think I may be able to simplify it down to $\iff (A\cap C)\cap(B\cap C) = \emptyset$ but logically that does not make sense to me. We're trying to prove that C has no elements in common with A and C has no elements in common with B which you could just as easily do by simplifying it to $(A\cap C)\cup(B\cap C) = \emptyset$. The statement I was able to simplify it to ($(A\cap C)\cap(B\cap C) = \emptyset$) looks like it is more proving that $A$ and $B$ and $C$ have no common elements, namely $A\cap B\cap C = \emptyset$. Did I interpret it correct, and the problem is just kinda weird?
+>
+> If my original interpretation is correct: $(A\cap C)\cap(B\cap C) = \emptyset$ then I believe the sets $A = \{1, 2, 3\}, B = \{4, 5, 6\}, C = \{3, 4\}$ proves their statement wrong.
+>
+> ###c.)
+> I translate the c.) to:
+>
+> $$(A\cap B)\cap C = \emptyset \iff (A\cap C)\cap(B\cap C) = \emptyset$$
+>
+> Can I just use the distributive law here?
+>
+> Am I interpreting these even close to correctly?
+:::
+
+For a) I am with you up to here:
+
+> I'm inclined to make my proof say that this **implies** $A\cap B = B\cap A$ which we can **prove** by stating the commutative law of set theory.
+
+Where you say *implies* you probably mean *is implied by* or *follows from*.  And as far as “proving” $A \cap B = B \cap A$ from the commutative law of set theory, that's really the only content to the law.  So there's nothing to prove there—you can just mention it parenthetically.
+
+For c), I'm not aware of a distributive law for intersection over itself.  But you could invoke the *associative* (and commutative) law for intersection and the fact that $C\cap C= C$:
+$$(A \cap B) \cap C = (A \cap B) \cap (C \cap C) = A \cap B \cap C \cap C = A \cap C \cap B \cap C = (A \cap C) \cap (B \cap C)$$
+
+For b) I agree with Graham.
+
+As for your question, “Do I need to prove the commutative law?”, that depends on the context of the assignment.  Is the law stated in your textbook before this exercise, or has it been covered in class?  If so, you are probably free to use it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1911609/set-theory-what-are-these-questions-asking/1911624#1911624) on Mathematics Stack Exchange, 2016-09-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

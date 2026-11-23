@@ -1,0 +1,60 @@
+---
+title: given the dot and cross products of vectors b and v, solve for v
+date: '2023-01-18'
+description: Neither the dot product nor the cross product is invertible, so you have to be circumspect with the approach here. If you were to write out the equations…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4621052
+se-link: https://math.stackexchange.com/questions/4620743/given-the-dot-and-cross-products-of-vectors-b-and-v-solve-for-v/4621052#4621052
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+- vectors
+- inner-products
+- outer-product
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[given the dot and cross products of vectors b and v, solve for v](https://math.stackexchange.com/questions/4620743/given-the-dot-and-cross-products-of-vectors-b-and-v-solve-for-v), asked by [Joseph_Kopp](https://math.stackexchange.com/users/1053681/joseph-kopp) on Mathematics Stack Exchange (2023-01-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given that the dot product of b and v is k, and that the cross product of b and v is c, solve for the vector v in terms of b, c, and k, of which are known and fixed.
+>
+> It may be useful to note that the book gives v=(kb-(bxc))/mag(b)^2 as the solution, I simply can't figure out how to get to it.
+>
+> I'm sure that there's something simple to this problem that I'm missing, as this is just an exercise in the book to practice vector operations, but regardless I can't figure it out.
+>
+> I've managed to use the cosine and sine definitions of the dot and cross product, divided the equations, and played with some basic trig in order to solve for the magnitude of v, but I'm not sure how to get the direction. In other words, finding the unit vector of v would be sufficient at this point in the problem. In doing so, I spent a long time thinking about projections on b, v, and b cross c, but couldn't seem to find any meaningful equation I could use to solve for v hat.
+>
+> I also thought about using the given dot product as well as dotting v with c (equal to 0) and some third equation, in order to solve for the three components of v with a linear system of 3 equations in 3 unknowns, but I can't think of how to get a third equation to use. I thought of trying to do something with the expression I found for the magnitude, but this doesn't seem to give any linear equations.
+>
+> Any help would be very appreciated, this problem has been bugging me. Also, I apologize for the lack of formal notation in writing this question, I'm not used to the software yet regarding that.
+:::
+
+Neither the dot product nor the cross product is invertible, so you have to be circumspect with the approach here. If you were to write out the equations $\mathbf b \cdot \mathbf v = k$ and $\mathbf b \times \mathbf v = \mathbf c$, and think of the components of $\mathbf v$ as variables, then you have four equations in three unknowns. This seems like too many equations, but if you remember that some vectors (namely, multiples of $\mathbf b$) have a cross product of zero with $\mathbf b$, there is some hope that the system is consistent.
+
+Write $\mathbf v = \alpha \mathbf b + \mathbf p$, where $\mathbf{p} \cdot \mathbf{b} = 0$. Then $$\mathbf{b} \cdot \mathbf{v} = \alpha \mathbf{b} \cdot \mathbf{b}  = \alpha |\mathbf{b}|^2$$ Since $\mathbf b \cdot \mathbf v = k$ is given, we must have $\alpha = \frac{k}{|\mathbf{b}|^2}$.
+Also,
+$$\mathbf{b} \times \mathbf{v} = \mathbf{b} \times (\alpha \mathbf b + \mathbf p)  = \mathbf{b} \times \mathbf{p}$$
+And we are given that this is equal to $\mathbf{c}$. By the [BAC-CAB identity][1], we have
+$$\begin{aligned}
+    \mathbf{b} \times \mathbf{c} &= \mathbf{b} \times (\mathbf{b} \times \mathbf{p})
+    \\&= \mathbf{b} (\mathbf{b} \cdot \mathbf{p}) - \mathbf{p} (\mathbf{b} \cdot \mathbf{b}) 
+    \\&= - |\mathbf{b}|^2\mathbf{p}
+\end{aligned}$$ 
+So $\mathbf{p} = - \frac{ \mathbf{b} \times \mathbf{c}}{|\mathbf{b}|^2}$. If you put these together, you get
+$$\mathbf{v} = \frac{k}{|\mathbf{b}|^2} \mathbf{b} - \frac{ \mathbf{b} \times \mathbf{c}}{|\mathbf{b}|^2} = \frac{k \mathbf{b} - \mathbf{b} \times \mathbf{c}}{|\mathbf{b}|^2}$$
+
+  [1]: https://mathworld.wolfram.com/BAC-CABIdentity.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4620743/given-the-dot-and-cross-products-of-vectors-b-and-v-solve-for-v/4621052#4621052) on Mathematics Stack Exchange, 2023-01-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,37 @@
+---
+title: Find the rectangle with the greatest area
+date: '2016-11-18'
+description: You're right, it has something to do with derivatives, but you can't just scan the problem and look for the first function you see, and take the derivative of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2020090
+se-link: https://math.stackexchange.com/questions/2020085/find-the-rectangle-with-the-greatest-area/2020090#2020090
+se-score: 0
+se-accepted: false
+se-tags:
+- rectangles
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the rectangle with the greatest area](https://math.stackexchange.com/questions/2020085/find-the-rectangle-with-the-greatest-area), asked by [prishila](https://math.stackexchange.com/users/262873/prishila) on Mathematics Stack Exchange (2016-11-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Find the rectangle with the greatest area, with a corner on O(0,0), one in the Ox axis and one on Oy axis, and one on the parabolic curve $y=4-x^2$
+> I thought to use the tangent of the parabolic function f'(x)=-2x. i don't know what to do next.
+> For sides a and b the area is S=a*b
+:::
+
+You're right, it has something to do with derivatives, but you can't just scan the problem and look for the first function you see, and take the derivative of it.
+
+This is an optimization problem, and we know that because of the word *highest* (it should probably be *greatest*).  Greatest what?  Greatest *area*.  So construct the function that computes the area of the rectangle.  That is the function you want to take the derivative of.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2020085/find-the-rectangle-with-the-greatest-area/2020090#2020090) on Mathematics Stack Exchange, 2016-11-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

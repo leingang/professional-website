@@ -1,0 +1,58 @@
+---
+title: How to find delta, for a given epsilon?
+date: '2017-12-19'
+description: As commenters in this question and the linked question have stated, it is impossible to solve this problem. Here is a proof of the negation.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2573200
+se-link: https://math.stackexchange.com/questions/2573177/how-to-find-delta-for-a-given-epsilon/2573200#2573200
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- limits
+- multivariable-calculus
+- real-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find delta, for a given epsilon?](https://math.stackexchange.com/questions/2573177/how-to-find-delta-for-a-given-epsilon), asked by [AJ_](https://math.stackexchange.com/users/460073/aj) on Mathematics Stack Exchange (2017-12-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: 7jjV7.png
+>
+> Problem that I am facing:
+>
+> So naturally I decided to shift to the polar co-ordinates, however when I try to simplify the expression remains very complicated and despite using the fact that sin and cos belong to [-1,1] I cannot get any conclusive bound.
+>
+> Thanks
+:::
+
+As commenters in this question and the linked question have stated, it is impossible to solve this problem.  Here is a proof of the negation.
+
+You are asked to show that
+$$\exists \delta > 0,\forall (x,y)\in \mathbb{R}^2,\ 0 < \sqrt{x^2+y^2} < \delta \implies |f(x,y)| < 0.01$$  
+I will show that
+$$\forall \delta > 0,\exists (x,y)\in\mathbb{R}^2,\ 0 < \sqrt{x^2+y^2} < \delta \wedge |f(x,y)| \geq 0.01$$
+
+Let $\delta > 0$ be given.  
+
+Setting $y=x$ in the function and taking the limit as $x\to 0$ gives
+$$\lim_{x\to 0} f(x,x) = \lim_{x\to 0} \frac{2x^5 - 5 x^4 + x^5}{4x^4} = - \frac{5}{4}$$
+This means there exists $\delta_1 > 0$ such that for all $x\in\mathbb{R}$,
+$0 < |x| < \delta_1 \implies f(x,x) < -1$.  Set $x = y = \min\left\{\frac{\delta}{2},\frac{\delta_1}{2}\right\}$.  Then $0 < \sqrt{x^2+y^2} < \delta$ and $|x|< \delta_1$ are both satisfied.  It follows from the second inequality that $|f(x,y)| \geq 1 > 0.01$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2573177/how-to-find-delta-for-a-given-epsilon/2573200#2573200) on Mathematics Stack Exchange, 2017-12-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,42 @@
+---
+title: Help explaining formula to calc students
+date: '2017-12-05'
+description: If $\mathbf{c}(t) = (x(t),y(t))$, then $\frac{ds}{dt}$ is the derivative of arc length with respect to $t$. If you think of $\mathbf{c}(t)$ as the position of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2551456
+se-link: https://math.stackexchange.com/questions/2551453/help-explaining-formula-to-calc-students/2551456#2551456
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+- parametric
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help explaining formula to calc students](https://math.stackexchange.com/questions/2551453/help-explaining-formula-to-calc-students), asked by user482578 on Mathematics Stack Exchange (2017-12-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is a stupid question but what is the proper name of this formula? Been trying to look for a proper definition for this but can't find it online. It's been a long time since I had to use these that my brain is drawing a blank. 
+>
+> $$||a||=\sqrt{\left(\frac{{\rm d}^{2}y}{{\rm d}t^{2}}\right)^{2}+\left(\frac{{\rm d}^{2}x}{{\rm d}t^{2}}\right)^{2}}$$
+>
+> Edit: just found it used in this question:
+> https://math.stackexchange.com/questions/241312/acceleration-of-a-particle-described-by-parametric-equations
+>
+> So it's the magnitude of the vector's speed?
+:::
+
+If $\mathbf{c}(t) = (x(t),y(t))$, then $\frac{ds}{dt}$ is the derivative of arc length with respect to $t$.  If you think of $\mathbf{c}(t)$ as the position of a particle, $\mathbf{c}'(t)=(x'(t),y'(t))$ is its velocity and $||\mathbf{c}'(t)|| = \sqrt{x'(t)^2 + y'(t)^2}$ is its *speed*.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2551453/help-explaining-formula-to-calc-students/2551456#2551456) on Mathematics Stack Exchange, 2017-12-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,76 @@
+---
+title: How to center vertically content of the table?
+date: '2010-11-07'
+description: 'Change the p to m in your definition of the x column type:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5059
+se-link: https://tex.stackexchange.com/questions/5054/how-to-center-vertically-content-of-the-table/5059#5059
+se-score: 10
+se-accepted: true
+se-tags:
+- tables
+- vertical-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to center vertically content of the table?](https://tex.stackexchange.com/questions/5054/how-to-center-vertically-content-of-the-table), asked by [pixel](https://tex.stackexchange.com/users/1164/pixel) on TeX Stack Exchange (2010-11-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have this table:
+>
+> ```latex
+> \usepackage{array}
+> \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+>
+> \begin{table}[ht]\footnotesize
+> \centering
+> \begin{tabular*}{0.95\textwidth }{@{\extracolsep{\fill}}|llllllllllllllll|x{0.15\textwidth}|}
+> \hline
+> \multicolumn{16}{|c|}{Small text} & Long text \\ \hline 
+> 1 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 16 & 19 & 20 & 21 & 22 & 23 & 0.9636149 \\ \hline 
+> \end{tabular*}
+> \caption{Caption}
+> \label{tab:Example}
+> \end{table}
+> ```
+> How to center "Small text"?
+:::
+
+Change the `p` to `m` in your definition of the `x` column type:
+
+```latex
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}m{#1}}
+```
+
+Full example:
+
+```latex
+\documentclass{article}
+\usepackage{array}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}m{#1}}
+\begin{document}
+
+\begin{table}[ht]\footnotesize
+\centering
+\begin{tabular*}{0.95\textwidth }{@{\extracolsep{\fill}}|llllllllllllllll|x{0.15\textwidth}|}
+\hline
+\multicolumn{16}{|c|}{Small text} & Long long long long long text \\ \hline 
+1 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 16 & 19 & 20 & 21 & 22 & 23 & 0.9636149 \\ \hline 
+\end{tabular*}
+\caption{Caption}
+\label{tab:Example}
+\end{table}
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5054/how-to-center-vertically-content-of-the-table/5059#5059) on TeX Stack Exchange, 2010-11-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

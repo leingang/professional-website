@@ -1,0 +1,53 @@
+---
+title: New limits when changing to polar coordinates for calculating a double integral
+date: '2016-02-27'
+description: For each $\theta$, you need to integrate from the vertical line $x = \frac{1}{2}$ to the circle $r=1$. The upper limit is obviously $1$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1674801
+se-link: https://math.stackexchange.com/questions/1674791/new-limits-when-changing-to-polar-coordinates-for-calculating-a-double-integral/1674801#1674801
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- integration
+- multivariable-calculus
+- polar-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[New limits when changing to polar coordinates for calculating a double integral](https://math.stackexchange.com/questions/1674791/new-limits-when-changing-to-polar-coordinates-for-calculating-a-double-integral), asked by [Stabilo](https://math.stackexchange.com/users/224404/stabilo) on Mathematics Stack Exchange (2016-02-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Calculate
+>
+> $$\iint_D {1 \over {(x^2+y^2)^2}} dxdy$$
+>
+> when: $$D= \{\space (x,y) \in \mathbb R ^2 \space |\space {1 \over 2} \le x \space,\space x \le y \le \sqrt 3 x\space,\space x^2+y^2 \le 1\space \}$$
+>
+> I change to polars $\space x=r \cos \theta$, $\space y=r \sin \theta \space$, and I can see that ${\pi \over 4}\le \theta \le {\pi \over 3}$, but what are the limits of $r$? 
+>
+> Even when I draw this I can't figure what they are.
+>
+>
+> Note: I just want to understand how to find the new limits, I'll calculate the rest by myself.
+:::
+
+For each $\theta$, you need to integrate from the vertical line $x = \frac{1}{2}$ to the circle $r=1$.  The upper limit is obviously $1$.
+
+As for the lower limit, the equation $x=\frac{1}{2}$ translated to polar coordinates becomes
+$$r \cos\theta = \frac{1}{2} \implies r = \frac{1}{2\cos\theta} = \frac{1}{2}\sec\theta$$
+This means that
+$$D = \left\{(r,\theta)\mid \frac{\pi}{4} \leq \theta \leq \frac{\pi}{3},\  \frac{1}{2} \sec\theta \leq r \leq 1\right\}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1674791/new-limits-when-changing-to-polar-coordinates-for-calculating-a-double-integral/1674801#1674801) on Mathematics Stack Exchange, 2016-02-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

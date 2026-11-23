@@ -1,0 +1,186 @@
+---
+title: Number Algorithm floats with dependency (subalgorithms environment)
+date: '2010-11-06'
+description: 'Here is the "easy" way to do it:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5002
+se-link: https://tex.stackexchange.com/questions/4991/number-algorithm-floats-with-dependency-subalgorithms-environment/5002#5002
+se-score: 4
+se-accepted: false
+se-tags:
+- numbering
+- floats
+- algorithms
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Number Algorithm floats with dependency (subalgorithms environment)](https://tex.stackexchange.com/questions/4991/number-algorithm-floats-with-dependency-subalgorithms-environment), asked by [philosodad](https://tex.stackexchange.com/users/1286/philosodad) on TeX Stack Exchange (2010-11-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What I have: 3 algorithms, like so:
+>
+> ```latex
+> \begin{algorithm}
+> \caption{Caption One}
+> ...
+> \label{alg:one}
+> \end{algorithm}
+>
+> \begin{algorithm}
+> \caption{Caption Two}
+> ...
+> \label{alg:two}
+> \end{algorithm}
+>
+> \begin{algorithm}
+> \caption{Caption Three}
+> ...
+> \label{alg:three}
+> \end{algorithm}
+> ```
+>
+> What I want: I want algorithm 1 to be numbered in the same manner as the rest of the algorithms in the document, say, as **Algorithm 1**. Then I want Algorithms 2 and 3 to be numbered **Algorithm 1a** (or 1.1, or 1-a, or whatever) and **Algorithm 1b**.
+>
+> Then I want numbering to continue as previous, so that the next algorithm is **Algorithm 2**. Can this be done, and if so, how?
+:::
+
+Here is the "easy" way to do it:
+
+```latex
+\begin{algorithm}
+\caption{Caption One}
+...
+\label{alg:one}
+\end{algorithm}
+
+\begin{algorithm}
+\renewcommand{\thealgorithm}{1a}
+\caption{Caption Two}
+...
+\label{alg:two}
+\end{algorithm}
+
+\begin{algorithm}
+\renewcommand{\thealgorithm}{1b}
+\caption{Caption Three}
+...
+\label{alg:three}
+\end{algorithm}
+
+\begin{algorithm}
+\setcounter{algorithm}{1}
+\caption{Caption Four}
+...
+\label{alg:four}
+\end{algorithm}
+```
+
+The "right" way to do it might be to create macros that turn on and off subnumbering.  
+
+```latex
+\makeatletter
+\newcounter{subalgorithm}
+\newenvironment{subalgorithms}{
+  \setcounter{subalgorithm}{0}
+  % redefine the macro that sets the algorithm number to include the subalgorithm number
+  \renewcommand{\thealgorithm}{\arabic{algorithm}\alph{subalgorithm}}%
+  % patch the macro that sets the caption head to unincrement to
+  % - unincrement the algorithm counter
+  % - increment the subalgorithm counter
+  % - then do whatever it was supposed to do before
+  \let\old@fnum@algorithm=\fnum@algorithm%
+  \def\fnum@algorithm{%
+    \addtocounter{algorithm}{-1}%
+    \stepcounter{subalgorithm}%
+    \old@fnum@algorithm}%
+}{}
+\makeatother
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Caption One}
+...
+\label{alg:one}
+\end{algorithm} 
+
+\begin{subalgorithms}
+
+\begin{algorithm}
+\caption{Caption Two}
+...
+\label{alg:two}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Caption Three}
+...
+\label{alg:three}
+\end{algorithm}
+
+\end{subalgorithms}
+
+\begin{algorithm}
+\caption{Caption Four}
+...
+\label{alg:four}
+\end{algorithm}
+```
+
+A third method would be to create a new float `subalgorithm` with a counter that reset with `algorithm`.  
+
+```latex
+\makeatletter
+\floatstyle{\ALG@floatstyle}
+\newfloat{subalgorithm}{htbp}{loa}[algorithm]
+\floatname{subalgorithm}{Subalgorithm}
+\renewcommand{\thesubalgorithm}{\arabic{algorithm}\alph{subalgorithm}}
+\@namedef{l@subalgorithm}{\@dottedtocline{1}{1.5em}{2.3em}}%
+\makeatother
+
+\begin{document}
+\listofalgorithms
+
+\begin{algorithm}
+\caption{Caption One}
+...
+\label{alg:one}
+\end{algorithm}
+
+\begin{subalgorithm}
+\caption{Caption Two}
+...
+\label{alg:two}
+\end{subalgorithm}
+
+\lipsum[2-4]
+
+\begin{subalgorithm}
+\caption{Caption Three}
+...
+\label{subalg:three}
+\end{subalgorithm}
+
+\begin{algorithm}
+\caption{Caption Four}
+...
+\label{alg:four}
+\end{algorithm}
+```
+
+References:
+
+ - <a href="http://ctan.org/tex-archive/macros/latex/contrib/float/">float package</a> source/documentation
+ - <a href="http://ctan.org/tex-archive/macros/latex/contrib/algorithm/">algorithm package</a> source/documentation
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4991/number-algorithm-floats-with-dependency-subalgorithms-environment/5002#5002) on TeX Stack Exchange, 2010-11-06. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

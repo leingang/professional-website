@@ -1,0 +1,47 @@
+---
+title: What counts as a "known" function
+date: '2017-01-27'
+description: We use the term elementary function for any function that can be expressed in terms of a finite composition of polynomials, exponentials, and inverses of the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2116945
+se-link: https://math.stackexchange.com/questions/2116934/what-counts-as-a-known-function/2116945#2116945
+se-score: 8
+se-accepted: false
+se-tags:
+- functions
+- soft-question
+- special-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[What counts as a "known" function](https://math.stackexchange.com/questions/2116934/what-counts-as-a-known-function), asked by [Mark Bennet](https://math.stackexchange.com/users/2906/mark-bennet) on Mathematics Stack Exchange (2017-01-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This question arises from a discussion on https://math.stackexchange.com/questions/2116861/how-to-deal-with-the-integral-of-ex-ex2 where the error function is invoked and there is a comment that this might not be a satisfactory solution (at least for some) because it is more a renaming exercise than a solution. Similarly for the Lambert W, which appears regularly.
+>
+> Now there are functions we all know and learn, like the trigonometric functions, exponential function and logarithm, which emerge reasonably naturally in various contexts early in our mathematical experience. Hyperbolic functions (sinh/cosh etc) are not so immediately used, but emerge through being the odd and even parts of the exponential function as well as in other ways.
+>
+> Then there are special functions of various kinds like Bessel Functions, Legendre Polynomials, Hypergeometric functions as well as those in the presenting discussion.
+>
+> It seems to me that whether we actually like particular functions or not - or consider them as solutions rather than renamings - might depend on the fluency and intuition we have developed in understanding them. It seems to me to be a bit like solving equations by radicals, which is a nice thing to do, because we know what radicals are - but practically we return to numerical estimates very often, so the radical gives an illusion of precision rather than a practical solution.
+>
+> So my question is approximately "what makes a function familiar enough to be a special function?"
+>
+> Now this could be too vague, or opinion-based, or more suitable for meta - but on the other hand I thought the discussion was interesting enough to highlight, and maybe others will have some useful insight.
+:::
+
+We use the term [*elementary function*](https://en.wikipedia.org/wiki/Elementary_function) for any function that can be expressed in terms of a finite composition of polynomials, exponentials, and inverses of the same (roughly speaking).  So it includes logs, and roots, trig and hyperbolic by combining exponentials (and passing to complex numbers), and inverses of those, etc.  The way I explain it to students is, “If you can evaluate it on a standard scientific calculator, it's an elementary function.”  I second the recommendation of Brian's article.
+
+This is a pretty good place to draw the line if you're teaching an undergrad calculus course.  Other functions can be “admitted” when their need comes up in more advanced courses.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2116934/what-counts-as-a-known-function/2116945#2116945) on Mathematics Stack Exchange, 2017-01-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

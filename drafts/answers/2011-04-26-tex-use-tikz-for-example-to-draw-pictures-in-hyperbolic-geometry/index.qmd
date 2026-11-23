@@ -1,0 +1,41 @@
+---
+title: Use tikz (for example) to draw pictures in hyperbolic geometry
+date: '2011-04-26'
+description: Probably not. I googled "latex hyperbolic geometry" and the top hit was this page. There are plenty of papers about hyperbolic geometry written in latex but no…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16629
+se-link: https://tex.stackexchange.com/questions/16617/use-tikz-for-example-to-draw-pictures-in-hyperbolic-geometry/16629#16629
+se-score: 2
+se-accepted: false
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use tikz (for example) to draw pictures in hyperbolic geometry](https://tex.stackexchange.com/questions/16617/use-tikz-for-example-to-draw-pictures-in-hyperbolic-geometry), asked by [John Palmieri](https://tex.stackexchange.com/users/262/john-palmieri) on TeX Stack Exchange (2011-04-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to draw pictures in the [Poincaré disk model](http://en.wikipedia.org/wiki/Poincar%C3%A9_disk_model) for hyperbolic geometry.  Are there any built-in or add-on packages for tikz to do this?  For example, it would be nice to have functions for drawing [Saccheri quadrilaterals][q-1] or [Lambert quadrilaterals][q-2] or asymptotic triangles.
+>
+> (In my brief use so far, the [tkz-euclide](http://www.altermundus.fr/pages/euclide.html) package looks very good for Euclidean geometry, and now I'm looking for a hyperbolic analogue of it.)
+>
+>
+>   [q-1]: http://en.wikipedia.org/wiki/Saccheri_quadrilateral
+>   [q-2]: http://en.wikipedia.org/wiki/Lambert_quadrilateral
+:::
+
+Probably not.  I googled "latex hyperbolic geometry" and the top hit was this page.  There are plenty of papers about hyperbolic geometry written in latex but no packages that I found for hyperbolic geometry. 
+
+But I think these things can be done in TikZ, if one works hard enough.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16617/use-tikz-for-example-to-draw-pictures-in-hyperbolic-geometry/16629#16629) on TeX Stack Exchange, 2011-04-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

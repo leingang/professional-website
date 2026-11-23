@@ -1,0 +1,156 @@
+---
+title: Solarize TeXshop colorscheme
+date: '2013-02-11'
+description: I had not heard of that color scheme before so I followed the links and coded up the solarized TeXShop Color Scheme script as an AppleScript.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 97701
+se-link: https://tex.stackexchange.com/questions/97648/solarize-texshop-colorscheme/97701#97701
+se-score: 15
+se-accepted: true
+se-tags:
+- texshop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Solarize TeXshop colorscheme](https://tex.stackexchange.com/questions/97648/solarize-texshop-colorscheme), asked by user25665 on TeX Stack Exchange (2013-02-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The default white background color is too difficult to
+> work with for long periods of time. I am trying to change this
+> color scheme to the famous color scheme "solarized" by Ethan Schoonover.
+>
+> I can download the color scheme from his webpage.
+>
+> http://ethanschoonover.com/solarized
+>
+>
+> Is there anyway I can make this to be my texshop color scheme?. May be someone
+> can write a set of terminal commands like this
+>
+> https://github.com/altercation/solarized/issues/167
+>
+>  that would look like Ethan's 
+> color scheme.
+>
+> Thanks for your time.
+:::
+
+I had not heard of that color scheme before so I followed the links and coded up the [solarized TeXShop Color Scheme](https://github.com/altercation/solarized/issues/167) script as an AppleScript.  
+
+If you put this in `~/Library/Applications/Scripts/TeXShop/` it will appear as an item in the Scripts menu on the right-hand side of the menu bar.  Although, for the preferences to take effect, TeXShop needs to be restarted.  This script restarts but doesn't reopen the windows that were open before restarting.
+
+
+```latex
+-- solarized light color scheme
+-- see http://ethanschoonover.com/solarized
+-- and https://github.com/altercation/solarized/issues/167
+
+do shell script "
+# solarized light color scheme
+
+# background = solarized base3 = 253 246 227
+defaults write TeXShop background_R 0.99;
+defaults write TeXShop background_G 0.96;
+defaults write TeXShop background_B 0.89;
+
+# commands = solarized red = 220  50  47
+defaults write TeXShop commandred 0.86;
+defaults write TeXShop commandgreen 0.196;
+defaults write TeXShop commandblue 0.184;
+
+# comments = solarized base1 = 147 161 161
+defaults write TeXShop commentred 0.58;
+defaults write TeXShop commentgreen 0.63;
+defaults write TeXShop commentblue 0.63;
+
+# foreground = solarized base00 = 101 123 131
+defaults write TeXShop foreground_R 0.40;
+defaults write TeXShop foreground_G 0.48;
+defaults write TeXShop foreground_B 0.51;
+
+# index = solarized magenta = 211 54 130
+defaults write TeXShop indexred 0.83;
+defaults write TeXShop indexgreen 0.21;
+defaults write TeXShop indexblue 0.51;
+
+# marker = solarized cyan = 42 161 152
+defaults write TeXShop markerred 0.165;
+defaults write TeXShop markergreen 0.63;
+defaults write TeXShop markerblue 0.596;
+
+# insertionpoint = solarized base00 = 101 123 131
+defaults write TeXShop insertionpoint_R 0.40;
+defaults write TeXShop insertionpoint_G 0.48;
+defaults write TeXShop insertionpoint_B 0.51;
+"
+
+if application "TeXShop" is running then
+	tell application "TeXShop" to quit
+	try -- work around a "Connection invalid (-609)" message (bug?)
+		tell application "TeXShop" to activate
+	end try
+end if
+try -- work around a "Connection invalid (-609)" message (bug?)
+	tell application "TeXShop" to activate
+end try
+```
+
+Needs improvement (like a dialog warning of the quit).  Then the same should be done for the script that returns to defaults.  
+
+Further syntax colorization in TeXShop is not possible.  Quoting from the Help panel (Help > Open Help panel ..., then "How do I configure TeXShop?", then "Hidden Preference Items"):
+
+> When syntax coloring is on, comments are colored red, commands are
+> colored blue, and the symbols \$, {, and } are colored dark green.
+> These colors can be changed. A color is determined by the red, green,
+> and blue components of the color; each is a number between 0.00 and
+> 1.00. To change the color of \$, {, and } to bright green, issue the following commands in Terminal:
+> 
+>     defaults write TeXShop markerred 0.0 
+>     defaults write TeXShop markergreen 1.0 
+>     defaults write TeXShop markerblue 0.0 
+>
+> To change the
+> comment color, replace "marker" with "comment"; to change the command
+> color, replace "marker" with "command".
+> 
+> The background color of the source window can be changed. For example,
+> to set this background to (r, g, b) = (.42, .39, .77), issue the
+> following commands in Terminal:
+> 
+>     defaults write TeXShop background_R 0.42 
+>     defaults write TeXShop background_G 0.39 
+>     defaults write TeXShop background_B 0.77 
+> 
+> Warning:
+> the next two items have not worked since version 2.10. They will be
+> fixed eventually, but probably not in the immediate future. 
+> **[seems to work now in 3.11]**
+> 
+> The text color of the source window can be changed. This change
+> requires that syntax coloring be on. For example, to set this
+> foreground color for text to (r, g, b) = (.42, .39, .77), issue the
+> following commands in Terminal:
+> 
+>     defaults write TeXShop foreground_R 0.42 
+>     defaults write TeXShop foreground_G 0.39 
+>     defaults write TeXShop foreground_B 0.77 
+>
+> The color of the insertion point in the source window can be changed. For
+> example, to set this insertion point color to (r, g, b) = (.42, .39,
+> .77), issue the following commands in Terminal:
+> 
+>     defaults write TeXShop insertionpoint_R 0.42 
+>     defaults write TeXShop insertionpoint_G 0.39
+>     defaults write TeXShop insertionpoint_B 0.77
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/97648/solarize-texshop-colorscheme/97701#97701) on TeX Stack Exchange, 2013-02-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

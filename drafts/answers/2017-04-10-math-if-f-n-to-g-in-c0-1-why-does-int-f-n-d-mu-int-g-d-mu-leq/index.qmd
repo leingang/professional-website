@@ -1,0 +1,50 @@
+---
+title: if $f_n' \to g $ in $C([0,1])$ why does $|\int f'_n\,d\mu - \int g \,d\mu| \leq \|f'_n - g \|_{\infty} \to 0$
+date: '2017-04-10'
+description: As Crostul points out, the inequality is $$\left|\int f\,d\mu \right| \leq \int |f|\,d\mu$$ and it comes from the triangle inequality. Indeed, suppose $f =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2227972
+se-link: https://math.stackexchange.com/questions/2227958/if-f-n-to-g-in-c0-1-why-does-int-f-n-d-mu-int-g-d-mu-leq/2227972#2227972
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- functional-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[if $f_n' \to g $ in $C([0,1])$ why does $|\int f'_n\,d\mu - \int g \,d\mu| \leq \|f'_n - g \|_{\infty} \to 0$](https://math.stackexchange.com/questions/2227958/if-f-n-to-g-in-c0-1-why-does-int-f-n-d-mu-int-g-d-mu-leq), asked by [Olba12](https://math.stackexchange.com/users/229160/olba12) on Mathematics Stack Exchange (2017-04-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $(f_n)_n$ be a sequence in $E \subset C^1([0,1])$ where $E$ is closed. Now define a new sequence of derivatives: $(Df_n)_n = (f'_n)_n$. Assume that $f'_n \to g$ in $C([0,1])$. Now the claim is:
+>
+> Since $f'_n \to g$ in $C([0,1])$ we have that
+> $$\left|\int_{0}^{t} f'_n \,d\mu - \int_{0}^{t} g \,d\mu \right| = \int_{0}^{t} |f'_n - g| \,d\mu \leq \|f'_n - g \|_{\infty} \to 0,$$
+> where $\mu$ is the Lebesgue measure. 
+>
+> I don't understand how the equality holds (maybe misprint) but I definitely don't understand the inequality between integral and norm.
+:::
+
+As Crostul points out, the inequality is $$\left|\int f\,d\mu \right| \leq \int |f|\,d\mu$$
+and it comes from the triangle inequality.  Indeed, suppose $f = \sum_{i=1}^n s_i \chi(E_i)$ is a simple function.  Then
+$$\left|\int f\,d\mu \right| = \left|\sum_{i=1}^n s_i \mu(E_i) \right| 
+\leq \sum_{i=1}^n |s_i| \mu(E_i) = \int |f|\,d\mu$$
+The fact that it extends from simple functions to measurable functions is left as an exercise (or it's in your textbook).
+
+For the second, note that if $h$ is a continuous function on $[a,b]$, then
+$$\int_a^b h(x)\,dx \leq (b-a) \cdot \max_{a \leq x \leq b} h(x)$$
+So
+$$\int_0^t |f'_n -g| \,d\mu \leq t \cdot \max_{0 \leq x \leq t}  (f'_n-g)(x)
+\leq 1 \cdot \max_{0 \leq x \leq 1} (f'_n-g)(x)  = \left\Vert f'_n - g\right\Vert_{\infty}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2227958/if-f-n-to-g-in-c0-1-why-does-int-f-n-d-mu-int-g-d-mu-leq/2227972#2227972) on Mathematics Stack Exchange, 2017-04-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

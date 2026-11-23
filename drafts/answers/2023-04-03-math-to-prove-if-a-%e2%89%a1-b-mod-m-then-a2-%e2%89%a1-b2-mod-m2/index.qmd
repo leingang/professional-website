@@ -1,0 +1,46 @@
+---
+title: To prove If $a ≡ b$ mod $m$, then $a^2 ≡ b^2$ mod $m^2$
+date: '2023-04-03'
+description: Rather than directly prove the statement false, we can use the relations to look for counterexamples.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4671948
+se-link: https://math.stackexchange.com/questions/4671932/to-prove-if-a-%e2%89%a1-b-mod-m-then-a2-%e2%89%a1-b2-mod-m2/4671948#4671948
+se-score: 3
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- solution-verification
+- modular-arithmetic
+- lifting-the-exponent
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[To prove If $a ≡ b$ mod $m$, then $a^2 ≡ b^2$ mod $m^2$](https://math.stackexchange.com/questions/4671932/to-prove-if-a-%e2%89%a1-b-mod-m-then-a2-%e2%89%a1-b2-mod-m2), asked by [quadingle the 2nd](https://math.stackexchange.com/users/1086142/quadingle-the-2nd) on Mathematics Stack Exchange (2023-04-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am tying to disprove it but I feel my proof is lacking, please let me know what I can improve on from here, thanks!:
+>
+>  - If $a ≡ b$ mod $m$, then $m|a-b$ i.e. $a-b=km$, $k$ is an int.
+> - Square both sides we get: $(a-b)^2=k^2m^2\implies a^2-2ab+b^2=k^2m^2$
+> - Then $a^2+b^2=2ab+k^2m^2$
+> - This means that $m^2|a^2+b^2$ and not $m^2|a^2-b^2$ i.e. $a^2≡b^2$ mod $m^2$ 
+> - Therefore the statement If $a ≡ b$ mod $m$, then $a^2 ≡ b^2$ mod $m^2$, is false.
+:::
+
+Rather than directly prove the statement false, we can use the relations to look for counterexamples.
+
+Suppose there exist $a$, $b$, and $m$ such that $a \equiv b \pmod{m}$ and $a^2 \equiv b^2 \pmod{m^2}$. Then there exist integers $k$ and $\ell$ such that $a-b=km$ and $a^2-b^2 = \ell m^2$. Since $a^2-b^2 = (a-b)(a+b)$, we have $km(a+b) = \ell m^2$, which means $k(a+b) = \ell m$. So $a+b$ is a zero divisor modulo $m$. Since $a+b \equiv 2b \pmod{m}$, we see that $2b$ is a zero divisor modulo $m$.
+
+To find a counterexample, look for $b$ and $m$ such that $2b$ and $m$ are relatively prime, and set $a=b+km$ for any nonzero integer $k$.   For instance, choose $b=1$ and $m=3$, so $a=4$. Then $16 \not\equiv 1 \pmod{9}$, so we have a counterexample. Steven Creech's counterexample comes from the choice $b=3$ and $m=5$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4671932/to-prove-if-a-%e2%89%a1-b-mod-m-then-a2-%e2%89%a1-b2-mod-m2/4671948#4671948) on Mathematics Stack Exchange, 2023-04-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

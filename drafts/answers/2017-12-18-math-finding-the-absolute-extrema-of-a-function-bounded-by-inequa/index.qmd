@@ -1,0 +1,52 @@
+---
+title: Finding the absolute extrema of a function bounded by inequalities
+date: '2017-12-18'
+description: In case you're expected to solve the problem without citing more advanced theorems in convex analysis, I'll give a more pedestrian hint. If $f$ has a local…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2572276
+se-link: https://math.stackexchange.com/questions/2572261/finding-the-absolute-extrema-of-a-function-bounded-by-inequalities/2572276#2572276
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- algebra-precalculus
+- multivariable-calculus
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the absolute extrema of a function bounded by inequalities](https://math.stackexchange.com/questions/2572261/finding-the-absolute-extrema-of-a-function-bounded-by-inequalities), asked by [Samuel Uribe](https://math.stackexchange.com/users/483281/samuel-uribe) on Mathematics Stack Exchange (2017-12-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is the last question of the section I'm answering.
+>
+> > Find the absolute maximum and minimum of $$T(x,y)=x^2+xy+y^2-12x+2$$ on the set $$0\le{x}\le{9},-5\le{y}\le{0}$$
+>
+> I drew the rectangle boundary and separated the constraints as:
+>
+> $$x=0,x=9,y=0,y=-5$$
+>
+> I'm basically just as lost as the tutors in the fact that I tried to do the determinant:
+> $$f_{xx}f_{yy}-f_{xy}^2$$
+> However that just gives me a minimum at (8,-4) with the value of 3. The question wants absolute maximum and minimum.
+:::
+
+In case you're expected to solve the problem without citing more advanced theorems in convex analysis, I'll give a more pedestrian hint.  If $f$ has a local maximum or minimum at a point on the boundary, then that point is also a local maximum or minimum of the function *restricted* to the boundary.  What that means is that in addition to the critical point found on the interior of the region, you need to parametrize the boundary and look for more critical points. 
+
+For instance, one segment of the boundary is the $x$-axis between $x=0$ and $x=9$.  Set $g(t) = f(t,0)$ for $0 \leq t \leq 9$.  Simplifying,
+$$g(t) = t^2-12t + 2$$
+Now use your standard single-variable calculus techniques to find the maximum and minimum of a function defined on a closed interval: critical points and endpoints. Since $g'(t) = 2t-12$, which is zero when $t=6$, we know that $t=6$ is a critical point. So add $g(6) = f(6,0) = -34$ to your list of values to check.  Also add in $g(0) = 2$ and $g(9) = -25$.
+
+There are three more sides and two more corners.  Once you have found the values at each of those, compare with the value at the one interior critical point.  The greatest of these is the global maximum, and the least is the global minimum.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2572261/finding-the-absolute-extrema-of-a-function-bounded-by-inequalities/2572276#2572276) on Mathematics Stack Exchange, 2017-12-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

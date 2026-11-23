@@ -1,0 +1,58 @@
+---
+title: Display certain objects in a document side by side
+date: '2011-02-08'
+description: The standard LaTeX way is minipages.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 10631
+se-link: https://tex.stackexchange.com/questions/10622/display-certain-objects-in-a-document-side-by-side/10631#10631
+se-score: 7
+se-accepted: false
+se-tags:
+- floats
+- positioning
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Display certain objects in a document side by side](https://tex.stackexchange.com/questions/10622/display-certain-objects-in-a-document-side-by-side), asked by user3448 on TeX Stack Exchange (2011-02-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What is the _standard way_ in latex to display certain objects (e.g. pictures, tables, etc.) side by side, instead of one below the other?
+> I thought about using the tabular environment for this, but I'm not sure if there isn't a better way.
+:::
+
+The standard LaTeX way is minipages. 
+
+In order to make sure that your multiple minipages end up on the same line, their horizontal dimensions have to add up to something less than the current `\textwidth`.  So if I care about lining them up, I often use multiples of `\textwidth` as the minipage widths.  Such as
+
+```latex
+\documentclass{article}
+\usepackage{lipsum} % just for demonstration
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+  \lipsum[1]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.6\textwidth}
+  \lipsum[2-3]
+\end{minipage}
+
+\end{document}
+```
+
+The `\hfill` control sequence inserts an infinitely stretchable amount of glue between the minipages—effectively pushing the second one all the way to the edge of the line.  Since the total widths of the boxes is `0.9\textwidth`, you get a separation of `0.1\textwidth` between the minipages.
+
+Another method is the [`multicol`](http://ctan.org/pkg/multicol) package, but that's mainly for columns of text side-by-side.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/10622/display-certain-objects-in-a-document-side-by-side/10631#10631) on TeX Stack Exchange, 2011-02-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

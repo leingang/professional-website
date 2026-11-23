@@ -1,0 +1,45 @@
+---
+title: $\iiint_Ez(x^2+y^2+z^2)^{-3/2}dV$ where $E=\{(x,y,z):x^2+y^2+z^2\leq16, z\geq2\}$
+date: '2015-10-24'
+description: The region $E$ is a spherical cap. If you draw a ray from the origin through $E$, it will enter $E$ through the plane $z=2$ and exit through the sphere $x^2 +…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1495358
+se-link: https://math.stackexchange.com/questions/1495345/iiint-ezx2y2z2-3-2dv-where-e-x-y-zx2y2z2-leq16-z-geq2/1495358#1495358
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+- multivariable-calculus
+- spherical-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$\iiint_Ez(x^2+y^2+z^2)^{-3/2}dV$ where $E=\{(x,y,z):x^2+y^2+z^2\leq16, z\geq2\}$](https://math.stackexchange.com/questions/1495345/iiint-ezx2y2z2-3-2dv-where-e-x-y-zx2y2z2-leq16-z-geq2), asked by [Danxe](https://math.stackexchange.com/users/170847/danxe) on Mathematics Stack Exchange (2015-10-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Convert to spherical coordinates and evaluate:
+> $$\iiint_Ez(x^2+y^2+z^2)^{-3/2}dV$$
+> where $E$ is the region satisfying the following inequalities: $x^2+y^2+z^2\leq16$, $z\geq2$.
+>
+> When I drew out the graph. I got the boundaries to be $2\leq\rho\leq4$, $0\leq\theta\leq2\pi$, $0\leq\phi\leq \frac{\pi}{3}$.
+>
+> But apparently, my $\rho$ is wrong. it's supposed to be $\frac{2}{\cos\phi}\leq\rho\leq4$.
+>
+> I can't seem to see why. How exactly was it chosen? From what i gather it's suppose to be the range of values that the parameters can take.
+:::
+
+The region $E$ is a spherical cap.  If you draw a ray from the origin through $E$, it will enter $E$ through the plane $z=2$ and exit through the sphere $x^2 + y^2 + z^2 = 16$.  That is, for a fixed $\theta$ and $\phi$, the lower limit of $\rho$ comes from the plane and the upper limit of $\rho$ comes from the sphere.
+
+You are right that the upper limit is $\rho = 4$; that describes the sphere.  But a lower limit of $2$ would describe a smaller sphere.  Instead, convert the equation $z=2$ into spherical coordinates: $\rho \cos\phi = 2$.  Therefore the lower limit of $\rho$ is $\frac{2}{\cos\phi}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1495345/iiint-ezx2y2z2-3-2dv-where-e-x-y-zx2y2z2-leq16-z-geq2/1495358#1495358) on Mathematics Stack Exchange, 2015-10-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,76 @@
+---
+title: Loading a package from a zip file
+date: '2011-01-31'
+description: The file that you linked to is a named "prodint.zip", but is actually a gzipped tarball. The unzipping process is depends on your operating system.
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 4851336
+se-link: https://stackoverflow.com/questions/4850065/loading-a-package-from-a-zip-file/4851336#4851336
+se-score: 0
+se-accepted: true
+se-tags:
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Loading a package from a zip file](https://stackoverflow.com/questions/4850065/loading-a-package-from-a-zip-file), asked by [Marco](https://stackoverflow.com/users/584879/marco) on Stack Overflow (2011-01-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to use a special notation in LaTeX, namely the "product integral" symbol. 
+> Apparently, the \prodi command from the prodint package does the job. The package seems to be available in the form of a zip file at the following page http://www.math.leidenuniv.nl/~gill/ (near the end of the page).
+> Can someone explain me how I can load the package from that zip file ?
+>
+> Thank you in advance !
+:::
+
+The file that you linked to is a named "prodint.zip", but is actually a gzipped tarball.  The unzipping process is depends on your operating system.
+
+<h3>Mac OS X</h3>
+
+Mac OS X 10.3 or later have a built0in utility that opens gzipped files and untars archives.  You can just double click on the file.
+
+<h3>Windows</h3>
+
+This is from the [gzip][1] home page:
+
+> For Windows 9x/NT/2000/ME/XP, use <a
+> href="http://www.sfsu.edu/ftp/win/utils/">PowerArchiver</a>,
+> <a
+> href="http://www.7-zip.org">7-zip</a>
+> (freeware) or <a
+> href="http://www.winzip.com">Winzip</a>
+> (commercial).
+
+<h3>Unix (including Mac from the Terminal)</h3>
+
+Type and run the following command (the `$` is the unix prompt, not part of the command):
+
+```latex
+$ tar xzvf prodint.tgz
+```
+
+If that doesn't work, try this sequence:
+
+```latex
+$ gunzip prodint.tgz
+$ tar xvf prodint.tar
+```
+
+Now that you've unarchived the files you will probably want to know how to install them so that your TeX can see them.  That also will depend on your operating system and tex distribution.  Read the file `prodint.readme` that is in the archive and TUG's [Installing Tex Fonts][2] page.
+
+PS You can find an entire community on the [TeX StackExchange](https://tex.stackexchange.com/), where no TeX-related question is too small.
+
+
+  [1]: http://www.gzip.org/#faq6
+  [2]: http://www.tug.org/fonts/fontinstall.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4850065/loading-a-package-from-a-zip-file/4851336#4851336) on Stack Overflow, 2011-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

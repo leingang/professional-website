@@ -1,0 +1,184 @@
+---
+title: pgfplots - box plot with colored outliers
+date: '2018-12-18'
+description: I figured it out once I realized that point meta can include computations based on table data. And it is even aware of the boxplot prepared keys!
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 466307
+se-link: https://tex.stackexchange.com/questions/466144/pgfplots-box-plot-with-colored-outliers/466307#466307
+se-score: 1
+se-accepted: false
+se-tags:
+- pgfplots
+- boxplot
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[pgfplots - box plot with colored outliers](https://tex.stackexchange.com/questions/466144/pgfplots-box-plot-with-colored-outliers), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2018-12-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to restyle a pgfplots box plot in a matter suggested by [Daniel Carr](https://pdfs.semanticscholar.org/d712/8ec89ee4423eb9215ee47a00efa7347be8c5.pdf).
+>
+> * filled boxes instead of outlined
+> * thickened whiskers with no fences
+> * all elements (boxes, whiskers, and outliers) colored differently depending on if they are above or below the median.
+>
+> I am almost finished except for the coloring of the outliers.  Here is a MWE:
+>
+> ```latex
+> \documentclass{standalone}
+> \usepackage{pgfplots}
+> \usepgfplotslibrary{statistics}
+> \pgfplotsset{compat=1.16}
+> \pgfplotsset{
+>     every boxplot/.append style={
+>         scatter,
+> %        visualization depends on={((\thisrow{y}<\pgfplotsboxplotvalue{median}) ? "red" : "blue") \as \perpointcolor},
+>         % scatter/use mapped color={draw=\perpointcolor,fill=\perpointcolor},
+>         boxplot/draw/box/.code={
+>             \draw [/pgfplots/boxplot/every box/.try,
+>                    /pgfplots/boxplot/every lower box/.try]
+>                 (boxplot box cs:\pgfplotsboxplotvalue{lower quartile},0)
+>                 rectangle
+>                 (boxplot box cs:\pgfplotsboxplotvalue{median},1); 
+>             \draw [/pgfplots/boxplot/every box/.try,
+>                    /pgfplots/boxplot/every upper box/.try]
+>                 (boxplot box cs:\pgfplotsboxplotvalue{median},0)
+>                 rectangle
+>                 (boxplot box cs:\pgfplotsboxplotvalue{upper quartile},1); 
+>         },
+>         boxplot/draw/lower whisker/.code={
+>             \draw[/pgfplots/boxplot/every lower whisker/.try] (boxplot cs:\pgfplotsboxplotvalue{lower whisker})
+>               -- (boxplot cs:\pgfplotsboxplotvalue{lower quartile});
+>         },
+>         boxplot/draw/upper whisker/.code={
+>             \draw[/pgfplots/boxplot/every upper whisker/.try] (boxplot cs:\pgfplotsboxplotvalue{upper quartile})
+>               -- (boxplot cs:\pgfplotsboxplotvalue{upper whisker});
+>               }
+>         },       
+>     boxplot/.cd,
+>         every lower box/.style={draw=red,fill=red},
+>         every upper box/.style={draw=green,fill=green},
+>         every lower whisker/.style={ultra thick,draw=red},
+>         every upper whisker/.style={ultra thick,draw=green},
+>         every median/.style={black}
+> }
+> \begin{document}
+> \begin{tikzpicture}
+>     \begin{axis}[
+>         y=0.33cm,
+>         enlarge x limits,
+>         ytick=\empty,
+>         axis y line=none,
+>         axis equal image,
+>     ]
+>     \addplot+[
+>         boxplot prepared={
+>             lower whisker=42, lower quartile=45,
+>             median=47,
+>             upper quartile=47.5, upper whisker=48,
+>             sample size=1000,
+>         }] table [row sep=\\,y index=0] {40\\ 34\\ 56\\};
+>     \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> [![sample output][q-1]][q-1]
+>
+> The two commented lines are my attempt to color the outliers depending on if they are below or above the median.  When I uncomment them I get a `Missing $ inserted` error.
+>
+> I'm not sure the `scatter` keys are aware of the `boxplot prepared` key values.  Any ideas? 
+>
+>   [q-1]: Vz7bh.png
+:::
+
+I figured it out once I realized that `point meta` can include computations based on table data.  And it is even aware of the `boxplot prepared` keys!
+
+The relevant keys are:
+
+```latex
+point meta=(x > \boxplotvalue{median}),
+colormap={relativetomedian}{color=(red) color=(green)},
+scatter/use mapped color={draw=mapped color,fill=mapped color},
+```
+
+The first line sets `point meta` to `0` or `1` depending on whether the plotted x-coordinate is less than or greater than the median.  The second line sets up a color map between the two colors (below and above median).  The third line sets the point color.  Since the point meta is either 0 or 1, the color is either the extreme left or right side of the map.
+
+Here's the complete code:
+
+```latex
+\documentclass[png]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{statistics}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{
+    every boxplot/.append style={
+        scatter,
+        point meta=(x > \boxplotvalue{median}),
+        colormap={relativetomedian}{color=(red) color=(green)},
+        scatter/use mapped color={draw=mapped color,fill=mapped color},
+        boxplot/draw/box/.code={
+            \draw [/pgfplots/boxplot/every box/.try,
+                   /pgfplots/boxplot/every lower box/.try]
+                (boxplot box cs:\pgfplotsboxplotvalue{lower quartile},0)
+                rectangle
+                (boxplot box cs:\pgfplotsboxplotvalue{median},1); 
+            \draw [/pgfplots/boxplot/every box/.try,
+                   /pgfplots/boxplot/every upper box/.try]
+                (boxplot box cs:\pgfplotsboxplotvalue{median},0)
+                rectangle
+                (boxplot box cs:\pgfplotsboxplotvalue{upper quartile},1); 
+        },
+        boxplot/draw/lower whisker/.code={
+            \draw[/pgfplots/boxplot/every lower whisker/.try] (boxplot cs:\pgfplotsboxplotvalue{lower whisker})
+              -- (boxplot cs:\pgfplotsboxplotvalue{lower quartile});
+        },
+        boxplot/draw/upper whisker/.code={
+            \draw[/pgfplots/boxplot/every upper whisker/.try] (boxplot cs:\pgfplotsboxplotvalue{upper quartile})
+              -- (boxplot cs:\pgfplotsboxplotvalue{upper whisker});
+              }
+        },       
+    boxplot/.cd,
+        every lower box/.style={draw=none,fill=red},
+        every upper box/.style={draw=none,fill=green},
+        every lower whisker/.style={ultra thick,draw=red},
+        every upper whisker/.style={ultra thick,draw=green},
+        every median/.style={black}
+}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        y=0.33cm,
+        enlarge x limits,
+        ytick=\empty,
+        axis y line=none,
+        axis equal image,
+    ]
+    \addplot+[
+        boxplot prepared={
+            lower whisker=42, lower quartile=45,
+            median=47,
+            upper quartile=47.5, upper whisker=48,
+            sample size=1000,
+        }] table [row sep=\\,y index=0] {40\\ 34\\ 56\\};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+```
+
+[![sample code output][1]][1]
+
+
+  [1]: AzWeg.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/466144/pgfplots-box-plot-with-colored-outliers/466307#466307) on TeX Stack Exchange, 2018-12-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

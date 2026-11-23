@@ -1,0 +1,46 @@
+---
+title: Confirming symmetry about a curve/line?
+date: '2017-06-26'
+description: Symmetry around a point in the plane usually means rotational symmetry. Symmetry across a line usually means reflectional symmetry. These are very different…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2337107
+se-link: https://math.stackexchange.com/questions/2337037/confirming-symmetry-about-a-curve-line/2337107#2337107
+se-score: 0
+se-accepted: true
+se-tags:
+- graphing-functions
+- symmetry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confirming symmetry about a curve/line?](https://math.stackexchange.com/questions/2337037/confirming-symmetry-about-a-curve-line), asked by [Alpha Mineron](https://math.stackexchange.com/users/457524/alpha-mineron) on Mathematics Stack Exchange (2017-06-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm a bit confused, is symmetric about Origin same as symmetric about $y=x$ line?
+>
+> Yes or no, how can I check for myself? I mean how can I do it on paper, let's take a random line/curve and
+:::
+
+Symmetry around a *point* in the plane usually means rotational symmetry. Symmetry across a *line* usually means reflectional symmetry.  These are very different symmetries.
+
+If you take the graph of $y=\sin(x)$ on $[−π/2,π/2]$ and rotate it around the origin, you get the same graph (the function is odd). But if you reflect it across $y=x$, you get the graph of the arcsine function.
+
+[![graph of $y=\sin x$][1]][1]
+[![graph of $y=\arcsin x$][2]][2]
+
+It's no coincidence that the graph of the inverse of a function $f$ is the reflection of the graph of $f$ in the line $y=x$.  If you work out the algebra, the reflection of the point $(a,b)$ in $y=x$ is $(b,a)$.  That is, this reflection *switches the coordinates*.  When dealing with functions, the inverse to a function switches the roles of $x$ and $y$ as well.
+
+  [1]: TDJmP.png
+  [2]: hRqOm.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2337037/confirming-symmetry-about-a-curve-line/2337107#2337107) on Mathematics Stack Exchange, 2017-06-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

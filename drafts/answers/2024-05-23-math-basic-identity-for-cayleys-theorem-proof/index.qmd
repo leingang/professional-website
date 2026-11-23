@@ -1,0 +1,47 @@
+---
+title: Basic identity for Cayley's theorem proof
+date: '2024-05-23'
+description: This looks like a pretty straightforward application of the binomial theorem. For a natural number $N$, we have $$\sum{i=0}^N \binom{N}{i} x^{N-i}y^i =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4921395
+se-link: https://math.stackexchange.com/questions/4921385/basic-identity-for-cayleys-theorem-proof/4921395#4921395
+se-score: 2
+se-accepted: false
+se-tags:
+- combinatorics
+- graph-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Basic identity for Cayley's theorem proof](https://math.stackexchange.com/questions/4921385/basic-identity-for-cayleys-theorem-proof), asked by [Amanda Wealth](https://math.stackexchange.com/users/1158735/amanda-wealth) on Mathematics Stack Exchange (2024-05-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was studying graph theory when a question came to my mind.
+>
+> The proof of Cayley's theorem (as in Wilson's "Introduction to graph theory", p. 69) is somehow clear, I just can't realise why the last equality holds (which should be easy since it's not explained anywhere). WolframAlpha confirms its validity as well. It's the following:
+> $$\sum_{k=1}^{n-1}(n-1)^{-k+n-1}\binom{n-2}{k-1} = n^{n-2}$$
+> The text gives the intermediate passage $\{(n-1)+1\}^{n-2}$. Can anyone enlighten me?
+>
+>
+>   [q-1]: iEPSIGj8.png
+:::
+
+This looks like a pretty straightforward application of the binomial theorem. For a natural number $N$, we have
+$$\sum_{i=0}^N \binom{N}{i} x^{N-i}y^i = (x+y)^N$$
+If we set $N=n-2$, $x=n-1$, and $y=1$, we get
+$$\sum_{i=0}^{n-2} \binom{n-2}{i} (n-1)^{n-2-i} \cdot 1^i = ((n-1)+1)^{n-2} = n^{n-2}$$
+Now reindex the sum by setting $k=i+1$. We get
+$$n^{n-2} = \sum_{k=1}^{n-1} \binom{n-2}{k-1}(n-1)^{n-2-(k-1)}
+    = \sum_{k=1}^{n-1} \binom{n-2}{k-1}(n-1)^{-k+n-1}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4921385/basic-identity-for-cayleys-theorem-proof/4921395#4921395) on Mathematics Stack Exchange, 2024-05-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

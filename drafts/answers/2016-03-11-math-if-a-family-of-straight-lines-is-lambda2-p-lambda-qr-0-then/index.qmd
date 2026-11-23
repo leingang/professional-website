@@ -1,0 +1,105 @@
+---
+title: If a family of straight lines is $\lambda^2 P+\lambda Q+R=0$, then these lines will be tangent to the curve $Q^2=4PR.$
+date: '2016-03-11'
+description: This is a pretty brute-force method but it works.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1693260
+se-link: https://math.stackexchange.com/questions/1693078/if-a-family-of-straight-lines-is-lambda2-p-lambda-qr-0-then-these-lines-w/1693260#1693260
+se-score: 2
+se-accepted: false
+se-tags:
+- geometry
+- analytic-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If a family of straight lines is $\lambda^2 P+\lambda Q+R=0$, then these lines will be tangent to the curve $Q^2=4PR.$](https://math.stackexchange.com/questions/1693078/if-a-family-of-straight-lines-is-lambda2-p-lambda-qr-0-then-these-lines-w), asked by [Brahmagupta](https://math.stackexchange.com/users/257841/brahmagupta) on Mathematics Stack Exchange (2016-03-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have read this theorem in my book but i do not know how to prove it.<br><br>
+> If a family of straight lines can be represented by an equation $\lambda^2 P+\lambda Q+R=0$ where $\lambda$ is a parameter and $P,Q,R$ are linear functions of $x$ and $y$ then the family of lines will be tangent to the curve $Q^2=4PR.$<br><br>
+> My try:<br>
+> Let $P:a_1x+b_1y+c_1=0$<br>
+> $Q:a_2x+b_2y+c_2=0$<br>
+> $R:a_3x+b_3y+c_3=0$<br>
+> Then the family of straight lines can be represented by an equation $\lambda^2 (a_1x+b_1y+c_1)+\lambda (a_2x+b_2y+c_2)+(a_3x+b_3y+c_3)=0$<br><br>
+> $x(\lambda^2a_1+\lambda a_2+a_3)+y(\lambda^2b_1+\lambda b_2+b_3)+(\lambda^2c_1+\lambda c_2+c_3)=0$<br><br>
+> But i do not know how to prove that the family of lines will be tangent to the curve $Q^2=4PR.$
+:::
+
+This is a pretty brute-force method but it works.
+
+Test
+----
+To figure out what was going on, I tried a simple case: $P=x$, $Q=y$, $R=1$.  The family of lines is $$\lambda^2x +\lambda y + 1 = 0$$ and the quadratic is $$y^2 = 4x$$  To say that the family of lines is tangent to the curve means that wherever they intersect, their derivatives agree.
+
+So first, we look at the intersections.  If $\lambda^2 x + \lambda y + 1 = 0$, then $y = -\lambda x  -\frac{1}{\lambda}$ ($\lambda \neq 0$ because then the line's equation becomes $1=0$).  So $y^2 = \lambda^2 x^2 + 2x + \frac{1}{\lambda^2}$.  On the other hand, if $y^2 = 4x$, then
+$$\begin{align*}
+    \lambda^2 x^2 + 2x + \frac{1}{\lambda^2} &= 4x \\
+\implies
+    \lambda^2 x^2 - 2x + \frac{1}{\lambda^2} &= 0 \\
+\implies \left(\lambda x - \frac{1}{\lambda}\right)^2 &= 0\\
+\implies x &= \frac{1}{\lambda^2}
+\end{align*}$$
+If follows that $y = -\lambda \cdot \frac{1}{\lambda^2} - \frac{1}{\lambda} = -\frac{2}{\lambda}$.  This jibes with the second equation $y^2 = 4x$.
+
+The derivative $\frac{dy}{dx}$ along the line $\lambda^2 x + \lambda y + 1 = 0$ is clearly the slope $-\lambda$.  The derivative along the curve $y^2=4x$ is
+$$2y \frac{dy}{dx} = 4\implies \frac{dy}{dx} = \frac{2}{y}$$
+If $y=-\frac{2}{\lambda}$ then $\frac{2}{y} = -\lambda$, as desired.
+
+[![animation][1]][1]
+
+The general case
+-------
+
+Now I'm going to be careful not to divide by zero. Let $F = \lambda^2 P + \lambda Q + R$ and $G = Q^2-4PR$.  We want to show
+$$\begin{vmatrix} F_x & F_y \\ G_x & G_y \end{vmatrix} =0$$
+at the intersections $F=G=0$.
+
+First, we reduce the equations for the intersections.  If $\lambda^2 P + \lambda Q + R = 0$, then $\lambda Q = - \lambda^2 P - R$, so 
+$$\lambda^2 Q^2 = \lambda^4 P^2 + 2\lambda^2 PR + R^2$$
+On the other hand, if $Q^2 =4PR$, then $\lambda^2 Q^2 = 4\lambda PR$, and we have
+$$\begin{align*}
+    \lambda^4 P^2 + 2\lambda^2 PR + R^2 &= 4\lambda PR \\
+\implies
+    \lambda^4 P^2 - 2\lambda^2 PR + R^2 &= 0 \\
+\implies
+    \left(\lambda^2 P-R\right)^2 &=0 \\
+\implies
+    \lambda^2 P-R &=0 \tag{1}\\
+\end{align*}$$
+Substituting $R=\lambda ^2P$ into the first equation gives
+$$2\lambda^2 P + \lambda Q = 0 \implies \lambda(2\lambda P + Q) = 0 \implies 2\lambda P + Q=0 \tag{2}$$
+
+Now we compute the determinant of the derivatives:
+$$\begin{vmatrix} F_x & F_y \\ G_x & G_y \end{vmatrix}
+= \begin{vmatrix}
+      \lambda^2 P_x + \lambda Q_x + R_x &
+      \lambda^2 P_y + \lambda Q_y + R_y \\
+      2QQ_x - 4P_xR - 4PR_x &
+      2QQ_y - 4P_yR - 4PR_y \\
+  \end{vmatrix}$$
+Add $4P$ times the first line to the second line.
+The determinant is
+$$\begin{vmatrix}
+      \lambda^2 P_x + \lambda Q_x + R_x &
+      \lambda^2 P_y + \lambda Q_y + R_y \\
+      2(2\lambda P+Q)Q_x +4(\lambda^2P- R)P_x  &
+      2(2\lambda P+Q)Q_y +4(\lambda^2P- R)P_y 
+  \end{vmatrix}$$
+In light of (1) and (2), the second line is zero.
+
+
+  [1]: q4EqY.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1693078/if-a-family-of-straight-lines-is-lambda2-p-lambda-qr-0-then-these-lines-w/1693260#1693260) on Mathematics Stack Exchange, 2016-03-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,49 @@
+---
+title: Proving Convexity review question
+date: '2016-09-21'
+description: 'Short answer: Let $x=2$, $x''=3$, and $\lambda=\frac{1}{2}$. What is $\bar x$? Is it in $X$?'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1936031
+se-link: https://math.stackexchange.com/questions/1936028/proving-convexity-review-question/1936031#1936031
+se-score: 2
+se-accepted: false
+se-tags:
+- convergence-divergence
+- convex-analysis
+- economics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving Convexity review question](https://math.stackexchange.com/questions/1936028/proving-convexity-review-question), asked by [flamingoman](https://math.stackexchange.com/users/371072/flamingoman) on Mathematics Stack Exchange (2016-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove that the set
+> $X=[1,2] \cup [3,4] \subset R$ 
+> is not convex.
+>
+> I know I have to apply the equation $x̄ = \lambda x +(1-\lambda)x'$ where $\lambda$ is in $[0,1]$ as this proves convexity but I don't understand how to go about it and how to prove every point exists in the set $X$.
+:::
+
+Short answer: Let $x=2$, $x'=3$, and $\lambda=\frac{1}{2}$.  What is $\bar x$?  Is it in $X$?
+
+Long answer: Consider the definition.
+
+> A set $X\subseteq\mathbb{R}$ is convex if for all $x$ and $x'$ in $X$ and $\lambda$ in $[0,1]$, the combination $\bar x = \lambda x + (1-\lambda)x'$ is in $X$.
+
+To negate this contradiction, you need to invert the quantifiers:
+
+> A set $X$ is *not* convex if *there exist* $x$ and $x'$ in $X$ and $\lambda \in [0,1]$ such that $\bar x = \lambda x + (1-\lambda)x'$ is *not* in $X$.
+
+What the definition says in English is that “the line between any two points of $X$ is contained in $X$.” So to show that a set is *not* convex, you need to find two points of $X$ such that the connecting line between them is not contained in $X$.  That led me to pick $x=2$ and $x'=3$.  Letting $\lambda = \frac{1}{2}$ just makes $\bar x$ the midpoint $2\frac{1}{2}$, obviously not in $X$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1936028/proving-convexity-review-question/1936031#1936031) on Mathematics Stack Exchange, 2016-09-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

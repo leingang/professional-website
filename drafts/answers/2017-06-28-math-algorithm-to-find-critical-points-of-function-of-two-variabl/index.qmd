@@ -1,0 +1,45 @@
+---
+title: Algorithm to find critical points of function of two variables
+date: '2017-06-28'
+description: Everything is right except for step 9. If the determinant is positive and $f{xx} > 0$, the critical point is a maximum. If the determinant is positive and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2338792
+se-link: https://math.stackexchange.com/questions/2338777/algorithm-to-find-critical-points-of-function-of-two-variables/2338792#2338792
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Algorithm to find critical points of function of two variables](https://math.stackexchange.com/questions/2338777/algorithm-to-find-critical-points-of-function-of-two-variables), asked by [Leonardo](https://math.stackexchange.com/users/164728/leonardo) on Mathematics Stack Exchange (2017-06-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given any function of $2$ variables such as $f=2x^2+3y^3$, would the following be the step by step method to find its critical points?
+>
+>  1. Differentiate it with respect to  $x$ (calling this $f_x$)
+>  2. Differentiate it with respect to $y$ (calling this $f_y$)
+>  3. Solve $f_x=0$ and $f_y=0$
+>  4. Differentiate $f_x$ with respect to $x$ $(f_{xx})$
+>  5. Differentiate $f_y$ with respect to $y$ $(f_{yy})$
+>  6. Differentiate either $f_x$ with respect to $y$ or  $f_y$ with respect to $x$  ( the result should be the same i.e $f_{xy}=f_{yx}$)
+>  7. Create a $2\times 2$ matrix as $$\begin{pmatrix} f_{xx}&f_{xy}\\ f_{yx} &f_{yy}\end{pmatrix}$$ substituting for every point possible found in step 3.
+>  8. Find the determinant for the matrix.
+>  9. If the determinant is $>0$ then this is a maximum, if it is $< 0$ it is a minimum.
+>
+> Correct?
+:::
+
+Everything is right except for step 9.  If the determinant is positive and $f_{xx} > 0$, the critical point is a maximum.  If the determinant is positive and $f_{xx} < 0$, the critical point is a minimum.  If the determinant is negative, the critical point is a saddle point.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2338777/algorithm-to-find-critical-points-of-function-of-two-variables/2338792#2338792) on Mathematics Stack Exchange, 2017-06-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

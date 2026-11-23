@@ -1,0 +1,61 @@
+---
+title: The tangent line to the curve of intersection of the surface $x^2+y^2=z$ and the plane $x+z=3$ at the point $(1,1,2)$ passes through
+date: '2020-05-15'
+description: Let $f(x,y,z) = x^2+y^2-z$ and $g(x,y,z) = x+z-3$. Then $P=(1,1,2)$ lies on the intersection of the surfaces $S1 = \{f=0\}$ and $S2 = \{g=0\}$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3676208
+se-link: https://math.stackexchange.com/questions/3669062/the-tangent-line-to-the-curve-of-intersection-of-the-surface-x2y2-z-and-the/3676208#3676208
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- vector-analysis
+- tangent-line
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The tangent line to the curve of intersection of the surface $x^2+y^2=z$ and the plane $x+z=3$ at the point $(1,1,2)$ passes through](https://math.stackexchange.com/questions/3669062/the-tangent-line-to-the-curve-of-intersection-of-the-surface-x2y2-z-and-the), asked by [Math geek](https://math.stackexchange.com/users/585505/math-geek) on Mathematics Stack Exchange (2020-05-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The tangent line to the curve of intersection of the surface $x^2+y^2=z$ and the plane $x+z=3$ at the point $(1,1,2)$ passes through
+>
+> (A)$(-1,-2,4)$
+>
+> (B)$(-1,4,4)$
+>
+> (C)$(3,4,4)$
+>
+> (D)$(-1,4,0)$
+>
+> I can find the equation of the tangent line, If I can find the suitable parametrization($\vec{R(t)}$) using the equation $w(\lambda)=\vec{R(t)}|_{(1,1,2)}+ R'(t)|_{(1,1,2)}\lambda$
+>
+> I made a parametrization by choosing $x=t,z=3-t,y^2=t-t^2.$ But it is not differnetiable at that point. How do I find the suitable parametrization?
+:::
+
+Let $f(x,y,z) = x^2+y^2-z$ and $g(x,y,z) = x+z-3$.  Then $P=(1,1,2)$ lies on the intersection of the surfaces $S_1 = \{f=0\}$ and $S_2 = \{g=0\}$.
+
+The tangent plane to $S_1$ at $P$ is normal to $\mathbf{n}_1 = \nabla f(P) = (2,2,-1)$.  The tangent plane to $S_2$ at $P$ is normal to $\mathbf{n}_2 = \nabla g(P) = (1,0,-1)$. 
+ The line $L$ through $P$ tangent to $S_1 \cap S_2$ is the intersection of the two tangent planes.  That is, $L$ passes through $P$ in the direction $\mathbf{n}_1 \times \mathbf{n}_2$.  
+
+This is enough information to parametrize $L$ and decide which of the four points $A$, $B$, $C$, and $D$ lie on it.  A quicker strategy may be to find the four vectors $\overrightarrow{PA}$, $\overrightarrow{PB}$, $\overrightarrow{PC}$, and $\overrightarrow{PD}$, and check with the dot product which are perpendicular to both $\mathbf{n}_1$ and $\mathbf{n}_2$.
+$$\begin{align*}
+    \overrightarrow{PA} &= (-2,-3,-6) \\
+    \overrightarrow{PB} &= (-2,3,2) \\
+    \overrightarrow{PC} &= (2,3,2) \\
+    \overrightarrow{PD} &= (-2,-3,-2) \\
+\end{align*}$$
+We see that only $\overrightarrow{PB}$ is perpendicular to $\mathbf{n}_2$. So assuming the correct answer is listed, it would have to be B.
+
+As a further check, we see that $\overrightarrow{PB}$ is perpendicular to $\mathbf{n}_1$.  In fact, $\mathbf{n}_1 \times \mathbf{n}_2 = (2,-3,-2) = - \overrightarrow{PB}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3669062/the-tangent-line-to-the-curve-of-intersection-of-the-surface-x2y2-z-and-the/3676208#3676208) on Mathematics Stack Exchange, 2020-05-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

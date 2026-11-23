@@ -1,0 +1,49 @@
+---
+title: Every compact connected Lie group is actually a real algebraic group
+date: '2017-06-26'
+description: $U(n)$ is a real algebraic group, and not a complex algebraic group, because the equations which define it are algebraic over $\mathbb{R}$, and not over…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2337477
+se-link: https://math.stackexchange.com/questions/2337461/every-compact-connected-lie-group-is-actually-a-real-algebraic-group/2337477#2337477
+se-score: 5
+se-accepted: false
+se-tags:
+- algebraic-geometry
+- representation-theory
+- lie-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Every compact connected Lie group is actually a real algebraic group](https://math.stackexchange.com/questions/2337461/every-compact-connected-lie-group-is-actually-a-real-algebraic-group), asked by [Maffred](https://math.stackexchange.com/users/279068/maffred) on Mathematics Stack Exchange (2017-06-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Every compact connected Lie group is actually a real algebraic group.
+>
+> For example $U(n)$ fits the requests. I can't understand in which sense $U(n)$ is real, since its matrices are not real and its defining equations are not real.
+>
+> Thanks!
+:::
+
+$U(n)$ is a real algebraic group, and not a complex algebraic group, because the equations which define it are algebraic over $\mathbb{R}$, and not over $\mathbb{C}$.
+
+Consider
+$$U(1) = \left\{z \in \mathbb{C} \mid z \bar z = 1\right\}$$
+In this form $U(1)$ is a subgroup of $\mathbb{C}^\times$, so is a group of complex numbers.  And the equation defining $U(1)$ has complex variables in it.  But that equation is not a polynomial equation in $z$, because of the $\bar z$ term.
+
+On the other hand, $U(1)$ is isomorphic to the group
+$$S^1 = \left\{(x,y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1 \right\}$$
+with multiplication rule given by
+$$(x_1,y_1)\cdot(x_2,y_2) = (x_1 x_2 - y_1 y_2, x_1 y_2 + y_1 x_2)$$
+Now the group's equation is a polynomial in the real variables $x$ and $y$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2337461/every-compact-connected-lie-group-is-actually-a-real-algebraic-group/2337477#2337477) on Mathematics Stack Exchange, 2017-06-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

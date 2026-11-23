@@ -1,0 +1,71 @@
+---
+title: Maximize $\int_\Gamma\,\langle{y,x}\rangle^2\, dx$
+date: '2016-09-30'
+description: Let's do the second one first. Let $$\begin{align} f(y1, \dots, yn) &= \int\Omega (y1x1 + \dots yn xn)\,dV \\ g(y1, \dots, yn) &= y1^2 + y2^2 + \dots + yn^2…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1948130
+se-link: https://math.stackexchange.com/questions/1947966/maximize-int-gamma-langley-x-rangle2-dx/1948130#1948130
+se-score: 4
+se-accepted: false
+se-tags:
+- integration
+- geometry
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Maximize $\int_\Gamma\,\langle{y,x}\rangle^2\, dx$](https://math.stackexchange.com/questions/1947966/maximize-int-gamma-langley-x-rangle2-dx), asked by [Nico Schlömer](https://math.stackexchange.com/users/36678/nico-schl%c3%b6mer) on Mathematics Stack Exchange (2016-09-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given a bounded, compact, closed _surface_ $\Gamma\subset\mathbb{R}^n$, I'm searching
+> $$\max_{y\in\mathbb{R}^n, \|y\|=1} \int_\Gamma \langle y, x\rangle^2.$$
+> Without the square, and with the enclosed volume $\Omega$,
+> $$\max_{y\in\mathbb{R}^n, \|y\|=1} \int_\Omega \langle y, x\rangle,$$
+> I'm guessing $y_\text{max}$ points towards the centroid of $\Omega$. Not sure how to prove that though.
+>
+> Any hints?
+:::
+
+Let's do the second one first.  Let 
+$$\begin{align*}
+    f(y_1, \dots, y_n) &= \int_\Omega (y_1x_1 + \dots y_n x_n)\,dV \\
+    g(y_1, \dots, y_n) &= y_1^2 + y_2^2 + \dots + y_n^2
+\end{align*}$$
+We want the critical values of $f$ subject to the constraint that $g=1$.
+By the method of Lagrange multipliers, there is a constant $\lambda$ such that, for each $i$ from $1$ to $n$, $\frac{\partial f}{\partial y_i} = \lambda \frac{\partial g}{\partial y_i}$.  That is,
+$$\int_\Omega x_i \,dV = 2\lambda y_i$$
+for each $i$.  By squaring and summing all $n$ of these equations, we get
+$$4\lambda^2 = \sum_{i=1}^n \left(\int_\Omega x_i \,dV\right)^2$$
+
+The only way the right-hand side is zero is if $\int_\Omega x_i \,dV = 0$ for each $i$.  In that case $f$ is identically zero and any $y$ will do.
+Otherwise, $\lambda \neq 0$, so
+$$y_i = \frac{1}{2\lambda} \int_\Omega x_i \,dV$$
+Since the $i$th coordinate of the centroid of $\Omega$ is $\bar x_i =\frac{1}{\operatorname{Vol}(\Omega)}\int_\Omega x_i \,dV$, I agree that $y$ is a multiple of $\bar x$.
+
+* * *
+
+The first one is trickier, at least, to me.  Let 
+$$h(y_1,\dots,y_n) = \int_\Gamma (x_1y_1+\dots+x_ny_n)^2\,ds$$ 
+Again, we want to maximize $h$ subject to $g=1$.  We have
+$$2\int_\Gamma (x_1y_1+\dots+x_ny_n)x_i\,ds = 2\lambda y_i \tag{$*$}$$
+for each $i$.  If we set
+$$M_{ij} = \int_\Gamma x_i x_j \,ds$$
+then $(*)$ is equivalent to 
+$$\sum_{j=1}^n M_{ij} y_j = \lambda y_i$$
+In other words, $y$ is an eigenvector of the matrix $M$, corresponding to the eigenvalue $\lambda$.  
+
+The matrix $M$ is symmetric, and I think, positive definite.  I am guessing the latter can be shown by squaring each equation and adding them up like before.  So there is an orthonormal basis of eigenvectors.  Therefore the maximum value of $f$ is the maximum of the eigenvalues of $M$.
+
+I'm not sure if we can say more than that.  This is a very interesting problem but I've already spent way too much time that I should be doing something else! `\smiley`
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1947966/maximize-int-gamma-langley-x-rangle2-dx/1948130#1948130) on Mathematics Stack Exchange, 2016-09-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

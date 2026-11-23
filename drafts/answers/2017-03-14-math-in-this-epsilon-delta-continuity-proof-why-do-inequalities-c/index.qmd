@@ -1,0 +1,59 @@
+---
+title: in this epsilon delta continuity proof, why do inequalities change to equalities
+date: '2017-03-14'
+description: 'What you are seeing is a long chain of relations which would be read left-to-right if space permitted: $$|f(y) - f(x)| = |(3y+4)-(3x+4)| = |3y-3x| = 3 |y-x| <…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2185690
+se-link: https://math.stackexchange.com/questions/2185681/in-this-epsilon-delta-continuity-proof-why-do-inequalities-change-to-equalities/2185690#2185690
+se-score: 2
+se-accepted: true
+se-tags:
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[in this epsilon delta continuity proof, why do inequalities change to equalities](https://math.stackexchange.com/questions/2185681/in-this-epsilon-delta-continuity-proof-why-do-inequalities-change-to-equalities), asked by [Joaquin Brandan](https://math.stackexchange.com/users/336779/joaquin-brandan) on Mathematics Stack Exchange (2017-03-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> i'm trying to follow this proof of continuity of the function $f(x)=3x+4$
+> using Delta epsilon.
+>
+> https://www.youtube.com/watch?v=WzOl_MwATf4
+>
+> On minute 5:29, written in green, an inequality suddenly changes to an equality and i'm not sure why.
+>
+> It would seem that for the definition to hold, you would need
+> $$|f(y)-f(x)|<\epsilon$$
+> not 
+> $$|f(y)-f(x)|=\epsilon$$
+>
+> And even if that was valid i'm not sure how he got there.
+>
+> Is this correct? if so why?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: T5nGD.png
+:::
+
+What you are seeing is a long chain of relations which would be read left-to-right if space permitted:
+$$|f(y) - f(x)| = |(3y+4)-(3x+4)| = |3y-3x| = 3 |y-x| < 3 \delta = 3\cdot \frac{\epsilon}{3} = \epsilon$$
+Each relation relates only the two expressions on either side.
+Since $\delta = \frac{\epsilon}{3}$, we know that $3 \delta = 3\cdot \frac{\epsilon}{3}$ at the second-to-last step.
+
+But as they say, “a chain is only as strong as its weakest link.”  So ignoring the intermediate steps by transitivity, we have
+$$|f(y) - f(x)| < \epsilon$$
+and that's exactly what was to be shown.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2185681/in-this-epsilon-delta-continuity-proof-why-do-inequalities-change-to-equalities/2185690#2185690) on Mathematics Stack Exchange, 2017-03-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,51 @@
+---
+title: Area between the curves $y^2=x+4$ and $y^2=x$.
+date: '2017-11-17'
+description: I think that part of the “solution” belongs in the problem. The region bounded by $y^2=x+4$ and $y^2=x$ is actually infinite. The two curves are parallel. If…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2524854
+se-link: https://math.stackexchange.com/questions/2524839/area-between-the-curves-y2-x4-and-y2-x/2524854#2524854
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area between the curves $y^2=x+4$ and $y^2=x$.](https://math.stackexchange.com/questions/2524839/area-between-the-curves-y2-x4-and-y2-x), asked by [mathnew2](https://math.stackexchange.com/users/504083/mathnew2) on Mathematics Stack Exchange (2017-11-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Evaluate the area between the curves $y^2=x+4$ and $y^2=x$.
+>
+> My teacher found the intersection points with axis $y$, $0=y^2-4$ and he obtained $y=-2$, $y=2$.
+> Then he formulated the integral, $$\int_{-2}^{2}[(y^2-4)-(y^2)]dy.$$
+> I don't understand, is this correct??
+:::
+
+I think that part of the “solution” belongs in the problem.  The region bounded by $y^2=x+4$ and $y^2=x$ is actually infinite.  The two curves are parallel.  If that really is the question, the answer can only be $\infty$.  
+
+[![enter image description here][1]][1]
+
+Another issue I would have with the solution: the integral written above, ostensibly computing an area, evaluates to $-16$.
+
+Instead, I suspect that the task is to find the area of the region bounded by $y^2=x+4$, $y^2=x$, **and** $y=-2$ and $y=2$.  This is now a bounded region (call it $D$), and can be represented as
+$$D = \left\{(x,y) : -2 \leq y \leq 2,\ y^2-4 \leq x \leq y^2 \right\}$$
+[![enter image description here][2]][2]
+Therefore the area of $D$ is
+$$A = \int_{-2}^{2} (y^2 - (y^2-4))\,dy = \int_{-2}^2 4\,dy = 16$$
+
+
+  [1]: SSBCt.png
+  [2]: OiE9r.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2524839/area-between-the-curves-y2-x4-and-y2-x/2524854#2524854) on Mathematics Stack Exchange, 2017-11-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

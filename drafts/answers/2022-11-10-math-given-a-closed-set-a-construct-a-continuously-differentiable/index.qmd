@@ -1,0 +1,44 @@
+---
+title: Given a closed set A, construct a continuously differentiable function that has A as its set of zeroes.
+date: '2022-11-10'
+description: I don't think there's a problem with this function being well-defined. Every non-empty subset of real numbers which is bounded below has an infimum. If $x…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4573180
+se-link: https://math.stackexchange.com/questions/4573167/given-a-closed-set-a-construct-a-continuously-differentiable-function-that-has/4573180#4573180
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Given a closed set A, construct a continuously differentiable function that has A as its set of zeroes.](https://math.stackexchange.com/questions/4573167/given-a-closed-set-a-construct-a-continuously-differentiable-function-that-has), asked by [Real Analysis Noob](https://math.stackexchange.com/users/1073595/real-analysis-noob) on Mathematics Stack Exchange (2022-11-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Edit: I answered my own question. Please let me know if there's an error, and I will fix it. If it's right, I'd appreciate it if you let me know that.
+>
+> First of all, does this function - $f(x) = inf\{(x-y)^2 : y \in A\}$ - work? I hope it does. Second, I'm trying to show this function is well-defined.
+>
+> Let $f(x) = inf\{(x-y)^2 : y \in A\}$. We prove this function is well-defined. Grab an arbitrary $x$. It is either in $A$ or not. If it's in $A$, then $f(x) = 0$ because $f(x) = inf\{(x-y)^2 : y \in A\}$, and we can let $y = x$, so $f(x) = 0$. If it's not in $A$, then note that $(x-y)^2$ is smallest when $y$ is near $x$, so take the $y$ such $|x-y|$ is the smallest. We know that such a $y$ exists because if not ...
+>
+> This is where I get stuck. Intuitively, I know that for closed sets, the endpoint is included in the set, and so we don't need to worry about points that get arbitrarily close to an endpoint but are not equal to an endpoint. 
+>
+> Regarding the continuously differentiable part, I'm intuitively imagining that we have a bunch of zeros on the line with these half parabolas connecting them?
+:::
+
+I don't think there's a problem with this function being well-defined. Every non-empty subset of real numbers which is bounded below has an infimum. If $x \notin A$, the set $\{(x-y)^2 : y \in A \}$ is bounded below by $0$, so there is definitely an infimum (and it's not zero, since the complement of $A$ is open).
+
+I worry about the differentiability, though. If $A = \{-1,1\}$, then doesn't $f(x)$ simplify to $(x+1)^2$ if $x \leq 0$ and $(x-1)^2$ if $x \geq 0$? That's not going to be differentiable at $0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4573167/given-a-closed-set-a-construct-a-continuously-differentiable-function-that-has/4573180#4573180) on Mathematics Stack Exchange, 2022-11-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

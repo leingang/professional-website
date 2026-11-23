@@ -1,0 +1,50 @@
+---
+title: if $\pi_1(G)$ is trivial, how to prove $ \pi_1(G/H)=\pi_0(H)/\pi_0(G) $?
+date: '2014-10-20'
+description: In the article you linked there is a proof at the bottom of the page (After “To prove these relations...”), but it's obfuscated by a typo.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 982616
+se-link: https://math.stackexchange.com/questions/981211/if-pi-1g-is-trivial-how-to-prove-pi-1g-h-pi-0h-pi-0g/982616#982616
+se-score: 1
+se-accepted: true
+se-tags:
+- algebraic-topology
+- topological-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[if $\pi_1(G)$ is trivial, how to prove $ \pi_1(G/H)=\pi_0(H)/\pi_0(G) $?](https://math.stackexchange.com/questions/981211/if-pi-1g-is-trivial-how-to-prove-pi-1g-h-pi-0h-pi-0g), asked by [No One](https://math.stackexchange.com/users/185631/no-one) on Mathematics Stack Exchange (2014-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $G$ be a topological group, $H$ be its normal subgroup of $G$, and $G/H$ be the quotient space induced by the natural map.(We know that $G/H$ is again a topological group) 
+>
+> If $\pi_1(G)$ is trivial, how to prove $\pi_1(G/H)=\pi_0(H)/\pi_0(G)$?
+> The author of this article use this fact directly in the page 5, but I want to know the proof of it.
+>
+> http://ocw.u-tokyo.ac.jp/lecture_files/sci_03/11/notes/en/ooguri11.pdf
+>
+> Plus: Can anybody show me a book of an article on the introduction to the fundamental group of topological group? It is really hard for me to find one.
+:::
+
+In the article you linked there is a proof at the bottom of the page (After “To prove these relations...”), but it's obfuscated by a typo.
+
+Whenever $F\stackrel{i}{\rightarrow} E \stackrel{p}{\rightarrow} B$ is a [fibration][1], there is a [long exact sequence][2] in homotopy, moving downward by degree.  At the end of the sequence you have
+$$\pi_1(G) \longrightarrow \pi_1(G/H) \stackrel{\beta}{\longrightarrow} \pi_0(H) \stackrel{i_*}{\longrightarrow} \pi_0(G) \stackrel{p_*}{\longrightarrow} \pi_0(G/H) \longrightarrow 0$$
+This is the line marked (2) in the link, but $\pi_0(H)$ is written as $\pi_0(G)$.  
+
+The assumption is that $\pi_1(G)$ is trivial, so $\beta$ is an injection.  This means that $\pi_1(G/H)$ is isomorphic to the image of $\beta$.  Since the sequence is exact, the image of $\beta$ is equal to the kernel of $i_*$.  And the kernel of $i_*$ is the set of components of $H$ that are contained in the identity component of $G$.  That is, $\pi_0(H)/\pi_0(G)$.
+
+  [1]: http://en.wikipedia.org/wiki/Fibration
+  [2]: http://en.wikipedia.org/wiki/Exact_sequence
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/981211/if-pi-1g-is-trivial-how-to-prove-pi-1g-h-pi-0h-pi-0g/982616#982616) on Mathematics Stack Exchange, 2014-10-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

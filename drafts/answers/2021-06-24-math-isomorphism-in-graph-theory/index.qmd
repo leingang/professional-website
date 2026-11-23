@@ -1,0 +1,84 @@
+---
+title: isomorphism in graph theory
+date: '2021-06-24'
+description: First, I think it's important to understand what an isomorphism of graphs really is. If $G$ and $H$ are graphs, an isomorphism from $G$ to $H$ is a bijection…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4181872
+se-link: https://math.stackexchange.com/questions/4180365/isomorphism-in-graph-theory/4181872#4181872
+se-score: 1
+se-accepted: true
+se-tags:
+- discrete-mathematics
+- graph-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[isomorphism in graph theory](https://math.stackexchange.com/questions/4180365/isomorphism-in-graph-theory), asked by [llee7 jkonn](https://math.stackexchange.com/users/943736/llee7-jkonn) on Mathematics Stack Exchange (2021-06-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How do we understand that these three graphs are isomorphism without the number of edges and vertices like this complex graph?Can you help me how to prove these graphs are isomorphic?
+>
+> I don't understand this example
+>
+> [![enter image description here][q-1]][q-1]
+>
+> - the other question which my mind is mix is that When do we count the self-loop twice? sometimes we did not count twice , we count 1. why do we do that?
+>
+> thank you in advance.
+>
+>
+>   [q-1]: HtEZF.png
+:::
+
+First, I think it's important to understand what an isomorphism of graphs really is.  If $G$ and $H$ are graphs, an isomorphism from $G$ to $H$ is a bijection $f \colon V(G) \to V(H)$ such that for all vertices $a$ and $b$ of $G$, $a \sim b \iff f(a) \sim f(b)$.  That's the definition.  The *concept* of isomorphism is that $G$ and $H$ are indistinguishable, or equivalent, in all graph-theoretic senses.  They are, for all intents and purposes, the same graph.
+
+[The question of when two graphs are isomorphic is interesting, and difficult.](https://en.wikipedia.org/wiki/Graph_isomorphism_problem)  It's not particularly hard to check if a given map of vertices is a graph isomorphism: if $G$ has $n$ vertices, there are $\binom{n}{2}$ pairs of vertices $(a,b)$ for which to check if $a \sim b \iff f(a) \sim f(b)$ is satisfied.  But there are $n!$ distinct bijections between two sets of $n$ vertices.  To see if any of these results in a graph isomorphism could conceivably require checking $a \sim b \iff f(a) \sim f(b)$ for as many as $n! \times \binom{n}{2}$ triples $(f,a,b)$.  
+
+If two graphs are not isomorphic, there is often a quick way to show it, if you know where to look.  There are certain properties of graphs which are preserved by isomorphism.  For instance:
+
+* the number of vertices
+* the number of edges
+* the degree counts of the vertices
+* the number of connected components
+* the number of $k$-cycles for any $k$
+* and many more
+
+But vexingly, there is no easy test or collection of tests which is 100% deterministic of isomorphism, nor is it true that for any pair of nonisomorphic graphs there is an “obvious” test that distinguishes them.
+
+The three graphs you show all have 10 vertices, 15 edges, and each vertex has degree three.  So none of these easy tests rule out isomorphism.  If they are isomorphic, how could we know/show it?
+
+You may be able to imagine continuously deforming the first figure into the second.  Picture the outer five vertices as fixed, and rotating the inner star of vertices clockwise by about 90 degrees.  You can label the vertices of the first figure by the numbers $1$ through $10$, and track where they would end up in the second figure.  That would give you the isomorphism between the graphs.
+
+It's not as obvious (to me) how to deform the first figure into the third.  So I employed a follow-your-nose method.
+
+1. Label the vertices of the first figure, 1 through 10.
+2. Pick a vertex of the second figure with the same degree as vertex 1 in the first figure, and label it 1.  
+3. Label the neighbors of vertex 1 in the second figure with the labels of the neighbors of vertex 1 in the first figure.  
+4. Repeat step 3 for each of the newly labeled vertices, preserving any cycles that get labeled.
+
+Notice that the first and third graphs don't have any $3$-cycles or $4$-cycles, but lots of $5$-cycles.  So you have to take care that the labels are consistent.  This is what I arrived at:
+
+[![two drawings of the Petersen graph, labeled to show their isomorphism][1]][1]
+
+Notice how the $5$-cycles are consistently labeled:
+
+* $1\sim 2\sim 7 \sim 9 \sim 6 \sim 1$
+* $1\sim 2 \sim 7 \sim 10 \sim 5 \sim 1$
+* $1\sim 2 \sim 3 \sim 4 \sim 5 \sim 1$
+* etc.
+
+To rigorously show this is an isomorphism, it suffices to show that the neighbors of vertex $i$ in the first graph are labeled the same as those of vertex $i$ in the third graph, for all $i$.  I'll leave that to you to check.
+
+  [1]: jePW3.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4180365/isomorphism-in-graph-theory/4181872#4181872) on Mathematics Stack Exchange, 2021-06-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

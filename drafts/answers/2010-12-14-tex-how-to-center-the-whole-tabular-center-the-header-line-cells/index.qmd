@@ -1,0 +1,60 @@
+---
+title: How to center the whole tabular, center the header line cells, and have some space after it?
+date: '2010-12-14'
+description: The usual cause of tables not centering is an overfull \hbox. Search this site for questions about centering and you should find some solutions. This one…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 7119
+se-link: https://tex.stackexchange.com/questions/7117/how-to-center-the-whole-tabular-center-the-header-line-cells-and-have-some-spa/7119#7119
+se-score: 2
+se-accepted: false
+se-tags:
+- tables
+- spacing
+- floats
+- horizontal-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to center the whole tabular, center the header line cells, and have some space after it?](https://tex.stackexchange.com/questions/7117/how-to-center-the-whole-tabular-center-the-header-line-cells-and-have-some-spa), asked by [Daniel Standage](https://tex.stackexchange.com/users/1917/daniel-standage) on TeX Stack Exchange (2010-12-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a few questions about tables that are probably pretty basic. Here is the code for my table.
+>
+> ```latex
+> \begin{table}
+>   \begin{tabular}{| r | l | l |}
+>     \hline
+>     \textbf{Species} & \textbf{Abbrev.} & \textbf{Common Name} \\ \hline
+>     \textit{Arabidopsis thaliana} & At & Thale cress \\
+>     \textit{Oryza sativa} & Os & Rice \\
+>     \textit{Brachypodium distachyon} & Bd & Purple false brome \\
+>     \textit{Glycine max} & Gm & Soybean \\
+>     \textit{Vitis vinifera} & Vv & Grape \\
+>     \textit{Sorghum bicolor} & Sb & Sorghum \\
+>     \textit{Medicago truncatula} & Mt & Barrel clover \\
+>     \textit{Zea mays} & Zm & Maize \\ \hline
+>   \end{tabular}
+>   \caption{This study presents a comprehensive analysis of the intron distribution in these 8 model plant species.}
+> \end{table}
+> ```
+>
+> Here are my questions.
+>
+>  1. How can I change the alignment of the first row of headers (center) without affecting the alignment of the subsequent rows?
+>  2. How can I add space between the bottom of the table and the caption? The caption text is right up against the bottom of the table.
+>  3. How can I horizontally center this table in the available space? I tried the `\begin{center}` environment but that did not work.
+:::
+
+The usual cause of tables not centering is an overfull `\hbox`. Search this site for questions about centering and you should find some solutions.  This one: [Center flow chart horizontally](https://tex.stackexchange.com/q/2319/1402) is pretty useful.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7117/how-to-center-the-whole-tabular-center-the-header-line-cells-and-have-some-spa/7119#7119) on TeX Stack Exchange, 2010-12-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

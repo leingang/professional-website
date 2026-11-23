@@ -1,0 +1,41 @@
+---
+title: Hyperplane defined by dot product
+date: '2020-01-03'
+description: Here is a constructive argument. Let $e1, \dots, en$ be a basis of $K^n$. Since $v \neq 0$, at least one of the basis vectors $ei$ must satisfy $v \cdot ei…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3496360
+se-link: https://math.stackexchange.com/questions/3496342/hyperplane-defined-by-dot-product/3496360#3496360
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Hyperplane defined by dot product](https://math.stackexchange.com/questions/3496342/hyperplane-defined-by-dot-product), asked by user731634 on Mathematics Stack Exchange (2020-01-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Problem:**
+> > Let $v\in K^n, v\neq0$. Show that $vx=0$ defines a hyperplane in $K^n$.
+>
+> The definition I'm working with: Let $V$ be a finite-dimensional vector space of dimension $n\in\mathbb{N}\setminus\{0\}$. A hyperplane is a subspace of $V$ with dimension $n-1$.
+> <hr>
+>
+> Intuitively, for $x$ we have $n-1$ free parameters, since we can always choose the $n$th parameter in such a way that makes the dot product equal zero, but I haven't been able to show this formally so far.
+:::
+
+Here is a constructive argument.  Let $e_1, \dots, e_n$ be a basis of $K^n$.  Since $v \neq 0$, at least one of the basis vectors $e_i$ must satisfy $v \cdot e_i \neq 0$.  Assume that $v \cdot e_n \neq 0$.  For each $i$ from $1$ to $n-1$, define
+$$u_i = (v\cdot e_n) e_i - (v\cdot e_i) e_n$$
+It's easy to show that $u_1, u_2, \dots, u_{n-1}$ satisfy $v \cdot u_i = 0$.  It's less easy, but still pretty straightforward, to show that they are linearly independent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3496342/hyperplane-defined-by-dot-product/3496360#3496360) on Mathematics Stack Exchange, 2020-01-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

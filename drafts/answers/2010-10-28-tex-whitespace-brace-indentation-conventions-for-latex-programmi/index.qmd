@@ -1,0 +1,60 @@
+---
+title: whitespace/brace/indentation conventions for LaTeX programming
+date: '2010-10-28'
+description: Both Will and TH. have answered well. I'm going to go with a modified <a href="http://en.wikipedia.org/wiki/Indentstyle#K.26Rstyle">K&R style</a>…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4662
+se-link: https://tex.stackexchange.com/questions/3866/whitespace-brace-indentation-conventions-for-latex-programming/4662#4662
+se-score: 2
+se-accepted: true
+se-tags:
+- programming
+- braces
+- indentation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[whitespace/brace/indentation conventions for LaTeX programming](https://tex.stackexchange.com/questions/3866/whitespace-brace-indentation-conventions-for-latex-programming), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2010-10-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> This question is not about formatting the text/markup of a document.  I'm really focused on the programming aspect of LaTeX.  I'm working on a fairly large set of document classes and packages, and I'm wondering what's conventional for bracing and indentation. 
+>
+> Looking at the `latex.ltx` file, I see some groups which have their closing braces as the end of the last line, e.g.,:
+>
+> ```latex
+> \def\vgl@{\par \dimen@\prevdepth \hrule \@height\z@
+>   \nobreak\vskip\skip@ \prevdepth\dimen@}
+> ```
+>
+> Other times the closing brace is in the next line, as in
+>
+> ```latex
+> \def\ltx@sh@ft #1{%
+>   \dimen@ #1%
+>   \kern \strip@pt
+>     \fontdimen1\font \dimen@
+>   } % kern by #1 times the current slant
+> ```
+>
+> I suppose the latter style could be called K&R.  I don't know if the former has enough adherents in the C world to have a name.
+>
+> As of this morning I'm considering K&R style braces with indents of four spaces.  `latex.ltx` and other sources I've read use two, but four seems a bit more readable.  Extra newlines means one has to be careful about extra spaces and `\par`s being added, but for purposes of readability I like the space.
+>
+> I'm interested to hear what other conventions LaTeX programmers have used and come to like.
+:::
+
+Both Will and TH. have answered well.  I'm going to go with a modified <a href="http://en.wikipedia.org/wiki/Indent_style#K.26R_style">K&R style</a> brace/indentation style.  I won't indent functions differently from control structures as they do.  TH. is wise in saying there are some obvious exceptions.
+
+I haven't settled yet on the number of spaces of indent.  I think somewhere between 2 and 4 is good.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/3866/whitespace-brace-indentation-conventions-for-latex-programming/4662#4662) on TeX Stack Exchange, 2010-10-28. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

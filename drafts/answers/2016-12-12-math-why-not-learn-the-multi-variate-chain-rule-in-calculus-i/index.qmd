@@ -1,0 +1,44 @@
+---
+title: Why not learn the multi-variate chain rule in Calculus I?
+date: '2016-12-12'
+description: I used to think this, too, until I taught Calculus I.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2055498
+se-link: https://math.stackexchange.com/questions/2055481/why-not-learn-the-multi-variate-chain-rule-in-calculus-i/2055498#2055498
+se-score: 57
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- derivatives
+- education
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why not learn the multi-variate chain rule in Calculus I?](https://math.stackexchange.com/questions/2055481/why-not-learn-the-multi-variate-chain-rule-in-calculus-i), asked by [Simply Beautiful Art](https://math.stackexchange.com/users/272831/simply-beautiful-art) on Mathematics Stack Exchange (2016-12-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am wondering why we don't learn the multi-variate chain rule in Calculus I?  I know the name implies it is more suitable for multi-variable Calculus, but after learning it, I've found it very useful.  Notably, one does not need to remember product rule or quotient rule or regular chain rule, and I don't think you would have to learn about logarithmic differentiation either.
+>
+> So with all these advantages, why don't we teach it?
+:::
+
+I used to think this, too, until I taught Calculus I.
+
+If you, as a math student and enthusiast, like to see the product rule, etc., as special cases of the multivariate chain rule, then that is good for you and deepens your understanding.
+
+However, my experience has been that reasoning from the general to the specific doesn't always sink in to the novice learner.  If the multivariate chain rule is mumbo-jumbo, nothing derived from it is understandable either.
+
+The median student in Calculus I struggles with the concept of function, has trouble working with more than two variables, and can't keep straight whether $\frac{1}{x}$ is the derivative of $\ln x$ or the other way around.  I'm not trying to bash Calculus I students; only to recognize that they are in a different place mathematically than we are now, or even than we were when we first learned Calculus I.  To reach them, we have to understand where their frontiers are and what is just beyond them.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2055481/why-not-learn-the-multi-variate-chain-rule-in-calculus-i/2055498#2055498) on Mathematics Stack Exchange, 2016-12-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

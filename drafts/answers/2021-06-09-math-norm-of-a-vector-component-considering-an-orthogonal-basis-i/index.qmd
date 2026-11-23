@@ -1,0 +1,51 @@
+---
+title: Norm of a vector component (considering an orthogonal basis) is always lesser than or equal to the norm of the entire vector in $\mathbb R^n$
+date: '2021-06-09'
+description: So I'm assuming this not some arbitrary norm, but a norm that arises from some arbitrary positive-definite inner product, and your use of orthogonal refers to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4168372
+se-link: https://math.stackexchange.com/questions/4168354/norm-of-a-vector-component-considering-an-orthogonal-basis-is-always-lesser-th/4168372#4168372
+se-score: 3
+se-accepted: false
+se-tags:
+- real-analysis
+- linear-algebra
+- normed-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Norm of a vector component (considering an orthogonal basis) is always lesser than or equal to the norm of the entire vector in $\mathbb R^n$](https://math.stackexchange.com/questions/4168354/norm-of-a-vector-component-considering-an-orthogonal-basis-is-always-lesser-th), asked by user568976 on Mathematics Stack Exchange (2021-06-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose $\mathbb R^n$ (with the usual dot product as inner product) is equipped with some arbitrary norm $||\cdot||$. Now let's say $\mathbf x = (x_1, x_2, \ldots, x_n)$ is a vector in $\mathbb R^n$ (where $\{x_1, x_2, \ldots, x_n\}$ are the components of $\mathbf x$ in any orthogonal basis of $\mathbb R^n$).
+>
+> Can we always say that $||(0, \ldots, x_i, \ldots, 0)|| \leq ||\mathbf x||$ (where $1 \leq i \leq n$)? That is, is the norm of any component of a vector $\mathbf x$ in $\mathbb R^n$ always lesser than or equal to the norm of the entire vector $\mathbf x$? How does this follow from the definition of "norm"?
+:::
+
+So I'm assuming this not some arbitrary norm, but a norm that arises from some arbitrary positive-definite inner product, and your use of *orthogonal* refers to that inner product.  
+
+You don't really need an entire basis, just a single unit vector.  The projection of any vector onto any unit vector will be shorter (or at most, exactly as long as) the given vector.
+
+Given a vector $\mathbf{x}$, and a unit vector $\mathbf{u}$, there exists a real number $t$ and a vector $\mathbf{p}$ such that
+$$\mathbf{x}= t\mathbf{u} + \mathbf{p}$$
+and $\mathbf{p}$ is orthogonal to $\mathbf{u}$.  In your notation, $\mathbf{u}$ is the $i$th basis vector, and $t$ is your $x_i$.
+
+By the Pythagorean Theorem, 
+$$\Vert \mathbf{x} \Vert^2 = \Vert t \mathbf{u} \Vert^2 + \Vert \mathbf{p} \Vert^2 = t^2 + \Vert \mathbf{p} \Vert^2 \geq t^2$$
+So $|t| \leq \Vert \mathbf{x} \Vert$.
+
+A generalization of this is [Parseval's identity](https://en.wikipedia.org/wiki/Parseval%27s_identity).
+
+José and Ben are pointing out that if the norm and inner product being considered aren't related to each other, the statement is false.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4168354/norm-of-a-vector-component-considering-an-orthogonal-basis-is-always-lesser-th/4168372#4168372) on Mathematics Stack Exchange, 2021-06-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,37 @@
+---
+title: This integral evaluates to infinity, does this mean it exists or doesn't exist?
+date: '2014-05-14'
+description: You can unambiguously say either the integral $\displaystyle\int{-\infty}^\infty x^2\,dx = \infty$ or the integral diverges.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 794573
+se-link: https://math.stackexchange.com/questions/201599/this-integral-evaluates-to-infinity-does-this-mean-it-exists-or-doesnt-exist/794573#794573
+se-score: 3
+se-accepted: false
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[This integral evaluates to infinity, does this mean it exists or doesn't exist?](https://math.stackexchange.com/questions/201599/this-integral-evaluates-to-infinity-does-this-mean-it-exists-or-doesnt-exist), asked by [dukenukem](https://math.stackexchange.com/users/42396/dukenukem) on Mathematics Stack Exchange (2012-09-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Say I  have$f(x) = x^2$ for all $x \in \mathbb{R}$
+>
+> Does the integral of f(x) over the entire real line exist? It's infinity so does that mean it doesn't exist?
+:::
+
+You can unambiguously say either the integral $\displaystyle\int_{-\infty}^\infty x^2\,dx = \infty$ or the integral **diverges**.
+
+It's been said that the best definitions are the ones which make the theorems easiest to state and prove.  The trouble with counting an infinite integral as “existing” is that they have to be ruled out from various theorems about combinations of integrals.  For instance, the statement that $\int_a^b (f(x)-g(x))\,dx = \int_a^b f(x)\,dx - \int_a^b g(x)\,dx$ results in something indeterminate if both of the integrals on the right are infinite.  So you have to preface that equation with the condition that both integrals exist *and are finite*.  Simpler to just include only finite limits as “existing.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/201599/this-integral-evaluates-to-infinity-does-this-mean-it-exists-or-doesnt-exist/794573#794573) on Mathematics Stack Exchange, 2014-05-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

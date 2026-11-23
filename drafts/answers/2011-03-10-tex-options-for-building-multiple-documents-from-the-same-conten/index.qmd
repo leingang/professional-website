@@ -1,0 +1,76 @@
+---
+title: Options for building multiple documents from the same content with different layouts
+date: '2011-03-10'
+description: \sections aren't usually environments, and this is the problem with a one-size-fits-all \section. For instance, how would LaTeX know if the next \section was a…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13185
+se-link: https://tex.stackexchange.com/questions/13184/options-for-building-multiple-documents-from-the-same-content-with-different-lay/13185#13185
+se-score: 3
+se-accepted: false
+se-tags:
+- include
+- input
+- document-configuration
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Options for building multiple documents from the same content with different layouts](https://tex.stackexchange.com/questions/13184/options-for-building-multiple-documents-from-the-same-content-with-different-lay), asked by [mankoff](https://tex.stackexchange.com/users/360/mankoff) on TeX Stack Exchange (2011-03-10; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I need to produce two document layouts using the same content. I'm going to be making heavy use of the `input{}` command to do this, but it is more complex than just this. I'm looking for suggestions how to best build the document.
+>
+> I have 10 instruments, and each instrument has an **intro**, **calibration**, **operation**, **post processing**, and **maintenance** documentation section. So there are 50+ segments to this document.
+>
+> One version needs to be arranged by instrument, like so:
+>
+> * Doc Intro
+> * Instrument 1
+>  * Intro
+>  * Calib
+>  * Ops...
+> * Instrument 2
+>  * Intro
+>  * Calib
+>
+> etc.
+>
+> I need a second version of the document that is arranged by order of operations, so:
+>
+> * Doc Intro
+> * Calibration
+>  * In 1
+>  * In 2
+>  * ...
+>  * In 10
+> * Operations
+>  * In 1
+>  * In 2
+>
+> etc.
+>
+> As you can see, just writing a shell script to build a wrapper `.tex` document full of `\input{}` isn't enough, as each of the input-ed tex documents needs different headers, both depth and title, for example. What is a `\subsection{Instrument 1}` in one document becomes a `\subsubsection{Calibration}` in another document, although the exact same text is in the paragraphs below that.
+>
+> I could have the shell script decide what is a `subsection` and what is a `subsubsection` too, but now I'm writing more `bash` then `LaTeX`.
+>
+> Is there something for `sections` like the `itemize` environment? For `itemize`, I don't need to tell it how deep it is with `itemitemitemize` similar to `subsubsubsection`, it just handles it automagically.
+>
+> Any other suggestions on how to best write once and compile twice will be much appreciated.
+:::
+
+> Is there something for `section`s like the `itemize` environment? For itemize, I don't need to tell it how deep it is with `itemitemitemize` similar to `subsubsubsection`, it just handles it automagically.
+
+`\section`s aren't usually environments, and this is the problem with a one-size-fits-all `\section`.  For instance, how would LaTeX know if the next `\section` was a child section or a sibling section?  
+
+But maybe you could implement document divisions as environments, and then keep track of the section depth that way.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13184/options-for-building-multiple-documents-from-the-same-content-with-different-lay/13185#13185) on TeX Stack Exchange, 2011-03-10. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

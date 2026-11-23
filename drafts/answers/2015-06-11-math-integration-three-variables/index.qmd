@@ -1,0 +1,41 @@
+---
+title: Integration three variables
+date: '2015-06-11'
+description: You have $$\begin{split}\frac {dz}{dx} &= y^{n-1} \frac {dy}{dx} \left( n \left(\frac {dy}{dx} \right)^{2} + 2y\frac{d^{2}y}{dx^{2}} \right) \\ &=…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1321523
+se-link: https://math.stackexchange.com/questions/1321511/integration-three-variables/1321523#1321523
+se-score: 3
+se-accepted: true
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integration three variables](https://math.stackexchange.com/questions/1321511/integration-three-variables), asked by [Stuart Miller](https://math.stackexchange.com/users/233260/stuart-miller) on Mathematics Stack Exchange (2015-06-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Could someone tell me how I integrate these kind of equations and in particular the one I wrote down?
+> The book says that integrating the below expression should give:$$z=y^{n}\left(\frac {dy}{dx}     \right)^{2}$$
+>
+> $\frac {dz}{dx} = y^{n-1} \frac {dy}{dx} \left( n \left(\frac {dy}{dx}      \right)^{2} + 2y\frac{d^{2}y}{dx^{2}}                \right)$
+:::
+
+You have
+$$\begin{split}\frac {dz}{dx} &= y^{n-1} \frac {dy}{dx} \left( n \left(\frac {dy}{dx}      \right)^{2} + 2y\frac{d^{2}y}{dx^{2}} \right) \\
+&= \color{red}{n y^{n-1} \left(\frac{dy}{dx}\right)}\color{blue}{\left(\frac{dy}{dx}\right)^2} + \color{red}{y^n}\cdot \color{blue}{2 \frac{dy}{dx} \frac{d^2y}{dx^2}}
+\end{split}$$
+
+Let $u = y^n$ and $v=\left(\frac{dy}{dx}\right)^2$.  Then the first term above is $\color{red}{\frac{du}{dx}}\color{blue}{v}$ and the second is $\color{red}{u} \color{blue}{\frac{dv}{dx}}$.  So $z = uv$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1321511/integration-three-variables/1321523#1321523) on Mathematics Stack Exchange, 2015-06-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

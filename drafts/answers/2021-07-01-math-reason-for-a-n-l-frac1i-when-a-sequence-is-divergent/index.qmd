@@ -1,0 +1,57 @@
+---
+title: Reason for $|a_n-L| > \frac{1}{i}$, when a sequence is divergent
+date: '2021-07-01'
+description: 'The statement: > Suppose ... that $\{an\}$ does not converge (to $x$). Then, for every $i>0$, there is an arbitrarily large $an$ such that $|an-x|>\frac1i$.​'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4187896
+se-link: https://math.stackexchange.com/questions/4187420/reason-for-a-n-l-frac1i-when-a-sequence-is-divergent/4187896#4187896
+se-score: 1
+se-accepted: false
+se-tags:
+- sequences-and-series
+- limits
+- convergence-divergence
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Reason for $|a_n-L| > \frac{1}{i}$, when a sequence is divergent](https://math.stackexchange.com/questions/4187420/reason-for-a-n-l-frac1i-when-a-sequence-is-divergent), asked by [Umesh shankar](https://math.stackexchange.com/users/80910/umesh-shankar) on Mathematics Stack Exchange (2021-07-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a basic question regarding the limit of a sequence.As per the link given below on the section of convergence of sub sequences, when a sequence $\left\{a_n\right\}$ diverges, $\forall i>0$, there is a sufficiently large $a_n$ such that $$|a_n-L|>\frac{1}{i}$$. 
+>
+> https://brilliant.org/wiki/subsequences/
+>
+> I am actually confused with this because when i take $a_n=(-1)^n$ and $L=-1$ and $i=0.01$, i can choose sufficiently large $a_n$ as $1$ and we get $$|1-(-1)|>\frac{1}{0.01}$$ which is false. So am i missing something?
+:::
+
+The statement:
+> Suppose ... that $\{a_n\}$ does not converge (to $x$). Then, for every $i>0$, there is an arbitrarily large $a_n$ such that $|a_n-x|>\frac1i$.​
+
+is true, with minor clarifications.  But as we'll see, it's not so critical to the proof of the desired claim.
+
+**Claim.** Suppose that $\{a_n\}$ is a sequence, and $x$ is a real number such that $\{a_n\}$ does not converge to $x$.  Then there exists a positive integer $i_0$ such that for all positive integers $n$ and integers $i > i_0$, there exists an integer $n_i$ such that $n_i > n$ and $$|a_{n_i} - x | > \frac{1}{i}$$
+
+Before the proof, remember the definition of convergence and the proper way to negate quantified statements.  We say that $\{a_n\}$ converges to $x$ if _for every_ $\epsilon > 0$ _there exists_ $N \in \mathbb{N}$ such that _for all_ $n \in \mathbb{N}$, if $n > N$, then $|a_n - x | < \epsilon$.
+
+The negation of this is: $\{a_n\}$ does not converge to $x$ if _there exists_ $\epsilon > 0$ such that _for all_ $N \in \mathbb{N}$ _there exists_ $n \in \mathbb{N}$ such that $n > N$ and $|a_n - x| \geq \epsilon$.
+
+*Proof of claim.* Since $\{a_n\}$ does not converge to $x$, there exists $\epsilon > 0$ as in the previous paragraph.  Choose $i_0$ to be a positive integer such that $\frac{1}{i_0} < \epsilon$.  Suppose that $i$ is a positive integer greater than $i_0$, and $n$ is any positive integer.  Since $a_n \not\to x$, there exists an integer $n_i > n$ such that $$|a_n - x | \geq \epsilon > \frac{1}{i_0} > \frac{1}{i}$$ QED.
+
+But this is too clever by half.  In order to reach a contradiction, it's sufficient to find an $\epsilon > 0$ and an increasing sequence $\{n_k\}$ such that $|a_{n_k} - x| \geq \epsilon$ for all $k$. This is guaranteed if $\{a_n\}$ does not converge to $x$. Then $\{a_{n_k}\}$ cannot converge to $x$ either.
+
+But even _this_ is unnecessary.  Suppose every subsequence of $\{a_n\}$ converges to $x$.  The sequence $\{a_n\}$ is a subsequence of $\{a_n\}$, so it converges to $x$ as well.
+
+See also [A sequence converges if and only if every subsequence converges?](https://math.stackexchange.com/q/1060064/2785) from this site.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4187420/reason-for-a-n-l-frac1i-when-a-sequence-is-divergent/4187896#4187896) on Mathematics Stack Exchange, 2021-07-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

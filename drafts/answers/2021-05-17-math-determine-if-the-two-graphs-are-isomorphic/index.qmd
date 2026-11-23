@@ -1,0 +1,80 @@
+---
+title: Determine if the two graphs are isomorphic
+date: '2021-05-17'
+description: 'Comparing properties can show that two graphs are not isomorphic. but cannot reliably be used to show graphs are isomorphic. Consider these two:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4142055
+se-link: https://math.stackexchange.com/questions/4142046/determine-if-the-two-graphs-are-isomorphic/4142055#4142055
+se-score: 3
+se-accepted: false
+se-tags:
+- graph-isomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determine if the two graphs are isomorphic](https://math.stackexchange.com/questions/4142046/determine-if-the-two-graphs-are-isomorphic), asked by [Robo Jumble](https://math.stackexchange.com/users/906963/robo-jumble) on Mathematics Stack Exchange (2021-05-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let G be the graph with vertex and edge sets
+> $$V = \{1, 2, 3, 4\}$$ and $$E = \{\{1,2\},\{1,3\},\{1,4\},\{2,3\},\{2,4\}\}$$
+>
+> and H be the graph with vertex and edge sets
+>
+> $$V = \{a, b, c, d\}$$and 
+> $$E = \{\{a,b\},\{a,d\},\{b,c\},\{a,c\},\{c,d\}\}$$
+> Question is "write down an isomorphism between them?"
+> i have chosen the following
+>
+> $$ϕ(1)=a$$
+> $$ϕ(2)=c$$
+> $$ϕ(3)=b$$
+> $$ϕ(4)=d$$
+>  Number of edges $$|E_1|=|E_2|=5$$
+> Degree sequence for $$|V_1|=3,3,2,2$$
+>                     $$|V_2|=3,2,3,2$$ 
+>
+>
+> $$ϕ(\{1,2\})=\{a,c\},ϕ(\{1,3\})=\{a,b\},ϕ(\{1,4\})=\{a,d\},ϕ(\{2,3\})=\{c,b\},$$ 
+>
+> $$ϕ(\{2,4\})=\{c,d\}$$
+> therefore they are isomorphic 
+> is my method correct is there a better way to show it?
+>
+> Also how do you figure the number of isomorphism two graphs have between them 
+>
+> Any type of help will be much appreciated
+:::
+
+Comparing properties can show that two graphs are *not* isomorphic.  but cannot reliably be used to show graphs are isomorphic.  Consider these two:
+
+[![drawing of the graph $(\{a,b,c,d,e,f\},\{\{a,b\},\{b,c\},\{c,d\},\{d,e\},\{d,f\}\})$][1]][1]
+
+[![drawing of the graph $(\{1,2,3,4,5,6\},\{\{1,2\},\{2,3\},\{3,4\},\{4,5\},\{3,6\}\})$][2]][2]
+
+These two graphs have the same number of vertices (6) and edges (5), and the same degree sequences ($3,2,2,1,1,1$), but are not isomorphic.  The first graph's degree 3 vertex has two neighbors with degree 1, but the second graph's degree 3 vertex has two neighbors with degree 2.
+
+
+To show that graphs are isomorphic, you most often need to exhibit an isomorphism.  You gave a function $G$ from $V_1$ to $V_2$.  You need to show:
+
+* $G$ is a bijection from $V_1$ to $V_2$, and
+* for all $x$ and $y$ in $V_1$, $(x \sim y) \iff G(x) \sim G(y)$.  
+
+There are many ways to show a function is a bijection.  Since $G$ is a function from one finite set to another of the same size, it's sufficient to show that $G$ is injective.  
+
+Since $|V_1| = 4$, there are $\binom{4}{2}=6$ sets of distinct vertices $x$ and $y$.  You can just write down all of them and check if adjacent vertices in the first graph are sent by $G$ to adjacent vertices in the second graph.
+
+
+  [1]: NQCxw.png
+  [2]: IsyLW.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4142046/determine-if-the-two-graphs-are-isomorphic/4142055#4142055) on Mathematics Stack Exchange, 2021-05-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

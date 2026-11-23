@@ -1,0 +1,49 @@
+---
+title: Polar Coordinates as a Definitive Technique for Evaluating Limits
+date: '2017-03-24'
+description: 'Usually the “use polar coordinates” technique for evaluating limits of two variables works like this: Write $f(x,y) = g(r,\theta)$, and let $r\to 0$. If the…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2200988
+se-link: https://math.stackexchange.com/questions/2200667/polar-coordinates-as-a-definitive-technique-for-evaluating-limits/2200988#2200988
+se-score: 9
+se-accepted: false
+se-tags:
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Polar Coordinates as a Definitive Technique for Evaluating Limits](https://math.stackexchange.com/questions/2200667/polar-coordinates-as-a-definitive-technique-for-evaluating-limits), asked by [Hugh Entwistle](https://math.stackexchange.com/users/361701/hugh-entwistle) on Mathematics Stack Exchange (2017-03-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A lot of questions say "use polar coordinates" to calculate limits when they approach $0$. 
+>
+> But is using polar coordinates the best way to evaluate limits, moreover, prove that they exist? 
+>
+> Do they account for every single possible direction to approach a limit, for example, along a parabola. 
+>
+> Specifically, if I were to show that 
+> $$\lim_{(x,y)\rightarrow (0,0)} f(x,y)=L$$
+> using polar coordinates, is that enough to asser that the limit is indeed, $L$. ?
+:::
+
+Usually the “use polar coordinates” technique for evaluating limits of two variables works like this: Write $f(x,y) = g(r,\theta)$, and let $r\to 0$.  If the limit still depends on $\theta$, the two-variable limit $\lim_{(x,y) \to (0,0)} f(x,y)$ does not exist.
+
+But if $\lim_{r\to 0} g(r,\theta) =L$, it is not sufficient to say that $\lim_{(x,y) \to (0,0)} f(x,y)=L$.  For instance, let
+$$f(x,y) = \frac{x^2y}{x^4+y^2}$$
+Then substituting $x=r \cos\theta$, $y=r\sin\theta$ gives
+$$f(x,y) = \frac{r^3\cos^2\theta\sin\theta}{r^4\cos^4\theta + r^2\sin^2\theta}
+    = \frac{r\cos^2\theta\sin\theta}{r^2\cos^4\theta + \sin^2\theta}$$
+as $r\to0$, the expression on the right tends to zero.  But $\lim_{(x,y) \to (0,0)} f(x,y)\neq 0$.  If we approach $(0,0)$ along the line $y=x^2$, we get
+$$\lim_{x\to 0,y=x^2} f(x,y) = \frac{x^2(x^2)}{x^4 + (x^2)^2} = \frac{1}{2}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2200667/polar-coordinates-as-a-definitive-technique-for-evaluating-limits/2200988#2200988) on Mathematics Stack Exchange, 2017-03-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

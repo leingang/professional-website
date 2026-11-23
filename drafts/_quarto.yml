@@ -1,0 +1,16 @@
+# Unpublished posts live here, outside the site/ project, so they don't slow
+# down site builds (Quarto reads every .qmd in a project, drafts included).
+# Preview one with `make preview-post POST=drafts/answers/<folder>/index.qmd`;
+# publish it with `make publish POST=…`.
+project:
+  type: default
+  output-dir: _site
+format:
+  html:
+    theme:
+      light: [cosmo, ../site/theme.scss]
+      dark: [cosmo, ../site/theme.scss, ../site/theme-dark.scss]
+    html-math-method: mathjax
+    lang: en
+    toc: false
+    title-block-banner: false

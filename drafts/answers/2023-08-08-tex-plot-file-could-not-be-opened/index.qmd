@@ -1,0 +1,79 @@
+---
+title: Plot file could not be opened
+date: '2023-08-08'
+description: In 2023 I think the recommended best practice is to use the luatex engine if possible. Then you just need to change contour gnuplot to contour lua and it Just…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 693035
+se-link: https://tex.stackexchange.com/questions/242132/plot-file-could-not-be-opened/693035#693035
+se-score: 1
+se-accepted: false
+se-tags:
+- tikz-pgf
+- tables
+- pgfplots
+- documentation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Plot file could not be opened](https://tex.stackexchange.com/questions/242132/plot-file-could-not-be-opened), asked by [user144921](https://tex.stackexchange.com/users/58922/user144921) on TeX Stack Exchange (2015-05-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The following code is from the "gallery of examples in the manual - PGFPlots".
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=newest}
+> \pagestyle{empty}
+> \begin{document}
+> \begin{tikzpicture}
+>     \begin{axis}[
+>         title={$x \exp(-x^2-y^2)$},
+> 		domain=-2:2,enlarge x limits,
+>         view={0}{90},
+>     ]
+>    \addplot3[contour gnuplot={number=14},thick]
+>           {exp(0-x^2-y^2)*x};
+>     \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> Unfortunately the code does not work and I get the following error message:
+>
+> ```latex
+> ! Package pgfplots Error: sorry, plot file{example_175_contourtmp0.table} could
+>  not be opened.
+>
+> See the pgfplots package documentation for explanation.
+> Type  H <return>  for immediate help.
+>  ...                                              
+>
+> l.17           {exp(0-x^2-y^2)*x};
+>
+> ? 
+> ! Emergency stop.
+>  ...                                              
+>
+> l.17           {exp(0-x^2-y^2)*x};
+>
+> End of file on the terminal!
+> ```
+>
+>
+> I have no idea what could be the problem. It would be great if anbody can offer a solution.
+:::
+
+In 2023 I think the recommended best practice is to use the `luatex` engine if possible. Then you just need to change `contour gnuplot` to `contour lua` and it Just Works without needing to run an external problem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/242132/plot-file-could-not-be-opened/693035#693035) on TeX Stack Exchange, 2023-08-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

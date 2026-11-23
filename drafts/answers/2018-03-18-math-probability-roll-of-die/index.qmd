@@ -1,0 +1,59 @@
+---
+title: 'Probability : Roll of Die'
+date: '2018-03-18'
+description: 'To me this sounds like a good application of an absorbing Markov chain. There are four states:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2697200
+se-link: https://math.stackexchange.com/questions/2694015/probability-roll-of-die/2697200#2697200
+se-score: 1
+se-accepted: false
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Probability : Roll of Die](https://math.stackexchange.com/questions/2694015/probability-roll-of-die), asked by [S.Rana](https://math.stackexchange.com/users/540063/s-rana) on Mathematics Stack Exchange (2018-03-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\textsf{A}$ and $\textsf{B}$ are playing a game with $2$ standard dice.
+>
+> >- Both the dice are rolled together and the total is counted.
+> - $\textsf{A}$ says that a total of $2$ will be rolled first.
+> - $\textsf{B}$, whereas, says that two Consecutive totals of $7$′s will be rolled first.
+> - They keep rolling the dice till one of them wins&nbsp;!.
+>
+> What is the probability that $\textsf{A}$ wins the game&nbsp;?.
+>
+> For a total of $2$, $\{(1,1)\}$ and for a total of $7$, $\{(1,6),(6,1),(2,4),(4,2),(3,4),(4,3)\}$ are the required scenarios. I don't understand how we need to incorporate the probabilities of $\textsf{A}$ winning, i.e., $1/36$ and $\textsf{B}$ winning, i.e. $6/36$ into a game of infinite rounds, i.e. until $\textsf{A}$ wins. –
+:::
+
+To me this sounds like a good application of an absorbing [Markov chain](https://en.wikipedia.org/wiki/Markov_chain).  There are four states:
+
+  1. “Neutral” where neither A nor B is ahead.
+  2. “B up” where B can win on the next roll.
+  3. “A wins”
+  4. “B wins”
+
+The first two states are transitional and the last two terminal.  The transition matrix between these four states is
+$$P = \begin{bmatrix} 29/36 & 1/6 & 1/36 & 0 \\
+                        29/36 & 0   & 1/36 & 1/6 \\
+                            0 & 0   &    1 & 0 \\
+                            0 & 0   &    0 & 1 \end{bmatrix}
+    = \begin{bmatrix} Q & R \\ 0 & I \end{bmatrix}$$
+Here $p_{ij}$ is the probability of moving from state $i$ to state $j$. The $2\times 2$ matrices $Q$ and $R$ are the top left and top right blocks of $P$.  [The fundamental matrix](https://hips.seas.harvard.edu/blog/2013/02/15/the-fundamental-matrix-of-a-finite-markov-chain/) of this Markov chain is
+$$N = (I-Q)^{-1} = \begin{bmatrix} 216/13 & 36/13 \\ 174/13 & 42/13 \end{bmatrix}$$
+The probability of absorption matrix is
+$$NR = \begin{bmatrix} 7/13 & 6/13 \\ 6/13 & 7/13 \end{bmatrix}$$
+This means that from neutral (state 1), A has a $7/13$ chance of winning (state 3).  However, once a 7 is rolled (state 2), B has a $7/13$ chance of winning (state 4).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2694015/probability-roll-of-die/2697200#2697200) on Mathematics Stack Exchange, 2018-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

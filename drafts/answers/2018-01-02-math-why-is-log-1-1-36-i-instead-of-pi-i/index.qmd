@@ -1,0 +1,37 @@
+---
+title: Why is $\log(-1) = 1.36 i$ instead of $\pi i$?
+date: '2018-01-02'
+description: Starting from $e^{i\pi} = -1$, we have $\log(-1) = i\pi \log(e)$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2588964
+se-link: https://math.stackexchange.com/questions/2588954/why-is-log-1-1-36-i-instead-of-pi-i/2588964#2588964
+se-score: 4
+se-accepted: false
+se-tags:
+- complex-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is $\log(-1) = 1.36 i$ instead of $\pi i$?](https://math.stackexchange.com/questions/2588954/why-is-log-1-1-36-i-instead-of-pi-i), asked by [Albert Hendriks](https://math.stackexchange.com/users/220116/albert-hendriks) on Mathematics Stack Exchange (2018-01-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> According to Google, $\log(-1) = 1.36 i$. Why is that true? Euler's identity says $e^{i\pi} = -1$. Taking the log on both sides gives $\log(-1) = i\pi (\neq 1.36i)$.
+:::
+
+Starting from $e^{i\pi} = -1$, we have $\log(-1) = i\pi \log(e)$.
+
+What is $\log(e)$?  It depends on who you ask.  Many mathematicians use log as an abbreviation for the natural logarithm (base $e$), while others (including most calculators) use it for the common logarithm.  Indeed
+$$\pi \log_{10}(e) \approx  1.364$$
+so I suspect that's why Google tells you what it does.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2588954/why-is-log-1-1-36-i-instead-of-pi-i/2588964#2588964) on Mathematics Stack Exchange, 2018-01-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

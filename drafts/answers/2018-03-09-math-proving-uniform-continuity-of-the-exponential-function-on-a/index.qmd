@@ -1,0 +1,66 @@
+---
+title: Proving uniform continuity of the exponential function on a semi-finite interval
+date: '2018-03-09'
+description: 'Just to expand on José''s point: You cannot “choose” $a$ to be equal to $A$; you are given $A$, $a$, and $b$. You''re right that you can assume $a \geq b$…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2683960
+se-link: https://math.stackexchange.com/questions/2682769/proving-uniform-continuity-of-the-exponential-function-on-a-semi-finite-interval/2683960#2683960
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- continuity
+- solution-verification
+- exponential-function
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving uniform continuity of the exponential function on a semi-finite interval](https://math.stackexchange.com/questions/2682769/proving-uniform-continuity-of-the-exponential-function-on-a-semi-finite-interval), asked by [Marc](https://math.stackexchange.com/users/503755/marc) on Mathematics Stack Exchange (2018-03-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Suppose $A\in\mathbb{R}$. 
+> >
+> >Prove that the exponential function is
+> > uniformly continuous on the interval $(-\infty, A]$.
+>
+> **Proof:**
+>
+> Suppose $a,b\in(-\infty,A]$, and choose $a=A\geq b$ without loss of generality. We know that the exponential function is continuous everywhere, so that: 
+> $$|A-b|<\delta\implies |e^A-e^b|<\epsilon$$
+>
+> The choice of $\delta$ is then only dependent on $A$, and not on $b$ as the only restriction on $b$ is that it is less than or equal to $A$, which simply means $b\in(-\infty,A]$. So for all $\epsilon>0$ there is a $\delta>0$ such that for all $b\in(-\infty,A]$, the property holds. So, the exponential function is uniformly continuous on $(-\infty,A]$.
+>
+> * * *
+> At first I split the cases $(-\infty,0]$ and $[0,A]$ but halfway through typing this post I realised it might not have been necessary, though I must say I'm greatly unsure about my proof. What I initially wrote was along the lines of the following;
+>
+> Suppose $a,b\in(-\infty,A]$, and choose $a\geq b$ without loss of generality, so that $|a-b|=a-b$. Suppose $|a-b|=a-b<\delta$ for any $\delta>0$. We can write $|e^a-e^b| =|e^b(e^{a-b}-1)|$ so that whenever $b\to-\infty$, $|e^b(e^{a-b}-1)|\to0<\epsilon$ for all $\epsilon>0$. We have that for all $\epsilon>0$ that there is a $\delta>0$ such that for all $a\in(-\infty,A]$, whenever $b\to-\infty$ that $|a-b|<\delta\implies |e^a-e^b|<\epsilon$ so that the exponential function is uniformly continuous as $b\to-\infty$...
+:::
+
+> Suppose $a,b\in(-\infty,A]$, and choose $a=A\geq b$ without loss of generality.
+
+Just to expand on José's point: You cannot “choose” $a$ to be equal to $A$; you are *given* $A$, $a$, and $b$.  You're right that you can *assume* $a \geq b$, because one of the two must be greater than or equal to the other; rename $a$ to be the greater and $b$ the lesser.  But how do you know that it is safe to assume $a=A$?  
+
+> We know that the exponential function is continuous everywhere, so that: 
+$$|A-b|<\delta\implies |e^A-e^b|<\epsilon$$
+
+You just dropped in some symbols; they need to be quantified.  After “so that” you should write: “given $\epsilon > 0$, there exists a $\delta > 0$ such that:” But are you using the fact that the exponential function is continuous at $A$?  or at $b$?
+
+> The choice of $\delta$ is then only dependent on $A$, and not on $b$ as the only restriction on $b$ is that it is less than or equal to $A$, which simply means $b\in(-\infty,A]$.
+
+You have also imposed the restriction that $|A-b| < \delta$.  You can't simultaneously send $b$ to $-\infty$.
+
+
+Here's a flag: At what point did you use anything specific to the exponential function?  It seems like all you used was the fact that it's continuous on $(\infty,A]$.  If that is all you need, then any function satisfying that property is also uniformly continuous.  For example, $f(x) = x^2$ on $(-\infty,0]$.  But that function is not uniformly continuous.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2682769/proving-uniform-continuity-of-the-exponential-function-on-a-semi-finite-interval/2683960#2683960) on Mathematics Stack Exchange, 2018-03-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

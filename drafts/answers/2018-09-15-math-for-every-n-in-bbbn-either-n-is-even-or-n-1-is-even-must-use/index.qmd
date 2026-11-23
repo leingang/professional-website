@@ -1,0 +1,58 @@
+---
+title: For every $n\in \Bbb{N}$, either $n$ is even or $n-1$ is even (Must use Induction)
+date: '2018-09-15'
+description: Let's go through this line by line.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2918199
+se-link: https://math.stackexchange.com/questions/2918167/for-every-n-in-bbbn-either-n-is-even-or-n-1-is-even-must-use-inductio/2918199#2918199
+se-score: 1
+se-accepted: false
+se-tags:
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[For every $n\in \Bbb{N}$, either $n$ is even or $n-1$ is even (Must use Induction)](https://math.stackexchange.com/questions/2918167/for-every-n-in-bbbn-either-n-is-even-or-n-1-is-even-must-use-inductio), asked by user593509 on Mathematics Stack Exchange (2018-09-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have gotten a lot of the proof done so far but I am now stuck: Pf: Let $n\in\Bbb{N}$. $P(n)$ is the statement, "$n$ is even or $n-1$ is even" 
+> Base Case ($n=1$): $n=1$  and $1-1=1$ so $n-1$ is even. $P(2)$ holds. 
+> Induction: Let $k\in\Bbb{N}$. We will assume $P(k)$ is true, $k$ is even or $k-1$ is even, in order to prove $P(k+1)$. Then $k+1$ is even or $(k+1)-1$ is even.
+> My next step was going to be to either multiply or add $(k+1)$ and $(k+1)-1$ together since with natural numbers you can do that but I am not sure what to do after that...
+:::
+
+Let's go through this line by line.
+
+> Base Case ($n=1$): $n=1$ and $1-1=\color{red}{1}$ so $n-1$ is even. 
+
+I think this is just a typo.  $1-1=0$, and that is even.
+
+> $P(2)$ holds. 
+
+You probably mean $P(1)$ holds.  That is what you proved.
+
+> Induction: Let $k∈N$. We will assume $P(k)$ is true, [that is,] $k$ is even or $k-1$ is even, in order to prove $P(k+1)$. 
+
+Good.  I added in that bracketed part because it emphasizes that “$P(k)$ is true” and “$k$ is even or $k-1$ is even” are equivalent statements.
+
+> Then $k+1$ is even or $(k+1)-1$ is even. 
+
+Hold on.  This statement is equivalent to $P(k+1)$, which has not been proved yet.  When you say “Then ... ” it sounds like you are saying it follows from previous work.
+
+Well, what do you know at this point?  You know (or rather, you're assuming) that either $k$ or $k-1$ is even.  You want to show that either $k+1$ or $k$ is even.  Try to prove this first:
+
+**Lemma.** If $n$ is an even integer, then $n+2$ is even.
+
+Then see if that lemma helps you with the inductive step.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2918167/for-every-n-in-bbbn-either-n-is-even-or-n-1-is-even-must-use-inductio/2918199#2918199) on Mathematics Stack Exchange, 2018-09-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

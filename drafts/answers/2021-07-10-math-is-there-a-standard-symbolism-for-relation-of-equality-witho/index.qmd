@@ -1,0 +1,42 @@
+---
+title: Is there a standard symbolism for relation of "equality without transitivity" (like assignment, to a variable or set; respectively xRy or xRY)?
+date: '2021-07-10'
+description: Regarding paragraph two, lots of students misuse the equals sign here. You might see “Let $G = \text{group}$” as shorthand for “Let $G$ be a group.”
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4195289
+se-link: https://math.stackexchange.com/questions/4195259/is-there-a-standard-symbolism-for-relation-of-equality-without-transitivity-l/4195289#4195289
+se-score: 2
+se-accepted: false
+se-tags:
+- notation
+- mathematical-modeling
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Is there a standard symbolism for relation of "equality without transitivity" (like assignment, to a variable or set; respectively xRy or xRY)?](https://math.stackexchange.com/questions/4195259/is-there-a-standard-symbolism-for-relation-of-equality-without-transitivity-l), asked by [user946772](https://math.stackexchange.com/users/946772/user946772) on Mathematics Stack Exchange (2021-07-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Many software languages use "=" for assignment and "==" for mathematical equality, but how mathematically can the former be conveyed (roughly meaning "corresponds to, but ostensibly not equivalent to")?
+>
+> A related question: Is there a way to express membership (of some broader category) without denoting the child object as being one of xeither an element or a subset  (e.g. ∋ vs. [⊋,⊃,⊇] child) orand that the parent object is generically one of xeither a set or subset (e.g. ∈ vs. [⊊,⊂,⊆] parent)? An  analogy of the former is "(noun *x*) is a (thing of property *y*)" or "(noun *x*) has (characteristic Y, or is adjective descriptor y)" where Y:={all y}" but where the predicate in either case is ambiguous (i.e.; could be an arbitrary element of some class, or some set defined within a group), and latter being approximately "(some thing(s) of property *x* is(are)) is (proper noun *y*)" or "(property *X* entails (things defined by *y*)" where in the first case the "closest-defined parent group" of the antecedent does not necessarily wholly contains the "closest-defined parent group" of the predicate but the latter does.
+>
+> A question related to the preceding paragraph: Is there an explicitly ambiguous subset/superset symbol to denote "might or might not be equal to"? Or is the best simply the version without the underline? 
+>
+> Less specific to the topic: Is there a big list of mathematical TeX-based symbols that don't have current Unicode counterparts, preferably accompanied by proposed meanings or example usage and closest-Unicode counterpart? Some of the ones in this post I copied from block U+22Fx at https://en.wikipedia.org/wiki/Ordered_set_operators.  Also what does four-bar and over-line/over-line ounterparts of element-of\contains symbols (e.g. ⋹, ⋸) mean? overbar for complement of, under for "or equal to"?
+:::
+
+Regarding paragraph two, lots of students misuse the equals sign here.  You might see “Let $G = \text{group}$” as shorthand for “Let $G$ be a group.”
+
+It could be fixed to “Let $G \in \operatorname{ob}(\mathbf{Grp})$”; that is, $G$ is an element of the class of objects in the category of groups.  But that's not any clearer or quicker to write than than “Let $G$ be a group,” is it?  If English words suffice, use them.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4195259/is-there-a-standard-symbolism-for-relation-of-equality-without-transitivity-l/4195289#4195289) on Mathematics Stack Exchange, 2021-07-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

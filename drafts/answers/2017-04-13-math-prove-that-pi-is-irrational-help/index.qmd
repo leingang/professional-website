@@ -1,0 +1,54 @@
+---
+title: Prove that $\pi$ is irrational help
+date: '2017-04-13'
+description: 'I haven''t worked it out, but I wonder if this is the missing step: $$\int{-1}^{1}(1-x^2)(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx =…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2231666
+se-link: https://math.stackexchange.com/questions/2231642/prove-that-pi-is-irrational-help/2231666#2231666
+se-score: 3
+se-accepted: false
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\pi$ is irrational help](https://math.stackexchange.com/questions/2231642/prove-that-pi-is-irrational-help), asked by [The math god](https://math.stackexchange.com/users/436230/the-math-god) on Mathematics Stack Exchange (2017-04-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am working through Cartwright's proof for $\pi$ being irrational; specifically, the problem states:
+>
+> Given $$A_n=\int_{-1}^{1}(1-x^2)^n\cos\left(\frac {\pi x}{2}\right)\,dx$$
+>
+> Prove:
+>
+> $$A_n=\frac {8n(2n-1)A_{n-1}-16n(n-1)A_{n-2}}{\pi ^2}.$$
+>
+> I must prove it using integration by parts and have gotten really close to the answer but I am stuck at this step:
+>
+> $$A_n=\frac{-16n(n-1)}{\pi^2}\int_{-1}^{1}x^2(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)+\frac {8n}{\pi^2}A_{n-1}.$$
+>
+> Specifically, I'm wondering how one could get rid of the $x^2$ term out of the integral to get $A_{n-2}.$
+>
+> Thanks in advance!
+:::
+
+I haven't worked it out, but I wonder if this is the missing step:
+$$\int_{-1}^{1}(1-x^2)(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx
+= \int_{-1}^{1}(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx 
+-\int_{-1}^{1}x^2(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx$$
+So
+$$\int_{-1}^{1}x^2(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx
+= \int_{-1}^{1}(1-x^2)^{n-2}\cos\left(\frac {\pi x}{2}\right)\,dx
+ -\int_{-1}^{1}(1-x^2)^{n-1}\cos\left(\frac {\pi x}{2}\right)\,dx$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2231642/prove-that-pi-is-irrational-help/2231666#2231666) on Mathematics Stack Exchange, 2017-04-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

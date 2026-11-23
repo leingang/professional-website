@@ -1,0 +1,36 @@
+---
+title: Determining the best possible substitution for an integrand
+date: '2015-01-23'
+description: The quadratic form suggests $x = \sec\theta$. But rationalizing first gives $$\frac{1}{1 + \sqrt{x^2-1}} = \frac{\sqrt{x^2-1}-1}{x^2}$$ Now substituting…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1116837
+se-link: https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand/1116837#1116837
+se-score: 6
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining the best possible substitution for an integrand](https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand), asked by [user208567](https://math.stackexchange.com/users/208567/user208567) on Mathematics Stack Exchange (2015-01-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What substitution is best used to calculate  $$\int \frac{1}{1 + \sqrt{x^2 -1}}dx$$
+:::
+
+The quadratic form suggests $x = \sec\theta$.  But rationalizing first gives
+$$\frac{1}{1 + \sqrt{x^2-1}} = \frac{\sqrt{x^2-1}-1}{x^2}$$
+Now substituting $x=\sec\theta$ yields (after some algebra)
+$$\int\frac{\sqrt{x^2-1}-1}{x^2}\,dx = \int(\sec\theta - \cos\theta - \sin\theta)\,d\theta$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1116827/determining-the-best-possible-substitution-for-an-integrand/1116837#1116837) on Mathematics Stack Exchange, 2015-01-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

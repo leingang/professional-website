@@ -1,0 +1,93 @@
+---
+title: Why does the direction of the gradient vector depend only on the tangent vector to the contour and not the nature of the function itself?
+date: '2025-08-11'
+description: You need to assume that the mountain is the graph of a differentiable function. One way to think about differentiability at a point is that all the partial…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5089356
+se-link: https://math.stackexchange.com/questions/5089348/why-does-the-direction-of-the-gradient-vector-depend-only-on-the-tangent-vector/5089356#5089356
+se-score: 4
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does the direction of the gradient vector depend only on the tangent vector to the contour and not the nature of the function itself?](https://math.stackexchange.com/questions/5089348/why-does-the-direction-of-the-gradient-vector-depend-only-on-the-tangent-vector), asked by [HPB](https://math.stackexchange.com/users/797768/hpb) on Mathematics Stack Exchange (2025-08-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider a function $z = f(x,y)$.
+>
+> The gradient vector (which gives the direction along which the function $f$ will change the fastest) is said to be perpendicular to the tangent vector at any point on the plane curve (which is a contour, ie, the value of $z$ stays the same on that curve, for all $x$ and $y$). And this direction of the gradient vector is true irrespective of the definition of $f$.
+>
+> I understand all the calculations and the proofs, but intuitively it doesn't make sense. If I am standing on a plane curve / contour of a mountain range, and I'm facing the tangent vector at that point, the rate of the greatest change should surely depend on the nature of the function $f$, ie, in this case, the terrain? For example, I might find that 30 degrees to my right there is a very steep slope up, and 90 degrees to the tangent vector the terrain only rises by a tiny bit. In which case that 30 degree would be the direction along which the maximum change to $f$ would take place - not perpendicular to the tangent vector.
+>
+> Where am I going wrong?
+:::
+
+You need to assume that the mountain is the graph of a differentiable function. One way to think about differentiability at a point is that all the partial derivatives exist, and the affine-linear function they determine is a “really good” approximation to the function near the point. If the partial derivatives are continuous, then the function is differentiable, and the level curves will also be differentiable.
+
+The situation you're describing sounds continuous, but not differentiable.
+
+For example, let $f(x,y) = \frac{3x^2y + y^3}{x^2 + y^2}$ if $(x,y) \neq (0,0)$, and $f(0,0) = 0$. This function is graphed below. It looks very similar to the graph that @Carmeister created. 
+
+[![graph of f][1]][1]
+
+The level curve $f=0$ is the $x$-axis. The partial derivatives of $f$ at $(0,0)$ are
+$$\begin{align*}
+    \frac{\partial f}{\partial x}(0,0)
+&= \lim_{x\to 0} \frac{f(x,0)}{x} = \lim_{x\to 0}\frac{0}{x} = 0 
+\\\frac{\partial f}{\partial y}(0,0)
+&= \lim_{y\to 0} \frac{f(0,y)}{y} = \lim_{y\to 0}\frac{y}{y} = 1 
+\end{align*}$$
+So $\nabla f(0,0) = \left<0,1\right>$.
+
+To find the direction of greatest increase, first let's compute the directional derivative in an arbitrary direction $\left<\cos\theta,\sin\theta\right>$. We have
+$$\begin{align*}
+   D_{\left<\cos\theta,\sin\theta\right>}f(0,0)
+   &= \lim_{t\to 0} \frac{f(t\cos\theta,t\sin\theta)}{t}
+ \\&= \lim_{t\to 0} \frac{1}{t}\left(\frac{t^3 (3\cos^2\theta \sin \theta + \sin^3 \theta)}{t^2(\cos^2\theta + \sin^2 \theta)}\right) 
+  \\&= 3\cos^2\theta \sin \theta + \sin^3 \theta
+  \\&= 3 \sin\theta - 2 \sin^3 \theta
+\end{align*}$$
+To find the extreme values of this directional derivative, we take *its* derivative with respect to $\theta$:
+$$\begin{align*}
+   \frac{d}{d\theta} D_{\left<\cos\theta,\sin\theta\right>}f(0,0)
+   &= 3\cos\theta - 6 \sin^2 \theta \cos \theta
+  \\&= 3\cos\theta\left(1 - 2 \sin^2 \theta\right)
+\end{align*}$$
+The critical points are where $\cos\theta = 0$ or $\sin^2\theta = \frac{1}{2}$.
+
+ * If $\cos\theta = 0$, then $\sin\theta = \pm 1$, and $2 \sin\theta - \sin^3 \theta = \pm 1$.
+ * If $\sin^2\theta = \frac{1}{2}$, then $3 \sin\theta - 2\sin^3 \theta = \pm \sqrt{2}$, depending on the sign of $\sin\theta$. 
+
+So $D_{\left<\cos\theta,\sin\theta\right>}f(0,0)$ achieves its maximum of $\sqrt{2}$ at $\frac{\pi}{4}$ and $\frac{3\pi}{4}$, and its minimum of $-\sqrt{2}$ at $-\frac{\pi}{4}$ and $-\frac{3\pi}{4}$. The angles $\theta = \pm\frac{\pi}{2}$ are critical, and they are perpendicular to the level curve, but they are not global extrema. In fact $\theta = \frac{\pi}{2}$ is a local minimum and $\theta = \frac{\pi}{2}$ is a local maximum. You can see this on the graph, and verify it using the second derivative test. Here is a graph of $D_{\left<\cos\theta,\sin\theta\right>}f(0,0)$ versus $\theta$:
+
+[![graph of directional derivative][2]][2]
+
+Finally, we can see why this doesn't violate the “gradient points in direction of greatest increase” rule. $f$ is differentiable at $(0,0)$ if and only if 
+$$\lim_{(x,y) \to (0,0)}
+    \frac{f(x,y) - f(0,0) - \frac{\partial f}{\partial x}(0,0)x - \frac{\partial f}{\partial y}(0,0)y}{\sqrt{x^2+y^2}} = 0$$
+We have $f(0,0) = 0$, $\frac{\partial f}{\partial x}(0,0) = 0$, and $\frac{\partial f}{\partial y}(0,0) = 1$. So we want to find the limit of
+$$\begin{align*}
+    \frac{1}{\sqrt{x^2+y^2}}\left[\frac{3x^2y+y^2}{x^2+y^2} - y \right]
+&= \frac{3x^2y + y^3 - y^2(x^2+y^2)}{(x^2+y^2)^{3/2}}
+\\&= \frac{2x^2y}{(x^2+y^2)^{3/2}}
+\end{align*}$$
+If we approach $(0,0)$ along the line $x = t$, $y= 0$, the limit will be $0$. But if we approach $(0,0)$ along the line $x=t$, $y=t$, the limit will be $\frac{1}{\sqrt{2}}$. So the two-variable limit cannot exist. This means $f$ is *not* differentiable at $(0,0)$. 
+
+
+  [1]: V0dwa85t.png
+  [2]: 0WEufbCY.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5089348/why-does-the-direction-of-the-gradient-vector-depend-only-on-the-tangent-vector/5089356#5089356) on Mathematics Stack Exchange, 2025-08-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

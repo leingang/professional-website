@@ -1,0 +1,44 @@
+---
+title: Why do people use unnecessary braces?
+date: '2010-10-07'
+description: This is a form of the brace style debate in other programming languages. Having programmed both in perl and python I am beginning to favor the forced…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 3865
+se-link: https://tex.stackexchange.com/questions/1914/why-do-people-use-unnecessary-braces/3865#3865
+se-score: 1
+se-accepted: false
+se-tags:
+- macros
+- best-practices
+- braces
+- syntax
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why do people use unnecessary braces?](https://tex.stackexchange.com/questions/1914/why-do-people-use-unnecessary-braces), asked by [TH.](https://tex.stackexchange.com/users/647/th) on TeX Stack Exchange (2010-08-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I often see people creating new macros where the macro token is surrounded by braces. For example,
+>
+> ```latex
+> \newcommand{\foo}{foo}
+> ```
+>
+> This is unnecessary and I find the extra braces make it harder to read. Why do people do this?
+>
+> (As an aside, I've even seen people try to use `\let{\foo}{\bar}` which, of course, doesn't work.)
+:::
+
+This is a form of the brace style debate in other programming languages.  Having programmed both in perl and python I am beginning to favor the forced convention of the latter.  Perl's philosophy is TIMTOWTDI, but personally it helps to have regularized code when you have to go back and read it years later.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/1914/why-do-people-use-unnecessary-braces/3865#3865) on TeX Stack Exchange, 2010-10-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

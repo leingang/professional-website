@@ -1,0 +1,75 @@
+---
+title: 'TikZ: Node position in draw environment'
+date: '2015-01-17'
+description: Have you tried something like node[pos=xx]?
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 223651
+se-link: https://tex.stackexchange.com/questions/223650/tikz-node-position-in-draw-environment/223651#223651
+se-score: 3
+se-accepted: false
+se-tags:
+- tikz-pgf
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TikZ: Node position in draw environment](https://tex.stackexchange.com/questions/223650/tikz-node-position-in-draw-environment), asked by [Isaac Vandermeulen](https://tex.stackexchange.com/users/43460/isaac-vandermeulen) on TeX Stack Exchange (2015-01-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am drawing some diagrams of mechanical systems which have many rotated components. For each of these components I am attaching a coordinate system, which is often rotated with the component. I am drawing the coordinates using the draw command and adding labels (`x` and `y`) using the node command. I would like the axis label to be in line with the axis (i.e., the arrow points directly at it) regardless of how the coordinate system is rotated. Currently I have done:
+>
+> ```latex
+> \documentclass{standalone}
+>     \usepackage{tikz}
+> \begin{document}
+>     \begin{tikzpicture}
+> ```
+> 	        \draw[<->,rotate around={22.5:(0,0)}](0,1)node[above]{\$y\$}--(0,0.2)--(1,0.2)node[right]{\$x\$};
+>         \end{tikzpicture}
+>     \end{document}
+>
+> This code results in the following output:
+>
+> ![enter image description here][q-1]
+>
+> TikZ seems to be interpreting `node[above]` to mean above using the standard coordinates, instead of "rotating" what it means for the node to be above the end of the line. I would ideally like to be able to write something like `node[angle=22.5]` to correctly position the label. Is there a way to do this where I can specify the angle instead of just above, right, etc.?
+>
+>
+>   [q-1]: gCNtb.png
+:::
+
+Have you tried something like `node[pos=xx]`? 
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+    \draw[<->,rotate around={22.5:(0,0)}] 
+        (0,1) --(0,0.2) node[pos=-0.2] {$y$}
+        -- (1,0.2) node[pos=1.2] {$x$};
+\end{tikzpicture}
+\end{document}
+```
+
+![sample output][1]
+
+  [1]: d1j1o.png
+
+The `pos` key of a node places it that position along the segment.  `pos=0` is the beginning, and `pos=1` is the end.  `pos=0.5` is the middle, sometimes useful, but not here. 
+
+We need to place the nodes a little bit before the beginning of the segment and a little bit after.  So we subtract a little bit from `0` and add a little bit to `1`.
+
+The disadvantage here is that the separation you get is as a fraction of the segment length.  So if you want a fixed distance from the end you may need to find another way.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/223650/tikz-node-position-in-draw-environment/223651#223651) on TeX Stack Exchange, 2015-01-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,75 @@
+---
+title: '"[" as first character in table row'
+date: '2013-01-24'
+description: 'Here is a MWE that illustrates your problem:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 95241
+se-link: https://tex.stackexchange.com/questions/95236/as-first-character-in-table-row/95241#95241
+se-score: 25
+se-accepted: false
+se-tags:
+- tables
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+["[" as first character in table row](https://tex.stackexchange.com/questions/95236/as-first-character-in-table-row), asked by [Mq_](https://tex.stackexchange.com/users/24945/mq) on TeX Stack Exchange (2013-01-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Whenever I try to compile a table that has a "[" as first character in a row it gives me the error:
+>
+> ```latex
+> Missing number, treated as zero.
+> Illegal unit of measure
+> ```
+>
+> Example:
+>
+> ```latex
+> \begin{table}[htb]
+>     \centering
+>     \begin{tabular}{r|r}
+>         [some text ] & ... \\
+>         [some more text ] & ...
+>     \end{tabular}
+>     \caption{...}
+>     \label{tab:...}
+> \end{table}
+> ```
+>
+>
+> How can I print "[" as first character in a row?
+:::
+
+Here is a MWE that illustrates your problem:
+
+```latex
+\documentclass{article}
+\begin{document}
+\begin{table}
+    \begin{tabular}{r|r}
+        [some text ] & ... \\
+        [more text ] & ... \\
+    \end{tabular}
+\end{table}
+\end{document}
+```
+
+The issue is that `\\[1 in]` is used at the end of a line to skip `1in` (for instance) of additional vertical space.  So `\\` is a macro and `[1in]` is an optional argument to that macro.
+
+When TeX reads `\\`, then newline, then `[`, it ignores the newline (as it normally does with all whitespace after a macro) and proceeds as if it were expanding `\\[more text ]`.  But this clearly doesn't make any sense since `more text ` is not a length, in particular it doesn't start with a number.  Hence the error: `Missing number, treated as zero. Illegal unit of measure`.
+
+It wasn't reproduced in your original MWE because you had only one line with bracketed text at the beginning and `\\` at the end.  It happens between the end of one line and the beginning of another.
+
+As Sigur suggests, you can keep TeX from expanding this way by putting braces around the bracketed text.  TeX will expand `\\{[more text ]}` the expected way since it doesn't "look" like an optional argument is being used anymore.  egreg's suggestion of `\\\relax` will similarly inhibit the macro processor from reading the bracketed text as an optional argument.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/95236/as-first-character-in-table-row/95241#95241) on TeX Stack Exchange, 2013-01-24, with [edits](https://tex.stackexchange.com/posts/95241/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

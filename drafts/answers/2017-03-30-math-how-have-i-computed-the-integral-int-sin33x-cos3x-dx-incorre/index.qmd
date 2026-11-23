@@ -1,0 +1,84 @@
+---
+title: How have I computed the integral $\int \sin^{3}(3x)\cos(3x)\,dx$ incorrectly?
+date: '2017-03-30'
+description: You determined $du=3\,dx$, but substituted $dx = 3\,du$. So your answer is off by a factor of nine. $$\int \sin^3(3x) \cos(3x)\,dx = \int \sin^3(u)…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2210549
+se-link: https://math.stackexchange.com/questions/2210541/how-have-i-computed-the-integral-int-sin33x-cos3x-dx-incorrectly/2210549#2210549
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How have I computed the integral $\int \sin^{3}(3x)\cos(3x)\,dx$ incorrectly?](https://math.stackexchange.com/questions/2210541/how-have-i-computed-the-integral-int-sin33x-cos3x-dx-incorrectly), asked by [yre](https://math.stackexchange.com/users/428730/yre) on Mathematics Stack Exchange (2017-03-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\displaystyle \int \sin^{3}(3x)\cos(3x)\,dx$
+>
+> $u = 3x$
+>
+> $du = 3\,dx$
+>
+> $3\displaystyle\int \sin^{3}(u)\cos(u)\,du$
+>
+> $3\displaystyle\int \sin^{2}(u)\sin(u)\cos(u)\,du$
+>
+> $3\displaystyle\int (1 - \cos^{2}(u))\sin(u)\cos(u)\,du$
+>
+> $v = \cos(u)$
+>
+> $dv = -\sin(u)\,du$
+>
+> $3\displaystyle\int (1 - v^{2})(-1)v\,dv$
+>
+> $3\displaystyle\int (-v + v^{3})\,dv$
+>
+> $3\left[-\frac{v^{2}}{2} + \frac{v^{4}}{4}\right]$
+>
+> $3\left[ -\frac{\cos^{3}{3x}}{2} + \frac{\cos^{4}(3x)}{4}\right]$
+>
+> $= -3 \frac{\cos^{2}(3x)}{2} + 3\frac{\cos^{4}(3x)}{4} + C$
+>
+> wolfram states this as incorrect, what have I done wrong?
+> Thank you
+:::
+
+You determined $du=3\,dx$, but substituted $dx = 3\,du$.  So your answer is off by a factor of nine.
+$$\int \sin^3(3x) \cos(3x)\,dx = \int \sin^3(u) \cos(u)\cdot \frac{1}{3}\,du
+= \frac{1}{3}\int \sin^3(u) \cos(u)\,du$$
+Then proceed as you did.  You'll get 
+$$\int \sin^3(3x) \cos(3x)\,dx =- \frac{1}{6} \cos^2(3x) -\frac{1}{12}\cos^4(3x)+C$$
+
+The other answers are suggesting substituting $u=\sin(3x)$ in one fell swoop.  Then $du = 3 \cos(3x)\,dx$, so
+$$\int \sin^3(3x) \cos(3x)\,dx = \frac{1}{3}\int u^3\,du = \frac{1}{3}\cdot\frac{1}{4}u^4 + C = \frac{1}{12}\sin^4(3x)+C$$
+Both are correct, although the second solution is more compact and concise.  In the comments you asked if the two are “equivalent.” Yes, but only in the antiderivative sense.  Using the trig identities:
+$$\begin{align*}
+    - \frac{1}{6}\cos^2(3x) + \frac{1}{12}\cos^4(3x)
+    &= \frac{1}{12}\cos^2(3x)\left(\cos^2(3x) - 2\right) \\
+    &= \frac{1}{12}\left(1-\sin^2(3x)\right)\left(1-\sin^2(3x)-2\right) \\
+    &= \frac{1}{12}\left(1-\sin^2(3x)\right)\left(-1-\sin^2(3x)\right) \\
+    &= \frac{1}{12}\left(\sin^2(3x)-1\right)\left(\sin^2(3x)+1\right) \\
+    &= \frac{1}{12}\left(\sin^4(3x)-1\right) = \frac{1}{12}\sin^4(3x) - \frac{1}{12}
+\end{align*}$$
+You can see the two antiderivatives differ by a constant.
+
+[![enter image description here][1]][1]
+
+
+  [1]: MOaTC.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2210541/how-have-i-computed-the-integral-int-sin33x-cos3x-dx-incorrectly/2210549#2210549) on Mathematics Stack Exchange, 2017-03-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

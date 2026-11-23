@@ -1,0 +1,70 @@
+---
+title: Scaling "node distance" in tikz
+date: '2010-11-17'
+description: Method 1 Apparently you don't have to give units to the node distance key. If you don't, it seems to take them as coordinates. So this scales the node distance…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5525
+se-link: https://tex.stackexchange.com/questions/5506/scaling-node-distance-in-tikz/5525#5525
+se-score: 10
+se-accepted: true
+se-tags:
+- tikz-pgf
+- positioning
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Scaling "node distance" in tikz](https://tex.stackexchange.com/questions/5506/scaling-node-distance-in-tikz), asked by [Ryan Reich](https://tex.stackexchange.com/users/575/ryan-reich) on TeX Stack Exchange (2010-11-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Well, here's another TikZ question; this time, I have no idea how to find an answer.  I would like to give all my nodes with relative coordinates:
+>
+> ```latex
+> \node (A) {A};
+> \node (B) [right = of A] {B};
+> ```
+>
+> using the `positioning` library.  The distance is `node distance`.  Unfortunately, it appears that passing the option `scale = <factor>` to `{tikzpicture}` does not have the desired effect on this distance; in fact, it does nothing.  How can I give unit-free distances with relative coordinates?
+:::
+
+**Method 1** Apparently you don't have to give units to the `node distance` key.  If you don't, it seems to take them as coordinates.  So this scales the node distance to three times the default unit length, and the default unit length is the same as the default node distance.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\begin{document}
+\begin{tikzpicture}
+\begin{scope}[node distance=3]
+\node (A) {A};
+\node (B) [right = of A] {B};
+\end{scope}
+\end{tikzpicture}
+\end{document}
+```
+
+**Method 2** *after comments, consensus is that this is the preferred method* It's possible to plot a point, read its coordinates, and set the node distance to that.
+
+```latex
+\begin{tikzpicture}[xscale=3]
+\pgfpointtransformed{\pgfpointxy{1}{1}};
+\pgfgetlastxy{\vx}{\vy}
+\begin{scope}[node distance=\vy and \vx] % strange syntax here
+\node (A) {A};
+\node (B) [right = of A] {B};
+\end{scope}
+\end{tikzpicture}
+```
+
+**Edit** improvement that doesn't enlarge the bounding box invisibly from Andrew Stacey's comment.  Thanks!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5506/scaling-node-distance-in-tikz/5525#5525) on TeX Stack Exchange, 2010-11-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

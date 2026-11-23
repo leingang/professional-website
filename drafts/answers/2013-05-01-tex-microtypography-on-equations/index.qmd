@@ -1,0 +1,93 @@
+---
+title: Microtypography on equations
+date: '2013-05-01'
+description: I know this is not what you asked for (an XY problem) and really ad hoc, but it's how I would solve the problem. You can adjust the spacing by making the…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 111729
+se-link: https://tex.stackexchange.com/questions/111722/microtypography-on-equations/111729#111729
+se-score: 27
+se-accepted: false
+se-tags:
+- math-mode
+- font-expansion
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Microtypography on equations](https://tex.stackexchange.com/questions/111722/microtypography-on-equations), asked by [Christoph B.](https://tex.stackexchange.com/users/14222/christoph-b) on TeX Stack Exchange (2013-05-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is there a way to make all three lines of math in the code below take up the same amount of length by use of font expansion? I know too little about `microtype` to even see if it could offer a solution. I don't care too much about the exact math environment that'll be used in the end (`gather` is not too bad a solution if I can't get expansion working).
+>
+> Bonus if the solution works with `lualatex`, and especially the `\usefonttheme{professionalfonts}` of `beamer`.
+>
+> Alas, changing variable and function names is not an option (basically, only the square braces may change if that can help).
+>
+> Alternatively, one could try to tweak the spacings manually, but except by trial and error using `\hspaces`, would there be an intelligent way of doing that (say, aligning the absolute values on top of each other, and the total length of each line being the same?)
+>
+>
+> ```latex
+> \documentclass{article}
+>
+> \usepackage{amsmath}
+> \usepackage{amsfonts}
+>
+> \begin{document}
+>
+>   \begin{align*}
+> 	\lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{5/2-\varepsilon}\left[\vphantom{A^2}u(x,y)-u_{\mathrm{as}}(x,y)\right]\right\vert & = 0 \\
+> 	\lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{5/2-\varepsilon}\left[\vphantom{A^2}v(x,y)-v_{\mathrm{as}}(x,y)\right]\right\vert & = 0 \\
+> 	\lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{9/2-\varepsilon}\left[\vphantom{A^2}\omega(x,y)-\omega_{\mathrm{as}}(x,y)\right]\right\vert & = 0
+>   \end{align*}
+>
+> \end{document}
+> ```
+>
+> Present output:
+>
+> ![Present output][q-1]
+>
+>
+>   [q-1]: IZFFh.png
+:::
+
+I know this is not what you asked for (an [XY problem][1]) and really *ad hoc*, but it's how I would solve the problem.  You can adjust the spacing by making the different characters appear to have the same width.  For instance `\phantom{\omega}\mathrlap{u}` creates a `u` that takes up as much space as an `\omega`.  (Though the `u` is aligned to the right of this box.) So I would try something like:
+
+```latex
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\newcommand{\sizeof}[2]{\phantom{#1}\mathllap{#2}}
+\begin{document}
+
+  \begin{align*}
+    \lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{5/2-\varepsilon}\left[\vphantom{A^2}\sizeof{\omega}{u}(x,y)-\sizeof{\omega}{u}_{\mathrm{as}}(x,y)\right]\right\vert & = 0 \\
+    \lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{5/2-\varepsilon}\left[\vphantom{A^2}\sizeof{\omega}{v}(x,y)-\sizeof{\omega}{v}_{\mathrm{as}}(x,y)\right]\right\vert & = 0 \\
+    \lim_{y\to\infty}\sup_{x\in\mathbb{R}} \left\vert y^{9/2-\varepsilon}\left[\vphantom{A^2}\omega(x,y)-\omega_{\mathrm{as}}(x,y)\right]\right\vert & = 0
+  \end{align*}
+
+\end{document}
+```
+
+![sample code output][2]
+
+(`\mathrlap` is provided by the [`mathtools`](http://ctan.org/pkg/mathtools) package.) This looks closer to having all lines the same length, and most readers will not notice that you've inserted some space between the open bracket and *u* or *v*.
+You could further tweak by adjusting the exponents of *y*.
+
+
+  [1]: https://tex.meta.stackexchange.com/questions/2449/what-does-xy-problem-mean/2450#245
+  [2]: ymMQf.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/111722/microtypography-on-equations/111729#111729) on TeX Stack Exchange, 2013-05-01, with [edits](https://tex.stackexchange.com/posts/111729/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

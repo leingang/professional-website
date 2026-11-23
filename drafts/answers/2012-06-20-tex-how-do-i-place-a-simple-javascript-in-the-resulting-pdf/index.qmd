@@ -1,0 +1,66 @@
+---
+title: How do I place a simple javascript in the resulting PDF?
+date: '2012-06-20'
+description: Take a look a the AcroTeX Education Bundle. The eforms package therein provides commands for creating JavaScript forms. If you want to reuse JavaScript code…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 60596
+se-link: https://tex.stackexchange.com/questions/60582/how-do-i-place-a-simple-javascript-in-the-resulting-pdf/60596#60596
+se-score: 5
+se-accepted: false
+se-tags:
+- pdf
+- javascript
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I place a simple javascript in the resulting PDF?](https://tex.stackexchange.com/questions/60582/how-do-i-place-a-simple-javascript-in-the-resulting-pdf), asked by [Yitzhak Kornbluth](https://tex.stackexchange.com/users/15797/yitzhak-kornbluth) on TeX Stack Exchange (2012-06-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to use LaTeX to produce a PDF document with forms with the following features:
+> -One or two user-modifiable text fields
+> -One output text field
+> -A "run" button that, when pressed, will take the first fields, run calculations on it using a javascript function, and put the result in the output field.
+>
+> So what packages would I need (I presume insdljs, but would I need anything else), where can I get them, and what would be the actual program to put into LaTeX.  Thanks.
+:::
+
+Take a look a the [AcroTeX Education Bundle][1].  The `eforms` package therein provides commands for creating JavaScript forms.  If you want to reuse JavaScript code from form element to element you can use the `insdljs` package as you know about.
+
+There are a ton of examples with source code at the AEB site.  Here's a short demo:
+
+```latex
+\documentclass{article}
+\usepackage[pdftex]{eforms}
+\usepackage{insdljs}
+
+\begin{insDLJS}{\jobname}{update the form}
+function update() {
+	var a = parseFloat(this.getField("A").value);
+	var b = parseFloat(this.getField("B").value);
+	this.getField("C").value = a*a+b;
+}
+\end{insDLJS}
+
+\begin{document}
+\begin{tabular}{rrr}
+& $x$ & \textField{A}{1.5cm}{1.0cm} \\
+& $y$ & \textField{B}{1.5cm}{1.0cm} \\
+\pushButton[\CA{Calculate}\A{\JS{update();}}]{run}{1.5cm}{1.0cm}
+& $x^2 + y$ & \textField{C}{1.5cm}{1.0cm}
+\end{tabular}
+\end{document}
+```
+
+  [1]: http://www.math.uakron.edu/~dpstory/webeq.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/60582/how-do-i-place-a-simple-javascript-in-the-resulting-pdf/60596#60596) on TeX Stack Exchange, 2012-06-20, with [edits](https://tex.stackexchange.com/posts/60596/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

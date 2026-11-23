@@ -1,0 +1,42 @@
+---
+title: What are some of the problems that arise from introducing too many axioms?
+date: '2017-10-10'
+description: I'm not sure how rigorous that statement is meant to be. But if one of your axioms contradicts another, every proposition is provable. That's a big problem.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2466350
+se-link: https://math.stackexchange.com/questions/2466300/what-are-some-of-the-problems-that-arise-from-introducing-too-many-axioms/2466350#2466350
+se-score: 2
+se-accepted: false
+se-tags:
+- logic
+- axioms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What are some of the problems that arise from introducing too many axioms?](https://math.stackexchange.com/questions/2466300/what-are-some-of-the-problems-that-arise-from-introducing-too-many-axioms), asked by [user7389159](https://math.stackexchange.com/users/489910/user7389159) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> From [Mathigon](https://mathigon.org/world/Axioms_and_Proof):
+>
+> >If there are too many axioms, you can prove almost anything, and mathematics would also not be interesting.
+>
+> I don't understand this. Why does introducing more axioms cause a problem?
+:::
+
+I'm not sure how rigorous that statement is meant to be.  But if one of your axioms contradicts another, every proposition is provable.  That's a big problem.
+
+It's not as if mathematicians spend a lot of time debating whether there are too many axioms or too few.  But there are some notable exceptions.  For thousands of years mathematicians tried to prove that [Euclid's fifth postulate](https://en.wikipedia.org/wiki/Parallel_postulate) followed from the others.  As it turned out, eliminating that axiom revealed beautiful noneuclidean geometries, totally consistent with the other four postulates.  So adopting a framework with fewer axioms led to many more theorems.
+
+Also, as the article points out, the Axiom of Choice is a famous axiom of set theory.  It seems “obvious” on its face, and there seems to be no reason to adopt it as an axiom.  And yet...it gives us such counter-intuitive theorems as the [Banach-Tarski paradox](https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox).  But we can't have one without the other.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2466300/what-are-some-of-the-problems-that-arise-from-introducing-too-many-axioms/2466350#2466350) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

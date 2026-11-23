@@ -1,0 +1,66 @@
+---
+title: Why the vertical asymptote of y=f(x) is the zeros of $1/f(x)$?
+date: '2017-11-01'
+description: 'It sounds like you''re saying this:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2499929
+se-link: https://math.stackexchange.com/questions/2499841/why-the-vertical-asymptote-of-y-fx-is-the-zeros-of-1-fx/2499929#2499929
+se-score: 1
+se-accepted: true
+se-tags:
+- functions
+- graphing-functions
+- function-and-relation-composition
+- rational-functions
+- characteristic-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why the vertical asymptote of y=f(x) is the zeros of $1/f(x)$?](https://math.stackexchange.com/questions/2499841/why-the-vertical-asymptote-of-y-fx-is-the-zeros-of-1-fx), asked by [Siwei Feng](https://math.stackexchange.com/users/459218/siwei-feng) on Mathematics Stack Exchange (2017-11-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Why the vertical asymptote of $y=f(x)$ is the zeros of $1/f(x)$? For example, if $f(x)$ has a vertical asymptote $x=1$, then $(1,0)$ must be a x-intercept of $1/f(x)$?
+>
+> I saw this in IB textbook and I want to know why.
+>
+> >  the vertical asymptotes of $y = f(x)$ become zeros of $y = \frac{1}{f(x)}$
+:::
+
+It sounds like you're saying this:
+
+> If the graph of $f(x)$ has a vertical asymptote at $x=a$, then $1/f(a)=0$.
+
+**Example:** Let $f(x) = \frac{x+1}{x-1}$.  This has a vertical asymptote at $x=1$.  The reciprocal expression is $\frac{x-1}{x+1}$, and the associated function has a zero at $x=1$.
+
+But this is being very sloppy about the relation between a function and its reciprocal.  The reciprocal of $f(x)=\frac{x+1}{x-1}$ is $\frac{1}{f(x)} = \frac{x-1}{x+1}$, *but* the domain of $f$ excludes $1$.  So actually
+$$\frac{1}{f(x)} = \begin{cases} \frac{x-1}{x+1} & x \neq 1 \\
+    \text{undefined} & x=1 \end{cases}$$
+So there is no value $a$ for which $\frac{1}{f(a)} = 0$.
+
+And come to think of it, the equation $\frac{1}{f(a)} = 0$ is already problematic, because if it were satisfied, then
+$$\frac{1}{f(a)} = 0 \implies 1 = 0 \cdot f(a) = 0.$$
+And this is a contradiction.
+
+We can extend $f$ to give it a value at its asymptote, in such a way that the reciprocal is defined.  But that reciprocal value still won't be zero.  For instance, suppose we said
+$$f(x) = \begin{cases} \frac{x+1}{x-1} & x \neq 1 \\
+    2 & x=1 \end{cases}$$
+Then,
+$$\frac{1}{f(x)} = \begin{cases} \frac{x-1}{x+1} & x \neq 1 \\
+    \frac{1}{2} & x=1 \end{cases}$$
+So $f$ has an asymptote at $x=1$, and $\frac{1}{f}$ is not zero at $x=1$.
+
+* * *
+
+I am wondering why this was written in your textbook when it's so wrong.  It could be that only a certain class of functions are being considered.  For instance, I think it's true for rational functions $f(x) = \frac{p(x)}{q(x)}$, where $p$ and $q$ are polynomials.  This $f$ has vertical asymptotes when the denominator tends to zero and the numerator to something other than zero.  That is, if $q(a) = 0$ and $p(a) \neq 0$, then $f$ has a vertical asymptote at $a$.  Then the  reciprocal expression $f(x) = q(x)/p(x)$ does have a zero at $a$.  But this isn't quite the same thing as the function $\frac{1}{f(x)}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2499841/why-the-vertical-asymptote-of-y-fx-is-the-zeros-of-1-fx/2499929#2499929) on Mathematics Stack Exchange, 2017-11-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

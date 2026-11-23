@@ -1,0 +1,69 @@
+---
+title: 'proof by induction: $7^{2n} - 2^n$ is always divisible by $47$'
+date: '2017-11-09'
+description: Step 1 is not “$7^{2(n+1)} - 2^{n+1}$.” You're thinking in terms of expressions and you want to think in terms of sentences. This is one half of the conclusion…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2512808
+se-link: https://math.stackexchange.com/questions/2512751/proof-by-induction-72n-2n-is-always-divisible-by-47/2512808#2512808
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-number-theory
+- induction
+- divisibility
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[proof by induction: $7^{2n} - 2^n$ is always divisible by $47$](https://math.stackexchange.com/questions/2512751/proof-by-induction-72n-2n-is-always-divisible-by-47), asked by [Oscar](https://math.stackexchange.com/users/494748/oscar) on Mathematics Stack Exchange (2017-11-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> as per the title, i need to prove by induction that the expression "$7^{2n} - 2^n$" is always divisible by $47$.  
+>
+> base case is fine: $7^{2*1} - 2^1 = 47$. 
+>
+> Induction step gets lost quickly, any ideas?
+>
+> step 1: $7^{2(n+1)} - 2^{(n+1)}$ 
+>
+> step 2:  $7^2 * 7^{2n} - 2^1 * 2^{n}$ 
+>
+> step 3: ???
+>
+> step 4: profit.
+:::
+
+Step 1 is **not** “$7^{2(n+1)} - 2^{n+1}$.”  You're thinking in terms of *expressions* and you want to think in terms of *sentences*.  This is one half of the conclusion to an if-then statement you want to prove:
+
+> For any $n$, if $7^{2n} - 2^n$ is divisible by $47$, then $7^{2(n+1)} - 2^{n+1}$ is also divisible by $47$.
+
+Step 0 is the base case, which you have shown.  
+
+Step 1 is “Suppose there exists a positive integer $n$ such that $7^{2n} = 2^n$.”  
+
+Step 2 is: you need to show that $7^{2(n+1)} - 2^{n+1}$ is divisible by $47$.
+
+You've got a few answers on how to show that.  Essentially it's the old add-and-subtract-the-same-thing trick.
+$$\begin{align*}
+    7^{2n+2} - 2^{n+1} &= 7^2\cdot 7^{2n} - 2\cdot 2^{n} 
+\\&= 7^2 \cdot 7^{2n} - 7^2 \cdot 2^n + 7^2 \cdot 2^n - 2\cdot 2^n
+\\&= 49 (7^{2n} - 2^{n}) + 47 \cdot 2^n
+\end{align*}$$
+If $7^{2n} - 2^{n} = 47k$ for some integer $k$, then
+$$49 (7^{2n} - 2^{n}) + 47 \cdot 2^n = 49\cdot 47k + 47 \cdot 2^n = 47(49k + 2^n)$$
+in other words, also a multiple of $47$.
+
+Step 3 is “Therefore, by induction, $7^{2n} - 2^n$ is divisible by $47$ for all positive integers $n$.”
+
+If you follow these steps, and apply them to all proofs by induction, you will indeed *profit*.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2512751/proof-by-induction-72n-2n-is-always-divisible-by-47/2512808#2512808) on Mathematics Stack Exchange, 2017-11-09, with [edits](https://math.stackexchange.com/posts/2512808/revisions) by [egreg](https://math.stackexchange.com/users/62967/egreg). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

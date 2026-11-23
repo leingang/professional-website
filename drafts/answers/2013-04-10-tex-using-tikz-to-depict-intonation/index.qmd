@@ -1,0 +1,142 @@
+---
+title: Using TikZ to depict intonation
+date: '2013-04-10'
+description: 'I would use the famous \tikzmark macro and combine it with intersection coordinates. Here is the code:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 107948
+se-link: https://tex.stackexchange.com/questions/107941/using-tikz-to-depict-intonation/107948#107948
+se-score: 17
+se-accepted: false
+se-tags:
+- tikz-pgf
+- linguistics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Using TikZ to depict intonation](https://tex.stackexchange.com/questions/107941/using-tikz-to-depict-intonation), asked by [donnek](https://tex.stackexchange.com/users/27101/donnek) on TeX Stack Exchange (2013-04-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am looking into using TikZ to represent pitch patterns over a phrase or sentence (intonation).
+>
+> I've got it to produce some useful results, already, as in the attached MWE (although in 1.1 the baselines don't seem to level up).
+>
+> ```latex
+> %!TEX TS-program = xelatex
+> %!TEX encoding = UTF-8 Unicode
+> \documentclass[a4paper,12pt, oneside]{article}
+>
+> \usepackage{fontspec}
+> \defaultfontfeatures{Mapping=tex-text, Scale=MatchLowercase}
+> \setmainfont{Charis SIL}
+>
+> \usepackage{tikz}
+>
+> \begin{document}
+>
+> \section{Marking intonation using TikZ}
+>
+> \subsection{Setting words on different levels}
+>
+> \begin{table}[hbtp]
+> \begin{tabular}{ll}
+> \cline{1-1} \noalign{\smallskip}
+> \tikz[x=1mm,y=1mm,baseline=12] \draw (0,10) node {\underline{Where}} (10,2) node {are} (20,2) node {you} (30,6) node {\underline{go}} (40,0) node{ing?}; & \textit{neutral/default - stress represented by underlining}\\
+> \cline{1-1} \noalign{\smallskip}
+> \tikz[x=1mm,y=1mm,baseline=12] \draw (0,0) node {Where} (10,10) node {\underline{are}} (20,5) node {you} (30,2) node {go} (40,0) node{ing?}; & \textit{ e.g. in response to ``I'm not going to the shops after all.''}\\
+> \cline{1-1}
+> \end{tabular}
+> \end{table}
+>
+> Why do ``are'' and ``you'' in the first example appear on slightly
+> different levels, even though they are both set to 1mm on the y axis? 
+> Likewise for ``where'' and ``ing'' in the second example.
+>
+> I'm not sure I'm using ``baseline'' properly here!
+>
+> \subsection{As above, but boxed}
+>
+> \begin{tikzpicture}
+> \node[draw] at (0,1) {\underline{Where}};
+> \node[draw] at (1,0.1) {are};
+> \node[draw] at (2,0.1) {you};
+> \node[draw] at (3,0.6) {\underline{go}};
+> \node[draw] at (4,0) {ing?};
+> \end{tikzpicture}\
+> Still have to figure out the difference between ``\textbackslash draw node'' and ``\textbackslash node[draw]''!
+>
+> \subsection{Graphical contour}
+>
+> \begin{table}[hbtp]
+> \begin{tabular}{l}
+> \tikz[x=1mm,y=1mm,rounded corners=2mm] \draw[very thick, gray](0,10)--(10,2)--(20,2){[red]--(30,6)--(40,0)}; \\
+> Where are you~~~going?
+> \end{tabular}
+> \end{table}
+>
+> \begin{table}[hbtp]
+> \begin{tabular}{l}
+> \tikz[x=1mm,y=1mm,rounded corners=2mm] \draw[very thick, gray](0,10)--(12,2)--(23,2){[red]--(26,6)--(35,0)}; \\
+> Where are you going?
+> \end{tabular}
+> \end{table}
+>
+> This is preferable to setting the individual words on different levels, but
+> requires trial and error in (i) matching the length of the whole contour to
+> the utterance, and (ii) spreading the parts of the contour to match the words
+> of the utterance, either by spacing the words (first example) or adjusting the
+> contour points (second example).
+>
+> \end{document}
+> ```
+>
+> However, my main query is whether anyone has a method for dealing with the issue in 1.3.  This involves trial-and-error in fitting the contour to the words, and I was wondering if there is any way to somehow anchor particular contour coordinates to particular syllables.  I know that lines can be attached to nodes, but I haven't been able to find a way of getting the lines to "float" above the nodes.  Any suggestions for allowing a line of text to be marked with anchor points as it is typed, with the contour then being drawn between these?
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: z76El.png
+:::
+
+I would use the famous [`\tikzmark`][1] macro and combine it with intersection coordinates.  Here is the code:
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture,baseline] \node [anchor=base] (#1) {};}%
+\tikzstyle{intonation}=[rounded corners=2mm,yshift=1.5ex]
+\begin{document}
+
+\begin{tikzpicture}[remember picture]
+\node{\tikzmark{w}Where \tikzmark{a}are \tikzmark{y}you \tikzmark{g}go\tikzmark{i}ing\tikzmark{q}?};
+\draw[intonation] (w |- 0,1) -- (a |- 0,0.2) -- (y |- 0,0.2) -- (g |- 0,0.6) -- (q |- 0,0);
+\end{tikzpicture}
+
+\end{document}
+```
+
+The `\tikzmark` macro saves the coordinates of the point of the document at which it is called.  So the node text `\tikzmark{w}Where \tikzmark{a}are...` saves coordinates called `w`, `a`, etc., at various points in the sentence.
+
+If `A` and `B` are TikZ nodes or coordinates, then `(A |- B)` is the intersection of a vertical line through `A` and a horizontal line through `B`.  So `(w |- 0,1)` has as its *x* coordinate the baseline-left point of the *w* in *where*, and *y* coordinate 1.  You can change this *y* coordinate as you wish for the other coordinate names.
+
+Here is the result:
+
+![sample code output][2]
+
+
+You might be able to design a macro that specifies/marks the text and defines the *y*-values in the same argument.  But this is a possible implementation.
+
+
+  [1]: https://tex.stackexchange.com/a/1570/1402
+  [2]: Fawm9.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/107941/using-tikz-to-depict-intonation/107948#107948) on TeX Stack Exchange, 2013-04-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

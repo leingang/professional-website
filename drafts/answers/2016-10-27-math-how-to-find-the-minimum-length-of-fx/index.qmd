@@ -1,0 +1,62 @@
+---
+title: How to find the minimum length of $f(x)$
+date: '2016-10-27'
+description: Following Gil Strang's calculus of variations notes online, you want to use a Lagrangian of the form $$\mathscr{L}(y,y',\lambda) = \int0^1 \sqrt{1+(y')^2}\,dx…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1988004
+se-link: https://math.stackexchange.com/questions/1987742/how-to-find-the-minimum-length-of-fx/1988004#1988004
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus-of-variations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find the minimum length of $f(x)$](https://math.stackexchange.com/questions/1987742/how-to-find-the-minimum-length-of-fx), asked by [c-2785](https://math.stackexchange.com/users/259213/c-2785) on Mathematics Stack Exchange (2016-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $f(0)=0, f(1)=t$ 
+> and
+> $$\int_0^1 f(x) dx = 1$$
+> How find the minimum length of $f(x)$ in $[0, 1]$ ?
+>
+> For example when t=2, the minimum length of f(x) is the segment of OA
+>
+> (O is the origin and  A=(1, 2))
+>
+> But how find the minimum length when t=3 ?
+:::
+
+Following [Gil Strang's calculus of variations notes online](https://ocw.mit.edu/courses/mathematics/18-086-mathematical-methods-for-engineers-ii-spring-2006/readings/am72.pdf), you want to use a Lagrangian of the form
+$$\mathscr{L}(y,y',\lambda) = \int_0^1 \sqrt{1+(y')^2}\,dx + \lambda \left(\int_0^1 y\,dx - 1\right)
+    = \int_0^1\left(\sqrt{1+y'^2}+\lambda y\right)\,dx -\lambda$$
+Let the term in parentheses be $F(y,y',\lambda)$.
+If $\dfrac{\delta \mathscr{L}}{\delta y} =0$, the Euler-Lagrange equations are
+$$0 = \frac{\partial F}{\partial y} -\frac{d}{dx}\frac{\partial F}{\partial y'}
+      = \lambda - \frac{d}{dx}\frac{y'}{\sqrt{1+(y')^2}}$$
+So we can integrate once to get:
+$$\frac{y'}{\sqrt{1+y'^2}} = \lambda x + c$$
+for some constant $c$.  Solving,
+$$y' = \frac{\lambda x + c}{\sqrt{1-(\lambda x + c)^2}}$$
+Let $u = \lambda x + c$.  Then
+$$y = \int \frac{\lambda x + c}{\sqrt{1-(\lambda x + c)^2}}\,dx
+      = \frac{1}{\lambda}\int \frac{u}{\sqrt{1-u^2}}\,du
+      = -\frac{1}{\lambda} \sqrt{1-u^2} + d$$
+Or,
+$$\begin{align*}
+    (\lambda y - \lambda d)^2 &= 1-(\lambda x + c)^2\\
+\implies \left(x + \frac{c}{\lambda}\right)^2 + (y-d)^2 &= \frac{1}{\lambda^2}
+\end{align*}$$
+The curve is a circular arc.  We can find $c$, $d$, and $\lambda$ by placing $(0,0)$ and $(1,t)$ on the curve, and solving $\int_0^1 y\,dx = 1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1987742/how-to-find-the-minimum-length-of-fx/1988004#1988004) on Mathematics Stack Exchange, 2016-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

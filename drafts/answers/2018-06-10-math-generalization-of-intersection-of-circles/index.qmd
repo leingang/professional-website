@@ -1,0 +1,57 @@
+---
+title: Generalization of intersection of circles?
+date: '2018-06-10'
+description: Pass from $\mathbb{R}^2$ to $\mathbb{C}^2$, and the equations will always have solutions. In the case where the circles don't intersect, the points predicted…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2814781
+se-link: https://math.stackexchange.com/questions/2814764/generalization-of-intersection-of-circles/2814781#2814781
+se-score: 1
+se-accepted: false
+se-tags:
+- geometry
+- algebraic-geometry
+- circles
+- plane-curves
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Generalization of intersection of circles?](https://math.stackexchange.com/questions/2814764/generalization-of-intersection-of-circles), asked by [flawr](https://math.stackexchange.com/users/109451/flawr) on Mathematics Stack Exchange (2018-06-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let us consider two circles in the (real) plane:
+>
+> $C_1 : (x-x_1)^2 + (y-y_1)^2 - r_1^2 = 0$
+>
+> $C_2 : (x-x_2)^2 + (y-y_2)^2 - r_2^2 = 0$
+>
+> In order to calculate their intersection point we can easily find the line defined by the two points by subtracting $C_1$ from $C_2$:
+>
+> $L: -2(x_1-x_2)x + (x_1^2-x_2^2) - 2(y_1-y_2)y + (y_1^2-y_2^2) - (r_1^2-r_2^2) = 0$
+>
+> Plugging this back into either circle equation $C_i$ we can easily determine the intersection points of $C_1$ and $C_2$. So we can view the line $L$ as the line defined by the two intersection points.
+>
+> But is there also a nice geometric interpretation of $L$ if the circles do not intersect?
+>
+> (That is, when the distance between their centers is smaller than $\min \{r_1,r_2\}$ or larger than $r_1+r_2$.)
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: zgpel.gif
+:::
+
+Pass from $\mathbb{R}^2$ to $\mathbb{C}^2$, and the equations will always have solutions.  In the case where the circles don't intersect, the points predicted by the equations will be imaginary.
+
+Yet, the line between those imaginary points does intersect the real plane.  That is the line you see.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2814764/generalization-of-intersection-of-circles/2814781#2814781) on Mathematics Stack Exchange, 2018-06-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

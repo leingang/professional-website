@@ -1,0 +1,43 @@
+---
+title: 'Let $f: \mathbb{R}_{>0} \to \mathbb{R}, f(x) = \sin{\frac{1}{x}}$. Then f is not uniformly continuous'
+date: '2016-03-10'
+description: 'The definition of uniformly continuous is:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1692058
+se-link: https://math.stackexchange.com/questions/1692053/let-f-mathbbr-0-to-mathbbr-fx-sin-frac1x-then-f-is-not/1692058#1692058
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $f: \mathbb{R}_{>0} \to \mathbb{R}, f(x) = \sin{\frac{1}{x}}$. Then f is not uniformly continuous](https://math.stackexchange.com/questions/1692053/let-f-mathbbr-0-to-mathbbr-fx-sin-frac1x-then-f-is-not), asked by [L.F. Cavenaghi](https://math.stackexchange.com/users/248387/l-f-cavenaghi) on Mathematics Stack Exchange (2016-03-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am not sure if I know what I have to do. I imagine that supposing that the opposite I should get any contradiction, but, how to choose $\epsilon$ and $x$, $y$, for this?
+>
+> Thanks!
+:::
+
+The definition of uniformly continuous is:
+
+> **For every** $\epsilon > 0$ **there exists** a $\delta > 0$ such that **for all** $x$ and $y$, $|x-y| < \delta \implies$|f(x) - f(y)| < \epsilon$.
+
+To negate the definition you have to bubble the “not” down through all the quantifiers and the implication:
+
+> **There exists** an $\epsilon > 0$such that **for every**$\delta > 0$**there exist** numbers$x$and$y$such that$|x-y| < \delta$but$|f(x) - f(y)| \geq \epsilon$.
+
+If you look at the graph of this function (or a computer's best approximation to the graph), you'll see that the values 1 and -1 are achieved infinitely often in every interval containing the origin.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1692053/let-f-mathbbr-0-to-mathbbr-fx-sin-frac1x-then-f-is-not/1692058#1692058) on Mathematics Stack Exchange, 2016-03-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

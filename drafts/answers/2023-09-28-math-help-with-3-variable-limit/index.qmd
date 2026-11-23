@@ -1,0 +1,54 @@
+---
+title: Help with 3 variable limit
+date: '2023-09-28'
+description: Since $$\dfrac{zy-z-2x^2-2(y-1)^4-2|z|}{x^2+(y-1)^4+|z|} =\dfrac{z(y-1)}{x^2+(y-1)^4+|z|} -2$$ It's sufficient to determine if $$\lim{(x,y,z) \to (0,1,0)}…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4777423
+se-link: https://math.stackexchange.com/questions/4775545/help-with-3-variable-limit/4777423#4777423
+se-score: 1
+se-accepted: false
+se-tags:
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help with 3 variable limit](https://math.stackexchange.com/questions/4775545/help-with-3-variable-limit), asked by [user286046](https://math.stackexchange.com/users/1035105/user286046) on Mathematics Stack Exchange (2023-09-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to do this limit:
+>
+> $$\lim\limits_{(x,y,z)  \to (0,1,0)} \dfrac{zy-z-2x^2-2(y-1)^4-2|z|}{x^2+(y-1)^4+|z|}$$
+>
+> For every path I can imagine, the limit is $-2$, but I don't know how to prove it (without applying the definition).
+>
+> Also, I can see the $-2$ appearing because $\dfrac{zy-z-2x^2-2(y-1)^4-2|z|}{x^2+(y-1)^4+|z|}=\dfrac{zy-z-2(x^2+(y-1)^4+|z|)}{x^2+(y-1)^4+|z|},$ but other than that, I don't know where else to go.
+:::
+
+Since
+$$\dfrac{zy-z-2x^2-2(y-1)^4-2|z|}{x^2+(y-1)^4+|z|} =\dfrac{z(y-1)}{x^2+(y-1)^4+|z|} -2$$
+It's sufficient to determine if 
+$$\lim_{(x,y,z) \to (0,1,0)} \frac{z(y-1)}{x^2+(y-1)^4+|z|}$$
+exists. Just to be cleaner, let's set $u=x$, $v=y-1$ and $w=z$. We are down to 
+$$\lim_{(u,v,w) \to (0,0,0)} \frac{vw}{u^2+v^4+|w|}$$
+In situations like these, when you have a quotient and both numerator and denominator tend to zero, it helps to look at the degree of each. Can you approach the origin along a rational curve that makes the degrees match?
+
+Try $u=0$, $v=t$, and $w=t^3$. Then $$\frac{vw}{u^2 + v^4 + |w|} = \frac{t^4}{t^4 + |t^3|}$$ The limit of the right-hand side as $t\to 0$ is 1.
+
+On the other hand, we could try $u=0$, $v=0$, and $w=t$. Then 
+$$\frac{vw}{u^2 + v^4 + |w|} = \frac{0}{|t|} = 0$$
+The limit of the right-hand side is $0$.
+
+Since the limits along these two paths are different, the two-variable limit does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4775545/help-with-3-variable-limit/4777423#4777423) on Mathematics Stack Exchange, 2023-09-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

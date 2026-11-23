@@ -1,0 +1,52 @@
+---
+title: What is the mathematically correct terminology for the contribution of each value of a set to the sum of the set?
+date: '2021-07-23'
+description: 'I think proportion is the most correct word for what you are calculating:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4205608
+se-link: https://math.stackexchange.com/questions/4205598/what-is-the-mathematically-correct-terminology-for-the-contribution-of-each-valu/4205608#4205608
+se-score: 1
+se-accepted: false
+se-tags:
+- summation
+- terminology
+- ratio
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the mathematically correct terminology for the contribution of each value of a set to the sum of the set?](https://math.stackexchange.com/questions/4205598/what-is-the-mathematically-correct-terminology-for-the-contribution-of-each-valu), asked by [Matthew Connolly](https://math.stackexchange.com/users/952508/matthew-connolly) on Mathematics Stack Exchange (2021-07-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In my work I often come across situations where I would like to know how much a particular number contributes to the overall sum of the values of a set.  When referring to this value, or the set of numbers that is each individual values contribution to the sum, I  usually refer to said values as the "percentage contribution to the sum", and although this conveys the premise, I can't help but think that maybe it's not the correct label for this.  My efforts to find the correct term have fallen short repeatedly so I figured I would come to this StackExchange forum to query the math community.  Just to clarify my question I present the following situation (and I apologize in advance for this being in code as I am far more proficient in programming than mathematics formatting).
+>
+> Say I have an array of 4 values
+>
+> **array([16594.38194089, 16833.38403293, 28933.39527259, 28956.02268959])**
+>
+> The sum of which comes to 
+> **91317.18393599312**
+>
+> resulting in a "percent composition / percent contribution  / this is the term I am looking for"  of 
+>
+> **array([0.18172245, 0.18433972, 0.31684502, 0.31709281])**
+>
+> And that's it, that's the thing I am looking for the *correct* term for.   It's probably a really simple answer but I like to use the correct names for things whenever possible and this has been eluding me for a while.
+:::
+
+I think *[proportion](https://www.merriam-webster.com/dictionary/proportion)* is the most correct word for what you are calculating:
+
+> the relation of one part to another or to the whole with respect to magnitude, quantity, or degree 
+
+We also use *proportion* to mean an equality of ratios, so this might be a bit ambiguous.  One ratio would be the numbers as given $a:b:c$.  An equivalent one would be the one scaled so that the sum is one, as in $a/(a+b+c):b/(a+b+c):c/(a+b+c)$. So you could also call this expression a “normalized” ratio.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4205598/what-is-the-mathematically-correct-terminology-for-the-contribution-of-each-valu/4205608#4205608) on Mathematics Stack Exchange, 2021-07-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

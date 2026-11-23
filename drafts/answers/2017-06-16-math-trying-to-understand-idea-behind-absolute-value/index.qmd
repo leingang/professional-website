@@ -1,0 +1,39 @@
+---
+title: Trying to understand idea behind absolute value?
+date: '2017-06-16'
+description: In some cases you need to deal with absolute value as a piecewise linear function, just like you did. But other times, you can use geometry and symmetry to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2325366
+se-link: https://math.stackexchange.com/questions/2325355/trying-to-understand-idea-behind-absolute-value/2325366#2325366
+se-score: 5
+se-accepted: false
+se-tags:
+- absolute-value
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trying to understand idea behind absolute value?](https://math.stackexchange.com/questions/2325355/trying-to-understand-idea-behind-absolute-value), asked by [Hockeyfan19](https://math.stackexchange.com/users/316628/hockeyfan19) on Mathematics Stack Exchange (2017-06-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I came up with this question when trying to understand how to process the equation $|x| + |y| = 4$, and how its graph should look. It only started to make sense when I broke $|x|$ down into two separate statements for $x \geq 0$ and $x <0$. Then I took those two new statements and broke each one into two more statements involving $y\geq 0$ and $y <0$. I ended up with four statements, one for each quadrant of the $xy$-plane, each with a separate functions.
+>
+> Is it necessary to look at the absolute value sign like this in higher level math? Focusing on the idea that it breaks a single statement into two separate statements that describe separate subsets of whatever $U$ you're working with? And that the union of those subsets equals the universal set?
+:::
+
+In some cases you need to deal with absolute value as a piecewise linear function, just like you did.  But other times, you can use geometry and symmetry to create a picture of the solution set.
+
+Remember that $|x|$ is the *distance* from $x$ to $0$ on the number line.  So in the plane, $|x|+|y|$ is the sum of the distances from $(x,y)$ to the $y$-axis and $x$-axis, respectively (yes, in that order—think about that for a minute).  
+
+Another way to think about it uses that fact that $|x|+|y|$ stays the same if $x$ is replaced by $-x$, or $y$ is replaced by $-y$.  So the solution set $|x|+|y|=4$ has vertical and horizontal symmetry to it.  So you can draw the portion in the first quadrant and reflect in both axes.  If $(x,y)$ is in the first quadrant, then $|x|+|y| = x+y$.  So take the segment of the line $x+y=4$ in the first quadrant, which connects $(0,4)$ to $(4,0)$, and reflect it around.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2325355/trying-to-understand-idea-behind-absolute-value/2325366#2325366) on Mathematics Stack Exchange, 2017-06-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

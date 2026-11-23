@@ -1,0 +1,61 @@
+---
+title: Is it actually illegal to TeX `texbook.tex`?
+date: '2010-11-30'
+description: The copyright holders have the right to decide what you can do with it. It seems clear to me.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6208
+se-link: https://tex.stackexchange.com/questions/6204/is-it-actually-illegal-to-tex-texbook-tex/6208#6208
+se-score: 2
+se-accepted: false
+se-tags:
+- tex-core
+- plain-tex
+- copyright
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it actually illegal to TeX `texbook.tex`?](https://tex.stackexchange.com/questions/6204/is-it-actually-illegal-to-tex-texbook-tex), asked by [SamB](https://tex.stackexchange.com/users/1189/samb) on TeX Stack Exchange (2010-11-30; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> At the top of `texbook.tex`, it is written:
+>
+> ```latex
+> % This manual is copyright (C) 1984 by the American Mathematical Society.
+> % All rights are reserved!
+> % The file is distributed only for people to see its examples of TeX input,
+> % not for use in the preparation of books like The TeXbook.
+> % Permission for any other use of this file must be obtained in writing
+> % from the copyright holder and also from the publisher (Addison-Wesley).
+> \loop\iftrue
+>   \errmessage{This manual is copyrighted and should not be TeXed}\repeat
+> \pausing1 \input manmac
+> ```
+>
+> Does this *actually* mean that would be illegal to TeX this file, or is it more likely an attempt at intimidation by Addison-Wesly?
+>
+> Would it make any difference ... 
+>
+>  1. ... if the output were only for personal use?
+>
+>  1. ... if the output were only used on-screen, not printed?
+>
+>  1. ... if one already owned a copy of the TeXbook?
+>
+> (Probably the answers to at least some of these questions vary from country to country.)
+>
+> Also (this is probably a big can of worms), would it be *wrong* to do so?
+:::
+
+The copyright holders have the right to decide what you can do with it.  It seems clear to me.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6204/is-it-actually-illegal-to-tex-texbook-tex/6208#6208) on TeX Stack Exchange, 2010-11-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

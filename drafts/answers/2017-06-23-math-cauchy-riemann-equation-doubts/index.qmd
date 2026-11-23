@@ -1,0 +1,51 @@
+---
+title: Cauchy-Riemann equation doubts
+date: '2017-06-23'
+description: The function $f(x+iy) = 2ixy$ is differentiable as a function from $\mathbb{R}^2$ to $\mathbb{C}$, but is not complex differentiable.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2333568
+se-link: https://math.stackexchange.com/questions/2333530/cauchy-riemann-equation-doubts/2333568#2333568
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- complex-numbers
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Cauchy-Riemann equation doubts](https://math.stackexchange.com/questions/2333530/cauchy-riemann-equation-doubts), asked by [xpeiro](https://math.stackexchange.com/users/382883/xpeiro) on Mathematics Stack Exchange (2017-06-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> First of all I want to tell I know this question is pretty awkward, but I've been working on it  and searching about it and I've not got anything which clears my doubts.
+>
+> According to cauchy-riemann equation any $f(z)$ which returns just a real or imaginary part can't be derivable but it can be derivate via derivative definition.
+>
+> e.g.: 
+> $$f(z)=i2xy\\
+> U_x=0; U_y=0; V_x=2y; V_y=2x$$
+> So, according to c-r isnt derivable, however via derivative definition we get it is; $\frac{\partial f}{\partial y} = i2x$ and $\frac{\partial f}{\partial x} = i2y$. 
+>
+> What I'm misunderstanding?
+>
+> Thank you.
+:::
+
+The function $f(x+iy) = 2ixy$ is differentiable as a function from $\mathbb{R}^2$ to $\mathbb{C}$, but is not complex differentiable.  
+
+One way to see this is to write $f$ in terms of $z$ and $\bar z$ rather than $x$ and $y$:
+$$2ixy = 2i \left(\frac{z+\bar z}{2}\right)\left(\frac{z-\bar z}{2i}\right)
+         = \frac{1}{2}\left(z^2 - \bar z^2\right)$$
+In these coordinates, the Cauchy-Riemann equations take the form $\frac{\partial f}{\partial \bar z} = 0$.  Here $\frac{\partial f}{\partial \bar z} = \bar z$, so $f$ is not complex differentiable.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2333530/cauchy-riemann-equation-doubts/2333568#2333568) on Mathematics Stack Exchange, 2017-06-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

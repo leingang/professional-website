@@ -1,0 +1,50 @@
+---
+title: Which manuals are on your "TeX Reference" shelf?
+date: '2010-11-20'
+description: At work I have the beamer and pgf manuals open about 50% of the time. The TeXbook is one of the most thumbed books I own. But I also would like to recommend A…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5673
+se-link: https://tex.stackexchange.com/questions/66/which-manuals-are-on-your-tex-reference-shelf/5673#5673
+se-score: 13
+se-accepted: false
+se-tags:
+- books
+- documentation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which manuals are on your "TeX Reference" shelf?](https://tex.stackexchange.com/questions/66/which-manuals-are-on-your-tex-reference-shelf), asked by [Sharpie](https://tex.stackexchange.com/users/17/sharpie) on TeX Stack Exchange (2010-07-26; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> This is a community wiki since there is no "one true answer"- if you find an answer that contains a lot of your choices, but is missing something you feel is incredibly useful.  Feel free to add it.  A short description of what topics the reference covers would be nice as well.
+>
+> Organize by subject please.
+>
+> For example: I always keep the following PDFs at my fingertips.
+>
+> ### Document Layout
+>
+>   * [The Memoir manual](http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/):  Covers, in exquisite detail, how to produce just about any document using the `memoir` LaTeX class. ([PDF](http://tug.ctan.org/tex-archive/macros/latex/contrib/memoir/memman.pdf) 4.5 MB)
+>
+> ### Mathematical Typesetting
+>
+>   * [Math Mode](http://tug.ctan.org/obsolete/info/math/voss/mathmode/): A document by Herbert Voß that explains how to typeset just about any mathematical expression in LaTeX. ([PDF](http://tug.ctan.org/obsolete/info/math/voss/mathmode/Mathmode.pdf) 2 MB)
+>
+> ### Graphics
+>
+>   * [The PGF Manual](https://ctan.org/pkg/pgf): Explains, with examples, how to draw just about any figure using PGF/TikZ.  Also a good example of what awesome documentation should look like. ([PDF](http://mirror.macomnet.net/pub/CTAN/graphics/pgf/base/doc/pgfmanual.pdf) 9.5 MB)
+:::
+
+At work I have the beamer and pgf manuals open about 50% of the time.  *The TeXbook* is one of the most thumbed books I own.  But I also would like to recommend *[A Guide to LaTeX](http://www.amazon.com/Guide-LATEX-Document-Preparation-Beginners/dp/0201398257)* by Kopka and Daly.  A very nice guide that starts from basics and ends with a bit of programming.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/66/which-manuals-are-on-your-tex-reference-shelf/5673#5673) on TeX Stack Exchange, 2010-11-20. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

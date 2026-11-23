@@ -1,0 +1,41 @@
+---
+title: Calculus Question about Rolle’s Theorem pertaining to velocity and acceleration
+date: '2017-11-30'
+description: The Mean Value Theorem states that if $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists a point $c$ in $(a,b)$ such that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2543855
+se-link: https://math.stackexchange.com/questions/2543667/calculus-question-about-rolle-s-theorem-pertaining-to-velocity-and-acceleration/2543855#2543855
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculus Question about Rolle’s Theorem pertaining to velocity and acceleration](https://math.stackexchange.com/questions/2543667/calculus-question-about-rolle-s-theorem-pertaining-to-velocity-and-acceleration), asked by [incogNICO](https://math.stackexchange.com/users/508402/incognico) on Mathematics Stack Exchange (2017-11-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> At 9:13 A.M., a sports car is traveling 35 miles per hour. Two minutes later, the car is traveling 85 miles per hour. Prove that at some time during this two-minute interval, the car’s acceleration is exactly 1500 miles per hour squared.
+:::
+
+The [Mean Value Theorem][1] states that if $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists a point $c$ in $(a,b)$ such that 
+$$\frac{f(b) - f(a)}{b-a} = f'(c)$$
+If you think of $f$ as varying over time, the left-hand side is the average rate of change of $f$ over the interval $[a,b]$, and the right-hand side is the instantaneous rate of change at $c$.  
+
+You mentioned Rolle's Theorem in your title; the MVT is equivalent to it.
+
+If $f$ is velocity, what is $f'$?
+
+  [1]: https://en.wikipedia.org/wiki/Mean_value_theorem
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2543667/calculus-question-about-rolle-s-theorem-pertaining-to-velocity-and-acceleration/2543855#2543855) on Mathematics Stack Exchange, 2017-11-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

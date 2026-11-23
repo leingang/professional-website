@@ -1,0 +1,74 @@
+---
+title: Wrap latex environment
+date: '2011-04-05'
+description: The problem is that the listings package needs to make all kinds of changes to the internals of LaTeX in order to evaluate the contents of the lstlisting…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15027
+se-link: https://tex.stackexchange.com/questions/15026/wrap-latex-environment/15027#15027
+se-score: 6
+se-accepted: true
+se-tags:
+- listings
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Wrap latex environment](https://tex.stackexchange.com/questions/15026/wrap-latex-environment), asked by [Steenreem](https://tex.stackexchange.com/users/4670/steenreem) on TeX Stack Exchange (2011-04-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm a beginning latex user. I have some programming code in my document which I format using the lstlisting environment from the package listings.
+>
+> However this still allows the code segments to be split into two pieces when placed near the end of a page.
+>
+> To fix this I also use a figure environment for code.
+> This causes an often recurring pattern:
+>
+> ```latex
+> \begin{figure}[H]
+> \begin{lstlisting}
+> ..code..
+> \end{lstlisting}
+> \end{figure}
+> ```
+>
+> How can I define a new environment for this pattern?
+> I tried:
+>
+> ```latex
+> \newenvironment{mylisting}
+> {
+> \begin{figure}[H]
+> \begin{lstlisting}
+> }
+> {
+> \end{lstlisting}
+> \end{figure}
+> }
+> ```
+>
+> However using this environment gave errors all over.
+:::
+
+The problem is that the `listings` package needs to make all kinds of changes to the internals of LaTeX in order to evaluate the contents of the `lstlisting` environment in a non-LaTeX way.  In particular it shuts down expansion of control sequences starting with `\` so the end code to your `mylisting` environment gets passed right by. 
+
+If all you want to do is have a listing in a float, you can do
+
+```latex
+\begin{lstlisting}[float=h]
+...
+\end{lstlisting}
+```
+
+You might find [some of these questions about the listings package on the TeX SE](https://tex.stackexchange.com/questions/tagged/listings) useful as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15026/wrap-latex-environment/15027#15027) on TeX Stack Exchange, 2011-04-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

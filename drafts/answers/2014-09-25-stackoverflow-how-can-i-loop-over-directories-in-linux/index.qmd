@@ -1,0 +1,54 @@
+---
+title: How can I loop over directories in Linux?
+date: '2014-09-25'
+description: The technique I use most often is find | xargs. For example, if you want to make every file in this directory and all of its subdirectories world-readable, you…
+categories:
+- stackoverflow
+license: CC BY-SA 4.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 26038761
+se-link: https://stackoverflow.com/questions/2107945/how-can-i-loop-over-directories-in-linux/26038761#26038761
+se-score: 8
+se-accepted: false
+se-tags:
+- linux
+- bash
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I loop over directories in Linux?](https://stackoverflow.com/questions/2107945/how-can-i-loop-over-directories-in-linux), asked by [Erik Sapir](https://stackoverflow.com/users/243967/erik-sapir) on Stack Overflow (2010-01-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am writing a script in Bash on Linux and need to go through all subdirectory names in a given directory. How can I loop through these directories (and skip regular files)?
+>
+> For example, if the directory is */tmp/*, which contains */tmp/A*, */tmp/B*, and */tmp/C* subdirectories, I need to retrieve A, B and C.
+:::
+
+The technique I use most often is `find | xargs`.  For example, if you want to make every file in this directory and all of its subdirectories world-readable, you can do:
+
+```
+find . -type f -print0 | xargs -0 chmod go+r
+find . -type d -print0 | xargs -0 chmod go+rx
+```
+
+The `-print0` option terminates with a NULL character instead of a space.  The `-0` option splits its input the same way.  So this is the combination to use on files with spaces.
+
+You can picture this chain of commands as taking every line output by `find` and sticking it on the end of a `chmod` command.
+
+If the command you want to run as its argument in the middle instead of on the end, you have to be a bit creative.  For instance, I needed to change into every subdirectory and run the command `latemk -c`.  So I used (from [Wikipedia](http://en.wikipedia.org/wiki/Xargs#The_Shell_Trick)):
+
+```
+find . -type d -depth 1 -print0 | \
+    xargs -0 sh -c 'for dir; do pushd "$dir" && latexmk -c && popd; done' fnord
+```
+
+This has the effect of `for dir $(subdirs); do stuff; done`, but is safe for directories with spaces in their names.  Also, the separate calls to `stuff` are made in the same shell, which is why in my command we have to return back to the current directory with `popd`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2107945/how-can-i-loop-over-directories-in-linux/26038761#26038761) on Stack Overflow, 2014-09-25, with [edits](https://stackoverflow.com/posts/26038761/revisions) by [Peter Mortensen](https://stackoverflow.com/users/63550/peter-mortensen). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

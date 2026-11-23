@@ -1,0 +1,52 @@
+---
+title: 'Differentiation : derivative of product of 2 polynomial'
+date: '2015-08-06'
+description: 'Expand the right-hand side and subtract $y=uv$: $$\delta y = uv + u \,\delta v + v \,\delta u + (\delta u)(\delta v) - uv = u \,\delta v + v \,\delta u +…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1386764
+se-link: https://math.stackexchange.com/questions/1386753/differentiation-derivative-of-product-of-2-polynomial/1386764#1386764
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiation : derivative of product of 2 polynomial](https://math.stackexchange.com/questions/1386753/differentiation-derivative-of-product-of-2-polynomial), asked by [Kawa Banga](https://math.stackexchange.com/users/259256/kawa-banga) on Mathematics Stack Exchange (2015-08-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$\begin{align}\frac{dy}{dx}=\frac {dv}{dx}u+\frac {du}{dx}v \end{align}$$
+> So in order to understand the derivatives of the formula above, I saw this
+>
+> $$\begin{align}&y=(2x+1)(x+1) \\ &u=(2x+1),\ v=(x+1) \\
+> &y=uv\end{align}$$
+> but then somehow this happened
+>
+> $$\begin{align}y+\delta y=(u+\delta u)(v+\delta v)\end{align}$$
+>
+> and I don't understand how those deltas are related to each other, and how do they even cancel each other out?
+>
+> Explanation please ._.? thanks
+>
+> **EDIT:** I know how it becomes the formula from there on, but what I wanted to know is how the delta(y), delta(u), (v) can just pop out in the last equation, I don't understand, and how would they cancel each other out?
+:::
+
+Expand the right-hand side and subtract $y=uv$:
+$$\delta y = uv + u \,\delta v + v \,\delta u + (\delta u)(\delta v) - uv
+= u \,\delta v + v \,\delta u + (\delta u)(\delta v)$$
+Divide by $\delta x$:
+$$\frac{\delta y}{\delta x} = u \frac{\delta v}{\delta x} + v \frac{\delta u}{\delta x} + \delta u \frac{\delta v}{\delta x}$$
+Now let $\delta x \to 0$.  If $u$ and $v$ are differentiable, then $\delta u \to 0$, $\frac{\delta u}{\delta x}\to\frac{du}{dx}$, and $\frac{\delta v}{\delta x} \to \frac{dv}{dx}$.  Hence
+$$\frac{dy}{dx} = v \frac{du}{dx}+u \frac{dv}{dx}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1386753/differentiation-derivative-of-product-of-2-polynomial/1386764#1386764) on Mathematics Stack Exchange, 2015-08-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

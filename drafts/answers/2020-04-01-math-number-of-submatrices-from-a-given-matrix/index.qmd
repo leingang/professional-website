@@ -1,0 +1,38 @@
+---
+title: Number of submatrices from a given matrix
+date: '2020-04-01'
+description: If you have an $m \times n$ matrix, and you want to find the number of $p \times q$ submatrices found within it, then you need to choose $p$ rows from the $m$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3605407
+se-link: https://math.stackexchange.com/questions/3605401/number-of-submatrices-from-a-given-matrix/3605407#3605407
+se-score: 6
+se-accepted: true
+se-tags:
+- linear-algebra
+- combinatorics
+- matrices
+- permutations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Number of submatrices from a given matrix](https://math.stackexchange.com/questions/3605401/number-of-submatrices-from-a-given-matrix), asked by [Roshan Shrestha](https://math.stackexchange.com/users/44821/roshan-shrestha) on Mathematics Stack Exchange (2020-04-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let's suppose I have a $4 \times 3$ matrix. Then, is there any way I can compute the number of square submatrices it can form, also the number of square submatrices of given order like say 3, which is 4 ( as I can count it easily for the given matrix), but what about for the number of square submatrices I can form of order 2 from the given matrix. Is it a permutation and combination problem, or we can figure it our intuitively.
+:::
+
+If you have an $m \times n$ matrix, and you want to find the number of $p \times q$ submatrices found within it, then you need to choose $p$ rows from the $m$ available, and $q$ columns from the $n$ available.  The total number of such is $\binom{m}{p}\binom{n}{q}$.
+
+For example, if the matrix is $4 \times 3$ and you want to know the number of $3\times 3$ submatrices, the answer is $\binom{4}{3} \binom{3}{3} = 4$.  Or the number of $2\times2$ submatrices will be $\binom{4}{2}\binom{3}{2} = 6 \times 3 = 18$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3605401/number-of-submatrices-from-a-given-matrix/3605407#3605407) on Mathematics Stack Exchange, 2020-04-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

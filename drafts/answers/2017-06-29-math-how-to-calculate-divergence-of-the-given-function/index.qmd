@@ -1,0 +1,66 @@
+---
+title: How to calculate divergence of the given function?
+date: '2017-06-29'
+description: Without switching coordinate systems, this is my favorite method, since it breaks down the identity into small pieces.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2340443
+se-link: https://math.stackexchange.com/questions/2340141/how-to-calculate-divergence-of-the-given-function/2340443#2340443
+se-score: 0
+se-accepted: true
+se-tags:
+- vectors
+- vector-analysis
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to calculate divergence of the given function?](https://math.stackexchange.com/questions/2340141/how-to-calculate-divergence-of-the-given-function), asked by [coder_86](https://math.stackexchange.com/users/424417/coder-86) on Mathematics Stack Exchange (2017-06-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The vector function is:
+>
+> $$\mathbf{v}=\frac{1}{r^2}\hat{\mathbf{r}}$$
+>
+>
+> $r$ is the magnitude of position vector and
+>
+> $\hat{\mathbf{r}}$ is the unit vector along the position vector
+>
+> Now divergence will be
+>
+> $$\nabla \cdot \mathbf{v}={\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)}\cdot \mathbf{v}$$
+>
+> How is this evaluated?
+:::
+
+Without switching coordinate systems, this is my favorite method, since it breaks down the identity into small pieces.
+
+Let $\mathbf{r} = x\mathbf{i} + y \mathbf{j} + z \mathbf{k}$, and $r = \sqrt{x^2 + y^2 + z^2}$.  Notice that
+$$\begin{align*}
+    \mathbf{v} &= \frac{\mathbf{r}}{r^3}\\
+    \mathbf{r}\cdot\mathbf{r} &= r^2 \\
+    \nabla r &= \frac{\mathbf{r}}{r} \\
+    \nabla \cdot \mathbf{r} &= 3 \\
+\end{align*}$$
+We can use the product rule for the divergence, and the power rule for the gradient:
+$$\begin{align*}
+    \nabla \cdot \mathbf{v} &= \nabla\cdot(r^{-3} \mathbf{r}) \\
+    &= (\nabla r^{-3}) \cdot \mathbf{r} + r^{-3} \nabla \cdot \mathbf{r} \\
+    &= (-3)r^{-4}\nabla r \cdot \mathbf{r} + 3 r^{-3} \\
+    &= (-3)r^{-4}(r^{-1}\mathbf{r})\cdot \mathbf{r} + 3 r^{-3} \\
+    &= (-3)r^{-5}\mathbf{r}\cdot\mathbf{r} + 3r^{-3} \\
+    &= (-3)r^{-5}r^2 + 3r^{-3} \\
+    &= (-3)r^{-3} + 3r^{-3} = 0
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2340141/how-to-calculate-divergence-of-the-given-function/2340443#2340443) on Mathematics Stack Exchange, 2017-06-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

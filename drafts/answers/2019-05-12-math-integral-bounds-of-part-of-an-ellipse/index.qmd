@@ -1,0 +1,52 @@
+---
+title: Integral Bounds of Part of an Ellipse
+date: '2019-05-12'
+description: You need to solve both equations at once. $$-2 = 4 \cos\theta\qquad\qquad -3 \sqrt 3 = 6 \sin\theta$$ If you try to use inverse functions on the first, you get…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3223728
+se-link: https://math.stackexchange.com/questions/3223714/integral-bounds-of-part-of-an-ellipse/3223728#3223728
+se-score: 2
+se-accepted: true
+se-tags:
+- integration
+- definite-integrals
+- elliptic-curves
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integral Bounds of Part of an Ellipse](https://math.stackexchange.com/questions/3223714/integral-bounds-of-part-of-an-ellipse), asked by [mathsandthat](https://math.stackexchange.com/users/640207/mathsandthat) on Mathematics Stack Exchange (2019-05-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![Question][q-1]][q-1]
+>
+>
+>   [q-1]: cEhco.png
+>
+> I'm looking through my notes, and I've completed this questions integral, getting $-144 \int cos^4(\theta)$ and due to the fact that $x=4cos(\theta)$ I calculated that the lower bound is $cos^-1(\frac{2\sqrt{3}}{4})=\frac{\pi}{6}$. The lecture notes confirm that this is correct however when I try the upper bound of the integral I get two different answers regardless of how I use $x=4cos(\theta)$ or $y=6sin(\theta)$ (the two ways in which he curve is parametererised).
+>
+> The upper bound that the lecture notes specify is $\frac{4\pi}{3}$
+:::
+
+You need to solve *both* equations at once.
+$$-2 = 4 \cos\theta\qquad\qquad
+    -3  \sqrt 3 = 6 \sin\theta$$
+If you try to use inverse functions on the first, you get an angle in the second quadrant: $\cos^{-1}\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$.  If you try to use inverse functions on the second, you get an angle in the fourth quadrant: $\sin^{-1}\left(-\frac{\sqrt{3}}{2}\right) = - \frac{\pi}{3}$.  Neither of these is the angle you are looking for: the point is in the third quadrant.
+
+However, using the symmetry properties of sine and cosine, we see that:
+$$\begin{align*}
+   \cos\left(-\frac{2\pi}{3}\right) &= \cos\left(\frac{2\pi}{3}\right) = -\frac{1}{2}\\
+   \sin\left(-\frac{2\pi}{3}\right) &= -\sin\left(\frac{2\pi}{3}\right) = -\frac{\sqrt{3}}{2}
+\end{align*}$$
+So this angle satisfies both equations.  But we need to start from the lower limit $\theta=\frac{\pi}{6}$ and go counterclockwise, increasing $\theta$.  So we use $-\frac{2\pi}{3} + 2\pi = \frac{4\pi}{3}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3223714/integral-bounds-of-part-of-an-ellipse/3223728#3223728) on Mathematics Stack Exchange, 2019-05-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

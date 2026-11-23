@@ -1,0 +1,51 @@
+---
+title: Find $\lim_{(x,y)\to (0,0)} \frac{xy^2}{|x|+|y|}$
+date: '2024-05-29'
+description: I would avoid polar coordinates altogether. Notice $$\left|\frac{xy^2}{|x| + |y|}\right| = \frac{|x|}{|x|+|y|} y^2 \leq y^2$$ So by the squeeze theorem…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4924437
+se-link: https://math.stackexchange.com/questions/4924432/find-lim-x-y-to-0-0-fracxy2xy/4924437#4924437
+se-score: 3
+se-accepted: true
+se-tags:
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find $\lim_{(x,y)\to (0,0)} \frac{xy^2}{|x|+|y|}$](https://math.stackexchange.com/questions/4924432/find-lim-x-y-to-0-0-fracxy2xy), asked by [user1942348](https://math.stackexchange.com/users/211463/user1942348) on Mathematics Stack Exchange (2024-05-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Find 
+> $$\lim_{(x,y) \to (0,0)} \frac{xy^2}{|x| + |y|}.$$
+>
+> **Attempt:**
+>
+> Putting $x = r\cos\theta,\; y = r\sin\theta$, 
+> $$\lim_{(r, \theta) \to (0,0)} \frac{r^2 \sin^2\theta \cos\theta}{|\cos\theta| + |\sin\theta|} 
+> \leq \lim_{(r, \theta) \to (0,0)} \frac{r^2}{|\cos\theta| + |\sin\theta|} = 0 \qquad (?)$$
+>
+> Please solve this question. Is the above approach correct?
+>
+> **Edit:**
+>
+> $$\lim_{r\to 0} \frac{r^2 \sin^2\theta \cos\theta}{|\cos\theta| + |\sin\theta|} 
+> \leq \lim_{r\to 0} \frac{r^2}{|\cos\theta| + |\sin\theta|} 
+> = 0$$
+:::
+
+I would avoid polar coordinates altogether. Notice
+$$\left|\frac{xy^2}{|x| + |y|}\right| = \frac{|x|}{|x|+|y|} y^2 \leq y^2$$
+So by the squeeze theorem, $\lim_{(x,y) \to (0,0)} \frac{xy^2}{|x| + |y|} = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4924432/find-lim-x-y-to-0-0-fracxy2xy/4924437#4924437) on Mathematics Stack Exchange, 2024-05-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

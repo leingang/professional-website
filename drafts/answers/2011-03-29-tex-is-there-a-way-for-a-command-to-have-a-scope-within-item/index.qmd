@@ -1,0 +1,78 @@
+---
+title: Is there a way for a command to have a scope within item?
+date: '2011-03-29'
+description: Bulding on Gonzalo's solution, you can alter the definition of \item within the Lenumerate environment and behavior outside it will be as normal.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14499
+se-link: https://tex.stackexchange.com/questions/14475/is-there-a-way-for-a-command-to-have-a-scope-within-item/14499#14499
+se-score: 3
+se-accepted: false
+se-tags:
+- macros
+- lists
+- grouping
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way for a command to have a scope within item?](https://tex.stackexchange.com/questions/14475/is-there-a-way-for-a-command-to-have-a-scope-within-item), asked by [kirill_igum](https://tex.stackexchange.com/users/1643/kirill-igum) on TeX Stack Exchange (2011-03-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I defined a command 
+>
+> ```latex
+> \newcommand{\done}{\color[RGB]{124, 124, 255}}
+> ```
+>
+> Is there a way to use it as
+>
+> ```latex
+> \item \done la-la
+> ```
+>
+> instead of 
+>
+> ```latex
+> \item {\done la-la}
+> ```
+>
+> It bothers me to put brackets all the time.  
+> So basically I want `\done` to have a scope only within `\item`.
+:::
+
+Bulding on Gonzalo's solution, you can alter the definition of `\item` within the `Lenumerate` environment and behavior outside it will be as normal.
+
+```latex
+\documentclass{article}
+
+\newenvironment{Lenumerate}{%
+  \begingroup
+  \let\latexsaveditem\item
+  \renewcommand{\item}{\endgroup\begingroup\latexsaveditem}
+  \enumerate\begingroup%
+}{%
+  \endgroup\endenumerate\endgroup%
+}
+
+\begin{document}
+
+\begin{Lenumerate}
+  \item \bfseries a
+  \item \itshape b
+  \item \scshape c
+  \item d
+\end{Lenumerate}
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14475/is-there-a-way-for-a-command-to-have-a-scope-within-item/14499#14499) on TeX Stack Exchange, 2011-03-29. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,76 @@
+---
+title: tangent value at a point of an hyperbola
+date: '2021-06-24'
+description: 'To summarize what you did so far, we are given a hyperbola with equation $$ax^2 + (y-d)^2 + f = 0$$ and we want to find $a$, $d$, and $f$ such that:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4181928
+se-link: https://math.stackexchange.com/questions/4181669/tangent-value-at-a-point-of-an-hyperbola/4181928#4181928
+se-score: 1
+se-accepted: false
+se-tags:
+- conic-sections
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[tangent value at a point of an hyperbola](https://math.stackexchange.com/questions/4181669/tangent-value-at-a-point-of-an-hyperbola), asked by [floppy_molly](https://math.stackexchange.com/users/765545/floppy-molly) on Mathematics Stack Exchange (2021-06-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have an hyperbola (centered to the Y axis, displaced in Y) passing through the points $P(X,Y)$, $P_1(0,1)$ $P_2(2/pi,2/pi)$.
+>
+> This hyperbola has for equation $a*X² + (Y-d)² +f = 0$
+>
+> So far so good: we can find $a$ and $f$ ($f=(1-d)²$..) depending of $d$ because it pass through $P_1$ and $P_2$ . See graph 
+>
+> https://www.desmos.com/calculator/egiica6qvj
+> By adding the condition: tangent at$P_2$ should be -1, we should be able to find $d$ and not only guess it is around 2.2
+>
+> Update final: The equation of the tangent line is: $x*(2/pi)*a + (y-d)*(2/pi - d) = -f$
+:::
+
+To summarize what you did so far, we are given a hyperbola with equation
+$$ax^2 + (y-d)^2 + f = 0$$
+and we want to find $a$, $d$, and $f$ such that:
+
+1. $P_1(0,1)$ is on the hyperbola
+2. $P_2(\alpha,\alpha)$ is on the hyperbola (we are going to abbreviate $\alpha = \frac{2}{\pi}$ for the time being)
+3. The tangent line to the hyperbola at $P_2$ has slope $-1$.
+
+The first condition gives us:
+$$(1-d)^2 + f = 0 \tag{1}$$
+which means $f = -(1-d)^2$.  The second condition gives us:
+$$\begin{gather*}
+    a \alpha^2 + (\alpha - d)^2 + f = 0 \tag{2}
+\end{gather*}$$
+
+Using implicit differentiation:
+$$2ax + 2(y-d)\frac{dy}{dx} = 0$$
+So at any point $(x,y)$ on the hyperbola
+$$\frac{dy}{dx} = - \frac{a x}{y-d}$$
+Therefore, the third condition gives us an equation:
+$$\begin{gather*}
+    -1 = - \frac{a\alpha}{\alpha -d}  \\\iff
+    a\alpha = \alpha - d \tag{3}
+\end{gather*}$$
+If we substitute $(1)$ and $(3)$ into $(2)$, we have an equation for $d$ alone:
+$$(\alpha - d)\alpha + (\alpha - d)^2 - (1-d)^2 = 0$$
+This looks quadratic in $d$, but actually, the two $d^2$ terms cancel and it's linear.  The solution is:
+$$d = \frac{2\alpha^2-1}{3\alpha - 2} = \frac{8-\pi^2}{6\pi - 2\pi^2}
+     \approx 2.1015$$
+[Desmos](https://www.desmos.com/calculator/z3wiqsvydv) confirms that the hyperbola with this choice of $d$, $a$, and $f$ passes through $P_1$ and $P_2$, and has the correct tangent at $P_2$:
+
+[![graph of the hyperbola, with the points P1(1,0) and P2(2/pi,2/pi) marked, and the line through P2 with slope -1 drawn.  Evidently the hyperbola passes through both P1 and P2, and the line is tangent to the hyperbola at P2][1]][1]
+
+
+  [1]: tYLDZ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4181669/tangent-value-at-a-point-of-an-hyperbola/4181928#4181928) on Mathematics Stack Exchange, 2021-06-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

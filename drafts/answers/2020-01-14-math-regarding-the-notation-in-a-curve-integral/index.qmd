@@ -1,0 +1,49 @@
+---
+title: Regarding the notation in a curve integral
+date: '2020-01-14'
+description: If you parametrize the curve with functions $x=f(t)$, $y=g(t)$ over an interval $a \leq t \leq b$, then $$\frac{1}{2} \int{C\phi} (y\,dx - x\,dy) =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3508529
+se-link: https://math.stackexchange.com/questions/3508518/regarding-the-notation-in-a-curve-integral/3508529#3508529
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Regarding the notation in a curve integral](https://math.stackexchange.com/questions/3508518/regarding-the-notation-in-a-curve-integral), asked by [3nondatur](https://math.stackexchange.com/users/481633/3nondatur) on Mathematics Stack Exchange (2020-01-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am working on the following exercise:
+>
+> >Let $0 < \phi < \pi$ and consider the curve 
+> >
+> >$$C_{\phi} := \bigg\{ (2+ \cos(t), 1+ \sin(t)) \ \bigg\lvert \  \lvert t \rvert \le \phi \bigg\}.$$
+> >
+> >Calculate the curve integral 
+> $$\frac{1}{2} \int_{C_\phi} y \ dx - x \ dy.$$
+>
+> I do not know what $y \ dx$ and $x \ dy$ should mean in this context. Could you please explain?
+:::
+
+If you parametrize the curve with functions $x=f(t)$, $y=g(t)$ over an interval $a \leq t \leq b$, then
+$$\frac{1}{2} \int_{C_\phi} (y\,dx - x\,dy) = \frac{1}{2}\int_a^b \left(g(t)f'(t) -f(t)g'(t)\right)\,dt$$
+Formally, you take the functions defining the parametrization and substitute them into the integrand for $x$ and $y$.  Then you take the differentials of those functions and substitute them for $dx$ and $dy$.
+
+Your curve $C_\phi$ is already described by a parametrization $x = 2+ \cos t,y=1 + \sin t$, $-\phi \leq t \leq \phi$.  Therefore $dx = - \sin t \,dt$ and $dy = \cos t\,dt$ and
+$$\frac{1}{2} \int_{C_\phi} (y\,dx - x\,dy) = \frac{1}{2}\int_{-\phi}^\phi \left((1+\sin t)(-\sin t) -(2+\cos t)(\cos t)\right)\,dt$$
+Can you take it from here?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3508518/regarding-the-notation-in-a-curve-integral/3508529#3508529) on Mathematics Stack Exchange, 2020-01-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

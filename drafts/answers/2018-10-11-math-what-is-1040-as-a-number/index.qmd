@@ -1,0 +1,44 @@
+---
+title: What is $10^{40}$ as a number?
+date: '2018-10-11'
+description: 'I''m assuming you know that for any real number $a$ and whole number $n$, $a^n$ is the product of $n$ factors of $a$: $$a^n = \underbrace{a \cdot a \cdots…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2951211
+se-link: https://math.stackexchange.com/questions/2951198/what-is-1040-as-a-number/2951211#2951211
+se-score: 4
+se-accepted: true
+se-tags:
+- index-notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is $10^{40}$ as a number?](https://math.stackexchange.com/questions/2951198/what-is-1040-as-a-number), asked by [Ty Jury](https://math.stackexchange.com/users/603021/ty-jury) on Mathematics Stack Exchange (2018-10-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What is $10^{40}$?
+>
+> Every time I google this question I get $1\mathrm{e}\!+\!40$ but I don’t understand this so what is it as a number?
+:::
+
+I'm assuming you know that for any real number $a$ and whole number $n$, $a^n$ is the product of $n$ factors of $a$:
+$$a^n = \underbrace{a \cdot a \cdots a}_{\text{$n$ factors}}$$
+So $10^{40}$ is the product of forty tens, all in a row.
+
+In our base-ten system, multiplying by ten has the effect of adding a zero to the end of the number.  So $10^{40} = 10 \times 10^{39}$ is $10$ followed by $39$ zeroes.  In other words, $1$ followed by forty zeroes.  
+
+This is useful in [scientific notation][1].  It's a way to conveniently express very large or very small numbers without writing a lot of zeroes.  For instance, the number $1234500000$ can be written as $1.2345 \times 10^9$.  A calculator or computer expresses scientific notation with the letter `e` for “exponent” (of the base 10).  So $1.2345 \times 10^9$ gets printed as `1.2345e+9`.
+
+
+  [1]: https://simple.wikipedia.org/wiki/Scientific_notation
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2951198/what-is-1040-as-a-number/2951211#2951211) on Mathematics Stack Exchange, 2018-10-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,90 @@
+---
+title: Pass key option inside a macro to a TikZ drawing command
+date: '2013-04-19'
+description: I'm not sure what you want to do exactly but I would recommend building the length-setting code into the keys themselves so you can pass all the arguments to…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109605
+se-link: https://tex.stackexchange.com/questions/109596/pass-key-option-inside-a-macro-to-a-tikz-drawing-command/109605#109605
+se-score: 4
+se-accepted: true
+se-tags:
+- macros
+- pgfkeys
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Pass key option inside a macro to a TikZ drawing command](https://tex.stackexchange.com/questions/109596/pass-key-option-inside-a-macro-to-a-tikz-drawing-command), asked by [TeXtnik](https://tex.stackexchange.com/users/2483/textnik) on TeX Stack Exchange (2013-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I define a command with one optional key parameter. This command makes some calculations and them draws a `tikzpicture`. How can made my command to accept all the keys that a `\draw` command accept and pass them?
+>
+> <pre>
+> \newlength{\gl@blgskip}
+> \pgfkeys{/lineskip/.cd,
+>                    .default=\baselineskip,
+>                    .store in = \gl@blgskip@macro
+> }
+>
+>
+> \newcommand{\baselinegrid}[1][]
+> {
+>
+>    \pgfkeys{lineskip,#1}
+>    % set length to optional parameter lineskip
+>    \setlength{\gl@blgskip}{\gl@blgskip@macro}
+>
+>   %%% Do some calculations ...
+>
+>
+>   \begin{tikzpicture}
+>     \draw (0,0) -- (0,5cm);
+>   \end{tikzpicture}
+> </pre>
+>
+> Now I can call my commands as `\baselinegrid[lineskip=3cm]`. I want to do thing like `\baselinegrid[lineskiip=3cm, color=red]` and pass the option `color` to the `\draw` command.
+:::
+
+I'm not sure what you want to do exactly but I would recommend building the length-setting code into the keys themselves so you can pass all the arguments to the `tikzpicture` environment directly.  Such as
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\makeatletter
+\newlength{\gl@blgskip}
+\tikzset{lineskip/.cd,
+   .default=\baselineskip,
+   .code={\setlength{\gl@blgskip}{#1}}
+}
+\newcommand{\baselinegrid}[1][]
+{
+  \begin{tikzpicture}[#1]
+    \draw (0,0) grid (\gl@blgskip,\gl@blgskip);
+  \end{tikzpicture}
+}
+\makeatother
+\begin{document}
+
+\baselinegrid[lineskip=3cm,color=red]
+
+\end{document}
+```
+
+![sample code output][1]
+
+You don't need to put your keys in a separate namespace as long as you're not overwriting a `tikz` key.  The `.code` key handler sets up a macro to handle the argument passed to it, so you don't have to `.store in` the argument and then call a separate macro later.
+
+In situations such as these, I usually end up building all the code into keys such as the `execute at begin/end picture` so that your interface can be just `\tikz[baselinegrid,lineskip=...]{}`.  If you explain more of what you want to see I can explain more.
+
+  [1]: lPRKZ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109596/pass-key-option-inside-a-macro-to-a-tikz-drawing-command/109605#109605) on TeX Stack Exchange, 2013-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

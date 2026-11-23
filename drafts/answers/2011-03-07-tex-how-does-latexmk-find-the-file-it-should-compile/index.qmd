@@ -1,0 +1,63 @@
+---
+title: How does latexmk find the file it should compile?
+date: '2011-03-07'
+description: Make sure you are running this command in the same directory as myfile.tex.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12904
+se-link: https://tex.stackexchange.com/questions/12883/how-does-latexmk-find-the-file-it-should-compile/12904#12904
+se-score: 2
+se-accepted: false
+se-tags:
+- latexmk
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does latexmk find the file it should compile?](https://tex.stackexchange.com/questions/12883/how-does-latexmk-find-the-file-it-should-compile), asked by user3992 on TeX Stack Exchange (2011-03-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Following up on https://tex.stackexchange.com/questions/12729/gedit-missing-link-texlive
+>
+> ```latex
+> latexmk myfile.tex
+> ```
+>
+> delivers this answer:
+>
+>
+> ```latex
+> Latexmk: Could not find file [myfile.tex]
+>
+> Run number 1 of latex [myfile.tex]
+>
+> This is pdfTexk, Version 3.141592-1.40.3 (Web2C 7.5.6) 
+>
+>  %&-line parsing enabled.
+>
+> entering extended mode
+>
+> ! I can't find file 'myfile.tex'
+>
+> <*> myfile.tex   
+>
+> Please type another input file name:
+> ```
+>
+>
+> I renamed the file but still it could not be found.
+>
+> does a `.tex` file have to be in a specific place in order to be found by `latexmk`?
+:::
+
+Make sure you are running this command in the same directory as `myfile.tex`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12883/how-does-latexmk-find-the-file-it-should-compile/12904#12904) on TeX Stack Exchange, 2011-03-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,42 @@
+---
+title: Squeeze Theorem problem with two variables
+date: '2023-02-16'
+description: This means that $$\left| \sin(3x-y) \cos{\frac{1}{x^2 + y^2}} \right| \leq \left|\sin(3x-y)\right|$$ Furthermore $|\sin(t)| \leq |t|$ for all $t \in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4640576
+se-link: https://math.stackexchange.com/questions/4640570/squeeze-theorem-problem-with-two-variables/4640576#4640576
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Squeeze Theorem problem with two variables](https://math.stackexchange.com/questions/4640570/squeeze-theorem-problem-with-two-variables), asked by [NDD](https://math.stackexchange.com/users/1072114/ndd) on Mathematics Stack Exchange (2023-02-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am asked to find $$\lim_{(x,y)\to(0,0)}\left(\sin(3x-y)\cos\left(\frac{1}{x^2+y^2}\right)\right)$$
+> I know the answer is 0, but I have to prove it. 
+> I know that $\cos{\frac{1}{x^2 + y^2}}$ is bound between -1 and 1, but I am not quite sure how to set up the full squeeze theorem.
+:::
+
+> I know that $\cos{\frac{1}{x^2 + y^2}}$ is bound between -1 and 1
+
+This means that
+$$\left| \sin(3x-y) \cos{\frac{1}{x^2 + y^2}} \right| \leq \left|\sin(3x-y)\right|$$
+Furthermore $|\sin(t)| \leq |t|$ for all $t \in \mathbb{R}$. So $|\sin(3x-y)| \leq |3x-y|$.
+
+Does that help?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4640570/squeeze-theorem-problem-with-two-variables/4640576#4640576) on Mathematics Stack Exchange, 2023-02-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

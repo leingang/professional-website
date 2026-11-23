@@ -1,0 +1,89 @@
+---
+title: \overprint inside \itemize problem -- shaky frames
+date: '2013-02-27'
+description: 'You can make \sout overlay specification aware like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 100100
+se-link: https://tex.stackexchange.com/questions/100079/overprint-inside-itemize-problem-shaky-frames/100100#100100
+se-score: 3
+se-accepted: false
+se-tags:
+- beamer
+- lists
+- itemize
+- overlays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[\overprint inside \itemize problem -- shaky frames](https://tex.stackexchange.com/questions/100079/overprint-inside-itemize-problem-shaky-frames), asked by [user26549](https://tex.stackexchange.com/users/26549/user26549) on TeX Stack Exchange (2013-02-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm having troubles with a presentation. I want to create something like this
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{ulem} % To strikeout text
+>
+> \begin{document}
+> \begin{frame}
+> \begin{itemize}
+> \onslide<1->{
+> \item item 1
+> \item item 2
+> \item item 3}
+> \begin{overprint}
+> \onslide*<2>{\item item 4}
+> \onslide<3>{\item \sout{item 4} $\to$ Actually we'll going to put here another item: item 5}
+> \end{overprint}
+> \end{itemize}
+> \end{frame}
+> \end{document}
+> ```
+>
+> but the frames move up and down in a strange way. Can you please help me to make the frames stay fixed?
+:::
+
+You can make `\sout` overlay specification aware like this:
+
+```latex
+\documentclass{beamer}
+\usepackage{ulem} % To strikeout text
+\renewcommand<>{\sout}[1]{\alt#2{\beameroriginal{\sout}{#1}}{#1}}
+\begin{document}
+\begin{frame}
+\begin{itemize}
+\item<1-> item 1
+\item<1-> item 2
+\item<1-> item 3
+\item<2-> \sout<3>{item 4} \visible<3>{$\to$ Actually we'll going to put here another item: item 5}
+\end{itemize}
+\end{frame}
+\end{document}
+```
+
+Line 3 redefines `\sout` so that `\sout<spec>{text}` expands to `\alt<spec>{text}{\sout{text}}`.  Then you need `\visible` instead of `\only` to make sure that the space taken up by the revealed text is reserved even when it's not revealed. 
+
+With incremental specifications you can write:
+
+```latex
+\begin{frame}
+\begin{itemize}
+\item<+-> item 1
+\item<.-> item 2
+\item<.-> item 3
+\item<+-> \sout<+>{item 4} \visible<.>{$\to$ Actually we'll going to put here another item: item 5}
+\end{itemize}
+\end{frame}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/100079/overprint-inside-itemize-problem-shaky-frames/100100#100100) on TeX Stack Exchange, 2013-02-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

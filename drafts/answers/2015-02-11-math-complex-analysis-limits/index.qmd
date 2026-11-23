@@ -1,0 +1,58 @@
+---
+title: 'Complex Analysis: Limits'
+date: '2015-02-11'
+description: You are correct that $$|f(z) - w0| = |z+z0||z-z0|$$ You want this product to be $<\epsilon$. Given $\epsilon > 0$, you may choose $\delta$ as small as you like…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1143688
+se-link: https://math.stackexchange.com/questions/1143674/complex-analysis-limits/1143688#1143688
+se-score: 1
+se-accepted: true
+se-tags:
+- complex-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Complex Analysis: Limits](https://math.stackexchange.com/questions/1143674/complex-analysis-limits), asked by [Swamp G](https://math.stackexchange.com/users/162231/swamp-g) on Mathematics Stack Exchange (2015-02-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am currently working on the following problem:  
+>
+> Let c denote a complex constant. Then use the definition of limit to show that $$\lim_{z\to\ z_0} (z^2 + c) = z_0^2 +c$$  
+>
+> Definition of limit: For $$\lim_{z\to\ z_0} f(z) = w_0$$ $|f(z) - w_0| < \varepsilon$ whenever $0 < |z - z_0| < \delta$.  
+>
+> Here is my work so far:  
+> $|f(z) - w_0| = |z^2 + c - z_0^2 - c| = |z^2 - z_0^2| = |(z + z_0)(z - z_0)| = |z + z_0||z - z_0| < \varepsilon$.
+>
+> This is where I began to be confused. Initially, I thought I could just say that $\delta \leq \frac{\varepsilon}{|z + z_0|}$, but learned that this is not correct. It was then recommended to me that I try rewriting as such: $|z + z_0||z - z_0| = |z - z_0||z - z_0 + 2z_0|$. I don't really see the logic behind this. I am aware that this problem involves placing a restriction such that $\delta \leq 1$ and then finding the minimum of two values of $\delta$, but I don't see how nor why I would do such a thing.
+>
+> Can anyone help me solve this problem?
+:::
+
+You are correct that
+$$|f(z) - w_0| = |z+z_0||z-z_0|$$
+You want this product to be $<\epsilon$.  Given $\epsilon > 0$, you may choose $\delta$ as small as you like and assume that $|z-z_0| < \delta$ to make it so.
+
+Here is the scratch work: Suppose $\delta \leq 1$.  If $|z-z_0| < \delta$,
+$$|z + z_0| = |(z-z_0) + 2z_0| \leq |z - z_0| + 2 |z_0| \leq 1 + 2|z_0|$$
+Suppose also that $\delta \leq \frac{\epsilon}{1+2|z_0|}$.  If $|z-z_0| < \delta$, then
+$$|f(z) - w_0| = |z+z_0||z-z_0| < (1 + 2|z_0|) \cdot \frac{\epsilon}{1+2|z_0|} = \epsilon$$
+which is what we wanted.  So we can choose $\delta = \min\left(1,\frac{\epsilon}{1+2|z_0|}\right)$ and both inequalities will be satisfied.
+
+Here is the formal proof: Given $\epsilon > 0$, let $\delta = \min\left(1,\frac{\epsilon}{1+2|z_0|}\right)$.  Then since $\delta \leq 1$, if $|z-z_0| < \delta$, we have
+$$|z + z_0| = |(z-z_0) + 2z_0| \leq |z - z_0| + 2 |z_0| \leq 1 + 2|z_0|$$
+Moreover,
+$$|f(z) - w_0| = |z+z_0||z-z_0| < (1+2|z_0|) \cdot \delta \leq (1 + 2|z_0|) \cdot \frac{\epsilon}{1+2|z_0|} = \epsilon$$
+Since this is true for any $\epsilon > 0$, we know $\lim_{z\to z_0} f(z) = w_0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1143674/complex-analysis-limits/1143688#1143688) on Mathematics Stack Exchange, 2015-02-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,43 @@
+---
+title: Formal proof of linear combination - geometric, algebraic
+date: '2017-11-17'
+description: I don't think it has anything to do with linear algebra. The integers are closed under addition, by definition. Multiplication by natural numbers is defined by…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2524841
+se-link: https://math.stackexchange.com/questions/2524827/formal-proof-of-linear-combination-geometric-algebraic/2524841#2524841
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Formal proof of linear combination - geometric, algebraic](https://math.stackexchange.com/questions/2524827/formal-proof-of-linear-combination-geometric-algebraic), asked by [jiten](https://math.stackexchange.com/users/424260/jiten) on Mathematics Stack Exchange (2017-11-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I request formal proof (geometric and algebraic) regarding the linear combination of any number ($\ge 2$) of integers being again an integer. May provide link otherwise. The proof is very basic to understanding many proofs, but is missing its description anywhere. The proof is needed for the below statement:
+>
+> Let $u_i, q_i$ be integers for $i \in \{1, 2, ..., k\}$, then $\sum_{i=1}^{i=k} q_iu_i$ is also an integer.
+>
+> I expect logically that the only (geometric, and based on that the algebraic) proof must be based on linear algebra, and hence using each term of the summation ($\sum_{i=1}^{i=k} q_iu_i$) being represented by a vector, and then finding the vector sum. But, there is a uniqueness to this vector addition, i.e. all the vectors have same angle ($0^0$, as all are on x-axis) and hence are simply added up, and final sum is based on sign and magnitudes as in paper based addition. 
+>
+> I request that, if possible, an alternate proof be provided that is not basing the algebraic proof on linear algebra.
+:::
+
+I don't think it has anything to do with linear algebra.  The integers are closed under addition, by definition.  Multiplication by natural numbers is defined by repeated addition: If $q,u \in \mathbb{Z}$ and $q >0$, then
+$$q u = \underbrace{u + u + \dots + u}_{\text{$q$ summands}}$$
+so that's still an integer.  If $q < 0$, then $qu = -(-q)u$, so that's still an integer.  
+
+You can use mathematical induction to extend binary sums to $n$-ary sums.  So any $\mathbb Z$-linear combination of integers is an integer.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2524827/formal-proof-of-linear-combination-geometric-algebraic/2524841#2524841) on Mathematics Stack Exchange, 2017-11-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

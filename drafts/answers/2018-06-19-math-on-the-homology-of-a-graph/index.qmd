@@ -1,0 +1,39 @@
+---
+title: On the homology of a graph
+date: '2018-06-19'
+description: The incidence matrix of a graph has a row for each vertex, a column for each edge, and a $0$ or $1$ in each entry depending on whether the corresponding vertex…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2825326
+se-link: https://math.stackexchange.com/questions/2825317/on-the-homology-of-a-graph/2825326#2825326
+se-score: 2
+se-accepted: true
+se-tags:
+- homological-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[On the homology of a graph](https://math.stackexchange.com/questions/2825317/on-the-homology-of-a-graph), asked by [bateman](https://math.stackexchange.com/users/48329/bateman) on Mathematics Stack Exchange (2018-06-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am reading Weibel, *An Introduction to Homological Algebra*. In chapter one (Exercise 1.1.6.), there is the definition of the homology of a graph, that I can't understand. 
+>
+> >Let $v_1,\ldots,v_V$ be the vertices and $e_1,\ldots,e_E$ the edges of a finite graph. For any ring $R$, let $C$ be the $R$-module chain complex with $C_1$ the free $R$-module on the set of edges, $C_0$ the free $R$-module on the set of vertices, all others $C_n$ the zero $R$-module and the only non-zero differential $d\colon C_1\to C_0$, given by the incidence matrix.
+>
+> Question: what does it mean that the incidence matrix of the graph works as the differential of the chain complex $C$?
+:::
+
+The [incidence matrix](http://mathworld.wolfram.com/IncidenceMatrix.html) of a graph has a row for each vertex, a column for each edge, and a $0$ or $1$ in each entry depending on whether the corresponding vertex is on the corresponding edge.  As an $V\times E$ matrix, it defines a linear transformation from $R^E$ to $R^V$.
+
+This is just a fancy way of saying the differential of an edge is the formal sum of its endpoints.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2825317/on-the-homology-of-a-graph/2825326#2825326) on Mathematics Stack Exchange, 2018-06-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,39 @@
+---
+title: Real eigenvalues of a rotation matrix
+date: '2019-02-07'
+description: The only thing wrong with your approach is that the eigenvalues can be real if the discriminant is zero, too. $\sin^2 \theta < 0$ has no solution, but $\sin^2…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3103976
+se-link: https://math.stackexchange.com/questions/3103954/real-eigenvalues-of-a-rotation-matrix/3103976#3103976
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+- eigenvalues-eigenvectors
+- rotations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Real eigenvalues of a rotation matrix](https://math.stackexchange.com/questions/3103954/real-eigenvalues-of-a-rotation-matrix), asked by [Harry](https://math.stackexchange.com/users/297545/harry) on Mathematics Stack Exchange (2019-02-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose the rotation matrix 
+> $$\pmatrix{ \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta}$$
+> has real eigenvalues. Then what would the value of $\theta$ be?
+>
+> I know that the eigenvalues of this matrix are $\{e^{\pm i\theta}\}$. To derive the condition under which the eigenvalues are real, I found the characteristic function and set the discriminant $\Delta=b^2-4ac$ $>0$. From this, I got $\sin^{2}\theta <0$. Since sine is a square term, how can it be negative?!  Am I right?
+:::
+
+The only thing wrong with your approach is that the eigenvalues can be real if the discriminant is zero, too.  $\sin^2 \theta < 0$ has no solution, but $\sin^2 \theta = 0$ gives $\theta = 0$ and $\theta = \pi$.  The first gives you the identity matrix, the second its opposite.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3103954/real-eigenvalues-of-a-rotation-matrix/3103976#3103976) on Mathematics Stack Exchange, 2019-02-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

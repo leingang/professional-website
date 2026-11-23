@@ -1,0 +1,43 @@
+---
+title: If $\displaystyle\lim_{n\to\infty}(n^2a_n)$ exist then show that $\sum a_n$ converges.
+date: '2017-04-25'
+description: Let $L = \lim{n\to\infty} n^2 |an|$. We know this exists because $\lim{n\to\infty} n^2 an$ exists. Also $L \geq 0$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2251358
+se-link: https://math.stackexchange.com/questions/2251352/if-displaystyle-lim-n-to-inftyn2a-n-exist-then-show-that-sum-a-n-conv/2251358#2251358
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- sequences-and-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $\displaystyle\lim_{n\to\infty}(n^2a_n)$ exist then show that $\sum a_n$ converges.](https://math.stackexchange.com/questions/2251352/if-displaystyle-lim-n-to-inftyn2a-n-exist-then-show-that-sum-a-n-conv), asked by [MatheMagic](https://math.stackexchange.com/users/397530/mathemagic) on Mathematics Stack Exchange (2017-04-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If $\displaystyle\lim_{n\to\infty}(n^2a_n)$ exist then show that $\sum a_n$ converges.
+>
+> my try:We have to somehow use the fact that $\sum\frac1{n^2}$ converges but don't know how.
+:::
+
+Let $L = \lim_{n\to\infty} n^2 |a_n|$.  We know this exists because $\lim_{n\to\infty} n^2 a_n$ exists.  Also $L \geq 0$.
+
+Let $b_n = \frac{1}{n^2}$.  We know that $\sum_{n=1}^\infty b_n$ converges.  Moreover,
+$$\lim_{n\to\infty} \frac{|a_n|}{b_n} = \lim_{n\to\infty} \frac{|a_n|}{1/n^2}
+    = \lim_{n\to\infty} n^2 |a_n| = L$$
+So by the Limit Comparison Test $\sum_{n=1}^\infty |a_n|$ converges.
+
+(The usual Limit Comparison Test requires $L>0$.  But it can be extended to: if $\frac{a_n}{b_n} \to 0$, and $\sum b_n$ converges, then $\sum a_n$ converges.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2251352/if-displaystyle-lim-n-to-inftyn2a-n-exist-then-show-that-sum-a-n-conv/2251358#2251358) on Mathematics Stack Exchange, 2017-04-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

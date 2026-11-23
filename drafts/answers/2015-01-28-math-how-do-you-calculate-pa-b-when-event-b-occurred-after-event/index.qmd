@@ -1,0 +1,59 @@
+---
+title: How do you calculate P(A/B), when event B occurred after event A?
+date: '2015-01-28'
+description: Here is a proof that doesn't directly reference Bayes' Theorem. By definition you know that $$\begin{align} P(C\mid S) &= \frac{P(S\cap C)}{P(S)} \\ P(S\mid C)…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1123433
+se-link: https://math.stackexchange.com/questions/1123314/how-do-you-calculate-pa-b-when-event-b-occurred-after-event-a/1123433#1123433
+se-score: 0
+se-accepted: false
+se-tags:
+- probability
+- statistics
+- probability-theory
+- problem-solving
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do you calculate P(A/B), when event B occurred after event A?](https://math.stackexchange.com/questions/1123314/how-do-you-calculate-pa-b-when-event-b-occurred-after-event-a), asked by [user2901512](https://math.stackexchange.com/users/341850/user2901512) on Mathematics Stack Exchange (2015-01-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> There's really only one question I can't begin to handle when it comes to probability, literally. It's not the only type of question I struggle with, though it's the type of question where I can't even get a foothold.
+>
+> Here's an example:
+>
+> On a randomly selected day, the probability that Jacques will eat cereal for breakfast, P(C), is 0.4, the probability that he will eat a sandwich for lunch, P(S), is equal to 0.6, and the conditional probability that he will eat a sandwich for lunch, given that he has already eaten cereal for breakfast, P(S | C), is equal to 0.7.
+>
+> Based on this information, what is P(C | S), the probability that Jacques eats cereal for breakfast given that he eats a sandwich for lunch?
+>
+> Soruce: Khan academy.
+>
+> Ok, so first of all, I know that P(S | C) is 0.7, because regardless of P(C), P(S) given P(C) happened anyway, is 0.7. However, I cannot for the life of me figure out a calculation for the probability that he eats cereal for breakfast given that later on he's going to eat a sandwich.
+>
+> The only thing I can think to include is the average Probability that he eats a sandwhich, which is 0.6, but apart from that...
+>
+> Any help would be much appreciated.
+>
+> By the way, do you think this is a little advanced for a beginner in stats? To me it's like tackling multiplication when your in the middle of learning addition.
+:::
+
+Here is a proof that doesn't directly reference Bayes' Theorem.  By definition you know that
+$$\begin{align*}
+    P(C\mid S) &= \frac{P(S\cap C)}{P(S)} \\
+    P(S\mid C) &= \frac{P(C\cap S)}{P(C)} \\
+\end{align*}$$
+Of course $P(S\cap C) = P(C \cap S)$ because these are the same sets.  If you clear the denominators in each, you get
+$$P(S \cap C) = P(C\mid S)P(S) = P(S\mid C)P(C)$$
+The equation on the right has four quantities, three of which are given and one of which is desired.  Solve.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1123314/how-do-you-calculate-pa-b-when-event-b-occurred-after-event-a/1123433#1123433) on Mathematics Stack Exchange, 2015-01-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

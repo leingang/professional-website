@@ -19,7 +19,9 @@ website:
   description: "Mathematics educator and academic leader: teaching, teacher training, and educational technology."
   site-url: https://www.matthewleingang.com
   favicon: images/favicon.svg
-  draft-mode: gone
+  # Drafts show up when previewing (including the editor's Preview button).
+  # Publishing uses `--profile production` (_quarto-production.yml), which hides them.
+  draft-mode: visible
   open-graph: true
   twitter-card: true
   navbar:

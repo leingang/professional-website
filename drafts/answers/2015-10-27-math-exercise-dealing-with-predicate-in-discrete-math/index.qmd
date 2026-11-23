@@ -1,0 +1,52 @@
+---
+title: Exercise dealing with predicate in discrete math
+date: '2015-10-27'
+description: 'The best approach is an if-then argument in both directions:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1500104
+se-link: https://math.stackexchange.com/questions/1500087/exercise-dealing-with-predicate-in-discrete-math/1500104#1500104
+se-score: 1
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- predicate-logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Exercise dealing with predicate in discrete math](https://math.stackexchange.com/questions/1500087/exercise-dealing-with-predicate-in-discrete-math), asked by [user_123945839432](https://math.stackexchange.com/users/273821/user-123945839432) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Define the following predicate P(x,y,z) for naturals x and y and positive naturals z. 
+>
+> If x < z, P(x,y,z)   is true $iff$ x = y. 
+>
+> If y > = z, then P(x,y,z) is false.
+>
+> If y < z and x >= z, then P(x,y,z) is true $iff$ P(x - z,y,z) is true.
+>
+> Prove that if y < z, then P(x,y,z) is true $iff$ $(\exists r: x = rz+ y$) where r is $n\in\mathbb{N}$
+>
+> What is the best way to approach this?
+:::
+
+The best approach is an if-then argument in both directions:
+
+ 1. First show that if $P(x,y,z)$ is true, there exists $r$ such that $x=rz+y$.
+
+ 2. Then show that if there exists such an $r$, $P(x,y,z)$ is true.
+
+Or maybe in the opposite order.
+
+For instance, what is $P(rz+y,y,z)$?  By definition of $P$, this is true if and only if $P(rz+y-z,y,z)$.  Keep going.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1500087/exercise-dealing-with-predicate-in-discrete-math/1500104#1500104) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

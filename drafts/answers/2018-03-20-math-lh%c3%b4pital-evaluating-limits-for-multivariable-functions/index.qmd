@@ -1,0 +1,44 @@
+---
+title: L'Hôpital evaluating limits for multivariable functions?
+date: '2018-03-20'
+description: You can use L'Hôpital's rule on the path limit $$\lim{\substack{x\to 0 \\ y = x}} \frac{x^2+y}{y} = \lim{x\to0} \frac{x^2 + x}{x} \stackrel{\text{H}}{=}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2700471
+se-link: https://math.stackexchange.com/questions/2700460/lh%c3%b4pital-evaluating-limits-for-multivariable-functions/2700471#2700471
+se-score: 1
+se-accepted: false
+se-tags:
+- limits
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[L'Hôpital evaluating limits for multivariable functions?](https://math.stackexchange.com/questions/2700460/lh%c3%b4pital-evaluating-limits-for-multivariable-functions), asked by [beatrix-kiddo](https://math.stackexchange.com/users/160301/beatrix-kiddo) on Mathematics Stack Exchange (2018-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let's say I want to evaluate the following limit:
+>
+> > $$\lim_{(x,y) \to (0,0)} \frac{x^2 + y}{y}$$
+>
+> and I choose the paths $x = 0$ (which gives me the limit equal to $1$) and I decide on the path $y = x$ also. By substituting $y = x$, does that allow me to use L'Hôpital?
+>
+> > $$\lim_{(x,y) \to (0,0)} \frac{x^2 + y}{y} = \lim_{x \to 0} \frac{x^2 + x}{x} = \lim_{x \to 0} \frac{2x+1}{1} = 1$$
+:::
+
+You can use L'Hôpital's rule on the path limit
+$$\lim_{\substack{x\to 0 \\ y = x}} \frac{x^2+y}{y} = \lim_{x\to0} \frac{x^2 + x}{x} \stackrel{\text{H}}{=} \lim_{x\to 0} \frac{2x+1}{1} = 1$$
+*However*, that doesn't tell you enough to conclude that $\lim_{(x,y) \to (0,0)}\frac{x^2+y}{y}=1$.  For as Siong Thye Goh suggests, you can find the limit along another path:
+$$\lim_{\substack{x\to 0 \\ y = -x^2}} \frac{x^2+y}{y} = \lim_{x\to0} \frac{0}{-x^2} = 0$$
+Since these two path limits disagree, we know $\lim_{(x,y) \to (0,0)}\frac{x^2+y}{y}$ does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2700460/lh%c3%b4pital-evaluating-limits-for-multivariable-functions/2700471#2700471) on Mathematics Stack Exchange, 2018-03-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

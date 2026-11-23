@@ -1,0 +1,77 @@
+---
+title: (Basic properties of order for natural numbers) Proofs
+date: '2020-02-05'
+description: The last two proofs look good. The first is a little sloppy.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3534795
+se-link: https://math.stackexchange.com/questions/3534785/basic-properties-of-order-for-natural-numbers-proofs/3534795#3534795
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- proof-writing
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[(Basic properties of order for natural numbers) Proofs](https://math.stackexchange.com/questions/3534785/basic-properties-of-order-for-natural-numbers-proofs), asked by user746285 on Mathematics Stack Exchange (2020-02-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Currently, I am self-studying Terence Tao's Analysis. I proves several of exercises but encountered difficulties with the others. Could you please check my proofs and suggest the solution for the remaining ones ? This is the proposition that we need to prove.
+>
+> > **Proposition 2.2.12 (Basic properties of order for natural numbers).**
+> Proposition 2.2.12 (Basic properties of order for natural numbers).
+> Let a, b, c be natural numbers. Then
+>
+> >  - (a) (Order is reflexive) a ≥ a.
+> >  - (b) (Order is transitive) If a ≥ b and b ≥ c, then a ≥ c.
+> >  - (c) (Order is anti-symmetric) If a ≥ b and b ≥ a, then a = b.
+> >  - (d) (Addition preserves order ) a ≥ b if and only if a + c ≥ b + c.
+> >  - (e) a < b if and only if a++ ≤ b.
+> >  - (f ) a < b if and only if b = a + d for some positive number d.
+>
+> Tao gives the following definition.
+>
+> > **Definition 2.2.11 (Ordering of the natural numbers).** Let n and m be
+> > natural numbers. We say that n is greater than or equal to m, and
+> > write n ≥ m or m ≤ n, iff we have n = m + a for some natural number a.
+> > We say that n is strictly greater than m, and write n>m or m<n, iff n
+> > ≥ m and n = m.
+>
+> I have the proofs for the first three statements. Could you please check it.
+>
+>  - > a) a $\ge$ a  
+>    >Proof: if a$\ge$ a, then a = a + n for some natural n. This is true for n = 0.
+>
+>
+>
+>  - > b) a $\ge$ b and b $\ge$ c, then a $\ge$ c   
+>   Proof: From the antecedent, a = b + n and b = c + m, for some natural n,m   Then a =
+>    c + (n + m). Hence, a $\ge$ c
+>  - > c) If a $\ge$ b and b $\ge$ a, then a = b   
+>  Proof: Antecedent implies
+>    that a = b + n and b = a + m for some natural n, m.   Hence a = a + m
+>     n which is only true for n, m = 0.
+>
+> I have doubts regarding the last proof since I have not used Peano axioms.
+:::
+
+The last two proofs look good.  The first is a little sloppy.
+
+> a) a ≥ a
+>
+> Proof: if a≥ a, then a = a + n for some natural n. This is true for n = 0.
+
+You can't start with “**if** $a \geq a$” if you want to show **that** $a \geq a$ is true.  So instead say: “Since $a = a+0$ and $0$ is a natural number, $a \geq a$.“
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3534785/basic-properties-of-order-for-natural-numbers-proofs/3534795#3534795) on Mathematics Stack Exchange, 2020-02-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

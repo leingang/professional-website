@@ -1,0 +1,50 @@
+---
+title: Why if $B$ is diagonal and $B=M^{-1}AM$ the columns of $M$ are eigenvectors of $A$?
+date: '2019-06-10'
+description: This is stitching together various definitions with different perspectives on matrix multiplication.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3257708
+se-link: https://math.stackexchange.com/questions/3257692/why-if-b-is-diagonal-and-b-m-1am-the-columns-of-m-are-eigenvectors-of/3257708#3257708
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why if $B$ is diagonal and $B=M^{-1}AM$ the columns of $M$ are eigenvectors of $A$?](https://math.stackexchange.com/questions/3257692/why-if-b-is-diagonal-and-b-m-1am-the-columns-of-m-are-eigenvectors-of), asked by [Kevin](https://math.stackexchange.com/users/353053/kevin) on Mathematics Stack Exchange (2019-06-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know that $A$ is diagonalisable if exists a diagonal matrix $B$ such that $B=M^{-1}AM$. Somewhere I read that the columns of M are eigenvectors of A. Why is that? Also, is $M$ uniquely defined?
+:::
+
+This is stitching together various definitions with different perspectives on matrix multiplication.
+
+1. If $A$ and $M$ are matrices such that $AM$ is defined, the $j$th column of the product matrix $AM$ is $A$ times the vector in the $j$th column of $M$.
+
+2. If $M$ and $B$ are matrices such that $MB$ is defined and $B$ is diagonal, then the $j$th column of $MB$ is the $j$th column of $M$ scaled by the $j$th entry along the diagonal of $B$.  
+
+If those two facts aren't obvious, try it out with a few small examples to see why.
+
+A vector $m$ is called an eigenvector of $A$ with (scalar) eigenvalue $b$ if $Am = bm$.  If there is a basis of eigenvectors $m_1, m_2, \dots, m_n$ with eigenvalues $b_1, b_2, \dots, b_n$, then $A m_j = b_j m_j$.  In other words, for each $j$, then $j$th column of $AM$ equals the $j$th column of $MB$.  That is, $AM = MB$, which, since $M$ is invertible (remember its columns are a basis), means $B = M^{-1}AM$.
+
+No, $M$ is not uniquely determined by $A$.
+
+* We could permute its columns any way we like, and we would still have $M^{-1} A M$ diagonal.
+
+* Even if the eigenvalues which make up the diagonal elements of $B$ are fixed, any column of $M$ can be scaled by a nonzero constant, and we would still have $M^{-1} AM=B$.
+
+* If any of the eigenvalues appears more than once, we can substitute for each of the columns of $M$ corresponding to a repeated eigenvalue, any linear combination of those eigenvectors.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3257692/why-if-b-is-diagonal-and-b-m-1am-the-columns-of-m-are-eigenvectors-of/3257708#3257708) on Mathematics Stack Exchange, 2019-06-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,80 @@
+---
+title: Partial derivative help for sigma and pi notation in Lagrange maximization
+date: '2017-11-21'
+description: When differentiating a monomial with respect to one of the variables, the other variables are to be held constant. Therefore, $$\frac{\partial}{\partial xj}…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2530862
+se-link: https://math.stackexchange.com/questions/2530822/partial-derivative-help-for-sigma-and-pi-notation-in-lagrange-maximization/2530862#2530862
+se-score: 2
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- lagrange-multiplier
+- economics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Partial derivative help for sigma and pi notation in Lagrange maximization](https://math.stackexchange.com/questions/2530822/partial-derivative-help-for-sigma-and-pi-notation-in-lagrange-maximization), asked by [Sven van Holten](https://math.stackexchange.com/users/502636/sven-van-holten) on Mathematics Stack Exchange (2017-11-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For a high school multivariable calc class I am writing an essay on an economic utility function and its maximisation using the Lagrange multipliers. 
+>
+> The formula is
+> $output = \prod_i^n x_i^{\sigma_i}$, where n is the number of goods, x is a specific good and $\sigma$ is a multiplier. The constraint needed for the lagrange multiplier method is C > $\sum_i^n x_i*p_i$ where p is the price and C is the maximum cost of a company.
+>
+> So essentially you have:
+> $$f(x_i) = \prod_i^n x_i^{\sigma_i} - {\lambda}(C-\sum_i^n x_i*p_i)$$
+>
+> Now my question is how to go on. Which partial derivative should I take, and also is that possible with the pi and sigma notation?
+>
+> Thanks in advanced.
+:::
+
+When differentiating a monomial with respect to one of the variables, the other variables are to be held constant.  Therefore,
+$$\frac{\partial}{\partial x_j} \left(x_1^{\sigma_1} x_2^{\sigma_2} \dots x_n^{\sigma_n}\right)
+    = x_1^{\sigma_1} x_2^{\sigma_2} \cdots x_{j-1}^{\sigma_{j-1}}\sigma_j x_j^{\sigma_j-1} x_{j+1}^{\sigma_{j+1}}\dots x_n^{\sigma_n}$$
+As long as $x_j \neq 0$ you could write it as
+$$\frac{\partial}{\partial x_j}\prod_{i=1}^n x_i^{\sigma_i} = \frac{\sigma_j}{x_j} \prod_{i=1}^n x_i^{\sigma_i}$$
+
+When differentiating a linear combination with respect to one of the variables, again the other variables are to be held constant.  Therefore,
+$$\frac{\partial}{\partial x_j}\left(p_1 x_1 + p_2 x_2 + \dots + p_n x_n\right)
+= \frac{\partial}{\partial x_j} \sum_{i=1}^n p_i x_i
+= p_j$$
+
+* * *
+
+In celebration of my first upvote nine years after posting this answer, I will add more details. Your lagrange multiplier equations are
+$$\frac{\sigma_j}{x_j} \prod_{i=1}^n x_i^{\sigma_i}
+  =\lambda p_j
+  \implies
+   \sigma_j \prod_{i=1}^n x_i^{\sigma_i}
+  =\lambda p_j x_j$$
+(for each $j$), along with the equation of constraint:
+$$\sum_{i=1}^n p_i x_i = C$$ 
+If you add together both sides of the first $n$ equations, and substitute in the $n+1$st one, you get
+$$\sum_{j=1}^n \sigma_j \prod_{i=1}^n x_i^{\sigma_i}
+  = \lambda \sum_{j=1}^n p_j x_j = \lambda C$$
+Therefore,
+$$\lambda = \frac{1}{C} \sum_{k=1}^n \sigma_k \prod_{i=1}^n x_i^{\sigma_i}$$
+Substituting this into the $j$th equation, we get
+$$\sigma_j \prod_{i=1}^n x_i^{\sigma_i}
+  =\frac{1}{C} \sum_{k=1}^n \sigma_k \prod_{i=1}^n x_i^{\sigma_i} p_j x_j
+\implies 
+  x_j = \frac{C}{p_j} \frac{\sigma_j}{\sum_{k=1}^n \sigma_k}$$
+for each $j=1,\dots,n$.
+The critical value is
+$$\prod_{j=1}^n\left(\frac{C}{p_j} \frac{\sigma_j}{\sum_{k=1}^n \sigma_k}\right)^{\sigma_j}
+= \left(\frac{C}{\sum_{k=1}^n \sigma_k}\right)^{\sum_{k=1}^n \sigma_k}
+  \prod_{j=1}^n \left(\frac{\sigma_j}{p_j}\right)^{\sigma_j}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2530822/partial-derivative-help-for-sigma-and-pi-notation-in-lagrange-maximization/2530862#2530862) on Mathematics Stack Exchange, 2017-11-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,50 @@
+---
+title: Change the double integral to an iterated integral
+date: '2024-06-18'
+description: 'The triangle has three sides: the vertical line $x=0$, the horizontal line $y=4$, and the diagonal line $y=4x$.'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4934470
+se-link: https://math.stackexchange.com/questions/4934462/change-the-double-integral-to-an-iterated-integral/4934470#4934470
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- solution-verification
+- iterated-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Change the double integral to an iterated integral](https://math.stackexchange.com/questions/4934462/change-the-double-integral-to-an-iterated-integral), asked by [samsamradas](https://math.stackexchange.com/users/1259839/samsamradas) on Mathematics Stack Exchange (2024-06-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given:
+> $$\iint_S (x+y)dA$$
+>
+> such that the bounded region is given by a triangular area with vertices: $(0,0),(0,4),(1,4)$.
+>
+> Now we have that $x = \frac{4}{y}$ and $x =0$ for the first iterated integral taking horizontal slices and for the second integral vertical slices we have from $x=0$ to $x=1$
+>
+> $$\int_0^1\int_0^{4/y}(x+y)dxdy$$
+>
+> am I correct?
+:::
+
+The triangle has three sides: the vertical line $x=0$, the horizontal line $y=4$, and the diagonal line $y=4x$.
+
+Moving from left-to-right, the bottom edge of $S$ is the line $y=4x$, and the top edge is $y=4$. The left extreme is at $x=0$, and the right one at $x=1$. Therefore
+$$\iint_S f\,dA = \int_0^1\int_{4x}^4 f(x,y)\,dy\,dx$$
+
+If you'd rather move from bottom-to-top, the lower extreme is at $y=0$ and the upper one at $y=4$. The left edge is along $x=4$. You need to rewrite the equation $y=4x$ as $x=y/4$ to get $x$ as a function of $y$. Therefore
+$$\iint_S f\,dA = \int_0^4\int_{0}^{y/4} f(x,y)\,dx\,dy$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4934462/change-the-double-integral-to-an-iterated-integral/4934470#4934470) on Mathematics Stack Exchange, 2024-06-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

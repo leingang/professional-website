@@ -1,0 +1,93 @@
+---
+title: Problem finding the flux over a cylinder
+date: '2017-06-14'
+description: The surface $S$ is not the entire boundary of $V$. To use the divergence theorem, you have to close up $S$ by adding the top and bottom disks. Let…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2322074
+se-link: https://math.stackexchange.com/questions/2322050/problem-finding-the-flux-over-a-cylinder/2322074#2322074
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- differential-geometry
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problem finding the flux over a cylinder](https://math.stackexchange.com/questions/2322050/problem-finding-the-flux-over-a-cylinder), asked by [Relure](https://math.stackexchange.com/users/120603/relure) on Mathematics Stack Exchange (2017-06-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm doing this exercise:
+>
+> > Let's consider the vector field given by $\mathbf F(x,y,z)=(x+1,y-1,1-2z)$,and the cylinder given by $S=\{x^2+y^2=1\mid\ 0≤z≤1 \}$, with the orientation given by $\mathbf{n}=\displaystyle\frac{1}{\sqrt{x^2+y^2}}(x,y,0)$. Calculate the flux over the surface $S$ **integrating the divergence over a situable domain**.
+>
+> My try:
+>
+> > If we calculate the divergence and we use the Gauss theorem, we see that $$\iint_{S}\mathbf  F\cdot dS=\iiint_V\operatorname{div}(\mathbf F)\,dV$$
+> but $\operatorname{div}(\mathbf F)=1+1-2,$ so the flux over any surface is $0$.
+>
+> Is there something I'm missing?
+>
+> Thanks.
+:::
+
+The surface $S$ is not the entire boundary of $V$.  To use the divergence theorem, you have to close up $S$ by adding the top and bottom disks.  Let
+$$\begin{align*}
+    S_1 &= \left\{(x,y,1)\mid x^2 + y^2 \leq 1 \right\} \\
+    S_0 &= \left\{(x,y,0)\mid x^2 + y^2 \leq 1 \right\} \\
+\end{align*}$$
+So as surfaces,
+$$\partial V =  S \cup S_1 \cup S_0$$
+
+Now we need to orient those surfaces.  The conventional way to orient a surface that is the graph of a function is “upwards”—that is, the normal direction with positive $z$-component.  So $\mathbf{n} = \mathbf{k}$ on $S_0$ and $S_1$.  The conventional way to orient a surface that is the boundary of a solid is “outwards.”  On $S_1$, upwards and outwards are the same, but on $S_0$, upwards and outwards are opposite.  So we say
+$$\partial V = S + S_1 - S_0$$
+as *oriented* surfaces. Therefore
+$$\begin{align*}
+    \iiint_V \operatorname{div}\mathbf{F}\,dV 
+    &= \iint_{\partial V} \mathbf{F} \cdot d\mathbf{S}
+  \\&= \iint_{S + S_1 - S_0} \mathbf{F} \cdot d\mathbf{S}
+  \\&= \iint_S \mathbf{F} \cdot d\mathbf{S} + \iint_{S_1} \mathbf{F} \cdot d\mathbf{S} - \iint_{S_0} \mathbf{F} \cdot d\mathbf{S}
+\end{align*}$$
+The three integrals on the right are no longer thought of as attached to $V$.
+In particular, $S_1$ and $S_0$ are both oriented upwards now.
+We can solve this for $\iint_S \mathbf{F} \cdot d\mathbf{S}$:
+$$\iint_S \mathbf{F} \cdot d\mathbf{S}
+    = \iiint_V \operatorname{div}\mathbf{F}\,dV 
+     -\iint_{S_1} \mathbf{F} \cdot d\mathbf{S}
+     +\iint_{S_0} \mathbf{F} \cdot d\mathbf{S}$$
+As you point out, the first integral on the right-hand side is zero.  On the surface $S_1$, $\mathbf{n} = \mathbf{k}$ and $\mathbf{F} = \left<x+1,y-1,-1\right>$.  So
+$$\iint_{S_1} \mathbf{F} \cdot d\mathbf{S}
+   =\iint_{S_1} \left<x+1,y-1,-1\right>\cdot \mathbf{k}\,dS
+   =\iint_{S_1} (-1)\,dS = (-1) \operatorname{Area}(S_1) = -\pi$$
+On $S_2$, $\mathbf{F} = \left<x+1,y-1,1\right>$, so
+$$\iint_{S_0} \mathbf{F} \cdot d\mathbf{S}
+   =\iint_{S_0} 1\,dS = \operatorname{Area}(S_1) = \pi$$
+Putting these all together, we have
+$$\iint_S \mathbf{F} \cdot d\mathbf{S} = 2\pi$$
+
+* * *
+In this case, it's possible to check the calculation by computing the flux directly.  Parametrize the surface $S$ by
+$$\mathbf{r}(u,v) = \left<\cos u,\sin u, v\right>$$
+over $0 \leq u \leq 2\pi$, $0 \leq v \leq 1$.  Then
+$$\mathbf{n} = \left<\cos u,\sin u,0\right>$$
+So
+$$\begin{align*}
+    \iint_S \mathbf{F} \cdot d\mathbf{S}
+    &= \int_0^{2\pi}\int_0^1 \left<\cos u+1,\sin u-1, v\right>\cdot \left<\cos u,\sin u,0\right>\,dv\,du \\
+    &= \int_0^{2\pi}\int_0^1 \left(\cos^2 u+\cos u +\sin^2 u-\sin u\right)\,dv\,du \\
+    &= \int_0^{2\pi} \left(\cos^2 u+\cos u +\sin^2 u-\sin u\right)\,du \\
+    &= \int_0^{2\pi} \left(1+\cos u -\sin u\right)\,du \\
+    &= 2\pi + 0 - 0 = 2\pi
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2322050/problem-finding-the-flux-over-a-cylinder/2322074#2322074) on Mathematics Stack Exchange, 2017-06-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

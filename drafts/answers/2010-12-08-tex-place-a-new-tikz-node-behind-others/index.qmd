@@ -1,0 +1,153 @@
+---
+title: place a new TikZ node behind others
+date: '2010-12-08'
+description: 'There are two ways that I know of:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6752
+se-link: https://tex.stackexchange.com/questions/6751/place-a-new-tikz-node-behind-others/6752#6752
+se-score: 7
+se-accepted: true
+se-tags:
+- tikz-pgf
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[place a new TikZ node behind others](https://tex.stackexchange.com/questions/6751/place-a-new-tikz-node-behind-others), asked by [nlopes](https://tex.stackexchange.com/users/2350/nlopes) on TeX Stack Exchange (2010-12-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to have a new TikZ node appear behind the previous one. For instance in beamer presentations for highlighting parts of code.  
+>
+> I can do this if I place the `\node` *before* the new node and give it a hardcoded overlay number, but I'd rather keep the `<+>` overlay specification.
+>
+> Of course any suggestions for a better way to do this are also welcome! 
+>
+> An example of what I'm trying to achieve: 
+>
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{tikz,fancyvrb}
+> \usetikzlibrary{shapes,positioning}
+>
+> \begin{document}
+> \begin{frame}[fragile]
+>   \begin{tikzpicture}
+>     \draw<2->[fill=blue!50] (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+>
+>     \node {
+>       \begin{minipage}{\linewidth}
+> \begin{Verbatim}
+> Please note this line!
+> \end{Verbatim}
+>       \end{minipage}
+>     };
+>
+>   \end{tikzpicture}
+> \end{frame}
+> \end{document}
+> ```
+>
+>
+> EDIT: example for using layers
+>
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{tikz,fancyvrb}
+> \usetikzlibrary{shapes,positioning,backgrounds}
+>
+> \begin{document}
+>
+> \begin{frame}[fragile]
+>
+>   \begin{tikzpicture}
+>
+>     \node<+-> at (0,0){
+>       \begin{minipage}{\linewidth}
+>         \VerbatimInput{queries/example.xquery}
+>       \end{minipage}
+>     };
+>
+>     \begin{pgfonlayer}{background}
+>       \draw<+->[fill=blue!50] (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+>     \end{pgfonlayer}
+>
+>   \end{tikzpicture}
+>
+> \end{frame}
+>
+>
+> \end{document}
+> ```
+:::
+
+There are two ways that I know of:
+
+ 1. Use PGF layers
+
+ 2. Use offsets in your incremental overlay specifications.
+
+Here is an example with both.
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz,fancyvrb}
+\usetikzlibrary{shapes,positioning}
+
+\begin{document}
+
+\begin{frame}[fragile]{using pgflayers}
+  \pgfdeclarelayer{box}
+  \pgfdeclarelayer{text}
+  \pgfsetlayers{box,text}
+  \begin{tikzpicture}
+    \useasboundingbox (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+    \begin{pgfonlayer}{text}
+    \node<+->{
+      \begin{minipage}{\linewidth}
+%\begin{Verbatim}
+Please note this line!
+%\end{Verbatim}
+      \end{minipage}
+    };
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{box}
+    \draw<+->[fill=blue!50] (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+    \end{pgfonlayer}
+  \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}[fragile]{using offsets}
+  \begin{tikzpicture}
+    \useasboundingbox (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+    \draw<.(2)->[fill=blue!50] (-0.5\linewidth,-1em) rectangle (0.5\linewidth,1em);
+    \node<+->{
+      \begin{minipage}{\linewidth}
+%\begin{Verbatim}
+Please note this line!
+%\end{Verbatim}
+      \end{minipage}
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}
+```
+
+
+
+I couldn't get the `Verbatim` environment to work; do you really need it?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6751/place-a-new-tikz-node-behind-others/6752#6752) on TeX Stack Exchange, 2010-12-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

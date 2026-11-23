@@ -1,0 +1,76 @@
+---
+title: columns/alignment with itemize
+date: '2010-11-16'
+description: You can't do this particular mixture of itemize and tabular out of the box. But the listliketab package can help. The purpose of that package is to make tables…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 5464
+se-link: https://tex.stackexchange.com/questions/5460/columns-alignment-with-itemize/5464#5464
+se-score: 11
+se-accepted: true
+se-tags:
+- tables
+- beamer
+- lists
+- align
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[columns/alignment with itemize](https://tex.stackexchange.com/questions/5460/columns-alignment-with-itemize), asked by [evencoil](https://tex.stackexchange.com/users/1931/evencoil) on TeX Stack Exchange (2010-11-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to make alignment points in a list environment. The following code gives me an error, but it almost compiles to what I want, just missing the bullet points. I must be misunderstanding something about align and/or tabular and how they work with linebreaks. Guidance appreciated!
+>
+> ```latex
+> \documentclass{beamer}
+>
+> \begin{document}
+>
+> \begin{frame}
+> ```
+> 	    \frametitle{Title}
+> 	    \begin{itemize}
+> 	    \begin{tabular}{ll}
+> 		    \item Topic Apple: &Something to say about it \\
+>     	    \item Topic Watermelons: &Something different
+> 	    \end{tabular}
+> 	    \end{itemize}
+>     \end{frame}
+>
+> ```latex
+> \end{document}
+> ```
+:::
+
+You can't do this particular mixture of itemize and tabular out of the box.  But the  [listliketab](http://www.ctan.org/tex-archive/macros/latex/contrib/listliketab/) package can help.  The purpose of that package is to make tables looks like lists.
+
+```latex
+\documentclass{beamer}
+\usepackage{listliketab}
+\begin{document}
+
+\begin{frame}
+    \frametitle{Title}
+    \begin{listliketab} 
+    \storestyleof{itemize} 
+        \begin{tabular}{Lll}
+            \textbullet & Topic Apple: &Something to say about it \\
+            \textbullet & Topic Watermelons: &Something different
+        \end{tabular} 
+    \end{listliketab}
+\end{frame}
+\end{document}
+```
+
+Works in beamer and other all other classes (that I know of).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5460/columns-alignment-with-itemize/5464#5464) on TeX Stack Exchange, 2010-11-16, with [edits](https://tex.stackexchange.com/posts/5464/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,55 @@
+---
+title: Let $X$ denote the number of tosses required to get the 5th head and $Y$ the number between the 6th and 7th heads. Are $X$ and $Y$ independent?
+date: '2015-08-19'
+description: What you want to show is that $$P(X=x \wedge Y=y) = P(X=x)P(Y=y)$$ for all values $x$ and $y$ of $X$ and $Y$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1402776
+se-link: https://math.stackexchange.com/questions/1402700/let-x-denote-the-number-of-tosses-required-to-get-the-5th-head-and-y-the-num/1402776#1402776
+se-score: 2
+se-accepted: true
+se-tags:
+- probability
+- probability-theory
+- probability-distributions
+- geometric-probability
+- negative-binomial
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $X$ denote the number of tosses required to get the 5th head and $Y$ the number between the 6th and 7th heads. Are $X$ and $Y$ independent?](https://math.stackexchange.com/questions/1402700/let-x-denote-the-number-of-tosses-required-to-get-the-5th-head-and-y-the-num), asked by [arnab](https://math.stackexchange.com/users/98205/arnab) on Mathematics Stack Exchange (2015-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Let $X$ denote the number of tosses required to get the 5th head and $Y$ the number between the 6th and 7th heads. Are $X$ and $Y$ independent?
+>
+>
+> Y will always depend on X . NO ?
+> i know geometric distribution has lack of memory property . but in this the underlying distribution is i think negative binomial. 
+>
+> i think 'no, they are not independent ' . help please.
+:::
+
+What you want to show is that 
+$$P(X=x \wedge Y=y) = P(X=x)P(Y=y)$$
+for all values $x$ and $y$ of $X$ and $Y$.
+
+Let $Z$ be the number of tosses between the 5th and 6th head.  Then
+$$\begin{align*}
+    P(X=x \wedge Y=y)
+    &= \sum_{z=1}^\infty \underbrace{\binom{x-1}{4}p^5q^{x-5}}_{X=x} \underbrace{\vphantom{\binom{x-1}{4}}q^{z-1}p}_{Z=z} \underbrace{\vphantom{\binom{x-1}{4}}q^{y-1}p}_{Y=y} \\
+    &= \binom{x-1}{4}p^5q^{x-5} \cdot q^{y-1}p \cdot \sum_{z=1}^\infty q^{z-1}p \\
+    &= \binom{x-1}{4}p^5q^{x-5} \cdot q^{y-1}p \cdot \frac{p}{1-q} \\
+    &= \binom{x-1}{4}p^5q^{x-5} \cdot q^{y-1}p = P(X=x)P(Y=y)
+\end{align*}$$
+Once you separate the events like this it boils down to the tosses being independent of each other.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1402700/let-x-denote-the-number-of-tosses-required-to-get-the-5th-head-and-y-the-num/1402776#1402776) on Mathematics Stack Exchange, 2015-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

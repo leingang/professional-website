@@ -1,0 +1,72 @@
+---
+title: Show that matrix $A$'s columns build a basis for $\mathbb{R^3}$
+date: '2018-05-23'
+description: 'Mostly! Here are some nitpicks:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2793297
+se-link: https://math.stackexchange.com/questions/2793283/show-that-matrix-as-columns-build-a-basis-for-mathbbr3/2793297#2793297
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+- matrices
+- vector-spaces
+- vectors
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that matrix $A$'s columns build a basis for $\mathbb{R^3}$](https://math.stackexchange.com/questions/2793283/show-that-matrix-as-columns-build-a-basis-for-mathbbr3), asked by [Ski Mask](https://math.stackexchange.com/users/503445/ski-mask) on Mathematics Stack Exchange (2018-05-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to show that a $3 \times 3$ matrix's columns **(let's call this matrix $A$)** build a basis for $\mathbb {R^3}$. To show that I tried to fulfill the 2 requirements for building a basis:
+>
+>  1. The rows are linearly independent.
+>  2. The matrix spans $\mathbb{R^3}$
+>
+> I reduced the matrix into the row reduced echelon form and ended up with $A=\begin{pmatrix}1 & 0 & 0 \\
+> 0 & 1 & 0 \\
+> 0 & 0 & 1\end{pmatrix}$, which shows that $A$ is linearly independent; so the $1$st requirement is fulfilled.
+>
+> Then to show that $A$ spans $\mathbb{R^3}$ I showed that $A \cdot \begin{pmatrix}a \\ b \\ c \end{pmatrix}=\begin{pmatrix}a \\ b \\ c \end{pmatrix}$ which means that I can get any point on $\mathbb{R^3}$, therefore $A$ forms a basis for $\mathbb{R^3}$
+>
+> Is my reasoning correct?
+:::
+
+Mostly! Here are some nitpicks:
+
+> ...the 2 requirements for building a basis:
+
+> 1. The rows are linearly independent.
+
+I think you mean *columns* instead of rows.  The question is about columns.
+
+> 2. The matrix spans $\mathbb{R^3}$
+
+Matrices don't “span”; sets of vectors span.  So you want to show that *the columns of* the matrix span $\mathbb{R}^3$.
+
+> I reduced the matrix into the row reduced echelon form and ended up with $A=\begin{pmatrix}1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1\end{pmatrix}$, which shows that $A$ is linearly independent
+
+Again, linear independence is not a property of matrices, it's a property of sets of vectors.  If you mean to say that *the columns of* $A$ are linearly independent, then you have argued that correctly.
+
+> Then to show that $A$ spans $\mathbb{R^3}$ I showed that $A \cdot \begin{pmatrix}a \\ b \\ c \end{pmatrix}=\begin{pmatrix}a \\ b \\ c \end{pmatrix}$ which means that I can get any point on $\mathbb{R^3}$
+
+I think I know what you are trying to say here, but what you wrote is not equivalent.  What you wrote couldn't be true for all $a$, $b$, and $c$ unless $A$ was the identity matrix, and it may not have any solution even if $A$ is invertible.
+
+I think you want to say that the system $A \cdot \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} a \\ b \\ c\end{pmatrix}$ has a solution for all real numbers $a$, $b$, and $c$. The left-hand side can be written as a linear combination of the columns of $A$, so the system has a solution if and only if $(a,b,c)$ is in the span of the columns of $A$.
+
+In calculus, you're usually only studying one class of object: functions.  So the many properties you study (continuous, differentiable, integrable, etc.) are all properties of the same thing.  In linear algebra, and further in math, you may study several types of objects at once.  So be careful about using the right antecedents for the properties you're asserting.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2793283/show-that-matrix-as-columns-build-a-basis-for-mathbbr3/2793297#2793297) on Mathematics Stack Exchange, 2018-05-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

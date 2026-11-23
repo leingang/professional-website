@@ -1,0 +1,33 @@
+---
+title: Is there a term that means f(x) approaches an asymptote while remaining on the same side?
+date: '2016-09-23'
+description: You sometimes see $\searrow$ or $\downarrow$ used instead of $\rightarrow$ to indicate that a function or sequence decreases to its limit rather than merely…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1938412
+se-link: https://math.stackexchange.com/questions/1938406/is-there-a-term-that-means-fx-approaches-an-asymptote-while-remaining-on-the-s/1938412#1938412
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a term that means f(x) approaches an asymptote while remaining on the same side?](https://math.stackexchange.com/questions/1938406/is-there-a-term-that-means-fx-approaches-an-asymptote-while-remaining-on-the-s), asked by [Ted Ersek](https://math.stackexchange.com/users/24768/ted-ersek) on Mathematics Stack Exchange (2016-09-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Limit of $\frac{1}{x}$ as x approaches infinity is zero, and so is the limit of $\frac{\sin(x)}{x}$ as $x$ approaches infinity. However, as far as I know we don't have a concise way to say $\frac{1}{x}$ approaches the real axis as $x$ approaches infinity *and* as $x$ is a finite number approaching infinity $\frac{1}{x}$ is always positive. On the other hand, $\frac{\sin(x)}{x}$ does not poses this property. Wouldn't it be useful to define a word that means $f(x)$ approaches a certain asymptote as $x$ approaches infinity, *and* is always on the same side of the asymptote? I think we should also have a convenient way to say from which side it approaches the asymptote. Do we already have a way to do that?
+:::
+
+You sometimes see $\searrow$ or $\downarrow$ used instead of $\rightarrow$ to indicate that a function or sequence *decreases* to its limit rather than merely approaches it.  But usually words are coined as needed, not because they'd be nice to have.  It could be there aren't enough theorems about the functions you describe that a whole new word is needed to describe them.  Or, perhaps, the combination of limit and monotonicity is enough.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1938406/is-there-a-term-that-means-fx-approaches-an-asymptote-while-remaining-on-the-s/1938412#1938412) on Mathematics Stack Exchange, 2016-09-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

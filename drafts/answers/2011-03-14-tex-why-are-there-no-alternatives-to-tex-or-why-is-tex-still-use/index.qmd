@@ -1,0 +1,88 @@
+---
+title: Why are there no alternatives to TeX, or, why is TeX still used?
+date: '2011-03-14'
+description: 'The alternatives to TeX exist: they are WYSIWYG word processors and desktop publishing programs. And in most commercial areas they are adopted far more widely.'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 13372
+se-link: https://tex.stackexchange.com/questions/13370/why-are-there-no-alternatives-to-tex-or-why-is-tex-still-used/13372#13372
+se-score: 31
+se-accepted: false
+se-tags:
+- tex-core
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are there no alternatives to TeX, or, why is TeX still used?](https://tex.stackexchange.com/questions/13370/why-are-there-no-alternatives-to-tex-or-why-is-tex-still-used), asked by [jameshfisher](https://tex.stackexchange.com/users/4173/jameshfisher) on TeX Stack Exchange (2011-03-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm fairly new to TeX and LaTeX, having been drawn in by the _Big Idea_ — creating a document programmatically.  However, my experience of TeX (and its libraries — LaTeX, ConTeXt, …) has been almost entirely unpleasant.
+>
+> My impression is that TeX (_etc._) is essentially a pile of undocumented macros (where even are *functions?*) in an unparsable syntax (I am told it's Turing-complete), that very often collapses (most error messages have a mysterious origin), with shaky support for modern frameworks (I have to _read a paper_ on font naming schemes to find how to apply Helvetica?), and no serious opportunity for actual programming (as opposed to braindead markup), with a confusingly fragmented codebase (which binary, distribution, library should I use, and how do they interact?).
+>
+> Given that the Big Idea is a laudable one, and that TeX and friends are far from an ideal implementation of it, I'd like to know:
+>
+> **Why it is that, within the problem domain of programmatic document formatting, TeX is the only serious player?  Does no-one have an idea of how do to this better?  What would TeX look like if we were to design it from scratch?**
+>
+> (Note: I'm *not* looking for a flame war; I'm looking for genuine answers.)
+:::
+
+The alternatives to TeX exist: they are WYSIWYG word processors and desktop publishing programs.  And in most commercial areas they are adopted far more widely.
+
+TeX is still used [in many academic and other fields][1] because
+
+ - [its output is beautiful][2]
+ - it's free and open source
+ - it's gained considerable inertia in the 30 years since it's been in use, being part of the academic tradition
+
+I'm not sure what you mean by a lack of "serious programming opportunities".  Functions and data structures are implemented as macros, yes, but I think that most of the power TeX users would call themselves programmers.
+
+You might find some of these questions helpful in your quest for understanding the TeX way:
+
+ - https://tex.stackexchange.com/questions/5893/what-is-tex-used-for
+ - https://tex.stackexchange.com/questions/1756/why-should-i-use-latex
+ - https://tex.stackexchange.com/questions/11/what-is-the-best-book-to-start-learning-latex
+
+  [1]: https://tex.stackexchange.com/questions/940/what-professions-use-tex-latex-besides-cs
+  [2]: http://www.texample.net/
+
+And as for putting section headings in Helvetica, it isn't that bad, but you do have to understand a few things about LaTeX and its history.  TeX predates PostScript, PDF, TrueType, and most electronic typesetting standards (as well as Unicode which is a whole new set of issues).  So its font mechanism is a little archaic.  This has been dramatically improved with the XeTeX engine, which works natively with TrueType fonts and Unicode.
+
+Here is a sample file, which is similar to the [solution that you linked to](http://www.kronto.org/thesis/tips/section-title.html) in that it uses the [`sectsty`](http://ctan.org/pkg/sectsty) package.  This package is probably on your local TeX distribution anyway; no need to download or install.  Unlike the example you linked to you have to run this through xelatex instead of pdflatex.  Again, that executable is also probably in your local distribution too.  The advantage is the the font specification is more sane.
+
+```latex
+\documentclass{article}
+\title{Helvectica section headings}
+% TEX.SE \url{}
+\usepackage{lipsum}
+
+\usepackage{fontspec}
+\newfontfamily{\phv}{Helvetica}
+\usepackage{sectsty}
+\allsectionsfont{\phv}
+
+\begin{document}
+\maketitle
+
+\section{First section}
+
+\lipsum[1-3]
+
+\section{Second section}
+
+\lipsum[4-5]
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13370/why-are-there-no-alternatives-to-tex-or-why-is-tex-still-used/13372#13372) on TeX Stack Exchange, 2011-03-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

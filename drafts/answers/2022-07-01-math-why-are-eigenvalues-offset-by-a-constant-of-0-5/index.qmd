@@ -1,0 +1,61 @@
+---
+title: Why are eigenvalues offset by a constant of 0.5?
+date: '2022-07-01'
+description: The product of the eigenvalues equals the determinant, and the sum of the eigenvalues equals the trace. The trace of $M$ is $1+d$, which means the average of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4484301
+se-link: https://math.stackexchange.com/questions/4484285/why-are-eigenvalues-offset-by-a-constant-of-0-5/4484301#4484301
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+- eigenvalues-eigenvectors
+- quadratics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are eigenvalues offset by a constant of 0.5?](https://math.stackexchange.com/questions/4484285/why-are-eigenvalues-offset-by-a-constant-of-0-5), asked by [Krys](https://math.stackexchange.com/users/951117/krys) on Mathematics Stack Exchange (2022-07-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> If you use the quadratic formula to find a general equation for eigenvalues you get this:
+>
+> $M=
+>   \left[ {$$\begin{array}{cc}
+>    1 & b \\
+>    c & d \\
+>   \end{array}$$ } \right]
+> $$v =$ eigenvalue(s) of the matrix (quadratic)
+>
+> So:
+>
+> $det(M)=0$$(a-v)(d-v)-(b)(c)=0$$v^2-av-dv+ad-bc=0$$(1)v^2+(-a-d)v+(ad-bc)=0$  
+>
+> So if we use the quadratic formula:
+>
+> $h=1$$j=-a-d$$k=ad-bc$$v=\frac{-j\pm\sqrt{j^2-4hk}}{2h}$
+>
+> Expanding we get:
+>
+> $v=\frac{a+d\pm\sqrt{a^2+2ad+d^2-4ad+4bc}}{2}$
+>
+> Then symplifying...
+>
+> $v=\frac{1}{2}+\frac{d\pm\sqrt{a^2+d^2+4bc-2ad}}{2}$  
+>
+> My question is: is there an intuitive reason the value is offset by a constant 0.5? Or is this just one of those "it just is" things?
+:::
+
+The product of the eigenvalues equals the determinant, and the sum of the eigenvalues equals the trace. The trace of $M$ is $1+d$, which means the average of the two eigenvalues is $\frac{1+d}{2}$. Your explicit calculation backs that up.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4484285/why-are-eigenvalues-offset-by-a-constant-of-0-5/4484301#4484301) on Mathematics Stack Exchange, 2022-07-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

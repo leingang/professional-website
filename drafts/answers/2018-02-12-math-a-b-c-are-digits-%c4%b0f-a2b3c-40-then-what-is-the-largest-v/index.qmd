@@ -1,0 +1,37 @@
+---
+title: $a,b,c$ are digits. İf $a+2b+3c=40$ then what is the largest value for $a+b+c$?
+date: '2018-02-12'
+description: Let's say you are going to market to buy fish. Some fish cost $1, some cost $2, others cost $3. You have $40 and want to buy the most fish. How many of each…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2647808
+se-link: https://math.stackexchange.com/questions/2647795/a-b-c-are-digits-%c4%b0f-a2b3c-40-then-what-is-the-largest-value-for-abc/2647808#2647808
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$a,b,c$ are digits. İf $a+2b+3c=40$ then what is the largest value for $a+b+c$?](https://math.stackexchange.com/questions/2647795/a-b-c-are-digits-%c4%b0f-a2b3c-40-then-what-is-the-largest-value-for-abc), asked by [user57928](https://math.stackexchange.com/users/530848/user57928) on Mathematics Stack Exchange (2018-02-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am finding it hard to understand the method and the logic behind this. 
+>
+> I read that we have to give the one with the smallest coefficient the biggest value ,why is this . ?
+:::
+
+> I read that we have to give the one with the smallest coefficient the biggest value; why is this?
+
+Let's say you are going to market to buy fish.  Some fish cost \$1, some cost \$2, others cost \$3.  You have \$40 and want to buy *the most fish*.  How many of each should you buy?  Clearly you should buy 40 of the one-dollar fish.  You could swap two of the one-dollar fish for one two-dollar fish; that would result in the same amount paid, but would result in one less fish.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2647795/a-b-c-are-digits-%c4%b0f-a2b3c-40-then-what-is-the-largest-value-for-abc/2647808#2647808) on Mathematics Stack Exchange, 2018-02-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

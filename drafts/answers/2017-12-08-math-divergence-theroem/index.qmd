@@ -1,0 +1,74 @@
+---
+title: Divergence theroem
+date: '2017-12-08'
+description: Your coordinates should be $$\begin{align} x &= r \cos \alpha \\ y &= \color{red}{r \sin \alpha} \\ z &= t \end{align}$$ You have a different expression for…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2557409
+se-link: https://math.stackexchange.com/questions/2557397/divergence-theroem/2557409#2557409
+se-score: 1
+se-accepted: false
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Divergence theroem](https://math.stackexchange.com/questions/2557397/divergence-theroem), asked by [Catacroker](https://math.stackexchange.com/users/445783/catacroker) on Mathematics Stack Exchange (2017-12-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a problem applying the divergence theorem in two problems.
+>
+> The first asks me to calculate $\int \int F · N dS$ where $F(x,y,z)=(x^2 + \sin z, x y + \cos z, e^y)$ in  in the cylinder $x^2 + y^2=4$  limited by the planes $XY$ and $x+z=6$.
+>
+>
+> I compute divergence and $\mathop{div}{F} = 3 x$.
+>
+> To compute $\int \int \int \mathop{div}{F} \ dV$, I use cylindrical coordinates:
+>
+> $x= r \cos( \alpha)$
+>
+> $y=r \sin (\alpha)$
+>
+> $z=t$
+>
+> for $r \in [0,2]$, $\alpha \in [0, 2 \pi]$ and $t \in [0, 6- r \cos(\alpha)]$.
+> As the Jacobian is $r$ I have the following:
+>
+> $$I=\int \int F · N dS$=  $\int \int \int \mathop{div}{F}  \space dV =  \int_{0}^{2 \pi} \int_{0}^{2} \int_{0}^{6- r \cos(\alpha)} 3 r \cos( \alpha) r \ dt \ dr \ d\alpha$$
+>
+> I compute it using Mathematica and I have I=0 however I know that the result is not that. Where have I been wrong?
+>
+>
+> The other problem is similar.
+>
+> I have to compute I have to calculate the flow F that passes through S where $F(x,y,z)=(x^2 + \sin(yz), y- x e^{-z},z^2)$ and $S$ is the boundery of cylinder $x^2+y^2=4$ limited by planes $z=0$ and $x+z=2$. I have applied the divergence theorem as in the previous case and I have to
+>
+>
+> $$I=\int \int F · N dS= \int_{0}^{2 \pi} \int_{0}^ {2} \int _{0}^{2-r \cos(\alpha)} (2 r \cos (\alpha) + 1 + 2z )r\ dz\ dr\ d\alpha=\frac{64 \pi}{3}$$
+>
+> And as in the previous case, it is not the solution either. Where this error?
+>
+> Thank you very much to all.
+:::
+
+Your coordinates should be 
+$$\begin{align*}
+    x &= r \cos \alpha \\
+    y &= \color{red}{r \sin \alpha} \\
+    z &= t
+\end{align*}$$
+You have a different expression for $y$.  I don't think it matters in the integration, however, as a coincidence.  
+The volume integral is
+$$\iiint_E 3x\,dV = \int_0^{2\pi}\int_0^2 \int_0^{6-r\cos\alpha}3(r\cos \alpha) \color{red}{r}\,dt\,dr\,d\alpha$$
+And that should make a big difference.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2557397/divergence-theroem/2557409#2557409) on Mathematics Stack Exchange, 2017-12-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

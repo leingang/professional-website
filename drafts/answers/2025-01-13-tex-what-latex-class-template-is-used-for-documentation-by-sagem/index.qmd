@@ -1,0 +1,68 @@
+---
+title: What latex class/template is used for documentation by SageMath?
+date: '2025-01-13'
+description: 'From LaTeX customization on the Sphinx documentation site:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 734963
+se-link: https://tex.stackexchange.com/questions/734959/what-latex-class-template-is-used-for-documentation-by-sagemath/734963#734963
+se-score: 6
+se-accepted: false
+se-tags:
+- templates
+- documentation
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What latex class/template is used for documentation by SageMath?](https://tex.stackexchange.com/questions/734959/what-latex-class-template-is-used-for-documentation-by-sagemath), asked by [Schroedinger'sDog](https://tex.stackexchange.com/users/214205/schroedingersdog) on TeX Stack Exchange (2025-01-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am preparing documentation for a code package and I prefer the [documentation style used by SageMath][q-1]. It also seems to used in a few other places such as [here][q-2]. Is a LaTex template for the SageMath documentation available anywhere? (I could reverse engineer the template using the ```memoir``` class, but perhaps it might save me some valuable time by asking kind strangers for help first.)
+>
+>
+>   [q-1]: https://doc.sagemath.org/pdf/en/a_tour_of_sage/a_tour_of_sage.pdf
+>   [q-2]: https://mosullivan.sdsu.edu/Teaching/sdsu-sage-tutorial/SDSUSageTutorial.pdf
+:::
+
+From [LaTeX customization](https://www.sphinx-doc.org/en/master/latex.html) on the Sphinx documentation site:
+
+> The LaTeX package file `sphinx.sty` loads various components providing support macros (aka commands), and environments, which are used in the mark-up produced on output from the latex builder, before conversion to pdf via the LaTeX toolchain. Also the  LaTeX class files `sphinxhowto.cls` and `sphinxmanual.cls` define or customize some environments. All of these files can be found in the latex build repertory.
+
+So you really only need those three files in addition to an adequate TeX distribution. I found them in the [sphinx source repo](https://github.com/sphinx-doc/sphinx/tree/master/sphinx/texinputs). Then this template worked for me:
+
+```latex
+\def\sphinxdocclass{report}
+\documentclass[letterpaper,10pt,english]{sphinxmanual}
+\usepackage{times}
+\usepackage[Bjarne]{fncychap}
+\usepackage{sphinx}
+
+
+\usepackage{lipsum}% just for placeholder text
+
+\title{Lorem Ipsum}
+\author{R.J.~Drofnats}
+\newcommand{\sphinxlogo}{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Foo}
+\lipsum 
+\chapter{Bar}
+\lipsum
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/734959/what-latex-class-template-is-used-for-documentation-by-sagemath/734963#734963) on TeX Stack Exchange, 2025-01-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

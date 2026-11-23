@@ -1,0 +1,67 @@
+---
+title: Rules for simplifying algebraic fractions
+date: '2022-10-08'
+description: There's a lot going on here; let's take it step by step. I'm assuming that the task is to simplify $$\frac{x^2+xy}{y^2+xy}$$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4548306
+se-link: https://math.stackexchange.com/questions/4548266/rules-for-simplifying-algebraic-fractions/4548306#4548306
+se-score: 1
+se-accepted: false
+se-tags:
+- fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Rules for simplifying algebraic fractions](https://math.stackexchange.com/questions/4548266/rules-for-simplifying-algebraic-fractions), asked by [Cookies](https://math.stackexchange.com/users/1091673/cookies) on Mathematics Stack Exchange (2022-10-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm new to maths and I'm working on simplifying the fraction below:
+>
+> x^2+xy 
+> ----------
+> y^2+xy
+>
+> The answer is x over y but i want to know why i cant simply cancel everything out as it is from the start.  I have been taught to cancel out like terms, so can't i say, "xy over xy = 1, x^2 over y^2 is simply X x X and Y x Y, so i can divide those by top and bottom and get answer = 1" and ultimately end up with nothing as the answer?
+>
+> Also, would the answer simply be 1 or would it be 0 if i did it this way?  my teacher cancels out like terms a lot but doesn't always write the 1, so i'm a bit confused.
+>
+> Or at the very minimum, why is that i cant cancel xy over xy out now, but if i write them out as x(x+y) over x(x+y) i can then cancel out the terms in the brackets?
+:::
+
+There's a lot going on here; let's take it step by step. I'm assuming that the task is to simplify $$\frac{x^2+xy}{y^2+xy}$$.
+
+> I have been taught to cancel out like terms, so can't i say, "xy over xy = 1, ...
+
+It sounds like you are trying to do this:
+$$\frac{x^2 \color{red}{+xy}}{y^2 \color{red}{+ xy}} \color{red}{=} \frac{x^2}{y^2}$$
+This is wrong. You can cancel common *factors* in the numerator and denominator but not common *terms*. If you try it with $x=1$ and $y=2$, then the left-hand side of the above is $\frac{1^2 + 1 \cdot 2}{2^2 + 1 \cdot 2} = \frac{3}{6} = \frac{1}{2}$, while the right-hand side is $\frac{1^2}{2^2} = \frac{1}{4}$.
+
+> x^2 over y^2 is simply X x X and Y x Y, so i can divide those by top and bottom and get answer = 1" 
+
+It sounds like you are trying to do this:
+$$\frac{x^2}{y^2} \color{red}{=} \frac{x^2 /x^2}{y^2/y^2} = \frac{1}{1}$$
+This is also wrong. You can only divide the top and bottom by the same expression, not different ones.
+
+> and ultimately end up with nothing as the answer?
+
+It sounds like you are equating the $1$ that arrives from canceling everything in sight with $0$ (“nothing").  But a multiplicative nothing is $1$, while $0$ is the additive nothing.
+
+OK, then, turning to your question about the solution which is correct:
+
+> why is that ...if i write them out as x(x+y) over x(x+y) i can then cancel out the terms in the brackets?
+
+You have
+$$\frac{x^2+xy}{y^2+xy} = \frac{x\color{blue}{(x+y)}}{y\color{blue}{(y+x)}} = \frac{x}{y}$$
+Here we see common *factors* in the numerator in denominator, so they can be canceled. But there isn't anywhere to go from here, since $x$ and $y$ are independent variables.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4548266/rules-for-simplifying-algebraic-fractions/4548306#4548306) on Mathematics Stack Exchange, 2022-10-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

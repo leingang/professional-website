@@ -1,0 +1,38 @@
+---
+title: Do goofs in a recommendation letter hurt a student applying for grad school?
+date: '2015-01-03'
+description: I do occasionally see copy-and-paste errors in recommendation letters and I smile for a minute and move on. Living in a glass house as I do, I would not dare…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 35199
+se-link: https://academia.stackexchange.com/questions/20010/do-goofs-in-a-recommendation-letter-hurt-a-student-applying-for-grad-school/35199#35199
+se-score: 4
+se-accepted: false
+se-tags:
+- graduate-admissions
+- recommendation-letter
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Do goofs in a recommendation letter hurt a student applying for grad school?](https://academia.stackexchange.com/questions/20010/do-goofs-in-a-recommendation-letter-hurt-a-student-applying-for-grad-school), asked by [Ellen Spertus](https://academia.stackexchange.com/users/269/ellen-spertus) on Academia Stack Exchange (2014-04-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When rereading my copies of letters of recommendation I wrote when a student of mine applied to multiple graduate schools, I was appalled to see mistakes I made where the wrong graduate program was mentioned in the letter.  For example, in a letter to CMU, I recommended the student to Georgia Tech.  
+>
+> Do mistakes like this hurt a grad student applicant, perhaps by showing they are applying to other programs, or do they only reflect poorly on the letter writer?  In this case, the schools were all in the same (top) tier.
+:::
+
+I do occasionally see copy-and-paste errors in recommendation letters and I smile for a minute and move on.  Living in a glass house as I do, I would not dare to throw stones.
+
+I know this is tangential, but I take the opposite extreme with cover letters.  If a candidate is applying for a job at my university and their letter mentions another university, I take it as a big strike against them.  It may not single-handedly sink the application, but mistakes like this often correlate with poorly written applications in general.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/20010/do-goofs-in-a-recommendation-letter-hurt-a-student-applying-for-grad-school/35199#35199) on Academia Stack Exchange, 2015-01-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,83 @@
+---
+title: How to get part name in LaTeX ?
+date: '2011-03-14'
+description: I couldn't find a macro that saves the part's title, so I used the etoolbox package to patch the internals within the \part command to do that. Then you just…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13393
+se-link: https://tex.stackexchange.com/questions/13387/how-to-get-part-name-in-latex/13393#13393
+se-score: 9
+se-accepted: false
+se-tags:
+- header-footer
+- fancyhdr
+- parts
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to get part name in LaTeX ?](https://tex.stackexchange.com/questions/13387/how-to-get-part-name-in-latex), asked by [yolo](https://tex.stackexchange.com/users/3864/yolo) on TeX Stack Exchange (2011-03-14; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Actually I am using the `fancyhdr` package, and trying to put the current part name in the right header. 
+>
+> I know that `\rightmark` and `\leftmark` are used to represent the current section and chapter heading respectively, but I can not find anything similar to represent the part name.
+:::
+
+I couldn't find a macro that saves the part's title, so I used the [`etoolbox`](http://ctan.org/pkg/etoolbox) package to patch the internals within the `\part` command to do that.  Then you just take that save macro and put it wherever.
+
+```latex
+\documentclass{report}
+\title{part name in right mark}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+
+\makeatletter
+% patch \@part[#1]{#2} and \@spart (see the class file) to save the part name
+\pretocmd{\@part}{\gdef\parttitle{#1}}{}{}
+\pretocmd{\@spart}{\gdef\parttitle{#1}}{}{}
+\makeatother
+
+\pagestyle{fancy}
+\renewcommand{\rightmark}{\parttitle}
+
+
+\begin{document}
+
+
+\maketitle
+\tableofcontents
+
+\part{First part}
+
+\chapter{first chapter}
+
+\lipsum\lipsum\lipsum
+
+\chapter{second chapter}
+
+\lipsum\lipsum\lipsum
+
+\part{Second part}
+
+\chapter{third chapter}
+
+\lipsum\lipsum\lipsum
+
+\chapter{fourth chapter}
+
+\lipsum\lipsum\lipsum
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13387/how-to-get-part-name-in-latex/13393#13393) on TeX Stack Exchange, 2011-03-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

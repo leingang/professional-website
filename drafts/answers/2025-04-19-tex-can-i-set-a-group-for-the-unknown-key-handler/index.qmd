@@ -1,0 +1,221 @@
+---
+title: Can I set a group for the unknown key handler?
+date: '2025-04-19'
+description: My original post was a bit of an XY Problem. What I want (Y) is to set several keys in the optional argument to the \question command, and have them be…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 741110
+se-link: https://tex.stackexchange.com/questions/740962/can-i-set-a-group-for-the-unknown-key-handler/741110#741110
+se-score: 2
+se-accepted: false
+se-tags:
+- exam
+- key-value
+- l3keys
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Can I set a group for the unknown key handler?](https://tex.stackexchange.com/questions/740962/can-i-set-a-group-for-the-unknown-key-handler), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2025-04-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am working on an extension to the `exam` class, and would like to add optional arguments to the `\question` command. Currently, the command takes one optional argument, the number of points the question should have.
+>
+> The implementation of `\question` comes down to a `\@doitem` command (line 3584 of [`exam.cls`](https://mirrors.ctan.org/macros/latex/contrib/exam/exam.cls)):
+>
+> ```latex
+> \def\@doitem{\@ifnextchar[{\@readpoints}%
+>                           {\item@points@pageinfo}%
+> }
+> ```
+>
+> That is, if there is an optional argument given, it is passed to `\@readpoints`, and if not, `\item@points@pageinfo` is expanded instead. The `\@readpoints` command reads the points and then expands `\item@points@pageinfo`. The latter command generates the question number and point designation.
+>
+> Instead of a “free text” optional argument for the points, I would like to pass it to a `points` keyword argument. I would also prefer to set a question label with a `label` keyword argument, instead of an explicit `\label` command. The first argument needs to be processed before `\@readpoints`, and the second after `\item@points@pageinfo`. [Another use case is given in [this question](https://tex.stackexchange.com/q/683468/1402), where OP wants to add question metadata like the learning objective assessed.]
+>
+> Here's what I have so far:
+>
+> ```latex
+> \tl_new:N \l_exam_points_tl
+> \RenewDocumentCommand{\@doitem}{={points} +O{}}{
+>   \tl_clear:N \l_exam_points_tl
+>   \keys_set_groups:nnn {exam/item} {points} {#1} 
+>   \tl_if_empty:NTF \l_exam_points_tl {
+>     \item@points@pageinfo
+>   }{
+>     \@readpoints[\l_exam_points_tl]
+>   }
+>   \keys_set_exclude_groups:nnn {exam/item} {points} {#1}
+> }
+> \keys_define:nn {exam/item} {
+>     points .tl_set:N = \l_exam_points_tl,
+>     points .groups:n = {points},
+>     hello  .code:n = {[Hello,~#1!]},% just for testing
+>     label  .code:n = {\label{#1}},
+>     unknown .meta:n = {points=\l_keys_key_str},
+>     unknown .groups:n = {points},
+> }
+> ```
+>
+> The argument specification to the new `\@doitem` command allows for an optional argument either as free text or as a series of keyvals (Section 2.9 of [`usrguide.pdf`](http://mirrors.ctan.org/macros/latex/base/usrguide.pdf)). The keys are scanned for any which set the points (Section 27.7 of [`interface3.pdf`](http://mirrors.ctan.org/macros/latex/required/l3kernel/interface3.pdf)). If so, the value is saved in `\l_exam_points_tl` for passing to `\@readpoints`. The rest are deferred until after `\item@points@pageinfo`.
+>
+> This works pretty well! If the optional argument text is `points=5` or just `5`, the points are set correctly. If the optional argument is `label=foo`, a label is set after the question counter is incremented. And `label=foo,points=5` does both.
+>
+> What doesn't work yet is an optional argument like `label=foo,5`. I was hoping the `unknown` key handler could handle that, by rerouting it to `points`. I tried to put the `unknown` key handler in the group that is processed before `\@readpoints`. But what I wrote has no effect. 
+>
+> I also tried `unknown .code:n = {\tl_set:Nx \l_exam_points_tl {\l_keys_key_str}}`, and I can tell by `\cs_show:N` that it does read and set `\l_exam_points_tl` to the correct value of the unknown key string. But it doesn't do it until after `\item@points@pageinfo`, which is too late. Without the `unknown` key handler, I get an error about an unknown key (naturally!)
+>
+> So is there a way for unknown keys to be handled within a group, or otherwise have an unknown key processed in advance? “No” is a reasonable answer. If I am adding keyword arguments to a question that already has a point value as a free text argument, I can simultaneously add the `points` keyword. But I thought I'd ask to see if I understand the situation well.
+>
+> Here is a complete document that illustrates my question.
+>
+> ```latex
+> \documentclass{exam}
+> \title{Know your US States and Capitals!}
+>
+> \makeatletter
+> \ExplSyntaxOn
+> \DeclareCommandCopy\examorig@doitem\@doitem
+> \tl_new:N \l_exam_points_tl
+> \RenewDocumentCommand{\@doitem}{={points} +O{}}{
+>   \tl_clear:N \l_exam_points_tl
+>   \keys_set_groups:nnn {exam/item} {points} {#1} 
+>   \tl_if_empty:NTF \l_exam_points_tl {
+>     \item@points@pageinfo
+>   }{
+>     \@readpoints[\l_exam_points_tl]
+>   }
+>   \keys_set_exclude_groups:nnn {exam/item} {points} {#1}
+>   \cs_show:N \l_exam_points_tl
+> }
+> \keys_define:nn {exam/item} {
+>     points .tl_set:N = \l_exam_points_tl,
+>     points .groups:n = {points},
+>     hello  .code:n = {[Hello,~#1!]},
+>     label  .code:n = {\label{#1}},
+>     unknown .meta:n = {points=\l_keys_key_str},
+> %    unknown .code:n = {\tl_set:Nx \l_exam_points_tl {\l_keys_key_str}},
+>     unknown .groups:n = {points},
+> }
+> \ExplSyntaxOff
+> \makeatother
+>
+> \begin{document}
+>
+> \begin{questions}
+>
+> \question[label=CA,points=3] What is the capital of California?
+> \begin{choices}
+>     \choice Los Angeles
+>     \choice Sacramento
+>     \choice San Francisco
+>     \choice San Diego
+> \end{choices}
+>
+> \question[hello=world,label=TX] Which city serves as the capital of Texas?
+> \begin{choices}
+>     \choice Dallas
+>     \choice Houston
+>     \choice Austin
+>     \choice San Antonio
+> \end{choices}
+>
+> % freetext argument `2` is converted to `points=2` and processed
+> \question[2] What is the capital of Florida?
+> \begin{choices}
+>     \choice Miami
+>     \choice Orlando
+>     \choice Jacksonville
+>     \choice Tallahassee
+> \end{choices}
+>
+> % non-keyword argument '3' is ignored, or rather it is read at the wrong time
+> \question[label=NY,3] Which city is the capital of New York?
+> \begin{choices}
+>     \choice Buffalo
+>     \choice Albany
+>     \choice New York City
+>     \choice Syracuse
+> \end{choices}
+>
+> \question[hello=Donald,points=7] What is the capital of Nevada?
+> \begin{choices}
+>     \choice Reno
+>     \choice Henderson
+>     \choice Carson City
+>     \choice Las Vegas
+> \end{choices}
+>
+> % non-keyword argument '6' is ignored, or rather it is read at the wrong time
+> \question[hello=Duck,6] Which city serves as the capital of Colorado?
+> \begin{choices}
+>     \choice Denver
+>     \choice Boulder
+>     \choice Colorado Springs
+>     \choice Aurora
+> \end{choices}
+>
+>
+> \end{questions}    
+> \end{document}
+> ```
+:::
+
+My original post was a bit of an [XY Problem](https://en.wikipedia.org/wiki/XY_problem). What I want (Y) is to set several keys in the optional argument to the `\question` command, and have them be processed (or effectively processed) at different times. I also would like to keep as much of the “old” functionality as possible, in that non-keyword arguments are assumed to be a point value.
+
+The question I asked (X) was in the title: Can I set a group of the unknown key handler? And as Jasper pointed out in the comments, the answer is *no*. It's in the manual, in fact on the very page I had open when I wrote my original post. Oops.
+
+As for Y, there are several ways to do it.
+
+# With key groups
+
+The partial solution in my original post is to declare a group of keys to be processed first, to set the point value and determine if `\@readpoints` is expanded. The rest of the keys are processed after `\item@points@pageinfo`.
+
+## Handling unknown keys as point values
+
+The groups can be flipped: declare the group of keys to be processed last instead, and the excluded ones can be set using `\keys_set_exclude_groups`. This would handle unknown keys first.
+
+The disadvantage would be having to purposefully set a key group for what I expect will be the much larger group.
+
+## Without handling unknown keys as point values
+
+Maybe just don't do it? If I'm editing a question that has a free text optional argument, and I'm adding keyword arguments to it, I can at the same time change the free text argument to a `points` keyval. And letting the kernel complain about an unknown key passed is a reasonable way to remind me to do that.
+
+I could customize the error message to remind users that if keys are passed in the optional argument, points need to be set with a `points` key.
+
+# Without key groups
+
+Another way is to process all the keys at the beginning, and let the key handlers make sure the values are used at the right time.
+
+## With variables
+
+User @cfr has contributed an answer like this, where the `label` key sets a variable `\l_exam_label_tl`. After `\item@points@pageinfo` is expanded, the code checks whether this variable is set, and calls a copy of `\label` on it (IIRC). 
+
+I like it. On the other hand, it seems like a lot of setup code.
+
+## With hooks
+
+Like in cfr's answer, keys only need to be set at the beginning of the command. But hooks can be used to pass their effects to the right time. The unknown key handler makes a new call to `key_set`, passing the “key” as the value of a `points` key.
+
+```latex
+\keys_define:nn {exam/item} {
+    points .tl_set:N = \l_exam_points_tl,
+    hello  .code:n = {\AddToHookNext{cmd/item@points@pageinfo/after}{[Hello,~#1!]}},
+    label  .code:n = {\AddToHookNext{cmd/item@points@pageinfo/after}{\label{#1}}},
+    unknown .code:n = { \keys_set:ne {exam/item} {points=\l_keys_key_str} },
+}
+```
+
+This seems like an odd combination of high- and low-level code, but it seems to work and it's not too cumbersome. 
+ 
+I still haven't decided which implementation to go with. But I appreciate the suggestions.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/740962/can-i-set-a-group-for-the-unknown-key-handler/741110#741110) on TeX Stack Exchange, 2025-04-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

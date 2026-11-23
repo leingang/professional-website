@@ -1,0 +1,87 @@
+---
+title: Paragraph indented to absolute horizontal position.
+date: '2011-03-19'
+description: The TeX primitive \parshape can do what you want.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13869
+se-link: https://tex.stackexchange.com/questions/13856/paragraph-indented-to-absolute-horizontal-position/13869#13869
+se-score: 4
+se-accepted: false
+se-tags:
+- indentation
+- paragraphs
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Paragraph indented to absolute horizontal position.](https://tex.stackexchange.com/questions/13856/paragraph-indented-to-absolute-horizontal-position), asked by [Brennan Vincent](https://tex.stackexchange.com/users/4318/brennan-vincent) on TeX Stack Exchange (2011-03-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am in the following situation: I need to have some text on the first line of a paragraph indented to the normal paragraph indentation point, then I need _further text on that same line_, as well as all subsequent lines in the paragraph, to be indented to a specific horizontal location (in my case, 2 inches). How can I achieve this?
+>
+> EDIT: None of the solutions take into account that I need **further text on the first line** to be indented to the same length as additional lines. Your answers get me almost there, but not quite.
+>
+> ![sample][q-1]
+>
+>
+>   [q-1]: wWKgW.jpg
+:::
+
+The TeX primitive `\parshape` can do what you want.
+
+```latex
+\dimen0\hsize
+\advance\dimen0 by -2in
+\parshape=2 0pt \hsize 2in \dimen0
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue
+duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit
+litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum
+clarifiant sollemnes in futurum.
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue
+duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod
+mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit
+litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum
+clarifiant sollemnes in futurum.
+
+\bye
+```
+
+(this is a plain tex example; if you wanted it in LaTeX just copy and paste it between `\begin{document}...\end{document}` but omit `\bye`)
+
+![sample code output][1]
+
+Parshapes are documented in the TeXBook.  Google found me a [passage in *The Advanced TeXBook*](http://books.google.com/books?id=rstheMEAf2gC&pg=PA107&lpg=PA107&dq=parshape&source=bl&ots=TTSzVpaPho&sig=EY_hWnV6GajTGgasoZddCHfJ8Us&hl=en&ei=tJGETfbGN8jDgQefy-XBCA&sa=X&oi=book_result&ct=result&resnum=7&ved=0CD4Q6AEwBg#v=onepage&q=parshape&f=false) which also helps.  The basic usage is that `\parshape` expects a number then a sequence of pairs of dimensions.  Each pair of dimensions represents the indentation and width of each line.  The number at the beginning is the index of the pair which should be used once the sequence of pairs is exhausted.  
+
+The first two lines of the sample set the temporary dimension `\dimen0` to the default paragraph width `\hsize` minus 2 inches.  The `\parshape` line says that the first line should be a normal line (no indentation, width `\hsize`), the second should be indented by 2 in and `\hsize`- 2 in wide (so it ends at the same place as above), and subsequent lines should follow the specification for the second line.  Apparently the regular first line paragraph indentation comes after the parshape is applied, so you don't need to adjust the first line for that.
+
+Notice that `\parshape` applies only to the current paragraph.  If you want *every* paragraph to be set that way, use the `\everypar` token register.  Replace line 3 above to read
+
+```latex
+\everypar{\parshape=2 0pt \hsize 2in \dimen0}
+```
+
+
+  [1]: 7toCH.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13856/paragraph-indented-to-absolute-horizontal-position/13869#13869) on TeX Stack Exchange, 2011-03-19. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

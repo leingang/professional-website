@@ -1,0 +1,41 @@
+---
+title: What is the definition of $\bigcup_{i}^{\infty}A_i$ and $\sum_{i}^{\infty}a_i$?
+date: '2020-03-18'
+description: Most of the time, you're right about the infinite sum. There are alternate definitions of infinite sum (like the ones that lead to $\sum{i=1}^\infty i =…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3585533
+se-link: https://math.stackexchange.com/questions/3585526/what-is-the-definition-of-bigcup-i-inftya-i-and-sum-i-inftya-i/3585533#3585533
+se-score: 0
+se-accepted: true
+se-tags:
+- infinity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the definition of $\bigcup_{i}^{\infty}A_i$ and $\sum_{i}^{\infty}a_i$?](https://math.stackexchange.com/questions/3585526/what-is-the-definition-of-bigcup-i-inftya-i-and-sum-i-inftya-i), asked by user675768 on Mathematics Stack Exchange (2020-03-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What is the definition of $\bigcup_{i}^{\infty}A_i$ and $\sum_{i}^{\infty}a_i$?
+>
+> My assumption until now was $$\bigcup_{i}^{\infty}A_i=\lim_{n\rightarrow\infty}\bigcup_{i}^{n}A_i$$ and $$\sum_{i}^{\infty}a_i=\lim_{n\rightarrow\infty}\sum_{i}^{n}a_i$$
+>
+> However, I don't recall seeing it anywhere, and I want to verify if my implicit assumptions are correct or not. Thank you for taking the time.
+>
+> PS: help me find proper tags for this question please.
+:::
+
+Most of the time, you're right about the infinite sum.  There are alternate definitions of infinite sum (like the ones that lead to $\sum_{i=1}^\infty i = -\frac{1}{12}$), but that's probably not of use to you.
+
+As for the union, you don't really need a limit.  $\bigcup_{i=1}^\infty A_i$ is the set of all $x$ such that $x \in A_i$ for some $i$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3585526/what-is-the-definition-of-bigcup-i-inftya-i-and-sum-i-inftya-i/3585533#3585533) on Mathematics Stack Exchange, 2020-03-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

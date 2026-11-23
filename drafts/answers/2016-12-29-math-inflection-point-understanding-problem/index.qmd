@@ -1,0 +1,69 @@
+---
+title: Inflection point, understanding problem
+date: '2016-12-29'
+description: 'It is neither necessary nor sufficient that $f''''(c)$ exists and $f''''(c) =0$ for the graph of $f$ to have an inflection point at $c$. Consider:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2076390
+se-link: https://math.stackexchange.com/questions/2076345/inflection-point-understanding-problem/2076390#2076390
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Inflection point, understanding problem](https://math.stackexchange.com/questions/2076345/inflection-point-understanding-problem), asked by [Blnpwr](https://math.stackexchange.com/users/289132/blnpwr) on Mathematics Stack Exchange (2016-12-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am facing problems computing the inflection point
+>
+> We have $$f(x) = (2x^2-x^3)^{1/3}$$
+>
+> Let's assume $f$ is defined like: $f:\Bbb{R}\to \Bbb{R}$
+> (As far as I read on wikipedia, it's a matter of opinion. You could also say $f: (- \infty,2]\to \Bbb{R}$)
+>
+> But we assume $f:\Bbb{R}\to\Bbb{R}$
+>
+>
+> $$f'(x) = \frac{4x-3x^2}{3(2x^2-x^3)^{\frac{2}{3}}}$$
+>
+> $$f''(x) = \frac{-8x^2}{9(2x^2-x^3)^{\frac{5}{3}}}$$
+>
+> Both derivatives are correct, I computed it two times and finally checked it online ( e.g. WolframAlpha).
+>
+> I know that for an inflection point $f''(x) = 0$
+>
+> BUT: $-8x^2 =0 \Rightarrow x = 0$
+> That does not work, because $f''(0)$ would not be defined, since the denominator is $0$.
+>
+> What am I doing wrong?
+>
+> Thank you.
+:::
+
+It is neither necessary nor sufficient that $f''(c)$ exists and $f''(c) =0$ for the graph of $f$ to have an inflection point at $c$.  Consider:
+
+ - $f(x) = x^{1/3}$.  The graph of $f$ has an inflection point at $(0,0)$, but $f$ is not even once differentiable at $0$:
+
+ - $f(x) = x^4$.  Then $f''(0) = 0$, but $f$ has a local minimum at $0$, not an inflection point.
+
+Instead, the definition of inflection is a point at which concavity changes.  It's harder to encode, but you can say it this way: $f$ has an inflection point at $c$ if there exist $a$ and $b$ with $a < c < b$ such that $f$ is concave up on $(a,c)$ and $f$ is concave down on $(c,b)$, or $f$ is concave down on $(a,c)$ and concave up on $(c,b)$.  
+
+It's not hard to show that if $f''(c) = 0$ and $f'''(c) \neq 0$, then $f$ has an inflection point at $c$.  But that is not the case you have here.  Instead, you would want to show that $f''(c)$ has one sign on one side of $0$, and the other sign on the other side.
+
+Consider that
+$$f(x) = -\frac{8x^2}{9(2x^2-x^3)^{5/3}} =  -\frac{8x^2}{9[x^2(2-x)]^{5/3}} = -\frac{8x^2}{9x^{10/3}(2-x)^{5/3}} = -\frac{8}{9x^{4/3}(2-x)^{5/3}}$$
+If $x$ is near zero, $(2-x)^{5/3}$ is positive, and $x^{4/3}$ is positive, too.  So the quotient is negative on either side of $0$, meaning $0$ is not an inflection point.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2076345/inflection-point-understanding-problem/2076390#2076390) on Mathematics Stack Exchange, 2016-12-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

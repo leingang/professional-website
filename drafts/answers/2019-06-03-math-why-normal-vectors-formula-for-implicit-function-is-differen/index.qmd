@@ -1,0 +1,87 @@
+---
+title: Why normal vector's formula for implicit function is different than for explicit function?
+date: '2019-06-03'
+description: No. In the second case you're dealing with a function of three variables. You can see that because you have all three variables on one side of the equation…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3250125
+se-link: https://math.stackexchange.com/questions/3250107/why-normal-vectors-formula-for-implicit-function-is-different-than-for-explicit/3250125#3250125
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- multivariable-calculus
+- vector-analysis
+- surfaces
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Why normal vector's formula for implicit function is different than for explicit function?](https://math.stackexchange.com/questions/3250107/why-normal-vectors-formula-for-implicit-function-is-different-than-for-explicit), asked by [weno](https://math.stackexchange.com/users/617563/weno) on Mathematics Stack Exchange (2019-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Find tangent plane to surface: $z = x^2 + y^2 - 3$ at point $P(2, 1, 2)$**
+>
+> The normal vector to the plane I am looking for is defined as:
+>
+> $$\vec{n} = [\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, -1] \Big|_{P(2,1,2)}$$
+>
+> I think I understand everything. Problem is when I am dealing with an implicit form of function.
+>
+> **Find tangent plane to $4x^2 + 2y^2 + z^2 - 12 = 0$ at point $P(1, -\sqrt{2}, -2)$**
+>
+> So the normal vector is defined as:
+>
+> $$\vec{n} = [\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}] \Big|_{P(1, -\sqrt{2}, -2)}$$
+>
+> I am still getting good results. But I simply cannot understand what is going on. 
+>
+> The second, implicit function, could be rewritten in explicit form as something like: $$z = \pm \sqrt{-4x^2 - 2y^2 + 12} = f(x, y)$$
+>
+> So... it is really confusing to me why in the first normal vector's equation there's $-1$ and in the second there's $\frac{\partial f}{\partial z}$ instead. After all I am dealing with function of two variables in both cases, right?
+>
+> And, after I convert the function from implicit to explicit form (and even before conversion), shouldn't I use $\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}, \frac{\partial z}{\partial z}$ notation instead of $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}$?
+>
+> To show what I am struggling with to understand: let's say I have function $y = x^2 = f(x)$. Clearly I can find $y'$, but I cannot find $x'$, right?
+>
+> Can someone help me understand this, how is it possible that the first normal vector equation can be that much different than the implicit one? 
+>
+> Are those two functions: implicit and explicit, even equivalent or not?
+:::
+
+> After all I am dealing with function of two variables in both cases, right?
+
+No.  In the second case you're dealing with a function of *three* variables.  You can see that because you have all three variables on one side of the equation
+$$4x^2 + 2y^2 + z^2 - 12 = 0$$
+and a constant on the other.  Also, as you point out, the normal vector includes $\frac{\partial f}{\partial z}$ as a component, so $f$ must be a function of $z$ (in addition to $x$ and $y$).
+
+If you want to solve the second question using the first method, you can write
+$$z = - \sqrt{-4x^2 - 2y^2 + 12}$$
+(Not $\pm$, you have to choose the negative branch to pass through $(1, -\sqrt{2}, -2)$.
+Then you get
+$$\begin{align*}
+    \frac{\partial z}{\partial x}
+    &= \frac{1}{2}(-4x^2-2y^2+12)^{-1/2}(-8x) 
+     = -\frac{4x}{\sqrt{-4x^2 - 2y^2 + 12}} \\
+    \frac{\partial z}{\partial y} 
+    &= \frac{1}{2}(-4x^2-2y^2+12)^{-1/2}(-4x)
+     = -\frac{2y}{\sqrt{-4x^2 - 2y^2 + 12}} \\
+\end{align*}$$
+At $x=1$ and $y=-\sqrt{2}$ this gives a normal vector of
+$$\vec n_1 = \left[-\frac{4\cdot 1}{-2},-\frac{2\cdot -\sqrt{2}}{-2},-1\right]
+             = \left[2,-\sqrt{2},-1\right]$$
+This seems different from the normal vector given by the second method:
+$$\vec n_2 = \left.\left[8 x,4y,2z\right]\right|_{(1,-\sqrt{2},-2)}    
+             = \left[8,-4\sqrt{2},-4\right]$$
+But as you can see $\vec n_2 = 4 \vec n_1$.  “Normal” is more of a line than a vector; any two normal vectors will be linearly dependent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3250107/why-normal-vectors-formula-for-implicit-function-is-different-than-for-explicit/3250125#3250125) on Mathematics Stack Exchange, 2019-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

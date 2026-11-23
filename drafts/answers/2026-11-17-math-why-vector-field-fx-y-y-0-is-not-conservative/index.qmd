@@ -1,0 +1,50 @@
+---
+title: Why vector field $f(x,y)=(y,0)$ is not conservative?
+date: '2026-11-17'
+description: “There is no circle” is too reductive a restatement of the condition that there must be no rotation in a conservative vector field. The more precise statement…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5154540
+se-link: https://math.stackexchange.com/questions/5154532/why-vector-field-fx-y-y-0-is-not-conservative/5154540#5154540
+se-score: 7
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- vector-analysis
+- vector-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why vector field $f(x,y)=(y,0)$ is not conservative?](https://math.stackexchange.com/questions/5154532/why-vector-field-fx-y-y-0-is-not-conservative), asked by [Kolkatas](https://math.stackexchange.com/users/1781165/kolkatas) on Mathematics Stack Exchange (2026-11-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to check if the vector field $f(x,y)=(y,0)$ is conservative in upper half plane, i.e. $\{(x,y): y>0\}$. 
+>
+> On desmos.com, the picture of this vector field in the upper half-plane shows horizontal arrows pointing to the right. 
+>
+> Since there is no circle, I thought that it was conservative. 
+>
+> But with $P(x,y)=y$ and $Q(x,y)=0$, we see that 
+> $$P_y\neq Q_x$$
+> at any point in the domain. 
+>
+> **What is my mistake in understanding?** I am totally confused here myself, due to improper reading on online resources; I trust here the suggestions of experts on this site!
+:::
+
+“There is no circle” is too reductive a restatement of the condition that there must be no *rotation* in a conservative vector field. The more precise statement comes from the curl, as you computed. 
+
+But you can still find the circles. Notice
+$$f(x,y) = (y/2,x/2) + (y/2,-x/2) = \nabla\left(\frac{xy}{2}\right)+ (y/2,-x/2)$$
+So $f$ differs from a circular vector field by a conservative vector field.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5154532/why-vector-field-fx-y-y-0-is-not-conservative/5154540#5154540) on Mathematics Stack Exchange, 2026-11-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

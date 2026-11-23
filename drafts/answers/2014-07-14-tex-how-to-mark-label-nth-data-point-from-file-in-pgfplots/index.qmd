@@ -1,0 +1,187 @@
+---
+title: How to mark/label nth data point from file in pgfplots?
+date: '2014-07-14'
+description: I think the easiest way to do it is as you've done, keeping in mind that if there are N equally spaced points, the pos-ition of the n-th point is (n-1)/(N-1).
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191398
+se-link: https://tex.stackexchange.com/questions/191365/how-to-mark-label-nth-data-point-from-file-in-pgfplots/191398#191398
+se-score: 14
+se-accepted: true
+se-tags:
+- pgfplots
+- nodes-near-coords
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to mark/label nth data point from file in pgfplots?](https://tex.stackexchange.com/questions/191365/how-to-mark-label-nth-data-point-from-file-in-pgfplots), asked by [Hotschke](https://tex.stackexchange.com/users/8917/hotschke) on TeX Stack Exchange (2014-07-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ```latex
+> \documentclass{standalone}
+>
+> \usepackage{pgfplots}
+> \usepackage{pgfplotstable}
+> \pgfplotsset{compat=1.10}
+>
+> \pgfplotstableread{
+> 0.01    1.00
+> 0.02    2.00
+> 0.03    3.00
+> 0.04    4.00
+> 0.05    5.00
+> }\datatable
+>
+> \begin{document}
+> \begin{tikzpicture}
+> \begin{axis}[ymin=0, ymax=6]
+> \addplot table  {\datatable}
+> node[pos=0.0, pin=above:"Unidentified peak"]{} % pos only allows for fractional value
+> node[pos=0.2, pin=above:"Bragg peak"]{} % pos only allows for fractional value
+> node[pos=1.0, pin=above:"my custom label"]{} % pos only allows for fractional value
+> ;
+>
+> \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+>
+> **UPDATE:**
+> A slightly shorter version of the second solution in the answer by @Matthew Leingang:
+>
+> ```latex
+> \documentclass{standalone}
+>
+> \usepackage{pgfplots}
+> \usepackage{pgfplotstable} % For \pgfplotstableread
+> \pgfplotsset{compat=1.10}
+>
+> \pgfplotstableread{
+> 0.01    1.00
+> 0.011   2.00
+> 0.012   3.00
+> 0.013    4.00
+> 0.05    5.00
+> }\datatable
+> % \pgfplotstableread{results.dat}\datatable
+>
+> \pgfplotstablegetrowsof{\datatable}
+> \pgfmathsetmacro{\N}{\pgfplotsretval}  
+>
+> \begin{document}
+> \begin{tikzpicture}
+> \begin{axis}[ymin=0, ymax=6]
+>   \addplot+[mark=none, forget plot] table {\datatable};
+>   \addplot+[only marks] table  {\datatable}
+>     % pos = (index-1)/(N-1)  (index starting from 1)
+>     node[pos=(1-1)/(\N-1), pin=right:first point (1/\N)]{}
+>     node[pos=(3-1)/(\N-1), pin=-45:third point (3/\N)]{}
+>     node[pos=(4-1)/(\N-1), pin=-45:end of linear behaviour (4/\N)]{}
+> ;
+> \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: lFsED.png
+:::
+
+I think the easiest way to do it is as you've done, keeping in mind that if there are *N* equally spaced points, the `pos`-ition of the *n*-th point is (n-1)/(N-1).  
+
+In your case you have 5 points and you want to mark the second, so it should be at position 0.25:
+
+```latex
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable} % For \pgfplotstableread
+
+\pgfplotstableread{
+0.01    1.00
+0.02    2.00
+0.03    3.00
+0.04    4.00
+0.05    5.00
+}\datatable
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[ymin=0, ymax=6]
+\addplot table  {\datatable}
+node[pos=0.0, pin=right:``first point'']{} 
+node[pos=0.25, pin=above:``second point'']{} 
+node[pos=1.0, pin=left:``last point'']{} 
+;
+
+\end{axis}
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+This will work as along as your points are evenly spaced.  If they are not, you have two choices that I know of:
+
+ 1. calculate the relative position based on the point coordinates.  If they are labeled `x_1, x_2, ..., x_N`, the *n*-th point is at position `(x_n - x_1)/(x_N - x_1)`.
+
+ 2. Use a plot handler that only plots the points without interpolation, e.g., `only marks`.  Then you can use fractional positions and the handler will “snap to” the point indexed by that fraction.  So if there are five points `pos=0.25` will snap to the second point regardless of whether it is really 1/4th of the way from the left to right.  
+
+If you have unevenly spaced points and you want to mark them, interpolate them, *and* label them, you can use a two-step approach.  First, plot without marks with `\addplot+[mark=none,forget plot] ...`  Then plot only marks and label with `\addplot+[only marks] ... node[pos=0.25] ...`.  Here is an example of that:
+
+```latex
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\begin{document}
+
+\begin{tikzpicture}[
+    declare function={
+        f(\x) = 2*(\x)^3 - 3*(\x)^2 - 12 *\x;
+    }]
+    \begin{axis}[
+        width=\linewidth,
+        xmin=-3.3,xmax=4,
+        ymin=-21,ymax=21,
+        xtick={-1,0.5,2},
+        xticklabels={$-1$,$\frac12$,$2$},
+        ytick=\empty,
+        samples=50
+    ]
+        \addplot+[domain=-3:4,mark=none,forget plot] {f(x)};
+        \addplot+[samples at={-1.8117,-1,0,0.5,2,3.3117},only marks] {f(x)}
+            node[pos=0,
+                pin={-88:$\left(\frac{1}{4}\left(3 - \sqrt{105}\right),0\right)$},
+                ] {}
+            node[pos=0.2,pin={$(-1,7)$}] {}
+            node[pos=0.4,pin={15:$(0,0)$}] {}
+            node[pos=0.6,pin={0:$\left(\frac12,-6\frac12\right)$}] {}
+            node[pos=0.8,pin={90:$(2,-20)$}] {}
+            node[pos=1.0,pin={95:$\left(\frac{1}{4}\left(3 + \sqrt{105}\right),0\right)$}] {}
+        ;
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+```
+
+![second sample code output][2]
+
+The `forget plot` command keeps the plot cycle from shifting so the second plot is styled exactly as the first one is.  The second `\addplot` marks specific (unevenly spaced) points.  Since there are six of them, the position of the *n*-th is `0.2n`.
+
+
+  [1]: CHY1X.png
+  [2]: QyELA.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/191365/how-to-mark-label-nth-data-point-from-file-in-pgfplots/191398#191398) on TeX Stack Exchange, 2014-07-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

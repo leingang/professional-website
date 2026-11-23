@@ -1,0 +1,72 @@
+---
+title: Properties of an orthogonal transformation $U$ with $U^{2} = -I$
+date: '2021-04-21'
+description: I think the hint makes more sense if “...such operator does not exist in $\mathbb{R}^2$...” is changed to “...such operator does not exist in $\mathbb{R}^1$...”
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4111545
+se-link: https://math.stackexchange.com/questions/4111505/properties-of-an-orthogonal-transformation-u-with-u2-i/4111545#4111545
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Properties of an orthogonal transformation $U$ with $U^{2} = -I$](https://math.stackexchange.com/questions/4111505/properties-of-an-orthogonal-transformation-u-with-u2-i), asked by [sanguine](https://math.stackexchange.com/users/907619/sanguine) on Mathematics Stack Exchange (2021-04-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> From *Linear Algebra Done Wrong*:
+>
+> > Let $U$ be an orthogonal transformation in a real inner product space, satisfying $U^{2} = -I$. Show that in this case dim$X = 2n$, and that there exists a subspace $E \subset X$, dim$E = n$, and an orthogonal transformation $U_{0} : E \to E^{\perp}$ such that $U$ in the decompostion $X = E \oplus E^{\perp}$ is given by the block matrix
+> $$U = \begin{pmatrix} 
+>     \mathbf{0} & -U^{*}_{0} \\
+>     U_{0} & \mathbf{0} \\
+>     \end{pmatrix}$$
+>
+> This question is followed up by a hint:
+>
+> > ...[T]he statement is trivial if dim$X = 2$: in this case we can take for $E$ any one-dimensional subspace, see Exercise 8.3. Then it is not hard to show, that such operator [sic] does not exists [sic] in $\mathbb{R}^{2}$, and one can use induction in dim $X$ to complete the proof.
+>
+> Exercise 8.3 proves that an orthogonal transformation satisfying the same conditions as in the question above has
+> $$Ux \perp x$$
+> for all $x \in X$.
+>
+> I'm looking for clarification of the hint. On the one hand, we are asked to prove that the matrix $U$ in the decomposition $X = E \oplus E^{\perp}$ has the indicated form. On the other, the matrix of $U_{0}$ must have dimensions $2n \times 2n$, which results in a $4n \times 4n$ matrix $U$. Clearly then, we have a contradiction: no such operator in exists in $X$ (which has dim $X = 2n$), and the hint says as much. So what exactly needs to be shown? (I'm well aware that my reasoning might be flawed. My guess would be that I'm somehow misinterpreting the transformation $U_{0}$.).
+:::
+
+I think the hint makes more sense if “...such operator does not exist in $\mathbb{R}^2$...” is changed to “...such operator does not exist in $\mathbb{R}^1$...”
+
+For the inductive step, perhaps show that if $\dim X > 2$, then there exists an orthogonal decomposition $X = X' \oplus X''$, where $\dim X' = 2$, and such that, in this decomposition, $U$ has block diagonal form
+$$U = \begin{pmatrix} J & 0 \\ 0 & U''\end{pmatrix}$$
+where $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$, and $U'' \colon X'' \to X''$ satisfies all the same conditions as $U$.  And Exercise 8.3 seems relevant here.
+
+* * *
+
+I'll go ahead and share my solution.  
+
+Suppose $\dim X = 1$.  Then there exists $\lambda \in \mathbb{R}$ such that $Ux = \lambda x$ for all $x \in X$.  But $-x = U^2x = \lambda^2 x$, a contradiction.
+
+Suppose $\dim X = 2$.  Let $x_1$ be any nonzero vector in $X$, and let $E$ be the subspace spanned by $x_1$.  Let $y_1 = Ux_1$.  Observe that $E^\perp$ is spanned by $y_1$, and $Uy_1 = -x_1$.  So the matrix of $U$ in the basis $(x_1,x_2)$ is $J$, which fits the desired block pattern with $U_0 = 1$.
+
+Now suppose $\dim X > 2$.  Let $x_0$ be any nonzero vector in $X$.  Let $y_0 = Ux_0$, and let $X'$ be the subspace spanned by $x_0$ and $y_0$.  Let $X''$ be the orthogonal complement of $X'$.  Since $U$ is orthogonal, $U \colon X' \to X'$ and $U \colon X'' \to X''$.  The matrix of $U \colon X' \to X'$ in the basis $(x_0,y_0)$ is $J$.  As for $X''$, by the inductive hypothesis, there is an orthogonal decomposition $X'' = E'' \oplus (E'')^\perp$ such that $U \colon E'' \to (E'')^\perp$, such that $U$ on $X''$ has block form $\begin{pmatrix} \mathbf{0} & -(U_0'')^* \\ U_0'' & \mathbf{0} \end{pmatrix}$.  This means that $U$ on $X = X' \oplus E'' \oplus (E'')^\perp$ has block form
+$$\begin{pmatrix} J & \mathbf{0} & \mathbf{0} \\ \mathbf{0} & \mathbf{0} & -(U_0'')^* \\ \mathbf{0} & U_0'' & \mathbf{0} \end{pmatrix}$$
+But rearranging the rows and columns of this matrix will get you the block form you need.  Let $E$ be the subspace of $X$ spanned by $x_0$ and $E''$.  We see $E^\perp$ is spanned by $y_0$ and $(E'')^\perp$.  In this decomposition, $U$ has block form
+$$\begin{pmatrix}
+   0 & 0 & -1 & \mathbf{0} \\
+   \mathbf{0} & \mathbf{0} & \mathbf{0} & -(U_0'')^* \\
+   1 & \mathbf{0} & 0 & \mathbf{0} \\
+   \mathbf{0} & U_0'' & \mathbf{0} & \mathbf{0}
+\end{pmatrix}$$
+Thus $U_0 = \begin{pmatrix} 1 & \mathbf{0} \\ \mathbf{0} & U_0'' \end{pmatrix}$ will work.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4111505/properties-of-an-orthogonal-transformation-u-with-u2-i/4111545#4111545) on Mathematics Stack Exchange, 2021-04-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

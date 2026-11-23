@@ -1,0 +1,62 @@
+---
+title: Detect LaTeX class name
+date: '2010-04-17'
+description: After refining my question I'll show how I answered it. Along the lines of what dmckee was saying. Just test for the functionality.
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2658158
+se-link: https://stackoverflow.com/questions/2524614/detect-latex-class-name/2658158#2658158
+se-score: 3
+se-accepted: true
+se-tags:
+- latex
+- introspection
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Detect LaTeX class name](https://stackoverflow.com/questions/2524614/detect-latex-class-name), asked by [Matthew Leingang](https://stackoverflow.com/users/297797/matthew-leingang) on Stack Overflow (2010-03-26; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm working on a LaTeX package which might need to do some things differently depending on the class that's being used.  I'm wondering if there's a way to auto-detect or test the document class.
+>
+> One could certainly look up the class files and test for the existence of a specific macro defined by that class, but is there a smarter way?  I looked at the definition of the `\ProvidesClass` macro and can't see if it saves the class name anywhere except `\@currname`.  I believe `\@currname` is just the name of the current package or class being read.
+>
+> Basically I want to execute
+>
+> ```latex
+> \author{\longauthorname}
+> ```
+>
+> in the `article` class but
+>
+> ```latex
+> \author[\shortauthorname]{\longauthorname}
+> ```
+>
+> in the `beamer` class.
+:::
+
+After refining my question I'll show how I answered it.  Along the lines of what dmckee was saying.  Just test for the functionality.
+
+```latex
+\ifcsname beamer@author\endcsname
+  \author[\shortauthorname]{\longauthorname}
+\else
+  \author{\longauthorname}
+\fi
+```
+
+`\ifcsame` is available on all e-TeX builds and is documented (along with other ways to check if a command is defined) <a href="http://tug.org/texmf-dist/doc/generic/FAQ-en/html/FAQ-isdef.html">here</a>.
+
+You can't check for the actual signature of the `\author` macro (i.e., does it take an optional argument?) but you can check for some of the auxiliary macros defined to implement optional arguments.  `\beamer@author` is one of those in the `beamer` class.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2524614/detect-latex-class-name/2658158#2658158) on Stack Overflow, 2010-04-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,62 @@
+---
+title: Deciding whether there exists a certain function based on connectedness
+date: '2021-06-25'
+description: The function $f(x,y) = (|x|-1,y)$ is continuous and maps $A$ onto $B$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4182829
+se-link: https://math.stackexchange.com/questions/4182211/deciding-whether-there-exists-a-certain-function-based-on-connectedness/4182829#4182829
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- functions
+- metric-spaces
+- connectedness
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Deciding whether there exists a certain function based on connectedness](https://math.stackexchange.com/questions/4182211/deciding-whether-there-exists-a-certain-function-based-on-connectedness), asked by [Lucas](https://math.stackexchange.com/users/834840/lucas) on Mathematics Stack Exchange (2021-06-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Problem:**
+>
+> Let $$A=\left\{(x, y) \in \mathbb{R}^{2}:(x-1)^{2}+y^{2}=1\right\} \cup\left\{(x, y) \in \mathbb{R}^{2}:(x+1)^{2}+y^{2}=1\right\}$$ and $$B=\left\{(x, y) \in \mathbb{R}^{2}: x^{2}+y^{2}=1\right\}$$
+>
+> Decide whether there exists a continuous and surjective function 
+> $$f: A \longrightarrow B$$
+>
+> **Attempt:**
+>
+> I have been trying to solve the above problem as follows: 
+>
+>  **1.** Note that $B$ is connected, since it is just the unit circle in $\mathbb{R}^{2}$
+>
+>  **2.** Note that $A$ is also connected. Why is that? Well, $A$ is the union of two connected sets with non-empty intersection and is therefore connected.
+>
+> Furthermore, regarding connected sets, it holds that a metric space $\left(M, d\right)$ is **disconnected** if, and only if, there exists a **continuous and surjective function** 
+> $$f: M \rightarrow\{0,1\}$$
+>
+> **However**, since both $A$ and $B$ are connected sets, I can't really use the above proposition to reach a contradiction of some sort, which was my initial strategy. 
+>
+> More specifically, I was hoping to exhibit a continuous surjection between a connected set and $\{0,1\}$, therefore reaching a contradiction. I would do this by using the fact that the composition of surjective funcions is still surjective or something similar.
+>
+> Is there a way to solve the problem using my initial thoughts? If not, what else should I consider to approach the above problem?
+>
+> Thanks in advance
+:::
+
+The function $f(x,y) = (|x|-1,y)$ is continuous and maps $A$ onto $B$.
+
+The absolute value function “folds” negative numbers onto positive numbers, so applied in the $x$-coordinate will fold the circle in the left half of the plane onto the circle in the right half.  Then subtracting one will move this doubled circle back to place its center at the origin.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4182211/deciding-whether-there-exists-a-certain-function-based-on-connectedness/4182829#4182829) on Mathematics Stack Exchange, 2021-06-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

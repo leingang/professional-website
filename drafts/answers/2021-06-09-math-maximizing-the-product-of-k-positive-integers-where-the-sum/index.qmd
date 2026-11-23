@@ -1,0 +1,60 @@
+---
+title: Maximizing the product of $k$ positive integers where the sum is equal to $n$
+date: '2021-06-09'
+description: To build on soupless's answer, you want your numbers to be as close together as possible to maximize their product. That's a calculus problem, which can be…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4168289
+se-link: https://math.stackexchange.com/questions/4168162/maximizing-the-product-of-k-positive-integers-where-the-sum-is-equal-to-n/4168289#4168289
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- optimization
+- factoring
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Maximizing the product of $k$ positive integers where the sum is equal to $n$](https://math.stackexchange.com/questions/4168162/maximizing-the-product-of-k-positive-integers-where-the-sum-is-equal-to-n), asked by [Mike Chan](https://math.stackexchange.com/users/939292/mike-chan) on Mathematics Stack Exchange (2021-06-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Question: Given an integer $n$, break it into the sum of $k$ positive integers, where $k \geq 2$, and maximize the product of those integers.
+>
+> Return the maximum product you can get.
+>
+> Comment:
+>
+> The key observation is the fact that for any integer $n \geq 4$, it has the property such that $3\cdot(n - 3) > n$ which means breaking it into two integers $3$ and $n - 3$ makes the product larger while keeping the sum unchanged.
+>
+> If $n - 3$ is still greater than $4$, we can break it into $3$ and $n - 6$, resulting in $3 \cdot 3 \cdot (n - 6)$ and so on, until we cannot break it (less than or equal to $4$) anymore.
+>
+> I was just wondering, why is the above observation true/valid, from an academic/mathematical perspective
+:::
+
+To build on soupless's answer, you want your numbers to be as close together as possible to maximize their product.  That's a calculus problem, which can be solved using Lagrange multipliers.
+
+For integers, it's a bit trickier, since you can't necessarily make them all the same (only when $k$ is a factor of $n$ can you do so).  Given $n$ and $k$, there exist $q$ and $r$ such that $n=kq+r$ and $0 \leq r < k$.  We claim the product is maximized by making $r$ numbers equal to $q+1$ and $k-r$ of them equal to $q$.  This partition is characterized by the property that each of the numbers is between $q$ and $q+1$, and they all add up to $n$.
+
+If, as in the first of soupless's examples, $n=10$ and $k=4$, then $q=2$ and $r=2$.  The method predicts that the product is maximized with two $3$'s and two $2$'s.  Or user64494's example of $n=40$ and $k=6$.  Then $q=6$ and $r=4$, and the maximum product predicted is $7^4 6^2 = 86,436$.
+
+Why is this partition maximal?  Suppose we were given a partition of $n$ for which at least one of the $k$ numbers, call it $n_1$, were strictly less than $q$.  Then one of the numbers, call it $n_2$, must be strictly greater than $q$, otherwise the sum would be less than $kq$, and $n \geq kq$.  So $n_1 \leq q-1$ and $n_2 \geq q+1$, meaning $n_2 - n_1 \geq 2$.
+
+Create a new partition that replaces $n_1$ with $n_1' = n_1+1$ and $n_2$ with $n_2' = n_2 - 1$, but leaves the other numbers the same.  Then
+$$n_1'n_2' = (n_1 + 1)(n_2-1) = n_1 n_2 + (n_2 - n_1) - 1 \geq n_1n_2 +1$$
+This means the product of the numbers in the new partition is larger, and so the given partition is not maximal.
+
+Similarly, one should be able to argue that if one of the numbers is more than $q+1$, then one of them is less than $q+1$, and borrowing one from the greater to give to the lesser will make the product greater. 
+
+* * *
+Having completed this answer, I see you might be interested in maximizing over $k$, too.  If that's true, I'd have to think more about that.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4168162/maximizing-the-product-of-k-positive-integers-where-the-sum-is-equal-to-n/4168289#4168289) on Mathematics Stack Exchange, 2021-06-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

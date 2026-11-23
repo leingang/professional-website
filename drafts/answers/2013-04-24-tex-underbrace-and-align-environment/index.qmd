@@ -1,0 +1,81 @@
+---
+title: \underbrace and align environment
+date: '2013-04-24'
+description: Here is an alternative to what you want, which still conveys the same information without decorating equals signs with equations. The traditional way to…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 110508
+se-link: https://tex.stackexchange.com/questions/110460/underbrace-and-align-environment/110508#110508
+se-score: 4
+se-accepted: false
+se-tags:
+- math-mode
+- align
+- underbrace
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[\underbrace and align environment](https://tex.stackexchange.com/questions/110460/underbrace-and-align-environment), asked by [patrickvogt](https://tex.stackexchange.com/users/29087/patrickvogt) on TeX Stack Exchange (2013-04-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to typeset a proof and want to emphasize what I do in each step e.g. by underbracing an equal-sign when I substitute a variable. In addition I also want to align equal-signs in every line. Unfortunately I don't know how to align an underbraced equal-sign and a non underbraced equal-sign at the same time.
+>
+> [![Result of the MWE][q-1]][q-1]
+>
+> Question: How can I align the underbraced and the non underbraced equal-sign vertically?
+>
+> ```latex
+> \documentclass{report}
+>
+> \usepackage{amsmath} % Mathe
+> \usepackage{mathtools} % Mathe
+> \usepackage{amsfonts} % Mathesymbole
+>
+> \begin{document}
+>
+> \begin{align*}
+>     D(D^TD)^{-1} &\underbrace{=}_{\mathclap{D=B(B^TB)^{-1}}} B(B^TB)^{-1}((B(B^TB)^{-1})^TB(B^TB)^{-1})^{-1} \\
+>       &= B(B^TB)^{-1}(((B^TB)^{-1})^TB^TB(B^TB)^{-1})^{-1}
+> \end{align*}
+>
+> \end{document}
+> ```
+>
+>
+>   [q-1]: MRzg5.png
+:::
+
+Here is an alternative to what you want, which still conveys the same information without decorating equals signs with equations.  The traditional way to annotate steps in a derivation is with labels.  So you could instead do
+
+```latex
+\documentclass{report}
+
+\usepackage{amsmath} % Mathe
+\usepackage{mathtools} % Mathe
+\usepackage{amsfonts} % Mathesymbole
+
+\begin{document}
+\begin{align}
+    D(D^TD)^{-1} 
+      &= B(B^TB)^{-1}((B(B^TB)^{-1})^TB(B^TB)^{-1})^{-1}  \label{subst}\\
+      &= B(B^TB)^{-1}(((B^TB)^{-1})^TB^TB(B^TB)^{-1})^{-1} \label{trans}
+\end{align}
+Here \eqref{subst} is due to the substitution $D=B(B^TB)^{-1}$, and \eqref{trans} is by the transpose law for matrix multiplication.
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: asUNN.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/110460/underbrace-and-align-environment/110508#110508) on TeX Stack Exchange, 2013-04-24, with [edits](https://tex.stackexchange.com/posts/110508/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

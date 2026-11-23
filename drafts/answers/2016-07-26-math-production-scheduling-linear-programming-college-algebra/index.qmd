@@ -1,0 +1,63 @@
+---
+title: Production Scheduling - Linear Programming - College Algebra
+date: '2016-07-26'
+description: Double check your algebra. I got that the two production constraints intersect at $\left(\frac{1}{2},\frac{21}{4}\right)$. Non-integer answers can be…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1872007
+se-link: https://math.stackexchange.com/questions/1871994/production-scheduling-linear-programming-college-algebra/1872007#1872007
+se-score: 0
+se-accepted: true
+se-tags:
+- linear-programming
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Production Scheduling - Linear Programming - College Algebra](https://math.stackexchange.com/questions/1871994/production-scheduling-linear-programming-college-algebra), asked by [icewolf461](https://math.stackexchange.com/users/356425/icewolf461) on Mathematics Stack Exchange (2016-07-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> It's me. I got an answer for the following question but it just looks wrong lol. It's a decimal.
+>
+> In a factory, machine 1 produces 8-inch (in.) pliers at the rate of 60 units per hour (hr) and 6-in. pliers at the rate of 70 units/hr. Machine 2 produces 8-in. pliers at the rate of 40 units/hr and 6-in. pliers at the rate of 20 units/hr. It costs 50 dollars per hr to operate machine 1, and machine 2 costs 30 dollars per hr to operate. The production schedule requires that at least 240 units of 8-in. pliers and at least 140 units of 6-in. pliers be produced during each 10-hr day. Which combination of machines will cost the least money to operate?
+>
+> This is what I got:
+>
+> Let x be no. of units to produce in machine 1 and
+>
+> Let y be no. of units to produce in machine 2
+>
+> Objective Function: C=50x+30y
+>
+> Constraints:
+>
+> x ≥ 0
+>
+> y ≥ 0
+>
+> 60x+40y ≥ 240
+>
+> 70x+20y ≥ 140
+>
+> Then I found the intercepts, plotted the graph, and ended up with .5 and 5.15 as answers...that doesn't seem right. ._.
+>
+> Any help is appreciated as always.
+>
+> Regards,
+>
+> Jason
+:::
+
+Double check your algebra.  I got that the two production constraints intersect at $\left(\frac{1}{2},\frac{21}{4}\right)$.  Non-integer answers can be interpreted as rates or frequencies.  For instance, running half a machine doesn't make sense per se, but running one machine half the day would accomplish the same thing.
+
+You should also double check that this corner is in fact the minimum of $C$.  The other corners are $(4,0)$ and $(0,7)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1871994/production-scheduling-linear-programming-college-algebra/1872007#1872007) on Mathematics Stack Exchange, 2016-07-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,68 @@
+---
+title: Are equivalence relations total, i.e. are all elements of an equivalence relation related one to each other?
+date: '2018-02-09'
+description: The answer given is correct. You are right that the relation $$\{(a,a),(b,b),(c,c),(d,d)\}$$ is also an equivalence relation—it's a different equivalence…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2643503
+se-link: https://math.stackexchange.com/questions/2643472/are-equivalence-relations-total-i-e-are-all-elements-of-an-equivalence-relatio/2643503#2643503
+se-score: 1
+se-accepted: false
+se-tags:
+- relations
+- equivalence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Are equivalence relations total, i.e. are all elements of an equivalence relation related one to each other?](https://math.stackexchange.com/questions/2643472/are-equivalence-relations-total-i-e-are-all-elements-of-an-equivalence-relatio), asked by [RajS](https://math.stackexchange.com/users/336409/rajs) on Mathematics Stack Exchange (2018-02-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Some definitions** that I am aware of:
+>
+> > 1. **Equivalence relation:** Is reflexive, symmetric and transitive
+> 2. **Equivalence class of $a$ under equivalence relation $R$ $[a]_R$:** set of all elements that are related to an element a
+> 3. **Partition and Equivalence class:**
+>  - A partition of a set S is a collection of disjoint nonempty subsets of S that have S as their union. 
+>  - Thus, equivalence classes of an equivalence relation on a set form a partition of the set.
+> 4. **POSET / Partial Ordering:** Is antisymmetric, reflexive, transitive relation.
+> 5. **TOSET / Totally ordered POSET:** POSET with every two elements in the set are comparable
+>
+> **The question**
+> >Suppose $A=\{a,b,c,d\}$ and $π_1$ is the following partition of A
+> $π_1=\{\{a,b,c\}\{d\}\}$. List the ordered pairs of the equivalence relations induced by $π_1$.
+>
+> **The answer given**
+> >$\{(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c),(d,d)\}$
+>
+> **My doubt**  
+> Equivalence relation is reflexive, symmetric and transitive.
+> But that does not means that all symmetric and transitive pairs should be there in the equivalence class, right? We can just have reflexive pairs also, right? Like this: $\{(a,a),(b,b),(c,c),(d,d)\}$, right? Now someone will say, for pairs $\{(a,a),(b,b),(c,c),(d,d)\}$, equivalence classes will be $\{\{a\},\{b\},\{c\},\{d\}\}$. But I feel that's not compulsory, right? Have a look at definition of partition / equivalence relation again:
+>
+> > A partition of a set S is a collection of disjoint nonempty subsets (which are equivalence relation) of S that have S as their union.
+>
+> Thus given equivalence relation, we can combine two or more (say $A$ and $B$) of them to form bigger equivalence relation. In that equivalence relation also, symmetricity, reflexivity and transitivity will follow. But there might not be pairs such as $aRb$ and $bRa$. Thus its not equivalence class, even though equivalence relation hold on it and it still forms part of valid partition (union of them forms whole set and they are disjoint). In other words,
+>
+> > **(1)** Partition is made of sets, which may or may not be equivalence classes (as partitions have only requirement that they are disjoint and their union form an original set).  
+> **(2)** Set of equivalence classes on a set form a partition.
+>
+> So if all above thoughts are right and since question does not use word "equivalence ***class***", but "equivalence ***relation***", am I right with the fact that we can just have reflexive pairs (or even some symmetric and transitive pairs, if not all), for example $\{(a,a),(b,b),(c,c),(d,d),(a,b),(b,a)\}$. Here, 
+>
+> - $(a,a),(b,b),(c,c),(d,d)$ are what I call as reflexive pairs, i.e. pairs which confirm that the relation is reflexive 
+> - $(a,b),(b,a)$ are what I call as symmetric pairs, i.e. pairs which confirm that the relation is symmetric 
+> - in this example, there is no pair (x,y) dictated by transitive relationship
+:::
+
+The answer given is correct.  You are right that the relation
+$$\{(a,a),(b,b),(c,c),(d,d)\}$$
+is also an equivalence relation—it's a *different* equivalence relation.  And it yields a different partition.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2643472/are-equivalence-relations-total-i-e-are-all-elements-of-an-equivalence-relatio/2643503#2643503) on Mathematics Stack Exchange, 2018-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

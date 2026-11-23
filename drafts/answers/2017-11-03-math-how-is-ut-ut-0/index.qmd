@@ -1,0 +1,37 @@
+---
+title: How is $-u''(t)/u'(t) > 0$?
+date: '2017-11-03'
+description: The negative sign on the left-hand side doesn't mean the left-hand side is negative. Basically we need $u'(t)$ and $u''(t)$ to have opposite signs. Then their…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2502288
+se-link: https://math.stackexchange.com/questions/2502282/how-is-ut-ut-0/2502288#2502288
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How is $-u''(t)/u'(t) > 0$?](https://math.stackexchange.com/questions/2502282/how-is-ut-ut-0), asked by [K. Sepoko](https://math.stackexchange.com/users/498711/k-sepoko) on Mathematics Stack Exchange (2017-11-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am faced with the following problem $-u''(t)/u'(t) > 0$. This equation is in a mathematical article related to soil degeneration. Can someone please explain how this is possible.
+:::
+
+The negative sign on the left-hand side doesn't mean the left-hand side is negative.  Basically we need $u'(t)$ and $u''(t)$ to have opposite signs.  Then their quotient is negative, and the opposite of it is positive.
+
+So a function $u$ with $u'>0$ and $u''<0$ (i.e., increasing and concave down) will satisfy the inequality.  Or a function with $u'<0$ and $u''>0$ (i.e., decreasing and concave up).
+
+Explicitly, both $u(t) = \sqrt{t}$ and $u(t) =\frac{1}{t}$ would work.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2502282/how-is-ut-ut-0/2502288#2502288) on Mathematics Stack Exchange, 2017-11-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

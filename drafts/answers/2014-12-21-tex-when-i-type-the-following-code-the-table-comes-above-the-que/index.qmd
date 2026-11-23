@@ -1,0 +1,62 @@
+---
+title: When I type the following code, the table comes above the question. How can I make it appear below the question?
+date: '2014-12-21'
+description: The table environment is for floating tables. If you don't want your tabular material to move, omit it and just use tabular.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 218955
+se-link: https://tex.stackexchange.com/questions/218953/when-i-type-the-following-code-the-table-comes-above-the-question-how-can-i-ma/218955#218955
+se-score: 4
+se-accepted: true
+se-tags:
+- tables
+- horizontal-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When I type the following code, the table comes above the question. How can I make it appear below the question?](https://tex.stackexchange.com/questions/218953/when-i-type-the-following-code-the-table-comes-above-the-question-how-can-i-ma), asked by [Sâu](https://tex.stackexchange.com/users/63483/s%c3%a2u) on TeX Stack Exchange (2014-12-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ```latex
+> \begin{question}
+> Calculate the reverberation time of hall of 1500 \si{m^3} volume
+> having a seating capacity for 120 persons when \\
+> (i) when the hall is empty \\ 
+> (ii) with full capacity audience \\
+> (iii) audience occupying the cushioned seats with following data:
+> \begin{table}
+> \begin{tabular}{| c | c | c |}
+>   \hline
+>   \textbf{Surface} & \textbf{Area (\si{m^2})} & \textbf{Coefficient of
+>     absorption (O W U)} \\
+>   \hline
+>   Plastered walls & 112 & 0.03 \\
+>   Wooden floor & 130 & 0.06 \\
+>   Plastered ceiling & 170 & 0.04 \\
+>   Wooden door & 20 & 0.06 \\
+>   \hline
+>   Cushioned chairs (Nos.) & 100 & 1.0 \\
+>   Audience (Nos.) & 120 & 4.7 \\
+>   \hline
+> \end{tabular}
+> \end{table}
+> ```
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: xp9HH.png
+:::
+
+The `table` environment is for floating tables. If you don't want your tabular material to move, omit it and just use `tabular`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/218953/when-i-type-the-following-code-the-table-comes-above-the-question-how-can-i-ma/218955#218955) on TeX Stack Exchange, 2014-12-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

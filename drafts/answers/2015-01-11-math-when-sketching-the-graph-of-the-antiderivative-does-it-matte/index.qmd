@@ -1,0 +1,53 @@
+---
+title: When sketching the graph of the antiderivative does it matter if I cross the x axis?
+date: '2015-01-11'
+description: Good question! No, it doesn't matter. Remember, all antiderivatives of the same function differ by a constant. So you could always add or subtract enough to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1099688
+se-link: https://math.stackexchange.com/questions/1099684/when-sketching-the-graph-of-the-antiderivative-does-it-matter-if-i-cross-the-x-a/1099688#1099688
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When sketching the graph of the antiderivative does it matter if I cross the x axis?](https://math.stackexchange.com/questions/1099684/when-sketching-the-graph-of-the-antiderivative-does-it-matter-if-i-cross-the-x-a), asked by [Belphegor](https://math.stackexchange.com/users/160288/belphegor) on Mathematics Stack Exchange (2015-01-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am currently doing antiderivatives and I just finished drawing the graph of one, but then I realized that the book had an almost same graph as mine. The only difference between mine and the book's was that mine crossed the x axis less times than the book's..Here is a picture of the sketch.
+>
+> I don't think it matters though since it should come out the same when you derive it to get f(x) from F(x)... 
+> The graph labelled 1 is mine and the one with less detail is the book's.
+>
+> ![enter image description here][q-1]
+>
+>
+> EDIT: I was given the information that F(0) = 1 as well.
+>
+> ![enter image description here][q-2]
+>
+>
+>   [q-1]: hjdUh.jpg
+>   [q-2]: swZZX.png
+:::
+
+Good question!  No, it doesn't matter.  Remember, all antiderivatives of the same function differ by a constant.  So you could always add or subtract enough to prevent or guarantee crossing the $x$-axis.
+
+*Unless* you are given extra information, like $F(0) = 1$.  Now you're talking about a *specific* function and the graphs would have to match.
+
+The big question is whether $F(3)$ is positive or negative.  By the Fundamental Theorem of Calculus
+$$F(3) - F(0) = \int_0^3 f(x)\,dx \implies F(3) = 1 + \int_0^3 f(x)\,dx$$
+It's pretty clear from the picture that $\int_0^3 f(x)\,dx<0$.  Is it less than $-1$?  Equivalently, is the area below the graph on $[0,2]$ at least one more than the area above the graph on $[0,3]$?  That's believable, especially if you assume the scale on the $y$-axis is the same as on the $x$-axis.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1099684/when-sketching-the-graph-of-the-antiderivative-does-it-matter-if-i-cross-the-x-a/1099688#1099688) on Mathematics Stack Exchange, 2015-01-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

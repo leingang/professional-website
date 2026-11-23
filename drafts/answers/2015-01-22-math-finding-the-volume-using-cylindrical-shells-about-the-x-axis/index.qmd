@@ -1,0 +1,51 @@
+---
+title: Finding the volume using cylindrical shells about the x-axis
+date: '2015-01-22'
+description: I agree with you. The volume is $$\begin{align} \int0^8 2\pi y x\,dy &= \int0^8 2\pi y \left(2\sqrt[3]{y}\right)\,dy \\ &= 4\pi \int0^8y^{4/3} \,dy \\ &= 4\pi…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1115586
+se-link: https://math.stackexchange.com/questions/1115572/finding-the-volume-using-cylindrical-shells-about-the-x-axis/1115586#1115586
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- definite-integrals
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the volume using cylindrical shells about the x-axis](https://math.stackexchange.com/questions/1115572/finding-the-volume-using-cylindrical-shells-about-the-x-axis), asked by [Xorty](https://math.stackexchange.com/users/209881/xorty) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I have spent about a hour on this problem and figured it was time to ask for some advice. The problem is to find the volume using cylindrical shells by rotating the region bounded 
+> by
+> $$8y = x^3,\qquad y = 8,\qquad x = 0$$
+> about the x-axis.
+>
+> I changed the one on the far left to $x = 2*y^{1/3}$.
+>
+> I said the region of the integral went from $0$ to $8$ and that the integrand is
+>
+> $$2 * \pi * y * (2* y^{1/3})\,dy$$
+>
+> I figured the height would be $x = 2*y^{1/3}$ and that the radius is just $y$. Any help would be greatly appreciate since I can't find any help for this online. I searched around and found some similar problems but it still doesn't make sense to me. Thanks!
+:::
+
+I agree with you.  The volume is
+$$\begin{align*}
+\int_0^8 2\pi y x\,dy &= \int_0^8 2\pi y \left(2\sqrt[3]{y}\right)\,dy \\
+&= 4\pi \int_0^8y^{4/3} \,dy \\
+&= 4\pi \left[\frac{3}{7}y^{7/3}\right]^8_0 = \frac{12\pi}{7} \cdot 2^7 = \frac{1536\pi}{7}
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1115572/finding-the-volume-using-cylindrical-shells-about-the-x-axis/1115586#1115586) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

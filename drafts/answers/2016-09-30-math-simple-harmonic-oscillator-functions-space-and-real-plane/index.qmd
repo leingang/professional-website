@@ -1,0 +1,44 @@
+---
+title: simple harmonic oscillator functions space and real plane
+date: '2016-09-30'
+description: This might be a bit advanced for you now, but eventually you may study linear systems of differential equations. They take the form $\mathbf{y}'(t) = A…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1948022
+se-link: https://math.stackexchange.com/questions/1947973/simple-harmonic-oscillator-functions-space-and-real-plane/1948022#1948022
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[simple harmonic oscillator functions space and real plane](https://math.stackexchange.com/questions/1947973/simple-harmonic-oscillator-functions-space-and-real-plane), asked by [Arsh Gh](https://math.stackexchange.com/users/287583/arsh-gh) on Mathematics Stack Exchange (2016-09-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> the functions that satisfy the simple harmonic oscillator equation
+> $\frac{\mathrm{d}^2x  }{\mathrm{d} t^2}=-\omega _{0}^2x$
+> constitute a linear space .
+>
+> is this linear space is isomorphic to $\mathbb{R}^2$ ?
+:::
+
+This might be a bit advanced for you now, but eventually you may study linear systems of differential equations.  They take the form $\mathbf{y}'(t) = A \mathbf{y}(t)$, where $\mathbf{y}(t)$ is a (column) vector of $n$ functions of $t$, and $A$ is an $n\times n$ matrix.  
+
+Your equation is one of these, because you can let $y_1(t) = x(t)$ and $y_2(t) = x'(t)$.  Then $y_1' = y_2$ and $y_2' = -\omega_0^2 y_1$.  That is,
+$$\begin{bmatrix} y_1 \\ y_2 \end{bmatrix}'
+   =\begin{bmatrix} 0 & 1 \\ -\omega_0^2 & 0 \end{bmatrix}
+    \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}$$
+
+The solution space of a linear system of $n$ differential equations has dimension $n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1947973/simple-harmonic-oscillator-functions-space-and-real-plane/1948022#1948022) on Mathematics Stack Exchange, 2016-09-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

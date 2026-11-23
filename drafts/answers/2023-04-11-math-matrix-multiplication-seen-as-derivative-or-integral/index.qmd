@@ -1,0 +1,66 @@
+---
+title: Matrix multiplication seen as derivative or integral
+date: '2023-04-11'
+description: 'A couple of things which help anyone learning linear algebra from Gil Strang''s texts:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4677129
+se-link: https://math.stackexchange.com/questions/4677061/matrix-multiplication-seen-as-derivative-or-integral/4677129#4677129
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+- integration
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Matrix multiplication seen as derivative or integral](https://math.stackexchange.com/questions/4677061/matrix-multiplication-seen-as-derivative-or-integral), asked by [John HHU](https://math.stackexchange.com/users/850906/john-hhu) on Mathematics Stack Exchange (2023-04-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm reading the book "Introduction to Linear Algebra 5th edition" page 24 about Inverse Matrix, below is the background info. 
+>
+> $$\mathbf{A} = \begin{bmatrix} 1 & 0 & 0 \\ -1 & 1 & 0 \\ 0 & -1 & 1 \end{bmatrix}, \qquad
+> \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}, \qquad
+> \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}.$$
+>
+> In which the author mentioned 
+> "The differences $\mathbf{A}\mathbf{x}$ become the derivative $\frac{\mathrm{d}x}{\mathrm{d}t} = b(t)$. In the inverse direction, the sums $\mathbf{A}^{-1}\mathbf{b}$ become the integral of $b(t)$."
+>
+> I'm so confused about these statements, I'm thinking he meant vector $\mathbf{x}$ as a function, which applied to matrix $\mathbf{A}$, so $\mathbf{x}(t)$ is the $\mathbf{A}\mathbf{x}$.  Then how could: "$\mathbf{A}\mathbf{x}$ become the derivative $\frac{\mathrm{d}x}{\mathrm{d}t} = b(t)$"? As I cant imagine the derivative of $\mathbf{A}\mathbf{x}$ or $x(t)$ here.  
+>
+> $$\mathbf{A}\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 - x_1 \\ x_3 - x_2 \end{bmatrix}$$
+>
+> * * *
+>
+> ![book page][q-1]
+>
+>
+>   [q-1]: k73kt.png
+:::
+
+A couple of things which help anyone learning linear algebra from Gil Strang's texts:
+
+1. Strang writes in a pretty conversational style, and fills in details after motivating the ideas.
+2. Strang's lectures are online and form a good companion to the text.
+
+One remark which might add some context to the portion you clipped comes on page 27:
+
+> This section is looking ahead to key ideas, not fully explained yet.
+
+*What I think* Strang is saying here with “The differences $Ax$ become the derivative $dx/dt$...” etc., is that
+
+* Differential equations $x'(t) = b(t)$ are an infinite-dimensional version of linear equations $Ax=b$.
+* If a vector is treated like a time series, the difference matrix $A$ has a lot of the same features of a derivative operator on differentiable functions, and the sum matrix $A^{-1}$ as a lot of the same features as an integration operator.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4677061/matrix-multiplication-seen-as-derivative-or-integral/4677129#4677129) on Mathematics Stack Exchange, 2023-04-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

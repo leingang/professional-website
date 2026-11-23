@@ -1,0 +1,71 @@
+---
+title: Suppress equation number when not refered to
+date: '2011-04-14'
+description: 'I coded up a workaround before I noticed Herbert''s answer. Here it is anyway:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15822
+se-link: https://tex.stackexchange.com/questions/15820/suppress-equation-number-when-not-refered-to/15822#15822
+se-score: 3
+se-accepted: false
+se-tags:
+- equations
+- cross-referencing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Suppress equation number when not refered to](https://tex.stackexchange.com/questions/15820/suppress-equation-number-when-not-refered-to), asked by [Jonas T](https://tex.stackexchange.com/users/1930/jonas-t) on TeX Stack Exchange (2011-04-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is is possible to use only `equation` or `align` environments without the `*` and then automatically suppress the equation number if there is nothing refering to that equation? It would make the LaTeX-life much easier I think.
+:::
+
+I coded up a workaround before I noticed Herbert's answer.  Here it is anyway:
+
+```latex
+\documentclass{article}
+% TEX.SE \url{http://tex.stackexchange.com/q/15820/1402}
+\usepackage{amsmath}
+\usepackage{etoolbox}
+
+\makeatletter
+\appto{\equation}{%
+  \notag
+  \preto{\label}{%
+    \refstepcounter{equation}
+    \tag{\arabic{equation}}%
+  }
+}
+\makeatother
+
+\begin{document}
+
+\begin{equation}
+A = A
+\end{equation}
+
+\begin{equation}\label{B}
+B = B
+\end{equation}
+
+\begin{equation}
+C = C
+\end{equation}
+
+Proof: See Equation~\ref{B}.
+
+\end{document}
+```
+
+It's my first use of the [`etoolbox`](http://ctan.org/pkg/etoolbox) macros to prepend and append code to hooks.  This method first appends `\notag` to every equation beginning, thus suppressing equation numbering; then prepends to `\label` the code which steps the counter and resets the tag.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15820/suppress-equation-number-when-not-refered-to/15822#15822) on TeX Stack Exchange, 2011-04-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

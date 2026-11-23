@@ -1,0 +1,59 @@
+---
+title: How do I disprove using $\epsilon - \delta $ definition of limits?
+date: '2018-11-09'
+description: I think zooming out with a little generalization may help here. Prove that a function cannot have two limits at a point.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2991613
+se-link: https://math.stackexchange.com/questions/2991585/how-do-i-disprove-using-epsilon-delta-definition-of-limits/2991613#2991613
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How do I disprove using $\epsilon - \delta $ definition of limits?](https://math.stackexchange.com/questions/2991585/how-do-i-disprove-using-epsilon-delta-definition-of-limits), asked by [William](https://math.stackexchange.com/users/552998/william) on Mathematics Stack Exchange (2018-11-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have only learned (in the morning), that how to use $\epsilon- \delta$ definition to "prove" a limit, thanks to the people here, that helped me learn how to pick my delta, and after 6+ hours of practising, I think I have gotten fairly good at that. 
+>
+> I'd like to learn how to "disprove" using the same method. My book, which I'm self studying from, Bartle, doesn't have a lot on disproving. So I'd like some to help me out with this.
+>
+> First of all, what I know: I understand to disprove, It'd be sufficient to pick a particular $\epsilon$, and show that for every $\delta >0$ there exists some $x$ belonging to the deleted delta nbd of $c$ (point at which I'm finding the limit) for which,  $|f(x)-L|≥ \epsilon$ this is more or less, negation of the definition.
+>
+> So taking random example, let $f(x)= 2x+3$, disprove the $\lim\limits_{x \to 2} f(x)= 10$
+>
+> So $|f(x)-10| = |2x-7|$
+> Now before taking random $\epsilon$ I'd like someone to point me out, how $\epsilon$ is chosen? Because clearly, the condition tells us, there exists "at least one" $\epsilon$, not "for all" $\epsilon$, so (I'm guessing) there are some specific $\epsilon$'s only out of which we have to pick one. 
+>
+> Next up, how is that "particular" $x$ taken from the deleted nbd of $2$.
+>
+> I did see some examples on the internet, but as I'm a beginner, given my limited understanding of real analysis, it becomes very hard to follow the arguments without explanation. Hence this question.
+>
+> I know I'm asking a lot, so any help is appreciated
+:::
+
+I think zooming out with a little generalization may help here.  Prove that a function cannot have two limits at a point.  
+
+> **Proposition.** If $\lim_{x\to a} f(x) = L$ and $\lim_{x\to a} f(x) = M$, then $L=M$.
+
+The idea is that $f(x)$ cannot be arbitrarily close to distinct numbers $L$ and $M$ as $x\to a$.  To get a contradiction, choose an $\epsilon$ such that $|f(x) - L| < \epsilon$ and $|f(x) - M| < \epsilon$ can't both be satisfied.
+
+Now if you can show that $\lim_{x\to 2} (2x+3) = 7$, you know that $\lim_{x\to 2}(2x+3) \neq 10$.
+
+To take the exercise a bit further, suppose you want to prove that function *does not* have a limit at all at a point.  This adds an extra quantified variable to the statement.  $\lim_{x\to a}f(x)$ does not exist if for all $L$, there exists $\epsilon>0$ such that for all $\delta > 0$, there exists $x$ such that $0 < |x-a| < \delta$ but $|f(x) - L| \geq \epsilon$.  Now show:
+
+> **Proposition.** If $\lim_{x\to a^{+}} f(x)$ and $\lim_{x\to a^-} f(x)$ exist and are distinct, then $\lim_{x\to a}f(x)$ does not exist.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2991585/how-do-i-disprove-using-epsilon-delta-definition-of-limits/2991613#2991613) on Mathematics Stack Exchange, 2018-11-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

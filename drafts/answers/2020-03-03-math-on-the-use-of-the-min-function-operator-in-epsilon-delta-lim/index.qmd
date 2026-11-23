@@ -1,0 +1,57 @@
+---
+title: 'On the use of the "min" function / operator in epsilon-delta limit proofs: how does " delta = min {a,b}" guarantee " delta <a AND delta < b"?'
+date: '2020-03-03'
+description: Either $a \leq b$ or $b \leq a$. The minimum is equal to one and less than the other. So it's less than or equal to both.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3568332
+se-link: https://math.stackexchange.com/questions/3568328/on-the-use-of-the-min-function-operator-in-epsilon-delta-limit-proofs-how-d/3568332#3568332
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- soft-question
+- definition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[On the use of the "min" function / operator in epsilon-delta limit proofs: how does " delta = min {a,b}" guarantee " delta <a AND delta < b"?](https://math.stackexchange.com/questions/3568328/on-the-use-of-the-min-function-operator-in-epsilon-delta-limit-proofs-how-d), asked by user655689 on Mathematics Stack Exchange (2020-03-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Below a limit proof that requires in the end the use of the " min" function. 
+>
+> I know I have to use " delta = min {a,b} " but I do not understand clearly how the " min function" does the job. 
+>
+> Can it be shown formally that " *delta = min { 1, epsilon/15}* " guarantees that : 
+> "*( delta < 1 AND delta < epsilon /15)".* 
+>
+> My question : how to explain the step from (8) to (9) in the proof below? 
+>
+> Also: when checking a delta value in the form of  "*min { a, b}"*, do I have to proceed to a double verification, one for *a*, and one for *b*?
+>
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: FcOKy.png
+:::
+
+Either $a \leq b$ or $b \leq a$.  The minimum is equal to one and less than the other.  So it's *less than or equal* to both.
+
+If $|x-1| < \delta$, then either:
+$$|x - 1 | < \delta = a < b$$
+or 
+$$|x - 1 | < \delta = b < a$$
+Either way, $|x-1| \leq a$ and $|x-1| \leq b$ both hold.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3568328/on-the-use-of-the-min-function-operator-in-epsilon-delta-limit-proofs-how-d/3568332#3568332) on Mathematics Stack Exchange, 2020-03-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,99 @@
+---
+title: Can I get a PDF from `.lvt` files to visually verify the output?
+date: '2019-09-15'
+description: OK, so I learned from the comments that I need to avoid \END because that short-circuits the tex run, and I have to make sure some (non-log) output is…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 508425
+se-link: https://tex.stackexchange.com/questions/508409/can-i-get-a-pdf-from-lvt-files-to-visually-verify-the-output/508425#508425
+se-score: 3
+se-accepted: false
+se-tags:
+- package-writing
+- l3build
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can I get a PDF from `.lvt` files to visually verify the output?](https://tex.stackexchange.com/questions/508409/can-i-get-a-pdf-from-lvt-files-to-visually-verify-the-output), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2019-09-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to write regression tests with the `l3build` system.  I know how to use `l3build save` to make a `.tlg` file from an `.lvt` file so that future tests can be compared against what's presumed to be a successful outcome.
+>
+> But I can't figure out how to make l3build generate a PDF from a `.lvt` file, so I can look at the output and verify it's doing what I want.  It seems like that's a natural step in the process, before running `l3build save`.  
+>
+> I also know how to make an `.lvt` file and an `.lve` file so that `l3build check` can verify that the test output is equal to the expected output.  So I can write the `.lve` to use lower-level code to generate what I want the `.lvt` file to generate.  But I can't see the PDF output from `.lve` files either.
+>
+> Here's an MWE (let's call it `testfiles/test.lvt`): 
+>
+> ```latex
+> \input regression-test.tex
+> \documentclass{article}
+> \usepackage{expl3}
+> \usepackage{amsfonts}
+> \newcommand{\R}{\mathbb{R}}
+> \begin{document}
+> \START
+> \ExplSyntaxOn
+> \box_new:N \l_tmp_box
+> \hbox_set:Nn \l_tmp_box {$\R$}
+> \box_show:N \l_tmp_box
+> \ExplSyntaxOff
+> \END
+> \end{document}
+> ```
+>
+> Then `l3build save test` produces `test.tlg` in `testfiles/` and `build/test`, but no PDF file in either directory.
+:::
+
+OK, so I learned from the comments that I need to avoid `\END` because that short-circuits the tex run, and I have to make sure some (non-log) output is generated.
+
+I removed `\END` from the MWE above.  And to make sure I generated some output, I added a `\box_use:N` line to the `\box_show:N` line.  The `show` one only describes the box, and that only gets saved in the `.log` file.  The `use` one actually puts the box in the output stream.  
+
+So my test now looks like:
+
+```latex
+\input regression-test.tex
+\documentclass{article}
+\usepackage{expl3}
+\usepackage{amsfonts}
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+\ExplSyntaxOn
+\START
+\box_new:N \l_tmp_box
+\hbox_set:Nn \l_tmp_box {$\R$}
+\box_show:N \l_tmp_box
+\box_use:N \l_tmp_box
+\ExplSyntaxOff
+\end{document}
+```
+
+Now `l3build save test` creates the file `build/test/test.tlg` that looks like this:
+
+```latex
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+> \box...=
+\hbox(6.88889+0.0)x7.22223
+.\mathon
+.\U/msb/m/n/10 R
+.\mathoff
+! OK.
+<argument> \l_tmp_box
+l. ...\box_show:N \l_tmp_box
+[1
+] (test.aux)
+```
+
+It also creates `build/test/test.pdf` with the contents of `\l_tmp_box` in it.  And I didn't have to repeat the tested code, only one extra line to handle the box in two different ways.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/508409/can-i-get-a-pdf-from-lvt-files-to-visually-verify-the-output/508425#508425) on TeX Stack Exchange, 2019-09-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

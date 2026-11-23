@@ -1,0 +1,58 @@
+---
+title: How to use MathJax library on Google App Engine
+date: '2011-09-05'
+description: 'Since March 2011 MathJAX has its own CDN, so you can now use it without uploading any files to GAE. Just make sure this is in any page''s header:'
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 7309958
+se-link: https://stackoverflow.com/questions/4624154/how-to-use-mathjax-library-on-google-app-engine/7309958#7309958
+se-score: 6
+se-accepted: false
+se-tags:
+- python
+- google-app-engine
+- tex
+- mathjax
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to use MathJax library on Google App Engine](https://stackoverflow.com/questions/4624154/how-to-use-mathjax-library-on-google-app-engine), asked by [systempuntoout](https://stackoverflow.com/users/130929/systempuntoout) on Stack Overflow (2011-01-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to add Tex support to my application and I would like to use [MathJax][q-1] to render Mathematics formulas client side since I gave up the 
+> server side solution explained [here][q-2].   
+> The MathJax library is pretty fat (30.000 files) and it can't be easily installed on App Engine due to the [files number limitation][q-3].
+>
+> I have no experience with MathJax library so I'm open to other strategies like:  
+>
+>   - Available MathJax CDN
+>   - Cutting down some directories/files to reduce the package's files number.
+>
+> Do you know any way to use Mathjax on Google App Engine?
+>
+>
+>   [q-1]: http://www.mathjax.org/
+>   [q-2]: https://stackoverflow.com/questions/4592501/tex-markup-how-to-render-it-in-html-with-python
+>   [q-3]: http://code.google.com/intl/it-IT/appengine/docs/python/runtime.html#Quotas_and_Limits
+:::
+
+Since March 2011 [MathJAX has its own CDN][1], so you can now use it without uploading any files to GAE.  Just make sure this is in any page's header:
+
+```python
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?...">
+</script>
+```
+
+  [1]: http://docs.mathjax.org/en/latest/start.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4624154/how-to-use-mathjax-library-on-google-app-engine/7309958#7309958) on Stack Overflow, 2011-09-05, with [edits](https://stackoverflow.com/posts/7309958/revisions) by [Bob Stein](https://stackoverflow.com/users/673991/bob-stein). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

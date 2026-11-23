@@ -1,0 +1,79 @@
+---
+title: 'Exam package: How can I stick part and solutionbox together?'
+date: '2025-05-06'
+description: 'You can combine Phil''s and Jesse''s answers and use hooks to avoid the need for etoolbox. If you put this in the preamble:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 742127
+se-link: https://tex.stackexchange.com/questions/453317/exam-package-how-can-i-stick-part-and-solutionbox-together/742127#742127
+se-score: 1
+se-accepted: false
+se-tags:
+- exam
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Exam package: How can I stick part and solutionbox together?](https://tex.stackexchange.com/questions/453317/exam-package-how-can-i-stick-part-and-solutionbox-together), asked by [Jens Metzner](https://tex.stackexchange.com/users/81557/jens-metzner) on TeX Stack Exchange (2018-10-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm using the [exam class][q-1] and have the problem with the `parts` enviroment in combination with the `solutionorbox` enviroment. The `part` and the corresponding `solutionorbox` should be on the same page. Here is an example that demonstrate the problem:
+>
+> ```latex
+> \documentclass{exam}
+> \usepackage{blindtext}
+> \begin{document}
+> \begin{questions}
+> \titledquestion{Farben}
+> \begin{parts}
+> \part[4] Question 1 \blindtext
+> \begin{solutionorbox}[16cm]
+> 	\blindtext
+> \end{solutionorbox}
+> \part[4] Question 2 \blindtext
+> \begin{solutionorbox}[10cm]
+> 	\blindtext
+> \end{solutionorbox}
+> \end{parts}
+> \end{questions}
+> \end{document}
+> ```
+>
+>
+> I have tried to modify the `\part` command by using `etoolbox` package but it does not work with:
+>
+> ```latex
+> \preto{\part}{\par\nobreak\vfil\penalty 9999\vfilneg\vtop\bgroup}
+> ```
+>
+> This is the `part` definition in the _exam.cls_:
+>
+> ```latex
+> \def\part{%
+>   \@bonusfalse
+>   \process@part
+> }%
+> ```
+>
+> How can I add a `\newpage` if needed that the question and the space for a solution is on the same page without adding the `\newpage`?
+>
+>   [q-1]: https://ctan.org/tex-archive/macros/latex/contrib/exam
+:::
+
+You can combine Phil's and Jesse's answers and use hooks to avoid the need for `etoolbox`. If you put this in the preamble:
+
+```latex
+\AddToHook{cmd/partshook/after}{\AddToHook{cmd/part/before}{\filbreak}}
+```
+
+Then every `\part` command will automatically have a `\filbreak` preceding it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/453317/exam-package-how-can-i-stick-part-and-solutionbox-together/742127#742127) on TeX Stack Exchange, 2025-05-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

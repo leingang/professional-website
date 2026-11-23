@@ -1,0 +1,115 @@
+---
+title: Random shuffle itemize
+date: '2013-02-03'
+description: As the usual implementation of \begin{list} \item ... \item ... \item ... \end{list} doesn't read or save the actual text of the items, some out-of-my-league…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 96649
+se-link: https://tex.stackexchange.com/questions/96645/random-shuffle-itemize/96649#96649
+se-score: 7
+se-accepted: false
+se-tags:
+- lists
+- environments
+- enumerate
+- random-numbers
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Random shuffle itemize](https://tex.stackexchange.com/questions/96645/random-shuffle-itemize), asked by [Chris](https://tex.stackexchange.com/users/752/chris) on TeX Stack Exchange (2013-02-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is there an environment (or macro for itemize) that shuffles all items randomly each time the pdf is generated?
+:::
+
+As the usual implementation of `\begin{list} \item ... \item ... \item ... \end{list}` doesn't read or save the actual text of the items, some out-of-my-league hacking needs to be done to save then permute list items if you want the same interface.
+
+I asked a [similar question](http://pgf-and-tikz.10981.n7.nabble.com/Random-permutation-of-a-list-td3546.html) on the pgf-users mailing list several years ago.  Here is Mark Wibrow's answer for randomizing a PGF list of the form declared by `\pgfmathdeclarelist`.  I've dropped this snippet into my exam files ever since.
+
+```latex
+\documentclass{article} 
+\usepackage{tikz} 
+
+\begin{document} 
+
+\makeatletter 
+\def\pgfmathdeclarelist#1#2{% 
+        \def\pgfmath@list@name{#1}% 
+        \c@pgfmath@counta=0% 
+        \pgfmath@declarelistlist#2{\pgfmath@stop}% 
+}% 
+\def\pgfmath@declarelistlist#1{% 
+        \ifx#1\pgfmath@stop% 
+                \expandafter\edef\csname pgfmath@list@\pgfmath@list@name 
+@length\endcsname{\the\c@pgfmath@counta}% 
+        \else% 
+                \advance\c@pgfmath@counta by1\relax% 
+                \pgfutil@namedef{pgfmath@list@\pgfmath@list@name @\the\c@pgfmath@counta}{#1}% 
+                \expandafter\pgfmath@declarelistlist% 
+        \fi% 
+} 
+
+\def\pgfmathgetlistitem#1#2#3{\expandafter\let\expandafter#1\expandafter=\csname 
+pgfmath@list@#2@#3\endcsname} 
+
+\def\pgfmathsetlistitem#1#2#3{% 
+        \pgfutil@namedef{pgfmath@list@#1@#2}{#3}% 
+} 
+
+\def\pgfmathgetlistlength#1#2{% 
+        \expandafter\let\expandafter#1\expandafter=\csname 
+pgfmath@list@#2@length\endcsname% 
+} 
+
+\def\pgfmathknuthshuffle#1{% 
+        \pgfmathgetlistlength\pgfmath@len{#1}% 
+        \pgfmathloop% 
+        \ifnum\pgfmathcounter>\pgfmath@len% 
+        \else% 
+                \pgfmathrandominteger\pgfmath@temp{1}{\pgfmath@len}% 
+                \pgfmathgetlistitem\pgfmath@@temp{#1}{\pgfmathcounter}% 
+                \pgfmathgetlistitem\pgfmath@@@temp{#1}{\pgfmath@temp}% 
+                \def\pgfmath@marshal{\pgfmathsetlistitem{#1}}% 
+                \expandafter\pgfmath@marshal\expandafter{\expandafter\pgfmath@temp\expandafter}\expandafter{\pgfmath@@temp}% 
+                \expandafter\pgfmath@marshal\expandafter{\expandafter\pgfmathcounter\expandafter}\expandafter{\pgfmath@@@temp}% 
+        \repeatpgfmathloop% 
+} 
+
+\makeatother 
+
+\pgfmathdeclarelist{mylist}{{A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}} 
+\pgfmathgetlistlength{\l}{mylist} 
+
+\begin{tikzpicture}[every node/.style={circle, draw}] 
+
+\foreach \i in {1,...,\l}{ 
+        \pgfmathgetlistitem{\x}{mylist}{\i} 
+        \node at (0,-\i) (\x-1) {\x}; 
+} 
+
+\pgfmathknuthshuffle{mylist} 
+
+\foreach \i in {1,...,\l}{ 
+        \pgfmathgetlistitem{\x}{mylist}{\i} 
+        \node at (7.5,-\i) (\x-2) {\x}; 
+} 
+
+\foreach \i in {1,...,\l}{ 
+        \pgfmathgetlistitem{\x}{mylist}{\i} 
+        \draw [->] (\x-1) -- (\x-2); 
+} 
+
+\end{tikzpicture} 
+\end{document} 
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/96645/random-shuffle-itemize/96649#96649) on TeX Stack Exchange, 2013-02-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

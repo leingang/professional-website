@@ -1,0 +1,51 @@
+---
+title: Mechanical Surface Integrator
+date: '2017-03-10'
+description: This device is called a pinwheel machine.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2181115
+se-link: https://math.stackexchange.com/questions/2181108/mechanical-surface-integrator/2181115#2181115
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Mechanical Surface Integrator](https://math.stackexchange.com/questions/2181108/mechanical-surface-integrator), asked by [sheppa28](https://math.stackexchange.com/users/14397/sheppa28) on Mathematics Stack Exchange (2017-03-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In an episode of "Dirty Jobs" Mike Rowe visited a tannery where they used an old mechanical device to calculate the surface area. Video shown [ \[here\]][q-1]
+>
+> How is it calculating the surface area? Is it doing Riemann sum as it passes through with the width being the distances between the wheel, or is doing an operation similar to a planimeter [[link][q-2]] with an application of Green's Theorem? (Or some other mechanism?)
+>
+>
+>   [q-1]: https://www.youtube.com/watch?v=u3vHZqsY9Qg
+>   [q-2]: https://en.wikipedia.org/wiki/Planimeter
+:::
+
+This device is called a [pinwheel machine](http://www.leathermag.com/features/featuresize-matters-155421546/).
+
+[![enter image description here][1]][1]
+
+(Enid Shelton, [town of Otley, UK](http://www.otley.co.uk/gallery/sheldon/industries/leather/index.htm))
+
+A planimeter would measure around the hide, but it looks like this machine passes over the hide with parallel wheels.  If the hide comes into contact with the wheel, it clicks and records a unit of area.  So it's more like a Riemann sum.
+
+See also [this article][2] proposing a computer-vision alternative (from which I got this information).
+
+
+  [1]: vPyVE.jpg
+  [2]: https://www.slideshare.net/Jamal_2011/led-based-leather-area-measuring-machine
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2181108/mechanical-surface-integrator/2181115#2181115) on Mathematics Stack Exchange, 2017-03-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

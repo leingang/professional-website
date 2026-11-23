@@ -1,0 +1,42 @@
+---
+title: Is a relation considered reflexive only if (a, a) ∈ R for every a ∈ M
+date: '2023-07-18'
+description: 'To expand on the points made in the comments: the reflexive property of a relation does require a “domain” from which the elements come. This is in contrast to…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4738452
+se-link: https://math.stackexchange.com/questions/4738445/is-a-relation-considered-reflexive-only-if-a-a-%e2%88%88-r-for-every-a-%e2%88%88-m/4738452#4738452
+se-score: 7
+se-accepted: true
+se-tags:
+- elementary-set-theory
+- equivalence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is a relation considered reflexive only if (a, a) ∈ R for every a ∈ M](https://math.stackexchange.com/questions/4738445/is-a-relation-considered-reflexive-only-if-a-a-%e2%88%88-r-for-every-a-%e2%88%88-m), asked by [Amjed Omar](https://math.stackexchange.com/users/1201909/amjed-omar) on Mathematics Stack Exchange (2023-07-18; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the set $M = \{1, 2, 3\}$ and the relation $R = \{(1, 1), (2, 2)\}$. Does this relation satisfy reflexivity with respect to the concept of an "equivalence relation"?
+>
+> Someone told me that for an relation to satisfy reflexivity, it is not necessary for every element $a ∈ M$ to have $(a, a) ∈ R$, as long as $a$ doesn't appear in any pair in the relation $R$. (i.e. in the above example, since $3$ doesn't appear in any pairs like $(3, 1)$, $(1, 3)$, $(3, 2)$, ...etc. then $(3, 3)$ isn't necessary to belong to $R$) Thus, R above satisfies reflexivity.
+>
+> However, I don't think that's correct because, as I remember, in order for an relation to satisfy reflexivity, then for every $a ∈ M$, there must be $(a, a) ∈ R$
+:::
+
+To expand on the points made in the comments: the reflexive property of a relation does require a “domain” from which the elements come. This is in contrast to the other two properties of an equivalence relation (symmetry and transitivity).
+
+In your example, the relation $R = \{(1,1),(2,2)\}$ is a reflexive relation on $\{1,2\}$, but is not a reflexive relation on $\{1,2,3\}$.
+
+Perhaps of additional note is that there is a notion of a [*quasi-reflexive* relation](https://en.wikipedia.org/wiki/Reflexive_relation#Quasi-reflexivity) on a set, defined by the rule that $(x,y) \in R \implies (x,x),(y,y) \in R$. It is slightly more general in that we only require elements to be related to themselves, if they are related to elements other than themselves. Your example relation would be quasi-reflexive on $\{1,2,3\}$ as a result.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4738445/is-a-relation-considered-reflexive-only-if-a-a-%e2%88%88-r-for-every-a-%e2%88%88-m/4738452#4738452) on Mathematics Stack Exchange, 2023-07-18, with [edits](https://math.stackexchange.com/posts/4738452/revisions) by [PrincessEev](https://math.stackexchange.com/users/597568/princesseev). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,53 @@
+---
+title: Every quadratic form is continuous on the unit circle.
+date: '2018-09-04'
+description: Choose a basis $v1, v2$ of $V$. Then any $x \in V$ can be written as $x1 v1 + x2 v2$ for unique scalars $x1$ and $x2$. These are the coordinates on $V$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2905204
+se-link: https://math.stackexchange.com/questions/2904526/every-quadratic-form-is-continuous-on-the-unit-circle/2905204#2905204
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Every quadratic form is continuous on the unit circle.](https://math.stackexchange.com/questions/2904526/every-quadratic-form-is-continuous-on-the-unit-circle), asked by [Boar](https://math.stackexchange.com/users/517394/boar) on Mathematics Stack Exchange (2018-09-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to prove a proposition below. 
+>
+> \\\\\\\\\\\\\\\\\\\\\\
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: AtIQo.png
+> \\\\\\\\\\\\\\\\\\\\\\\
+>
+>
+> In the proof, the author claims that $Q$ is continuous on the unit circle.
+>
+> In order to establish this fact, I first choose one vector $p$ in the unit circle and then aim to show that $Q$ is continuous at $p$. Let $\epsilon>0$ be given. I want to find $\delta>0$ so that if $||x-p||<\delta$, and $x$ is in the unit circle, then $|Q(x)-Q(p)|<\epsilon$. Note that $||\cdot||$ is the norm defined by the inner product on $V$. Since $Q$ is a quadratic form on $V$, there exists a symmetric bilinear form $H$ on V such that $\forall x\in V$, $Q(x)=H(x,x)$. Here comes the problem. I don't know what's the next step I should take. Is there any inequality that benefits? Thanks a lot.
+:::
+
+Choose a basis $v_1, v_2$ of $V$.  Then any $x \in V$ can be written as $x_1 v_1 + x_2 v_2$ for unique scalars $x_1$ and $x_2$.  These are the *coordinates* on $V$ determined by the basis $v_1, v_2$.  Then
+$$Q(x) = H(x_1v_1 + x_2v_2,x_1v_1+x_2v_2) = x_1^2 H(v_1,v_1) + 2x_1x_2 H(v_1,v_2) + x_2^2 H(v_2,v_2)$$
+So if we set $a = H(v_1,v_1)$, $b = H(v_1,v_2)$, and $c = H(v_2,v_2)$, then
+$$Q(x_1v_1 + x_2v_2) = ax_1^2 + 2b x_1 x_2 + c x_2^2.$$
+This means that $Q$ is a polynomial in the coordinates of $x$, and is therefore a continuous function.
+
+If you need to go deeper, show that the coordinate functions $x_1$ and $x_2$ themselves are continuous.  Then use the fact that sums, multiples, and products of continuous functions are continuous to show that $Q$ is.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2904526/every-quadratic-form-is-continuous-on-the-unit-circle/2905204#2905204) on Mathematics Stack Exchange, 2018-09-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

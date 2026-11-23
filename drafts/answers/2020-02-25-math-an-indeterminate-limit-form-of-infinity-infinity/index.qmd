@@ -1,0 +1,52 @@
+---
+title: An indeterminate limit form of infinity/infinity
+date: '2020-02-25'
+description: 'First I would factor $x^{1/3}$ out of the second term: $$x^{5/3}\left(\left(x+\sin\left(\frac{1}{x}\right)\right)^\frac{1}{3}-x^\frac{1}{3}\right) =…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3559983
+se-link: https://math.stackexchange.com/questions/3559942/an-indeterminate-limit-form-of-infinity-infinity/3559983#3559983
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- indeterminate-forms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[An indeterminate limit form of infinity/infinity](https://math.stackexchange.com/questions/3559942/an-indeterminate-limit-form-of-infinity-infinity), asked by [Noah Dorsey](https://math.stackexchange.com/users/754252/noah-dorsey) on Mathematics Stack Exchange (2020-02-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am trying to solve the limit:
+> $$\lim_{x\to\infty}x^\frac{5}{3}\left(\left(x+\sin\left(\frac{1}{x}\right)\right)^\frac{1}{3}-x^\frac{1}{3}\right)$$
+>
+> I was trying to find a way to bring it into a fraction form to apply L'Hospital's rule, and I tried using
+> $$a-b=\frac{a^3-b^3}{a^2+ab+b^2}$$
+>
+> But it made it even more complex and after applying L'Hospital's rule I got stuck with all the terms. Is there a smarter way to evaluate it?
+:::
+
+First I would factor $x^{1/3}$ out of the second term:
+$$x^{5/3}\left(\left(x+\sin\left(\frac{1}{x}\right)\right)^\frac{1}{3}-x^\frac{1}{3}\right)
+ = x^{2}\left(\left(1+ \frac{1}{x}\sin\left(\frac{1}{x}\right)\right)^{1/3}-1\right)$$
+Then I would substitute $t = \frac{1}{x}$:
+$$\lim_{x\to\infty}x^{2}\left(\left(1+ \frac{1}{x}\sin\left(\frac{1}{x}\right)\right)^{1/3}-1\right)
+   = \lim_{t\to 0^+} \frac{(1+t \sin t)^{1/3} - 1}{t^2}$$
+At this point we could use Taylor's Theorem, or the Binomial series, or L'Hôpital's rule.  The limit of the quotient of the derivatives is:
+$$\begin{align*}
+    \lim_{t\to 0^+} \frac{\frac{1}{3}(1+t\sin t)^{-2/3}(t \cos t + \sin t)}{2t}
+    &= \frac{1}{6}\cdot 1 \cdot \lim_{t\to 0^+} \left(\cos t + \frac{\sin t}{t}\right)
+    \\&= \frac{1}{6}(1+1) = \frac{1}{3}
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3559942/an-indeterminate-limit-form-of-infinity-infinity/3559983#3559983) on Mathematics Stack Exchange, 2020-02-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

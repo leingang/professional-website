@@ -1,0 +1,48 @@
+---
+title: Can you explain the absolute value sign when integrating $\int_{-1}^{1}dx \int_{0}^{x^2} \sqrt{x^2-y} dy$?
+date: '2018-03-29'
+description: 'To elaborate on the existing answers, notice what happens when you forget that $\sqrt{u^2} = |u|$ and substitute $u$ instead: $$I2 = \dots = \int{-1}^1…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2713392
+se-link: https://math.stackexchange.com/questions/2713373/can-you-explain-the-absolute-value-sign-when-integrating-int-11dx-int/2713392#2713392
+se-score: 3
+se-accepted: false
+se-tags:
+- integration
+- multivariable-calculus
+- definite-integrals
+- multiple-integral
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can you explain the absolute value sign when integrating $\int_{-1}^{1}dx \int_{0}^{x^2} \sqrt{x^2-y} dy$?](https://math.stackexchange.com/questions/2713373/can-you-explain-the-absolute-value-sign-when-integrating-int-11dx-int), asked by [Juan](https://math.stackexchange.com/users/269726/juan) on Mathematics Stack Exchange (2018-03-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm doing homework on the following integral:
+> $$\int_{-1}^{1}dx \int_{0}^{x^2} \sqrt{x^2-y} dy$$
+> And here is the answer:
+> [![Why the absolute value][q-1]][q-1]
+>
+>
+>   [q-1]: bP7Lh.png
+>
+> I try to think about it, but I couldn't answer why there is an absolute value sign in the third expression at $x^3$. Can somebody explain it for me why? Thank you! :D
+:::
+
+To elaborate on the existing answers, notice what happens when you forget that $\sqrt{u^2} = |u|$ and substitute $u$ instead:
+$$I_2 = \dots = \int_{-1}^1 \int_0^{x^2} \sqrt{x^2-y}\,dy\,dx
+  =  \color{red}{\frac{2}{3}\int_{-1}^1 x^3\,dx} = 0$$
+At this point, you should notice there must be some mistake. 
+The integrand is nonnegative so the integral should be positive.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2713373/can-you-explain-the-absolute-value-sign-when-integrating-int-11dx-int/2713392#2713392) on Mathematics Stack Exchange, 2018-03-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,39 @@
+---
+title: Prove $F^\infty$ is infinite dimensional
+date: '2015-01-13'
+description: I think you have the right idea. But the definition of dimension as the cardinality of the basis is only for the case when the basis is finite. I believe the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1102222
+se-link: https://math.stackexchange.com/questions/1102213/prove-f-infty-is-infinite-dimensional/1102222#1102222
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $F^\infty$ is infinite dimensional](https://math.stackexchange.com/questions/1102213/prove-f-infty-is-infinite-dimensional), asked by [qqqqq](https://math.stackexchange.com/users/207534/qqqqq) on Mathematics Stack Exchange (2015-01-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove $F^\infty$ is infinite dimensional
+>
+> I can see that this is trivially true. But how does one mathematically prove it?
+>
+> It looks true by definition honestly. Do i say that since it is an n-tuple where n is inf that it needs n linearly independent vectors to span it and hence it has infinite dim?
+:::
+
+> Do i say that since it is an n-tuple where n is inf that it needs n linearly independent vectors to span it and hence it has infinite dim?
+
+I think you have the right idea.  But the definition of dimension as the cardinality of the basis is only for the case when the basis is finite.  I believe the definition of *infinite dimensional* is: not finite dimensional.  That is, there is no finite linearly independent set that spans $F^\infty$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1102213/prove-f-infty-is-infinite-dimensional/1102222#1102222) on Mathematics Stack Exchange, 2015-01-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

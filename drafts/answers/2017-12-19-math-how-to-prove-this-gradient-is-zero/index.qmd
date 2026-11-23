@@ -1,0 +1,40 @@
+---
+title: How to prove this gradient is zero?
+date: '2017-12-19'
+description: Looks like I answered the question in a comment, so just to make sure the question doesn't appear unanswered, I'll copy it here.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2573496
+se-link: https://math.stackexchange.com/questions/2573416/how-to-prove-this-gradient-is-zero/2573496#2573496
+se-score: 0
+se-accepted: true
+se-tags:
+- derivatives
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to prove this gradient is zero?](https://math.stackexchange.com/questions/2573416/how-to-prove-this-gradient-is-zero), asked by [tanoserio](https://math.stackexchange.com/users/468643/tanoserio) on Mathematics Stack Exchange (2017-12-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a function f::$\mathbb{R^2} \rightarrow \mathbb{R}$, I know it is C¹ and given a point $P \in \mathbb{R^2}$, $f(P) = 0$. I have to show $\nabla f(P) = (0, 0)$.
+>
+> Now, I was able to show that C¹ implies differentiablity as I thought I would need that, but it seems to me I need more data to make this proof. As I understand f has a critical point in point P $\iff \nabla f(P) = (0, 0)$ so I need to show, ONLY knowing f is C¹ and that $f(P) = 0$ that P is a critical point, but I think with only these things it can't be achieved.
+>
+> Am I right? Any help will be appreciated.
+:::
+
+Looks like I answered the question in a comment, so just to make sure the question doesn't appear unanswered, I'll copy it here.
+
+You are right.  It's not enough to know that $f$ is $C^1$ and $f(P) = 0$ to conclude that $\nabla f(P) = 0$.  As a counterexample, take $f(x,y) = x$.  Then $f(0,0) = 0$ but $\nabla f(0,0) = (1,0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2573416/how-to-prove-this-gradient-is-zero/2573496#2573496) on Mathematics Stack Exchange, 2017-12-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

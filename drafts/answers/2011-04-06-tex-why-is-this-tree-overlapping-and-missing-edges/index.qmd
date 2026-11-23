@@ -1,0 +1,94 @@
+---
+title: Why is this tree overlapping and missing edges?
+date: '2011-04-06'
+description: One problem is all the (left node) and (right node) notations. That syntax gives a name to the nodes. Usually node names are unique, but you've named half of…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 15180
+se-link: https://tex.stackexchange.com/questions/15175/why-is-this-tree-overlapping-and-missing-edges/15180#15180
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+- trees
+- tikz-trees
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is this tree overlapping and missing edges?](https://tex.stackexchange.com/questions/15175/why-is-this-tree-overlapping-and-missing-edges), asked by [Trevor Arjeski](https://tex.stackexchange.com/users/4722/trevor-arjeski) on TeX Stack Exchange (2011-04-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> ```latex
+> \node [circle, draw] at (6, 0)  {63}
+> 	child{node [circle, draw] (left node) {26}
+>     child{node [rectangle,draw] (left node) {A:12}}
+>     child{node [circle, draw] (right node) {14}
+>         child{node[rectangle,draw] (left node) {B:7}}
+>         child{node [circle, draw] (right node) {7}
+>             child{node[rectangle,draw] (left node) {Z:2}}
+>             child{node[rectangle,draw] (right node) {X:5}}
+>             }
+>            }
+>            }
+>     child{node [circle, draw] (right node) {37}
+>  	child{node [rectangle,draw]  (left node) {I:18}}
+>  	child{node [circle, draw] (right node) {19}
+>   	   	child{node[rectangle,draw] (left node) {S:9}}
+>    		 child{node[rectangle,draw] (right node) {M:10}}
+>    		 }}
+>    		 ;
+> ```
+>
+> I'm new to tree building with LaTeX and I just can't seem to troubleshoot my own problems.  Can anyone see the problem with this code that is causing the tree to come out messed up?
+:::
+
+One problem is all the `(left node)` and `(right node)` notations.  That syntax gives a name to the nodes.  Usually node names are unique, but you've named half of them one thing and half of them another thing!  So just take those out.
+
+The sibling distance is by default 15mm at each level of the tree.  There's no computation about the number of descendants to make the tree space out automatically.  So you just have to make sure that the first level stretches out a bit.
+
+Here is a complete example document:
+
+```latex
+\documentclass{minimal}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[level 1/.style={sibling distance=30mm},level 2/.style={sibling distance=15mm}]
+\node [circle, draw] at (6, 0)  {63}
+    child{node [circle, draw]  {26}
+    child{node [rectangle,draw]  {A:12}}
+    child{node [circle, draw]  {14}
+        child{node[rectangle,draw]  {B:7}}
+        child{node [circle, draw]  {7}
+            child{node[rectangle,draw]  {Z:2}}
+            child{node[rectangle,draw]  {X:5}}
+            }
+           }
+           }
+    child{node [circle, draw]  {37}
+    child{node [rectangle,draw]  {I:18}}
+    child{node [circle, draw]  {19}
+        child{node[rectangle,draw] {S:9}}
+         child{node[rectangle,draw]  {M:10}}
+         }}
+         ;
+\end{tikzpicture}
+
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: mhizF.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15175/why-is-this-tree-overlapping-and-missing-edges/15180#15180) on TeX Stack Exchange, 2011-04-06. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

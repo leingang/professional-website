@@ -1,0 +1,58 @@
+---
+title: use implicit differentiation to find $\partial z/\partial x$, $\partial z/\partial y$
+date: '2017-10-10'
+description: Solving for $z$ and then differentiating would be an explicit method. Instead, you can differentiate a function of three variables while treating $z$ to be a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465442
+se-link: https://math.stackexchange.com/questions/2465430/use-implicit-differentiation-to-find-partial-z-partial-x-partial-z-parti/2465442#2465442
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- partial-derivative
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[use implicit differentiation to find $\partial z/\partial x$, $\partial z/\partial y$](https://math.stackexchange.com/questions/2465430/use-implicit-differentiation-to-find-partial-z-partial-x-partial-z-parti), asked by [2316354654](https://math.stackexchange.com/users/115082/2316354654) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+> I can't find the word implicit differentiation anywhere in the book, but I'm assuming it means solve for $z$ in this case and differentiate with respect to $x$, then $y$ in this problem. But when I took the derivative with respect to $x$ of 47 after solving for $z$, i get a different answer.
+>
+> I got $$z = \dfrac{\sqrt{-x^2-2y^2+1}}{\sqrt{3}}$$ 
+>
+> and for the derivative of that:
+>
+> $$-\dfrac{x}{\sqrt{3}\sqrt{-x^2-2y^2+1}}$$
+>
+> (i got these results on https://www.derivative-calculator.net/)
+>
+> this is different than the answer in the book. am i not supposed to solve for $z$ and differentiate with respect to $x$ then $y$? Is this another form of the answer? help..
+>
+> the answer is $-x/3z$ ... which I don't get..
+>
+>   [q-1]: Hzusm.png
+:::
+
+Solving for $z$ and then differentiating would be an *explicit* method.  Instead, you can differentiate a function of three variables while treating $z$ to be a function of $x$ and $y$, then solving for $\frac{\partial z}{\partial x}$ and $\frac{\partial z}{\partial y}$.  
+
+For instance, if $x+y^2 + z^3 = 0$, then the derivative of the left-hand side with respect to $x$ would be $1 + 3z^2 \frac{\partial z}{\partial x} = 0$.  Thus $\frac{\partial z}{\partial x} = -\frac{1}{3z^2}$.
+
+In general, given $f(x,y,z) = c$, the derivative of the left-hand side with respect to $x$, treating $z$ as if it were a function of $x$ and $y$, would be
+$\frac{\partial f}{\partial x} + \frac{\partial f}{\partial z} \frac{\partial z}{\partial x}$.  Thus
+$$\frac{\partial z}{\partial x} = - \frac{\partial f/\partial x}{\partial f/\partial z}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465430/use-implicit-differentiation-to-find-partial-z-partial-x-partial-z-parti/2465442#2465442) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

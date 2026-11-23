@@ -1,0 +1,42 @@
+---
+title: Is the map $\mathbb{Z}\times \mathbb{Z} \to S_3$ a homomorphism?
+date: '2016-11-23'
+description: If you guess that $\Phi$ is not a homomorphism, you need to find points $(i1,j1)$ and $(i2,j2)$ in $\mathbb{Z}\times\mathbb{Z}$ such that $$\Phi((i1,j1) +…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2027962
+se-link: https://math.stackexchange.com/questions/2027936/is-the-map-mathbbz-times-mathbbz-to-s-3-a-homomorphism/2027962#2027962
+se-score: 4
+se-accepted: false
+se-tags:
+- group-theory
+- group-homomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the map $\mathbb{Z}\times \mathbb{Z} \to S_3$ a homomorphism?](https://math.stackexchange.com/questions/2027936/is-the-map-mathbbz-times-mathbbz-to-s-3-a-homomorphism), asked by [Quarternion](https://math.stackexchange.com/users/387981/quarternion) on Mathematics Stack Exchange (2016-11-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So the question I ran into while working through some group theory problems was, is the map $\mathbb{Z}\times \mathbb{Z} \to S_3$ defined by $(i,j) \to (12)^i (123)^j$, a homomorphism?
+>
+> By looking at the problem, I assume that it is not, by the sole fact that $\mathbb{Z} \times \mathbb{Z}$ is abelian and $S_3$ is not, but I applied the homomorphism property just to be sure. I am unsure if I am applying it right, and if I am, how do I finish.  Any ways to proceed are helpful.
+>
+> $$\begin{equation}
+> \Phi ((i_1,j_1)+(i_2,j_2)) =(1,2)^{i_1 + i_2}(123)^{j_1 + j_2} \\ \Phi(i_1,j_1) \circ \Phi(i_2,j_2)= (1,2)^{i_1}(123)^{j_1} \circ (1,2)^{i_2}(123)^{j_2} = ???
+> \end{equation}$$
+:::
+
+If you guess that $\Phi$ is not a homomorphism, you need to find points $(i_1,j_1)$ and $(i_2,j_2)$ in $\mathbb{Z}\times\mathbb{Z}$ such that 
+$$\Phi((i_1,j_1) + (i_2,j_2)) \neq \Phi(i_1,j_1)\Phi(i_2,j_2)$$
+Keep it super-simple when looking for contradictions.  We know that in $\mathbb{Z}\times\mathbb{Z}$ that $(1,0)$ and $(0,1)$ commute.  Do their images $\Phi(1,0) = (12)$ and $\Phi(0,1) = (123)$ commute?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2027936/is-the-map-mathbbz-times-mathbbz-to-s-3-a-homomorphism/2027962#2027962) on Mathematics Stack Exchange, 2016-11-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

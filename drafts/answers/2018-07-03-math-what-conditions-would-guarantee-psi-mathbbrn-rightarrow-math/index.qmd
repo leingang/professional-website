@@ -1,0 +1,44 @@
+---
+title: 'What conditions would guarantee $\Psi: \mathbb{R}^n \rightarrow \mathbb{R}^2$ to be non-zero in a small neighbourhood?'
+date: '2018-07-03'
+description: 'Here is a relevant fact:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2839591
+se-link: https://math.stackexchange.com/questions/2839521/what-conditions-would-guarantee-psi-mathbbrn-rightarrow-mathbbr2-to/2839591#2839591
+se-score: 2
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- differential-geometry
+- maxima-minima
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What conditions would guarantee $\Psi: \mathbb{R}^n \rightarrow \mathbb{R}^2$ to be non-zero in a small neighbourhood?](https://math.stackexchange.com/questions/2839521/what-conditions-would-guarantee-psi-mathbbrn-rightarrow-mathbbr2-to), asked by [Johnny T.](https://math.stackexchange.com/users/238156/johnny-t) on Mathematics Stack Exchange (2018-07-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose I have $\Psi: \mathbb{R}^n \rightarrow \mathbb{R}^2$ where 
+> $\Psi(\mathbf{0}) = \mathbf{0}$. I would like to show that there exists a small open set $U$ around $\mathbf{0}$ such that it is non-zero for all points in $U \backslash \{ \mathbf{0} \}$. 
+>
+> I am wondering what kind of conditions on $\Psi$ would ensure this is satisfied? Any comments are appreciated. Thank you.
+:::
+
+Here is a relevant fact: 
+
+> **Theorem** Suppose that $\psi\colon \mathbb{R}^n \to \mathbb{R}$ is $C^3$, satisfies $\psi(\mathbf{0}) = 0$, and that the matrix of second partial derivatives $\left[\frac{\partial^2 \psi}{\partial x_i\,\partial x_j}(\mathbf{0})\right]$ is positive-definite.  Then $\psi$ has a local minimum at $\mathbf{0}$, meaning there is an open neighborhood $U$ of $\mathbf{0}$ such that $\psi(\mathbf{x}) > 0$ for all $\mathbf{x} \in U$, $\mathbf{x} \neq \mathbf{0}$.  Similarly, if the matrix of second partial derivatives is negative definite, then $\psi$ has a local maximum at $\mathbf{0}$.
+
+The proof requires Taylor's theorem and some linear algebra.  
+
+Now suppose $\mathbf{\Psi}\colon \mathbb{R}^n \to \mathbb{R}^2$ is of class $C^3$, and $\mathbf{\Psi}(\mathbf{0}) = \mathbf{0}$.  Writing $\mathbf{\Psi} = (\psi_1,\psi_2)$, suppose further that the matrix of second partial derivatives $\left[\frac{\partial^2 \psi_k}{\partial x_i\,\partial x_j}(\mathbf{0})\right]$ is positive-definite or negative-definite for each $k$.  Then applying the theorem to each component gives neighborhoods $U_1$ and $U_2$ of $\mathbf{0}$ for which $\psi_k(\mathbf{x}) \neq 0$ for all $\mathbf{x} \in U_k \setminus\{\mathbf{0}\}$.  Let $U = U_1 \cap U_2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2839521/what-conditions-would-guarantee-psi-mathbbrn-rightarrow-mathbbr2-to/2839591#2839591) on Mathematics Stack Exchange, 2018-07-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

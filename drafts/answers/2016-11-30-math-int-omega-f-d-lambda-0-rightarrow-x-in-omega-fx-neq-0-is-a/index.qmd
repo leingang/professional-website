@@ -1,0 +1,62 @@
+---
+title: '$\int_{\Omega} |f| d\lambda = 0 \Rightarrow \{x \in \Omega: f(x) \neq 0\}$ is a null set'
+date: '2016-11-30'
+description: Another way to write $\phik$ is $$\phik(x) = \begin{cases} 0 & \text{if $f(x) = 0$}\\ k|f(x)| & \text{if $|f(x)| \leq \frac{1}{k}$} \\ 1 & \text{if $|f(x)|…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2037343
+se-link: https://math.stackexchange.com/questions/2037324/int-omega-f-d-lambda-0-rightarrow-x-in-omega-fx-neq-0-is-a/2037343#2037343
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- integration
+- probability-theory
+- measure-theory
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$\int_{\Omega} |f| d\lambda = 0 \Rightarrow \{x \in \Omega: f(x) \neq 0\}$ is a null set](https://math.stackexchange.com/questions/2037324/int-omega-f-d-lambda-0-rightarrow-x-in-omega-fx-neq-0-is-a), asked by [Julian ](https://math.stackexchange.com/users/344530/julian) on Mathematics Stack Exchange (2016-11-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Let $(\Omega, \mathscr A, \lambda)$ be a measure space.
+> >
+> >For an $\mathscr A$-measurable numerical function $f: \Omega \rightarrow \Bbb R$, it holds that
+> >
+> >$\int_{\Omega} |f| d\lambda = 0 \Rightarrow \{x \in \Omega: f(x) \neq 0\}$ is a null set.
+>
+> The argument works the following way:
+>
+> Define
+>
+> $S := \{x \in \Omega: f(x) \neq 0\}$. Since $f$ is measurable, it follows that $S \in \mathscr A$. For every natural number $k \ge 1$, we define 
+>
+> $\phi_k := \inf\{k|f|, X_s\}$ with $X_s$ being the Indicator function. 
+>
+> Hence,
+>
+> $\phi_k \uparrow X_s$, and since $\phi_k \le k|f|$, we get $\int \phi_k d\lambda = 0$.
+>
+> While I understand the very last step here, I don't see why $\phi_k \uparrow X_s$. $X_s = 0$ for every $x \notin S$, and since $S$ is defined the way it is, it's only possible that $|f| = 0$, and therefore, $k|f| = 0$ for every $k$. So how does $\phi_k$ converge against $X_s$ here?
+:::
+
+Another way to write $\phi_k$ is
+$$\phi_k(x) = \begin{cases} 0 & \text{if $f(x) = 0$}\\
+                        k|f(x)| & \text{if $|f(x)| \leq \frac{1}{k}$} \\
+                              1 & \text{if $|f(x)| \geq \frac{1}{k}$}
+                \end{cases}$$
+So if $f(x) = 0$, $\phi_k(x) = 0 = \chi_S(x)$ for all $k$.
+If $f(x) \neq 0$, there exists $K$ such that $|f(x)| > \frac{1}{K}$.
+Then for all $k \geq K$, $\phi_k(x) = 1 = \chi_S(x)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2037324/int-omega-f-d-lambda-0-rightarrow-x-in-omega-fx-neq-0-is-a/2037343#2037343) on Mathematics Stack Exchange, 2016-11-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

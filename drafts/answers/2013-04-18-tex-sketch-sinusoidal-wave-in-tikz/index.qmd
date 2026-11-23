@@ -1,0 +1,87 @@
+---
+title: Sketch sinusoidal wave in Tikz
+date: '2013-04-18'
+description: 'As I said in my comment, you can adjust the grid by choosing the coordinates on the line with grid in it:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109371
+se-link: https://tex.stackexchange.com/questions/109362/sketch-sinusoidal-wave-in-tikz/109371#109371
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Sketch sinusoidal wave in Tikz](https://tex.stackexchange.com/questions/109362/sketch-sinusoidal-wave-in-tikz), asked by user18290 on TeX Stack Exchange (2013-04-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What is the easiest way to **sketch** a sinusoidal wave in PGF/Tikz? I have tried this:
+>
+> ```latex
+> \begin{tikzpicture}
+>   \draw[loosely dotted] (0,0) grid (4,2);
+>   \draw[x=0.5cm,y=1cm, ultra thick, red]
+>     (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1) cos (5,0) sin (6,-1);
+> \end{tikzpicture}
+> ```
+>
+> How do I get the grid to cover all the wave? Is there a better way of **sketching** (not plotting) functions/waves?
+:::
+
+As I said in my comment, you can adjust the grid by choosing the coordinates on the line with `grid` in it:
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+  \draw[loosely dotted] (0,-1) grid (3,1);
+  \draw[x=0.5cm,y=1cm, ultra thick, red]
+    (0,1) cos (1,0) sin (2,-1) cos (3,0) sin (4,1) cos (5,0) sin (6,-1);
+\end{tikzpicture}
+\end{document}
+```
+
+Your second `\draw` line changes the scale of the *x* axis to `0.5cm` instead of `1cm` as is the default.  So `(3,1)` on the first line is the same point as `(6,1)` on the second line.
+
+![sample code output][1]
+
+If you just want to interpolate points on a curve smoothly, you can use the `plot` command of tikz like so:
+
+```latex
+\draw[x=0.5cm,y=1cm, ultra thick, red]
+    plot[smooth] coordinates {(0,1) (1,0) (2,-1) (3,0) (4,1) (5,0) (6,-1)};
+```
+
+There is a `tension` key that adjusts the curviness of the smoothing but frankly I couldn't get anything that looked better to me than the default.
+
+![sample code output][2]
+
+Another option would be to use Bézier curves.  However, in specifying a Bézier curve between two points, two *additional* points are needed.  These two describe the velocity vector coming out of and into each point.
+
+```latex
+\draw[x=0.5cm,y=1cm, ultra thick, red]  (0,1) 
+  .. controls ([xshift=\dx]0,1)  and ([xshift=-\dx]2,-1)  .. (2,-1) 
+  .. controls ([xshift=\dx]2,-1) and ([xshift=-\dx]4,1)   .. (4,1) 
+  .. controls ([xshift=\dx]4,1)  and ([xshift=-\dx]6,-1)  .. (6,-1) ;
+```
+
+![sample code output][3]
+
+You'll notice I took advantage of the symmetry to eliminate the coordinates along the \$x\$-axis.  
+
+  [1]: qzeZ0.png
+  [2]: fYUft.png
+  [3]: 7ETOx.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109362/sketch-sinusoidal-wave-in-tikz/109371#109371) on TeX Stack Exchange, 2013-04-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

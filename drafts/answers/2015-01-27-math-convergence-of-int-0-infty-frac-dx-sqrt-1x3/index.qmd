@@ -1,0 +1,63 @@
+---
+title: Convergence of $\int_0 ^\infty \frac {dx}{\sqrt {1+x^3}}$
+date: '2015-01-27'
+description: You got some good answers but I want to highlight some of the reasoning errors you made. It's important to derive your assertions carefully.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1122338
+se-link: https://math.stackexchange.com/questions/1122299/convergence-of-int-0-infty-frac-dx-sqrt-1x3/1122338#1122338
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convergence of $\int_0 ^\infty \frac {dx}{\sqrt {1+x^3}}$](https://math.stackexchange.com/questions/1122299/convergence-of-int-0-infty-frac-dx-sqrt-1x3), asked by [MathMan](https://math.stackexchange.com/users/66069/mathman) on Mathematics Stack Exchange (2015-01-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Convergence of $\int_0 ^\infty \dfrac {dx}{\sqrt {1+x^3}}$
+>
+> **Attempt:** $\lim_{x \rightarrow \infty} \dfrac {x^{\frac{3}{2}}}{\sqrt {1+x^3}} =1$
+>
+> Hence, $\dfrac {1}{x^{\frac{3}{2}}}$ and $\dfrac {1}{\sqrt {1+x^3}}$ converge/diverge together.
+>
+> $\int_0 ^\infty \dfrac {dx}{x^{\frac{3}{2}}}$ does not converge since, it's not defined at $0$.
+>
+> However, my textbook says this integral is convergent. Why is it so?
+>
+> Thank you for reading through!
+:::
+
+You got some good answers but I want to highlight some of the reasoning errors you made.  It's important to derive your assertions carefully.
+
+> Hence, $\dfrac {1}{x^{\frac{3}{2}}}$ and $\dfrac {1}{\sqrt {1+x^3}}$ converge/diverge together.
+
+Remember that convergence is a property of the improper integral, not the function being integrated.  So a statement like “$\frac{1}{x^{3/2}}$ converges” is ambiguous.  What you mean is
+
+>> Hence, $\color{red}{\int_1^\infty}\frac {1}{x^{\frac{3}{2}}}\color{red}{\,dx}$ and $\color{red}{\int_1^\infty}\frac {1}{\sqrt {1+x^3}}\color{red}{\,dx}$ converge/diverge together.
+
+This is true.  Now for this:
+
+> $\int_0 ^\infty \frac {dx}{x^{\frac{3}{2}}}$ does not converge since, it's not defined at $0$.
+
+A couple of problems here.  One is that you have two improper integrals in one.  Both $\int_0^1 \frac{dx}{x^{3/2}}$ and $\int_1^\infty \frac{dx}{x^{3/2}}$ are improper.  But only the second one is relevant for this problem.  That's because $\int_0^1 \frac{dx}{\sqrt{1+x^3}}$ is *not* improper, so you are only worried about whether $\int_1^\infty \frac{dx}{\sqrt{1+x^3}}$ converges.
+
+As for $\int_0^1 \frac{dx}{x^{3/2}}$, you are correct that it does not converge, but it does *not* follow from your assertion that the integrand is not defined at $0$.  After all, $\int_0^1 \frac{dx}{x^{1/2}}$ does converge, but the integrand is not defined at $0$ either.  The divergence of $\int_0^1 \frac{dx}{x^{3/2}}$ follows from the $p$-test: if $p > 1$ then $\int_0^1 \frac{dx}{x^p}$ diverges and $\int_1^\infty \frac{dx}{x^p}$ converges.
+
+To piece this all together: You know $\int_1^\infty \frac{dx}{x^{3/2}}$ converges by the $p$-test.  Therefore, $\int_1^\infty\frac{dx}{\sqrt{1+x^3}}$ converges.  Finally, 
+$$\int_0^\infty \frac{dx}{\sqrt{1+x^3}} = \int_0^1 \frac{dx}{\sqrt{1+x^3}}  + \int_1^\infty\frac{dx}{\sqrt{1+x^3}}$$
+so the given integral converges.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1122299/convergence-of-int-0-infty-frac-dx-sqrt-1x3/1122338#1122338) on Mathematics Stack Exchange, 2015-01-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,64 @@
+---
+title: Indentation and line wraps in TeXShop
+date: '2011-04-25'
+description: TeXShop's macro editor is very powerful, so if you can write a script to pretty-print your code you can hook it into a macro and run it whenever you want.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16531
+se-link: https://tex.stackexchange.com/questions/16510/indentation-and-line-wraps-in-texshop/16531#16531
+se-score: 1
+se-accepted: false
+se-tags:
+- indentation
+- source
+- texshop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Indentation and line wraps in TeXShop](https://tex.stackexchange.com/questions/16510/indentation-and-line-wraps-in-texshop), asked by [fudo](https://tex.stackexchange.com/users/5075/fudo) on TeX Stack Exchange (2011-04-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> As pointed out in [this question][q-1], in TeXShop there is no way to make source paragraphs (i.e. long lines with no hard wraps) follow source indents *automatically*, that is, while typing. The solution proposed in the [accepted answer][q-2] is unsatisfactory, in my opinion, as it requires manual insertion of line breaks at every single line... I believe you should not be forced to adopt such a behavior in year 2011, unless you are a big fan of old typewriters.
+>
+> My ultimate goal is to obtain 
+>
+> > readable, "programming language-style"
+> > source code, with indented blocks for
+> > environments,
+>
+> and I would like to get that using TeXShop (I know that's easy using other editors, such as Emacs).
+> My question is: 
+>
+> > is there at least a way to obtain
+> > such a formatting *after* typing,
+> > e.g. using
+> > a macro which inserts line breaks
+> > in the right spots?
+>
+> The first thing I tried is the following:
+>
+>  1. Write the code naturally, with no indents nor hard wraps;
+>  2. Select any block (or even the whole code) and then apply Source > Wrap Lines > Hard Wrap from TeXShop's menu;
+>  3. Select any block you want to indent, and indent it using the appropriate command in the Source menu.
+>
+> However this does not work nicely, because after you indent the block some lines may become too long for the editor window's width.
+>
+>
+>   [q-1]: https://tex.stackexchange.com/questions/5143/long-paragraphs-follow-source-indents-in-texshop
+>   [q-2]: https://tex.stackexchange.com/questions/5143/long-paragraphs-follow-source-indents-in-texshop/5147#5147
+:::
+
+TeXShop's macro editor is very powerful, so if you can write a script to pretty-print your code you can hook it into a macro and run it whenever you want.
+
+But the best thing is probably to get in touch with the developers.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16510/indentation-and-line-wraps-in-texshop/16531#16531) on TeX Stack Exchange, 2011-04-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,67 @@
+---
+title: '2015 MMATHS Solution #6'
+date: '2019-08-30'
+description: 'First let''s establish the cases:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3338705
+se-link: https://math.stackexchange.com/questions/3338673/2015-mmaths-solution-6/3338705#3338705
+se-score: 1
+se-accepted: true
+se-tags:
+- analytic-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[2015 MMATHS Solution #6](https://math.stackexchange.com/questions/3338673/2015-mmaths-solution-6), asked by [asdf334](https://math.stackexchange.com/users/399339/asdf334) on Mathematics Stack Exchange (2019-08-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Yes, I'm here again, with another misunderstanding about the solution.
+>
+> Question: 
+> Two positive integers $a$ and $b$ are chosen randomly, uniformly, and independently from the set of positive integers less than or equal to $1000$. What is the expected value of the number of quadrants through which the graph $x^a+y^b=1$ will pass?
+>
+> Solution:
+> Without loss of generality suppose that $a$ (or $b$, respectively) is even. Then $(x, y)$ is a solution if and only if $(−x, y)$ is a solution. Now we show that $y$ can be positive or negative. Note that $$y=\sqrt[b]{1-x^a}.$$ If $b$ is odd, then as long as $x$ is large enough, the expression will be negative. If $b$ is even, then symmetry means that $-\sqrt[b]{1-x^a}$ is a solution whenever $\sqrt[b]{1-x^a}$ is a solution.
+>
+> Answer is $3.75$.
+>
+> The solution shows that $y$ can be positive or negative, but there is nothing else. It also says $(x, y)$ is a solution if and only if $(-x, y)$ is, which doesn't have proof. It also doesn't explain how you get to $3.75$. Can someone please provide a better solution?
+:::
+
+First let's establish the cases:
+
+* If $a$ and $b$ are both even, the curve $x^a + y^b = 1$ is closed and passes through all four quadrants.
+* If *exactly one* of $a$ and $b$ is even, the curve is not closed, but still passes through all four quadrants.
+* If *neither* of $a$ and $b$ is even (that is, they are both odd), the curve passes through three quadrants—the first, third, and fourth.
+
+There are a number of ways to show this.  Your algebraic argument can be strengthened and analyzed on a case-by-case basis.  You can also use calculus.  For any $a$ and $b$, $(1,0)$ and $(0,1)$ are on the curve $x^a+y^b = 1$.  If we differentiate implicitly treating $y$ as a function of $x$:
+$$ax^{a-1} + b y^{b-1} \frac{dy}{dx} = 0
+\implies \frac{dy}{dx} = - \frac{ax^{a-1}}{by^{b-1}}$$
+Apparently $\frac{dy}{dx} = 0$ at $(0,1)$, which means the tangent line to the curve is horizontal there.  So the curve passes into both the first (on the right of $(0,1)$) and third (on the left) quadrants.
+
+Similarly, $\frac{dx}{dy} = 0$ at $(1,0)$, which means the tangent line to the curve is vertical there, and the curve passes into the fourth quadrant as well.
+
+If $b$ is even, then $(0,-1)$ is on the curve, and $\frac{dy}{dx} = 0$ there.  So the curve has a horizontal tangent there, and because of this passes into the fourth quadrant.
+
+If $a$ is even, then $(-1,0)$ is on the curve, and $\frac{dx}{dy} = 0$ there.  So the curve has a vertical tangent there, and because of this also passes into the fourth quadrant.
+
+As lulu points out, if $a$ and $b$ are both odd, then $x^a + y^b < 0$ for all $(x,y)$ in the third quadrant.  So the curve will only pass through three quadrants.
+
+Now let $X(a,b)$ be the random variable which assigns to $(a,b)$ the number of quadrants $x^a+y^b = 1$ passes through.  We already know there are only two values of $X$: $3$ and $4$.  So
+$$E(X) = 3\cdot P(X=3) + 4\cdot P(X=4)$$
+We also know that $X=3$ if $a$ and $b$ are both odd and $X=4$ otherwise.  Let $\mathrm{OO}$ be the event that $a$ and $b$ are both odd.  Then
+$$E(X) = 3 \cdot P(\mathrm{OO}) + 4 \cdot (1-P(\mathrm{OO})) = 4 - P(\mathrm{OO})$$
+The last thing to determine is $P(\mathrm{OO})$.  But this is pretty clear.  The probability that $a$ is odd is $\frac{1}{2}$ since there are 1000 outcomes for $a$ and half of them are odd.  The probability that $b$ is odd is also $\frac{1}{2}$.  Since the two events are independent, the probability that they are both odd is $\frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$.  Thus
+$$E(X) = 4 - \frac{1}{4} = 3.75$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3338673/2015-mmaths-solution-6/3338705#3338705) on Mathematics Stack Exchange, 2019-08-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

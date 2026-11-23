@@ -1,0 +1,79 @@
+---
+title: Is there a way to get \filedate and \fileversion from \ProvidesPackage{} inside the package source file?
+date: '2024-04-12'
+description: OP said my comment was useful, so I'll expand to an answer. The readprov package provides access to the to \ProvidesXXX lines in classes, packages, or generic…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 715440
+se-link: https://tex.stackexchange.com/questions/572533/is-there-a-way-to-get-filedate-and-fileversion-from-providespackage-inside/715440#715440
+se-score: 3
+se-accepted: false
+se-tags:
+- package-writing
+- latex-base
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way to get \filedate and \fileversion from \ProvidesPackage{} inside the package source file?](https://tex.stackexchange.com/questions/572533/is-there-a-way-to-get-filedate-and-fileversion-from-providespackage-inside), asked by [LaTeXereXeTaL](https://tex.stackexchange.com/users/218142/latexerexetal) on TeX Stack Exchange (2020-11-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I like to `\typeout` a message showing my package's version and date. I know about `\GetFileInfo` but that apparently only works within a `.dtx` file. Is there a way to automatically extract `\filedate` and `\fileversion` from a package's `\ProvidesPackage{}` declaration? I'm currently just defining a version string and using that in `\typeout` but that means having to edit versions and dates twice in a file, which may be prone to error.
+>
+> MWE package `littlepackage.sty`:
+>
+> ```latex
+> \ProvidesPackage{littlepackage}[2020/11/26 v1.2.3 A simple demo package]
+> \NeedsTeXFormat{LaTeX2e}[1999/12/01]
+>
+> \newcommand*{\littlepackageversion}{v1.2.3 dated 2020/11/26}
+>
+> \AtBeginDocument{%
+> \typeout{}
+> \typeout{littlepackage: You're using littlepackage version \littlepackageversion.}
+> \typeout{}
+> }%
+> ```
+>
+> MWE `littledemo.tex` document that uses the package:
+>
+> ```latex
+> % !TEX TS-program = lualatexmk
+> % !TEX encoding = UTF-8 Unicode
+>
+> \documentclass{article}
+> \usepackage{littlepackage}
+>
+> \begin{document}
+> Hello.
+>
+> \end{document}
+> ```
+:::
+
+OP said my comment was useful, so I'll expand to an answer. The [`readprov`](https://texdoc.org/pkg/readprov) package provides access to the to `\ProvidesXXX` lines in classes, packages, or generic files without requiring the `doc` package. So your `littlepackage.sty` file can look like this, no h@ckery required.
+
+```latex
+\ProvidesPackage{littlepackage}[2020/11/26 v1.2.3 A simple demo package]
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+
+\usepackage{readprov}
+\ReadPackageInfos{littlepackage}
+\edef\littlepackageversion{\fileversion}
+
+\AtBeginDocument{%
+\typeout{}
+\typeout{littlepackage: You're using littlepackage version \littlepackageversion.}
+\typeout{}
+}%
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/572533/is-there-a-way-to-get-filedate-and-fileversion-from-providespackage-inside/715440#715440) on TeX Stack Exchange, 2024-04-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

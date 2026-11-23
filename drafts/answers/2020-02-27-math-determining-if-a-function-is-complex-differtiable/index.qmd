@@ -1,0 +1,69 @@
+---
+title: Determining if a function is complex-differtiable
+date: '2020-02-27'
+description: You can calculate the real and imaginary parts of $g$ and show that the Cauchy-Riemann equations are not satisfied. That's equivalent to testing whether…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3562519
+se-link: https://math.stackexchange.com/questions/3562384/determining-if-a-function-is-complex-differtiable/3562519#3562519
+se-score: 1
+se-accepted: false
+se-tags:
+- complex-analysis
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Determining if a function is complex-differtiable](https://math.stackexchange.com/questions/3562384/determining-if-a-function-is-complex-differtiable), asked by [mathsandthat](https://math.stackexchange.com/users/640207/mathsandthat) on Mathematics Stack Exchange (2020-02-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The question I have been asked is: Let $g :$ \ $\{-1\} \rightarrow \mathbb{C}$ be the function defined by: $$g(z) = \frac{\overline{z}^2}{1+z}$$
+>
+> I need to use the definition of complex-differentiation to identify the $a \in \mathbb{C}$ \ {$-1$} at which $g$ is complex-differentiable or not complex-differentiable.
+>
+> This is my attempt:
+>
+> To prove the complex differentiability of the function $g :$ \ $\{-1\} \rightarrow \mathbb{C}$ I must show the existence of: $$\frac{g(a+h)-g(a)}{h} = \lim_{h \rightarrow 0} \frac{1}{h} ( \frac{( \overline{a} + \overline{h})^2}{1+a+h})- \frac{\overline{a}^2}{1+a}$$
+>
+> $$= \lim_{h \rightarrow 0} ( \frac{ \overline{a}^2 + 2\overline{ah} + \overline{h}^2}{h+h^2+ah} - \frac{\overline{a}^2}{h+ah}$$
+>
+> $$= \lim_{h \rightarrow 0} ( \frac{ \overline{a}^2 + 2\overline{ah} + \overline{h}^2}{h+h^2+ah}) - \lim_{h \rightarrow 0} (\frac{\overline{a}^2}{h+ah})$$
+>
+> Now if I look at just $\lim_{h \rightarrow 0} (\frac{\overline{a}^2}{h+ah})$:
+>
+> $$\lim_{h \rightarrow 0} (\frac{\overline{a}^2}{h+ah}) = \overline{a}^2 \lim_{h \rightarrow 0} (\frac{1}{h+ah})$$
+> $$= \overline{a}^2 \lim_{h \rightarrow 0} (\frac{1}{h(a+1)})$$
+> $$= \overline{a}^2 \frac{1}{a+1} \lim_{h \rightarrow 0} (\frac{1}{h})$$
+> $$= \overline{a}^2 \cdot \frac{1}{a+1} \cdot  \infty$$
+> $$= \infty$$
+>
+> Therefore, for $\lim_{h \rightarrow 0} (\frac{\overline{a}^2}{h+ah})$ approaching the limit along different directions of the real axis gives different values. Thus the global limit does not exist and therefore $\frac{g(a+h)-g(a)}{h}$ does not exist either. Therefore I can conclude that $g$ is not complex differentiable in $\mathbb{C}$
+>
+> That is what I have done but this is a grey area in complex analysis for me so I would be grateful if someone could confirm I am working along the right lines/ point out my mistakes. Thanks.
+:::
+
+You can calculate the real and imaginary parts of $g$ and show that the Cauchy-Riemann equations are not satisfied.  That's equivalent to testing whether $\frac{\partial g}{\partial \bar z} = 0$.  If you accept all of that, it's clear this function is not complex differentiable except possibly at $0$.
+
+If you really need to do it from the definition, then you have to show that 
+$$\lim_{h\to 0} \frac{g(a+h) - g(a)}{h}$$
+does not exist.  In your answer you argued that since $\lim_{h\to 0} \frac{g(a)}{h}$ is infinite, the entire limit does not exist.  That's flawed reasoning, because the same argument applies to every difference quotient, including those of differentiable functions.
+
+Let's simplify: why is $f(z) = \bar z$ not differentiable?  At a point $a$,
+$$\frac{f(a+h) - f(a)}{h} = \frac{\overline{a+h} - \bar a}{h} = \frac{\bar h}{h}$$
+We can let $h \to 0$ in any number of directions.  For instance, if $h$ is real, then $\frac{\bar{h}}{h} = 1$, so the limit would have to be $1$.  But if $h$ is purely imaginary, then $\frac{\bar h}{h} = -1$, so the limit would have to be $-1$.  Since these both can't be true, the limit can't exist.
+
+I suggest you try something similar here.  If $a\neq 0$, set $h=ta$ and let $t \to 0$.  Then set $h=ita$  and let $t \to 0$.  If you get different limits, $g$ cannot be differentiable at $a$.
+
+The derivative at $0$ is equal to
+$$\lim_{h\to 0} \frac{g(h)}{h} = \lim_{h\to 0} \frac{\bar h^2}{h(1+h)} = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3562384/determining-if-a-function-is-complex-differtiable/3562519#3562519) on Mathematics Stack Exchange, 2020-02-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,39 @@
+---
+title: Let $X$ be a topological space and $A \subset X$ not closed. Is then $A \cap K$ not closed in $K$ with the relative topology?
+date: '2017-11-29'
+description: 'It''s a lot easier to read if you put all the suppositions before the proposition:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2542606
+se-link: https://math.stackexchange.com/questions/2542599/let-x-be-a-topological-space-and-a-subset-x-not-closed-is-then-a-cap-k/2542606#2542606
+se-score: 1
+se-accepted: true
+se-tags:
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $X$ be a topological space and $A \subset X$ not closed. Is then $A \cap K$ not closed in $K$ with the relative topology?](https://math.stackexchange.com/questions/2542599/let-x-be-a-topological-space-and-a-subset-x-not-closed-is-then-a-cap-k), asked by [MPB94](https://math.stackexchange.com/users/395589/mpb94) on Mathematics Stack Exchange (2017-11-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $X$ be a topological space and $A \subset X$ not closed. Is then $A \cap K$ not closed in $K$ where $K$ is compact for example, with the relative topology? I mean by definition of the relative topology $U \cap K$ is open in $K$ if $U$ is open in $X$, but then $A \cap K$ could be of the form $B \cap K$ for some other $B \subset X$ closed or am I wrong about that?
+:::
+
+It's a lot easier to read if you put all the suppositions before the proposition:
+
+> Let $X$ be a topological space, $K \subset X$ compact, and $A \subset X$ not closed.  Is $A\cap K$ not closed in $K$?
+
+The answer is no.  Let $X = \mathbb{R}$ and $K = [0,1]$.  Let $A = \{1\} \cup (2,3)$.  Clearly $A$ is not closed.  But $A \cap K = \{1\}$, which is closed.
+
+Basically, “not closed” isn't a very robust condition.  Intersecting a non-closed set with a compact one can shear off its non-closed component.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2542599/let-x-be-a-topological-space-and-a-subset-x-not-closed-is-then-a-cap-k/2542606#2542606) on Mathematics Stack Exchange, 2017-11-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,71 @@
+---
+title: Workflow for converting LaTeX into Open Office / MS Word Format
+date: '2010-10-15'
+description: The best way I know to convert a TeX to an XML application is tex4ht. The project page says it converts TeX to a number of different output formats, including…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4151
+se-link: https://tex.stackexchange.com/questions/4145/workflow-for-converting-latex-into-open-office-ms-word-format/4151#4151
+se-score: 12
+se-accepted: false
+se-tags:
+- conversion
+- r
+- msword
+- open-office
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Workflow for converting LaTeX into Open Office / MS Word Format](https://tex.stackexchange.com/questions/4145/workflow-for-converting-latex-into-open-office-ms-word-format), asked by [Jeromy Anglim](https://tex.stackexchange.com/users/151/jeromy-anglim) on TeX Stack Exchange (2010-10-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I often have to write up reports based on the analysis of some data.
+> I use R to analyse the data and export tables, figures, and text.
+> This is then included into a LaTeX document either using `input` or Sweave ([see here for details][q-1]).
+>
+> However, when I collaborate with others, I sometimes need to provide a document in Open Office / MS Word format.
+>
+> **Question:**
+>
+> Thus, assume the simplest scenario
+>
+> - I have a LaTeX document with text, tables, and figures
+> - I need to export this reliably into Open Office or MS Word format: this includes mathematical formulas, table formatting, and quality figures)
+> - I don't need to go back from MS Word to LaTeX
+>
+> What is a reliable, efficient, and preferably free process?
+>
+> **Initial Thoughts:**
+>
+> - Export to HTML,
+> - [OOoLatex][q-2]
+> - LaTeX - LyX - ODF
+> - Use odfWeave
+> - [I also just saw this earlier question][q-3] that deals with some specific issues associated with LaTeX to Open Office conversion
+> - [I've also found this question about LaTeX to Word for resumes][q-4]
+>
+> I was hoping that there is an expert out there who has worked out a good system already.
+>
+>
+>   [q-1]: http://jeromyanglim.blogspot.com/2010/02/getting-started-with-sweave-r-latex.html
+>   [q-2]: http://ooolatex.sourceforge.net/
+>   [q-3]: https://tex.stackexchange.com/questions/1773/converting-latex-to-openoffice
+>   [q-4]: https://tex.stackexchange.com/questions/50/how-can-i-convert-math-less-latex-documents-into-microsoft-word
+:::
+
+The best way I know to convert a TeX to an XML application is [tex4ht][1].  The project page says it converts TeX to a number of different output formats, including "(X)HTML, MathML, OpenDocument, and DocBook."  I believe tex4ht can even convert tikz code to SVG graphics.  Word supports OpenDocument, so in theory you could just open up the converted document in Word.  I'd expect tables to survive the transition, not so much equations and figures.  But MS Word's native format is also an XML application, so you might be able to write an XSLT stylesheet to handle the math and figures.  
+
+  [1]: http://tug.org/tex4ht/
+
+The need for this kind of tool is evident, and the fact that there's no polished way to do it yet somewhat indicates the complexity of the task.  Keep that in mind before you take it up!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4145/workflow-for-converting-latex-into-open-office-ms-word-format/4151#4151) on TeX Stack Exchange, 2010-10-15. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

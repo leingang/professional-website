@@ -1,0 +1,50 @@
+---
+title: Calculating the $k$th derivative of $F(x) = x \sin (x^n)$ where the $F^k(0)$ does not equal $0$.
+date: '2016-11-03'
+description: I think comparing Maclaurin series is a nice way to to this. We have a power series representation $$\begin{align} F(x) &= x \sin(x^N) = x \sum{k=0}^\infty…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1997534
+se-link: https://math.stackexchange.com/questions/1996944/calculating-the-kth-derivative-of-fx-x-sin-xn-where-the-fk0-doe/1997534#1997534
+se-score: 0
+se-accepted: false
+se-tags:
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculating the $k$th derivative of $F(x) = x \sin (x^n)$ where the $F^k(0)$ does not equal $0$.](https://math.stackexchange.com/questions/1996944/calculating-the-kth-derivative-of-fx-x-sin-xn-where-the-fk0-doe), asked by [R83nLK82](https://math.stackexchange.com/users/385461/r83nlk82) on Mathematics Stack Exchange (2016-11-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a function $F(x) = x \sin (x^N)$  where $N$ is a natural number. I need to compute $F^k(0)$ for the smallest positive integer $k$ such that $F^k(0)\neq 0$. 
+> $F^k$ is the $k$th derivative of the function $F$. 
+>
+> I am confused on where to go with this question. I first started with the MacLaurin series expansion. Then I tried individually differentiating the function. 
+>
+> Could someone please help me with the question. Thanks in advance.
+:::
+
+I think comparing Maclaurin series is a nice way to to this.  We have a power series representation
+$$\begin{align*}
+    F(x) &= x \sin(x^N) =  x \sum_{k=0}^\infty \frac{(-1)^k(x^N)^{2k+1}}{(2k+1)!}
+    = \sum_{k=0}^\infty \frac{(-1)^k x^{N(2k+1)+1}}{(2k+1)!}
+\end{align*}$$
+On the other hand, since $F$ is analytic, we know
+$$F(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)x^n}{n!}$$
+Now compare the coefficients of each side of the equation:
+$$\sum_{n=0}^\infty \frac{f^{(n)}(0)x^n}{n!}=
+    \sum_{k=0}^\infty \frac{(-1)^k x^{N(2k+1)+1}}{(2k+1)!}$$
+Since the right-hand side starts with the power $N+1$ (when $k=0$), the coefficients $\frac{f^{(n)}(0)}{n!}$ are zero for $0 \leq n \leq N$.  Equating the coefficients of $x^{N+1}$, we have
+$$\frac{f^{(N+1)}(0)}{(N+1)!} = \frac{(-1)^0}{1!} = 1$$
+so $f^{(N+1)}(0)=(N+1)!$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1996944/calculating-the-kth-derivative-of-fx-x-sin-xn-where-the-fk0-doe/1997534#1997534) on Mathematics Stack Exchange, 2016-11-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

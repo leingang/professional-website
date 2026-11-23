@@ -1,0 +1,36 @@
+---
+title: Automated removal of unneeded packages
+date: '2010-12-24'
+description: Patching \newcommand to keep a record of what has been defined by what package, and what has been used, might work here but I'm not sure it's worth the effort.…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7701
+se-link: https://tex.stackexchange.com/questions/7693/automated-removal-of-unneeded-packages/7701#7701
+se-score: 1
+se-accepted: false
+se-tags:
+- packages
+- scripts
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Automated removal of unneeded packages](https://tex.stackexchange.com/questions/7693/automated-removal-of-unneeded-packages), asked by [Anthony Labarre](https://tex.stackexchange.com/users/440/anthony-labarre) on TeX Stack Exchange (2010-12-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> As others certainly do, I generally use a template for my papers, which contains everything I usually need (packages, macros, ...) to typeset my documents. However, my needs sometimes vary, and in the end I find myself including packages that I did not need.
+>
+> What I generally do in the preamble is `\usepackage{P} % R`, where R is the reason (e.g. set of commands) for including package P. This then allows me to check that R applies to my document, and remove P if not, but this is still a rather tedious process. Does anyone know of a script that checks for unneeded packages or commands in a document?
+:::
+
+Patching `\newcommand` to keep a record of what has been defined by what package, and what has been used, might work here but I'm not sure it's worth the effort.  Just don't include so much. Or, live with a few more unecessary milliseconds of compile time.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7693/automated-removal-of-unneeded-packages/7701#7701) on TeX Stack Exchange, 2010-12-24. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,42 @@
+---
+title: Fourier series periodic extension sketch
+date: '2017-02-22'
+description: A function $g$ is periodic with period $T$ if $g(x+T) = g(x)$ for all $x$. This means that shifting the graph of $f$ to the right by $T$ produces an identical…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2156509
+se-link: https://math.stackexchange.com/questions/2156498/fourier-series-periodic-extension-sketch/2156509#2156509
+se-score: 0
+se-accepted: false
+se-tags:
+- fourier-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Fourier series periodic extension sketch](https://math.stackexchange.com/questions/2156498/fourier-series-periodic-extension-sketch), asked by [Malk](https://math.stackexchange.com/users/416363/malk) on Mathematics Stack Exchange (2017-02-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Hi there don't really get this question:
+>
+> > Sketch the periodic extension of the function $f(x) = x^2$ for $−1 ≤ x ≤ 1$ with period 2 and find its Fourier series. 
+>
+> Does this just mean draw a normal $x^2$ graph from $-1$ to $1$? And then I would calculate the Fourier series for $x^2$ separately?
+:::
+
+Focus on the words:
+
+* A function $g$ is **periodic** with period $T$ if $g(x+T) = g(x)$ for all $x$.  This means that shifting the graph of $f$ to the right by $T$ produces an identical copy of the graph.  Or, the graph repeats over each interval that is $T$ wide.  As an example, the sine function is periodic with period $2\pi$.  
+* A function $g$ is an **extension** of a function $f$ if $g(x) = f(x)$ for all $x$ in the domain of $f$.  That is, $g$'s domain contains $f$'s domain, and agrees with $f$ on the domain of $f$.
+
+So you want to construct a function $g$ which *agrees* with $f$ on $[-1,1]$, and is periodic with period $2$.  There is only one way to do that.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2156498/fourier-series-periodic-extension-sketch/2156509#2156509) on Mathematics Stack Exchange, 2017-02-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

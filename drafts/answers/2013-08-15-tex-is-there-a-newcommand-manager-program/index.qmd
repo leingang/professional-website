@@ -1,0 +1,67 @@
+---
+title: Is there a \newcommand manager program?
+date: '2013-08-15'
+description: This may not be the answer you're looking for, which is why I made it first as a comment.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 128418
+se-link: https://tex.stackexchange.com/questions/96619/is-there-a-newcommand-manager-program/128418#128418
+se-score: 3
+se-accepted: true
+se-tags:
+- macros
+- editors
+- gedit
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a \newcommand manager program?](https://tex.stackexchange.com/questions/96619/is-there-a-newcommand-manager-program), asked by user16609 on TeX Stack Exchange (2013-02-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I type my latex document with gedit.  
+> I use a lot of macro to facilitates typesettings.  
+> I put all of them just after the `begin{document}` tag.  
+> For a homework question says, I use at least 20 macros.  
+> For example, in a question involving sequence
+>
+> ```latex
+> \newcommand{\xn}{x_n}
+> \newcommand{\yn}{y_n}
+> \newcommand{\xns}{\left\{ \xn \right\}}
+> \newcommand{\yns}{\left\{ \yn \right\}}
+> ```
+>
+> The problem is I never remember which one I created before.  
+> Also, it's distracting, when writing a sentence, to always go back to the top of the document to create the macro I need.  
+> It breaks my thinking follows.
+>
+> I was wondering, what people do to facilitate that.  
+> In an Eclipse IDE world, when writting code, I can use a function without defining it, then ask Eclipse to generate the body of the function.  
+> Is there some kind of program which helps to manage `\newcommand`?  
+>
+> The answer doesn't have to be limited to gedit.  
+>
+> I know I can externalize macros in a `command.tex` file say.  
+> I do this for general purpose macros, like probability notation, parenthesing,...  
+> It is really macros specific to a question which are hard to manage.  
+> It's not practical to define a general set of macro `command_homework.tex`.  
+> The macros must be created on a question by question basis.  
+> For example, in a question on sequence `\xn` is `x_n`, while for a question on limit it is `\frac{x}{n}`.
+:::
+
+This may not be the answer you're looking for, which is why I made it first as a comment.  
+
+I think it worthwhile to expend a few extra keystrokes and keep your code readable. In fact you save *no* keystrokes typing `\xn` instead of `x_n`, and for that you gain ambiguity that comes from having to remember how (or whether) you defined the macro. 
+
+Use a keystroke text expander like AutoHotKey (Windows) or TextExpander (Mac) to generate template code and fill-in the parameters.  Some IDEs (like TeXShop, and vi/emacs) have key combinations to do this too.  Save macros for cases of major semantic or presentation markup.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/96619/is-there-a-newcommand-manager-program/128418#128418) on TeX Stack Exchange, 2013-08-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

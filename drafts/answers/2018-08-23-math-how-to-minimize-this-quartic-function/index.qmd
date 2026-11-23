@@ -1,0 +1,63 @@
+---
+title: How to minimize this quartic function?
+date: '2018-08-23'
+description: Yes, there is a calculus for functions defined in terms of vector and matrix operations. It takes advantage of the algebraic rules for those operations (which…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2892484
+se-link: https://math.stackexchange.com/questions/2892459/how-to-minimize-this-quartic-function/2892484#2892484
+se-score: 1
+se-accepted: false
+se-tags:
+- optimization
+- nonlinear-optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to minimize this quartic function?](https://math.stackexchange.com/questions/2892459/how-to-minimize-this-quartic-function), asked by user532063 on Mathematics Stack Exchange (2018-08-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I need to find the vector that minimizes this matrix equation;
+>
+> $$\bar{v}.M_1.v-(\bar{v}.M_2.v)^2$$
+>
+> $v$ is a normalized complex vector and $\bar{v}$ is the complex conjugate but I can arrange parameters in such a way that it can be all real. $M_1$ and $M_2$ are Hermitian matrices and therefore the function I am asking is eventually a real number. 
+>
+> My idea was to rewrite the vector in terms of coefficients and then calculate the product and I get a quartic polynomial but solving it in higher dimensions is a mess.
+>
+> So I thought maybe it is possible to use some matrix techniques which always simplifies things. Approximations are also accepted.
+>
+> Also is there calculus techniques such that I can take derivative of this function and find the optimum vector?
+:::
+
+Yes, there is a calculus for functions defined in terms of vector and matrix operations.  It takes advantage of the algebraic rules for those operations (which is good), but care must be taken because of the noncommutativity of matrix multiplication.
+
+Here's an example.  If $x$ is a real variable, $a$ is a constant, and $f(x) = ax^2$, then $f'(x) = 2ax$.  if $\mathbf{x}$ is a vector variable, and $A$ is a constant square matrix, then the analogous quadratic function is $f(\mathbf{x}) = \mathbf{x}\cdot A \mathbf{x} = \mathbf{x}^T A \mathbf{x}$.  We can express the derivative of $f$ in terms of $\mathbf{x}$.
+
+If the $k$-th component of $\mathbf{x}$ is $x_k$, and the $(i,j)$-entry of $A$ is $a_{ij}$, then
+$$f(\mathbf{x}) = \sum_{i,j=1}^n x_i a_{ij} x_j$$
+So for each $k$,
+$$\begin{align*}
+    \frac{\partial f}{\partial x_k} 
+    &= \sum_{i,j=1}^n \frac{\partial}{\partial x_k}(x_i a_{ij} x_j) 
+     = \sum_{i,j=1}^n \left(\delta_{ik} a_{ij} x_j + x_i a_{ij} \delta_{jk}\right) \\
+    &= \sum_{j=1}^n a_{kj}x_j + \sum_{i=1}^n a_{ik}x_i
+\end{align*}$$
+The first summation is equal to the $k$-th component of $A\mathbf{x}$.  The second summation is equal to the $k$-th component of $A^T\mathbf{x}$.  So we can say:
+$$\frac{\partial}{\partial \mathbf{x}}(\mathbf{x}^T A \mathbf{x}) = A \mathbf{x} + A^T \mathbf{x}$$
+If $A$ is symmetric, then $\frac{\partial}{\partial \mathbf{x}}(\mathbf{x}^T A \mathbf{x}) = 2A\mathbf{x}$, which is pretty close to $\frac{d}{dx}(ax^2) = 2ax$.
+
+You can read more about this kind of calculus on [Wikipedia][1].  The thing is, you almost need to work it out in coordinates first, in order to convince yourself that the matrix algebra shortcuts are valid.
+
+  [1]: https://en.wikipedia.org/wiki/Matrix_calculus
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2892459/how-to-minimize-this-quartic-function/2892484#2892484) on Mathematics Stack Exchange, 2018-08-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

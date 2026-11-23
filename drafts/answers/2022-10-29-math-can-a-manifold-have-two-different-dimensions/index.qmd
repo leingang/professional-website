@@ -1,0 +1,45 @@
+---
+title: Can a manifold have two different dimensions.
+date: '2022-10-29'
+description: The disjoint union of a circle and sphere would satisfy the condition that every point has a neighborhood homeomorphic to either $\mathbb{R}^1$ or…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4564293
+se-link: https://math.stackexchange.com/questions/4564284/can-a-manifold-have-two-different-dimensions/4564293#4564293
+se-score: 4
+se-accepted: false
+se-tags:
+- differential-geometry
+- manifolds
+- riemannian-geometry
+- geometric-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can a manifold have two different dimensions.](https://math.stackexchange.com/questions/4564284/can-a-manifold-have-two-different-dimensions), asked by [lebong66](https://math.stackexchange.com/users/1058875/lebong66) on Mathematics Stack Exchange (2022-10-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We say that a manifold M is n-dimantional if it is locally Euclidean of dimension n,\
+> specifically if a
+> point p in M has a neighborhood $U_p$ such that there is a homeomorphism f from $U_p$
+> onto an open subset of $\mathbb{R}^n$.\
+> My question is, can it be n-dimensional in some neighborhood and m-dimensional in another neighborhood.\
+> \
+> Are there such manifolds?\
+> How can we constract one?
+:::
+
+The disjoint union of a circle and sphere would satisfy the condition that every point has a neighborhood homeomorphic to either $\mathbb{R}^1$ or $\mathbb{R}^2$. And perhaps some authors would want to include this space in the definition of manifold.
+
+Practically speaking, however, it seems the first step to analyzing "manifolds" such as this one is to decompose them into their pure-dimensional components. So I think more often than not, $n$ is considered fixed over $M$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4564284/can-a-manifold-have-two-different-dimensions/4564293#4564293) on Mathematics Stack Exchange, 2022-10-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

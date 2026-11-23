@@ -1,0 +1,56 @@
+---
+title: Let $G, H$ be finite groups. Then any subgroup of $G × H$ is equal to $A × B$ for some subgroups $A<G$ and $B<H.$
+date: '2018-08-22'
+description: 'Let''s make the quantifiers in the statement a bit more precise:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2891036
+se-link: https://math.stackexchange.com/questions/2891023/let-g-h-be-finite-groups-then-any-subgroup-of-g-%c3%97-h-is-equal-to-a-%c3%97-b-fo/2891036#2891036
+se-score: 5
+se-accepted: true
+se-tags:
+- abstract-algebra
+- group-theory
+- finite-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $G, H$ be finite groups. Then any subgroup of $G × H$ is equal to $A × B$ for some subgroups $A<G$ and $B<H.$](https://math.stackexchange.com/questions/2891023/let-g-h-be-finite-groups-then-any-subgroup-of-g-%c3%97-h-is-equal-to-a-%c3%97-b-fo), asked by [Cloud JR K](https://math.stackexchange.com/users/517603/cloud-jr-k) on Mathematics Stack Exchange (2018-08-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Let $G, H$ be finite groups. Then any subgroup of $G × H$ is equal to $A × B$ for some subgroups $A<G$ and $B<H.$
+>
+> Answer is given as False.
+>
+>
+> 1. What does $A<G$means? Does it mean A is a subgroup or proper subgroup?
+>
+> 2.If it was proper subgroup 
+> MY ATTEMPT:$G × H$ is a subgroup of itself which is not equal to $A × B$  for all $A<G$ and $B<H.$
+>
+>
+> 3.What if A is not a proper subgroup of G.Does it still false? If yes please give an (counter)example
+:::
+
+Let's make the quantifiers in the statement a bit more precise:
+
+> *For all* finite groups $G$ and $H$, and *for all* subgroups $K$ of $G \times H$, *there exist* subgroups $A$ of $G$ and $B$ of $H$ such that $K = A \times B$.
+
+To show this statement is false, prove its negative:
+
+> *There exist* finite groups $G$ and $H$, and a subgroup $K$ of $G \times H$, such that *for all* subgroups $A$ of $G$ and $B$ of $H$, $K \neq A \times B$.
+
+You mentioned the subgroup $K = G\times H$ itself.  Notice that this subgroup is in the form $A \times B$, where $A$ is a subgroup of $G$ and $B$ is a subgroup of $H$.  Just take $A = G$ and $B=H$.  So this doesn't lead to a counterexample.
+
+If you plot $G$ as a set of dots on the $x$-axis, and $H$ as a set of dots on the $y$-axis, then $G \times H$ is a grid of dots in the $xy$-plane.  Subgroups of the form $A \times B$ will have a “rectangular” appearance to them, since they contain every single point $(a,b)$, where $a \in A$ and $b \in B$.  So try to think about a subgroup that looks more “diagonal”.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2891023/let-g-h-be-finite-groups-then-any-subgroup-of-g-%c3%97-h-is-equal-to-a-%c3%97-b-fo/2891036#2891036) on Mathematics Stack Exchange, 2018-08-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

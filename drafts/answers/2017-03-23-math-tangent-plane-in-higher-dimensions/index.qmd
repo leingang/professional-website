@@ -1,0 +1,51 @@
+---
+title: Tangent plane in higher dimensions
+date: '2017-03-23'
+description: Your method seems sound, and I agree with you on the values of $a$, $b$, $c$, and $d$. But what doesn't “look right” about your hyperplane is that it doesn't…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2200227
+se-link: https://math.stackexchange.com/questions/2200193/tangent-plane-in-higher-dimensions/2200227#2200227
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- plane-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tangent plane in higher dimensions](https://math.stackexchange.com/questions/2200193/tangent-plane-in-higher-dimensions), asked by [E. Hurd](https://math.stackexchange.com/users/427708/e-hurd) on Mathematics Stack Exchange (2017-03-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How would I go about finding the tangent plane to the equation $(cosh x_1)^2 = x_2^2+x_3^2+x_4^2$ at the point $(0,0,\frac 1{\sqrt 2},\frac 1{\sqrt 2})$?
+>
+> I tried to find it by having $f=-(cosh x_1)^2+x_2^2+x_3^2+x_4^2$ and then finding the gradient of $f$. 
+>
+> Then I set up the equation of the plane as $a(x_1-0)+b(x_2-0)+c(x_3-\frac 1{\sqrt 2})+d(x_4-\frac 1{\sqrt 2})=0$ where $a,b,c,d$ are the partial derivatives of $f$ for $x_1,x_2,x_3,x_4$ respectively. After doing the plugging and chugging my final equation for the plane was $\frac 2{\sqrt 2}x_3+\frac 2{\sqrt 2}x_4=0$ which just doesn't look quite right. 
+>
+> Also, once I find the equation of the plane, how could I put the equation in the form of $(0,0,\frac 1{2^{1/2}},\frac 1{2^{1/2}})+span(v_1,v_2,v_3)$?
+:::
+
+Your method seems sound, and I agree with you on the values of $a$, $b$, $c$, and $d$.  But what doesn't “look right” about your hyperplane is that it doesn't pass through $\left(0,0,\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$.  
+
+Your normal form of the equation for the hyperplane needs a nonzero parameter on the right-hand side.  You can find the value of that parameter by evaluating the left-hand side at $\left(0,0,\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$.  So:
+$$\frac{2}{\sqrt{2}} x_3 + \frac{2}{\sqrt{2}} x_4 = \frac{2}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} + \frac{2}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}
+\implies x_3 + x_4 = \sqrt{2}$$
+Your $v_1$, $v_2$, and $v_3$ are any three linearly independent vectors whose third and fourth components add to zero.  They span the nullspace of the $1\times 4$ matrix 
+$$\begin{bmatrix} a & b & c & d \end{bmatrix}
+= \begin{bmatrix} 0 & 0 & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}
+\longrightarrow
+\begin{bmatrix} 0 & 0 & 1 & 1 \end{bmatrix}$$
+In linear algebra parlance, $x_1$, $x_2$, and $x_4$ are free variables, while $x_3 = -x_4$.  We get one vector from setting each of the free variables equal to $1$ and the others to zero, one at a time.  If $x_1 = 1$ and $x_2 = x_4 = 0$, we get $v_1 = (1,0,0,0)$.  If $x_2 = 1$ and $x_1 = x_4 = 0$, we get $v_2 = (0,1,0,0)$.  If $x_4 = 1$ and $x_1 = x_2 = 0$, we get $v_3 = (0,0,-1,1)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2200193/tangent-plane-in-higher-dimensions/2200227#2200227) on Mathematics Stack Exchange, 2017-03-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

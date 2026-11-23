@@ -1,0 +1,43 @@
+---
+title: What does it mean to multiply a vector by a set?
+date: '2025-10-21'
+description: For some intuition, set $n=m=1$. Let $B$ be the closed interval $[a,b]$, and $x \in \mathbb{R}$. Then $\{x\} \times B$ is the set of all $(x,y)$, where $a \leq…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5103099
+se-link: https://math.stackexchange.com/questions/5103094/what-does-it-mean-to-multiply-a-vector-by-a-set/5103099#5103099
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What does it mean to multiply a vector by a set?](https://math.stackexchange.com/questions/5103094/what-does-it-mean-to-multiply-a-vector-by-a-set), asked by [Robert Cudmore](https://math.stackexchange.com/users/1704218/robert-cudmore) on Mathematics Stack Exchange (2025-10-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In my textbook, the following result is stated as obvious:
+>
+> > If $B \subset \mathbf{R}^n$ is compact and $x \in \mathbf{R}^m$, it is easy to see that $\{x\} \times B \subset \mathbf{R}^{n+m}$ is compact. However, a much stronger assertion can be made.
+>
+> Although I think I can understand the logic behind the proof, I'm having  difficulty visualising what $\{x\} \times B$ means. Is there an intuitive way to understand this? I can't find many resources online.
+>
+>   [q-picture attached]: FyNiFAVo.png
+:::
+
+For some intuition, set $n=m=1$. Let $B$ be the closed interval $[a,b]$, and $x \in \mathbb{R}$. Then $\{x\} \times B$ is the set of all $(x,y)$, where $a \leq y \leq b$. This is the closed line segment joining $(x,a)$ and $(x,b)$ in the plane.
+
+For general $n$ and $m$, continue to think of the first $n$ coordinates as along an “$x$-axis”, and the last $m$ as along the “$y$-axis.” Then $\{x\} \times B$ translates the set $B$ over to the point where it lies over $x$. 
+This is just another version of $B$, which is why the author says it's obvious that $\{x\} \times B$ is compact.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5103094/what-does-it-mean-to-multiply-a-vector-by-a-set/5103099#5103099) on Mathematics Stack Exchange, 2025-10-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

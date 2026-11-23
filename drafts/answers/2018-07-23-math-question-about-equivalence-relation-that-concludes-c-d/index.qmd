@@ -1,0 +1,38 @@
+---
+title: Question about equivalence relation that concludes C=D
+date: '2018-07-23'
+description: From the context, I am guessing that $C$ and $D$ are relations on the same set $A$. The formal definition of relation is a set of ordered pairs. So both $C$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2860629
+se-link: https://math.stackexchange.com/questions/2860619/question-about-equivalence-relation-that-concludes-c-d/2860629#2860629
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-set-theory
+- equivalence-relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question about equivalence relation that concludes C=D](https://math.stackexchange.com/questions/2860619/question-about-equivalence-relation-that-concludes-c-d), asked by [Nothing](https://math.stackexchange.com/users/41908/nothing) on Mathematics Stack Exchange (2018-07-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Here is a statement I retrieved from Munkres Topology. It states that for x in a set A
+>
+> yCx if and only if yDx concludes that C=D. I don’t quite understand how this conclusion come from.
+:::
+
+From the context, I am guessing that $C$ and $D$ are relations on the same set $A$.  The formal definition of relation is a set of ordered pairs.  So both $C$ and $D$ are subsets of $A \times A$.
+
+The syntactic sugar notation for a relation $R\subseteq A \times A$ is to write $x \mathrel{R} y$ when $(x,y) \in R$.  So the statement $y \mathrel{C} x \iff y \mathrel{D} x$ is syntactically equivalent to $(y,x) \in C \iff (y,x) \in D$.  But this is equivalent to $C = D$ as sets.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2860619/question-about-equivalence-relation-that-concludes-c-d/2860629#2860629) on Mathematics Stack Exchange, 2018-07-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

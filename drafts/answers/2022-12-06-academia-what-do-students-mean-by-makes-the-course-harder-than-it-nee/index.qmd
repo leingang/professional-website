@@ -1,0 +1,41 @@
+---
+title: What do students mean by "makes the course harder than it needs to be"?
+date: '2022-12-06'
+description: Sometimes this happens when a student has prior experience, and success, in a subject from a high school course. In the US, Advanced Placement courses are…
+categories:
+- academia.se
+license: CC BY-SA 4.0
+draft: true
+se-site: academia
+se-answer-id: 191296
+se-link: https://academia.stackexchange.com/questions/191290/what-do-students-mean-by-makes-the-course-harder-than-it-needs-to-be/191296#191296
+se-score: 13
+se-accepted: false
+se-tags:
+- teaching
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What do students mean by "makes the course harder than it needs to be"?](https://academia.stackexchange.com/questions/191290/what-do-students-mean-by-makes-the-course-harder-than-it-needs-to-be), asked by [xyz](https://academia.stackexchange.com/users/163649/xyz) on Academia Stack Exchange (2022-12-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Something I hear from students about certain instructors is a complaint that the instructor "makes the course harder than it has to be" or some variation. I'm a postdoc and my students generally really like me. I hear them say this about other instructors and I'm just curious, what is going on? I read it on ratemyprofessor or reviews of other instructors, or overhead students saying this. 
+>
+> The easy explanation is "the student is lazy" but I don't buy this. I generally agree with the students that the instructors they dislike aren't great instructors. 
+>
+> It seems to be closer to saying "the instructor is unclear". What is an example of an instructor "making something harder than it needs to be"?
+:::
+
+Sometimes this happens when a student has prior experience, and success, in a subject from a high school course. In the US, Advanced Placement courses are marketed as equivalent to introductory college courses, but college instructors covering the same syllabus will take quite a different approach than high school teachers.
+
+As an example: in single-variable calculus we teach the concept of the derivative as a limit of difference quotients, use the limit to prove theorems about the derivative, and ask students exam questions requiring this conceptual understanding. In a high school class, there may be more class time spent on the literal "calculus" of derivatives with the power rule, product rule, quotient rule, etc. 
+
+A student may have succeeded in this high school class, thanks to the extra time spent with in class with the instructor, and the focus on mechanics over concepts. They may find that the college version, comparatively, spends "too much" time on ideas that they feel aren't relevant since they weren't relevant in the high school version. From their point of view, the college instructor transformed a subject they found easy in high school into one which they currently find hard. Hence, "harder than it needs to be."
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/191290/what-do-students-mean-by-makes-the-course-harder-than-it-needs-to-be/191296#191296) on Academia Stack Exchange, 2022-12-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

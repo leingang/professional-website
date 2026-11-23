@@ -1,0 +1,42 @@
+---
+title: Is there a difference between the `displaymath` and `equation*` environments?
+date: '2010-11-22'
+description: You can find the relevant definitions in Section 55.2 of source2e.pdf and lines 2523–2667 of amsmath.sty LaTeX aliases \begin{displaymath} to \[ and…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5792
+se-link: https://tex.stackexchange.com/questions/5788/is-there-a-difference-between-the-displaymath-and-equation-environments/5792#5792
+se-score: 1
+se-accepted: false
+se-tags:
+- math-mode
+- equations
+- amsmath
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a difference between the `displaymath` and `equation*` environments?](https://tex.stackexchange.com/questions/5788/is-there-a-difference-between-the-displaymath-and-equation-environments), asked by [Pieter](https://tex.stackexchange.com/users/210/pieter) on TeX Stack Exchange (2010-11-22; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> The [`amsmath` documentation][q-1] says
+>
+> > Basic LaTeX doesn’t provide an `equation*` environment, but rather a  functionally equivalent environment named `displaymath`.
+>
+> Are they *really* the same or is there a catch? Maybe in interaction with some other packages?
+>
+>
+>   [q-1]: ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf
+:::
+
+You can find the relevant definitions in Section 55.2 of `source2e.pdf` and lines 2523–2667 of `amsmath.sty` LaTeX aliases `\begin{displaymath}` to `\[` and `\end{displaymath}` to `\]`, where `\[` and `\]` are wrappers around `$$` with some checks.  `amsmath` redefines `\[` to `\begin{equation*}` and `\]` to `\end{equation*}`, which in turn wraps around `$$` with some checks.   So they do the same thing, and as Stefan notes, once you load `amsmath`, they literally do the same thing.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5788/is-there-a-difference-between-the-displaymath-and-equation-environments/5792#5792) on TeX Stack Exchange, 2010-11-22. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

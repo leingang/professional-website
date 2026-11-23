@@ -1,0 +1,45 @@
+---
+title: Compute the sum of an exponent divided by factorial
+date: '2017-04-20'
+description: The power series $\sum{n=0}^\infty \frac{x^n}{n!}$ converges for all $x$. If we call it by $f(x)$, notice that $$f'(x) = \sum{n=1}^\infty \frac{nx^{n-1}}{n!} =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2243703
+se-link: https://math.stackexchange.com/questions/2243696/compute-the-sum-of-an-exponent-divided-by-factorial/2243703#2243703
+se-score: 1
+se-accepted: false
+se-tags:
+- summation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Compute the sum of an exponent divided by factorial](https://math.stackexchange.com/questions/2243696/compute-the-sum-of-an-exponent-divided-by-factorial), asked by [Denis Kulagin](https://math.stackexchange.com/users/142444/denis-kulagin) on Mathematics Stack Exchange (2017-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> There was much discussion on Math SO why
+>
+> $$\lim_{n\to\infty} \frac{\alpha^n}{n!}  = 0$$
+>
+> when $\alpha > 1$. What would be the strategy for computing:
+>
+> $$\sum_{n=0}^{\infty} \frac{\alpha^n}{n!}$$
+>
+> given that it's convergence is easlity proven using *ratio test*.
+:::
+
+The power series $\sum_{n=0}^\infty \frac{x^n}{n!}$ converges for all $x$.  If we call it by $f(x)$, notice that
+$$f'(x) = \sum_{n=1}^\infty \frac{nx^{n-1}}{n!}
+          = \sum_{n=1}^\infty \frac{x^{n-1}}{(n-1)!}
+          = \sum_{m=0}^\infty \frac{x^{m}}{m!} = f(x)$$
+Also, $f(0) = 1$.  These two properties characterize the exponential function, by uniqueness of solutions to ordinary differential equations.  Therefore $f(x) = e^x$ for all $x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2243696/compute-the-sum-of-an-exponent-divided-by-factorial/2243703#2243703) on Mathematics Stack Exchange, 2017-04-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

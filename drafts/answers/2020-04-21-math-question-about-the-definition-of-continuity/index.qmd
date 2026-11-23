@@ -1,0 +1,43 @@
+---
+title: Question about the definition of continuity
+date: '2020-04-21'
+description: You skipped the part where, given $\epsilon>0$, “there exists $\delta > 0$ such that if $|x-c|< \delta$, then $|f(x) - f(c)| < \epsilon$.”
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3637301
+se-link: https://math.stackexchange.com/questions/3637285/question-about-the-definition-of-continuity/3637301#3637301
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question about the definition of continuity](https://math.stackexchange.com/questions/3637285/question-about-the-definition-of-continuity), asked by [Evan Kim](https://math.stackexchange.com/users/607258/evan-kim) on Mathematics Stack Exchange (2020-04-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a question about how this theorem interacts with the definition of continuity in an example $f(x) = x^2$.
+>
+> **Theorem:** If $a \in \mathbb{R}$ is such that $0 \leq a < \epsilon$ for every $\epsilon > 0$, then $a = 0$.
+>
+> **Definition:** Let $A \subseteq \mathbb{R}$, $f\colon A \to \mathbb{R}$, and $c \in A$. We say that $f$ is _continuous at $c$_ if given any $\epsilon > 0$ there exists $\delta > 0$ such that for all $x\in A$ such that $|x-c| < \delta$, we have $|f(x) - f(c)| < \epsilon$.
+>
+> I picked $f(x) = x^2$ because it is pretty clearly continuous on $\mathbb{R}$. If I consider $f$ being continuous at $c=0$, then $|f(x) - f(c)| < \epsilon$. Since $$f(c) = f(0) = 0^2 = 0$$ the inequality becomes $$|f(x) - 0| < \epsilon$$
+>
+> Then apply the theorem and $f(x) = 0$ because $\epsilon$ was an arbitrary positive number. This doesn't make sense though because consider $f(1) = 1^2 = 1$. Then $|1| < \epsilon$ and obviously $f(x)$ is not 0.  What am I misunderstanding?
+:::
+
+You skipped the part where, given $\epsilon>0$, “*there exists* $\delta > 0$ such that **if** $|x-c|< \delta$, **then** $|f(x) - f(c)| < \epsilon$.”
+
+If $\epsilon$ is small, the necessary $\delta$ will probably be much less than $1$.  So $x=1$ would likely not satisfy $|x| < \delta$, meaning we can't conclude that $|f(1)| < \epsilon$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3637285/question-about-the-definition-of-continuity/3637301#3637301) on Mathematics Stack Exchange, 2020-04-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

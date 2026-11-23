@@ -1,0 +1,40 @@
+---
+title: Set of equivalence classes
+date: '2019-04-23'
+description: If the equivalence relation is the equals relation on $\mathbb{R}$, then the equivalence class of $x \in \mathbb{R}$ is $\{x\}$, the set containing only $x$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3198476
+se-link: https://math.stackexchange.com/questions/3198456/set-of-equivalence-classes/3198476#3198476
+se-score: 1
+se-accepted: false
+se-tags:
+- equivalence-relations
+- quotient-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Set of equivalence classes](https://math.stackexchange.com/questions/3198456/set-of-equivalence-classes), asked by [Joe Martin](https://math.stackexchange.com/users/666817/joe-martin) on Mathematics Stack Exchange (2019-04-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm new to equivalence classes here, so I hope someone could help me out
+>
+> Mathworld (http://mathworld.wolfram.com/EquivalenceClass.html) defined equivalence classes as "a subset of the form$(x \in X:x\sim a),$ where a is an element of  X and the notation $"x\sim y"$ is used to mean that there is an equivalence relation between $x$ and $y$.
+>
+> I wonder if that is the case, then is the equivalence classes of the relation $x\sim y$ if $x=y$ in the real is just the set of $x$ itself? Then would the quotient space $R / \sim$ be an empty set?
+:::
+
+If the equivalence relation is the equals relation on $\mathbb{R}$, then the equivalence class of $x \in \mathbb{R}$ is $\{x\}$, the set containing only $x$.
+
+The quotient space $\mathbb{R}/\mathord{=}$ is bijective to $\mathbb{R}$ by the mapping $x \leftrightarrow \{x\}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3198456/set-of-equivalence-classes/3198476#3198476) on Mathematics Stack Exchange, 2019-04-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

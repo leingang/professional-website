@@ -1,0 +1,63 @@
+---
+title: Add space between paragraphs in Beamer
+date: '2011-02-21'
+description: I've noticed this too when preparing slides. Rather than have two paragraphs and separate them with vertical space explicitly, I've often used one of the…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 11642
+se-link: https://tex.stackexchange.com/questions/11622/add-space-between-paragraphs-in-beamer/11642#11642
+se-score: 13
+se-accepted: false
+se-tags:
+- beamer
+- spacing
+- paragraphs
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Add space between paragraphs in Beamer](https://tex.stackexchange.com/questions/11622/add-space-between-paragraphs-in-beamer), asked by [Andrej](https://tex.stackexchange.com/users/3732/andrej) on TeX Stack Exchange (2011-02-21; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Customizing spacing between paragraphs in Beamer plagues me constantly. To split two paragraphs by one empty line I usually put `\medskip` tag between paragraphs, but this is very ugly solution.
+>
+> Now I try with `\parskip`, which works fine, but fails inside various environments (e.g., also affecting spacing between items in itemize environment). Minimum example is pasted below.
+>
+> Any help is much appreciated.
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage[english]{babel}
+> \usepackage[utf8x]{inputenc}
+> \usepackage{parskip}
+> \setlength{\parskip}{\smallskipamount} 
+>
+> \begin{document}
+> \begin{frame}{Test frame}
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis erat dolor. Aenean tincidunt sem non quam feugiat tempus.
+>
+> Sed semper justo vitae sem ultrices semper. Mauris urna leo, dictum eget vulputate vitae, venenatis ut leo.
+> \end{frame}
+> \end{document}
+> ```
+:::
+
+I've noticed this too when preparing slides.  Rather than have two paragraphs and separate them with vertical space explicitly, I've often used one of the following workarounds:
+
+ - convert each of the paragraphs you want to split to a block-like environment such as `theorem`, `question`, `answer`, etc.  That way (in my theme, at least) they get boxed and visually separated.
+
+ - if the two paragraphs are simply text, it should be sufficient to use either the `center`, `flushleft`, or `flushright` environment with the second paragraph
+
+ - if the two paragraphs are supporting material to the same point, use an `itemize` environment and make each its own `\item`.  Then you get some vertical separation and a visual cue (bullet, triangle, or anything else you want) indicating that these are separate ideas.
+
+Any of these should make the frame more readable.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11622/add-space-between-paragraphs-in-beamer/11642#11642) on TeX Stack Exchange, 2011-02-21, with [edits](https://tex.stackexchange.com/posts/11642/revisions) by [thomp45793](https://tex.stackexchange.com/users/13991/thomp45793). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

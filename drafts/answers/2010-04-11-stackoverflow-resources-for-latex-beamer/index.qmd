@@ -1,0 +1,40 @@
+---
+title: Resources for latex beamer
+date: '2010-04-11'
+description: Use the source, Luke. :-)
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2616846
+se-link: https://stackoverflow.com/questions/2586599/resources-for-latex-beamer/2616846#2616846
+se-score: 0
+se-accepted: false
+se-tags:
+- latex
+- beamer
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Resources for latex beamer](https://stackoverflow.com/questions/2586599/resources-for-latex-beamer), asked by [manugupt1](https://stackoverflow.com/users/191799/manugupt1) on Stack Overflow (2010-04-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am learning latex right now as a hobby and was working on beamer classes. What I would like to know is how to create your own themes for beamer. Can you please point out some good resources which would help me do it..I googled but could not really find some
+:::
+
+Use the source, Luke. :-)
+
+Find a theme you like and read the source code to figure out what it does.  Copy it to your own theme package and change what you want to change.
+
+You will need to need to read Part III (Changing the Way Things Look) of the manual very carefully, probably several times, to learn how beamer uses templates to place things on the page, colors, and fonts.
+
+I used beamer for several years before I figured out enough about to start hacking at themes.  So don't get discouraged.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2586599/resources-for-latex-beamer/2616846#2616846) on Stack Overflow, 2010-04-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

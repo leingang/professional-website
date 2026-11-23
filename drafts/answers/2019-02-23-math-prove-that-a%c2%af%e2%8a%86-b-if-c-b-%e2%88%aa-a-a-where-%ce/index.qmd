@@ -1,0 +1,61 @@
+---
+title: Prove that A¯⊆ B if (C-B) ∪ A = A, where Ω is the universal set and A, B, C are subsets of it.
+date: '2019-02-23'
+description: 'I think the claim should be:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3124163
+se-link: https://math.stackexchange.com/questions/3124121/prove-that-a%c2%af%e2%8a%86-b-if-c-b-%e2%88%aa-a-a-where-%ce%a9-is-the-universal-set-and-a-b-c-are/3124163#3124163
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that A¯⊆ B if (C-B) ∪ A = A, where Ω is the universal set and A, B, C are subsets of it.](https://math.stackexchange.com/questions/3124121/prove-that-a%c2%af%e2%8a%86-b-if-c-b-%e2%88%aa-a-a-where-%ce%a9-is-the-universal-set-and-a-b-c-are), asked by [John T](https://math.stackexchange.com/users/641985/john-t) on Mathematics Stack Exchange (2019-02-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Ok this question bothers me. I am stuck on it and I actually think the text book might have incorrectly worded the question.
+>
+> Using direct proof:
+>  I assume A¯⊆ B. So this piece, along with the fact that A,B,C ⊆ U are the only pieces of information I have.
+>
+> How can I make my way to show that (C-B) ∪ A = A if I have almost no information on C?
+> Am I supposed to assume that A ∪ B ∪ C = U or something? I don't know how I can make any kind of statement about C without knowing its true.
+>
+> If you could give me a hint in the right direction, or solve the problem, I would greatly appreciate it.
+>
+> Thanks,
+> John
+:::
+
+I think the claim should be:
+
+> Let $A$ and $B$ be subsets of $\Omega$.  Then $\bar A \subseteq B$ if and only if $(C \setminus B) \cup A = A$ for all subsets $C \subseteq \Omega$.
+
+Before diving in, let's remember:
+
+* For sets $X,Y \subseteq \Omega$, $\bar X \subseteq Y \iff \bar Y \subseteq X$.
+* For sets $X,Y$, $X \subseteq Y \iff X \cup Y = Y$.
+
+**Proof.**
+
+ - ($\Rightarrow$): Suppose that $\bar A \subseteq B$, and let $C \subseteq \Omega$.  Then
+$$(C \setminus B) = C \cap \bar B \subseteq \bar B \subseteq A$$
+and this means that $(C \setminus B) \cup A = A$.
+
+ - ($\Leftarrow$): Suppose that $(C \setminus B) \cup A = A$ for all subsets $C \subseteq \Omega$.  Let $C = \bar B$.  Then
+$$(C \setminus B) = \bar B \setminus B = \bar B$$
+so $\bar B \cup A = A$. Therefore $\bar B \subseteq A$, which means $\bar A \subseteq B$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3124121/prove-that-a%c2%af%e2%8a%86-b-if-c-b-%e2%88%aa-a-a-where-%ce%a9-is-the-universal-set-and-a-b-c-are/3124163#3124163) on Mathematics Stack Exchange, 2019-02-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

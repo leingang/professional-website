@@ -1,0 +1,51 @@
+---
+title: Estimating the sum of series $\sum_{n=1}^{\infty} \frac{(-1)^n}{3^n n!}$ to four decimal places.
+date: '2019-06-03'
+description: In order to get $k$ decimal places of accuracy after rounding, you need an error less than $0.5 \times 10^{-k} = 5 \times 10^{-k-1}$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3249667
+se-link: https://math.stackexchange.com/questions/3249637/estimating-the-sum-of-series-sum-n-1-infty-frac-1n3n-n-to-four/3249667#3249667
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Estimating the sum of series $\sum_{n=1}^{\infty} \frac{(-1)^n}{3^n n!}$ to four decimal places.](https://math.stackexchange.com/questions/3249637/estimating-the-sum-of-series-sum-n-1-infty-frac-1n3n-n-to-four), asked by [Hellowhatsup](https://math.stackexchange.com/users/657337/hellowhatsup) on Mathematics Stack Exchange (2019-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How can I approximate the sum of series $\sum_{n=1}^{\infty} \frac{(-1)^n}{3^n n!}$ to four decimal places? 
+>
+> I thought i was supposed to evaluate the term until it is less than $\frac{1}{10^n}$ (here, in this case n = 4, since to four decimal places.
+>
+> This gives me the fifth term when $\frac{1}{3^5 5!}$ < $\frac{1}{10^n}$. But the answer given in the answer sheet is sixth term, and says the fifth term affect to four decimal places. If this is true, what could I do to evaluate a series to nth decimal places, since my way of solving it doesn't necessarily work out for every case?
+>
+> Thank you in advance for your kind responses :)
+:::
+
+In order to get $k$ decimal places of accuracy after rounding, you need an error less than $0.5 \times 10^{-k} = 5 \times 10^{-k-1}$.  
+
+To see this, consider the question of how large a number can be and still be zero after rounding to four decimal places?  $0.00009$ will round to $0.0001$, not zero.  But anything less than $0.00005$ will round to zero.
+
+The remainder estimate for alternating series says that the remainder is less than the first unsummed term. So you are looking for the first number $n$ such that
+$$\left|\frac{(-1)^{n+1}}{3^{n+1}(n+1)!}\right| < 5 \times 10^{-5} = \frac{1}{2 \times 10^4}$$
+Equivalently, you want $n$ such that $3^{n+1}(n+1)! > 20000$.  Notice that $3^4 \times 4! = 1944$ and $3^5 \times 5! = 29160$.  Since the fifth term is small enough, the sum of the first four terms has the desired accuracy.  
+
+Since we know the value of the infinite sum explicitly, we can verify:
+$$\sum_{n=1}^4 \frac{(-1)^n}{3^nn!} = -\frac{551}{1944} = -0.283436\dots$$
+while
+$$\sum_{n=1}^\infty \frac{(-1)^n}{3^nn!} = e^{-1/3} -1 = -0.283468 \dots$$
+We see agreement in the first four decimal places.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3249637/estimating-the-sum-of-series-sum-n-1-infty-frac-1n3n-n-to-four/3249667#3249667) on Mathematics Stack Exchange, 2019-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

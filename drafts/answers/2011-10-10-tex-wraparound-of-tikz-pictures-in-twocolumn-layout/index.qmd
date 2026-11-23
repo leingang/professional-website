@@ -1,0 +1,103 @@
+---
+title: Wraparound of tikz pictures in twocolumn layout
+date: '2011-10-10'
+description: TikZ is definitely overkill for this usage, unless you want fancier decorations of your boxes besides background colors and rules.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 31128
+se-link: https://tex.stackexchange.com/questions/31121/wraparound-of-tikz-pictures-in-twocolumn-layout/31128#31128
+se-score: 2
+se-accepted: false
+se-tags:
+- tikz-pgf
+- two-column
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Wraparound of tikz pictures in twocolumn layout](https://tex.stackexchange.com/questions/31121/wraparound-of-tikz-pictures-in-twocolumn-layout), asked by [Alan J. Mole](https://tex.stackexchange.com/users/8480/alan-j-mole) on TeX Stack Exchange (2011-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am currently typesetting a document in a two column layout. Many text blocks are put into colored boxes, currently implemented with TikZ. This works; however, I have to split the text blocks manually between two columns, otherwise the whole column will move to the second column, as the tikzpicture gets too large. Is there any way to automatically split all nodes of a tikzpicture when the bottom of a column is reached? If not, can I implement this using a theorem package?
+>
+> ```latex
+> \documentclass[twocolumn]{scrartcl}
+> \usepackage{lipsum}
+> \usepackage{tikz}
+>
+> \newcommand\mybox[1]{%
+>   \noindent\begin{tikzpicture}%
+>   \node[rectangle, draw=red!40, fill=red!20, inner sep=10pt] (box){%
+>     \begin{minipage}{0.9\columnwidth}%
+>       #1%
+>     \end{minipage}%
+>   };%
+>   \end{tikzpicture}%
+> }
+>
+> \begin{document}
+> \section{Observe overflow:}
+> \mybox{\lipsum[1]}
+> \mybox{\lipsum[3]}
+>
+> \newpage
+> \section{Correctly set:}
+> \mybox{\lipsum[4]}
+>
+> \end{document}
+> ```
+:::
+
+TikZ is definitely overkill for this usage, unless you want fancier decorations of your boxes besides background colors and rules.
+
+I tried the [`mdframed`](http://ctan.org/pkg/mdframed) package but I got some extraneous rules and colorboxes that extended into the second column.  The package docs say it doesn't work with `multicolumn` environments.  
+
+Here is a sort of solution with the [`framed`](http://ctan.org/pkg/framed) package:
+
+```latex
+\documentclass[twocolumn]{scrartcl}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{framed}
+
+\makeatletter
+\newenvironment{MyBox}{%
+\colorlet{framecolor}{red!40}%
+\colorlet{shadecolor}{red!20}%
+\setlength{\fboxrule}{2pt}%
+\def\FrameCommand{\fcolorbox{framecolor}{shadecolor}}%
+  \MakeFramed {\FrameRestore\@setminipage}}%
+ {\par\unskip\endMakeFramed}
+\newcommand{\mybox}[1]{\begin{MyBox}#1\end{MyBox}}
+\makeatother
+
+
+\begin{document}
+\section{Observe overflow:}
+\mybox{\lipsum[1-2]}
+\mybox{\lipsum[3]}
+
+\newpage
+\section{Correctly set:}
+\mybox{\lipsum[4]}
+
+\end{document}
+```
+
+![sample code output page][1]
+
+I say "sort of" because I don't think you want one box per paragraph, and this is what happens with this package.
+
+
+  [1]: tjD9n.jpg
+  [2]: miJhU.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/31121/wraparound-of-tikz-pictures-in-twocolumn-layout/31128#31128) on TeX Stack Exchange, 2011-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

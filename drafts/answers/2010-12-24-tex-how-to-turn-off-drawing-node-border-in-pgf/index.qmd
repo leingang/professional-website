@@ -1,0 +1,72 @@
+---
+title: How to turn off drawing node border in PGF?
+date: '2010-12-24'
+description: 'I think you need to draw the lines manually:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 7674
+se-link: https://tex.stackexchange.com/questions/7667/how-to-turn-off-drawing-node-border-in-pgf/7674#7674
+se-score: 4
+se-accepted: true
+se-tags:
+- tikz-pgf
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to turn off drawing node border in PGF?](https://tex.stackexchange.com/questions/7667/how-to-turn-off-drawing-node-border-in-pgf), asked by user1553 on TeX Stack Exchange (2010-12-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to create a picture for [Instant Insanity][q-1] problem. Here is my following code:
+>
+> ```latex
+> \begin{tikzpicture}
+> \matrix[nodes=draw]
+> {
+> ; & \node{\LARGE R}; & ; & ;\\
+> \node{\LARGE R}; & \node[draw=white]{\LARGE B}; & \node{\LARGE G}; & \node{\LARGE W};\\
+> ; & \node{\LARGE R}; & ; & ;\\
+> };
+> \end{tikzpicture}
+> ```
+>
+> The problem is, the node containing B has relatively thick border. This is due to border overlapping by surrounding nodes. How can I turn off drawing borders of node containing **B** ?
+>
+>   [q-1]: http://www.maa.org/mathland/mathtrek_8_9_99.html
+:::
+
+I think you need to draw the lines manually:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\begin{document}
+\begin{tikzpicture}
+\matrix(m)[matrix of nodes,nodes={minimum width=2em,font=\LARGE}]
+{
+  & R & & \\
+R & B & G & W\\
+  & R & & \\
+};
+\draw (m-3-2.south west) rectangle (m-1-2.north east);
+\draw (m-2-1.south west) rectangle (m-2-4.north east);
+\draw (m-2-3.south east) -- (m-2-3.north east);
+\end{tikzpicture}
+\end{document}
+```
+
+TikZ's matrix library is apparently necessary to access the nodes in a matrix.  
+
+Now you can take that and make it the replacement text of a macro so you won't have to type it over and over.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7667/how-to-turn-off-drawing-node-border-in-pgf/7674#7674) on TeX Stack Exchange, 2010-12-24, with [edits](https://tex.stackexchange.com/posts/7674/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

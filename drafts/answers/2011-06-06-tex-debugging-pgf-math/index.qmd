@@ -1,0 +1,48 @@
+---
+title: Debugging pgf-math
+date: '2011-06-06'
+description: Christoph mentioned this but it's worth making explicit. If you don't want to actually draw anything you don't need a tikzpicture environment and you don't…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 20072
+se-link: https://tex.stackexchange.com/questions/20056/debugging-pgf-math/20072#20072
+se-score: 3
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Debugging pgf-math](https://tex.stackexchange.com/questions/20056/debugging-pgf-math), asked by [Nils](https://tex.stackexchange.com/users/4081/nils) on TeX Stack Exchange (2011-06-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Just learned about pgfmath, but how can I debug it?
+>
+> ```latex
+> \pgfmathparse{..} \pgfmathresult
+> ```
+>
+> doesn't print anything inside a tikzpicture environment. How can I simply print the result of an expression to check weather the calculation was done correctly?
+:::
+
+Christoph mentioned this but it's worth making explicit.  If you don't want to actually draw anything you don't need a `tikzpicture` environment and you don't need to put `\pgfmathresult` in nodes.
+
+```latex
+\documentclass{article}
+\usepackage{pgf}
+\begin{document}
+\pgfmathparse{2+3}
+\pgfmathresult
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/20056/debugging-pgf-math/20072#20072) on TeX Stack Exchange, 2011-06-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

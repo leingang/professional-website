@@ -1,0 +1,64 @@
+---
+title: 'Linear Algebra: coordinates and basis'
+date: '2017-01-06'
+description: The question is a bit hard to understand because it's written in a weird order. Usually the question goes (environment) (specifics) (statement to be proved).…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2085605
+se-link: https://math.stackexchange.com/questions/2085567/linear-algebra-coordinates-and-basis/2085605#2085605
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+- orthogonality
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Linear Algebra: coordinates and basis](https://math.stackexchange.com/questions/2085567/linear-algebra-coordinates-and-basis), asked by [user404495](https://math.stackexchange.com/users/404495/user404495) on Mathematics Stack Exchange (2017-01-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm asked to show that if $f,g \in \mathrm{Sig}_3$ (sig stands for signal) have the coordinates $x,y \in \mathbb{R^4}$ with respect to the basis $(v_0, v_1, v_2, v_3)$, then 
+> $$\left<f,g\right>=\pi(x_1y_1+x_2y_2+x_3y_3+x_4y_4)$$
+> where
+> $$v_0=\frac{1}{\sqrt2}, 
+> v_1=\cos x,
+> v_2=\cos(2x),
+> v_3=\cos(3x)$$
+> and
+> $$C^0([0;2\pi])$$
+>
+> Any idea how to show this? I'm completely stuck. All of the examples online use vectors with numbers, but I'm just given functions.
+:::
+
+The question is a bit hard to understand because it's written in a weird order.  Usually the question goes (*environment*) (*specifics*) (*statement to be proved*).  If I understand your problem well, I think it would be better written this way:
+
+> Let $f$ and $g$ be elements of $\mathrm{Sig}_3$, which has inner product
+$$\left<f,g\right> = \int_0^{2\pi} f(x)g(x)\,dx$$
+[I don't actually know what $\mathrm{Sig}_3$ is, even with the information that Sig stands for signal.  But I'm trying to work from the context.]  Let
+$$\begin{align*}
+   v_0 &= \frac{1}{\sqrt{2}} \\
+   v_1 &= \cos(x) \\
+   v_2 &= \cos(2x) \\
+   v_3 &= \cos(3x)
+\end{align*}$$
+Suppose that with respect to the basis $(v_0, v_1, v_2, v_3)$, $f$ and $g$ have coordinates $x$ and $y$ in $\mathbb{R}^4$.  Show that
+$$\left<f,g\right> = \pi(x_1 y_1 + x_2 y_2 + x_3 y_3 + x_4 y_4)$$
+
+Please correct me if that's not what your problem is.  But notice how it starts with the environment of the vector space $\mathrm{Sig}_3$, along the definition of the inner product.  Then comes the specific information: for these two elements, we have these two coordinate vectors.  Finally, the statement we are to prove.
+
+So I think you will be home free if you understand the meaning of this sentence:
+
+> Suppose that with respect to the basis $(v_0, v_1, v_2, v_3)$, $f$ and $g$ have coordinates $x$ and $y$ in $\mathbb{R}^4$.
+
+What does this tell you about the formulas for $f(x)$ and $g(x)$?  Once you know this, you should be able to compute $\left<f,g\right>$ directly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2085567/linear-algebra-coordinates-and-basis/2085605#2085605) on Mathematics Stack Exchange, 2017-01-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,45 @@
+---
+title: What does it mean, geometrically for two surfaces to be locally isometric?
+date: '2016-11-16'
+description: Picture a sphere made of rubber (like a racquetball or tennis ball). Cut out a hunk of it and lay it on the table. Do all parts of the rubber touch the table?
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2017286
+se-link: https://math.stackexchange.com/questions/2017237/what-does-it-mean-geometrically-for-two-surfaces-to-be-locally-isometric/2017286#2017286
+se-score: 4
+se-accepted: false
+se-tags:
+- differential-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What does it mean, geometrically for two surfaces to be locally isometric?](https://math.stackexchange.com/questions/2017237/what-does-it-mean-geometrically-for-two-surfaces-to-be-locally-isometric), asked by [Jack M](https://math.stackexchange.com/users/30481/jack-m) on Mathematics Stack Exchange (2016-11-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've heard it said that if two surfaces have the same first fundamental form, or if they're locally isometric, then they "behave metrically in the same way", or variants on that theme. The textbook I'm reading says that it's "intuitively clear" that the cylinder is isometric to the plane, because "by cutting a cylinder along a generator we may unroll it onto part of a plane". Well, couldn't I do something similar to cut and flatten out *any* surface onto a plane?
+>
+> What is the geometric meaning of the existence or non-existence of a local isometry?
+:::
+
+> Well, couldn't I do something similar to cut and flatten out any surface onto a plane?
+
+Picture a sphere made of rubber (like a racquetball or tennis ball).  Cut out a hunk of it and lay it on the table.  Do all parts of the rubber touch the table?  
+
+Since the ball has some convexity to it, either the rubber is going to touch in the center and be bowed up around the edge, or touch around the edge and bubble up in the center.  
+
+Of course, you could squish the rubber and force it to lie flat against the table.  But now you've changed the metric (you have literally stretched certain points of the rubber further away from each other).  
+
+So I think it's not true that any surface can be cut and flattened onto a plane. 
+
+This is a small-scale version of the problem of drawing accurate maps of the world.  Cartographers tried to create flat representations of the surface of the Earth while preserving distance.  As it turns out, this is impossible.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2017237/what-does-it-mean-geometrically-for-two-surfaces-to-be-locally-isometric/2017286#2017286) on Mathematics Stack Exchange, 2016-11-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

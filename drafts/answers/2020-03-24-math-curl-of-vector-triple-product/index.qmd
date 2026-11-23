@@ -1,0 +1,82 @@
+---
+title: Curl of vector triple product.
+date: '2020-03-24'
+description: 'Using the BAC-CAB identity: $$(\mathbf{R} \times \mathbf{A}) \times \mathbf{B} = - (\mathbf{A} \cdot \mathbf{B}) \mathbf{R} + (\mathbf{B} \cdot \mathbf{R})…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3593324
+se-link: https://math.stackexchange.com/questions/3593279/curl-of-vector-triple-product/3593324#3593324
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- vector-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Curl of vector triple product.](https://math.stackexchange.com/questions/3593279/curl-of-vector-triple-product), asked by [huministic](https://math.stackexchange.com/users/677016/huministic) on Mathematics Stack Exchange (2020-03-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I want to prove that for given constant vectors **A** and **B**
+>
+> Curl [ (**R** × **A**) ×**B** ] = **B** × **A**
+>
+> where **R** = xi + yj + zk
+>
+> I proved vector triple product using index notation but I don't know how to approach the above problem using index notation.
+:::
+
+Using the [BAC-CAB identity](https://mathworld.wolfram.com/BAC-CABIdentity.html):
+$$(\mathbf{R} \times \mathbf{A}) \times \mathbf{B}
+    = - (\mathbf{A} \cdot \mathbf{B}) \mathbf{R} + (\mathbf{B} \cdot \mathbf{R}) \mathbf{A}$$
+Now you can use the [product rule](https://en.wikipedia.org/wiki/Vector_calculus_identities#Curl_2) for the curl of a scalar times a vector:
+$$\nabla((\mathbf{R} \times \mathbf{A}) \times \mathbf{B})
+   = - \nabla(\mathbf{A} \cdot \mathbf{B}) \times \mathbf{R}
+     - (\mathbf{A} \cdot \mathbf{B}) (\nabla \times \mathbf{R})
+     + \nabla(\mathbf{B} \cdot \mathbf{R}) \times \mathbf{A}
+     + (\mathbf{B} \cdot \mathbf{R}) (\nabla \times \mathbf{A})$$
+Since $\mathbf{A}$ and $\mathbf{B}$ are constant, $\nabla (\mathbf{A} \cdot \mathbf{B}$ and $\nabla \times \mathbf{A}$ are zero.  Also, $\nabla \times \mathbf{R} = \mathbf{0}$ by calculation.  The only thing left to show is that $\nabla(\mathbf{B} \cdot \mathbf{R}) = \mathbf{B}$, but this is straightforward.
+
+* * *
+
+If you want to use index notation, let $\mathbf{e}_1 = \mathbf{i}$, $\mathbf{e}_2 = \mathbf{j}$, and $\mathbf{e}_3 = \mathbf{k}$.  So we can write $\mathbf{A} = a_i \mathbf{e}_i$ and $\mathbf{B} = b_i \mathbf{e}_i$ (Einstein summation).  Write $x_1 = x$, $x_2 = y$, $x_3 = z$, so $\mathbf{R} = x_i \mathbf{e}_i$.  Let $\epsilon_{ijk}$ be the Levi-Civita tensor, so that
+$$\mathbf{A} \times \mathbf{B} = \epsilon_{ijk} a_i b_j \mathbf{e}_k$$
+For each $i$, write $\partial_i  = \frac{\partial}{\partial x_i}$.  Notice that $\partial_i x_j = \delta_{ij}$, where $\delta$ is the Kronecker delta tensor.  And if $\mathbf{F} = F_i \mathbf{e}_i$ is a vector field, then
+$$\nabla \times \mathbf F = \epsilon_{ijk} \partial_i F_j \mathbf{e}_k$$
+
+Now 
+$$\begin{align*}
+   \nabla \times ((\mathbf{R} \times \mathbf{A}) \times \mathbf{B})
+   &= \epsilon_{ijk} \partial_i ((\mathbf{R} \times \mathbf{A}) \times \mathbf{B})_j \mathbf{e}_k \\
+   &= \epsilon_{ijk} \partial_i (\epsilon_{\ell mj} (\mathbf{R} \times \mathbf{A})_\ell b_m)\mathbf{e}_k \\
+   &= \epsilon_{ijk} \partial_i (\epsilon_{\ell mj} \epsilon_{rp\ell}x_r a_p  b_m) \mathbf{e}_k\\
+   &= \epsilon_{ijk} \epsilon_{\ell mj} \epsilon_{rp\ell} \partial_i x_r a_p  b_m \mathbf{e}_k\\
+   &= \epsilon_{ijk} \epsilon_{\ell mj} \epsilon_{rp\ell} \delta_{ir} a_p  b_m \mathbf{e}_k\\
+   &= \epsilon_{ijk} \epsilon_{\ell mj} \epsilon_{ip\ell} a_p  b_m \mathbf{e}_k\\
+\end{align*}$$
+Use the contraction identity on the first and last symbol (they both start with $i$):
+$$\epsilon_{ijk}\epsilon_{ip\ell} = \delta_{jp}\delta_{k\ell} - \delta_{j\ell}\delta_{kp}$$
+And notice that:
+$$\begin{align*}
+    \epsilon_{\ell mj}\delta_{jp}\delta_{k\ell} &= \epsilon_{kmp} \\
+    \epsilon_{\ell mj}\delta_{j\ell}\delta_{kp} &= \epsilon_{\ell m\ell} = 0
+\end{align*}$$
+So finally:
+$$\nabla \times ((\mathbf{R} \times \mathbf{A}) \times \mathbf{B})
+    = \epsilon_{kmp} a_p b_m \mathbf{e}_k
+    = \epsilon_{mpk} b_m a_p \mathbf{e}_k
+    = \mathbf{B} \times \mathbf{A}$$
+
+I'll point out that the contraction identity for the Levi-Civita tensor is essentially BAC-CAB in index notation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3593279/curl-of-vector-triple-product/3593324#3593324) on Mathematics Stack Exchange, 2020-03-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

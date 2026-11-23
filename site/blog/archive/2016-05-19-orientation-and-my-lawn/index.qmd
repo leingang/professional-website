@@ -7,7 +7,7 @@ categories:
 - calculus-3
 - orientation
 - topology
-- draft
+draft: true
 legacy-source: nikola
 description: Orientation of the boundaries of plane regions, explained with a suburban metaphor.
 aliases:

@@ -1,0 +1,62 @@
+---
+title: Extrema of derivate are where tangent crosses the curve.
+date: '2024-03-20'
+description: 'By $T$, the author is referring to the linearization of $f$ about $x=x0$: $$T(x) = f(x0) + f''(x0)(x-x0)$$ By the Mean Value Theorem, for all $x \in (a,b)$…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4884507
+se-link: https://math.stackexchange.com/questions/4884443/extrema-of-derivate-are-where-tangent-crosses-the-curve/4884507#4884507
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- derivatives
+- maxima-minima
+- tangent-line
+- inflection-point
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Extrema of derivate are where tangent crosses the curve.](https://math.stackexchange.com/questions/4884443/extrema-of-derivate-are-where-tangent-crosses-the-curve), asked by [user791759](https://math.stackexchange.com/users/791759/user791759) on Mathematics Stack Exchange (2024-03-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In this article https://www.jstor.org/stable/2310782 i found this proposition:
+>
+> Let $f$ be a differentiable function defined on an open interval $(a, b)$ containing
+>  the point $x_0$. 
+>
+> Let:
+>
+>  (B) There exists an open interval  $I\subset (a, b)$, $x_0\in I$, such that on $I$ the function $f'$ attains a (local) maximum or minimum at $x_0$.
+>
+>  (C) There exists an open interval $I\subset (a, b)$, $x_0\in I$ such that on I we have
+>  $T\ge f$ on one side of $x_0$ and $T\le f$ on the other side. Here $T$ is the tangent to the
+>  graph of $f$ at the point $x_0$.
+>
+> Then (B) implies (C).
+>
+> I ask help for proof thats if $x_0$ is local minimum of $f'$ (i.e. $\exists \delta>0$ : $f'(x)\ge f'(x_0)$ for $x_0-\delta<x<x_0+\delta$), then $f\le T$ in $(x_0-\delta,x_0)$ and $f\ge T$ in $(x_0,x_0+\delta)$. $[T(x)=f(x_0)+f'(x_0)(x-x_0)]$.
+>
+> Ps. On Wikipedia (https://en.wikipedia.org/wiki/Inflection_point) i found that ' If all extrema of $f'$ are isolated (that is, in some neighborhood, x is the one and only point at which f' has a (local) minimum or maximum), then an inflection point is a point on the graph of f at which the tangent crosses the curve.'
+:::
+
+By $T$, the author is referring to the linearization of $f$ about $x=x_0$: $$T(x) = f(x_0) + f'(x_0)(x-x_0)$$
+By the Mean Value Theorem, for all $x \in (a,b)$ there exists a point $\xi$ between $x$ and $x_0$, such that $$f(x) = f(x_0) + f'(\xi)(x-x_0)$$ 
+Now suppose that $f'(x_0)$ is the minimum value of $f'$ on $I$, and $x$ is a point in $I$ less than $x_0$. Then
+$$\begin{aligned} 
+    f'(\xi) &\geq f'(x_0) 
+\\\implies f'(\xi)(x-x_0) &\leq f'(x_0)(x-x_0) 
+\\\implies f(x_0) + f'(\xi)(x-x_0)  &\leq f(x_0) + f'(x_0)(x-x_0)
+\\\implies f(x) &\leq T(x)
+\end{aligned}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4884443/extrema-of-derivate-are-where-tangent-crosses-the-curve/4884507#4884507) on Mathematics Stack Exchange, 2024-03-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,52 @@
+---
+title: Why is the limit of a real sequence defined so?
+date: '2017-12-01'
+description: 'An English description of limit is that: $\lim{n\to\infty} fn = A$ provided values of $fn$ can be made arbitrarily close to $A$ by taking $n$ sufficiently…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2545503
+se-link: https://math.stackexchange.com/questions/2545495/why-is-the-limit-of-a-real-sequence-defined-so/2545503#2545503
+se-score: 2
+se-accepted: true
+se-tags:
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is the limit of a real sequence defined so?](https://math.stackexchange.com/questions/2545495/why-is-the-limit-of-a-real-sequence-defined-so), asked by [Ashwin B](https://math.stackexchange.com/users/429969/ashwin-b) on Mathematics Stack Exchange (2017-12-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I read in Mathematical Analysis Zorich - 1 that "the limit of a real sequence  $f:\Bbb N \to \Bbb R$ is $A \in \Bbb R$" is defined as follows:
+>
+> $$\Bigl (\lim \limits_{n \to \infty} f_n=A \Bigr ) := \forall V(A)\ \exists N\in \Bbb N\ \ \forall n>N(f_n \in V(A))$$ (where$\ V(A)$ is some neighbourhood of $A$)   
+> $\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad$or  
+> $$\Bigl (\lim \limits_{n \to \infty} f_n:=A \Bigr ) := \forall \epsilon >0 \ \exists N\in \Bbb N\ \ \forall n>N\ (|f_n - A|< \epsilon)$$  
+> While I understand how to apply the definition to find the limits of sample sequences, my questions are:  
+> -Why is this defined so?
+> -   
+> -What's the idea here?  
+> -
+> -What's the intuition that led to this definition?  
+> -
+:::
+
+An English description of limit is that: $\lim_{n\to\infty} f_n = A$ provided values of $f_n$ can be made arbitrarily close to $A$ by taking $n$ sufficiently large.
+
+What does *arbitrarily close to $A$* mean?  It means *as close as you want*.  If you measure “closeness”  by distance, it means “within $\epsilon$, no matter how small $\epsilon$ is, as long as it's positive.”
+
+What does *sufficiently large* mean?  It means *after a certain number of terms have passed*.  So after some threshold index $N$.  
+
+To put this together, the definition of limit might be phrased as: “Pick any small number you want.  Call it $\epsilon$.  I can find a corresponding threshold index, which I'll call $N$, after which sequence terms $a_n$ are within $\epsilon$ of $A$.”
+
+I hope that at least partially answers your question.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2545495/why-is-the-limit-of-a-real-sequence-defined-so/2545503#2545503) on Mathematics Stack Exchange, 2017-12-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,87 @@
+---
+title: Using \multicolumn with beamer inside an overlay command
+date: '2010-12-01'
+description: I tried sprinkling some magical fairy \expandafter dust around to see if the \only part could be processed before the ampersand, but it resulted in errors.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 6320
+se-link: https://tex.stackexchange.com/questions/6303/using-multicolumn-with-beamer-inside-an-overlay-command/6320#6320
+se-score: 2
+se-accepted: true
+se-tags:
+- beamer
+- tables
+- overlays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using \multicolumn with beamer inside an overlay command](https://tex.stackexchange.com/questions/6303/using-multicolumn-with-beamer-inside-an-overlay-command), asked by [Yossi Farjoun](https://tex.stackexchange.com/users/117/yossi-farjoun) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'd like to have a conditional `\multicolumn` command depending on the slide, so I put it inside an alt or an only command, as follows:
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage[latin1]{inputenc}
+> \begin{document}
+> \begin{frame}
+> \begin{equation*}
+>   \begin{array}{rlll}
+>   a&b&c&d\\
+>   A&\multicolumn{3}{l}{BCD}\\ %this is OK
+>    A&B&C&D\\ %as is this obviously...
+>   A&\only<-+>{\multicolumn{3}{l}{BCD}}\only<.->{B&C&D}\\ %but this
+>   A&\alt<-+>{\multicolumn{3}{l}{BCD}}{B&C&D}\\% and this do not compile
+>   A&\multicolumn{3}{l}{\only<-+>{BCD}\only<+->{\begin{tabular}{lll}B&C&D\\\end{tabular}}} %this line works, but, of course, gives the wrong alignment...
+> \end{array}
+> \end{equation*}
+> \end{frame}
+> \end{document}
+> ```
+>
+> The problem seems to be that LaTeX wants the `\multicolumn` command to appear as the first thing after an & or a newline...but then, as the last line shows, I don't know how to align with the other columns...
+>
+> Currently I'm solving the problem using `\hspace*` but this is a bit of a ugly hack.
+>
+> Any ideas on how I could get this to work properly??
+:::
+
+I tried sprinkling some magical fairy `\expandafter` dust around to see if the `\only` part could be processed before the ampersand, but it resulted in errors.
+
+This requires only one token of repetition:
+
+```latex
+A\alt<-+>{&\multicolumn{3}{l}{BCD}}{&B&C&D}\
+```
+I could not get your `\only<-+>`...`\only<.->` construction to work with the `+`s.  It does work with explicit numbers.  But I assume that if the `\alt` construction works you'll take it as preferable.  
+
+Complete example:
+
+```latex
+\documentclass{beamer}
+\usepackage[latin1]{inputenc}
+\begin{document}
+\begin{frame}
+\begin{equation*}
+  \begin{array}{rlll}
+   a&b&c&d\\
+   A&\multicolumn{3}{l}{BCD}\\ %this is OK
+   A&B&C&D\\ %as is this obviously...
+   A\only<1>{&\multicolumn{3}{l}{BCD}}\only<2->{&B&C&D} \\% this works now, but not with -+ etc.
+   A\alt<-+>{&\multicolumn{3}{l}{BCD}}{&B&C&D}\\% this works even with -+
+\end{array}
+\end{equation*}
+\end{frame}
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6303/using-multicolumn-with-beamer-inside-an-overlay-command/6320#6320) on TeX Stack Exchange, 2010-12-01, with [edits](https://tex.stackexchange.com/posts/6320/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,46 @@
+---
+title: A pedantic question about notation -- "such that" symbols
+date: '2015-02-03'
+description: 'The problem I have with $\ni$ is that it makes an optical illusion in combination with $\in$: $$\forall z \in \mathbb{R} \ \exists w \in \mathbb{C} \ni w^2 =…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1132373
+se-link: https://math.stackexchange.com/questions/1132351/a-pedantic-question-about-notation-such-that-symbols/1132373#1132373
+se-score: 12
+se-accepted: false
+se-tags:
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A pedantic question about notation -- "such that" symbols](https://math.stackexchange.com/questions/1132351/a-pedantic-question-about-notation-such-that-symbols), asked by [bjd2385](https://math.stackexchange.com/users/167604/bjd2385) on Mathematics Stack Exchange (2015-02-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've seen a few different symbols for "such that" in my studies, including these four:
+> $$\ni \quad\quad \:\cdot\ni\cdot\: \quad\quad \colon \quad\quad \mid$$
+> I'm aware that either of the last two are acceptable in set notations, e.g. $\left\{x:x\in\mathbb{Z}\right\}$ or $\left\{x\left.\right|x\in\mathbb{Z}\right\}$, but I am not sure about the former two, i.e. "$\ni$" vs. "$\cdot\ni\cdot$". My discrete math textbook, *Discrete Mathematics with Appplications* by Epp, says the latter is "such that" whereas here on Mathematics SE I've only seen the former, and even then only rarely.
+>
+> When is it appropriate to use these two "such that" symbols and when isn't it?
+:::
+
+The problem I have with $\ni$ is that it makes an optical illusion in combination with $\in$: 
+$$\forall z \in \mathbb{R} \ \exists w \in \mathbb{C} \ni w^2 = z$$
+My eye is drawn to the $\mathbb{C}$ and I can't focus on the formula.  Also there's the issue that $A \ni x$ is used as syntactic sugar for $x \in A$, and I find this more useful.
+
+In written work I would use no symbol for “such that”—just the words.  In notes I will use “s.t.” which works fine.
+$$\forall z \in \mathbb{R} \ \exists w \in \mathbb{C} \text{ s.t. } w^2 = z$$
+When logicians use $\exists$, the “such that” is implicit.  So you could technically use no symbol, but I don't know how readable that is.  
+$$\forall z \in \mathbb{R} \ \exists w \in \mathbb{C} (w^2 = z)$$
+Actually I think they write it more like this:
+$$\forall z (z\in\mathbb{R} \rightarrow\exists w(w\in\mathbb{C} \wedge w^2=z))$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1132351/a-pedantic-question-about-notation-such-that-symbols/1132373#1132373) on Mathematics Stack Exchange, 2015-02-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

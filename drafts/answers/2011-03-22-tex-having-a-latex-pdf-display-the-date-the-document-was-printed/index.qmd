@@ -1,0 +1,315 @@
+---
+title: Having a LaTeX PDF display the date the document was printed, not compiled
+date: '2011-03-22'
+description: If you had a clock on the pdf that kept time using JavaScript, then any time you printed it the paper would have the time printed, right? It reminds me of a…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14066
+se-link: https://tex.stackexchange.com/questions/14052/having-a-latex-pdf-display-the-date-the-document-was-printed-not-compiled/14066#14066
+se-score: 0
+se-accepted: false
+se-tags:
+- pdf
+- compiling
+- datetime
+- printing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Having a LaTeX PDF display the date the document was printed, not compiled](https://tex.stackexchange.com/questions/14052/having-a-latex-pdf-display-the-date-the-document-was-printed-not-compiled), asked by [Brett](https://tex.stackexchange.com/users/4377/brett) on TeX Stack Exchange (2011-03-22; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have been looking around for quite some time trying to find a way for a PDF (created using XeTeX) to adjust the date accordingly by the date it was printed - not compiled. I am familiar with `\date`, `\datedate`, `datenumber` & `datetime` packages, etc. but these are not what I want. I also found a page in tex.stackexchange.com, which I mostly do not understand ( https://tex.stackexchange.com/questions/12304/date-of-file-creation ) that was getting closer to what I want but not exactly. Oh, by the way, it would be great if it was platform independent as not all employees have the same computer.
+>
+>
+> The idea here is to create time-sheets for employees that they can print off before work and have the date automatically created for them. Here is the rough (really) draft of the time sheet (most of the comments are me playing around with some new-to-me techniques involving the `pgf`/`tikz` packages - irrelevant):
+>
+> Thanks very much and hope it is clear!
+>
+>
+>
+> ```latex
+> \documentclass[10pt,onecolumn,usenames,dvipsnames]{amsart}
+> \usepackage{tikz}
+> \usepackage{pgf}
+> \usepackage{pgfkeys}
+> \usetikzlibrary{
+>   chains,
+>   arrows,
+>   shapes.misc,
+>   shapes.arrows,
+>   matrix,
+>   positioning,
+>   scopes,
+>   decorations.pathmorphing,
+>   shadows%
+> }
+> \usetikzlibrary{snakes}
+> \usepackage[hmargin=1.5cm, vmargin=1.50cm]{geometry}
+> \geometry{top=0.5cm}
+> \geometry{left=0.5cm}
+> \geometry{right=0.5cm}
+> \usepackage{bbding}
+> \usepackage{amssymb}
+> \usepackage{amsmath,fp}
+> \usepackage{algorithm2e}
+> \usepackage{eurosym}
+> \usepackage{color,graphicx}
+> \usepackage{fontspec,xltxtra,xunicode}
+> \defaultfontfeatures{Mapping=tex-text}
+> \setromanfont[Mapping=tex-text]{Hoefler Text}
+> \setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+> \usepackage{hyperref}
+> \definecolor{linkcolour}{HTML}{FF0080}
+> \definecolor{shade}{HTML}{D4D7FE}
+> \definecolor{text1}{HTML}{2b2b2b}		
+> \definecolor{headings}{HTML}{701112} 
+> \hypersetup{	colorlinks,breaklinks,
+> 			urlcolor=linkcolour, 
+> 			linkcolor=linkcolour}
+> \usepackage{fancyhdr}			
+> \pagestyle{fancy}
+> \fancyhf{}
+> \rfoot{\color{headings} {\sffamily Last update: \today}. Typeset with X\LaTeX}
+> \renewcommand{\headrulewidth}{0pt}
+> \usepackage{titlesec}				
+> \titleformat{\section}
+> 	{\color{headings}
+> 		\scshape \Large\raggedright}{}{0em}{}[\color{blue}\titlerule]
+> \titlespacing{\section}{0pt}{0pt}{5pt}
+> \usepackage[yyyymmdd,hhmmss]{datetime}
+> \usepackage{datenumber}
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+> \rfoot{Compiled on \today\ at \currenttime}
+> \cfoot{}
+> \lfoot{Page \thepage}
+> \usepackage{ifthen}
+> \begin{document}
+> ```
+>
+> 	\color{text1} 
+>
+> 	\centering
+> 	\par{\centering{
+> 	{ \addfontfeature{LetterSpace=20.0}\fontsize{20}{20}\selectfont \scshape {\underline{To Do \$\backslash\$ Did}} }}
+> 	}\\[6mm]	
+> 	{\color{white} \hrule} 
+>
+> 	\begin{minipage}[t]{0.25\textwidth}
+> 		\section{Timeline}
+> 			\begin{tikzpicture}
+> 				\draw[snake](0,40pt) -- (0,0);
+> 				\draw (0,20pt) node[left=10pt]{\datedate};
+> 				\draw (0,10pt) node[left=10pt]{Worked On:};
+>
+> 				\draw(0 pt, 0 pt) -- (0 pt, -600 pt);
+>
+>
+> 					\foreach \y [count=\yi] in {-30,-54,...,-570}{
+>
+> 					\draw (3 pt, \y pt) -- ( -3pt, \y pt);			
+> 					\draw (0 pt, .1\y pt) -- (-60 pt,  .1\y + 1 pt ) node[midway,above]{[\hspace{1.5cm}]};	
+> 					\draw (0 pt, 0.1\y pt) -- (100 pt, 0.1\y + 20 pt) node[midway,sloped,below]{};
+> 					}
+>
+> 			\end{tikzpicture}
+>
+> 	\end{minipage}
+> 	\hfill
+> 	\begin{minipage}[t]{0.25\textwidth}
+> 		\vspace{21mm}
+> 			\foreach \a/\b/\z [count=\ai,count=\bi,count=\zi] in {1,...,23}
+> 				{
+> 				\ifthenelse{\ai<13}
+> 					{
+> 					\ifthenelse{\isodd{\ai}}
+> 						{																
+> 						\FPdiv\c{\ai}{2} \FPadd\c{\c}{6} \FPupn\c{\c{} 0 round} \$\FPprint\c\$: 
+> 							\ifthenelse{\bi=2}
+> 								{\$30\$}
+> 								{\$00\$}
+> 						}
+> 						{																
+> 						\FPdiv\c{\ai}{2}    \FPadd\c{\c}{6}    \FPupn\c{\c{} 0 round}    \$\FPprint\c\$:\$30\$
+> 						} to 
+> 							\ifthenelse{\isodd{\zi}}
+> 								{
+> 								\FPdiv\c{\zi}{2}    \FPadd\c{\c}{6}    \FPupn\c{\c{} 0 round}    \$\FPprint\c\$:\$30\$
+> 								}
+> 								{
+> 								\FPdiv\c{\zi}{2}    \ifthenelse{\zi<12}{\FPadd\c{\c}{7}}{\FPadd\c{\c}{-5}}    \FPupn\c{\c{} 0 round}    \$\FPprint\c\$: %interior \ifthenelse takes care of 12:30 - 1:00
+> 									\ifthenelse{\zi=1}
+> 									{\$30\$}
+> 									{\$00\$}
+> 								}
+> 								\\\\
+> 					}
+> 					{
+> 					\ifthenelse{\isodd{\ai}}
+> 						{																
+> 						\FPdiv\c{\ai}{2}    \FPadd\c{\c}{-6}    \FPupn\c{\c{} 0 round}    \$\FPprint\c\$:\$00\$
+> 						}
+> 						{																
+> 						\FPdiv\c{\ai}{2}    \FPadd\c{\c}{-6}    \FPupn\c{\c{} 0 round} \$\FPprint\c\$: 
+> 							\ifthenelse{\bi=2}
+> 							{\$00\$}
+> 							{\$30\$}
+> 						}  --
+> 							\ifthenelse{\isodd{\zi}}
+> 								{
+> 								\FPdiv\c{\zi}{2} \FPadd\c{\c}{-6} \FPupn\c{\c{} 0 round} \$\FPprint\c\$:\$30\$
+> 								}
+> 								{
+> 								\FPdiv\c{\zi}{2}    \ifthenelse{\zi<12}{\FPadd\c{\c}{7}}{\FPadd\c{\c}{-5}}    \FPupn\c{\c{} 0 round}    \$\FPprint\c\$: %interior \ifthenelse takes care of 12:30 - 1:00
+> 									\ifthenelse{\zi=1}
+> 									{\$30\$}
+> 									{\$00\$}
+> 								}
+> 								\\\\						
+> 					}
+> 				}	
+> 	\end{minipage}
+> 	\hfill
+> 	\begin{minipage}[t]{0.38\textwidth}
+> 		\section{Description}
+> 			\begin{enumerate}
+> 			\item Move old tires and wheels into grey round bin north of shop.
+> 			\item Move small LP tanks into quonset
+> 			\item Drill and tap threads into quonset door frame
+> 			\item Wire brush wheel and mount two tires for water trailer
+> 			\item Clean up paint gun (air)
+> 			\item Clean up yard of garbage and lumber
+> 			\item Stack wood by container on west side of quonset
+> 			\end{enumerate}
+>
+>
+> 	\end{minipage}
+>
+>
+> 	\newpage
+> 	\begin{minipage}[t]{0.45\textwidth} 
+>
+> 		\section{Timeline}
+>
+> 			\begin{tikzpicture}
+> 				\draw[snake] (0,40pt) -- (0,0);
+> 				\draw (0,20pt) node[left=10pt] {Prior to sale. \$\Bigg\{\$};
+>
+> 				\draw (0 pt,0 pt) -- (0 pt,-400 pt);
+> 				\foreach \y in {40,0,-40,-80, -120, -160, -200, -240}
+> 				\draw (3pt, \y pt) -- ( -3pt, \y pt);
+>
+> 				\draw (0,0) node[left=10pt] {XX/XX/2011};
+>
+> 				\draw (0 pt,-40 pt) node[left=10pt] {XX/XX/2011};
+> 				\draw (0 pt, -40 pt) -- (40:4) node[midway,sloped,below]{start of .}; 
+> 				\draw (0 pt, -40 pt) node[below=0pt]{\hspace{4cm} Pur};
+> 				\draw (0 pt, -40 pt) node[below=10pt]{\hspace{4cm} arm, };
+>
+> 				\draw (0 pt, -80 pt) node[left=10pt] {XX/XX/2011}; 
+>
+> 				\draw (0 pt, -120 pt) node[left=10pt] {XX/XX/2011};
+>
+> 				\draw (0 pt, -160 pt) node[left=10pt] {XX/XX/2011};
+>
+> 				\draw (0 pt, -200 pt) node[left=10pt] {XX/XX/2011};
+>
+> 			\end{tikzpicture}
+>
+>
+> 	\end{minipage} %END of left-hand side minipage
+> 	\hfill
+> 	\begin{minipage}[t]{0.51\textwidth}
+> 		\section{Timeline Specifics}
+> 			\vspace{60pt}
+>
+> 			\begin{tikzpicture}[every on chain/.style=join,every join/.style=->,node distance=2mm and 1cm]
+> 			{ [start chain=trunk]
+> 			\node[on chain]{A};
+> 			\node [on chain] {B};
+> 			{ [start branch=numbers going below]
+> 			\node [on chain] {1};
+> 			\node [on chain] {2};
+> 			\node [on chain] {3};
+> 			}
+> 			{ [start branch=greek going above]
+> 			\node [on chain] {\$\alpha\$};
+> 			\node [on chain] {\$\beta\$};
+> 			\node [on chain] {\$\gamma\$};
+> 			}
+> 			\node [on chain,join=with trunk/numbers-end,join=with trunk/greek-end] {C};
+> 			{ [start branch=symbols going below]
+> 			\node [on chain] {\$\star\$};
+> 			\node [on chain] {\$\circ\$};
+> 			\node [on chain] {\$\int\$};
+> 			}
+> 			}
+> 			\end{tikzpicture}
+>
+> 			\makeatletter
+> 			\tikzset{join/.code=\tikzset{after node path={%
+> 			\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+> 			edge[every join]#1(\tikzchaincurrent)\fi}}}
+> 			\makeatother
+>
+> 			\tikzset{>=stealth',every on chain/.append style={join},
+> 			         every join/.style={-*/>}}
+> 			\centering
+>
+> 			\begin{tikzpicture}[start chain] {
+> 				\node[on chain] {\$0\$};
+> 			    	\node[on chain] {\$A\$} ;
+> 			    	\node[on chain, join={node[above] {\$\scriptstyle\varphi\$}}] {\$B\$};
+> 			    	\node[on chain, join={node[above] {\$\scriptstyle\psi\$}}] {\$C\$};
+> 			    	\node[on chain] {\$0\$}; }
+> 			\end{tikzpicture}
+> 			\bigskip
+>
+> 			\begin{tikzpicture}
+> 			  	\matrix (m) [matrix of math nodes, row sep=3em, column sep=3em]
+> 			    	{ 0 & A  & B  & C  & 0 \\
+> 			      	0 & A' & B' & C' & 0 \\ };
+> 			  	{ [start chain] \chainin (m-1-1);
+> 			    	\chainin (m-1-2);
+> 			    	{ [start branch=A] \chainin (m-2-2)
+> 			        [join={node[right] {\$\scriptstyle\eta_1\$}}];}
+> 			    	\chainin (m-1-3) [join={node[above] {\$\scriptstyle\varphi\$}}];
+> 			    	{ [start branch=B] \chainin (m-2-3)
+> 			        [join={node[right] {\$\scriptstyle\eta_2\$}}];}
+> 			    	\chainin (m-1-4) [join={node[above] {\$\scriptstyle\psi\$}}];
+> 			    	{ [start branch=C] \chainin (m-2-4)
+> 			        [join={node[right] {\$\scriptstyle\eta_3\$}}];}
+> 			    	\chainin (m-1-5); }
+> 			  	{ [start chain] \chainin (m-2-1);
+> 			    	\chainin (m-2-2);
+> 			    	\chainin (m-2-3) [join={node[above] {\$\scriptstyle\varphi'\$}}];
+> 			    	\chainin (m-2-4) [join={node[above] {\$\scriptstyle\psi'\$}}];
+> 			    	\chainin (m-2-5); }
+> 			\end{tikzpicture}
+>
+> 	\end{minipage}
+> 	\vspace{10pt}
+>
+> ```latex
+> \end{document}
+> ```
+:::
+
+If you had a clock on the pdf that kept time using JavaScript, then any time you printed it the paper would have the time printed, right?  It reminds me of a [discussion we had on latex-beamer][1] ages ago about putting a ticking clock on a presentation.  There was a [posted solution][2] with a [link that appears dead now][3], but some code was traded around in the thread (from the [`powerdot`][4] package) which may help.
+
+  [1]: http://old.nabble.com/clock-on-presentation-td11700070.html
+  [2]: http://old.nabble.com/Re:-Analog-ticking-clock-in-PDFLaTeX-p13419871.html
+  [3]: http://pcmap.unizar.es/numerico/software
+  [4]: http://www.ctan.org/tex-archive/macros/latex/contrib/powerdot/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14052/having-a-latex-pdf-display-the-date-the-document-was-printed-not-compiled/14066#14066) on TeX Stack Exchange, 2011-03-22. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

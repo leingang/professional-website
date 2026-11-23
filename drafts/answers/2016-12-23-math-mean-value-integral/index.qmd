@@ -1,0 +1,45 @@
+---
+title: mean Value Integral
+date: '2016-12-23'
+description: The Integral Mean Value Theorem says that if $f$ is integrable on $[A,B]$, then $$\intA^B f(x)\,dx = (B-A) f(c)$$ for some $c$ in $(A,B)$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2070024
+se-link: https://math.stackexchange.com/questions/2069994/mean-value-integral/2070024#2070024
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[mean Value Integral](https://math.stackexchange.com/questions/2069994/mean-value-integral), asked by [Numerical Person](https://math.stackexchange.com/users/173803/numerical-person) on Mathematics Stack Exchange (2016-12-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+> I can solve this integral in the very general way. But I don't unnderstand  how they have applied the mean value theorem to this integral and solve this? 
+>
+>
+>   [q-1]: tiI8p.png
+:::
+
+The **Integral Mean Value Theorem** says that if $f$ is integrable on $[A,B]$, then 
+$$\int_A^B f(x)\,dx = (B-A) f(c)$$
+for some $c$ in $(A,B)$.
+
+In your first integral you have $A = \frac{L}{4} - \frac{a}{2}$ and $B = \frac{L}{4} + \frac{a}{2}$.  So $B- A = a$, and since $a$ is “small enough” (according to the note), $c \approx \frac{L}{4}$.  Hence
+$$\int_{L/4 - a/2}^{L/4 + a/2} f(x)\,dx \approx a f\left(\frac{L}{4}\right)$$
+The other integral is treated similarly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2069994/mean-value-integral/2070024#2070024) on Mathematics Stack Exchange, 2016-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

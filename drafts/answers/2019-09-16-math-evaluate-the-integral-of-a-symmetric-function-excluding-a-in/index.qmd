@@ -1,0 +1,49 @@
+---
+title: Evaluate the integral of a symmetric function excluding a interval of numbers
+date: '2019-09-16'
+description: 'Yes, that''s right. You can compute explicitly: $$\begin{align} \int{[-M, M]\setminus(-\epsilon, \epsilon)} \frac{1}{x} \,dx &= \int{-M}^{-\epsilon}…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3358869
+se-link: https://math.stackexchange.com/questions/3358864/evaluate-the-integral-of-a-symmetric-function-excluding-a-interval-of-numbers/3358869#3358869
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- limits
+- multivariable-calculus
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Evaluate the integral of a symmetric function excluding a interval of numbers](https://math.stackexchange.com/questions/3358864/evaluate-the-integral-of-a-symmetric-function-excluding-a-interval-of-numbers), asked by [novo](https://math.stackexchange.com/users/477187/novo) on Mathematics Stack Exchange (2019-09-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm struggling with interpreting how to evaluate $$\lim_{\epsilon\to 0} \int_{[-M, M]\setminus(-\epsilon, \epsilon)} \frac{1}{x} \,dx$$ (The limit is taken from above).
+>
+> I'm understanding that $[-M, M]\setminus(-\epsilon, \epsilon)$ means the interval $[-M, M]$ without the interval $(-\epsilon, \epsilon)$.
+> At first I thought maybe we're evaluating the integral from $-M$ to $M$ but excluding the area that gets arbitrarly close to $0$, because there the integral would diverge to infinity. With my interpretation the value would simply be $0$ because of the symmetry of $\frac{1}{x}$ about the origin - and if we integrated from $-\epsilon$ to $-M$ and add the integral from $\epsilon$ to $M$ they would cancel each other out, avoiding the problems at the origin.
+>
+> I would appreaciate a clarification as I'm not sure at all about my reasoning.
+:::
+
+Yes, that's right.  You can compute explicitly:
+$$\begin{align*}
+\int_{[-M, M]\setminus(-\epsilon, \epsilon)} \frac{1}{x} \,dx 
+&= \int_{-M}^{-\epsilon} \frac{1}{x}\,dx + \int_{\epsilon}^M\frac{1}{x} \,dx \\
+&= \left.\ln(-x)\right|_{-M}^{-\epsilon} + \left.\ln(x)\right|_{\epsilon}^M \\
+&= \left(\ln \epsilon - \ln M\right) + \left(\ln M - \ln \epsilon\right) = 0
+\end{align*}$$
+So the limit of the above as $\epsilon\to 0$ is also $0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3358864/evaluate-the-integral-of-a-symmetric-function-excluding-a-interval-of-numbers/3358869#3358869) on Mathematics Stack Exchange, 2019-09-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

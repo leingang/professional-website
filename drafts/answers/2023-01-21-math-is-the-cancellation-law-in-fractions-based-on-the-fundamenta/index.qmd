@@ -1,0 +1,58 @@
+---
+title: Is the cancellation law in fractions based on the fundamental law of fractions or that a number dividend by itself is equal to one?
+date: '2023-01-21'
+description: I'm not sure how much this matters, but if you ask me, the fundamental law of fractions (that factors common to the numerator and denominator can be canceled)…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4623179
+se-link: https://math.stackexchange.com/questions/4623172/is-the-cancellation-law-in-fractions-based-on-the-fundamental-law-of-fractions-o/4623179#4623179
+se-score: 0
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the cancellation law in fractions based on the fundamental law of fractions or that a number dividend by itself is equal to one?](https://math.stackexchange.com/questions/4623172/is-the-cancellation-law-in-fractions-based-on-the-fundamental-law-of-fractions-o), asked by [Jeff00](https://math.stackexchange.com/users/1012878/jeff00) on Mathematics Stack Exchange (2023-01-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have what I believe is a straight forward question.  Assume the following expression:
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+> Using the commutative property of multiplication, I can rewrite the expression as follows and by also separating the expression into multiple terms:
+>
+> [![enter image description here][q-2]][q-2]
+>
+> We all know that a number dividend by itself is equal to one, although I do not know if there is a "rule" that says this, unless you convert division into multiplication and use the additive inverse to get to this result.  Several textbooks have examples of actually dividing both the numerator and the denominator by the same amount, using the fundamental law of fractions, to convert two of the terms to 1, as follows:
+>
+> [![enter image description here][q-3]][q-3]
+>
+> I know, in practice, no one does this and these steps are usually done mentally.  However, my question is whether the "correct" methodology is to actually divide the numerator and denominator by the same amount, when the fraction is already equivalent to one because the numerator and the denominator are the same. Or can we just rely on the fact that a number dividend by itself equals one, although there is no axiom or definition to tell us this?
+>
+>
+>   [q-1]: LlIJX.png
+>   [q-2]: fH3EC.png
+>   [q-3]: H3fwu.png
+:::
+
+I'm not sure how much this matters, but if you ask me, the fundamental law of fractions (that factors common to the numerator and denominator can be canceled) is the fundamental one.
+
+You didn't say what $a$ and $b$ in the expression above were. Perhaps integers, real numbers, or just variables. It turns out you can construct fractions from any algebraic structure (called a ring) with addition and multiplication operations. The rule which guides that construction is the cancellation law.
+
+If an element $a$ in the ring has a multiplicative inverse $a^{-1}$, it can be shown that $\frac{1}{a}$ is equivalent to $\frac{a^{-1}}{1}$. So multiplying numerator and denominator by the inverse of a common factor produces the same fraction as cancellation. But this would be the longer way around.
+
+I can go into more detail if you want; I'm not sure about your background.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4623172/is-the-cancellation-law-in-fractions-based-on-the-fundamental-law-of-fractions-o/4623179#4623179) on Mathematics Stack Exchange, 2023-01-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

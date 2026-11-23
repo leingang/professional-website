@@ -1,0 +1,37 @@
+---
+title: 3 unknown, 3 nonlinear equations of form $xy - z =$ constant
+date: '2015-08-05'
+description: The brute force method would be to isolate (“solve for”) $z$ in the third equation (assuming $y \neq 0$), and substitute into the first two. That gives two…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1385891
+se-link: https://math.stackexchange.com/questions/1385877/3-unknown-3-nonlinear-equations-of-form-xy-z-constant/1385891#1385891
+se-score: 0
+se-accepted: false
+se-tags:
+- nonlinear-system
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[3 unknown, 3 nonlinear equations of form $xy - z =$ constant](https://math.stackexchange.com/questions/1385877/3-unknown-3-nonlinear-equations-of-form-xy-z-constant), asked by [doc holiday](https://math.stackexchange.com/users/259157/doc-holiday) on Mathematics Stack Exchange (2015-08-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How can I solve:     $$xy - z = a$$
+>                       $$xz - y = b$$
+>                      $$yz - x = c$$ 
+>          for $x, y, z$ (where $a,b,c$ are constants)?   Let all variables and constants be integers 
+>          (or at least rational)
+:::
+
+The brute force method would be to isolate (“solve for”) $z$ in the third equation (assuming $y \neq 0$), and substitute into the first two.  That gives two nonlinear equations in two variables $x$ and $y$.  Then repeat: isolate either $y$ or $x$ in one of those new equations, and substitute into the other.  That should result in one (probably nonlinear) equation for one of the variables.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1385877/3-unknown-3-nonlinear-equations-of-form-xy-z-constant/1385891#1385891) on Mathematics Stack Exchange, 2015-08-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

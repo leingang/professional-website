@@ -1,0 +1,49 @@
+---
+title: Seperable ODE derivation
+date: '2017-10-13'
+description: 'You are nearly there. You have $$\ln u = -y^2 + c$$ To isolate $u$, you have to undo the ln. The exponential function is its inverse: $$u = e^{-y^2 + c} = e^c…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2470619
+se-link: https://math.stackexchange.com/questions/2470609/seperable-ode-derivation/2470619#2470619
+se-score: 1
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Seperable ODE derivation](https://math.stackexchange.com/questions/2470609/seperable-ode-derivation), asked by [fr14](https://math.stackexchange.com/users/412287/fr14) on Mathematics Stack Exchange (2017-10-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Looking for some help in solving the following seperable ODE,
+>
+> $$\frac{d u }{d y } + 2yu = 0$$
+>
+> So my attempt at separating the variable gives,
+>
+> $$\frac{d u }{d  y \ }  = -2yu$$
+>
+> $$\frac{d u }{u } = -2ydy$$
+>
+> $$\ln u = -y^2+ c$$
+>
+> the final answer to this solution is $u = Ce^{-y^2}$n but I am not sure how to get this result
+:::
+
+You are nearly there.  You have
+$$\ln u = -y^2 + c$$
+To isolate $u$, you have to undo the ln.  The exponential function is its inverse:
+$$u = e^{-y^2 + c} = e^c e^{-y^2}$$
+Now let $C = e^c$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2470609/seperable-ode-derivation/2470619#2470619) on Mathematics Stack Exchange, 2017-10-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

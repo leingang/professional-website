@@ -1,0 +1,66 @@
+---
+title: 'Debugging LaTeX Errors: how to isolate the problem'
+date: '2014-07-12'
+description: The () in the console or log file indicate included files. So this error is happening while LaTeX is processing the QuickFlippedLessons2.aux file. The l. at…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191194
+se-link: https://tex.stackexchange.com/questions/191190/debugging-latex-errors-how-to-isolate-the-problem/191194#191194
+se-score: 6
+se-accepted: false
+se-tags:
+- errors
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Debugging LaTeX Errors: how to isolate the problem](https://tex.stackexchange.com/questions/191190/debugging-latex-errors-how-to-isolate-the-problem), asked by [Dov](https://tex.stackexchange.com/users/32330/dov) on TeX Stack Exchange (2014-07-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Using TeXWorks and TeXLive, usually errors display the relevant text, and I can go find the problem.  Of course, it would be nice if there were a button I could click to go there, but it's not crippling.  However, I now have a large document, and suddenly, I get the following error, with no clue about where in the document it is failing:
+>
+> ```latex
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+> (c:/bin/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+> (c:/bin/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def)
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/url/url.sty))
+>
+> Package hyperref Message: Driver (autodetected): hpdftex.
+>
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty)
+> (c:/bin/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty)
+>
+> (./QuickFlippedLessons2.aux
+> ! Undefined control sequence.
+> l.75 \@writefil
+>
+> ? 
+> ```
+>
+> I don't have a previous version saved, so finding this could be an extremely tedious process of deleting sections until I find the relevant one.  Is there anything I can do?
+:::
+
+The `()` in the console or log file indicate included files.  So this error is happening while LaTeX is processing the `QuickFlippedLessons2.aux` file.  The `l.` at the beginning of the line indicates the line number.  So this is telling you that there is an undefined control sequence `\@writefil` on line 75 of `QuickFlippedLessons2.aux`.
+
+Now `.aux` files are automatically created during a prior LaTeX run, and read at `\begin{document}` of the current run. Unless you are intentionally writing to the `.aux` file, my guess is that you had a prior aborted LaTeX run that only partially wrote something to the `.aux` file.  
+
+If that is the case, hitting <kbd>enter</kbd> at this error will command LaTeX to continue compiling as best it can.  If this is the only problem, the run will succeed and the `.aux` file will be correctly written, and the error will go away in future runs.
+
+Alternatively, you can delete the `.aux` file and recompile.  The first run will write the `.aux` file correctly.
+
+(Heiko beat me by a minute, but I'll keep the post since I tried to go into more detail.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/191190/debugging-latex-errors-how-to-isolate-the-problem/191194#191194) on TeX Stack Exchange, 2014-07-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

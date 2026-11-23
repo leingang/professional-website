@@ -1,0 +1,52 @@
+---
+title: Why is $\tan(\theta)$ the reciprocal of $\tan(90 - \theta)$?
+date: '2017-04-11'
+description: I am pretty sure that is why this function is called cosine. I guess in the days when these values had to be looked up on tables, it was easier to have another…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2228617
+se-link: https://math.stackexchange.com/questions/2228604/why-is-tan-theta-the-reciprocal-of-tan90-theta/2228617#2228617
+se-score: 3
+se-accepted: true
+se-tags:
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is $\tan(\theta)$ the reciprocal of $\tan(90 - \theta)$?](https://math.stackexchange.com/questions/2228604/why-is-tan-theta-the-reciprocal-of-tan90-theta), asked by [Toby Mak](https://math.stackexchange.com/users/285313/toby-mak) on Mathematics Stack Exchange (2017-04-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Recently, I had a look at [this question on Quora](https://www.quora.com/How-much-is-def-deg-circ-log-tan1-deg+-log-tan2-deg+-log-tan3-deg+-cdots+-log-tan89-deg-when-log-is-a-base-10-logarithm) about how the values of integer tangents from $\tan(1^{\circ})$ to $\tan(90^{\circ})$ sum to $1$. I tried to solve the question on my own here, and got stuck here:
+>
+> $$\tan(θ) = \frac{1}{\tan(90 - \theta)}$$
+>
+> $$\tan(θ)\tan(90 - \theta) =  1$$
+>
+> Please help and, if possible, find more than one solution for this identity (since I know it is commonly used).
+:::
+
+Worth remembering: 
+
+> The *cosine* of an angle is the *sine* of its *co*mplement.
+
+I am pretty sure that is why this function is called cosine.  I guess in the days when these values had to be looked up on tables, it was easier to have another column in the table than to add a step to the arithmetic.
+
+The complement of an angle $\theta$ is $90-\theta$.  So
+$$\begin{align*}
+    \cos(\theta) &= \sin(90-\theta) \\
+    \sin(\theta) &= \cos(90-\theta)
+\end{align*}$$
+Since tangent is sine divided by cosine:
+$$\tan(90-\theta) = \frac{\sin(90-\theta)}{\cos(90-\theta)} = \frac{\cos(\theta)}{\sin(\theta)} = \cot(\theta)$$
+Again, the *cotangent* of an angle is the *tangent* of its *co*mplement.  Finally, since $\cot(\theta) = \frac{1}{\tan(\theta)}$, your identity is proved.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2228604/why-is-tan-theta-the-reciprocal-of-tan90-theta/2228617#2228617) on Mathematics Stack Exchange, 2017-04-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

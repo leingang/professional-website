@@ -1,0 +1,44 @@
+---
+title: 'Image manipulation: What are the options?'
+date: '2011-05-12'
+description: Take a look at the manual to the graphics bundle. It's called grfguide.pdf and if you have a command line you can probably call it up by typing "texdoc…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 18075
+se-link: https://tex.stackexchange.com/questions/18070/image-manipulation-what-are-the-options/18075#18075
+se-score: 3
+se-accepted: false
+se-tags:
+- graphics
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Image manipulation: What are the options?](https://tex.stackexchange.com/questions/18070/image-manipulation-what-are-the-options), asked by [u17](https://tex.stackexchange.com/users/1236/u17) on TeX Stack Exchange (2011-05-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What manipulations on imported images can be done from inside LaTeX?
+>
+> Using the `graphicx` package, I can
+>
+>  - Change image width and height
+>  - Rotate image by a given angle
+>  - Crop image
+>  - Select specific page in image file (e.g., in a multi-page PDF)
+>
+> Are the other more advanced options? Things I would find useful include flipping an image, rendering it as B/W, or controlling resolution? 
+>
+> Can I call an external program to do more advanced manipulation from LaTeX?
+:::
+
+Take a look at the manual to the graphics bundle.  It's called `grfguide.pdf` and if you have a command line you can probably call it up by typing "`texdoc graphicx`".  It's also on [CTAN](http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/18070/image-manipulation-what-are-the-options/18075#18075) on TeX Stack Exchange, 2011-05-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

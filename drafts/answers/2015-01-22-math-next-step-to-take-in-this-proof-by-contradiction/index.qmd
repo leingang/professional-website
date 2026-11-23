@@ -1,0 +1,53 @@
+---
+title: Next step to take in this proof by contradiction?
+date: '2015-01-22'
+description: An analytic proof is probably beyond the scope of your discrete math course. I suspect brute force is the intended approach from here.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1114485
+se-link: https://math.stackexchange.com/questions/1114483/next-step-to-take-in-this-proof-by-contradiction/1114485#1114485
+se-score: 1
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- proof-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Next step to take in this proof by contradiction?](https://math.stackexchange.com/questions/1114483/next-step-to-take-in-this-proof-by-contradiction), asked by [committedandroider](https://math.stackexchange.com/users/170019/committedandroider) on Mathematics Stack Exchange (2015-01-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is a problem from Discrete Mathematics and its Applications
+> ![enter image description here][q-1]
+>
+> Here is my work so far 
+> ![enter image description here][q-2]
+>
+> It's similar to this other question I had https://math.stackexchange.com/questions/1105927/next-step-to-take-to-reach-the-contradiction.
+>
+> I am assuming that I what I am trying to prove is false, that is there is a positive perfect cube less than 1000 that is the sum of the cubes of two positive integers.  From here I need  to take logical steps to show that assuming that what I am trying to prove is false leads to a contradiction(false no matter what is passed in).
+>
+> The first algebraic step I took was saying that if s^3 < 1000, cubing root both sides, s < 10. The next logical step i took was saying that if a^3 + b ^3 = s ^ 3, a^3 + b^3 < 1000 as well. If a ^ 3 + b ^ 3 < 1000, I implied that a ^ 3 < 1000 and b ^ 3 < 1000 because if either component >= 1000, the result will also be >= 1000. Going off of that, repeating(recursion) the step I did for s^3 < 1000. I got that b < 10 and a < 10.
+>
+> In the end i have three intervals   0 < s < 10, 0 < a < 10, and 0 < b < 10. I don't where to go from here though. I think it be too brute force to test every s from 1 to 9 and showing that there is no a^3 and b^3 that will add to it.
+>
+> What's the next step I should take to reach the contradiction that would be more efficient/not as exhaustive?
+>
+>
+>   [q-1]: IiSAQ.png
+>   [q-2]: gJqQv.jpg
+:::
+
+An analytic proof is probably beyond the scope of your discrete math course.  I suspect brute force is the intended approach from here.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1114483/next-step-to-take-in-this-proof-by-contradiction/1114485#1114485) on Mathematics Stack Exchange, 2015-01-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

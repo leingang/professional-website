@@ -1,0 +1,43 @@
+---
+title: Proof by Induction for $X=\frac{n}{3n+1}$
+date: '2017-10-24'
+description: Here is another proof that $X{n+1} > Xn$ for all $n$ (be they natural numbers or integers).
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2488064
+se-link: https://math.stackexchange.com/questions/2488033/proof-by-induction-for-x-fracn3n1/2488064#2488064
+se-score: 0
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- proof-writing
+- induction
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof by Induction for $X=\frac{n}{3n+1}$](https://math.stackexchange.com/questions/2488033/proof-by-induction-for-x-fracn3n1), asked by [wsh_97](https://math.stackexchange.com/users/451703/wsh-97) on Mathematics Stack Exchange (2017-10-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The question asks to prove that the set $X=\{\frac{n}{3n+1}:n\in\mathbb{N}\}$ does not contain a maximal element. Also prove that the set does not contain a minimum.
+>
+> I started with the equation $X_n=\frac{n}{3n+1}$ and a base case of $n=1$. Doing so, $X_1=\frac{1}{4}$. Now I take $n=k$ which gives us $X_k=\frac{k}{3k+1}$. Doing so, we then want to prove that $n=k+1$ is also true. So, if we plug this into the equation, we get $X_{k+1}=\frac{k+1}{3k+2}$. 
+>
+> After doing so, I got stuck and did not know how to continue with this question. Any help would be tremendously appreciated.
+:::
+
+Here is another proof that $X_{n+1} > X_n$ for all $n$ (be they natural numbers or integers).
+
+Let $f(x) = \frac{x}{3x+1}$.  Then $X_n = f(n)$ for all $n$.  For any $n$,
+$$X_{n+1} - X_n = f(n+1) - f(n) = f'(c_n)$$
+for some $c_n$ between $n$ and $n+1$.  This follows from the Mean Value Theorem.  But $f'(x) = \frac{1}{(3x+1)^2}$, which is positive for all $x$.  So $f'(c_n) > 0$, which implies $X_{n+1} > X_n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2488033/proof-by-induction-for-x-fracn3n1/2488064#2488064) on Mathematics Stack Exchange, 2017-10-24. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

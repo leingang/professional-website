@@ -1,0 +1,55 @@
+---
+title: Matrix equation / Rewrite formula
+date: '2019-02-12'
+description: You're close. If $\mathbf{W}A = \mathbf{W} + A$, then $$\mathbf{W}(A-I) = A$$ where $I$ is the $2\times2$ identity matrix. Then $$\mathbf{W} = A(A-I)^{-1}$$ if…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3110661
+se-link: https://math.stackexchange.com/questions/3110646/matrix-equation-rewrite-formula/3110661#3110661
+se-score: 1
+se-accepted: true
+se-tags:
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Matrix equation / Rewrite formula](https://math.stackexchange.com/questions/3110646/matrix-equation-rewrite-formula), asked by [DerCoder](https://math.stackexchange.com/users/644193/dercoder) on Mathematics Stack Exchange (2019-02-12; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I´m looking for a solution for matrix **W**.
+> Can anyone help me pls?
+>
+>
+> $$\mathbf W \cdot A =\mathbf W + A$$
+>
+> $$A = 
+> \left(
+>     \begin{matrix}
+>     2 & 1 \\
+>     1 & 3 \\
+>     \end{matrix}
+> \right)$$
+>
+>
+> My solution:
+> **W** = $\left(\frac{A}{A-1}\right)$
+> Is this correct? 
+> Because $A-1$ is not possible - in my opinion (I thought you can´t subtract an integer from a matrix)
+:::
+
+You're close.  If $\mathbf{W}A = \mathbf{W} + A$, then
+$$\mathbf{W}(A-I) = A$$
+where $I$ is the $2\times2$ identity matrix.  Then
+$$\mathbf{W} = A(A-I)^{-1}$$
+if $A-I$ is invertible.  Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3110646/matrix-equation-rewrite-formula/3110661#3110661) on Mathematics Stack Exchange, 2019-02-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

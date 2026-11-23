@@ -1,0 +1,91 @@
+---
+title: Style same type of element throughout document
+date: '2013-04-23'
+description: 'Niel''s answer is a good one for what you want to do. I was thinking more generally of the question: how to change the formatting of the body of an enumerate or…'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 110329
+se-link: https://tex.stackexchange.com/questions/110064/style-same-type-of-element-throughout-document/110329#110329
+se-score: 2
+se-accepted: false
+se-tags:
+- lists
+- italic
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Style same type of element throughout document](https://tex.stackexchange.com/questions/110064/style-same-type-of-element-throughout-document), asked by [Hunter McMillen](https://tex.stackexchange.com/users/29466/hunter-mcmillen) on TeX Stack Exchange (2013-04-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am new to Latex and am wondering if there exists anything like a `class` in HTML. I have been writing a bunch of documents lately and all my `\item`s have needed to be *italized*, is there some way to indicate at the beginning of the file how to style `\item`s without have to do:
+>
+> ```latex
+> \item \texit{.........................} 
+> \item \texit{.........................} 
+> \item \texit{.........................} 
+> \item \texit{.........................} 
+> \item \texit{.........................} 
+> \item \texit{.........................} 
+> ```
+>
+> over and over again?
+:::
+
+Niel's answer is a good one for what you want to do.  I was thinking more generally of the question: how to change the formatting of the body of an `enumerate` or `itemize` environment, *without changing the item labels*?
+
+In order to do this, you have to switch the font commands on and off after each `\item` and before the next `\item`.  The trouble is that `\item` takes an optional argument.  So to make it work, patch the auxiliary macro `\@item`:
+
+```latex
+\documentclass{article}
+\usepackage{etoolbox}
+\usepackage{color}
+\begin{document}
+
+\setlength\parindent{0ex}
+
+\makeatletter
+\pretocmd{\@item}{\normalfont\normalcolor}
+{\message{Patching of @item succeeded.}}
+{\message{Patching of @item failed.}}
+\apptocmd{\@item}{\scshape\color{red}}
+{\message{Patching of @item succeeded.}}
+{\message{Patching of @item failed.}}
+
+\makeatother
+
+
+\begin{itemize}
+\item foo \emph{(bar)} \item bar
+\end{itemize}
+Some text
+
+\begin{enumerate}
+\item foo
+\item bar
+\end{enumerate}
+
+\end{document}
+```
+
+So when TeX encounters `\@item`, it will:
+
+ 1. switch the font and color (back) to `\normal`
+ 2. do what `\@item` would normally do, which is to set a label and change the margins, etc.
+ 3. switch the font to `\scshape` and color to `red`.
+
+Here is the output:
+
+![sample code output][1]
+
+  [1]: 5pbMk.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/110064/style-same-type-of-element-throughout-document/110329#110329) on TeX Stack Exchange, 2013-04-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

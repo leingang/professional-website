@@ -1,0 +1,44 @@
+---
+title: How to create custom beamer template
+date: '2011-04-18'
+description: I think the first thing you want to do is browse the themes available in the standard distribution. For that, look in the beamer manual, Part III. Then read…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16090
+se-link: https://tex.stackexchange.com/questions/16078/how-to-create-custom-beamer-template/16090#16090
+se-score: 5
+se-accepted: false
+se-tags:
+- beamer
+- templates
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to create custom beamer template](https://tex.stackexchange.com/questions/16078/how-to-create-custom-beamer-template), asked by [y2p](https://tex.stackexchange.com/users/3444/y2p) on TeX Stack Exchange (2011-04-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to create a custom beamer template, for the slides to look something like this
+>
+> ![enter image description here][q-1].
+>
+> How can I go about it?
+> Thanks
+>
+>
+>   [q-1]: RHELY.png
+:::
+
+I think the first thing you want to do is browse the themes available in the standard distribution.  For that, look in the beamer manual, Part III.  Then read about how beamer selects templates, fonts, and colors in Part II.  Then start looking at the source code for the theme files, which are located in `${TEXMF}/tex/latex/beamer/themes`.
+
+This is not an easy thing to do, but if you find something that exists close to what you want you might be able to adapt it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16078/how-to-create-custom-beamer-template/16090#16090) on TeX Stack Exchange, 2011-04-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,79 @@
+---
+title: Prove that the Well Ordering Axiom does not apply to the rational and real numbers.
+date: '2020-02-05'
+description: No, there can only be one “candidate” for the maximum. You've essentially shown that for all $a/b \in S$, $(a+1)/(b+1) \in S$ and is larger. So there's no…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3534801
+se-link: https://math.stackexchange.com/questions/3534525/prove-that-the-well-ordering-axiom-does-not-apply-to-the-rational-and-real-numbe/3534801#3534801
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- number-theory
+- proof-writing
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Prove that the Well Ordering Axiom does not apply to the rational and real numbers.](https://math.stackexchange.com/questions/3534525/prove-that-the-well-ordering-axiom-does-not-apply-to-the-rational-and-real-numbe), asked by [Sean O'Gary](https://math.stackexchange.com/users/708749/sean-ogary) on Mathematics Stack Exchange (2020-02-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am currently self teaching and have nobody to go to for help. This is not a homework problem.
+>
+> Show that the Well-Ordering Axiom is not always true if $\mathbb{Z}$ is replaced by $\mathbb{Q}$ or $\mathbb{R}$.
+>
+> It seems the term Well Ordering Axiom, by that name, is not widely understood. Perhaps it is unique to my book. As stated in it (Algebra by Mark Sepanski): If a nonempty set S$\subset$$\mathbb{Z}$is bounded above, then S contains a unique largest element, i.e., there is a unique m$\in$S so that m$\geq$a for all a$\in$ S. 
+>
+> Here is my attempt:
+>
+> Let us consider the set
+>
+> S={x$\in$Q|0$<$x$<$1}. 
+>
+> The set S is bounded above by 1. Assume for the sake of contradiction that the Well-Ordering Axiom applies to the rational numbers. Then there should be some maximum element c $\in$S. Since S$\subset$$\mathbb{Q}$, c$\in$$\mathbb{Q}$and we can write c =$\frac ab$, where a,b$\in$$\mathbb{Z}$. Furthermore, a < b since 0 < c < 1. Now, we shall construct a counterexample, namely, an element of S greater than c. 
+>
+> a < b
+> $\implies$a+ab < b+ab$\implies$a(b+1) < b(a+1)$\implies$$\frac ab$<$\frac {a+1}{b+1}$
+>
+> So, we have found a number greater than c and less than 1 (obviously). Nonetheless, since I am a learner:
+>
+> a < b $\implies$a+1 < b+1$\implies$$\frac {a+1}{b+1}$ < 1
+>
+> Finally, since a,b > 0,
+>
+> 0 < $\frac {a+1}{b+1}$ < 1. 
+>
+> This violates our assumption that c is the maximum element of S. Thus, there is no maximal element of S. Since, $\mathbb{Q}$$\subset$$\mathbb{R}$, the same applies to$\mathbb{R}$. QCD
+>
+> The minimum case I will not bother writing here as this is sufficient for my question. 
+>
+> Does this method require the proof to be infinite? In this proof I showed that a/b is not the maximum element. Isn't (a+1)/(b+1) a candidate for the new maximum requiring a repition of the proof bringing us to (a+2)/(b+2) and so on.
+>
+> If my proof is valid then why is this a problem in the case for proving the principle of mathematical induction where the same logic is being applied in a sort of loop? 
+>
+> Of course, a and b are arbitrary integers so perhaps the logic of my initial proof implicitly applies to anything of the form (integer)/(integer). 
+>
+> The reason I suspected the possibility of an infinite proof is because to prove the PMI we cannot simply do this:
+>
+> p1 is given and p(n) => p(n+1). 1+1=2. Therefore p2. Applying the same logic, we can get to any arbitrary n $\in$$\mathbb{N}$. Therefore, the PMI holds. 
+>
+> And obviously this spans all of $\mathbb{N}$ QED.
+:::
+
+> Does this method require the proof to be infinite? In this proof I showed that $a/b$ is not the maximum element. Isn't $(a+1)/(b+1)$ a candidate for the new maximum requiring a repetition of the proof bringing us to $(a+2)/(b+2)$ and so on.
+
+No, there can only be one “candidate” for the maximum.  You've essentially shown that for *all* $a/b \in S$, $(a+1)/(b+1) \in S$ and is larger.  So there's no maximum element.
+
+You can think about a proof by contradiction as a game between two debaters.  You claim there is no maximum element of $S$ and dare your opponent to find one.  Suppose they claim to find one.  Now you construct an element of $S$ that is larger, defying their claim that they found the maximum.  But the opponent doesn't get to change their answer—that's against the rules.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3534525/prove-that-the-well-ordering-axiom-does-not-apply-to-the-rational-and-real-numbe/3534801#3534801) on Mathematics Stack Exchange, 2020-02-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

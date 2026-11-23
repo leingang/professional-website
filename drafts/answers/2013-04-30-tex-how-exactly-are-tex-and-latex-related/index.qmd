@@ -1,0 +1,38 @@
+---
+title: How exactly are TeX and LaTeX related?
+date: '2013-04-30'
+description: TeX has the option of a set of formatting macros called a format. Plain TeX is one of these formats, LaTeX is another, ConTeXt is a third. So in that sense…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 111524
+se-link: https://tex.stackexchange.com/questions/111516/how-exactly-are-tex-and-latex-related/111524#111524
+se-score: 2
+se-accepted: true
+se-tags:
+- tex-core
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How exactly are TeX and LaTeX related?](https://tex.stackexchange.com/questions/111516/how-exactly-are-tex-and-latex-related), asked by [Sean Allred](https://tex.stackexchange.com/users/17423/sean-allred) on TeX Stack Exchange (2013-04-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know that plain TeX is the low-level typographical language that describes nearly every aspect of presentation, taking care of things like paragraph breaks, new pages, and the like.
+>
+> I know (well, I've inferred) that LaTeX is in fact written in TeX, partly to demonstrate its power and partly for sheer convenience; LaTeX allows the author to construct documents logically rather than 'typographically' as using plain TeX, no-frills, would have you do.
+>
+> What I don't know is how LaTeX really does it.  Does LaTeX compile the document into a PDF, or does it compile the document into plain TeX for `tex` to actually process?  What features does LaTeX *actually* add on to plain TeX?
+:::
+
+TeX has the option of a set of formatting macros called a *format*.  Plain TeX is one of these formats, LaTeX is another, ConTeXt is a third.  So in that sense LaTeX is just a layer of helper code over TeX, like a library in a programming language.  As far as I understand it (and many here do better than I), prior to `pdftex` the `latex` executable was a  version of `tex` pre-compiled with the LaTeX macros “baked in.” As Herbert notes, the `pdftex` program has many formats baked in and chooses one according the name under which it was called.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/111516/how-exactly-are-tex-and-latex-related/111524#111524) on TeX Stack Exchange, 2013-04-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

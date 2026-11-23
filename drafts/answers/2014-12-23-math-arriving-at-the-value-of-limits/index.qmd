@@ -1,0 +1,52 @@
+---
+title: Arriving at the value of Limits
+date: '2014-12-23'
+description: Um, no. Set $\epsilon = \frac{1}{2}$. Let $\delta > 0$ be given, and set $x=\min\left\{\frac{\delta}{2},\frac{1}{2}\right\}$. Then $|x| < \delta$ but $$|f(x) -…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1078304
+se-link: https://math.stackexchange.com/questions/1078272/arriving-at-the-value-of-limits/1078304#1078304
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Arriving at the value of Limits](https://math.stackexchange.com/questions/1078272/arriving-at-the-value-of-limits), asked by [user117913](https://math.stackexchange.com/users/117913/user117913) on Mathematics Stack Exchange (2014-12-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> According to the formal definition of limits,
+>
+> Let $f(x)$ be a function defined on an open interval $D$ that contains $c$, except possibly at $x=c$. Let $L$ be a number. Then we say that
+>
+> $$\lim_{x \to c} f(x) = L$$
+> if, for every $\varepsilon>0$, there exists a $\delta>0$ such that for all $x\in D$ with
+>
+> $$0 < \left| x - c \right| < \delta$$
+> we have
+>
+> $$\left| f(x) - L \right| < \varepsilon$$
+>
+>
+> Suppose now we have a function $f(x)=x$. Now if we want to calculate the limit at 0, we just replace x by the value 0. What decides that it is correct and is the only possible limit? We could as easily have chosen 1 as our limit still satisfy the formal definition by staying within the error limits. Why is this so?
+:::
+
+> We could as easily have chosen 1 as our limit still satisfy the formal definition by staying within the error limits. 
+
+Um, no.  Set $\epsilon = \frac{1}{2}$.  Let $\delta > 0$ be given, and set $x=\min\left\{\frac{\delta}{2},\frac{1}{2}\right\}$. Then $|x| < \delta$ but $$|f(x) - 1| = |x-1| \geq \frac{1}{2}$$
+
+We have shown there exists some $\epsilon >0$ such that for all $\delta > 0$ there exists $x$ with $|x-0| < \delta$ but $|f(x) - 1| \geq \epsilon$.  This is the negation of the statement that $\lim_{x\to a} f(x) = 1$.  That is, the limit *cannot* be 1.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1078272/arriving-at-the-value-of-limits/1078304#1078304) on Mathematics Stack Exchange, 2014-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,58 @@
+---
+title: Help needed in understanding the basics of Cartan decomposition of a Lie algebra
+date: '2014-12-23'
+description: The map $\theta$ is a linear map of the vector space $\mathfrak{gl}n$. Eigenvectors of $\theta$ are matrices $X$ such that $-X^ = \lambda X$. Since $\theta^2$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1079227
+se-link: https://math.stackexchange.com/questions/1079221/help-needed-in-understanding-the-basics-of-cartan-decomposition-of-a-lie-algebra/1079227#1079227
+se-score: 2
+se-accepted: true
+se-tags:
+- reference-request
+- lie-groups
+- lie-algebras
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help needed in understanding the basics of Cartan decomposition of a Lie algebra](https://math.stackexchange.com/questions/1079221/help-needed-in-understanding-the-basics-of-cartan-decomposition-of-a-lie-algebra), asked by [math](https://math.stackexchange.com/users/71939/math) on Mathematics Stack Exchange (2014-12-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to learn the basics of Cartan decomposition of Lie algebra, and have come across the following example. 
+>
+> Consider $\mathfrak{gl_n}$ as the Lie algebra of endomorphisms of $\mathbb{C}^n$. Let the Cartan involution on $\mathfrak{gl_n}$ be given by 
+> $\theta (A)=-A^*,$ where $*$ denotes conjugate transpose of $A \in \mathfrak{gl_n}$ and the  killing form is given by  $$(X,Y)=-\frac{1}{2} Tr(A\theta(B)).$$ 
+> I have the following questions: 
+>
+> $1)$ What does it mean by $\pm1-$eigenspace of $\theta$ ? This [wikipedia page](http://en.wikipedia.org/wiki/Cartan_decomposition#Cartan_pairs) tells that 
+>
+> > Since $\theta ^ 2 =1,$ the linear map $\theta$ has the two eigenvalues $\pm1.$ 
+>
+> What is the definition of eigen-space in this context? I know eigenspaces only in the context of basic linear algebra. I got confused here. 
+>
+> $2)$ What is the Cartan decomposition of $\mathfrak{gl}_n$ ? Any suggestions for references? 
+>
+> Thanks!
+:::
+
+The map $\theta$ is a linear map of the vector space $\mathfrak{gl}_n$.  Eigenvectors of $\theta$ are matrices $X$ such that $-X^* = \lambda X$.  Since $\theta^2$ is the identity function, eigenvalues of $\theta$ must be square roots of $1$, namely $\pm 1$.
+
+The eigenspace corresponding to the eigenvalue $1$ is the set
+$$\left\{X \in \mathfrak{gl_n} : -X^* =X\right\}$$
+This is the set of skew-hermitian matrices.
+The $-1$-eigenspace is the set
+$$\left\{X \in \mathfrak{gl_n} : X^* =X\right\}$$
+of hermitian matrices.
+
+Look in Helgason's book *Differential Geometry, Lie Groups, and Symmetric Spaces* for more.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1079221/help-needed-in-understanding-the-basics-of-cartan-decomposition-of-a-lie-algebra/1079227#1079227) on Mathematics Stack Exchange, 2014-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

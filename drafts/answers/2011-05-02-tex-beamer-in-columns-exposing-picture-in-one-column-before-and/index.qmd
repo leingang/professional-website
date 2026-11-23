@@ -1,0 +1,128 @@
+---
+title: Beamer - in columns exposing picture in one column before and after text in other column
+date: '2011-05-02'
+description: You can add overlay specifications to many environments and macros—column and \item in particular—in beamer (such commands/environments are called overlay…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17141
+se-link: https://tex.stackexchange.com/questions/17121/beamer-in-columns-exposing-picture-in-one-column-before-and-after-text-in-othe/17141#17141
+se-score: 11
+se-accepted: false
+se-tags:
+- beamer
+- columns
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer - in columns exposing picture in one column before and after text in other column](https://tex.stackexchange.com/questions/17121/beamer-in-columns-exposing-picture-in-one-column-before-and-after-text-in-othe), asked by [dingo_d](https://tex.stackexchange.com/users/4682/dingo-d) on TeX Stack Exchange (2011-05-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm doing a presentation in beamer, and I was wondering is it possible to, in two columns, make text first appear in left column, then on the second click I'd get a picture in the right column, and then I'd just continue with the text in the left column?
+>
+> The way I made it now is, that the picture in the right column will come after the text in the left column:
+>
+> ```latex
+> \begin{frame}
+> \frametitle{Prva probna valna funkcija}
+> Varijacionu metodu započinjemo sljedećom probnom valnom funkcijom\pause
+> \begin{columns}
+> 	\begin{column}{0.5\textwidth}
+> 	\begin{itemize}
+> 	\item\begin{equation*}
+> 	\varphi_1(x)=\left(\frac{b}{\sqrt{\pi}}\right)^{1/2}e^{-\frac{b^2}{2}x^2}
+> 	\end{equation*}
+> 	\pause
+> 	\item Očekivana vrijednost energije\pause
+> 	\begin{equation*}
+> 	E(b)=\langle\varphi_1|\hat{H}|\varphi_1\rangle,
+> 	\end{equation*}
+> 	\end{itemize}
+> 	\end{column}\pause
+> 	\begin{column}{0.5\textwidth}
+> 	\centerline{\includegraphics[width=0.9\textwidth]{valfun1.eps}}
+> 	\end{column}
+> \end{columns}
+> \end{frame}
+> ```
+>
+> And I'd like it to have the first equation shown first, then the picture on the right, and then some more text on the left...
+>
+> Thanks for any advice.
+:::
+
+You can add overlay specifications to many environments and macros—`column` and `\item` in particular—in beamer (such commands/environments are called *overlay specification aware*).  This eliminates the need for many `\onslide` macros.  So Gonzalo's code can be be trimmed down a tiny bit:
+
+```latex
+\documentclass[draft]{beamer}
+\begin{document}
+\begin{frame}
+\frametitle{Prva probna valna funkcija}
+Varijacionu metodu započinjemo sljedećom probnom valnom funkcijom
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{itemize}
+    \item<2->\begin{equation*}
+    \varphi_1(x)=\left(\frac{b}{\sqrt{\pi}}\right)^{1/2}e^{-\frac{b^2}{2}x^2}
+    \end{equation*}
+    \item<4-> Očekivana vrijednost energije
+    \uncover<5->{\begin{equation*}
+    E(b)=\langle\varphi_1|\hat{H}|\varphi_1\rangle,
+    \end{equation*}}
+    \end{itemize}
+    \end{column}
+    \begin{column}<3->{0.5\textwidth}
+    \centerline{\includegraphics[width=0.9\textwidth]{valfun1.eps}}
+    \end{column}
+\end{columns}
+\end{frame}
+\end{document}
+```
+
+(The `draft` option makes it compile without the graphics file.)
+
+The specification `<n->` means "show this stuff from slide *n* onwards."  The only case I couldn't attach it to a command or environment was the `equation*` environment you wanted to uncover.  So I used `\uncover`.
+
+You can also use *incremental* overlay specifications where `<+->` means "add one to the slide count, then show this stuff from slide *n* onwards".  I kind of like this because it means you can insert stuff and you don't have to change all then umbers.  If you just put these everywhere you had `<n->` above you'd back at the original problem, however: stuff gets uncovered in the order it's coded, not the order you want.  But a number in parentheses *after* the `+` means to add that much more (or less) if the number is negative, to the slide count.  So you can also do it this way:  
+
+```latex
+\documentclass[draft]{beamer}
+\begin{document}
+\begin{frame}
+\frametitle{Prva probna valna funkcija}
+Varijacionu metodu započinjemo sljedećom probnom valnom funkcijom
+\begin{columns}
+    \begin{column}<+->{0.5\textwidth}
+    \begin{itemize}
+    \item<+->\begin{equation*}
+    \varphi_1(x)=\left(\frac{b}{\sqrt{\pi}}\right)^{1/2}e^{-\frac{b^2}{2}x^2}
+    \end{equation*}
+    \item<+(1)-> Očekivana vrijednost energije
+    \uncover<+(1)->{\begin{equation*}
+    E(b)=\langle\varphi_1|\hat{H}|\varphi_1\rangle,
+    \end{equation*}}
+    \end{itemize}
+    \end{column}
+    \begin{column}<+(-2)->{0.5\textwidth}
+    \centerline{\includegraphics[width=0.9\textwidth]{valfun1.eps}}
+    \end{column}
+\end{columns}
+\end{frame}
+\end{document}
+```
+
+To figure out how this works, first put in `<+->` everywhere.  I put in a dummy one at the first column because I need to increment the slide count from zero.  We want to move the picture up two steps in the sequence—before the second `\item` and the `\uncover`ed `equation*`.  So we subtract two from the default slide count there.  But we also need to shift the second `\item` and the `\uncover`ed `equation*` down to make room for the picture (otherwise the graphic and the second `\item` come out at the same time.)  So we add one in addition to the increment there.
+
+The advantage is that if I insert stuff later one before the shifted graphic or after the last `\uncover`ed `equation*` I don't have to adjust the overlay specifications.  But something in between those would require adjustment.  
+
+(Read Chapter 9 of the 3.10 beamer manual for this.  You might have to read it several times, actually. `\smiley`)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17121/beamer-in-columns-exposing-picture-in-one-column-before-and-after-text-in-othe/17141#17141) on TeX Stack Exchange, 2011-05-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

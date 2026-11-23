@@ -1,0 +1,71 @@
+---
+title: LaTeX VERY compact itemize
+date: '2011-02-11'
+description: Try the enumitem and shortlst packages.
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 4969944
+se-link: https://stackoverflow.com/questions/4968557/latex-very-compact-itemize/4969944#4969944
+se-score: 3
+se-accepted: false
+se-tags:
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LaTeX VERY compact itemize](https://stackoverflow.com/questions/4968557/latex-very-compact-itemize), asked by [gex](https://stackoverflow.com/users/569980/gex) on Stack Overflow (2011-02-11; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am trying to build  a very compact itemize with LaTeX, because I want to fit it in a table without whitespace everywhere.
+>
+> What I need:
+>
+> - No whitespace before list
+> - No whitespace after list
+> - No whitespace between lines
+> - Less indent before the bulletpoints
+>
+> I have tried many packages (`paralist`, `mdwlist`, `enumitem`) but non of them can fully do it.
+>
+> I tried it myself (with the help of `paralist`) and could get rid of everything except the whitespace after the list. This is my current solution:
+>
+> ```latex
+> \makeatletter
+> \newcommand*{\compress}{\@minipagetrue}
+> \makeatother
+>
+> \newenvironment{ilist}%
+>   {
+>     %from parlist package, reduces indent before bulletpoints
+> 	\setdefaultleftmargin{1em}{1em}{}{}{}{} 
+> 	\compress %places itemize into minipage, removing whitespace before
+>   	\begin{itemize}%
+>     \setlength{\itemsep}{0pt}%
+>     \setlength{\topsep}{0pt} 
+>     \setlength{\partopsep}{0pt}
+>     \setlength{\parsep}{0pt}
+>     \setlength{\parskip}{0pt}}%
+>   {\end{itemize}}
+> ```
+>
+>
+> However, I am unable to get rid of the space after the list. I can do it with a negative `vspace` but this is:
+>
+> 1. Ugly
+> 2. Does not work for tables: The rule after the row in which the list is will still be one line below.
+>
+> Can anyone tell me how to do it? I have googled so much, but it somehow seems that I am the first human that ever tried to insert an itemize into a table :D
+:::
+
+Try the [`enumitem`](http://ctan.org/pkg/enumitem) and [`shortlst`](http://ctan.org/pkg/shortlst) packages.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4968557/latex-very-compact-itemize/4969944#4969944) on Stack Overflow, 2011-02-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

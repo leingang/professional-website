@@ -1,0 +1,57 @@
+---
+title: why is the PDF of the sum of two continuous random variables the convolution of the PDF's?
+date: '2018-01-30'
+description: I don't know what proofs you've seen, but the basic idea is that, if $X+Y=Z$, then $Y = Z-X$. Then take all possible values for $X$, and add them up.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2628406
+se-link: https://math.stackexchange.com/questions/2628366/why-is-the-pdf-of-the-sum-of-two-continuous-random-variables-the-convolution-of/2628406#2628406
+se-score: 14
+se-accepted: true
+se-tags:
+- probability
+- probability-distributions
+- random-variables
+- intuition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[why is the PDF of the sum of two continuous random variables the convolution of the PDF's?](https://math.stackexchange.com/questions/2628366/why-is-the-pdf-of-the-sum-of-two-continuous-random-variables-the-convolution-of), asked by [the_firehawk](https://math.stackexchange.com/users/416286/the-firehawk) on Mathematics Stack Exchange (2018-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have taken a probability course last year but we didn't cover that notion. 
+>
+> I do know the steps in the discrete case. finding the support of $X + Y$... calculating the the probability of each element of the support... dressing a table. however this process is very intuitive and self-explanatory.
+>
+> the convolution is very useful when taking inverse of product of Laplace/Fourier transforms which is why it's hard for me to think of an analogy between taking the inverse of integral and computing the PDF of the sum of two random variables. 
+>
+> I'd like to know the intuition behind : 
+>
+> $$f_Z(z)=\int^{\infty}_{-\infty}f(x,z-x)dx$$
+>
+> or just $$f_Z(z) = \int_{- \infty}^{\infty} f_X(x)f_Y(z-x)\;dx$$
+>
+> when they are independent 
+>
+> not a proof as I already found some on this site and elsewhere.
+:::
+
+I don't know what proofs you've seen, but the basic idea is that, if $X+Y=Z$, then $Y = Z-X$.  Then take all possible values for $X$, and add them up.
+
+Let's pass into discrete probability, just to be simple.  Let $X$ and $Y$ be discrete random variables, and $Z = X+Y$.  Notice that
+$$P(Z=z \mid X = x) = P(Y = z-x)$$
+So
+$$P(Z=z) = \sum_{x} P(Z = z \mid X= x) P(X=x) = \sum_x P(Y=z-x) P(X=x)$$
+If you set $f_X(x) = P(X=x)$ and so on, this amounts to 
+$$f_Z(z) = \sum_{x} f_X(x) f_Y(z-x)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2628366/why-is-the-pdf-of-the-sum-of-two-continuous-random-variables-the-convolution-of/2628406#2628406) on Mathematics Stack Exchange, 2018-01-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

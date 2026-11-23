@@ -1,0 +1,37 @@
+---
+title: Can an undergraduate student be penalized for exceeding what is expected of a work?
+date: '2024-04-25'
+description: Yes, this can present an undue burden on the grader. I was a grader in a graduate-level algebra class once, and one undergraduate student turned in problem…
+categories:
+- academia.se
+license: CC BY-SA 4.0
+draft: true
+se-site: academia
+se-answer-id: 209936
+se-link: https://academia.stackexchange.com/questions/209882/can-an-undergraduate-student-be-penalized-for-exceeding-what-is-expected-of-a-wo/209936#209936
+se-score: 19
+se-accepted: true
+se-tags:
+- grading
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can an undergraduate student be penalized for exceeding what is expected of a work?](https://academia.stackexchange.com/questions/209882/can-an-undergraduate-student-be-penalized-for-exceeding-what-is-expected-of-a-wo), asked by [IAG](https://academia.stackexchange.com/users/180599/iag) on Academia Stack Exchange (2024-04-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let's say that a professor gives a series of problems, among which the students must solve and present one appropriately, an assignment (in mathematics) as it has always been done at university. The professor is accustomed to presented solutions having between one and two sides of the page, but the student presents seven sides. The solution presented is correct, and it is not difficult nor unnatural, but the student gives many details and justifies many things, lengthening the task a lot. Could this level of detail be a problem for the student when it comes to grading? (In addition to being a time management problem in itself, but I just wanted to know if it could be a problem in terms of grading work).
+:::
+
+> Could this level of detail be a problem for the student when it comes to grading? (In addition to being a time management problem in itself, but I just wanted to know if it could be a problem in terms of grading work)
+
+Yes, this can present an undue burden on the grader. I was a grader in a graduate-level algebra class once, and one undergraduate student turned in problem sets that were 5-10 times longer in terms of page count than the others. This student expressed the desire to be very thorough, but I was forced to sift through all the details I wasn't looking for to find the details I was looking for. 
+
+Extrapolating from homework to professional work, you never want to waste your reader's time.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/209882/can-an-undergraduate-student-be-penalized-for-exceeding-what-is-expected-of-a-wo/209936#209936) on Academia Stack Exchange, 2024-04-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

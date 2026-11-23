@@ -1,0 +1,56 @@
+---
+title: Hide custom environment content based on boolean
+date: '2011-04-11'
+description: Another way to do this is to use the environ package and conditionally keep or toss the \BODY.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15521
+se-link: https://tex.stackexchange.com/questions/15509/hide-custom-environment-content-based-on-boolean/15521#15521
+se-score: 17
+se-accepted: false
+se-tags:
+- environments
+- conditionals
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Hide custom environment content based on boolean](https://tex.stackexchange.com/questions/15509/hide-custom-environment-content-based-on-boolean), asked by [Santiago Palladino](https://tex.stackexchange.com/users/4805/santiago-palladino) on TeX Stack Exchange (2011-04-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a custom environment which adds some text around its content, but I also want it to be able to show or hide its contents depending on a boolean. 
+>
+> I have tried doing the following:
+>
+> ```latex
+> \newif\ifshow
+> \showfalse
+> \newenvironment{myenv}
+> {\ifshow\textbf{Content of myenv:}}
+> {\fi}
+> ```
+>
+> But the first `\begin{myenv}` raises an `Incomplete \iffalse; all text was ignored after line X`. It would seem that the `\iffalse` is causing the `\end{myenv}` to be ignored, so the `\fi` is never written.
+>
+> Any idea on how could I accomplish this?
+:::
+
+Another way to do this is to use the [`environ`](http://ctan.org/pkg/environ) package and conditionally keep or toss the `\BODY`.
+
+```latex
+\usepackage{environ}
+\NewEnviron{myenv}{
+  \ifshow
+    \textbf{Content of myenv: \BODY}
+  \fi}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15509/hide-custom-environment-content-based-on-boolean/15521#15521) on TeX Stack Exchange, 2011-04-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

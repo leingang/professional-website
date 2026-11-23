@@ -1,0 +1,49 @@
+---
+title: Convolution between the derivative Dirac delta function and other function
+date: '2016-09-02'
+description: Let $s = a-t$, so that $ds=-dt$. Then $$\int{-\infty}^\infty \delta'(a-t)g(t)\,dt =\int{-\infty}^\infty \delta'(s)g(a-s)\,ds$$ If we set $\tilde g(s) =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1912165
+se-link: https://math.stackexchange.com/questions/1912108/convolution-between-the-derivative-dirac-delta-function-and-other-function/1912165#1912165
+se-score: 1
+se-accepted: false
+se-tags:
+- dirac-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convolution between the derivative Dirac delta function and other function](https://math.stackexchange.com/questions/1912108/convolution-between-the-derivative-dirac-delta-function-and-other-function), asked by [Fabrício](https://math.stackexchange.com/users/365709/fabr%c3%adcio) on Mathematics Stack Exchange (2016-09-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm having trouble with the following convolution:
+> $$\begin{equation}\label{eq:1}
+> \int_{-\infty}^{+\infty} \delta'(a-t) g(t) dt \textrm{.}
+> \end{equation}$$
+>
+> I know that (I prove this)
+> $$\begin{equation}\label{eq:2}
+> \int_{-\infty}^{+\infty} \delta'(t) g(t) dt \textrm{.}=-g'(0),
+> \end{equation}$$
+>
+> but I can not calculate the other. Can someone tell me how to solve this:
+> $$\begin{equation}\label{eq:3}
+> \int_{-\infty}^{+\infty} \delta'(a-t) g(t) dt \textrm{.}
+> \end{equation}$$
+:::
+
+Let $s = a-t$, so that $ds=-dt$.  Then
+$$\int_{-\infty}^\infty \delta'(a-t)g(t)\,dt
+   =\int_{-\infty}^\infty \delta'(s)g(a-s)\,ds$$
+If we set $\tilde g(s) = g(a-s)$, then according your your previous result, the integral above is $-\tilde g'(0)$.  What is that in terms of the original $g$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1912108/convolution-between-the-derivative-dirac-delta-function-and-other-function/1912165#1912165) on Mathematics Stack Exchange, 2016-09-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

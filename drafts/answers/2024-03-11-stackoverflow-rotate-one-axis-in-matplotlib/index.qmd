@@ -1,0 +1,93 @@
+---
+title: Rotate one axis in matplotlib
+date: '2024-03-11'
+description: Thanks to @JohanC for the pointer to his answer to a similar question. The part I was missing is that the axes' current transformation needs to be added to the…
+categories:
+- stackoverflow
+license: CC BY-SA 4.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 78141604
+se-link: https://stackoverflow.com/questions/78137364/rotate-one-axis-in-matplotlib/78141604#78141604
+se-score: 1
+se-accepted: true
+se-tags:
+- python
+- matplotlib
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Rotate one axis in matplotlib](https://stackoverflow.com/questions/78137364/rotate-one-axis-in-matplotlib), asked by [Matthew Leingang](https://stackoverflow.com/users/297797/matthew-leingang) on Stack Overflow (2024-03-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have some series x and y such that x+y ≤ 1. If I make a simple scatter plot it looks like this:
+>
+> [![scatter plot][q-1]][q-1]
+>
+>
+> I'd like to transform this plot so that the angle between the positive x and y axes is 60 degrees rather than 90 degrees. Basically I want the fundamental region bounded by the origin and (1,0) and (0,1) to be transformed from an isosceles right triangle to an equilateral triangle. 
+>
+> Through various web searches (including [this tutorial](https://www.tutorialspoint.com/how-to-rotate-a-simple-matplotlib-axes)) this is the closest I can come up with:
+>
+> ```python
+>
+> import matplotlib.pyplot as plt
+> from matplotlib.transforms import Affine2D
+> import mpl_toolkits.axisartist.floating_axes as floating_axes
+>
+> fig = plt.figure()
+> plot_extents = 0, 1, 0, 1
+> transform = Affine2D().skew_deg(30,0).scale(1,0.8660254038)
+> helper = floating_axes.GridHelperCurveLinear(transform, plot_extents)
+> ax = floating_axes.FloatingSubplot(fig, 111, grid_helper=helper)
+>
+> x = [0.41729137, 0.31693662, 0.25544209, 0.13843966, 0.31218805,0.01035702, 0.4847026 , 0.11104309, 0.25144685, 0.18332651]
+> y = [0.20372773, 0.5395082 , 0.6020569 , 0.19787512, 0.57743819,0.93317626, 0.43035489, 0.8235019 , 0.36000727, 0.24365175]
+> ax.scatter(x,y)
+> ax.set_xlim(-0.15,1.15)
+> ax.set_ylim(-0.15,1.15)
+> fig.add_axes(ax)
+> ```
+>
+> But the result seems to keep the points where they are and only move the one axis.
+>
+> [![second attempt][q-2]][q-2]
+>
+>   [q-1]: VEGkY.png
+>   [q-2]: 6IO37.png
+:::
+
+Thanks to @JohanC for the pointer to [his answer to a similar question](https://stackoverflow.com/a/68664166/297797). The part I was missing is that the axes' current transformation needs to be added to the desired transformation.
+
+```python
+r = np.random.rand(3,10)
+x = r[0]/(r[0]+r[1]+r[2])
+y = r[1]/(r[0]+r[1]+r[2])
+
+fig = plt.figure()
+plot_extents = 0, 1, 0, 1
+transform = Affine2D().skew_deg(30,0).scale(1,0.8660254038)
+helper = floating_axes.GridHelperCurveLinear(transform, plot_extents)
+ax = floating_axes.FloatingSubplot(fig, 111, grid_helper=helper)
+
+
+ax.scatter(x,y,transform = ax.transData + transform)
+ax.set_xlim(-0.15,1.15)
+ax.set_ylim(-0.15,1.15)
+fig.add_axes(ax)
+```
+
+[![successful plot][1]][1]
+
+I need to prettify it some more, but this solves the problem in the question.
+
+
+  [1]: 2l9Fv.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/78137364/rotate-one-axis-in-matplotlib/78141604#78141604) on Stack Overflow, 2024-03-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

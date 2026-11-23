@@ -1,0 +1,42 @@
+---
+title: Why is this subset closed
+date: '2016-11-22'
+description: Here is a hint. Consider the special case $m=n$ and $k=0$. Then $S$ consists of square matrices with rank less than $n$. This is the same as the set of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2025573
+se-link: https://math.stackexchange.com/questions/2025557/why-is-this-subset-closed/2025573#2025573
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+- general-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is this subset closed](https://math.stackexchange.com/questions/2025557/why-is-this-subset-closed), asked by [JDoe](https://math.stackexchange.com/users/351993/jdoe) on Mathematics Stack Exchange (2016-11-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I try to understand the following statement:
+>
+> Let $L(\mathbb{R}^n,\mathbb{R}^m)$ denote the vector space of linear maps from $\mathbb{R}^n$ to $\mathbb{R}^m$. Now the statement is that the set
+>
+> $S := \{\phi \in L(\mathbb{R}^n,\mathbb{R}^{m-k})~|~ \text{rank}(\phi)<m-k \}$ is a closed subset in $L(\mathbb{R}^n,\mathbb{R}^{m-k})$.
+>
+> Can anyone tell me why that is? Thanks!
+:::
+
+Here is a hint.  Consider the special case $m=n$ and $k=0$.  Then $S$ consists of square matrices with rank less than $n$.  This is the same as the set of matrices with zero determinant.  Since the determinant is a continuous function on $L(\mathbb{R}^n,\mathbb{R}^n)$ (I assume this is true in your chosen topology), and $S$ is the inverse image of the point $0$, then $S$ is closed.
+
+Now in general, you can still use the determinant, or many determinants, to determine rank.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2025557/why-is-this-subset-closed/2025573#2025573) on Mathematics Stack Exchange, 2016-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

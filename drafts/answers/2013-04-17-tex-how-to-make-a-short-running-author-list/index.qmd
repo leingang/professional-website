@@ -1,0 +1,63 @@
+---
+title: How to make a short running author list?
+date: '2013-04-17'
+description: It should just work to write
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109252
+se-link: https://tex.stackexchange.com/questions/109248/how-to-make-a-short-running-author-list/109252#109252
+se-score: 11
+se-accepted: false
+se-tags:
+- titles
+- amsart
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to make a short running author list?](https://tex.stackexchange.com/questions/109248/how-to-make-a-short-running-author-list), asked by [Felix Goldberg](https://tex.stackexchange.com/users/14090/felix-goldberg) on TeX Stack Exchange (2013-04-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am writing a paper (using the amsart class) where we have four authors. The problem is that the author names on the even pages spill over onto the page numbers and obscure them. What I'd like to do is to define a short running author list (where, say, given names could be replaced by initials) and have it placed on top of the even pages.
+>
+> But how does one do that within amsart?
+:::
+
+It should just work to write
+
+```latex
+\author[short name]{long name}
+```
+
+for each author in the preamble.
+
+For example:
+
+```latex
+\documentclass{amsart}
+\title{Of Cabbages and Kings}
+\author[Y.X.H.A.E.A.W.K. Conley]{Yo Xing Heyno Augustus Eisner Alexander Weiser Knuckles Conley}
+\address{New York University}
+\author[N.I. Lobachevski]{Nicolai Ivanovich Lobachevski}
+\address{Kazan University}
+\author[J.J.J. Schmidt]{John Jacob Jingleheimer Schmidt}
+\address{Hisnameismyname U.}
+\usepackage{lipsum}% just for dummy text
+
+\begin{document}
+\maketitle
+
+\lipsum[1-100]
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109248/how-to-make-a-short-running-author-list/109252#109252) on TeX Stack Exchange, 2013-04-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

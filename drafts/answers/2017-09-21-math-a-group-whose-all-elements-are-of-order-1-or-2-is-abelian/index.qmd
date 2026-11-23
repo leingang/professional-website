@@ -1,0 +1,56 @@
+---
+title: A group whose all elements are of order 1 or 2 is Abelian.
+date: '2017-09-21'
+description: Your first two cases are a little inelegant, since $a^1 = e$ means that $a=e$. So the property that every element is of order 1 or 2 can be simplified to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2439240
+se-link: https://math.stackexchange.com/questions/2439220/a-group-whose-all-elements-are-of-order-1-or-2-is-abelian/2439240#2439240
+se-score: 6
+se-accepted: false
+se-tags:
+- group-theory
+- proof-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A group whose all elements are of order 1 or 2 is Abelian.](https://math.stackexchange.com/questions/2439220/a-group-whose-all-elements-are-of-order-1-or-2-is-abelian), asked by [John Mayne](https://math.stackexchange.com/users/311539/john-mayne) on Mathematics Stack Exchange (2017-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Suppose you have $(G, \cdot)$a group whose all elements are either of order $1$ or $2$. Show that it's abelian.
+>
+> My proof, suppose you have $a,b \in G$ such that $a^1 = e$ and $b^1 =e$ then:  
+> $$a \cdot b= e \cdot e = b \cdot a$$
+>
+> Now suppose we have $a^1 = e$ and $b^2 = e$:  
+> $$a \cdot b = e \cdot b  = b \cdot e = b \cdot a$$
+>
+> And finally suppose $a^2 = e$ and $b^2 = e$ then:  
+> $$a \cdot b = a \cdot ( a^{-1} \cdot a ) \cdot b = (a^{-1})(a^2)b=a^{-1}b$$
+> and $$b \cdot a = b  (b^{-1} \cdot b ) a = b^{-1}(b^2)a = b^{-1}a$$
+> Thus we have $$(a\cdot b)(b\cdot a)= (a^{-1} \cdot b)(b^{-1} \cdot a)= e$$
+> Thus $ab=ba$. 
+>
+> Is my proof correct?
+:::
+
+Your first two cases are a little inelegant, since $a^1 = e$ means that $a=e$.  So the property that every element is of order 1 or 2 can be simplified to requiring $$x^2 = e,\; \forall  x \in G.$$
+
+Here is a streamlined version.  Let $a, b \in G$ and let $x = ab$.  Since $x^2 = e$, we have
+$$abab = e$$
+Multiply on the right by $b$ and remember that $b^2 =e$ to get
+$$aba = b$$
+Multiply on the right by $a$ and remember that $a^2 =e$ to get
+$$ab = ba$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2439220/a-group-whose-all-elements-are-of-order-1-or-2-is-abelian/2439240#2439240) on Mathematics Stack Exchange, 2017-09-21, with [edits](https://math.stackexchange.com/posts/2439240/revisions) by [amWhy](https://math.stackexchange.com/users/9003/amwhy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

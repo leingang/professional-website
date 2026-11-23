@@ -1,0 +1,37 @@
+---
+title: Is there a way to get two pages in one with LaTeX?
+date: '2010-10-27'
+description: '2up sounds like exactly what you want. But here''s another answer: pgfpages is part of the PGF package and has a pretty nice interface to doing things like…'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4621
+se-link: https://tex.stackexchange.com/questions/783/is-there-a-way-to-get-two-pages-in-one-with-latex/4621#4621
+se-score: 1
+se-accepted: false
+se-tags:
+- packages
+- positioning
+- printing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way to get two pages in one with LaTeX?](https://tex.stackexchange.com/questions/783/is-there-a-way-to-get-two-pages-in-one-with-latex), asked by [Vivi](https://tex.stackexchange.com/users/14/vivi) on TeX Stack Exchange (2010-08-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to have my document compiled with two pages in one using LaTeX, like what you see when you choose to print two pages in one. As my pages are "portrait", I need the page to be shown in landscape when the two pages are compiled in one, and If I could also include margins around each page, that would be wonderful. 
+>
+> Does anyone know of any package(s) I can use to get the effect I am after?
+:::
+
+2up sounds like exactly what you want.  But here's another answer: pgfpages is part of the PGF package and has a pretty nice interface to doing things like this.  It's used in beamer to produce handouts of slides.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/783/is-there-a-way-to-get-two-pages-in-one-with-latex/4621#4621) on TeX Stack Exchange, 2010-10-27. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,52 @@
+---
+title: How to add a gif file to my LaTeX file?
+date: '2010-12-23'
+description: 'With the original latex engine, this would work:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 7603
+se-link: https://tex.stackexchange.com/questions/7602/how-to-add-a-gif-file-to-my-latex-file/7603#7603
+se-score: 14
+se-accepted: false
+se-tags:
+- graphics
+- gif
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to add a gif file to my LaTeX file?](https://tex.stackexchange.com/questions/7602/how-to-add-a-gif-file-to-my-latex-file), asked by [TCL](https://tex.stackexchange.com/users/2119/tcl) on TeX Stack Exchange (2010-12-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> > **Related:**  
+> > [Convert gif image to png on the fly](https://tex.stackexchange.com/questions/4979/convert-gif-image-to-png-on-the-fly)  
+>
+> <!-- End of automatically inserted text -->
+>
+> I have an image file -- a gif file, which is the graph of a function.
+> How do I add it to a LaTeX file? Will it come out OK in the subsequent pdf file?
+:::
+
+With the original `latex` engine, this would work:
+
+```latex
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+    \includegraphics{your.gif}
+\end{document}
+```
+
+But if you are using `pdflatex` or `xelatex`, this will result in an error about `.gif` being an unknown graphics extension.  (If you don't know which engine you are using, it's probably `pdflatex`.)  I would recommend converting the `.gif` file to a `.png` file and repeating the above snippet, with `your.gif` replaced by `your.png`.  In fact, you can just use `your`; latex has a default set of extensions it will add to find the file.
+
+There are dozens of ways to convert GIFs to PNGs, including many free online services. Google is your friend.  The only reason I can see to convert the file on the fly with each compiling of the latex document would be if your gif file changes often as the result of some other process.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7602/how-to-add-a-gif-file-to-my-latex-file/7603#7603) on TeX Stack Exchange, 2010-12-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

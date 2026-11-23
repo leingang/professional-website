@@ -1,0 +1,106 @@
+---
+title: Understanding the product rule example in The Mechanical Universe Derivates episode
+date: '2023-07-20'
+description: You are essentially right. The video is asking you to think of these two operations (changing the width and changing the length) separately, but what's being…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4739532
+se-link: https://math.stackexchange.com/questions/4739025/understanding-the-product-rule-example-in-the-mechanical-universe-derivates-epis/4739532#4739532
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Understanding the product rule example in The Mechanical Universe Derivates episode](https://math.stackexchange.com/questions/4739025/understanding-the-product-rule-example-in-the-mechanical-universe-derivates-epis), asked by [James](https://math.stackexchange.com/users/387741/james) on Mathematics Stack Exchange (2023-07-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In [episode 3 of The Mechanical Universe, an example of the product rule][q-1] is illustrated at a construction site. 
+>
+> A carpenter first cuts a board decreasing its length. The commentator states that the change in area equals width times the change in length. 
+>
+> Then, the carpenter cuts the same board decreasing its width. The commentator states that the change in area equals length times the change in width. 
+>
+> Therefore, it is noted (referring to the surface area of one side of the board) 
+>
+> ```
+> ΔArea = Δlength X width + Δwidth X length
+> ```
+>
+> Then, the episode goes on to replace Δ with the infinitesimal d to state that this is the product rule.
+>
+> However, after the first cut, why is the change in area of the second cut not equal to:
+>
+> ```
+> Δwidth X (length - Δlength)
+> ```
+>
+> since the length was reduced by Δlength with the first cut? Shouldn't the product rule then be:
+>
+> ```
+> ΔArea = Δlength X width + Δwidth X (length - Δlength)
+> ```
+>
+> **Update**
+>
+> Thanks for the feedback. Here's how interpreted the video:
+>
+> The surface of the board prior to cutting has width, W, and length, L as follows:
+>
+> [![board without cutting][q-2]][q-2]
+>
+>
+> After first cut, the board is:
+>
+> [![board after first cut][q-3]][q-3]
+>
+> The piece cut off is:
+>
+> [![piece cut off][q-4]][q-4]
+>
+> After second cut, the board is:
+>
+> [![board after second cut][q-5]][q-5]
+>
+> The second piece cut off is:
+>
+> [![2nd piece cut off][q-6]][q-6]
+>
+>
+> So if I add up the area of the two pieces that were cut off, I get 
+>
+> ```
+> ΔArea = ΔL X W + ΔW X (L - ΔL)
+> ```
+>
+> This may be the wrong way to look at it. That's how I interpreted the video.   
+>
+> Both cooper.hat and Matthew Leingang noted that the ΔWΔL term will go away when small. When that happens, the above equation matches the product rule.
+>
+>
+>   [q-1]: https://youtu.be/szCChCc58dg?t=1080
+>   [q-2]: iRN4i.png
+>   [q-3]: P4WG8.png
+>   [q-4]: 7WKjV.png
+>   [q-5]: mFLhH.png
+>   [q-6]: 3tFWw.png
+:::
+
+You are essentially right. The video is asking you to think of these two operations (changing the width and changing the length) separately, but what's being depicted is the two dimensions changing sequentially.
+
+What's called the “length” in the second equation is called “length - ∆length” in the first. 
+
+This sleight of hand avoids the “(∆length)(∆width)” term that should be in the ∆Area formula. This term is negligible. Physicists will say it's negligible because it's the product of two “small” quantities, which makes it *much* smaller than the merely “small” quantities ∆length and ∆width. Mathematicians say that it's negligible because in the product rule derivation, if you assume $L$ and $W$ are differentiable functions of $t$ and divide by $\Delta t$, the term $\Delta L \cdot \frac{\Delta W}{\Delta t}$ tends to zero as $\Delta t \to 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4739025/understanding-the-product-rule-example-in-the-mechanical-universe-derivates-epis/4739532#4739532) on Mathematics Stack Exchange, 2023-07-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

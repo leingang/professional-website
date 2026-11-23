@@ -1,0 +1,41 @@
+---
+title: Prove that $M/\mathrm{Tor}(M)$ is an R-module with zero torsion
+date: '2015-02-07'
+description: Basically you want to show that if $r\hat x =0$, then $\hat x =0$. Equivalently, if $rx\in\operatorname{Tor}(M)$, then $x\in\operatorname{Tor}(M)$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1137262
+se-link: https://math.stackexchange.com/questions/1137259/prove-that-m-mathrmtorm-is-an-r-module-with-zero-torsion/1137262#1137262
+se-score: 0
+se-accepted: true
+se-tags:
+- abstract-algebra
+- modules
+- integral-domain
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $M/\mathrm{Tor}(M)$ is an R-module with zero torsion](https://math.stackexchange.com/questions/1137259/prove-that-m-mathrmtorm-is-an-r-module-with-zero-torsion), asked by [okie](https://math.stackexchange.com/users/98816/okie) on Mathematics Stack Exchange (2015-02-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >I need to prove that  $M/\mathrm{Tor}(M)$ is an $R$-module with zero torsion. ($R$ is assumed to be an integral domain.)
+>
+> I already prove that $M/Tor(M)$ is an R-module, but in the part of zero torsion, I am lost. This is my attempt: 
+>
+> To prove that $M/Tor(M)$ has zero torsion, we have: $$Tor(M/Tor(M)) = \{\widehat{x} \in M/Tor(M) | r*\widehat{x} = 0, r\neq0,r \in R\}$$ where: $\widehat{x} = x + Tor(M).$ In other words, we have: $$r*(x + Tor(M)) = 0,$$
+>
+> $$(r*x) + Tor(M) = 0,$$Since $r \neq 0 \Rightarrow r*x \in Tor(M) \Rightarrow Tor(M) = 0$, hence  $M/Tor(M)$ has zero torsion.
+:::
+
+Basically you want to show that if $r\hat x =0$, then $\hat x =0$. Equivalently, if $rx\in\operatorname{Tor}(M)$, then $x\in\operatorname{Tor}(M)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1137259/prove-that-m-mathrmtorm-is-an-r-module-with-zero-torsion/1137262#1137262) on Mathematics Stack Exchange, 2015-02-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

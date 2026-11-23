@@ -1,0 +1,56 @@
+---
+title: Explain phrase "For each pair of distinct elements" in reference to a graph.
+date: '2017-05-12'
+description: From your subset $S$ of vertices you can construct a set of pairs $P$, where $(v,w) \in P$ if there is a directed path from $v$ to $w$ (not necessarily…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2278190
+se-link: https://math.stackexchange.com/questions/2278120/explain-phrase-for-each-pair-of-distinct-elements-in-reference-to-a-graph/2278190#2278190
+se-score: 3
+se-accepted: true
+se-tags:
+- graph-theory
+- terminology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Explain phrase "For each pair of distinct elements" in reference to a graph.](https://math.stackexchange.com/questions/2278120/explain-phrase-for-each-pair-of-distinct-elements-in-reference-to-a-graph), asked by [KeyC0de](https://math.stackexchange.com/users/231110/keyc0de) on Mathematics Stack Exchange (2017-05-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In one of my algorithm courses, there is this: 
+>
+> > A subset $S$ of vertices in a directed graph $G$ is
+> strongly connected if for each pair of distinct
+> vertices ($v_i$, $v_j$) in $S$, $v_i$ is connected to $v_j$ and
+> $v_j$ is connected to $v_i$.
+>
+> And then the following example graph is given for this proposition: 
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Maybe i do not understand what that phrase means. What i think it means is this: A node, say $E$ can be a member of an ordered pair $(v_i, v_j)$ only once, ie. if $(E, A)$, then $\lnot (E, [someOtherNode])$. But we clearly see here, that we have $(E,A)$ and $(E,D)$. 
+>
+> How should i correctly interpret this phrase. What does it mean exactly? Thanks.
+>
+>
+>   [q-1]: m6PLe.jpg
+:::
+
+From your subset $S$ of vertices you can construct a set of pairs $P$, where $(v,w) \in P$ if there is a directed path from $v$ to $w$ (not necessarily confined to $S$).  The set is strongly connected if
+$$\forall v,w\in S, ( v\neq w \Rightarrow (v,w) \in P \wedge (w,v) \in P)$$
+Let $S=G$ in the example graph.  Notice that $(A,B)$, $(B,C)$, $(C,D)$, $(D,E)$, $(E,A)$ are all in $P$.  So by transitivity, every pair of distinct vertices is in $P$.
+
+The word *distinct* in the definition rules out the requirement that $(v,v) \in P$.  However, it seems that $(v,w) \in P \wedge (w,v) \in P$ would imply that $(v,v)\in P$ anyway.
+
+I'm not sure what you mean by “valid” pair.  Any pair *may* be in $P$; the condition is only that certain pairs *must* be in $P$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2278120/explain-phrase-for-each-pair-of-distinct-elements-in-reference-to-a-graph/2278190#2278190) on Mathematics Stack Exchange, 2017-05-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

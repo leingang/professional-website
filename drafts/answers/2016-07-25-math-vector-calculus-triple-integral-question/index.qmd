@@ -1,0 +1,90 @@
+---
+title: Vector calculus triple integral question
+date: '2016-07-25'
+description: Lazy Answer ----------- The solid $D$ has symmetry in $y$; that is, for every point $(x,y,z)$ in $D$, the point $(x,-y,z)$ is also in $D$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1870560
+se-link: https://math.stackexchange.com/questions/1870537/vector-calculus-triple-integral-question/1870560#1870560
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Vector calculus triple integral question](https://math.stackexchange.com/questions/1870537/vector-calculus-triple-integral-question), asked by [mathhelpplease](https://math.stackexchange.com/users/321461/mathhelpplease) on Mathematics Stack Exchange (2016-07-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Looking to get some help with this triple integration question from my textbook.
+>
+> $\iiint _D 3xydV$ where $D$ is the solid region above the xy-plane bounded below by the cone $z=\sqrt{x^2+y^2}$ and above by the cylinder $x^2+z^2=1$
+:::
+
+Lazy Answer
+-----------
+The solid $D$ has symmetry in $y$; that is, for every point $(x,y,z)$ in $D$, the point $(x,-y,z)$ is also in $D$.
+
+[![solid D][1]][1]
+
+The integrand $f(x,y,z)$ is odd in $y$; that is, $f(x,-y,z) = - f(x,y,z)$ for all $x$, $y$, and $z$.
+
+Putting these facts together, the integral is zero.  To see why, think about splitting $D$ into many pieces, and weighting the volume of each piece by the function value on that piece.  For every piece on one side of the $xz$-plane, there is a mirror image piece on the opposite side (this is because of the symmetry of $D$).  Moreover, the function value on that mirror image piece will be the exact opposite as on the original piece.  So in summing them, each piece and its mirror image will cancel in pairs.
+
+  [1]: 2yoTO.png
+
+Smart Answer #1
+---------------
+
+To sketch the region, find the curve along which the two surfaces intersect.  If $x^2 + z^2 = 1$ and $z = \sqrt{x^2 + y^2}$, we can square the second and substitute it into the first:
+$$x^2 + (x^2 + y^2) = 1 \implies 2x^2 + y^2 =1$$
+So the curve of intersection projects onto the ellipse $2x^2 + y^2 =1$ in the $xy$-plane.  This curve bounds a plane region $R$.
+
+Over $R$, the two surfaces can be expressed as graphs of functions of $x$ and $y$.  The cylinder satisfies $z=\sqrt{1-x^2}$ and the cone is $z=\sqrt{x^2+y^2}$ already.
+Therefore
+$$\iiint_D 3xy\,dV = \iint_R \int_{\sqrt{x^2+y^2}}^{\sqrt{1-x^2}}3xy\,dz \,dA$$
+Now to integrate over $R$, we take the boundary curve $2x^2 + y^2 = 1$ and find the limits of $y$: $y= \pm\sqrt{1-2x^2}$.  The limits of $x$ are when $y=0$, so $x = \pm\frac{1}{\sqrt{2}}$.  Therefore
+$$\iiint_D 3xy\,dV = \int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}} \int_{\sqrt{x^2+y^2}}^{\sqrt{1-x^2}}3xy\,dz\,dy\,dx$$
+
+This integral looks complicated, but step by step the answer is revealed.  First, notice that $3xy$ is independent of $z$, so integrating with respect to $z$ means we just tack on a $z$:
+$$\begin{split}
+\int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}} \int_{\sqrt{x^2+y^2}}^{\sqrt{1-x^2}}3xy\,dz\,dy\,dx
+&= \int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}} 
+\left[3xyz\right]^{z=\sqrt{1-x^2}}_{z=\sqrt{x^2+y^2}}\,dy\,dx \\
+&= \int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}}
+3xy\left(\sqrt{1-x^2}-\sqrt{x^2+y^2}\right)\,dy\,dx \\
+&= \int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}}
+3xy\sqrt{1-x^2}\,dy\,dx
+
+- \int_{-1/\sqrt{2}}^{1/\sqrt{2}} \int_{-\sqrt{1-2x^2}}^{\sqrt{1-2x^2}}
+3xy\sqrt{x^2+y^2}\,dy\,dx
+\end{split}$$
+
+At this point, notice that both integrals are of an odd function of $y$ over an interval $[-u(x),u(x)]$.  So again by symmetry, each evaluates to zero.  Or, you can continue to evaluate them directly; the second one needs a substitution $u=\sqrt{x^2+y^2}$.
+
+Smart Answer #2
+---------------
+
+After writing the first “smart” answer, I realized there was a better way to harness the symmetry.  Instead of projecting onto the $xy$-plane, project onto the $xz$-plane.  The image of $D$ is the region
+$$R_2 = \left\{(x,z) \mid |x| \leq z \leq \sqrt{1-x^2}\right\}$$
+and the limits of $y$ are $y=\pm\sqrt{z^2-x^2}$.  So now
+$$\iiint_D 3xy\,dV = \iint_{R_2} \int_{-\sqrt{z^2-x^2}}^{\sqrt{z^2-x^2}}3xy\,dy\,dA_{x,z}$$
+For any $x$ and $z$,
+$$\begin{split}
+\int_{-\sqrt{z^2-x^2}}^{\sqrt{z^2-x^2}}3xy\,dy
+&= \left[\frac{3}{2}xy^2\right]^{z=\sqrt{z^2-x^2}}_{z=-\sqrt{z^2-x^2}}\,dy=0
+\end{split}$$
+So
+$$\iiint_D 3xy\,dV = \iint_{R_2} 0\,dA_{x,z} = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1870537/vector-calculus-triple-integral-question/1870560#1870560) on Mathematics Stack Exchange, 2016-07-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

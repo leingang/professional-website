@@ -1,0 +1,67 @@
+---
+title: Prove that $(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}}$
+date: '2018-08-15'
+description: I think you have the right idea. One minor comment is that when you write “Hence, $mq=np$”, you imply that the statement $mq=np$ follows from some immediately…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2883701
+se-link: https://math.stackexchange.com/questions/2883678/prove-that-bm-frac1n-bp-frac1q/2883701#2883701
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- real-numbers
+- rational-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}}$](https://math.stackexchange.com/questions/2883678/prove-that-bm-frac1n-bp-frac1q), asked by [Pedro Cavalcante](https://math.stackexchange.com/users/571485/pedro-cavalcante) on Mathematics Stack Exchange (2018-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The exercise is:
+>
+> >Fix $b>1$. If $m, n, p, q$ are integers, $n>0$, $q>0$ and $r=m/n=p/q$, prove that:
+> >
+> >$$(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}}$$
+> >
+> >Hence it makes sense to define $b^r = (b^m)^{\frac{1}{n}}$
+>
+> So far, this is what I got:
+>
+> Since $n,q>0$, $m$ and $p$ _must_ both be positive or both be negative, or else the equality $m/n=p/q$ won't hold. Now, $m/n$ is not necessarily an integer, but $mq$ surely is. The same holds for $np$. It is trivial to see that $(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}} \iff b^{mq} = b^{np}$.
+>
+> _Lemma_: For every real $x>0$ and every integer $w>0$, there is one and only one positive real $y$ such that $y^w = x$. 
+>
+> Proof: See Rudin's Principles of Mathematical Analysis, page 10. 
+>
+> Hence, $mq=np$. So, indeed $(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}}$. 
+>
+> Is this proof satisfactory? Am I missing something?
+:::
+
+I think you have the right idea.  One minor comment is that when you write “Hence, $mq=np$”, you imply that the statement $mq=np$ follows from some immediately previous statement, such as the the lemma.  But it doesn't; it follows from the hypothesis that $m/n = p/q$.  
+
+But more importantly (IMO), this line
+
+> It is trivial to see that $(b^m)^{\frac{1}{n}} = (b^p)^{\frac{1}{q}} \iff b^{mq} = b^{np}$
+
+needs more explanation.  When students write that something is “trivial”, I usually take it as a bluff.  To me the point of the exercise is to use the lemma you cited to prove that $y^n = b^m \implies y^q = b^p$.  Your highlighted statement follows.
+
+* * *
+
+Addendum: Based on the comments below, I think you're still missing the point of the exercise and how the lemma is to be used.  You're right that the lemma guarantees $(b^m)^{1/n} = (b^p)^{1/q}$, but if I understand the exercise correctly, you are to *provide the details*.
+
+The lemma tells us that every positive number *has* a $w$-th root, and how to recognize the $w$-th root of a number from its properties.  In other words, $w$-th roots exist and are unique.
+
+What *is* $(b^m)^{1/n}$? It's the unique positive real number $y$ such that $y^n = b^m$.  Likewise, $(b^p)^{1/q}$ is the unique positive real number $z$ such that $z^q = b^p$.  To prove that $(b^m)^{1/n} = (b^p)^{1/q}$, it is sufficient to show that $y^q = b^p$ Why? And how?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2883678/prove-that-bm-frac1n-bp-frac1q/2883701#2883701) on Mathematics Stack Exchange, 2018-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

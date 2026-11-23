@@ -1,0 +1,62 @@
+---
+title: Spherical Coordiantes in vector calc
+date: '2016-07-25'
+description: Let $E$ be the solid in question. The limits of the $z$ integral are $z=0$ and $z=\sqrt{4-x^2-y^2}$. That means the bottom face of the solid is in the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1870863
+se-link: https://math.stackexchange.com/questions/1870804/spherical-coordiantes-in-vector-calc/1870863#1870863
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Spherical Coordiantes in vector calc](https://math.stackexchange.com/questions/1870804/spherical-coordiantes-in-vector-calc), asked by [mathhelpplease](https://math.stackexchange.com/users/321461/mathhelpplease) on Mathematics Stack Exchange (2016-07-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to evaluate this triple integral
+>
+> $$\int^2_{-2} \int_0^{\sqrt{4-x^2}} \int_0^{\sqrt{4-x^2-y^2}} (x^2+y^2+z^2) \, dz \, dy \, dx$$
+>
+> <br><br>
+>
+> **My solution:**
+>
+>
+> First I identified the solid as being a quarter of an ice cream cone bounded by cone $z=r$ and sphere $z=\sqrt{4-r^2}$. The line of intersection of the cone and there sphere is found from $z=\sqrt{4-r^2}$, thus $z=r=3$. In the xy-plane we have a quarter of a circle $0\leq\theta\leq\pi/2, 0\leq r\leq 3$. Also, $r\leq z\leq\sqrt{4-r^2}$. 
+>
+> The solid in spherical coordinates is $0\leq p\leq\sqrt{4}, 0\leq\alpha\leq\pi/4, 0\leq\theta\leq\pi/2$. Then the integrand is $p^2$
+>
+> Just wondering if this is correct and if it is how to set up the triple integration from here and then evaluate.
+:::
+
+Let $E$ be the solid in question.  The limits of the $z$ integral are $z=0$ and $z=\sqrt{4-x^2-y^2}$.  That means the bottom face of the solid is in the $xy$-plane and the top is in the sphere $x^2 + y^2 + z^2=4$.  
+
+Looking at the $x$ and $y$ limits, we see that the projection of $E$ onto the $xy$-plane is the region
+$$D = \left\{(x,y)\mid -2 \leq x \leq 2,\ 0 \leq y \leq \sqrt{4-x^2}\right\}$$
+This is the upper half disk of radius $2$ centered at the origin.
+So $E$ is the part of the ball of radius $2$ that satisfies $y \geq 0$ and $z\geq 0$.  
+
+Draw this solid to visualize it in spherical coordinates.  We have $0 \leq \theta\leq\pi$ (half of the circle in the equatorial plane), $0 \leq \phi\leq \frac{\pi}{2}$ (from the north pole to the equator), and $0 \leq \rho\leq 2$ (center to the surface).
+So
+$$\begin{split}
+\iiint_E (x^2+y^2+z^2)\,dV
+&= \int_0^\pi \int_0^{\pi/2} \int_0^2\rho^2(\rho^2\sin\phi)\,d\rho\,d\phi\,d\theta\\
+&= \int_0^\pi \int_0^{\pi/2} \int_0^2\rho^4\sin\phi\,d\rho\,d\phi\,d\theta\\
+&= \int_0^\pi 1\,d\theta \cdot \int_0^{\pi/2} \sin\phi\,d\phi \cdot \int_0^2\rho^4\,d\rho \\
+&= \pi \cdot 1 \cdot \frac{32}{5} = \frac{32\pi}{5}
+\end{split}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1870804/spherical-coordiantes-in-vector-calc/1870863#1870863) on Mathematics Stack Exchange, 2016-07-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,102 @@
+---
+title: How to create custom Tikz nodes?
+date: '2010-10-25'
+description: 'If you change the code which draws the tree you can use only one of your custom node macros:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4549
+se-link: https://tex.stackexchange.com/questions/1344/how-to-create-custom-tikz-nodes/4549#4549
+se-score: 2
+se-accepted: false
+se-tags:
+- tikz-pgf
+- macros
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to create custom Tikz nodes?](https://tex.stackexchange.com/questions/1344/how-to-create-custom-tikz-nodes), asked by [Łukasz Lew](https://tex.stackexchange.com/users/69/%c5%81ukasz-lew) on TeX Stack Exchange (2010-08-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I don't want to change style only.
+> I want to create node that takes 3 numbers and display them with appropriate decorations.
+> For instance:
+>
+> ```latex
+> \mynode{5,6,7} 
+> ```
+>
+> Should display node with "a=5", "b=6" and "c=7" inside in 3 lines.
+>
+> **Update:**
+>
+> I have this code:
+>
+> ```latex
+> \documentclass{standalone}
+> \usepackage{tikz}
+> \usepackage{amsmath}
+>
+> \newcommand{\statnode}[3]{
+>   \node[rectangle, draw]{
+>     $\begin{aligned}
+>       n &= #1 \\ 
+>       \text{sum} &= #2 \\ 
+>       \mu &= #3
+>     \end{aligned}$
+>   }
+> }
+>
+> \newcommand{\statnodex}[3]{
+>   node[rectangle, draw]{
+>     $\begin{aligned}
+>       n &= #1 \\ 
+>       \text{sum} &= #2 \\ 
+>       \mu &= #3
+>     \end{aligned}$
+>   }
+> }
+>
+> \begin{document}
+>
+> \begin{tikzpicture}[
+>     level distance=100,
+>   ]
+>
+>   \statnode{1}{10}{0.1}
+>   child {
+>     \statnodex{1}{10}{0.1}
+>   };
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> But:
+>
+>   - it is ugly to have 2 commands
+>   - it renders incorrectly for some reason
+:::
+
+If you change the code which draws the tree you can use only one of your custom node macros:
+
+```latex
+  \draw \statnodex{1}{10}{0.1}
+        child {
+               \statnodex{1}{10}{0.1}
+        };
+```
+
+`\node` is just syntactic sugar for `\draw node`.
+
+Now you could get really fancy and define a new multi-part node (see "Shapes with Multiple Text Parts" in the PGF manual, which is Section 39.6 in the 2.00 version) but unless you want to do this in many documents a macro seems fine.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/1344/how-to-create-custom-tikz-nodes/4549#4549) on TeX Stack Exchange, 2010-10-25. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

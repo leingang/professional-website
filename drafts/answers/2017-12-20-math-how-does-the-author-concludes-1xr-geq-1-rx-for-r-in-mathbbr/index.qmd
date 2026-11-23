@@ -1,0 +1,60 @@
+---
+title: How does the author concludes $(1+x)^r \geq 1 + rx$ for $r \in \mathbb{R} \geq 1 $using MVT
+date: '2017-12-20'
+description: 'The mean value theorem says:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2574783
+se-link: https://math.stackexchange.com/questions/2574767/how-does-the-author-concludes-1xr-geq-1-rx-for-r-in-mathbbr-geq-1/2574783#2574783
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How does the author concludes $(1+x)^r \geq 1 + rx$ for $r \in \mathbb{R} \geq 1 $using MVT](https://math.stackexchange.com/questions/2574767/how-does-the-author-concludes-1xr-geq-1-rx-for-r-in-mathbbr-geq-1), asked by [Our](https://math.stackexchange.com/users/279869/our) on Mathematics Stack Exchange (2017-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In the book of _The Elements of Analysis_ by Bartle, at page 214, it is given that
+>
+> > To show that $(1+x)^n \geq 1 + nx$ for $n \geq 1$ and $n\in
+>  \mathbb{R}$, let  $$f(x) = (1+x)^r$$ so that $$f'(x) = r
+>  (1+x)^{r-1}.$$  If $-1 < x < 0$, then $f'(x) < r$, while if $x>0$,
+> > then $f'(x) > r$.If we apply MVT to both of those cases we obtain
+> > $$(1+x)^r \geq 1 + rx,$$ when $1+x> 0$ and $r \geq 1$.
+>
+> However, I couldn't understand what does the author means by saying "applying the MVT to both of those cases". I do not understand how do we get the conclusion from those observations. I would appreciate if someone can explain to me the procedure.
+>
+>
+> Note that I have seen [this][q-1] question, but I'm particularly interested in this particular solution.
+>
+>
+>   [q-1]: https://math.stackexchange.com/questions/924281/proving-1-xn-geq-1-nx
+:::
+
+The mean value theorem says:
+
+> If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists $c \in (a,b)$ such that $$\frac{f(b)-f(a)}{b-a} = f'(c)$$
+
+Put another way, the conclusion is that
+$$f(b) = f(a) + f'(c)(b-a)$$
+for some $c$ between $a$ and $b$.
+
+Assume $x>0$, and apply MVT to $f(x) = (1+x)^n$, $a=0$, and $b=x$.  You don't know what $c$ is, other than that $0 < c < x$, but at least you know $f'(c) > n$.  So
+$$f(x) = f(0) + f'(c) x > 1 + nx$$
+The case $x<0$ is treated similarly.
+
+Editorial note: The Mean Value Theorem is The Most Important Theorem in Calculus!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2574767/how-does-the-author-concludes-1xr-geq-1-rx-for-r-in-mathbbr-geq-1/2574783#2574783) on Mathematics Stack Exchange, 2017-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

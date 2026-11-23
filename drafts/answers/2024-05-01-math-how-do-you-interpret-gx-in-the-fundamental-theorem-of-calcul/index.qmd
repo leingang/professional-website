@@ -1,0 +1,39 @@
+---
+title: How do you interpret $G(x)$ in the Fundamental Theorem of calculus?
+date: '2024-05-01'
+description: No, because not every antiderivative of $f$ will even have a zero. Consider $f(x) = 2x$. Then $F(x) = x^2 + 1$ is an antiderivative for $f$. But there isn't…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4909146
+se-link: https://math.stackexchange.com/questions/4909124/how-do-you-interpret-gx-in-the-fundamental-theorem-of-calculus/4909146#4909146
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do you interpret $G(x)$ in the Fundamental Theorem of calculus?](https://math.stackexchange.com/questions/4909124/how-do-you-interpret-gx-in-the-fundamental-theorem-of-calculus), asked by [Jon](https://math.stackexchange.com/users/1318003/jon) on Mathematics Stack Exchange (2024-05-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So the Fundamental theorem of Calculus states that 
+> If $f$ is continuous on $[a,b]$, then we can define a function $G(x)=\int_a^xf(t)dt$ and this function will give us the value of the area under $f$ from $a$ to $x$. Then $\frac{dG}{dx}=f(x)$.
+>
+> Now $f(x)$ has many derivatives each of which differs from $G(x)$ by a constant, so $G(x)=F(x)+C$.   
+> So a unique thing about $G(x)$ is that it tracks the area under $f(x)$ exactly while other anti-derivatives do not have this ability as they are always off by a constant. But could we make an argument that for any antiderivative $F$ of $f$ there exists a lower bound $a$ of the integral $\int_a^xf(t)dt$ such that $F$ happens to calculate the area under $f$ from $a$ exactly because of the fact that $F(a)=0$ for that particular $a$ that we chose. So basically any antiderivative $F$ can be defined as $\int_a^xf(t)dt$ if we choose the right $a$ such that $F(a)=0$.I'm asking this because differentiation and integration are said to be reverse operations, but they are only reverse up to the point where you start calculating the area under $f$.
+:::
+
+> But could we make an argument that for any antiderivative $F$ of $f$ there exists a lower bound $a$ of the integral $\int_a^xf(t)dt$ such that $F$ happens to calculate the area under $f$ from $a$ exactly because of the fact that $F(a)=0$ for that particular $a$ that we chose. So basically any antiderivative $F$ can be defined as $\int_a^xf(t)dt$ if we choose the right $a$ such that $F(a)=0$.
+
+No, because not every antiderivative of $f$ will even have a zero. Consider $f(x) = 2x$. Then $F(x) = x^2 + 1$ is an antiderivative for $f$. But there isn't any $a$ such that $\int_a^x 2t\,dt = x^2 + 1$, because the left-hand side equals $x^2-a^2$, and $x^2-a^2 = x^2 + 1$ doesn't have a real solution.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4909124/how-do-you-interpret-gx-in-the-fundamental-theorem-of-calculus/4909146#4909146) on Mathematics Stack Exchange, 2024-05-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

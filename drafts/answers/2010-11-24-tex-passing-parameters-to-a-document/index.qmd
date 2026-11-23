@@ -1,0 +1,122 @@
+---
+title: Passing parameters to a document
+date: '2010-11-24'
+description: 'Update: I have elaborated on the technique below in a recent (2020) TUGboat article.'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 5906
+se-link: https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document/5906#5906
+se-score: 4
+se-accepted: false
+se-tags:
+- automation
+- compiling
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Passing parameters to a document](https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document), asked by [Caramdir](https://tex.stackexchange.com/users/83/caramdir) on TeX Stack Exchange (2010-08-10; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I compile most of my documents via Makefiles which take care of the bibliography, indexes, etc. Often I'd like to compile different versions from the same TeX file changing only small things (e.g. a beamer presentation plus a version with the `handout` option).
+>
+> Is there any standard mechanism for passing parameters to the TeX file so that I can just type `make handout` to get the `handout` version in the above example?
+:::
+
+**Update**: I have elaborated on the technique below in a recent (2020) [TUGboat article](https://www.tug.org/TUGboat/tb41-3/tb129leingang-docstrip.pdf).
+
+* * *
+
+My solution is a bit unique: `docstrip`.  Instead of my master file being a `.tex` file, it's a docstrip file with `.dtx` extension.  The header for each file is the docstrip `\generate` command, and the rest of the file uses docstrip's `%<tag>` mechanism to conditionally include/exclude stuff.  For example (sorry, this isn't very minimal):
+
+```latex
+%<*driver>
+\input docstrip.tex
+\newwrite\configfile
+\immediate\openout\configfile=config.def
+\immediate\write\configfile{\string\def\string\rootjobname{\jobname}}
+\immediate\closeout\configfile
+\askforoverwritefalse
+\generate{\file{\jobname.tex}{\from{\jobname.dtx}{source}}
+          \file{\jobname_slides.tex}{\from{\jobname.dtx}{metadata,slides}}
+          \file{\jobname_lp.tex}{\from{\jobname.dtx}{metadata,article}}          
+          \file{\jobname_handout.tex}{\from{\jobname.dtx}{metadata,slides,handout}}        
+          \file{\jobname_ws.tex}{\from{\jobname.dtx}{metadata,worksheet}}
+          \file{\jobname_ws-sol.tex}{\from{\jobname.dtx}{metadata,worksheet,solutions}}
+}
+\endbatchfile
+%</driver>
+%<*metadata>
+\input config.def
+\let\oldrootjobname=\rootjobname
+% Change these!
+\def\longtitle{Section 3.7 \\ Indeterminate Forms and L'H\^opital's Rule}
+\def\shorttitle{L'H\^opital's Rule}
+\def\longcoursename{V63.0121.002.2010Su, Calculus I}
+\def\shortcoursename{V63.0121, Calculus I}
+%</metadata>
+\author{\longcoursename}
+%<*slides>
+\documentclass[ignorenonframetext,
+%<handout>handout
+]{beamer} 
+\usepackage[tikz,beamerpresentation]{V63-0121-2010Su}
+\author[\shortcoursename]{\longcoursename}
+\title[\shorttitle]{\longtitle}
+%<*handout>
+\usepackage{pgfpages}
+\usepackage{handoutWithNotes}
+\pgfpagesuselayout{3 on 1 with notes}[letterpaper]
+%</handout>
+%</slides>
+%<*article>
+\documentclass{article}
+\usepackage{beamerarticle} 
+\usepackage[tikz,
+]{V63-0121-2010Su}
+\title{\longtitle}
+%</article>
+%<*worksheet>
+\documentclass{article}
+\title{\longtitle}
+\usepackage[worksheet,tikz,
+%<solutions>solutions,
+]{V63-0121-2010Su}
+\author{\shortcoursename}
+\date{Summer 2010}
+%</worksheet>
+%<*source>
+\date{June 7, 2010}
+% ... beamer slides ...        
+\end{document}
+%</source> 
+%<*article>
+\usepackage{beamerarticle} 
+\setjobnamebeamerversion{\rootjobname_slides} 
+%</article>
+%<*slides|article>
+\input{\rootjobname_\secnum.tex} 
+%</slides|article>
+%<*worksheet>
+\begin{document}
+\maketitle
+% worksheet material ...
+\end{document}
+%</worksheet>
+```
+
+If you tex or latex the file `foo.dtx`, the individual files `foo_slides.tex`, `foo_handout.tex`, `foo_lp.tex` (for lesson plan, my personal notes), `foo_ws.tex` (worksheet), `foo_ws-sol.tex` (worksheet solutions) are all generated.  Then you tex or latex whichever of these you want to produce.
+
+Advantages of this method are that copying and reusing the file in the next semester involve copying a single file and editing.  It's as portable as any `.tex` file—no extra utility or scripting language needed.  The produced files don't have to be compiled with anything other than tex either.  You get one document:one file which makes it easier to know what's in a document by its file name.
+
+Disadvantages are that it's kinda crufty, and some people may not like running TeX on two files every time they want to preview something they are editing.  With TeXShop this is actually pretty easy because you can open files for preview, which means you only see the pdf and not the source.  So I edit the `.dtx` file, open the derivative `.tex` file for preview, and typeset the `.dtx` and derivative `.pdf` in a single sequence of keys.  Works for me.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document/5906#5906) on TeX Stack Exchange, 2010-11-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

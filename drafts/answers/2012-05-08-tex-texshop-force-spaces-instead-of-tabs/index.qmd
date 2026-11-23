@@ -1,0 +1,83 @@
+---
+title: 'TeXShop: Force spaces instead of tabs'
+date: '2012-05-08'
+description: What you're talking about are often called soft tabs, and I'd like them too in TeXShop. But so far I haven't found them.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 54920
+se-link: https://tex.stackexchange.com/questions/54909/texshop-force-spaces-instead-of-tabs/54920#54920
+se-score: 8
+se-accepted: false
+se-tags:
+- texshop
+- sourcecode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[TeXShop: Force spaces instead of tabs](https://tex.stackexchange.com/questions/54909/texshop-force-spaces-instead-of-tabs), asked by [Jonathan Komar](https://tex.stackexchange.com/users/13552/jonathan-komar) on TeX Stack Exchange (2012-05-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is there a way to make TeXShop insert an arbitrary number of spaces when I press the tab key instead of inserting a tab?  This functionality is in TeXnicle and I really like it, but TeXShop is my favorite editor. 
+>
+> A related question is how to easily indent multiple lines of code with spaces (not tabs) in TeXShop. When I think about it, I don't even know how to indent multiple lines of code with tabs!
+>
+> The setting in TeXnicle is shown in the following picture:
+>
+> ![TeXnicle Functionality: Replace Tab with Spaces][q-3]
+>
+>
+> ## Update
+>
+> I have put together some code which will add a single space (or more) in front of an arbitary number of selected lines in TeXShop. I need some help here, however. After I run the script, TeXShop deselects the original selection. **Why is this bad?** You cannot quickly rerun the script on the same selection. It wouldn't be efficient to make a key binding for this script. 
+>
+> ```latex
+> (*BASIC STRUCTURE OF THIS SCRIPT*)
+> --repeat with each line in theselection
+> --do shell script "sed 's/^/ /'   --THIS THING JUST ADDS A SPACE IN FRONT OF EACH LINE OF INPUT
+>
+> tell application "TeXShop"
+> 	--get the front document
+> 	set thisDoc to the front document
+> 	set mySel to selection of thisDoc
+> 	set selContent to content of selection of thisDoc
+> 	set outcome to do shell script "echo " & (quoted form of selContent) & "|sed 's/^/ /' "
+> 	set content of selection of thisDoc to outcome
+> end tell
+> ```
+>
+> Before: 
+>
+> ![Selection Before Script][q-1]
+>
+> After: 
+>
+> ![Result][q-2]
+>
+> Is there a way to fix this script so that it leaves the selection selected after running?
+>
+>   [q-1]: EQ7MN.png
+>   [q-2]: IJoBz.png
+>   [q-3]: ollon.png
+:::
+
+What you're talking about are often called *soft tabs*, and I'd like them too in TeXShop.  But so far I haven't found them.
+
+The indent/unindent actions are under the Source menu in TeXShop's menubar.  <strike>They insert hard tabs.</strike> They insert soft tabs (I'm not sure when this change was made). They don't have any keys bound to them by default, but you can use the System Preferences to create some as in [this Lifehacker article][1].  
+
+I had thought about creating a TeXShop macro to insert a soft tab, and binding it to the Tab key, but that's more problematic than it sounds.  The tab key is used to navigate any dialog box.  Perhaps for this reason it's not possible to bind the tab key using TeXShop's macro editor editor (or the "Keyboard" System Preferences panel).
+
+What you really need to do is re-bind the tab key only in the document's editing window.  I don't know how to do that.
+
+
+  [1]: http://lifehacker.com/343328/create-a-keyboard-shortcut-for-any-menu-action-in-any-program
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/54909/texshop-force-spaces-instead-of-tabs/54920#54920) on TeX Stack Exchange, 2012-05-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

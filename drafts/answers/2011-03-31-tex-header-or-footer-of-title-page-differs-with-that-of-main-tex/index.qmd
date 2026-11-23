@@ -1,0 +1,199 @@
+---
+title: Header or footer of title page differs with that of main text
+date: '2011-03-31'
+description: The problem is that \leftheadertitlepage is defined only within the titlepage environment, while \lhead sets an interal macro globally. So after of the…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 14662
+se-link: https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text/14662#14662
+se-score: 5
+se-accepted: false
+se-tags:
+- header-footer
+- titles
+- fancyhdr
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Header or footer of title page differs with that of main text](https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text), asked by [warem](https://tex.stackexchange.com/users/3253/warem) on TeX Stack Exchange (2011-03-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> My purpose is that
+>
+>  1. every page except title page has same header and footer.
+>  2. for title page,   
+>     ==> it has `exactly same footer` with that of other page.  
+>     ==> and it has `completely different header` with that of other page.
+>
+> By default, title page will switch to `plain` pagestyle. Then we can define whatever in it. In my case, since title page has same footer with that of other page, I first define a pagestyle for whole article, then redefine a different header in title page. This header is only local to title page and won't influence the header of other pages.
+>
+> After defining my own header `leftheadertitlepage` for title page, the footer of title page `disappeared`. If I used `fancyhdr`'s header, e.g., `\fancyhead[L]{whatever}`, the footer of title page will be there as I desire. In both cases, the header and footer for other pages are OK. So how to make title page have my own header and a general footer of whole article?
+>
+> Following is a small example. Please help check.
+>
+> ```latex
+> \documentclass[titlepage,a4paper]{article}
+>
+> \usepackage{calc}
+> \usepackage[demo]{graphics}
+>
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+> \renewcommand{\footrulewidth}{0.4pt}
+> \rfoot{\thepage}
+> \cfoot{}
+>
+> \begin{document}
+>
+> \begin{titlepage}
+> \thispagestyle{fancy}
+> \fancyhead{}
+> \renewcommand{\headrulewidth}{0pt}
+>
+> \newcommand\leftheadertitlepage{%
+> \begin{tabular}[b]{@{}l}
+> \begin{minipage}[b]{0.6\textwidth}
+> \includegraphics{test} 
+> \end{minipage}
+> Energietechnik GmbH \\
+> Gesch\"{a}ftsbereich\\
+> Energietechnik\\
+> \end{tabular}
+> }
+> \settototalheight\headheight{\maxof{\leftheadertitlepage}}
+> \lhead{\leftheadertitlepage}
+>
+> \textbf{\Huge{title page}}
+> \pagebreak
+> \end{titlepage}
+> \lhead{}
+> \chead{demo}
+> whatever
+> \newpage
+> demo
+>
+> \end{document}
+> ```
+>
+>
+>
+> With the help from Seamus and Matthew, I agree with Seamus's suggestion: 
+>
+> ====================>  
+> In title page, first, use the default pagestyle `plain`, then define the large image at the top that makes it look like a header. Finally, restore the pagestyle `fancyhdr` to make its footer exactly same with that of other pages.   
+> <==================== 
+>
+> Following is the updated code:
+>
+> ```latex
+> \documentclass[titlepage,a4paper]{article}
+>
+> \usepackage{calc}
+> \usepackage[demo]{graphics}
+>
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+> \renewcommand{\footrulewidth}{0.4pt}
+> \rfoot{\thepage}
+> \cfoot{}
+>
+> \begin{document}
+>
+> \begin{titlepage}
+> % by default, the pagestyle of title page is plain
+> \renewcommand{\headrulewidth}{0pt} % cancel out the decorative line
+>
+> \newcommand\leftheadertitlepage{%
+> \begin{tabular}[b]{@{}l}
+> \begin{minipage}[b]{0.6\textwidth}
+> \includegraphics{test} 
+> \end{minipage}
+> Energietechnik GmbH \\
+> Gesch\"{a}ftsbereich\\
+> Energietechnik\\
+> \end{tabular}
+> }
+>
+> \newlength{\temp}
+> \settototalheight\temp{\maxof{\leftheadertitlepage}}
+> \vspace*{-\temp} % make the below image move up, then it looks like a header
+>
+> \leftheadertitlepage % define the large image and put it at the top
+>
+> \textbf{\Huge{title page}}
+> \thispagestyle{fancy} % restore fancyhdr pagestyle
+> \pagebreak
+> \end{titlepage}
+> \lhead{}
+> \chead{demo}
+> whatever
+> \newpage
+> demo
+>
+> \end{document}
+> ```
+>
+> In the end, thank Seamus and Matthew again.
+:::
+
+The problem is that `\leftheadertitlepage` is defined only within the `titlepage` environment, while `\lhead` sets an interal macro *globally*.  So after of the titlepage `fancyhdr` wants to but `\leftheadertitlepage` in the left head but doesn't know what that means anymore!  Hence the `undefined control sequence` error.
+
+To fix this, move the definition of `\leftheadertitlepage` to thepreamble.  Then it will compile without difficulty.  But you will also find the code from `\leftheadertitlepage` on pages after the title page.  To shut that off just put `\lhead` after the titlepage is over.
+
+Here is your rearranged file:
+
+```latex
+\documentclass[titlepage,a4paper]{article}
+
+\usepackage{calc}
+\usepackage[demo]{graphics}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[R] {\thepage}
+\fancyfoot[C] {}
+
+\newcommand\leftheadertitlepage{%
+\begin{tabular}[b]{@{}l}
+\begin{minipage}[b]{0.6\textwidth}
+\includegraphics{test} 
+\end{minipage}
+Energietechnik GmbH \\
+Gesch\"{a}ftsbereich\\
+Energietechnik\\
+\end{tabular}
+}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+
+\settototalheight\headheight{\maxof{\leftheadertitlepage}}
+\lhead{\leftheadertitlepage}
+
+title page
+\pagebreak
+\end{titlepage}
+\lhead{}% to shut off the placement of `\leftheadertitlepage`
+
+whatever
+
+\end{document}
+```
+
+I'm not sure what it is you exactly want on the title page, but this allows to the document to compile without errors so you can take it to the next step.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text/14662#14662) on TeX Stack Exchange, 2011-03-31, with [edits](https://tex.stackexchange.com/posts/14662/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

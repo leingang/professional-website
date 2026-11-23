@@ -1,0 +1,65 @@
+---
+title: If $f(x) $ be a polynomial function satisfying $f(x).f(\frac{1}{x})=f(x) +f(\frac{1}{x})$ and $f(4) =65$ then find $f(6)$
+date: '2015-01-10'
+description: 'The equations are satisfied by $f(x) = x^3 + 1$. For: $$f(x) f\left(\frac{1}{x}\right) = (x^3 + 1) \left(\frac{1}{x^3} + 1\right) = 1 + x^3 + \frac{1}{x^3} + 1…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1098454
+se-link: https://math.stackexchange.com/questions/1098449/if-fx-be-a-polynomial-function-satisfying-fx-f-frac1x-fx-f-fra/1098454#1098454
+se-score: 2
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $f(x) $ be a polynomial function satisfying $f(x).f(\frac{1}{x})=f(x) +f(\frac{1}{x})$ and $f(4) =65$ then find $f(6)$](https://math.stackexchange.com/questions/1098449/if-fx-be-a-polynomial-function-satisfying-fx-f-frac1x-fx-f-fra), asked by [Sachin](https://math.stackexchange.com/users/68597/sachin) on Mathematics Stack Exchange (2015-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Problem : 
+>
+> If $f(x)$ be a polynomial function satisfying $f(x).f(\frac{1}{x})=f(x) +f(\frac{1}{x})$ and $f(4) =65$ then find $f(6)$ 
+>
+>
+> Solution : 
+>
+> $f(x) f(\frac{1}{x})-f(x) =f(\frac{1}{x})$
+>
+> $\Rightarrow f(x) =\frac{f(1/x)}{f(1/x)-1}$.....(i)
+>
+>
+> Also $f(x).f(\frac{1}{x})=f(x) +f(\frac{1}{x})$
+>
+> $\Rightarrow f(\frac{1}{x})=\frac{f(x)}{f(x)-1}$ ......(ii)
+>
+> On multiplying (i) and (ii) , we get 
+>
+> $f(x) .f(\frac{1}{x})=\frac{f(1/x).f(x)}{(f(1/x)-1) ((f)(x)-1)}$
+>
+>
+> $\Rightarrow (f(\frac{1}{x}) -1)(f(x)-1)=1$ 
+>
+> Please suggest how to proceed here since $f(x)-1 ; \& f(\frac{1}{x}-1)$ are reciprocal to each other 
+> Thanks
+:::
+
+The equations are satisfied by $f(x) = x^3 + 1$.  For:
+$$f(x) f\left(\frac{1}{x}\right)
+    = (x^3  + 1) \left(\frac{1}{x^3} + 1\right)
+    = 1 + x^3 + \frac{1}{x^3} + 1
+    = f(x) + f \left(\frac{1}{x}\right)$$
+and $f(4) = 4^3 + 1 = 65$.
+So
+$f(6) = 6^3 + 1 = 217$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1098449/if-fx-be-a-polynomial-function-satisfying-fx-f-frac1x-fx-f-fra/1098454#1098454) on Mathematics Stack Exchange, 2015-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

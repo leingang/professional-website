@@ -1,0 +1,66 @@
+---
+title: Area of Cardioid $r=1+\sin(\theta)$ Using Green's Theorem
+date: '2018-08-07'
+description: 'The form of Green''s theorem that you used: $$A(D) = \iintD dx\,dy = \frac{1}{2}\oint{\partial D} (x\,dy - y\,dx)$$ applies when $x$ and $y$ are cartesian…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2875315
+se-link: https://math.stackexchange.com/questions/2875247/area-of-cardioid-r-1-sin-theta-using-greens-theorem/2875315#2875315
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area of Cardioid $r=1+\sin(\theta)$ Using Green's Theorem](https://math.stackexchange.com/questions/2875247/area-of-cardioid-r-1-sin-theta-using-greens-theorem), asked by [newhere](https://math.stackexchange.com/users/300848/newhere) on Mathematics Stack Exchange (2018-08-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Find the area enclosed by $r=1+\sin \theta$ using Green's theorem.
+>
+> What I have is
+>
+> $\gamma(t)=(t,1+\sin t)$
+>
+> $\gamma'(t)=(1,\cos t)$
+>
+> Then $\frac{1}{2}\int_{0}^{2\pi}(-1-\sin t+t\cos t)dt=-\pi$
+>
+> Is it correct?
+:::
+
+The form of Green's theorem that you used:
+$$A(D) = \iint_D dx\,dy = \frac{1}{2}\oint_{\partial D} (x\,dy - y\,dx)$$
+applies when $x$ and $y$ are *cartesian* coordinates.  Your expression $\gamma(t) = (t,1+\sin t)$ expresses the curve in *polar* coordinates.  So you need to either state Green's theorem in polar coordinates, or express $\gamma$ in cartesian coordinates.
+
+Let's do the latter.  The change of variables is $x = r\cos\theta$, $y = r\sin\theta$.  So use
+$$\gamma(t) = ((1+\sin t)\cos t,(1+\sin t)\sin t)$$
+
+As for the former, you can compute
+$$\begin{align*}
+    dx &= \cos\theta \,dr - r \sin\theta \,d\theta \\
+    dy &= \sin\theta \,dr + r \cos\theta \,d\theta
+\end{align*}$$
+Then through a little [exterior algebra][1], we get
+$$dx \,dy = r\,dr\,d\theta$$
+and
+$$x\,dy - y\,dx = r^2\,d\theta$$
+So Green's theorem tells us
+$$A(D) = \int_D r\,dr\,d\theta = \frac{1}{2}\oint_{\partial D} r^2\,d\theta$$
+I think in many undergraduate multivariable calculus courses this identity isn't derived from Green's theorem, but it can be.  In any case, if $D$ is the region enclosed by the cardioid $r = 1 + \sin\theta$, then
+$$A(D) = \frac{1}{2}\int_{0}^{2\pi}(1+\sin\theta)^2\,d\theta$$
+
+
+  [1]: https://en.wikipedia.org/wiki/Exterior_algebra
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2875247/area-of-cardioid-r-1-sin-theta-using-greens-theorem/2875315#2875315) on Mathematics Stack Exchange, 2018-08-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

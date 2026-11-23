@@ -1,0 +1,35 @@
+---
+title: What is really the purpose of $i$?
+date: '2017-11-13'
+description: They are useful, not just for solving quadratic equations, but for many algebraic equations. Legend has it that the mathematicians of the Italian Renaissance…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2518531
+se-link: https://math.stackexchange.com/questions/2518491/what-is-really-the-purpose-of-i/2518531#2518531
+se-score: 0
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is really the purpose of $i$?](https://math.stackexchange.com/questions/2518491/what-is-really-the-purpose-of-i), asked by [Angelina Wallis](https://math.stackexchange.com/users/502523/angelina-wallis) on Mathematics Stack Exchange (2017-11-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> We started talking about imaginary numbers again this year and asked this question in class, but nobody could really give a straight answer. So if anyone could tell me the real reason we have imaginary numbers that would be great! :)
+:::
+
+They are useful, not just for solving quadratic equations, but for many algebraic equations.  Legend has it that the mathematicians of the Italian Renaissance (in particular, Cardano, Tartaglia, and Viete), noticed that if you allowed yourself an imaginary number $i$ with $i^2=-1$, then you could construct formulas for finding roots to cubic equations.  They were ambivalent about the use of such numbers (hence the names *real* and *imaginary*), but if the roots are real, these imaginary methods will still find them.  I think this is how they caught on.
+
+For a more scholarly telling of the story, you might look at *An Imaginary Tale: The Story of $\sqrt{-1}$* by Paul J. Nahin.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2518491/what-is-really-the-purpose-of-i/2518531#2518531) on Mathematics Stack Exchange, 2017-11-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

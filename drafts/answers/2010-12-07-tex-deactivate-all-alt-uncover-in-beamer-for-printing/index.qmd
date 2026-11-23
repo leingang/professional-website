@@ -1,0 +1,70 @@
+---
+title: Deactivate all \alt,\uncover in beamer (for printing)
+date: '2010-12-07'
+description: If you're printing the file, you probably want to use handout mode or article mode.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 6706
+se-link: https://tex.stackexchange.com/questions/6705/deactivate-all-alt-uncover-in-beamer-for-printing/6706#6706
+se-score: 23
+se-accepted: true
+se-tags:
+- beamer
+- animations
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Deactivate all \alt,\uncover in beamer (for printing)](https://tex.stackexchange.com/questions/6705/deactivate-all-alt-uncover-in-beamer-for-printing), asked by [Elenaher](https://tex.stackexchange.com/users/1435/elenaher) on TeX Stack Exchange (2010-12-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a big latex beamer that uses `\alt`, `\uncover`, ... to create "animations".
+>
+> My goal is to deactivate all these commands temporary (let's say : just use the last state/slide each time there's this kind of thing) to print my document.
+>
+> Is there a global command to do this or have I to do all this manually (comment manually the commands / or (simpler but still really long) suppress manually pages from the output) ?
+>
+> Thanks very much in advance for your help.
+:::
+
+If you're printing the file, you probably want to use handout mode or article mode.  
+
+```latex
+\documentclass[handout]{beamer}
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm] % for instance
+```
+
+OR
+
+```latex
+\documentclass{beamer}
+\usepackage{beamerarticle}
+```
+
+If you want pictures of slides, handout mode is best  If you want something that looks more like an article, article mode is best.  I'll assume you want handout, but the answer is similar for article.
+
+In handout mode, all slides are by default overlayed, which for complicated frames makes a mess.  But all of your overlay specifications like `<+->` that you used in the beamer .tex file can be specified for the handout mode, too. If there is something you do not want on the handout, add `| handout:0` to the overlay specification.  So
+
+```latex
+\only<1-3| handout:0>{foo}
+```
+
+will have `foo` appear only on slides 1-3 of the beamer mode and not in the handout.  Although it may seem like a pain to deactivate so many specifications in a large beamer file, it's the "right" way to do it because it doesn't change the document in beamer mode (like commenting out would).
+
+See these two questions that relate to making beamers into handouts:
+
+ * [How can I distribute beamer overlayareas in handout mode across multiple frames?](https://tex.stackexchange.com/questions/6582/how-can-i-distribute-beamer-overlayareas-in-handout-mode-across-multiple-frames)
+ 
+ 
+ * [different overlay specification in different beamer modes?](https://stackoverflow.com/questions/2645418/different-overlay-specification-in-different-beamer-modes) on StackOverflow
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6705/deactivate-all-alt-uncover-in-beamer-for-printing/6706#6706) on TeX Stack Exchange, 2010-12-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

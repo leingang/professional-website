@@ -1,0 +1,47 @@
+---
+title: What is meant by the symbol “$\equiv$” in this context?
+date: '2019-08-29'
+description: The symbol $\equiv$ has different meanings in different contexts, but it usually refers to an equivalence relation distinct from actual equality.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3338085
+se-link: https://math.stackexchange.com/questions/3338069/what-is-meant-by-the-symbol-equiv-in-this-context/3338085#3338085
+se-score: 2
+se-accepted: true
+se-tags:
+- geometry
+- notation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is meant by the symbol “$\equiv$” in this context?](https://math.stackexchange.com/questions/3338069/what-is-meant-by-the-symbol-equiv-in-this-context), asked by [Lucifer](https://math.stackexchange.com/users/633975/lucifer) on Mathematics Stack Exchange (2019-08-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![diagram referred to by derivation][q-1]][q-1]
+> [![mathematical derivation with confusing statement highlighted][q-2]][q-2]
+>
+> See the highlighted text in the 2nd photo, where it says
+> $$\triangle OAC \equiv \triangle OC'A'$$
+> What is meant by the symbol “$\equiv$”?
+>
+>   [q-1]: gz1Cm.jpg
+>   [q-2]: jXoOy.jpg
+:::
+
+The symbol $\equiv$ has different meanings in different contexts, but it usually refers to an [equivalence relation][1] distinct from actual equality.
+
+In this context of plane Euclidean geometry, it seems the author is using it for the [congruence](https://en.wikipedia.org/wiki/Congruence_(geometry)#Congruence_of_triangles) relation on polygons.
+
+
+  [1]: https://en.wikipedia.org/wiki/Equivalence_relation
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3338069/what-is-meant-by-the-symbol-equiv-in-this-context/3338085#3338085) on Mathematics Stack Exchange, 2019-08-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

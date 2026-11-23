@@ -1,0 +1,64 @@
+---
+title: In a math paper, is this considered redundant?
+date: '2016-09-28'
+description: First of all, I'm not sure "nonnegative matrix" means, unambiguously, "matrix with nonnegative entries." But my bigger issue with
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1945028
+se-link: https://math.stackexchange.com/questions/1944681/in-a-math-paper-is-this-considered-redundant/1945028#1945028
+se-score: 20
+se-accepted: false
+se-tags:
+- proof-writing
+- article-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[In a math paper, is this considered redundant?](https://math.stackexchange.com/questions/1944681/in-a-math-paper-is-this-considered-redundant), asked by [User001](https://math.stackexchange.com/users/190772/user001) on Mathematics Stack Exchange (2016-09-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If I want to put emphasis on a matrix being entrywise-nonnegative, can I write in my paper 
+>
+> "...and thus there exists a nonnegative matrix $\mathcal{Q} \in \mathcal{M}_N(\mathbb{R^+})$..." 
+>
+> or is that redundant and should be avoided?
+>
+> is it instead better to say 
+>
+> "...and thus there exists a matrix $\mathcal{Q} \in \mathcal{M}_N(\mathbb{R^+})$..." 
+>
+> Personally, I like the first choice, in order to put emphasis on the existence of a nonnegative matrix, but I wonder whether it's bad style for math writing.
+>
+> I'm using $\mathcal{M}_N(\mathbb{R^+})$ to denote the set of $n\times n$ matrices with nonnegative entries.
+>
+> Thanks,
+:::
+
+First of all, I'm not sure "nonnegative matrix" means, unambiguously, "matrix with nonnegative entries."  But my bigger issue with
+
+> ...and thus there exists a nonnegative matrix $\mathcal{Q} \in \mathcal{M}_N(\mathbb{R^+})$...
+
+is that you may not need the notation at all. Sometimes programs that debug code will point out when you're declaring a variable but not using it for anything.  It's not exactly an error, but it can complicate your writing.
+
+If you're going to refer to the set of $N\times N$ matrices with nonnegative entries several times, name it at the beginning of a paragraph.  Then use the shorthand notation later on.  As in:
+
+> Let $\mathcal{M}_N(\mathbb{R^+})$ be the set of all $N\times N$ matrices with nonegative entries. ... *yada yada yada* ... and thus there exists $\mathcal{Q} \in \mathcal{M}_N(\mathbb{R^+})$ such that ... 
+
+This way, someone who missed what exactly $\mathcal{M}_N(\mathbb{R^+})$ was can scan backwards to the beginning of the paragraph to find it.  Someone who remembers can just move on without stumbling over an inline declaration.
+
+If you're not going to refer to the set often, there's no need to name it with notation.  Just say
+
+> ... and thus there exists an $N\times N$ matrix $\mathcal{Q}$ with nonnegative entries such that ...
+
+Erdos wrote “the best notation is no notation.”  Use it only if you need it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1944681/in-a-math-paper-is-this-considered-redundant/1945028#1945028) on Mathematics Stack Exchange, 2016-09-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

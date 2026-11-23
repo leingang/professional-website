@@ -1,0 +1,54 @@
+---
+title: Geometric visualization for volume of parallelepiped
+date: '2018-08-20'
+description: I'm not sure there's an intuitive way to visualize a volume calculation as a linear combination of areas, except in the case you have already. It's just the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2889028
+se-link: https://math.stackexchange.com/questions/2889001/geometric-visualization-for-volume-of-parallelepiped/2889028#2889028
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- vectors
+- determinant
+- volume
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Geometric visualization for volume of parallelepiped](https://math.stackexchange.com/questions/2889001/geometric-visualization-for-volume-of-parallelepiped), asked by [jp_](https://math.stackexchange.com/users/585764/jp) on Mathematics Stack Exchange (2018-08-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Volume of parallelepiped defined by vectors 
+> $$\begin{align}
+> \begin{bmatrix}a\\b\\c\end{bmatrix}&,\quad \begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix},\quad\begin{bmatrix}w_1\\w_2\\w_3\end{bmatrix} = \det\begin{pmatrix}\begin{bmatrix}a&v_1&w_1\\b&v_2&w_2\\c&v_3&w_3\end{bmatrix}\end{pmatrix}\\
+> &= a(v_2w_3 - v_3w_2) + b(v_3w_1 - v_1w_3) + c(v_1w_2 - v_2w_1)\\
+> &= a(\text{Area of parallelogram obtained by projecting parallelepiped on the $yz$ plane})\\ 
+> &+b(\text{Area of parallelogram obtained by projecting parallelepiped on the $zx$ plane}) \\
+> &+c(\text{Area of parallelogram obtained by projecting parallelepiped on the $xy$ plane})
+> \end{align}$$
+>
+>
+> I can visualize the case when any one component of vectors $v$ and $w$ are $0$. Suppose the $z$ component is $0$. So there would not be any parallelogram formed on the $yz$ and $zx$ plane. So the volume would simply be 
+> $$=c(\text{Area of parallelogram obtained by projecting parallelepiped on the $xy$ plane})$$
+> which is simple enough to visualize. But, I am having trouble visualizing when all the three components of $v$ and $w$ are non-zero. Can anyone help?
+:::
+
+I'm not sure there's an intuitive way to visualize a volume calculation as a linear combination of areas, *except* in the case you have already.  It's just the
+$$\text{Volume} = \text{Area of base}\cdot \text{height}$$
+formula from high school geometry.  
+
+But I would encourage you go the other direction, and induct from this case to the more general one.  There is a rotation of space which brings $v$ and $w$ into the $xy$-plane.  This rotation preserves determinants.  So the volume formula has to be the same.
+
+Intuitively, volume is a little more intrinsic to space than the axes or coordinates we install to describe space.  So we can choose our coordinates/axes to make the visualization convenient.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2889001/geometric-visualization-for-volume-of-parallelepiped/2889028#2889028) on Mathematics Stack Exchange, 2018-08-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

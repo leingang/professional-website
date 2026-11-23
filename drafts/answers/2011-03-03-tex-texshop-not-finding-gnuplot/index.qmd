@@ -1,0 +1,74 @@
+---
+title: TeXShop not finding Gnuplot
+date: '2011-03-03'
+description: 'Another method is to create a symbolic link so that TeXShop finds it in the place it''s looking. In a Terminal window execute:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12552
+se-link: https://tex.stackexchange.com/questions/12520/texshop-not-finding-gnuplot/12552#12552
+se-score: 1
+se-accepted: false
+se-tags:
+- external-files
+- gnuplot
+- texshop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[TeXShop not finding Gnuplot](https://tex.stackexchange.com/questions/12520/texshop-not-finding-gnuplot), asked by [romeovs](https://tex.stackexchange.com/users/3127/romeovs) on TeX Stack Exchange (2011-03-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm working in TeXShop on my mac and I love it.
+>
+> There is one slight problem though. I use TikZ wich sometimes uses gnuplot to create it's plots. One would think that running TeXShop alone is enough (TeXShop should call gnuplot) but it isn't for me.
+>
+> I have to run my file from the command line using:
+>
+> ```latex
+> latex -shell-escape myfile.tex
+> ```
+>
+> and only after I did this the plot's will appear in TeXShop. What happens is this:
+>
+>  1. TeXShop can't find or call `gnuplot`so it doesn't create the necessary `*.table` files
+>  2. If I call `latex` from the command line, it automagically *does* find gnuplot and creates the correct `*.table` files
+>  3. When I run TeXShop again, the `*.table` files are already there and it just picks them up to work with.
+>
+> I thought this was normal, until I discorvered it wasn't by using another package that also needs to call an external program (`minted`, which needs pygmentize and/or python). This package works normally from my TeXShop and this got me thinking: should calling gnuplot from TeXShop work just as well?
+>
+> I'm guessing it has something to do with the location of my gnuplot, using `which gnuplot`on the command line tells me it is in:
+>
+> ```latex
+> /opt/local/bin/gnuplot
+> ```
+>
+> It got installed there using the installtion guide [here][q-1] (actually, I installed *all* the macports, and gnuplot was one of them).
+>
+> Readings in some other fora lead me to believe the symbolic link is broken.. Although I don't quite know what that means or how to fix it. TeXShop doesn't *know* where to find `gnuplot`.
+>
+> What should I do to fix this?
+>
+>
+> PS: to avoid the obvious question: yes, `--shell-escape` is enabled in my TeXShop preferences.
+>
+>   [q-1]: http://gnuplot.darwinports.com/
+:::
+
+Another method is to create a symbolic link so that TeXShop finds it in the place it's looking.  In a Terminal window execute:
+
+```latex
+$ sudo ln -s /opt/local/bin/gnuplot /usr/local/bin
+```
+
+(the `$` is the prompt, not something to execute.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12520/texshop-not-finding-gnuplot/12552#12552) on TeX Stack Exchange, 2011-03-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

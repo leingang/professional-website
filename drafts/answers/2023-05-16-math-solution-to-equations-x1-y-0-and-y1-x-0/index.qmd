@@ -1,0 +1,57 @@
+---
+title: solution to equations $x(1-y)=0$ and $y(1-x)=0$
+date: '2023-05-16'
+description: Both equations in the system need to be satisfied.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4700522
+se-link: https://math.stackexchange.com/questions/4700486/solution-to-equations-x1-y-0-and-y1-x-0/4700522#4700522
+se-score: 2
+se-accepted: true
+se-tags:
+- systems-of-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[solution to equations $x(1-y)=0$ and $y(1-x)=0$](https://math.stackexchange.com/questions/4700486/solution-to-equations-x1-y-0-and-y1-x-0), asked by [Lenny White](https://math.stackexchange.com/users/696467/lenny-white) on Mathematics Stack Exchange (2023-05-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I need to solve two equations:
+>
+> $$x(1-y)=0 \\
+> y(1-x)=0$$
+>
+> If I had one equation, ex $x(1-y)$, the solution would be $x=0$ or $y = 1$. But how do I go about solving two such equations? Are the solutions as below?
+> $$x = 0 \lor y=0 \\
+> x = 0 \lor y=1 \\
+> x = 1 \lor y=0 \\
+> x = 1 \lor y=1$$
+:::
+
+*Both* equations in the system need to be satisfied.
+
+ - Equation 1 says: either $x=0$ or $y=1$
+ - Equation 2 says: either $y=0$ or $x=1$
+
+If you choose $x=0$ from equation 1, then you can't choose $x=1$ for equation 2. So $y=0$.
+
+Likewise, if you choose $y=1$ from equation 1, then you can't choose $y=0$ for equation 2. So $x=1$.
+
+If you want to do it with boolean algebra, you have:
+$$\begin{aligned}
+    ((x=0) \lor (y=1)) \land ((y=0) \lor (x=1))
+    &= ((x=0) \land (y=0)) \lor ((x=0) \land (x=1)) \lor ((y=1) \land (y=0)) \lor ((y=1) \land (x=1))
+  \\&= ((x=0) \land (y=0)) \lor \text{FALSE} \lor \text{FALSE} \lor ((y=1) \land (x=1))
+  \\&= ((x=0) \land (y=0)) \lor ((y=1) \land (x=1))
+\end{aligned}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4700486/solution-to-equations-x1-y-0-and-y1-x-0/4700522#4700522) on Mathematics Stack Exchange, 2023-05-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

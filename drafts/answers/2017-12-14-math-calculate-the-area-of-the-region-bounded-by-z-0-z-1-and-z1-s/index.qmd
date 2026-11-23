@@ -1,0 +1,48 @@
+---
+title: Calculate the area of the region bounded by $z=0, z=1,$, and $(z+1)\sqrt{x^2+y^2}=1$
+date: '2017-12-14'
+description: 'You''re well on your way. In cylindrical coordinates, $$B = \left\{(r,\theta,z): 0 \leq z \leq 1,\ 0 \leq \theta \leq 2\pi,\ 0 \leq r \leq…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2565808
+se-link: https://math.stackexchange.com/questions/2565802/calculate-the-area-of-the-region-bounded-by-z-0-z-1-and-z1-sqrtx2y2/2565808#2565808
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculate the area of the region bounded by $z=0, z=1,$, and $(z+1)\sqrt{x^2+y^2}=1$](https://math.stackexchange.com/questions/2565802/calculate-the-area-of-the-region-bounded-by-z-0-z-1-and-z1-sqrtx2y2), asked by [K Split X](https://math.stackexchange.com/users/381431/k-split-x) on Mathematics Stack Exchange (2017-12-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Calculate the volume of the region bounded by $z=0, z=1,$, and $(z+1)\sqrt{x^2+y^2}=1$
+>
+> The integral is $\int_{B}z\text{ dV}$
+>
+> The area is like the thing between the top two green places. The first place is $z=1$, second is $z=0$
+>
+> Clearly we have $0\leq z\leq 1$, but I'm not sure what to bound next? Should I be using cylindrical? 
+>
+> Would it be correct in saying $0\leq r\leq \dfrac{1}{z+1}$
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: THRhl.png
+:::
+
+You're well on your way.  In cylindrical coordinates,
+$$B = \left\{(r,\theta,z): 0 \leq z \leq 1,\ 0 \leq \theta \leq 2\pi,\ 0 \leq r \leq \frac{1}{z+1}\right\}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2565802/calculate-the-area-of-the-region-bounded-by-z-0-z-1-and-z1-sqrtx2y2/2565808#2565808) on Mathematics Stack Exchange, 2017-12-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

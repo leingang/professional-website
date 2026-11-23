@@ -1,0 +1,144 @@
+---
+title: Need help re-defining the basic trig functions
+date: '2013-03-04'
+description: I agree with egreg that this interface doesn't actually save you any work and actually loses some clarity in the source. Here's how I have been handling these…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 100780
+se-link: https://tex.stackexchange.com/questions/100754/need-help-re-defining-the-basic-trig-functions/100780#100780
+se-score: 1
+se-accepted: false
+se-tags:
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Need help re-defining the basic trig functions](https://tex.stackexchange.com/questions/100754/need-help-re-defining-the-basic-trig-functions), asked by [Mirrana](https://tex.stackexchange.com/users/22286/mirrana) on TeX Stack Exchange (2013-03-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to define my own commands to replace `\sin`, `\cos`, `\tan`, etc... I'd like to be able to use `\tan[a]{x}` to mean `\tan^{a}{(x)}`, and `\tan{x}` to mean just `\tan{(x)}`.
+>
+> I've tried modeling a solution based on something I found online for having a command with an optional parameter, but I can't seem to get it to work.
+>
+> ```latex
+> \let\sin\oldsin
+>
+> \def\sin{\@ifnextchar[{\@with}{\@without}}
+> \def\@with[#1]#2{\oldsin^{#1}{(#2)}}
+> \def\@without#1{\oldsin{(#1)}}
+> ```
+>
+> It complains about \oldsin not being a command.
+>
+> I'd also like this to be able to function in combination with another command I made:
+>
+> ```latex
+> \renewcommand\arcsin[1]{\sin[-1]{(#1)}}
+> ```
+:::
+
+I agree with egreg that this interface doesn't actually save you any work and actually loses some clarity in the source.  Here's how I have been handling these powers of trig function.
+
+I use the [`cool`](http://ctan.org/pkg/cool) package.  It provides commands like `\Sin` and `\Cos` which automatically add parentheses of the right size.  It also provides their inverses `\ArcSin`, etc., which can be configured for either the "arc" style or the "inverse" style.  Since LaTeX only provides `\arc`-macros for sine, cosine, and tangent, though, you have to provide the others.
+
+For powers, I wanted to be able to type `\Sin{x}^2` and see it as if I had typed `\sin^2(x)`.  So I redefined `\Sin` to look for `^` and adapt.  
+
+```latex
+\documentclass{article}
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\arcsec}{\operatorname{arcsec}}
+\newcommand{\arccsc}{\operatorname{arccsc}}
+\usepackage{cool}
+\makeatletter
+\newcommand{\COOL@switch@arctrig}[2]{%
+    \ifthenelse{\equal{\COOL@notation@ArcTrig}{inverse}}{#1}{%
+        \ifthenelse{\equal\COOL@notation@ArcTrig{arc}}{#2}{%
+            \PackageError{cool}{Invalid ArcTrig option: can be only `arc' or `inv'}%
+        }%
+    }
+}
+\renewcommand{\ArcCot}[1]{%
+    \COOL@switch@arctrig{\cot^{-1}}{\arccot}%
+    \COOL@decide@paren{ArcTan}{#1}%
+}
+\renewcommand{\ArcSec}[1]{%
+    \COOL@switch@arctrig{\sec^{-1}}{\arcsec}%
+    \COOL@decide@paren{ArcSec}{#1}%
+}
+\renewcommand{\ArcCsc}[1]{%
+    \COOL@switch@arctrig{\csc^{-1}}{\arccsc}%
+    \COOL@decide@paren{ArcCsc}{#1}%
+}
+
+\let\COOL@Sin@Nopower\Sin
+\let\COOL@Cos@Nopower\Cos
+\let\COOL@Tan@Nopower\Tan
+\let\COOL@Cot@Nopower\Cot
+\let\COOL@Sec@Nopower\Sec
+\let\COOL@Csc@Nopower\Csc
+
+\def\Sin#1{\@ifnextchar^{\COOL@Sin@Power{#1}}{\COOL@Sin@Nopower{#1}}}
+\def\Cos#1{\@ifnextchar^{\COOL@Cos@Power{#1}}{\COOL@Cos@Nopower{#1}}}
+\def\Tan#1{\@ifnextchar^{\COOL@Tan@Power{#1}}{\COOL@Tan@Nopower{#1}}}
+\def\Cot#1{\@ifnextchar^{\COOL@Cot@Power{#1}}{\COOL@Cot@Nopower{#1}}}
+\def\Sec#1{\@ifnextchar^{\COOL@Sec@Power{#1}}{\COOL@Sec@Nopower{#1}}}
+\def\Csc#1{\@ifnextchar^{\COOL@Csc@Power{#1}}{\COOL@Csc@Nopower{#1}}}
+
+\def\COOL@Sin@Power#1^#2{\sin^{#2}\COOL@decide@paren{Sin}{#1}}
+\def\COOL@Cos@Power#1^#2{\cos^{#2}\COOL@decide@paren{Cos}{#1}}
+\def\COOL@Tan@Power#1^#2{\tan^{#2}\COOL@decide@paren{Tan}{#1}}
+\def\COOL@Cot@Power#1^#2{\cot^{#2}\COOL@decide@paren{Cot}{#1}}
+\def\COOL@Sec@Power#1^#2{\sec^{#2}\COOL@decide@paren{Sec}{#1}}
+\def\COOL@Csc@Power#1^#2{\csc^{#2}\COOL@decide@paren{Csc}{#1}}
+
+\makeatother
+\begin{document}
+\begin{minipage}{0.4\textwidth}
+\[
+       \Style{ArcTrig=arc}
+       \begin{aligned}
+         \ArcSin{1} &= \frac{\pi}{2}  \\
+         \ArcCos{1} &= 0              \\
+         \ArcTan{1} &= \frac{\pi}{4}  \\
+         \ArcCot{1} &= \frac{\pi}{4}  \\
+         \ArcSec{1} &= 0              \\
+         \ArcCsc{1} &= \frac{\pi}{2}  \\
+       \end{aligned}
+\]
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\[
+       \Style{ArcTrig=inverse}
+       \begin{aligned}
+         \ArcSin{1} &= \frac{\pi}{2}  \\
+         \ArcCos{1} &= 0              \\
+         \ArcTan{1} &= \frac{\pi}{4}  \\
+         \ArcCot{1} &= \frac{\pi}{4}  \\
+         \ArcSec{1} &= 0              \\
+         \ArcCsc{1} &= \frac{\pi}{2}  \\
+       \end{aligned}
+\]
+\end{minipage}
+\[
+\Sin{x}^2 = \frac{1}{2}\left(1 - \Cos{2x}\right)
+\]
+\end{document}
+```
+
+![sample code output][1]
+
+I guess a disadvantage is that if you type `\Sin x^2` you will get `\sin^2(x)` when you probably mean `\sin(x^2)`.  But the `cool` way is to embrace the arguments.
+
+
+  [1]: ztz88.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/100754/need-help-re-defining-the-basic-trig-functions/100780#100780) on TeX Stack Exchange, 2013-03-04, with [edits](https://tex.stackexchange.com/posts/100780/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

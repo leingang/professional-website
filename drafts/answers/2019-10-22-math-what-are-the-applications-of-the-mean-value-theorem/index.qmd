@@ -1,0 +1,48 @@
+---
+title: What are the applications of the Mean Value Theorem?
+date: '2019-10-22'
+description: Suppose $f$ is a constant function. Then its derivative is zero. This follows directly from the definition.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3404368
+se-link: https://math.stackexchange.com/questions/3403076/what-are-the-applications-of-the-mean-value-theorem/3404368#3404368
+se-score: 12
+se-accepted: false
+se-tags:
+- calculus
+- soft-question
+- education
+- motivation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What are the applications of the Mean Value Theorem?](https://math.stackexchange.com/questions/3403076/what-are-the-applications-of-the-mean-value-theorem), asked by user694818 on Mathematics Stack Exchange (2019-10-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm going through my first year of teaching AP Calculus.  One of the things I like to do is to impress upon my students why the topics I introduce are interesting and relevant to the big picture of understanding the nature of change.  
+>
+> That being said, while I know that the Mean Value Theorem is one of the central facts in the study of calculus, I'm not really clear on why.  I feel that it's a bit like IVT for the derivatives of a continuous and differentiable function.  But I feel that the only thing I did with it when I studied Calc is to identify the point where the tangent was parallel to the secant of the endpoints.  If the class had been a little smaller or I had been a little bolder, I might have raised my hand and asked the professor "So what?"  But I didn't, so here we are.
+>
+> To be clear, I am not at all arguing that MVT is not critical, so I don't plan on the answers being opinion-based.  But can you discuss some uses of MVT that justify the lofty place it has in the curriculum?
+:::
+
+Suppose $f$ is a constant function.  Then its derivative is zero.  This follows directly from the definition.
+
+Suppose $f \colon \mathbb{R} \to \mathbb{R}$ satisfies $f'(x) = 0$ for all $x$.  Must $f$ be a constant function?
+
+The answer is yes.  Because for any $x \in \mathbb{R}$ there exists $t$ between $0$ and $x$ such that
+$$f(x) = f(0) + x f'(t)$$
+but $f'(t) = 0$, so $f(x) = f(0)$.  
+
+The Mean Value Theorem (or Rolle's Theorem, but MVT is more flexible) is the fundamental theorem which connects information about the derivative of a function back to the original function.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3403076/what-are-the-applications-of-the-mean-value-theorem/3404368#3404368) on Mathematics Stack Exchange, 2019-10-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

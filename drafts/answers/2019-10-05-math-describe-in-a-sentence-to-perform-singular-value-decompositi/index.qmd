@@ -1,0 +1,47 @@
+---
+title: Describe in a sentence to perform Singular Value Decomposition (SVD) for all $t$.
+date: '2019-10-05'
+description: ''
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3381529
+se-link: https://math.stackexchange.com/questions/3381513/describe-in-a-sentence-to-perform-singular-value-decomposition-svd-for-all-t/3381529#3381529
+se-score: 1
+se-accepted: true
+se-tags:
+- svd
+- article-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Describe in a sentence to perform Singular Value Decomposition (SVD) for all $t$.](https://math.stackexchange.com/questions/3381513/describe-in-a-sentence-to-perform-singular-value-decomposition-svd-for-all-t), asked by [Menno Van Dijk](https://math.stackexchange.com/users/711543/menno-van-dijk) on Mathematics Stack Exchange (2019-10-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This question might be more of a linguistic thing than a pure mathematical question. However, I am struggling with writing something down in a proper manner.
+>
+> I'm trying to describe that I want to perform SVD in each month on a matrix $X_t$ that changes every month (where $t$ indicates the month), thereby obtaining $V^T_t$ and $\Sigma_t$ for all months in my sample. I will then use $V^T_t$ and $\Sigma_t$ for Principal Component Analysis. 
+>
+> Currently, I am writing this down as follows.
+>
+> > Once the data is finalized, SVD is performed in each month
+> > independently on the data matrix $X_t$. This results in a component loadings matrix $V^T_t$ for each month, as well as the eigenvalues in $\Sigma_t$. The matrices $V^T_t$ and $\Sigma_t$ will subsequently be employed in reducing the dimensions of the data by means of equation 3.
+>
+> Where equation 3 simply shows how the dimensionality of the data can be reduced by using the loadings in $V^T_t$.   
+>
+> However, I am unsure whether this is the correct way of writing down that I obtain these matrices in every month. I'm not a mathematician, so would love to get a better grasp of how this should be written down.
+:::
+
+How about this?
+
+> ... SVD is performed independently on the data matrix $X_t$ **for each month $t$**. This results in a component loadings matrix $V^T_t$ and eigenvalues $\Sigma_t$ for each $t$. The matrices $V^T_t$ and $\Sigma_t$ will subsequently be employed in reducing the dimensions of the data by means of equation 3.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3381513/describe-in-a-sentence-to-perform-singular-value-decomposition-svd-for-all-t/3381529#3381529) on Mathematics Stack Exchange, 2019-10-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

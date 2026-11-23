@@ -1,0 +1,46 @@
+---
+title: The ordered square is connected but not path connected.
+date: '2022-12-26'
+description: It looks like any open subset $V$ of $I$ could take the place of $(0,1)$ and the construction would still work.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4605827
+se-link: https://math.stackexchange.com/questions/4605817/the-ordered-square-is-connected-but-not-path-connected/4605827#4605827
+se-score: 1
+se-accepted: true
+se-tags:
+- general-topology
+- path-connected
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The ordered square is connected but not path connected.](https://math.stackexchange.com/questions/4605817/the-ordered-square-is-connected-but-not-path-connected), asked by [Dsrksidemath](https://math.stackexchange.com/users/903329/dsrksidemath) on Mathematics Stack Exchange (2022-12-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> consider the following proof , from Munkres . My question is why I define $U_x$ using $x\times (0,1)$ and for example not other open set such as  $x\times (0,\frac{1}{2})$ or $x\times (\frac{1}{3},\frac{1}{2})$ ?  
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: fsDWR.png
+:::
+
+It looks like any open subset $V$ of $I$ could take the place of $(0,1)$ and the construction would still work.
+
+* $f^{-1}(x \times V)$ is nonempty by the intermediate value theorem
+* $f^{-1}(x \times V)$ is open because $f$ is continuous
+* $f^{-1}(x \times V) \cap f^{-1}(y \times V) = \emptyset$ whenever $x \neq y$.
+* $f^{-1}(x \times V)$ contains a rational number because the rational elements of $I$ are dense in $I$.
+
+So it's a matter of style. The question becomes, "what's your favorite open subset of $I$, if you had to pick one?" One good candidate would be the interior of $I$, or the largest open subset of $I$, which is $(0,1)$. If the author had chosen $(0,\tfrac{1}{2})$, for example, the reader might have wondered if it was necessary to exclude certain points.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4605817/the-ordered-square-is-connected-but-not-path-connected/4605827#4605827) on Mathematics Stack Exchange, 2022-12-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

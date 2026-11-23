@@ -1,0 +1,44 @@
+---
+title: How composition of a surjective and an arbitrary map is an injective map?
+date: '2016-09-21'
+description: The assertion is not that $f\circ\varphi$ is injective, but that $\varphi'$ is injective as a map of homomorphisms. That is, if $f\circ \varphi = 0$, then $f$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1935653
+se-link: https://math.stackexchange.com/questions/1935641/how-composition-of-a-surjective-and-an-arbitrary-map-is-an-injective-map/1935653#1935653
+se-score: 1
+se-accepted: true
+se-tags:
+- abstract-algebra
+- modules
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How composition of a surjective and an arbitrary map is an injective map?](https://math.stackexchange.com/questions/1935641/how-composition-of-a-surjective-and-an-arbitrary-map-is-an-injective-map), asked by user231343 on Mathematics Stack Exchange (2016-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> According to the page 392 of the book Abstract Algebra by Fooote,
+>
+> [![enter image description here][q-1]][q-1]
+>
+> But why composition of a surjective map $\phi$ and an arbitrary (or injective by choice) map $f$ is $\phi'$ an injective map? It's necessary for the map $\phi$ to be surjective in $M ^{\phi} \to N \to 0$ not required to be an injectve map.     
+>
+>   [q-1]: XfKPv.jpg
+:::
+
+The assertion is not that $f\circ\varphi$ is injective, but that $\varphi'$ is injective as a map of homomorphisms.  That is, if $f\circ \varphi = 0$, then $f$ is the zero map.
+
+To see this, suppose $f\circ\varphi = 0$.  Let $n\in N$.  Since $\varphi$ is surjective, there exists $m\in M$ such that $n=\varphi(m)$.  So $f(n) = f(\varphi(m)) = (f\circ \varphi)(m) = 0$. 
+
+We have shown $f(n) =0$ for all $n\in N$, implying $f=0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1935641/how-composition-of-a-surjective-and-an-arbitrary-map-is-an-injective-map/1935653#1935653) on Mathematics Stack Exchange, 2016-09-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

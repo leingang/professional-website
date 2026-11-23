@@ -1,0 +1,60 @@
+---
+title: 'If $\nabla$ is the covariant derivative, why $\nabla: \mathcal{X}(S) \rightarrow \mathcal{X}(S) \otimes \Omega^{1}(S)$?'
+date: '2017-10-10'
+description: A linear transformation between finite-dimensional vector spaces $V$ and $W$ can be seen as an element of $W \otimes V^$. The canonical map $$\phi\colon W…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465399
+se-link: https://math.stackexchange.com/questions/2465363/if-nabla-is-the-covariant-derivative-why-nabla-mathcalxs-rightarrow/2465399#2465399
+se-score: 1
+se-accepted: false
+se-tags:
+- geometry
+- derivatives
+- differential-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[If $\nabla$ is the covariant derivative, why $\nabla: \mathcal{X}(S) \rightarrow \mathcal{X}(S) \otimes \Omega^{1}(S)$?](https://math.stackexchange.com/questions/2465363/if-nabla-is-the-covariant-derivative-why-nabla-mathcalxs-rightarrow), asked by [Zazatto](https://math.stackexchange.com/users/322499/zazatto) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm studying differential geometry, and my professor defined covariante derivative in this way:
+>
+> Let $S \subset \mathbb{R}^3$ be a surface, $$\mathcal{X}(S) = \left\{ \xi:S\rightarrow \bigcup\limits_{p\in S} T_p S; \mbox{ }\xi(p) \in T_pS\hspace{0.1cm} \forall\hspace{0,1cm} p \in S \right\}$$ (the set of the fields over the surface $S$), and $\Omega^{1}(S)$ the set of 1-forms over $S$. 
+>
+> Consider $p$ $\in$ $S$ and $y \in T_pS,$ choosing a curve $\alpha: I \rightarrow S$, satisfying $\alpha(0) = p$ and $\alpha'(0) = y$, we can define the covariant derivative at $p$ of the vector field $\xi$ relative to the vector $y$ as :
+> $$\nabla_y \xi (p) := \pi_{T_pS} \circ \left(\left.\frac{d\xi(\alpha(t)) }{dt} \right|_{t=0}\right).$$
+> Where $\pi_{T_pS}$ is the projection of $\mathbb{R}^3$ over $T_p S$. It's easy to verify that this definition doesn't depend of the parametrization of the curve $\alpha$.
+>
+> Now, we can expand this notion of covariant derivative by changing the vector $y$ for a field $X$ $\in$ $\mathcal{X}(s)$, so
+>
+> $$\nabla_{X} \xi (p) := \nabla_{X(p)} \xi(p).$$  
+>
+> My problem is here. My teacher said that this caracterion show us that the operator $\nabla$ acts in $\mathcal{X}(S)$ and return tensor of $\mathcal{X(S)}\otimes \Omega^{1}(S),$ *i. e;*
+>
+> $$\nabla: \mathcal{X}(S) \rightarrow \mathcal{X}(S)\otimes\Omega^{1}(S)$$
+> $$\xi \mapsto \nabla\xi$$
+>
+> I really want to know why $\nabla \xi$ $\in$ $\mathcal{X}(S)\otimes\Omega^{1}(S)$. From my knowledge and understanding of the circumstances, I see $\nabla \xi$ as
+> $$\nabla \xi : \mathcal{X}(S) \rightarrow \mathcal{X}(S)$$
+>
+> which implies  $\nabla \xi$ $\in$ $\mathcal{F}(\mathcal{X}(S),\mathcal{X}(S))= \{f:\mathcal{X}(S)\rightarrow \mathcal{X}(S) \}$. Is $\mathcal{F}(\mathcal{X}(S),\mathcal{X}(S)) = \mathcal{X}(S)\otimes\Omega^{1}(S)$ (or isomorphic as linear space) ? If yes, how I see this?
+:::
+
+A linear transformation between finite-dimensional vector spaces $V$ and $W$ can be seen as an element of $W \otimes V^*$. The canonical map
+$$\phi\colon W \times V^* \to \operatorname{Hom}(V,W),\
+    \phi(w,\alpha)(v) = \alpha(v)w$$
+is bilinear, so factors through a homomorphism $W \otimes V^*\to \operatorname{Hom}(V,W)$.  By checking on a basis you can see this is an isomorphism.
+
+For any $\xi\in\mathcal{X}(S)$ and $p\in S$, the operator $\nabla \xi$ is a linear transformation from $T_pS$ to $T_pS$.  So it is an element of $T_pS \otimes T_p^* S$ for each $p$.  Taken globally, $\nabla \xi$ is a section of $TS \otimes T^*S$, which is isomorphic to $\mathcal{X}(S) \otimes \Omega^1 (S)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465363/if-nabla-is-the-covariant-derivative-why-nabla-mathcalxs-rightarrow/2465399#2465399) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

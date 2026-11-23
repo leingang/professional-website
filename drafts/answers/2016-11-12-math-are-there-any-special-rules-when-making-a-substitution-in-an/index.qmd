@@ -1,0 +1,51 @@
+---
+title: Are there any special rules when making a substitution in an integral?
+date: '2016-11-12'
+description: I like Alfred's point but I would say it slightly differently. The $dx$ at the end is not just the “other end” of the integral delimited on the left by $\int$.…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2010370
+se-link: https://math.stackexchange.com/questions/2010189/are-there-any-special-rules-when-making-a-substitution-in-an-integral/2010370#2010370
+se-score: -1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- indefinite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Are there any special rules when making a substitution in an integral?](https://math.stackexchange.com/questions/2010189/are-there-any-special-rules-when-making-a-substitution-in-an-integral), asked by [Lachy](https://math.stackexchange.com/users/131425/lachy) on Mathematics Stack Exchange (2016-11-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Please consider the integral:
+>
+> $$\int_{-a}^{a}x^2dx=\frac{2a^3}{3}$$
+>
+> I would like to know why I can't make the substitution:
+>
+> $$u=x^2$$
+>
+> When I make the substitution, the limits of the integral will be the same, and the integral itself will be zero, which is the wrong answer. So why does this simple change of variables not work as I have expected?
+>
+> Please note that I do not want help solving the integral, I know how to solve it several ways. My question is why does this specific attempt at a solution not work?
+:::
+
+I like Alfred's point but I would say it slightly differently.  The $dx$ at the end is not just the “other end” of the integral delimited on the left by $\int$.  It's also not just the indicator of which variable is being integrated.  It's part of the integral itself.  In other words, we don't integrate functions $f(x)$ so much as *forms* $f(x)\,dx$.  
+
+When we make a substitution, we have to substitute fully the entire form from one involving $x$ to one involving $u$.  When integrating $x^2\,dx$, if we substitute $u = x^2$, we must substitute for $dx$ in terms of $u$ and $du$.  Since $\frac{du}{dx} = 2x$, we write $du = 2x\,dx$.  Thus $dx = \frac{1}{2x}\,du = \frac{1}{2\sqrt{u}}\,du$.  So
+$$\int x^2 \,dx = \int u \frac{1}{2\sqrt{u}}\,du = \frac{1}{2}\int \sqrt{u}\,du$$
+That's different from $\int u\,du$.  
+
+I think you were just switching the differential from $dx$ to $du$ without substituting.  You can avoid this mistake if you remember that $dx$ and $du$ are part of the integral.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2010189/are-there-any-special-rules-when-making-a-substitution-in-an-integral/2010370#2010370) on Mathematics Stack Exchange, 2016-11-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

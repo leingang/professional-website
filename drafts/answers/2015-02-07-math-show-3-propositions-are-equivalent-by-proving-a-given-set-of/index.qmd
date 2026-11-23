@@ -1,0 +1,50 @@
+---
+title: Show 3 propositions are equivalent by proving a given set of implications
+date: '2015-02-07'
+description: Use a direct proof for each. Remember you can add or subtract the same thing to both sides of an inequality, or multiply or divide by a positive constant, and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1137230
+se-link: https://math.stackexchange.com/questions/1137227/show-3-propositions-are-equivalent-by-proving-a-given-set-of-implications/1137230#1137230
+se-score: 2
+se-accepted: false
+se-tags:
+- logic
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show 3 propositions are equivalent by proving a given set of implications](https://math.stackexchange.com/questions/1137227/show-3-propositions-are-equivalent-by-proving-a-given-set-of-implications), asked by [ComputerLocus](https://math.stackexchange.com/users/142233/computerlocus) on Mathematics Stack Exchange (2015-02-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am giving the following propositions:
+>
+> $p: a < b$
+>
+> $q: \frac{a+b}{2} > a$
+>
+> $r: \frac{a+b}{2} < b$
+>
+> $a$ and $b$ are real numbers.
+>
+> I need to show that these are equivalent by proving the following:
+>
+> $(p \implies q) \land (q \implies r) \land (r \implies p)$
+>
+> So they are all strong together by the **and** I assume I should prove each of these implications separately and then show that the conclusions are all equivalent. I don't want the whole question solved for me, but I am looking for a base. 
+>
+> If I look at $p \implies q$, where would I start here? Should I be using a direct proof, contraposition, or a contradiction to best solve this?
+:::
+
+Use a direct proof for each. Remember you can add or subtract the same thing to both sides of an inequality, or multiply or divide by a positive constant, and the inequality is preserved.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1137227/show-3-propositions-are-equivalent-by-proving-a-given-set-of-implications/1137230#1137230) on Mathematics Stack Exchange, 2015-02-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

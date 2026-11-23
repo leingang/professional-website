@@ -1,0 +1,89 @@
+---
+title: Prove that $\lim_{x\to -3} \frac{1}{x}=-\frac{1}{3}$ using epsilon-delta definition.
+date: '2019-01-29'
+description: 'This step of the side work:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3091658
+se-link: https://math.stackexchange.com/questions/3091644/prove-that-lim-x-to-3-frac1x-frac13-using-epsilon-delta-definit/3091658#3091658
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- limits
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\lim_{x\to -3} \frac{1}{x}=-\frac{1}{3}$ using epsilon-delta definition.](https://math.stackexchange.com/questions/3091644/prove-that-lim-x-to-3-frac1x-frac13-using-epsilon-delta-definit), asked by [Dallas W.](https://math.stackexchange.com/users/415132/dallas-w) on Mathematics Stack Exchange (2019-01-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I just finished a proof for this problem, but I'm not very confident that I have done it correctly. Any feedback, corrections, or suggestions would be very helpful. 
+>
+> >By definition $$\lim_{x\to a}f(x)=L$$ means that $\forall\epsilon>0$, $\exists\delta>0$ such that $0\neq|x-a|<\delta$, and x$\neq$a $\implies
+> |f(x)-L|<\epsilon$.
+>
+> Prove that $$\lim_{x\to -3} \frac{1}{x}=-\frac{1}{3}$$ using the epsilon-delta definition.
+>
+> > *Side Work:* Want to show $\exists\delta>0$ such that $0\neq|x+3|<\delta \implies |\frac{1}{x}+\frac{1}{3}|<\epsilon$.
+> >
+> >$|\frac{1}{x}+\frac{1}{3}|<\epsilon \implies |\frac{3+x}{3x}|<\epsilon \implies |3+x|<|3x|\epsilon$
+> >
+> >Choose $\delta<1$ to get $|x+3|<\delta<1$
+> >
+> >So, $-1<x+3<1$
+> >
+> >$\implies -4<x<-2$ 
+> >
+> >$\implies -12<3x<-6$  
+> >
+> >$\implies |3x|>6$  
+> >
+> >So we now have: $|3+x|<\delta$ and $|3x|>6$.
+> >
+> >$\implies |\frac{3+x}{3x}|<\frac{3+x}{6}<\frac{\delta}{6}\le\epsilon$
+> >
+> >So, $\frac{\delta}{6}\le\epsilon \implies \delta\le6\epsilon$
+>
+>
+> ***Proof***: Let $\epsilon>0$ be given.
+>
+> Choose $\delta=min(1,6\epsilon) \implies \forall x$ with $0\neq|x+3|<\delta \implies x\in(-3-\delta, -3+\delta)$
+>
+> So, $x\in(-4,-2)$ because $\delta\le 1$
+>
+> So, $|3x|>6$
+>
+> Thus, whenever $0\neq|x+3|<\delta$, we have
+>
+> $|\frac{1}{x}+\frac{1}{3}|= |\frac{3+x}{3x}|<\frac{\delta}{6} \le 6\epsilon \cdot (\frac{1}{6}) =\epsilon$
+>
+> $\therefore$ The limit holds by definition.
+:::
+
+This step of the side work:
+
+>$$-12 < 3x < -6 \implies |3x| < 6$$
+
+is wrong.  For instance, $x=-3$ satisfies the first inequality, but not the second.
+
+But then also this step of the proof:
+
+>$$\frac{|x+3|}{|3x|} < \frac{\delta}{6}$$
+
+is wrong if you are assuming that $|3x| < 6$.  If you increase the denominator of a fraction, the fraction becomes *smaller*, not larger.
+
+But I think fixing one mistake fixes the other.  In fact, you know
+
+$$3x < -6 \implies |3x| > 6 \implies \frac{1}{|3x|} < \frac{1}{6}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3091644/prove-that-lim-x-to-3-frac1x-frac13-using-epsilon-delta-definit/3091658#3091658) on Mathematics Stack Exchange, 2019-01-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

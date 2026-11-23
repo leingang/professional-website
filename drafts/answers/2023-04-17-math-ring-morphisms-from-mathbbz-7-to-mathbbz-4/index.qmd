@@ -1,0 +1,44 @@
+---
+title: Ring morphisms from $\mathbb{Z}_7$ to $\mathbb{Z}_4$
+date: '2023-04-17'
+description: Let $f \colon \mathbb{Z}7 \to \mathbb{Z}4$ be a homomorphism. Then $$f(4) = f(1+1+1+1) = f(1) + f(1) + f(1) + f(1) = 0$$ But then $$f(1) = f(4+4) = f(4) + f(4)…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4680876
+se-link: https://math.stackexchange.com/questions/4680866/ring-morphisms-from-mathbbz-7-to-mathbbz-4/4680876#4680876
+se-score: 0
+se-accepted: false
+se-tags:
+- abstract-algebra
+- ring-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Ring morphisms from $\mathbb{Z}_7$ to $\mathbb{Z}_4$](https://math.stackexchange.com/questions/4680866/ring-morphisms-from-mathbbz-7-to-mathbbz-4), asked by [user890948](https://math.stackexchange.com/users/890948/user890948) on Mathematics Stack Exchange (2023-04-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How would I find all the ring morphisms from $\mathbb{Z}_7$ to $\mathbb{Z}_4$? I know that if the map function is $f(x)$, we must have that $f(1) = 1$ and that $f(a \cdot b) = f(a) \cdot f(b)$, as well as $f(a + b) = f(a) + f(b)$. 
+>
+> In other such questions, I understand that if it's from say $\mathbb{Z}_{15}$ to $\mathbb{Z}_3$ then it's much easier since 15's a multiple of 3.
+>
+> However, I'm not sure how to find the morphisms if their relatively prime numbers.
+:::
+
+Let $f \colon \mathbb{Z}_7 \to \mathbb{Z}_4$ be a homomorphism. Then
+$$f(4) = f(1+1+1+1) = f(1) + f(1) + f(1) + f(1) = 0$$
+But then
+$$f(1) = f(4+4) = f(4) + f(4) = 0$$
+So $f(x) = 0$ for all $x \in \mathbb{Z}_7$.
+
+In general, suppose that $m$ and $n$ are relatively prime, and consider $f \colon \mathbb{Z}_m \to \mathbb{Z}_n$. Then $f(n) = n \cdot f(1) = 0$ in $\mathbb{Z}_n$. There exists an integer $a$ such that $a n \equiv 1 \pmod{m}$. But then also, $f(1) = f(an) = a f(n) = 0$. So $f(x) = 0$ for all $x \in \mathbb{Z}_m$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4680866/ring-morphisms-from-mathbbz-7-to-mathbbz-4/4680876#4680876) on Mathematics Stack Exchange, 2023-04-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

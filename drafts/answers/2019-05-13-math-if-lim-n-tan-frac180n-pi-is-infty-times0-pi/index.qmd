@@ -1,0 +1,66 @@
+---
+title: If $ \lim n\tan{\frac{180°}{n}}= \pi $, is $ \infty \times0 = \pi $?
+date: '2019-05-13'
+description: That is correct. 180 degrees is $\pi$ radians. If you change variables from $n$ to $\theta$ with $\theta = \frac{1}{n}$, you get $$\lim{n \to \infty}…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3224470
+se-link: https://math.stackexchange.com/questions/3224455/if-lim-n-tan-frac180n-pi-is-infty-times0-pi/3224470#3224470
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- volume
+- infinity
+- pi
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $ \lim n\tan{\frac{180°}{n}}= \pi $, is $ \infty \times0 = \pi $?](https://math.stackexchange.com/questions/3224455/if-lim-n-tan-frac180n-pi-is-infty-times0-pi), asked by [Kantura](https://math.stackexchange.com/users/181004/kantura) on Mathematics Stack Exchange (2019-05-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I derived the volume of a cone using two approaches and compared the results.
+>
+> First I integrated a circle of radius $r$ over the height $h$ to get the expression: $$V_1=\frac{1}{3}\pi r^2 h$$
+>
+> Then I considered a polygonal pyramid of infinite sides.
+>
+> An n-sided polygon with apothem $r$ has an area of: $$A=nr^2\tan{\frac{180°}{n}}$$
+>
+> Integrating this over the height $h$ gives the expression for the area of the n-sided polygonal pyramid as: $$V_2=\frac{1}{3}n\tan{\frac{180°}{n}}r^2 h$$
+>
+> Equating $V_1$ and $V_2$ implies that: $$\lim_{n \to \infty} \left(n\tan{\frac{180°}{n}}\right) = \pi$$
+>
+> So is it true to say that: $$\infty\tan{\frac{180°}{\infty}} = \pi$$ 
+>
+> But: $$\tan{\frac{180°}{\infty}}=0$$
+>
+> So: $$\infty (0)=\pi$$
+>
+> Can anyone shed some light on this surprising result?
+:::
+
+> Equating $V_1$ and $V_2$ implies that: $$\lim_{n \to \infty} \left(n\tan{\frac{180}{n}}\right) = \pi$$
+
+That is correct.  180 degrees is $\pi$ radians.  If you change variables from $n$ to $\theta$ with $\theta = \frac{1}{n}$, you get
+$$\lim_{n \to \infty} \left(n\tan{\frac{180}{n}}\right)
+ = \lim_{n \to \infty} \frac{\tan{\pi x}}{x}$$
+and that is, in fact $\pi$.
+
+> So is it true to say that: $$\infty\tan{\frac{180}{\infty}} = \pi$$ 
+
+Not at all.  The limit of a product of functions is the product of the limits of the functions *provided those functions have limits in the first place*.  Since $\lim_{n\to\infty} n$ does not exist, you cannot apply the limit laws that way.
+
+In short: $\infty$ is not a number.  Treating it as a number leads to madness (or, at least, contradiction).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3224455/if-lim-n-tan-frac180n-pi-is-infty-times0-pi/3224470#3224470) on Mathematics Stack Exchange, 2019-05-13. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

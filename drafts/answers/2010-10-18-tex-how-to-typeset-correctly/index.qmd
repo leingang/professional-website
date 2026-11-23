@@ -1,0 +1,41 @@
+---
+title: How to typeset \$:=\$ correctly?
+date: '2010-10-18'
+description: I actually think that symbol looks ugly. It would be OK if the spacing between the dots were the same as that between the lines of the equals. But I use
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4251
+se-link: https://tex.stackexchange.com/questions/4216/how-to-typeset-correctly/4251#4251
+se-score: 9
+se-accepted: false
+se-tags:
+- math-mode
+- symbols
+- relation-symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to typeset \$:=\$ correctly?](https://tex.stackexchange.com/questions/4216/how-to-typeset-correctly), asked by [Oscar Randal-Williams](https://tex.stackexchange.com/users/1504/oscar-randal-williams) on TeX Stack Exchange (2010-10-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I like to use `$:=$` for "is defined to be equal to", but this is never typeset with the symmetry one would like, as the colon is always too low relatively to the equals sign. Is there any way of getting this to appear correctly?
+:::
+
+I actually think that symbol looks ugly.  It would be OK if the spacing between the dots were the same as that between the lines of the equals.  But I use
+
+```latex
+\newcommand{\defeq}{\stackrel{\text{def}}{=}}
+```
+
+instead.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4216/how-to-typeset-correctly/4251#4251) on TeX Stack Exchange, 2010-10-18, with [edits](https://tex.stackexchange.com/posts/4251/revisions) by [Charles Stewart](https://tex.stackexchange.com/users/175/charles-stewart). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

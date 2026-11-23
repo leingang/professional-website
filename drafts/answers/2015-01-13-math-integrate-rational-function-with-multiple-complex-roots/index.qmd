@@ -1,0 +1,72 @@
+---
+title: Integrate rational function with multiple complex roots
+date: '2015-01-13'
+description: 'You have a strange form for your partial fraction decomposition. I would be inclined to stay in the field of real numbers and write: $$\frac{x^2}{(1+n^2x^2)^2}…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1103178
+se-link: https://math.stackexchange.com/questions/1103142/integrate-rational-function-with-multiple-complex-roots/1103178#1103178
+se-score: 2
+se-accepted: false
+se-tags:
+- integration
+- analysis
+- definite-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Integrate rational function with multiple complex roots](https://math.stackexchange.com/questions/1103142/integrate-rational-function-with-multiple-complex-roots), asked by [StefanH](https://math.stackexchange.com/users/33817/stefanh) on Mathematics Stack Exchange (2015-01-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to integrate
+> $$\int_{-1}^1 \frac{x^2}{(1+n^2x^2)^2} dx.$$
+> By [WolframAlpha][q-1] I know the solution is
+> $$\int_{-1}^1 \frac{x^2}{(1+n^2x^2)^2} dx = \frac{\arctan(n) - \frac{n}{n^2+1}}{n^3}.$$
+> Do derive it on my own, I did a partial fraction decomposition and found
+> $$\frac{x^2}{(1+n^2x^2)^2} = \frac{\frac{1}{2n^2}}{1+n^2x^2} + \frac{\frac{1}{4n^2}}{(x-i/n)^2} + \frac{\frac{1}{4n^2}}{(x+i/n)^2}.$$
+> I checked this multiple times, but it must be wrong, because when I proceed with it I get
+> $$\begin{align*}
+>  \int_{-1}^1 \frac{x^2}{(1+n^2x^2)^2} dx
+>   & = \frac{1}{n^2} \left( \frac{1}{2} \int_{-1}^1 \frac{1}{1+n^2x^2} d x + \frac{1}{4} \int_{-1}^1 \frac{1}{(x-i/n)^2} d x + \frac{1}{4} \int_{-1}^1 \frac{1}{(x+i/n)^2} d x \right) \\
+> & = \frac{1}{n^2}\left( \frac{1}{2} \frac{\arctan(xn)}{n}\bigg\vert_{-1}^1 + \frac{1}{4} \left( \frac{-1}{x-i/n}\bigg\vert_{-1}^1 + \frac{-1}{x+i/n}\bigg\vert_{-1}^1 \right)\right) \\
+> & = \frac{1}{n^2} \left( \frac{\arctan(n)}{n} + \frac{1}{4} \left( \frac{-2}{1+1/n^2} + \frac{-2}{1+1/n^2}\right)\right) \\
+> & = \frac{1}{n^2} \left( \frac{\arctan(n)}{n} -\frac{1}{1+1/n^2} \right) \\
+> & = \frac{1}{n^2} \left( \frac{\arctan(n)}{n} - \frac{n^2}{n^2+1} \right) \\
+> & = \frac{\arctan(n)}{n^3} - \frac{1}{n^2+1}
+> \end{align*}$$
+> This result is consistent which what I found with [WolframAlpha][q-2], but surely
+> $$\frac{\arctan(n)}{n^3} - \frac{1}{n^2+1} \ne \frac{\arctan(n) - \frac{n}{n^2+1}}{n^3}$$
+> so what went wrong, I am sitting here since hours and do not see any fault...
+>
+>
+>   [q-1]: http://www.wolframalpha.com/input/?i=int%20x%5E2%2F%281%2Bn%5E2*x%5E2%29%5E2%20dx%2C%20x%3D-1..1
+>   [q-2]: http://www.wolframalpha.com/input/?i=int%20%280.5%2Fn%5E2%29%2F%281%2Bn%5E2x%5E2%29%20%2B%20%280.25%2Fn%5E2%29%2F%28x%2Bi%2Fn%29%5E2%20%2B%20%280.25%2Fn%5E2%29%2F%28x-i%2Fn%29%5E2%20dx
+:::
+
+You have a strange form for your partial fraction decomposition.  I would be inclined to stay in the field of real numbers and write:
+$$\frac{x^2}{(1+n^2x^2)^2} = \frac{Ax+B}{1+n^2x^2} + \frac{Cx+D}{(1+n^2x^2)^2}$$
+It turns out $B=\frac{1}{n^2}$ and $D = -\frac{1}{n^2}$, while $A=C=0$.
+
+To integrate $\int\frac{dx}{(1+n^2x^2)^2}$, use the substitution $nx=\tan\theta$.   Then $n\,dx = \sec^2\theta\,d\theta$ and $(1+n^2x^2)^{\color{green}{2}} = \sec^4\theta$.  You get
+$$\begin{align*}
+    \int\frac{dx}{(1+n^2x^2)^2} &= \frac{1}{n}\int\frac{\sec^2\theta\,d\theta}{\sec^4\theta} \\
+&= \frac{1}{n} \int\cos^2\theta\,d\theta \\
+&= \frac{1}{2n} \int(1+ \cos(2\theta))\,d\theta\\
+&= \frac{\theta}{2n} + \frac{1}{4n}\sin(2\theta) + C \\
+&= \frac{\arctan(nx)}{2n}+\frac{1}{2n}\sin\theta \cos\theta + C \\
+&= \frac{\arctan(nx)}{2n}+\frac{1}{2n}\frac{nx}{\sqrt{1+n^2x^2}}\frac{1}{\sqrt{1+n^2x^2}} + C \\
+&= \frac{\arctan(nx)}{2n}+\frac{1}{2}\frac{x}{1+n^2x^2} + C \\
+\end{align*}$$
+
+[Green exponent of $2$ added thanks to Stefan's careful eye.]
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1103142/integrate-rational-function-with-multiple-complex-roots/1103178#1103178) on Mathematics Stack Exchange, 2015-01-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

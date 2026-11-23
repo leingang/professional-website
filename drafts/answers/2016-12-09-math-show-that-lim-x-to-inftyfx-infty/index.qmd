@@ -1,0 +1,46 @@
+---
+title: Show that $\lim_{x\to\infty}f(x)=\infty$
+date: '2016-12-09'
+description: 'Hint: by the Mean Value Theorem (should be in the same chapter as Rolle''s Theorem), for any $x > 0$, $$f(x) = f(0) + f''(z)x > f(0) + cx$$ where $z$ is some…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2050494
+se-link: https://math.stackexchange.com/questions/2050487/show-that-lim-x-to-inftyfx-infty/2050494#2050494
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that $\lim_{x\to\infty}f(x)=\infty$](https://math.stackexchange.com/questions/2050487/show-that-lim-x-to-inftyfx-infty), asked by [Siddhartha](https://math.stackexchange.com/users/257185/siddhartha) on Mathematics Stack Exchange (2016-12-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is from the chapter on Rolle's theorem:
+>
+> Suppose that $f'(x)>c>0\ \forall x\in[0, \infty)$. Show that $\lim_{x\to\infty}f(x)=\infty$
+>
+> **My attempt:**
+>
+> Let $g(x)=f(x)-cx$
+>
+> $g'(x)=f'(x)-c>0$
+>
+> I feel I'm on the right track but I don't know where to use Rolle's theorem here. Any help would be much appreciated, guys.
+:::
+
+Hint: by the Mean Value Theorem (should be in the same chapter as Rolle's Theorem), for any $x > 0$,
+$$f(x) = f(0) + f'(z)x > f(0) + cx$$
+where $z$ is some point between $0$ and $x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2050487/show-that-lim-x-to-inftyfx-infty/2050494#2050494) on Mathematics Stack Exchange, 2016-12-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

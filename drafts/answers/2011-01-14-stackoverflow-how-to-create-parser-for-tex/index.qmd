@@ -1,0 +1,43 @@
+---
+title: how to create parser for TEX?
+date: '2011-01-14'
+description: It depends on how much of TeX you actually want to implement. LaTeX2HTML is a perl project which converts LaTex to HTML. There's also MathJax which converts…
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 4694055
+se-link: https://stackoverflow.com/questions/3814825/how-to-create-parser-for-tex/4694055#4694055
+se-score: 3
+se-accepted: false
+se-tags:
+- c#
+- parsing
+- tex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to create parser for TEX?](https://stackoverflow.com/questions/3814825/how-to-create-parser-for-tex), asked by [Akash Kava](https://stackoverflow.com/users/85597/akash-kava) on Stack Overflow (2010-09-28; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am looking to develop a TEX parser, now problem is there is no Context Free Grammar and there can not be one, because its not context free language, I heard that it is some sort of macro language and that builds on its own.
+>
+> So now I need direction of what kind of grammar this macro language has and how to build anything upon in c#.
+>
+> I will write the tokenizer and parser, but I need some rules of macro in TEX which are quite hard to find, everywhere else there is documentation about how to use TEX macros.
+:::
+
+It depends on how much of TeX you actually want to implement.  [LaTeX2HTML][1] is a perl project which converts LaTex to HTML.  There's also [MathJax][2] which converts TeX math to HTML or MathML.  If you want to see how some non-TeX programs parse TeX look at those.
+
+
+  [1]: http://www.latex2html.org/
+  [2]: http://www.mathjax.org/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/3814825/how-to-create-parser-for-tex/4694055#4694055) on Stack Overflow, 2011-01-14. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

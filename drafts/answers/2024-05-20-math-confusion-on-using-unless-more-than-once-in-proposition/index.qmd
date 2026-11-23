@@ -1,0 +1,63 @@
+---
+title: Confusion on using "unless" more than once in proposition
+date: '2024-05-20'
+description: 'I agree with Lee Mosher''s characterization of the sentence. I''ll offer up this suggested rewrite:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4919762
+se-link: https://math.stackexchange.com/questions/4919747/confusion-on-using-unless-more-than-once-in-proposition/4919762#4919762
+se-score: 7
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- logic
+- propositional-calculus
+- first-order-logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confusion on using "unless" more than once in proposition](https://math.stackexchange.com/questions/4919747/confusion-on-using-unless-more-than-once-in-proposition), asked by [Bob Marley](https://math.stackexchange.com/users/801877/bob-marley) on Mathematics Stack Exchange (2024-05-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> [![From Discrete Math Rosen Textbook][q-1]][q-1]
+>
+>
+>   [q-1]: LRGLpzXd.png
+>
+> I'm having trouble interpreting this highlighted sentence (from Discrete Math Rosen Textbook) properly due to using unless more than once in this sentence. I understand that q unless (not p) is the same as saying p implies q, but I'm not sure how to exactly apply that rule here for this sentence. Is it equivalent to saying (by rearranging the sentence a bit):
+>
+> Unless every input value is tested (call it proposition "p"), unless the correctness of the program is established (call it proposition "q"), no amount of testing can show it produces the desired output for all input values (call it proposition "r").
+>
+> or 
+>
+> If every input value is not tested, then if the correctness of the program is not established, no amount of testing can show it produces the desired output for all input values.
+>
+> or 
+>
+> (not p) --> ( (not q) --> r) 
+>
+> or 
+>
+> ( (not p) and (not q) ) --> r
+>
+> Kindly please help me here.
+>
+> It might just be the commas throwing me off (my bad english lol)
+:::
+
+I agree with Lee Mosher's characterization of the sentence. I'll offer up this suggested rewrite:
+
+> No amount of testing can show that a computer program produces the desired output for all input values, unless either every single input value is tested, or the correctness of the program is [theoretically] established.
+
+I appreciate you wanting to translate this into propositional logic, but it doesn't distinguish between truth that is established theoretically vs. experimentally. What the author is saying is that you can't experimentally verify a program without testing all cases.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4919747/confusion-on-using-unless-more-than-once-in-proposition/4919762#4919762) on Mathematics Stack Exchange, 2024-05-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

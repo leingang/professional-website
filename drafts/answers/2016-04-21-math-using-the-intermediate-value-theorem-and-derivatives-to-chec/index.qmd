@@ -1,0 +1,63 @@
+---
+title: Using the Intermediate Value Theorem and derivatives to check for intersections.
+date: '2016-04-21'
+description: Sorry I deleted my comment. I understand your question a little bit better now.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1752056
+se-link: https://math.stackexchange.com/questions/1752012/using-the-intermediate-value-theorem-and-derivatives-to-check-for-intersections/1752056#1752056
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using the Intermediate Value Theorem and derivatives to check for intersections.](https://math.stackexchange.com/questions/1752012/using-the-intermediate-value-theorem-and-derivatives-to-check-for-intersections), asked by [Eduardo M.](https://math.stackexchange.com/users/293533/eduardo-m) on Mathematics Stack Exchange (2016-04-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following question:
+>
+> *Prove that the line $y_1=9x+17$ is tangent to the graph of the function $y_2=x^3-3x+1$. Find the point of tangency.*
+>
+> So, what I did was:
+>
+>
+> * * *
+>
+>
+> Let's construct a function $h$, such that $$h(x)=x^3-3x+1-(9x+17)=x^3-12x-16.$$ 
+>
+> This function is continuous everywhere, particularly in the interval $[0,5]$. Now, $$h(0)=(0)^3-12(0)-16=-16$$ and $$h(5)=(5)^3-12(5)-16=49.$$ So, by Bolzano's theorem, there must exist a point $c \in (0,5)$ such that $h(c)=0$. This proves that the line $y_1$ and the function $y_2$ are tangent to each other at least at one point. 
+>
+> Now, we can think of the point of intersection as the point in which $h'(x)=0$. So, $$h'(x)=0 \iff 3x^2-12=0 \iff x \in \{-2,2\}.$$ Now, if either one of those two points is the point of intersection, then it must be a root of $h(x)$, so plugging them in we have $$h(2)= (2)^3-12(2)-16 = -32 \neq 0$$ and $$h(-2)=(-2)^3-12(-2)-16=24-24=0.$$ Therefore, $x=-2$ is the point of intersection of $y_1$ with $y_2$.
+>
+>
+> * * *
+>
+> Now, my issue here is that I don't know exactly how to justify that what I did was actually right. In particular, I don't know why taking the difference of both original functions (constructing $h$) is a valid move and why is it that finding the points in which $h'(x)=0$ equates to finding the point of intersection between $y_1$ and $y_2$. So, my question is: if what I did was actually correct, why is it so? And if it's not, why am I wrong?. 
+>
+> Thanks in advance.
+:::
+
+Sorry I deleted my comment.  I understand your question a little bit better now.
+
+Since the two curves are graphs of the functions $f(x) = x^3 -3x+1$ and $g(x) = 9x+17$, they intersect at points $c$ where $f(c) = g(c)$.  This is equivalent to saying $f(c) - g(c) = 0$, which is equivalent to saying the function $h(x) = f(x) - g(x)$ has a zero at $c$.
+
+If the curves are *tangent* at a point of intersection, then not only $f(c) = g(c)$ is true but $f'(c) = g'(c)$ as well.  That is, $f$ and $g$ share the same tangent line (point *and* slope) at $c$.  The equation $f'(c) = g'(c)$ is equivalent to $h'(c) = 0$.  So we need to solve the equations $h(x) = 0$ and $h'(x) = 0$.
+
+One way to solve the problem (my original suggestion) is to find the zeroes of $h$ and plug them into $h'$ to see if they are also zeroes of $h'$.  The trouble is that $h$ is cubic so finding roots is a hair more difficult than standard high school algebra.  But $h'$ is quadratic so you can find its zeroes easily.  You found them: they are $\pm 2$.  But only one of these ($-2$) is also a root of $h$.  So the point of tangency is $(-2,-1)$.
+
+The IVT is redundant, you don't need to otherwise prove that the function has a zero if you can find it explicitly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1752012/using-the-intermediate-value-theorem-and-derivatives-to-check-for-intersections/1752056#1752056) on Mathematics Stack Exchange, 2016-04-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

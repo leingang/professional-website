@@ -1,0 +1,72 @@
+---
+title: Then $\{ f \in R\mid f(0) = f'(0) = 0 \}$ is choose the coorect option
+date: '2018-09-19'
+description: 'Let $S$ be the set described: $$S = \left\{ f\in R \mid f(0) = f''(0) = 0 \right\}$$'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2923037
+se-link: https://math.stackexchange.com/questions/2923021/then-f-in-r-mid-f0-f0-0-is-choose-the-coorect-option/2923037#2923037
+se-score: 1
+se-accepted: true
+se-tags:
+- abstract-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Then $\{ f \in R\mid f(0) = f'(0) = 0 \}$ is choose the coorect option](https://math.stackexchange.com/questions/2923021/then-f-in-r-mid-f0-f0-0-is-choose-the-coorect-option), asked by [jasmine](https://math.stackexchange.com/users/557708/jasmine) on Mathematics Stack Exchange (2018-09-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Consider the ring $R = C^1[-1,1]$ of all continuously differentiable real
+> valued functions on $[−1, 1]$ with the usual operations of pointwise addition
+> and pointwise multiplication. 
+>
+> Then   $\{ f \in R\mid f(0) = f'(0) = 0 \}$ is 
+>
+> choose the coorect option 
+>
+> $1)$  subring
+>
+> $2)$ Ideal
+>
+> # My attempt  : 
+>
+> i know that definition of Subring : An nonempty subset $S$ of a Ring $R$ is subring if and only if 
+>
+> $1)$ $a-b \in S$
+>
+> $2)$ $ab \in S$   for all $a,b \in S$
+>
+> Definition of Ideal : An nonempty subset $S$ of a Ring $R$ is Ideal if and only if 
+>
+> $1)$ $a-b \in S$
+>
+> $2)$ $ar \in S$   for $a \in S$ and $r \in R$
+>
+>
+>
+> Now  From the  definition    i thinks   both option a) and b)  are correct
+>
+>
+> Pliz tell  me am i right  or wrong?
+:::
+
+Let $S$ be the set described:
+$$S = \left\{ f\in R \mid f(0) = f'(0) = 0 \right\}$$
+
+Two calculus facts seem relevant:
+
+1. The sum rule: $(f+g)'(0) = f'(0) + g'(0)$
+2. The product rule: $(fg)'(0) = f'(0) g(0) + f(0)g'(0)$.
+
+So is it true that if $f\in S$ and $g\in S$ then $fg \in S$?  What about if $f\in S$ and $g \notin S$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2923021/then-f-in-r-mid-f0-f0-0-is-choose-the-coorect-option/2923037#2923037) on Mathematics Stack Exchange, 2018-09-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

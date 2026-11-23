@@ -1,0 +1,41 @@
+---
+title: Commutative diagram generating app
+date: '2010-11-04'
+description: Not that I know of. Most people who want to make commutative diagrams are happy to write TeX code. :-) TeXShop for the Mac does have a GUI for matrices, which…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4947
+se-link: https://tex.stackexchange.com/questions/4946/commutative-diagram-generating-app/4947#4947
+se-score: 1
+se-accepted: false
+se-tags:
+- diagrams
+- tools
+- online
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Commutative diagram generating app](https://tex.stackexchange.com/questions/4946/commutative-diagram-generating-app), asked by eridesent on TeX Stack Exchange (2010-11-04; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> There are various types of commutative diagrams in mathematics, but several of them are the most common place. For example, a square (with 4 objects), a right triangle (with 3 objects), two adjacent squares (with 6 objects) and so on.
+>
+> It seems that there are several packages for generating commutative diagrams, but almost none of them are easy, in the sense it's really difficult to remember how to write a code for a commutative diagram. For me, I need to find an example every time and then just substitute things to get my own diagram.
+>
+> I've always wondered, if there is a web-app, like a webpage, a really user-friendly GUI, where you already have the shape of a comm. diagram, then you just put in objects and different kind of arrows in the boxes, and then finally, the web-app just generate the LaTeX code for the comm. diagram.
+>
+> Is there such things?
+:::
+
+Not that I know of.  Most people who want to make commutative diagrams are happy to write TeX code. :-)  TeXShop for the Mac does have a GUI for matrices, which could possibly be adapted to something for commutative diagrams.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4946/commutative-diagram-generating-app/4947#4947) on TeX Stack Exchange, 2010-11-04. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,48 @@
+---
+title: When to write "$dx$" in differentiation
+date: '2015-01-08'
+description: $dx$ is really an enigma in calculus and differential equations. Leibniz treated it as an “infinitesimal”—a number smaller than any positive number but larger…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1096967
+se-link: https://math.stackexchange.com/questions/1096952/when-to-write-dx-in-differentiation/1096967#1096967
+se-score: 8
+se-accepted: false
+se-tags:
+- ordinary-differential-equations
+- implicit-differentiation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When to write "$dx$" in differentiation](https://math.stackexchange.com/questions/1096952/when-to-write-dx-in-differentiation), asked by [Sam](https://math.stackexchange.com/users/206563/sam) on Mathematics Stack Exchange (2015-01-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm taking differential equations right now, and the lack of fundamental knowledge in calculus is kicking my butt.
+>
+> In class, my professor has done several implicit differentiations.
+> I realize that when taking the derivative with respect to "$x$," I have to write "$\frac{dy}{dx}$" whenever I differentiate "$y$" and nothing when it's "$x$" since it will be "$\frac{dx}{dx}$."
+>
+> However, today, he differentiated the equation "$y=ux$" to get "$d y= u\, d x + x\, d u$."
+> I'm not sure why he has decided to write $d y$ and $d x$ separately like that. I don't think he did implicit differentiation. Can someone explain what he did? Thank you very much.
+>
+> EDIT:
+> To provide more context, the professor was working on changing a homogeneous differential equation to a separable differential equation. He stated that in $f(x,y)$, all $y$ must be substituted with $ux$. Therefore, $f(x,ux)$. This prompted him to find the derivative of the equation as well, which he wrote as "$dy = u\,dx + x\,du$"
+:::
+
+$dx$ is really an enigma in calculus and differential equations.  Leibniz treated it as an “infinitesimal”—a number smaller than any positive number but larger than $0$.  In differential geometry it is something called a *one-form*.  If I could drop two names at once, Raoul Bott told me a story about a class he took from J.H.C. Whitehead who, when asked, “What exactly is $dx$?” held his thumb and forefinger $\varepsilon$ apart and said “Liiiiittle bit of $x$.” 
+
+But in calculus $dx$ is called a *differential*.  It can be treated as an independent variable with $x$.  If $y$ depends on $x$, then we can add its differential variable $dy$ and relate them all with the equation
+$$dy = \frac{dy}{dx} \,dx$$
+
+Then all of the warnings in calculus that $dx$ and $dy$ aren't numbers so they can't stand alone and certainly can't be “divided” to form $\frac{dy}{dx}$ can be be swept under the rug.  So Arkamis's derivation is not rigorous but it is “rigorous enough” for an undergrad intro to ODE course.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1096952/when-to-write-dx-in-differentiation/1096967#1096967) on Mathematics Stack Exchange, 2015-01-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

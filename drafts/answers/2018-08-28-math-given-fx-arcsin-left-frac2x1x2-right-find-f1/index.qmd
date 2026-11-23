@@ -1,0 +1,54 @@
+---
+title: Given $f(x) = \arcsin\left(\frac{2x}{1+x^2}\right)$, find $f'(1)$.
+date: '2018-08-28'
+description: Notice that $$\begin{align} f'(x) &= \frac{1}{\sqrt{1-\left(\frac{2x}{1+x^2}\right)^2}}\frac{d}{dx}\left(\frac{2x}{1+x^2}\right) \\&=…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2897366
+se-link: https://math.stackexchange.com/questions/2897317/given-fx-arcsin-left-frac2x1x2-right-find-f1/2897366#2897366
+se-score: 1
+se-accepted: false
+se-tags:
+- derivatives
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Given $f(x) = \arcsin\left(\frac{2x}{1+x^2}\right)$, find $f'(1)$.](https://math.stackexchange.com/questions/2897317/given-fx-arcsin-left-frac2x1x2-right-find-f1), asked by [Aladdin](https://math.stackexchange.com/users/585716/aladdin) on Mathematics Stack Exchange (2018-08-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Let
+> $$f(x) = \arcsin\left(\frac{2x}{1+x^2}\right).$$
+> What is the value of $f'(1)$? 
+>
+> The function splits into 
+> $$f(x) = \begin{cases} 
+> \phantom{\pi-\,}2\arctan(x), & \text{if $-1 \leq x \leq 1$},\\
+> \pi - 2\arctan(x), & \text{if $x > 1$}.
+> \end{cases}$$
+>
+> I differentiated the function corresponding to $1$ but my answer is coming to be $1$, but the book tells me the answer does not exist. How can we say the derivative doesn't exist?
+:::
+
+Notice that
+$$\begin{align*}
+    f'(x) &= \frac{1}{\sqrt{1-\left(\frac{2x}{1+x^2}\right)^2}}\frac{d}{dx}\left(\frac{2x}{1+x^2}\right)
+    \\&= \frac{1}{\sqrt{\left(\frac{1+x^2}{1+x^2}\right)^2-\left(\frac{2x}{1+x^2}\right)^2}}\cdot\frac{(1+x^2)(2) - (2x)(2x)}{(1+x^2)^2}
+    \\&= \sqrt{\frac{(1+x^2)^2}{(1-x^2)^2}}\cdot \frac{2(1-x^2)}{(1+x^2)^2}
+\end{align*}$$
+(Skipping a bit of the algebra here).  You would like to cancel the square and square root, and in the case of $(1+x^2)$, you can.  But $1-x^2$ could be positive or negative, so $\sqrt{(1-x^2)^2} = |1-x^2|$, not $1-x^2$.  Therefore
+$$f'(x) = \frac{2}{1+x^2}\cdot \frac{1-x^2}{|1-x^2|}$$
+As $x\to 1$, the first factor tends to $2$, unambiguously.  But the second factor is $\pm 1$ depending on whether the numerator is positive or negative.  That is,
+$$\lim_{x\to 1^-} f'(x) = 1\qquad\text{and}\qquad\lim_{x\to 1^+} f'(x) = -1$$
+It follows that $f$ cannot be differentiable at $1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2897317/given-fx-arcsin-left-frac2x1x2-right-find-f1/2897366#2897366) on Mathematics Stack Exchange, 2018-08-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

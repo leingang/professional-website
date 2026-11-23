@@ -1,0 +1,56 @@
+---
+title: Are there any downsides to using macros to avoid typing accents?
+date: '2013-04-03'
+description: This might be a contrarian view, but I would give up and learn how to accent things. It's only a small number of keystrokes more to type Erd\H{o}s instead of…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 106731
+se-link: https://tex.stackexchange.com/questions/106724/are-there-any-downsides-to-using-macros-to-avoid-typing-accents/106731#106731
+se-score: 9
+se-accepted: false
+se-tags:
+- best-practices
+- accents
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Are there any downsides to using macros to avoid typing accents?](https://tex.stackexchange.com/questions/106724/are-there-any-downsides-to-using-macros-to-avoid-typing-accents), asked by [Zev Chonoles](https://tex.stackexchange.com/users/27533/zev-chonoles) on TeX Stack Exchange (2013-04-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> As a native English speaker, I am not used to many words with accents on them, so I find it somewhat difficult to keep the various accents straight in my head, and moreso to also remember the TeX commands for all of them.
+>
+> Additionally, I am very lazy.
+>
+> Thus, I have recently begun to use macros for accented words that commonly come up in my writing, thereby absolving me of the responsibility of remembering which accents the word takes and how to type them. This also ensures that I am consistent: I don't need to worry about whether I mistyped the accent in a single occurrence of the word, which would be tough to spot.
+>
+> Here are some examples:
+>
+> ```latex
+> \newcommand{\Poincare}{Poincar\'e}
+> \newcommand{\adele}{adel\`e}
+> \newcommand{\Cech}{\v{C}ech}
+> \newcommand{\Erdos}{Erd\H{o}s}
+> ```
+>
+> I've described what I see as the benefits of doing this. My question is, is this a "best practice"?   
+> Or at least an "okay practice"? What are the downsides?
+>
+> One that I realized recently is that, of course, this will produce collisions between my desired definitions for words that are the same up to accents. For example, in mathematics we use the words French words `étale` and `étalé` (see [here](https://en.wikipedia.org/wiki/%C3%89tale_morphism) and [here](https://en.wikipedia.org/wiki/Sheaf_(mathematics)#The_.C3.A9tal.C3.A9_space_of_a_sheaf)), and they would both  want to be the definition of the macro `\etale`. Now, the former is used much more than the latter, so I would grant it the macro to it, but that leaves the question of how to appropriately make a command for the latter. A starred version, maybe? A macro `\etalee`? Or, should I give up and actually remember how to accent things?
+:::
+
+This might be a contrarian view, but I would give up and learn how to accent things.  It's only a small number of keystrokes more to type `Erd\H{o}s` instead of `\Erdos`.  It's also more portable since anyone with TeX will be able to copy-and-paste that code.  If you're comfortable in the unicode world (and so is anyone to whom you would send the source code), use the unicode method and type `Erdős`.  
+
+The macro method breaks down with your étale/étalé.  Either `\etalee` nor `\etale*` seem intuitive enough that I wouldn't be double-checking each one constantly.
+
+Use text-expansion software (e.g., TextExpander or AutoHotKey) for saving keystrokes, and macros when parameters are involved.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/106724/are-there-any-downsides-to-using-macros-to-avoid-typing-accents/106731#106731) on TeX Stack Exchange, 2013-04-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

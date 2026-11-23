@@ -1,0 +1,57 @@
+---
+title: Show that each connected component of a topological space $X$ is connected.
+date: '2018-08-09'
+description: I don't think it matters too much that the sets $Cy$ may not be unique. The proof rests on the notion that a union of connected sets with common intersection…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2877610
+se-link: https://math.stackexchange.com/questions/2877598/show-that-each-connected-component-of-a-topological-space-x-is-connected/2877610#2877610
+se-score: 0
+se-accepted: false
+se-tags:
+- general-topology
+- proof-verification
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that each connected component of a topological space $X$ is connected.](https://math.stackexchange.com/questions/2877598/show-that-each-connected-component-of-a-topological-space-x-is-connected), asked by [Perturbative](https://math.stackexchange.com/users/266135/perturbative) on Mathematics Stack Exchange (2018-08-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Show that each connected component of a topological space $X$ is connected.
+>
+> Here is my proof
+>
+> *My Proof:* Choose a connected component $$C = [x] = \{y \in X \mid \exists \text{ a connected set containing both $x$ and $y$}\}$$
+>
+> Now for each $y \in C$ let $C_y$ be the connected set containing $x$ and $y$. We claim that $C = \bigcup_{y \in [x]}C_y$. To prove this claim pick $\alpha \in \bigcup_{y \in [x]}C_y$, then $\alpha \in C_y$ for some $y \in C$. Since $C_y$ is a connected set in $X$ containing both $\alpha$ and $x$, it follows that $\alpha \in C$ hence $\bigcup_{y \in [x]}C_y \subseteq C$.
+>
+> Conversely pick $\beta \in C$, then by construction $\beta \in C_{\beta}$ which is the connected set containing both $x$ and $\beta$. Thus $\beta \in \bigcup_{y \in [x]}C_y$ and we have $C = \bigcup_{y \in [x]}C_y$.
+>
+> Now since $\bigcup_{y \in [x]}C_y$ all contain $x$, their intersection is nonempty and since each $C_y$ is connected it follows that $\bigcup_{y \in [x]}C_y$ is connected. Thus $C$ is connected. $\square$
+>
+> * * *
+>
+> First of is my proof correct? Can I improve it in any way? I'm not too happy about my construction of $\bigcup_{y \in [x]}C_y$, because I said 
+>
+> >"for each $y \in C$ let $C_y$ be the connected set containing $x$ and $y$"
+>
+> but there's no need for $C_y$ to be unique and that made matters a bit hairy when I tried to show that $C \subseteq \bigcup_{y \in [x]}C_y$
+>
+> Is there a better way to prove this?
+:::
+
+I don't think it matters too much that the sets $C_y$ may not be unique.  The proof rests on the notion that a union of connected sets with common intersection is connected, which seems plausible (I haven't tried to prove it though).  If that isn't an established proposition in your text though, I think it should be proved.
+
+But the construction seems a little complicated.  You might just appeal to the definition of connected.  If $C = [x]$ were *not* connected, you could find disjoint sets $X$ and $Y$ such that $C \cap X \neq \varnothing$, $C \cap Y \neq \varnothing$, and $C \subseteq X \cup Y$.  Choose an $x\in X \cap C$ and $y \in Y \cap C$, and a connected set $D$ containing $x$ and $y$.  Can you argue to a contradiction from here?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2877598/show-that-each-connected-component-of-a-topological-space-x-is-connected/2877610#2877610) on Mathematics Stack Exchange, 2018-08-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

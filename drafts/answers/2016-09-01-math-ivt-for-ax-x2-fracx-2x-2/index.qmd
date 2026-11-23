@@ -1,0 +1,51 @@
+---
+title: IVT for $a(x) = x+2+\frac{|x-2|}{x-2}$
+date: '2016-09-01'
+description: The function can be written piecewise as $$f(x) = \begin{cases} x+1 & \text{if $1 ≤ x < 2$} \\ x+3 & \text{if $2 < x ≤ 5$} \end{cases}$$ Notice that $f(2)$ is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1910548
+se-link: https://math.stackexchange.com/questions/1910512/ivt-for-ax-x2-fracx-2x-2/1910548#1910548
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[IVT for $a(x) = x+2+\frac{|x-2|}{x-2}$](https://math.stackexchange.com/questions/1910512/ivt-for-ax-x2-fracx-2x-2), asked by [Stuck](https://math.stackexchange.com/users/365373/stuck) on Mathematics Stack Exchange (2016-09-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If we have the function $a(x) = x+2 + \frac{|x-2|}{x-2}$, where $x$ is a member of $[1,5]$ and $y$ is a member of $[2,8]$, when we apply the Intermediate Value Theorem, why could it be either true or false?
+:::
+
+The function can be written piecewise as
+$$f(x) = \begin{cases} x+1 & \text{if $1 ≤ x < 2$} \\
+                        x+3 & \text{if $2 < x ≤ 5$} \end{cases}$$
+Notice that $f(2)$ is not defined.
+The graph of $f$ is the line segment from $(1,2)$ to $(2,3)$ (not including the latter point), then the line segment from $(2,5)$ to $(5,8)$ (not including the former point).  You might want to draw it for reference.
+
+We have
+$$\begin{align*}
+    \lim_{x\to 2^-} f(x) &= 3 \\
+    \lim_{x\to 2^+} f(x) &= 5 
+\end{align*}$$
+So $\lim_{x\to 2} f(x)$ does not exist.  
+
+The IVT requires that $f$ be *continuous* on a closed, bounded interval.  Right now $f$ is defined only on $[1,2)\cup(2,5]$, which is not a single interval (nor is it closed).  What's worse, even if we choose a value for $f(2)$, the fact that $\lim_{x\to 2}f(x)$ does not exist says that $f$ cannot be continuous at $2$.  So no matter what, we cannot satisfy the hypotheses of the IVT.
+
+You say “why could it be either true or false?”  I am guessing what you mean is that why should the statement “there exists $x$ in $[1,5]$ such that $f(x) = c$” be true for some values of $c$ in $[2,8]$ and false for other values of $c$?  Let's verify it.  Is there an $x$ such that $f(x) = 6$?  Yes, $f(3) = 3+3 = 6$.
+Is there an $x$ such that $f(x) = 4$? No, because $x$ is either less than 2 or greater than 2.  If $x < 2$, $f(x) = 4 \implies x+1 = 4 \implies x=3$, which is a contradiction.  If $x>2$, $f(x) = 4 \implies x+3 = 4 \implies x=1$, also a contradiction.  (This is easier to see on a graph; sorry I don't have the time to produce one.)
+
+So there are some values of $c$ which have a corresponding $x$, but some values of $c$ which do not.  The reason this is consistent with the IVT, and not contradicting, it is that $f$ is not continuous.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1910512/ivt-for-ax-x2-fracx-2x-2/1910548#1910548) on Mathematics Stack Exchange, 2016-09-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

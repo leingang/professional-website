@@ -1,0 +1,44 @@
+---
+title: How to find the tangent line of a level curve of a function?
+date: '2018-09-02'
+description: Your gradient looks correct to me.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2903132
+se-link: https://math.stackexchange.com/questions/2903125/how-to-find-the-tangent-line-of-a-level-curve-of-a-function/2903132#2903132
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- analysis
+- multivariable-calculus
+- tangent-line
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find the tangent line of a level curve of a function?](https://math.stackexchange.com/questions/2903125/how-to-find-the-tangent-line-of-a-level-curve-of-a-function), asked by [Marco](https://math.stackexchange.com/users/575724/marco) on Mathematics Stack Exchange (2018-09-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm trying to solve this exercise but I'm having some issue.<br><br>Find the equation of the tangent line of $e^{x-y}(2x^2+y^2)$ at the point $(1,0)$ at the level curve.<br><br>
+> So I start finding the gradient of the function<br>
+> $gradf={e^{x-y}(2x^2+y^2)+4xe^{x-y} \choose -e^{x-y}(2x^2+y^2)+2ye^{x-y}}$<br><br>
+> But now I don't know how to go on and even if find the gradient is actually correct, can someone help me by explaining me how to solve this excercise?
+:::
+
+Your gradient looks correct to me.
+
+Use the chain rule.  Along the level curve $f(x,y) = c$, as long as $\frac{\partial f}{\partial y} \neq 0$, we can consider $y$ as implicitly a function of $x$.  Then
+$$\frac{\partial f}{\partial x} + \frac{\partial f}{\partial y} \frac{dy}{dx} = 0$$
+so
+$$\frac{dy}{dx} = - \frac{\partial f/\partial x}{\partial f/\partial y}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2903125/how-to-find-the-tangent-line-of-a-level-curve-of-a-function/2903132#2903132) on Mathematics Stack Exchange, 2018-09-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

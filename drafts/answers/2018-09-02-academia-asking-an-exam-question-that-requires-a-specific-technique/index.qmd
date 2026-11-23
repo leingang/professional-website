@@ -1,0 +1,45 @@
+---
+title: Asking an exam question that requires a specific technique
+date: '2018-09-02'
+description: 'Here is one way to scaffold the problem:'
+categories:
+- academia.se
+license: CC BY-SA 4.0
+draft: true
+se-site: academia
+se-answer-id: 116263
+se-link: https://academia.stackexchange.com/questions/116088/asking-an-exam-question-that-requires-a-specific-technique/116263#116263
+se-score: 3
+se-accepted: false
+se-tags:
+- exams
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Asking an exam question that requires a specific technique](https://academia.stackexchange.com/questions/116088/asking-an-exam-question-that-requires-a-specific-technique), asked by [Michael Stachowsky](https://academia.stackexchange.com/users/45408/michael-stachowsky) on Academia Stack Exchange (2018-08-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This question https://academia.stackexchange.com/questions/116019/inadmissible-theorems-in-research mentioned a scenario in which a student was not allowed to use a theorem that he knew because it wasn't in the course.  I've administered exams in which the instructor said "using X technique, solve for Y", and grades of 0 were assigned when a different, admittedly simpler, technique was used.  Students seemed to consider the question to be giving a hint, rather than a requirement.
+>
+> Students often get angry about this, since they feel they got the right answer.  The instructor's goal, though, was to get the students to prove that they could use the particular technique, and therefore the answer itself was not relevant.
+>
+> To complicate matters, there are often times in which not using technique X results in a simpler method for the particular question.  This is usually because X is a more general method and is only really powerful when the problem exceeds what is reasonable on an exam.  A student could reasonably walk away from the exam thinking that X is just "more complicated" and not worth the trouble.
+>
+> How can you ask a question like that that tests their ability to use a particular technique in a way that gets them to understand the purpose of the question?  Especially, how can such a question be asked to avoid having students erroneously discount the importance of technique X because a simpler method exists for the particular problem?
+:::
+
+Here is one way to scaffold the problem:
+
+> a. Describe technique X.
+>
+> b. Use technique X to solve problem Y.
+
+So students can earn credit knowing the technique in general, and they get a hint that they are expected to use it in this problem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/116088/asking-an-exam-question-that-requires-a-specific-technique/116263#116263) on Academia Stack Exchange, 2018-09-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

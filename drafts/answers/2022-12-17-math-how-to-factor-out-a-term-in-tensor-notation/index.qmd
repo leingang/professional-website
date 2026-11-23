@@ -1,0 +1,45 @@
+---
+title: how to factor out a term in Tensor notation
+date: '2022-12-17'
+description: As I'm sure you're aware, the Einstein summation convention is in force, meaning that any index appearing twice in the same term is to be summed over. The name…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4600730
+se-link: https://math.stackexchange.com/questions/4600719/how-to-factor-out-a-term-in-tensor-notation/4600730#4600730
+se-score: 2
+se-accepted: true
+se-tags:
+- tensors
+- classical-mechanics
+- kronecker-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to factor out a term in Tensor notation](https://math.stackexchange.com/questions/4600719/how-to-factor-out-a-term-in-tensor-notation), asked by [Itay2924](https://math.stackexchange.com/users/1131944/itay2924) on Mathematics Stack Exchange (2022-12-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am studying classical mechanics and I was asked in my homework to calculate poisson brackets of components of angular momentum. I couldn't understand how to approach, then I looked at the solution. I found:
+> $$\begin{align*}
+>     \epsilon_{\alpha\beta\gamma}\epsilon_{\gamma\mu\nu} x_\beta p_\nu + \epsilon_{\alpha\beta\gamma}\epsilon_{\beta\mu\nu} x_\nu p_\gamma
+>     &= \left(\epsilon_{\alpha\beta\gamma}\epsilon_{\gamma\mu\nu} + \epsilon_{\alpha\gamma\nu}\epsilon_{\gamma\mu\beta}\right) x_\beta p_\nu
+> \end{align*}$$
+> I still don't understand how they factored out the expression of $x_\beta p_v$. What have they exactly done?
+>
+>
+>   [q-1]: 7OBNR.png
+:::
+
+As I'm sure you're aware, the Einstein summation convention is in force, meaning that any index appearing twice in the same term is to be summed over. The name of that index is irrelevant. Whether it is called $\mu$ or $\beta$ doesn't matter as long as the name of that index is unique to the term. Sometimes these are called “dummy indices;” I prefer “summation indices” to avoid the ableist connotation.
+
+In the second term of the expression on the left-hand side, $\epsilon_{\alpha\beta\gamma}\epsilon_{\beta\mu\nu} x_\nu p_\gamma$, the only non-summation indices are $\alpha$ and $\mu$. In order to combine this term with the previous, we would like to have the same name of the indices on $x$ and $p$ ($\beta$ and $\nu$, respectively). So we rename the $\nu$ on $x$ to $\beta$. Of course, we have to replace the other appearances of $\nu$ with $\beta$ too. At the same time, we rename the $\gamma$ on $p$ by $\nu$, and change all the other appearances as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4600719/how-to-factor-out-a-term-in-tensor-notation/4600730#4600730) on Mathematics Stack Exchange, 2022-12-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

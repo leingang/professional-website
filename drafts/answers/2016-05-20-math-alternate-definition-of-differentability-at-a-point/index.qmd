@@ -1,0 +1,83 @@
+---
+title: Alternate definition of differentability at a point
+date: '2016-05-20'
+description: There are functions which are differentiable at a point $a$ but the derivative $f'(x)$ is not continuous at $a$. For instance, $f(x) = x^2 \cos(1/x)$ when…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1793575
+se-link: https://math.stackexchange.com/questions/1793542/alternate-definition-of-differentability-at-a-point/1793575#1793575
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- real-analysis
+- derivatives
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Alternate definition of differentability at a point](https://math.stackexchange.com/questions/1793542/alternate-definition-of-differentability-at-a-point), asked by [Perturbative](https://math.stackexchange.com/users/266135/perturbative) on Mathematics Stack Exchange (2016-05-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Usually in most introductory Calculus courses, a definition of differentiability at a point $a$ is defined, as follows :
+>
+> > A function $f$ is differentiable at $a$ if $f'(a)$ exists
+>
+> As a corollary of this :
+>
+> > A function $f$ is not differentiable at $a$ if $f'(a)$ does not exist
+>
+> * * *
+>
+> However can differentiability be defined another way, in terms of continuity of the derivative function?
+>
+> **<i>Possible</i> Alternate Definition** 
+> > A function $f$ is differentiable at $a$ if $f'(x)$ is continuous at $a$
+>
+> Stated more formally, given $f : \mathbb{R} \to \mathbb{R}$, $f$ is differentiable $\text{iff}$
+>
+> $$\lim_{x\to a} f'(x) = f'(a)$$
+>
+> * * *
+>
+> A simple example to illustrate this would be to look at $f(x) = |x|$.
+>
+> $$f'(x) =\begin{cases}
+> \ \ \ 1  &\text{if} & x > 0 \\
+> -1  &\text{if} & x < 0 \\
+> \end{cases}$$
+>
+> And using the alternate definition, we can show that since the limit doesn't exist $$\lim_{x \to 0} f'(x) \not= f'(0)$$
+>  and thus $f'(x)$ is discontinous at $x=0$, and hence not differentiable at $x=0$.
+>
+> * * *
+>
+> *Note:* I haven't looked up whether this is actually a definition or not (this is just something I thought up), as far as I know, differentiability in most textbooks are *not* defined in this way. If this possible alternate definition, that I've given is incorrect, in any way whatsoever, or if it doesn't generalize well *(conceptually that is)* outside of single-variable calculus for real-valued functions, please feel free to tear it apart completely.
+:::
+
+There are functions which are differentiable at a point $a$ but the derivative $f'(x)$ is not continuous at $a$.  For instance, $f(x) = x^2 \cos(1/x)$ when $x\neq0$, and $f(0) = 0$.  Using the definition:
+$$f'(0) = \lim_{h\to 0} \frac{f(h) - f(0)}{h}
+    = \lim_{h\to 0}\frac{h^2\cos(1/h)}{h} = \lim_{h\to 0}h \cos(1/h) = 0$$
+(the limit is zero because the $\cos(1/h)$ term is bounded by $1$ in absolute value).
+However, away from zero,
+$$f'(x) = 2x \cos(1/x) - \sin(1/x)$$
+As $x\to 0$, the first term tends to zero but the second has no limit.  Therefore $\lim_{x\to 0} f'(x)$ does not exist.
+
+However, if both $\lim_{x\to a^+} f'(x)$ and $f'(a)$ exist, they must agree.  Proof: For any $x$ sufficiently near $a$ but greater than $a$, the difference quotient $\frac{f(x)-f(a)}{x-a}$ is equal to $f'(c_x)$ for some point $c_x$ in $(a,x)$ (Mean Value Theorem).  As $x\to a^+$, $c_x \to a$, so $f'(a) = \lim_{x\to a} f'(x)$.
+
+Similarly, if $\lim_{x\to a^-} f'(x)$ and $f'(a)$ exist, they must agree. The proof is identical, *mutatis mutandis*. 
+
+This means that if $\lim_{x\to a^+} f'(x)$ and $\lim_{x\to a^-} f'(x)$ exist, but *disagree*, then $f$ is not differentiable at $a$.  For it it were, $f'(a)$ would need to be equal to two unequal things.
+
+Therefore, your proof that $|x|$ is not differentiable at $0$ is legitimate, but it relies on the Mean Value Theorem rather than the definition.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1793542/alternate-definition-of-differentability-at-a-point/1793575#1793575) on Mathematics Stack Exchange, 2016-05-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

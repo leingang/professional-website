@@ -1,0 +1,36 @@
+---
+title: Is there a difference between theorem proof and theorem demonstration?
+date: '2016-12-13'
+description: In English, proof and demonstration have different connotations, as Théophile points out. A demonstration might be an application or “illustration” of a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2057102
+se-link: https://math.stackexchange.com/questions/2057072/is-there-a-difference-between-theorem-proof-and-theorem-demonstration/2057102#2057102
+se-score: 7
+se-accepted: false
+se-tags:
+- proof-verification
+- terminology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a difference between theorem proof and theorem demonstration?](https://math.stackexchange.com/questions/2057072/is-there-a-difference-between-theorem-proof-and-theorem-demonstration), asked by [yoyo_fun](https://math.stackexchange.com/users/325100/yoyo-fun) on Mathematics Stack Exchange (2016-12-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When referring to proving that a theorem is true, I have seen both words used interchangeably. Do they mean the same thing ?
+:::
+
+In English, *proof* and *demonstration* have different connotations, as Théophile points out.  A demonstration might be an application or “illustration” of a method.  I believe most native English speakers would use *proof*.
+
+But in some other languages, the word cognate to *demonstration* is what is used for proof.  The letters QED, commonly appearing after a proof, are initials for the Latin phrase *quod erat demonstrandum*.  In French, they say *ce qu'il fallait démontrer*.  But in German, the word for “to prove” is *beweisen* rather than *demonstrieren* (and *prüfen* is to test!)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2057072/is-there-a-difference-between-theorem-proof-and-theorem-demonstration/2057102#2057102) on Mathematics Stack Exchange, 2016-12-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

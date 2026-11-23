@@ -1,0 +1,48 @@
+---
+title: triple integral- plane/cone
+date: '2018-06-03'
+description: In cylindrical coordinates, the cone has equation $z=r$; it intersects the plane in a circle of radius $3$. So the integral is equal to $$\int0^{2\pi} \int0^3…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2806096
+se-link: https://math.stackexchange.com/questions/2806084/triple-integral-plane-cone/2806096#2806096
+se-score: 2
+se-accepted: false
+se-tags:
+- integration
+- multivariable-calculus
+- spherical-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[triple integral- plane/cone](https://math.stackexchange.com/questions/2806084/triple-integral-plane-cone), asked by [kenobe](https://math.stackexchange.com/users/457841/kenobe) on Mathematics Stack Exchange (2018-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Currently I am working on this problem that requires me to calculate this triple integral when I am given cone/plane intersection. The issue is that integrals in both cases (when using spherical and cylindrical coordinates) lead to, even more, complicated ones. Only hints required. Thank You.
+> [![enter image description here][q-1]][q-1]
+>
+> >Calculate $$\int \int \int_E \sqrt{x^2+y^2+z^2}\space dV$$
+>
+> where $E$ is the is region bound by the plane $z=3$ and the cone $z=\sqrt{x^2+y^2}$
+>
+>   [q-1]: ea5jL.jpg
+:::
+
+In cylindrical coordinates, the cone has equation $z=r$; it intersects the plane in a circle of radius $3$.  So the integral is equal to
+$$\int_0^{2\pi} \int_0^3 \int_r^3 \sqrt{r^2+z^2}r\,dz\,dr\,d\theta
+    = 2\pi \int_0^3 \int_r^3 \sqrt{r^2+z^2}r\,dz\,dr$$
+As written the integral on the right needs a trigonometric substitution; it would be easier to rearrange the limits:
+$$2\pi \int_0^3 \int_r^3 \sqrt{r^2+z^2}r\,dz\,dr
+    = 2\pi \int_0^3 \int_0^z \sqrt{r^2+z^2}r\,dr\,dz$$
+Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2806084/triple-integral-plane-cone/2806096#2806096) on Mathematics Stack Exchange, 2018-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

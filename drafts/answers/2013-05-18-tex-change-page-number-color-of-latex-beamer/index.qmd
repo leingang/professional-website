@@ -1,0 +1,89 @@
+---
+title: change page number color of latex beamer
+date: '2013-05-18'
+description: 'The page number option to the footline template is found in beamerbaseauxtemplates.sty:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 114953
+se-link: https://tex.stackexchange.com/questions/114952/change-page-number-color-of-latex-beamer/114953#114953
+se-score: 8
+se-accepted: true
+se-tags:
+- color
+- page-numbering
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[change page number color of latex beamer](https://tex.stackexchange.com/questions/114952/change-page-number-color-of-latex-beamer), asked by [Emalka](https://tex.stackexchange.com/users/26889/emalka) on TeX Stack Exchange (2013-05-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to change the page number color to black in latex beamer. What do I need to add to the following code?
+>
+>
+> ```latex
+> \defbeamertemplate{headline}{page number}{%
+>     \vskip1pt%
+>     \setbeamertemplate{footline}[page number]%
+>     \usebeamertemplate{footline}%
+> }
+> \setbeamertemplate{headline}[page number]
+> ```
+:::
+
+The `page number` option to the `footline` template is found in `beamerbaseauxtemplates.sty`:
+
+
+```latex
+\defbeamertemplate{footline}{page number}
+{%
+  \hfill%
+  \usebeamercolor[fg]{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  \insertpagenumber\,/\,\insertpresentationendpage\kern1em\vskip2pt%
+}
+```
+
+So when setting the footline beamer will use a font and a color `page number in head/foot`.  That color can be configured as you wish, like so:
+
+```latex
+\documentclass{beamer}
+\usepackage{lipsum}
+
+\defbeamertemplate{headline}{page number}{%
+    \vskip1pt%
+    \setbeamertemplate{footline}[page number]%
+    \usebeamertemplate{footline}%
+}
+\setbeamertemplate{headline}[page number]
+\setbeamercolor{page number in head/foot}{fg=green}
+\setbeamerfont{page number in head/foot}{size=\large}
+
+\begin{document}
+
+\begin{frame}{Lorem ipsum}
+\lipsum[1]
+\end{frame}
+
+\begin{frame}{Dolor sit amet}
+\lipsum[2]
+\end{frame}
+\end{document}
+```
+
+![sample code output][2]
+
+  [1]: bHc7A.png
+  [2]: Hv2ol.png
+
+To learn more about these configurations, read Section 1.4, 17, and 18 of the beamer manual.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/114952/change-page-number-color-of-latex-beamer/114953#114953) on TeX Stack Exchange, 2013-05-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

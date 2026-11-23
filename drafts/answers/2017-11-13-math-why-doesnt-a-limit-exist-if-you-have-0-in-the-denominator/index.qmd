@@ -1,0 +1,41 @@
+---
+title: Why doesn't a limit exist if you have 0 in the denominator?
+date: '2017-11-13'
+description: 'You can appeal to the definition of limit, or you can use the product law and prove this by contradiction:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2518214
+se-link: https://math.stackexchange.com/questions/2518137/why-doesnt-a-limit-exist-if-you-have-0-in-the-denominator/2518214#2518214
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why doesn't a limit exist if you have 0 in the denominator?](https://math.stackexchange.com/questions/2518137/why-doesnt-a-limit-exist-if-you-have-0-in-the-denominator), asked by [Vrisk](https://math.stackexchange.com/users/198640/vrisk) on Mathematics Stack Exchange (2017-11-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Say I want to find the limit of $f(x) = \frac{p(x)}{q(x)}$ at some 'a'. I've been told the limit doesn't exist if ever the denominator q(x) went to zero but not the numerator. Why is this?
+:::
+
+You can appeal to the definition of limit, or you can use the product law and prove this by contradiction:
+
+*Suppose that $\lim_{x\to a} p(x) = b \neq 0$, and $\lim_{x\to a} q(x) = 0$.  Then $\lim_{x\to a} \frac{p(x)}{q(x)}$ does not exist.*
+
+**Proof** Suppose for the sake of contradiction that $\lim_{x\to a} \frac{p(x)}{q(x)} = L$.  Then
+$$\lim_{x\to a} p(x) = \lim_{x\to a} \frac{p(x)}{q(x)}\cdot q(x)
+    = \lim_{x\to a} \frac{p(x)}{q(x)} \cdot \lim_{x\to a} q(x)
+    = L \cdot 0 = 0$$
+But this contradicts the assumption that $\lim_{x\to a} p(x)\neq 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2518137/why-doesnt-a-limit-exist-if-you-have-0-in-the-denominator/2518214#2518214) on Mathematics Stack Exchange, 2017-11-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

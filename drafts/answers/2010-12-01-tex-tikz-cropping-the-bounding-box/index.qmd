@@ -1,0 +1,212 @@
+---
+title: 'TikZ: Cropping the Bounding Box'
+date: '2010-12-01'
+description: Sure, just insert \useasboundingbox <some rectangle> after \begin{tikzpicture}. That can make the bounding box surround only what you want. Look in the PGF…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6343
+se-link: https://tex.stackexchange.com/questions/6342/tikz-cropping-the-bounding-box/6343#6343
+se-score: 9
+se-accepted: false
+se-tags:
+- tikz-pgf
+- graphics
+- crop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[TikZ: Cropping the Bounding Box](https://tex.stackexchange.com/questions/6342/tikz-cropping-the-bounding-box), asked by [Freddie Witherden](https://tex.stackexchange.com/users/753/freddie-witherden) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> A graphing program I use has support for TikZ output. It generates a `\begin{tikzpicture} ... \end{tikzpicture}` which I can include in my document. The problem, however, is that it appears to insert a large amount of whitespace around the actual drawing.
+>
+> Currently, my approach has been to include the plot in an 'empty' LaTeX file, run `pdflatex` on it and then unleash `pdfcrop`. The resulting PDF can then be included in place of the TikZ image.
+>
+> However, this is not at all clean, and quite a bit of work on my part. Therefore, I am wondering if I can instruct TikZ to do the cropping for me.
+>
+> **Update**
+> Here is a minimal document that shows the issue; sorry for the length, machine generated TikZ is (unfortunately) never that concise. I've added a chunk at the end to show the bounding box for the figure.
+>
+> <pre>\documentclass[11pt]{article}
+> \pagestyle{empty}
+> \usepackage{tikz}
+> \begin{document}
+> \begin{tikzpicture}{0pt}{0pt}{518pt}{403pt}
+> 	\clip(0pt,403pt) -- (389.957pt,403pt) -- (389.957pt,99.6166pt) -- (0pt,99.6166pt) -- (0pt,403pt);
+> 	\color[rgb]{1,1,1}
+> 	\fill(3.76406pt,399.236pt) -- (380.923pt,399.236pt) -- (380.923pt,253.19pt) -- (3.76406pt,253.19pt) -- (3.76406pt,399.236pt);
+> 	\fill(53.4497pt,394.719pt) -- (374.901pt,394.719pt) -- (374.901pt,289.325pt) -- (53.4497pt,289.325pt) -- (53.4497pt,394.719pt);
+> \begin{scope}
+> 	\color[rgb]{0,0,0}
+> 	\pgftext[center, base, at={\pgfpoint{13.5506pt}{343.151pt}},rotate=90]{\sffamily\fontsize{9}{0}\selectfont{\$\mathsf{\theta}\$ / rad}}
+> 	\color[rgb]{0.0784314,0.0745098,0.0705882}
+> 	\pgftext[center, base, at={\pgfpoint{30.1125pt}{285.561pt}}]{\sffamily\fontsize{9}{0}\selectfont{-0.10}}
+> 	\pgftext[center, base, at={\pgfpoint{30.1125pt}{311.91pt}}]{\sffamily\fontsize{9}{0}\selectfont{-0.05}}
+> 	\pgftext[center, base, at={\pgfpoint{31.9945pt}{338.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.00}}
+> 	\pgftext[center, base, at={\pgfpoint{31.9945pt}{365.359pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.05}}
+> 	\pgftext[center, base, at={\pgfpoint{31.9945pt}{391.708pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.10}}
+> 	\color[rgb]{0,0,0}
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,294.595pt) -- (48.9328pt,294.595pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,299.865pt) -- (48.9328pt,299.865pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,305.134pt) -- (48.9328pt,305.134pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,310.404pt) -- (48.9328pt,310.404pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,320.943pt) -- (48.9328pt,320.943pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,326.213pt) -- (48.9328pt,326.213pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,331.483pt) -- (48.9328pt,331.483pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,336.752pt) -- (48.9328pt,336.752pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,348.045pt) -- (48.9328pt,348.045pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,353.314pt) -- (48.9328pt,353.314pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,358.584pt) -- (48.9328pt,358.584pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,363.854pt) -- (48.9328pt,363.854pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,374.393pt) -- (48.9328pt,374.393pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,379.663pt) -- (48.9328pt,379.663pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,384.933pt) -- (48.9328pt,384.933pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,390.202pt) -- (48.9328pt,390.202pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,289.325pt) -- (45.9216pt,289.325pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,315.674pt) -- (45.9216pt,315.674pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,342.022pt) -- (45.9216pt,342.022pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,369.123pt) -- (45.9216pt,369.123pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,395.472pt) -- (45.9216pt,395.472pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,395.472pt) -- (52.6969pt,289.325pt);
+> 	\pgftext[center, base, at={\pgfpoint{215.304pt}{256.202pt}}]{\sffamily\fontsize{9}{0}\selectfont{\textit{t}}}
+> 	\color[rgb]{0.0784314,0.0745098,0.0705882}
+> 	\pgftext[center, base, at={\pgfpoint{52.6969pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{0}}
+> 	\pgftext[center, base, at={\pgfpoint{93.3487pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{5}}
+> 	\pgftext[center, base, at={\pgfpoint{133.248pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{10}}
+> 	\pgftext[center, base, at={\pgfpoint{173.9pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{15}}
+> 	\pgftext[center, base, at={\pgfpoint{213.799pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{20}}
+> 	\pgftext[center, base, at={\pgfpoint{254.451pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{25}}
+> 	\pgftext[center, base, at={\pgfpoint{294.35pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{30}}
+> 	\pgftext[center, base, at={\pgfpoint{335.002pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{35}}
+> 	\pgftext[center, base, at={\pgfpoint{374.901pt}{271.258pt}}]{\sffamily\fontsize{9}{0}\selectfont{40}}
+> 	\color[rgb]{0,0,0}
+> 	\draw[line join=bevel, line cap=rect](60.9778pt,289.325pt) -- (60.9778pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](68.5059pt,289.325pt) -- (68.5059pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](76.7869pt,289.325pt) -- (76.7869pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](85.0678pt,289.325pt) -- (85.0678pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](100.877pt,289.325pt) -- (100.877pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](109.158pt,289.325pt) -- (109.158pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](117.439pt,289.325pt) -- (117.439pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](124.967pt,289.325pt) -- (124.967pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](141.529pt,289.325pt) -- (141.529pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](149.057pt,289.325pt) -- (149.057pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](157.338pt,289.325pt) -- (157.338pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](165.619pt,289.325pt) -- (165.619pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](181.428pt,289.325pt) -- (181.428pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](189.709pt,289.325pt) -- (189.709pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](197.99pt,289.325pt) -- (197.99pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](205.518pt,289.325pt) -- (205.518pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](222.08pt,289.325pt) -- (222.08pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](229.608pt,289.325pt) -- (229.608pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](237.889pt,289.325pt) -- (237.889pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](246.17pt,289.325pt) -- (246.17pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](261.979pt,289.325pt) -- (261.979pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](270.26pt,289.325pt) -- (270.26pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](278.541pt,289.325pt) -- (278.541pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](286.069pt,289.325pt) -- (286.069pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](302.631pt,289.325pt) -- (302.631pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](310.159pt,289.325pt) -- (310.159pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](318.44pt,289.325pt) -- (318.44pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](326.721pt,289.325pt) -- (326.721pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](342.53pt,289.325pt) -- (342.53pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](350.811pt,289.325pt) -- (350.811pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](359.092pt,289.325pt) -- (359.092pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](366.62pt,289.325pt) -- (366.62pt,285.561pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,289.325pt) -- (52.6969pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](93.3487pt,289.325pt) -- (93.3487pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](133.248pt,289.325pt) -- (133.248pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](173.9pt,289.325pt) -- (173.9pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](213.799pt,289.325pt) -- (213.799pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](254.451pt,289.325pt) -- (254.451pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](294.35pt,289.325pt) -- (294.35pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](335.002pt,289.325pt) -- (335.002pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](374.901pt,289.325pt) -- (374.901pt,282.55pt);
+> 	\draw[line join=bevel, line cap=rect](52.6969pt,289.325pt) -- (374.901pt,289.325pt);
+> 	\color[rgb]{1,1,0}
+> 	\fill[opacity=0.392157](271.012pt,348.045pt) -- (362.103pt,348.045pt) -- (362.103pt,337.505pt) -- (271.012pt,337.505pt) -- (271.012pt,348.045pt);
+> 	\color[rgb]{0,0,0}
+> 	\draw[line join=miter, line cap=rect](271.012pt,348.045pt) -- (362.103pt,348.045pt) -- (362.103pt,337.505pt) -- (271.012pt,337.505pt) -- (271.012pt,348.045pt);
+> 	%\color[rgb]{1,1,1}
+> 	%\fill[opacity=0.607843](278.541pt,396.225pt) -- (361.35pt,396.225pt) -- (361.35pt,351.809pt) -- (278.541pt,351.809pt) -- (278.541pt,396.225pt);
+> 	\color[rgb]{1,0,0}
+> 	\draw[line width=1pt, line join=miter, line cap=rect](287.574pt,385.685pt) -- (302.631pt,385.685pt);
+> 	\color[rgb]{0,0,0}
+> 	\pgftext[left, base, at={\pgfpoint{310.159pt}{381.921pt}}]{\sffamily\fontsize{9}{0}\selectfont{Euler}}
+> 	\color[rgb]{0,0.501961,0}
+> 	\draw[line width=1pt, line join=miter, line cap=rect](287.574pt,374.393pt) -- (302.631pt,374.393pt);
+> 	\color[rgb]{0,0,0}
+> 	\pgftext[left, base, at={\pgfpoint{310.159pt}{370.629pt}}]{\sffamily\fontsize{9}{0}\selectfont{Leapfrog}}
+> 	\draw[line width=1pt, line join=miter, line cap=rect](287.574pt,363.101pt) -- (302.631pt,363.101pt);
+> 	\pgftext[left, base, at={\pgfpoint{310.159pt}{359.337pt}}]{\sffamily\fontsize{9}{0}\selectfont{Analytic}}
+> 	\color[rgb]{1,1,1}
+> 	\fill(3.76406pt,249.426pt) -- (386.193pt,249.426pt) -- (386.193pt,103.381pt) -- (3.76406pt,103.381pt) -- (3.76406pt,249.426pt);
+> 	\color[rgb]{1,1,0}
+> 	\fill[opacity=0.392157](57.2137pt,246.415pt) -- (386.193pt,246.415pt) -- (386.193pt,133.493pt) -- (57.2137pt,133.493pt) -- (57.2137pt,246.415pt);
+> \end{scope}
+> \begin{scope}
+> 	\color[rgb]{0,0,0}
+> 	\draw[line join=miter, line cap=rect](56.4609pt,247.168pt) -- (385.44pt,247.168pt) -- (385.44pt,134.246pt) -- (56.4609pt,134.246pt) -- (56.4609pt,247.168pt);
+> 	\color[rgb]{0,0,0}
+> 	\pgftext[center, base, at={\pgfpoint{13.5506pt}{191.46pt}},rotate=90]{\sffamily\fontsize{9}{0}\selectfont{\textbf{ }}}
+> 	\color[rgb]{0.0784314,0.0745098,0.0705882}
+> 	\pgftext[center, base, at={\pgfpoint{30.8653pt}{131.988pt}}]{\sffamily\fontsize{9}{0}\selectfont{-0.010}}
+> 	\pgftext[center, base, at={\pgfpoint{30.8653pt}{159.842pt}}]{\sffamily\fontsize{9}{0}\selectfont{-0.005}}
+> 	\pgftext[center, base, at={\pgfpoint{32.7473pt}{186.943pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.000}}
+> 	\pgftext[center, base, at={\pgfpoint{32.7473pt}{214.044pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.005}}
+> 	\pgftext[center, base, at={\pgfpoint{32.7473pt}{241.898pt}}]{\sffamily\fontsize{9}{0}\selectfont{0.010}}
+> 	\color[rgb]{0,0,0}
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,141.774pt) -- (52.6969pt,141.774pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,147.044pt) -- (52.6969pt,147.044pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,152.313pt) -- (52.6969pt,152.313pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,157.583pt) -- (52.6969pt,157.583pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,168.875pt) -- (52.6969pt,168.875pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,174.145pt) -- (52.6969pt,174.145pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,179.415pt) -- (52.6969pt,179.415pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,185.437pt) -- (52.6969pt,185.437pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,195.977pt) -- (52.6969pt,195.977pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,201.999pt) -- (52.6969pt,201.999pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,207.269pt) -- (52.6969pt,207.269pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,212.538pt) -- (52.6969pt,212.538pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,223.831pt) -- (52.6969pt,223.831pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,229.1pt) -- (52.6969pt,229.1pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,234.37pt) -- (52.6969pt,234.37pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,239.64pt) -- (52.6969pt,239.64pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,135.752pt) -- (49.6856pt,135.752pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,163.606pt) -- (49.6856pt,163.606pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,190.707pt) -- (49.6856pt,190.707pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,217.808pt) -- (49.6856pt,217.808pt);
+> 	\draw[line join=bevel, line cap=rect](56.4609pt,245.662pt) -- (49.6856pt,245.662pt);
+> 	\pgftext[center, base, at={\pgfpoint{220.95pt}{106.392pt}}]{\sffamily\fontsize{9}{0}\selectfont{\textbf{ }}}
+> 	\color[rgb]{0.0784314,0.0745098,0.0705882}
+> 	\pgftext[center, base, at={\pgfpoint{83.5622pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{28}}
+> 	\pgftext[center, base, at={\pgfpoint{112.169pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{29}}
+> 	\pgftext[center, base, at={\pgfpoint{140.776pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{30}}
+> 	\pgftext[center, base, at={\pgfpoint{169.383pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{31}}
+> 	\pgftext[center, base, at={\pgfpoint{197.99pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{32}}
+> 	\pgftext[center, base, at={\pgfpoint{226.597pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{33}}
+> 	\pgftext[center, base, at={\pgfpoint{255.58pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{34}}
+> 	\pgftext[center, base, at={\pgfpoint{283.81pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{35}}
+> 	\pgftext[center, base, at={\pgfpoint{313.17pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{36}}
+> 	\pgftext[center, base, at={\pgfpoint{341.777pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{37}}
+> 	\pgftext[center, base, at={\pgfpoint{370.384pt}{116.178pt}}]{\sffamily\fontsize{9}{0}\selectfont{38}}
+> \end{scope}
+>
+> % My stuff -- show the bb
+> \path[draw=black] (current bounding box.north west) rectangle (current bounding box.south east);
+> \end{tikzpicture}
+> \end{document}
+> </pre>
+:::
+
+Sure, just insert `\useasboundingbox <some rectangle>` after `\begin{tikzpicture}`.  That can make the bounding box surround only what you want.  Look in the PGF manual for that command and you can see it in action.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6342/tikz-cropping-the-bounding-box/6343#6343) on TeX Stack Exchange, 2010-12-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

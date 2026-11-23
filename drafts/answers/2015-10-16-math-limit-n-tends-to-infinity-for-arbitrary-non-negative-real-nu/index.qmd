@@ -1,0 +1,57 @@
+---
+title: limit n tends to infinity for arbitrary non negative real numbers
+date: '2015-10-16'
+description: Here is a version with L'Hôpital's rule. It's not quite as strong (logically) as the other answers, as we'll explain.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1483178
+se-link: https://math.stackexchange.com/questions/1483083/limit-n-tends-to-infinity-for-arbitrary-non-negative-real-numbers/1483178#1483178
+se-score: 0
+se-accepted: false
+se-tags:
+- limits
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[limit n tends to infinity for arbitrary non negative real numbers](https://math.stackexchange.com/questions/1483083/limit-n-tends-to-infinity-for-arbitrary-non-negative-real-numbers), asked by [mea43](https://math.stackexchange.com/users/266593/mea43) on Mathematics Stack Exchange (2015-10-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: 0NkL6.png
+> I tried evaluating the limit taking log and afterwards i couldnt proceed further. I tried solving using numbers instead of variables and did not got any relation from that and help in this matter is appreciated
+:::
+
+Here is a version with L'Hôpital's rule.  It's not quite as strong (logically) as the other answers, as we'll explain.
+
+Assume that $a_1 \leq a_2 \leq \dots \leq a_k$.  Starting from
+$$L = \lim_{n\to\infty} \left(a_1^n + a_2^n + \dots + a_k^n\right)^{1/n}$$
+we know
+$$\begin{split}
+    \ln L &= \ln \lim_{n\to\infty} \left(a_1^n + a_2^n + \dots + a_k^n\right)^{1/n} \\
+    &= \lim_{n\to\infty}\ln\left(a_1^n + a_2^n + \dots + a_k^n\right)^{1/n} \\
+    &= \lim_{n\to\infty}\frac{\ln\left(a_1^n + a_2^n + \dots + a_k^n\right)}{n}\\
+    &\stackrel{\text{H}}{=} \lim_{n\to\infty}\frac{(\ln a_1) a_1^n + (\ln a_2)a_2^n + \dots + (\ln a_k)a_k^n}{a_1^n + a_2^n + \dots + a_k^n} \\
+    &= \lim_{n\to\infty} \frac{a_k^n}{a_k^n}\cdot \frac{(\ln a_1) \left(\frac{a_1}{a_k}\right)^n + (\ln a_2)\left(\frac{a_2}{a_k}\right)^n + \dots + (\ln a_{k-1})\left(\frac{a_{k-1}}{a_k}\right)^n+ \ln a_k}{\left(\frac{a_1}{a_k}\right)^n + \left(\frac{a_2}{a_k}\right)^n + \dots + \left(\frac{a_{k-1}}{a_k}\right)^n+1} \\
+&= 1 \cdot \frac{0 + 0 + \dots + 0 + \ln a_k}{0 + 0 + \dots + 0 + 1} = \ln a_k
+\end{split}$$
+(“H” denotes the invocation of L'Hôpital's rule).  Therefore $L=a_k$.
+
+Remarks:
+
+ 1. Limit proofs with L'Hôpital's rule are “backwards” in the sense that we don't know that the limit $L$ exists until we get to the end.
+
+ 2. To verify the power sequence is indeterminate requires a check of cases.  If $a_k > 1$ then the base $a_1^n + \dots + a_k^n$ tends to $\infty$ so the limit is of the indeterminate form $\infty^0$.  If $a_k < 1$ then the base $a_1^n + \dots + a_k^n$ tends to $0$ so the limit is of the indeterminate form $0^0$.  If $a_k =1$, the base $a_1^n + \dots + a_k^n$ tends to $1$.  This form ($1^0$) is not indeterminate; the limit is $1$, but that requires a separate proof without L'Hôpital's rule.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1483083/limit-n-tends-to-infinity-for-arbitrary-non-negative-real-numbers/1483178#1483178) on Mathematics Stack Exchange, 2015-10-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

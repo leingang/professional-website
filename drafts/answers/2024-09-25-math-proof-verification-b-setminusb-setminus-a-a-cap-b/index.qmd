@@ -1,0 +1,43 @@
+---
+title: 'Proof verification: $B\setminus(B\setminus A) = A\cap B$'
+date: '2024-09-25'
+description: Your proof looks valid to me. The problem I have with proofs written this way is they exchange one set of symbols (set theory operations) with another (boolean…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4976363
+se-link: https://math.stackexchange.com/questions/4976278/proof-verification-b-setminusb-setminus-a-a-cap-b/4976363#4976363
+se-score: 0
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof verification: $B\setminus(B\setminus A) = A\cap B$](https://math.stackexchange.com/questions/4976278/proof-verification-b-setminusb-setminus-a-a-cap-b), asked by user1239475 on Mathematics Stack Exchange (2024-09-25; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Here is my proof:
+>
+> Let $x\in B\setminus(B\setminus A).$ By repeated use of definitions, we get $$x\in B \wedge (x\notin B\setminus A) \iff x\in B \wedge\neg(x\in B\setminus A) \iff  x\in B \wedge\neg(x\in B\wedge x\notin a).$$ By DeMorgan’s law and the distributive law, $$x\in B \wedge (x\notin B \vee x\in A)\iff (x\in B\wedge x\notin B)\vee(x\in B \wedge x\in A).$$ Since $(x\in B\wedge x\notin B)$ is a contradiction, we have $\neg(x\in B\wedge x\notin B)$. By disjunctive syllogism,
+>
+> $$(x\in B \wedge x\in A)\iff x\in A\cap B. \blacksquare$$
+> Since I am studying pure math on my own, (I have started with real analysis…) I would like to hear any feedback.
+:::
+
+Your proof looks valid to me. The problem I have with proofs written this way is they exchange one set of symbols (set theory operations) with another (boolean algebra operations). And in doing so they become almost too dense to read. I prefer to write them out more or less in English, as in:
+
+Suppose $x \in B \setminus (B \setminus A)$. Then $x \in B$ and $x \notin B \setminus A$. If $x \notin A$, then the fact that $x \in B$ would give us that $x \notin B \setminus A$, contradicting what we know. So we must have that $x \in A$. Since $x \in B$ too, we know $x \in A \cap B$. Therefore $B\setminus (B \setminus A) \subseteq A \cap B$.
+
+Now suppose that $x \in A \cap B$. Then $x \in A$ and $x \in B$. Because $x \in B$ and $x \in A$, we know $x \notin B \setminus A$. Since $x \in B$ and $x \notin B \setminus A$, we know $x \in B\setminus (B \setminus A)$. Therefore $A \cap B \subseteq B\setminus (B \setminus A)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4976278/proof-verification-b-setminusb-setminus-a-a-cap-b/4976363#4976363) on Mathematics Stack Exchange, 2024-09-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

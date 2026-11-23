@@ -1,0 +1,65 @@
+---
+title: Question on foiling with vectors?
+date: '2017-09-27'
+description: Sure, any bilinear form $\left<-,-\right>$ obeys FOIL (For those who haven't taken algebra in the US, this stands for first, outer, inner, last). Given vectors…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2446895
+se-link: https://math.stackexchange.com/questions/2446854/question-on-foiling-with-vectors/2446895#2446895
+se-score: 3
+se-accepted: false
+se-tags:
+- linear-algebra
+- statistics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question on foiling with vectors?](https://math.stackexchange.com/questions/2446854/question-on-foiling-with-vectors), asked by [Nicklovn](https://math.stackexchange.com/users/240697/nicklovn) on Mathematics Stack Exchange (2017-09-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Show that
+> $$\frac1{f}\sum_{i=1}^n(\mathbf{x}_i-\bar{\mathbf{x}})(\mathbf{x}_i-\bar{\mathbf{x}})'=\frac1{f}\sum_{i=1}^n(\mathbf{x}_i\mathbf{x}_i'-n\bar{\mathbf{x}}\bar {\mathbf{x}}').$$
+>
+> I need this to understand an example in my textbook on Hotelling's $T^2$ but I can't figure out how they get this result. I imagine it's quite trivial but I can't seem to figure it out..
+>
+> Edit, my textbook is using this result to simplify computation. Otherwise you need to sum a lot of vectors :/
+:::
+
+Sure, any bilinear form $\left<-,-\right>$ obeys FOIL (For those who haven't taken algebra in the US, this stands for *first, outer, inner, last*).
+Given vectors $a$, $b$, $c$, and $d$:
+$$\begin{align*}
+\left<a+b,c+d\right> &= \left<a,c+d\right> + \left<b,c+d\right> \\
+    &= \left<a,c\right> + \left<a,d\right> + \left<b,c\right> + \left<b,d\right> \\
+\end{align*}$$
+If, in addition, the form is symmetric, you can combine terms.  For instance,
+$$\begin{align*}
+    \left<x-y,x-y\right> &= \left<x,x\right> - \left<x,y\right> - \left<y,x\right> + \left<y,y\right>
+\\  &= \left<x,x\right> - 2 \left<x,y\right> + \left<y,y\right>
+\end{align*}$$
+
+For the identity you're working on, the key is the identity $\sum_{j=1}^n \mathbf{x}_j = n \bar{\mathbf {x}}$.  We have
+$$\begin{align*}
+    \sum_{i=1}^n(\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})'
+    &= \sum_{i=1}^n\left(\mathbf{x}_i\mathbf{x}_i' - \mathbf{x}_i\bar{\mathbf{x}}' - \bar{\mathbf{x}}\mathbf{x}_i' + \bar{\mathbf{x}}\bar{\mathbf{x}}'\right)
+  \\&= \sum_{i=1}^n\mathbf{x}_i\mathbf{x}_i' - \sum_{i=1}^n\mathbf{x}_i \bar{\mathbf{x}}' - \sum_{i=1}^n \bar{\mathbf{x}}\mathbf{x}_i' + n \bar{\mathbf{x}}\bar{\mathbf{x}}'
+\end{align*}$$
+By the distributive property,
+$$\begin{align*}
+   \sum_{i=1}^n\mathbf{x}_i \bar{\mathbf{x}}'
+  &=\left(\sum_{i=1}^n\mathbf{x}_i\right) \bar{\mathbf{x}}' = n \bar{\mathbf {x}}\bar{\mathbf{x}}' \\
+\sum_{i=1}^n \bar{\mathbf{x}}\mathbf{x}_i'
+&= \bar{\mathbf{x}}\left(\sum_{i=1}^n \mathbf{x}_i'\right)
+ = \bar{\mathbf{x}}(n\bar{\mathbf{x}}') = n \bar{\mathbf{x}}\bar{\mathbf{x}}'
+\end{align*}$$
+So the middle two terms combine with the last, and the result is proved.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2446854/question-on-foiling-with-vectors/2446895#2446895) on Mathematics Stack Exchange, 2017-09-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

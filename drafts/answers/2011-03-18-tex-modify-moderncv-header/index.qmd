@@ -1,0 +1,83 @@
+---
+title: Modify moderncv header
+date: '2011-03-18'
+description: 'You just need to change the \maketitle command:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 13786
+se-link: https://tex.stackexchange.com/questions/13785/modify-moderncv-header/13786#13786
+se-score: 8
+se-accepted: false
+se-tags:
+- moderncv
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Modify moderncv header](https://tex.stackexchange.com/questions/13785/modify-moderncv-header), asked by user4306 on TeX Stack Exchange (2011-03-18; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is there a possibility to change the order of photo and name in the `moderncv` class using `\moderncvtheme[blue]{casual}`?
+>
+> Right now it looks like this:
+>
+> <PRE>
+> PHOTOPHOTO
+> PHOTOPHOTO
+> PHOTOPHOTO
+> PHOTOPHOTO
+> PHOTOPHOTO                      FirstName LastName
+> ________________________________________________________________________________________</PRE> 
+>
+>
+> But actually I want it to look like this:
+>
+> <PRE>
+>                                         PHOTOPHOTO
+>                                         PHOTOPHOTO
+>                                         PHOTOPHOTO
+>                                         PHOTOPHOTO
+> FirstName LastName                      PHOTOPHOTO
+> ________________________________________________________________________________________</PRE> 
+>
+>
+> How can I do that?
+:::
+
+You just need to change the `\maketitle` command:
+
+```latex
+% reverse the name and photo
+\makeatletter
+% maketitle
+\renewcommand*{\maketitle}{%
+  {%
+    {\firstnamestyle{\@firstname}~\familynamestyle{\@familyname}}}%
+    \hfill%
+    \ifthenelse{\isundefined{\@photo}}%
+      {}%
+      {{\color{firstnamecolor}\framebox{\includegraphics[width=\@photowidth]{\@photo}}}\\[-.35em]}%
+    {\color{firstnamecolor}\rule{\textwidth}{.25ex}\\[2.5em]}%
+% optional quote
+  \ifthenelse{\isundefined{\@quote}}%
+    {}%
+    {{\centering{}\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+  \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle
+\makeatother
+```
+
+The hardest part is determining where to put this block of code.  The `\maketitle` command is defined not in `moderncv.cls`, but in the theme (package) file such as `moderncvthemecasual.sty`.  Moreover, the implementation of `\moderncvtheme` makes sure that this theme package is not loaded until the *end* of the preamble.  
+
+So if you want to do this once, put it in your cv TeX file, but it has to be expanded *after `\begin{document}` and before `\maketitle`*.  The best way to do this is to surround the block above with `\AtBeginDocument{...}` in the preamble, after `\moderncvtheme[blue]{casual}`.
+
+If you want to do this more than once, you could copy the file `moderncvthemecasual.sty` and add a package option.  If this is beyond your expertise you may want to email the developers and see if they'll consider it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13785/modify-moderncv-header/13786#13786) on TeX Stack Exchange, 2011-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

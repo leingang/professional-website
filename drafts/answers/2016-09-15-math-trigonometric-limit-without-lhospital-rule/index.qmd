@@ -1,0 +1,48 @@
+---
+title: Trigonometric limit without L'Hospital rule
+date: '2016-09-15'
+description: First you want to show that $$\lim{y\to 0} \frac{\arctan y}{y} = 1$$ To do this, I would let $\theta = \arctan y$. Then $\theta \to 0$ as $y \to 0$, so…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1927721
+se-link: https://math.stackexchange.com/questions/1927706/trigonometric-limit-without-lhospital-rule/1927721#1927721
+se-score: 1
+se-accepted: true
+se-tags:
+- limits
+- trigonometry
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trigonometric limit without L'Hospital rule](https://math.stackexchange.com/questions/1927706/trigonometric-limit-without-lhospital-rule), asked by [user369151](https://math.stackexchange.com/users/369151/user369151) on Mathematics Stack Exchange (2016-09-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am having some problems for solving the following limit without L'Hospital rule or series:
+> $$\lim_{x\rightarrow 0}\frac{\arctan{2x}}{\sin{3x}}$$
+> Thank you very much for your help!
+:::
+
+First you want to show that 
+$$\lim_{y\to 0} \frac{\arctan y}{y} = 1$$
+To do this, I would let $\theta = \arctan y$.  Then $\theta \to 0$ as $y \to 0$, so
+$$\lim_{y\to 0} \frac{\arctan y}{y}
+    = \lim_{\theta\to 0} \frac{\theta}{\tan \theta}
+    = \lim_{\theta\to 0} \frac{\theta}{\sin \theta}\cdot \cos\theta
+    = 1 \cdot 1 = 1$$
+(the limit $\lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1$ is one of the basic limits you can usually invoke without proof).
+
+Now
+$$\frac{\arctan 2x}{\sin 3x} = \frac{\dfrac{\arctan 2x}{2x}}{\dfrac{\sin 3x}{3x}}\cdot \frac{2}{3}$$
+Can you take it from there?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1927706/trigonometric-limit-without-lhospital-rule/1927721#1927721) on Mathematics Stack Exchange, 2016-09-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

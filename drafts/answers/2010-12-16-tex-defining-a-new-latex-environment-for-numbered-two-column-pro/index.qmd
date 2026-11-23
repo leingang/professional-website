@@ -1,0 +1,108 @@
+---
+title: Defining a new LaTeX environment for numbered two-column proofs
+date: '2010-12-16'
+description: You could also adapt listliketab.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7197
+se-link: https://tex.stackexchange.com/questions/7192/defining-a-new-latex-environment-for-numbered-two-column-proofs/7197#7197
+se-score: 0
+se-accepted: false
+se-tags:
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Defining a new LaTeX environment for numbered two-column proofs](https://tex.stackexchange.com/questions/7192/defining-a-new-latex-environment-for-numbered-two-column-proofs), asked by [maths](https://tex.stackexchange.com/users/2533/maths) on TeX Stack Exchange (2010-12-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to write up problem sets for my programming languages class, and I want to create an environment for a certain style of proof.  Proofs in this style will have two columns, with numbering on the left (starting at 1), like this:
+>
+> ```latex
+> \begin{tabular}{rc|l}  
+> (1) & Prop A & Justification \\  
+> (2) & Prop B & Justification \\  
+> (3) & Prop C & From (1) and (2)
+> \end{tabular}
+> ```
+>
+> I would like the numbering to happen automatically, without my having to add a column (like eqnarray does, with numbering on the right), and in perfect world, I would like to be able to use references and labels to refer to conclusions, so that if I insert steps or move them around I won't have to renumber everything.  Usage would hopefully look something like this:
+>
+> ```latex
+> \begin{twoproof}
+> Prop A & Justification \label{A} \\
+> Prop B & Justification \label{B} \\
+> Prop C & From \ref{A} and \ref{B}
+> \end{twoproof}
+> ```
+>
+> My very simplistic first attempt was this:
+>
+> ```latex
+> \newcounter{proofc}
+> \newenvironment{twoproof}{  
+>   \tabular{@{\stepcounter{proof} \arabic{proofc}}c|l}  
+> }{  
+>   \endtabular  
+> }
+> ```
+>
+> But not only will this not let me use `\ref` (I think), but whenever I try to use this environment I get this error:
+>
+> ```latex
+> ! Missing \endcsname inserted.  
+> <to be read again>   
+>                \csname\endcsname  
+> l.79 \begin{twoproof}
+> ```
+>
+> I tried running `\show\eqnarray` to see if I could use that as a template, but didn't understand the output at all, and I'm not sure where to look for enlightenment.
+>
+> I will appreciate any help or direction that anyone might be able to provide!
+>
+> * * *
+>
+> **Edit2:**: I figured this issue out.  I tried to get clever and wrap my `twoproof` environments in `\begin{displaymath}` and `\end{displaymath}`, and I guess this environment doesn't play well with amstex, because when I changed the way I was defining `twoproof` and got rid of the `displaymath`, everything started working again.
+>
+> **Edit**: While Willie Wong's answer (thankfully) solved my problem with with the missing `endcsname`, when I try to run this example:
+>
+> ```latex
+> \begin{twoproof}
+> \label{step1} Prop A & Justification \\
+> \label{step2} Prop B & Justification \\
+> Prop C & Because \ref{step1} and \ref{step2}
+> \end{twoproof}
+> ```
+>
+> I run into this error:
+>
+> ```latex
+> Package amsmath Error: Multiple \label's: label 'step1' will be lost.
+>
+> See the amsmath package documentation for explanation.
+> Type  H <return>  for immediate help.
+>  ...                                              
+>
+> l.56 \label
+>            {step2} Prop B & Justification \\
+> ```
+>
+> If anyone has any ideas about what might be causing this, any help will be greatly appreciated.
+>
+> Also, as long as I'm editing the question, does anyone know how to right-justify the numbering in the table?  It's not a big deal, but I think it might look a little nicer.  I've thought very briefly about setting up a custom `\halign`, but I don't think it's worth the effort.  If there's a (comparatively) easy solution, though, I'd love to hear it.
+>
+> Thanks again!
+:::
+
+You could also adapt [`listliketab`](http://ctan.org/pkg/listliketab).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7192/defining-a-new-latex-environment-for-numbered-two-column-proofs/7197#7197) on TeX Stack Exchange, 2010-12-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

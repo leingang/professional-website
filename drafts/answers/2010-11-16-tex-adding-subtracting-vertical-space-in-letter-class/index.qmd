@@ -1,0 +1,61 @@
+---
+title: Adding/subtracting vertical space in »letter« class
+date: '2010-11-16'
+description: Use the source, Luke. The letter.cls file is actually not that hard to read compared to article.cls :-)
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5488
+se-link: https://tex.stackexchange.com/questions/5475/adding-subtracting-vertical-space-in-letter-class/5488#5488
+se-score: 14
+se-accepted: true
+se-tags:
+- vertical-alignment
+- letters
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Adding/subtracting vertical space in »letter« class](https://tex.stackexchange.com/questions/5475/adding-subtracting-vertical-space-in-letter-class), asked by [Kristen](https://tex.stackexchange.com/users/1785/kristen) on TeX Stack Exchange (2010-11-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Is there a way to move the to-address up (or, respectively, the date down) in the »letter« document class?  With the to-address on the left and date on the right, I wish for the vertical alignment of the top row of the to-address to be the same as that of the date.  Does anyone know a way of doing this?
+:::
+
+Use the source, Luke.  The `letter.cls` file is actually not that hard to read compared to `article.cls` :-)
+
+If you redefine `\opening` you should be able to get what you want:
+
+```latex
+\makeatletter
+\renewcommand*{\opening}[1]{%
+%  \ifx\@empty\fromaddress
+%    \thispagestyle{firstpage}%
+%      {\raggedleft\@date\par}%
+%  \else  % home address
+%    \thispagestyle{empty}%
+%    {\raggedleft\begin{tabular}{l@{}}\ignorespaces
+%      \fromaddress \\*[2\parskip]%
+%      \@date \end{tabular}\par}%
+%  \fi
+%  \vspace{2\parskip}%
+%  {\raggedright \toname \\ \toaddress \par}%
+  \begin{minipage}[t]{0.5\textwidth}%
+    \toname \\ 
+    \toaddress
+  \end{minipage}\hfill\@date\par
+  \vspace{2\parskip}%
+  #1\par\nobreak}
+\makeatother
+```
+
+The commented-out part is a switch based on whether a from-address is given.  I'm assuming you aren't using a from-address since otherwise you would have specified where you wanted it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5475/adding-subtracting-vertical-space-in-letter-class/5488#5488) on TeX Stack Exchange, 2010-11-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

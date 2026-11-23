@@ -1,0 +1,87 @@
+---
+title: Help understanding distance traveled for a slice of a sphere in calculating total "work" to remove water?
+date: '2017-05-07'
+description: Nice drawing and showing of your work so far!
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2269893
+se-link: https://math.stackexchange.com/questions/2269883/help-understanding-distance-traveled-for-a-slice-of-a-sphere-in-calculating-tota/2269893#2269893
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help understanding distance traveled for a slice of a sphere in calculating total "work" to remove water?](https://math.stackexchange.com/questions/2269883/help-understanding-distance-traveled-for-a-slice-of-a-sphere-in-calculating-tota), asked by [yre](https://math.stackexchange.com/users/428730/yre) on Mathematics Stack Exchange (2017-05-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Q:
+> Suppose a spherical tank is full of water, calculate the work required to drain it out completely, if the radius 3ft and there is a spout of 1ft. (water density $62.5 Ilbs/ft^{3}$)
+>
+> Solution
+>
+> picture of the situation:
+>
+>
+>
+> [![(get a generic cross-sectional slice)][q-1]][q-1]
+>
+> $V_{slice} = π·r^{2}·h$
+>
+> $V_{slice} = π·r^{2}·dy$
+>
+> So, now I have to find out what 'r' is.
+> 'r' is the same as the isolated 'x' of the equation of a circle.
+> So,
+>
+>
+> $x^{2} + y^{2} = 9$
+>
+> $x = +/-\sqrt{9 - y^{2}}$
+>
+> so,
+>
+> $V_{slice} = π·(9 - y^{2})·dy$
+>
+>
+> and for force:
+>
+> $F_{slice} = (62.5)·π·(9 - y^{2})$
+>
+> And now displacement, which I think I have wrong.
+>
+> $displacement = (7 - y)$
+>
+> Because the slice would have to travel from the bottom of -3 to 0 which is 3, and from o to +3 which is 3, so a distance of 6, +1 for the spout so 7 altogether. I was told it's suppose to be 4 - y but I have no idea why this is.
+>
+> For the limits of intergation we only integrate where there is water, so limits of integration would range from 0 to 6.
+>
+> So altogether:
+> $W = \displaystyle\int_{0}^{6} (62.5)·π·(9-y^{2})·(7 - y)dy$
+>
+> Why is the displacement/distance wrong?
+>
+> Thank you
+>
+>
+>   [q-1]: I0FyS.png
+:::
+
+Nice drawing and showing of your work so far!  
+
+When you're measuring displacement, find the *coordinates* of the initial and final position and subtract them.  You chose coordinates to put $y=0$ in the middle of the tank; that's a good idea because that's the real symmetry in the problem—it makes the equation for the tank simple.  The bottom of the tank is at position $y=-3$, and the top of the tank is at position $y=3$.  The top of the spout is at position $y=4$.  So the slice at position $y$, in moving to position $4$, travels a distance $4-y$.
+
+You can check this against some of what we just pointed out.  The water at the bottom of the tank needs to move 7 ft, just like you said.  And $4-(-3) = 7$.  The water at the top of the tank only moves 1 ft, and $4-3 = 1$.  The water in the middle of the tank moves to the top of the tank (3 ft) , then another foot of spout, and $4-0 = 4$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2269883/help-understanding-distance-traveled-for-a-slice-of-a-sphere-in-calculating-tota/2269893#2269893) on Mathematics Stack Exchange, 2017-05-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

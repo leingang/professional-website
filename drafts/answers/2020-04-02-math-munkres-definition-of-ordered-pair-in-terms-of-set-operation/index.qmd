@@ -1,0 +1,37 @@
+---
+title: Munkres definition of ordered pair in terms of set operations
+date: '2020-04-02'
+description: There were several attempts to codify ordered pairs in pure set-theoretic terms. This is Kurawtowski's definition from 1921. If $P = \{\{a\},\{a,b\}\}$, then…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3606697
+se-link: https://math.stackexchange.com/questions/3606666/munkres-definition-of-ordered-pair-in-terms-of-set-operations/3606697#3606697
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Munkres definition of ordered pair in terms of set operations](https://math.stackexchange.com/questions/3606666/munkres-definition-of-ordered-pair-in-terms-of-set-operations), asked by [John P.](https://math.stackexchange.com/users/749683/john-p) on Mathematics Stack Exchange (2020-04-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For sets $A$ and $B$, Munkres defines the Cartesian product in the form
+> $$A \times B = \{(a,b) \mid a \in A, b \in B\}.$$ 
+> Then, he defines ordered pairs as
+> $$(a,b) = \{\{a\}, \{a,b\} \}.$$
+> I was hoping someone could provide some intuition to this definition. I always thought of an ordered pair as some element of the Cartesian plane, not as a set of sets. Is this is simply a definitional thing, this would be fine. But I take it there is some mapping back to intuition that I'm missing.
+:::
+
+There were several attempts to codify ordered pairs in pure set-theoretic terms.  This is Kurawtowski's definition from 1921.  If $P = \{\{a\},\{a,b\}\}$, then $a$ is the unique $x$ satisfying $$\forall A \in P, x \in A$$  Furthermore, $b$ is the unique $y$ satisfying $$(\exists A \in P, y \in A) \wedge (\forall A_1,A_2 \in P, y \in A_1\cap A_2 \implies A_1 = A_2)$$ For more, you can read [Defining the ordered pair using set theory](https://en.wikipedia.org/wiki/Ordered_pair#Defining_the_ordered_pair_using_set_theory) on Wikipedia.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3606666/munkres-definition-of-ordered-pair-in-terms-of-set-operations/3606697#3606697) on Mathematics Stack Exchange, 2020-04-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

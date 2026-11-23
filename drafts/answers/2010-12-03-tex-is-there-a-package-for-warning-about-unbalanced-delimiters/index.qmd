@@ -1,0 +1,40 @@
+---
+title: Is there a package for warning about unbalanced delimiters?
+date: '2010-12-03'
+description: Most editors will provide the functionality of matching delimiters. And yes, a simple script could tell if your delimiters were balanced, and find delimiters…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6473
+se-link: https://tex.stackexchange.com/questions/6470/is-there-a-package-for-warning-about-unbalanced-delimiters/6473#6473
+se-score: 4
+se-accepted: false
+se-tags:
+- packages
+- delimiters
+- proofreading
+- syntax-checker
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a package for warning about unbalanced delimiters?](https://tex.stackexchange.com/questions/6470/is-there-a-package-for-warning-about-unbalanced-delimiters), asked by [uckelman](https://tex.stackexchange.com/users/1585/uckelman) on TeX Stack Exchange (2010-12-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm copy-editing a rather lengthy set theory book. One thing I'd like to check systematically is whether all left-right unambiguous delimiters (parentheses brackets curly, square and angle) are balanced.
+>
+> I could write a Perl script to check for this, but was thinking that there might already be a LaTeX package which warns you about unbalanced delimiters. Is there such a thing?
+:::
+
+Most editors will provide the functionality of *matching* delimiters.  And yes, a simple script could tell if your delimiters were balanced, and find delimiters which were not matched.  But it won't be able to correct unmatched delimiters—only the user can say what he means.
+
+When I'm writing I'm compiling every few minutes to make sure that the copy is what I want.  If you're talking about matching delimiters related to TeX input, TeX will usually complain because your unintended mismatch will cause an error.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6470/is-there-a-package-for-warning-about-unbalanced-delimiters/6473#6473) on TeX Stack Exchange, 2010-12-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

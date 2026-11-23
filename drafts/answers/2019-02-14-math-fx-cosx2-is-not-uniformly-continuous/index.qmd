@@ -1,0 +1,64 @@
+---
+title: f(x)=cos(x^2) is not uniformly continuous
+date: '2019-02-14'
+description: 'Think about the definition of uniform continuity:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3112960
+se-link: https://math.stackexchange.com/questions/3112938/fx-cosx2-is-not-uniformly-continuous/3112960#3112960
+se-score: 2
+se-accepted: false
+se-tags:
+- uniform-continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[f(x)=cos(x^2) is not uniformly continuous](https://math.stackexchange.com/questions/3112938/fx-cosx2-is-not-uniformly-continuous), asked by [Averi Knutson](https://math.stackexchange.com/users/642228/averi-knutson) on Mathematics Stack Exchange (2019-02-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Prove that $f(x)=cos(x^2)$ is not uniformly continuous on the set R.
+>
+> I started out by solving $cos(x_k^2)$=1⟹cosX=1 ⟹ $X=2_k\pi$
+> $x_k^2$=$2k\pi$=>$x_k$⟹$\sqrt(2k\pi)$ -> goes to infinity
+>
+> $cost_k^2$=-1=>$t_k^2$=$k\pi$⟹$t_k$=$\sqrt(k\pi)$ goes to 0 as k goes to infinity
+>
+> 1. show difference of $\|x_k-t_k|$->0 but $|f(x_k)-f(t_k)|$=2≠0.
+>
+> $\sqrt(2k\pi)$-$\sqrt(k\pi)$->0 when k->infinity.
+>
+> Then we are told to conjugate (a+b)(a-b)=$a^2-b^2$.
+>
+> So I got $\frac{k\pi}{\sqrt(2k\pi)+\sqrt(k\pi)}$
+>
+> This is where I am confused on how to relate this back to showing it is not uniformly continuous.
+:::
+
+Think about the definition of uniform continuity:
+
+> $f$ is **uniformly continuous** if *for every*  $\epsilon > 0$ *there exists* a $\delta > 0$ such that *for all* $x$ and $y$, if $|x-y| < \delta$, then $|f(x) - f(y)| < \epsilon$.
+
+When you negate such a statement, the quantifiers flip.  So:
+
+> $f$ is **not** uniformly continuous if *there exists* an $\epsilon > 0$ such that *for all* $\delta > 0$ *there exist* $x$ and $y$ such that $|x-y| < \delta$, but $|f(x) - f(y)| \geq \epsilon$.
+
+Now look at a graph of the function:
+
+[![graph of y=cos(^2)][1]][1]
+
+You see that the function oscillates between $1$ and $-1$, but at an increasing frequency the further away from zero you go.  That's because $f'(x) = 2x \sin(x^2)$.
+
+Thinking about it another way, the horizontal distance between each consecutive peak and valley shrinks the larger $x$ gets, and in fact tends to $0$ as $x \to \infty$.  So we can find points $x$ and $y$ arbitrarily close together such that $f(x) = 1$ and $f(y) = -1$.  That is what you're trying to find with all your $x_k$'s and $t_k$'s.
+
+  [1]: 4XpcB.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3112938/fx-cosx2-is-not-uniformly-continuous/3112960#3112960) on Mathematics Stack Exchange, 2019-02-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

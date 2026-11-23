@@ -1,0 +1,75 @@
+---
+title: Don't understand steps in integration of an ODE
+date: '2017-02-02'
+description: Let's look at these two solutions line by line.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2126258
+se-link: https://math.stackexchange.com/questions/2125616/dont-understand-steps-in-integration-of-an-ode/2126258#2126258
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Don't understand steps in integration of an ODE](https://math.stackexchange.com/questions/2125616/dont-understand-steps-in-integration-of-an-ode), asked by [JDoeDoe](https://math.stackexchange.com/users/342995/jdoedoe) on Mathematics Stack Exchange (2017-02-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need help understand this solution. I don't grasp the steps in the integration and have never seen this approach before. [I thought a non-homogeneous 2nd order linear equations had a general solution $y=y_p(x)+y_h(x)$][q-1].
+>
+> >$$\begin{cases}
+> -u''(x)=f(x), \quad 0<x<1 \\
+> u(0)=u(1)=0.
+> \end{cases}$$
+> First integration:
+> $$-u'(x)=\int_0^xf(y)\mathrm{d}y + C_1$$
+> Second integration: 
+> $$-u(x)=\int_0^x \int_0^zf(y)\mathrm{d}y\mathrm{d}z+C_1x+C_2$$
+>
+> How is the first integration done? Why is there a integration constant when it's not a indefinite integral? And why are the bounds not between $0$ and $1$?
+>
+> I thought I should solve it like:
+> $$-u'(x)=\int f(x)\mathrm{d}x=F(x)+C_1$$
+> and then
+> $$-u(x)=\int (F(x)+C_1) \mathrm{d}x= F(x)x+C_1x+C_2$$
+>   [q-1]: http://www.sosmath.com/diffeq/second/nonhomo/nonhomo.html
+:::
+
+Let's look at these two solutions line by line.
+
+Quoted solution:
+>> First integration: $$-u'(x)=\int_0^xf(y)\mathrm{d}y + C_1$$
+
+Your solution:
+> $$-u'(x)=\int f(x)\mathrm{d}x=F(x)+C_1$$
+
+These are the same statement.  The Fundamental Theorem of Calculus tells us that, if $f$ is continuous, then $g(x) = \int_0^x f(y)\,dy$ is an antiderivative/indefinite integral of $f$.
+
+Quoted solution:
+>> Second integration:
+>> $$-u(x)=\int_0^x \int_0^zf(y)\mathrm{d}y\mathrm{d}z+C_1x+C_2$$
+
+Your solution:
+> $$-u(x)=\int (F(x)+C_1) \mathrm{d}x= F(x)x+C_1x+C_2$$
+
+Not quite.  You integrated a function of $x$ by multiplying it by $x$.  That typically only works for constant functions.  For instance, if $f(x) = \cos x$, then $F(x) = \sin x$, and the integral of $\sin x$ is not $x \sin x$.
+
+The quoted solution is applying the same FTC principle again.  To find an antiderivative of $F(x) + C_1$, we integrate from $0$ to $x$:
+$$\begin{align*}
+\int(F(x) + C_1)\,dx &= \int_0^x (F(z) + C_1) \,dz + C_2  \\
+&= \int_0^x \int_0^z f(y)\,dy\,dx + \left.C_1 z\right|^x_0 + C_2 \\
+&= \int_0^x \int_0^z f(y)\,dy\,dx + C_1 x + C_2 \\
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2125616/dont-understand-steps-in-integration-of-an-ode/2126258#2126258) on Mathematics Stack Exchange, 2017-02-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

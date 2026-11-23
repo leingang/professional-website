@@ -1,0 +1,41 @@
+---
+title: Example 1.30 from Introduction to Mathematical Thinking by John D'Angelo
+date: '2018-01-31'
+description: Mathematical thinking doesn't always come from an algorithm. Also, you shouldn't assume that just because the author wrote $(1-|x|)^2 \geq 0$, it was the first…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2628988
+se-link: https://math.stackexchange.com/questions/2628913/example-1-30-from-introduction-to-mathematical-thinking-by-john-dangelo/2628988#2628988
+se-score: 1
+se-accepted: false
+se-tags:
+- quadratics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Example 1.30 from Introduction to Mathematical Thinking by John D'Angelo](https://math.stackexchange.com/questions/2628913/example-1-30-from-introduction-to-mathematical-thinking-by-john-dangelo), asked by [Bernalillo](https://math.stackexchange.com/users/509355/bernalillo) on Mathematics Stack Exchange (2018-01-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+> I understand the example. However, I am curious how the author knows to start the argument with $$(1-\lvert x\rvert)^2\ge0.$$ What algorithm does he follow that begins with this assumption?
+>
+>
+>
+>   [q-1]: yhIlK.jpg
+:::
+
+Mathematical thinking doesn't always come from an algorithm.  Also, you shouldn't assume that just because the author wrote $(1-|x|)^2 \geq 0$, it was the first thing that popped into his head.  When you write a proof, often it comes together in bits and pieces.  You might start at the beginning and see where your guesses take you, or you might jump to the end and see what it takes to get there.  
+
+But here's a rule of thumb which the author may be relying on: it's been said that all inequalities can be derived from the fact that for all real $a$, $a^2 \geq 0$.   The author has used this fact, substituting $a = 1-|x|$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2628913/example-1-30-from-introduction-to-mathematical-thinking-by-john-dangelo/2628988#2628988) on Mathematics Stack Exchange, 2018-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

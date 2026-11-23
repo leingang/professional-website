@@ -1,0 +1,44 @@
+---
+title: Computing the Path Integral of a Complex Function
+date: '2020-04-15'
+description: According to Cauchy's integral theorem, this is entirely expected. It says that if $f \colon \mathbb{C} \to \mathbb{C}$ is holomorphic, and $\gamma$ is a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3627155
+se-link: https://math.stackexchange.com/questions/3627142/computing-the-path-integral-of-a-complex-function/3627155#3627155
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+- complex-analysis
+- path-connected
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Computing the Path Integral of a Complex Function](https://math.stackexchange.com/questions/3627142/computing-the-path-integral-of-a-complex-function), asked by [guts](https://math.stackexchange.com/users/543210/guts) on Mathematics Stack Exchange (2020-04-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My question is given as:
+>
+>  $\gamma \ : \ [0,\pi] \rightarrow \mathbb{C}$ for the function $\gamma(t)=2e^{i6t}$, compute the path integral $\int_\gamma z^5 dz$
+>
+> My attempt so far is $$\begin{align}\int_\gamma z^5 dz & = \int_0^\pi \gamma(t)^5 \gamma'(t) dt \\ &= \int_0^\pi (2e^{i6t})^5 (12ie^{i6t})dt \\ & = 384i \int^\pi_0 e^{36it} dt \\ & = 384i \bigg[\frac{-1}{36}ie^{36it}\bigg]^\pi_0 \\ & = 384i \bigg(\frac{-1}{36}i--\frac{1}{36}i \bigg) \\ & = 0
+> \end{align}$$
+>
+> I don't believe this is correct because I got 0, could anyone clarify if what I have done is correct?
+>
+> Help is greatly appreciated.
+:::
+
+According to [Cauchy's integral theorem](https://en.wikipedia.org/wiki/Cauchy%27s_integral_theorem), this is entirely expected.  It says that if $f \colon \mathbb{C} \to \mathbb{C}$ is holomorphic, and $\gamma$ is a simple closed curve, then $$\oint_\gamma f\,dz = 0$$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3627142/computing-the-path-integral-of-a-complex-function/3627155#3627155) on Mathematics Stack Exchange, 2020-04-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

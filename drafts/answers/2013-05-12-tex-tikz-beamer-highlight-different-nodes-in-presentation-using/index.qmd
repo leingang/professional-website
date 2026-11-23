@@ -1,0 +1,220 @@
+---
+title: Tikz beamer highlight different nodes in presentation using againframe
+date: '2013-05-12'
+description: 'You can adapt this answer to https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node?rq=1:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 113839
+se-link: https://tex.stackexchange.com/questions/113832/tikz-beamer-highlight-different-nodes-in-presentation-using-againframe/113839#113839
+se-score: 9
+se-accepted: true
+se-tags:
+- tikz-pgf
+- beamer
+- highlighting
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Tikz beamer highlight different nodes in presentation using againframe](https://tex.stackexchange.com/questions/113832/tikz-beamer-highlight-different-nodes-in-presentation-using-againframe), asked by [DanFritz](https://tex.stackexchange.com/users/27432/danfritz) on TeX Stack Exchange (2013-05-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm working on a presentation in Beamer, I have a tikz flow chart that I want to repeat after a block on the chart is handeld in the presentation. To make it visually easy for the users I would like to highlight the next block I'm going to talk about and dim the blocks that I've already discussed.
+>
+> I figured out how to create an alert style for the block that should be highlighted. Below is my code.
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{tikz}
+> \usetikzlibrary{arrows,shapes,positioning}
+> \usepackage{xcolor}
+>
+>
+> \definecolor{uablue}{RGB}{0,61,100}
+> \colorlet{uablue100}{uablue}
+> \colorlet{uablue75} {uablue!75!white}
+> \colorlet{uablue50} {uablue!50!white}
+> \colorlet{uablue25} {uablue!25!white}
+> \colorlet{uablue10} {uablue!10!white}
+> \colorlet{uablue5}  {uablue!5!white}
+>
+> \definecolor{uared}{RGB}{126,0,47}
+> \colorlet{uared100}{uared}
+> \colorlet{uared75} {uared!75!white}
+> \colorlet{uared50} {uared!50!white}
+> \colorlet{uared25} {uared!25!white}
+> \colorlet{uared10} {uared!10!white}
+> \colorlet{uared5}  {uared!5!white}
+> \begin{document}
+>
+> \begin{frame}
+> \label{overview}
+> \frametitle{Overview}
+> \begin{figure}
+> \centering
+> \tikzstyle{block} = [rectangle, draw, fill=blue!25,text width=4em, text centered, rounded corners, minimum height=2em, line width=1pt ]
+> \tikzstyle{line} = [draw, -latex', line width=1pt]
+> \tikzstyle{alert} = [text=red, fill=red!25, draw=red]
+>
+> \begin{tikzpicture}[node distance = 2cm, auto]
+>     % Place nodes
+>     \node [block, alert] (client) {Web Client};
+>     \node [block, right of=client, node distance=3cm] (python) {Python Service};
+>     \node [block, right of=python, node distance=3cm] (wavefront) {Wavefront};
+>     \node [block, above of=wavefront] (AMCL) {AMCL};
+>     \node [block, below of=wavefront] (VFH) {VFH};
+>     % Draw edges
+>     \path [line] (client) -> (python);
+>     \path [line] (python) -> (client);
+>     \path [line] (python) -- (wavefront);
+>     \path [line] (wavefront) -- (AMCL);
+>     \path [line] (AMCL) -- (python);
+>     \path [line] (wavefront) -- (VFH);
+> \end{tikzpicture}
+> \end{figure}
+> \end{frame}
+>
+> \end{document}
+> ```
+>
+> So the idea is that I only define the tikzfigure once and when I use `\againframe` I can select which block should be highlighted and which should be dimmed. I've looked at other examples but they wanted to highlight different parts in sequential frames. I use this frame as my 'overview frame'
+>
+> EDIT: I have my overview frame, then some other frames and then I want to repeat my overview frame again using `\againframe` and select a different block to highlight.
+>
+> thanks!
+:::
+
+You can adapt this answer to https://tex.stackexchange.com/questions/6135/how-to-make-beamer-overlays-with-tikz-node?rq=1:
+
+```latex
+\tikzset{onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{alt/.code args={<#1>#2#3}{%
+  \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+  \temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+}}
+```
+
+This allows you to put for instance `temporal=<overlay specification>{before}{during}{after}` in the keyval list anywhere in a TikZ command.  `onslide` works the same way with `\only` and I included `\alt` to round out the set.
+
+Here is the complete code:
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+\usepackage{xcolor}
+
+\definecolor{uablue}{RGB}{0,61,100}
+\colorlet{uablue100}{uablue}
+\colorlet{uablue75} {uablue!75!white}
+\colorlet{uablue50} {uablue!50!white}
+\colorlet{uablue25} {uablue!25!white}
+\colorlet{uablue10} {uablue!10!white}
+\colorlet{uablue5}  {uablue!5!white}
+
+\definecolor{uared}{RGB}{126,0,47}
+\colorlet{uared100}{uared}
+\colorlet{uared75} {uared!75!white}
+\colorlet{uared50} {uared!50!white}
+\colorlet{uared25} {uared!25!white}
+\colorlet{uared10} {uared!10!white}
+\colorlet{uared5}  {uared!5!white}
+
+\tikzset{onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{alt/.code args={<#1>#2#3}{%
+  \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+  \temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+}}
+
+\begin{document}
+\begin{frame}<1>[label=overview]
+\frametitle{Overview}
+\begin{figure}
+\centering
+\tikzstyle{block} = [rectangle, draw, fill=uablue25, 
+    text width=4em, text centered, rounded corners, minimum height=2em, line width=1pt ]
+\tikzstyle{line} = [line width=1pt, -triangle 45]
+\tikzstyle{alert} = [text=uared100, fill=uared25, draw=uared100]
+\tikzstyle{dim} = [text=uablue25, fill=uablue5, draw=uablue25]
+
+\begin{tikzpicture}[node distance=1.5cm, auto]
+    % Place nodes
+    \node [block,onslide=<2->{dim}] (client) {Web Client};
+    \node [block,onslide=<2->{dim}] (python) [right of=client, node distance=3cm] {Python Service};
+    \node [block,onslide=<2->{dim}] (wavefront) [right of=python, node distance=3cm] {Wavefront};
+    \node [block,onslide=<2->{dim}] (AMCL) [above of=wavefront] {AMCL};
+    \node [block,temporal=<2>{}{alert}{dim}] (VFH) [below of=wavefront] {VFH};
+    \node [block,onslide=<2->{dim}] (laser) [above right=0.5cm and 1.2cm of AMCL] {Laser};
+    \node [block,onslide=<2->{dim}] (dash7) [right of=AMCL, node distance=3cm] {DASH7};
+    \node [block,onslide=<2->{dim},temporal=<3>{}{alert}{dim}] (robot) [right of=wavefront, node distance=3cm] {Robot};
+    % Draw edges
+    \draw [line] (client.east) -> (python.west);
+    \draw [line] (python) -> (client);
+    \draw [line] (python) -- (wavefront);
+    \draw [line] (AMCL) -- (wavefront);
+    \draw [line] (AMCL) edge[out=180,in=90] (python);
+    \draw [line] (python) edge[out=270,in=180] (VFH);
+    \draw [line] (wavefront) -- (VFH);
+    \draw [line] (laser) -> (AMCL);
+    \draw [line] (dash7) -> (AMCL);
+    \draw [line] (robot) -> (AMCL);
+    \draw [line] (VFH) edge[out=0,in=270] (robot);
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Introductory stuff}
+\begin{itemize}[<+->]
+\item Stuff
+\item Stuff
+\item Stuff
+\item Stuff
+\end{itemize}
+\end{frame}
+
+\againframe<2>{overview}
+
+\begin{frame}{Stuff about VFH}
+\begin{itemize}[<+->]
+\item Stuff
+\item Stuff
+\item Stuff
+\item Stuff
+\item Stuff
+\end{itemize}
+\end{frame}
+
+\againframe<3>{overview}
+
+\begin{frame}{Stuff about Robot}
+\begin{itemize}[<+->]
+\item Stuff
+\item Stuff
+\item Stuff
+\end{itemize}
+\end{frame}
+
+\end{document}
+```
+
+![sample code output][1]
+
+  [1]: 9nqXt.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/113832/tikz-beamer-highlight-different-nodes-in-presentation-using-againframe/113839#113839) on TeX Stack Exchange, 2013-05-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

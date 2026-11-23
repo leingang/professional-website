@@ -1,0 +1,45 @@
+---
+title: How to find a base and exponent of a specific given number?
+date: '2019-09-24'
+description: So if I understand what you mean by “find the base and exponent of a specific number,” the problem is,
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3368247
+se-link: https://math.stackexchange.com/questions/3368236/how-to-find-a-base-and-exponent-of-a-specific-given-number/3368247#3368247
+se-score: 0
+se-accepted: false
+se-tags:
+- logarithms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find a base and exponent of a specific given number?](https://math.stackexchange.com/questions/3368236/how-to-find-a-base-and-exponent-of-a-specific-given-number), asked by [Sediqullah Tanai](https://math.stackexchange.com/users/708165/sediqullah-tanai) on Mathematics Stack Exchange (2019-09-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I came across this specific problem today in the class that what could be the base and exponent of $8192$ I know that it can be guessed that the base is $2$ and exponent is $13$ but I need a proper solution using algorithm.
+>
+> Your answers are appreciated!
+:::
+
+So if I understand what you mean by “find the base and exponent of a specific number,” the problem is,
+
+> Given a positive integer $c$, find positive integers $a$ and $b$ such that $c=a^b$.  
+
+Factoring into primes is the key.  For your example $8192 = 2^{13}$.  So $a=2$ and $b=13$ is *a* solution.  Are there others?  Any “base” $a$ must be a factor of $8192$, which (because the prime factorization is unique), must be a power of $2$.  So $a=2^k$ for some $k$.  But then $a^b = (2^k)^b = 2^{bk}$, which, again by uniqueness, means that $k$ is a factor of $13$.  But $13$ is prime so $k=1$ or $k=13$.  $k=1$ is the case we've already discovered ($a=2$ and $b=13$).  $k=13$ is a sort of trivial case $a=8192$ and $b=1$; we probably want to exclude that.
+
+But we may not always get a unique nontrivial $a$ and $b$.  For instance, try $c=64$.  We can factor it into $2^6$.  The factors of $6$ besides $1$ and $6$ are $2$ and $3$.  Accordingly, $64 = (2^3)^2=8^2$ and $(2^2)^3=4^3$.  So there are three possibilities:
+
+* $a=2$ and $b=6$
+* $a=4$ and $b=3$
+* $a=8$ and $b=2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3368236/how-to-find-a-base-and-exponent-of-a-specific-given-number/3368247#3368247) on Mathematics Stack Exchange, 2019-09-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

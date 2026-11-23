@@ -1,0 +1,49 @@
+---
+title: Tikzpicture on every page
+date: '2010-11-04'
+description: everyshi is an alternative to everypage. I suppose the bophook package and your TikZ overlay snippet will also work.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4948
+se-link: https://tex.stackexchange.com/questions/4930/tikzpicture-on-every-page/4948#4948
+se-score: 6
+se-accepted: false
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikzpicture on every page](https://tex.stackexchange.com/questions/4930/tikzpicture-on-every-page), asked by [ipavlic](https://tex.stackexchange.com/users/1688/ipavlic) on TeX Stack Exchange (2010-11-04; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How can I include a tikzpicture on every page?
+>
+> I would like to create a complicated document template (page should be framed, and have a table to hold document information both in the header and footer).
+>
+> I was thinking of using something like:
+>
+> ```latex
+> \begin{tikzpicture}[remember picture,overlay]  
+> % complicated layout should be here, simple example is given below:  
+> % \node [xshift=1cm,yshift=1cm] at (current page.south west)  
+> % {This is an absolutely positioned text in the page};  
+> \end{tikzpicture}
+> ```
+>
+> Do you have any other suggestions on how to create such a template?
+:::
+
+`everyshi` is an alternative to `everypage`.  I suppose the `bophook` package and your TikZ overlay snippet will also work.  
+
+To save some compile time you should probably save your tikzpicture to a `\savebox` (<a href="http://www.personal.ceu.hu/tex/spacebox.htm">reference</a>) and do a `\usebox` on every page, though.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4930/tikzpicture-on-every-page/4948#4948) on TeX Stack Exchange, 2010-11-04. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

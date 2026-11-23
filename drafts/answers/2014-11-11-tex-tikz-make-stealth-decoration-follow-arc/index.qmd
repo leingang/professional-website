@@ -1,0 +1,97 @@
+---
+title: 'TikZ: Make stealth decoration follow arc'
+date: '2014-11-11'
+description: It looks like you can add an option to \arrow to shift it.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 211690
+se-link: https://tex.stackexchange.com/questions/211676/tikz-make-stealth-decoration-follow-arc/211690#211690
+se-score: 7
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TikZ: Make stealth decoration follow arc](https://tex.stackexchange.com/questions/211676/tikz-make-stealth-decoration-follow-arc), asked by [arney](https://tex.stackexchange.com/users/21828/arney) on TeX Stack Exchange (2014-11-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In this MWE
+>
+> ```latex
+> \documentclass[border=5mm]{standalone}
+>
+> \usepackage{tikz}
+> \usetikzlibrary{decorations.markings}
+>
+> \begin{document}
+> \begin{tikzpicture}[path/.append style={
+>    decoration={
+>    markings,
+>      mark=at position 0.5 with {\arrow [scale=1.5]{stealth}},
+>    },
+>    postaction=decorate,
+>    thick,
+>  }]
+>
+>    \draw[path] (-2, 0) -- (-0.5, 0);
+>    \draw[path] (-0.5, 0) arc [start angle=180, delta angle=-180, radius=0.5];
+>    \draw[path] (0.5, 0) -- (2, 0);
+>    \draw[path] (2, 0) arc [start angle=0, end angle=180, radius=2];
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> ![][q-1]
+>
+> The position of the arrows along the arc doesn't quite look right. Also, the arrows do not seem to be placed in the middle of the paths (wrong anchor).
+>
+> How can I fix this?
+>
+>
+>   [q-1]: xhsjB.png
+:::
+
+It looks like you can add an option to `\arrow` to shift it.
+
+```latex
+\documentclass[border=5mm,png]{standalone}    
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}[path/.append style={
+   decoration={
+       markings,
+       mark=at position 0.5 with {\arrow[xshift=2.5\pgflinewidth,red,>=stealth]{>}}
+   },
+   postaction=decorate,
+   thick,
+ }]
+   \draw[path] (-2, 0) -- (-0.5, 0);
+   \draw[path] (-0.5, 0) arc [start angle=180, delta angle=-180, radius=0.5];
+   \draw[path] (0.5, 0) -- (2, 0);
+   \draw[path] (2, 0) arc [start angle=0, end angle=180, radius=2];
+   \draw[help lines] (0,0) --++ (0,2) (1.25,0) --++ (0,2) (-1.25,0) --++ (0,02);
+   \draw[help lines] (-2,0) --++ (4,0) (-2,0.5) --++ (4,0) (-2,2) --++ (4,0);
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+The magic number `2.5\pgflinewidth` is half of the length of the `stealth` arrow tip, from point to the vertex of the cavity, as can be found by digging into `pgfcorearrows.code.tex`.  This is about as good as I can do at the moment.
+
+
+  [1]: Rdekb.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/211676/tikz-make-stealth-decoration-follow-arc/211690#211690) on TeX Stack Exchange, 2014-11-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

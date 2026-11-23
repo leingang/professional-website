@@ -1,0 +1,65 @@
+---
+title: Animating Protocols
+date: '2010-12-01'
+description: 'beamer has an \animate method that advances slides automatically in succession. You just have to create the "stop motion" slides. For instance:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6331
+se-link: https://tex.stackexchange.com/questions/6330/animating-protocols/6331#6331
+se-score: 13
+se-accepted: true
+se-tags:
+- beamer
+- animations
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Animating Protocols](https://tex.stackexchange.com/questions/6330/animating-protocols), asked by [Sadeq Dousti](https://tex.stackexchange.com/users/1347/sadeq-dousti) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm creating a `beamer` presentation on network protocols. I like to put very simple animations in the slides, like an **arrow** extending from sender to receiver, showing the flow of network messages.
+>
+> I saw LaTeX packages like `animate` which can do this. Yet I believe they are an overkill. 
+>
+> Or, don't they? Well, I don't know.
+>
+> > Is there a simple way for doing what I'm after?
+:::
+
+beamer has an `\animate` method that advances slides automatically in succession.  You just have to create the "stop motion" slides.  For instance:
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{frame}
+\begin{tikzpicture}[every node/.style={draw}]
+\node (s) {sender};
+\node (r) at (5,0) {receiver};
+\animate<2-10>
+\foreach \pos in {0.1,0.2,...,1.0} {
+  \action<+>{
+    \path (s) -- (r) node[pos=\pos,coordinate] (p) {};
+    \draw[->] (s) -- (p);
+  }
+}
+\end{tikzpicture}
+\end{frame}
+
+\end{document}
+```
+
+Open the PDF in Adobe Reader and enable full screen mode.  After one click you will see the arrow extend animatedly from sender to receiver.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6330/animating-protocols/6331#6331) on TeX Stack Exchange, 2010-12-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

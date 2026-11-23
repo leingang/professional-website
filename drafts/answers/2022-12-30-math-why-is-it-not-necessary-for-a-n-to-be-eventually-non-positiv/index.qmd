@@ -1,0 +1,48 @@
+---
+title: Why is it not necessary for $a_n$ to be eventually non-positive if $\sum\limits_{i=1}^{\infty}a_i$ diverges to-$\infty$
+date: '2022-12-30'
+description: 'That sequence is a valid counterexample. Another one would be: $$an = \begin{cases} 1 & \text{$n$ is odd} \\ -2 & \text{$n$ is even} \end{cases}$$ Notice that…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4608652
+se-link: https://math.stackexchange.com/questions/4608619/why-is-it-not-necessary-for-a-n-to-be-eventually-non-positive-if-sum-limits/4608652#4608652
+se-score: 5
+se-accepted: true
+se-tags:
+- sequences-and-series
+- convergence-divergence
+- divergent-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is it not necessary for $a_n$ to be eventually non-positive if $\sum\limits_{i=1}^{\infty}a_i$ diverges to-$\infty$](https://math.stackexchange.com/questions/4608619/why-is-it-not-necessary-for-a-n-to-be-eventually-non-positive-if-sum-limits), asked by [a22](https://math.stackexchange.com/users/1031691/a22) on Mathematics Stack Exchange (2022-12-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When I attempted this question I thought that it was necessary but I’m not sure why it’s not necessary because if I take for example 
+>
+> $$a_n = \begin{cases}-(2)^n&\text{if $n$ is odd}\\\frac{1}{2}& \text{if $n$ is even}\end{cases}$$
+>
+> Would the sum of this sequence diverge to minus infinity? So would this show that $a_n$ does not have to be non-positive eventually?
+:::
+
+That sequence is a valid counterexample. Another one would be:
+$$a_n = \begin{cases} 1 & \text{$n$ is odd} \\ 
+                       -2 & \text{$n$ is even}
+          \end{cases}$$
+Notice that the sum of any two consecutive terms is $-1$. So the partial sum can be expressed in closed form:
+$$\sum_{k=1}^n a_n = \begin{cases} 
+                           -\frac{n}{2} & \text {$n$ is even} \\
+                           -\frac{n}{2} + \frac{3}{2} & \text{$n$ is odd} 
+    \end{cases}$$
+Then you can show that the partial sums tend to $-\infty$ as $n\to\infty$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4608619/why-is-it-not-necessary-for-a-n-to-be-eventually-non-positive-if-sum-limits/4608652#4608652) on Mathematics Stack Exchange, 2022-12-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

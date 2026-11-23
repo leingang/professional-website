@@ -1,0 +1,39 @@
+---
+title: Comparing coefficients of polynomials
+date: '2016-10-15'
+description: One way to think about it is that a polynomial is characterized by the name of the variable, the degree, and the list of coefficients. In other words, if I…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1969868
+se-link: https://math.stackexchange.com/questions/1969852/comparing-coefficients-of-polynomials/1969868#1969868
+se-score: 1
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Comparing coefficients of polynomials](https://math.stackexchange.com/questions/1969852/comparing-coefficients-of-polynomials), asked by [Puzzled417](https://math.stackexchange.com/users/297795/puzzled417) on Mathematics Stack Exchange (2016-10-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If we have two polynomials, say for example, $a_0+a_1x+a_2x^2 = 1+2x+3x^2$ for all $x$, why must it follow that $a_0 = 1,a_2 = 2,$ and $a_3 = 3$? Can we generalize this for any polynomials and infinite sum polynomials as well?
+:::
+
+One way to think about it is that a polynomial is characterized by the name of the variable, the degree, and the list of coefficients.  In other words, if I said, "I'm thinking of a polynomial in the variable $x$, of degree $2$, with constant term $1$, linear coefficient $2$, and quadratic coefficient $3$", you could guess which polynomial I was thinking about in one try.  I gave you all the information necessary to write down $1 + 2x + 3x^2$.  
+
+To make it slightly more sophisticated, two polynomials are equal if and only if they have the same variable, degree, and coefficients.  So if
+$$a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n = 1 + 2x + 3x^2$$
+then $a_0 = 1$, $a_1 = 2$, $a_3 = 3$, and $a_4 = a_5 = \dots = a_n = 0$.
+
+Yes, it does generalize.  For any ring $R$, the ring $R[x]$ stands for polynomials in $x$ with coefficients from $R$.  By definition, the powers of $x$—$1$, $x$, $x^2$, $x^3$, etc.—are independent over $R$, so two polynomials are equal iff their coefficients are equal.  The ring $R[[x]]$ consists of infinite series in $x$, and has the same property.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1969852/comparing-coefficients-of-polynomials/1969868#1969868) on Mathematics Stack Exchange, 2016-10-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

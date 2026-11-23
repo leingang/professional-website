@@ -1,0 +1,59 @@
+---
+title: Random variables viewed as vectors. What is the zero vector? When are two vectors equal?
+date: '2025-04-07'
+description: The zero vector in this vector space is the zero function $X (\omega) = 0$ for all $\omega \in \Omega$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5053810
+se-link: https://math.stackexchange.com/questions/5053805/random-variables-viewed-as-vectors-what-is-the-zero-vector-when-are-two-vector/5053810#5053810
+se-score: 4
+se-accepted: true
+se-tags:
+- probability
+- vector-spaces
+- random-variables
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Random variables viewed as vectors. What is the zero vector? When are two vectors equal?](https://math.stackexchange.com/questions/5053805/random-variables-viewed-as-vectors-what-is-the-zero-vector-when-are-two-vector), asked by [peter.petrov](https://math.stackexchange.com/users/116591/peter-petrov) on Mathematics Stack Exchange (2025-04-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose $\Omega$ is finite, e.g. $\Omega = \{w_1, w_2, \dots, w_n\}$  
+>
+> I am reading that we can view the random variable $X$ as the n-dimensional vector $(X(w_1), X(w_2), \dots, X(w_n))$, 
+>
+> and we can define an inner product on random variables in this way  
+>
+> $(X,Y) = \sum_w X(w)Y(w)p(w) = \mathop{\mathbb{E}} (XY)$   
+>
+> And so in this way we get an Euclidean space of random variables.    
+>
+> I think I am not clear on one thing though. What is the zero element here in this Euclidean vector space? Or when do we consider two random variables equal?   
+>
+> If a random variable $X_1$ takes values: 0,1,2 with probabilities 1,0,0, and then if another random variable $X_2$ takes value just 0 with probability 1, and they are defined on the same $\Omega$, are $X_1$ and $X_2$ the same or different random variables?   
+>
+> I guess we should consider them the same, because for inner product we must have that $(X,X) = 0$ implies $X=0$.  
+>
+> But on the other hand, I think they are conceptually different especially if $\Omega$ is not countable. So is the key here (in defining this Euclidean space) that our $\Omega$ is finite and hence countable?      
+>
+> Because e.g. if $\Omega$ is the geometric segment [AB], maybe we could have $X_1(A) = 1, X_1(B) = 2, X_1(T) = 0$ if T is an inner point of $[AB]$, while $X_2$ takes value $0$ on the whole segment [AB]. So I think these two are different random variables.
+:::
+
+The zero vector in this vector space is the zero function $X (\omega) = 0$ for all $\omega \in \Omega$.
+
+> If a random variable $X_1$ takes values: 0,1,2 with probabilities 1,0,0, and then if another random variable $X_2$ takes value just 0 with probability 1, are these the same or different random variables? 
+
+Are the domains of $X_1$ and $X_2$ the same space $\Omega$? Then yes, these are the same random variable.
+
+In the case of uncountable sample spaces, we call random variables equivalent if the set on which they differ has probability zero. The two random variables in your continuous example are equal “almost everywhere” as we say in measure theory.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5053805/random-variables-viewed-as-vectors-what-is-the-zero-vector-when-are-two-vector/5053810#5053810) on Mathematics Stack Exchange, 2025-04-07. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

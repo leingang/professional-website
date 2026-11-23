@@ -1,0 +1,72 @@
+---
+title: How to use glossaries-package without need to print out the Glossary
+date: '2011-04-29'
+description: 'The warnings are coming from the hyperlinks that are being created to targets that are not created. So put this in the preamble:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16924
+se-link: https://tex.stackexchange.com/questions/16921/how-to-use-glossaries-package-without-need-to-print-out-the-glossary/16924#16924
+se-score: 8
+se-accepted: true
+se-tags:
+- beamer
+- glossaries
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to use glossaries-package without need to print out the Glossary](https://tex.stackexchange.com/questions/16921/how-to-use-glossaries-package-without-need-to-print-out-the-glossary), asked by [meep.meep](https://tex.stackexchange.com/users/3735/meep-meep) on TeX Stack Exchange (2011-04-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know that it doesn't make much sense to create a glossary and then not want to use it. I print the glossary in my main document. But now I have a presentation with beamer slides, where I just copy equations from the main document. In the equations, most variables are glossary entries. But it makes no sense for me to print a glossary in my presentation. Then I get all those warnings that an entry has been referenced but does not exist, which is very annoying. Is there any way to get around this?
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{lmodern}
+> \usepackage{glossaries}
+>
+> \newglossaryentry{bp}{%type=symbols, In the original there are 2 different types of glossaries
+> ```
+> 	name={\ensuremath{BP}},sort=bp,description={Basispreis einer Option}}
+>     \makeglossaries
+>     \begin{document}
+>
+> ```latex
+> \frame{\gls{bp} has to give the output \ensuremath{BP}.}
+>
+> %\printglossaries
+> \end{document}
+> ```
+:::
+
+The warnings are coming from the hyperlinks that are being created to targets that are not created.  So put this in the preamble:
+
+```latex
+\glsdisablehyper
+```
+
+You still get these warnings.
+
+>     Package glossaries Warning: \makeglossaries hasn't been used,
+>     the glossaries will not be updated.
+>     
+>     Package glossaries Warning: No \printglossary or \printglossaries
+>     found. This document will not have a glossary.
+
+So just silence them with this option:
+
+```latex
+\usepackage[nowarn]{glossaries}
+```
+
+I think that covers it!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16921/how-to-use-glossaries-package-without-need-to-print-out-the-glossary/16924#16924) on TeX Stack Exchange, 2011-04-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

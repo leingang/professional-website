@@ -1,0 +1,74 @@
+---
+title: 'Show that $\textrm{trace}: \textrm{End}(V)\rightarrow k$ defined by $\textrm{trace}(\phi ):=\textrm{trace}(M(\phi ))$ is a linear map.'
+date: '2017-03-30'
+description: Nice job framing your question precisely!
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2210523
+se-link: https://math.stackexchange.com/questions/2210511/show-that-textrmtrace-textrmendv-rightarrow-k-defined-by-textrmtra/2210523#2210523
+se-score: 3
+se-accepted: true
+se-tags:
+- linear-algebra
+- trace
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that $\textrm{trace}: \textrm{End}(V)\rightarrow k$ defined by $\textrm{trace}(\phi ):=\textrm{trace}(M(\phi ))$ is a linear map.](https://math.stackexchange.com/questions/2210511/show-that-textrmtrace-textrmendv-rightarrow-k-defined-by-textrmtra), asked by [Thy Art is Math](https://math.stackexchange.com/users/366290/thy-art-is-math) on Mathematics Stack Exchange (2017-03-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **The Problem**
+>
+> Show that $\textrm{trace}: \textrm{End}(V)\rightarrow k$ defined by $\textrm{trace}(\phi ):=\textrm{trace}(M(\phi ))$ is a linear map.
+> _____________________________________________________________________________
+> **My Question**
+>
+> I need some help with understanding the *notation* in this question.  In other words, I am having a difficult time "reading the question."  If anybody would be willing to dumb this down for me, I'd be incredibly grateful.  I think once I understand how to *start* this proof, I will be be fine.
+>
+>
+> I understand:
+>
+>  1. What $\textrm{trace}$ means.
+>  2. What $\textrm{End}(V)$ means.
+>  3. What a linear map is, and how to show that something is a linear map.
+>
+> I do not understand:
+>
+>  1. What $\phi$ means in this context.
+>  2. What $M(\phi)$ means.
+>  3. What $\textrm{trace}(M(\phi))$ means.
+>
+>
+> _____________________________________________________________________________
+> **Additional Details**
+>
+> The book used is the course I am taking is *Abstract Linear Algebra* by Curtis, although this exercise may not be from the text itself.
+> _____________________________________________________________________________
+>
+> As always, **thank you** all for your help.
+:::
+
+Nice job framing your question precisely!  
+
+1. $\phi$ is the variable of this particular function.  Just like the $x$ in $f(x) = x^2$.  It stands for any member of $\operatorname{End}(V)$.
+
+2. I don't think it's standard notation, but from the context I gather that $M(\phi)$ is a matrix associated to $\phi$. Once you choose a basis $v_1, v_2, \dots v_n$ for $V$, you know that there are constants $(a_{ij})$ such that 
+$$\phi(v_j) = \sum_{i=1}^n a_{ij} v_i$$
+for each $j$.  Then $M(\phi)$ is the matrix whose $(i,j)$th entry is $a_{ij}$.
+
+3. Now you know that $M(\phi)$ is a matrix, it should be clear that $\operatorname{trace}(\phi)$ is the trace of this matrix.
+
+Something to think about/prove: If you need to choose a basis to find $M(\phi)$, does the trace depend on that basis?  If it does, trace is not a function on endomorphisms, only on matrices.
+
+Then you have to show that the trace satisfies the linearity properties.  But that should be straightforward.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2210511/show-that-textrmtrace-textrmendv-rightarrow-k-defined-by-textrmtra/2210523#2210523) on Mathematics Stack Exchange, 2017-03-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,416 @@
+---
+title: '! TeX capacity exceeded, sorry [save size=50000]'
+date: '2016-07-22'
+description: Although it's usually a coding error that leads to this message, I think in this case it's legitimate.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 320545
+se-link: https://tex.stackexchange.com/questions/320441/tex-capacity-exceeded-sorry-save-size-50000/320545#320545
+se-score: 2
+se-accepted: false
+se-tags:
+- errors
+- pdftex
+- spreadtab
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[! TeX capacity exceeded, sorry [save size=50000]](https://tex.stackexchange.com/questions/320441/tex-capacity-exceeded-sorry-save-size-50000), asked by [EduarDudz](https://tex.stackexchange.com/users/110501/eduardudz) on TeX Stack Exchange (2016-07-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am working in a large spreadsheet using `spreadtab` package.
+> The spreadsheet is basically a billing list with individual prices; quantities and total price for all items.
+> Even with a high number of items, I had no problems with the spreadsheet, however, the list has now ~400 and I am getting the error `! TeX capacity exceeded, sorry [save size=50000]`.
+>
+> I tried to follow a previous suggestion from https://tex.stackexchange.com/questions/134597/tex-capacity-exceeded-save-size?rq=1, and changed the `texmf.cnf` file in `C:\texlive\2016\texmf-dist\web2c` without success.
+>
+> There is a way to overcome this problem?
+>
+> Here is the code:
+>
+> ```latex
+> \documentclass
+> [
+> 10pt,
+> a4paper														% paper size
+> ]
+> {article}
+>
+> \usepackage[utf8]{inputenc}
+> \usepackage{booktabs}
+> \usepackage{spreadtab}
+> \usepackage{longtable}
+> \usepackage{booktabs}
+>
+> \begin{document}
+> \begin{center}
+>
+> \begin{spreadtab}{{longtable}{lrrr}}
+> ```
+> 	\toprule
+> 	@					&	0	&	0	&			\\
+> 	\midrule
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	@	Item A			&	2	&	26	&	[-2,0]*[-1,0]	\\
+> 	\midrule
+>     365.5*26*4/7				&		&	[1,0]	&	sum(d2:[0,-1]) \\
+>     \bottomrule
+> 	\end{spreadtab}
+>     \end{center}
+>     \end{document}
+:::
+
+Although it's usually a coding error that leads to this message, I think in this case it's legitimate.  
+
+I wasn't able to grok the implementation immediately, but in the [documentation][1] of the `spreadtab` package we read:
+
+> ... `spreadtab` proceeds in 3 main stages before `\begin{<table environment>}`sees the table:
+> 
+> * first, it reads the body of the table, divides it in lines and cells, and in each cell, seeks a possible formula;
+> * then, it computes the formulas in the cells, taking care for each to previously calculate all the dependent cells. The calculations are done by the fp package;
+> * finally, it is necessary to rebuild the table, replacing each formula by its numerical calculated value and handing over to the environment name specified by the user.
+
+It sounds like this process defines one, possibly more, macro *per cell* in the spreadsheet.  Since there is a limit to the number of macros TeX can hold, there is a limit to the spreadsheet's size.  
+
+It sounds like switching engines solved your problem for now.  But my instinct would be to use the right tool for the job.  And LaTeX is just not a spreadsheet program.  You could use Excel or a free, open-source alternative for a spreadsheet, LaTeX to format reports, and python as glue between them.  There are python libraries for parsing spreadsheet files (CSV, but also others) so you can probably do this quickly.
+
+  [1]: http://mirrors.ctan.org/macros/latex/contrib/spreadtab/spreadtab_doc_en.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/320441/tex-capacity-exceeded-sorry-save-size-50000/320545#320545) on TeX Stack Exchange, 2016-07-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

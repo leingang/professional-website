@@ -1,0 +1,61 @@
+---
+title: Determining the curvature of an Ellipse
+date: '2015-10-16'
+description: For your first question, the “right”ness depends on how precise you want to define “bends”. But if you look at the expression $\left|\frac{d\hat…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1483296
+se-link: https://math.stackexchange.com/questions/1483280/determining-the-curvature-of-an-ellipse/1483296#1483296
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- curvature
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Determining the curvature of an Ellipse](https://math.stackexchange.com/questions/1483280/determining-the-curvature-of-an-ellipse), asked by [bluemoon](https://math.stackexchange.com/users/257639/bluemoon) on Mathematics Stack Exchange (2015-10-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have the following parameterization of an Ellipse:
+>
+> $$x=a \cos (\omega t),\space \space \space y=b\sin(\omega t),\space \space \space \omega=const., \space \space \space a,b \in \Bbb R$$
+>
+> I want to determine the **curvature** $\color{blue}{\kappa}$ and the **radius of curvature** $\color{red}{\rho}$
+>
+> I know that the curvature is the absolute value of the unit-tangent vector $\hat{e}_t$ differentiated with respect to arc-length:
+>
+> $$\color{blue}{\kappa}=\lvert \frac{d \hat{e}_t}{ds}\lvert$$
+>
+> The radius of curvature is:
+>
+> $$\color{red}{\rho}=\frac{1}{\color{blue}{\kappa}}$$
+>
+> **My questions:**
+>
+> 1. Am I right in saying that curvature just tells me how much my curve bends at a certain point?
+>
+> 2. How do I calculate $\frac{d \hat{e}_t}{ds}$?
+>
+> I know how to get $\hat{e}_t$:
+>
+> $$\dot{\vec{r}}(t)=\begin{bmatrix}-a \omega \sin(\omega t) \\b \omega \cos(\omega t)\end{bmatrix} \implies \frac{\dot{\vec{r}}(t)}{\lvert \dot{\vec{r}}(t)\rvert}=\frac{1}{\sqrt{a^2\omega^2\sin^2(\omega t)+b^2\omega^2\cos(\omega t)}} \begin{bmatrix}-a \omega \sin(\omega t) \\b \omega \cos(\omega t)\end{bmatrix}=\hat{e}_t$$
+>
+> However, how do I differentiate this with respect to arc-length $s$?
+:::
+
+For your first question, the “right”ness depends on how precise you want to define “bends”.  But if you look at the expression $\left|\frac{d\hat e_t}{ds}\right|$, you can interpret it as the speed at which the unit tangent vector rotates as you move uniformly along the curve.  
+
+For the second, the arc-length functions along ellipses are not integrable in elementary terms (they are the pathway to the study of *elliptic functions*).   Instead, you might find one of the equivalent formulas for curvature more helpful:
+$$\kappa(t) = \frac{\left|\dot{\hat e_t}(t)\right|}{\left|\dot{\vec r}(t)\right|} = \frac{\left|\dot{\vec r}(t) \times \ddot{\vec r}(t)\right|}{\left|\dot{\vec r}(t)\right|^3}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1483280/determining-the-curvature-of-an-ellipse/1483296#1483296) on Mathematics Stack Exchange, 2015-10-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

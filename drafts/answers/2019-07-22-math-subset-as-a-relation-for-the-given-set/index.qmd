@@ -1,0 +1,67 @@
+---
+title: Subset as a relation for the given set
+date: '2019-07-22'
+description: With respect to JMoravitz's point of view, I think you understand the problem as intended by the instructor/problem author, and should not extend to the case…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3300831
+se-link: https://math.stackexchange.com/questions/3300793/subset-as-a-relation-for-the-given-set/3300831#3300831
+se-score: -1
+se-accepted: false
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Subset as a relation for the given set](https://math.stackexchange.com/questions/3300793/subset-as-a-relation-for-the-given-set), asked by user686544 on Mathematics Stack Exchange (2019-07-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Having an immense amount of trouble trying to figure this problem out, and the more I think and ask about it the more confused I seem to get. I think I have finally figured it out so can someone who truly knows the correct answer justify this?
+>
+> Problem:Let $A=\{a,b,c\}$,Let $\mathcal{P}(A)=\{S:S\subseteq A\}$
+>
+> Q1.Is the relation "is a subset of" a relation on $A$?
+>
+> Q2.Is the relation "is a subset of" a relation on $\mathcal{P}(A)$?
+>
+> Q1.Attempt:
+>
+> I would say the relation "is a subset of" is **NOT** a relation on $A$
+>
+> Since $A \times A=\{(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b)(c,c)\}$
+>
+> Knowing $R \subseteq A \times A$
+>
+> It is clear to me $a,b,c$ are elements, not sets, so an element in the relation on $A$ takes the form of $(a,a)$ for $a \in A$.So a "subset relation" cannot be defined on $A$.
+>
+> Since $a \subseteq a$ is false for all $a \in A$ because $a$ is an element not a set
+>
+> Q2.However a subset relation **can** be defined on $\mathcal{P}(A)$
+>
+> Since elements of a relation on $\mathcal{P}(A)$ are actually ordered pairs of sets, now it **is** possible to define a "subset relation" on $\mathcal{P}(A)$.
+>
+> For example $(\{a\},\{a,b,c\})\in \mathcal{P}(A) \times \mathcal{P}(A)$
+>
+> and since for a relation on $\mathcal{P}(A)$, $R \subseteq \mathcal{P}(A) \times \mathcal{P}(A)$ and $\{a\} \subseteq \{a,b,c\}$
+>
+> Now it is possible to define the relation "is a subset" of on $\mathcal{P}(A)$
+:::
+
+With respect to JMoravitz's point of view, I think you understand the problem as intended by the instructor/problem author, and should not extend to the case that elements of $A$ might contain themselves as subsets.
+
+I'm inferring the point of the problem is to understand the difference between something being an element of a set versus a subset.  The notation $A = \{a,b,c\}$ implies (not logically, but idiomatically) that $A$ is a set containing three elements which are not sets.  A representative interpretation might be three integers, or three points in the plane.
+
+Assuming this, then you can say $\{a\} \subset \{a\}$ but $(\{a\},\{a\}) \notin A \times A$ (since $\{a\} \notin A$), so is-a-subset-of is not a relation on $A$.
+
+I'm sure your instructor would be happy to clarify the problem or discuss these counterintuitive edge cases.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3300793/subset-as-a-relation-for-the-given-set/3300831#3300831) on Mathematics Stack Exchange, 2019-07-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

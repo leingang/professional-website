@@ -1,0 +1,48 @@
+---
+title: What do the eigenvectors of the matrix of a quadratic form represent?
+date: '2017-06-01'
+description: One application of this theory is the moment of inertia matrix in physics. It's a symmetric, positive-definite form, so there's an orthogonal basis of…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2305861
+se-link: https://math.stackexchange.com/questions/2305791/what-do-the-eigenvectors-of-the-matrix-of-a-quadratic-form-represent/2305861#2305861
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- quadratic-forms
+- orthogonal-matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What do the eigenvectors of the matrix of a quadratic form represent?](https://math.stackexchange.com/questions/2305791/what-do-the-eigenvectors-of-the-matrix-of-a-quadratic-form-represent), asked by [garex434](https://math.stackexchange.com/users/448684/garex434) on Mathematics Stack Exchange (2017-06-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is the "structure" we're following as we near the end of our linear algebra course. There are quite a lot of dense bits and I was hoping someone could briefly explain the ulterior motive behind all this (i.e what can I solve with this knowledge?).
+>
+> Orthogonal transformations --> diagonalize symmetric matrices;
+>
+> Symmetric matrices --> can represent quadratic forms;
+>
+> Sylvester's theorem - signature invariant.
+>
+> Thank you!
+:::
+
+One application of this theory is the [moment of inertia][1] matrix in physics.  It's a symmetric, positive-definite form, so there's an orthogonal basis of eigenvectors in “body coordinates”, and the eigenvalues are all positive.  You can show that rotation about the axis corresponding to the largest and smallest eigenvalues is stable, but unstable about the axis corresponding to the middle one.  
+
+To see what I'm talking about, toss a book in the air while giving it a spin around each of its axes (a rubber band to keep it from opening helps).  If you hold the bottom-left and bottom-right corners of the book while looking at its front cover, and flip it up, the book will wobble as it rotates, until it's eventually rotating around either the top-to-bottom or front-to-back axis.  There is more about this in Marsden and Ratiu's book on mechanics (the front cover is an illustration of this stability diagram).
+
+
+  [1]: https://en.wikipedia.org/wiki/Moment_of_inertia#The_inertia_matrix_for_spatial_movement_of_a_rigid_body
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2305791/what-do-the-eigenvectors-of-the-matrix-of-a-quadratic-form-represent/2305861#2305861) on Mathematics Stack Exchange, 2017-06-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

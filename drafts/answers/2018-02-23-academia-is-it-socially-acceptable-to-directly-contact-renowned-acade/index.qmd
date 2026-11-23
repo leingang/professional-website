@@ -1,0 +1,46 @@
+---
+title: Is it socially acceptable to directly contact renowned academics as a student?
+date: '2018-02-23'
+description: People have been sending fan letters since snail mail existed, and probably before. What's the worst that can happen? It's not likely they'll resent the…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 104400
+se-link: https://academia.stackexchange.com/questions/104342/is-it-socially-acceptable-to-directly-contact-renowned-academics-as-a-student/104400#104400
+se-score: 6
+se-accepted: false
+se-tags:
+- etiquette
+- academic-life
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it socially acceptable to directly contact renowned academics as a student?](https://academia.stackexchange.com/questions/104342/is-it-socially-acceptable-to-directly-contact-renowned-academics-as-a-student), asked by [Fraïssé](https://academia.stackexchange.com/users/20070/fra%c3%afss%c3%a9) on Academia Stack Exchange (2018-02-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Can anyone chime in whether if it is socially acceptable for a (graduate) student to directly contact renowned academics outside your immediate research department with comments on their work or your work? 
+>
+> *This is under the assumption that you are not a crank or a stalker or someone who is trying to become an "academic celebrity".*
+>
+> By renowned academic, I refer to people who have published well-known textbooks, ultra-high impact publications, or are important figures (i.e., "Godfather/mother of..."), or have made public appearances, shook hand with the President, etc. 
+>
+> It is not unheard of in the old days. I remember seeing letters from [Einstein][q-1] or [Freud][q-2] answering questions from "concerned citizens" (including kids). But I wonder if it is socially acceptable to do this nowadays. Regardless of the answer, I wonder what are the chances of receiving a serious reply.
+>
+> *Update:
+> Encouraged by the response I have received, I contacted the person with his work and I posed to question for him asking for advice. The person gave me a very warm reply!* 
+>
+>   [q-1]: http://physicstoday.scitation.org/do/10.1063/PT.6.4.20171219a/full/
+>   [q-2]: https://en.wikisource.org/wiki/A_Letter_from_Freud_(to_a_mother_of_a_homosexual)
+:::
+
+People have been sending fan letters since snail mail existed, and probably before.  What's the worst that can happen?  It's not likely they'll resent the “intrusion” so much as to do anything harmful (like what? sabotage your college application?) or embarrassing (like what?  spend the time responding only to say, “buzz off!”).  Chances are, the worst that will happen is the email will be ignored.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/104342/is-it-socially-acceptable-to-directly-contact-renowned-academics-as-a-student/104400#104400) on Academia Stack Exchange, 2018-02-23. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

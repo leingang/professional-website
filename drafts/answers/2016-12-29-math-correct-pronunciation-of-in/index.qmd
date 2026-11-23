@@ -1,0 +1,48 @@
+---
+title: Correct pronunciation of $\in$.
+date: '2016-12-29'
+description: 'There are a few idiomatic usages. I''ll copy from a randomly-selected textbook on my shelf. This is from a proof of Cantor''s Theorem: For every set $A$, $A$ and…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2076298
+se-link: https://math.stackexchange.com/questions/2076252/correct-pronunciation-of-in/2076298#2076298
+se-score: 3
+se-accepted: true
+se-tags:
+- notation
+- pronunciation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Correct pronunciation of $\in$.](https://math.stackexchange.com/questions/2076252/correct-pronunciation-of-in), asked by user342207 on Mathematics Stack Exchange (2016-12-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was curious whether there is a standard reference for the correct English pronunciation of general mathematical symbols. In particular, I am wondering how to pronounce the symbol "$\in$" correctly, or at least what is most common.
+>
+> In mathematical texts, I have seen phrases like "Let $x \in X$ such that" and "Let $x \in X$ be such that". In the first phrase $\in$ seems to be pronounced as "be an element of", whereas the correct pronunciation in the second phrase is just "in".
+>
+> In the excellent survey *How to write mathematics?*, Paul Halmos writes that he prefers to read "$\in"$ as "is in" rather than the preposition "in". This still seems to be very personal, so I am curious whether there is a standard nowadays.
+:::
+
+There are a few idiomatic usages.  I'll copy from a randomly-selected textbook on my shelf.  This is from a proof of Cantor's Theorem: For every set $A$, $A$ and its power set $\mathscr{P}(A)$ do not have the same size:
+
+> Let $f \colon A \to \mathscr{P}(A)$ be given.  We will show that $f$ is not onto.  Define $$B = \left\{ x\in A \mid x \notin f(x) \right\}$$  Since $B \subseteq A$, this means that $B \in \mathscr{P}(A)$ [1], so $B$ is a member of the codomain of $f$.  To see that $f(x) \neq B$ for all $x \in A$ [2], we imagine what would happen if there were a $b\in A$ with $f(b) = B$.  A contradiction then arises when considering the question “Is $b\in B$? [3]” ...
+
+From *Discrete Mathematics: Mathematical Reasoning and Proof with Puzzles, Patterns, and Games*, by Douglas E. Ensley and J. Winston Cawley.
+
+In the first note “this means that $B\in\mathscr{P}(A)$,” we can read $\in$ as “is in.” It would be equivalent to say “this means that $B$ is in $\mathscr{P}(A)$.”  The main idea of the sentence is that the relation holds.
+
+In the second, “$f(x) \neq B$ for all $x \in A$”, the $\in$ can be read as just “in.”  As in, “$f(x) \neq B$ for all $x$ in $A$.”  To put “is” in there would insert an extra verb.  The relation $x\in A$ is not the main idea here; it's  parenthetical to $f(x) \neq B$.
+
+In the third, the relation is still the main idea of the clause, but to make the question start with a verb (standard written English), we write *is* and read “in” for $\in$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2076252/correct-pronunciation-of-in/2076298#2076298) on Mathematics Stack Exchange, 2016-12-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

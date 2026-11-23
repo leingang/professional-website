@@ -1,0 +1,101 @@
+---
+title: Documentclass user macros
+date: '2011-02-28'
+description: The document class itself shouldn't produce any output, which is what your tikzpicture environment is attempting to do. One way to get around that is to save…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 12312
+se-link: https://tex.stackexchange.com/questions/12291/documentclass-user-macros/12312#12312
+se-score: 1
+se-accepted: true
+se-tags:
+- document-classes
+- templates
+- boxes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Documentclass user macros](https://tex.stackexchange.com/questions/12291/documentclass-user-macros), asked by [ipavlic](https://tex.stackexchange.com/users/1688/ipavlic) on TeX Stack Exchange (2011-02-28; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I wanted to create a documentclass for a [complex template][q-1]. I ran into the following problem:
+>
+>    1. I want to have user macros to store content in boxes which are then displayed by the template in the class code
+>    2. I have to measure those boxes in order to set the dimensions of my layout
+>    3. I would like my layout to be in the document class, and not in the document source file
+>    4. I would like to be able to use user macros for storing the above-mentioned content in my document source file
+>
+> Is that possible?
+>
+> As a small example, let's pretend I want to create a frame using `TikZ` which would be big enough to accomodate user provided text . I would want something in the lines of:
+>
+> documentclass:
+>
+> ```latex
+> ...
+> \newsavebox{\titlebox}
+> \sbox{\titlebox}{\parbox{\5cm}{\UserProvidedText}}
+>
+> \newlength\titleheight
+> \settototalheight\titleheight{\usebox{\titlebox}}
+>
+> \begin{tikzpicture}[remember picture, overlay]
+> 	\draw (0,0) rectangle (5cm,\titleheight) {\UserProvidedText};
+> \end{tikzpicture}
+> ```
+>
+> document source:
+>
+> ```latex
+> %provide \UserProvidedText somehow
+> ```
+>
+> As I see it, documentclass needs to know about `\UserProvidedText` before the document source is itself read (I am presuming that TeX simply reads documentclass, and then goes on with reading the rest of the source).
+>
+>
+> [q-1]: https://tex.stackexchange.com/questions/11937/creating-a-complex-template
+:::
+
+The document class itself shouldn't produce any output, which is what your `tikzpicture` environment is attempting to do.  One way to get around that is to save that code in an `\AtBeginDocument` command.  For example, here is a class file, which I have named `ipavlic.cls`:
+
+```latex
+\LoadClass{article}
+\renewcommand{\title}[1]{\gdef\@title{#1}}
+\RequirePackage{tikz}
+
+\AtBeginDocument{
+\begin{tikzpicture}[remember picture, overlay]
+    \draw ([xshift=1cm]current page.west) node[rectangle,text width=5cm,rotate=90]  {\@title};
+\end{tikzpicture}
+}
+```
+
+The `\LoadClass{article}` command makes this class basically a “derived class” of the standard `article.cls`; probably a good idea to not start from scratch. `:D` The article class provides the `\title` command with the exact same functionality that I renewed it to; I just did that to show you what it does.  It saves its input in a macro `\@title` (the `@` sign is a just a convention for class/package-internal macros.  It somewhat protects this text from being overwritten accidentally.)  The `\AtBeginDocument` macro saves its input for execution right after `\begin{document}`.
+
+Note also that it's TikZ *nodes* that contain text, not rectangles.  And you don't need to save the title in a box then put it in a node—TikZ will probably take care of that for you.
+
+Now here is a TeX file using this shiny new class.
+
+```latex
+\documentclass{ipavlic}
+\title{TikZ Placement of Title}
+\usepackage{lipsum}
+\begin{document}
+\lipsum
+\end{document}
+```
+
+A disadvantage to this implementation is that because it relies on TikZ's `remember picture` mechanism, you have to run LaTeX twice to get the title in the right place.
+
+Another method would be to alter the shipout routines which are executed at the end of every page.  Your custom routine would place all of the rules and extra info outside of the regular type block.  If it were me doing that I would use the `pgfpages` package but there are methods with less overhead I'm sure.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12291/documentclass-user-macros/12312#12312) on TeX Stack Exchange, 2011-02-28. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

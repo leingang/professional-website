@@ -1,0 +1,55 @@
+---
+title: Finding certain coefficients in Taylor expansion of $ \log(1 +qx^2 + rx^3)$
+date: '2016-06-14'
+description: I think the suggested solution is straightforward enough not to be dismissed out-of-hand. We know $$\log(1+u) = u - \frac{u^2}{2} + \frac{u^3}{3} -…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1825911
+se-link: https://math.stackexchange.com/questions/1825901/finding-certain-coefficients-in-taylor-expansion-of-log1-qx2-rx3/1825911#1825911
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- taylor-expansion
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding certain coefficients in Taylor expansion of $ \log(1 +qx^2 + rx^3)$](https://math.stackexchange.com/questions/1825901/finding-certain-coefficients-in-taylor-expansion-of-log1-qx2-rx3), asked by [ilmath](https://math.stackexchange.com/users/347766/ilmath) on Mathematics Stack Exchange (2016-06-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This exercise is part of the STEP $3$ paper from $2014$. 
+>
+> At a certain point in the problem, we 're supposed find $a_n$ for $n = {2,5,7,9}$
+> where $a_n$ is the coefficient of $x^n$ in the series expansion around $0$ of $\log(1+qx^2 + rx^3)$.
+>
+> I knew at first sight that this can't be as direct as it seems, precisely because it'd be tedious to expand all the powers of $(qx^2+rx^3)$ to find the coefficients we're looking for. When I saw I couldn't get anywhere with this,
+>
+> I looked at the provided 'hints and solutions' and , to my surprise, this is all they said, 'the coefficients may be found easily by expanding $\log(1 +qx^2 + rx^3)$' . '
+>
+> While using a computational resource such as Wolfram | Alpha may find the solution quickly, how does one do it by hand?
+:::
+
+I think the suggested solution is straightforward enough not to be dismissed out-of-hand.
+We know
+$$\log(1+u) = u - \frac{u^2}{2} + \frac{u^3}{3} - \frac{u^4}{4} \pm\dotsm$$
+Let $u = qx^2 + rx^3$.  Then
+$$\log(1+qx^2 + rx^3) = (qx^2 + rx^3) - \frac{1}{2}(qx^2 + rx^3)^2 + \frac{1}{3}(qx^2 + rx^3)^3 + \dotsm$$
+Only the first power of $(qx^2 + rx^3)$ is going to produce a term of degree $2$.  So $a_2 = q$.  The expansion of $(qx^2 + rx^3)^2$ is going to produce terms of degree $4$, $5$, and $6$, and the expansion of $(qx^2 + rx^3)^3$ is going to produce terms of degree $6$, $7$, $8$, and $9$.  The expansion of $(qx^2+rx^3)^4$ is going to produce terms of degree $8$, $9$, and higher.  The expansion of $(qx^2 + rx^3)^5$ is going to produce terms of degree $10$ and higher.
+
+So $a_5$ comes from the cross term in the second binomial power:
+$$a_5 = -\frac{1}{2} (2qr) = -qr$$
+The degree $7$ term comes from  $(qx^2)^2(rx^3)^1$.  From the binomial theorem there is a factor of $3$, but there is also the $\frac{1}{3}$ in front of the power to cancel those.  Therefore
+$$a_7 = q^2 r$$
+The degree $9$ term comes from $(qx^2)^0(rx^3)^3$ in the third power and $(qx^2)^3(rx^3)^1$ in the fourth power.  So
+$$a_9 = \frac{1}{3}r^3 - \frac{1}{4}\cdot 4 q^3r = \frac{1}{3}r^3 - q^3 r$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1825901/finding-certain-coefficients-in-taylor-expansion-of-log1-qx2-rx3/1825911#1825911) on Mathematics Stack Exchange, 2016-06-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

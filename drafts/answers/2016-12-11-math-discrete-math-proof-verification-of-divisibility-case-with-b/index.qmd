@@ -1,0 +1,56 @@
+---
+title: Discrete math proof-verification of divisibility. Case with both truth and a counterexample
+date: '2016-12-11'
+description: Your negation of the statement is not correct. The original statement is
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2054337
+se-link: https://math.stackexchange.com/questions/2054327/discrete-math-proof-verification-of-divisibility-case-with-both-truth-and-a-cou/2054337#2054337
+se-score: 1
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- proof-verification
+- divisibility
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Discrete math proof-verification of divisibility. Case with both truth and a counterexample](https://math.stackexchange.com/questions/2054327/discrete-math-proof-verification-of-divisibility-case-with-both-truth-and-a-cou), asked by [SeesSound](https://math.stackexchange.com/users/317630/seessound) on Mathematics Stack Exchange (2016-12-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If you need me to expand or write the proof more formally please let me know.
+>
+> I am confused by the following question, where it seems I have found both a universal value that makes the question true, but then I have also found a counterexample. Where did I go wrong in my proof? Is the statement true or false?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: pxGLK.png
+:::
+
+Your negation of the statement is not correct.  The original statement is
+
+> $$\forall a \ \exists b\ (3 \mid a+b)$$
+
+Its negation is
+
+> $$\exists a\ \forall b (3 \not\mid a+b)\tag{1}$$ 
+
+What you showed is
+
+> $$\forall b\ \exists a\ (3 \not\mid a+b)\tag{2}$$
+
+Interchanging those two quantifiers is a big deal.  In (2), $a$ can depend on $b$.  Indeed, this is what you did to show the statement is true.  But in (1), $a$ comes first and $b$ is arbitrary.  
+
+Your proof of truth of the original statement is valid.  To make it clear that you are using the quantifiers correctly, you should add words to your proof. “Given $a$, let $b=-a$.  Then $b+a = 0$, and $3 \mid 0$.”  The use of “given” refers to the “for all” quantifier, and the use of “let” refers to “there exists.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2054327/discrete-math-proof-verification-of-divisibility-case-with-both-truth-and-a-cou/2054337#2054337) on Mathematics Stack Exchange, 2016-12-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

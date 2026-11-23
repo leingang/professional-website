@@ -1,0 +1,79 @@
+---
+title: Intersecting planes not shown correctly with TikZ
+date: '2013-04-17'
+description: 'Unfortunately, this doesn''t seem possible in the current version of pgfplots. From the manual (Section 4.5.1):'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 109210
+se-link: https://tex.stackexchange.com/questions/109196/intersecting-planes-not-shown-correctly-with-tikz/109210#109210
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+- pgfplots
+- 3d
+- matlab
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Intersecting planes not shown correctly with TikZ](https://tex.stackexchange.com/questions/109196/intersecting-planes-not-shown-correctly-with-tikz), asked by [George Urvey](https://tex.stackexchange.com/users/21070/george-urvey) on TeX Stack Exchange (2013-04-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I made a plot in MATLAB of a deformed and an undeformed model. I converted the figure to TikZ using [matlab2tikz][q-1] and added it to my .tex file. I then noticed that the two configurations, which are intersecting, are not displayed correctly. To illustrate what I mean, I've stripped down the TikZ code to make to rectangles cross in a 3D space:
+>
+> ```latex
+> \begin{tikzpicture}
+> \begin{axis}[%
+> 	width=5cm,height=5cm,
+> 	view={-37.5}{45},
+> 	scale only axis,
+> 	xmin=-3, xmax=23,
+> 	ymin=0, ymax=20,
+> 	zmin=-5, zmax=5,
+> 	hide axis]
+> 	\addplot3 [fill=white!80!red,opacity=0.5,draw=black] table[row sep=crcr]{
+> 	20 0 0\\
+> 	20 20 0\\
+> 	0 20 0\\
+> 	0 0 0\\
+> 	};
+>
+> 	\addplot3 [fill=white!80!blue,opacity=0.8,draw=black] table[row sep=crcr]{
+> 	15 5 -4\\
+> 	15 15 0\\
+> 	5 15 4\\
+> 	5 5 0\\
+> 	};
+> \end{axis}
+> \end{tikzpicture}
+> ```
+>
+> The result looks like this:
+>
+> ![Two crossing planes][q-2]
+>
+> As can be seen one plane lies entirely on top of the other, while in fact they intersect (i.e. about half of the blue plane lies 'underneath' the red plane). 
+> With my minimum TikZ knowledge I was hoping someone here could help me fix this problem, such that the planes indeed intersect.
+>
+>
+>   [q-1]: http://www.mathworks.nl/matlabcentral/fileexchange/22022-matlab2tikz
+>   [q-2]: CUA9f.png
+:::
+
+Unfortunately, this doesn't seem possible in the current version of pgfplots.  From the [manual][1] (Section 4.5.1):
+
+> `pgfplots` supports *z* buffering techniques up to a certain extent. It works pretty well for single scatter plots (`z buffer=sort`), mesh or surface plots (`z buffer=auto`) or parametric mesh and surface plots (`z buffer=sort`). *However, it can’t combine different `\addplot` commands, those will be drawn in the order of appearance.* You may encounter the limitations sometimes. Maybe it will be improved in future versions.
+
+
+  [1]: http://texdoc.net/pkg/pgfplots
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/109196/intersecting-planes-not-shown-correctly-with-tikz/109210#109210) on TeX Stack Exchange, 2013-04-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

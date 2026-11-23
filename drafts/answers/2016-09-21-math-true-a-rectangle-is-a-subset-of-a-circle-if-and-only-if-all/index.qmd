@@ -1,0 +1,43 @@
+---
+title: True? "A rectangle is a subset of a circle if and only if all its vertices are in the circle (or its boundary)."
+date: '2016-09-21'
+description: 'The statement is true, but I don''t know of an elementary proof. The proof that comes to mind uses the Krein-Milman Theorem: a compact set is equal to the…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1935741
+se-link: https://math.stackexchange.com/questions/1935727/true-a-rectangle-is-a-subset-of-a-circle-if-and-only-if-all-its-vertices-are-i/1935741#1935741
+se-score: 1
+se-accepted: false
+se-tags:
+- geometry
+- euclidean-geometry
+- analytic-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[True? "A rectangle is a subset of a circle if and only if all its vertices are in the circle (or its boundary)."](https://math.stackexchange.com/questions/1935727/true-a-rectangle-is-a-subset-of-a-circle-if-and-only-if-all-its-vertices-are-i), asked by [Marios Gretsas](https://math.stackexchange.com/users/359315/marios-gretsas) on Mathematics Stack Exchange (2016-09-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is this statement true?
+>
+> > A rectangle is a subset of a circle if and only if all its vertices are in the circle (or in its boundary).
+>
+> Intuitively it's true, but can someone give me proof?
+>
+> Thank you in advance!
+:::
+
+The statement is true, but I don't know of an elementary proof.  The proof that comes to mind uses the [Krein-Milman Theorem](https://en.wikipedia.org/wiki/Krein%E2%80%93Milman_theorem): a compact set is equal to the closed convex hull of its extreme points.
+
+Suppose all the vertices of a rectangle are inside the circle.  Then every convex combination of the vertices is also inside the circle (since the circle is also convex).  Since the set of all convex combinations of the vertices generates the rectangle, the rectangle is inside the circle.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1935727/true-a-rectangle-is-a-subset-of-a-circle-if-and-only-if-all-its-vertices-are-i/1935741#1935741) on Mathematics Stack Exchange, 2016-09-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

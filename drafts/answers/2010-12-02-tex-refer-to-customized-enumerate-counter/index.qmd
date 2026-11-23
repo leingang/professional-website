@@ -1,0 +1,106 @@
+---
+title: Refer to customized `enumerate` counter
+date: '2010-12-02'
+description: The enumitem package gives you lots more—you can create enumerate-like list environments and set their format globally. Then you can use a counter to save the…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6378
+se-link: https://tex.stackexchange.com/questions/6360/refer-to-customized-enumerate-counter/6378#6378
+se-score: 13
+se-accepted: true
+se-tags:
+- cross-referencing
+- enumerate
+- counters
+- enumitem
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Refer to customized `enumerate` counter](https://tex.stackexchange.com/questions/6360/refer-to-customized-enumerate-counter), asked by [Pieter](https://tex.stackexchange.com/users/210/pieter) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> <h2>Background</h2>
+> I'm typesetting a list of conditions for a certain mathematical object. There are three conditions. Later on I wish to provide an equivalent condition for the third. Therefore, it would be nice to have this kind of numbering:
+> >c) condition 1
+>
+> >b) condition 2
+>
+> >c) condition 3
+>
+> while later on there would be
+>
+> >c') condition 3 (alternative)
+>
+> My idea was to use a `\label{c}` for the original condition and write
+>
+> ```latex
+> \item[\ref{c}]\label{c-prime} ...
+> ```
+>
+> and it hoping it would be able to refer to c') this way. But `\ref{c-prime}` results in the number of the definition, not in the enumerate counter.
+>
+> <h2>Solution</h2>
+> I've got a solution, based on a hard-coded starting point for the counter and fixed layout. Using [`enumitem`][q-1] I can write
+>
+> ```latex
+> \begin{enumerate}[label=\alph*'),ref=(\alph*'),start=3]
+> ```
+>
+> and everything works smoothly
+> <h2>Question</h2>
+> There are some drawbacks:
+>
+>  - I have to hand pick the starting point for the counter, rendering it impossible to automatically change the ordering;
+>  - the formatting for labels and references is hard-coded, if I change the global format I still have to adapt it locally.
+>
+> What can I do to make this more flexible?
+>
+> <small>I am aware this is a rather academic question as it already works, but I'm curious</small>
+>
+>   [q-1]: http://pkg.ctan.org/enumitem
+:::
+
+The `enumitem` package gives you lots more—you can create `enumerate`-like list environments and set their format globally.  Then you can use a counter to save the value of the current item to feed to `start` later on.
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}% just for blind text
+\usepackage{enumitem}
+\newlist{conditions}{enumerate}{1}
+\newlist{altconditions}{enumerate}{1}
+\setlist[conditions]{label=\alph*),ref=(\alph*)}
+\setlist[altconditions]{label=\alph*$'$),ref=(\alph*$'$)}
+\newcounter{favoritecondition}
+\begin{document}
+
+\lipsum[1]
+
+\begin{conditions}
+\item condition 1
+\item condition 2
+\item condition 3\label{c}\setcounter{favoritecondition}{\value{conditionsi}}
+\item condition 4
+\end{conditions}
+
+\lipsum[2]
+
+An alternative to condition \ref{c} is
+
+\begin{altconditions}[start=\value{favoritecondition}]
+\item\label{c-prime} condition 3 alternative 
+\end{altconditions}
+
+We leave as an exercise to the reader that \ref{c} and \ref{c-prime} are equivalent.
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6360/refer-to-customized-enumerate-counter/6378#6378) on TeX Stack Exchange, 2010-12-02. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

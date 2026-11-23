@@ -1,0 +1,60 @@
+---
+title: Mean value theorem and the continuity of step length
+date: '2020-02-15'
+description: After thinking about this a bit, I realized it's a simple application of the implicit function theorem. Let $$\newcommand{\R}{\mathbb{R}} F(a,b,t) = f(b) -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3548076
+se-link: https://math.stackexchange.com/questions/3544760/mean-value-theorem-and-the-continuity-of-step-length/3548076#3548076
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- derivatives
+- rolles-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Mean value theorem and the continuity of step length](https://math.stackexchange.com/questions/3544760/mean-value-theorem-and-the-continuity-of-step-length), asked by [Zhuoran Liu](https://math.stackexchange.com/users/750377/zhuoran-liu) on Mathematics Stack Exchange (2020-02-13; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}, f\in C^1$. Then for two points $a,b \in \mathbb{R}$, we know by mean value theorem we know that there exists $t \in (0, 1)$ such that
+> $$f^\prime(a+t(b-a)) = \frac{f(b)-f(a)}{b-a}$$
+> We can view $t$ as a parameter collectively decided by $a,b$ and $f(\cdot)$. Now, suppose that we hold $a$ to be fixed and move $b$, what can be said about the changes in $t$ corresponding to the changes in $b$ (e.g. can we argue if $t(a,b)$ is continuous)? 
+>
+> Thanks in advance for your hints/suggestions!
+:::
+
+After thinking about this a bit, I realized it's a simple application of the [implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem).  Let
+$$\newcommand{\R}{\mathbb{R}}
+    F(a,b,t) = f(b) - f(a) - f'(a+t(b-a))(b-a)$$
+Let $U = \{(a,b): b > a\} \subset \R^2$ and $V = (0,1) \subset \R$.  The mean value theorem says that for all $(a_0,b_0) \in U$ there exists $t_0 \in V$ such that $F(a_0,b_0,t_0) = 0$.  
+
+The derivatives of $F$ are:
+$$\begin{align*}
+    \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+    \pderiv{F}{a} &= - f'(a) + f'(a+t(b-a)) - f''(a+t(b-a))(1-t)(b-a) \\
+    \pderiv{F}{b} &=  f'(b) - f'(a+t(b-a)) - f''(a+t(b-a))t(b-a) \\
+    \pderiv{F}{t} &= -f''(a+t(b-a))(b-a)^2
+\end{align*}$$
+If $f$ is $C^2$, then $F$ is $C^1$, and that is smooth enough to apply IFT.  The invertibility criterion for the IFT is that $\pderiv{F}{t}(a_0,b_0,t_0) \neq 0$.  Since $b_0 \neq a_0$, this is guaranteed if only $f''(a_0+t(b_0-a_0)) \neq 0$.
+
+To summarize, if $f$ is $C^2$, $\frac{f(b_0)-f(a_0)}{b_0-a_0} = f'(a+t(b-a))$ and $f''(a_0 + t_0(b_0-a_0) \neq 0$, then $t$ is a $C^1$ function of $(a,b)$ in a neighborhood of $(a_0,b_0)\cap U$.  Moreover,
+$$\begin{align*}
+    \pderiv{t}{a} &= -\frac{\pderiv{F}{a}}{\pderiv{F}{t}}
+        = \frac{f'(a+t(b-a))-f'(a)}{f''(a+t(b-a))(b-a)^2} - \frac{1-t}{b-a} \\
+    \pderiv{t}{b} &= -\frac{\pderiv{F}{b}}{\pderiv{F}{t}}
+        = \frac{f'(b) - f'(a+t(b-a))}{f''(a+t(b-a))(b-a)^2} - \frac{t}{b-a} \\
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3544760/mean-value-theorem-and-the-continuity-of-step-length/3548076#3548076) on Mathematics Stack Exchange, 2020-02-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

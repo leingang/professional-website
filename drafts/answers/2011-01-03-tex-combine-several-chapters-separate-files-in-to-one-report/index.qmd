@@ -1,0 +1,53 @@
+---
+title: Combine several chapters (separate files) in to one report
+date: '2011-01-03'
+description: Use a larger document class like book, report, or memoir, that allows chapters. Include the text of your introduction (the document part, not the preamble) in…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 8199
+se-link: https://tex.stackexchange.com/questions/8198/combine-several-chapters-separate-files-in-to-one-report/8199#8199
+se-score: 14
+se-accepted: true
+se-tags:
+- book-design
+- include
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Combine several chapters (separate files) in to one report](https://tex.stackexchange.com/questions/8198/combine-several-chapters-separate-files-in-to-one-report), asked by [Niroshan](https://tex.stackexchange.com/users/2709/niroshan) on TeX Stack Exchange (2011-01-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am writing my final year thesis. I was asked to write my report part by part. First I wrote the Introduction chapter. No I have completed the Literature Survey.
+> Both these were written as two separate articles(document class). Both these tex files reside in different directories and both of them have their own bibliography. All the bibtex files are kept in a common folder
+>
+> ```latex
+> Report
+>    >intro
+>        >introduction.tex
+>    >lit-review
+>        >literature-review.tex
+>    >refs
+>        >refgroup1.bib
+>        >refgroup2.bib
+> ```
+>
+>
+> Now I want to combine these two articles in to one document as two chapters, to produce a draft report which will be extended further by adding new parts as my research progresses. The references should be displayed at the end of the whole report.
+>
+> Could someone guide me to do this? Thank you
+:::
+
+Use a larger document class like book, report, or memoir, that allows chapters.  Include the text of your introduction (the document part, not the preamble) in the first chapter, and the text of your lit review in the second.
+
+Use the [`multibib`](http://ctan.org/pkg/multibib) or [`chapterbib`](http://ctan.org/pkg/chapterbib) package to manage separate bibliographies.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/8198/combine-several-chapters-separate-files-in-to-one-report/8199#8199) on TeX Stack Exchange, 2011-01-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

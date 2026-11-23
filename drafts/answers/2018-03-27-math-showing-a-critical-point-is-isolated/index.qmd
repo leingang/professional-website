@@ -1,0 +1,36 @@
+---
+title: Showing a Critical Point is Isolated
+date: '2018-03-27'
+description: A critical point $p$ is not a local extremum if every neighborhood of $p$ contains a point $q$ with $f(q) > f(p)$ and a point $q'$ with $f(q') < f(p)$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2710466
+se-link: https://math.stackexchange.com/questions/2710443/showing-a-critical-point-is-isolated/2710466#2710466
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Showing a Critical Point is Isolated](https://math.stackexchange.com/questions/2710443/showing-a-critical-point-is-isolated), asked by [confusedmath ](https://math.stackexchange.com/users/480806/confusedmath) on Mathematics Stack Exchange (2018-03-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm looking at the critical point $(0,0)$ of the function $f(x,y)=x^2+4y^3$. Since the Hessian is singular, we cannot conclude anything about the local extrema. However, a graph of this function clearly shows that $(0,0)$ is neither a local max nor min. I'm wondering if there is a way to go about showing this without just referring to the graph. Further, is there a way to show that $(0,0)$ is isolated or not isolated?
+:::
+
+A critical point $p$ is not a local extremum if every neighborhood of $p$ contains a point $q$ with $f(q) > f(p)$ and a point $q'$ with $f(q') < f(p)$.
+
+In this case, $f(0,0) = 0$, but for any $\epsilon>0$, $f(\epsilon,0) = \epsilon^2 > 0$, and $f(0,-\epsilon) = -4\epsilon^3 < 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2710443/showing-a-critical-point-is-isolated/2710466#2710466) on Mathematics Stack Exchange, 2018-03-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

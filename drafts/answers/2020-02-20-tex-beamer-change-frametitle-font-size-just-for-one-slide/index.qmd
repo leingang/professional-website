@@ -1,0 +1,65 @@
+---
+title: Beamer change frametitle font size just for one slide
+date: '2020-02-20'
+description: Samcarter's answer is correct as long as the ignorenonframetext class option is not selected. If it is, the { and } around the slide that was intended to be…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 529326
+se-link: https://tex.stackexchange.com/questions/309479/beamer-change-frametitle-font-size-just-for-one-slide/529326#529326
+se-score: 1
+se-accepted: false
+se-tags:
+- beamer
+- frame-title
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer change frametitle font size just for one slide](https://tex.stackexchange.com/questions/309479/beamer-change-frametitle-font-size-just-for-one-slide), asked by [lsl__](https://tex.stackexchange.com/users/103693/lsl) on TeX Stack Exchange (2016-05-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a slide with long frame title so I want to make the font size smaller. The others are fine so I don't want to change the default settings.
+>
+> Any ideas how to do it?
+:::
+
+Samcarter's answer is correct *as long as the `ignorenonframetext` class option is not selected.*  If it is, the `{` and `}` around the slide that was intended to be changed are not noticed.  This means the `\setbeamerfont` command is not localized, and all subsequent slides will have the new (smaller) font size set.
+
+To work around this, make sure there is a group around the slide:
+
+```latex
+\documentclass[ingorenonframetext]{beamer}
+
+\begin{document}
+
+\begin{frame}
+    \frametitle{normal title}
+    abc
+\end{frame} 
+
+\mode<presentation>{\bgroup}
+\setbeamerfont{frametitle}{size=\small}
+\begin{frame}
+    \frametitle{extra extra extraextra extra extraextra extra extra extra extra extra long title}
+    abc
+\end{frame}         
+\mode<presentation>{\egroup}
+
+
+\begin{frame}
+    \frametitle{normal title}
+    abc
+\end{frame} 
+
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/309479/beamer-change-frametitle-font-size-just-for-one-slide/529326#529326) on TeX Stack Exchange, 2020-02-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

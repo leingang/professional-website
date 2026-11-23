@@ -1,0 +1,75 @@
+---
+title: 'Tikz: Placing connecting Labels'
+date: '2024-12-21'
+description: The key child anchor=north that you set draws edges “to” the north anchor point of the child nodes. If you change
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 733309
+se-link: https://tex.stackexchange.com/questions/733308/tikz-placing-connecting-labels/733309#733309
+se-score: 2
+se-accepted: false
+se-tags:
+- tikz-pgf
+- tikz-arrows
+- tikz-trees
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Tikz: Placing connecting Labels](https://tex.stackexchange.com/questions/733308/tikz-placing-connecting-labels), asked by [David Collins](https://tex.stackexchange.com/users/111823/david-collins) on TeX Stack Exchange (2024-12-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm building a tree n Tikz.  When I assign a label and arrow to show the relationship between two nodes, the label & arrow does not align with the line connecting the two nodes.
+> ```latex
+> \documentclass[tikz]{standalone}
+>
+> \tikzset{
+>   every node/.style={   align=center}
+> }
+>
+> \begin{document}
+> \begin{tikzpicture}
+> \tikzstyle{level 1}=[sibling distance=25mm]
+> 	\node[ rectangle, draw, color=red] (MD) {Title}
+> 		[child anchor=north]	
+> 		child  {node (Inv) {SubTitle}  }
+> 		child  {node (Sel) {SecTitle}  };
+> \draw[<->, thick, blue] (MD) -- node[above, sloped] {abcde} +(Inv);
+> \end{tikzpicture}
+> \end{document}
+> ```
+> My output:
+> [![enter image description here][q-1]][q-1]
+> Any suggestions, please?
+>
+> This was the only search return that was close but didn't have the original lines to align with:
+> https://tex.stackexchange.com/questions/720004/enhancing-line-connections-and-text-alignment-in-tikz-diagram
+>
+>
+>
+>   [q-1]: MB5m2sUp.png
+:::
+
+The key `child anchor=north` that you set draws edges “to” the north anchor point of the child nodes. If you change
+
+```latex
+\draw[<->, thick, blue] (MD) -- node[above, sloped] {abcde} +(Inv);
+```
+
+to
+
+```latex
+\draw[<->, thick, blue] (MD) -- node[above, sloped] {abcde} +(Inv.north);
+```
+
+the two lines will match up.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/733308/tikz-placing-connecting-labels/733309#733309) on TeX Stack Exchange, 2024-12-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

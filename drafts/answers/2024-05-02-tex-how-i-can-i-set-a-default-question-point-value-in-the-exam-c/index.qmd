@@ -1,0 +1,157 @@
+---
+title: How I can I set a default question point value in the exam class?
+date: '2024-05-02'
+description: 'Here is the solution I came up with originally. In the preamble:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 717035
+se-link: https://tex.stackexchange.com/questions/717001/how-i-can-i-set-a-default-question-point-value-in-the-exam-class/717035#717035
+se-score: 1
+se-accepted: false
+se-tags:
+- macros
+- exam
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How I can I set a default question point value in the exam class?](https://tex.stackexchange.com/questions/717001/how-i-can-i-set-a-default-question-point-value-in-the-exam-class), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2024-05-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm writing an exam in the `exam` class and I'd like to set the point value for an entire group of questions at once. For example:
+>
+> ```latex
+> \documentclass{exam}
+> \title{Know your US States and Capitals!}
+>
+>
+> \begin{document}
+>
+> \begin{questions}
+>
+> \begingroup
+> \defaultpoints{2}
+> \question What is the capital of California?
+> \begin{choices}
+>     \choice Los Angeles
+>     \choice Sacramento
+>     \choice San Francisco
+>     \choice San Diego
+> \end{choices}
+>
+> \question Which city serves as the capital of Texas?
+> \begin{choices}
+>     \choice Dallas
+>     \choice Houston
+>     \choice Austin
+>     \choice San Antonio
+> \end{choices}
+>
+> \question What is the capital of Florida?
+> \begin{choices}
+>     \choice Miami
+>     \choice Orlando
+>     \choice Jacksonville
+>     \choice Tallahassee
+> \end{choices}
+>
+> \endgroup
+>
+> \begingroup
+> \defaultpoints{3}
+> \question Which city is the capital of New York?
+> \begin{choices}
+>     \choice Buffalo
+>     \choice Albany
+>     \choice New York City
+>     \choice Syracuse
+> \end{choices}
+>
+> \question What is the capital of Nevada?
+> \begin{choices}
+>     \choice Reno
+>     \choice Henderson
+>     \choice Carson City
+>     \choice Las Vegas
+> \end{choices}
+>
+> \question Which city serves as the capital of Colorado?
+> \begin{choices}
+>     \choice Denver
+>     \choice Boulder
+>     \choice Colorado Springs
+>     \choice Aurora
+> \end{choices}
+>
+> \question What is the capital of Massachusetts?
+> \begin{choices}
+>     \choice Springfield
+>     \choice Boston
+>     \choice Worcester
+>     \choice Cambridge
+> \end{choices}
+>
+> \question Which city is the capital of Washington state?
+> \begin{choices}
+>     \choice Seattle
+>     \choice Tacoma
+>     \choice Spokane
+>     \choice Olympia
+> \end{choices}
+> \endgroup
+>
+> % no points should be specified
+> \question What is the capital of Hawaii?
+> \begin{choices}
+>     \choice Maui
+>     \choice Honolulu
+>     \choice Kauai
+>     \choice Hilo
+> \end{choices}
+>
+> \question[5] Which city serves as the capital of Ohio?
+> \begin{choices}
+>     \choice Cincinnati
+>     \choice Columbus
+>     \choice Cleveland
+>     \choice Dayton
+> \end{choices}
+>
+> \end{questions}    
+> \end{document}
+> ```
+>
+> (N.B. I don't mean to comment on the actual difficulty of these questions!)
+>
+> The output should be the same as if the first three questions were declared with `\question[2]`, and the next five with `\question[3]`. The ninth question is outside a group of default points, so shouldn't have any points attached to it. The last question should work as a normal question with points defined.
+>
+> I have a h@cky solution already and I will post it eventually, but I'm curious to see if there are better ones.
+:::
+
+Here is the solution I came up with originally. In the preamble:
+
+```latex
+\makeatletter
+\let\orig@doitem\@doitem
+\newcommand{\defaultpoints}[1]{
+   \def\@doitem{\@ifnextchar[{\@readpoints}{\@readpoints[#1]}}
+}
+\newcommand{\nodefaultpoints}{
+    \let\@doitem\orig@doitem
+}
+\makeatother
+```
+
+As you can see, my LaTeX habits are old. I duplicated `\@doitem` for safekeeping and redefined `\@doitem` to call `\@readpoints` on the default point number in the absence of any declared number.
+
+But this relies on the internals of the `\question` command. The solution by user202729 is cleaner and simpler.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/717001/how-i-can-i-set-a-default-question-point-value-in-the-exam-class/717035#717035) on TeX Stack Exchange, 2024-05-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

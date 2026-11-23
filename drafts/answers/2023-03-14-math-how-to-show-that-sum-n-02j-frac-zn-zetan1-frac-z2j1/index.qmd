@@ -1,0 +1,50 @@
+---
+title: How to show that $ \sum_{n=0}^{2j} \frac {z^{n}}{\zeta^{n+1}} =\frac {z^{2j+1}-\zeta^{2j+1}}{(z-\zeta)\zeta^{2j+1}} $
+date: '2023-03-14'
+description: As @Anne Bauval points out, this question has been answered in the comments.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4659002
+se-link: https://math.stackexchange.com/questions/4658954/how-to-show-that-sum-n-02j-frac-zn-zetan1-frac-z2j1/4659002#4659002
+se-score: 1
+se-accepted: false
+se-tags:
+- sequences-and-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to show that $ \sum_{n=0}^{2j} \frac {z^{n}}{\zeta^{n+1}} =\frac {z^{2j+1}-\zeta^{2j+1}}{(z-\zeta)\zeta^{2j+1}} $](https://math.stackexchange.com/questions/4658954/how-to-show-that-sum-n-02j-frac-zn-zetan1-frac-z2j1), asked by [Aisha](https://math.stackexchange.com/users/846479/aisha) on Mathematics Stack Exchange (2023-03-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am studying  some types of convergent sequences.
+> I know that $\sum_{n=0}^{2j} z^{n}=\frac {z^{2j+1}-1}{z-1}$, but I am struggling with how to show that :
+>
+> $$\sum_{n=0}^{2j} \frac {z^{n}}{\zeta^{n+1}}=\frac {z^{2j+1}-\zeta^{2j+1}}{(z-\zeta)\zeta^{2j+1}}.$$
+>
+> When I examined this formula with $j=1$ and $j=2,$ it is works but how can I prove this formula for all values of $j=1,2,\dots$ or where can I find a list of table show this?
+:::
+
+As @Anne Bauval points out, this question has been answered in the comments. 
+
+You are already aware of the geometric series formula. @dan_fulea suggests you change the variable from $z$ in your expression to $X$:
+$$\sum_{n=0}^{2j} X^n = \frac{X^{2j+1}-1}{X-1}$$
+Your expression contains a geometric series with $X=\frac{z}{\zeta}$ in it. So
+$$\begin{aligned}
+\sum_{n=0}^{2j} \frac {z^{n}}{\zeta^{n+1}}
+    &= \frac{1}{\zeta}\sum_{n=0}^{2j} \left(\frac{z}{\zeta}\right)^n \\
+    &= \frac{1}{\zeta} \cdot \frac{\left(\frac{z}{\zeta}\right)^{2j+1}-1}{\frac{z}{\zeta}-1} \\
+    &= \frac{\left(\frac{z}{\zeta}\right)^{2j+1}-1}{z-\zeta} 
+       \cdot \frac{\zeta^{2j+1}}{\zeta^{2j+1}}\\
+    &= \frac {z^{2j+1}-\zeta^{2j+1}}{(z-\zeta)\zeta^{2j+1}}
+\end{aligned}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4658954/how-to-show-that-sum-n-02j-frac-zn-zetan1-frac-z2j1/4659002#4659002) on Mathematics Stack Exchange, 2023-03-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,42 @@
+---
+title: Confused about the definition of a function. "Each a in A belongs to a unique ordered pair, (a,b) in f". What about asymptotes?
+date: '2019-10-27'
+description: In situations like vertical asymptotes and holes, the domain is adjusted to avoid those points.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3411328
+se-link: https://math.stackexchange.com/questions/3411325/confused-about-the-definition-of-a-function-each-a-in-a-belongs-to-a-unique-or/3411328#3411328
+se-score: 12
+se-accepted: false
+se-tags:
+- functions
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Confused about the definition of a function. "Each a in A belongs to a unique ordered pair, (a,b) in f". What about asymptotes?](https://math.stackexchange.com/questions/3411325/confused-about-the-definition-of-a-function-each-a-in-a-belongs-to-a-unique-or), asked by [Fubby](https://math.stackexchange.com/users/719232/fubby) on Mathematics Stack Exchange (2019-10-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Studying Set theory, specifically functions. My textbook says as follows: 
+>
+> >A function $f:A\rightarrow B$ is a relation from $A$ to $B$ (i.e, a subset of $A\times B$) such that each $a$ in $A$ belongs to a unique ordered pair, $(a,b)$ in $f$.
+>
+> This seems to add an additional 'rule' to the definition of a function from what I am familiar with in calculus. The requirement that *every* $a$ must map to some b is confusing to me. What about functions with vertical asymptotes? Don't those functions map from $\mathbb R\rightarrow\mathbb R$, but there is some a value where the function is not defined? Or the same could be said about functions with "holes".
+>
+> Any help would be appreciated. Thanks!
+:::
+
+In situations like vertical asymptotes and holes, the domain is adjusted to avoid those points.
+
+For instance, the function $f(x) = \frac{1}{x}$ does *not* have domain $\mathbb{R}$.  It has domain $\{x \in \mathbb{R}: x \neq 0\}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3411325/confused-about-the-definition-of-a-function-each-a-in-a-belongs-to-a-unique-or/3411328#3411328) on Mathematics Stack Exchange, 2019-10-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

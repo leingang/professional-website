@@ -1,0 +1,79 @@
+---
+title: 'Extending the question: Is $S$ a basis for $P^3$?'
+date: '2018-11-06'
+description: Good for you trying to deepen your understanding of this subject. Unlike calculus, where you're usually just studying one thing at a time (functions), linear…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2987637
+se-link: https://math.stackexchange.com/questions/2987481/extending-the-question-is-s-a-basis-for-p3/2987637#2987637
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Extending the question: Is $S$ a basis for $P^3$?](https://math.stackexchange.com/questions/2987481/extending-the-question-is-s-a-basis-for-p3), asked by [Evan Kim](https://math.stackexchange.com/users/607258/evan-kim) on Mathematics Stack Exchange (2018-11-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > Let $S = \{4 - t, t^3, 6t^2, 3t + t^3, -1 + 4t\}$.  Is $S$ a basis for $P^3$?
+>
+> Polynomial Equation:  
+> 0t<sup>3</sup> + 0t<sup>2</sup> - t + 4 = 0  
+> t<sup>3</sup> + 0t<sup>2</sup> + 0t + 0 = 0  
+> 0t<sup>3</sup> + 6t<sup>2</sup> + 0t + 0 = 0  
+> t<sup>3</sup> + 0t<sup>2</sup> + 3t + 0 = 0  
+> 0t<sup>3</sup> + 0t<sup>2</sup> + 4t - 1 = 0  
+>
+> Transform into an augmented matrix:  
+> \begin{bmatrix}0&0&-1&4&0\\1&0&0&0&0\\0&6&0&0&0\\1&0&3&0&0\\0&0&4&-1&0\end{bmatrix}
+> RREF:  
+> \begin{bmatrix}1&0&0&0&0\\0&1&0&0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&0\end{bmatrix}
+>
+> I answered the question saying that S is not a basis for p<sup>3</sup> because the all zero bottom row means that there is a free variable within the equation, making the overall system linearly dependent and therefore not a basis.
+>
+> To push my understanding, can I further say that the vector (-1 + 4t) is the only dependent variable and if it was not in S, then S would be a basis of p<sup>3</sup>? 
+>
+> Also, the presence of the free variable would mean that the dependent vector would be a non-unique combination of ANY of the other vectors found within S?
+:::
+
+Good for you trying to deepen your understanding of this subject.  Unlike calculus, where you're usually just studying one thing at a time (functions), linear algebra has a lot of objects with different properties.  These objects are related, and sometimes in a canonical fashion, but they're not the same object.  Sets of vectors are not identical to matrices, matrices are not identical to systems of equations, variables are not the same as vectors, etc.  So I want to pick apart some of your statements to make sure you're using the terms correctly.  
+
+> I set all the polynomials = 0, and reduced the augmented 5x5 matrix down to reduced row echelon form
+
+To push your understanding: *why* did you do this?  If your answer is “Aren't you supposed to do that?” then you should dig a little deeper.  You didn't show your augmented matrix, but based on its dimensions I'm assuming you put the coefficients of the polynomials as rows of the matrix.  But the more direct connection to linear dependence is the matrix whose *columns* are the coefficients of the polynomials.  If $A$ is that matrix, then a linear dependence relation among the vectors in $S$ is a solution to the linear system $Ax =0$.  Note that $A$ has dimensions $4\times 5$.  If you form the augmented matrix by adding the column of zeros, that augmented matrix has dimensions $4\times6$.
+
+> the all zero bottom row means that there is a free variable within the equation,
+
+Ask yourself: What equation?  Usually a row of zeroes in the RREF means that you have some redundancy in the system of equations, not necessarily a free variable.  For instance, the system $x=1$ and $3x=3$ will have a row of zeroes in the RREF of the augmented matrix, but there aren't any free variables.
+
+Again, using the vectors in $S$ as columns of $A$ gives you the answer you want: The RREF of $A$ will have a column of zeroes.  So there is a free variable in the system $Ax=0$, that is, there are nontrivial solutions to the system.
+
+> making the overall system linearly dependent and therefore not a basis.
+
+A system of equations cannot be linearly dependent, only a set of vectors can be linearly dependent.  Likewise, a system of equations cannot be a basis, only a set a vectors can be a basis.  In this case, the nontrivial solutions to $Ax=0$ do imply that $S$ (not “the system”) is linearly dependent, and therefore not a basis.
+
+> can I further say that the vector $(-1 + 4t)$ is the only dependent variable
+
+A vector is not a variable, dependent or otherwise.  In this system $Ax=0$, the last column of $A$ corresponds to the vector $-1+4t$, and the last variable $x_5$ is free. You're eliding this correspondence when you use the word “is”.  But I think it's important to understand that vectors and variables are fundamentally different objects.  
+
+But $-1+4t$ is not unique even in this regard.  If you reversed the order of the vectors, you'd still get a free variable in the associated system, but this time it would correspond to the vector $4-t$.  
+
+> and if it was not in S, then S would be a basis of $P^3$?
+
+Now *that* is a good question! If you let $S'$ be the set with $-1+4t$ removed, and $A'$ the matrix whose columns are the vectors in $S'$, you'll find that the RREF of $A'$ is $I_4$.  So yes, $S'$ is a basis of $P^3$.  Does every vector in $S$ have that property, that if you remove it from $S$, what's left is a basis?
+
+> Also, the presence of the free variable would mean that the dependent vector would be a non-unique combination of ANY of the other vectors found within S?
+
+Sort of.  If $Ax = 0$, then each of the columns in $A$ corresponding to nonzero components of $x$ can be written as a linear combination of the other columns (again, corresponding to nonzero components).  In the example above, you'll never get the column of $A$ corresponding to the vector $6t^2$ to be zero in the RREF.  So you'll never be able to write that vector as a linear combination of the others.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2987481/extending-the-question-is-s-a-basis-for-p3/2987637#2987637) on Mathematics Stack Exchange, 2018-11-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

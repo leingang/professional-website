@@ -1,0 +1,52 @@
+---
+title: Integration $ f(x) = e^{1-e^{-x}}$
+date: '2017-05-07'
+description: The problem is asking for an upper bound for the integral, and there are many ways to do that other than evaluating the integral. The fact that the integral…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2269610
+se-link: https://math.stackexchange.com/questions/2269590/integration-fx-e1-e-x/2269610#2269610
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integration $ f(x) = e^{1-e^{-x}}$](https://math.stackexchange.com/questions/2269590/integration-fx-e1-e-x), asked by [sheldonzy](https://math.stackexchange.com/users/401508/sheldonzy) on Mathematics Stack Exchange (2017-05-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Consider the function:
+>
+> $f(x) = e^{1-e^{-x}}$
+>
+> The question:
+>
+> > Find a number $M_1$ such that the area between the curves
+> > $y=f(x),y=0,x=0,x=2$ is at most $M_1$
+>
+> What I did:
+> [![enter image description here][q-1]][q-1]
+>
+> We haven't learned yet the Exponential Integral function (saw online similar stuff), so I would like help without it..
+>
+> Any help will be much appreciated. Thanks.
+>
+>
+>   [q-1]: H5F2R.png
+:::
+
+The problem is asking for an *upper bound* for the integral, and there are many ways to do that other than evaluating the integral.  The fact that the integral can't be evaluated in elementary terms is a hint that you're probably not required to evaluate it.  
+
+One of the crudest estimates for an integral is: if $f(x) \leq M$ on $[a,b]$, then $\int_a^b f(x)\,dx \leq M (b-a)$. So it is enough to find an upper bound for $f(x) = e^{1-e^{-x}}$ on $[0,2]$, then multiply by $2$.  This is what Did did when he arrived at his hint.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2269590/integration-fx-e1-e-x/2269610#2269610) on Mathematics Stack Exchange, 2017-05-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

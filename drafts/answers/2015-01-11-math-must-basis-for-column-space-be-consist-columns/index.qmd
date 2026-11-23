@@ -1,0 +1,80 @@
+---
+title: Must basis for column space be consist columns?
+date: '2015-01-11'
+description: The answer to the question in the body of your post—is $$\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\right\}$$…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1100350
+se-link: https://math.stackexchange.com/questions/1100344/must-basis-for-column-space-be-consist-columns/1100350#1100350
+se-score: 3
+se-accepted: true
+se-tags:
+- matrices
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Must basis for column space be consist columns?](https://math.stackexchange.com/questions/1100344/must-basis-for-column-space-be-consist-columns), asked by [Sahar Rabinoviz](https://math.stackexchange.com/users/207181/sahar-rabinoviz) on Mathematics Stack Exchange (2015-01-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Lets say we have the following Matrix
+> $$\left[
+> \begin{matrix}
+> 2 & 0 & 0\\
+> 0 & 2 & 0\\
+> 0 & 0 & 0 \\
+> \end{matrix}
+> \right]$$
+>
+> Obviously a basis for this would be 
+> $$\begin{Bmatrix}
+> \left[
+> \begin{matrix}
+> 2\\
+> 0\\
+> 0\\
+> \end{matrix}
+> \right]
+> ,\left[
+> \begin{matrix}
+> 0\\
+> 2\\
+> 0\\
+> \end{matrix}
+> \right]
+> \end{Bmatrix}$$
+> But would another valid basis be
+> $$\begin{Bmatrix}
+> \left[
+> \begin{matrix}
+> 1\\
+> 0\\
+> 0\\
+> \end{matrix}
+> \right]
+> ,\left[
+> \begin{matrix}
+> 0\\
+> 1\\
+> 0\\
+> \end{matrix}
+> \right]
+> \end{Bmatrix}$$
+:::
+
+The answer to the question in the *body* of your post—is
+$$\left\{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\right\}$$
+a basis of the column space?—is yes! Remember the the column space of a matrix is *spanned* by the columns, and any spanning set contains a subset which is a basis.  But of course there can be other bases for a subspace.  The second set of vectors is linearly independent and has the same span as the first set, so is also a basis.
+
+The answer to the question in the *title* of your post—must a basis for the column space consist of columns?—is no. That is the point of Abel's answer.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1100344/must-basis-for-column-space-be-consist-columns/1100350#1100350) on Mathematics Stack Exchange, 2015-01-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

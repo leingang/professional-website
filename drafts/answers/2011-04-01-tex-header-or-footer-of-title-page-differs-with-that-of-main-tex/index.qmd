@@ -1,0 +1,289 @@
+---
+title: Header or footer of title page differs with that of main text
+date: '2011-04-01'
+description: OK, I decided to add this as another answer because my first answer is really in response to the error you got the first time you posted.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 14714
+se-link: https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text/14714#14714
+se-score: 4
+se-accepted: false
+se-tags:
+- header-footer
+- titles
+- fancyhdr
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Header or footer of title page differs with that of main text](https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text), asked by [warem](https://tex.stackexchange.com/users/3253/warem) on TeX Stack Exchange (2011-03-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> My purpose is that
+>
+>  1. every page except title page has same header and footer.
+>  2. for title page,   
+>     ==> it has `exactly same footer` with that of other page.  
+>     ==> and it has `completely different header` with that of other page.
+>
+> By default, title page will switch to `plain` pagestyle. Then we can define whatever in it. In my case, since title page has same footer with that of other page, I first define a pagestyle for whole article, then redefine a different header in title page. This header is only local to title page and won't influence the header of other pages.
+>
+> After defining my own header `leftheadertitlepage` for title page, the footer of title page `disappeared`. If I used `fancyhdr`'s header, e.g., `\fancyhead[L]{whatever}`, the footer of title page will be there as I desire. In both cases, the header and footer for other pages are OK. So how to make title page have my own header and a general footer of whole article?
+>
+> Following is a small example. Please help check.
+>
+> ```latex
+> \documentclass[titlepage,a4paper]{article}
+>
+> \usepackage{calc}
+> \usepackage[demo]{graphics}
+>
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+> \renewcommand{\footrulewidth}{0.4pt}
+> \rfoot{\thepage}
+> \cfoot{}
+>
+> \begin{document}
+>
+> \begin{titlepage}
+> \thispagestyle{fancy}
+> \fancyhead{}
+> \renewcommand{\headrulewidth}{0pt}
+>
+> \newcommand\leftheadertitlepage{%
+> \begin{tabular}[b]{@{}l}
+> \begin{minipage}[b]{0.6\textwidth}
+> \includegraphics{test} 
+> \end{minipage}
+> Energietechnik GmbH \\
+> Gesch\"{a}ftsbereich\\
+> Energietechnik\\
+> \end{tabular}
+> }
+> \settototalheight\headheight{\maxof{\leftheadertitlepage}}
+> \lhead{\leftheadertitlepage}
+>
+> \textbf{\Huge{title page}}
+> \pagebreak
+> \end{titlepage}
+> \lhead{}
+> \chead{demo}
+> whatever
+> \newpage
+> demo
+>
+> \end{document}
+> ```
+>
+>
+>
+> With the help from Seamus and Matthew, I agree with Seamus's suggestion: 
+>
+> ====================>  
+> In title page, first, use the default pagestyle `plain`, then define the large image at the top that makes it look like a header. Finally, restore the pagestyle `fancyhdr` to make its footer exactly same with that of other pages.   
+> <==================== 
+>
+> Following is the updated code:
+>
+> ```latex
+> \documentclass[titlepage,a4paper]{article}
+>
+> \usepackage{calc}
+> \usepackage[demo]{graphics}
+>
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+> \renewcommand{\footrulewidth}{0.4pt}
+> \rfoot{\thepage}
+> \cfoot{}
+>
+> \begin{document}
+>
+> \begin{titlepage}
+> % by default, the pagestyle of title page is plain
+> \renewcommand{\headrulewidth}{0pt} % cancel out the decorative line
+>
+> \newcommand\leftheadertitlepage{%
+> \begin{tabular}[b]{@{}l}
+> \begin{minipage}[b]{0.6\textwidth}
+> \includegraphics{test} 
+> \end{minipage}
+> Energietechnik GmbH \\
+> Gesch\"{a}ftsbereich\\
+> Energietechnik\\
+> \end{tabular}
+> }
+>
+> \newlength{\temp}
+> \settototalheight\temp{\maxof{\leftheadertitlepage}}
+> \vspace*{-\temp} % make the below image move up, then it looks like a header
+>
+> \leftheadertitlepage % define the large image and put it at the top
+>
+> \textbf{\Huge{title page}}
+> \thispagestyle{fancy} % restore fancyhdr pagestyle
+> \pagebreak
+> \end{titlepage}
+> \lhead{}
+> \chead{demo}
+> whatever
+> \newpage
+> demo
+>
+> \end{document}
+> ```
+>
+> In the end, thank Seamus and Matthew again.
+:::
+
+OK, I decided to add this as another answer because my first answer is really in response to the error you got the first time you posted.  
+
+The `article` class switches the current pagestyle to `empty` within the `titlepage` environment.  So any pagestyle changes you make outside of the environment will be eliminated after `\begin{titlepage}`.  This means you could make a custom fancy pagestyle `titlepage` and use it within your title page:
+
+```latex
+\fancypagestyle{titlepage}{
+   %\settototalheight{\headheight}{\maxof{\leftheadertitlepage}}
+   \renewcommand{\footrulewidth}{0.4pt}
+   \lhead{\leftheadertitlepage}
+   \chead{}
+   \rhead{}
+   \cfoot{}
+   \rfoot{\thepage}
+}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{titlepage}
+\textbf{\Huge{title page}}
+\end{titlepage}
+
+% etc.
+```
+
+You will see your custom header on the title page with the fancy footer identical to the one you defined in the `fancy` pagestyle, and your `fancy` pagestyle on the other pages.  You *won't* see the words "title page", though, and it's because they are behind the big black box standing in for your graphic.  
+
+The problem is that this header is way too tall.  The `fancyhdr` package complains about that in the console:
+
+>     Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+>      Make it at least 127.60004pt.
+>      We now make it that large for the rest of the document.
+>      This may cause the page layout to be inconsistent, however.
+
+We don't actually notice that change in the `\headheight`, maybe because this page style is only in force for this page?  Anyway, you must have noticed that because you had this line in your code:
+
+```latex
+\settototalheight{\headheight}{\maxof{\leftheadertitlepage}}
+```
+
+This makes `\headheight` big enough to hold the box created by `\leftheadertitlepage`.  If you insert this into your `\fancypagestyle{titlepage}{...` declaration (uncommenting it in the snippet above), you will eliminate the warning, and you will now see "title page" on the title page.
+
+But you won't see your custom footer.  Why?  It didn't "disappear", it's below the edge of the page.  The reason is that you've increased `\headheight` but you have not decreased the other layout parameters, and the logical page is now too tall to fit on on the physical page.  You can see this by inserting dummy text on the title page; it will run all the way off the bottom.
+
+So you need to *subtract* from `\textheight` the amount you *add* to `\headheight`.  You can do this by adding:
+
+```latex
+\newlength{\originalheadheight}
+\setlength{\originalheadheight}{\headheight}
+```
+
+in the preamble and then 
+
+```latex
+\settototalheight{\headheight}{\maxof{\leftheadertitlepage}}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{\originalheadheight}   
+```
+
+somewhere else.  But now we have another problem: you can't do this within the `titlepage` environment or the `\fancypagestyle{titlepage}` block.  This is because 
+
+1. changes to `\textheight` don't take effect until the next page.
+2. the changes to `\headheight` are forgotten after the group containing the `\fancypagestyle{titlepage}` code ends.
+
+If you try to put this in the preamble you get something *completely* different and this is because *the height of the `\leftheadertitlepage` depends on the context it's expanded in and so is different in the preamble than in the header.*  In the preamble `\leftheadertitlepage` takes up a box 827pt high.
+
+So now what?  Here, finally, is my solution.  It requires a trial run to find out how high the header on the title page needs to be.  Then you have to hard-code that in.  Unless there's another way to set the `\leftheadertitlepage` box as if it were in the header when it's actually in the preamble, I don't know how else to do it.  Then the adjustments to `\textheight` are done in the preamble, and have to be undone in the document text.  The final wrinkle is that they have to be undone *twice*.  Once within the `titlepage` environment, which will only affect the next page.  Then once after the `titlepage` environment, which will affect the rest of the pages.
+
+```latex
+\documentclass[titlepage,a4paper]{article}
+\usepackage{calc}
+\usepackage[demo]{graphics}
+
+\usepackage{lipsum}% just for dummy text, not part of solution.
+
+\usepackage{fancyhdr}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{}
+\chead{demo}
+\cfoot{}
+\rfoot{\thepage}
+\pagestyle{fancy}
+
+\newcommand{\leftheadertitlepage}{
+   \begin{tabular}[b]{@{}l}
+      \begin{minipage}[b]{0.6\textwidth}
+         \includegraphics{test} 
+      \end{minipage}
+      Energietechnik GmbH \\
+      Gesch\"{a}ftsbereich\\
+      Energietechnik\\
+   \end{tabular}}
+
+
+\makeatletter
+\newlength{\originalheadheight}
+\setlength{\originalheadheight}{\headheight}
+\newlength{\titlepageheadheight}
+\setlength{\titlepageheadheight}{127.60004pt}% has to be hard coded.
+%\settototalheight{\headheight}{\maxof{\leftheadertitlepage}} will not work in this context
+\addtolength{\textheight}{-\titlepageheadheight}
+\addtolength{\textheight}{\originalheadheight}   
+\makeatother
+
+
+\fancypagestyle{titlepage}{
+% uncommenting this line eliminates a warning, but also
+% adds too much vertical space to the page.  So comment it out, record the number in the warning,
+% then enter it above
+   \setlength{\headheight}{\titlepageheadheight}
+   \renewcommand{\footrulewidth}{0.4pt}
+   \lhead{\leftheadertitlepage}
+   \chead{}
+   \rhead{}
+   \cfoot{}
+   \rfoot{\thepage}
+}
+
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{titlepage}
+\textbf{\Huge{title page}}
+%\lipsum[1-6]
+% restore \textheight to its original--this will only happen on the next page
+% because of the group within the titlepage environment
+\addtolength{\textheight}{\titlepageheadheight}
+\addtolength{\textheight}{-\originalheadheight}   
+\end{titlepage}
+% restore \textheight to its original--this will happen from the next page on
+\addtolength{\textheight}{\titlepageheadheight}
+\addtolength{\textheight}{-\originalheadheight}   
+
+\lipsum
+\lipsum
+
+\end{document}
+```
+
+After all of this I agree with Seamus.  A one-off pagestyle with taller header is probably better achieved with one-off code at the top of the page with an empty header.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14653/header-or-footer-of-title-page-differs-with-that-of-main-text/14714#14714) on TeX Stack Exchange, 2011-04-01, with [edits](https://tex.stackexchange.com/posts/14714/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

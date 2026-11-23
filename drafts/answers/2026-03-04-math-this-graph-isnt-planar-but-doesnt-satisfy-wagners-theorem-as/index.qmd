@@ -1,0 +1,58 @@
+---
+title: This graph isn't planar but doesn't satisfy Wagner's Theorem assumption?
+date: '2026-03-04'
+description: It's pretty clear from your description of $G$ in terms of vertices and edges that $G \cong K5$. Each of the five vertices is adjacent to the other four.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5127381
+se-link: https://math.stackexchange.com/questions/5127324/this-graph-isnt-planar-but-doesnt-satisfy-wagners-theorem-assumption/5127381#5127381
+se-score: 3
+se-accepted: false
+se-tags:
+- graph-theory
+- planar-graphs
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[This graph isn't planar but doesn't satisfy Wagner's Theorem assumption?](https://math.stackexchange.com/questions/5127324/this-graph-isnt-planar-but-doesnt-satisfy-wagners-theorem-assumption), asked by [jacek](https://math.stackexchange.com/users/1634155/jacek) on Mathematics Stack Exchange (2026-03-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How is this graph not planar?  
+>
+> [![enter image description here][q-1]][q-1]
+>
+> Description so that post is clear without picture: $5$ vertices, let's say $A$, $B$, $C$, $D$, $E$, with edges 
+> $$\begin{align}
+> A&: B, C, D, E \\ B&: C, D, E\\ C&: D, E\\ D&: E
+> \end{align}$$
+> ($X:A,B,C$ means edges $X$-$A$, $X$-$B$, $X$-$C$.)
+>
+> I am pretty sure that it is not planar (spent definitely too much time moving vertices around), but cannot find a $K_{3,3}$ or $K_5$ subgraph for [Wagner's theorem][q-2].
+>
+> What gives?
+>
+>
+>   [q-1]: Ol0Xc0i1.png
+>   [q-2]: https://en.wikipedia.org/wiki/Wagner%27s_theorem
+:::
+
+It's pretty clear from your description of $G$ in terms of vertices and edges that $G \cong K_5$. Each of the five vertices is adjacent to the other four.
+
+You mentioned sliding around vertices, and I wanted to make sure you knew about [Graphviz][2]. It's a handy tool for laying out graphs. If you use the `circo` algorithm you can see the most familiar drawing of $K_5$.
+
+[![Graphviz drawing of K_5][1]][1]
+
+
+  [1]: zEpwqM5n.png
+  [2]: https://dreampuf.github.io/GraphvizOnline/?engine=circo#graph%20G%20%7B%0A%0A%20%20%20%20A%20--%20%7BB%2CC%2CD%2CE%7D%0A%20%20%20%20B%20--%20%7BC%2CD%2CE%7D%0A%20%20%20%20C%20--%20%7BD%2CE%7D%0A%20%20%20%20D%20--%20%7BE%7D%0A%20%20%0A%7D
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5127324/this-graph-isnt-planar-but-doesnt-satisfy-wagners-theorem-assumption/5127381#5127381) on Mathematics Stack Exchange, 2026-03-04, with [edits](https://math.stackexchange.com/posts/5127381/revisions) by [mezzoctane](https://math.stackexchange.com/users/1009203/mezzoctane). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,67 @@
+---
+title: Convergence of the series $\sum_{n=1}^{\infty}\cot^{-1}(n)$
+date: '2017-02-28'
+description: 'The integral test works. To find $\int \cot^{-1}x\,dx$, let $u = \cot^{-1} x$ and $dv = dx$. Then $du = \frac{-1}{1+x^2}\,dx$ and $v=x$, so: $$\int…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2165393
+se-link: https://math.stackexchange.com/questions/2165372/convergence-of-the-series-sum-n-1-infty-cot-1n/2165393#2165393
+se-score: 6
+se-accepted: true
+se-tags:
+- calculus
+- sequences-and-series
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Convergence of the series $\sum_{n=1}^{\infty}\cot^{-1}(n)$](https://math.stackexchange.com/questions/2165372/convergence-of-the-series-sum-n-1-infty-cot-1n), asked by [soodehMehboodi](https://math.stackexchange.com/users/331034/soodehmehboodi) on Mathematics Stack Exchange (2017-02-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Consider the following series
+>  $$\sum_{n=1}^{\infty}\cot^{-1}(n)$$ 
+>
+> Which test can be useful to show convergence or divergence of above series?
+> I tried the comparison and Ratio test, but they did not help me.
+:::
+
+The integral test works.  To find $\int \cot^{-1}x\,dx$, let $u = \cot^{-1} x$ and $dv = dx$.  Then $du = \frac{-1}{1+x^2}\,dx$ and $v=x$, so:
+$$\int \cot^{-1}x\,dx = x \cot^{-1} x + \int \frac{x}{1 + x^2}\,dx
+    = x \cot^{-1} x + \frac{1}{2}\ln(1+x^2) + C$$
+Therefore
+$$\int_0^\infty \cot^{-1}x\,dx
+    =\lim_{t\to\infty} \left(t \cot^{-1}t + \frac{1}{2}\ln(1+t^2)\right)$$
+(when we evaluate at $t=0$, both $t \cot^{-1} t$ and $\frac{1}{2}\ln(1+t^2)$ are zero.)
+By L'Hôpital's rule:
+$$\begin{align*}
+    \lim_{t\to\infty} t \cot^{-1} t 
+    &= \lim_{t\to\infty} \frac{\cot^{-1}{t}}{1/t} \\
+    &= \lim_{t\to\infty} \frac{-1/(1+t^2)}{-1/t^2} 
+     = \lim_{t\to\infty} \frac{t^2}{1+t^2} = 1
+\end{align*}$$
+But as the other term, $\lim_{t\to\infty}\frac{1}{2}\ln(1+t^2) = +\infty$.
+Therefore the integral diverges, which means the series diverges as well.
+
+* * *
+
+Although the integral test is definitive, you expend a lot of effort where a little intuition can save it.  So here is some intuition: remember that for small $t$, $\sin t \approx t$ and $\cos t\approx 1$.  This means that 
+$$\cot t \approx \frac{1}{t}$$
+and therefore that
+$$\cot^{-1}\frac{1}{t} \approx t$$
+(again, for sufficiently small $t$).  
+If $n$ is large, $t = \frac{1}{n}$ is small, so
+$$\cot^{-1} n \approx \frac{1}{n}$$  
+Since we know that $\sum_{n=1}^\infty \frac{1}{n}$ diverges, we have a good clue that $\sum_{n=1}^\infty \cot^{-1} n$ diverges too.  We can confirm that with the limit comparison test: 
+$$\lim_{n\to\infty} \frac{\cot^{-1} n}{1/n} = 1$$
+as we showed already.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2165372/convergence-of-the-series-sum-n-1-infty-cot-1n/2165393#2165393) on Mathematics Stack Exchange, 2017-02-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

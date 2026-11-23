@@ -1,0 +1,40 @@
+---
+title: Section headers in margins
+date: '2011-03-14'
+description: Here is the source of the document you linked to. Just copy it and and change it.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 13409
+se-link: https://tex.stackexchange.com/questions/1313/section-headers-in-margins/13409#13409
+se-score: 4
+se-accepted: false
+se-tags:
+- sectioning
+- sections-paragraphs
+- resume
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Section headers in margins](https://tex.stackexchange.com/questions/1313/section-headers-in-margins), asked by [Amir Rachum](https://tex.stackexchange.com/users/5/amir-rachum) on TeX Stack Exchange (2010-08-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm working on my resume in LyX and I would like my section headers to look like [this][q-1]. What should I write in the preamble to achieve this?
+>
+>
+>   [q-1]: http://rpi.edu/dept/arc/training/latex/resumes/res2.pdf
+:::
+
+Here is the [source](https://web.archive.org/web/20200222200455/http://rpi.edu/dept/arc/training/latex/resumes/res2.tex) of the document you linked to.  Just copy it and and change it.
+
+You need the [`res`](https://web.archive.org/web/20200222200445/http://rpi.edu/dept/arc/training/latex/resumes/res.cls) class which is downloadable from the same place.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/1313/section-headers-in-margins/13409#13409) on TeX Stack Exchange, 2011-03-14, with [edits](https://tex.stackexchange.com/posts/13409/revisions) by [DG'](https://tex.stackexchange.com/users/29873/dg). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

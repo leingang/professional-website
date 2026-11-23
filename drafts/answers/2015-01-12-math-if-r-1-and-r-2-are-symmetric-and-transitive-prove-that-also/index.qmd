@@ -1,0 +1,71 @@
+---
+title: If $R_1$ and $R_2$ are symmetric and transitive, prove that also $R_1 \cup R_2$ is symmetric and transitive
+date: '2015-01-12'
+description: You might try this with a few examples of $R1$ and $R2$. For instance, consider the set of all line segments in the plane. If $A$ and $B$ are two line…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1101274
+se-link: https://math.stackexchange.com/questions/1101255/if-r-1-and-r-2-are-symmetric-and-transitive-prove-that-also-r-1-cup-r-2/1101274#1101274
+se-score: 0
+se-accepted: false
+se-tags:
+- proof-writing
+- relations
+- symmetry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[If $R_1$ and $R_2$ are symmetric and transitive, prove that also $R_1 \cup R_2$ is symmetric and transitive](https://math.stackexchange.com/questions/1101255/if-r-1-and-r-2-are-symmetric-and-transitive-prove-that-also-r-1-cup-r-2), asked by user168764 on Mathematics Stack Exchange (2015-01-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have to prove or confute (with a counter example) that, if $R_1$ and $R_2$ are symmetric and transitive, then $R_1 \cup R_2$ is also symmetric and transitive.
+>
+> * * *
+>
+> **Note**: *To prove the transitive case, I think I will ask a separate question, so that we can focus on the symmetric part now.*
+>
+> * * *
+>
+> The first thing I thought to do was to think about what does it mean $R_1$ and $R_2$ to be symmetric and transitive. Then I conclude that if a pair $(x, y) \in R_1$, then also $(y, x) \in R_1$. 
+>
+> I assumed also that $R_1$ and $R_2$ are define on a set $A = \{x, y, z \}$
+>
+>
+> I have to keep in my what is my goal: **prove that $R_1 \cup R_2$ is symmetric**, which means that if $((x, y) \in R_1 \cup R_2) \rightarrow ((y, x) \in R_1 \cup R_2)$. At this point, I could try to assume $(x, y) \in R_1 \cup R_2$ and prove $(y, x) \in R_1 \cup R_2$:
+>
+> Assuming $(x, y) \in R_1 \cup R_2$, which means $(x, y) \in R_1 \lor (x, y) \in R_2$, I have to split my proof in 2 cases:
+>
+>   1. **Case 1**: I assume $(x, y) \in R_1$
+>
+>       Since $R_1$ is symmetric, then $(y, x) \in R_1$. Since we know now that $(y, x) \in R_1$, we can say that $(y, x) \in R_1 \cup R_2$
+>
+>   2. **Case 2**: I assume $(x, y) \in R_2$
+>
+>       Since $R_2$ is symmetric, then $(y, x) \in R_2$. Since we know now that $(y, x) \in R_2$, we can say that $(y, x) \in R_1 \cup R_2$
+>
+> Is this a proof of the fact that, if $R_1$ and $R_2$ is symmetric, then also $R_1 \cup R_2$ is?
+:::
+
+You might try this with a few examples of $R_1$ and $R_2$.  For instance, consider the set of all line segments in the plane.  If $A$ and $B$ are two line segments, let $A\mathrel{R_1}B$ if $A$ and $B$ have the same length, and $A \mathrel{R_2} B$ if $A$ and $B$ have the same slope (or are both vertical).  Clearly $R_1$ and $R_2$ are symmetric and transitive (indeed, they are both equivalence relations).  $R_1 \cup R_2$ is the relation that $A$ and $B$ have *either* the same length *or* the same slope (or both).
+
+The conditions you need to check are:
+
+ - *symmetry*: If $A$ and $B$ have the same length or the same slope, do $B$ and $A$ have the same length or slope?  
+ - *transitivity*: If $A$ and $B$ have the same length or the same slope, and $B$ and $C$ have the same length or the same slope, must $A$ and $C$ have the same length or the same slope?  Draw some pictures and I think you might see the issue.
+
+Symmetry looks pretty straightforward.  IF $A$ has the same length as $B$ or $A$ is parallel to $B$, one of those has to be true.  If $A$ has the same length as $B$, then $B$ has the same length as $A$.  Or, if $A$ is parallel to $B$, then $B$ is parallel to $A$.  In either case, the statement “$B$ has the same length as $A$ or $B$ is parallel to $A$” is true.  
+
+On the other hand...what if $A$ has the same length as $B$, but $B$ is parallel to $C$?  Is it necessarily true that $A$ has the same length as $C$, or is parallel to $C$?  It's not to hard to come up with a counterexample.  For instance, $A$ and $B$ can be perpendicular but have the same length, and $C$ parallel to $B$ but twice as long.
+
+This example ought to convince you that if $R_1$ and $R_2$ are symmetric, then $R_1 \cup R_2$ must be symmetric.  However, if $R_1$ and $R_2$ are transitive, $R_1 \cup R_2$ need not be transitive.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1101255/if-r-1-and-r-2-are-symmetric-and-transitive-prove-that-also-r-1-cup-r-2/1101274#1101274) on Mathematics Stack Exchange, 2015-01-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

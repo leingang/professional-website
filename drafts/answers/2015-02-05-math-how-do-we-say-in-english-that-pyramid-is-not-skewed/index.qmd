@@ -1,0 +1,37 @@
+---
+title: How do we say in English that pyramid is not skewed?
+date: '2015-02-05'
+description: I believe the term you are looking for is right.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1135533
+se-link: https://math.stackexchange.com/questions/1135531/how-do-we-say-in-english-that-pyramid-is-not-skewed/1135533#1135533
+se-score: 1
+se-accepted: true
+se-tags:
+- terminology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do we say in English that pyramid is not skewed?](https://math.stackexchange.com/questions/1135531/how-do-we-say-in-english-that-pyramid-is-not-skewed), asked by [studying](https://math.stackexchange.com/users/213349/studying) on Mathematics Stack Exchange (2015-02-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to know if there is a term kind of "straight pyramid"? I mean, is there a word for a pyramid such that the line segment from the apex to the center of the base is perpendicular to the base.
+:::
+
+I believe the term you are looking for is *right*.
+
+From [mathwords.com](http://www.mathwords.com/r/right_pyramid.htm):
+
+> **right pyramid**: A pyramid that has its apex aligned directly above the center of the base.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1135531/how-do-we-say-in-english-that-pyramid-is-not-skewed/1135533#1135533) on Mathematics Stack Exchange, 2015-02-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

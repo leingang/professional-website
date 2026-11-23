@@ -1,0 +1,48 @@
+---
+title: Application of Rolle's theorem and determinant
+date: '2019-07-24'
+description: Let $\mathbf{c}$ be the vector-valued function which takes $x$ to $\left<\sin^3x,xe^x,x/(1+x^2)\right>$. Then $f(x)$ is the scalar triple product of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3302721
+se-link: https://math.stackexchange.com/questions/3302694/application-of-rolles-theorem-and-determinant/3302721#3302721
+se-score: 3
+se-accepted: false
+se-tags:
+- derivatives
+- determinant
+- rolles-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Application of Rolle's theorem and determinant](https://math.stackexchange.com/questions/3302694/application-of-rolles-theorem-and-determinant), asked by [Abhishek Kumar](https://math.stackexchange.com/users/660691/abhishek-kumar) on Mathematics Stack Exchange (2019-07-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> $f(x) =
+> \begin{vmatrix}
+>  \sin^3x & \sin^3 a & \sin^3 b \\ 
+>  xe^x & ae^a & be^b\\
+> \frac{x}{1+x^2} & \frac{a}{1+a^2} & \frac{b}{1+b^2}
+> \end{vmatrix}$<br>
+> Where $0<a<b<2π$ then show that the equation $f^{'}(x)=0$  has atlest one root in the interval $(a,b)$
+>
+> **My approach**
+> First try to differentiate the give determinant and find that $f^{'}(x)=0$ then I apply the Rolle's theorem to solve the question. 
+>
+> I face the difficulty in differentiate the determinant.
+:::
+
+Let $\mathbf{c}$ be the vector-valued function which takes $x$ to $\left<\sin^3x,xe^x,x/(1+x^2)\right>$.  Then $f(x)$ is the scalar triple product of $\mathbf{c}(x)$, $\mathbf{c}(a)$, and $\mathbf{c}(b)$:
+$$f(x) = \mathbf{c}(x) \cdot \left(\mathbf{c}(a) \times \mathbf{c}(b)\right)$$
+Because the cross product of two vectors in $\mathbb{R}^3$ is orthogonal to each of the individual vectors, $f(a) = f(b) = 0$.  So by Rolle's Theorem there exists a point $x$ between $a$ and $b$ where $f'(x) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3302694/application-of-rolles-theorem-and-determinant/3302721#3302721) on Mathematics Stack Exchange, 2019-07-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

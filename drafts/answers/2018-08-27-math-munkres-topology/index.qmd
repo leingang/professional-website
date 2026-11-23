@@ -1,0 +1,59 @@
+---
+title: Munkres Topology
+date: '2018-08-27'
+description: 'Any time you have a problem that says, "Show that X is Y", the process is:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2896374
+se-link: https://math.stackexchange.com/questions/2896364/munkres-topology/2896374#2896374
+se-score: 1
+se-accepted: false
+se-tags:
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Munkres Topology](https://math.stackexchange.com/questions/2896364/munkres-topology), asked by [user208059](https://math.stackexchange.com/users/208059/user208059) on Mathematics Stack Exchange (2018-08-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm starting to study this book and I've come across a problem that I haven't been able to solve. I need to prove that the next function is injective. 
+>
+> $g: A\rightarrow\mathbb Z_+$ where $A=\{(x,y)\in\mathbb Z_+\times\mathbb Z_+ : y \leq x\}$
+>
+> $g(x,y)={1\over 2}x(x-1)+y$ 
+>
+> It seems that it can't be solved in a direct way, like: $f(x_1)=f(x_2) \Rightarrow x_1=x_2$. I was thinking about doing it in an inductive way. First, defining a set $B=\{z\in\mathbb Z_+ :\exists!(x,y)\in A \text{ such } z=g(x,y)\}$ and then apply induction over B, but it seems that it fails with n + 1
+>
+>
+> I appreciate any help
+:::
+
+Any time you have a problem that says, "Show that X is Y", the process is:
+
+1. Look up the definition of Y in the textbook.
+2. Note the necessary conditions.
+3. Show that X satisfies the conditions.
+
+I don't have that textbook at arm's reach, but I am guessing that it says something like:
+
+> A function $f \colon A \to B$ is **injective** if for all $a_1,a_2\in A$, $f(a_1) = f(a_2) \implies a_1 =a_2$.
+
+(The “defined” word in a definition is always emphasized or put in bold face.  That helps you find definitions for things.)
+
+In your case, $g(x,y) = \frac{1}{2}x(x-1)+y$.  So you need to show that for all $(x_1,y_1), (x_2,y_2)\in A$, if $\frac{1}{2}x_1(x_1-1)+y_1 = \frac{1}{2}x_2(x_2-1)+y_2$, then $x_1=x_2$ and $y_1 = y_2$.
+
+If you're interested in an induction proof, you might try to show these two things:
+
+1. $f(x+1,y) > f(x,y)$ for all $x \in \mathbb{Z}_+$.
+2. $f(x+1,y+1) > f(x,y)$ for all $x \in \mathbb{Z}_+$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2896364/munkres-topology/2896374#2896374) on Mathematics Stack Exchange, 2018-08-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

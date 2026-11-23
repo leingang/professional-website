@@ -1,0 +1,53 @@
+---
+title: other form of uv notation of integration by parts
+date: '2015-05-21'
+description: I think you're getting tripped up because the $v$ used in each identity is different. To see why, use each to evaluate $\int x \cos x\,dx$. In the second…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1293160
+se-link: https://math.stackexchange.com/questions/1293143/other-form-of-uv-notation-of-integration-by-parts/1293160#1293160
+se-score: 0
+se-accepted: true
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[other form of uv notation of integration by parts](https://math.stackexchange.com/questions/1293143/other-form-of-uv-notation-of-integration-by-parts), asked by [Kirbies](https://math.stackexchange.com/users/157598/kirbies) on Mathematics Stack Exchange (2015-05-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So integration by parts looks like this 
+>
+> $\int u\, dv = uv - \int v\, du$
+>
+> But I have often seen it like this:
+>
+> $\int uv\,dx = u \int v\, dx - \int (u'\int v dx )\, dx$
+>
+> I cannot prove this.  
+>
+> $uv = \int v\, dx$ is trivial
+>
+>
+> $\int v\, du = \int (u'\int v dx )\, dx$  can be seen by substituting in $du = u'\,dx$ 
+>
+> But when it comes to showing $\int u\,dv = \int uv\,dx$ I get stuck.  How would I do this?
+:::
+
+I think you're getting tripped up because the $v$ used in each identity is different.  To see why, use each to evaluate $\int x \cos x\,dx$.  In the second identity, $v=\cos x$.  But in the first identity, $dv=\cos x\,dx$, so $v=\sin x$.
+
+Rather, you can prove the second identity by showing that the derivative of the of right-hand side is $uv$.
+Since $\left(\int v\,dx\right)' = v$, etc., we have
+$$\left(u \int v\,dx - \int u' \int v \,dx\right)'
+    = u' \int v\,dx + u v - u' \int v\,dx = uv$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1293143/other-form-of-uv-notation-of-integration-by-parts/1293160#1293160) on Mathematics Stack Exchange, 2015-05-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

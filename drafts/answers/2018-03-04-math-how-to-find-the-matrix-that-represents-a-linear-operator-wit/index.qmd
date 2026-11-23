@@ -1,0 +1,50 @@
+---
+title: How to find the matrix that represents a linear operator with respect to a given basis?
+date: '2018-03-04'
+description: For any linear transformation $\phi\colon \mathbb{R}^2 \to \mathbb{R}^2$, and basis $(v1,v2)$ of $\mathbb{R}^2$, there exist constants $b{ij}$ such that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2676743
+se-link: https://math.stackexchange.com/questions/2676735/how-to-find-the-matrix-that-represents-a-linear-operator-with-respect-to-a-given/2676743#2676743
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to find the matrix that represents a linear operator with respect to a given basis?](https://math.stackexchange.com/questions/2676735/how-to-find-the-matrix-that-represents-a-linear-operator-with-respect-to-a-given), asked by [berserkspartan](https://math.stackexchange.com/users/532452/berserkspartan) on Mathematics Stack Exchange (2018-03-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let phi(A):R^2->R^2 be a linear operator given by multiplication matrix 
+>
+> A =
+>
+>  (1  1                                                         
+>           01)
+>
+> Find a matrix that represents this operator with respect to the basis (1,0) and (-1,1).
+>
+> Any help would be much appreciated because I'm a bit confused as to what I should be doing here.
+:::
+
+For any linear transformation $\phi\colon \mathbb{R}^2 \to \mathbb{R}^2$, and basis $(v_1,v_2)$ of $\mathbb{R}^2$, there exist constants $b_{ij}$ such that
+$$\begin{align*}
+    \phi(v_1) &= b_{11}v_1 + b_{12}v_2 \\
+    \phi(v_2) &= b_{21}v_1 + b_{22}v_2
+\end{align*}$$
+
+Those coefficients $b_{ij}$ make up a matrix $B$, which is the matrix that represents $\phi$ with respect to $(v_1,v_2)$.
+
+You have been given $\phi$, $v_1$, and $v_2$; you should be finding $b_{ij}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2676735/how-to-find-the-matrix-that-represents-a-linear-operator-with-respect-to-a-given/2676743#2676743) on Mathematics Stack Exchange, 2018-03-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

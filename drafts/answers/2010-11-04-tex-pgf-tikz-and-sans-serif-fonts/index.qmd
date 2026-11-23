@@ -1,0 +1,76 @@
+---
+title: PGF/TikZ and Sans Serif Fonts
+date: '2010-11-04'
+description: There are two issues here. One is to make the default font sans-serif so that \selectfont selects it. The other is to get the math to use bold, sans-serif…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4921
+se-link: https://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts/4921#4921
+se-score: 4
+se-accepted: true
+se-tags:
+- tikz-pgf
+- fonts
+- sans-serif
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[PGF/TikZ and Sans Serif Fonts](https://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts), asked by [Freddie Witherden](https://tex.stackexchange.com/users/753/freddie-witherden) on TeX Stack Exchange (2010-11-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a TikZ/PGF file created directly by a graphing package of the form `\begin{tikzpicture}{dimensions} ... \end{tikzpicture}`.  The file uses `\pgftext[...]{\selectfont{Some text here or \boldmath$math$}}` to render text.
+>
+> By default, when I include the file in my document, the text is typeset in the default font for my document (Latin Modern Serif).  However, I wish for all of my figures/graphs to be typeset in a sans-serif font (Latin Modern Sans).  How can I go about this?
+>
+> Ideally, I would like to accomplish this without having to edit the file directly (so just changing the LaTeX around where I include it).
+>
+> **Update: Minimal Example**
+>
+> ```latex
+> \begin{tikzpicture}
+>  \pgftext{\selectfont{Hello \boldmath$W \times orld$}}
+> \end{tikzpicture}
+> ```
+>
+> Anything which can correctly set that piece of text to be sans-serif should do the trick.
+:::
+
+There are two issues here.  One is to make the default font sans-serif so that `\selectfont` selects it.  The other is to get the math to use bold, sans-serif letters.
+
+For the first, `\renewcommand{\familydefault}{\sfdefault}` works. See “[How do you change the document font in LaTeX?][1]” from StackOverflow.
+
+For the second, any new math font versions set up are deselected by `\boldmath`.  In fact, `\boldmath` expands to `\mathversion{bold}`.  So we need to override the font selections for the `bold` math version to choose bold, sans-serif letters.  This is accomplished by `\SetSymbolFont{letters}{bold}{OML}{cmbr}{bx}{it}` (There is no Latern Modern math alphabet; [Computer Modern Bright][2] is a suggested replacement).   
+
+Here is the complete working example.  You just need to add two lines to the preamble, and nothing to the automatically-generated part.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{lmodern}
+\SetSymbolFont{letters}{bold}{OML}{cmbr}{bx}{it}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\begin{tikzpicture}
+ \pgftext{\selectfont{Hello \boldmath$W \times orld$}}
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][3]
+
+
+  [1]: https://stackoverflow.com/questions/877597/how-do-you-change-the-document-font-in-latex
+  [2]: https://tex.stackexchange.com/a/33168/1402
+  [3]: AguNi.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4887/pgf-tikz-and-sans-serif-fonts/4921#4921) on TeX Stack Exchange, 2010-11-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

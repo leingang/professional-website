@@ -1,0 +1,47 @@
+---
+title: Is hyperref really the best way to add metadata to a TeX file?
+date: '2010-11-26'
+description: There is xmpincl which allows you to add arbitrary metadata in the Adobe XMP (Extensible Metadata Platform) format. But you have to write a separate XML file…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5975
+se-link: https://tex.stackexchange.com/questions/5958/is-hyperref-really-the-best-way-to-add-metadata-to-a-tex-file/5975#5975
+se-score: 13
+se-accepted: false
+se-tags:
+- hyperref
+- pdf
+- metadata
+- hyperxmp
+- xmp
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is hyperref really the best way to add metadata to a TeX file?](https://tex.stackexchange.com/questions/5958/is-hyperref-really-the-best-way-to-add-metadata-to-a-tex-file), asked by [Seamus](https://tex.stackexchange.com/users/215/seamus) on TeX Stack Exchange (2010-11-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> So I know one of hyperref's features is that it can add metadata to you PDFs. This is a nice feature and if you're putting stuff online, it's good to include metadata.
+>
+> But is the `hyperref` package really the best way to do it? I mean, if you're using hyperref anyway, that's fine. But if you don't want hyperrefs in your document, it seems weird to include the package, and then turn off pretty much all its functionality. And given that hyperref is a shorthand for "package conflict nightmare", is seems insane that you should have to deal with it just for the sake of some metadata.
+>
+> So I have two questions.
+>
+>  1. Is there a good reason that hyperref includes this functionality which is apparently unrelated to its primary purpose?
+>  2. Is there a better (smaller, less conflicty, easier...) option to include metadata in my PDFs?
+:::
+
+There is [`xmpincl`][1] which allows you to add *arbitrary* metadata in the Adobe [XMP (Extensible Metadata Platform)][2] format.  But you have to write a separate XML file to do this.  I always thought there should be a LaTeX way to create an XMP file on the first pass and embed it in the PDF on the second pass.  But so far I know of none. 
+
+  [1]: http://ctan.org/pkg/xmpincl
+  [2]: http://www.adobe.com/products/xmp/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5958/is-hyperref-really-the-best-way-to-add-metadata-to-a-tex-file/5975#5975) on TeX Stack Exchange, 2010-11-26. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

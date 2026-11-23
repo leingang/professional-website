@@ -1,0 +1,70 @@
+---
+title: Why can't all vector functions not be gradient of a scalar function?
+date: '2017-05-11'
+description: 'The notation $M = \int \vec F\cdot d\vec r$ elides an important detail: the path along which $F$ is to be integrated. The usual construction is to integrate…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2276652
+se-link: https://math.stackexchange.com/questions/2276588/why-cant-all-vector-functions-not-be-gradient-of-a-scalar-function/2276652#2276652
+se-score: 6
+se-accepted: true
+se-tags:
+- calculus
+- physics
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why can't all vector functions not be gradient of a scalar function?](https://math.stackexchange.com/questions/2276588/why-cant-all-vector-functions-not-be-gradient-of-a-scalar-function), asked by [Joe](https://math.stackexchange.com/users/419536/joe) on Mathematics Stack Exchange (2017-05-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If we define $W=\int \vec{F}.\vec{dr}$, we obtain $\vec{F}=\vec{\triangledown}W$.
+>
+> Now for any $\vec{F}$ we can define such an $W$; and therefore any $\vec{F}$ can be written as the gradient of a scalar function (W).
+>
+> This is obviously not the case as there are indeed many vector functions which can't be written as the gradient of a scalar function. Therefore I am wrong somewhere. Can anybody point out where?
+>
+> >Edit:
+> I understood the point. However my following calculation has something wrong. Please point it out.
+>
+> >By definition of work:
+>
+> >$$W=\int \vec{F}.\vec{dr}$$
+> for any $\vec{F}$
+> $$=\int  F_x dx+\int F_y dy$$
+> (for any path C, the dot product can be splitted into its components)
+>
+> >Differentiating both sides wrt x:
+> $$F_x=\dfrac{dW}{dx}$$
+> and differentiating both sides wrt y:
+> $$F_y=\dfrac{dW}{dy}$$
+> and therefore for any $\vec{F}$
+> $$\vec{F}=\vec{\triangledown}W$$
+:::
+
+The notation $M = \int \vec F\cdot d\vec r$ elides an important detail: the path along which $F$ is to be integrated.  The usual construction is to integrate along a path that starts at a fixed point $p$ and ends at a variable point $x$.  But there are two trouble spots with this construction.
+
+The first is not so bad.  How do we know that there *is* a path from $p$ to each point $x$?  So we have to add the assumption that the domain of $\vec F$ is *connected*, or technically *path-connected*.  If the domain is connected, we at least have an $M(x)$ for each $x$.
+
+The second is trickier.  $M$ needs to be a function, and it should depend only on $x$, not on the specific path one takes from $p$ to $x$.  Otherwise you and I could accidentally pick different paths and get different results, and we wouldn't know which one to call $M(x)$.  So $\vec F$ needs the property that line integrals are independent of path.  This is equivalent to the property that line integrals around closed loops are zero. 
+
+If line integrals around closed loops are zero, it follows from Stokes's theorem that $\nabla \times \vec F = \vec 0$.  And the implication *almost* goes in the other way, too, except for the possibility that the path wraps around a “hole” in the domain.  Try
+$$\vec F(x,y,z) = \left<- \frac{y}{x^2+y^2}, \frac{x}{x^2+y^2},0\right>$$
+Then $\nabla \times \vec F = \vec 0$.  However, the domain of $\vec F$ excludes the $z$-axis, where $x=y=0$.  And in fact, if we integrate $\vec F$ around the unit circle in the $xy$-plane, we get $2\pi$, not $0$.  So this $\vec F$ is not conservative, despite it having a curl of zero.
+
+So we rule out that possibility and require that the domain of $\vec F$ be not just connected but *simply connected*: that any closed loop in the domain is contractible to a point.  Picture a slipknot closing up.  If the domain has no holes, a loop in the domain can contract to a point, but if there is a hole, a loop around that hole can't move “past” it.  
+
+So if $\vec F$ has a curl of zero, and the domain of $\vec F$ is connected and simply connected, your construction does result in a potential function and proves that $\vec F$ is conservative.  
+
+It's worth noting that the sufficient conditions are not just differential ($\nabla \times \vec F = \vec 0$), but topological (domain is connected and simply connected).  To follow this point, if we have a domain and we want to know more about its shape, we might try to construct vector fields with zero curl but which aren't conservative.  If we could find one, we would know the domain is not simply connected.  This kind of study is called *algebraic topology*.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2276588/why-cant-all-vector-functions-not-be-gradient-of-a-scalar-function/2276652#2276652) on Mathematics Stack Exchange, 2017-05-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

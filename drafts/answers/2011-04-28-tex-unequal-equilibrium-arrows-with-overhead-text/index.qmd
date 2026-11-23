@@ -1,0 +1,147 @@
+---
+title: Unequal equilibrium arrows with overhead text
+date: '2011-04-28'
+description: Another answer because I misunderstood your question. Digging around in the source code there are several macros which affect the length of the arrows.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16849
+se-link: https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text/16849#16849
+se-score: 8
+se-accepted: false
+se-tags:
+- arrows
+- mhchem
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Unequal equilibrium arrows with overhead text](https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text), asked by [ptrcao](https://tex.stackexchange.com/users/5107/ptrcao) on TeX Stack Exchange (2011-04-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ```latex
+> \documentclass[12pt]{article}
+> \usepackage[version=3]{mhchem}
+> \begin{document}
+>    \ce{CH2OH + ATP <=>>[\text{Hexokinase}] + \text{glucose 6-phosphate} + ADP + H+} \\
+>    \ce{CH2OH + ATP <=>> + \text{glucose 6-phosphate} + ADP + H+}
+> \end{document}
+> ```
+>
+> See the resulting Latex output, and compare.  In [1] the difference between the two arrows of the unequal equilibrium sign becomes less perceptible because the sign has been stretched by the text.  Compare to the same sign without the text [2].  I want the the differences between the upper and lower arrows to be exacerbated a bit more.  How can I achieve this in LaTEX?
+:::
+
+Another answer because I misunderstood your question.  Digging around in the source code there are several macros which affect the length of the arrows. 
+
+From `mhchem.sty` we have 
+
+```latex
+\newcommand*\mhchem@xlongrightshortleftharpoons[2][]{\mathrel{%
+  \sbox{\mhchem@arrows@box}%
+    {$\mkern9mu\ext@arrow 3399\mhchem@leftharpoondownfill@%
+     {#1}{\hphantom{#2}\mkern-6mu\mkern-12mu}$}%
+  \rlap{\protect\raisebox{-.22ex}{\usebox{\mhchem@arrows@box}}}%     
+  \protect\raisebox{.22ex}{$\ext@arrow 3399\mhchem@rightharpoonupfill@%
+    {\hphantom{\usebox{\mhchem@arrows@box}}\mkern-6mu}{#2}$}%
+  }}
+```
+
+It's basically a front end to `amsmath`'s `\ext@arrow` macro:
+
+```latex
+\def\ext@arrow#1#2#3#4#5#6#7{%
+  \mathrel{\mathop{%
+    \setbox\z@\hbox{#5\displaystyle}%
+    \setbox\tw@\vbox{\m@th
+      \hbox{$\scriptstyle\mkern#3mu{#6}\mkern#4mu$}%
+      \hbox{$\scriptstyle\mkern#3mu{#7}\mkern#4mu$}%
+      \copy\z@
+    }%
+    \hbox to\wd\tw@{\unhbox\z@}}%
+  \limits
+    \@ifnotempty{#7}{^{\if0#1\else\mkern#1mu\fi
+                       #7\if0#2\else\mkern#2mu\fi}}%
+    \@ifnotempty{#6}{_{\if0#1\else\mkern#1mu\fi
+                       #6\if0#2\else\mkern#2mu\fi}}}%
+}
+```
+
+So playing around with the arguments to `\ext@arrow` in lines 3-4 will affect the length of the lower arrow.  I could not grok the `\ext@arrow` code enough to figure out how.
+
+Instead I tried the option of drawing arrows with `pgf`.  You have to put
+
+```latex
+\usepackage{tikz}
+\mhchemoptions{arrows=pgf}
+```
+
+in the preamble.  Then the relevant macro is:
+
+```latex
+\newcommand*\mhchem@longrightshortleftharpoons@pgf[1]{%
+  \begin{tikzpicture}[baseline]%
+    \draw[use as bounding box] (0,0) (#1,1ex);
+    \draw[cap=round, join=round, line width=0.09ex]
+        (0.0cm,0.575ex+0.22ex) -- ++(#1,0cm) arc (250:198:0.9ex);  
+    \draw[cap=round, join=round, line width=0.09ex]
+        (#1+0.5em-1em,0.575ex-0.22ex) -- (0.5em,0.575ex-0.22ex) arc (70:18:0.9ex);
+  \end{tikzpicture}%
+}% 
+```
+
+From this you can see that the bottom arrow is 1em shorter than the top one.  To make it even shorter, change the last line to something like:
+
+```latex
+(#1-0.75em,0.575ex-0.22ex) -- (0.75em,0.575ex-0.22ex) arc (70:18:0.9ex);
+```
+
+This will make the bottom arrow 1.5em shorter.
+
+To make this configurable, define a key and invoke it.  Here's the complete example:
+
+```latex
+\documentclass[12pt]{minimal}
+\usepackage[version=3]{mhchem}
+\usepackage{tikz}
+\mhchemoptions{arrows=pgf}
+
+\makeatletter
+\newlength{\mhchem@shortarrow@reduction}
+\define@key{mhchem}{shortarrowreduction}{\setlength{\mhchem@shortarrow@reduction}{#1}}
+\renewcommand*\mhchem@longrightshortleftharpoons@pgf[1]{%
+  \begin{tikzpicture}[baseline]%
+    \draw[use as bounding box] (0,0) (#1,1ex);
+    \draw[cap=round, join=round, line width=0.09ex]
+        (0.0cm,0.575ex+0.22ex) -- ++(#1,0cm) arc (250:198:0.9ex);  
+    \draw[cap=round, join=round, line width=0.09ex]
+       % was: (#1+0.5em-1em,0.575ex-0.22ex) -- (0.5em,0.575ex-0.22ex) arc (70:18:0.9ex);
+        (#1-\the\mhchem@shortarrow@reduction,0.575ex-0.22ex) 
+        -- (\the\mhchem@shortarrow@reduction,0.575ex-0.22ex) arc (70:18:0.9ex);
+  \end{tikzpicture}%
+}
+\AtBeginDocument{\mhchemoptions{shortarrowreduction=0.5em}}
+\makeatother
+
+
+\begin{document}
+
+\noindent%
+   \ce{CH2OH + ATP <=>>[\text{Hexokinase}] + \text{glucose 6-phosphate} + ADP + H+} \\
+   {\mhchemoptions{shortarrowreduction=2em}
+   \ce{CH2OH + ATP <=>>[\text{Hexokinase}] + \text{glucose 6-phosphate} + ADP + H+}} \\
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: tbhHE.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16631/unequal-equilibrium-arrows-with-overhead-text/16849#16849) on TeX Stack Exchange, 2011-04-28, with [edits](https://tex.stackexchange.com/posts/16849/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

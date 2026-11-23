@@ -1,0 +1,52 @@
+---
+title: Why are more permutations included when a process is carried out in multiple steps rather than in a single step?
+date: '2021-08-16'
+description: 'Your second method can arrive at the same result in multiple ways. For instance we could:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4225870
+se-link: https://math.stackexchange.com/questions/4225863/why-are-more-permutations-included-when-a-process-is-carried-out-in-multiple-ste/4225870#4225870
+se-score: 1
+se-accepted: true
+se-tags:
+- permutations
+- combinations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why are more permutations included when a process is carried out in multiple steps rather than in a single step?](https://math.stackexchange.com/questions/4225863/why-are-more-permutations-included-when-a-process-is-carried-out-in-multiple-ste), asked by [TheLastAirbender](https://math.stackexchange.com/users/959029/thelastairbender) on Mathematics Stack Exchange (2021-08-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This might be a very basic question but I can't wrap my head around it.
+>
+> As a simple example, say we want to arrange the digits of set $S=\left\{1,2,3\right\}$ to form different 2-digit numbers. I imagine that this can be done by two methods:
+>
+> 1. Select two digits from the three digits at once and then arrange them.
+> $$^{3}C_{2}\cdot2!=6$$
+> 2. Select one digit, place it in one of the two places (ones place or tens place) and then select another digit out of the two remaining and place it in the other place.
+> $$^{3}C_{1}\cdot2!\cdot^{2}C_{1}\cdot1!=12$$
+>
+> Now, if we try to create different numbers just by writing down different permutations on a scrap piece of paper, it is clear that method 1 is correct while method 2 is incorrect. I don't understand where the error is in method 2.
+>
+> If someone could point it out to me in simple terms (I am still in high school), I would be grateful. Thanks for your time.
+>
+> P.S. I am new here so apologies for any mistakes.
+:::
+
+Your second method can arrive at the same result in multiple ways.  For instance we could:
+
+1. Draw the 1 first, flip a coin to place it in the tens position, then draw the 2.  The result is the number 12.
+2. Draw the 2 first, flip a coin to place it in the ones position, then draw the 1.  The result is also the number 12.
+
+When one of your answers is a multiple of the other, you should check for hidden repetition in your method.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4225863/why-are-more-permutations-included-when-a-process-is-carried-out-in-multiple-ste/4225870#4225870) on Mathematics Stack Exchange, 2021-08-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,62 @@
+---
+title: Evaluate $ \int_{a}^{b}(A - f(x))dx$ where $A = [1/(b-a)] \cdot \int_a^b f(x)\,dx$
+date: '2015-01-20'
+description: 'Hint: What is $$\inta^b A\,dx$$'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1111376
+se-link: https://math.stackexchange.com/questions/1111366/evaluate-int-aba-fxdx-where-a-1-b-a-cdot-int-ab-fx-d/1111376#1111376
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Evaluate $ \int_{a}^{b}(A - f(x))dx$ where $A = [1/(b-a)] \cdot \int_a^b f(x)\,dx$](https://math.stackexchange.com/questions/1111366/evaluate-int-aba-fxdx-where-a-1-b-a-cdot-int-ab-fx-d), asked by [Fazel N](https://math.stackexchange.com/users/175176/fazel-n) on Mathematics Stack Exchange (2015-01-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My solution:
+>
+> Using the definition of the integral, rewrite $f(x)$ in the expression $A = [1/(b-a)] \cdot \int_a^b f(x) \, dx$ as:
+>
+> $$A = \frac1{b-a} \sum_{i = 0}^{n \to +\infty} f(x)\frac{b-a}n$$
+>
+> The $b-a$ terms then cancel each other out resulting in:
+>
+>
+> $$A = \sum_{i = 0}^{n \to+\infty} \frac{f(x)}n$$ which is equal to $0$.
+>
+> Therefore, the original expression $\int_a^b (A - f(x)) \, dx$ simplifies to:
+>
+> $$-\int_a^b f(x) \, dx$$
+>
+> I'm not sure if I've approached the problem correctly, and if my final expression should be rewritten in a simpler form (if possible).
+>
+> Help or Confirmation?
+:::
+
+Hint:  What is
+$$\int_a^b A\,dx$$
+
+<!---
+Full solution: 
+$$\begin{align*}
+    \int_a^b(A - f(x))\,dx &= \int_a^b A\,dx - \int_a^b f(x)\,dx \\
+    &= A(b-a) - \int_a^b f(x)\,dx \\
+    &= \int_a^b f(x)\,dx - \int_a^b f(x)\,dx \\
+    &= 0
+\end{align*}$$
+-->
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1111366/evaluate-int-aba-fxdx-where-a-1-b-a-cdot-int-ab-fx-d/1111376#1111376) on Mathematics Stack Exchange, 2015-01-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

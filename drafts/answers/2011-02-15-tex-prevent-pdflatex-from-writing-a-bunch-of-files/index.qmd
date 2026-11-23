@@ -1,0 +1,55 @@
+---
+title: Prevent pdflatex from writing a bunch of files
+date: '2011-02-15'
+description: TeX writes the .log file. It contains more information about processing the job than what is shown on the console. It's very useful for debugging.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 11133
+se-link: https://tex.stackexchange.com/questions/11123/prevent-pdflatex-from-writing-a-bunch-of-files/11133#11133
+se-score: 29
+se-accepted: false
+se-tags:
+- auxiliary-files
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prevent pdflatex from writing a bunch of files](https://tex.stackexchange.com/questions/11123/prevent-pdflatex-from-writing-a-bunch-of-files), asked by [fouronnes](https://tex.stackexchange.com/users/3605/fouronnes) on TeX Stack Exchange (2011-02-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> If I create just a basic `hello.tex` file an compile it using 
+>
+> ```latex
+> pdflatex hello.tex
+> ```
+>
+> The `pdflatex` program is creating a plethora of file which is a little annoying. Currently it writes all those files about which I really don't care:
+>
+> ```latex
+> hello.aux, hello.log, hello.nav, hello.out, hello.snm, hello.toc
+> ```
+>
+> Is there a way to tell `pdflatex` to only write `hello.pdf` if the build is successful ? If not, can I specify the output directory of those files ? Maybe I could just write them in `/tmp`.
+:::
+
+TeX writes the `.log` file.  It contains more information about processing the job than what is shown on the console.  It's very useful for debugging.
+
+LaTeX writes the `.aux` and `.toc` files.  They are used for managing cross-references and table-of-contents information.  Since TeX's organism digests the input document from beginning to end, once per job, there's no other way to have a part of the document change based on later content.  
+
+The `beamer` class writes `.snm` and `.nav` files.  The `.snm` file is to assist you with including images of slides into an article version of the document.  The `.nav` file assists in creating navigation bars on slides.  Beamer is not apparently set up to suppress writing those files if they are not needed (i.e., if you do not need the functionality they enable).
+
+The `hyperref` package writes the `.out` file to assist in creating bookmarks in the pdf file.  Sometimes this isn't needed; I looked at the last few jobs I had which used hyperref and the `.out` files are empty.  Again, this doesn't seem suppressable.
+
+You can write the auxiliary files to a temporary directory.  Then you'll have to instruct TeX to look in that temporary directory.  Also you will have to make sure that the included auxiliary files are the right ones, not ones placed in the temporary directory by another process.  
+
+I think it's best to learn to live with these files.  If you don't want them after you're "done" with writing the document, just delete them.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11123/prevent-pdflatex-from-writing-a-bunch-of-files/11133#11133) on TeX Stack Exchange, 2011-02-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

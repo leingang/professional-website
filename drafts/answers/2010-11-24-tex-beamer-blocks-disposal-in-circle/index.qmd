@@ -1,0 +1,72 @@
+---
+title: beamer blocks disposal in circle
+date: '2010-11-24'
+description: The image can/should be done in TikZ and the overlaying can be done using the \action command (\pause is not quite smart enough here).
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5895
+se-link: https://tex.stackexchange.com/questions/5892/beamer-blocks-disposal-in-circle/5895#5895
+se-score: 7
+se-accepted: true
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[beamer blocks disposal in circle](https://tex.stackexchange.com/questions/5892/beamer-blocks-disposal-in-circle), asked by [Louis](https://tex.stackexchange.com/users/2107/louis) on TeX Stack Exchange (2010-11-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am happy with my beamer slides and I think blocks are nice to separate ideas...
+>
+> But I've seen some Cisco presentations (most probably powerpoint) with like an image in the middle and then multiple blocks disposed around it (in a circle shape)
+>
+> I think the effect is very nice, and I don't know how to do it in beamer:
+> do you have an idea?
+>
+> The idea is to have this kind of shape:
+>
+> ```latex
+> C1  C2 C3
+>   \ | /
+> C4-Im-C5
+>   / |     C6 C7  C8
+> ```
+> Im is the image and all Cn are comments (and should be nice inside blocks)
+>
+> Thank you
+> Louis
+>
+> PS: a perfect solution should allow to place some `\pause` in the blocks, so that we have first the image, then first comment and so on...
+:::
+
+The image can/should be done in TikZ and the overlaying can be done using the `\action` command (`\pause` is not quite smart enough here).
+
+```latex
+\documentclass{beamer}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+
+\begin{document}
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}
+\action<+->{\node[fill=red,ellipse] (O) {Im};}
+\foreach \text/\q in {$C_1$/135,$C_2$/90,$C_3$/45,$C_4$/180,$C_5$/0,$C_6$/225,$C_7$/270,$C_8$/315} {
+	\action<+->{\draw (\q:2cm) node[fill=blue!20!white,draw,rectangle]  {\text} -- (O);}
+}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5892/beamer-blocks-disposal-in-circle/5895#5895) on TeX Stack Exchange, 2010-11-24, with [edits](https://tex.stackexchange.com/posts/5895/revisions) by [Hendrik Vogt](https://tex.stackexchange.com/users/1235/hendrik-vogt). Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

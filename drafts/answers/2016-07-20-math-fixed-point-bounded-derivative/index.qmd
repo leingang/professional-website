@@ -1,0 +1,51 @@
+---
+title: Fixed point, bounded derivative
+date: '2016-07-20'
+description: Assuming your proof of the $p=1$ case is valid, you can apply it to $g=f^p$. You know $g$ has a unique fixed point $a$. You can show that $f(a)$ is a fixed…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1865406
+se-link: https://math.stackexchange.com/questions/1865363/fixed-point-bounded-derivative/1865406#1865406
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- fixed-point-theorems
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Fixed point, bounded derivative](https://math.stackexchange.com/questions/1865363/fixed-point-bounded-derivative), asked by [Michael](https://math.stackexchange.com/users/295411/michael) on Mathematics Stack Exchange (2016-07-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $p\in\mathbb{N}$. Let $f:I\to\mathbb{R}$ differentiable in the closed interval $I$ (bounded or not), with $f(I) \subset I$, and let $g = f\circ f\circ \cdots \circ f = f^p$, where $\circ$ means composition. If $\lvert g'(x) \rvert \leq c < 1, \forall x\in I$ where $c$ is a constant, show that there is only one $a\in I$ such that $f(a) = a$.
+>
+> **Some thoughts**
+>
+> I proved it for $p=1$, i.e. $g = f$ and $\lvert g'(x) \rvert = \lvert f'(x) \rvert \leq c < 1$. Notice that $I$ can be unbounded so the existence of the fixed point is not trivial.
+>
+> For the task, I use two results:
+>
+> 1. Let $f:I\to\mathbb{R}$ differentiable in the interval $I$. The function $f$ satisfies $\lvert f(x) - f(y) \rvert \leq c\lvert x - y \rvert$ for all $x,y\in I$ if and only if $\lvert f'(x) \rvert \leq c$ for all $x\in I$.
+>
+> 2. Let $0\leq c < 1$. If the sequence $(x_n)$ is such that $\lvert x_{n+2} - x_{n+1}\rvert \leq c\lvert x_{n+1} - x_n\rvert$ for all $n\in \mathbb{N}$, then the sequence $(x_n)$ converges.
+>
+> Now take any point $x_0\in I$ and build the following sequence: $x_1 = g(x_0), x_2 = g(x_1), \cdots, x_n = g(x_{n-1}), \cdots$. Since $\lvert g'(x) \rvert \leq c$, from result 1 we have $\lvert g(x_{n+1}) - g(x_{n}) \rvert \leq c\lvert x_{n+1} - x_{n} \rvert$, then $\lvert x_{n+2} - x_{n+1} \rvert \leq c\lvert x_{n+1} - x_{n} \rvert$. Since $0\leq c < 1$, from result 2 we have $(x_n)\to a$. Since $I$ is closed, $a\in I$. Finally, since $x_n = g(x_{n-1})$, this means $g(a) = a$. The uniqueness comes from supposing another $b$ and applying IVT to get contradiction.
+>
+> I am having trouble trying to prove for $p > 1$.
+>
+> **Update:** I marked Matthew's suggestion because it contained the key idea for the solution. The remaining bits for the solution are in the comments to his suggestion.
+:::
+
+Assuming your proof of the $p=1$ case is valid, you can apply it to $g=f^p$.  You know $g$ has a unique fixed point $a$.  You can show that $f(a)$ is a fixed point of $g$, too.  But this means $a=f(a)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1865363/fixed-point-bounded-derivative/1865406#1865406) on Mathematics Stack Exchange, 2016-07-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

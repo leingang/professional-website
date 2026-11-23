@@ -1,0 +1,59 @@
+---
+title: How to understand the equivalence statement of interval graphs?
+date: '2024-06-09'
+description: A partial ordering is called a linear ordering provided any two elements are comparable. In this context, it means the maximal cliques can be “sorted” into a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4929882
+se-link: https://math.stackexchange.com/questions/4929870/how-to-understand-the-equivalence-statement-of-interval-graphs/4929882#4929882
+se-score: 7
+se-accepted: true
+se-tags:
+- graph-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to understand the equivalence statement of interval graphs?](https://math.stackexchange.com/questions/4929870/how-to-understand-the-equivalence-statement-of-interval-graphs), asked by [licheng](https://math.stackexchange.com/users/708389/licheng) on Mathematics Stack Exchange (2024-06-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> An *interval graph* is an undirected graph formed from a set of intervals on the real line, with a vertex for each interval and an edge between vertices whose intervals intersect.
+>
+> I saw the theorem below on page 50 of the book *Graph classes: a survey* (A. Brandstädt , V.B. Le,  J.P. Spinrad). Society for Industrial and Applied Mathematics, 1999.)
+>
+> **Theorem 4.3 .1** (Gilmore, Hoffman [444]) Let $G$ be a graph. The following conditions are equivalent:
+> (i) $G$ is an interval graph;
+> (ii) The maximal cliques of $G$ can be linearly ordered such that for each vertex $v$, the maximal cliques containing $v$ occur consecutively.
+>
+> My main confusion lies in the meaning of (ii). What is 'linearly ordered' and what does 'maximal cliques containing  $v$ occur consecutively' mean?"
+>
+> I provided the following example, which can be tested by SageMath to show it is not an interval graph. However, if I want to verify it using (ii), how should I proceed?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: pBDi3cef.png
+:::
+
+A partial ordering is called a linear ordering provided any two elements are comparable. In this context, it means the maximal cliques can be “sorted” into a list.
+
+For your example, there are four maximal cliques: $\{1,2,3\}$, $\{2,4,5\}$, $\{2,3,5\}$, and $\{3, 5, 6\}$. For brevity let me just write them as three-digit numbers $123$, etc.
+
+Suppose that condition (ii) holds. The three cliques $123$, $235$, and $245$ must appear consecutively because they are the three cliques that contain the vertex $2$. Of these, the pair with $3$ and the pair with $5$ also have to appear consectively. So the only options are $123 < 235 < 245$ and the reverse.
+
+Suppose the order is $123 < 235 < 245$. There are only two options for $356$:
+
+* Either $123 < 235 < 245 < 356$, which is a contradiction because $245$ separates $235$ from $356$,
+* or $356 < 123 < 235 < 245$, which is a contradiction because $123$ separates $356$ from $235$.
+
+The other case is handled similarly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4929870/how-to-understand-the-equivalence-statement-of-interval-graphs/4929882#4929882) on Mathematics Stack Exchange, 2024-06-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

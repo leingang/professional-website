@@ -1,0 +1,39 @@
+---
+title: Is There A Way To Calculate Expected value From Variance And Vice Versa?
+date: '2015-07-13'
+description: Let $a > 0$ and let $Xa$ be the discrete random variable with $P(Xa = a) = 1/2$ and $P(Xa = -a) = 1/2$. Then $$\begin{align} E(Xa) &= 0 \\…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1359675
+se-link: https://math.stackexchange.com/questions/1359640/is-there-a-way-to-calculate-expected-value-from-variance-and-vice-versa/1359675#1359675
+se-score: 2
+se-accepted: false
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is There A Way To Calculate Expected value From Variance And Vice Versa?](https://math.stackexchange.com/questions/1359640/is-there-a-way-to-calculate-expected-value-from-variance-and-vice-versa), asked by [gbox](https://math.stackexchange.com/users/103441/gbox) on Mathematics Stack Exchange (2015-07-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If I am given the value of one (just the value), can I calculate the value of the other?
+:::
+
+Let $a > 0$ and let $X_a$ be the discrete random variable with $P(X_a = a) = 1/2$ and $P(X_a = -a) = 1/2$.  Then
+$$\begin{align*}
+    E(X_a) &= 0 \\
+    \operatorname{Var}(X_a) &= a^2
+\end{align*}$$
+
+Also, as David points out in the comments, adding a constant to a variable changes the expected value but not the variance.  So these two statistics are independent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1359640/is-there-a-way-to-calculate-expected-value-from-variance-and-vice-versa/1359675#1359675) on Mathematics Stack Exchange, 2015-07-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

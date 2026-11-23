@@ -1,0 +1,70 @@
+---
+title: How would you name these fraction macros?
+date: '2012-02-03'
+description: 'This typography blog post gives a few alternative terms:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 43283
+se-link: https://tex.stackexchange.com/questions/43242/how-would-you-name-these-fraction-macros/43283#43283
+se-score: 8
+se-accepted: false
+se-tags:
+- macros
+- package-writing
+- naming
+- fractions
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How would you name these fraction macros?](https://tex.stackexchange.com/questions/43242/how-would-you-name-these-fraction-macros), asked by [Todd Lehman](https://tex.stackexchange.com/users/8499/todd-lehman) on TeX Stack Exchange (2012-02-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I've got four macros now for typesetting fractions in text mode. The first writes them horizontally (shilling style, with a hyphen), the second writes them diagonally, the third writes them vertically, and the fourth chooses the style automatically based on the number of digits in the numerator and denominator.
+>
+> What would you name each of the four macros?
+>
+> For now, I'm calling them `\texthfrac`, `\textdfrac`, `\textvfrac`, and `\textfrac`, respectively.  Each takes 2 or 3 arguments (2 if given just a fraction; 3 if given an integer followed by a fraction).  Special care in kerning is needed for the 3-arguement case.
+>
+> The reason I'm asking is because what's going through my head now is wondering how much work would be involved in releasing these as a LaTeX package.  I'm really happy with how these all turned out.
+>
+> * * *
+>
+> <a href="ihPqq.png">
+> ![sample][q-1]
+> </a>
+>
+>   [q-1]: ihPqq.png
+:::
+
+This [typography blog post][1] gives a few alternative terms:
+
+> The forward slash (/), which we met earlier, is used to create
+> horizontally bound *split fractions*. *Stacked fractions*, also known as
+> *horizontal bar fractions* or *vertical fractions*, consist of numbers
+> stacked above and below a figure dash. A *nut fraction* is a stacked
+> fraction that is specifically designed to fit an en space. A *built
+> fraction* is one that is painstakingly assembled element by element,
+> whereas a *piece fraction* is one that comes as part of a font.
+
+All of your fractions are built fractions (which might suggest a package name of `buildfrac`).  Nut fractions are a special kind of piece fractions, so that term can be avoided. :-)  
+
+* Your `\textvfrac` is consistent with the term *vertical fraction*, but I happen to like *stacked fraction*.  
+* This [glossary of typographic terms](http://area.northwestcollege.edu/art/coursefiles/type_glossary/glossaryframeset.html) calls your `\textdfrac` a *diagonal fraction*. [HowToPrint](http://howtoprint.com/2011/print-terms/what-is-split-fraction/) and the quote above use the term *split fraction*.  
+* Your `\texthfrac` is called a *shilling fraction* as in Mark's link to [Michael Saunders's page](http://members.fortunecity.com/odradek5/otf-LaTeX/index.html), but also a *[fake fraction](http://printwiki.org/Fake_Fraction)* by PrintWiki.  *Fake* seems like a pretty apt term for a fraction which is set with ordinary size numbers and a slash.
+
+So, I think you would be well-understood by typographers and LaTeX users if you kept `\textvfrac` and `\textdfrac` as they are and changed `\texthfrac` to `\textffrac` (*f* for "fake").  Or to be more colorful you could change `\textdfrac` to `\splitfrac`, `\textvfrac` to `\stackedfrac`, and `\texthfrac` to `\fakefrac`. 
+
+
+
+  [1]: http://ilovetypography.com/2008/04/25/extreme-type-terminology-part-4/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/43242/how-would-you-name-these-fraction-macros/43283#43283) on TeX Stack Exchange, 2012-02-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

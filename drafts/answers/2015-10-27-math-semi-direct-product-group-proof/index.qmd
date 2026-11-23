@@ -1,0 +1,54 @@
+---
+title: Semi-direct product group proof.
+date: '2015-10-27'
+description: We need to show that if $(n1,a1)$ and $(n2,a2)$ are in $N \times A0$, then $$(n1,a1) \alpha (n2,a2) \in N \times A0$$ By definition of the multiplication…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1500440
+se-link: https://math.stackexchange.com/questions/1500428/semi-direct-product-group-proof/1500440#1500440
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- group-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Semi-direct product group proof.](https://math.stackexchange.com/questions/1500428/semi-direct-product-group-proof), asked by [user139985](https://math.stackexchange.com/users/139985/user139985) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Suppose $\alpha \colon A \to  \operatorname{Aut}(N)$ is a homomorphism and $A_0 \leq A$ is a subgroup.  Prove that $N \rtimes_\alpha A_0$ is a subgroup of $N \rtimes_\alpha A$.  Note that this makes sense because $N \times A_0$ is naturally a subset of $N \times A$.
+>
+> I'm really having a hard time exactly understanding this problem. Any advice would be helpful. My definition/visualization of a semidirect product group is shaky I think so any help there would be awesome too. Thanks!
+:::
+
+We need to show that if $(n_1,a_1)$ and $(n_2,a_2)$ are in $N \times A_0$, then 
+$$(n_1,a_1) *_\alpha (n_2,a_2) \in N \times A_0$$
+By definition of the multiplication $*_\alpha$ on $N \rtimes_\alpha A$, we have
+$$(n_1,a_1) *_\alpha (n_2,a_2) = (n_1 \alpha(a_1)(n_2),a_1a_2)$$
+The first element is definitely in $N$.  The second element is in $A_0$ since $A_0$ is a subgroup of $A$.
+
+We also need to show that for every $(n,a)$ in $N\times A_0$, the $*_\alpha$-inverse of $(n,a)$ is in $N\times A_0$.  Let the $*_\alpha$-inverse be called $(n',a')$.  By the definition of $*_\alpha$-multiplication it is clear that $a' = a^{-1}$.  This in in $A_0$ because, again, $A_0$ is a subgroup.
+We then need to find $n'$ such that
+$$n \alpha(a^{-1})(n') = e$$
+Solving,
+$$\begin{aligned}
+    \alpha(a^{-1})(n') &= n^{-1} \\
+\iff \alpha(a)\left(\alpha(a^{-1})(n')\right) &= \alpha(a)\left(n^{-1}\right)\\
+\end{aligned}$$
+Now $\alpha$ is a homomorphism, so $\alpha(a)\mathbin{\circ}\alpha(b) = \alpha(ab)$.  In particular, 
+$$\alpha(a)\mathbin{\circ}\alpha(a^{-1}) = \alpha(aa^{-1}) = \alpha(e) = \text{identity function on $N$}$$
+Therefore,
+$n' =  \alpha(a)\left(n^{-1}\right)$ and
+$$(n,a)^{*_\alpha-1} = (\alpha(a)\left(n^{-1}\right),a^{-1}) \in N \times A_0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1500428/semi-direct-product-group-proof/1500440#1500440) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

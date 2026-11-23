@@ -1,0 +1,51 @@
+---
+title: Baby Rudin Theorem 2.35 Proof Explanation
+date: '2021-06-30'
+description: 'You can reword that first “if“ as:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4187339
+se-link: https://math.stackexchange.com/questions/4187327/baby-rudin-theorem-2-35-proof-explanation/4187339#4187339
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- general-topology
+- metric-spaces
+- proof-explanation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Baby Rudin Theorem 2.35 Proof Explanation](https://math.stackexchange.com/questions/4187327/baby-rudin-theorem-2-35-proof-explanation), asked by [rpoc1231](https://math.stackexchange.com/users/921962/rpoc1231) on Mathematics Stack Exchange (2021-06-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The theorem states: **Closed subsets of compact sets are compact.**\
+> The proof is:
+>
+> > Suppose $F\subset K\subset X$, $F$ is closed (relative to $X$), and $K$ is compact. let $\{V_\alpha\}$ be an open cover of $F$. If $F^c$ is adjoined to $\{V_\alpha\}$, we obtain an open cover $\Omega$ of $K$. Since $K$ is compact, there is a finite subcollection $\Phi$ of $\Omega$ which covers $K$, and hence $F$. If $F^c$ is a member of $\Phi$, we may remove it from $\Phi$ and still retain an open cover of $F$. We have thus shown that a finite subcollection of $\{V_\alpha\}$ covers $F$.
+>
+> My question is are the two "if"s always true? Specifically:
+> >If $F^c$ is adjoined to $\{V_\alpha\}$...\
+> >If $F^c$ is a member of $\Phi$...
+>
+> I will admit that I still do not quite understand the concept of open covers and subcovers, so any clarifications on that will be very appreciated!
+:::
+
+You can reword that first “if“ as:
+
+> Let $\Omega = \{ V_\alpha \} \cup \{F^c\}$.  We see that $\Omega$ is an open cover of $K$.
+
+So it's not so much a conditional “if” statement as a sequential one.
+
+The second “if” statement is the important case of a proof by cases that a finite subset of $\Omega$ covering $K$ gives rise to a finite subset of $\{V_\alpha\}$ covering $F$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4187327/baby-rudin-theorem-2-35-proof-explanation/4187339#4187339) on Mathematics Stack Exchange, 2021-06-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

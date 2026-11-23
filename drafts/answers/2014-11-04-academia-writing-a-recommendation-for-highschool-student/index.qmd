@@ -1,0 +1,38 @@
+---
+title: Writing a recommendation for highschool student
+date: '2014-11-04'
+description: You're giving the student an extraordinary experience compared to her fellow applicants, so it's natural for her to ask you for a letter explaining that…
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 31144
+se-link: https://academia.stackexchange.com/questions/31139/writing-a-recommendation-for-highschool-student/31144#31144
+se-score: 5
+se-accepted: false
+se-tags:
+- recommendation-letter
+- undergraduate
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Writing a recommendation for highschool student](https://academia.stackexchange.com/questions/31139/writing-a-recommendation-for-highschool-student), asked by [user-2147482637](https://academia.stackexchange.com/users/12718/user-2147482637) on Academia Stack Exchange (2014-11-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am a full time researcher at a research institute, we are part of a university, but the institute does not have students, just researchers. I mostly have assistant researchers and interns that are undergrad. I am thinking of bringing on a final year highschool student who is really promising and has been winning some awards.
+>
+> They are interested in me writing a recommendation letter (to US schools, but we are outside US). Is this advisable?
+>
+> My main concerns are the appropriateness of a research based letter for undergrad admissions, as well as not being a Professor or Senior faculty as mentioned in questions specific for graduate school.  However when I think about myself, I am pretty sure I had high school teachers write my recommendations, non of which had a PHD nor, obviously, were professors.
+:::
+
+You're giving the student an extraordinary experience compared to her fellow applicants, so it's natural for her to ask you for a letter explaining that experience and your opinions of her work.  And I think it's very reasonable to provide one.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/31139/writing-a-recommendation-for-highschool-student/31144#31144) on Academia Stack Exchange, 2014-11-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

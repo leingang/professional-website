@@ -1,0 +1,41 @@
+---
+title: Continuity of coordinate functions
+date: '2017-12-19'
+description: The condition you're describing is called continuous in each variable separately, and you're right; it's not enough to guarantee continuity on the product…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2573573
+se-link: https://math.stackexchange.com/questions/2573557/continuity-of-coordinate-functions/2573573#2573573
+se-score: 15
+se-accepted: true
+se-tags:
+- general-topology
+- functions
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Continuity of coordinate functions](https://math.stackexchange.com/questions/2573557/continuity-of-coordinate-functions), asked by [matboy](https://math.stackexchange.com/users/446063/matboy) on Mathematics Stack Exchange (2017-12-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $X$ and $Y$ be topological spaces, $X\times{Y}$ with the product topology, and $f$ a function from $X\times{Y}$ to some other topological space. I know that the fact that the functions $f(x,.)$ and $f(.,y)$ are continuous for all $x\in{X}$ and $y\in{Y}$ doesn't imply that $f$ is continuous, but I just can't find a counter-example.
+:::
+
+The condition you're describing is called *[continuous in each variable separately][1]*, and you're right; it's not enough to guarantee continuity on the product space.
+
+One conventional counterexample is $f \colon \mathbb{R} \times \mathbb{R} \to \mathbb{R}$, 
+$$f(x,y) = \begin{cases} \frac{xy}{x^2+y^2} & (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0) \end{cases}$$
+Then $f$ is continuous in each variable separately.  Indeed, the only non-obvious paths to consider are $f(0,y)$ and $f(x,0)$, and along these lines $f$ is identically zero.  But $f$ is not continuous at zero; if you approach along the line $y=x$ you get a path limit of $\frac{1}{2}$.
+
+  [1]: https://calculus.subwiki.org/wiki/Separately_continuous_not_implies_continuous
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2573557/continuity-of-coordinate-functions/2573573#2573573) on Mathematics Stack Exchange, 2017-12-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,51 @@
+---
+title: Why is the exponent of the last distinct power of $2$ of any natural number the same as the count of $2$'s in its prime factorization?
+date: '2019-09-09'
+description: What a neat discovery. The key is that every natural number can be written as a sum of powers of two. For all $n$, there exist powers $r1, r2, \dots, rk$, such…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3350098
+se-link: https://math.stackexchange.com/questions/3350089/why-is-the-exponent-of-the-last-distinct-power-of-2-of-any-natural-number-the/3350098#3350098
+se-score: 1
+se-accepted: true
+se-tags:
+- prime-factorization
+- recursive-algorithms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is the exponent of the last distinct power of $2$ of any natural number the same as the count of $2$'s in its prime factorization?](https://math.stackexchange.com/questions/3350089/why-is-the-exponent-of-the-last-distinct-power-of-2-of-any-natural-number-the), asked by [JohnDNoone](https://math.stackexchange.com/users/702490/johndnoone) on Mathematics Stack Exchange (2019-09-09; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I've been trying to figure out a way to recursively divide a number by 2 until that operation would no longer result in a whole number (without actually running through such a process manually; i.e. find an equation that would just tell me).
+>
+> From what I've been testing, it looks like when you take a number and keep subtracting the highest power of 2 possible without dropping below 0, the exponent of the last power is the same as the number of times you can recursively divide by 2 while still getting a whole number.
+>
+> For example:
+>
+> $24 - (2^4) - (2^3) = 0$ ($3$ being the exponent of the last power)
+>
+> $\frac{24}{ 2} = \frac{12}{2} = \frac{6}{ 2} = 3$  ($3$ being the number of times you can recursively divide by $3$ (or its count of $2$'s in its prime factorization))
+>
+> Why is this the case? I know if you factor out as many $2$'s as possible while keeping whole numbers from the 'subtracting powers' example above you get $(2^3)(2+1)$, so it seems that this process is just another way to get prime factorization; but that just seems like such an unsatisfying answer. I'm really hoping there is some deeper meaning to be had here.
+>
+> Can anyone here give me the rundown on this or point me in the direction of some reading on this topic?
+:::
+
+What a neat discovery.  The key is that every natural number can be written as a sum of powers of two.  For all $n$, there exist powers $r_1, r_2, \dots, r_k$, such that
+$$n = 2^{r_1} + 2^{r_2} + \dots + 2^{r_k}$$
+Arrange these powers in increasing order, so that $r_1$ is the smallest.  That is your “exponent of the last power” from your experimentation.  On the other hand, since all the other powers are higher than $r_1$, all the other terms in the sum are divisible by $2^{r_1}$.  Therefore
+$$n = 2^{r_1}\left(1 + 2^{r_2 - r_1} + 2^{r_3 - r_1} + \dots + 2^{r_k - r_1}\right)$$
+
+You can see that after dividing $n$ by $2$ $r_1$ times, the remainder is the sum of a bunch of powers of $2$, plus one.  That is, the remainder is no longer divisible by $2$.  Therefore, $r_1$ is also the largest number of times you can divide $n$ by before reaching an odd number.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3350089/why-is-the-exponent-of-the-last-distinct-power-of-2-of-any-natural-number-the/3350098#3350098) on Mathematics Stack Exchange, 2019-09-09. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,78 @@
+---
+title: How to use the content of \title{} as a reference?
+date: '2011-04-14'
+description: 'If you look up \title in the latex source, you''ll see it''s defined like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 15806
+se-link: https://tex.stackexchange.com/questions/15804/how-to-use-the-content-of-title-as-a-reference/15806#15806
+se-score: 22
+se-accepted: true
+se-tags:
+- cross-referencing
+- titles
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to use the content of \title{} as a reference?](https://tex.stackexchange.com/questions/15804/how-to-use-the-content-of-title-as-a-reference), asked by [meep.meep](https://tex.stackexchange.com/users/3735/meep-meep) on TeX Stack Exchange (2011-04-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to be able to reference to my document title by name. How can I achieve that?
+>
+> ```latex
+> \documentclass{scrartcl}
+> \usepackage{hyperref}
+>
+> \begin{document}
+>
+> \title{Example}\label{title}
+> \author{me}
+> \maketitle
+>
+> The title is: "\nameref{title}" (Here it should read "Example")
+>
+> \end{document}
+> ```
+:::
+
+If you look up `\title` in the latex source, you'll see it's defined like this:
+
+```latex
+\def\title#1{\gdef\@title{#1}}
+```
+
+So the title is stored in a regular macro named `\@title`.  The only problem with using that to recover the title is the `@` sign, normally not allowed in control sequences.  
+
+To get around this, alias a regular macro to `\@title`:
+
+```latex
+\documentclass{scrartcl}
+\title{Example}
+\author{me}
+
+\makeatletter
+\let\inserttitle\@title
+\makeatother
+
+\begin{document}
+\maketitle
+
+The title is: ``\inserttitle'' (Here it should read ``Example'')
+
+\end{document}
+```
+
+`\label` does something a little bit different.  It saves the value of the currently active *counter* (requiring an aux file and a second pass), and you want to save the *expansion text* of a macro.  Macros are well suited for the latter, and it would be hard to overload `\label` and `\nameref` to do the former.
+
+You'll also see that I reorganized your code.  I think it's best to put macros that do not produce output like `\title` and `\author` in the preamble rather than within the `document`.  There shouldn't be anything between `\begin{document}` and `\maketitle` because you will likely get extra spaces from blank lines.  Also, having those “metadata” declarations in the preamble, and especially right after `\documentclass{}` makes it easier to identify the file to the user editing it.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/15804/how-to-use-the-content-of-title-as-a-reference/15806#15806) on TeX Stack Exchange, 2011-04-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

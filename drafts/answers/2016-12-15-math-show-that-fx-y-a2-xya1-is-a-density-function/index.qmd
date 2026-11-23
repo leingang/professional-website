@@ -1,0 +1,52 @@
+---
+title: Show that f(x,y) = a^2/x*y^a+1 is a density function
+date: '2016-12-15'
+description: 'Let $D$ be the domain in question: $$D = \left\{(x,y)\mid 1 \leq x < \infty, x \leq y <\infty\right\}$$ Then the integral is $$I = \iintD…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2060080
+se-link: https://math.stackexchange.com/questions/2060062/show-that-fx-y-a2-xya1-is-a-density-function/2060080#2060080
+se-score: 1
+se-accepted: false
+se-tags:
+- probability
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that f(x,y) = a^2/x*y^a+1 is a density function](https://math.stackexchange.com/questions/2060062/show-that-fx-y-a2-xya1-is-a-density-function), asked by [Killercat](https://math.stackexchange.com/users/396893/killercat) on Mathematics Stack Exchange (2016-12-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> i need help with solving the corresponding integral. I never took multivariable calculus, so im pretty bad at integration anyway, but i have to start somewhere.
+>
+> I have to show that the function $f(x,y) = \frac{a^2}{x*y^{a+1}}$ is a density function.
+> Given the fact that $x,y \geq 1$, this thing is going to be positive anyway. But, as i mentioned above, i have trouble showing the integration part.
+> Ive managed to work out the integral, with $F(x,y) = -a*y^{-a}*ln(x)$, but i have trouble  showing that the corresponding integral equals 1.
+>
+> Thy for the help
+:::
+
+Let $D$ be the domain in question:
+$$D = \left\{(x,y)\mid 1 \leq x < \infty, x \leq y <\infty\right\}$$
+Then the integral is
+$$I = \iint_D \frac{a^2}{xy^{a+1}}\,dA
+      = \int_1^\infty \int_x^\infty \frac{a^2}{x y^{a+1}}\,dy \,dx$$
+It looks like you antidifferentiated the integrand with respect to each variable consecutively.  But to do an iterated integral, you need to do one at a time (evaluating in between).  Thus:
+$$\begin{split}
+        \int_1^\infty \int_x^\infty \frac{a^2}{x y^{a+1}}\,dy \,dx
+        &= \int_1^\infty \left[-\frac{a}{x y^{a}}\right]^{y=\infty}_{y=x}\,dx \\
+        &= \int_1^\infty \frac{a}{x^{a+1}}\,dx \\
+        &= \left.-\frac{1}{x^{a}}\right|^{x=\infty}_{x=1}=1\\ 
+    \end{split}$$
+You should really find a good book on multivariable integration and “review” it because you won't be able to bluff your way through problems like this.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2060062/show-that-fx-y-a2-xya1-is-a-density-function/2060080#2060080) on Mathematics Stack Exchange, 2016-12-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

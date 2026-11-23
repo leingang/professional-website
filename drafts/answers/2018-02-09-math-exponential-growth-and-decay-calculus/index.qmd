@@ -1,0 +1,62 @@
+---
+title: Exponential growth and decay calculus.
+date: '2018-02-09'
+description: 'A function $y(t) = Ce^{kt}$ does satisfy $y'' = ky$, because: $$y''(t) = Ce^{kt}(k) = kCe^{kt} = ky(t)$$ I think you asked why it''s true that any function that…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2642752
+se-link: https://math.stackexchange.com/questions/2642743/exponential-growth-and-decay-calculus/2642752#2642752
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Exponential growth and decay calculus.](https://math.stackexchange.com/questions/2642743/exponential-growth-and-decay-calculus), asked by [Jwan622](https://math.stackexchange.com/users/77211/jwan622) on Mathematics Stack Exchange (2018-02-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm reading this text about exponential growth functions and derivatives and I'm a bit confused by this (questions in bold):
+>
+> [![enter image description here][q-1]][q-1]
+>
+> [![enter image description here][q-2]][q-2]
+>
+> **Is the above text true because the derivative of $e^x$ is $e^x$? and also the derivative of $5e^x$ is $5e^x$ and by chain rule the derivative of $5e^{2x}$ is $2 \cdot 5e^{2x}$. Is that why functions that fit the form "constant multiple of itself" are in the form $Ce^{kt}$?**
+>
+>
+> In Newton's law of cooling example, I don't see how we arrived at $\frac{dy}{dt}$. I don't get the section shaded in blue. **On a high level, what is going on?**
+>
+> [![enter image description here][q-3]][q-3]
+>
+>
+>   [q-1]: aiiSw.png
+>   [q-2]: gAg6v.png
+>   [q-3]: T8p5G.png
+:::
+
+A function $y(t) = Ce^{kt}$ does satisfy $y' = ky$, because:
+$$y'(t) = Ce^{kt}(k) = kCe^{kt} = ky(t)$$
+I think you asked why it's true that any function that satisfies $y'=ky$ must be in this form.  There's a different answer to that.  Given such a $y$, let $z(t) = y(t)e^{-kt}$.  Then
+$$z'(t) = y'(t) e^{-kt} + y(t)e^{-kt}(-k)
+          = ky(t) e^{-kt} -ky(t) e^{-kt} = 0$$
+So $z(t)$ is a constant $C$, which means $y(t) = Ce^{kt}$.
+
+Your second question is more straightforward.  The equation 
+$$\frac{dT}{dt} = k(T-T_s)\tag{$*$}$$
+is a mathematical formulation of Newton's Law of Cooling: An object cools in proportion to the difference in temperature between the object and its surroundings.  
+
+Make sure that makes sense to you.  If an object is much hotter than its surroundings, it will cool rapidly.  If an object is close to “room temperature”, it won't change its temperature much at all.  It works for warming, too.
+
+Given such a function $T(t)$, let $y(t) = T(t) - T_s$.  Then $y'(t) = T'(t)$, because the derivative of a constant is zero.  On the other hand, by ($*$) and the definition of $y(t)$, $T'(t) = k y(t)$.  So $y'(t) = ky(t)$, implying $y=Ce^{kt}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2642743/exponential-growth-and-decay-calculus/2642752#2642752) on Mathematics Stack Exchange, 2018-02-09, with [edits](https://math.stackexchange.com/posts/2642752/revisions) by [Jwan622](https://math.stackexchange.com/users/77211/jwan622). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

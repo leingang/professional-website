@@ -1,0 +1,97 @@
+---
+title: Calculating the odds of winning a card game
+date: '2026-08-04'
+description: This is a fun game! But don't play it.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5146064
+se-link: https://math.stackexchange.com/questions/635379/calculating-the-odds-of-winning-a-card-game/5146064#5146064
+se-score: 1
+se-accepted: false
+se-tags:
+- probability
+- analysis
+- statistics
+- card-games
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculating the odds of winning a card game](https://math.stackexchange.com/questions/635379/calculating-the-odds-of-winning-a-card-game), asked by [Lex](https://math.stackexchange.com/users/120733/lex) on Mathematics Stack Exchange (2014-01-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So my friend made this game and I want to the odds of winning his game. So his game is basically I pay \$$1$ to draw $2$ cards from the deck and guess $2$ numbers and one suit. For each correct guess I get \$$1$. Doubled guesses still only count for one correct guess. So either I lose \$$1$($0$correct guess), break even ($1$correct guess), profit \$$1$($2$correct guesses) or profit \$$2$($3$ correct guesses).
+>
+> To win, I have to profit at least \$$1$ so that means I need to be able to guess either both numbers, or one number and one suit.
+>
+> I was wondering what my odds of winning are or what the odds of all possibilities are.
+:::
+
+This is a fun game! But don't play it.
+
+Based on what you wrote twelve years ago, here's how I assume the game works:
+
+* Two random cards are dealt from a standard deck, face down.
+* You guess two ranks (the “number” on the card) and one suit.
+* You get a dollar if your first rank matches one of the cards, a dollar if your second rank matches one of the cards, and a dollar if your suit matches one of the cards.
+
+I'm inferring this from your sentence “Doubled guesses still only count for one correct guess” and that the set of payoff outcomes is $\{0,1,2,3\}$. If two cards of the same suit, guessed correctly, count for \$2, then you could get \$4 if you guessed both ranks and the shared suit correctly. I'm also assuming that you wouldn't guess the same rank twice; that would seem to be a wasted guess if “doubled guesses still only count for one correct guess.”
+
+Let's name some events and random variables:
+
+* Let $R_1$, $R_2$, $S_1$, and $S_2$ be the rank and suit of the two cards dealt. These are categorical [random variables](https://en.wikipedia.org/wiki/Random_variable), which we assume uniformly distributed among the possible values (i.e., the deck is fair).
+* Let $G_1$, $G_2$, and $G_3$ be the two ranks and suit guessed. 
+* Let $W_1$, $W_2$, and $W_3$ be the events that your two ranks and suit match the cards dealt.
+* Let $X_1$, $X_2$, and $X_3$ be the dollar amounts you get from the ranks and suit matching. These are numerical random variables.
+
+You asked for $P(W_1)$, $P(W_2)$, and $P(W_3)$ (the probabilities of winning in each way), and also $E(X_1+X_2+X_3)$ (the [expected](https://en.wikipedia.org/wiki/Expected_value) winnings per game).
+
+Let's calculate:
+$$\begin{aligned}
+P(W_1) &= P((G_1 = R_1) \cup (G_1 = R_2))
+\\&= P(G_1 = R_1) + P(G_1 = R_2) - P((G_1 = R_1) \cap (G_1 = R_2))
+\end{aligned}$$
+
+There are $13$ possible ranks, so it's pretty clear that $P(G_1 = R_1) = \frac{1}{13}$. It's also true that $P(G_1 = R_2) = \frac{1}{13}$. People find this hard to believe, because $R_1$ and $R_2$ are dependent on each other. But you can convince yourself two ways:
+
+* Either calculate it carefully conditioning on the rank of the first card:
+$$P(G_1 = R_2) = P(G_1 = R_2 \mid G_1 = R_1)P(G_1 = R_1) + P(G_1 = R_2 \mid G_1 \neq R_1)P(G_1 \neq R_1)$$
+* Or just imagine swapping the two cards dealt before turning them face up, or dealing them right-to-left instead of left-to-right. The set of outcomes isn't changed, so the probabilities wouldn't change.
+
+As for $P((G_1 = R_1) \cap (G_1 = R_2))$, there are $\binom{52}{2}$ ways to choose two cards, and $\binom{4}{2}$ ways to choose two cards of a fixed rank (since there are four cards of the same rank in the deck). 
+So
+$$P((G_1 = R_1) \cap (G_1 = R_2))
+= \frac{\binom{4}{2}}{\binom{52}{2}} = \frac{4 \cdot 3}{52 \cdot 51} = \frac{1}{13 \cdot 17}$$
+and finally
+$$P(W_1) = \frac{1}{13} + \frac{1}{13} - \frac{1}{13 \cdot 17} = \frac{33}{221} \approx 0.149$$
+
+In a similar way, $P(W_2) = P(W_1)$. And using suits instead of ranks, we can compute $P(W_3)$:
+$$\begin{aligned}
+  P(W_3) &= P(G_3 = S_1) + P(G_3 = S_2) - P(G_3 = S_1 = S_2)
+\\&= \frac{1}{4} + \frac{1}{4} - \frac{\binom{13}{2}}{\binom{52}{2}}
+\\&= \frac{1}{2} - \frac{13 \cdot 12}{52 \cdot 51}
+\\&= \frac{45}{102} \approx 0.441
+\end{aligned}$$
+
+Now for the payoffs. The rules make it easy, because $X_1$, $X_2$, and $X_3$ payoff \$1 depending on whether $W_1$, $W_2$, or $W_3$ happen. That is:
+$$E(X_1) = 1 \cdot P(W_1) + 0 \cdot P(\bar W_1) = P(W_1)$$
+and similarly for $X_2$ and $X_3$. Therefore, using the linearity of expectation, we have
+$$\begin{aligned}
+E(X_1 + X_2 + X_3) &= E(X_1) + E(X_2) + E(X_3)
+\\&= P(W_1) + P(W_2) + P(W_3)
+\\&= \frac{33}{221} + \frac{33}{221} + \frac{45}{102} \approx 0.740
+\end{aligned}$$
+
+I wrote some [python code to simulate this game](https://colab.research.google.com/gist/leingang/27f85555b344bc9441f4e497e7851c6b/lex.ipynb), and the average over a million hands agrees with these calculations.
+
+The [law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers) says that, in the limit as the number of iterations grows large, you should expect to win 74 cents per play. If you pay a dollar for each game, you will net an average *loss* of 26 cents per play. So [the only winning move is not to play](https://www.youtube.com/watch?v=CLJVLwB51LA).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/635379/calculating-the-odds-of-winning-a-card-game/5146064#5146064) on Mathematics Stack Exchange, 2026-08-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

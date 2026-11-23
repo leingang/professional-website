@@ -1,0 +1,81 @@
+---
+title: Which sans serif and monospace fonts suit Century Schoolbook?
+date: '2011-03-16'
+description: Ironic that you find Century Schoolbook suitable for online documentation, as it was developed nearly 100 years ago for school textbooks!
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13604
+se-link: https://tex.stackexchange.com/questions/13598/which-sans-serif-and-monospace-fonts-suit-century-schoolbook/13604#13604
+se-score: 3
+se-accepted: true
+se-tags:
+- fonts
+- typewriter
+- sans-serif
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which sans serif and monospace fonts suit Century Schoolbook?](https://tex.stackexchange.com/questions/13598/which-sans-serif-and-monospace-fonts-suit-century-schoolbook), asked by [Andrey Vihrov](https://tex.stackexchange.com/users/3104/andrey-vihrov) on TeX Stack Exchange (2011-03-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I find the [Century Schoolbook][q-1] family very legible for online documentation. However, I am unsure what [sans serif][q-2] (for typesetting, e.g., LaTeX package names) and [monospace][q-3] (for typesetting code) counterparts to choose for use with this typeface.
+>
+> Which fonts, in your opinion, could (and could not) be used with Century Schoolbook?
+>
+>   [q-1]: http://en.wikipedia.org/wiki/Century_Type_Family#Century_Schoolbook
+>   [q-2]: http://www.tug.dk/FontCatalogue/sansseriffonts.html
+>   [q-3]: http://www.tug.dk/FontCatalogue/typewriterfonts.html
+:::
+
+Ironic that you find Century Schoolbook suitable for online documentation, as it was developed nearly 100 years ago for school textbooks!
+
+While googling I found [esperfonto](http://www.esperfonto.com/), which has a search box to help pair fonts.
+
+They [suggest](http://www.esperfonto.com/search.html?typeface=&body=on&sans=on&workswith=Century+Schoolbook) Arial, Helvetica, or Frutiger Humanist 777 for sans fonts.  They don't suggest monospace pairs, though.
+
+The Frutiger family is not free.  I tried Century Schoolbook, Helvetica, and Courier, and it seems to look pretty good.  
+
+Here is a sample document (requires `xelatex`) to test your selections:
+
+```latex
+\documentclass{article}
+\title{Font Test}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{fontspec}
+\setmainfont{Century Schoolbook}
+\setsansfont{Helvetica}
+\setmonofont{Courier}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+\begin{document}
+\maketitle
+
+This article uses the \textsf{blindtext} package to typeset dummy text.  The preamble is:
+
+\begin{verbatim}
+\documentclass{article}
+\title{Font Test}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{fontspec}
+\setmainfont{Century Schoolbook}
+\setsansfont{Arial}
+\usepackage{sectsty}
+\setmonofont{Courier}
+\allsectionsfont{\sffamily}
+\end{verbatim}
+\blinddocument
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13598/which-sans-serif-and-monospace-fonts-suit-century-schoolbook/13604#13604) on TeX Stack Exchange, 2011-03-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

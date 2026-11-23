@@ -1,0 +1,47 @@
+---
+title: Analytical method to solve the given equations
+date: '2019-06-27'
+description: It sounds like you already solved the problem this way, but it's worth repeating that you don't need an exact value of the intersection point to answer the…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3276223
+se-link: https://math.stackexchange.com/questions/3276161/analytical-method-to-solve-the-given-equations/3276223#3276223
+se-score: 1
+se-accepted: false
+se-tags:
+- systems-of-equations
+- functional-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Analytical method to solve the given equations](https://math.stackexchange.com/questions/3276161/analytical-method-to-solve-the-given-equations), asked by user671231 on Mathematics Stack Exchange (2019-06-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I require the points of intersection of two curves $y^2=4x$ and $y=e^{-x/2}$ to the find the angle between them. Is there any method to find the points as when I tried to graph them the solution was a not so obvious value 
+> I did get the answer by using the formula as the denominator becomes 0 so the curves are orthogonal but is there some way to solve these 2 equations.
+:::
+
+It sounds like you already solved the problem this way, but it's worth repeating that you don't need an exact value of the intersection point to answer the question.
+
+As the good Doctor points out, the curves intersect where $4x=e^{-x}$.  Let $h(x) = 4x-e^{-x}$.  Since $h(0) = -1$ and $h(1) = 4-1/e > 0$, there is a zero of $h$ at some point $x_*$ between $0$ and $1$.  Since $h'(x) = 4+e^{-x} > 0$ for all $x$, there are no other zeroes of $h$ (between two zeroes of $h$ would lie a zero of $h'$). The curves intersect at $(x_*,y_*)$ where $y_*^2 = 4x_*$ and $y_* = e^{-x_*/2}$.
+
+Along the first curve,
+$$y^2 = 4x \implies 2y \frac{dy}{dx} = 4 \implies \frac{dy}{dx} = \frac{2}{y}$$
+Therefore,
+$$\left.\frac{dy}{dx}\right|_{(x_*,y_*)} = \frac{2}{y_*}$$
+Along the second curve,
+$$y = e^{-x/2} \implies \frac{dy}{dx} = -\frac{1}{2} e^{-x/2} = - \frac{1}{2} y$$
+Therefore,
+$$\left.\frac{dy}{dx}\right|_{(x_*,y_*)} = -\frac{1}{2} y_*$$
+You can see that these two tangent lines have negative reciprocal slopes, meaning they are orthogonal.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3276161/analytical-method-to-solve-the-given-equations/3276223#3276223) on Mathematics Stack Exchange, 2019-06-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

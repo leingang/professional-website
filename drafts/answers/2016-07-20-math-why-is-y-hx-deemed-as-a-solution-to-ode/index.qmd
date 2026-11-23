@@ -1,0 +1,51 @@
+---
+title: Why is $y=h(x)$ deemed as a solution to ODE
+date: '2016-07-20'
+description: I think it's important to understand what an equation is in the first place. Heuristically, it's a statement about an unknown quantity that is true or false…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1865377
+se-link: https://math.stackexchange.com/questions/1865349/why-is-y-hx-deemed-as-a-solution-to-ode/1865377#1865377
+se-score: 0
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is $y=h(x)$ deemed as a solution to ODE](https://math.stackexchange.com/questions/1865349/why-is-y-hx-deemed-as-a-solution-to-ode), asked by [Jek Denys](https://math.stackexchange.com/users/352103/jek-denys) on Mathematics Stack Exchange (2016-07-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Can some one explain why does $y=h(x)$ deemed as a solution to a given ODE concept?
+>
+> it seems like an important concept, and simple too. But I must be missing some peace in this logic. Can some one explain this is please?
+>
+> Update:
+> I went back to the text and found the source of my confusion. I mistook "if" for symbol meaning function. Now the following phrase means a lot: 
+> >"y=h(x) is a solution to ODE on interval I, IF h(x) is defined and differentiable throughout the interval, and as such that eq. becomes an identity if y and y' are replaced with h and h' respectively."
+:::
+
+I think it's important to understand what an *equation* is in the first place.  Heuristically, it's a statement about an unknown quantity that is true or false for various values of the quantity [yes, this is also true for inequalities and other relations, but bear with me.]
+
+For instance, $x^2 - 4x + 3 = 0$ is an *algebraic* equation.  The unknown is a number $x$, and the statement is that "(the number) squared minus four times (the number) plus three is zero".  A thousand years ago, before algebraic notation was invented, they were actually written out that way!  
+
+This equation can be checked for various values of $x$.  If substituting a certain value for $x$ results in a true statement, we say the equation is *satisfied* by that value.  For instance, does $x=0$ satisfy $x^2-4x+3 = 0$?  No, because the left-hand side evaluates to $3$ while the right-hand side is $0$.  Does $x=1$ satisfy the equation?  Yes, because $1^2-4+3 = 0$.
+
+You probably know of techniques for algorithmically solving algebraic equations.  But factoring or the quadratic formula are more complex than just checking solutions.  
+
+A *differential equation* is a statement about an unknown *function* $y(x)$ that involves derivatives of the function.  For example, $y' = 2y$ is a very succinct way to express the relation that the derivative of $y$ is a multiple (in this case, $2$) of $y$.  When Newton wrote *Principia*, his [second law](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion#Newton.27s_2nd_Law) was written not as $F = ma$, but *the change in momentum is proportional to the force applied*.  
+
+Just like with algebraic equations, the statement that a function is a solution to a differential equation is a matter of checking if substituting that function into the equation results in a true statement.  For instance, with $y'=2y$, you might guess that $y=x^2$ is a solution.  But substituting $y=x^2$ into $y'=2y$ gives $2x = 2(x^2) = 2x^2$.  This equation of functions is not true for all $x$.  However, if you try $y=e^{2x}$, then substituting, we have $y'=2e^{2x}$ and $2y=2e^{2x}$.  Since these are identical, the function satisfies the equation.
+
+Again, as with algebraic equations, differential equations are tougher to *solve* than to simply check solutions.  But the idea that a function is a solution is just a matter of substitution.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1865349/why-is-y-hx-deemed-as-a-solution-to-ode/1865377#1865377) on Mathematics Stack Exchange, 2016-07-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,63 @@
+---
+title: On A Textbook's Explanation Of Derivatives And Limits
+date: '2018-09-04'
+description: Yes. We start with a heuristic understanding of what the tangent line is, but no definition. We then draw lines which are “close” to the tangent line in that…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2905268
+se-link: https://math.stackexchange.com/questions/2905230/on-a-textbooks-explanation-of-derivatives-and-limits/2905268#2905268
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- derivatives
+- tangent-line
+- secant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[On A Textbook's Explanation Of Derivatives And Limits](https://math.stackexchange.com/questions/2905230/on-a-textbooks-explanation-of-derivatives-and-limits), asked by [Ethan Chan](https://math.stackexchange.com/users/559662/ethan-chan) on Mathematics Stack Exchange (2018-09-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For the past few days, I've been struggling to understand the concepts of tangent lines and instantaneous velocity. I picked up a textbook about the topic ("The Complete Idiot's Guide To Calculus"). This is what it has to say about how secant lines, that measure the gradient between 2 points of a curve, become tangent lines, that measure the slope of a single point on a curve: 
+>
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: YHEg3.png
+>
+> I have 3 questions regarding this: 
+>
+>  1. Does this mean that the tangent line isn't actually a line that is derived from the gradient of one point? It is instead the gradient over 2 points infinitely close together, so close that the distance between each other is delta x? Basically, so basically, the tangent line's gradient is given by the value of the limit? Am I right saying that?
+>
+>  2. For a distance time graph, where the derivative = instantaneous velocity, does that also mean that instantaneous isn't truly measured over a time period of 0, but instead a time period of $\Delta x$, where $\Delta x\to 0$? So instantaneous velocity is the value of the limit? But not actually the value given when distance is measured over a time period of 0? 
+>
+>  3. Would it be a stretch to call the tangent line and the instantaneous speed as given by the difference quotient an approximation? Because both of these are meant to be over a single point, over a time period of 0. But here, we are avoiding the nasty division by 0 by finding it over delta x instead, a value so small that is effectively 0, but not 0 (so we don't need to divide by 0)? So would it be a stretch to call the tangent line and the instantaneous speed as given by the difference quotient an approximation? 
+>
+> Can all 3 questions be answered not too rigorously, without epsilon delta proofs?
+:::
+
+> 1. Does this mean that the tangent line isn't actually a line that is derived from the gradient of one point? It is instead the gradient over 2 points infinitely close together, so close that the distance between each other is delta x? Basically, so basically, the tangent line's gradient is given by the value of the limit? Am I right saying that?
+
+Yes.  We start with a heuristic understanding of what the tangent line is, but no definition.  We then draw lines which are “close” to the tangent line in that they share one point with the tangent line, but are secant lines instead.  We can measure the slopes (gradients) of those secant lines.  If the slopes have a limit as the points approach each other, we define the tangent line to be the line with that slope.  So the slope comes first, then the tangent line.
+
+> 2. For a distance time graph, where the derivative = instantaneous velocity, does that also mean that instantaneous isn't truly measured over a time period of 0, but instead a time period of delta x, where delta x -> 0? So instantaneous velocity is the value of the limit? But not actually the value given when distance is measured over a time period of 0?
+
+The point is that there *isn't* any “value given when distance is measured over a time period of 0.”  An object travels zero distance in zero time.  Instead, instantaneous velocity is a *limit* of average velocity over smaller and smaller intervals of time. 
+
+> 3. Would it be a stretch to call the tangent line and the instantaneous speed as given by the difference quotient an approximation? Because both of these are meant to be over a single point, over a time period of 0. But here, we are avoiding the nasty division by 0 by finding it over delta x instead, a value so small that is effectively 0, but not 0 (so we don't need to divide by 0)? So would it be a stretch to call the tangent line and the instantaneous speed as given by the difference quotient an approximation? 
+
+The (slope of the) tangent line and the instantaneous speed are *limits*, not approximations.  They are *approximated by* the slopes of secant lines, or average velocities, over small intervals.  But they themselves are not approximations.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2905230/on-a-textbooks-explanation-of-derivatives-and-limits/2905268#2905268) on Mathematics Stack Exchange, 2018-09-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

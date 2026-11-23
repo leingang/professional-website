@@ -1,0 +1,68 @@
+---
+title: How to integrate $\int_a^b (x-a)(x-b)\,dx=-\frac{1}{6}(b-a)^3$ in a faster way?
+date: '2016-12-20'
+description: 'You can do this with substitution and Cavalieri''s formula: $$\int0^1 u^n \,du = \frac{1}{n+1}$$'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2065920
+se-link: https://math.stackexchange.com/questions/2065639/how-to-integrate-int-ab-x-ax-b-dx-frac16b-a3-in-a-faster-way/2065920#2065920
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to integrate $\int_a^b (x-a)(x-b)\,dx=-\frac{1}{6}(b-a)^3$ in a faster way?](https://math.stackexchange.com/questions/2065639/how-to-integrate-int-ab-x-ax-b-dx-frac16b-a3-in-a-faster-way), asked by [mathshungry](https://math.stackexchange.com/users/249513/mathshungry) on Mathematics Stack Exchange (2016-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\displaystyle \int_a^b (x-a)(x-b)\,dx=-\frac{1}{6}(b-a)^3$
+>
+> $\displaystyle \int_a^{(a+b)/2} (x-a)(x-\frac{a+b}{2})(x-b)\, dx=\frac{1}{64}(b-a)^4$ 
+>
+> Instead of expanding the integrand, or doing integration by part, is there any faster way to compute this kind of integral?
+:::
+
+You can do this with substitution and [Cavalieri's formula][1]:
+$$\int_0^1 u^n \,du = \frac{1}{n+1}$$
+
+For the first one, let $u= \frac{x-a}{b-a}$.  Then $x = (b-a)u +a$, which means $x-a = (b-a)u$ and $x-b = (b-a)(u-1)$.  Also $dx=(b-a)\,du$.  So
+$$\begin{align*}
+    \int_a^b (x-a)(x-b)\,dx 
+    &= (b-a)^3 \int_0^1 u (u-1)\,du
+    = (b-a)^3 \int_0^1 (u^2 - u) \\
+    &= (b-a)^3 \left(\frac{1}{3}-\frac{1}{2}\right) 
+     = -\frac{1}{6}(b-a)^3
+\end{align*}$$
+
+For the second one, let $u= \frac{2}{a-b}\left(x-\frac{a+b}{2}\right)$.  Then:
+$$\begin{align*}
+    x-a &= \frac{a-b}{2}(u-1) \\
+    x-b &= \frac{a-b}{2}(u+1) \\
+    x - \frac{a+b}{2} &= \frac{a-b}{2}u \\
+    dx  &= \frac{a-b}{2}\,du
+\end{align*}$$
+So
+$$\begin{align*}
+    \int_a^{(a+b)/2} (x-a)\left(x-\frac{a+b}{2}\right)(x-b)\,dx
+    &= \left(\frac{a-b}{2}\right)^4\int_1^0(u-1)u(u+1)\,du 
+     = -\frac{(b-a)^4}{16}\int_0^1 (u^3-u)\,du \\
+    &= -\frac{(b-a)^4}{16}\left(\frac{1}{4}-\frac{1}{2}\right)
+     = -\frac{1}{64}(b-a)^4
+\end{align*}$$
+
+This has less integration, but it took some time to get the substitution right.
+
+  [1]: https://en.wikipedia.org/wiki/Cavalieri%27s_quadrature_formula
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2065639/how-to-integrate-int-ab-x-ax-b-dx-frac16b-a3-in-a-faster-way/2065920#2065920) on Mathematics Stack Exchange, 2016-12-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

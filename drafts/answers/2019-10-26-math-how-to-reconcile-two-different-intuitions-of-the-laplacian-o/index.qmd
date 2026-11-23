@@ -1,0 +1,62 @@
+---
+title: How to reconcile two different intuitions of the Laplacian operator?
+date: '2019-10-26'
+description: Consider the square centered at $(0,0)$ with coordinates $(\pm h,\pm h)$. Average the value of $u$ at these four corners and measure the difference from…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3410098
+se-link: https://math.stackexchange.com/questions/3406500/how-to-reconcile-two-different-intuitions-of-the-laplacian-operator/3410098#3410098
+se-score: 1
+se-accepted: true
+se-tags:
+- partial-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to reconcile two different intuitions of the Laplacian operator?](https://math.stackexchange.com/questions/3406500/how-to-reconcile-two-different-intuitions-of-the-laplacian-operator), asked by [Antoni Parellada](https://math.stackexchange.com/users/152225/antoni-parellada) on Mathematics Stack Exchange (2019-10-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In [here][q-1] the Laplacian $u_{xx}+u_{yy}$ is said to:
+>
+> > The Laplacian measures the degree by which the value at a point differs from the average of its neighbors.
+>
+> whereas [here][q-2] the intuition departs from a more stringent set up: there is a scalar-valued function $f(x,y),$ from which the Laplacian is defined as the divergence of the gradient, $\nabla\cdot\nabla f.$ The intuition is:
+>
+> > A measure of how much of a minimum a point is in a scalar valued multivariate function.
+>
+> The question is where the **average** appears in the first interpretation - is it truly the average as understood in statistics? Because the second derivative in different directions seems to directly speak about the curvature of the graph - there is no averaging.
+>
+> And is the gradient also implied in the first interpretation? Or there is no real need for a gradient to understand the Laplacian?
+>
+>
+>   [q-1]: https://youtu.be/4J74tquQ7jU?t=435
+>   [q-2]: https://youtu.be/EW08rD-GFh0?t=278
+:::
+
+Consider the square centered at $(0,0)$ with coordinates $(\pm h,\pm h)$.
+Average the value of $u$ at these four corners and measure the difference from $u(0,0)$:
+$$\frac{u(h,h) + u(-h,h) + u(h,-h) + u(-h,-h)}{4} - u(0,0)
+    = \frac{u(h,h) + u(-h,h) + u(h,-h) + u(-h,-h) - 4u(0,0)}{4}$$
+by Taylor's theorem, 
+$$\begin{align*}
+    u(h,h) &= u(0,0) + h u_x(0,0) + h u_y(0,0) + \frac{1}{2}h^2(u_{xx}(0,0) + 2u_{xy}(0,0) + u_{yy}(0,0)) +R(h,h) \\\\
+    u(h,-h) &= u(0,0) + h u_x(0,0) - h u_y(0,0) + \frac{1}{2}h^2(u_{xx}(0,0) - 2u_{xy}(0,0) + u_{yy}(0,0)) +R(h,-h) \\\\ 
+    u(-h,h) &= u(0,0) - h u_x(0,0) + h u_y(0,0) + \frac{1}{2}h^2(u_{xx}(0,0) - 2u_{xy}(0,0) + u_{yy}(0,0)) +R(-h,h) \\\\
+    u(-h,-h) &= u(0,0) + h u_x(0,0) - h u_y(0,0) + \frac{1}{2}h^2(u_{xx}(0,0) + 2u_{xy}(0,0) + u_{yy}(0,0)) +R(-h,-h) \\\\ 
+\end{align*}$$
+You see that if we add these four together,
+$$\frac{u(h,h) + u(-h,h) + u(h,-h) + u(-h,-h) - 4u(0,0)}{4}
+= h^2 \left(u_{xx}(0,0)+u_yy(0,0)\right) + \text{remainders}$$
+So
+$$\lim_{h\to 0} \frac{u(h,h) + u(-h,h) + u(h,-h) + u(-h,-h) - 4u(0,0)}{4h^2} = \nabla^2 u(0,0)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3406500/how-to-reconcile-two-different-intuitions-of-the-laplacian-operator/3410098#3410098) on Mathematics Stack Exchange, 2019-10-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

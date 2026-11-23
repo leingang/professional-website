@@ -1,0 +1,58 @@
+---
+title: 'Proof verification: $f(x) = 3x^5 + {1\over x^3}$ is continuous everywhere over its domain.'
+date: '2019-05-28'
+description: You are given a rational function of of a variable $x$ and asked to prove it's continuous. In your proof, you substitute a rational function of another…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3243127
+se-link: https://math.stackexchange.com/questions/3243084/proof-verification-fx-3x5-1-over-x3-is-continuous-everywhere-over-i/3243127#3243127
+se-score: 2
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- proof-verification
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proof verification: $f(x) = 3x^5 + {1\over x^3}$ is continuous everywhere over its domain.](https://math.stackexchange.com/questions/3243084/proof-verification-fx-3x5-1-over-x3-is-continuous-everywhere-over-i), asked by [roman](https://math.stackexchange.com/users/53017/roman) on Mathematics Stack Exchange (2019-05-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> >Prove a function 
+> $$f(x) = 3x^5 + {1\over x^3}$$ 
+> is continuous everywhere over its domain.
+>
+> I've recently started to consider continuity of the function and would like to ask for verification of the below.
+>
+> What we want to eventually prove is that:
+> $$\forall x_0 \in \Bbb R\setminus\{0\}:\lim_{x\to x_0}\left(3x^5 + {1\over x^3}\right) = 3x_0^5 + {1\over x_0^3}$$
+>
+> Since $x\to x_0$ we may instead consider $f(x_0 + \Delta x)$ as $\Delta x\to 0$, so the limit becomes:
+> $$\begin{align}
+> \lim_{\Delta x \to 0}f(x_0 + \Delta x) &= \lim_{\Delta x\to0}\left(3(x_0 + \Delta x)^5 + {1\over (x_0 + \Delta x)^3}\right) \\
+> &=\lim_{\Delta x \to 0} \left(3(x_0^5 + \cdots + \Delta x^5) + {1\over x_0^3 + \cdots + \Delta x^3}\right) \\
+> &= 3x_0^5 + {1\over x_0^3}
+> \end{align}$$
+> Which means that for $x_0 \ne 0$:
+> $$\lim_{x\to x_0} \left(3x^5 + {1\over x^3}\right) = 3x_0^5 + {1\over x_0^3}$$
+>
+> And hence the function is continuous in any $x_0$ except for $0$. 
+>
+> Is this enough to consider the proof complete or have I missed something? Thank you!
+:::
+
+You are given a rational function of of a variable $x$ and asked to prove it's continuous.  In your proof, you substitute a rational function of another variable $\Delta x$.  At the point you substitute $0$ for every $\Delta x$, you are using the fact that you are asked to prove: rational functions are continuous (regardless of the name of the variable).  
+
+So if I were in the position of your instructor, I would probably be expecting something a little more rigorous than substitution.  But that's going to depend on the context of the problem.  Have you developed some of the basic limit laws yet?  For instance, if two functions have a limit at a point, their sum has a limit, and the limit of the sum is the sum of the limits?  Or, are you expected to use an $\epsilon,\delta$ argument?  You may need further guidance from your instructor on this.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3243084/proof-verification-fx-3x5-1-over-x3-is-continuous-everywhere-over-i/3243127#3243127) on Mathematics Stack Exchange, 2019-05-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

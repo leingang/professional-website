@@ -1,0 +1,38 @@
+---
+title: 'Prove that a map $f: C\rightarrow D$ between two chain complexes induces a map $f_*:H_d(C) \rightarrow H_d(D),\ \forall d\geq0$'
+date: '2017-11-15'
+description: You need to show that $f$ takes cycles to cycles and boundaries to boundaries. But this is a consequence of $\partial\circ d = \partial \circ f$ ($\partial$ is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2520817
+se-link: https://math.stackexchange.com/questions/2520767/prove-that-a-map-f-c-rightarrow-d-between-two-chain-complexes-induces-a-map/2520817#2520817
+se-score: 1
+se-accepted: false
+se-tags:
+- general-topology
+- algebraic-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that a map $f: C\rightarrow D$ between two chain complexes induces a map $f_*:H_d(C) \rightarrow H_d(D),\ \forall d\geq0$](https://math.stackexchange.com/questions/2520767/prove-that-a-map-f-c-rightarrow-d-between-two-chain-complexes-induces-a-map), asked by [PrimeSpiralObserver](https://math.stackexchange.com/users/489708/primespiralobserver) on Mathematics Stack Exchange (2017-11-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Prove that a map $f: C\rightarrow D$ between two chain complexes induces a map $f_*:H_d(C) \rightarrow H_d(D),\ \forall d\geq0$
+>
+> I know that for $d\geq0$, the $d^{th}$ homology group of C is $H_d(C)=ker(\delta)/im(\delta)$ but I do not know how to show that a map of chain complexes induces a map.
+:::
+
+You need to show that $f$ takes cycles to cycles and boundaries to boundaries.  But this is a consequence of $\partial\circ d = \partial \circ f$ ($\partial$ is the boundary map on each complex).
+
+So if $c$ is a cycle in $C$, $f_*([c]) = [f(c)]$ is well-defined.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2520767/prove-that-a-map-f-c-rightarrow-d-between-two-chain-complexes-induces-a-map/2520817#2520817) on Mathematics Stack Exchange, 2017-11-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

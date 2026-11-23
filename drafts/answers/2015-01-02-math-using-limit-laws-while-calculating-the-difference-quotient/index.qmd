@@ -1,0 +1,52 @@
+---
+title: Using limit laws while calculating the difference quotient?
+date: '2015-01-02'
+description: The really special behavior of this this function is at zero, so rather than do something for general $x$ and then “plug in” $x=0$, it's easier to start with…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1088431
+se-link: https://math.stackexchange.com/questions/1088427/using-limit-laws-while-calculating-the-difference-quotient/1088431#1088431
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- ordinary-differential-equations
+- limits
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using limit laws while calculating the difference quotient?](https://math.stackexchange.com/questions/1088427/using-limit-laws-while-calculating-the-difference-quotient), asked by [FigureItOut](https://math.stackexchange.com/users/190098/figureitout) on Mathematics Stack Exchange (2015-01-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to calculate the difference quotient of $f(x) = x|x|$ to calculate to derivative at $x=0$.
+>
+> Now when I try to do: $\lim_{h\to0} f(x)=\frac{(x+h)|x+h|-x|x|}{h}$ it just seems too complicated to calculate.
+>
+>
+> I even tried this:
+>
+> $$\lim_{h\to0}{ \frac{x+h-x}{h}} \lim_{h\to0}{ \frac{|x+h|-|x|}{h}}$$
+> Is this legal?
+>
+> Even so, I still don't know how to calculate to right limit.
+>
+> How do you calculate the difference quotient of this function?:|
+:::
+
+The really special behavior of this this function is at zero, so rather than do something for general $x$ and then “plug in” $x=0$, it's easier to start with $x=0$.  By the definition of the derivative, then by the definition of $f$:
+$$\begin{align*}
+   f'(0) &= \lim_{h\to 0} \frac{f(0+h)-f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h} \\
+         &= \lim_{h\to 0} \frac{h\left|h\right|}{h} = \lim_{h\to 0} |h| = 0
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1088427/using-limit-laws-while-calculating-the-difference-quotient/1088431#1088431) on Mathematics Stack Exchange, 2015-01-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

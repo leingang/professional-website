@@ -1,0 +1,47 @@
+---
+title: Does $f(x,y)= x^2 + y^3 -3y - 2$ have a minimum at the point $(0,1)$?
+date: '2024-02-23'
+description: The second derivative test can be used here as well. The hessian matrix of second derivatives is $$Hf(x,y) = \begin{pmatrix} 2 & 0 \\ 0 & 6y \end{pmatrix}$$ We…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4868382
+se-link: https://math.stackexchange.com/questions/4868369/does-fx-y-x2-y3-3y-2-have-a-minimum-at-the-point-0-1/4868382#4868382
+se-score: 2
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- optimization
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does $f(x,y)= x^2 + y^3 -3y - 2$ have a minimum at the point $(0,1)$?](https://math.stackexchange.com/questions/4868369/does-fx-y-x2-y3-3y-2-have-a-minimum-at-the-point-0-1), asked by [Alia](https://math.stackexchange.com/users/1134579/alia) on Mathematics Stack Exchange (2024-02-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let's consider the function:
+> $$f(x,y)= x^2 + y^3 -3y - 2.$$
+>
+> I find two critical points:
+> $(0,1)$ and $(0,-1)$.
+> Using the definition method with 
+> $h_1=x$ and $h_2=y-1$ to test the point $(0,1)$, I find that:
+> $$f(h_1,1+h_2)-f(0,1)= h_1^2 + h_2^2(h_2+3).$$
+> We can use $h_1=0$ to find that the sign is not constant
+> so there is no extremum, is that correct?
+:::
+
+The second derivative test can be used here as well. The hessian matrix of second derivatives is
+$$Hf(x,y) = \begin{pmatrix} 2 & 0 \\ 0 & 6y \end{pmatrix}$$ 
+We see that at the critical point $(0,1)$, the matrix is diagonal with two positive entries. This tells us $(0,1)$ is a local minimum. At the other critical point $(0,-1)$, the matrix has negative determinant, so the critical point is a saddle point.
+
+There is neither a global maximum or minimum value, since $\lim_{y\to \infty} f(0,y) = +\infty$ and $\lim_{y\to-\infty} f(0,y) = - \infty$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4868369/does-fx-y-x2-y3-3y-2-have-a-minimum-at-the-point-0-1/4868382#4868382) on Mathematics Stack Exchange, 2024-02-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

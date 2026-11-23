@@ -1,0 +1,56 @@
+---
+title: Area above a surface
+date: '2018-10-05'
+description: Your answer squares with the one I got using plain analytic geometry. The area of an ellipse is $\pi ab$, where $a$ and $b$ are the semimajor and semiminor…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2943562
+se-link: https://math.stackexchange.com/questions/2943516/area-above-a-surface/2943562#2943562
+se-score: 1
+se-accepted: true
+se-tags:
+- integration
+- area
+- surfaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Area above a surface](https://math.stackexchange.com/questions/2943516/area-above-a-surface), asked by [mvfs314](https://math.stackexchange.com/users/136318/mvfs314) on Mathematics Stack Exchange (2018-10-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have to find the area of the surface
+> $$x+y+z=5$$
+> localizated above the region $x^{2}+y^{2}\leq9$$.
+>
+> I did:
+> $$z=5-x-y\Rightarrow z_{x}=z_{y}=-1$$
+> So the area is
+> $$\int\int_{R}\sqrt{1+z_{x}^{2}+z_{y}^{2}}dxdy$$
+> where $R$ is the region $x^{2}+y^{2}\leq9$$
+>
+> Using polar coordinates, I got:
+> $$x=r\sin\theta, y=r\cos\theta$$
+> where $$r\in[0,3]$$ and $$\theta\in[0,2\pi]$$
+>
+> So the area is
+> $$A=\int_{0}^{2\pi}\int_{0}^{3}\sqrt{3}rdrd\theta$$
+> And when I evaluate it, I get $9\sqrt{3}\pi$, but the answer in the book is $6\pi$. Where is my mistake?
+:::
+
+Your answer squares with the one I got using plain analytic geometry.  The area of an ellipse is $\pi ab$, where $a$ and $b$ are the semimajor and semiminor axes, that is, the greatest and least distance from the center of the ellipse.
+
+The center of the ellipse is at $(0,0,5)$.  Since $z=5-x-y$, the greatest $z$-value occurs when $x+y$ is least, at $x = y = -\frac{3}{\sqrt{2}}$.  So the semimajor axis is the distance from $(0,0,5)$ to $\left(-\frac{3}{\sqrt{2}},-\frac{3}{\sqrt{2}},5+2\sqrt{3}\right)$, and this is $3\sqrt{3}$.  
+
+In the perpendicular direction, the semiminor axis is the distance from $(0,0,5)$ to $\left(\frac{3}{\sqrt2},-\frac{3}{\sqrt2},5\right)$, which is $3$.  So the area is
+$$\pi(3)(3\sqrt{3}) = 9\pi\sqrt{3}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2943516/area-above-a-surface/2943562#2943562) on Mathematics Stack Exchange, 2018-10-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,68 @@
+---
+title: How many words (i.e. not "math" symbols") should I use in my proofs? ${}{}$
+date: '2018-03-21'
+description: I'm going to agree with Kevin that it depends on what you're trying to do.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2702202
+se-link: https://math.stackexchange.com/questions/2701182/how-many-words-i-e-not-math-symbols-should-i-use-in-my-proofs/2702202#2702202
+se-score: 4
+se-accepted: false
+se-tags:
+- logic
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How many words (i.e. not "math" symbols") should I use in my proofs? ${}{}$](https://math.stackexchange.com/questions/2701182/how-many-words-i-e-not-math-symbols-should-i-use-in-my-proofs), asked by [Emannuel Weg](https://math.stackexchange.com/users/471358/emannuel-weg) on Mathematics Stack Exchange (2018-03-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I must once again resort to the advice of this great community.
+>
+> As I was reading about the pigeonhole principle something about its proof struck me as odd. Allow me to explain:
+>
+> After reading the "The Foundations: Logic and Proofs" chapter in Rosen's "Discrete mathematics and its applications" book I was left with the feeling/notion that I can (and I ought to) describe all my proof's statements in symbols.
+>
+> Yet, as you can see in the pigeonhole principle's proof:
+>
+> > We use a proof by contraposition. Suppose  none of the k boxes has
+> > more than one object. Then the total number of objects would be at
+> > most k. This contradicts the statement that we have k + 1 objects.
+>
+> Without a doubt it has more English words than symbols. Yet the proof is actually without flaws. I struggle with the fact that I can't convert it into the A -> B format (I hope you understand what I'm trying to convey).
+>
+> However, is there a way to symbolically represent what it states (as I'm trying to put it in my mind)? 
+>
+> Or the only way to argue for this proof, is by using words?
+>
+> And if so, is there any guide or principle that should tell us when to use words or symbols in our proofs?
+:::
+
+I'm going to agree with Kevin that it depends on what you're trying to do.
+
+ - If you're trying to work out the proof of a statement, symbols and shorthand is very handy to express your thoughts succinctly on paper, or on a board.  Then you can (hopefully) assemble them into a proof.  Symbols are also good for crystallizing a vague thought into a precise mathematical statement.
+
+ - When it's time to write it down for someone else to read, though, symbols can increase the semantic density, making it very hard to communicate effectively.  And when used *incorrectly*, as students often do, symbols can obscure what might be otherwise coherent arguments.  
+
+Obligatory quote from Paul R. Halmos in *[How to Write Mathematics][1]*:
+
+> The best notation is
+no notation; whenever it is possible to avoid the use of a complicated alphabetic
+apparatus, avoid it. A good attitude to the preparation of written mathematical
+exposition is to pretend that it is spoken. Pretend that you are explaining the
+subject to a friend on a long walk in the woods, with no paper available; fall back
+on symbolism only when it is really necessary.
+
+
+  [1]: http://www2.math.uu.se/~takis/ETC/Halmos_howToWriteMath.pdf
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2701182/how-many-words-i-e-not-math-symbols-should-i-use-in-my-proofs/2702202#2702202) on Mathematics Stack Exchange, 2018-03-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

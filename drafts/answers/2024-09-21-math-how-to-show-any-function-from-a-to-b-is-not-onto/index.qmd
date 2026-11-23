@@ -1,0 +1,48 @@
+---
+title: How to show any function from $A$ to $B$ is not onto?
+date: '2024-09-21'
+description: In general, to show a function $f \colon A \to B$ is not surjective, it suffices to find an element $b \in B$ such that for all $a \in A$, $f(a) \neq b$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4974530
+se-link: https://math.stackexchange.com/questions/4974523/how-to-show-any-function-from-a-to-b-is-not-onto/4974530#4974530
+se-score: 2
+se-accepted: true
+se-tags:
+- functions
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to show any function from $A$ to $B$ is not onto?](https://math.stackexchange.com/questions/4974523/how-to-show-any-function-from-a-to-b-is-not-onto), asked by [Akshhat Chaube](https://math.stackexchange.com/users/1313810/akshhat-chaube) on Mathematics Stack Exchange (2024-09-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was reading the book A Course on Borel sets by S.M. Srivastava, and there was a theroem essentially stating the Cardinality of a set is strictly less than of it's Power set.
+>
+> Now in that proof we had to show that there doesn't exist any onto function from $X$ to $\mathcal P(X)$ (the power set of $X$) which will complete the proof and they did that without using anything about the Codomain being a power set
+>
+> My question is can we prove for a set $A$ and $B$ there doesn't exist any onto function from $A$ to $B$.
+:::
+
+In general, to show a function $f \colon A \to B$ is not surjective, it suffices to find an element $b \in B$ such that for all $a \in A$, $f(a) \neq b$.
+
+In particular, given $f \colon X \to \mathcal{P}(X)$, let $$B = \left\{ x \in X \mid x \notin f(x) \right\}$$
+Observe that $B$ is a subset of $X$, which means it's an element of $\mathcal{P}(X)$. We claim $f(x) \neq B$ for all $x \in X$.
+
+Consider $x \in X$. Since $f(x)$ is a subset of $X$, either $x \in f(x)$ or not. Consider the cases:
+
+1. If $x \in f(x)$, then $x \notin B$. This means $f(x) \neq B$, because one of the sets contains $x$ and the other does not.
+2. If $x \notin f(x)$, then $x \in B$. This means $f(x) \neq B$, because one of the sets contains $x$ and the other does not.
+
+Either way, we have $f(x) \neq B$. Since $x$ was arbitrary, $f$ cannot be surjective.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4974523/how-to-show-any-function-from-a-to-b-is-not-onto/4974530#4974530) on Mathematics Stack Exchange, 2024-09-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

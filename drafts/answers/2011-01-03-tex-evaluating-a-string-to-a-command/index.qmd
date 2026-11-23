@@ -1,0 +1,52 @@
+---
+title: Evaluating a string to a command
+date: '2011-01-03'
+description: If you really want to make a list of comments indexed by an integer, why not use the arrayjobx package?
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 8196
+se-link: https://tex.stackexchange.com/questions/8188/evaluating-a-string-to-a-command/8196#8196
+se-score: 8
+se-accepted: false
+se-tags:
+- strings
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Evaluating a string to a command](https://tex.stackexchange.com/questions/8188/evaluating-a-string-to-a-command), asked by [Carl Johan](https://tex.stackexchange.com/users/233/carl-johan) on TeX Stack Exchange (2011-01-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How do I construct a string in LaTeX (perhaps with variables) that calls the LaTeX macro with the corresponding name?
+>
+> For example, say I have defined a comment as `\def\Comment1{Example text.}` and `\def\CommentText[#1]{\comment#1}` and I want `\CommentText[1]` to produce "Example text".
+>
+> I am pretty sure the above does not work. 
+>
+> Is there any way to make it work? Is there some good way to achieve the same result with another method (assuming I have about 50 comments that I want to name with names that make them easy for others to understand).
+:::
+
+If you really want to make a list of comments indexed by an integer, why not use the [arrayjobx](http://tug.ctan.org/pkg/arrayjobx) package?
+
+```latex
+\documentclass{article}
+\usepackage{arrayjobx}
+\newarray\Comment
+\Comment(1)={Example}
+\Comment(42)={Another Example}
+
+\begin{document}
+\Comment(1)
+\Comment(42)
+\end{document}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/8188/evaluating-a-string-to-a-command/8196#8196) on TeX Stack Exchange, 2011-01-03. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

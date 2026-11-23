@@ -1,0 +1,66 @@
+---
+title: Aligning an enumeration item to the top of a tikzpicture
+date: '2010-11-07'
+description: without any arguments, baseline takes the value 0pt, which is great because your tree grows downwards. So y=0 is at the top.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5029
+se-link: https://tex.stackexchange.com/questions/5023/aligning-an-enumeration-item-to-the-top-of-a-tikzpicture/5029#5029
+se-score: 15
+se-accepted: false
+se-tags:
+- tikz-pgf
+- lists
+- vertical-alignment
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Aligning an enumeration item to the top of a tikzpicture](https://tex.stackexchange.com/questions/5023/aligning-an-enumeration-item-to-the-top-of-a-tikzpicture), asked by [Ian Burris](https://tex.stackexchange.com/users/1719/ian-burris) on TeX Stack Exchange (2010-11-06; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I've drawn a tree using pgf/tikz and am trying to place it in an enumerated list. A snippet of my complete code is as follows:
+>
+> ```latex
+> \subsection*{Problem 2}
+> \begin{enumerate}[1)]
+> \item Max heap
+> \item
+> \begin{tikzpicture}[level/.style={sibling distance=50mm/#1}]
+> \node [circle,draw] (z){98}
+>   child {node [circle,draw] (a) {80}
+>     child {node [circle,draw] (b) {23}
+>       child {node [circle,draw] (c) {18}}
+>       child {node [circle,draw] (d) {21}}
+>     }
+>     child {node [circle,draw] (g) {48}}
+>   }
+>   child {node [circle,draw] (j) {79}
+>     child {node [circle,draw] (k) {76}}
+>     child {node [circle,draw] (l) {29}}
+> };
+> \end{tikzpicture}
+> \end{enumerate}
+> ```
+>
+> My problem is the list number is aligned with the bottom of the tikzpicture. How would I go about aligning it with the top of the tikzpicture?
+:::
+
+Just add `baseline`:
+
+```latex
+\begin{tikzpicture}[level/.style={sibling distance=50mm/#1},baseline]
+```
+
+without any arguments, `baseline` takes the value `0pt`, which is great because your tree grows downwards.  So y=0 is at the top.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5023/aligning-an-enumeration-item-to-the-top-of-a-tikzpicture/5029#5029) on TeX Stack Exchange, 2010-11-07. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

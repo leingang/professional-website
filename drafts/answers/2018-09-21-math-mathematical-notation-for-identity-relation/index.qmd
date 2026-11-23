@@ -1,0 +1,70 @@
+---
+title: Mathematical notation for identity relation.
+date: '2018-09-21'
+description: 'The second one is definitely correct. You can define a relation by its pairs. $$R = \left\{(a,a) : a \in A \right\}$$'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2925347
+se-link: https://math.stackexchange.com/questions/2925313/mathematical-notation-for-identity-relation/2925347#2925347
+se-score: 1
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- relations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Mathematical notation for identity relation.](https://math.stackexchange.com/questions/2925313/mathematical-notation-for-identity-relation), asked by [Tayyab Mazhar](https://math.stackexchange.com/users/595194/tayyab-mazhar) on Mathematics Stack Exchange (2018-09-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> For an identity relation, are the following mathematical notations correct?
+>
+>
+>
+> ∀a,b ∈ A : aRa ∧ ∄ aRb : a ≠ b
+>
+>
+> R = { (a,a) : a ∈ A }
+>
+> What i want to say in first notation is for every ***a*** and ***b*** in ***A***, ***a*** is related to itself, and there does not exist a relation between ***a*** and ***b***, where ***a*** is not equal to ***b***.
+:::
+
+The second one is definitely correct.  You can define a relation by its pairs.
+$$R = \left\{(a,a) : a \in A \right\}$$
+
+Reading the first one, it looks like you're saying that *$a$ is related to $a$ for every $a$, and there is no $b$ not equal to $a$ that is related to $a$.*  That might look more like this:
+$$\forall a \in A,\left( a \mathrel{R} a\right)
+    \wedge \neg \left(\exists b \in A,\ (a \neq  b) \wedge (a \mathrel{R} b)\right)$$
+That second part can be simplified logically, though.
+$$\begin{align*}
+    \neg \left(\exists b \in A,\ (a \neq  b) \wedge (a \mathrel{R} b)\right)
+    &\equiv \forall b \in A, (a=b) \vee (a \not\mathrel{R} b) \\
+    &\equiv \forall b \in A, (a \mathrel{R} b) \implies (a = b)
+\end{align*}$$
+That last part is because $p \implies q$ is equivalent to $(\neg p) \vee q$.
+
+The first part can be combined with it:
+$$\begin{align*}
+    \forall a \in A,\ a \mathrel{R} a 
+    \equiv \forall a \in A,\ \forall b \in A,\ \left(a = b \implies a \mathrel{R} b\right)
+\end{align*}$$
+So the two together say:
+$$\begin{align*}
+    &\forall a \in A,\ \forall b \in A,\ 
+    \left((a = b) \implies (a \mathrel{R} b)\right)
+    \wedge
+    \left((a \mathrel{R} b) \implies (a = b)\right)
+    \\&\equiv\forall a \in A,\ \forall b \in A,\ 
+    \left((a = b) \iff (a \mathrel{R} b)\right)
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2925313/mathematical-notation-for-identity-relation/2925347#2925347) on Mathematics Stack Exchange, 2018-09-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

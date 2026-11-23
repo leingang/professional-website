@@ -1,0 +1,73 @@
+---
+title: How do I solve triple integrals when given no function?
+date: '2015-10-27'
+description: Let $D$ be the plane region $$D = \left\{(x,y) \mid x\geq0,\ y \geq0,\ x+y \leq b\right\}$$ Then $E$ is “vertically simple” over $D$; by which we mean $$E =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1500720
+se-link: https://math.stackexchange.com/questions/1500696/how-do-i-solve-triple-integrals-when-given-no-function/1500720#1500720
+se-score: 2
+se-accepted: true
+se-tags:
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I solve triple integrals when given no function?](https://math.stackexchange.com/questions/1500696/how-do-i-solve-triple-integrals-when-given-no-function), asked by [Sossenbinder](https://math.stackexchange.com/users/284511/sossenbinder) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I got this assignment:
+>
+> It is set, that:
+>
+> 0 < b <= c
+>
+> Now, I have to calculate the volume of the figure given by:
+>
+> x >= 0, y >= 0, x + y <= b and x + y <= z <= c
+>
+>
+> I learnt that I $$\iiint{f(x,y,z)} dxdydz$$
+>
+> is the same as
+> $$\iiint_{0}^{f(x,y)}{f(x,y)} dxdy$$
+>
+> I'm not really sure what to do with the upper f(x,y) border here.
+> I would have said that I integrate the one to a z, to get this integral:
+> $$\iint{z}dxdy$$
+>
+> However, I'm very uncertain here.
+>
+> Can someone clear me up here?
+:::
+
+Let $D$ be the plane region
+$$D = \left\{(x,y) \mid x\geq0,\ y \geq0,\ x+y \leq b\right\}$$
+Then $E$ is “vertically simple” over $D$; by which we mean
+$$E = \left\{(x,y,z)\mid (x,y) \in D,\ x+y \leq z \leq c\right\}$$
+(It helps to draw it.)
+
+The volume of a solid is the triple integral of $1$ over that solid.  Therefore
+$$\begin{split}
+    \operatorname{Vol}(E) &= \iiint_E 1\,dV \\
+    &= \iint_D \int_{x+y}^c 1\,dz\,dA \\
+    &= \iint_D (c - x - y)\,dA \\
+\end{split}$$
+
+Now look more carefully at $D$.  We can describe it as
+$$D = \left\{(x,y) \mid 0 \leq x \leq b, 0 \leq y \leq b-x\right\}$$
+So
+$$\begin{split}
+    \iint_D (c - x - y)\,dA = \int_0^b \int_0^{b-x} (c-x-y)\,dy\,dx
+\end{split}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1500696/how-do-i-solve-triple-integrals-when-given-no-function/1500720#1500720) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

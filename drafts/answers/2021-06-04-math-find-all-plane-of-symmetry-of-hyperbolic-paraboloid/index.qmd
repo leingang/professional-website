@@ -1,0 +1,68 @@
+---
+title: find all plane of symmetry of hyperbolic paraboloid
+date: '2021-06-04'
+description: Here is a mostly complete answer which I have thought way too long on. First, use homogeneous coordinates so that we can say the surface has equation…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4163329
+se-link: https://math.stackexchange.com/questions/4152023/find-all-plane-of-symmetry-of-hyperbolic-paraboloid/4163329#4163329
+se-score: 1
+se-accepted: true
+se-tags:
+- analytic-geometry
+- symmetry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[find all plane of symmetry of hyperbolic paraboloid](https://math.stackexchange.com/questions/4152023/find-all-plane-of-symmetry-of-hyperbolic-paraboloid), asked by [Dsrksidemath](https://math.stackexchange.com/users/903329/dsrksidemath) on Mathematics Stack Exchange (2021-05-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Hi i need a little help to find all plane of symmetry of the  hyperbolic paraboloid. The equation is $x^2-y^2=z$.  I know that "standard" planes are   $x=0$ , because if i replace $x$ with $-x$ the equation does not change and $y=0$ for the same reason . My question is how can i say if there are more planes  of symmetry of this equation  ?( i mean "crooked" planes (i used a translator for this word)  Is there a way to find all plane of symmetry for an equation? thanks a lot
+:::
+
+Here is a mostly complete answer which I have thought way too long on. First, use homogeneous coordinates so that we can say the surface has equation $X^TQX=0$, where $X = \begin{bmatrix} x & y & z & 1 \end{bmatrix}^T$ and
+$$Q = \begin{bmatrix} 2 &  0 &  0 & 0 \\
+                        0 & -2 &  0 & 0 \\
+                        0 &  0 &  0 & -1 \\
+                        0 &  0 & -1 & 0 \end{bmatrix}$$
+
+A (projective) linear transformation $A$ preserves the surface if for all $X$,
+$$X^TQX = (AX)^T Q (AX) = X^T (A^TQA) X$$
+which would mean $A^TQA = Q$.  I want to say that $A^TQA=Q$ is necessary as well as sufficient, and I believe one can use the fact that $Q$ is invertible to prove that detail.  
+
+Now if $A$ is a reflection, $A^{-1} = A$, so $A^TQA = Q$ is equivalent to $A^TQ = QA$.  What is $A$?  From [Wikipedia](https://en.wikipedia.org/wiki/Transformation_matrix#Reflection_2), if a plane has equation $ax+by+cz+d=0$, where $a^2+b^2+c^2=1$, the transformation of projective space which reflects in the plane has matrix equation $X' = AX$, where
+$$A = \begin{bmatrix} 1 - 2 a^2  & - 2 a b & - 2 a c & - 2 a d \\ - 2 a b  & 1 - 2 b^2 & - 2 b c & - 2 b d \\ - 2 a c & - 2 b c & 1 - 2c^2 & - 2 c d \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+So $QA = A^TQ$ is equivalent to
+$$\left[\begin{matrix}2 - 4 a^{2} & - 4 a b & - 4 a c & - 4 a d\\4 a b & 4 b^{2} - 2 & 4 b c & 4 b d\\0 & 0 & 0 & -1\\2 a c & 2 b c & 2 c^{2} - 1 & 2 c d\end{matrix}\right]
+= \left[\begin{matrix}2 - 4 a^{2} & 4 a b & 0 & 2 a c\\- 4 a b & 4 b^{2} - 2 & 0 & 2 b c\\- 4 a c & 4 b c & 0 & 2 c^{2} - 1\\- 4 a d & 4 b d & -1 & 2 c d\end{matrix}\right]$$
+
+These matrices are equal when each pair of corresponding entries are equal.  but the entries below the diagonal are redundant with ones above the diagonal, and the entries along the diagonal are tautologies.  So there are at most six equations to work with:
+$$\begin{align*}
+    -4ab &= 4ab \tag{1.2} \\
+    -4ac &= 0   \tag{1.3} \\
+    -4ad &= 2ac \tag{1.4} \\
+     4bc &= 0   \tag{2.3} \\
+     4bd &= 2bc \tag{2.4} \\
+    2c^2-1 &= -1 \tag{3.4}
+\end{align*}$$
+The equation label $(m.n)$ comes from the $(m,n)$th entry of the matrices.  Remember also that $a^2+b^2+c^2 = 1$.
+
+Now to solve this system.  First, by $(3.4)$, $c=0$.  Therefore $a^2+b^2 =1$.  If we square both sides of $(1.4)$ and $(2.4)$ and add left and right sides, we get $4(a^2+b^2)d^2 = (a^2+b^2)c^2$.  Since $a^2+b^2=1$ and $c=0$, we are left with $d=0$ as well.
+
+Since $ab=0$ by $(1.2)$, either $a=0$ or $b=0$.  So it looks like there are four solutions for $(a,b,c,d)$: $(\pm1,0,0,0)$ and $(0,\pm1,0,0,0)$.  But it's more like two, since the first two solutions correspond to the same plane, and generate the same matrix $A$, and same for the last two.  So the unique solutions are:
+
+* $(a,b,c,d) = (1,0,0,0)$, which gives the plane $x=0$ and the symmetry $x' = -x$, $y' = y$, $z'=z$.
+* $(a,b,c,d) = (0,1,0,0)$, which gives the plane $y=0$ and the symmetry $x' =x$, $y'=-y$, $z'=z$.
+
+*Exercise.* Find the planes of symmetry of the other quadric surfaces (e.g., the hyperboloids, elliptic paraboloids, cones, etc.) using this method.  The only change will be the matrix $Q$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4152023/find-all-plane-of-symmetry-of-hyperbolic-paraboloid/4163329#4163329) on Mathematics Stack Exchange, 2021-06-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

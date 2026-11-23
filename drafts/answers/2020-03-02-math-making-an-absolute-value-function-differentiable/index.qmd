@@ -1,0 +1,60 @@
+---
+title: Making an absolute value function differentiable
+date: '2020-03-02'
+description: 'You have some answers already, but let me just point out what might be a source of confusion: if a function is defined piecewise, it can be differentiated…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3566675
+se-link: https://math.stackexchange.com/questions/3566645/making-an-absolute-value-function-differentiable/3566675#3566675
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- absolute-value
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Making an absolute value function differentiable](https://math.stackexchange.com/questions/3566645/making-an-absolute-value-function-differentiable), asked by [D_Lue](https://math.stackexchange.com/users/756021/d-lue) on Mathematics Stack Exchange (2020-03-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> > If I define a function as follows:
+> > 
+> > $$f(x) = |x| , \: \text{if x $\neq$ 0}, \: \\ \text{and} \\ f(x) = 0
+>  , \: \text{if $x = 0$}. \\$$
+> > 
+> > Is $f$ differentiable?
+>
+> I think it is. The absolute value function is differentiable everywhere except from $x=0$. The way $f$ is defined above, however, its derivative at $x=0$ is $f' = 0$ and thereby $f$ is differentiable. 
+>
+> Am I mistaken?
+:::
+
+You have some answers already, but let me just point out what might be a source of confusion: *if a function is defined piecewise, it can be differentiated piecewise, except at the endpoints which must be checked individually.*
+
+For instance, your function is
+$$f(x) = |x| = \begin{cases} x & x > 0 \\ -x & x < 0 \\ 0 & x = 0\end{cases}$$
+It's tempting to say, “Well, $x$, $-x$, and $0$ are all differentiable functions, so
+$$\color{red}{
+    f'(x) = \begin{cases} 1 & x > 0 \\ -1 & x < 0 \\ 0 & x = 0\end{cases}
+}$$
+and therefore $f$ is differentiable for all $x$.”
+
+But actually, we can only differentiate on the interior of the pieces.  That is,
+$$f'(x) = \begin{cases} 1 & x > 0 \\ -1 & x < 0 \end{cases}$$
+is true.  But to check whether $f$ is differentiable at $0$, we need to decide if
+$$\lim_{h\to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h\to 0} \frac{|h|}{h}$$
+exists.  In fact, this limit does not exist.
+
+The moral of the story is that differentiability requires checking not just a point, but a neighborhood around that point.  This is why when it can fail to be differentiable at the transition points of piecewise-defined functions.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3566645/making-an-absolute-value-function-differentiable/3566675#3566675) on Mathematics Stack Exchange, 2020-03-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,42 @@
+---
+title: 'Question about the proof of: If $m \lt n \Rightarrow f : S^m \rightarrow S^n$ is nullhomotopic.'
+date: '2017-07-10'
+description: $|\varphi|$ is not surjective, so it misses at least one point of $|L|$. Call that point “point”. The image is contained in $|L|$ with that point deleted. That…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2353675
+se-link: https://math.stackexchange.com/questions/2353661/question-about-the-proof-of-if-m-lt-n-rightarrow-f-sm-rightarrow-sn-is/2353675#2353675
+se-score: 0
+se-accepted: false
+se-tags:
+- algebraic-topology
+- proof-explanation
+- homotopy-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Question about the proof of: If $m \lt n \Rightarrow f : S^m \rightarrow S^n$ is nullhomotopic.](https://math.stackexchange.com/questions/2353661/question-about-the-proof-of-if-m-lt-n-rightarrow-f-sm-rightarrow-sn-is), asked by [Oliver G](https://math.stackexchange.com/users/334611/oliver-g) on Mathematics Stack Exchange (2017-07-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: Tuuqk.png
+>
+> I don't understand the red-underlined sentence.  What are they saying is contractible?  Are they saying $\text{im}|\phi|$ is contractible or $|L| - \{\text{point}\}$ is contractible?  And how do either of these being contractible imply that $|\phi|$ is nullhomotopic?
+:::
+
+$|\varphi|$ is not surjective, so it misses at least one point of $|L|$.  Call that point “point”.  The image is contained in $|L|$ with that point deleted.  That space ($L'=L \setminus \left\{\text{point}\right\}$, not $L$ itself) is contractible.  Contractible means there is a point $p \in L'$ and homotopy $H:[0,1] \times L' \to L'$, such that $H_1$ is the constant map $L' \to \left\{p\right\}$.  The map $\tilde H(t,x) = H(t,|\varphi|(x))$ is a homotopy between $|\varphi|$ and a constant map.  
+
+You seem to have some very specific questions like: why is the $m$-skeleton of an $(m+1)$-simplex, with a point deleted, contractible?  That may already be an exercise in the book you're reading.  Whether or not it is, it might be a good idea to try to prove that, and ask a different question if you run into trouble.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2353661/question-about-the-proof-of-if-m-lt-n-rightarrow-f-sm-rightarrow-sn-is/2353675#2353675) on Mathematics Stack Exchange, 2017-07-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

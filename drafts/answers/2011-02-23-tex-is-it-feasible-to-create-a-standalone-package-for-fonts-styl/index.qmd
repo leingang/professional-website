@@ -1,0 +1,59 @@
+---
+title: Is it feasible to create a standalone package for fonts / styles / layouts?
+date: '2011-02-23'
+description: You seem to have competing goals. If you want modularity, break off the code you reuse in your documents and distribute it separately. If you want portability…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11826
+se-link: https://tex.stackexchange.com/questions/11815/is-it-feasible-to-create-a-standalone-package-for-fonts-styles-layouts/11826#11826
+se-score: 1
+se-accepted: false
+se-tags:
+- fonts
+- packages
+- package-writing
+- repositories
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Is it feasible to create a standalone package for fonts / styles / layouts?](https://tex.stackexchange.com/questions/11815/is-it-feasible-to-create-a-standalone-package-for-fonts-styles-layouts), asked by [Debilski](https://tex.stackexchange.com/users/1154/debilski) on TeX Stack Exchange (2011-02-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> For many of my recent documents, I have started using a rather specific set of packages, settings, fonts and configuration. In one rare case, I even adapted one of the included fonts (in my opinion the `\partial` d should not be slanted when used as a derivative sign; if it is slanted, it specifies the boundary of a set).
+>
+> All of these settings are of course only made on one computer and specifically the font things had to be put into the `texlive/local` tree which makes sharing the settings on several computers a pain (not to think of synchronisation issues) and sharing with collaborators virtually impossible.
+>
+> Ideally, I’d want to create a git repository (or any other DVCS) for all those settings and for each new tex project, I’d copy (or clone or link or use a submodule) this repository into a subdirectory of the main tex file and have it automatically included somehow, so that all my private fonts, settings and packages are found and added without problems.
+>
+> Is this possible without large problems or will tex need some special initialisation routines and fixed paths for this even today?
+>
+> I suspect, I’m not the only one with those problems. How is such a thing solved by others?
+>
+>
+> **Edit / Explanation**
+>
+> I more or less think of the optimal solution to work like a style folder in a HTML file. So, I’d have a folder `style` with all fonts and images in it and a  special style sheet, which references all those files. This solution would be totally local and portable. I could move the folder around, rename it or even use the very same folder for all my HTML files, as long as I can reference the main style sheet file. This works because all paths inside the CSS file are relative to that file.
+>
+> The only adaptations I’d have to make are copying/linking/cloning the `style` folder and figuring out the path to the CSS file.
+>
+> I don’t expect the tex solution to be identical. It is a completely different system. But it would be great to do just these two things:
+>
+>   * clone the style/font repository into some subfolder of the current main tex file
+>   * inside the main tex file: include the style file
+>   * done
+>
+> Including the main file might even take a couple of lines to write, no problem there. But I’d very much appreciate it if all of these changes could be local to the folder of the main tex file.
+:::
+
+You seem to have competing goals.  If you want modularity, break off the code you reuse in your documents and distribute it separately.  If you want portability, keep it within the single file.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11815/is-it-feasible-to-create-a-standalone-package-for-fonts-styles-layouts/11826#11826) on TeX Stack Exchange, 2011-02-23. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,36 @@
+---
+title: What is the shortest distance from the ellipse $x^2+\frac{y^2}{4} =1$ and the point (2,2).
+date: '2020-04-21'
+description: You can think about this as a constrained optimization problem. You want to minimize the function $f(x,y) = (x-2)^2 + (y-2)^2$ [the square of the distance from…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3635733
+se-link: https://math.stackexchange.com/questions/3635723/what-is-the-shortest-distance-from-the-ellipse-x2-fracy24-1-and-the-po/3635733#3635733
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- projection
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the shortest distance from the ellipse $x^2+\frac{y^2}{4} =1$ and the point (2,2).](https://math.stackexchange.com/questions/3635723/what-is-the-shortest-distance-from-the-ellipse-x2-fracy24-1-and-the-po), asked by [kt046172](https://math.stackexchange.com/users/604278/kt046172) on Mathematics Stack Exchange (2020-04-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> What is the shortest distance from the ellipse $x^2+\frac{y^2}{4} =1$ and the point (2,2).
+>
+> I know that this is the projection of (2,2) onto the ellipse. How do I go about finding the shortest distance between this point and the curve?
+:::
+
+You can think about this as a constrained optimization problem.  You want to minimize the function $f(x,y) = (x-2)^2 + (y-2)^2$ [the square of the distance from $(x,y)$ to $(2,2)$], subject to the constraint that $x^2+y^2/4=1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3635723/what-is-the-shortest-distance-from-the-ellipse-x2-fracy24-1-and-the-po/3635733#3635733) on Mathematics Stack Exchange, 2020-04-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

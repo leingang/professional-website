@@ -1,0 +1,134 @@
+---
+title: Merge two PDF files output by LaTeX?
+date: '2011-01-10'
+description: Create the separate documents separately and merge them with a PDF utility. Semantically speaking, I feel this is the way to go rather than futzing with the…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 8665
+se-link: https://tex.stackexchange.com/questions/8662/merge-two-pdf-files-output-by-latex/8665#8665
+se-score: 137
+se-accepted: true
+se-tags:
+- pdf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Merge two PDF files output by LaTeX?](https://tex.stackexchange.com/questions/8662/merge-two-pdf-files-output-by-latex), asked by [Matthew Daws](https://tex.stackexchange.com/users/466/matthew-daws) on TeX Stack Exchange (2011-01-10; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to (re)submit a paper with a short cover letter, explaining the changes I have made.  However, the journal only allows me to upload one file.  As the main article will use the journal style class, and so forth, it's not really practical to use the 1st page for the letter (or is it?  Could I reset the page number etc. etc.??)
+>
+> Instead, could I create, say, two PDF files (one the letter, the other the article) and then somehow merge them together?
+:::
+
+Create the separate documents separately and merge them with a PDF utility.  Semantically speaking, I feel this is the way to go rather than futzing with the document settings.  After all, what you are submitting is not one "document" but a set of them.  
+
+**Edit:** This is an important question that has been asked more than once.  It's also not exactly TeX-related.  So I'm community-wikifying my answer so it can be improved and made definitive.
+
+<h3>LaTeX</h3>
+
+use Herbert's answer: the [pdfpages][1] package
+
+
+```latex
+\documentclass{article}% or something else
+\usepackage{pdfpages}
+\begin{document}
+\includepdf[pages=-]{paper1}
+\includepdf[pages=-]{paper2}
+
+\end{document}
+```
+
+You could also keep the document page sizes by adding a option:
+
+```latex
+\includepdf[pages=-,fitpaper]{paper1}
+\includepdf[pages=-,fitpaper]{paper2}
+```
+
+And not to repeat yourself use this:
+
+```latex
+\includepdfset{pages=-,fitpaper}
+\includepdf{paper1}
+\includepdf{paper2}
+\includepdf{paper3}
+\includepdf[fitpaper=false]{paper4} // you can add document specific options
+\includepdf{paper5}
+\includepdf{paper6}
+\includepdfset{} // to put default values back
+```
+
+<h3>Command Line</h3>
+
+ * [`pdftk`][2]
+
+        \$ pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf
+
+ * [GhostScript][3] 
+
+        \$ gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=merged.pdf source1.pdf source2.pdf source3.pdf etc.pdf
+
+   (via [Macworld](http://hints.macworld.com/article.php?story=2003083122212228))
+
+ * [PDFJAM][4] is a suite of scripts that uses LaTeX and pdfpages on the backend.
+
+        \$ pdfjoin foo1.pdf foo2.pdf --outfile bar.pdf
+
+   (via [Uwe Hermann][5])
+
+ * [`stapler`](https://github.com/hellerbarde/stapler) is a pure Python alternative to `pdftk`. 
+        
+         \$ stapler cat in1.pdf in2.pdf out.pdf
+
+ * [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/module.html#joining-pdf-documents) is a Python binding for [MuPDF](http://www.mupdf.com/) – “a lightweight PDF and XPS viewer”.
+
+          \$ python -m fitz join -o output.pdf file1.pdf file2.pdf
+
+* [`qpdf`](https://qpdf.sourceforge.io/) is a command-line tool and C++ library that performs content-preserving transformations on PDF files.
+
+          \$ qpdf --empty --pages file1.pdf file2.pdf -- output.pdf
+
+<h3>GUI</h3>
+
+  * Preview (Mac only) [example][7]
+
+  * Acrobat Pro (non-free) [video example][8]
+
+  * [GUIPDFTK][9]
+
+  * [PDFCreator][10] (Win only, free, Open Source, acts like a printer ⇒ no hyperlinks etc.)
+
+  * [PDF Mod][11] (Linux, free software)
+
+  * [PDF-Shuffler][12] (Linux, free software)
+
+  * [PDFsam][13] (JRE - Windows, Linux, Mac, free and non-free versions)
+
+[This question](https://tex.stackexchange.com/q/5842/1402) is very similar although the questioner didn't realize it.
+
+
+  [1]: http://ctan.org/pkg/pdfpages
+  [2]: https://www.pdflabs.com/tools/pdftk-server/
+  [3]: http://www.ghostscript.com/
+  [4]: http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam/
+  [5]: http://www.hermann-uwe.de/blog/manipulating-pdfs-from-the-command-line-joining-merging-rotating
+  [7]: http://hints.macworld.com/article.php?story=20071114191806624
+  [8]: http://www.youtube.com/watch?v=3Aj8VRt0v6c
+  [9]: http://www.paehl.de/pdf/gui_pdftk.html
+  [10]: http://www.pdfforge.org/pdfcreator
+  [11]: https://wiki.gnome.org/Apps/PdfMod
+  [12]: http://sourceforge.net/projects/pdfshuffler/
+  [13]: https://pdfsam.org/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/8662/merge-two-pdf-files-output-by-latex/8665#8665) on TeX Stack Exchange, 2011-01-10, with [edits](https://tex.stackexchange.com/posts/8665/revisions) by [chl](https://tex.stackexchange.com/users/2580/chl), [doncherry](https://tex.stackexchange.com/users/4012/doncherry), [aKzenT](https://tex.stackexchange.com/users/10990/akzent), [remjg](https://tex.stackexchange.com/users/19042/remjg), [sereizam](https://tex.stackexchange.com/users/101358/sereizam), [Boocko](https://tex.stackexchange.com/users/1389/boocko), [Santhosh](https://tex.stackexchange.com/users/221200/santhosh), [thehayro](https://tex.stackexchange.com/users/266934/thehayro), [frabjous](https://tex.stackexchange.com/users/411/frabjous). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

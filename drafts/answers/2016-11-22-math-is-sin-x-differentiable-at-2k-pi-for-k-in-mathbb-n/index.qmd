@@ -1,0 +1,43 @@
+---
+title: Is $|\sin x|$ differentiable at $2k\pi$ for $k \in \mathbb N$?
+date: '2016-11-22'
+description: Since $f$ is periodic with period $2\pi$, it suffices to show $f$ is not differentiable at $0$. It's easiest to do this from the definition.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2025194
+se-link: https://math.stackexchange.com/questions/2025121/is-sin-x-differentiable-at-2k-pi-for-k-in-mathbb-n/2025194#2025194
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is $|\sin x|$ differentiable at $2k\pi$ for $k \in \mathbb N$?](https://math.stackexchange.com/questions/2025121/is-sin-x-differentiable-at-2k-pi-for-k-in-mathbb-n), asked by [Omar Qasem](https://math.stackexchange.com/users/286661/omar-qasem) on Mathematics Stack Exchange (2016-11-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Just to check since I'm not sure about this one:
+>
+> > Is $|\sin x|$ differentiable at $2k\pi$ for $k \in \mathbb N$?
+>
+> If so then does the derivative at $2k \pi$ equal zero?
+:::
+
+Since $f$ is periodic with period $2\pi$, it suffices to show $f$ is not differentiable at $0$.  It's easiest to do this from the definition.
+
+If $0 < h < \pi$, then 
+$$\frac{f(0+h)-f(0)}{h} = \frac{|\sin(h)|}{h} = \frac{\sin(h)}{h} \to 1$$
+as $h\to 0^+$.  On the other hand, if $-\pi < h < 0$, then 
+$$\frac{f(0+h)-f(0)}{h} = \frac{|\sin(h)|}{h} = \frac{-\sin(h)}{h} \to -1$$
+as $h\to 0^-$.  Since $\lim_{h\to 0} \frac{f(0+h)-f(0)}{h}$ does not exist, $f$ is not differentiable at $0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2025121/is-sin-x-differentiable-at-2k-pi-for-k-in-mathbb-n/2025194#2025194) on Mathematics Stack Exchange, 2016-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

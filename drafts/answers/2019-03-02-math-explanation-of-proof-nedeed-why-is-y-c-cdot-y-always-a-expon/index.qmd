@@ -1,0 +1,61 @@
+---
+title: 'Explanation of proof nedeed: Why is $y''=c \cdot y$ always a exponential growth/decay function?'
+date: '2019-03-02'
+description: I'm not sure what it $g(t)/e^{ct}$ means in and of itself. But it a means to an end. (excuse my play on words there).
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3132757
+se-link: https://math.stackexchange.com/questions/3132736/explanation-of-proof-nedeed-why-is-y-c-cdot-y-always-a-exponential-growth-d/3132757#3132757
+se-score: 2
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- exponential-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Explanation of proof nedeed: Why is $y'=c \cdot y$ always a exponential growth/decay function?](https://math.stackexchange.com/questions/3132736/explanation-of-proof-nedeed-why-is-y-c-cdot-y-always-a-exponential-growth-d), asked by [Adrian Schumacher](https://math.stackexchange.com/users/649649/adrian-schumacher) on Mathematics Stack Exchange (2019-03-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Good evening,
+>
+> I'm struggling with understanding a proof:
+>
+> I know, that a solution of $y'=c \cdot y$ is $y=a \cdot e^{ct}$ and it's clear how to calculate this.
+>
+> I want to proof, that all solutions of a function describing a change of population, that is proprotional to the population, like $y'=c \cdot y$ is a function of exponential growth (or decay.
+>
+> I found a proof which I'm not able to understand:
+>
+> Let g be an other solution, whilst g is not describing an exponential growth or decay. 
+> We show $(\frac{g}{e^{ct}})'=0$ It's fine to me how they show it's zero. But where does $(\frac{g}{e^{ct}})'$ come from and why are they using it here, what does it mean?
+>
+> The whole proof can be find here, but it's in German. http://www.mathe-macht-spass.de/download/Arbeitsblatt_BeweisExpDiffgl.pdf
+>
+> (sorry for my english, still improving)
+>
+> Thanks!
+:::
+
+> It's fine to me how they show it's zero. But where does $(\frac{g}{e^{ct}})'$ come from and why are they using it here, what does it mean?
+
+I'm not sure what it $g(t)/e^{ct}$ *means* in and of itself.  But it a *means* to an end.  (excuse my play on words there).
+
+Our goal is to show that a function satisfying a certain differential equation must take a certain form.  The principal equation of this form, and its solution, is the fact that a function whose derivative is zero (on an interval) must be a constant (on that interval).  
+
+So we cook up a related function which, if it were constant, would tell us the function we are originally looking at must have the form we're claiming it to have.  Then we take the derivative of the related function and show it is zero.
+
+Because we want to show $g(t) = ae^{ct}$ for some $a$, we construct the quotient $h(t) = g(t)/e^{ct}$.  This function is constant if and only if $g$ has the form we claim it does.  Then we prove that $h$ is constant by showing $h'(t) = 0$.
+
+This is not obvious to anyone seeing it for the first time, but now you know the technique: find something you *want* to be constant, and prove that it *must* be constant by showing its derivative is zero.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3132736/explanation-of-proof-nedeed-why-is-y-c-cdot-y-always-a-exponential-growth-d/3132757#3132757) on Mathematics Stack Exchange, 2019-03-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

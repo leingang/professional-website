@@ -1,0 +1,58 @@
+---
+title: Differentiability of a function and existence of directional derivatives
+date: '2024-06-04'
+description: Despite the polar-coordinates limit, the two-variable limit does not exist. To see why, let $c$ be a constant and consider the curve $x=\frac{ct}{t-c}$…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4927435
+se-link: https://math.stackexchange.com/questions/4927408/differentiability-of-a-function-and-existence-of-directional-derivatives/4927435#4927435
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- calculus
+- multivariable-calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiability of a function and existence of directional derivatives](https://math.stackexchange.com/questions/4927408/differentiability-of-a-function-and-existence-of-directional-derivatives), asked by [Juan Herrera](https://math.stackexchange.com/users/1224876/juan-herrera) on Mathematics Stack Exchange (2024-06-04; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a problem. In the book of Classical Elemental Analysis of Hoffman - Marsden assure that the function $f: \mathbb{R}^2 \to \mathbb{R}$ defined by $f(x,y) = \frac{xy}{x^2+y}$ if $x^2 \neq -y$ and $f(x,y) = 0$ if $x^2 = -y$ is not differentiable because the function $f$ is not continuous in $(0,0)$ but I think it is not true because it is continuous since f(0,0) = 0 and with polar coordinates: $x = r\cos{\theta}, y = r\sin{\theta}$ when $(x,y) \rightarrow (0,0)$ then $r \rightarrow 0^{+}$, therefore
+>
+> $$\begin{aligned}
+> \lim_{(x,y) \rightarrow (0,0)}f(x,y) &= \lim_{(x,y) \rightarrow (0,0)} \frac{xy}{x^2+y}\\
+>  &= \lim_{r\rightarrow 0^{+}}\frac{(r\cos{\theta})(r\sin{\theta})}{r^2\cos^2{\theta}+r\sin{\theta}} \\
+> &= \lim_{r \rightarrow 0^{+}}\frac{r\cos{\theta}\sin{\theta}}{r\cos^2{\theta}+\sin{\theta}} \\
+> &= 0
+> \end{aligned}$$
+> then we have to $\lim_{(x,y) \rightarrow (0,0)}f(x,y) = f(0,0)$. The book uses that example to show that although all directional derivatives of $f$ exist at $(0,0)$, the function is not differentiable at $(0,0)$ and use the continuity argument of $f$ in $(0,0)$ but I think it is incorrect. I sense that the function is not differentiable at (0,0) but not with the argument given in the book, I have tried multiple options but I have not been able to. Any suggestions?
+:::
+
+Despite the polar-coordinates limit, the two-variable limit does not exist. To see why, let $c$ be a constant and consider the curve $x=\frac{ct}{t-c}$, $y=\frac{ct^2}{t-c}$, which passes through the origin at $t=0$. Then
+$$\begin{aligned}
+    \lim_{t\to 0} f(x(t),y(t)) &= \lim_{t\to 0} \frac{\frac{ct}{t-c} \cdot \frac{ct^2}{t-c}}{\left(\frac{ct}{t-c}\right)^2 + \frac{ct^2}{t-c}}
+\\&= \lim_{t\to0}\frac{c^2t^3}{(ct)^2 + ct^2(t-c)}
+\\&= \lim_{t\to0}\frac{c^2t^3}{ct^3} = \lim_{t\to 0} c = c
+\end{aligned}$$
+
+[![graph of surface and curve][1]][1]
+
+([Open in Geogebra](https://www.geogebra.org/calculator/u3ajg642))
+
+* * *
+You might wonder how I arrived at that parametrization. Using Geogebra to plot the surface $z=f(x,y)$, I guessed a parametrization of the level curve $f(x,y) =c$ satisfying $y=tx$. Solving $f(x,tx)=c$ for $x$ gives $x=\frac{ct}{t-c}$.
+
+  [1]: 3h0UBdlD.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4927408/differentiability-of-a-function-and-existence-of-directional-derivatives/4927435#4927435) on Mathematics Stack Exchange, 2024-06-04. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

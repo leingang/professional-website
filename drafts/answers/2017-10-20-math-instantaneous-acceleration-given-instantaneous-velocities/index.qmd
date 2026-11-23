@@ -1,0 +1,57 @@
+---
+title: Instantaneous Acceleration Given Instantaneous Velocities
+date: '2017-10-20'
+description: You can't get an instantaneous quantity from a finite set of data. The average acceleration over the smallest possible interval is the best approximation to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2480848
+se-link: https://math.stackexchange.com/questions/2480838/instantaneous-acceleration-given-instantaneous-velocities/2480848#2480848
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- physics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Instantaneous Acceleration Given Instantaneous Velocities](https://math.stackexchange.com/questions/2480838/instantaneous-acceleration-given-instantaneous-velocities), asked by [Carson](https://math.stackexchange.com/users/472236/carson) on Mathematics Stack Exchange (2017-10-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a table of instantaneous velocities and their respective times. It is taken every 10 seconds for 2 minutes. How can I calculate the distance traveled (doesn't need to be exact) and instantaneous acceleration (also, doesn't need to be super exact) at each time? At this point in my class, we have only learned derivatives and aren't allowed to use integrals to solve this problem. 
+>
+> Table:<br/>
+> t(s) | v(mi/h)<br/>
+> 0             21.75<br/>
+> 10            21.75<br/>
+> 20            29.20<br/>
+> 30            87.61<br/>
+> 40            107.50<br/>
+> 50            111.85<br/>
+> 60            120.55<br/>
+> 70            132.35<br/>
+> 80            125.52<br/>
+> 90            131.73<br/>
+> 100           132.97<br/>
+> 110           98.18<br/>
+> 120           83.26<br/>
+>
+> I have tried dividing by time, but that's not right and simply taking v2-v1/t2-t1 just gets an average acceleration when I need an instantaneous one. 
+> Thanks.
+:::
+
+> I have tried dividing by time, but that's not right and simply taking $(v_2-v_1)/(t_2-t_1)$ just gets an average acceleration when I need an instantaneous one.
+
+You can't get an instantaneous quantity from a finite set of data.  The average acceleration over the smallest possible interval is the best approximation to the instantaneous velocity.  You could average the averages on each side of a point, but that's not guaranteed to be a better estimate.  
+
+You can estimate the distance traveled by “dead reckoning.”  Assume the velocity at each time step is constant, the constant measured at the left edge of each interval, and multiply by the time durations.  That's an estimate of the distance traveled on that time step.  Add them up.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2480838/instantaneous-acceleration-given-instantaneous-velocities/2480848#2480848) on Mathematics Stack Exchange, 2017-10-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,37 @@
+---
+title: Need help in understanding set ordered relationship.
+date: '2015-10-27'
+description: There is nothing fancy in this restriction. It just means that if you have a relation on $X$, and $Y \subseteq X$, then you have a relation on $Y$ too.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1499388
+se-link: https://math.stackexchange.com/questions/1499375/need-help-in-understanding-set-ordered-relationship/1499388#1499388
+se-score: 0
+se-accepted: false
+se-tags:
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Need help in understanding set ordered relationship.](https://math.stackexchange.com/questions/1499375/need-help-in-understanding-set-ordered-relationship), asked by [kishoredbn](https://math.stackexchange.com/users/16119/kishoredbn) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am reading a paper, where it is said that **X** is a set ordered by relation **R**. Any subset **Y** of **X** is then ordered by the restriction of **R** to **Y**, i.e. by **R∩(YxY)**.
+>
+> I want to know what is meant by this notation  **R∩(YxY)**.
+:::
+
+There is nothing fancy in this restriction.  It just means that if you have a relation on $X$, and $Y \subseteq X$, then you have a relation on $Y$ too.
+
+For example: Let $X = \mathbb{R}$ and $R$ be the less-than relation $<$.  Let $Y = \mathbb{N}$.  Then we can order $\mathbb{N}$ by the same relation.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1499375/need-help-in-understanding-set-ordered-relationship/1499388#1499388) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

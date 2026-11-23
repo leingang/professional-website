@@ -1,0 +1,79 @@
+---
+title: Protecting negative spacing in math mode
+date: '2010-12-01'
+description: I would suspect that multicols is altering the width of a negative thin space some how. Here's a hackier version that just overlaps.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6346
+se-link: https://tex.stackexchange.com/questions/6339/protecting-negative-spacing-in-math-mode/6346#6346
+se-score: 1
+se-accepted: false
+se-tags:
+- math-mode
+- spacing
+- horizontal-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Protecting negative spacing in math mode](https://tex.stackexchange.com/questions/6339/protecting-negative-spacing-in-math-mode), asked by [fuenfundachtzig](https://tex.stackexchange.com/users/1442/fuenfundachtzig) on TeX Stack Exchange (2010-12-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am using `\!` to create negative spacings and put a dash over a symbol in math mode. (Here I am denoting missing transverse energy by defining a command `\met` where a dash is put across `E_T`, see code below.) 
+>
+> This works well in most cases (when using `beamer`), but in the article class it can fail when lines are filled with additional space. Then the dash is no longer in the right position.
+>
+> Is there a better way to put the dash in place?
+>
+> Minimal example:
+>
+> ```latex
+> \documentclass{article}
+>
+> \usepackage{xspace}
+> \usepackage{multicol}
+>
+> \begin{document}
+>
+>   % \met has the negative spacing
+>   \newcommand{\met}{\ensuremath{\not\!\!E_T}\xspace}
+>
+>   % fails here
+>   \begin{multicols}{2}
+>     A model for \met trigger rates.
+>     Lorem ipsum dolor sit amet, consectetuer
+>     adipiscing elit. Ut purus elit, vestibulum ut, placerat ac,
+>     adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu
+>     libero, nonummy eget, consectetuer id, vulputate a, magna. Donec
+>     vehicula augue eu neque. 
+>   \end{multicols}
+>
+>   % works here
+>   A model for \met trigger rate prediction.
+>   Lorem ipsum dolor sit amet, consectetuer
+>   adipiscing elit. Ut purus elit, vestibulum ut, placerat ac,
+>   adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu
+>   libero, nonummy eget, consectetuer id, vulputate a, magna.
+>
+>
+> \end{document}
+> ```
+>
+> PS: Feel free to put appropriate tags.
+:::
+
+I would suspect that multicols is altering the width of a negative thin space some how.  Here's a hackier version that just overlaps.
+
+```latex
+  \newcommand{\met}{\ensuremath{\hbox to 0pt{$\not$}E_T}\xspace}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6339/protecting-negative-spacing-in-math-mode/6346#6346) on TeX Stack Exchange, 2010-12-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

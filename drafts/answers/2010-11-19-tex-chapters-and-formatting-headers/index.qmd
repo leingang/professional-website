@@ -1,0 +1,54 @@
+---
+title: Chapters and Formatting Headers
+date: '2010-11-19'
+description: Put it in a file called header.tex and in your main chapter put \input{header.tex}.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5654
+se-link: https://tex.stackexchange.com/questions/5653/chapters-and-formatting-headers/5654#5654
+se-score: 7
+se-accepted: false
+se-tags:
+- include
+- preamble
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Chapters and Formatting Headers](https://tex.stackexchange.com/questions/5653/chapters-and-formatting-headers), asked by [Connor Albright](https://tex.stackexchange.com/users/2028/connor-albright) on TeX Stack Exchange (2010-11-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> When I am composing a large document in LaTeX, I often compose the chapters in separate documents. When I do this I have to copy and paste a large block of header text to the chapter I am editing so I can make sure the formatting is correct while I am writing it. 
+>
+> How can I import a header file of formatting information with a single line?
+:::
+
+Put it in a file called `header.tex` and in your main chapter put `\input{header.tex}`.
+
+But, you might be better off creating a master file that has the header text in it, then `\include`s the chapters.  
+
+```latex
+\documentclass{book}
+\title{my awesome book}
+\author{me}
+\date{\today}
+
+\includeonly{ch1}
+\begin{document}
+\include{ch1.tex}
+\include{ch2.tex}
+...
+\end{document}
+```
+
+Changing the `\includeonly` line allows you to switch on and off what gets included.  So you could only include the chapter you were working on to make compiling quicker.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5653/chapters-and-formatting-headers/5654#5654) on TeX Stack Exchange, 2010-11-19. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

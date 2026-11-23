@@ -1,0 +1,69 @@
+---
+title: Smooth manifold and singular point
+date: '2018-09-05'
+description: This an example of the Implicit Function Theorem.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2906572
+se-link: https://math.stackexchange.com/questions/2906532/smooth-manifold-and-singular-point/2906572#2906572
+se-score: 3
+se-accepted: true
+se-tags:
+- smooth-manifolds
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Smooth manifold and singular point](https://math.stackexchange.com/questions/2906532/smooth-manifold-and-singular-point), asked by [user15988](https://math.stackexchange.com/users/162365/user15988) on Mathematics Stack Exchange (2018-09-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I came across a statement that looks like this: 
+>
+> Let $f(x): x\in U\subseteq\mathbb{R}^d\rightarrow\mathbb{R}$ be an analytic function. Then, $\left\{x\in U:f(x)=y\right\}$ is a smooth manifold if $\nabla f(x)\neq0$ for all $x$ such that $f(x)=y$.
+>
+> Why is this the case? Why can't smooth manifolds include points that is $\nabla f(x)=0$?
+:::
+
+This an example of the [Implicit Function Theorem][1].
+
+Let $M = \left\{x\in U \mid f(x) = y\right\}$, and let $a \in U$.  Since $\nabla f(a) \neq 0$, one of the partial derivatives $\frac{\partial f}{\partial x_i}(a) \neq 0$.  Let's assume it's $\frac{\partial f}{\partial x_d}(a)$.  The Implicit Function Theorem says that there exists an open set $V$ in $\mathbb{R}^{d-1}$, containing the point $(a_1,\dots,a_{d-1})$, and a function $g \colon V \to \mathbb{R}$, such that $g(a_1,\dots,a_{d-1}) = a_d$, and 
+$$f(x_1,x_2,\dots,x_{d-1},g(x_1,x_2,\dots,x_{d-1})) = y$$
+That is, every point of $M$ has a neighborhood where one of the coordinates can be written as a function of the others.  If $f$ is $C^k$, then $g$ is $C^k$ too.  The derivatives of $g$ can be computed in terms of the derivatives of $f$.
+
+As an example, let $f(x_1,x_2) = x_1^2 + x_2^2$, $y=1$, and $a = (0,1)$.  Near $a$, we can write $x_2 = \sqrt{1-x_1^2}$, and the function $g(x) = \sqrt{1-x^2}$ is smooth in a neighborhood of $0$.  This tells us that the single coordinate $x_1$ can describe a point on the circle in a neighborhood of $(1,0)$.  This won't work near $(1,0)$, though, and notice $\frac{\partial f}{\partial x_2}(1,0) = 0$.  So we use the other coordinate $x_1$, and write it in terms of $x_2$.
+
+As a *nonexample*, consider $f(x_1,x_2) = (x_1^2 + x_2^2)^2 - (x_1^2-x_2^2)$.  The level set $f^{-1}(0)$ is called a [lemniscate](https://en.wikipedia.org/wiki/Lemniscate), and looks like this:
+
+[![lemniscate][2]][2]
+
+You can see that except for the origin, the curve is nice and smooth.  But at the origin, the curve intersects itself transversely.  In terms of $\nabla f$, we have,
+$$\begin{align*}
+    \frac{\partial f}{\partial x_1} &= 2(x_1^2 + x_2^2)(2x_1) - 2x_1 
+        = 2x_1(2(x_1^2 + x_2^2)-1) 
+\\
+    \frac{\partial f}{\partial x_2} &= 2(x_1^2 + x_2^2)(2x_2) + 2x_2 
+        = 2x_2(2(x_1^2 + x_2^2)+1) 
+\\
+\end{align*}$$
+So $\nabla f(x_1,x_2) = 0 \iff (x_1,x_2) = (0,0)$.
+
+
+The basic idea of a manifold is a topological space where every point has a neighborhood that “looks like” a subset of $\mathbb{R}^n$.  In this setting, a given a point $a \in M$, there is a subset $V$ of $\mathbb{R}^{d-1}$ and a map $\phi \colon V \to M$, given by
+$$\phi(x_1,\dots,x_{d-1}) = (x_1,\dots,x_{d-1},g(x_1,\dots,x_{d-1})$$
+Let $V' = \phi(V)$; then $a \in V' \subset M$.  Then $V'$ looks like $V$, in the sense that we can use coordinates on $V$ to describe points of $M$.  That is why $M$ is a smooth manifold.  
+
+To learn more about manifolds and how they are defined and analyzed, look for books on “Differential Geometry” or “Differential Topology”.  Boothby is the one that I learned from, but volumes by do Carmo or Guillemin and Pollack are also good.
+
+
+  [1]: https://en.wikipedia.org/wiki/Implicit_function_theorem
+  [2]: bcPKI.gif
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2906532/smooth-manifold-and-singular-point/2906572#2906572) on Mathematics Stack Exchange, 2018-09-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

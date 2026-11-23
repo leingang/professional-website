@@ -1,0 +1,66 @@
+---
+title: Table will not center (and it is spilling off the right side of the page)
+date: '2010-11-04'
+description: You could surround the All Round (suggestion) with \llap. That will let it stick into the left margin a bit.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4929
+se-link: https://tex.stackexchange.com/questions/4926/table-will-not-center-and-it-is-spilling-off-the-right-side-of-the-page/4929#4929
+se-score: 7
+se-accepted: false
+se-tags:
+- tables
+- horizontal-alignment
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Table will not center (and it is spilling off the right side of the page)](https://tex.stackexchange.com/questions/4926/table-will-not-center-and-it-is-spilling-off-the-right-side-of-the-page), asked by [sixtyfootersdude](https://tex.stackexchange.com/users/1333/sixtyfootersdude) on TeX Stack Exchange (2010-11-04; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I just generated this table using [Excel2LaTeX][q-1]:
+>
+> ![alt text][q-2]
+>
+>
+>   [q-1]: http://www.ctan.org/tex-archive/help/Catalogue/entries/excel2latex.html
+>   [q-2]: 7nBoX.png
+>
+> Even though I enclosed the table in `\begin{center}` the table did not get centered.  The table still sticks out the right side.  Is there somehow that I can easily fix this?
+>
+> This is the code for the table:
+>
+> ```latex
+> \begin{center}
+> \begin{tabular}{rrrrrrr}
+>         &    MSRP & Vol. Disc. & Promo. Allow. & Discount/Sale & Promo/Sale & Income/Sale \\
+> {\bf All Round} & {\bf \$5.49} & {\bf 30.0\%} & {\bf 13.0\%} & {\bf \$1.65} & {\bf \$0.71} & {\bf \$2.36} \\
+> {\bf All Round (suggestion)} & {\bf \$5.49} & {\bf 25.0\%} & {\bf 20.0\%} & {\bf \$1.37} & {\bf \$1.10} & {\bf \$2.47} \\
+> Believe &  \$3.99 &  33.5\% &  15.6\% &  \$1.34 &  \$0.62 &  \$1.96 \\
+> Best Help &  \$4.59 &  34.5\% &  13.3\% &  \$1.58 &  \$0.61 &  \$2.19 \\
+> Coughcure &  \$4.69 &  28.5\% &  16.7\% &  \$1.34 &  \$0.78 &  \$2.12 \\
+>  Defogg &  \$4.09 &  22.5\% &  11.1\% &  \$0.92 &  \$0.45 &  \$1.37 \\
+> Dripstop &  \$4.09 &  21.5\% &  13.3\% &  \$0.88 &  \$0.54 &  \$1.42 \\
+> {\bf Dryup} & {\bf \$4.79} & {\bf 21.5\%} & {\bf 15.6\%} & {\bf \$1.03} & {\bf \$0.75} & {\bf \$1.78} \\
+> Effective &  \$4.09 &  30.0\% &  14.4\% &  \$1.23 &  \$0.59 &  \$1.82 \\
+>     End &  \$4.49 &  30.0\% &  14.4\% &  \$1.35 &  \$0.65 &  \$1.99 \\
+>   Extra &  \$4.09 &  31.0\% &  12.5\% &  \$1.27 &  \$0.51 &  \$1.78 \\
+> \end{tabular}  
+> \end{center}
+> ```
+:::
+
+You could surround the `All Round (suggestion)` with `\llap`.  That will let it stick into the left margin a bit.![alt text][1]
+
+
+  [1]: hwDiD.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4926/table-will-not-center-and-it-is-spilling-off-the-right-side-of-the-page/4929#4929) on TeX Stack Exchange, 2010-11-04. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

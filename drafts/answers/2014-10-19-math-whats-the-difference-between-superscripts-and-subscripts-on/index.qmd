@@ -1,0 +1,45 @@
+---
+title: What's the difference between superscripts and subscripts on fields?
+date: '2014-10-19'
+description: These are notational conventions. Sometimes they are compatible, sometimes not.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 981207
+se-link: https://math.stackexchange.com/questions/981187/whats-the-difference-between-superscripts-and-subscripts-on-fields/981207#981207
+se-score: 4
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What's the difference between superscripts and subscripts on fields?](https://math.stackexchange.com/questions/981187/whats-the-difference-between-superscripts-and-subscripts-on-fields), asked by [User](https://math.stackexchange.com/users/180763/user) on Mathematics Stack Exchange (2014-10-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $P_2$ vs $\mathbb{R}^3$
+>
+> $P_2$ represents the set of polynomials equal to or less than degree 2.
+>
+> $\mathbb{R}^3$ represents (I think) a vector with 3 elements.
+>
+> Is there any difference if the number is placed as superscript or subscription?
+:::
+
+These are notational conventions. Sometimes they are compatible, sometimes not.
+
+If $F$ is a field, $F^k$ denotes the vector space of $k$-tuples of elements of $F$.  Such is the case with $\mathbb{R}^3$.  Since this set also the $k$-fold Cartesian product of $F$ with itself, the superscript notation agrees with that for powers.  
+
+Other times a construction will depend on a number like degree, and it's typical to put that in the subscript. 
+
+A good author will define his or her notation at the outset, as in, "Let $P_2$ be the vector space of polynomials of degree $\leq 2$ over $\mathbb{R}$." Then there is no ambiguity.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/981187/whats-the-difference-between-superscripts-and-subscripts-on-fields/981207#981207) on Mathematics Stack Exchange, 2014-10-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

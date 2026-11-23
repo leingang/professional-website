@@ -1,0 +1,57 @@
+---
+title: ODE with various initial conditions
+date: '2019-01-22'
+description: Think about the initial condition as a parameter. Since $$\ln \left| \frac{x}{1-x}\right| = e^t + C$$ we know $$\frac{x}{1-x} = A e^t$$ where $A = e^C$.…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3083236
+se-link: https://math.stackexchange.com/questions/3083195/ode-with-various-initial-conditions/3083236#3083236
+se-score: 1
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- initial-value-problems
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[ODE with various initial conditions](https://math.stackexchange.com/questions/3083195/ode-with-various-initial-conditions), asked by [glowstonetrees](https://math.stackexchange.com/users/520107/glowstonetrees) on Mathematics Stack Exchange (2019-01-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I encountered the following ODE:
+>
+> $$\frac{dx}{dt} = x(1-x)$$
+>
+> Of course, this can easily be solved with separation of variables:
+>
+> $$\implies \int \frac{dx}{x(1-x)} = \int dt \implies \ln \bigg|\frac{x}{1-x} \bigg| = t+C$$
+>
+> This solution is valid on $\Bbb R \backslash \{0,1\}$, so there would be no problem with imposing initial condition $x(0) = x_0$ as long as $x_0 \neq 0,1$.
+>
+> **But, my question is how would we solve this ODE if the initial condition was indeed $x_0=0$ or $x_0=1$?** 
+>
+> Intuitively, I see that these are fixed points so that $x \equiv 0$ or $x \equiv 1$ in these cases. But I guess I would like to know whether there is a way to express the solution of the ODE given general initial condition?
+:::
+
+Think about the initial condition as a parameter.  Since
+$$\ln \left| \frac{x}{1-x}\right| = e^t + C$$
+we know
+$$\frac{x}{1-x} = A e^t$$
+where $A = e^C$.  Evaluating at $t=0$ gives
+$$A = \frac{x(0)}{1-x(0)}$$
+and so
+$$x(t) = \frac{\frac{x(0)}{1-x(0)} e^t}{1 + \frac{x(0)}{1-x(0)}  e^t}
+         = \frac{x(0) e^t}{1+x(0)(e^t-1)}$$
+So now think about the function $\gamma(s,t)$, where for each $s$, $t \mapsto \gamma(s,t)$ is the solution to $x' = x(1-x)$, $x(0) = s$.  Using the above, we see that
+$$\gamma(s,t) = \frac{se^t}{1+s(e^t-1)}$$
+Notice $\lim_{s\to 0} \gamma(s,t) = 0$ and $\lim_{s\to 1} \gamma(s,t) = 1$ for all $t$.  So the two equilibrium cases are the limits of the non-equilibrium cases as the initial conditions tend toward the critical points.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3083195/ode-with-various-initial-conditions/3083236#3083236) on Mathematics Stack Exchange, 2019-01-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

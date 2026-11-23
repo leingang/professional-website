@@ -1,0 +1,54 @@
+---
+title: What is the role of conjectures in modern mathematics?
+date: '2016-11-17'
+description: A conjecture is an unproved theorem. Since it's unproved, you can't use a conjecture to prove a theorem or solve a problem. But some conjectures are famous…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2018191
+se-link: https://math.stackexchange.com/questions/2018183/what-is-the-role-of-conjectures-in-modern-mathematics/2018191#2018191
+se-score: 16
+se-accepted: false
+se-tags:
+- soft-question
+- terminology
+- education
+- conjectures
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the role of conjectures in modern mathematics?](https://math.stackexchange.com/questions/2018183/what-is-the-role-of-conjectures-in-modern-mathematics), asked by [Vidyanshu Mishra](https://math.stackexchange.com/users/363566/vidyanshu-mishra) on Mathematics Stack Exchange (2016-11-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Today, I heard of something so called [Goldbach's conjecture](https://en.wikipedia.org/wiki/Goldbach%27s_conjecture) from my mathematics teacher in the class. This was one of the most interesting things that I have ever heard in mathematics.
+>
+> This made me curious to study a bit more about conjectures. The definition of conjecture on google says that:
+>
+> > A conjecture is an opinion or conclusion formed on the basis of incomplete information.
+>
+> Now the question which is stuck in my mind is: *What is the use of conjectures in modern mathematics?"* Are they used in problem solving as we use theorems/lemma?
+>
+> If it is the case then how can we use something to solve a problem which is not even known with certainty (Which we can't prove)??
+:::
+
+A conjecture is an unproved theorem.  Since it's unproved, you can't use a conjecture to prove a theorem or solve a problem.  But some conjectures are famous enough to get their own names so that they can be referred to easily.  
+
+More importantly, conjectures often represent an area of research that a community of mathematicians will work on.  Many differential geometers worked on the [Poincaré conjecture][1] until it was proven by [Grigori Perelman][2].  Andrew Wiles and Richard Taylor's proof of Fermat's Last Theorem was actually a proof of the [Taniyama-Shimura-Weil conjecture][3].  The [Langlands program][4] is a set of conjectures that has directed number theory for decades.  So conjectures serve as goals for mathematicians to work towards.
+
+It can happen that conjectures are proven false as well, which is significant too.
+
+
+  [1]: https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture
+  [2]: http://en.wikipedia.org/wiki/Grigori_Perelman
+  [3]: https://en.wikipedia.org/wiki/Modularity_theorem
+  [4]: https://en.wikipedia.org/wiki/Langlands_program
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2018183/what-is-the-role-of-conjectures-in-modern-mathematics/2018191#2018191) on Mathematics Stack Exchange, 2016-11-17, with [edits](https://math.stackexchange.com/posts/2018191/revisions) by [Alex](https://math.stackexchange.com/users/293781/alex). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

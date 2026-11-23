@@ -1,0 +1,48 @@
+---
+title: How detailed should proofs be in a mathematical PhD thesis?
+date: '2015-02-03'
+description: 'Think about who is going to read your thesis. My thesis had four audiences: me, my advisors (2), and my mom. Unless you''re Tate or Serre you probably have a…'
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 38187
+se-link: https://academia.stackexchange.com/questions/38157/how-detailed-should-proofs-be-in-a-mathematical-phd-thesis/38187#38187
+se-score: 20
+se-accepted: false
+se-tags:
+- phd
+- thesis
+- writing
+- mathematics
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How detailed should proofs be in a mathematical PhD thesis?](https://academia.stackexchange.com/questions/38157/how-detailed-should-proofs-be-in-a-mathematical-phd-thesis), asked by [Zuriel](https://academia.stackexchange.com/users/24832/zuriel) on Academia Stack Exchange (2015-02-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I heard this suggestion from a mathematics professor:
+>
+> **In writing a mathematical Ph.D. thesis, it is far more tolerable to be tediously-lengthy than having a gap in the proofs.**
+>
+> I think what he means is that whenever in doubt, adding more details to make the argument clearer is always better, even if sometimes doing this may make the proof too wordy.
+>
+> Now if I really follow his advice literally, it seems there are too many details for me to write. For example, I don't even feel safe to write "the case n=1 is trivial" when proving by induction, or "by a direct calculation we have the following result". Another example is, whenever writing a commutative diagram (some of my diagrams are 3-D), I doubt if I need to prove that every small triangle or rectangle is commutative. (Actually I have asked [this question][q-1] but have received no answer so far.)
+>
+> Thus my question is: How detailed should be the proofs be in a mathematical Ph.D. thesis?
+>
+>   [q-1]: https://math.stackexchange.com/questions/1115910/checking-that-a-3-d-diagram-is-commutative
+:::
+
+Think about who is going to read your thesis.  My thesis had four audiences: me, my advisors (2), and my mom.  Unless you're Tate or Serre you probably have a pretty similar number.
+
+I wanted all the details in it so that I wouldn't have to sweat over them again when I rewrote it into a journal article.  I knew my advisors could skim past what they thought was obvious.  I knew the whole thing was going to be incomprehensible to my mom and so it might as well be long to be impressive.  So I wrote it long.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/38157/how-detailed-should-proofs-be-in-a-mathematical-phd-thesis/38187#38187) on Academia Stack Exchange, 2015-02-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

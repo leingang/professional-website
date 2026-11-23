@@ -1,0 +1,110 @@
+---
+title: Syriac Abbreviation Mark
+date: '2013-04-23'
+description: 'Here is a TikZ method:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 110204
+se-link: https://tex.stackexchange.com/questions/110197/syriac-abbreviation-mark/110204#110204
+se-score: 2
+se-accepted: false
+se-tags:
+- xetex
+- unicode
+- polyglossia
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Syriac Abbreviation Mark](https://tex.stackexchange.com/questions/110197/syriac-abbreviation-mark), asked by [Ariel](https://tex.stackexchange.com/users/29511/ariel) on TeX Stack Exchange (2013-04-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to implement in XeLaTeX the Syriac Abbreviation Mark (see here: http://en.wikipedia.org/wiki/Syriac_Abbreviation_Mark).
+>
+> The code I came up with is the following:
+>
+> ```latex
+> \catcode`^^^^070f=13
+> \chardef\zwj="200D
+> \def^^^^070f#1 {\zwj\aemph{#1}\ }
+> ```
+>
+> Now I can use the control character in the text (assuming I have a Syriac font):
+>
+> ```latex
+> \documentclass{article}
+>
+> \usepackage{polyglossia}
+>
+> \setmainlanguage{syriac}
+>
+> \setmainfont{Estrangelo Edessa}
+>
+>
+> \catcode`^^^^070f=13
+> \chardef\zwj="200D
+> \def^^^^070f#1 {\zwj\aemph{#1}\ }
+>
+> \begin{document}
+>
+> ܫܠ܏ܡܳܐ ܫܠܡܐ.
+>
+> \end{document}
+> ```
+>
+> Here is the result:
+>
+> ![Example of Syriac Abbreviation Mark][q-1]
+>
+> This is not perfect for two reasons. First, it requires a space to end the control sequence (in fact, it should be ended by any non-Syriac character). Second, ideally the result should be an overline with 3 dots in it (beginning, end and middle - see above Wikipedia article for example).
+>
+> Could anyone help me out with this?
+>
+>
+>   [q-1]: ZMdsX.gif
+:::
+
+Here is a TikZ method:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{xspace}
+\tikzstyle{zwj}=[inner sep=0pt,outer sep=0pt,anchor=base]
+\tikzstyle{zwjdot}=[circle,draw,fill,inner sep=0pt,outer sep=0pt,minimum width=1pt]
+\newcommand{\zwj}[1]{%
+   \tikz[baseline]{
+      \node[zwj] (text) {#1};
+      \useasboundingbox (text.base west) rectangle (text.north east);
+      \draw ([yshift=2ex]text.base west) -- ([yshift=2ex]text.base east)
+         node[pos=0,zwjdot] {}
+         node[pos=1,zwjdot] {}
+         node[pos=0.5,zwjdot] {};
+   }%
+}
+\begin{document}
+
+\begin{tabular}{ll}
+foobar         & puckluck \\
+\zwj{foo}bar   & \zwj{puck}luck
+\end{tabular}
+\end{document}
+```
+
+At this point the descenders are changing the vertical alignment.  I'll try more later.
+
+![sample code output][1]
+
+
+  [1]: 8P3zh.png
+  [2]: PajQk.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/110197/syriac-abbreviation-mark/110204#110204) on TeX Stack Exchange, 2013-04-23, with [edits](https://tex.stackexchange.com/posts/110204/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

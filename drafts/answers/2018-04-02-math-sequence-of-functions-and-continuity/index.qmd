@@ -1,0 +1,44 @@
+---
+title: sequence of functions and continuity
+date: '2018-04-02'
+description: For each natural number $n$, define $fn\colon[0,1] \to \mathbb{R}$ by $$fn(x) = \begin{cases} \frac{1}{n} & x \neq \frac{1}{n} \\ \frac{2}{n} & x = \frac{1}{n}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2719291
+se-link: https://math.stackexchange.com/questions/2719080/sequence-of-functions-and-continuity/2719291#2719291
+se-score: 0
+se-accepted: true
+se-tags:
+- real-analysis
+- sequence-of-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[sequence of functions and continuity](https://math.stackexchange.com/questions/2719080/sequence-of-functions-and-continuity), asked by [gunnersFc](https://math.stackexchange.com/users/489236/gunnersfc) on Mathematics Stack Exchange (2018-04-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a couple of questions on sequences of functions to help me understand the concept better.
+>
+>
+> If you have a function f, what must be required of the function to be able to build a sequence of convergent functions. Is it just that the sequence has to converge to f?
+>
+> If you have a differentiable function f, then will the sequence of functions that converges to f all be continuous (and differentiable)? And if they are all continuous then will the sequence be pointwise convergent? 
+>
+> (I have seen examples of sequences of functions that were all continuous but the sequence wasn't uniformly continuous so I know continuity does not imply uniform continuity, but what about pointwise?)
+:::
+
+For each natural number $n$, define $f_n\colon[0,1] \to \mathbb{R}$ by
+$$f_n(x) = \begin{cases} \frac{1}{n} & x \neq \frac{1}{n} \\
+                           \frac{2}{n} & x = \frac{1}{n} \end{cases}$$
+Then none of the functions $f_n$ are continuous.  However, the sequence $(f_n)$ converges uniformly to the zero function, and that function is continuous, differentiable, etc.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2719080/sequence-of-functions-and-continuity/2719291#2719291) on Mathematics Stack Exchange, 2018-04-02. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

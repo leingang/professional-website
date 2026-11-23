@@ -1,0 +1,55 @@
+---
+title: What best combination of fonts for Serif, Sans, and Mono do you recommend?
+date: '2011-01-23'
+description: 'My university recommends the Microsoft family: Cambria for serif, Calibri for sans, Cambria Math for math, and Consolas for monospace. They all came with my…'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 9565
+se-link: https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend/9565#9565
+se-score: 21
+se-accepted: false
+se-tags:
+- fonts
+- xetex
+- typography
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What best combination of fonts for Serif, Sans, and Mono do you recommend?](https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend), asked by [chl](https://tex.stackexchange.com/users/2580/chl) on TeX Stack Exchange (2011-01-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Now that Xe(La)TeX is being increasingly used to deliver nifty documents, I am wondering if any recommendations have been published or discussed about the best combination of font families for mixing Serif, Sans Serif, and Monospace.
+>
+> For example, I know that [Kieran Healy](http://www.kieranhealy.org/) uses a nice combination of Minion Pro, Myriad Pro, and Pragmata (a LaTeX template is available at [kjh-vita](http://kjhealy.github.com/kjh-vita/)). Likewise, according to the American Association of University Presses, Minion, ITC New Baskerville and FF Scala & 4. FF Scala Sans are the top three best fonts, but see
+> [Top Typefaces Used by Book Design Winners](http://fontfeed.com/archives/top-ten-typefaces-used-by-book-design-winners/). I have been playing myself with Apple Garamond, Fontin Sans and Menlo (Apple default monospaced font shipped with OS X 10.6), because all are available with any combination of `\itshape` and `\bfseries` (as described in [The XeTeX Companion][q-1]).
+>
+> So my question is just: What would you recommend as pretty looking and freely available fonts for typesetting a TeX or LaTeX document? Ideally, this should allow to use mathematical expressions as well. (*one response per post please*)
+>
+>
+>   [q-1]: http://xml.web.cern.ch/XML/lgc2/xetexmain.pdf
+:::
+
+My university recommends the Microsoft family: Cambria for serif, Calibri for sans, Cambria Math for math, and Consolas for monospace.  They all came with my Mac.  I'm not sure that the university's recommendation is the most informed one, but those are designed to go together.
+
+To see these in a sample document, insert the following into your preamble
+
+```latex
+\usepackage{fontspec}
+\setmainfont{Cambria}
+\setsansfont{Calibri}
+\setmathrm{Cambria Math}
+\setmonofont{Consolas}
+```
+
+(and use XeTeX.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend/9565#9565) on TeX Stack Exchange, 2011-01-23. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

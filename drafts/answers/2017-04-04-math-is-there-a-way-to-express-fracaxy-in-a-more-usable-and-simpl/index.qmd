@@ -1,0 +1,52 @@
+---
+title: Is there a way to express $\frac{a}{x+y}$ in a more usable and simplifiable form?
+date: '2017-04-04'
+description: Well, since you referred to an infinite series, you could say $$\begin{align} \frac{a}{x+y} &= \frac{a}{x} \cdot \frac{1}{1 + \frac{y}{x}} = \frac{a}{x}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2218053
+se-link: https://math.stackexchange.com/questions/2218028/is-there-a-way-to-express-fracaxy-in-a-more-usable-and-simplifiable-form/2218053#2218053
+se-score: 1
+se-accepted: false
+se-tags:
+- number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a way to express $\frac{a}{x+y}$ in a more usable and simplifiable form?](https://math.stackexchange.com/questions/2218028/is-there-a-way-to-express-fracaxy-in-a-more-usable-and-simplifiable-form), asked by [Xii](https://math.stackexchange.com/users/402319/xii) on Mathematics Stack Exchange (2017-04-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have made a previous post: [Why does $\frac{x}{ln(x+1)}$ = Something that includes factorials?][q-1]
+>
+> In here, the answerer whose answer I accepted had stated that something in the form $\frac{a}{x+y}$ doesn't necessarily $= \frac{a}{x}+\frac{a}{y}$
+>
+> Example:$\frac{2}{1+1}$ doesn't equal $2(\frac{2}{1})$s , since 1 doesn't equal 4. 
+>
+> Therefore, I cannot split the terms up individually. 
+>
+> Is there a way I can put this in the form of [term]+[term]+[term]+[term]+[term]+...
+>
+>   [q-1]: https://math.stackexchange.com/questions/2200126/why-does-x-lnx1-something-that-includes-factorials
+:::
+
+Well, since you referred to an infinite series, you could say
+$$\begin{align*}
+    \frac{a}{x+y} &= \frac{a}{x} \cdot \frac{1}{1 + \frac{y}{x}}
+    = \frac{a}{x} \sum_{n=0}^\infty \left(-\frac{y}{x}\right)^n
+    \\&= \frac{a}{x}\left(1 - \frac{y}{x} + \frac{y^2}{x^2} - \frac{y^3}{x^3} + \dots\right)
+    \\&= \frac{a}{x} - \frac{ay}{x^2} + \frac{ay^2}{x^3} - \frac{ay^3}{x^4} + \dots
+\end{align*}$$
+The series converges as long as $|y| < |x|$.  If $|y|>|x|$, reverse the roles of $x$ and $y$. If $y=x$, then $\frac{a}{x+y} = 2\frac{a}{x}$.
+
+However, I guess this doesn't fit your description of “a more useable and simplifiable form.”  The shorter, more direct answer is that you can't distribute a sum over a quotient like you can over a product.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2218028/is-there-a-way-to-express-fracaxy-in-a-more-usable-and-simplifiable-form/2218053#2218053) on Mathematics Stack Exchange, 2017-04-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

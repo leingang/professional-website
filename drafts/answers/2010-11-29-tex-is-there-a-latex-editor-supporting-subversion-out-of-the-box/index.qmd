@@ -1,0 +1,44 @@
+---
+title: Is there a LaTeX editor supporting Subversion out of the box?
+date: '2010-11-29'
+description: I wish I could say TeXShop, my editor of choice, but I can't. There's always emacs and Eclipse.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6132
+se-link: https://tex.stackexchange.com/questions/6131/is-there-a-latex-editor-supporting-subversion-out-of-the-box/6132#6132
+se-score: 12
+se-accepted: false
+se-tags:
+- editors
+- revision-control
+- ide
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a LaTeX editor supporting Subversion out of the box?](https://tex.stackexchange.com/questions/6131/is-there-a-latex-editor-supporting-subversion-out-of-the-box), asked by [Display Name](https://tex.stackexchange.com/users/2099/display-name) on TeX Stack Exchange (2010-11-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Actually I am new to Subversion. Shortly speaking, Subversion is a tool to manage versioning of documents, especially for software developers. You can find the details [here][q-1].
+>
+> I have a team to write a book using LaTeX, each member can create, update and delete the supporting files. To avoid any loss of data, I want to manage the synchronization using Subversion.
+>
+> Is there a LaTeX editor supporting Subversion out of the box?
+>
+> EDIT 1: Thanks all for your response. 
+> I just wait for a couple of days to get more options from others. Then I will mark as the answer, of course not so objective :D
+>
+>   [q-1]: http://en.wikipedia.org/wiki/Apache_Subversion
+:::
+
+I wish I could say TeXShop, my editor of choice, but I can't.  There's always [emacs](http://www.emacswiki.org/emacs/SubVersion) and [Eclipse](http://subclipse.tigris.org/).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6131/is-there-a-latex-editor-supporting-subversion-out-of-the-box/6132#6132) on TeX Stack Exchange, 2010-11-29. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,115 @@
+---
+title: Little clarification required in integrals of multiple variable
+date: '2021-07-20'
+description: 'The second version is what I call the “20th-century” notation for the surface integral. The definition is: $$\iintS \vec F \cdot d \vec S = \iintS \vec F \cdot…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4203585
+se-link: https://math.stackexchange.com/questions/4203394/little-clarification-required-in-integrals-of-multiple-variable/4203585#4203585
+se-score: 1
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- divergence-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Little clarification required in integrals of multiple variable](https://math.stackexchange.com/questions/4203394/little-clarification-required-in-integrals-of-multiple-variable), asked by [санкет мхаске](https://math.stackexchange.com/users/795513/%d1%81%d0%b0%d0%bd%d0%ba%d0%b5%d1%82-%d0%bc%d1%85%d0%b0%d1%81%d0%ba%d0%b5) on Mathematics Stack Exchange (2021-07-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> How is this integral: $$\iint_{S} p(x,y,z)\,dy\,dz + q(x,y,z)\,dz\,dx + r(x,y,z)\,dx\,dy$$
+> equivalent to this one
+> $$\iint_S \vec{F}\cdot d\vec{S}$$ where $\vec{F}=\left<p,q,r\right>$
+>
+> (I was trying to solve a question on Divergence theorem and spent too much time trying to find what is $\vec{F}$ and then peeked into the solution to find the above which was right in front of me the whole time)
+>
+> Thank you in advance
+:::
+
+The second version is what I call the “20th-century” notation for the surface integral.  The definition is:
+$$\iint_S \vec F \cdot d \vec S = \iint_S \vec F \cdot \vec n \,dS$$
+where $\vec n$ is a unit normal vector field on $S$.  
+
+To compute this integral, we normally need a parametrization.  Suppose that $D$ is a domain of $\mathbb R^2$, and $\vec r \colon D \to S$ is a parametrization of $S$ compatible with the orientation $\vec n$.  Write $\vec r(u,v) = (x(u,v),y(u,v),z(u,v))$.  We define
+$$\begin{align*}
+    \vec r_u &= \left<\frac{\partial x}{\partial u},\frac{\partial y}{\partial u},\frac{\partial z}{\partial u}\right>
+\\  \vec r_v &= \left<\frac{\partial x}{\partial v},\frac{\partial y}{\partial v},\frac{\partial z}{\partial v}\right>
+\end{align*}$$
+Then $\vec r$ is compatible with $\vec n$ if $\vec r_u \times \vec r_v$ is in the positive direction of $\vec n$ for all $(u,v) \in D$. In this case,
+$$\iint_S \vec F \cdot \vec n \,dS
+   = \iint_D \vec F(\vec r(u,v)) \cdot (\vec r_u \times \vec r_v)\,dA$$
+Let's take it one step further down.  Write $\vec F(x,y,z) = \left<P(x,y,z),Q(x,y,z),R(x,y,z)\right>$.  Then
+$$\vec r_u \times \vec r_v
+    = \left<\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}
+           -\frac{\partial z}{\partial u} \frac{\partial y}{\partial v}, 
+           \frac{\partial z}{\partial u} \frac{\partial x}{\partial v}
+           -\frac{\partial x}{\partial u} \frac{\partial z}{\partial v},
+           \frac{\partial x}{\partial u} \frac{\partial y}{\partial v}
+           -\frac{\partial y}{\partial u} \frac{\partial x}{\partial v}
+    \right>$$
+So
+$$\begin{align*}
+\iint_D \vec F(\vec r(u,v)) \cdot (\vec r_u \times \vec r_v)\,dA
+    &= \iint_D \biggl(
+         P(x(u,v),y(u,v),z(u,v))
+         \left(
+            \frac{\partial y}{\partial u} \frac{\partial z}{\partial v}
+           -\frac{\partial z}{\partial u} \frac{\partial y}{\partial v} 
+         \right)
+     \\&\qquad\qquad+
+         Q(x(u,v),y(u,v),z(u,v))
+         \left(
+            \frac{\partial z}{\partial u} \frac{\partial x}{\partial v}
+           -\frac{\partial x}{\partial u} \frac{\partial z}{\partial v} 
+         \right)
+     \\&\qquad\qquad+
+         R(x(u,v),y(u,v),z(u,v))
+         \left(
+            \frac{\partial x}{\partial u} \frac{\partial y}{\partial v}
+           -\frac{\partial y}{\partial u} \frac{\partial x}{\partial v} 
+         \right)
+      \biggr)\,du\,dv\tag{$*$}
+\end{align*}$$
+
+In order to understand the “19th-century” notation:
+$$\iint_S \left(P \,dy\,dz + Q \,dz\,dx + R \,dx\,dy\right)$$
+you just have to treat the $dx$, $dy$, $dz$ symbols as differentials, compute them in terms of $du$ and $dv$, and assume that differentials can be multiplied *skew-commutatively*. So:
+$$\begin{align*}
+    dx &= \frac{\partial x}{\partial u}\,du + \frac{\partial x}{\partial v}\,dv \\
+    dy &= \frac{\partial y}{\partial u}\,du + \frac{\partial y}{\partial v}\,dv \\
+    dz &= \frac{\partial z}{\partial u}\,du + \frac{\partial z}{\partial v}\,dv
+\end{align*}$$
+and therefore,
+$$\begin{align*}
+    dy\,dz &= 
+     \left(\frac{\partial y}{\partial u}\,du + \frac{\partial y}{\partial v}\,dv\right)
+     \left(\frac{\partial z}{\partial u}\,du + \frac{\partial z}{\partial v}\,dv\right)
+    \\&= \frac{\partial y}{\partial u}\frac{\partial z}{\partial u} \,du\,du
+      + \frac{\partial y}{\partial u} \frac{\partial z}{\partial v}\,du\,dv
+      + \frac{\partial y}{\partial v}\frac{\partial z}{\partial u}\,dv\,du
+      +\frac{\partial y}{\partial v}\frac{\partial z}{\partial v}\,dv\,dv
+    \\&= \left(\frac{\partial y}{\partial u} \frac{\partial z}{\partial v}
+    - \frac{\partial y}{\partial v}\frac{\partial z}{\partial u}\right)\,du\,dv
+\end{align*}$$
+(Notice $du\,du = dv\,dv = 0$, and also $dv\,du = -du\,dv$, by skew-commutativity.)
+You see that this is the same combination of partial derivatives that forms the $x$-component of $\vec r_u \times \vec r_v$.  Similarly,
+$$\begin{align*}
+    dz\,dx &= \left(            \frac{\partial z}{\partial u} \frac{\partial x}{\partial v}
+           -\frac{\partial x}{\partial u} \frac{\partial z}{\partial v} 
+\right)\,du\,dv
+\\  dy\,dy &= \left(            \frac{\partial x}{\partial u} \frac{\partial y}{\partial v}
+           -\frac{\partial y}{\partial u} \frac{\partial x}{\partial v} 
+\right)\,du\,dv
+\end{align*}$$
+So $\iint_S \left(P \,dy\,dz + Q \,dz\,dx + R \,dx\,dy\right)$ turns out to be equal to the right-hand side of ($*$) as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4203394/little-clarification-required-in-integrals-of-multiple-variable/4203585#4203585) on Mathematics Stack Exchange, 2021-07-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

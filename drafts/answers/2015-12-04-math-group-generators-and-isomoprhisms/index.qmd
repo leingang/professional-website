@@ -1,0 +1,50 @@
+---
+title: Group generators and isomoprhisms
+date: '2015-12-04'
+description: I don't know about the Chinese Remainder Theorem for groups. But as for your second question, it is sufficient to show that $\mathbb{Z}2 \times \mathbb{Z}3$ is…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1559169
+se-link: https://math.stackexchange.com/questions/1559158/group-generators-and-isomoprhisms/1559169#1559169
+se-score: 0
+se-accepted: false
+se-tags:
+- group-theory
+- group-isomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Group generators and isomoprhisms](https://math.stackexchange.com/questions/1559158/group-generators-and-isomoprhisms), asked by [Quality](https://math.stackexchange.com/users/153357/quality) on Mathematics Stack Exchange (2015-12-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Hello I have a rather quick question about the following;
+>
+> I want to show that the groups
+>
+> $\mathbb{Z_{2}} \times \mathbb{Z_{3}} \cong \mathbb{Z_{6}}$
+>
+> Two questions;
+>
+> I learnt the Chinese remainder theorem for rings, does it also hold for groups?
+>
+> Second question
+>
+> I know that any two cyclic groups with the same number of elements are isomorphic,
+>
+> is the following a valid understanding of generators etc,
+>
+> from $(1,1)$ since we are dealing with $\mathbb{Z}$ then our operations are addition (as 'multiplication') from addition and multiplication we can form all other 6 ordered pairs of such and therefore is that sufficient to conclude it is a cyclic group with 6 elements and clearly then isomorphic to $\mathbb{Z}$
+:::
+
+I don't know about the Chinese Remainder Theorem for groups.  But as for your second question, it is sufficient to show that $\mathbb{Z}_2 \times \mathbb{Z}_3$ is cyclic by demonstrating that $(1,1)$ is a generator.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1559158/group-generators-and-isomoprhisms/1559169#1559169) on Mathematics Stack Exchange, 2015-12-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

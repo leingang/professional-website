@@ -1,0 +1,66 @@
+---
+title: Restriction of a linear application (a matrix) to two subspaces
+date: '2021-07-08'
+description: This is the right answer. For all $z \in Z$, $\piS M z = 0$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4193402
+se-link: https://math.stackexchange.com/questions/4193398/restriction-of-a-linear-application-a-matrix-to-two-subspaces/4193402#4193402
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- vector-spaces
+- vectors
+- linear-transformations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Restriction of a linear application (a matrix) to two subspaces](https://math.stackexchange.com/questions/4193398/restriction-of-a-linear-application-a-matrix-to-two-subspaces), asked by [bobinthebox](https://math.stackexchange.com/users/711912/bobinthebox) on Mathematics Stack Exchange (2021-07-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $Z=\{(x_1,x_2): x_1 = x_2 \}$ and $S= \{ (y_1,y_2): y_2=0\}$ and consider the linear application defined by 
+> $$M = 
+> \begin{bmatrix}
+> 1 & -1 \\
+> 0 & 1
+> \end{bmatrix}$$
+>
+> Compute $M_{ZS}$, i.e. the restriction of $M$ operating from $Z$ to $S$.
+>
+> * * *
+> My attempt:
+> In class we have said that in order to define $M_{ZS}$ one has to compute $$M_{ZS} = \pi_S M E_Z$$
+>
+> where $E_Z$ is the extension operator. Given a subspace $Z \subset \mathbb{R}^r$, it associates to any $z \in Z$, the same element, but seen as an element of $\mathbb{R}^r$. 
+>
+> While $\pi_S= E_S^t$, i.e. the transpose of the extension operator associated to $S$.
+>
+> Now, $Z$ is a one-dimensional subspace of $\mathbb{R}^2$, and it's spanned by $(1,1)^T$. Also $S$ is a one-dimensional subspace of $\mathbb{R}^2$, spanned by $e_1$.
+> So the application $E_Z: Z \rightarrow \mathbb{R}^2$, $(x,x) \mapsto (x,x)$ has matrix $\begin{bmatrix} 1 \\ 1  \end{bmatrix}$ 
+>
+> and $E_S$ has matrix 
+> $\begin{bmatrix} 1 \\ 0  \end{bmatrix}$ so that $\pi_s=E_S^t = \begin{bmatrix} 1 &0  \end{bmatrix}^T$ 
+>
+>
+>
+> If you now perform $\pi_S M E_Z$ you find **just the number $0$**. **What am I missing?** Is this possible?
+:::
+
+This is the right answer.  For all $z \in Z$, $\pi_S M z = 0$.
+
+Using slightly different notation, let $z \in Z$.  Then there exists $\alpha \in \mathbb{R}$ such that $z = \begin{bmatrix} \alpha  \\ \alpha \end{bmatrix}$.  So
+$$\pi_S Mz = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}\begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}
+\begin{bmatrix} \alpha  \\ \alpha \end{bmatrix} =\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 0 \\ \alpha \end{bmatrix}
+= \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4193398/restriction-of-a-linear-application-a-matrix-to-two-subspaces/4193402#4193402) on Mathematics Stack Exchange, 2021-07-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

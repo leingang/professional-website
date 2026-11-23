@@ -1,0 +1,93 @@
+---
+title: Allow only certain commands in own environment
+date: '2013-10-03'
+description: For ignoring text, you could use myenv as a special type of comment environment (from the package of the same name). I don't think there's a way to only allow…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 136274
+se-link: https://tex.stackexchange.com/questions/136260/allow-only-certain-commands-in-own-environment/136274#136274
+se-score: 2
+se-accepted: false
+se-tags:
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Allow only certain commands in own environment](https://tex.stackexchange.com/questions/136260/allow-only-certain-commands-in-own-environment), asked by [user26756](https://tex.stackexchange.com/users/37615/user26756) on TeX Stack Exchange (2013-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to define an environment `myenv` and allow only certain predefined commands to be executed betwwen `\begin{myenv}` and `\end{myenv}`. 
+>
+> For example I want text typed there to be ignored and also to give a list of commands which are allowed. Is there a way to achieve this?
+>
+> Thanks.
+:::
+
+For ignoring text, you could use `myenv` as a special type of `comment` environment (from the [package of the same name](http://ctan.org/pkg/comment)).  I don't think there's a way to only allow a certain number of macros, however.  You can disallow any macro by redefining it to give an error message.
+
+```latex
+\documentclass{article}
+\usepackage{comment}
+\usepackage{lipsum}
+
+\newcommand{\foo}{bar}
+
+\specialcomment{myenv}{
+	\newcommand{\nomacros}{%
+		\GenericError{}{%
+			Illegal macro%
+		}{}{
+		This macro is not allowed within the `myenv' environment
+		}}%
+	\let\foo\nomacros
+	\let\bar\nomacros
+}{}
+
+
+\begin{document}
+
+\lipsum[1]
+
+\begin{myenv}
+\lipsum[1]
+\foo\bar
+\end{myenv}
+
+\end{document}
+```
+
+The console will give:
+
+>     ! Illegal macro.
+>     
+>     
+>     Type  H <return>  for immediate help.
+>      ...                                              
+>                                                       
+>     l.2 \foo
+>             \bar
+>     ? h
+>      This macro is not allowed within the `myenv' environment 
+>     ? 
+>     
+>     ! Illegal macro.
+>     
+>     
+>     Type  H <return>  for immediate help.
+>      ...                                              
+>                                                       
+>     l.2 \foo\bar
+>                 
+>     ? x
+>     No pages of output.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/136260/allow-only-certain-commands-in-own-environment/136274#136274) on TeX Stack Exchange, 2013-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

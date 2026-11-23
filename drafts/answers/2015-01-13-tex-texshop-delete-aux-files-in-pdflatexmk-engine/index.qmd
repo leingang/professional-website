@@ -1,0 +1,90 @@
+---
+title: 'Texshop: Delete aux files in pdflatexmk engine'
+date: '2015-01-13'
+description: Each engine is a shell script of its own, so probably the cleanest method to augment an existing engine is to add to the script.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 222838
+se-link: https://tex.stackexchange.com/questions/206979/texshop-delete-aux-files-in-pdflatexmk-engine/222838#222838
+se-score: 1
+se-accepted: false
+se-tags:
+- texshop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Texshop: Delete aux files in pdflatexmk engine](https://tex.stackexchange.com/questions/206979/texshop-delete-aux-files-in-pdflatexmk-engine), asked by [FooBar](https://tex.stackexchange.com/users/39314/foobar) on TeX Stack Exchange (2014-10-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to enhance the pdflatexmk engine to delete the files afterwards. I'm coming from https://tex.stackexchange.com/questions/88458/automatically-trash-aux-files-after-successful-typesetting-in-texshop, where the instruction is to write a Python file that does execute "pdftex", and then delete every other file ex-post.
+>
+> However, I'm unaware in how I may call different texshop "engines". That is, instead of doing
+>
+> ```latex
+> command = '/usr/texbin/pdflatex ' + '--output-driver=/usr/texbin/xdvipdfmx ' +     OUTPUT_ARGUMENT + '"' + output_dir + '"' + ' ' + '"' + pdf_path + os.path.sep + tex_file + '"'
+> ```
+>
+> Since I'm saving my file in the `/Engine` folder, I thought I could simply
+>
+> ```latex
+> execfile("pdflatexmk.engine")
+> ```
+>
+> instead - But this gives 
+>
+> ```latex
+> Traceback (most recent call last):
+>   File "/Volumes/Stuff/user/Library/TeXShop/Engines/pdflatexmk_del.py", line 43, in     <module>
+>     execfile("pdflatexmk.engine")
+> IOError: [Errno 2] No such file or directory: 'pdflatexmk.engine'
+> ```
+:::
+
+Each engine is a shell script of its own, so probably the cleanest method to augment an existing engine is to add to the script.  
+
+What you want is to effectively call `pdflatexmk -c` after each successful run of `pdflatexmk`.
+
+If you look at `pdflatexmk.engine` you'll see that the last line is:
+
+```latex
+"${LTMKBIN}"/latexmk -pdf -r "${LTMKEDIT}/latexmkrcedit" -r "${TSBIN}/pdflatexmkrc" ${localrc} "$1" 
+```
+
+That's the nut of the whole script: calling `latexmk`.   To add commands that are executed only on successful completion of this line, add `&& <cmds>`.  So change the last line to:
+
+```latex
+"${LTMKBIN}"/latexmk -pdf -r "${LTMKEDIT}/latexmkrcedit" -r "${TSBIN}/pdflatexmkrc" ${localrc} "$1" && "${LTMKBIN}"/latexmk -c
+```
+
+Save that new engine as `pdflatexmk-c.engine` or something else you like, and restart TeXShop.
+
+Then you can invoke this engine as the first line in your `.tex` file, as in:
+
+```latex
+% !TEX TS-program = pdflatexmk-c
+\documentclass{article}
+\usepackage{lipsum}
+
+\begin{document}
+\tableofcontents
+
+\section{Foo}
+\lipsum
+\section{Bar}
+\lipsum[1-12]
+
+\end{document}
+```
+
+You'll see that `pdflatexmk` is run, running `pdflatex` a few times to get the generated references right, and then `pdflatexmk -c` is run, deleting the auxiliary files.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/206979/texshop-delete-aux-files-in-pdflatexmk-engine/222838#222838) on TeX Stack Exchange, 2015-01-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,81 @@
+---
+title: If $\partial_i f_j(\overline x)=\partial_j f_i(\overline x)$, then $f=\nabla u$
+date: '2020-05-14'
+description: The standard trick is to use the chain rule twice. $$\begin{align} \frac{\partial u}{\partial xi}(\bar x) &= \int0^1 \sum{\ell}\frac{\partial }{\partial…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3674559
+se-link: https://math.stackexchange.com/questions/3667779/if-partial-i-f-j-overline-x-partial-j-f-i-overline-x-then-f-nabla-u/3674559#3674559
+se-score: 1
+se-accepted: true
+se-tags:
+- real-analysis
+- multivariable-calculus
+- vector-analysis
+- vector-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[If $\partial_i f_j(\overline x)=\partial_j f_i(\overline x)$, then $f=\nabla u$](https://math.stackexchange.com/questions/3667779/if-partial-i-f-j-overline-x-partial-j-f-i-overline-x-then-f-nabla-u), asked by [imas145](https://math.stackexchange.com/users/236234/imas145) on Mathematics Stack Exchange (2020-05-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $\Omega\subset \mathbb{R}^n$ be an open, convex set such that $\overline 0\in\Omega$. Let $f\colon\Omega\to\mathbb{R}^n$ be a $C^1$ function. Also, $\partial_i f_j(\overline x)=\partial_j f_i(\overline x)$ for all $i,j$. I'm trying to show that there exists a differentiable function $u\colon\Omega\to\mathbb{R}$ such that $\nabla u(\overline x)=f(\overline x)$ for all $\overline x\in\Omega$. 
+>
+> **My attempt:**
+>
+> Given that $\Omega$ is convex, we can connect an arbitrary point $\overline x\in\Omega$ to the origin with a line, i.e. $t\overline x\in\Omega$ for all $t\in[0,1]$. Let then
+>
+> $$u(\overline x)=\int_0^1 f(t\overline x)\cdot\overline x\, dt$$
+>
+> Expanding the dot product, we have that
+>
+> $$u(\overline x)=\sum_{\ell=1}^n x_\ell \int_0^1 f_\ell (t\overline x) \, dt$$
+>
+> Now, let $\overline e\in\mathbb{R}^n$ such that $\|\overline e\|=1$. Then
+>
+> $$\begin{align*}
+> \frac{u(\overline x+h\overline e)-u(\overline x)}{h} &=\frac{1}{h} \sum_\ell \left[(x_\ell+h e_\ell)\int_0^1 f_\ell(t(\overline x+h\overline e)) \, dt-x_\ell \int_0^1 f_\ell (t\overline x) \, dt\right] \\
+> &=\sum_\ell \left[x_\ell \int_0^1 \frac{f_\ell(t(\overline x+h\overline e))-f_\ell(t\overline x)}{h} \, dt +e_\ell\int_0^1 f_\ell(t(\overline x+h\overline e)) \, dt \right].
+> \end{align*}$$
+>
+> By the Intermediate Value Theorem, there exists $\xi_\ell,\xi_\ell'\in[0,1]$ such that
+>
+> $$\int_0^1 \frac{f_\ell(t(\overline x+h\overline e))-f_\ell(t\overline x)}{h} \, dt=\frac{f_\ell(\xi_\ell(\overline x+h\overline e))-f_\ell(\xi_\ell\overline x)}{h}$$
+>
+> and
+>
+> $$\int_0^1 f_\ell(t(\overline x+h\overline e)) \, dt=f_\ell(\xi_\ell'(\overline x+h\overline e)).$$
+>
+> Letting $h\to 0$, we get that
+>
+> $$\partial_{\overline e}u(\overline x)=\sum_\ell \left[x_\ell \partial_{\overline e} f_\ell(\xi_\ell\overline x)+e_\ell f_\ell(\xi_\ell'\overline x) \right].$$
+>
+> Therefore, when $\overline e=\overline e_i$ is one of the standard basis vectors, we have
+>
+> $$\partial_i u(\overline x) =\sum_\ell x_\ell\partial_i(\xi_\ell\overline x)+f_i(\xi_i'\overline x).$$
+>
+> This is where I get stuck. It should be that $\partial_i u(\overline x)=f_i(\overline x)$, but how do I get that? Playing around with a few concrete examples, it does work out if you choose the correct values for $\xi$, but how can I do that in general? Or is that even possible, is this even in the right direction? Any help is appreciated.
+>
+> This is basically a generalization of the fact that in $\mathbb{R}^3$, if $\nabla\times f=\overline 0$, then by Stokes' theorem (for a suitable set $\Omega$ like here) the vector field $f$ is conservative.
+:::
+
+The standard trick is to use the chain rule twice.
+$$\begin{align*}
+    \frac{\partial u}{\partial x_i}(\bar x)
+    &= \int_0^1 \sum_{\ell}\frac{\partial }{\partial x_i}\left(f_\ell(t \bar x) x_\ell\right) \,dt
+    \\&= \int_0^1 \sum_{\ell}\left(\frac{\partial f_\ell}{\partial x_i}(t \bar x) tx_\ell + f_\ell(t\bar x)\frac{\partial x_\ell}{\partial x_i}\right) \,dt
+    \\&= \int_0^1 \left(\sum_{\ell}\frac{\partial f_i}{\partial x_\ell}(t \bar x) tx_\ell + f_i(t\bar x)\right) \,dt
+    \\&= \int_0^1 \frac{d}{dt}\left(f_i(t\bar x)t\right) \,dt
+    \\&= \left.\mathstrut f_i(t\bar x)t\right|^{t=1}_{t=0} =f_i(\bar x)
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3667779/if-partial-i-f-j-overline-x-partial-j-f-i-overline-x-then-f-nabla-u/3674559#3674559) on Mathematics Stack Exchange, 2020-05-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

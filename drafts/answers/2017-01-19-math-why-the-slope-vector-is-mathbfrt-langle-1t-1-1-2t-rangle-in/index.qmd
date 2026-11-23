@@ -1,0 +1,56 @@
+---
+title: why the slope vector is $\mathbf{r}(t)=\langle 1+t,1,1-2t \rangle$ in this problem?
+date: '2017-01-19'
+description: Back up a bit. The first $\mathbf{r}(t)$ in that paragraph is a vector equation for $C1$, that is, the curve defined by equations $y=1$ and $z=f(x,y)$. We…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2104645
+se-link: https://math.stackexchange.com/questions/2104612/why-the-slope-vector-is-mathbfrt-langle-1t-1-1-2t-rangle-in-this-probl/2104645#2104645
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[why the slope vector is $\mathbf{r}(t)=\langle 1+t,1,1-2t \rangle$ in this problem?](https://math.stackexchange.com/questions/2104612/why-the-slope-vector-is-mathbfrt-langle-1t-1-1-2t-rangle-in-this-probl), asked by [DSL](https://math.stackexchange.com/users/230517/dsl) on Mathematics Stack Exchange (2017-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If $f(x,y)=4-x^{2}-2y^{2}$, find $f_{x}(1,1)$ and $f_{y}(1,1)$ and interpret these numbers as slopes. 
+>
+> I understand that this is a partial derivative
+>
+> and I can solve it by setting $x$ or $y$ as constant. 
+>
+> by setting $y$ as constant, then how come the vector for slope is 
+>
+> $\mathbf{r}(t)=\langle 1+t,1,1-2t \rangle$ for $T_{1}$ in this case as indicated in the picture?
+>
+> ?
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: Mcscx.png
+:::
+
+Back up a bit.  The first $\mathbf{r}(t)$ in that paragraph is a vector equation for $C_1$, that is, the curve defined by equations $y=1$ and $z=f(x,y)$.  We could translate it into parametric equations as $x=t$, $y=1$, and $z=f(t,1) = 2-t^2$.
+
+$T_1$ is the line tangent to $C_1$ at the point $P=(1,1,2)$.  With the vector equation $\mathbf{r}(t)$ used above, $T_1$ has direction vector $\mathbf{v}$ given by $\mathbf{r}'(1)$.  Since $\mathbf{r}'(t) = \left<1,0,-2t\right>$, we have $\mathbf{v} = \left<1,0,-2\right>$.
+
+The *second* $\mathbf{r}(t)$ is a vector equation for $T_1$.  We can construct this using the point $P$ and the direction vector $\mathbf{v}$.  Setting $\mathbf{r}_0 = \overrightarrow{OP} = \left<1,1,2\right>$, $T_1$ has vector equation
+$$\mathbf{r}(t) = \mathbf{r}_0 + t \mathbf{v} = \left<1,1,2\right>+t\left<1,0,-2\right> = \left<1+t,1,1-2t\right>$$
+
+It's perhaps unfortunate that Stewart uses $\mathbf{r}(t)$ as a generic variable for vector functions, rather than a specific named one.  But it's akin to giving parametric equations for $C_1$ as $x=t$, $y=1$, and $z=2-t^2$, then immediately after giving parametric equations for $T_1$ as $x=1+t$, $y=1$, and $z=1-2t$.  The $x$, $y$, and $z$ in each set of equations are just variable names.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2104612/why-the-slope-vector-is-mathbfrt-langle-1t-1-1-2t-rangle-in-this-probl/2104645#2104645) on Mathematics Stack Exchange, 2017-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

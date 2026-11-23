@@ -1,0 +1,51 @@
+---
+title: Use the definition of partial derivatives as limits (4) to find $f_x(x,y)$, $f_y(x,y)$
+date: '2017-10-10'
+description: In each of these problems, the idea is to simplify the difference quotient so that the denominator does not tend to zero as $h\to 0$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2465377
+se-link: https://math.stackexchange.com/questions/2465372/use-the-definition-of-partial-derivatives-as-limits-4-to-find-f-xx-y-f-y/2465377#2465377
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- limits
+- multivariable-calculus
+- partial-derivative
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use the definition of partial derivatives as limits (4) to find $f_x(x,y)$, $f_y(x,y)$](https://math.stackexchange.com/questions/2465372/use-the-definition-of-partial-derivatives-as-limits-4-to-find-f-xx-y-f-y), asked by [2316354654](https://math.stackexchange.com/users/115082/2316354654) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> [![enter image description here][q-1]][q-1]
+>
+> I'm not sure how I'm supposed to approach this. I tried using the limit definition below, and then plugging in small values near 0 for h and it seemed like it would be 1.. but I think I'm way off. I know how to take partial derivatives with respect to x, y the regular way but I'm confused on how to do this with (4). I checked in my book, but it's not really straight forward. I couldn't find a similar example online either. Please help.
+>
+>   [q-1]: Jl9lr.png
+:::
+
+In each of these problems, the idea is to simplify the difference quotient so that the denominator does not tend to zero as $h\to 0$.  
+
+For instance, let $f(x,y) = x^2y$.  This is not your problem, but once you understand this problem, you will know how to do your problems.  Then
+
+$$\begin{align*}
+    f_x(x,y) &= \lim_{h\to 0} \frac{f(x+h,y) - f(x,y)}{h}
+    \\&= \lim_{h\to 0} \frac{(x+h)^2y - x^2y}{h}
+    \\&= \lim_{h\to 0} \frac{(x^2+2xh+h^2)y - x^2y}{h}
+    \\&= \lim_{h\to 0} \frac{x^2y+2xhy+h^2y - x^2y}{h}
+    \\&= \lim_{h\to 0} \frac{2xhy+h^2y}{h}
+    \\&= \lim_{h\to 0} (2xy+hy) = 2xy
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2465372/use-the-definition-of-partial-derivatives-as-limits-4-to-find-f-xx-y-f-y/2465377#2465377) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

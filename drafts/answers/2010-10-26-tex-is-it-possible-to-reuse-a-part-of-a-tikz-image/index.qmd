@@ -1,0 +1,82 @@
+---
+title: Is it possible to reuse a part of a tikz image
+date: '2010-10-26'
+description: 'To fill in @philosodad''s first way, this does what you want and obeys <a href="http://en.wikipedia.org/wiki/Don%27trepeatyourself">DRY</a>:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 4588
+se-link: https://tex.stackexchange.com/questions/4576/is-it-possible-to-reuse-a-part-of-a-tikz-image/4588#4588
+se-score: 17
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to reuse a part of a tikz image](https://tex.stackexchange.com/questions/4576/is-it-possible-to-reuse-a-part-of-a-tikz-image), asked by [Peter Smit](https://tex.stackexchange.com/users/459/peter-smit) on TeX Stack Exchange (2010-10-26; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a part of my plot that I want to repeat several times.
+>
+> To be exact, the part I want to replicate is:
+>
+> ```latex
+> \draw[yscale=2.0,yshift=-3,xscale=0.1,domain=0:10] plot[id=gauss1] function{exp(-(x-5)*(x-5)/2/2/2.0)/sqrt(pi)/2};
+> \draw[yscale=2.0,yshift=-3,xscale=0.1,domain=5:15] plot[id=gauss2] function{exp(-(x-10)*(x-10)/2/2/2.0)/sqrt(pi)/2};
+> ```
+>
+> I want to place this same function in multiple places in my tikz matrix (I want to repeat this two exact statements on multiple places)
+>
+> What is the best way of doing this? Is there a way to not copy-paste this?
+>
+> I tried including this with \input{sometexfile} but that does give compile errors.
+:::
+
+To fill in @philosodad's first way, this does what you want and obeys <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>:
+
+```latex
+\begin{scope}[yscale=2.0,yshift=-3,xscale=0.1]
+  \foreach \i/\mu/\xmin/\xmax in {1/5/0/10,2/10/5/15} {
+    \draw[domain=\xmin:\xmax] plot[id=gauss\i] function{exp(-(x-\mu)*(x-\mu)/2/2/2.0)/sqrt(pi)/2};
+  }
+\end{scope}
+```
+
+The scope environment isn't required (you can put those options on the `\draw` line) but it does make the line shorter. :-)
+
+If you want to put that in multiple places, just assign it to a box.
+
+```latex
+\usetikzlibrary{matrix}
+
+\newsavebox{\gaussians}
+\savebox{\gaussians}{
+  \begin{tikzpicture}
+    \begin{scope}[yscale=2.0,yshift=-3,xscale=0.1]
+      \foreach \i/\mu/\xmin/\xmax in {1/5/0/10,2/10/5/15} {
+        \draw[domain=\xmin:\xmax] plot[id=gauss\i] function{exp(-(x-\mu)*(x-\mu)/2/2/2.0)/sqrt(pi)/2};
+      }
+    \end{scope}
+  \end{tikzpicture}
+}
+
+\begin{tikzpicture}
+  \node[matrix of nodes] {
+    \usebox{\gaussians} & foo & \usebox{\gaussians} \\
+    bar & \usebox{\gaussians} & baz \\
+  };
+\end{tikzpicture}
+```
+
+**Edit:** Following Yossi's suggestion, I rewrote this to use a saved box rather than a macro.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4576/is-it-possible-to-reuse-a-part-of-a-tikz-image/4588#4588) on TeX Stack Exchange, 2010-10-26, with [edits](https://tex.stackexchange.com/posts/4588/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

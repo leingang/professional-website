@@ -1,0 +1,78 @@
+---
+title: Proving differentiability by testing continuity of the partials?
+date: '2024-06-11'
+description: Most of the answers to your many questions are already very good. I just want to add one point on the third question.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4931004
+se-link: https://math.stackexchange.com/questions/4930953/proving-differentiability-by-testing-continuity-of-the-partials/4931004#4931004
+se-score: 4
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Proving differentiability by testing continuity of the partials?](https://math.stackexchange.com/questions/4930953/proving-differentiability-by-testing-continuity-of-the-partials), asked by [InvestingScientist](https://math.stackexchange.com/users/694824/investingscientist) on Mathematics Stack Exchange (2024-06-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This is question 54 from Section 2.3 of Susan Jane Colley's Vector Calculus. I need to determine whether the function is differentiable at the point $(a,b) = (1, 0)$
+>
+> $$f(x,y) = \big((x-1)y\big)^{2/3}$$
+>
+> So my attempt at this began with checking the partial derivatives for continuity. If the partial derivatives are not continuous then $f$ fails to be differentiable. 
+>
+> $$f_x(x, y) = \frac{2y}{3\big((x-1)y \big)^{1/3}}\\\\
+> f_y(x, y) = \frac{2(x-1)}{3\big((x-1)y \big)^{1/3}}$$
+> Given the both partials are not defined at $(a,b) = (1,0)$, then I determined $f$ is not differentiable. However, I took a look at the solution manual it asserts that the function is indeed differentiable. I have provided her proof of this below. 
+>
+> Solutions 
+> --
+>
+> The solution manual asserts that 
+> $$f(x,0) \equiv 0 \Rightarrow f_x(1, 0) = 0\\\\
+> f(1,y) \equiv 0 \Rightarrow f_y(1, 0) = 0$$
+>
+> The tangent plane $h(x, y) = f(1,0) + f_x(1, 0)(x-1) + f_y(1, 0)(y-0) = 0$. Thus, for $(x,y) \neq (1,0)$ we have that 
+> $$0 \leq \frac{|f(x,y) - h(x,y)|}{||(x,y) - (1,0)||} = \frac{|f(x,y)|}{\sqrt{(x-1)^2 + y^2}}$$
+> Then
+> $$|f(x,y)| = |x-1|^{2/3}|y|^{2/3} \leq ((x-1)^2 + y^2)^{1/3}((x-1)^2 + y^2)^{1/3}\\\\
+> = ((x-1)^2 + y^2)^{2/3}$$
+> Thus, 
+> $$\frac{|f(x,y)|}{\sqrt{(x-1)^2 + y^2}} \leq \frac{((x-1)^2 + y^2)^{2/3}}{((x-1)^2 + y^2)^{1/2}} = ((x-1)^2 + y^2)^{1/6}$$
+> Because the last expression approaches zero as $(x,y) \rightarrow (0,0)$ then $f$ must be differentiable at $(1,0)$
+>
+> I have several questions
+>
+>  1. Could you explain why despite the fact the partial derivatives are not continuous at $(a,b) = (1,0)$, we go on to assert differentiability?
+>  2. Why does $f(x,0) \equiv 0$ mean that $f_x(1, 0) = 0$?
+>  3. The argument on the tangent plane is confusing. We say $h(1,0) = 0$ but the proof goes on to say "For $(x,y) \neq (1,0)$" and then proceeds to use $h(x)$ at $(1,0)$
+>  4. In the line beginning $|f(x,y)$, what identity is this being used?
+>  5. In the final argument, is this some variation of the squeeze theorem in that if $\lim_{(x,y) \rightarrow (1,0)}((x-1)^2 + y^2)^{1/6} = 0$ then since this is greater than or equal to $|f(x,y)| = |x-1|^{2/3}|y|^{2/3}$, then its limit must also be zero?
+>
+> Apologies for the long question but I want to ensure I understand this.
+:::
+
+Most of the answers to your many questions are already very good. I just want to add one point on the third question.
+
+The author is using this definition of differentiable: $f(x,y)$ is differentiable at $(a,b)$ if $f_x(a,b)$ and $f_y(a,b)$ exist, and furthermore that $$\lim_{(x,y) \to (a,b)} \frac{f(x,y) - h(x,y)}{\Vert \left<x,y\right> - \left<a,b\right>\Vert} = 0$$
+
+Here $h(x,y)$ is the linearization of $f$ at $(a,b)$: $h(x,y) = f(a,b)+f_x(a,b)(x-a) + f_y(a,b)(y-b)$. The graph of $h$ is a plane and is the best candidate for “tangent plane” to the graph of $f$ at $(a,b)$. Every definition of differentiability comes down to the idea that this plane approximates $f(x,y)$ very well near $(a,b)$. How well? Near $(a,b)$ the difference between $f(x,y)$ and $h(x,y)$ is much smaller than the distance between $(x,y)$ and $(a,b)$.
+
+We are focusing on the point with $a=1$ and $b=0$. Having used the limit definition of partial derivative, we know $f_x(1,0) = f_y(1,0) = 0$. This means $h(x,y) = 0(x-1) + 1(y-0) = 0$. This means we need to check if
+$$\frac{f(x,y) - h(x,y)}{\Vert \left<x,y\right> - \left<1,0\right>\Vert} = \frac{f(x,y) - 0}{\sqrt{(x-1)^2 + (y-0)^2}}
+= \frac{f(x,y)}{\sqrt{(x-1)^2 + y^2}}
+= \frac{((x-1)y)^{2/3}}{\sqrt{(x-1)^2 + y^2}}$$
+tends to zero as $(x,y) \to (1,0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4930953/proving-differentiability-by-testing-continuity-of-the-partials/4931004#4931004) on Mathematics Stack Exchange, 2024-06-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

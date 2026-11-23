@@ -1,0 +1,57 @@
+---
+title: Number of ways to label die with opposing faces summing to 7
+date: '2020-01-01'
+description: Your successive face-swapping doesn't produce as many unique labelings as you think. Once you swap faces twice, you are back in the original orientation, as…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3494414
+se-link: https://math.stackexchange.com/questions/3494386/number-of-ways-to-label-die-with-opposing-faces-summing-to-7/3494414#3494414
+se-score: 12
+se-accepted: true
+se-tags:
+- combinatorics
+- group-theory
+- finite-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Number of ways to label die with opposing faces summing to 7](https://math.stackexchange.com/questions/3494386/number-of-ways-to-label-die-with-opposing-faces-summing-to-7), asked by [bob](https://math.stackexchange.com/users/620729/bob) on Mathematics Stack Exchange (2020-01-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> A friend and I have a disagreement about the number of unique ways to label the faces of a six-sided die with integers from one to six so that each pair of opposing faces sums to seven.
+>
+> I think the answer is 8 since swapping each pair of opposing faces results in (I think) a different handedness for the two hemi cubes centered on the two faces being swapped, without affecting the other hemi cubes. So I think the problem is represented by the possible independent states of the three opposing pairs, giving $2^3=8$ permutations.
+>
+> My friend thinks the answer is 2, as he argues that a single swap changes the handedness of the *entire die*, and that further independent swaps can’t further change the die’s handedness, and thus don’t generate unique states.
+>
+> Who is right? (Or is neither of us right?)
+:::
+
+Your successive face-swapping doesn't produce as many unique labelings as you think.  Once you swap faces twice, you are back in the original orientation, as this figure shows:
+
+[![Some symmetries of a cube.  The cube is labeled with the numbers 1 through 6.  The numbers on opposite sides are swapped twice, and the cube is rotated 90 degrees twice.  We see they produce the same configuration.][1]][1]
+
+The large numbers are on the faces, and the small ones are on the hidden faces that they are nearest.  Swapping the top/bottom and left/right pairs produces the same labeling as simply rotating 180° around the front-back axis.
+
+So here is another way to go about counting the labelings:  Fix a single corner of the cube and consider the three faces incident on that corner:
+
+* There are six possibilities for the first face: any number from 1 to 6;
+* Once the first face is chosen, there are *four* possibilities for the second face, because neither the number on the first face, nor its complement, which has to be placed opposite the first face, are available.
+* Once the first two faces are chosen, there are only two possibilities for the last face.
+
+So there are $6 \times 4 \times 2$ ways to label the cube if it's in a fixed position.  Of course, we are allowed to rotate the cube, and labelings of the cube should be considered equivalent if one can be rotated into the other.  [There are $4!$ rotations of the cube](https://en.wikipedia.org/wiki/Octahedral_symmetry).  So the number of distinct labelings modulo rotation is
+$$\frac{6 \times 4 \times 2}{4 \times 3 \times 2 \times 1} = 2$$
+
+
+  [1]: eWOBd.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3494386/number-of-ways-to-label-die-with-opposing-faces-summing-to-7/3494414#3494414) on Mathematics Stack Exchange, 2020-01-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

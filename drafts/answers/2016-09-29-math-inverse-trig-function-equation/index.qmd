@@ -1,0 +1,40 @@
+---
+title: Inverse trig function equation
+date: '2016-09-29'
+description: 'Here is a proof without words:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1946864
+se-link: https://math.stackexchange.com/questions/1946690/inverse-trig-function-equation/1946864#1946864
+se-score: 2
+se-accepted: false
+se-tags:
+- trigonometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Inverse trig function equation](https://math.stackexchange.com/questions/1946690/inverse-trig-function-equation), asked by [Anonymous](https://math.stackexchange.com/users/364332/anonymous) on Mathematics Stack Exchange (2016-09-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> How would you suggest I go about solving this question? I've been thinking about it for ages and nothing comes to mind. 
+>
+> $$\arcsin x + \arccos x = \frac{\pi}{2}$$
+:::
+
+Here is a proof without words:
+
+[![proof without words][1]][1]
+
+
+  [1]: 0iGJb.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1946690/inverse-trig-function-equation/1946864#1946864) on Mathematics Stack Exchange, 2016-09-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

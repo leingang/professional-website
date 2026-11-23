@@ -1,0 +1,118 @@
+---
+title: 'Pgfplots: picture moves with sample size!'
+date: '2014-09-25'
+description: I was able to eliminate the behavior by eliminating the space after \pgfmathparse.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 203131
+se-link: https://tex.stackexchange.com/questions/203124/pgfplots-picture-moves-with-sample-size/203131#203131
+se-score: 4
+se-accepted: true
+se-tags:
+- pgfplots
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Pgfplots: picture moves with sample size!](https://tex.stackexchange.com/questions/203124/pgfplots-picture-moves-with-sample-size), asked by [Dominique](https://tex.stackexchange.com/users/2701/dominique) on TeX Stack Exchange (2014-09-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm quite new to `pgfplots` and I must be doing something wrong. I'm plotting a piecewise function using the following code:
+>
+>
+> ```latex
+> \documentclass{amsbook}
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=1.8}
+>
+> \begin{document}
+>
+> \newcommand{\DELTA}{.3}
+> \pgfmathdeclarefunction{fdelta}{1}{%
+>     \pgfmathparse{%
+>       and(#1 >= 1-\DELTA/2, #1 <= 1+\DELTA/2) * (1 - 2 * abs(#1 - 1) / \DELTA)
+>     }
+>  }
+>
+> \begin{tikzpicture}
+>   \begin{axis}[
+>       title={$f_{\delta}(x)$},
+>       xmin=0, xmax=2,
+>       xtick={0, .85, 1.15, 2},
+>       xticklabels={0, \(1-\frac{1}{2}\delta\), \(1+\frac{1}{2}\delta\), 2},
+>       ytick={0, 1},
+>     ]
+>     \addplot[domain=0:2, ultra thick]{fdelta(x)};
+>   \end{axis}
+> \end{tikzpicture}
+>
+> \end{document}
+> ```
+>
+> Now if I add the `samples=11` option to `\addplot`, the picture changes position in the resulting PDF file! If I keep increasing the sample size, the picture eventually moves outside of the margins of the document...
+>
+> In addition to the moving plot issue, finding an appropriate sample size for a piecewise linear function is a bit frustrating because the samples often "miss" the junction points. Is there a way to set samples piecewise as well?
+>
+> As a secondary question, is it possible to set the values of `xtick` using `\DELTA`, as in the function definition?
+>
+> Thanks!
+>
+> Note: my example uses `amsbook`, but I observe the same behavior with `standalone`.
+:::
+
+I was able to eliminate the behavior by eliminating the space after `\pgfmathparse`.
+
+```latex
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+
+\newcommand{\DELTA}{.3}
+\pgfmathdeclarefunction{fdelta}{1}{%
+    \pgfmathparse{%
+      and(#1 >= 1-\DELTA/2, #1 <= 1+\DELTA/2) * (1 - 2 * abs(#1 - 1) / \DELTA)%
+    }%
+ }
+
+\newcommand{\g}[1]{
+\begin{tikzpicture}[scale=0.75]
+  \begin{axis}[
+      title={$f_{\delta}(x)$},
+      xmin=0, xmax=2,
+      xtick={0, .85, 1.15, 2},
+      xticklabels={0, \(1-\frac{1}{2}\delta\), \(1+\frac{1}{2}\delta\), 2},
+      ytick={0, 1},
+      samples=#1
+    ]
+    \addplot[domain=0:2, ultra thick]{fdelta(x)};
+  \end{axis}
+\end{tikzpicture}}
+
+\begin{document}
+
+\g{10}
+
+\g{11}
+
+\g{20}
+
+
+\end{document}
+```
+
+![sample code output][2]
+
+  [1]: LzF9P.png
+  [2]: zVBhB.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/203124/pgfplots-picture-moves-with-sample-size/203131#203131) on TeX Stack Exchange, 2014-09-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

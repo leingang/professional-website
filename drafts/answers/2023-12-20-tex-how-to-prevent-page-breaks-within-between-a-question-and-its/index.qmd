@@ -1,0 +1,231 @@
+---
+title: How to prevent page breaks within between a question and its answer choices in Exam class?
+date: '2023-12-20'
+description: Since \question isn't an environment, there's not a good way to insert a \minipage before and \endminipage after every question. But \filbreak before \question…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 705383
+se-link: https://tex.stackexchange.com/questions/224639/how-to-prevent-page-breaks-within-between-a-question-and-its-answer-choices-in-e/705383#705383
+se-score: 0
+se-accepted: false
+se-tags:
+- exam
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to prevent page breaks within between a question and its answer choices in Exam class?](https://tex.stackexchange.com/questions/224639/how-to-prevent-page-breaks-within-between-a-question-and-its-answer-choices-in-e), asked by [Gregory](https://tex.stackexchange.com/users/14631/gregory) on TeX Stack Exchange (2015-01-23; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to prevent page breaks between a question and its answer choices in the Exam class. There's a good solution to the problem of how to prevent page breaks within the answer choices [here][q-1], but that question did not address how to prevent breaks between the question and the answers.
+>
+>
+>   [q-1]: https://tex.stackexchange.com/questions/32402/how-to-prevent-page-breaks-in-lists-exam-class
+:::
+
+Since `\question` isn't an environment, there's not a good way to insert a `\minipage` before and `\endminipage` after every question. But `\filbreak` before `\question` does a pretty good job. As [Frank Mittelbach notes on another answer][1], `\filbreak` inserts a low level of stretching (overcome by `\fill`) and a strong suggestion of pagebreaking. If LaTeX insists on breaking between a question stem and its options, hardcoding the `minipage` around it is still available. (Note 1)
+
+The next challenge is that the `\question` command isn't provided at the top level of the `exam` class. It's only inside a `questions` environment. Luckily, a `\questionshook` command, expanded inside this environment, is provided. So putting this in the preamble seems to work:
+
+```latex
+\usepackage{etoolbox}
+\appto{\questionshook}{\preto{\question}{\filbreak}}
+```
+
+Here is a complete working example, maybe not minimal, but long enough to stretch across several pages. (Note 2)
+
+```latex
+\documentclass{exam}
+\title{Know your US States and Capitals!}
+
+\usepackage{etoolbox}
+\appto{\questionshook}{\preto{\question}{\filbreak}}
+
+\begin{document}
+
+\begin{questions}
+
+\question What is the capital of California?
+\begin{choices}
+    \choice Los Angeles
+    \choice Sacramento
+    \choice San Francisco
+    \choice San Diego
+\end{choices}
+
+\question Which city serves as the capital of Texas?
+\begin{choices}
+    \choice Dallas
+    \choice Houston
+    \choice Austin
+    \choice San Antonio
+\end{choices}
+
+\question What is the capital of Florida?
+\begin{choices}
+    \choice Miami
+    \choice Orlando
+    \choice Jacksonville
+    \choice Tallahassee
+\end{choices}
+
+\question Which city is the capital of New York?
+\begin{choices}
+    \choice Buffalo
+    \choice Albany
+    \choice New York City
+    \choice Syracuse
+\end{choices}
+
+\question What is the capital of Nevada?
+\begin{choices}
+    \choice Reno
+    \choice Henderson
+    \choice Carson City
+    \choice Las Vegas
+\end{choices}
+
+\question Which city serves as the capital of Colorado?
+\begin{choices}
+    \choice Denver
+    \choice Boulder
+    \choice Colorado Springs
+    \choice Aurora
+\end{choices}
+
+\question What is the capital of Massachusetts?
+\begin{choices}
+    \choice Springfield
+    \choice Boston
+    \choice Worcester
+    \choice Cambridge
+\end{choices}
+
+\question Which city is the capital of Washington state?
+\begin{choices}
+    \choice Seattle
+    \choice Tacoma
+    \choice Spokane
+    \choice Olympia
+\end{choices}
+
+\question What is the capital of Hawaii?
+\begin{choices}
+    \choice Maui
+    \choice Honolulu
+    \choice Kauai
+    \choice Hilo
+\end{choices}
+
+\question Which city serves as the capital of Ohio?
+\begin{choices}
+    \choice Cincinnati
+    \choice Columbus
+    \choice Cleveland
+    \choice Dayton
+\end{choices}
+
+% Additional Questions (11-20)
+
+\question What is the capital of Arizona?
+\begin{choices}
+    \choice Tucson
+    \choice Mesa
+    \choice Phoenix
+    \choice Flagstaff
+\end{choices}
+
+\question Which city serves as the capital of Pennsylvania?
+\begin{choices}
+    \choice Philadelphia
+    \choice Pittsburgh
+    \choice Allentown
+    \choice Harrisburg
+\end{choices}
+
+\question What is the capital of Illinois?
+\begin{choices}
+    \choice Chicago
+    \choice Springfield
+    \choice Rockford
+    \choice Peoria
+\end{choices}
+
+\question Which city is the capital of Oregon?
+\begin{choices}
+    \choice Eugene
+    \choice Salem
+    \choice Portland
+    \choice Bend
+\end{choices}
+
+\question What is the capital of Tennessee?
+\begin{choices}
+    \choice Memphis
+    \choice Knoxville
+    \choice Chattanooga
+    \choice Nashville
+\end{choices}
+
+\question Which city serves as the capital of New Jersey?
+\begin{choices}
+    \choice Newark
+    \choice Trenton
+    \choice Jersey City
+    \choice Atlantic City
+\end{choices}
+
+\question What is the capital of Wisconsin?
+\begin{choices}
+    \choice Milwaukee
+    \choice Green Bay
+    \choice Madison
+    \choice Kenosha
+\end{choices}
+
+\question Which city is the capital of Minnesota?
+\begin{choices}
+    \choice Rochester
+    \choice St. Paul
+    \choice Duluth
+    \choice Minneapolis
+\end{choices}
+
+\question What is the capital of Utah?
+\begin{choices}
+    \choice Salt Lake City
+    \choice Provo
+    \choice Ogden
+    \choice St. George
+\end{choices}
+
+\question Which city serves as the capital of Maryland?
+\begin{choices}
+    \choice Baltimore
+    \choice Annapolis
+    \choice Rockville
+    \choice Frederick
+\end{choices}
+
+\end{questions}    
+\end{document}
+```
+
+Notes:
+
+1. LaTeX permits you to pretend a command is an environment. `\begin{question}` starts a group and expands `\question`, and (since `\endquestion` isn't defined) `\end{question}` ends the group and does nothing else. Kind of nice if you prefer to use environments.
+
+2. [ChatGPT knows how to use the `exam` class!](https://chat.openai.com/share/596f7b3f-d529-4d7e-8738-6504353b40a8)
+
+
+  [1]: https://tex.stackexchange.com/a/422573/1402
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/224639/how-to-prevent-page-breaks-within-between-a-question-and-its-answer-choices-in-e/705383#705383) on TeX Stack Exchange, 2023-12-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

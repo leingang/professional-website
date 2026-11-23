@@ -1,0 +1,139 @@
+---
+title: Strange recursive macro output
+date: '2010-11-03'
+description: Not sure what you want to happen but if you change the second example to
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 4886
+se-link: https://tex.stackexchange.com/questions/4885/strange-recursive-macro-output/4886#4886
+se-score: 2
+se-accepted: false
+se-tags:
+- macros
+- e-tex
+- recursion
+- loops
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Strange recursive macro output](https://tex.stackexchange.com/questions/4885/strange-recursive-macro-output), asked by [yannisl](https://tex.stackexchange.com/users/963/yannisl) on TeX Stack Exchange (2010-11-03; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Strange recursive macro output
+>
+> The code that follows describes a macro that can iterate recursively (i.e, a forloop) and uses e-TeX `numexpr`. It is based on an example found in the [e-TeX manual][q-1]  (page 9)
+>
+> The first part of the code is pretty straight forward. In the second definition of `foo`, it appears that the macro loops twice! 
+>
+> ```latex
+> 0,1,2,3,4,5
+> TeX
+> TeX
+> TeX
+> TeX
+> TeX
+> ```
+>
+> Something does not look correct here! It reminds me of closures in JavaScript. Can you explain this behaviour?
+>
+> There is also a second part to the question. The e-TeX manual defines a similar function as:
+>
+> ```latex
+> \def\foo#1#2{\noindent\number#1
+> \ifnum#1<#2,
+> \expandafter\foo
+> \expandafter{\number\numexpr#1+1\expandafter}%
+> \expandafter{\number#2\expandafter}%
+> \fi}
+> ```
+>
+> What are all these `\expandafters` used for? They seem unecessary. Shouldn't also the comma be after `\number#1` on line one rather than after the `ifnum`?
+>
+> Here is my code with all three examples:
+>
+>
+> ```latex
+> \documentclass[11pt]{article}
+> \begin{document}
+>
+> \def\foo#1#2#3{\noindent\number#1, \TeX\par
+> \ifnum#1<#2   
+>   \foo{\number\numexpr#1+\number#3}{\number#2}{\number#3}%
+> \fi}
+>
+> \foo{0}{5}{1}
+> \bigskip
+>
+>
+> \def\foo#1#2#3{\noindent\number#1, 
+> \ifnum#1<#2
+>   \foo{\number\numexpr#1+\number#3}{\number#2}{\number#3}%
+>    %\else\relax
+>
+> \noindent\TeX\par
+> \fi}
+>
+>
+> \foo{12}{18}{1}
+>
+>
+> \bigskip
+> \def\foo#1#2{\number#1, \TeX\par
+> \ifnum#1<#2
+> \expandafter\foo
+> \expandafter{\number\numexpr#1+1\expandafter}%
+> \expandafter{\number#2\expandafter}% 
+> \fi}
+>
+>
+>
+> \foo{12}{18}
+>
+> \end{document}
+> ```
+>
+>
+>
+>
+>   [q-1]: http://www.let.rug.nl/alfa/tex/tetex30/etex/base/etex-man.pdf
+:::
+
+Not sure what you want to happen but if you change the second example to 
+
+```latex
+\def\foo#1#2#3{\noindent\number#1,\TeX\par
+\ifnum#1<#2
+  \foo{\number\numexpr#1+\number#3}{\number#2}{\number#3}%
+\fi}
+
+\foo{12}{18}{1}
+```
+
+you will get
+
+> 12, TeX
+>
+> 13, TeX
+>
+> 14, TeX
+>
+> 15, TeX
+>
+> 16, TeX
+>
+> 17, TeX
+>
+> 18, TeX
+
+For the last example, you can judge for yourself if the `\expandafter`s are necessary by taking them out and seeing what happens.  Essentially the `\ifnum` will get evaluated not on a number but on `\number\numexpr#1+1`, which it won't know how to resolve.  You get an infinite loop.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4885/strange-recursive-macro-output/4886#4886) on TeX Stack Exchange, 2010-11-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

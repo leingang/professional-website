@@ -1,0 +1,51 @@
+---
+title: A good memorandum template for LaTeX
+date: '2010-11-16'
+description: Do you have an example you're emulating that you can point out? Googling "latex fax cover sheet" found this page with a plain TeX template but I'm not sure if…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5482
+se-link: https://tex.stackexchange.com/questions/5479/a-good-memorandum-template-for-latex/5482#5482
+se-score: 1
+se-accepted: true
+se-tags:
+- templates
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[A good memorandum template for LaTeX](https://tex.stackexchange.com/questions/5479/a-good-memorandum-template-for-latex), asked by [Rook](https://tex.stackexchange.com/users/18045/rook) on TeX Stack Exchange (2010-11-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Pretty much the title says it all ... does anyone know of a good memorandum template (with an example maybe?).
+>
+> You know, the things companies print on their text and stuff before faxing them out. It is usually composed of a letterhead on top (a logo on the left is optional), and some accounts and banking data in small letters on the bottom of the document.
+>
+> In the middle, goes your text.
+>
+> I'm rather unexperienced in composing LaTeX documents, but I have to make a memo and want it to look rather nice, so bear with me, if something in here sounds silly.
+>
+> Examples: 
+>
+> ![Juniata College letterhead][q-1]
+>
+> ![Brockhouse letterhead][q-2]
+>
+>
+>   [q-1]: 589RL.jpg
+>   [q-2]: miCRf.gif
+:::
+
+Do you have an example you're emulating that you can point out?  Googling "latex fax cover sheet" found [this page](http://www.dsl.org/comp/templates/) with a plain TeX template but I'm not sure if the template classifies as "rather nice."
+
+This might be a good application of ConTeXt here.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5479/a-good-memorandum-template-for-latex/5482#5482) on TeX Stack Exchange, 2010-11-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

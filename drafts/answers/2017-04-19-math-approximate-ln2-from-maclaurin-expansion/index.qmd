@@ -1,0 +1,40 @@
+---
+title: Approximate $\ln(2)$ from Maclaurin expansion
+date: '2017-04-19'
+description: 'To stitch the comments together, it seems that you have already found: $$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots \tag{$$}$$ You…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2242225
+se-link: https://math.stackexchange.com/questions/2242179/approximate-ln2-from-maclaurin-expansion/2242225#2242225
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Approximate $\ln(2)$ from Maclaurin expansion](https://math.stackexchange.com/questions/2242179/approximate-ln2-from-maclaurin-expansion), asked by [Rashaad Gatlin](https://math.stackexchange.com/users/438382/rashaad-gatlin) on Mathematics Stack Exchange (2017-04-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was given a function f(x)= ln((1-x)/(1+x)) and I had to find the 9th degree polynomial and use it to approximate ln2.  I came up with the polynomial (x- (x^2)/2 + (x^3)/3 - (x^4)/4...., but I don't know what to do next to approximate ln2.
+:::
+
+To stitch the comments together, it seems that you have already found:
+$$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3}  - \frac{x^4}{4} + \cdots
+\tag{$*$}$$
+You were asked to find the Maclaurin series for
+$$f(x) = \ln\left(\frac{1-x}{1+x}\right) = \ln(1-x) - \ln(1+x)$$
+but if you use (*) twice you should be able to put that together.  Now if you solve
+$$\frac{1-x}{1+x} = \frac{1}{2}$$
+you should be able to find the right $x$ to plug in, and get a series that converges to $\ln\left(\frac{1}{2}\right) = -\ln 2$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2242179/approximate-ln2-from-maclaurin-expansion/2242225#2242225) on Mathematics Stack Exchange, 2017-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

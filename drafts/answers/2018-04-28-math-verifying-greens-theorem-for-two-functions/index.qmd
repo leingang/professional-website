@@ -1,0 +1,57 @@
+---
+title: Verifying Green's Theorem for two functions
+date: '2018-04-28'
+description: You need to show that $$\int{\partial D} (M\,dx + N\,dy) = \iint{D} \left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right)\,dA$$
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2756862
+se-link: https://math.stackexchange.com/questions/2756830/verifying-greens-theorem-for-two-functions/2756862#2756862
+se-score: 2
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- greens-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Verifying Green's Theorem for two functions](https://math.stackexchange.com/questions/2756830/verifying-greens-theorem-for-two-functions), asked by [Marc92](https://math.stackexchange.com/users/552575/marc92) on Mathematics Stack Exchange (2018-04-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Verify Green's theorem for the functions: $M(x,y)=2x^3+y^3$ and $N(x,y)=3xy^2$, and the region $D$ which is the annulus between the circles of radii $a$ and $b$ ($a<b$), centered at the origin. Be careful with the orientations.
+>
+> I am aware of Green's theorem but am not sure how to approach and proceed with this problem. I don't know how to set up the integral and I am very confused. Help would be greatly appreciated! Please and thank you!
+:::
+
+You need to show that 
+$$\int_{\partial D} (M\,dx + N\,dy)
+    = \iint_{D} \left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right)\,dA$$
+
+For the right-hand side:
+$$\begin{align*}
+    \frac{\partial N}{\partial x} &=6xy \\
+    \frac{\partial M}{\partial y} &=3y^2 \\
+\end{align*}$$
+So 
+$$\begin{align*}
+    \iint_{D} \left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right)\,dA
+    &= \iint_D \left(6xy-3y^2\right)\,dA \\
+    &= \int_0^{2\pi} \int_a^b 6\left((r \cos \theta)(r\sin\theta) - 3(r\sin\theta)^2\right)\,r\,dr\,d\theta
+\end{align*}$$
+For the left-hand side, let $C_a$ and $C_b$ be the circles of radius $a$ and $b$ centered at the origin.  Then as oriented curves, $\partial D = C_b - C_a$.  We can parametrize $C_a$ by $x=a\cos\theta$, $y=a\sin\theta$, $0 \leq\theta\leq 2\pi$, and similarly for $C_b$.  Therefore
+$$\begin{align*}
+    \int_{\partial D} \left(M\,dx + N\,dy\right)
+    &= \int_0^{2\pi}\left(\left(2(b\cos\theta)^3 +(b\sin\theta)^3\right)(-b\sin\theta) + \left(3(b\cos\theta)(b\sin\theta)^2\right)(b\cos\theta)\right)\,d\theta \\
+    &\qquad-\int_0^{2\pi}\left(\left((a\cos\theta)^3 +(a\sin\theta)^3\right)(-a\sin\theta) + \left(3(a\cos\theta)(a\sin\theta)^2\right)(a\cos\theta)\right)\,d\theta
+\end{align*}$$
+Evaluate each and show that they are equal.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2756830/verifying-greens-theorem-for-two-functions/2756862#2756862) on Mathematics Stack Exchange, 2018-04-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

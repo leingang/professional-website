@@ -1,0 +1,42 @@
+---
+title: Is it possible to extend forms defined on a vector sub-bundle?
+date: '2016-12-14'
+description: 'To answer your original question: If $A$ has a metric on it, you can let $E^\perp$ be the subbundle of $A$ orthogonal to $E$. Then $A = E \oplus E^\perp$. The…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2058518
+se-link: https://math.stackexchange.com/questions/2058425/is-it-possible-to-extend-forms-defined-on-a-vector-sub-bundle/2058518#2058518
+se-score: 1
+se-accepted: true
+se-tags:
+- differential-geometry
+- vector-bundles
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to extend forms defined on a vector sub-bundle?](https://math.stackexchange.com/questions/2058425/is-it-possible-to-extend-forms-defined-on-a-vector-sub-bundle), asked by [PtF](https://math.stackexchange.com/users/49572/ptf) on Mathematics Stack Exchange (2016-12-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $\pi:A\longrightarrow M$ be a vector bundle and $E\subseteq A$ a vector sub-bundle. Recall, a $k$-form on $A$ is a section of $\Lambda^k A^*$. Let us write $\Omega^k(A):=\Gamma(\Lambda^k A^*)$. 
+>
+> The inclusion $\jmath: E\longrightarrow A$ is a vector bundle map and therefore induces $\jmath^*:\Omega^k(A)\longrightarrow \Omega^k(E)$ so that we can ''restrict" forms on $A$ to forms on $E$. 
+>
+> Conversely, is it possible to extend forms on $E$ to forms on $A$?
+>
+> Thanks.
+:::
+
+To answer your original question: If $A$ has a metric on it, you can let $E^\perp$ be the subbundle of $A$ orthogonal to $E$.  Then $A = E \oplus E^\perp$.  The map $\pi \colon A \to E$ which is the identity on $E$ and zero on $E^\perp$ induces $\pi^* \colon \Omega^k(E) \to \Omega^k(A)$ (for any $k$).  Since $\pi \circ \jmath = \operatorname{id}_E$, $\jmath^*\circ\pi^* = \operatorname{id}_{\Omega^k(E)}$, so $\pi^*$ extends forms on $E$ to forms on $A$.
+
+To answer your follow up question: I think you're right that if $\jmath$ is an injection than $\jmath^*$ is a surjection.  The short exact sequence $0 \to E \to A \to A/E \to 0$ gives the contravariant short exact sequence in forms.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2058425/is-it-possible-to-extend-forms-defined-on-a-vector-sub-bundle/2058518#2058518) on Mathematics Stack Exchange, 2016-12-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

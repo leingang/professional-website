@@ -1,0 +1,43 @@
+---
+title: Is there a function that is differentiable but not integrable?
+date: '2015-02-16'
+description: It's important to know that if a function is continuous on a closed interval, it is integrable on that interval. This question seems to be getting at how…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1150914
+se-link: https://math.stackexchange.com/questions/1150910/is-there-a-function-that-is-differentiable-but-not-integrable/1150914#1150914
+se-score: 14
+se-accepted: true
+se-tags:
+- integration
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a function that is differentiable but not integrable?](https://math.stackexchange.com/questions/1150910/is-there-a-function-that-is-differentiable-but-not-integrable), asked by [Robert](https://math.stackexchange.com/users/215496/robert) on Mathematics Stack Exchange (2015-02-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> is there such a function that is defined in [0,1], differentiable in (0,1) but not integrable? Thanks in advance.
+:::
+
+It's important to know that if a function is continuous on a closed interval, it is integrable on that interval.  This question seems to be getting at how strict that condition is.
+
+If a function is differentiable on an *open* interval, then it is automatically continuous on that interval.  The question is whether it can be extended to a continuous function on the enclosing closed interval.  And one way this can fail to happen is if the function has an infinite limit at an endpoint.
+
+So that is how we construct the counterexample.  The function
+$$f(x) = \begin{cases} 
+    0 & x=0 \\
+    \frac{1}{x} & x > 0 
+       \end{cases}$$
+is defined on $[0,1]$, differentiable on $(0,1)$, but not integrable on $[0,1]$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1150910/is-there-a-function-that-is-differentiable-but-not-integrable/1150914#1150914) on Mathematics Stack Exchange, 2015-02-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

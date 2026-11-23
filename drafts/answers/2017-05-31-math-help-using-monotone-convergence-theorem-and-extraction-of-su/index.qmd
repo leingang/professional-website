@@ -1,0 +1,67 @@
+---
+title: Help using Monotone Convergence Theorem and Extraction of Subsequences to write proof
+date: '2017-05-31'
+description: No, this argument has multiple logical errors.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2304874
+se-link: https://math.stackexchange.com/questions/2304747/help-using-monotone-convergence-theorem-and-extraction-of-subsequences-to-write/2304874#2304874
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- sequences-and-series
+- proof-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Help using Monotone Convergence Theorem and Extraction of Subsequences to write proof](https://math.stackexchange.com/questions/2304747/help-using-monotone-convergence-theorem-and-extraction-of-subsequences-to-write), asked by [Jeg](https://math.stackexchange.com/users/422630/jeg) on Mathematics Stack Exchange (2017-05-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Q: Let $(X_n)_{n=1}^∞$  be a bounded sequence of real numbers. For all n∈ℕ, let $t_n:=\inf\{x_n: k≥n\}$. Show that $(t_n)_{n=1}^∞$ is convergent. 
+>
+> I know that I have to use the monotone convergent theorem (and I think I can use the Extraction of Subsequences), but I'm not sure that I applied them correctly, or if my proof needs to be more in debth. 
+>
+> So since $k≥n$, we know that$X_n≥X_k$ or $X_n≤X_k$, and hence $X_n$ is convergent (by the monotone convergence theorem). I think that this line $"t_n:=\inf\{X_n: k≥n\}"$ means that $t_n$ is a subsequnce of $X_n$, so by a proposition of the Extraction of Subsequences "If a subsequence converges to $l$, then every subsequence converges to $l$", if $X_n$ converges to $l$, then $t_n$ converges to $l.$ 
+>
+> Does this make sense, and do I need to add anything? 
+>
+> Thanks in advance for any help.
+:::
+
+No, this argument has multiple logical errors.
+
+> So since $k\geq n$, 
+
+Stop right here.  $k$ and $n$ are not fixed numbers.  For *each* $n$, we look for the infimum of $X_k$ for *all* $k$ larger than $n$.  This number is what we call $t_n$. 
+
+Aside: it's a good idea to compute $(t_n)$ for various bounded sequences $(X_n)$.  What if $X_n = 1/n$?  What if $X_n = (-1)^n$?
+
+> we know that $X_n≥X_k$ or $X_n≤X_k$, 
+
+Well, this is true for any numbers $X_n$ and $X_k$, **but**
+
+> and hence $(X_n)$ is convergent (by the monotone convergence theorem). 
+
+It seems you have inferred that $X_n≥X_k$ for all indices $n$ and $k$ with $n \geq k$ or that $X_n≤X_k$ for all indices $n$ and $k$ with $n \geq k$.  You inducted from a single, trivial case to the universal.  
+
+Put it another way: the only hypothesis you were given about $(X_n)$ is that it was bounded.  You seem to have shown that it is convergent.  Is it true that all bounded sequences converge?  No, so something must be wrong with this argument.
+
+> I think that this line "$t_n:=\inf\left\{X_n: k≥n\right\}$" means that $(t_n)$ is a subsequence of $(X_n)$
+
+It doesn't.  For instance, if $X_n = 1/n$ for each $n\geq 1$, then $t_n = 0$ for all $n$.  Not only is the constant sequence $(0)$ not a subsequence of $(1/n)$, none of the values of the sequence $(1/n)$ are zero.
+
+* * *
+
+OK, so how do we make this right?  The monotone convergence theorem is the right way to go.  You should be able to show that $(t_n)$ is bounded because $(X_n)$ is bounded, and that $(t_n)$ is monotone.  If $n' \geq n$, what can you say about the sets of indices $\left\{k : k \geq n\right\}$ and $\left\{k : k \geq n'\right\}$?  What does that imply about the infima of $X_k$ over those two sets of indices?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2304747/help-using-monotone-convergence-theorem-and-extraction-of-subsequences-to-write/2304874#2304874) on Mathematics Stack Exchange, 2017-05-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

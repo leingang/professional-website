@@ -1,0 +1,109 @@
+---
+title: Linewidth resets when using input files
+date: '2011-10-11'
+description: The problem is that \newlength is global but \setlength is local. The first time your main document inputs fig.tex \plotwidth is undefined so the new length is…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 31215
+se-link: https://tex.stackexchange.com/questions/31213/linewidth-resets-when-using-input-files/31215#31215
+se-score: 3
+se-accepted: false
+se-tags:
+- input
+- lengths
+- grouping
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Linewidth resets when using input files](https://tex.stackexchange.com/questions/31213/linewidth-resets-when-using-input-files), asked by [adn](https://tex.stackexchange.com/users/7561/adn) on TeX Stack Exchange (2011-10-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to set some figure files in standalone .tex files, and then input them in the main file. Those files looks something like this
+>
+> ```latex
+> \ifx \plotwidth \undefined
+>  \newlength{\plotwidth} \setlength{\plotwidth}{0.9\linewidth} 
+> \else \fi% width of the total figure
+> \rule{\linewidth}{\plotwidth}% figure goes here
+> ```
+>
+> The main idea I have is to set standard widths using `\linewidth`, and being able to change the size in the main file by defining the `\plotwidth` before inputting the file. However, when I call the figures the second time in the same file, for some reason the `\plotwidth` is defined but its lenght is zero. As this example show
+>
+> ```latex
+> \documentclass{article}
+>
+> \begin{document}
+>
+> \begin{figure}
+> \input{fig.tex}
+> \caption{Test}
+> \end{figure}
+>
+> \begin{figure}
+> \input{fig.tex}
+> \caption{Test}
+> \end{figure}
+>
+> \end{document}
+> ```
+> Can someone explain me why this is not working, and how to solve it?
+:::
+
+The problem is that `\newlength` is global but `\setlength` is local.  The first time your main document inputs fig.tex `\plotwidth` is undefined so the new length is created and set.  This happens inside a TeX group so the setting is local to the input file.  Then that group ends and `\plotwidth` reverts to its initial setting of `0.0pt`.
+
+The second time the name document inputs fig.tex `\plotwidth` *is* defined, so the `\setlength` branch is not expanded.  The result is that `\plotwidth` remains at `0.0pt`.
+
+The solution is to give `\plotwidth` a value in the main tex file.  
+
+Also, if you want your `fig.tex` file to be standalone tex file, the easiest way to do that is to use the `standalone` document class and package.  Here is your MWE with that:
+
+fig.tex:
+
+```latex
+\documentclass{standalone}
+\begin{document}
+\ifx \plotwidth \undefined
+ \newlength{\plotwidth} \setlength{\plotwidth}{0.9\linewidth} 
+\else \fi% width of the total figure
+
+\rule{\plotwidth}{\plotwidth}% figure goes here
+\end{document}
+```
+
+main.tex:
+
+```latex
+\documentclass{article}
+\usepackage{standalone}
+
+\newlength{\plotwidth} \setlength{\plotwidth}{0.5\linewidth}
+\begin{document}
+
+\begin{figure}
+\include{fig}
+\caption{Test}
+\end{figure}
+
+
+\begin{figure}
+\include{fig}
+\caption{Test}
+\end{figure}
+
+\end{document}
+```
+
+`\showthe\plotwidth` in your file will halt expansion and show you the current value of `\plotwidth`.  Very good for debugging.
+
+I notice as I finish this that egreg has answered as well.  I basically agree with him.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/31213/linewidth-resets-when-using-input-files/31215#31215) on TeX Stack Exchange, 2011-10-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

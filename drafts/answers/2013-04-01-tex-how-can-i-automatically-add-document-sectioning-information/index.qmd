@@ -1,0 +1,105 @@
+---
+title: How can I automatically add document sectioning information to the log file?
+date: '2013-04-01'
+description: Like I suggested in my answer to your other question, you can hook into the \section macro. The issue is that \section is not a simple macro. Its expansion…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 106411
+se-link: https://tex.stackexchange.com/questions/106391/how-can-i-automatically-add-document-sectioning-information-to-the-log-file/106411#106411
+se-score: 5
+se-accepted: true
+se-tags:
+- logging
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I automatically add document sectioning information to the log file?](https://tex.stackexchange.com/questions/106391/how-can-i-automatically-add-document-sectioning-information-to-the-log-file), asked by [Pete](https://tex.stackexchange.com/users/24293/pete) on TeX Stack Exchange (2013-04-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is it possible to add data into the `.log` file?
+>
+> For example, I create a LaTeX file and at some point, i want to put a command that will add data into the `.log` file.
+>
+> I don't want something hardcoded into the LaTeX file. I want to add a message like, "You are now parsing section 1". Then somewhere else in the document, I want to add "You are now parsing section 2".
+>
+> Is it possible, if yes, how can I achieve this?
+:::
+
+Like I suggested in my answer to [your other question][2], you can hook into the `\section` macro.  The issue is that `\section` is not a simple macro.  Its expansion involves an auxiliary macro `\@startsection`, which in turn expands `\@sect` with *eight* arguments.  You can read Section 61.2 of [source2e][1] for the gory details, but the first argument is the "level" of section (`section`, `subsection`, etc.), and the eighth is the name of the section.  
+
+You need a TeX executable with the e-TeX primitives to use the [`etoolbox`](http://ctan.org/pkg/etoolbox) package.  But you probably do without knowing it.  The code below adds to the `\@sect` command the logging directive.  It essentially does what David and Werner suggested in their comments, but automatically after each sectioning command.
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+
+\makeatletter
+\apptocmd{\@sect}{
+   \typeout{You are now parsing #1 \expandafter\csname the#1\endcsname, ``#8''}
+}
+{%
+   \typeout{Patch of \string\@sect\space succeeded}
+}
+{%
+   \typeout{Patch of \string\@sect\space failed}
+}
+\makeatother
+
+\begin{document}
+
+\section{First}
+\lipsum[1-2]
+
+\subsection{A subsection}
+\lipsum[3-7]
+
+\section{Second}
+\lipsum
+
+\section{Third}
+\lipsum
+
+\end{document}
+```
+
+Here is a snippet from the console output:
+
+```latex
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/lipsum/lipsum.sty)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/etex-pkg/etex.sty))
+Patch of \@sect succeeded
+(./Pete.aux)
+You are now parsing section 1, ``First''
+You are now parsing subsection 1.1, ``A subsection''
+[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+You are now parsing section 2, ``Second''
+[2]
+You are now parsing section 3, ``Third''
+[3] [4] [5] (./Pete.aux) )</usr/local/texlive/2012/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb>
+Output written on Pete.pdf (5 pages, 41359 bytes).
+Transcript written on Pete.log.
+```
+
+
+
+
+  [1]: http://texdoc.net/source2e
+  [2]: https://tex.stackexchange.com/questions/106381/how-is-it-possible-to-put-hidden-data-in-latex
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/106391/how-can-i-automatically-add-document-sectioning-information-to-the-log-file/106411#106411) on TeX Stack Exchange, 2013-04-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

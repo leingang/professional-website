@@ -1,0 +1,88 @@
+---
+title: hiding TikZ definitions inside a namespace
+date: '2024-12-05'
+description: 'Based on your MWE, you want the [mypackage] key to install styles into the current scope. I do that with a style that adds styles. For instance:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 732274
+se-link: https://tex.stackexchange.com/questions/732258/hiding-tikz-definitions-inside-a-namespace/732274#732274
+se-score: 10
+se-accepted: false
+se-tags:
+- tikz-pgf
+- package-writing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[hiding TikZ definitions inside a namespace](https://tex.stackexchange.com/questions/732258/hiding-tikz-definitions-inside-a-namespace), asked by [N. Virgo](https://tex.stackexchange.com/users/12461/n-virgo) on TeX Stack Exchange (2024-12-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm writing a package that I hope to eventually release, which will contain a lot of tikz macros. It will contain a few styles with short names like `box`, and I'm hoping that I can hide those inside the `pgfkeys` hierarchy so as not to pollute the global namespace.
+>
+> What I'm imagining is that there might be a key `/my package/box`, and the user can use it with something along the lines of
+> ```latex
+> \begin{tikzpicture}[my package]
+>    \node[box] at (0,0);
+> \end{tikzpicture}
+> ```
+>
+> However, I can't seem to work out how to do such a simple thing. Here is an MWE for one of my attempts, but it fails with `I do not know the key '/tikz/box'`, so it's evidently not looking inside the `/tikz/my package` namespace.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+>
+> \tikzset{
+> 	my package/.style = {}, % without this it complains about the key /tikz/my package not existing
+> 	my package/box/.style = {
+> 		rounded corners=1mm
+> 	}
+> }
+>
+> \begin{document}
+>
+> \begin{tikzpicture}[my package]
+>    \node[box] at (0,0);
+> \end{tikzpicture}
+>
+> \end{document}
+> ```
+>
+> I'm not attached to the package being used in exactly this way - the code above is just an example. What I'm looking for is the "right way" to make my package easy to use while avoiding potential name clashes.
+:::
+
+Based on your MWE, you want the `[mypackage]` key to install styles into the current scope. I do that with a style that adds styles. For instance:
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+
+\tikzset{
+    my package/.style = {
+        box/.style = {
+            draw,
+            rounded corners=1mm
+        }
+}}
+
+\begin{document}
+
+\begin{tikzpicture}[my package]
+   \node[box] at (0,0) {box};
+\end{tikzpicture}
+
+\end{document}
+```
+
+If your example is much, much bigger, there might be some performance hit from installing these styles over and over. In that case, maybe you could use aliases or another solution.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/732258/hiding-tikz-definitions-inside-a-namespace/732274#732274) on TeX Stack Exchange, 2024-12-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

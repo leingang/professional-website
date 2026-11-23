@@ -1,0 +1,101 @@
+---
+title: Booklets in memoir class
+date: '2011-04-30'
+description: 'In case you want 4 on 1 layout with a booklet orientation, you can use pgfpages like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17015
+se-link: https://tex.stackexchange.com/questions/16967/booklets-in-memoir-class/17015#17015
+se-score: 1
+se-accepted: false
+se-tags:
+- memoir
+- book-design
+- printing
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Booklets in memoir class](https://tex.stackexchange.com/questions/16967/booklets-in-memoir-class), asked by [Paul Salomon](https://tex.stackexchange.com/users/5136/paul-salomon) on TeX Stack Exchange (2011-04-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was just reading this [question](https://tex.stackexchange.com/questions/16803/place-two-a5-pages-on-a4-using-memoir) about using pdfpages to create twoup effects in memoir.  This worked great for me, but I am wondering how I can get the page order to set up a booklet, so that it can be folded in half with correct pagination.  I never got the booklet code to work.  Any idea?
+:::
+
+In case you want 4 on 1 layout with a booklet orientation, you can use pgfpages like this:
+
+```latex
+\documentclass{article}
+% TEX.SE \url{}
+\usepackage{lipsum}
+\usepackage{pgfpages}
+
+
+\pgfpagesdeclarelayout{4 on 1 booklet}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=4,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.25\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    rotation=180,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    rotation=180,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.75\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.25\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{4 on 1 booklet}
+
+\begin{document}
+\lipsum
+\lipsum
+\lipsum
+\end{document}
+```
+
+There is a [bug][1] in pgfpages with rotation that needs to be fixed first, though.
+
+
+  [1]: https://tex.stackexchange.com/questions/16237/is-there-a-way-to-rotate-all-pages-in-xelatex/16245#16245
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16967/booklets-in-memoir-class/17015#17015) on TeX Stack Exchange, 2011-04-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

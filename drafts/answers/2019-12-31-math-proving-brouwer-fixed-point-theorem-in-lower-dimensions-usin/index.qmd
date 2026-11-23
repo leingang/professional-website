@@ -1,0 +1,89 @@
+---
+title: Proving Brouwer fixed point theorem in lower dimensions using vector calculus theorems
+date: '2019-12-31'
+description: I left this tab open for over a week before I finally came up with an answer. Good question!
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3493252
+se-link: https://math.stackexchange.com/questions/3483190/proving-brouwer-fixed-point-theorem-in-lower-dimensions-using-vector-calculus-th/3493252#3493252
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving Brouwer fixed point theorem in lower dimensions using vector calculus theorems](https://math.stackexchange.com/questions/3483190/proving-brouwer-fixed-point-theorem-in-lower-dimensions-using-vector-calculus-th), asked by [Bachmaninoff](https://math.stackexchange.com/users/39117/bachmaninoff) on Mathematics Stack Exchange (2019-12-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> By vector calculus theorems, I don't mean the general Stokes' theorem using differential forms. Rather I mean using Green's theorem for plane curves to prove Brouwer in dimension 2 or divergence theorem in dimension 3.
+>
+> I assume it still boils down to deducing the non-existence of continuous retractions from $D^n$ to $S^{n-1}$. For $n=1$ (so $D^1=[-1,1]$ and $S^0=\{-1,1\})$ the argument seems easy. Assume there is a such a retraction $r$. $r$ must be constant (or else $r[-1,1]$ is disconnected), so $r'=0$. So the fundamental theorem of calculus yields
+>
+> $$0 = \int_{-1}^1 r'(t)dt = r(1)-r(-1)=1-(-1)=2,$$
+> a contradiction.
+>
+> I am essentially asking if there is an explicit application of the standard vector calculus theorems for $n=2,3$ in this spirit. Thanks for any help!
+:::
+
+I left this tab open for over a week before I finally came up with an answer.  Good question!
+
+First, using the FTC in the $n=1$ case is a bit of overkill.  Like you said, a continuous function $r \colon [-1,1] \to \{-1,1\}$ would have to have a connected image, so it must be a constant.  But if $r$ is a retraction, then $r(-1) = -1$ and $r(1) =1$.  These can't both be true.  
+
+As for $n=2$, suppose there is a $C^2$ retraction $F \colon D^2 \to S^1$.  Write $P$ and $Q$ for the components of $F$; since $F$ takes values in $S^1$ we have $P^2+Q^2 = 1$.  Differentiating with respect to $x$ and $y$ gives
+$$\begin{align*}
+    P \frac{\partial P}{\partial x} + Q \frac{\partial Q}{\partial x} &= 0 \\
+    P \frac{\partial P}{\partial y} + Q \frac{\partial Q}{\partial y} &= 0 \\
+\end{align*}$$
+So
+$$\begin{bmatrix} \frac{\partial P}{\partial x} & \frac{\partial Q}{\partial x} \\
+    \frac{\partial P}{\partial y} & \frac{\partial Q}{\partial y} 
+    \end{bmatrix}\begin{bmatrix} P \\ Q \end{bmatrix} = 0$$
+Since $(P,Q) \neq (0,0)$, we must have 
+$$\begin{vmatrix}
+        \frac{\partial P}{\partial x} & \frac{\partial Q}{\partial x} \\
+        \frac{\partial P}{\partial y} & \frac{\partial Q}{\partial y} 
+    \end{vmatrix}
+    =\frac{\partial P}{\partial x}\frac{\partial Q}{\partial y} 
+     - \frac{\partial P}{\partial y}\frac{\partial Q}{\partial x} = 0$$
+Since $F$ is a retraction, we have $P(x,y) = x$ and $Q(x,y) = y$ for all $x,y \in S^1$.  This means that
+$$\oint_{S^1} x\,dy = \oint_{S^1} P\,dQ
+    = \oint_{S^1} P\left(\frac{\partial Q}{\partial x}\,dx + \frac{\partial Q}{\partial y}\,dy\right)$$
+Applying Green's theorem to the right-hand side gives
+$$\begin{align*}
+    \oint_{S^1} P\left(\frac{\partial Q}{\partial x}\,dx + \frac{\partial Q}{\partial y}\,dy\right)
+    &= \iint_{D^2}\left[\frac{\partial}{\partial x}\left(P\frac{\partial Q}{\partial y}\right)- \frac{\partial}{\partial y}\left(P\frac{\partial Q}{\partial x}\right)
+    \right]\,dA
+    \\&= \iint_{D^2}\left[\left(\frac{\partial P}{\partial x}\frac{\partial Q}{\partial y} + P \frac{\partial^2 Q}{\partial x\,\partial y}\right)- 
+\left(\frac{\partial P}{\partial y}\frac{\partial Q}{\partial x}+P \frac{\partial^2 Q}{\partial y\,\partial x}\right)
+    \right]\,dA
+    \\&= \iint_{D^2}\left(\frac{\partial P}{\partial x}\frac{\partial Q}{\partial y} - \frac{\partial P}{\partial y}\frac{\partial Q}{\partial x}\right)\,dA = 0
+\end{align*}$$
+But applying Green's theorem to the left-hand side gives
+$$\begin{align*}
+    \oint_{S^1}x\,dy &= \iint_{D^2}\frac{\partial x}{\partial x}\,dA = \iint_{D^2}1 \,dA = \pi
+\end{align*}$$
+This is a contradiction. $\Box$
+
+* * *
+
+What's happening is a low-tech translation of the usual Stokes' theorem argument (from [Wikipedia](https://en.wikipedia.org/wiki/Brouwer_fixed-point_theorem#A_proof_using_Stokes's_theorem)):
+$$0<\int_{S^{n-1}}\omega = \int_{S^{n-1}}F^*(\omega) = \int_{D^n}dF^*(\omega)= \int_{D^n}F^*(d\omega)=\int_{D^n}F^*(0) = 0$$
+where $\omega = x\,dy$ and $F^*\omega = P\,dQ$ ([here's why](https://math.stackexchange.com/q/1363891/2785)).  Since the partial derivative matrix $\frac{\partial (P,Q)}{\partial (x,y)}$ has zero determinant, $d F^*\omega = dP \wedge dQ = 0$.
+
+For $n=3$, I'm sure you can do something similar.  A function $F \colon D^3 \to S^2$, written in coordinates as $(P,Q,R)$, will satisfy $\left|\frac{\partial(P,Q,R)}{\partial(x,y,z)}\right| = 0$.  If $F$ is a retraction, then 
+$$\iint_{S^2} x\,dy\,dz = \iint_{S^2} P\,dQ\,dR$$
+The LHS is nonzero by the divergence theorem.  The RHS should turn out to be
+$$\iiint_{D^3} \left|\frac{\partial(P,Q,R)}{\partial(x,y,z)}\right|\,dV = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3483190/proving-brouwer-fixed-point-theorem-in-lower-dimensions-using-vector-calculus-th/3493252#3493252) on Mathematics Stack Exchange, 2019-12-31. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

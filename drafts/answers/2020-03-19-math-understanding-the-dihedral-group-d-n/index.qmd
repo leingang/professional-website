@@ -1,0 +1,41 @@
+---
+title: Understanding the Dihedral group, $D_n$
+date: '2020-03-19'
+description: All points of the polygon (interior and boundary) are defined by the vertices. So a symmetry of the polygon is a permutation of the vertices.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3586880
+se-link: https://math.stackexchange.com/questions/3586877/understanding-the-dihedral-group-d-n/3586880#3586880
+se-score: 0
+se-accepted: false
+se-tags:
+- group-theory
+- dihedral-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Understanding the Dihedral group, $D_n$](https://math.stackexchange.com/questions/3586877/understanding-the-dihedral-group-d-n), asked by [Partey5](https://math.stackexchange.com/users/617302/partey5) on Mathematics Stack Exchange (2020-03-19; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know what the dihedral group is, the group of symmetries (length-preserving) functions of a regular n-gon.
+> However, when it is referring to the symmetries of the regular n-gon what is it referring to?
+> Is it referring to the symmetries of:
+> The set of vertices on the n-gon, the set of points in the n-gon or the set of points on the edges of the n-gon ?
+>
+> Also is it considering these points as points in the complex plane?
+:::
+
+All points of the polygon (interior and boundary) are defined by the vertices.  So a symmetry of the polygon is a permutation of the vertices.  
+
+But not every permutation of the vertices is a symmetry of the polygon.  For instance, swapping two adjacent vertices of a square isn't a symmetry of the square.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3586877/understanding-the-dihedral-group-d-n/3586880#3586880) on Mathematics Stack Exchange, 2020-03-19. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

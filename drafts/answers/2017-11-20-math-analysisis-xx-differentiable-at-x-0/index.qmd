@@ -1,0 +1,37 @@
+---
+title: Analysis:Is $x|x|$ differentiable at $x=0$?
+date: '2017-11-20'
+description: It's not because the graph looks nice and smooth that the function is differentiable, although that is what the term is trying to capture.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2528518
+se-link: https://math.stackexchange.com/questions/2528516/analysisis-xx-differentiable-at-x-0/2528518#2528518
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Analysis:Is $x|x|$ differentiable at $x=0$?](https://math.stackexchange.com/questions/2528516/analysisis-xx-differentiable-at-x-0), asked by [kemb](https://math.stackexchange.com/users/411387/kemb) on Mathematics Stack Exchange (2017-11-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I plotted this graph in wolfram alpha and it looks nice and smooth at $x=0$.  Does that mean that $x|x|$ is differentiable at $x=0$?  I don't understand formally using the definition of the derivative why this is the case.  Thanks.
+:::
+
+It's not because the graph looks nice and smooth that the function is differentiable, although that is what the term is trying to capture.
+
+The function is differentiable because of the **definition** of differentiable.  The limit
+$$\lim_{h\to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h\to 0} \frac{h|h|}{h} = \lim_{h\to 0} |h| = 0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2528516/analysisis-xx-differentiable-at-x-0/2528518#2528518) on Mathematics Stack Exchange, 2017-11-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

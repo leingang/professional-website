@@ -1,0 +1,78 @@
+---
+title: Trying to create a inverse quare algorithm for expanding sphere
+date: '2015-11-25'
+description: I think you are confusing a function and its derivative. You say,
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1546385
+se-link: https://math.stackexchange.com/questions/1546353/trying-to-create-a-inverse-quare-algorithm-for-expanding-sphere/1546385#1546385
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+- geometry
+- spherical-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trying to create a inverse quare algorithm for expanding sphere](https://math.stackexchange.com/questions/1546353/trying-to-create-a-inverse-quare-algorithm-for-expanding-sphere), asked by [unknownSPY](https://math.stackexchange.com/users/282798/unknownspy) on Mathematics Stack Exchange (2015-11-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So, in a piece of software I am writing (this isn't homework),  I want to have a sphere expand relative to time.
+>
+> I want it to expand quickly from start with the expansion slowing over time.
+>
+> I.e, the rate of expansion being inversely proportion to time.
+>
+> I have the centre point of the sphere and a vector to a point on the sphere (radius) and obviously time.
+>
+> My first try 
+>
+> $p_1 =$ position on the sphere
+>
+> $p_2 =$ new position of the point on the sphere
+>
+> $c_1 =$ center of the sphere
+>
+> $t  =$ time
+>
+> $v_1 =$ vector from $c_1$ to $p_1$
+>
+> $v_1 = p_1 - c_1$
+>
+> $p_2 = p_1 + \frac{v_1}{t^2}$
+>
+> This gives me the exact opposite of what I want.  It starts big and shrinks very quickly to start off and then slows.
+>
+> What should I have done instead?
+:::
+
+I think you are confusing a function and its derivative.  You say,
+
+> I want it to expand quickly to start with with the expansion slowing over time.  i.e, an inverse square.
+
+So if $r(t)$ is the radius of the sphere, this sentence means you want $r'(t) = \frac{1}{t^2}$.
+
+But the way you programmed it is if $r(t)=\frac{1}{t^2}+\text{initial radius}$.
+
+So, if you really do want the radius to grow like the inverse square, you can solve $r'(t) = \frac{1}{t^2}$ to get $r(t) = C - \frac{1}{t}$.  
+
+To match your initial radius $r_0$ and your eventual radius $r_{\infty}$, you would have to introduce another parameter.  Perhaps $r'(t) = \frac{k}{t^2}$ will work.  The initial value problem
+$$r'(t) = \frac{k}{t^2}\qquad r(1) = r_0 \qquad \lim_{t\to\infty} r(t) = r_\infty$$
+has solution
+$$r(t) = r_\infty - \frac{r_\infty-r_0}{t}$$
+
+Now this may not be the best thing for you.  If so, you might want to think about other functions that start with quick growth and level off.  For instance, one model of heat transfer works with the equation $r'(t) = k(r_\infty - r(t))$.  So the closer $r(t)$ is to $r_\infty$, the less $r(t)$ changes.  The solution to that would be
+$$r(t) = r_\infty - (-r_\infty - r_0)e^{-kt}$$
+for any positive $k$. The larger the $k$, the larger $r'(0)$ will be, that is, the larger the expansion at the start.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1546353/trying-to-create-a-inverse-quare-algorithm-for-expanding-sphere/1546385#1546385) on Mathematics Stack Exchange, 2015-11-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

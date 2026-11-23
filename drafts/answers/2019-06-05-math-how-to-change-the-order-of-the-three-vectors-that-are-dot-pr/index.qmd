@@ -1,0 +1,45 @@
+---
+title: How to change the order of the three vectors that are dot product
+date: '2019-06-05'
+description: This is impossible. $(x \cdot u)u$ is a scalar multiple of $u$, and you can't write it as a multiple of $x$ unless $x$ is a multiple of $u$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3252262
+se-link: https://math.stackexchange.com/questions/3252254/how-to-change-the-order-of-the-three-vectors-that-are-dot-product/3252262#3252262
+se-score: 2
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to change the order of the three vectors that are dot product](https://math.stackexchange.com/questions/3252254/how-to-change-the-order-of-the-three-vectors-that-are-dot-product), asked by [Jason](https://math.stackexchange.com/users/600245/jason) on Mathematics Stack Exchange (2019-06-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Two vectors: $u$ (a unit vector) and $x$ (a regular non-unit vector), the angle between them is $\theta$
+>
+> I want to know the derivation process of changing $(x\cdot u)u$ to ***x (intuitively, I want to move $x$ to the far right side, and the `***`is any proper form that makes it work). 
+>
+> One of the appealing reasons to do that is that I can use *** as an operation on vector x.
+>
+> But here, does anyone could help me out for how to derive it from  $(x\cdot u)u$u to ***x ?
+>
+> Note that $u(u\cdot x)$ is not what we want, there should be no parenthesis.
+:::
+
+This is impossible.  $(x \cdot u)u$ is a scalar multiple of $u$, and you can't write it as a multiple of $x$ unless $x$ is a multiple of $u$.
+
+For instance, let $u=i$ and $x=i+j$.  Then $(x \cdot u)u = i$, and you can't write $i$ as a multiple of $i+j$.  
+
+Also, scalar multiplication by a vector is not a one-to-one operation, so “canceling” a dot product or multiplying by an inverse to a vector is undefined.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3252254/how-to-change-the-order-of-the-three-vectors-that-are-dot-product/3252262#3252262) on Mathematics Stack Exchange, 2019-06-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

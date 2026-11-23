@@ -1,0 +1,42 @@
+---
+title: Finding the area of surface obtained by rotating $(x-a)^2 + (y-b)^2 = r^2, 0 < r < a$, about the line $x = -a$.
+date: '2019-05-08'
+description: Pappus's Centroid Theorem says that the area of a surface of revolution is equal to the length of the rotated curve times the distance the centroid travels.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3218173
+se-link: https://math.stackexchange.com/questions/3218161/finding-the-area-of-surface-obtained-by-rotating-x-a2-y-b2-r2-0-r/3218173#3218173
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the area of surface obtained by rotating $(x-a)^2 + (y-b)^2 = r^2, 0 < r < a$, about the line $x = -a$.](https://math.stackexchange.com/questions/3218161/finding-the-area-of-surface-obtained-by-rotating-x-a2-y-b2-r2-0-r), asked by [Hellowhatsup](https://math.stackexchange.com/users/657337/hellowhatsup) on Mathematics Stack Exchange (2019-05-08; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So I solved this problem by using parametric euqations, where x= a + r cos t and y = a  +r sin t. Then got the answer 8$\pi r^2a$. But the answer sheet keeps saying that it is 16$\pi ra$. I'm not sure who's right.
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: UOI3w.jpg
+:::
+
+[Pappus's Centroid Theorem](http://mathworld.wolfram.com/PappussCentroidTheorem.html) says that the area of a surface of revolution is equal to the length of the rotated curve times the distance the centroid travels.
+
+In this case the rotated curve is a circle, and its circumference is $2\pi r$.  The centroid of the circle is the center $(a,b)$.  It travels around a circle of radius $2a$, for a distance of $2\pi(2a) = 4\pi a$.
+
+Therefore the surface area is $(2\pi r)(4\pi a) = 8 \pi^2 r a$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3218161/finding-the-area-of-surface-obtained-by-rotating-x-a2-y-b2-r2-0-r/3218173#3218173) on Mathematics Stack Exchange, 2019-05-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

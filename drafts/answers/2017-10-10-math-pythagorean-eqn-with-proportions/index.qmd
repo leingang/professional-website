@@ -1,0 +1,45 @@
+---
+title: Pythagorean Eqn. with Proportions
+date: '2017-10-10'
+description: Let the longer side be $a$. If the sides have ratio $16:9$, the shorter side has length $\frac{9}{16}a$. Now $$a^2 + \left(\frac{9}{16}a\right)^2 = 196$$ and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2466365
+se-link: https://math.stackexchange.com/questions/2466360/pythagorean-eqn-with-proportions/2466365#2466365
+se-score: 2
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Pythagorean Eqn. with Proportions](https://math.stackexchange.com/questions/2466360/pythagorean-eqn-with-proportions), asked by [mk mcmahon](https://math.stackexchange.com/users/489917/mk-mcmahon) on Mathematics Stack Exchange (2017-10-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> What are the side lengths of a 14" HD screen? This is not trivial to me because the side lengths must remain a 16x9 proportion. 
+> Seems like the solution could come from:
+>
+> ```
+> 16a^2+9b^2=196
+> ```
+>
+> I can use this to get the number but I want to see how it's worked out.
+> http://screen-size.info/
+>
+> Like how do the exponents interact with the coefficients? I asked two tutors and they both were stumped....
+:::
+
+Let the longer side be $a$.  If the sides have ratio $16:9$, the shorter side has length $\frac{9}{16}a$.  Now
+$$a^2 + \left(\frac{9}{16}a\right)^2 = 196$$
+and solve for $a$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2466360/pythagorean-eqn-with-proportions/2466365#2466365) on Mathematics Stack Exchange, 2017-10-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

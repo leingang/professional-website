@@ -1,0 +1,78 @@
+---
+title: Similar problem to Taylor's theorem proof
+date: '2015-02-16'
+description: 'This is a jigsaw puzzle, and there are only finitely many ways to fit the pieces together. You are given the statement:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1150585
+se-link: https://math.stackexchange.com/questions/1150567/similar-problem-to-taylors-theorem-proof/1150585#1150585
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Similar problem to Taylor's theorem proof](https://math.stackexchange.com/questions/1150567/similar-problem-to-taylors-theorem-proof), asked by [Lebes](https://math.stackexchange.com/users/212719/lebes) on Mathematics Stack Exchange (2015-02-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ![Chanbody][q-1]
+>
+>
+>   [q-1]: 0LkZY.png
+>
+> > **43.** Let $a_1,\dots,a_{n+1}$ be arbitrary points in $[a,b]$ and let
+> $$Q(x)=\prod_{i=1}^{n+1}(x-x_i).$$
+> Suppose that $f$ is $(n+1)$-times differentiable and that $P$ is a polynomial function of degree $\le n$ such that $P(x_i)=f(x_i)$ for $i=1,\dots,n+1$. Show that for each $x$ in $[a,b]$  there is a number $c$ in $(a,b)$ such that
+> $$f(x)-P(x)= Q(x) \cdot \frac{f(n+1)(c)}{(n+1)!}.$$
+> Hint: consider the function
+> $$F(t)=Q(x)[f(t)-P(t)]-Q(t)[f(x)-P(x)].$$
+> Show that $F$ is zero at $n+2$ different points in $[a,b]$, and use Problem 42.
+>
+> Problem 42 was: 
+>
+> >"Suppose that $f$ is $n$ times differentiable and that $f(x) = 0$ for $n+1$ different $x$. Prove that $f^{(n)}(x) = 0$ for some $x$. "
+>
+> I will start:
+> ----------------
+>
+> $$F(t) = Q(x)[f(t) - P(t)] - Q(t)[f(x) - P(x)]$$
+>
+> $$F(a) = Q(x)[f(a) - P(a)] - Q(a)[f(x) - P(x)]$$
+>
+> $$Q(a)  = \prod_{k=1}^{n+1} x- x_k = \prod_{k=1}^{n+1} a- a_k = (a- a_1)(a - a_2).... (a - a_{n+1})$$
+>
+> But I don't see any options? Can someone guide me? Thanks!
+>
+> **PLEASE DO NOT GIVE A FULL ANSWER**
+> ------------------------------------
+:::
+
+This is a jigsaw puzzle, and there are only finitely many ways to fit the pieces together.  You are given the statement:
+
+> **Problem 42** Suppose that $f$ is $n$ times differentiable and that $f(x)=0$ for $n+1$ different values of $x$.  Then $f^{(n)}(x) = 0$ for some $x$.
+
+Let's rewrite that slightly:
+
+> Suppose that $f$ is $n$ times differentiable and
+$$f(x_1) = f(x_2) = \cdots = f(x_n) = f(x_{n+1}) = 0$$
+for $n+1$ distinct points $x_1,x_2,\dots,x_{n+1}$.  Then there exists a point $c$ such that $f^{(n+1)}(c) = 0$.
+
+You are given a function $F(t) = Q(x) [f(t)-P(t)] - Q(t) [f(x) - P(x)]$ and directed to show that there are $n+2$ distinct values of $t$ for which $f(t) = 0$.  Then by Problem 42 there will be a point $c$ such that $F^{(n+1)}(c) = 0$.  If you are lucky $F^{(n+1)}(c)=0$ will imply that 
+$$f(x) - P(x) = Q(x) \cdot\frac{f^{(n+1)}(c)}{(n+1)!}$$
+
+The only question is which $n+2$ values of $t$ will yield $F(t) = 0$?  There are $n+1$ points $x_1,x_2,\dots,x_{n+1}$ given.  Do they satisfy this equation?  Remember that you know something about $Q(x_i)$ and $P(x_i)$.  Can you find one more value of $t$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1150567/similar-problem-to-taylors-theorem-proof/1150585#1150585) on Mathematics Stack Exchange, 2015-02-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

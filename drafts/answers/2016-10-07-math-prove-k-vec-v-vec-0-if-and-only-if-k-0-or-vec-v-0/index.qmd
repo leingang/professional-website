@@ -1,0 +1,71 @@
+---
+title: Prove $k\vec v = \vec 0$ if and only if $k=0$ or $\vec v = 0$
+date: '2016-10-07'
+description: OP seems to have lost interest in this question, but I'll go ahead and fill in at least one answer.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1958104
+se-link: https://math.stackexchange.com/questions/1953826/prove-k-vec-v-vec-0-if-and-only-if-k-0-or-vec-v-0/1958104#1958104
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $k\vec v = \vec 0$ if and only if $k=0$ or $\vec v = 0$](https://math.stackexchange.com/questions/1953826/prove-k-vec-v-vec-0-if-and-only-if-k-0-or-vec-v-0), asked by [stevieM](https://math.stackexchange.com/users/375184/steviem) on Mathematics Stack Exchange (2016-10-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to prove that $k\vec v = \vec 0$ if and only if ($k=0$ or $\vec v = 0$) using only the 10 axioms of an abstract vector space.
+:::
+
+OP seems to have lost interest in this question, but I'll go ahead and fill in at least one answer.  
+
+I don't know what the referenced set of 10 axioms were, but here is one conventional set of axioms for a vector space $V$ over a field $K$.  $V$ must have a binary operation $+\colon V \times V \to V$, and a map $\cdot\colon K \times V \to V$, satisfying:
+
+ 1. *$V$ is closed under addition*: for all $\vec v$ and $\vec w$ in $V$, $\vec v + \vec w \in V$.  
+
+ 2. *Vector addition is associative*: or all $\vec u$, $\vec v$, and $\vec w$ in $V$, $(\vec u + \vec v) + \vec w = \vec u + (\vec v + \vec w)$.  
+
+ 3. *An additive identity exists*: there is a vector $\vec 0$ in $V$ with the property that $\vec v + \vec 0 = \vec v$ for all $\vec v \in V$.
+
+ 4. *Additive inverses exist*: for all $\vec v\in V$ there exists a unique $\vec w \in V$ such that $\vec v+\vec w = \vec 0$.  (We usually write $-\vec v$ for this $\vec w$.)
+
+ 5. *Vector addition is commutative*: For all $\vec v,\vec w \in V$, $\vec v + \vec w = \vec w + \vec v$.
+
+ 5. *$V$ is closed under scalar multiplication*: For all $k\in K$ and $\vec v \in V$, $k\vec v \in V$.
+
+ 6. *scalar multiplication distributes over vector addition*: for all $k \in K$ and $\vec v$, $\vec w\in V$, $k(\vec v + \vec w) = k\vec v + k\vec w$.
+
+ 7. *scalar multiplication distributes over scalar addition*: for all $k, k'\in K$ and $\vec v\in V$, $(k + k')\vec v = k\vec v + k' \vec v$.
+
+ 8. *scalar multiplication is associative*: for all $k, k'\in K$ and $\vec v\in V$, $k(k'\vec v) = (kk')\vec v$.
+
+ 9. **The multiplicative identity in $k$ acts as the identity on $V$**: For all $\vec v \in V$, $1\vec v = \vec v$.
+
+If these are the 10, then the statement
+
+> For all $k\in K$ and $\vec v \in V$, $k\vec v = \vec 0$ iff $k=0$ or $\vec v=\vec 0$.
+
+can be proven quickly.  
+
+**Proof** ($\Leftarrow$): First, we show $k \vec 0 = \vec 0$ for all $k\in K$:
+$$k\vec 0 = k(\vec 0+\vec 0) = k\vec 0 + k \vec 0$$
+by axiom 7.  By axiom 4, we can add the inverse of $k\vec 0$ to each side, and end up with $\vec 0 = k \vec 0$.  Similarly, if $v\in V$, then
+$$0 \vec v = (0+0)\vec v = 0\vec v + 0 \vec v \implies 0\vec v = 0$$
+by axioms 8 and 4.  So if either $k=0$ or $\vec v=0$, then $k\vec v = \vec 0$.
+
+($\Rightarrow$): Suppose $k\vec v=\vec 0$ where $k\neq 0$.  Since $K$ is a field, $k$ as a multiplicative inverse $k^{-1}$ such that $k^{-1}k = 1$.  Therefore
+$$\vec 0 = k^{-1}\vec 0 = k^{-1} (k \vec v) = (k^{-1}k)\vec v = 1 \vec v = \vec v$$
+by axioms 9 and 10.  So $\vec v = 0$.  Therefore, if $k\vec v=0$, either $k=0$ or $\vec v = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1953826/prove-k-vec-v-vec-0-if-and-only-if-k-0-or-vec-v-0/1958104#1958104) on Mathematics Stack Exchange, 2016-10-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

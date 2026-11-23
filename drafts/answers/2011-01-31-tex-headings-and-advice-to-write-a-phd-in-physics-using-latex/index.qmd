@@ -1,0 +1,74 @@
+---
+title: Headings and advice to write a PhD in physics using LaTeX
+date: '2011-01-31'
+description: As far as the formatting of your magnum opus goes, ask around or google "<university name> latex thesis class" to see if there's a class file already written.…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 9945
+se-link: https://tex.stackexchange.com/questions/9931/headings-and-advice-to-write-a-phd-in-physics-using-latex/9945#9945
+se-score: 9
+se-accepted: false
+se-tags:
+- book-design
+- thesis
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Headings and advice to write a PhD in physics using LaTeX](https://tex.stackexchange.com/questions/9931/headings-and-advice-to-write-a-phd-in-physics-using-latex), asked by [Mermoz](https://tex.stackexchange.com/users/3259/mermoz) on TeX Stack Exchange (2011-01-31; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have 3 months to write a PhD thesis in French.
+> I have a good level in LaTeX (wrote several memoires and many articles), however, I would like to know if you have any **suggestions concerning good practises for this kind of work** (more than 100 pages, figures, tables, bibliography, footnotes...)
+>
+> What would be great would be to share a heading file, including all packages that will be needed during the writing.
+>
+> I give you what I came up with:
+>
+>
+> ```latex
+> \documentclass{book}
+> \usepackage[utf8]{inputenc}
+> \usepackage[frenchb]{babel}
+> \usepackage{lipsum}
+>
+>
+> \begin{document}
+> \chapter{Chapter 1}
+> \section{A section}
+> \lipsum[1-10]
+>
+> \chapter{Chapter 2}
+> \section{Another section}
+> \lipsum[1-10]
+> \end{document}
+> ```
+>
+> I also noticed this excellent link:
+> [Jamie Stevens' Webpage][q-1]
+>
+>
+> Any other suggestion is welcome.
+>
+>   [q-1]: https://web.archive.org/web/20110409125147/http://www-ra.phys.utas.edu.au/~jstevens/code_thesis_style.html
+:::
+
+As far as the formatting of your magnum opus goes, ask around or google "`<university name> latex thesis class`" to see if there's a class file already written.  Use that first.  If your university has formatting rules from the typewriter era and you want to produce a document that *you* are pleased to look at, you can develop your own class file that provides the same commands with your implementation.
+
+You should definitely use the `\include` and `\includeonly` mechanism to format only the part of the document that you are currently writing.
+
+I would also agree with others that `bibtex` or `biblatex` is necessary for large bibliographies.
+
+As for writing, I would follow the [YAGNI][1] principle.  *Just start writing.*  If you realize you need some special functionality, and you don't know how to implement it, stop and google, or come back here. 
+
+  [1]: http://en.wikipedia.org/wiki/You_ain%27t_gonna_need_it
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/9931/headings-and-advice-to-write-a-phd-in-physics-using-latex/9945#9945) on TeX Stack Exchange, 2011-01-31. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

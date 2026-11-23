@@ -1,0 +1,51 @@
+---
+title: Simple stokes - why is this the correct orientation?
+date: '2018-09-02'
+description: 'The induced orientation on $\partial S$ can be described this way:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2903231
+se-link: https://math.stackexchange.com/questions/2903217/simple-stokes-why-is-this-the-correct-orientation/2903231#2903231
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- stokes-theorem
+- orientation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Simple stokes - why is this the correct orientation?](https://math.stackexchange.com/questions/2903217/simple-stokes-why-is-this-the-correct-orientation), asked by [Oria Gruber](https://math.stackexchange.com/users/76802/oria-gruber) on Mathematics Stack Exchange (2018-09-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We want to calculate $\iint_{S}\text{curl}(\vec F)dS$ where $\vec{F}(x,y,z)=(y^2z, xz,x^2y^2)$ and $S$ is the part of the paraboloid $z=x^2+y^2$ that's inside the cylinder $x^2+y^2= 1$ with an outward facing normal.
+>
+> **My answer**:
+>
+> The boundary of $S$ is simply the unit circle $x^2+y^2 = 1$ at height $z=1$.
+>
+> A parametrization of $\partial S$ would be $r(\theta) = (\cos(\theta), \sin(\theta), 1)$, as $\theta$ goes from $0$ to $2\pi$.
+>
+> This is because the normal is facing outwards I believe, so for $\partial S$ to be positively oriented, $\theta$ goes from $0$ to $2\pi$.
+>
+> Calculating, we get $$\int_{\partial S}\vec{F}ds = \int_{0}^{2\pi}\vec{F}(r(\theta)) \cdot\nabla r(\theta)d\theta = \int_{0}^{2\pi}\cos^2(\theta)-\sin^3(\theta)d\theta = \pi$$
+>
+> However, the correct answer seems to be $-\pi$, so I got the orientation wrong, but I'm not sure why.
+:::
+
+The induced orientation on $\partial S$ can be described this way:
+
+> If you walk along $\partial S$ with your head pointing in the direction of the normal vector, the induced orientation is the one that keeps $S$ “on your left.”
+
+So if the orientation on $S$ is the one with downward $z$-component, you're walking around $\partial S$ with your head pointing down.  Somebody looking downwards on the $xy$-plane would see you going *clockwise* around the boundary circle.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2903217/simple-stokes-why-is-this-the-correct-orientation/2903231#2903231) on Mathematics Stack Exchange, 2018-09-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

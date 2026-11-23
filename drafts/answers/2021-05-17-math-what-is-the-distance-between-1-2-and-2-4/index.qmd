@@ -1,0 +1,42 @@
+---
+title: What is the distance between $[1,2)$ and $(2,4]$?
+date: '2021-05-17'
+description: I thought I would summarize the comments so that the question can have an answer.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4142025
+se-link: https://math.stackexchange.com/questions/4141950/what-is-the-distance-between-1-2-and-2-4/4142025#4142025
+se-score: 2
+se-accepted: true
+se-tags:
+- metric-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the distance between $[1,2)$ and $(2,4]$?](https://math.stackexchange.com/questions/4141950/what-is-the-distance-between-1-2-and-2-4), asked by [MrDi](https://math.stackexchange.com/users/228037/mrdi) on Mathematics Stack Exchange (2021-05-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know that $d(A,B)>0$ if two sets do not intersect. However what is the distance if two sets are very close two each other like $[1,2)$ and $(2,4]$?
+:::
+
+I thought I would summarize the comments so that the question can have an answer.
+
+The definition of distance between subsets of a metric space is: $$d(A,B) = \inf \{d(a,b) \mid a \in A,\ b \in B\}$$
+If $A = [1,2)$ and $B = (2,4]$, both as subsets of $\mathbb{R}$ with its usual metric $d(a,b) = |a-b|$, what is $d(A,B)$?
+
+You are correct that if sets $E$ and $F$ have a common point $x$, then $d(E,F) = 0$.  Because you can count $x$ as both a point in $E$ and in $F$, and $d(x,x) =0$.    But the converse—that $E \cap F = \emptyset \implies d(E,F) > 0$ is not true.
+
+Why would the definition (falsely) “suggest” that the distance between disjoint sets is positive?  Because $d(a,b) > 0$ whenever $a \neq b$.  But as JMoravitz points out, _the infimum of a set of positive numbers need not be a positive number_.  And Shubham Johri ever-so-succinctly provides an explicit pair of sequences $a_n \in A$, $b_n \in B$, such that $d(a_n,b_n) > 0$ for all $n$, but $\lim_{n \to\infty} d(a_n,b_n) = 0$.  This means that $d(A,B) = 0$.
+
+This illustrates an important property of the real numbers—they are _dense_ in the sense for any $x,y \in \mathbb{R}$ with $x < y$ there exists $z$ such that $x < z < y$.  Such is not the case for integers, and indeed, for subsets of $\mathbb{Z}$, $d(A,B) =0 \iff A \cap B \neq \emptyset$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4141950/what-is-the-distance-between-1-2-and-2-4/4142025#4142025) on Mathematics Stack Exchange, 2021-05-17. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

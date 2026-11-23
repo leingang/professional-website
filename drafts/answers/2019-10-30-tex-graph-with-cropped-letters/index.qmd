@@ -1,0 +1,123 @@
+---
+title: Graph with cropped letters
+date: '2019-10-30'
+description: I see that you set ticks=none, and then manually added something very much like axis ticks. If you use PGFPLOTS's own tick-placing system, the tick labels do…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 514180
+se-link: https://tex.stackexchange.com/questions/514073/graph-with-cropped-letters/514180#514180
+se-score: 12
+se-accepted: false
+se-tags:
+- tikz-pgf
+- ticks
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Graph with cropped letters](https://tex.stackexchange.com/questions/514073/graph-with-cropped-letters), asked by [José Carlos Santos](https://tex.stackexchange.com/users/134805/jos%c3%a9-carlos-santos) on TeX Stack Exchange (2019-10-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> If I compile this file:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=1.16,every axis/.append style={
+>   axis x line=middle,
+>   axis y line=middle,
+>   ticks=none}}
+> \pagestyle{empty}
+> \begin{document}
+> \begin{center}
+>   \begin{tikzpicture}
+>     \begin{axis}[xmin=-.2,xmax=2.75,ymin=-.2,ymax=2.25]
+>       \plot[thick,samples=100,domain=.5:2.5] {1/x};
+>       \coordinate (a1) at (.8,0);
+>       \coordinate (a2) at (0,1.25);
+>       \coordinate (b1) at (2,0);
+>       \coordinate (b2) at (0,.5);
+>       \node[below] at (a1) {\footnotesize$a$};
+>       \node[below] at (b1) {\footnotesize$b$};
+>       \node[left] at (a2) {\footnotesize$1/a$};
+>       \node[left] at (b2) {\footnotesize$1/b$};
+>       \draw[thin,dashed](a1)--(a1|-a2)--(a2);
+>       \draw[thin,dashed](b1)--(b1|-b2)--(b2);
+>     \end{axis}
+>   \end{tikzpicture}
+> \end{center}
+> \end{document}
+> ```
+>  then what I get is this:
+>
+> [![enter image description here][q-1]][q-1]
+>
+> As you can see, part of the text to the left of the vertical axis was cropped. I can easily fix this by replacing `xmin=-.2` with `xmin=-.25`, but what should I do if I do not want to have my text cropped while keeping `xmin=-.2`?
+>
+>
+>   [q-1]: 5tyxR.png
+:::
+
+I see that you set `ticks=none`, and then manually added something very much like axis ticks.  If you use PGFPLOTS's own tick-placing system, the tick labels do not get clipped.
+
+In this example, there's a lot of keysetting, but less code once the plot is drawn.
+
+```latex
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16,every axis/.append style={
+  axis x line=middle,
+  axis y line=middle,
+  xticklabel style={name=xtick \ticknum},
+  yticklabel style={name=ytick \ticknum},
+}}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=2.5,ymin=0,ymax=2,
+        enlargelimits,
+        xtick={0.8,2},
+        xticklabels={$a$,$b$},
+        ytick={0.5,1.25},
+        yticklabels={$1/a$,$1/b$},
+        tick style={draw=none},
+        ticklabel style={font=\footnotesize},
+        typeset ticklabels with strut,
+    ]
+      \addplot[thick,samples=100,domain=.5:2.5]  {1/x};
+      \coordinate (O) at (axis cs:0,0);
+      \coordinate (a1) at (xtick 0 |- O);
+      \coordinate (a2) at (ytick 1 -| O);
+      \coordinate (b1) at (xtick 1 |- O);
+      \coordinate (b2) at (ytick 0 -| O);
+      \draw[thin,dashed](a1)--(a1|-a2)--(a2);
+      \draw[thin,dashed](b1)--(b1|-b2)--(b2);
+    \end{axis}
+  \end{tikzpicture}
+\end{document}
+```
+
+[![sample code output][1]][1]
+
+Notes:
+
+* We can see that the y tick labels are automatically not clipped.
+
+* The `xticklabel style` and `yticklabel style` keys give names to the nodes which are the tick labels.  Then we can locate the `a1`, `a2`, `b1`, and `b2` nodes along the axes using those tick labels.
+
+* Rather than enlarge the limits manually by adding or subtracting a bit to each min and max, the `enlargelimits` key does that for us.
+
+* the `typeset ticklabels with strut` makes the baselines of the `a` and `b` tick labels align.  We can shift the x tick labels closer to the x axis with `xticklabel shift={-1.5mm}` or something similar.  
+
+
+  [1]: HlXhL.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/514073/graph-with-cropped-letters/514180#514180) on TeX Stack Exchange, 2019-10-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

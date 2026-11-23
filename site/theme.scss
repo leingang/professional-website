@@ -48,3 +48,8 @@ h1, h2, h3 { letter-spacing: -.005em; }
 
 // Legacy-post banner
 .callout.legacy { font-size: .9rem; }
+
+// Imported Stack Exchange answers (site/blog/answers/)
+.callout.se-question { font-size: .95rem; }
+.callout.se-question h2 { font-size: 1.1rem; margin-top: 0; }
+.se-attribution { margin-top: 2rem; padding-top: .75rem; border-top: 1px solid $border-color; font-size: .85rem; color: $text-muted; }

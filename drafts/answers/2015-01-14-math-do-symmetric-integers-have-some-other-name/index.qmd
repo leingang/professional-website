@@ -1,0 +1,60 @@
+---
+title: Do 'symmetric integers' have some other name?
+date: '2015-01-14'
+description: $(-1)(-1)=1$ is always going to be true in any ring. If $(-1)(-1)=-1$ as well, then $1=-1$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1104513
+se-link: https://math.stackexchange.com/questions/1104501/do-symmetric-integers-have-some-other-name/1104513#1104513
+se-score: 11
+se-accepted: false
+se-tags:
+- abstract-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Do 'symmetric integers' have some other name?](https://math.stackexchange.com/questions/1104501/do-symmetric-integers-have-some-other-name), asked by [Shufflepants](https://math.stackexchange.com/users/207912/shufflepants) on Mathematics Stack Exchange (2015-01-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $-1 \cdot -1 = +1$, but there seems to me to be no reason we couldn't define a number system where negative number's and positive numbers were completely symmetric.
+> Where:
+>
+> $$1 \cdot 1 = 1$$
+>
+> $$-1 \cdot -1 = -1$$
+>
+> I understand that in order to do this, multiplication could no longer be commutative and we'd have to decide what the result of $1 \cdot -1$ should be. I think we could choose that resulting sign of a multiplication could be the sign of the second term, so:
+>
+> $$1 \cdot -1 = -1$$
+>
+> $$-1 \cdot 1 = 1$$
+>
+> or more generally, the sign of any multiplication is determined by the sign of the second term.
+>
+> But where they otherwise behave roughly as expected, i.e. $1 - 2 = -1$.
+>
+> Some other consequences I'm aware of: 
+>
+> $$\sqrt{-1} = -1$$
+>
+> $$\sqrt{1} = 1$$
+>
+> $f(x) = x^2$ would behave in a way that can only be described piecewise in the normal reals as $x^2$ when $x \geq 0$, and $-(x^2)$ when $x < 0$.
+>
+> Is there already research or another name for such a number system? <strike>Or perhaps is there a ring that matches this?</strike> After looking at the properties of a ring, on http://en.wikipedia.org/wiki/Ring_%28mathematics%29 what I've described cannot be a ring since it does not have a multiplicative identity. There is no element i_m such that a * $i_m = a$ and $i_m \cdot a = a$ since multiplying by $1$ in the system I've described may change the sign of $a$ to be positive.
+:::
+
+$(-1)*(-1)=1$ is always going to be true in any ring.  If $(-1)*(-1)=-1$ as well, then $1=-1$.  
+
+Formally speaking, this means the ring will have *characteristic* $2$.  In practice, it tells you that every element is its own additive inverse.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1104501/do-symmetric-integers-have-some-other-name/1104513#1104513) on Mathematics Stack Exchange, 2015-01-14. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

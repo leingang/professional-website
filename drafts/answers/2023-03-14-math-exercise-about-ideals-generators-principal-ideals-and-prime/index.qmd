@@ -1,0 +1,90 @@
+---
+title: Exercise about Ideals, Generators, principal ideals and prime ideals
+date: '2023-03-14'
+description: You seem to be using $M$, $A$, and $I$ for the same set here. Stick with $A$ as given in the original problem. Edit Now I see that $M$ stands for something…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4659206
+se-link: https://math.stackexchange.com/questions/4659202/exercise-about-ideals-generators-principal-ideals-and-prime-ideals/4659206#4659206
+se-score: 2
+se-accepted: false
+se-tags:
+- abstract-algebra
+- polynomials
+- ring-theory
+- solution-verification
+- polynomial-rings
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Exercise about Ideals, Generators, principal ideals and prime ideals](https://math.stackexchange.com/questions/4659202/exercise-about-ideals-generators-principal-ideals-and-prime-ideals), asked by [wanymose](https://math.stackexchange.com/users/1137143/wanymose) on Mathematics Stack Exchange (2023-03-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Recently I started learning about ring theory and wanted to try some examples to see if I did understand everything correct. I would like to know If my solution (especially Nr. 4) is okay.
+>
+> Define $A := \left\{ f \in \mathbb{Q}[X] \mathop| f(0)=f'(0)=0 \right\}$
+>
+> 1) Show that $A$ is an Ideal 
+> 2) Find a generator of $A$
+> 3) Is $A$ principal ideal?
+> 4) Is $A$ prime ideal?
+>
+> About 1):
+> Considering $f(0)=f'(0)=0$ the elements of $A$ are of the form
+> $a_2X²+a_3X³+...+a_nX^n$
+>
+> $(A,+)$ is a subgroup of $(\mathbb{Q}[X],+)$ and for  $a \in A$, $q \in \mathbb{Q}[X] \Rightarrow aq \in A$
+> Thus $A$ is an Ideal
+>
+> About 2):
+>
+> Since $\mathbb{Q}[X]$ commutative and has a $1$, I can use the following theorem:
+>
+> Let $R$ be a commutative Ring with $1$. Then for $M \subset R$:
+>
+> $$(M)= \left\{ r_1 a_1+r_2 a_2+...+r_n a_n \mathop| r_i \in R, a_i \in M \right\} \tag{*}$$
+>
+> In my case is $(M)=A$, and since the representation $(*)$ is very similar to polynomial I get, $M= \{ a_2,a_3,...a_n\}$ to ba a generator of the Ideal $A$.
+>
+> About 3):
+>
+> Because $M$ has more than one element $\Rightarrow A$ is not a principal Ideal
+>
+> About 4):
+>
+> Let $R$ be a commutative Ring. 
+> An Ideal $I \neq R$ is calle prime ideal if:
+>
+> $a,b \in R$ and $ab \in I \Rightarrow a\in I$ or $b \in I$
+>
+> If I take $a=b=a_1X \in \mathbb{Q}[X]$, then $ab=a_1^2X^2 \in A$ but $a=b \notin A$. Thus, A is not a prime ideal.
+>
+>
+> Question:
+> As stated above, I am new to ring theory (algebra in general) and would like to know if my solution is correct (especially Nr.4)
+>
+>
+> **Edit:**
+> In 2) I meant $M= \{ X^2,X^3,...X^n\}$
+:::
+
+You seem to be using $M$, $A$, and $I$ for the same set here. Stick with $A$ as given in the original problem. *Edit* Now I see that $M$ stands for something different; a set of generators.
+
+Your answer for 2) isn't a solution. You haven't said what $a_1,\dots,a_n$ are. You need to be explicit here.
+
+For 3), you haven't said what the generators are, but even if you have found a way to generate the set with more than one element, that doesn't mean it's *not* also generateable with a single element. For instance $A = (2X^2, X^2 + X^4)$, but $A = (X^2)$ too.
+
+Your answer to 4) is correct! To simplify, I would suggest $a=b=X$ (i.e., set $a_1 = 1$).
+
+Your answer to 1) has no mistakes in it, but it is rather terse. If I were grading it, I would wonder if you could supply the missing steps. Based on your answer to 2) and 3) I would have doubts.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4659202/exercise-about-ideals-generators-principal-ideals-and-prime-ideals/4659206#4659206) on Mathematics Stack Exchange, 2023-03-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

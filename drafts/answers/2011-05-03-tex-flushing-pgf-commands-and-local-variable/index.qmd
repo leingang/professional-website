@@ -1,0 +1,90 @@
+---
+title: Flushing PGF commands and local variable
+date: '2011-05-03'
+description: If I understand correctly \LabelPointX does what you want it to do, and \LabelPoint does the same thing. You want to refactor \LabelPoint so it's less…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17234
+se-link: https://tex.stackexchange.com/questions/17228/flushing-pgf-commands-and-local-variable/17234#17234
+se-score: 1
+se-accepted: true
+se-tags:
+- tikz-pgf
+- macros
+- pgf-core
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Flushing PGF commands and local variable](https://tex.stackexchange.com/questions/17228/flushing-pgf-commands-and-local-variable), asked by [Peter Grill](https://tex.stackexchange.com/users/4301/peter-grill) on TeX Stack Exchange (2011-05-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I think I need a way to flush the PGF commands as the reference to `\LabelText` uses the last value, and not value at the time of invocation. The macro `LabelPoint` is intended to replace the first `\addplot` command as shown and label the point with the coordinates, or a specified label if one is given. BUT, both points get labelled as `top`.
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{pgfplots}
+> \usepackage{xparse}
+>
+> \begin{document}
+> \newcommand{\LabelText}{}
+> \NewDocumentCommand{\LabelPoint}{o o m m g}{
+> 	\IfNoValueTF{#5}{
+> 		\renewcommand{\LabelText}{$(#3,#4)$} % Label with given coordinates
+> 	}{
+> 		\renewcommand{\LabelText}{#5} % Use given label
+> 	}
+> 	\addplot [#1] coordinates{(#3,#4)} node [#2] {\LabelText};
+>
+> 	%\pgfsyssoftpath@flushcurrentpath % -- Syntax error
+> 	%\pgfusepath{fill}                % -- no effect
+> }
+>
+> \NewDocumentCommand{\LabelPointX}{o o m m g}{
+> ```
+> 	  \IfNoValueTF{#5}{
+> 		\addplot [#1] coordinates{(#3,#4)} node [#2] {\$(#3,#4)\$};
+> 	  }{
+> 		\addplot [#1] coordinates{(#3,#4)} node [#2] {#5};
+> 	  }
+>     }
+>
+> ```latex
+> \begin{tikzpicture}
+> \begin{axis}
+> 	\addplot [mark=*,color=red] coordinates{(0,0)} node [color=blue, below] {$(0,0)$};
+> 	\LabelPoint[mark=*,color=red][color=blue, below]{0.5}{0.5}{middle}
+> 	\LabelPoint[mark=*,color=red][color=blue, below]{1  }{1  }{top}
+> \end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> I thought the problem had to do with the PGF commands not being flushed, but I can't seem to get that to work -- Have commented out what I tried.
+>
+> I also don't like having a global variable `\LabelText` as it only really has meaning within the scope of the macro so any help in moving that to be within the `\NewDocumentCommand` would be helpful as well.
+>
+> The modified version `\LabelTextX` which uses two different `\addplot` commands works, but that just makes the code harder to read, and gets complicated when there are more conditions involved, so I really don't want to use that as a solution.
+:::
+
+If I understand correctly `\LabelPointX` does what you want it to do, and `\LabelPoint` does the same thing.  You want to refactor `\LabelPoint` so it's less repetitive.  
+
+Do you like this implementation?
+
+```latex
+\NewDocumentCommand{\LabelPointY}{o o m m g}{
+  \addplot [#1] coordinates{(#3,#4)} node [#2] {\IfNoValueTF{#5}{$(#3,#4)$}{#5}};
+}
+```
+
+This doesn't need any temporary variables and doesn't repeat anything.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17228/flushing-pgf-commands-and-local-variable/17234#17234) on TeX Stack Exchange, 2011-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

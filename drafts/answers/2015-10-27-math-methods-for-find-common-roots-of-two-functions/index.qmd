@@ -1,0 +1,41 @@
+---
+title: Methods for find common roots of two functions
+date: '2015-10-27'
+description: The common roots of two real functions $f(x)$ and $g(x)$ are the roots of $f(x)^2 + g(x)^2$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1499431
+se-link: https://math.stackexchange.com/questions/1499424/methods-for-find-common-roots-of-two-functions/1499431#1499431
+se-score: 6
+se-accepted: true
+se-tags:
+- functions
+- roots
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Methods for find common roots of two functions](https://math.stackexchange.com/questions/1499424/methods-for-find-common-roots-of-two-functions), asked by [akukas](https://math.stackexchange.com/users/190925/akukas) on Mathematics Stack Exchange (2015-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Are there any methods for finding the common roots of two functions? I would like to know if such a method exists, which doesn't involve finding all the roots of both functions.
+>
+> While I'd like to find one which can be applied to any two functions, I'm also interested in methods that only consider specific cases, such as finding the common real roots of two polynomial functions.
+:::
+
+The common roots of two real functions $f(x)$ and $g(x)$ are the roots of $f(x)^2 + g(x)^2$.
+
+* * *
+To see why this is true, first notice that if $f(x) = g(x) = 0$, then $f(x)^2 = g(x)^2 = 0$, and the sum must also be zero.
+
+Now suppose $f(x)^2 + g(x)^2 = 0$.  Remember $f(x)^2 \geq 0$ and $g(x)^2 \geq 0$. The only way the sum of two nonnegative numbers can be zero is if the nonnegative numbers are both zero.  Thus $f(x)^2 = 0$ and $g(x)^2 = 0$.  This implies $f(x) = 0$ and $g(x) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1499424/methods-for-find-common-roots-of-two-functions/1499431#1499431) on Mathematics Stack Exchange, 2015-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,39 @@
+---
+title: Google searching LaTeX commands?
+date: '2011-02-24'
+description: My standard search phrase is "tex latex <cmd>." For instance, googling "tex latex show" leads me to a the "ltxcmds" page from the TeX FAQ.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 11911
+se-link: https://tex.stackexchange.com/questions/11905/google-searching-latex-commands/11911#11911
+se-score: 9
+se-accepted: false
+se-tags:
+- macros
+- documentation
+- online
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Google searching LaTeX commands?](https://tex.stackexchange.com/questions/11905/google-searching-latex-commands), asked by [lowndrul](https://tex.stackexchange.com/users/3762/lowndrul) on TeX Stack Exchange (2011-02-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Q: How can I best search the web for **exact** LaTeX commands (e.g., `\show` as opposed to `show`)?
+>
+> It appears that Google will not allow us to escape the `\` character. So, searches for `\show` are interpreted as `show`. Needless to say, results would be tremendously more helpful if the search were interpreted as the former. (note: `"\show"` doesn't help either)
+>
+> Q: Has anyone had success searching LaTeX commands using **other** search engine? More generally, does anyone know of search engines that are particularly well-suited for searching non-standard characters?
+:::
+
+My standard search phrase is "`tex latex <cmd>`."  For instance, [googling "`tex latex show`"](http://www.google.com/search?q=tex+latex+show&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a) leads me to a the "[ltxcmds](https://texfaq.org/FAQ-ltxcmds)" page from the TeX FAQ.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11905/google-searching-latex-commands/11911#11911) on TeX Stack Exchange, 2011-02-24, with [edits](https://tex.stackexchange.com/posts/11911/revisions) by [barbara beeton](https://tex.stackexchange.com/users/579/barbara-beeton). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

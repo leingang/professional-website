@@ -1,0 +1,48 @@
+---
+title: Derivative of Integral with chain rule
+date: '2017-11-28'
+description: The answer is yes. It's also worth pointing out that $$\int0^y \frac{1}{\sqrt{1-u^2}}\,du = \arcsin y$$ So there ought to be considerable simplification in…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2541173
+se-link: https://math.stackexchange.com/questions/2541164/derivative-of-integral-with-chain-rule/2541173#2541173
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derivative of Integral with chain rule](https://math.stackexchange.com/questions/2541164/derivative-of-integral-with-chain-rule), asked by [tooooony](https://math.stackexchange.com/users/492610/tooooony) on Mathematics Stack Exchange (2017-11-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I need to find the derivative (respect to $x$) of the function
+>
+> $$G(x)=\int _{ { e }^{ x } }^{ sin(x) }{ ln( } { y }^{ 2 })dy$$
+>
+> By FTC, $A'(x)=ln({ x }^{ 2 })$.
+> So far I have
+>
+> $$G'(x)=\frac { d }{ dx } (A(\sin { x } ))-A({ e }^{ x }))\\ G'(x)=A'(\sin { x } )(\sin { x } )'-A'({ e }^{ x })({ e }^{ x })'\\ G'(x)=ln(\sin ^{ 2 }{ x } )(\cos { x } )-ln({ e }^{ 2x })({ e }^{ x })$$
+>
+> Can I apply the same method to compute the derivative of  
+> $$F(x)=\int _{ sin(x) }^{ cos(x) }{ \frac { 1 }{ \sqrt { 1-{ u }^{ 2 } }  }  } du$$
+>
+> Any help would be appreciated.
+:::
+
+The answer is yes.  It's also worth pointing out that
+$$\int_0^y \frac{1}{\sqrt{1-u^2}}\,du = \arcsin y$$
+So there ought to be considerable simplification in your derivative.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2541164/derivative-of-integral-with-chain-rule/2541173#2541173) on Mathematics Stack Exchange, 2017-11-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

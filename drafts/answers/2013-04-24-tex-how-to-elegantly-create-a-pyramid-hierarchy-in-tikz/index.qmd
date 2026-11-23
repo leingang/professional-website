@@ -1,0 +1,172 @@
+---
+title: How to elegantly create a pyramid hierarchy in tikz
+date: '2013-04-24'
+description: 'Here is a simplification using the tikz intersections library to cut down on brute-force calculation:'
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 110524
+se-link: https://tex.stackexchange.com/questions/110522/how-to-elegantly-create-a-pyramid-hierarchy-in-tikz/110524#110524
+se-score: 22
+se-accepted: true
+se-tags:
+- tikz-pgf
+- graphics
+- diagrams
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to elegantly create a pyramid hierarchy in tikz](https://tex.stackexchange.com/questions/110522/how-to-elegantly-create-a-pyramid-hierarchy-in-tikz), asked by [Elpezmuerto](https://tex.stackexchange.com/users/736/elpezmuerto) on TeX Stack Exchange (2013-04-24; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to create a pyramid hierarchy in tikz with smooth sides (unlike [this step-pyramid][q-1]) and place text in each level. Shown below is how I am currently doing this, is there a better way?
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \begin{document}
+> \begin{figure}[!h]
+> \centering
+> \begin{tikzpicture}[scale=0.73]
+>
+> \def \h {9};
+> \def \f {.7};
+>
+> \foreach \y in  {0,1,2,3,4,5,6} {
+> 	\def \w { \h*\f-\y*\f };
+> 	\def \v { \y*\f-\h*\f };
+> 	\draw (\v,\y) -- (\w,\y);
+> }
+>
+> \draw (-\h*\f,0)  -- (0,\h);
+> \draw (\h*\f,0)  -- (0,\h);
+>
+> \node at (0,0) [above] {G};
+> \node at (0,1) [above] {F};
+> \node at (0,2) [above] {E};
+> \node at (0,3) [above] {D};
+> \node at (0,4) [above] {C};
+> \node at (0,5) [above] {B};
+> \node at (0,6) [above] {A};
+> \end{tikzpicture}
+> \end{figure}
+> \end{document}
+> ```
+>
+> ![enter image description here][q-2]
+>
+>
+>   [q-1]: https://tex.stackexchange.com/q/54343/736
+>   [q-2]: nrt0s.jpg
+:::
+
+Here is a simplification using the tikz intersections library to cut down on brute-force calculation:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\begin{document}
+
+\begin{tikzpicture}
+\coordinate (A) at (-5,0);
+\coordinate (B) at ( 5,0);
+\coordinate (C) at (0,7);
+\draw[name path=AC] (A) -- (C);
+\draw[name path=BC] (B) -- (C);
+\foreach \y/\A in {0/G,1/F,2/E,3/D,4/C,5/B,6/A} {
+	\path[name path=horiz] (A|-0,\y) -- (B|-0,\y);
+	\draw[name intersections={of=AC and horiz,by=P},
+	      name intersections={of=BC and horiz,by=Q}] (P) -- (Q)
+		node[midway,above] {\A};
+}
+\end{tikzpicture}
+\end{document}
+```
+
+Notice the combination of level numbers and labels as in Gonzalo's comment.
+
+![sample code output][1]
+
+Here is another solution using the tikz calculations library:
+
+```latex
+\foreach \y/\A in {0/G,1/F,2/E,3/D,4/C,5/B,6/A} {
+	\draw ($(A)!\y/7!(C)$) -- ($(B)!\y/7!(C)$)
+        node[midway,above] {\A};
+}
+```
+
+The coordinate `($(A)!\y/7!(C)$)` is `\y/7` of the way between the coordinates `A` and `C`.  The advantage here is total DRY: Change any of the coordinates `A`, `B`, or `C`, and the pyramid will transform accordingly.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{document}
+
+\begin{tikzpicture}
+\coordinate (A) at (-5,0);
+\coordinate (B) at ( 5,1);
+\coordinate (C) at (0,3);
+\draw (A) -- (C);
+\draw (B) -- (C);
+\foreach \y/\A in {0/G,1/F,2/E,3/D,4/C,5/B,6/A} {
+	\draw ($(A)!\y/7!(C)$) -- ($(B)!\y/7!(C)$) node[midway,above] {\A};
+}
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][2]
+
+**Edit 2024-11-08**: To celebrate a few more upvotes 11 years after my original answer, I found a way to streamline the code further:
+
+* Using the `count` key to `\foreach`, the list index doesn't need to be hard-coded.
+* There's no way to count the number of levels without iterating it over it twice, but by making the list of levels a macro, we can do that once to count, then to draw.
+* We store the number of levels in a counter, which allows us to use the same name as the list of levels itself (internally it becomes a different control sequence).
+
+So now it looks like:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{document}
+
+\begin{tikzpicture}
+
+% Define vertices and levels
+\coordinate (A) at (-5,0);
+\coordinate (B) at ( 5,1);
+\coordinate (C) at (0,3);
+\newcommand{\levels}{G,F,E,D,C,B,A}
+
+\draw (A) -- (C);
+\draw (B) -- (C);
+
+% count the number of levels
+\newcounter{levels}
+\foreach \A in \levels {\stepcounter{levels}}
+
+\foreach[count=\y from 0] \A in \levels {
+    \draw ($(A)!\y/\the\value{levels}!(C)$) 
+        -- ($(B)!\y/\the\value{levels}!(C)$) 
+        node[midway,above] {\A};
+}
+\end{tikzpicture}
+\end{document}
+```
+
+  [1]: BIhkK.png
+  [2]: SWYtJ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/110522/how-to-elegantly-create-a-pyramid-hierarchy-in-tikz/110524#110524) on TeX Stack Exchange, 2013-04-24, with [edits](https://tex.stackexchange.com/posts/110524/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter), [d8xa](https://tex.stackexchange.com/users/166169/d8xa). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

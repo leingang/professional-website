@@ -1,0 +1,56 @@
+---
+title: Find the closest point on a plane to a general point using isometry.
+date: '2022-12-11'
+description: You're really almost there.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4596746
+se-link: https://math.stackexchange.com/questions/4596744/find-the-closest-point-on-a-plane-to-a-general-point-using-isometry/4596746#4596746
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- metric-spaces
+- normed-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find the closest point on a plane to a general point using isometry.](https://math.stackexchange.com/questions/4596744/find-the-closest-point-on-a-plane-to-a-general-point-using-isometry), asked by [RatherAmusing](https://math.stackexchange.com/users/1086705/ratheramusing) on Mathematics Stack Exchange (2022-12-11; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> In one of my assignments we had a question regarding finding the closest point on a plane to a general point. 
+> In the first part of the question we had to find the closest point on a plane to the origin: 
+>
+> > Suppose $a,b,d \neq 0$. Show that the closest point on the plane $ax+by+z=d$ to the origin is $(\frac{ad}{a^2+b^2+1},\frac{bd}{a^2+b^2+1},\frac{d}{a^2+b^2+1})$.
+>
+> I've managed to prove this by defining the norm squared of a vector on the plane  as a function $f: R^2 \rightarrow R$, defined as $f(x,y) = x^2+y^2+(d-ax-by)^2 = \rVert (x,y,z) \rVert^2$, then finding its minimum. 
+>
+> The next part is: 
+>
+> > Show that the function $(x,y,z) \mapsto (x-x_0, y-y_0, z-z_0)$ is an isometry, and use it to find the closest point on the given plane to $(x_0, y_0, z_0)$.
+>
+> Now, intuitively I understand that I need to translate the coordinate system so that $(x_0, y_0, z_0)$ is the origin, find the closest point on the plane using the translated coordinates by the first part of the question and then translate back the the old coordinate system (I think by just adding $x_0,y_0,z_0$ to the new minimum). But I'm not sure how to do it "formally" using the isometry.
+:::
+
+You're really almost there.
+
+To show $T:(x,y,z) \mapsto (x-x_0,y-y_0,z-z_0)$ is an isometry, show that $$\Vert T(x,y,z) - T(x',y',z')\Vert = \Vert (x,y,z) - (x',y',z')\Vert$$ for all $x$, $y$, $z$, $x'$, $y'$, $z'$.
+
+For the rest:
+
+1. Let $(u,v,w) = T(x,y,z)$. 
+2. Write the equation for the plane in terms the variables $u$, $v$, and $w$, and the constants $x_0$, $y_0$, and $z_0$.
+3. Find the distance from transformed plane in $uvw$-space to the origin.
+
+The fact that the closest point in the $uvw$-space is the image of the closest point in the $xyz$-space comes from the fact that $T$ is an isometry. And since the isometry preserves distances, the distance will be the same.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4596744/find-the-closest-point-on-a-plane-to-a-general-point-using-isometry/4596746#4596746) on Mathematics Stack Exchange, 2022-12-11. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

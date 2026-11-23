@@ -1,0 +1,78 @@
+---
+title: How can I fix jumping TikZ pictures in beamer?
+date: '2011-05-20'
+description: 'This barely counts as an answer, but here goes:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 18710
+se-link: https://tex.stackexchange.com/questions/18704/how-can-i-fix-jumping-tikz-pictures-in-beamer/18710#18710
+se-score: 6
+se-accepted: false
+se-tags:
+- tikz-pgf
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How can I fix jumping TikZ pictures in beamer?](https://tex.stackexchange.com/questions/18704/how-can-i-fix-jumping-tikz-pictures-in-beamer), asked by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey) on TeX Stack Exchange (2011-05-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> The problem of stuff jumping in beamer is a common one, (see e.g. https://tex.stackexchange.com/q/148/2693) and we've seen it here from time to time (I imagine the "related" list at the side will be quite long on this one!).  With a TikZ picture, one method of fixing this is to manually specify the bounding box.  I'd like to get rid of the word "manually" in that sentence!
+>
+> This oughtn't to be too hard to implement, my imagined scheme would involve writing out the final bounding box to the `.aux` file so that it is available for use at the start of the tikzpicture environment.
+>
+> First question: has anyone implemented this yet?
+>
+> If (as I suspect) not, I'd _like_ the second question to be "could someone do it for me?" but that's not in the spirit of the site.  So here's my idea for how this would be done:
+>
+> 1. On each slide of a frame, the tikzpicture saves its bounding box.
+> 2. At the end of the frame, the tikzpicture writes out the largest bounding box to the `.aux` file (note that the largest may not be the last).
+> 3. On subsequent runs, the way that the bounding box was written out tells the tikzpicture what its bounding box ought to be and it draws a `\useasboundingbox` path accordingly (at the start of the picture).
+>
+> So second question, which is a bit open-ended but hopefully I can get away with it: what are the pitfalls of the above.
+>
+> And third question, (yup, I'm really stretching things here): if there is a part of the above that someone _just happens to know_, please put the code in an answer.  I'm sufficiently confident of my TeX skills that I'll be able to take the pieces and put them together, and also to adapt pieces.  So I'm _not_ asking anyone to code this for me, just help me find the pieces needed.
+>
+> (though if anyone _does_ code it ...)
+>
+> Here's a very simple example of what I mean (you have to compile it to see, though).  As everyone knows, the earth goes around the sun.  But not in _this_ presentation.  Cosmology according to this presentation is a ... little bit weird.
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{tikz}
+>
+> \begin{document}
+> \begin{frame}
+> \begin{tikzpicture}
+> \foreach \k in {1,...,8}
+> {
+>   \fill<\k>[orange] (0,0) circle[radius=.5];
+>   \fill<\k>[blue] (\k * 45:3) circle[radius=.2] coordinate (a);
+> }
+> \draw (0,0) -- (a);
+> \end{tikzpicture}
+> \end{frame}
+> \end{document}
+> ```
+>
+> **Note:** The above example is a very simple example, it is _not_ a live example.  I don't want an answer that fixes that particular example, I'm looking for a system of fixing _every possible example_.
+:::
+
+This barely counts as an answer, but here goes:
+
+1. Not a problem.  I think you can use the `execute at end picture` key here.  The only pitfall I can think of is that the slide number is surprisingly hard to get at.  See my answer here: https://tex.stackexchange.com/questions/4009/latex-beamer-how-to-get-distinct-page-numbers-when-using-overlays/4012#4012. 
+
+2. Because of the non-standard way beamer expands the frame code, I think getting code executed at the end of the frame is hard.  But you could take care of this in step 1 by writing a bounding-box line to the aux file at the first slide and then each time the bounding box gets bigger.  Then when the aux file is read the last bounding-box line is the biggest.
+
+3. This shouldn't be a problem either.  I'd try the `execute at begin picture` key.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/18704/how-can-i-fix-jumping-tikz-pictures-in-beamer/18710#18710) on TeX Stack Exchange, 2011-05-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,65 @@
+---
+title: What is the definition of $\lim_{\epsilon \to 0+, \epsilon' \to 0+} \int_{a+\epsilon}^{b-\epsilon'} f = A$?
+date: '2019-08-29'
+description: Since $f$ has singularities at $a$ and $b$, the definite integral $\inta^b f$ is undefined. But for sufficiently small $\epsilon$ and $\epsilon'$, $f$ is…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3338100
+se-link: https://math.stackexchange.com/questions/3338086/what-is-the-definition-of-lim-epsilon-to-0-epsilon-to-0-int-a-eps/3338100#3338100
+se-score: 2
+se-accepted: true
+se-tags:
+- limits
+- improper-integrals
+- epsilon-delta
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the definition of $\lim_{\epsilon \to 0+, \epsilon' \to 0+} \int_{a+\epsilon}^{b-\epsilon'} f = A$?](https://math.stackexchange.com/questions/3338086/what-is-the-definition-of-lim-epsilon-to-0-epsilon-to-0-int-a-eps), asked by [tchappy ha](https://math.stackexchange.com/users/384082/tchappy-ha) on Mathematics Stack Exchange (2019-08-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Definition:
+> >Suppose that $f:[a,b] \rightarrow \mathbb{R}$ is continuous on $(a, b)$ and has singularities at $a$ and $b$.  
+> >
+> >If $\lim_{\epsilon \to 0+, \epsilon' \to 0+} \int_{a+\epsilon}^{b-\epsilon'} f = A$ for some real number $A$, then we define $\int_{a}^{b} f := A$.
+>
+> What is the definition of the following formula?  
+>
+> $$\lim_{\epsilon \to 0+, \epsilon' \to 0+} \int_{a+\epsilon}^{b-\epsilon'} f = A.$$
+:::
+
+Since $f$ has singularities at $a$ and $b$, the definite integral $\int_a^b f$ is undefined.  But for sufficiently small $\epsilon$ and $\epsilon'$, $f$ is continuous on $[a+\epsilon,b-\epsilon']$.  In those situations, $\int_{a+\epsilon}^{b-\epsilon'} f$ **is** defined.  We can ask if there is a limit of that integral over the “truncated” closed interval as it grows closer to the full interval $[a,b]$.  That is what is meant by the expression $\lim_{\epsilon\to 0,\epsilon'\to 0} \int_{a+\epsilon}^{b-\epsilon'} f$.  If that limit exists (and is a real number $A$), we define the improper integral $\int_a^b f$ to be that limit.
+
+To be more precise, $\int_a^b f = A$ if for every $\epsilon > 0$ there exist $\delta$ and $\delta'>0$ such that 
+$$\left|\int_{a+\eta}^{b - \eta'} f - A \right| < \epsilon$$
+whenever $\eta$ and $\eta'$ satisfy $0 < \eta < \delta$ and $0 < \eta' < \delta'$.
+
+* * *
+
+You asked if this limit can be reduced to $\lim_{\epsilon\to 0} \int_{a-\epsilon}^{b+\epsilon}$.  Consider the function
+$$f(x) = \begin{cases} 
+               \frac{1}{x+1}+ \frac{1}{x-1} & x \neq \pm 1 \\
+               0 & x = \pm1
+           \end{cases}$$
+Then $f$ is defined on $[-1,1]$, continuous on $(-1,1)$ and has singularities at $1$ and $-1$.  The indefinite integral is
+$$\int\left(\frac{1}{x-1} + \frac{1}{x+1}\right)\,dx = \ln|x+1| + \ln|x-1| + C$$
+So for any $\epsilon$ and $\epsilon'$ with $-1+\epsilon < 1 - \epsilon'$, we have
+$$\begin{align*}
+    \int_{-1+\epsilon}^{1 - \epsilon'} f
+    &= \ln(2-\epsilon') + \ln \epsilon'  - \ln \epsilon - \ln (2-\epsilon)
+\end{align*}$$
+As $\epsilon$ and $\epsilon'$ tend to $0$, the first and last terms tend to $\ln 2$ and $-\ln2$, so they cancel.  But what of $\ln \epsilon' - \ln \epsilon$?  This is equal to $\ln\frac{\epsilon'}{\epsilon}$.  If we restrict $\epsilon'$ to be equal to $\epsilon$, this ratio is $1$ and the definite integral is $0$.  But if we restrict $\epsilon'$ to be a different multiple of $\epsilon$, say $\epsilon' = \alpha\epsilon$ for some $\alpha > 0$, then $\ln\frac{\epsilon'}{\epsilon} = \ln \alpha$.  In summary,
+$$\lim_{\epsilon\to 0}\int_{-1+\epsilon}^{1-\epsilon} f = 0$$
+but
+$$\lim_{\epsilon\to 0,\epsilon'\to 0}\int_{-1+\epsilon}^{1-\epsilon'} f \text{ does not exist}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3338086/what-is-the-definition-of-lim-epsilon-to-0-epsilon-to-0-int-a-eps/3338100#3338100) on Mathematics Stack Exchange, 2019-08-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,142 @@
+---
+title: Determining the closest point to three lines in space
+date: '2026-07-27'
+description: The square of the distance from $P$ to the line through $L0$ in the direction of $V1$ is $$d^2(L,P) = \left|(P-L0) - (P-L0) \cdot…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5145192
+se-link: https://math.stackexchange.com/questions/5145085/determining-the-closest-point-to-three-lines-in-space/5145192#5145192
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- linear-algebra
+- geometry
+- optimization
+- analytic-geometry
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Determining the closest point to three lines in space](https://math.stackexchange.com/questions/5145085/determining-the-closest-point-to-three-lines-in-space), asked by [حسام العبيط](https://math.stackexchange.com/users/1711873/%d8%ad%d8%b3%d8%a7%d9%85-%d8%a7%d9%84%d8%b9%d8%a8%d9%8a%d8%b7) on Mathematics Stack Exchange (2026-07-26; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> You're given three lines defines parametrically as follows
+>
+> $L(t) = L_0 + t V_1 \tag{1}$
+>
+> $K(s) = K_0 + s V_2 \tag{2}$
+>
+> $M(r) = M_0 + r V_3 \tag{3}$
+>
+> where $L_0, K_0, M_0, V_1, V_2, V_3$ are all $3$-dimensional vectors.  You want to determine the point $P$ that is closest to these lines by minimization the following function:
+>
+> $f(P, t, s, r) = (P - L(t)) \cdot (P - L(t) ) + (P - K(s)) \cdot(P - K(s)) + (P - M(r)) \cdot (P - M(r) ) \tag{4}$
+>
+> Note that this minimization is unconstrained. 
+>
+> **My Attempt:**
+>
+> We the following partial derivative that we want to be equal to zero:
+>
+> $\nabla_P(f) = \mathbf{0} = 2 (P - L(t) ) + 2 (P - K(s)) + 2 (P - M(r) ) \tag{5}$
+>
+> This equation means that we should choose 
+>
+> $P = \dfrac{1}{3} ( L(t) + K(s) + M(r) ) \tag{6}$
+>
+> Differentiating with respect to $t, s, r$ we get
+>
+> $f_t = 2 (P - L(t)) \cdot (- V_1) = 0 \tag{7}$
+>
+> $f_s = 2 (P - K(s)) \cdot (- V_2) = 0 \tag{8}$
+>
+> $f_r = 2 (P - M(r) ) \cdot (- V_3) = 0 \tag{9}$
+>
+> These three equations together with $(6)$ form a linear system of equations which can be solved for $t, s, r$ , then $P$ is determined.
+>
+> **Question:** Is there another way to approach the problem?
+>
+> One possible alternative route I can think of is starting from $(6)$, evaluate the function $f$ as follows
+>
+> Define first the vector $X = [t, s, r]^T$, then using $(6)$, 
+>
+> $P - L(t) = \dfrac{1}{3} ( - 2 L(t) + K(s) + M(r) ) = X_1 + A X$
+>
+> $P - K(s) = \dfrac{1}{3} ( L(t) - 2 K(s) + M(r) )  = X_2 + B X$
+>
+> $P - M(r) = \dfrac{1}{3} ( L(t) + K(s) - 2 M(r) ) = X_3 + C X$
+>
+> where 
+>
+> $A = \dfrac{1}{3} [ - 2 V_1 , V_2 , V_3 ]$
+>
+> $B = \dfrac{1}{3} [ V_1, -2 V_2, V_3 ]$
+>
+> $C = \dfrac{1}{3} [ V_1, V_2, - 2 V_3 ]$
+>
+> $X_1 = \dfrac{1}{3} (- 2 L_0 + K_0 + M_0 )$
+>
+> $X_2 = \dfrac{1}{3} ( L_0 - 2 K_0 + M_0 )$
+>
+> $X_3 = \dfrac{1}{3} (L_0 + K_0 - 2 M_0 )$
+>
+> So, now our function to be minimized becomes the following quadratic function:
+>
+> $f(X) = (X_1 + A X)^T (X_1 + A X) + (X_2 + B X)^T (X_3 + B X) + (X_3 + C X)^T (X_3 + C X)$
+>
+> Re-arranging terms, gives
+>
+> $f(X) = X^T Q X + X^T b + c$
+>
+> where
+>
+> $Q = A^T A + B^T B + C^T C$
+>
+> $b = 2 A^T X_1 + 2 B^T X_3 + 2 C^T X_3$
+>
+> $c = X_1^T X_1 + X_2^T X_2 + X_3^T X_3$
+>
+> This quadratic function is very easy to minimize provided that the matrix $Q$ is positive definite.  From its definition it is easy to see that indeed it is positive definite.  Hence, the minimizing $X$ is
+>
+> $X^* = - \dfrac{1}{2} Q^{-1} b$
+>
+> With this $X^*$ the function can be written as
+>
+> $f(X) = (X - X^*)^T Q (X - X^*) + d^2$
+>
+> where 
+>
+> $d^2 = c - {X^*}^T Q {X^*}  = c - \dfrac{1}{4} b^T Q^{-1} b$
+>
+> This is the "minimum average squared distance of $P$" from the three lines.
+:::
+
+The square of the distance from $P$ to the line through $L_0$ in the direction of $V_1$ is
+$$d^2(L,P) = \left|(P-L_0) - (P-L_0) \cdot \frac{V_1}{|V_1|}\frac{V_1}{|V_1|}\right|^2$$
+If we replace $V_1$ with a unit vector $U_1$, we get
+$$d^2(L,P) = |(I-U_1U_1^T)(P-L_0)|^2$$
+The gradient of $d^2(L,P)$ as a function of $P$ is $2(I-U_1U_1^T)(P-L_0)$. This makes sense because it's the component of $P-L_0$ that's perpendicular to $U_1$, and that direction will move $P$ away from $L$ as fast as possible.
+
+Repeating this with the other two lines and summing, we want to minimize
+$$\begin{aligned}
+f(P) &= d^2(L,P) + d^2(K,P) + d^2(M,P)
+\\ &= |(I-U_1U_1^T)(P-L_0)|^2 + |(I-U_2U_2^T)(P-K_0)|^2 + |(I-U_3U_3^T)(P-M_0)|^2
+\end{aligned}$$
+Apparently
+$$\nabla f(P) = 2(I-U_1U_1^T)(P-L_0) + 2(I-U_2U_2^T)(P-K_0) + 2(I-U_3U_3^T)(P-M_0)$$
+
+Let $P_i = I-U_i^T U_i$ for each $i$. The minimum point $P$ satisfies
+$$P_1(P-L_0) + P_2(P-K_0) + P_3(P-M_0) = 0$$
+or 
+$$(P_1 + P_2 + P_3) P = P_1L_0 + P_2 K_0 + P_3 M_0$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5145085/determining-the-closest-point-to-three-lines-in-space/5145192#5145192) on Mathematics Stack Exchange, 2026-07-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

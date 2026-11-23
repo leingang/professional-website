@@ -1,0 +1,61 @@
+---
+title: 'LaTeX: Lstlisting automatically recognizing code passage'
+date: '2010-12-16'
+description: Something like this was discussed on the TeX SE a while back and one answer used a package catchfilebetweentags. This doesn't solve your problem directly, but…
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 4456425
+se-link: https://stackoverflow.com/questions/3915709/latex-lstlisting-automatically-recognizing-code-passage/4456425#4456425
+se-score: 1
+se-accepted: false
+se-tags:
+- latex
+- lines
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[LaTeX: Lstlisting automatically recognizing code passage](https://stackoverflow.com/questions/3915709/latex-lstlisting-automatically-recognizing-code-passage), asked by [phimuemue](https://stackoverflow.com/users/255688/phimuemue) on Stack Overflow (2010-10-12; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am writing a program (in C, but I suppose that's not so relevant) in connection with a little documentary material in LaTeX. I want the documentary material to contain code snippets from my original code.
+>
+> In order to include source code and keep it up to date, I do the following in my document:
+>
+> ```latex
+> \lstinputlisting[firstline=200, lastline=210]{../src/source.c)
+> ```
+>
+> This loads automatically the lines 200 to 210 (which contain e.g. a function) from `../src/source.c` into my document. 
+>
+> However, if I add some lines before line 200, this means that line 200 "wanders down some lines", so I have to adjust this in order to get my original function.
+>
+> So here's my question: Does anybody know about a possibility how to dynamically tell `lstinputlisting` (or any adequate substitute) to tell which lines to take?
+>
+> I imagine something like the following: I add special comments to my C source code that will be recognized by `lstinputlisting`, e.g.
+>
+> ```latex
+> /// lstinputlisting "myfunc" BEGIN
+> int myFunction(int x){
+>   return x+2;
+> }
+> /// lstinputlisting "myfunc" END
+> ```
+>
+> Then, `lstlisting` scans the file and just includes the lines between the `BEGIN` and the `END` things.
+:::
+
+Something like this was [discussed on the TeX SE][1] a while back and one answer used a package [`catchfilebetweentags`](http://www.ctan.org/tex-archive/macros/latex/contrib/catchfilebetweentags/).  This doesn't solve your problem directly, but perhaps you can use that to feed the fragment you want to `\lstlistings`, perhaps again with a temporary file.  
+
+
+  [1]: https://tex.stackexchange.com/questions/4889
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/3915709/latex-lstlisting-automatically-recognizing-code-passage/4456425#4456425) on Stack Overflow, 2010-12-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

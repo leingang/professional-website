@@ -1,0 +1,160 @@
+---
+title: unwanted white space when combining surface plot with a vector plot
+date: '2014-07-15'
+description: 'Your arrows are sticking out of the plot region, enlarging it. To fix, restrict the plot window explicitly with xmin, xmax, ymin, and ymax:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 191616
+se-link: https://tex.stackexchange.com/questions/191615/unwanted-white-space-when-combining-surface-plot-with-a-vector-plot/191616#191616
+se-score: 3
+se-accepted: true
+se-tags:
+- tikz-pgf
+- arrows
+- scaling
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[unwanted white space when combining surface plot with a vector plot](https://tex.stackexchange.com/questions/191615/unwanted-white-space-when-combining-surface-plot-with-a-vector-plot), asked by [nluigi](https://tex.stackexchange.com/users/59139/nluigi) on TeX Stack Exchange (2014-07-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am trying to produce a surface plot of a scalar field with a vector plot imposed on top using pgfplot/tikz. I am nearly there except that depending on the scale of the arrows white space is added between the axis and surface plot. How can this be avoided?
+>
+> ![scale=0.01][q-1]
+> ![scale=0.05][q-2]
+>
+> The code i am working with:
+>
+> ```latex
+> \documentclass{article}
+>
+> % Setting graphing environment
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=newest} 
+> \pgfplotsset{plot coordinates/math parser=false}
+>
+> \begin{document}
+>
+> % declare pgf colormaps:
+> \usepgfplotslibrary{colormaps} 
+>
+> % declare constants:
+> \pgfmathsetmacro\kx{2*pi}
+> \pgfmathsetmacro\ky{2*pi}
+> \pgfmathsetmacro\k{sqrt(\kx^2+\ky^2)}
+>
+> % declare equations:
+> \pgfmathdeclarefunction{rho}{2}{\pgfmathparse{% density
+> 	(\ky/\k)^2*cos(deg(2*\kx*#1))+(\kx/\k)^2*cos(deg(2*\ky*#2))}}
+> \pgfmathdeclarefunction{ux}{2}{\pgfmathparse{% x-velocity
+> 	-sqrt(2)*(\ky/\k)*cos(deg(\kx*#1))*sin(deg(\ky*#2))}}
+> \pgfmathdeclarefunction{uy}{2}{\pgfmathparse{% y-velocity
+> 	+sqrt(2)*(\kx/\k)*sin(deg(\kx*#1))*cos(deg(\ky*#2))}}
+> \pgfmathdeclarefunction{umag}{2}{\pgfmathparse{% velocity magnitude
+> 	sqrt(ux(#1,#2)^2+uy(#1,#2)^2)}}
+>
+> \begin{tikzpicture}
+> 	\begin{axis} [
+> 			domain=0:1, view={0}{90},
+> 			axis background/.style={fill=white},
+> 			colormap/jet, colorbar 
+> 		]
+> 		\addplot3 [
+> 				surf, shader=interp, samples=10    			]
+> 			{ rho(x,y) };
+>
+> 		\addplot3 [
+> 				white, -stealth, samples=20,
+> ```
+> 				    quiver={
+> 					    u={ux(x,y)/umag(x,y)}, 
+> 					    v={uy(x,y)/umag(x,y)}, 
+> 					    w={0}, 
+> 					    scale arrows=0.01 
+> 				    },
+>     			]
+>     			{umag(x,y)};
+>
+> ```latex
+> 	\end{axis}
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+>   [q-1]: 8HPak.png
+>   [q-2]: YKW7J.png
+:::
+
+Your arrows are sticking out of the plot region, enlarging it.  To fix, restrict the plot window explicitly with `xmin`, `xmax`, `ymin`, and `ymax`:
+
+```latex
+\documentclass{standalone}
+
+% Setting graphing environment
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} 
+\pgfplotsset{plot coordinates/math parser=false}
+
+\begin{document}
+
+% declare pgf colormaps:
+\usepgfplotslibrary{colormaps} 
+
+% declare constants:
+\pgfmathsetmacro\kx{2*pi}
+\pgfmathsetmacro\ky{2*pi}
+\pgfmathsetmacro\k{sqrt(\kx^2+\ky^2)}
+
+% declare *functions*: <-- Matthew with his mathematician hat on
+\pgfmathdeclarefunction{rho}{2}{\pgfmathparse{% density
+    (\ky/\k)^2*cos(deg(2*\kx*#1))+(\kx/\k)^2*cos(deg(2*\ky*#2))}}
+\pgfmathdeclarefunction{ux}{2}{\pgfmathparse{% x-velocity
+    -sqrt(2)*(\ky/\k)*cos(deg(\kx*#1))*sin(deg(\ky*#2))}}
+\pgfmathdeclarefunction{uy}{2}{\pgfmathparse{% y-velocity
+    +sqrt(2)*(\kx/\k)*sin(deg(\kx*#1))*cos(deg(\ky*#2))}}
+\pgfmathdeclarefunction{umag}{2}{\pgfmathparse{% velocity magnitude
+    sqrt(ux(#1,#2)^2+uy(#1,#2)^2)}}
+
+\begin{tikzpicture}
+    \begin{axis} [
+            domain=0:1, view={0}{90},
+            axis background/.style={fill=white},
+            colormap/jet, colorbar,
+            xmin=0,xmax=1,
+            ymin=0,ymax=1 
+        ]
+        \addplot3 [
+                surf, shader=interp, samples=10             ]
+            { rho(x,y) };
+
+        \addplot3 [
+                white, -stealth, samples=20,
+                quiver={
+                    u={ux(x,y)/umag(x,y)}, 
+                    v={uy(x,y)/umag(x,y)}, 
+                    w={0}, 
+                    scale arrows=0.1 
+                },
+            ]
+            {umag(x,y)};
+
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: lN8ES.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/191615/unwanted-white-space-when-combining-surface-plot-with-a-vector-plot/191616#191616) on TeX Stack Exchange, 2014-07-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

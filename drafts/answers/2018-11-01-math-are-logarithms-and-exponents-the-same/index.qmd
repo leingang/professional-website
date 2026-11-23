@@ -1,0 +1,47 @@
+---
+title: Are logarithms and exponents the same?
+date: '2018-11-01'
+description: I decided to flesh out my comment into an answer. This is a good question.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2980549
+se-link: https://math.stackexchange.com/questions/2980532/are-logarithms-and-exponents-the-same/2980549#2980549
+se-score: 3
+se-accepted: false
+se-tags:
+- logarithms
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Are logarithms and exponents the same?](https://math.stackexchange.com/questions/2980532/are-logarithms-and-exponents-the-same), asked by user611110 on Mathematics Stack Exchange (2018-11-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Logarithms are defined as 'a quantity representing the power to which a fixed number (the base) must be raised to produce a given number'
+> And exponents are defined as 'a quantity representing the power to which a given number or expression is to be raised, usually expressed as a raised symbol beside the number or expression'
+>
+> So is it not true that logarithms and exponents the same and logarithmic functions and exponents are inverse of each other?
+:::
+
+I decided to flesh out my comment into an answer.  This is a good question.
+
+As functions, exponentiation and logarithms are inverse to each other.  For instance, if $f(x) = a^x$, and $g(x) = \log_a(x)$, then $f(g(x)) = x$ and $g(f(x)) = x$.  (Slight caveat: the $x$ in the first equation must be positive, while the $x$ in the second equation can be any real number).  
+
+But exponential and logarithmic equations have the same amount of information in them.  That is,
+$$a^b = c \text{ exactly when } b = \log_a c$$
+Here $a$ and $c$ are positive numbers, while $b$ can be any real number.  
+
+In some elementary school curricula they teach [*fact families*][1].  For instance $3+4 = 7$ is in the same family as $4+3=7$, $7-3=4$, and $7-4=3$.  If you like, you can say that $a^b =c$ and $b =\log_a c$ belong to the same fact family, like two sides to the same coin.
+
+
+  [1]: https://www.mathatube.com/addition-subtraction-fact-triangle/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2980532/are-logarithms-and-exponents-the-same/2980549#2980549) on Mathematics Stack Exchange, 2018-11-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

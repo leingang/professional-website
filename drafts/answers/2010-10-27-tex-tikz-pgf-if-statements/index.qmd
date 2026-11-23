@@ -1,0 +1,120 @@
+---
+title: Tikz/Pgf if statements
+date: '2010-10-27'
+description: With TeX primitives you can do something like
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4633
+se-link: https://tex.stackexchange.com/questions/4628/tikz-pgf-if-statements/4633#4633
+se-score: 5
+se-accepted: false
+se-tags:
+- tikz-pgf
+- conditionals
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Tikz/Pgf if statements](https://tex.stackexchange.com/questions/4628/tikz-pgf-if-statements), asked by [EricR](https://tex.stackexchange.com/users/142/ericr) on TeX Stack Exchange (2010-10-27; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm having trouble writing if statements, I can find next to no documentation on them and what I want to do seems quite simple.
+>
+>
+> I'm using the [orbitals pgf/tikz example][q-1] from here, and I'd like to write a new atom type, whereby instead of the third argument, it takes phrase describing squashedness
+>
+> Normally, the code to create an atom looks like this:
+>
+> ```latex
+> \Atom{}{90/west/0,270/east/1}
+> ```
+>
+> So I wrote a separate method which I'm trying to modify that 
+>
+> ```latex
+> \AtomSquash{}{90/west/sq,270/east/sq}
+> ```
+>
+> The code for creating the atoms is as follows
+>
+> ```latex
+> \newcommand{\Atom}[3][AtomNode]{
+>   \node[atomcore] (#1){#2};% {\ce{#2}};
+>   \foreach \ang/\anchor/\n in {#3} {
+>       \orbital{\ang}{#1.\anchor}{\n}
+>   }
+> }
+> \newcommand{\AtomSquash}[3][AtomNode]{
+>         \node[atomcore] (#1){#2};
+>         \foreach \ang/\anchor/\squashness in {#3}{
+>                 \squashorbital{\ang}{#1.\anchor}{\squashness}
+>         }
+>
+> }
+> ```
+>
+>
+> And the orbital code:
+>
+> ```latex
+> \newcommand{\orbital}[3]{
+>     \begin{scope}[rotate=#1,shift=(#2)]
+>         % These points define the curve for the orbital.
+>         \coordinate (c1) at (-\orbwidth, .6 * \orbheight);
+>         \coordinate (c2) at (-\orbwidth, \orbheight);
+>         \coordinate (c3) at (\orbwidth, \orbheight);
+>         \coordinate (c4) at (\orbwidth, .6 * \orbheight);
+>         \coordinate (top) at (0,\orbheight);
+>
+>         %Coordinates of the electrons
+>
+>         \coordinate (e1) at (0, 0.45*\orbheight);
+>         \coordinate (e2) at (0, 0.75*\orbheight);
+>     \end{scope}  \begin{pgfonlayer}{background}
+>
+>       \draw[orbital #3] (#2) .. controls (c1) and (c2) .. (top) ..
+>             controls (c3) and (c4) .. (#2);
+>   \end{pgfonlayer}
+>
+>   % Draw the electrons
+>   \ifnum#3>0
+>       \foreach \n in {1,...,#3} {
+>           %Don't need electrons to be shaded.
+>           %\shade[ball color=electron] (e\n) circle (1mm);
+>       }
+>   \fi
+> }
+> ```
+>
+>
+> What I would especially like to do here, is have the ``\atom`` and ``\atomsquash`` in a single method, which would decide based on the number of arguments or say the text value of the third argument (is it equal to "sq" or is it a number?). I've tried writing an if statement that looks like the following ``\iftype=sq`` but the compiler seriously dislikes this. It doesn't help if I put quotes around the sq, the code will compile then but the if statement never is true.
+>
+> Help? 
+>
+>
+>   [q-1]: http://www.texample.net/tikz/examples/atoms-and-orbitals/
+:::
+
+With TeX primitives you can do something like
+
+```latex
+\def\sqstr{sq}
+\def\argiii{#3}
+\ifx\argiii\sqstr
+  % #3==sq code
+\else
+  % #3!=sq code
+\fi
+```
+
+I started out preferring ifthen.sty but for some reason nowadays I like TeX `\if`s.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4628/tikz-pgf-if-statements/4633#4633) on TeX Stack Exchange, 2010-10-27. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

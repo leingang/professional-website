@@ -1,0 +1,39 @@
+---
+title: 'Clarification: R/Z or Q/Z'
+date: '2016-10-03'
+description: These are the quotient groups of $\mathbb{R}$ or $\mathbb{Q}$ by the subgroup $\mathbb{Z}$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1952123
+se-link: https://math.stackexchange.com/questions/1952118/clarification-r-z-or-q-z/1952123#1952123
+se-score: 3
+se-accepted: false
+se-tags:
+- abstract-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Clarification: R/Z or Q/Z](https://math.stackexchange.com/questions/1952118/clarification-r-z-or-q-z), asked by [user336012](https://math.stackexchange.com/users/336012/user336012) on Mathematics Stack Exchange (2016-10-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I was wondering what are these two groups: $\mathbb{R}/\mathbb{Z}$ and $\mathbb{Q}/\mathbb{Z}$. Thanks!
+:::
+
+These are the quotient groups of $\mathbb{R}$ or $\mathbb{Q}$ by the subgroup $\mathbb{Z}$.
+
+Starting with real numbers or rational numbers, declare two numbers equivalent if their difference is an integer.  The equivalence classes under that relation form a group, called the quotient group.  Using set-theoretic notation, we say $x \sim y$ if $x-y \in \mathbb{Z}$, and then
+$$\mathbb{R}/\mathbb{Z} = \left\{[x] \mid x\in\mathbb{R}\right\}$$
+
+More concretely, we cast off the “integer part” of every real/rational number.  This turns out to be consistent with additions.  For instance, if $[x]$ denotes the equivalent class of $x\in\mathbb{R}$ by $\mathbb{Z}$, then
+$$[0.35] + [0.7] = [1.05] = [0.05]$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1952118/clarification-r-z-or-q-z/1952123#1952123) on Mathematics Stack Exchange, 2016-10-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

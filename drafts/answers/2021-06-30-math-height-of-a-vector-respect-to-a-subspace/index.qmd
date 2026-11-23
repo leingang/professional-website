@@ -1,0 +1,44 @@
+---
+title: Height Of A Vector Respect To A SubSpace
+date: '2021-06-30'
+description: If the vectors are $v1, v2, \dots, vn$, then $v1,v2,\dots,v{n-1}$ span a subspace $W$. The distance from $vn$ to $W$ is the minimum length of all vectors $vn -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4186580
+se-link: https://math.stackexchange.com/questions/4186563/height-of-a-vector-respect-to-a-subspace/4186580#4186580
+se-score: 0
+se-accepted: true
+se-tags:
+- linear-algebra
+- determinant
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Height Of A Vector Respect To A SubSpace](https://math.stackexchange.com/questions/4186563/height-of-a-vector-respect-to-a-subspace), asked by [user232560](https://math.stackexchange.com/users/890400/user232560) on Mathematics Stack Exchange (2021-06-30; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Can anyone explain me what means the following: 
+>
+> To compute the volume of a $n$ dimensional parallelepiped we use the base x height rule, we pick a vector, then height is the distance from this vector to the subspace spanned by the remainimg vectors,  where base is the $(n-1)$ dimensional volume formed by the remaining vectors.
+>
+> ¿What means height there?, I  understand it with $2$, $3$ dimensions, but what about 4?
+:::
+
+Like it says:
+
+> height is the distance from this vector to the subspace spanned by the remainimg vectors
+
+If the vectors are $v_1, v_2, \dots, v_n$, then $v_1,v_2,\dots,v_{n-1}$ span a subspace $W$.  The distance from $v_n$ to $W$ is the minimum length of all vectors $v_n - w$, as $w$ ranges over $W$.
+
+It's unlikely you would need to compute this height directly.  Most of the time the volume of a parallelepiped would be computed using the determinant formula.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4186563/height-of-a-vector-respect-to-a-subspace/4186580#4186580) on Mathematics Stack Exchange, 2021-06-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

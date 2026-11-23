@@ -1,0 +1,50 @@
+---
+title: Struggling to understand proof in introductory measure theory from Rudin
+date: '2016-10-01'
+description: The function $\varphin$ rounds $t$ down to the nearest multiple of $\frac{1}{2^n}$, until $t$ reaches $n$. At that point $\phin$ levels off to the constant…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1949309
+se-link: https://math.stackexchange.com/questions/1949256/struggling-to-understand-proof-in-introductory-measure-theory-from-rudin/1949309#1949309
+se-score: 3
+se-accepted: false
+se-tags:
+- measure-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Struggling to understand proof in introductory measure theory from Rudin](https://math.stackexchange.com/questions/1949256/struggling-to-understand-proof-in-introductory-measure-theory-from-rudin), asked by [Necroticka](https://math.stackexchange.com/users/234160/necroticka) on Mathematics Stack Exchange (2016-10-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So below is an excerpt from Rudin's book on "Real and Complex Analysis". The proof just confuses me quite a lot perhaps because of the fact that there's quite a few variables floating around. I've tried to highlight specific points which I believe are stopping me from understanding this. 
+>
+> First why does he define function (1) like this? Second, why is it a Borel function, or on what basis is that true? 
+>
+> [![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: xUjEk.jpg
+>
+> P.S. I'm not asking for complete explanation per se, but some idea of what is going on would be good, thanks a lot!
+:::
+
+The function $\varphi_n$ rounds $t$ down to the nearest multiple of $\frac{1}{2^n}$, until $t$ reaches $n$.  At that point $\phi_n$ levels off to the constant $n$.  For instance, here is a graph of $\phi_2$:
+
+![ltOZk.png][1]
+
+So $\varphi_n$ takes finitely many values on a finite partition of $[0,\infty]$.  That should be enough to show that it's Borel measurable.  If you draw a number of these, you'll see why $0 \leq \varphi_n(t) \leq \varphi_{n+1}(t)\leq t$ for all $n$, and $\varphi_n(t) \to t$ as $n\to\infty$ for all $t$.  
+
+Composing a measurable function $f$ with $\varphi_n$ is going to round the *values of $f$* down to the nearest multiple of $\frac{1}{2^n}$, up to a certain point.
+
+  [1]: LEvcn.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1949256/struggling-to-understand-proof-in-introductory-measure-theory-from-rudin/1949309#1949309) on Mathematics Stack Exchange, 2016-10-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

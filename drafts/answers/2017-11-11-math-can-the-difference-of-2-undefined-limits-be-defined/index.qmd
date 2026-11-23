@@ -1,0 +1,55 @@
+---
+title: Can the difference of 2 undefined limits be defined?
+date: '2017-11-11'
+description: I have the same take as user21820. Your error is treating “undefined” like it's a value when it's really just a predicate.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2515172
+se-link: https://math.stackexchange.com/questions/2514584/can-the-difference-of-2-undefined-limits-be-defined/2515172#2515172
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Can the difference of 2 undefined limits be defined?](https://math.stackexchange.com/questions/2514584/can-the-difference-of-2-undefined-limits-be-defined), asked by [OMar Mohamed](https://math.stackexchange.com/users/74646/omar-mohamed) on Mathematics Stack Exchange (2017-11-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is this limit defined or undefined?
+> $$\lim\limits_{x \to 0+} \left(\sqrt{\frac{1}{x}+2}-\sqrt{\frac{1}{x}}\right)$$
+> When I apply the rule of difference of limits, it's undefined. But, when I manipulate it, it gives me zero. And the graph of the function indicates it's defined on the right side.
+>
+> By multiplying by $\frac{\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}}}{\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}}}$:
+> $$\lim\limits_{x \to 0+} \frac{\left( \sqrt{\frac{1}{x}+2}-\sqrt{\frac{1}{x}} \, \right) \left(\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}} \, \right)}{\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}}}$$
+>
+> $$=\lim\limits_{x \to 0+} \frac{\frac{1}{x}+2-\frac{1}{x}}{\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}}}$$
+> $$=\lim\limits_{x \to 0+} \frac{2}{\sqrt{\frac{1}{x}+2}+\sqrt{\frac{1}{x}}}$$
+> Then, we multiply by $\frac{\sqrt{x}}{\sqrt{x}}$:
+> $$=\lim\limits_{x \to 0} \frac{2\sqrt{x}}{\sqrt{1+2x}+1}$$
+> And, we substitute:
+> $$=\frac{2\sqrt{0}}{\sqrt{1+2\times0}+1} = 0$$
+> So, is this limit defined or not? and what's my error, if any?
+:::
+
+I have the same take as user21820.  Your error is treating “undefined” like it's a value when it's really just a predicate.  
+
+When we write $\lim_{x\to a} f(x) = L$, it's not really an equation so much as a statement.  It's a statement about $f$, $a$, and $L$ all in one.  When we say that $\lim_{x\to a} f(x)$ is undefined, we mean that $\lim_{x\to a} f(x) = L$ is not true for any number $L$.  
+
+It's tempting to think of “undefined” as some magic quantity which nullifies real numbers.  Sometimes this leads to true statements.  For instance, if $\lim_{x\to a} f(x) = L$ and $\lim_{x\to a} g(x)$ is undefined, then $\lim_{x\to a} (f(x) + g(x))$ is undefined.  You might want to think of this succinctly as “finite plus undefined equals undefined.”
+
+But it also leads to false statements, as you have discovered.  It's just not true that if $\lim_{x\to a}f(x)$ is undefined and $\lim_{x\to a}g(x)$ is undefined, then $\lim_{x\to a} (f(x) + g(x))$ is undefined.  The simplest counterexample would be if $g(x) = -f(x)$.  So even though you might want to think to yourself “undefined plus undefined equals undefined,” this is specious reasoning.
+
+In a lot of computer languages, you can have an undefined or null value, and in some cases it can combine with other values.  For instance, in Excel, when a formula in a cell evaluates to #NA, any formula that uses that cell will also evaluate to #NA.  But it doesn't work that way with limits in math.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2514584/can-the-difference-of-2-undefined-limits-be-defined/2515172#2515172) on Mathematics Stack Exchange, 2017-11-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,69 @@
+---
+title: How to get tex4ht to respect listings styling better ?
+date: '2010-12-16'
+description: 'You can get the effects you want by adding this to the HTML''s stylesheet (Yay Firebug!):'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7235
+se-link: https://tex.stackexchange.com/questions/7216/how-to-get-tex4ht-to-respect-listings-styling-better/7235#7235
+se-score: 3
+se-accepted: true
+se-tags:
+- listings
+- html
+- tex4ht
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to get tex4ht to respect listings styling better ?](https://tex.stackexchange.com/questions/7216/how-to-get-tex4ht-to-respect-listings-styling-better), asked by [timday](https://tex.stackexchange.com/users/2539/timday) on TeX Stack Exchange (2010-12-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I've been producing PDFs and HTML from Latex sources, using tex4ht for the HTML (I'm on Debian/Lenny; so whatever versions are default on that).
+> I'm using the listings package to include source code.
+>
+> I'm very happy with the "look" of the [PDF][q-1], but the [HTML][q-2] looks a bit dreary without the code colouring or "blocked" listing headers.
+>
+> Is there some way of getting the HTML to include more of the listings styling ?  (I'm not wedded to tex4ht if there are alternatives which do the job better).
+>
+>   [q-1]: http://www.bottlenose.demon.co.uk/article/lru.pdf
+>   [q-2]: http://www.bottlenose.demon.co.uk/article/lru.htm
+:::
+
+You can get the effects you want by adding this to the HTML's stylesheet (Yay [Firebug][1]!):
+
+```latex
+div.lstinputlisting table.caption {
+    background: #c0c0c0;
+    color: white;
+    font-family: sans-serif;
+    padding-right: 100%;
+}
+div.lstinputlisting .pcrro7t- {
+    color: red;
+}
+```
+
+The [tex4ht page][2] says you can achieve this by putting this into a config file:
+
+```latex
+\Preamble{html} 
+\begin{document} 
+  \Css{ // everything from above } 
+\EndPreamble  
+```
+
+From there I'll cross my fingers and hope you know or can figure out how to call the right tex4ht command and use that config file.  `tex4ht` syntax is a little weird but see the linked page for examples.  
+
+  [1]: https://addons.mozilla.org/en-US/firefox/addon/1843/
+  [2]: http://www.tug.org/applications/tex4ht/mn-commands.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7216/how-to-get-tex4ht-to-respect-listings-styling-better/7235#7235) on TeX Stack Exchange, 2010-12-16. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

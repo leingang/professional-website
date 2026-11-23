@@ -1,0 +1,52 @@
+---
+title: Why does the double integral for the area of a circle of radius$1$ equal $\pi/8 $ instead of $\pi/4$?
+date: '2016-11-05'
+description: It's just not true that this integral is "the representation of a quarter circle of radius 1 in polar coordinates." The domain over which you are integrating…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2000269
+se-link: https://math.stackexchange.com/questions/2000256/why-does-the-double-integral-for-the-area-of-a-circle-of-radius1-equal-pi-8/2000269#2000269
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- multivariable-calculus
+- trigonometry
+- definite-integrals
+- polar-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why does the double integral for the area of a circle of radius$1$ equal $\pi/8 $ instead of $\pi/4$?](https://math.stackexchange.com/questions/2000256/why-does-the-double-integral-for-the-area-of-a-circle-of-radius1-equal-pi-8), asked by [Laser](https://math.stackexchange.com/users/213026/laser) on Mathematics Stack Exchange (2016-11-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Like [double integral a for quarter circle area][q-1]:
+> $$\int_0^{\pi/2} \int_0^1 (1-r^2) r\,dr\,d\theta = \frac{\pi}{8}$$
+>
+> If that truly is the representation of a quarter circle of radius 1 in polar coordinates, it must equal $\pi/4$. So, why is this *not* a quarter circle of radius one and is instead equal to $\pi/8$ suggesting a circle of radius $\sqrt2 / 2$ ?
+>
+>   [q-1]: http://www.wolframalpha.com/input/?i=double%20integral%20of%200%20to%20pi%2F2%20and%200%20to%201%20of%20(1%20-%20r%5E2)*r%20dr%20dtheta
+>
+>
+> Thanks!
+:::
+
+It's just not true that this integral is "the representation of a quarter circle of radius 1 in polar coordinates."  The *domain* over which you are integrating is a quarter disk, but you're integrating a function $f(r,\theta) = 1-r^2$ over that domain.
+
+There is a danger in calculus (especially in the transition from single to multivariable) to think of integrals as area.  In fact, integrals can be used to accumulate any function.  For instance, you can think of the function as measuring charge density over a metal plate in the shape of the domain.  Then the integral measures total charge.
+
+If you want an integral over a plane region that computes the area of the region, use $f(r,\theta)=1$.  Then
+$$\int_0^{\pi/2} \int_0^1 r\,dr\,d\theta = \left[\frac{r^2}{2}\right]^1_0 
+    \left[\theta\right]^{\pi/2}_0 = \frac{1}{2} \cdot \frac{\pi}{2} = \frac{\pi}{4}$$
+However, this doesn't prove the area formula.  The polar coordinates integration formula is derived from the area formula for this disk.  So this is—wait for it—circular logic.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2000256/why-does-the-double-integral-for-the-area-of-a-circle-of-radius1-equal-pi-8/2000269#2000269) on Mathematics Stack Exchange, 2016-11-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

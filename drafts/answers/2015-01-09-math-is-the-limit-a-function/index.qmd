@@ -1,0 +1,44 @@
+---
+title: Is the limit a function?
+date: '2015-01-09'
+description: This might work, except for the fact that not every function has a limit at every point. So any attempt to define your set $F$ or $N$ is going to be circular.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1097261
+se-link: https://math.stackexchange.com/questions/1097247/is-the-limit-a-function/1097261#1097261
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- real-analysis
+- limits
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the limit a function?](https://math.stackexchange.com/questions/1097247/is-the-limit-a-function), asked by [Newb](https://math.stackexchange.com/users/98587/newb) on Mathematics Stack Exchange (2015-01-09; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> We're aware of the existence of the limit in the context of calculus, e.g. where $f:\mathbb{R}\to\mathbb{R}$, we may have:
+> $$\lim_{x\to z} f(x) = y$$
+>
+> My question is whether it is valid to see the limit as a function. A limit takes two inputs: $f$, a function, and $z$, the value at which we take the limit of the function. These two inputs are a tuple $(f,z)$ where the first coordinate of the tuple is a function from some function space $F$[1] and the second coordinate is from $\mathbb{R}\cup[-\infty,+\infty]$, at least in standard one-variable calculus in the real numbers.
+>
+> So, instead of writing $\lim_{x\to z} f(x) = y$, I could write $\lim(f,z) = y$. Specifically, I want to claim that $\lim$ is a function such that $\lim : F \times ((\mathbb{R}\cup[-\infty,+\infty])\setminus N) \to \mathbb{R}\cup[-\infty,+\infty]$, where $N$ is the set of values in the extended reals for which we cannot take that particular limit, so we conveniently exclude them. The last part in particular may not read too well, but I hope that the point is clear: I'm asking if it is possible to call a limit a function that maps a (function, value) tuple to some image.
+>
+> [1] Matthew Leingang pointed out that different $f$ will have different $N$, which makes it hard to generally define an $F$ to suit an $N$. This is problematic for defining the domain of the limit, so I propose to define $F=\{f\}$, i.e. we define $F$ as containing only the particular function we're interested in taking the limit of.
+:::
+
+This might work, except for the fact that not every function has a limit at every point.  So any attempt to define your set $F$ or $N$ is going to be circular.
+
+I think the best way to think about the limit $\lim_{x\to z} f(x)=y$ is that it is a *statement* anout a function $f$, a point $z$, and a value $y$.  When we say the limit $\lim_{x\to z} f(x)$ does not exist, we mean that $\lim_{x\to z} f(x)=y$ is not true for any $y$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1097247/is-the-limit-a-function/1097261#1097261) on Mathematics Stack Exchange, 2015-01-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

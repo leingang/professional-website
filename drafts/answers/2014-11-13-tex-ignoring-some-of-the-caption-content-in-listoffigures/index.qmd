@@ -1,0 +1,114 @@
+---
+title: Ignoring some of the caption content in listoffigures
+date: '2014-11-13'
+description: 'Short answer: do it this way:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 212063
+se-link: https://tex.stackexchange.com/questions/212061/ignoring-some-of-the-caption-content-in-listoffigures/212063#212063
+se-score: 1
+se-accepted: true
+se-tags:
+- table-of-contents
+- front-matter
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Ignoring some of the caption content in listoffigures](https://tex.stackexchange.com/questions/212061/ignoring-some-of-the-caption-content-in-listoffigures), asked by [casparjespersen](https://tex.stackexchange.com/users/66161/casparjespersen) on TeX Stack Exchange (2014-11-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> When having a figure caption, I both write a title for the figure and a description of the content. An example could be:
+>
+> ```latex
+> \caption{Histogram equalization on Fig0316(2)(2nd\_from\_top).tif.
+>    {\bf (a)} Original image.
+>    {\bf (b)} Profile of the original image.
+>    {\bf (c)} Profile of the resulting image.
+>    {\bf (d)} Resulting image.
+>  \label{fig:eq:0316b}
+> }
+> ```
+>
+> Now, when I render the `\listoffigures` it includes everything stated within the `\caption{` and `}`. In this case, I only seek to include `Histogram equalization on Fig0316(2)(2nd\_from\_top).tif.` in the `lof`.
+>
+> How can I obtain that?
+:::
+
+Short answer: do it this way:
+
+```latex
+\begin{figure}
+\caption[Histogram equalization on Fig0316(2)(2nd\_from\_top).tif]
+{Histogram equalization on Fig0316(2)(2nd\_from\_top).tif.
+   {\bf (a)} Original image.
+   {\bf (b)} Profile of the original image.
+   {\bf (c)} Profile of the resulting image.
+   {\bf (d)} Resulting image.
+}
+ \label{fig:eq:0316b}
+\end{figure}
+```
+
+You might be interested in using the [`subcaption`](http://ctan.org/pkg/subcaption) package to typeset the subcaption labels automatically.  Then you don't need a short caption.
+
+```latex
+\documentclass{article}
+\title{Lorem Ipsum}
+\usepackage{mwe} % just for dummy images
+\usepackage{lipsum} % just for dummy text
+\usepackage{subcaption}
+\begin{document}
+\maketitle
+
+\listoffigures
+
+\section{Lorem Ipsum}
+
+\lipsum[1]
+\begin{figure}
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering%
+        \includegraphics[width=0.618\linewidth]{example-image-a}
+        \subcaption{Original image}
+    \end{minipage}
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering%
+        \includegraphics[width=0.618\textwidth]{example-image-b}
+        \subcaption{Profile of the original image}
+    \end{minipage}
+
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering%
+        \includegraphics[width=0.618\linewidth]{example-image-c}
+        \subcaption{Profile of the resulting image}
+    \end{minipage}
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering%
+        \includegraphics[width=0.618\textwidth,angle=180]{example-image-a}
+        \subcaption{Resulting image}
+    \end{minipage}
+    \caption{Histogram equalization on Fig0316(2)(2nd\_from\_top).tif}
+\end{figure}
+
+\section{Dolor sit amet}
+
+\lipsum[2-10]
+
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: Ui1yi.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/212061/ignoring-some-of-the-caption-content-in-listoffigures/212063#212063) on TeX Stack Exchange, 2014-11-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

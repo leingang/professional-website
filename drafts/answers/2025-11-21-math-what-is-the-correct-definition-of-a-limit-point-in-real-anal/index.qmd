@@ -1,0 +1,73 @@
+---
+title: What is the correct definition of a limit point in real analysis?
+date: '2025-11-21'
+description: There's no central authority on mathematical definitions, so you may not get an answer of the form “The first definition is ‘wrong’ because...” Authors can…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5110122
+se-link: https://math.stackexchange.com/questions/5110120/what-is-the-correct-definition-of-a-limit-point-in-real-analysis/5110122#5110122
+se-score: 21
+se-accepted: true
+se-tags:
+- real-analysis
+- sequences-and-series
+- intuition
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[What is the correct definition of a limit point in real analysis?](https://math.stackexchange.com/questions/5110120/what-is-the-correct-definition-of-a-limit-point-in-real-analysis), asked by [user1540346](https://math.stackexchange.com/users/1540346/user1540346) on Mathematics Stack Exchange (2025-11-21; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> This question relates two (seemingly) conflicting definitions of Limit Points in real analysis.
+>
+> The definition of limit points and closed sets from my notes are written as:
+>
+> >A much more general deﬁnition of open and closed sets can be obtained by considering the behaviour of sequences.
+> >
+> >**Example**. Consider the sequence $x_n=\frac{n}{n+1}$. We have $x_n \in (0,1)$, but $x_n\to 1\notin (0,1)$. On the other hand, both the sequence and its limit live in $[0,1]$
+> >
+> >**Deﬁnition**:
+> >$\text{Consider a set}\, S\subset \mathbb{R}. \text{A point}\,\bar{x}\,$ $\text{is called a limit point of}\,$ $S$ $\,\text{if there exists a sequence}\,$ $x_n\in S\,$ $\text{which converges to}\,\bar{x}$.
+> >
+> >**Deﬁnition**:
+> >A set $S$ is closed if it contains all its limit points.
+>
+> and I wish that was all there was to it...
+>
+> However, I have since seen a different definition in this [real analysis course](https://www.youtube.com/watch?v=RmsvftFNMtE) video, which clearly states from 0:30 that:
+> >A point $x$ is a limit point of a set $A$ if there is a sequence of points, $a_1,\, a_2,\,a_3,\,\dots$ from $A \setminus\{x\}$ such that $(a_n)\to \,x.$
+>
+> So for the second definition, this means that the set $\{1\}$ **cannot** have $1$ as a limit point, since the trivial $1, 1, 1, \dots$ sequence would satisfy this. 
+>
+> But according to the first definition, this $1$ is _actually_ a limit point (since it does not violate the requirements given in the quotation).
+>
+> By way of example, are $\frac{1}{17}$ and $1$ limit points for the set/interval $\left[\dfrac{1}{17},\,1\right]$?
+>
+> Well, according to a comment in the chat section [below an answer by Randall in this post](https://math.stackexchange.com/questions/5108255/example-that-the-union-of-an-in%ef%ac%81nite-number-of-closed-sets-is-not-necessarily-cl) the answer is yes, $\frac{1}{17}$ and $1$ are in fact limit points.
+>
+> So which quote is correct?
+:::
+
+There's no central authority on mathematical definitions, so you may not get an answer of the form “The first definition is ‘wrong’ because...” Authors can make whatever definitions they want, as long as they agree to the consequences.
+
+You're right that there's a conflict between the two definitions you found. What are the consequences? The definition from the ICL notes allows for isolated points to be called limit points, which would preclude having results like:
+
+* The closure of a set is the disjoint union of its limit points and its isolated points.
+* $x$ is a limit point of $A$ iff $x$ is in the closure of $A\setminus\{x\}$. 
+
+If you follow the definition from the video you watched, these are very straightforward to prove. 
+
+If you read those ICL notes a bit further, you might notice some strange extra conditions in theorems. You might find a statement about limit points with the additional hypothesis that they aren't isolated. Those theorems would be more cleanly stated and proved with a different definition.
+
+This is how definitions evolve over time. An example I like to point to is *prime number.* Some will say $1$ ought to be considered prime, since its only positive factors are $1$ and itself (redundantly). But if you let $1$ be a prime number, you give up the uniqueness of factorization into primes. We can tack on as many $1$'s as we like to a factorization. So if you want “unique” factorization, you have to change “prime numbers” to “prime numbers greater than $1$”. Or, you can exclude $1$ from the primes.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5110120/what-is-the-correct-definition-of-a-limit-point-in-real-analysis/5110122#5110122) on Mathematics Stack Exchange, 2025-11-21. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

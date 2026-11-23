@@ -1,0 +1,46 @@
+---
+title: Removing legend box (border) in pgfplots
+date: '2010-12-13'
+description: That looks like it might be asking for no legend to be drawn at all but actually it just applies to the rectangle around the legend.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7014
+se-link: https://tex.stackexchange.com/questions/7011/removing-legend-box-border-in-pgfplots/7014#7014
+se-score: 66
+se-accepted: false
+se-tags:
+- pgfplots
+- legend
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Removing legend box (border) in pgfplots](https://tex.stackexchange.com/questions/7011/removing-legend-box-border-in-pgfplots), asked by [Matt Williams](https://tex.stackexchange.com/users/1989/matt-williams) on TeX Stack Exchange (2010-12-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm attempting to remove or 'turn off' the legend border in pgfplots, but I can't seem to figure out how to do it.  I assume it will look something like this:
+>
+> ```latex
+> \begin{axis}[ legend style={?}]
+> ```
+>
+> where ? is a property related to the legend border (or box) that I can't seem to find.  The pgfplots help is really great, but I haven't seen this addressed anywhere.  Does anyone know how to accomplish this simple task?
+:::
+
+Try
+
+```latex
+\begin{axis}[ legend style={draw=none}]
+```
+
+That looks like it might be asking for no legend to be drawn at all but actually it just applies to the rectangle around the legend.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7011/removing-legend-box-border-in-pgfplots/7014#7014) on TeX Stack Exchange, 2010-12-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

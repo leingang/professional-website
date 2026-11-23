@@ -1,0 +1,37 @@
+---
+title: What is a template?
+date: '2016-05-19'
+description: I think this particular usage of the word template comes from Microsoft Word users. In that application, a template is essentially an example document with…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 310500
+se-link: https://tex.stackexchange.com/questions/309614/what-is-a-template/310500#310500
+se-score: 2
+se-accepted: false
+se-tags:
+- packages
+- templates
+- document-classes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is a template?](https://tex.stackexchange.com/questions/309614/what-is-a-template), asked by [Peter Wilson](https://tex.stackexchange.com/users/12082/peter-wilson) on TeX Stack Exchange (2016-05-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Regarding LaTeX I understand terms such as `class`, `package`, and so on but I don't understand the meaning of `template` as used by many questioners. Is it what is traditionally called a `package` or `class` or is it an example of a complete TeX document where the user edits the textual content, or ...?
+:::
+
+I think this particular usage of the word *template* comes from Microsoft Word users.  In that application, a template is essentially an example document with placeholder text and styling that can be customized to suit one's needs.  Word ships with several templates for letters, invoices, agendas, etc.  
+
+Templates can be pretty sophisticated with their own styles (in the MS Word sense) and even macros (I think).  I think the best analogue of this kind of template in the TeX universe is document class.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/309614/what-is-a-template/310500#310500) on TeX Stack Exchange, 2016-05-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

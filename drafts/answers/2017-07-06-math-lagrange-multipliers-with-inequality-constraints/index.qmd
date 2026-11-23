@@ -1,0 +1,97 @@
+---
+title: Lagrange multipliers with inequality constraints.
+date: '2017-07-06'
+description: Here is a solution which is a mixture of elimination and Lagrange. Using the only constraint that's an equality, we can substitute $z = 1-3x-2y$ into the…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2348592
+se-link: https://math.stackexchange.com/questions/2348394/lagrange-multipliers-with-inequality-constraints/2348592#2348592
+se-score: 5
+se-accepted: true
+se-tags:
+- calculus
+- multivariable-calculus
+- inequality
+- optimization
+- lagrange-multiplier
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Lagrange multipliers with inequality constraints.](https://math.stackexchange.com/questions/2348394/lagrange-multipliers-with-inequality-constraints), asked by [ChikChak](https://math.stackexchange.com/users/346298/chikchak) on Mathematics Stack Exchange (2017-07-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Find the maximum of $f(x,y,z)=(x+y+z)^3$, in $\mathbb{R}^3$ with the following constraints:
+> >
+> >$x \ge 0,\ 3x+2y+z=1,\ z\ge x^2+y^2$
+>
+> I know how to work with lagrange multipliers when the constraints are equalities(defining $h=f-\lambda_1 g_1-\lambda _2 g_2-...-\lambda_kg_k$ and solving $h=0$.But what am I suppose to do when the constraints are inequalities?
+:::
+
+Here is a solution which is a mixture of elimination and Lagrange.  Using the only constraint that's an equality, we can substitute $z = 1-3x-2y$ into the function and the other constraints.  So now the problem is to maximize
+$$f(x,y) = (x+y+(1-3x-2y))^3 = (1-2x-y)^3$$
+subject to the constraints $x\geq 0$ and 
+$$x^2 + y^2 \leq 1-3x-2y$$
+The first inequality describes the right half of the $xy$-plane.
+Complete the square in the second inequality:
+$$\begin{align*}
+    x^2 + 3x + y^2 + 2y &\leq 1 \\
+    x^2 + 3x + \frac{9}{4} + y^2 + 2y + 1 &\leq \frac{17}{4} \\
+    \left(x+\frac{3}{2}\right)^2 + \left(y + 1\right)^2  &\leq \frac{17}{4}
+\end{align*}$$
+
+Therefore, this inequality describes a disk of radius $\frac{\sqrt{17}}{2}$ centered at $\left(-\frac{3}{2},-1\right)$.  The two together form the constraint set.  It's the part that's shaded red and blue below.
+
+[![constraint set][1]][1]
+
+When looking for the extreme points, you want to search for ordinary critical points *inside* the constraint set, and constrained critical points *on the boundary* of the set.  For the first, we use the first-order conditions.  
+$$\begin{align*}
+    \frac{\partial f}{\partial x} &= -6(1-2x-y)^2 \\
+    \frac{\partial f}{\partial y} &= -3(1-2x-y)^2 \\
+\end{align*}$$
+The only way both of these can be zero is if $1-2x-y=0$, or $2x+y = 1$.  This describes a line through $(0,1)$ and $(1/2,0)$, shown in green on the diagram below.  You can see it doesn't touch the constraint set at all.  So there are no unconstrained critical points to check.
+
+The boundary of the constraint set includes two curves $x=0$ and $\left(x+\frac{3}{2}\right)^2 + \left(y + 1\right)^2  = \frac{17}{4}$.  First, use Lagrange to find any critical points along $x=0$.  We get
+$$\begin{align*}
+    -6(1-2x-y)^2 &= \lambda \\
+    -3(1-2x-y)^2 &= 0 \\
+     x&= 0
+\end{align*}$$
+The third and second equation tell us that $(1-y)^2 =0$, or $y=1$.  Again, this is outside the constraint set.  Next, use Lagrange with the second constraint equation:
+$$\begin{align*}
+    -6(1-2x-y)^2 &= 2\lambda \left(x+\frac{3}{2}\right) \\
+    -3(1-2x-y)^2 &= 2\lambda \left(y + 1\right)  \\    
+    \left(x+\frac{3}{2}\right)^2 + \left(y + 1\right)^2  &= \frac{17}{4}
+\end{align*}$$
+The first two equations tell us that $\lambda (2x+3) = \lambda(4y+4)$, so either $\lambda = 0$ (this forces $1-2x-y=0$, which has already been ruled out) or
+$$\begin{align*}
+    2x+3 &= 4y+4 \\
+    y &= \frac{1}{2}x-\frac{1}{4}
+\end{align*}$$
+This line, shown in orange below, does intersect the boundary of the constraint set in two places: $\left(0,-\frac{1}{4}\right)$ (when $x=0$) and $\left(\sqrt{\frac{17}{5}}-\frac{3}{2},\frac{1}{2}\sqrt{\frac{17}{5}} - 1\right)$.
+
+Finally, because this constraint set is not smooth but has corners, we have to include those in our check points.  They occur when $x=0$ and $\left(x+\frac{3}{2}\right)^2 + \left(y + 1\right)^2  = \frac{17}{4}$, or $\left(0,-1 \pm \sqrt{2}\right)$.
+
+[![constraint set with two lines][2]][2]
+
+So, four points to check:
+
+* $x=0$, $y=-1 + \sqrt{2}$: $f=(2-\sqrt(2))^3 \approx 0.20101$
+* $x=0$, $y=-1 - \sqrt{2}$: $f=(2+\sqrt(2))^3 \approx 39.799$
+* $x=0$, $y=-\frac{1}{4}$: $f=\frac{125}{64} \approx 1.95313$
+* $x=\sqrt{\frac{17}{5}}-\frac{3}{2}$, $y=\frac{1}{2}\sqrt{\frac{17}{5}} - 1$, $f\approx 0.059423$
+
+The greatest of these values by far is the one at $\left(0,-1-\sqrt{2}\right)$.  This is pretty messy, so I'm not 100% confident in the calculations, but [Wolfram Alpha](http://www.wolframalpha.com/input/?t=crmtb01&f=ob&i=maximum+of+(1-2x-y)%5E3+subject+to+x+%E2%89%A5+0+and+x%5E2+%2B+y%5E2+%E2%89%A4+1-3x-2y) agrees on the maximum.
+
+  [1]: BtIlD.png
+  [2]: Efxwl.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2348394/lagrange-multipliers-with-inequality-constraints/2348592#2348592) on Mathematics Stack Exchange, 2017-07-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

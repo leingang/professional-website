@@ -1,0 +1,42 @@
+---
+title: Recommended citation key construction
+date: '2010-10-12'
+description: If you're generating your own keys, I suggest <name>:<title> where both fields are shortened/abbreviated. For instance, a paper by Atiyah and Bott called "The…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4028
+se-link: https://tex.stackexchange.com/questions/4026/recommended-citation-key-construction/4028#4028
+se-score: 14
+se-accepted: false
+se-tags:
+- bibliographies
+- subjective
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Recommended citation key construction](https://tex.stackexchange.com/questions/4026/recommended-citation-key-construction), asked by [YuppieNetworking](https://tex.stackexchange.com/users/146/yuppienetworking) on TeX Stack Exchange (2010-10-12; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am starting a PhD, so reading papers and writing notes about them will be my routine for some months. I like to be organized so I try to add the interesting publications to a bib file. However, when writing my master dissertation, I didn't know how to organize my citation keys. I had some keys like `paper:smith03`, others like `master:goodwin97a` and even `paper:john2008adaptivealg`.
+>
+> I initially thought that `type`:`first lastname`:`year` was a good start but it then got a little out of control when I added authors that had the same last name or when the same author published many papers in the same year. I then tought about `type`:`first lastname`:`year`:`first couple of words of publication`, but it seemed to long, over-explained like the Hungarian notation of a variable (my initial approach was already a bit Hungarian-ish)
+>
+> **My question is:** do you have any tips or good citation keys for bibtex entries?
+:::
+
+If you're generating your own keys, I suggest `<name>:<title>` where both fields are shortened/abbreviated.  For instance, a paper by Atiyah and Bott called "The Moment Map and Equivariant Cohomology" could be keyed as `A-B:moment-map`.  Who cares what year it was published?  Not you; that's for people who want to look it up, and that's what the bibliography is for.  I don't think a catch-all system is as important as being able to remember the key when you type it.
+
+But you might also leave the key generation to somebody or something else.  MathSciNet (I can only speak from the math world) allows you to export records as BibTeX, and generates keys for you.  If you're using a Mac, use BibDesk to manage your bibliography.  It can import records from many sources and generates keys as well.  Then you can copy citations from BibDesk into your LaTeX window.  The keys are ugly but you just search and copy.
+
+I appreciate the desire for a system and for consistency; I've suffered from it often.  But don't let a system get in the way of the task of actually reading those papers you're citing. :-)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4026/recommended-citation-key-construction/4028#4028) on TeX Stack Exchange, 2010-10-12. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

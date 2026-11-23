@@ -1,0 +1,50 @@
+---
+title: $b_n \to +\infty$, $b_n > 0$, $n \to \infty$. Prove $a_n$ is convergent to $0$ if $a_n b_n$ is bounded.
+date: '2022-11-29'
+description: 'Hint: $$|an | = |an bn| \left|\frac{1}{bn}\right|$$ Since $(anbn)$ is bounded, there exists $M\geq 0$ such that $|anbn| \leq M$ for all $n$. Since…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4587876
+se-link: https://math.stackexchange.com/questions/4587870/b-n-to-infty-b-n-0-n-to-infty-prove-a-n-is-convergent-to-0-i/4587876#4587876
+se-score: 4
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$b_n \to +\infty$, $b_n > 0$, $n \to \infty$. Prove $a_n$ is convergent to $0$ if $a_n b_n$ is bounded.](https://math.stackexchange.com/questions/4587870/b-n-to-infty-b-n-0-n-to-infty-prove-a-n-is-convergent-to-0-i), asked by [KratosTheFarmer](https://math.stackexchange.com/users/1099620/kratosthefarmer) on Mathematics Stack Exchange (2022-11-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> $b_n \to +\infty$, $b_n > 0$, $n \to \infty$. Prove $a_n$ is convergent to $0$ if $a_n b_n$ is bounded.
+>
+> There are a lot of questions like "$a_n$ is convergent, $b_n$ is bounded. Prove $a_n b_n$ is convergent/bounded/evaluate lim etc".
+> So my questions is, I guess, pretty basic, but a little bit different (at least I hope so)
+>
+> Just to clarify, the question is why if $a_n b_n$ is bounded, while $b_n \to +\infty$, implies ($\implies$) that $a_n \to 0$
+>
+> Intuitive thinking is the following: if $b_n \to +\infty$, then $a_n$ must be decreasing (at least as fast as $b_n$ growth).  So, for example, $a_n = \frac{k}{b_n}$, $k$ -- some fixed number. Hence, $a_n \to 0$, $\lim_{n \to \infty} \frac{k \times b_n}{ b_n} = k$.
+>
+> Unfortunately, it can't be counted as proof.  Also I'm not so good at $\epsilon$-notation. 
+> But, my guess, we must somehow express $a_n$ through $b_n$.
+>
+> So I've got the idea "what to do" without knowledge "how to do".
+:::
+
+Hint:
+$$|a_n | = |a_n b_n| \left|\frac{1}{b_n}\right|$$
+Since $(a_nb_n)$ is bounded, there exists $M\geq 0$ such that $|a_nb_n| \leq M$ for all $n$. Since $\frac{1}{b_n} \to 0$, for all $\epsilon > 0$, there exists $N$ such that $\left|\frac{1}{b_n}\right| < \epsilon$ whenever $n \geq N$. Since $M$ is fixed and $\epsilon$ is arbitrary, you can make $M \epsilon$ as small as necessary.
+
+Does that help?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4587870/b-n-to-infty-b-n-0-n-to-infty-prove-a-n-is-convergent-to-0-i/4587876#4587876) on Mathematics Stack Exchange, 2022-11-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

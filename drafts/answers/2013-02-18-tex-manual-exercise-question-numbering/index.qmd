@@ -1,0 +1,113 @@
+---
+title: Manual exercise question numbering
+date: '2013-02-18'
+description: Good on you to look in the source code. Good on the package author to use good macro names that describe the intent. I guessed from your posted snippet that…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 98668
+se-link: https://tex.stackexchange.com/questions/98667/manual-exercise-question-numbering/98668#98668
+se-score: 4
+se-accepted: true
+se-tags:
+- numbering
+- counters
+- exercises
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Manual exercise question numbering](https://tex.stackexchange.com/questions/98667/manual-exercise-question-numbering), asked by [Paulius](https://tex.stackexchange.com/users/26082/paulius) on TeX Stack Exchange (2013-02-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am using [exercise][q-1] package to list exercises/questions. 
+> I am defining exercise list like this:
+>
+> ```latex
+> \begin{ExerciseList}
+>   \Exercise{Exercise title}
+>
+>   \ExeText
+>   Some exercise introduction
+>   \Question{First question}
+>   \Question{Second question}
+>   \Question{Third question}
+> \end{ExerciseList}
+> ```
+>
+> In the output questions are numbered like this:
+>
+> ```latex
+> 1. First question
+> ```
+>
+> However my desire is to have following output:
+>
+> ```latex
+> (a) First question
+> ```
+>
+> Actually it would be best if I could manually define list letter for question as I anticipate some gaps in numbering later. For example `\Question{e}{Some question}`.
+> From the package source I see that questions are translated to list items: 
+>
+> ```latex
+> \def\@QuestionHeader{\item[{\makebox[0cm][r]{\begingroup\@getQuestionInfo%
+> \QuestionHeaderDifficulty\QuestionNB\endgroup}}]%
+> \begingroup\@getQuestionInfo\QuestionHeaderTitle\endgroup\ignorespaces}
+> ```
+>
+> However I am unsure on how to redefine the macro in order to accomplish my goal.. Any ideas or hints?
+>
+>   [q-1]: http://www.ctan.org/tex-archive/macros/latex/contrib/exercise/
+:::
+
+Good on you to look in the source code.  Good on the package author to use good macro names that describe the intent.  I guessed from your posted snippet that `\QuestionNB` might be the macro that typeset the question number.  Searching the source file for that string found me:
+
+```latex
+% Presentation of Questions
+%    \begin{macrocode}
+\newcommand{\QuestionNB}{\arabic{Question}.\ }
+```
+
+Excellent!  We know `\QuestionNB` sets the arabic representation of the value the `Question` counter, with period and space.  So all you have to do is insert 
+
+```latex
+\renewcommand{\QuestionNB}{(\alph{Question})\ }
+```
+
+into the preamble after `\usepackage{exercise}` and you'll get what you want.  
+
+```latex
+\documentclass{article}
+\usepackage{exercise}
+\renewcommand{\QuestionNB}{(\alph{Question})\ }
+\renewcommand{\theQuestion}{(\alph{Question})}
+\begin{document}
+\begin{ExerciseList}
+  \Exercise{Exercise title}
+
+  \ExeText
+  Some exercise introduction
+  \Question{First question}
+  \Question{Second question}\label{q2}
+  \Question{Third question (\textit{Hint}: use your answer to question~\ref{q2})}
+\end{ExerciseList}
+\end{document}
+```
+
+([View this in CoCalc](https://cocalc.com/share/77102825-e295-4667-b66f-6775afeb829e/manual-exercise-question-numbering/manual-exercise-question-numbering.tex?viewer=share))
+
+[![sample code output][1]][1]
+
+The command `\theQuestion` is for setting the counter value in `\ref`erences.  So the line renewing it will take care of the situation described by Peutsch in the comments.
+
+  [1]: MktwY.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/98667/manual-exercise-question-numbering/98668#98668) on TeX Stack Exchange, 2013-02-18. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

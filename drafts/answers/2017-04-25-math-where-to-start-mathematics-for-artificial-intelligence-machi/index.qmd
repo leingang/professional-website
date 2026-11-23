@@ -1,0 +1,76 @@
+---
+title: Where to start mathematics for Artificial Intelligence (Machine Learning, Probability, Robotics)
+date: '2017-04-25'
+description: I think the idea that there is a clear, minimal path from "zero" to "machine learning" is idealistic. Linear Algebra is probably a good place to start, and I…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2251365
+se-link: https://math.stackexchange.com/questions/2251351/where-to-start-mathematics-for-artificial-intelligence-machine-learning-probab/2251365#2251365
+se-score: 3
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+- probability
+- algebra-precalculus
+- proof-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Where to start mathematics for Artificial Intelligence (Machine Learning, Probability, Robotics)](https://math.stackexchange.com/questions/2251351/where-to-start-mathematics-for-artificial-intelligence-machine-learning-probab), asked by [danali](https://math.stackexchange.com/users/440260/danali) on Mathematics Stack Exchange (2017-04-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A bit about myself: I am Dan. I am from the rural parts of Africa. I have no formal education what so ever (not even schooling) so please mind my English. I have moved to the great United States seven years ago. Currently I work as Software Engineer, I have self taught programming. My work is related to machine learning and making predictions on top of it. 
+>
+> Having said that, I know the syntactical things, I heavily use scikit learn in python. But how algorithms work - I have no idea. 
+>
+> I searched and asked around. People suggest a courses on Coursera / EDX. Those courses actually have a prerequisite. I do not understand their explanations. Somehow, those are not intuitive to me. I manage to complete the assignments as well with the help from forums and/or other co-students. At the end of it, I am still empty. One of my friend from (he is from India) told I need Mathematics. This is something I have heard a lot of times. While learning C programming, this came up. While learning numpy, scipy it came up. But if you ask me, it never stopped me from going ahead. 
+>
+> As I understand correctly, for the mastery that I imagine, Maths is must. Hence, I started my research of where to start learning. And in short - I am way more confused than before beginning. Following are the paths I explored. 
+>
+> 1. People say Linear Algebra is must for Machine Learning. Whenever I pick up some highly recommended book, they have Calculus in it (most say it as a prerequisite). 
+> 2. When I pick up Calculus books, they say Algebra is must. 
+> 3. When I pick up algebra, they say basic familiarity to Calculus is must. 
+>
+> I have no idea where to start. Since more than three months, I am moving from one source to another, and it does not seem to be going anywhere. 
+>
+> I visited the a private college in my area. I visited the public libraries. I am talking to the so called experts in the field. People give me various suggestions:
+>
+> 1. Start from Calculus Made Easy, by F.R.S. (1910 edition). As I started reading, the references given to *'officially called'* are completely unknown to me. I google those -> keep on wandering
+> 2. Start from Mathematics for a Practicle Man, by George Howe. This is the only book I could keep up with, but only partially. I am having hard time what is going on once Geometry starts. 
+> 3. My friend from India (He is an expert - PhD Machine Learning) suggested that I should start from Discrete Mathematics. He suggested two books Discrete Mathematics Proof, Structures and Applications, by Rowan Garnier and John Taylor and another one - Discrete Mathematics by Norman Biggs. I started reading the latter, but very difficult to follow the proofs. 
+> 4. The math teacher at the private college then again suggested me that I must learn the proof systems. He suggested another book - How to prove it, by Danial Velleman. 
+>
+> The fact that I never saw inside of any classroom is proving too costly for me. People on the internet (especially quora) are more vague. Someone says learn "Metamathematics" someone would say "precalculus", someone will say "Predicate Logic is must" and others outright deny me that I can learn now. 
+>
+> My goal is very very clear. I want to learn Artificial Intelligence systems. In that, create a robot, put some intelligence on top of it. Other streams are quite easy to follow - especially Electronics, Operating Systems, Arduino. 
+>
+> Can you guide me to learn Linear Algebra, Probability (may be statistics if this is different than Probability) and Calculus AFTER KNOWING THAT I KNOW ABSOLUTELY ZERO MATHEMATICS. Off course, I know the additions and multiplications, but the formal introduction to the things adds a lot of different perspectives to my brain. 
+>
+> One, may be off topic from the main question, why almost every book focuses so much on the proofs? I initially think I would be interested in knowing the Whats' than Hows'. Just like a function in programming - input and output. Is this helpful to have this mindset? Why is pro's and cos's of knowing and not knowing the proofs?
+>
+> My friend pointed me to this site. He said mostly your question will be closed, as opinion based questions are not valid. 
+>
+> My take is - Isn't there simple sequence of books? Why such a straight forward question should have different opinions? And if this question is not entertained, where should I asked? I am already out of resources as already told above. 
+>
+> Edit
+> ----
+> I forgot to add. I cannot follow the formal path of schooling - undergrad - grad. I have people to feed. My job just makes us all survive. I like the idea of getting hold of their syllabus and doing it at night at home. But, the whole intention is to do specific study rather than generic. 
+>
+> Further to this, if you think and believe it is best bet to start with school subjects, may I further ask - Are there public syllabus available? Or I need to travel to school? Again, I just hope there are no differences from one school to the other school. Otherwise I will be facing the same issue - which school syllabus to follow? 
+>
+> Note: My friend has been kind enough to help me ask question correctly here.
+:::
+
+I think the idea that there is a clear, minimal path from "zero" to "machine learning" is idealistic.  Linear Algebra is probably a good place to start, and I don't think you need to know calculus to learn it.  Don't let prerequisites prevent you from trying it.  Find a well-rated, free online course such as one you might find on EdX or Coursera.  Do the first lesson and, if there is something you don't understand, ask a question.  Repeat!
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2251351/where-to-start-mathematics-for-artificial-intelligence-machine-learning-probab/2251365#2251365) on Mathematics Stack Exchange, 2017-04-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

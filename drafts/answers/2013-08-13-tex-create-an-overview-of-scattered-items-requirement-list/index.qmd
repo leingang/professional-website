@@ -1,0 +1,141 @@
+---
+title: Create an overview of scattered items / requirement list
+date: '2013-08-13'
+description: This is a job for the tocloft package. It allows customizing the printing of the table of contents, list of figures, and list of tables; and also defining new…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 128025
+se-link: https://tex.stackexchange.com/questions/128015/create-an-overview-of-scattered-items-requirement-list/128025#128025
+se-score: 3
+se-accepted: true
+se-tags:
+- table-of-contents
+- glossaries
+- tocloft
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Create an overview of scattered items / requirement list](https://tex.stackexchange.com/questions/128015/create-an-overview-of-scattered-items-requirement-list), asked by [Lumiukko](https://tex.stackexchange.com/users/22011/lumiukko) on TeX Stack Exchange (2013-08-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm writing a document where I have to define **multiple requirements**. These requirements are scattered all over the document, since they belong in different sections and are explained seperately.
+>
+> It would be good to have a **central overview of all these requirements in one place**, e.g. a table. Unfortunately I can't figure out, how to do this, so I don't have to write the text of the requirement manually into the table (in case I am changing the words in one of them later, it should also automatically change in the overview, similar to a glossary or a ToC).
+>
+> I already made an own counter, so I don't have to number everything manually, since it's possible that I'm adding a requirement later on. However, I also tried to solve this problem before with an additional glossary, but these packages are quite... difficult to handle for me, so I failed with this approach.
+>
+> A perfect solution would be, if I just have to write \newreq{Requirement description} and it would generate an automatically numbered output like R01 Requirement description - and in addition I can use a command like \printreqoverview which is printing the table.
+>
+> Details like formatting or appearance I can modify later, but I am currently stuck with this referencing - and it would really help, since I have to write every description two times and check for spelling mistakes every time - a reference would help.
+>
+> I'm sorry, I can't describe the problem very well I guess...
+>
+> I added a minimum working example, which does not contain any referencing, just automatic numbering:
+>
+>
+>
+> ```latex
+> \documentclass[10pt]{article}
+> \usepackage[utf8]{inputenc}
+> \usepackage{lipsum}
+> \usepackage{fmtcount}
+>
+> \newcounter{rcount}
+> \setcounter{rcount}{0}
+> \newcommand{\newreq}{
+> 	\stepcounter{rcount}
+> 	\textbf{R\padzeroes[2]{\decimal{rcount}}}
+> }
+>
+> \begin{document}
+>
+> \section{First Chapter}
+>
+> \lipsum[4]
+>
+> \begin{enumerate}
+> 	\item[\newreq] This is the first requirement.
+> 	\item[\newreq] This is the second requirement.
+> \end{enumerate}
+>
+> \lipsum[4]
+>
+> \begin{enumerate}
+> 	\item[\newreq] This is the third requirement.
+> \end{enumerate}
+>
+> \lipsum[4]
+>
+> \section{Overview Table}
+>
+> \begin{tabular}{|l|l|}
+> 	\hline
+> 	\# & Requirement \\ \hline
+> 	\hline
+> 	R01 & Text of R01 \\ \hline
+> 	R02 & Text of R02 \\ \hline
+> 	R03 & Text of R03 \\ \hline
+> \end{tabular}
+>
+> \end{document}
+> ```
+:::
+
+This is a job for the [`tocloft`](http://ctan.org/pkg/tocloft) package.  It allows customizing the printing of the table of contents, list of figures, and list of tables; and also defining new “list of...”s.
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{fmtcount}
+\usepackage{tocloft}
+\newlistof{requirement}{lor}{List of Requirements}
+
+\renewcommand\therequirement{R\padzeroes[3]{\decimal{requirement}}}
+\newcommand{\newreq}[1]{%
+  \refstepcounter{requirement}%
+  \par\noindent\textbf{\therequirement. }#1%
+  \addcontentsline{lor}{requirement}{\protect\numberline{\therequirement} #1}%
+}
+
+
+\begin{document}
+
+\section{First Chapter}
+
+\lipsum
+
+\newreq{This is the first requirement.}
+\newreq{This is the second requirement.}
+
+
+\lipsum
+
+\newreq{This is the third requirement.}
+
+\lipsum
+
+\listofrequirement
+
+\end{document}
+```
+
+The line `\newlistof{requirement}{lor}{List of Requirements}` creates a new “list of”, based on a counter `requirement` (I renamed your `rcount`; LaTeX counters are in a different namespace than other macros so it's not necessary to have `count` in the name).  The list will be generated in a file whose base name is the same as the current job name, and whose extension is `.lor`.  The last argument is the title of the list to be displayed.  This command creates the macro `\listofrequirement`, which you can invoke to print the list.
+
+But writing the list is done on a step-by-step basis, each time a requirement is created.  The text of the requirement is needed as an argument to `\newreq`.  The new `\newreq` command first prints the requirement label, then the requirement text.  (You can customize how you want the requirements formatted.) The `\addcontentsline` command adds a line to the `.lor` file.  After expansion, that line will look like:
+
+```latex
+\contentsline {requirement}{\numberline {R\padzeroes [3]{\@decimal {1}}} This is the first requirement.}{2}
+```
+
+You can change the list of requirements to be a tabular, but you will have to make sure the `\begin{tabular}` is written to the `.lor` file at the beginning of the document and `\end{tabular}` at the end.  `\AtBeginDocument` and `\AtEndDocument` can be used here.  But perhaps this is good enough.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/128015/create-an-overview-of-scattered-items-requirement-list/128025#128025) on TeX Stack Exchange, 2013-08-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

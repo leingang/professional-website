@@ -1,0 +1,95 @@
+---
+title: Seeking advice on what mathematical models to use on dataset
+date: '2019-06-03'
+description: I'm going to go ahead and answer, even though you might get more/better answers on another Stackexchange site. I think you want to ask yourself what story…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3249589
+se-link: https://math.stackexchange.com/questions/3249562/seeking-advice-on-what-mathematical-models-to-use-on-dataset/3249589#3249589
+se-score: 1
+se-accepted: false
+se-tags:
+- probability-theory
+- regression
+- queueing-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Seeking advice on what mathematical models to use on dataset](https://math.stackexchange.com/questions/3249562/seeking-advice-on-what-mathematical-models-to-use-on-dataset), asked by [David Fort Myers](https://math.stackexchange.com/users/679358/david-fort-myers) on Mathematics Stack Exchange (2019-06-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Background Information**
+>
+> I work for a fire department in Florida and the fire chief posed a question to me; At any given moment in time during the calendar year 2018, how many fire trucks are busy,  how many are available, how many are standing by and how many are out of service? Using the SQL Server database I was able to distill this information into tabular data. 
+>
+> **Software available to me.** 
+>
+>
+> Also, because the data is in SQL Server I can parse out the date time stamp by hour, weekday, month, etc. Then Using Python or Excel I can generate statistical tests and univariate statistics and charts. I have modest experience with R. Therefore my tools are SQL Server, R, Python and Excel.
+>
+> **The data**
+>
+> For the first record with the primary key 21546912 at the time of january 1, 2018 at 00:02:31.800 there was 1 fire truck working, 9 fire trucks are available for work and 0 are standing by or out of service. For the entire year I have 104,179 observations showing at exactly that time stamp how many are working, available or standing by or out of service. 
+> I have enclosed 30 records as a comma separated values file below my question for you to see a sample.
+>
+> **The Question !**
+>
+> So what do I do with this data? I have already generated histograms showing the frequency of FireTrucksWorking, etc. Is there a statistical test such as regression that I can perform on this data? How do I bring meaning to this dataset? Are there any general patterns to the dataset that I can discover? Can I create a probability model out of this data such as; at 08:00 during the month of July there is x% probability of N fire trucks working ? Would you use queueing theory on this dataset?
+>
+> I am open to all suggestions. At this point I have a large dataset but it is really just a jumble of numbers, how do I generate meaning out of these numbers?
+>
+> **Thirty sample records of data** 
+>
+> PrimaryKey,DateTimeStamp,FireTrucksWorking,FireTrucksAvailableForWork,FireTrucksStandingBy,FireTrucksOutOfService
+> 21546912,2018-01-01 00:02:31.800,1,9,0,0
+> 21546921,2018-01-01 00:04:46.720,1,9,0,0
+> 21546950,2018-01-01 00:09:39.400,1,9,0,0
+> 21546951,2018-01-01 00:09:47.320,2,8,0,0
+> 21546955,2018-01-01 00:11:16.780,3,7,0,0
+> 21546959,2018-01-01 00:12:04.840,2,8,0,0
+> 21546962,2018-01-01 00:12:09.030,3,7,0,0
+> 21546963,2018-01-01 00:12:14.470,3,7,0,0
+> 21546966,2018-01-01 00:12:17.790,3,7,0,0
+> 21546967,2018-01-01 00:12:21.240,2,8,0,0
+> 21546970,2018-01-01 00:12:40.240,2,8,0,0
+> 21546973,2018-01-01 00:12:46.720,2,8,0,0
+> 21546990,2018-01-01 00:14:24.610,2,8,0,0
+> 21547002,2018-01-01 00:16:03.130,2,8,0,0
+> 21547036,2018-01-01 00:19:59.450,1,9,0,0
+> 21547043,2018-01-01 00:21:21.950,0,10,0,0
+> 21547064,2018-01-01 00:24:50.470,0,10,0,0
+> 21547065,2018-01-01 00:25:13.000,0,10,0,0
+> 21547165,2018-01-01 00:43:31.130,0,10,0,0
+> 21547344,2018-01-01 01:15:00.980,1,9,0,0
+> 21547361,2018-01-01 01:16:58.320,1,9,0,0
+> 21547383,2018-01-01 01:21:38.130,1,9,0,0
+> 21547421,2018-01-01 01:30:42.250,0,10,0,0
+> 21547436,2018-01-01 01:33:30.320,1,9,0,0
+> 21547442,2018-01-01 01:33:48.470,1,9,0,0
+> 21547449,2018-01-01 01:33:58.780,1,9,0,0
+> 21547474,2018-01-01 01:37:30.550,1,9,0,0
+> 21547484,2018-01-01 01:39:12.350,1,9,0,0
+> 21547487,2018-01-01 01:40:41.290,0,10,0,0
+> 21547510,2018-01-01 01:47:02.420,0,10,0,0
+:::
+
+I'm going to go ahead and answer, even though you might get more/better answers on another Stackexchange site.  I think you want to ask yourself what story you'd like to tell or question you want to ask.
+
+For instance, is the Chief worried about firefighting capacity?  Then you'd want to look at the average number of trucks available throughout the year.  You may need more data to interpret that number—how does it compare to previous year's numbers, when controlled for the number of homes in the city?  Or to cities with a comparable number of homes?
+
+Or is the chief worried about the costs of maintenance?  Then you might look at the average number of trucks out of service.
+
+You could also average the number of trucks out on calls over different time intervals, to help inform the department or the public when fires are more likely.  
+
+Basically, don't put the cart before the horse.  You have to know what you want to know to decide how to analyze the data.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3249562/seeking-advice-on-what-mathematical-models-to-use-on-dataset/3249589#3249589) on Mathematics Stack Exchange, 2019-06-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

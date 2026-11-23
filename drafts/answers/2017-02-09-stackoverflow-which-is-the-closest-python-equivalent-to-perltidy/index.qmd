@@ -1,0 +1,51 @@
+---
+title: Which is the closest Python equivalent to Perl::Tidy?
+date: '2017-02-09'
+description: I have used autopep8 for this purpose and found it handy.
+categories:
+- stackoverflow
+license: CC BY-SA 3.0
+draft: true
+se-site: stackoverflow
+se-answer-id: 42147533
+se-link: https://stackoverflow.com/questions/3567520/which-is-the-closest-python-equivalent-to-perltidy/42147533#42147533
+se-score: 0
+se-accepted: false
+se-tags:
+- python
+- emacs
+- code-formatting
+- perl-tidy
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Which is the closest Python equivalent to Perl::Tidy?](https://stackoverflow.com/questions/3567520/which-is-the-closest-python-equivalent-to-perltidy), asked by [Nikolai Prokoschenko](https://stackoverflow.com/users/6460/nikolai-prokoschenko) on Stack Overflow (2010-08-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Coming from Perl I've been used to hitting <kbd>C-c t</kbd> to reformat my code according to pre-defined `Perl::Tidy` rules. Now, with Python I'm astonished to learn that there is nothing that even remotely resembles the power of `Perl::Tidy`. PythonTidy 1.20 looks almost appropriate, but barfed at first mis-aligned line ("unexpected indent").
+>
+> In particular, I'm looking for the following:
+>
+>  * Put PEP-8 into use as far as possible (the following items are essentially derivations of this one)
+>  * Convert indentation tabs to spaces
+>  * Remove trailing spaces
+>  * Break up code according to the predefined line-length as far as it goes (Eclipse-style string splitting and splitting method chains)
+>  * Normalize whitespace around 
+>  * (bonus feature, optional) Re-format code including indentation.
+>
+> Right now, I'm going throught someone else's code and correct everything `pep8` and `pyflakes` tell me, which is mostly "remove trailing space" and "insert additional blank line". While I know that re-indentation is not trivial in Python (even though it should be possible just by going through the code and remembering the indentation), other features seem easy enough that I can't believe nobody has implemented this before. 
+>
+> Any recommendations?
+>
+> **Update**: I'm going to take a deeper look at PythonTidy, since it seems to go into the right direction. Maybe I can find out why it barfs at me.
+:::
+
+I have used [autopep8](https://pypi.python.org/pypi/autopep8) for this purpose and found it handy.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/3567520/which-is-the-closest-python-equivalent-to-perltidy/42147533#42147533) on Stack Overflow, 2017-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

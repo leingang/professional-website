@@ -1,0 +1,38 @@
+---
+title: vertically centered dot
+date: '2010-12-17'
+description: You can use \mathord{\cdot} for a centered dot with symbol-like (rather than binary operation-like) spacing.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7308
+se-link: https://tex.stackexchange.com/questions/7300/vertically-centered-dot/7308#7308
+se-score: 26
+se-accepted: false
+se-tags:
+- symbols
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[vertically centered dot](https://tex.stackexchange.com/questions/7300/vertically-centered-dot), asked by [Yasser Sobhdel](https://tex.stackexchange.com/users/2244/yasser-sobhdel) on TeX Stack Exchange (2010-12-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want to have a function name (like g(.)) and I do this in this ways:
+>
+>  1. `$g \left( . \right)$`
+>  2. `$g(.)$`
+>
+> But in either way, the dot "." seems a little lower than it is better to be. I am wondering if there is another way to have this output? (this may seem so basic but when I saw that writing three consecutive dots has its own command, I doubted may be I am doing it wrong)
+:::
+
+You can use `\mathord{\cdot}` for a centered dot with symbol-like (rather than binary operation-like) spacing.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7300/vertically-centered-dot/7308#7308) on TeX Stack Exchange, 2010-12-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

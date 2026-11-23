@@ -1,0 +1,92 @@
+---
+title: newenvironment/newcommand for existing environment in LaTeX-Beamer
+date: '2011-04-26'
+description: In addition to Martin's answer, you need to take special care within the beamer class, because that class also drastically alters LaTeX's expansion habits. See…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 16660
+se-link: https://tex.stackexchange.com/questions/16654/newenvironment-newcommand-for-existing-environment-in-latex-beamer/16660#16660
+se-score: 2
+se-accepted: false
+se-tags:
+- listings
+- environments
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[newenvironment/newcommand for existing environment in LaTeX-Beamer](https://tex.stackexchange.com/questions/16654/newenvironment-newcommand-for-existing-environment-in-latex-beamer), asked by [Julian](https://tex.stackexchange.com/users/14906/julian) on TeX Stack Exchange (2011-04-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to have [the solution of highlighting a line in `listings`-package][q-1]  as a command or environment. To bad I cannot get it working. I tried:
+>
+>  * a simple `newenvironment`: compile errors
+>  * `\newcommand`: also compile errors
+>  * the [`environ`-package][q-2], see below
+>
+>         \NewEnviron{listingh}{
+>           \vspace{-\baselineskip}
+>           \begin{lstlisting}[backgroundcolor=\color{yellow}]
+>           \BODY
+>           \end{lstlisting}
+>           \vspace{-\baselineskip}
+>         }
+>
+> Also, same kind of errors. `missing {`, `missing number, threaded a zero` etc.
+>
+> I try to use it with the `beamer`-package and `pdflatex`.
+>
+>
+>   [q-1]: https://stackoverflow.com/questions/1304315/highlighting-a-chunk-of-code-within-a-lstlisting/1313704#1313704
+>   [q-2]: https://stackoverflow.com/questions/1872951/wrap-latex-command-in-environment/1877976#1877976
+:::
+
+In addition to Martin's answer, you need to take special care within the beamer class, because that class also drastically alters LaTeX's expansion habits.  See section 2.6 of the beamer manual.
+
+```latex
+\documentclass{beamer}
+\usepackage{listings}
+
+\lstnewenvironment{listingh}[1][]{%
+    \vspace{-\baselineskip}%
+    \lstset{backgroundcolor=\color{yellow},#1}%
+}{%
+    \vspace{-\baselineskip}%
+}
+
+
+\begin{document}
+
+\defverbatim[colored]\mycode{%
+\begin{listingh}[emph={PRINT,GOTO},emphstyle={\color{blue}}]
+10 PRINT "HELLO, WORLD!"
+20 GOTO 10
+\end{listingh} }
+
+
+\begin{frame}{BASIC}
+\mycode
+\end{frame}
+
+% or
+\begin{frame}[fragile]{C++}
+\begin{listingh}[emph={cout,for},emphstyle={\color{blue}}]
+for (;;) {
+    cout << "Hello, world!";
+}
+\end{listingh}
+
+\end{document}
+```
+
+This looks bad but keep in mind you can redefine `\mycode` over and over again before each frame.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/16654/newenvironment-newcommand-for-existing-environment-in-latex-beamer/16660#16660) on TeX Stack Exchange, 2011-04-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

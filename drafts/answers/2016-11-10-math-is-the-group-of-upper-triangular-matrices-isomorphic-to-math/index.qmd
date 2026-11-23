@@ -1,0 +1,55 @@
+---
+title: Is the group of upper triangular matrices isomorphic to $\mathbb{R}^3$?
+date: '2016-11-10'
+description: Tobias has nailed it. It's important to understand what isomorphism between groups means.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2008098
+se-link: https://math.stackexchange.com/questions/2007917/is-the-group-of-upper-triangular-matrices-isomorphic-to-mathbbr3/2008098#2008098
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- abstract-algebra
+- matrices
+- group-theory
+- group-isomorphism
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is the group of upper triangular matrices isomorphic to $\mathbb{R}^3$?](https://math.stackexchange.com/questions/2007917/is-the-group-of-upper-triangular-matrices-isomorphic-to-mathbbr3), asked by [harry55](https://math.stackexchange.com/users/386945/harry55) on Mathematics Stack Exchange (2016-11-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let 
+> $$G = \left\{\begin{bmatrix} 1 & x & y \\ 0 & 1 & z \\ 0 & 0 & 1 \end{bmatrix} : x,y,z\in\mathbb{R}\right\}$$
+>
+> I have shown that the set $G$ with the operation of matrix multiplication is a non-abelian subgroup of $SL(3, \mathbb R)$.
+>
+> **Now, is $G$ isomorphic to the group comprising $\mathbb R^3=\{(x,y,z):x,y,z$ are in $\mathbb R\}$ with the operation of vector addition**.
+>
+> I know I have to show the map is a homomorphism and that it is bijective. I have done the process successfully with simpler groups but don't know what to do for a matrix and vector.    
+>
+>
+>   [q-1]: itmGE.jpg
+:::
+
+Tobias has nailed it.  It's important to understand what isomorphism between groups means.  
+
+Yes, two groups are isomorphic if there is a bijective homomorphism between them.  But more importantly, it means they are *indistinguishable* as far as groups go.  Poincaré said that mathematics is the art of calling different things by the same name.  Isomorphic groups get the same “name” in algebra.
+
+If $G$ and $G'$ are isomorphic, any group-theoretic property of $G$ must also hold in $G'$.  By “group-theoretic property” I mean any property of the group which depend only on group axioms.  Abelianness is such a property.  Thus, if $G$ and $G'$ are isomorphic, they are either both abelian or both nonabelian.
+
+One way to show that two groups are not isomorphic is to find a group-theoretic property that one holds and the other does not.  It's easier and cleaner than assuming there is an isomorphism and trying to derive a contradiction.
+
+Let $G'$ be the group of $\mathbb{R}^3$ under addition.  Your parametrization of $G$ shows that there are plenty of bijections between them.  But you've also shown that $G$ is nonabelian, while $G'$ is clearly abelian.  So the groups cannot be isomorphic.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2007917/is-the-group-of-upper-triangular-matrices-isomorphic-to-mathbbr3/2008098#2008098) on Mathematics Stack Exchange, 2016-11-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

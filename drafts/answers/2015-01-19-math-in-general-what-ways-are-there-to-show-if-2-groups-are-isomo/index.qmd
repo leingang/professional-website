@@ -1,0 +1,39 @@
+---
+title: In general, what ways are there to show if 2 groups are isomorphic?
+date: '2015-01-19'
+description: Yes, that's pretty much it. It's easy to show that two groups are not isomorphic by showing that something invariant under isomorphism is different in the two…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1110980
+se-link: https://math.stackexchange.com/questions/1110974/in-general-what-ways-are-there-to-show-if-2-groups-are-isomorphic/1110980#1110980
+se-score: 3
+se-accepted: true
+se-tags:
+- abstract-algebra
+- group-theory
+- finite-groups
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[In general, what ways are there to show if 2 groups are isomorphic?](https://math.stackexchange.com/questions/1110974/in-general-what-ways-are-there-to-show-if-2-groups-are-isomorphic), asked by [Tobyhas](https://math.stackexchange.com/users/202461/tobyhas) on Mathematics Stack Exchange (2015-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I take it that if the number of elements of a given order n is not the same between 2 groups, then they are definitely not isomorphic. So for example if I need to show that $C_{25}$ is not isomorphic to $C_5$ x $C_5$, I need to find some $n \le 25$ for which the number of elements of order n is not the same between the 2 groups. Right?
+>
+> But if I have 2 groups with the exact same number of elements of every possible order n, it's still not sufficient to establish they really are isomorphic, right? Because I need to show the mapping between them is bijective(?) So if I want to show 2 groups are isomorphic I would need to explicitly find a bijective mapping for each element that preserves the multiplication rules??
+:::
+
+Yes, that's pretty much it.  It's easy to show that two groups are *not* isomorphic by showing that something invariant under isomorphism is different in the two groups.  Like the number of elements, or the number of elements of a specific order, or the number of subgroups of a certain order, etc.
+
+But in general, the only (sure-fire) way to show two groups *are* isomorphic is to exhibit an isomorphism between them.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1110974/in-general-what-ways-are-there-to-show-if-2-groups-are-isomorphic/1110980#1110980) on Mathematics Stack Exchange, 2015-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

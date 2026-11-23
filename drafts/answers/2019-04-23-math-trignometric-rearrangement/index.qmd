@@ -1,0 +1,55 @@
+---
+title: Trignometric rearrangement
+date: '2019-04-23'
+description: 'First is a trigonometric identity: $$1 + \tan^2 \theta = \sec^2 \theta$$ for any $\theta$. This can be proven by taking $\sin^2\theta + \cos^2\theta =1$ and…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3198483
+se-link: https://math.stackexchange.com/questions/3198472/trignometric-rearrangement/3198483#3198483
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- differential
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Trignometric rearrangement](https://math.stackexchange.com/questions/3198472/trignometric-rearrangement), asked by [Arkilo](https://math.stackexchange.com/users/597101/arkilo) on Mathematics Stack Exchange (2019-04-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> So there is this equation:
+>
+> $y=\tan \left(e^{x}+c\right)$
+>
+> And in the next step it's differentiated w.r.t x
+>
+> $\frac{d y}{d x}=\sec ^{2}\left(e^{x}+c\right) \cdot e^{x}$
+>
+> Upto this point I follow what is going on.
+>
+> And then apparently it is rearranged but the author didn't make any comment as to how he rearranged it as follows:
+>
+> $\frac{d y}{d x}=\left(1+\tan ^{2}\left(e^{x}+c\right)\right) e^{x}$
+>
+> $\frac{d y}{d x}= e^{x}+e^{x} y^{2}$
+>
+> I can't figure out exactly how this is done, so I would appreciate any insights into this. Couldn't think of a better title so, feel free to change it if you want.
+:::
+
+First is a trigonometric identity:
+$$1 + \tan^2 \theta = \sec^2 \theta$$
+for any $\theta$.  This can be proven by taking $\sin^2\theta + \cos^2\theta =1$ and dividing every term by $\cos^2\theta$.
+
+Second, $1 + \tan^2(e^x + c)$ is swapped out for $1+y^2$, and that term is multiplied by $e^x$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3198472/trignometric-rearrangement/3198483#3198483) on Mathematics Stack Exchange, 2019-04-23. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

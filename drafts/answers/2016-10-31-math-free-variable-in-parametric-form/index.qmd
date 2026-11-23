@@ -1,0 +1,48 @@
+---
+title: free variable in parametric form
+date: '2016-10-31'
+description: '"Free" is not a value and "x4=free" is an abuse of the equal sign. You mean $x4$ is free. Is can denote equality ($=$), but here it denotes membership ($\in$).…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1993041
+se-link: https://math.stackexchange.com/questions/1993034/free-variable-in-parametric-form/1993041#1993041
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+- vectors
+- parametric
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[free variable in parametric form](https://math.stackexchange.com/questions/1993034/free-variable-in-parametric-form), asked by [user3427042](https://math.stackexchange.com/users/376892/user3427042) on Mathematics Stack Exchange (2016-10-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> if I have say $x_4$ = free, what value goes in the $x_4$ position of the parametric form, is it $1$ or $0$ or can it be any value since it's free?
+:::
+
+"Free" is not a value and "x4=free" is an abuse of the equal sign.  You mean $x_4$ *is* free.  *Is* can denote equality ($=$), but here it denotes membership ($\in$).  I had originally put this as a postscript, but your comments on my first drafts indicate this might be a stumbling block for you.
+
+If $x_4$ is a free variable, it should be left as a parameter since it can have, as you say, any value.
+
+You can express the other variables in terms of the free variables, or you can give names like $s$ and $t$ to the parameters and express all $x_i$ variables in terms of $s$ and $t$.
+
+It sounds like your specific general solution is:
+$$\begin{align*}
+    x_4 &\text{is free} \\
+    x_3 &= x_4 \\
+    x_2 &= 0 \\
+    x_1 &= 3x_4
+\end{align*}$$
+"$x_4$ is free" means that you can't say anything more specific than $x_4 = x_4$.  So (in vector form) $[x_1,x_2,x_3,x_4] = [3x_4,0,x_4,x_4] = x_4[3,0,1,1]$.  Alternatively, you could say $[x_1,x_2,x_3,x_4] = [3x_4,0,x_4,x_4] = t[3,0,1,1]$, where $t\in\mathbb{R}$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1993034/free-variable-in-parametric-form/1993041#1993041) on Mathematics Stack Exchange, 2016-10-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

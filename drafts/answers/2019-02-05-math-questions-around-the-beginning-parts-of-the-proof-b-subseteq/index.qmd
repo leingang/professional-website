@@ -1,0 +1,55 @@
+---
+title: 'Questions around the Beginning Parts of the Proof: $B \subseteq A$ iff $A \cup B = A$'
+date: '2019-02-05'
+description: What you're reading is a very common proof pattern when showing that sets are equal.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3101468
+se-link: https://math.stackexchange.com/questions/3101450/questions-around-the-beginning-parts-of-the-proof-b-subseteq-a-iff-a-cup-b/3101468#3101468
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-set-theory
+- logic
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Questions around the Beginning Parts of the Proof: $B \subseteq A$ iff $A \cup B = A$](https://math.stackexchange.com/questions/3101450/questions-around-the-beginning-parts-of-the-proof-b-subseteq-a-iff-a-cup-b), asked by [tree_traversal](https://math.stackexchange.com/users/639592/tree-traversal) on Mathematics Stack Exchange (2019-02-05; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have a question about the beginning of this proof.
+>
+> The proof I am going through starts out like this:
+>
+> Suppose $B \subseteq A$ and let $x \in (A \cup B)$. Then $x \in A$ or $x \in B$. [Proof continues from here...]
+>
+>
+> **Question 1:** Are we allowed to let x be an element of something not in our initial assumptions? We have $B \subseteq A$ as an assumption, not $x \in (A \cup B)$. But then we say let $x \in (A \cup B)$. Is that allowed?
+>
+> If it is fine to let x be an element of something not in our initial assumption, then we have both $x \in ( B \subseteq A$) and $x \in (A \cup B)$ 
+>
+> **Question 2:** Are these the same x's or are these two different x's? In other words is this: $x \in ( B \subseteq A$) and $y \in (A \cup B)$, where $x \neq$ y? Or is it $x \in ( B \subseteq A$) and $x \in (A \cup B)$, where the x's are the same? I am trying to understand if we are overloading the x term with two different meanings, or if these x terms mean the same thing.
+:::
+
+What you're reading is a very common proof pattern when showing that sets are equal.  
+
+What makes a set is the elements it contains.  So to show two sets are equal, we need to show that they contain exactly the same elements.  That is, every element of the first is an element of the second, and every element of the second is also an element of the first.
+
+> **Question 1:** Are we allowed to let x be an element of something not in our initial assumptions? We have $B \subseteq A$ as an assumption, not $x \in (A \cup B)$. But then we say let $x \in (A \cup B)$. Is that allowed?
+
+You're right, the initial assumption is that $B \subset A$.  You're not assuming that a specific element $x$ is in $A \cup B$.  Instead, you are pointing to an arbitrary element of $A \cup B$ and naming it $x$. The proof proceeds to show that $x$ (whatever it is) is also in $A$.  
+
+> **Question 2:** Are these the same x's or are these two different x's?
+
+Once you pick an element and name it $x$, you can't name another element $x$.  You want to show that if $x \in A \cup B$ then $x \in A$ (the same $x$).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3101450/questions-around-the-beginning-parts-of-the-proof-b-subseteq-a-iff-a-cup-b/3101468#3101468) on Mathematics Stack Exchange, 2019-02-05. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

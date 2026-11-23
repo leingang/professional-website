@@ -1,0 +1,110 @@
+---
+title: How do I insert text into the footline of a specific slide in Beamer?
+date: '2010-11-18'
+description: This provides a new template/font/color footline extra and a macro \footlineextra to add text to the footline.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5579
+se-link: https://tex.stackexchange.com/questions/5491/how-do-i-insert-text-into-the-footline-of-a-specific-slide-in-beamer/5579#5579
+se-score: 18
+se-accepted: true
+se-tags:
+- beamer
+- header-footer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I insert text into the footline of a specific slide in Beamer?](https://tex.stackexchange.com/questions/5491/how-do-i-insert-text-into-the-footline-of-a-specific-slide-in-beamer), asked by [saffsd](https://tex.stackexchange.com/users/1947/saffsd) on TeX Stack Exchange (2010-11-16; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm trying to insert references into a `beamer` footline. These references are different for each slide, so I cannot include them in the footline template - unless there is then some way to later define them per-slide. 
+>
+> I have tried to simply include the after a `\vfill`, but the location of the line then varies with each slide, and this is not what I want.
+>
+> How do I insert references (or really, just any custom text) into the footline of a specific slide in `beamer`?
+:::
+
+This provides a new template/font/color `footline extra` and a macro `\footlineextra` to add text to the footline.
+
+```latex
+\documentclass{beamer}    
+\title{Adding extra text to footline}
+\author{R.J.~Drofnats}
+\institute{University of St. Anford}
+
+\useoutertheme{infolines}% for example, ymmv
+
+\makeatletter
+% add a macro that saves its argument
+\newcommand{\footlineextra}[1]{\gdef\insertfootlineextra{#1}}
+\newbox\footlineextrabox
+
+% add a beamer template that sets the saved argument in a box.
+% The * means that the beamer font and color "footline extra" are automatically added. 
+\defbeamertemplate*{footline extra}{default}{
+    \begin{beamercolorbox}[ht=2.25ex,dp=1ex,leftskip=\Gm@lmargin]{footline extra}
+    \insertfootlineextra
+    %\par\vspace{2.5pt}
+    \end{beamercolorbox}
+}
+
+\addtobeamertemplate{footline}{%
+    % set the box with the extra footline material but make it add no vertical space
+    \setbox\footlineextrabox=\vbox{\usebeamertemplate*{footline extra}}
+    \vskip -\ht\footlineextrabox
+    \vskip -\dp\footlineextrabox
+    \box\footlineextrabox%
+}
+{}
+
+% patch \begin{frame} to reset the footline extra material
+\let\beamer@original@frame=\frame
+\def\frame{\gdef\insertfootlineextra{}\beamer@original@frame}
+\footlineextra{}
+\makeatother
+
+
+\setbeamercolor{footline extra}{fg=structure.fg}% for instance
+
+
+\begin{document}
+
+\begin{frame}\maketitle\end{frame}
+
+\begin{frame}{foo}
+\begin{itemize}
+\item one
+\item two
+\item three
+\end{itemize}
+\footlineextra{Source: ``Mr. Lee'' by the Bobbettes}
+\end{frame}
+
+\begin{frame}{bar}
+\begin{itemize}
+\item Able
+\item Baker
+\item Charlie
+\end{itemize}
+\footlineextra{Source: \emph{What do People Do All Day?} by Richard Scarry}
+\end{frame}
+
+\begin{frame}{baz}
+No footlineextra here
+\end{frame}
+
+\end{document}
+```
+
+Having spent an hour on this I must quit but a nice addition would be to make `\footlineextra` overlay-specification aware.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5491/how-do-i-insert-text-into-the-footline-of-a-specific-slide-in-beamer/5579#5579) on TeX Stack Exchange, 2010-11-18. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

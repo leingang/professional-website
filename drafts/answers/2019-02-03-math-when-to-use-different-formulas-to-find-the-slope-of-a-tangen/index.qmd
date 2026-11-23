@@ -1,0 +1,75 @@
+---
+title: When to use different formulas to find the slope of a tangent line
+date: '2019-02-03'
+description: You've already gotten several answers that point out the two limits are equivalent. But as far as which to use when, it may depend on the function.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3099103
+se-link: https://math.stackexchange.com/questions/3099072/when-to-use-different-formulas-to-find-the-slope-of-a-tangent-line/3099103#3099103
+se-score: 0
+se-accepted: false
+se-tags:
+- calculus
+- derivatives
+- tangent-line
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[When to use different formulas to find the slope of a tangent line](https://math.stackexchange.com/questions/3099072/when-to-use-different-formulas-to-find-the-slope-of-a-tangent-line), asked by [aloofmaloof](https://math.stackexchange.com/users/610299/aloofmaloof) on Mathematics Stack Exchange (2019-02-03; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I'm having some difficulty understanding the formulas to find the slope of a tangent line. As per my textbook, the first formula we received is presented below: 
+>
+> > The **tangent line** to the curve $y = f(x)$ at the point $P(a, f(a))$ is the  line through *P* with slope 
+> >
+> > $$m = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}$$
+> >
+> > provided that the limit exists. 
+>
+> Immediately after we received the above formula, we are given an alternate one in the form of a difference quotient:
+>
+> > $$m = \lim_{h\to 0}\frac{f(a+h)-f(a)}{h}$$
+>
+> The part where I'm experiencing difficulty is differentiating the two formulas. When I watched this [video][q-1] on Khan Academy, I walked away with the impression that the second formula was simply an alternate form of the first one. In my textbook, however, the author provides a diagram (see attached image) and states that if $h = x - a$, then $x = h + a$ and therefore we can use the second formula to find the slope of the tangent line.
+>
+> Are we always able to use the second formula instead of the first one, or might there be a situation where we are unable to use the second one and must rely on the first? If the latter is true, what might an example situation be? 
+>
+> [Tangent Line][q-2]
+>
+>
+>   [q-1]: https://www.youtube.com/watch?v=Df2escG-Vu0
+>   [q-2]: Gscac.png
+:::
+
+You've already gotten several answers that point out the two limits are equivalent.  But as far as which to use when, it may depend on the function.
+
+In some cases, $f(x) - f(a)$ can be simplified and a factor of $x-a$ found.  For instance, if $f(x) = x^2$, then
+$$f(x) - f(a) = x^2-a^2 = (x-a)(x+a)$$
+So at a point $(a,a^2)$, the tangent line has slope
+$$m = \lim_{x\to a}\frac{x^2-a^2}{x-a} = \lim_{x\to a} (x+a) = a + a = 2a.$$
+
+In other cases, $f(x) - f(a)$ is hard to simplify, but $f(a+h)$ is easier.  For instance, if $f(x) = \sin(x)$, then
+$$\begin{align*}
+    f(a+h) - f(a) = \sin(a+h) - \sin(a) 
+    &= \sin(a)\cos(h) + \cos(a)\sin(h) - \sin(a) \\
+    &= \sin(a)\left(\cos(h)-1\right) + \cos(a) \sin h
+\end{align*}$$
+Therefore at a point $(a,\sin(a))$, the tangent line has slope
+$$\begin{align*}
+    m &= \lim_{h\to 0} \frac{\sin(a+h) - \sin(a)}{h} \\
+      &= \lim_{h\to 0} \left(\frac{\cos(h)-1}{h}\sin(a) + \cos(a) \frac{\sin(h)}{h}\right)\\
+      &= 0 + \cos(a) = \cos(a)\\
+\end{align*}$$
+
+So the choice is between the first and second forms is between factoring and simplifying.  Really, though, you won't be doing too many of these problems once you learn the rules for computing derivatives quickly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3099072/when-to-use-different-formulas-to-find-the-slope-of-a-tangent-line/3099103#3099103) on Mathematics Stack Exchange, 2019-02-03. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,81 @@
+---
+title: Show that If a sequence is exact the dual sequence is exact
+date: '2019-08-22'
+description: $\newcommand{\im}{\operatorname{im}}$Suppose that $\varphi \in V^$ is in the kernel of $f^$. Since $f^\varphi = \varphi \circ f = 0$, we know that $\im f…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3331199
+se-link: https://math.stackexchange.com/questions/3331089/show-that-if-a-sequence-is-exact-the-dual-sequence-is-exact/3331199#3331199
+se-score: 2
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Show that If a sequence is exact the dual sequence is exact](https://math.stackexchange.com/questions/3331089/show-that-if-a-sequence-is-exact-the-dual-sequence-is-exact), asked by [New2Math](https://math.stackexchange.com/users/637652/new2math) on Mathematics Stack Exchange (2019-08-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The book is Bosch Linear Algebra $p.79$
+>
+> We look at at this sequence:
+>
+> $U\overset{f}\rightarrow V\overset{g}\rightarrow W$
+>
+> where $f$ and $g$ is linear.
+>
+> The respective dual sequence is:
+>
+> $W^*\overset{g^*}{\rightarrow}V^*\overset{f^*}\rightarrow U^*$
+>
+>  where if $V$ is a vectorspace, $V^*$ is the dualspace defined as the set of $\text{Hom}(V,K)$, i.e all linear maps from $V$ to its field which we call $K$. For a linear map $f:U\rightarrow W$, $f^*$ is defined as $f^*:W^*\rightarrow U^*$, with $f^*(\varphi)=\varphi\circ f$, this map is also linear.
+>
+> A sequence is exact if and only if $\text{im}f=\ker g$
+>
+> I have to show if a sequence is exact the resp. dual sequence is exact too.
+>
+> I don't understand the proof, in particular how the Fundamental theorem on homomorphisms is used here, which states if $f:V\rightarrow W$ is a homomorphism between two vectorspaces and there exists a linear subset $U$ of $V$ such that $U\subset \ker f$ then there exists (exactly one) $\bar{f}:V/U\rightarrow W$ such that $f=\bar{f}\circ\pi$ where $\pi$ is the canonical epimorphism
+>
+> ________________$ 
+>
+> I have to prove that $\ker f^*=\text{im } g^*$
+>
+> I already know $\text{im }g^*\subset \ker f^*$and if$\varphi\in \ker f^{*}$, ie a linear form$\varphi:V\rightarrow K$with$\varphi\circ f=0$then$\ker g\subset \ker \varphi$
+>
+> I understood to show that $\varphi\in \text{im } g^*$we have to construct a$\psi\in W^*$such that$\varphi=\psi\circ g$.
+>
+> We start with splitting $g$in$g_1$and$g_2$where$g_1$is the surjective linear map to$\text{im }g$and$g_2$is the nesting in$W$.
+>
+> Here is the part I don't understand:
+>
+> Applying the Fundamental theorem on homomorphisms there exists a $\varphi':\text{im }g\rightarrow K$such that$\varphi=\varphi'\circ g_1$
+>
+> [![diagram][q-1]][q-1]
+>
+> We know that $\varphi$is a linear map. And we also know that$\ker g$is a subspace  and a subset of$\ker\varphi$then there exist a$\bar{\varphi}:V/\ker g\rightarrow K$such that$\varphi=\bar{\varphi}\circ \pi$. But the domain is still$V$and we are looking for a map$\varphi'$with the domain$\text{im } g$and the codomain$K$such that$\varphi=\varphi'\circ g_1$. So this cannot be the map we are looking for. I am not sure if we even can use this map we have constructed but that seemed to me the only reasonable application of the homomorphism Theorem. If I am not wrong and we actually have to use this map, then tell me how I should continue.
+>
+>
+>
+>
+>   [q-1]: 6ITGm.png
+:::
+
+$\newcommand{\im}{\operatorname{im}}$Suppose that $\varphi \in V^*$ is in the kernel of $f^*$.  Since $f^*\varphi = \varphi \circ f = 0$, we know that $\im f \subseteq \ker \varphi$.  Since the original sequence is exact, $\im f = \ker g$.  So by the Fundamental Theorem on Homomorphisms (applied to $\varphi$), there is a unique map $\tilde\varphi \colon V/\ker g\to K$ such that $\tilde\varphi\circ \pi = \varphi$, where $\pi$ is the canonical epimorphism from $V$ to $V/\ker g$.
+
+By the same theorem applied to $g_1$, there is a unique map (in fact, an isomorphism) $\tilde g_1 \colon V/\ker g \to \im g$ such that $\tilde g_1 \circ \pi = g_1$.  Let $\varphi' = \tilde\varphi \circ \tilde g_1 ^{-1} \colon \im g \to K$.  Then 
+$$\varphi' \circ g_1 = \tilde\varphi\circ\tilde g_1^{-1} \circ g_1
+                   = \tilde\varphi\circ\pi = \varphi$$
+as desired.
+
+For the rest of the construction, you need to extend $\varphi'$ to be defined on all of $W$ instead of just $\im g$.  There isn't a canonical way to do this without extra structure on $W$, but there are many choices.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3331089/show-that-if-a-sequence-is-exact-the-dual-sequence-is-exact/3331199#3331199) on Mathematics Stack Exchange, 2019-08-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,40 @@
+---
+title: Prove sets are equal
+date: '2019-06-20'
+description: Basically, to show $A \subseteq B$, you want to show that if a number $z$ meets the conditions for belonging in $A$, then it also meets the conditions for…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3268240
+se-link: https://math.stackexchange.com/questions/3268238/prove-sets-are-equal/3268240#3268240
+se-score: 0
+se-accepted: false
+se-tags:
+- real-analysis
+- calculus
+- abstract-algebra
+- elementary-set-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove sets are equal](https://math.stackexchange.com/questions/3268238/prove-sets-are-equal), asked by [random0620](https://math.stackexchange.com/users/474610/random0620) on Mathematics Stack Exchange (2019-06-20; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I would like to show that the following two sets are equal $A=\{x^2:0\le x \le1\}$ and $B=\{y \in \mathbb{R}:0 \le y \le 1\}$. The strategy I would like to use is to show if $A \subseteq B$ and $B \subseteq A$ then $B=A$.
+>
+> I am unsure of the intermediate steps I could use to get to $A \subseteq B$ and $B \subseteq A$. What are some different ways I could prove this?
+:::
+
+Basically, to show $A \subseteq B$, you want to show that if a number $z$ meets the conditions for belonging in $A$, then it also meets the conditions for belonging in $B$, and *vice versa*.
+
+So suppose that $z$ is in $A$.  Then $z = x^2$ for some $x$ satisfying $0 \leq x \leq 1$.  You want to show that $z$ is in $B$.  That is, you want to show $z = y$ for some $y$ satisfying $0 \leq y \leq 1$.  Can you figure out how $y$, if it were to exist, must depend on $x$, which we know exists?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3268238/prove-sets-are-equal/3268240#3268240) on Mathematics Stack Exchange, 2019-06-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

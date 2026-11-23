@@ -1,0 +1,59 @@
+---
+title: What is the motivation behind defining continuity at isolated points?
+date: '2021-07-16'
+description: It's not just isolated points. Once you start to consider functions whose domains are not intervals, you have to give up on the pencil-lifting metaphor for…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4200219
+se-link: https://math.stackexchange.com/questions/4200176/what-is-the-motivation-behind-defining-continuity-at-isolated-points/4200219#4200219
+se-score: 5
+se-accepted: true
+se-tags:
+- real-analysis
+- continuity
+- definition
+- intuition
+- motivation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[What is the motivation behind defining continuity at isolated points?](https://math.stackexchange.com/questions/4200176/what-is-the-motivation-behind-defining-continuity-at-isolated-points), asked by [Joe](https://math.stackexchange.com/users/623665/joe) on Mathematics Stack Exchange (2021-07-16; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> The naive conception of a continuous function is that it is a function whose graph can be drawn without lifting your pencil off the page. In introductory analysis, we often define continuity at a point $a$ by requiring that $f$ be defined in a neighbourhood of $a$, and that $\lim_{x \to a}f(x)=f(a)$. One reason that this definition is consistent with this intuition is because of the intermediate value theorem:
+>
+> >If $f$ is continuous on $[a,b]$, and $c$ is a number that lies between $f(a)$ and $f(b)$, then there is some $x\in[a,b]$ such that $f(x)=c$.
+>
+> This theorem is intuitively obvious from the "pencil-lifting" conception of continuity, and so the fact that we can prove it from the proper definition of continuity affirms the fact that the definition we have chosen models our intuition.
+>
+> However, beyond introductory analysis, the definition of continuity is often stated a little differently. We say that $f$ is continuous at $a$ if $f$ is defined at $a$ (not necessarily in a neighbourhood of $a$), and that
+> $$\forall\varepsilon>0:\exists\delta>0:\forall x\in\operatorname{dom}(f):|x-a|<\delta\implies|f(x)-f(a)|<\varepsilon$$
+> This definition is equivalent to:
+>
+> >(i) $a$ is an isolated point of the domain of $f$, or
+> >
+> >(ii) $a$ is an accumulation point of the domain of $f$, and $\lim_{x \to a}f(x)=f(a)$.
+>
+> My question is: what is the motivation behind adopting the above definition? From the "pencil-lifting" conception of continuity, a function such as $f=\{(0,0),(1,0)\}$ does not look like it should be continuous, and so it seems that this definition, unlike the previous one, does not model our intuition (at least, it does not model the intuition that we have when are first introduced to continuous functions). It seems that there is something that this definition is something to capture, and that it is also convenient in many respects, but I'm not sure what they are.
+:::
+
+It's not just isolated points.  Once you start to consider functions whose domains are not intervals, you have to give up on the pencil-lifting metaphor for continuity.  For instance, consider $\mathbb{R}^\times$, the set of nonzero real numbers.  The function $f \colon \mathbb{R}^\times \to \mathbb{R}^\times$, $x \mapsto \frac{1}{x}$, is continuous, but doesn't satisfy the pencil-lifting criterion.
+
+It's been said that the best definitions are the ones which makes the theorems easy to state and prove.  The definition of continuity that you cite gives theorems like: 
+
+* If $f(a) > 0$, then $f(x) > 0$ for all $x$ sufficiently close to $a$;
+* If $A$ is a compact subset of the domain of $f$, then $f(A)$ is a compact subset of the image of $f$;
+* same as above with “compact” replaced by “connected”, or “path-connected”
+
+If you want to create exceptions to continuity for isolated points, then these theorems would be weakened.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4200176/what-is-the-motivation-behind-defining-continuity-at-isolated-points/4200219#4200219) on Mathematics Stack Exchange, 2021-07-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

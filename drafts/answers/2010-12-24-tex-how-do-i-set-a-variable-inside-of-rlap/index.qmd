@@ -1,0 +1,78 @@
+---
+title: How do I set a variable inside of \rlap
+date: '2010-12-24'
+description: '1. Changes within a group stay inside that group, and \rlap puts its argument inside an \hbox, therefore within its own group. So if you did:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 7673
+se-link: https://tex.stackexchange.com/questions/7672/how-do-i-set-a-variable-inside-of-rlap/7673#7673
+se-score: 8
+se-accepted: true
+se-tags:
+- macros
+- conditionals
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I set a variable inside of \rlap](https://tex.stackexchange.com/questions/7672/how-do-i-set-a-variable-inside-of-rlap), asked by [srking](https://tex.stackexchange.com/users/2528/srking) on TeX Stack Exchange (2010-12-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Two questions please about this code example:
+>
+> 1) Why does `\rlap` prevent me from setting a variable?<br>
+> 2) How do I set a variable from within an `\rlap` that is visible outside of `\rlap`?
+>
+> I'm using MikTex 2.8.  Thanks for any clue!
+>
+> ```latex
+> \documentclass{article}
+> \newif\ifmycheck
+> \begin{document}
+> \rlap{\mychecktrue}
+> % \mychecktrue
+> \ifmycheck
+> Check True!
+> \else
+> Check False!  % always takes this path!
+> \fi
+> \end{document}
+> ```
+:::
+
+1.  Changes within a group stay inside that group, and `\rlap` puts its argument inside an `\hbox`, therefore within its own group.  So if you did:
+
+        \rlap{\mychecktrue % group is still open!
+        % \mychecktrue
+        \ifmycheck
+        Check True!
+        \else
+        Check False!  
+        \fi}
+
+  You will get 
+>Check True!
+
+  So you see that you did set the variable inside `\rlap`.  
+
+2. You want the changes to persist outside the group.  So use the prefix `\global`:
+
+        \rlap{\global\mychecktrue}
+        % \mychecktrue
+        \ifmycheck
+        Check True!
+        \else
+        Check False!  
+        \fi
+
+  That will result again in "Check True!"
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/7672/how-do-i-set-a-variable-inside-of-rlap/7673#7673) on TeX Stack Exchange, 2010-12-24. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

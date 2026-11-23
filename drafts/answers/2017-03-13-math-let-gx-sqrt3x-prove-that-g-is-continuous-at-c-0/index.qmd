@@ -1,0 +1,66 @@
+---
+title: Let $g(x)=\sqrt[3]{x}$ prove that g is continuous at c= 0
+date: '2017-03-13'
+description: 'You''ve done most the work correctly. But some comments on your writeup:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2185167
+se-link: https://math.stackexchange.com/questions/2185040/let-gx-sqrt3x-prove-that-g-is-continuous-at-c-0/2185167#2185167
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+- proof-verification
+- continuity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Let $g(x)=\sqrt[3]{x}$ prove that g is continuous at c= 0](https://math.stackexchange.com/questions/2185040/let-gx-sqrt3x-prove-that-g-is-continuous-at-c-0), asked by [Lingnoi401](https://math.stackexchange.com/users/353503/lingnoi401) on Mathematics Stack Exchange (2017-03-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Please check my proof 
+>
+> Let $\epsilon >0$ and $\delta >0$
+>
+> $$|x-0|<\delta \leftrightarrow |\sqrt[3]{x}-\sqrt[3]{0}|<\epsilon$$
+>            $$\leftrightarrow  \sqrt[3]{x}<\epsilon$$
+>            $$\leftrightarrow  x<\epsilon ^{3}$$
+> choose $\delta =\epsilon ^{3}$
+>
+> then 
+>
+> $$|\sqrt[3]{x}-\sqrt[3]{0}|< \delta \leftrightarrow |\sqrt[3]{x}-\sqrt[3]{0}<(\sqrt[3]{\epsilon })^{3}=\epsilon$$
+>
+> therefore it is continouos at 0
+:::
+
+You've done most the work correctly.  But some comments on your writeup:
+
+ 1. The first block of work between “Let $\epsilon > 0$” and “Choose $\delta = \epsilon^3$” is scratch work.  It shouldn't be included in your final product.
+
+ 2. You write “Let $\epsilon > 0$ and $\delta > 0$” at the start; this is not idiomatic.  You are fulfilling a definition that starts “For every $\epsilon > 0$, ...”  In other words, $\epsilon$ is *arbitrary*.  But $\delta$ is far from arbitrary; you have to specify it.  
+
+So here is I would write it:
+
+> Given $\epsilon > 0$, let $\delta = \epsilon^3$.  Then for any real number $x$,
+$$|x - 0 | < \delta \implies -\delta < x < \delta \implies -\epsilon^3 < x < \epsilon^3$$
+Taking cube roots,
+$$-\epsilon < \sqrt[3]{x} < \epsilon
+    \implies |\sqrt[3]{x} - 0 | < \epsilon$$
+Since this is true for any $\epsilon$, we have $\lim_{x\to 0} \sqrt[3]{x} = 0$.  
+
+This is probably how you are expected to write up the problem.  However, a question for your teacher: How do we know that
+$$-\epsilon^3 < x < \epsilon^3
+    \implies -\epsilon < \sqrt[3]{x} < \epsilon$$
+is true?  How, in fact, do we know what $\sqrt[3]{x}$ *is* when $x$ is a real number?  In fact, we don't know how to define $\sqrt[3]{x}$ until we know that the function $g(x) = x^3$ is continuous, and has a continuous inverse.  So this whole exercise puts the cart before the horse in a way.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2185040/let-gx-sqrt3x-prove-that-g-is-continuous-at-c-0/2185167#2185167) on Mathematics Stack Exchange, 2017-03-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

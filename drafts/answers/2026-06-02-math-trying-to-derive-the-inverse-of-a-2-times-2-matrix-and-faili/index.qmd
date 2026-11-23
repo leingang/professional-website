@@ -1,0 +1,78 @@
+---
+title: Trying to derive the inverse of a $2 \times 2$ matrix and failing
+date: '2026-06-02'
+description: You're right. Assuming all denominators are nonzero,
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5139227
+se-link: https://math.stackexchange.com/questions/5139225/trying-to-derive-the-inverse-of-a-2-times-2-matrix-and-failing/5139227#5139227
+se-score: 5
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+- solution-verification
+- inverse
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Trying to derive the inverse of a $2 \times 2$ matrix and failing](https://math.stackexchange.com/questions/5139225/trying-to-derive-the-inverse-of-a-2-times-2-matrix-and-failing), asked by [LlamasAreFun](https://math.stackexchange.com/users/405269/llamasarefun) on Mathematics Stack Exchange (2026-06-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am struggling to derive the inverse of a $2 \times 2$ matrix, or more accurately, struggling with why my initial proof is wrong.
+>
+> If we are trying to find $A^{-1}$, then 
+>
+> $$A^{-1}A = I_2$$
+>
+> and I decided to try and mimic the steps of Row Echelon form in matrix form to create two matrices, $B$ and $C$, such that
+>
+> $$C(BA) = I_2$$
+>
+> And then I figure that, from the associativity of matrix multiplication,
+>
+> $$C(BA)=(CB)A=I_2 \Rightarrow CB=A^{-1}$$
+>
+> If 
+> $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix},$$
+> then I made 
+> $$B=\begin{bmatrix}1/a&0\\-c/a&1\end{bmatrix}$$
+> to get
+> $$BA=\begin{bmatrix}a/a&b/a\\c-a\frac{c}{a}&d-b\frac{c}{a}\end{bmatrix}=\begin{bmatrix}1&b/a\\0&d-b\frac{c}{a}\end{bmatrix}.$$ Great, and then 
+> $$C=\begin{bmatrix}1&-\frac{b}{a}(d-\frac{bc}{a})^{-1}\\0&(d-\frac{bc}{a})^{-1}\end{bmatrix}$$ 
+> and getting
+> $$C(BA)=\begin{bmatrix}1&0\\0&1\end{bmatrix}$$ implies a quick verification.
+>
+> Then, I notice that 
+> $$CB=\begin{bmatrix}1&-\frac{b}{a}(d-\frac{bc}{a})^{-1}\\0&(d-\frac{bc}{a})^{-1}\end{bmatrix}\begin{bmatrix}1/a&0\\-c/a&1\end{bmatrix}=\begin{bmatrix}1/a+\frac{bc}{a^2}(d-\frac{bc}{a})^{-1}&-\frac{b}{a}(d-\frac{bc}{a})^{-1}\\-\frac{c}{a}(d-\frac{bc}{a})^{-1}&(d-\frac{bc}{a})^{-1}\end{bmatrix}.$$
+>
+> Doing some rearranging gets you 
+> $$CB = 
+> \begin{bmatrix}\frac{ad-bc+\frac{bc}{a}}{ad-bc}&\frac{-b}{ad-bc}\\\frac{-c}{ad-bc}&\frac{a}{ad-bc}\end{bmatrix}$$ which is ALMOST right, but it ISN'T! BUT, if one choses 
+> $$C=\begin{bmatrix}1/a&-\frac{b}{a}(d-\frac{bc}{a})^{-1}\\0&(d-\frac{bc}{a})^{-1}\end{bmatrix},$$ THEN you get the right answer, as the fraction cancels out correctly to produce $d$. HOWEVER, with this change $C(BA) \neq I_2$.
+>
+> I then did it with MORE matrices, spreading out the operations to do only one row addition or scaling at a time, and I got the right answer.
+>
+> But, I'm confused as to why the initial approach didn't work. Is my algebra messed up? I've checked it several times. Is there something that I'm just not getting? If everything is right, it would appear that the matrices aren't associative.
+:::
+
+You're right. Assuming all denominators are nonzero,
+
+$$\begin{align*}
+  \frac{1}{a} + \frac{bc}{a^2}\left(d - \frac{bc}{a}\right)^{-1}
+  &= \frac{1}{a} + \frac{bc}{a^2(d-bc/a)}
+  \\&= \frac{1}{a} + \frac{bc}{a(ad-bc)}
+  \\&= \frac{ad-bc}{a(ad-bc)} + \frac{bc}{a(ad-bc)}
+  \\&= \frac{ad}{a(ad-bc)} = \frac{d}{ad-bc}
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5139225/trying-to-derive-the-inverse-of-a-2-times-2-matrix-and-failing/5139227#5139227) on Mathematics Stack Exchange, 2026-06-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

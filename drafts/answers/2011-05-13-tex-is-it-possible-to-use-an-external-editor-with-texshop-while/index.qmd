@@ -1,0 +1,35 @@
+---
+title: Is it possible to use an external editor with TeXShop, while keeping its sync features?
+date: '2011-05-13'
+description: Take a look at this page about using TeXShop with an external editor. You can configure TeXShop to open files in another editor, and if that editor can run…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 18143
+se-link: https://tex.stackexchange.com/questions/18142/is-it-possible-to-use-an-external-editor-with-texshop-while-keeping-its-sync-fe/18143#18143
+se-score: 2
+se-accepted: false
+se-tags:
+- editors
+- texshop
+- forward-inverse-search
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it possible to use an external editor with TeXShop, while keeping its sync features?](https://tex.stackexchange.com/questions/18142/is-it-possible-to-use-an-external-editor-with-texshop-while-keeping-its-sync-fe), asked by [fudo](https://tex.stackexchange.com/users/5075/fudo) on TeX Stack Exchange (2011-05-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm not completely satisfied with TeXShop's internal editor (especially about [line breaking](https://tex.stackexchange.com/questions/16510/indentation-and-line-wraps-in-texshop)), but I would like to keep using TeXShop for its neat visualization engine and sync features (inverse and forward search). Is it possible to keep those functionalities, or at least a decent inverse search, while using an external editor with TeXShop? If so, do you have any suggestions about a suitable editor for Mac?
+:::
+
+Take a look at this [page about using TeXShop with an external editor](http://ftp2.pl.freebsd.org/pub/TeX/TeXShop/texshop%202.26/TeXShop.app/Contents/Resources/Dutch.lproj/TeXShopHelp/pgs/advanced_externaleditor.htm).  You can configure TeXShop to open files in another editor, and if that editor can run unix commands, TeXShop provides executables for its interactive compiling.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/18142/is-it-possible-to-use-an-external-editor-with-texshop-while-keeping-its-sync-fe/18143#18143) on TeX Stack Exchange, 2011-05-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

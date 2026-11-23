@@ -1,0 +1,180 @@
+---
+title: How to randomly extract some pages of a PDF file, sort their pages, and finally bundle them into a new PDF?
+date: '2013-04-03'
+description: Here is a solution that only uses the mathy and loopy bits of pgf. It borrows some code Mark Wibrow wrote on the pgf-users mailing list a while back for…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 106728
+se-link: https://tex.stackexchange.com/questions/106456/how-to-randomly-extract-some-pages-of-a-pdf-file-sort-their-pages-and-finally/106728#106728
+se-score: 1
+se-accepted: false
+se-tags:
+- pdfpages
+- random-numbers
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to randomly extract some pages of a PDF file, sort their pages, and finally bundle them into a new PDF?](https://tex.stackexchange.com/questions/106456/how-to-randomly-extract-some-pages-of-a-pdf-file-sort-their-pages-and-finally), asked by [kiss my armpit](https://tex.stackexchange.com/users/19356/kiss-my-armpit) on TeX Stack Exchange (2013-04-02; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Some books in amazon.com have excerpts (first several pages plus appendixes) from which we can know their contents, layouts, etc roughly prior to purchasing. Statistically I think it will be better if an excerpt is made by extracting some pages (30-50 pages might be enough) of the corresponding book at random, sort their pages in increasing order, and finally bundle them in to a new PDF.
+>
+> My question is: how to do it in LaTeX?
+>
+>
+> ## _Minimal Working Example_
+>
+> ```latex
+> % compile with pdflatex -shell-escape 
+> % =============================================================================================
+> \def\NoticeThatIAmUsingThisPackageToExtractSomePagesFromAnExternalPDFFileInMyComputer{pdfpages}
+> % =============================================================================================
+> \documentclass{article}
+> \usepackage{filecontents}
+> \begin{filecontents*}{book.tex}
+> \documentclass{book}
+> \usepackage{blindtext}
+> \begin{document}
+> \Blinddocument
+> \end{document}
+> \end{filecontents*}
+>
+> \immediate\write18{pdflatex book.tex}
+> \immediate\write18{pdflatex book.tex}
+>
+>
+> \usepackage{\NoticeThatIAmUsingThisPackageToExtractSomePagesFromAnExternalPDFFileInMyComputer}
+>
+> \def\NumberOfPagesOfExcerpt{50}
+>
+> \begin{document}
+>
+> % do randomization, sorting and bundling here!
+> % \includepdf[pages=-]{book}
+> \end{document}
+> ```
+:::
+
+Here is a solution that only uses the mathy and loopy bits of `pgf`.  It borrows some code Mark Wibrow wrote on the pgf-users mailing list a while back for [shuffling a `pgfmath` list][1].  Lists in `pgfmath` are implemented with a hash, rather than a single token list.  
+
+To get a random list of *k* elements from the list {1,...,*N*}, I create the list {1,...,*N*} and knuth shuffle it.  Then I bubble-sort the first *k* elements.  Then for each *i* from 1 to *k* I include the *i*-th page of the PDF.
+
+```latex
+\documentclass{article}
+\usepackage{pgf,pgffor}
+\usepackage{pdfpages}
+
+\makeatletter
+
+% declare a list by its elements
+% e.g., \pgfmathdeclarelist{mylist}{{foo}{bar}{baz}}
+\def\pgfmathdeclarelist#1#2{%
+	\def\pgfmath@list@name{#1}%
+	\c@pgfmath@counta=0%
+	\pgfmath@declarelistlist#2{\pgfmath@stop}%
+}%
+\def\pgfmath@declarelistlist#1{%
+	\ifx#1\pgfmath@stop%
+		\expandafter\edef\csname pgfmath@list@\pgfmath@list@name @length\endcsname{\the\c@pgfmath@counta}%
+	\else%
+		\advance\c@pgfmath@counta by1\relax%
+		\pgfutil@namedef{pgfmath@list@\pgfmath@list@name @\the\c@pgfmath@counta}{#1}%
+		\expandafter\pgfmath@declarelistlist%
+	\fi%
+}
+
+% get a list item
+% \pgfmathgetlistitem{\cs}{mylist}{3} lets \cs be the 3rd item of mylist
+\def\pgfmathgetlistitem#1#2#3{%
+   \expandafter\let\expandafter#1\expandafter=\csname pgfmath@list@#2@#3\endcsname%
+}
+
+% set a list item
+% \pgfmathsetlistitem{mylist}{3}{foo} defines the 3rd item of mylist to be foo
+% caution - you may need the 3rd argument expanded first.
+\def\pgfmathsetlistitem#1#2#3{%
+   \pgfutil@namedef{pgfmath@list@#1@#2}{#3}%
+}
+
+% get the length of a list
+% \pgfmathgetlistlength{\mylistlength}{mylist} lets \mylistlength be the length of the list.
+\def\pgfmathgetlistlength#1#2{%
+   \expandafter\let\expandafter#1\expandafter=\csname pgfmath@list@#2@length\endcsname%
+}
+
+% set the length of a list
+% \pgfmathsetlistlength{mylist}{length} defines the length of mylist to be length
+\def\pgfmathsetlistlength#1#2{%
+   \expandafter\edef\csname pgfmath@list@#1@length\endcsname{#2}
+}
+
+
+\def\pgfmathknuthshuffle#1{%
+	\pgfmathgetlistlength\pgfmath@len{#1}%
+	\pgfmathloop%
+	\ifnum\pgfmathcounter>\pgfmath@len%
+	\else%
+		\pgfmathrandominteger\pgfmath@temp{1}{\pgfmath@len}%
+		\pgfmathgetlistitem\pgfmath@@temp{#1}{\pgfmathcounter}%
+		\pgfmathgetlistitem\pgfmath@@@temp{#1}{\pgfmath@temp}%
+		\def\pgfmath@marshal{\pgfmathsetlistitem{#1}}%
+		\expandafter\pgfmath@marshal\expandafter{\expandafter\pgfmath@temp\expandafter}\expandafter{\pgfmath@@temp}%
+		\expandafter\pgfmath@marshal\expandafter{\expandafter\pgfmathcounter\expandafter}\expandafter{\pgfmath@@@temp}%
+	\repeatpgfmathloop%
+}
+
+\def\NumberOfPagesOfExcerpt{9}
+\def\NumberOfPagesInPdf{17}
+
+% Populate page list. Rather than use \pgfmathdeclarelist we allocate the list and assign in a loop.
+% sorry for the \global... pgf's \foreach creates a group. 
+\def\s@pagelist{pagelist} % makes expansion easier
+\pgfmathsetlistlength{pagelist}{\NumberOfPagesInPdf}
+\foreach \i in {1,...,\NumberOfPagesInPdf}{
+   \global\expandafter\pgfmathsetlistitem\expandafter\s@pagelist\expandafter\i\expandafter{\i}
+}
+
+\pgfmathknuthshuffle{pagelist}
+
+% now a bubble sort on the first \NumberOfPagesOfExcerpt items in the list.
+\pgfmathtruncatemacro{\n}{\NumberOfPagesOfExcerpt-1}
+\foreach \j in {1,...,\n}{
+   \pgfmathtruncatemacro{\k}{\NumberOfPagesOfExcerpt-\j}
+   \foreach \i in {1,...,\k}{
+      \pgfmathtruncatemacro{\iplusone}{\i+1}
+      \pgfmathgetlistitem{\pagei}{pagelist}{\i}
+      \pgfmathgetlistitem{\pageiplusone}{pagelist}{\iplusone}
+      \ifnum\pagei>\pageiplusone
+          \global\expandafter\pgfmathsetlistitem\expandafter\s@pagelist\expandafter\i\expandafter{\pageiplusone}
+          \global\expandafter\pgfmathsetlistitem\expandafter\s@pagelist\expandafter\iplusone\expandafter{\pagei}       
+      \fi
+   }
+}
+
+\makeatother
+
+\begin{document}
+
+\foreach \i in {1,...,\NumberOfPagesOfExcerpt}{
+   \pgfmathgetlistitem{\pagei}{pagelist}{\i}
+   \includepdf[pages=\pagei]{book.pdf}
+}
+
+\end{document}
+```
+
+As you can see, it's a bit messy, but it doesn't require lua or an external script.  IANACS so I don't know how efficient it is, either.  But if you wanted efficiency you wouldn't do this job in TeX. :-)
+
+
+  [1]: http://permalink.gmane.org/gmane.comp.tex.pgf.user/2387
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/106456/how-to-randomly-extract-some-pages-of-a-pdf-file-sort-their-pages-and-finally/106728#106728) on TeX Stack Exchange, 2013-04-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

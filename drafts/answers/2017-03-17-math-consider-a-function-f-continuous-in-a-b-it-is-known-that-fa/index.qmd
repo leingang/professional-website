@@ -1,0 +1,67 @@
+---
+title: Consider a function $f$ continuous in $[a,b]$. It is known that $f(a)\cdot f(b) > 0$ How many zeros does the function have in that interval?
+date: '2017-03-17'
+description: It's not too hard to come up with examples satisfying (B), (C), and (D).
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2190307
+se-link: https://math.stackexchange.com/questions/2190276/consider-a-function-f-continuous-in-a-b-it-is-known-that-fa-cdot-fb/2190307#2190307
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Consider a function $f$ continuous in $[a,b]$. It is known that $f(a)\cdot f(b) > 0$ How many zeros does the function have in that interval?](https://math.stackexchange.com/questions/2190276/consider-a-function-f-continuous-in-a-b-it-is-known-that-fa-cdot-fb), asked by [Mark Read](https://math.stackexchange.com/users/283851/mark-read) on Mathematics Stack Exchange (2017-03-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Let $f$ be a real function of a real variable, continuous in $[a,b]$.
+> > 
+> > It is known that $f(a) \cdot f(b) > 0$.
+> > 
+> > Which of the following statements is correct?
+> > 
+> > (A) Nothing can be concluded about the number of solutions of the
+> > equation $f(0)$ in $[a,b]$.
+> > 
+> > (B) The equation $f(x) = 0$ has one solution in $[a,b]$.
+> > 
+> > (C) The equation $f(x) = 0$ has infinite solutions in $[a,b]$.
+> > 
+> > (D) The equation $f(x) = 0$ has not solutions in $[a,b]$.
+>
+>
+> My book says the solution is (A) but I don't understand why. 
+>
+> If $f(a) \cdot f(b) > 0$, then that means that $f(a)$ and $f(b)$ have to be both either positive or negative and thus, if the sign doesn't change, there should be no solutions and (D) should be the correct answer.
+>
+> Am I missing something? Why is (A) the right answer and not (D)?
+:::
+
+It's not too hard to come up with examples satisfying (B), (C), and (D).  
+
+* (B): Let $f(x) = 1+\cos x$ on $[0,2\pi]$.  Then $f(0) = f(2\pi) = 2$ and the only zero is at $\pi$.  
+
+* (C): Let
+$$f(x) = \begin{cases}
+             1-x & 0 \leq x \leq 1 \\
+               0 & 1 \leq x \leq 2 \\
+             x-2 & 2 \leq x \leq 3
+          \end{cases}$$
+Then $f(0) = f(3) = 1$, but $f$ has infinitely many zeroes.
+
+* (D): Let $f(x) = 1$ on $[0,1]$.  Then $f(0) = f(1) = 1$, but $f$ has no zeroes.
+
+Since none of these are impossible, the only allowable answer is (A).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2190276/consider-a-function-f-continuous-in-a-b-it-is-known-that-fa-cdot-fb/2190307#2190307) on Mathematics Stack Exchange, 2017-03-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

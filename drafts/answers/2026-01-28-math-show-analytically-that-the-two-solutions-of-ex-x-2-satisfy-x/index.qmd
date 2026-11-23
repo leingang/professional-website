@@ -1,0 +1,47 @@
+---
+title: Show analytically that the two solutions of $e^x-x=2$ satisfy $|x_2-x_1| \ge 2$.
+date: '2026-01-28'
+description: I'm assuming you can use the fact that $f(x) = e^x - x - 2$ is continuous, and that $2 < e < 3$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5121923
+se-link: https://math.stackexchange.com/questions/5121918/show-analytically-that-the-two-solutions-of-ex-x-2-satisfy-x-2-x-1-ge-2/5121923#5121923
+se-score: 10
+se-accepted: true
+se-tags:
+- real-analysis
+- analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show analytically that the two solutions of $e^x-x=2$ satisfy $|x_2-x_1| \ge 2$.](https://math.stackexchange.com/questions/5121918/show-analytically-that-the-two-solutions-of-ex-x-2-satisfy-x-2-x-1-ge-2), asked by [Giovanni Rigon](https://math.stackexchange.com/users/1695183/giovanni-rigon) on Mathematics Stack Exchange (2026-01-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I was working on my Calculus 1 Exam and I found this problem which I don't know how to approach.
+> Given $f(x)= e^x-x=2$ show that has $2$ solutions and that $|x_2-x_1|\geq2$. 
+>
+> Now, I have a few questions. My first try was to brute force the zeros, and, of course it works but this is not how I want to solve it. Now, to prove that $f(x)$ has two zeros is not that hard (I did it combining the study of $f'$ and the sign of $f$). 
+> My question is, how can someone approach the second part of the problem if not by brute-forcing the answer? 
+> Thanks to everybody :)
+:::
+
+I'm assuming you can use the fact that $f(x) = e^x - x - 2$ is continuous, and that $2 < e < 3$.
+
+Observe that $f(1) = e -3 < 0$, and $f(2) = e^2 - 4 = (e-2)(e+2) > 0$. So by the Intermediate Value Theorem there is a zero of $f$ (call it $x_1$) between $1$ and $2$.
+
+Now observe that $f(-2) = e^{-2} > 0$, and $f(-1) = e^{-1} - 1 < 0$. So there is a zero of $f$ (call is $x_2$) between $-2$ and $-1$. 
+
+Since $x_1 > 1$ and $x_2 < -1$, $|x_1 - x_2| > 2$.
+
+Perhaps you think this argument is pedestrian, but have you ever tried to prove the Intermediate Value Theorem?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5121918/show-analytically-that-the-two-solutions-of-ex-x-2-satisfy-x-2-x-1-ge-2/5121923#5121923) on Mathematics Stack Exchange, 2026-01-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

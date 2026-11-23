@@ -1,0 +1,55 @@
+---
+title: Show that a positive integer $n \in N$ can be written as a sum of positive coprime integers with $gcd(a,b)=1 $
+date: '2019-05-22'
+description: If one of the numbers is allowed to be $1$, then $a=n-1$ and $b=1$ is always a solution. If not, $n$ must be at least $7$.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3236063
+se-link: https://math.stackexchange.com/questions/3235552/show-that-a-positive-integer-n-in-n-can-be-written-as-a-sum-of-positive-copri/3236063#3236063
+se-score: 0
+se-accepted: true
+se-tags:
+- coprime
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Show that a positive integer $n \in N$ can be written as a sum of positive coprime integers with $gcd(a,b)=1 $](https://math.stackexchange.com/questions/3235552/show-that-a-positive-integer-n-in-n-can-be-written-as-a-sum-of-positive-copri), asked by [Andre](https://math.stackexchange.com/users/676286/andre) on Mathematics Stack Exchange (2019-05-22; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My idea was to show this via 3 cases.
+> In case one n is even n=2k, k is odd
+> In case two n is even with n=2k, k is odd
+> In case three n is odd so n=2k+1
+> Then I have to show that for $n<7$ not every integer has a written form of $n=a+b; gcd(a,b)=1.$
+> I want to show that in each case, the $gcd(a,b)=1$. Is this the right approach ?
+:::
+
+If one of the numbers is allowed to be $1$, then $a=n-1$ and $b=1$ is always a solution.  If not, $n$ must be at least $7$.
+
+If $n \geq 7$ is odd, then $n=2k+1 = k+(k+1)$ for some integer $k \geq 3$.  Consecutive integers are always relatively prime, so $a=k$ and $b=k+1$ would work.
+
+If $n$ is even, you have to try something else.  You could write $n$ as the sum of the two integers which differ by $2$, but they may not be relatively prime.  For instance, $10=4+6$.  But $12=5+7$.  The difference is the congruence modulo $4$.
+
+If $n\geq 7$ is a multiple of $4$, then $n=4k = (2k-1) + (2k+1)$ for some $k\geq 2$.  That is, $n$ is the some of consecutive odd integers.  By Euclid's algorithm,
+$$\gcd(2k+1,2k-1) = \gcd(2k-1,2) = 1$$
+So $a=2k-1$ and $b=2k+1$ will work.
+
+If $n\geq7$ is even, but not a multiple of $4$, then $n= 4k + 2 = (2k-1) + (2k+3)$ for some $k\geq2$.
+As above,
+$$\gcd(2k+3,2k-1) = \gcd(2k-1,4) = 1$$
+So $a=2k-1$ and $b=2k+3$ will work.  In the case of $n=22$, for instance, you get $a=9$ and $b=13$.  
+
+Here is a less case-based and less constructive solution: Let $p$ be a prime less than $n$ which does not divide $n$.  Let $a=b$ and $b=n-p$.  Then
+$$\gcd(n-p,p) = \gcd(n,p) = 1$$
+Since $p \nmid n$.  In the case of $n=22$, you get $3+19$, $5+17$, $7+15$, and $13+9$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3235552/show-that-a-positive-integer-n-in-n-can-be-written-as-a-sum-of-positive-copri/3236063#3236063) on Mathematics Stack Exchange, 2019-05-22. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

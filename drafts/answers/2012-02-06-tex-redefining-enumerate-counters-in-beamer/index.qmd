@@ -1,0 +1,104 @@
+---
+title: Redefining enumerate counters in beamer
+date: '2012-02-06'
+description: 'Here is a partial solution:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 43577
+se-link: https://tex.stackexchange.com/questions/43558/redefining-enumerate-counters-in-beamer/43577#43577
+se-score: 2
+se-accepted: false
+se-tags:
+- beamer
+- cross-referencing
+- lists
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Redefining enumerate counters in beamer](https://tex.stackexchange.com/questions/43558/redefining-enumerate-counters-in-beamer), asked by [Bernhard](https://tex.stackexchange.com/users/10739/bernhard) on TeX Stack Exchange (2012-02-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to do two things with the `enumerate` environment in `beamer`.
+>
+> 1. I'd like to reformat it so that it shows up as
+>
+>         (1) An item
+>           a. A subitem
+>           b. Another subitem
+>
+> 2. I'd like to be able to refer to these items with the usual `\ref` tags. Unfortunately, the only way I've found of getting the display of items inside of the environment right doesn't deliver the correct result for the references.
+>
+> Here's a minimal working example.
+>
+> ```latex
+> \documentclass{beamer}
+>
+> \setbeamertemplate{enumerate item}{(\insertenumlabel)}
+> \setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+>
+> \begin{document}
+>
+> \begin{enumerate}
+> \item Foo\label{item:1}
+>   \begin{enumerate}
+>   \item Bar\label{item:2}
+>   \item Zip\label{item:3}
+>   \end{enumerate}
+> \end{enumerate}
+>
+> Reference to ``Foo'': (\ref{item:1}).
+>
+> Reference to ``bar'': (\ref{item:2}). 
+>
+> Reference to ``zip'': (\ref{item:3}).
+> \end{document}
+> ```
+>
+> Unfortunately, that results in all three references in arabic numbers, i.e., `(1)`, `(1)`, and `(2)` for the three `\ref`'s, in that order.
+>
+> The desired output is for `(\ref{item:3})` to be rendered as `(1b)`.
+:::
+
+Here is a partial solution:
+
+```latex
+\documentclass{beamer}
+
+\setbeamertemplate{enumerate item}{(\insertenumlabel)}
+
+\begin{document}
+
+\begin{frame}
+\begin{enumerate}
+\item Foo\label{item:1}
+  \begin{enumerate}[a.]
+  \item Bar\label{item:2}
+  \item Zip\label{item:3}
+  \end{enumerate}
+\end{enumerate}
+
+Reference to ``Foo'': \ref{item:1}
+
+Reference to ``bar'': \ref{item:2} 
+
+Reference to ``zip'': \ref{item:3}
+\end{frame}
+
+\end{document}
+```
+
+This fixes the labels in the nested environment to be `a.` and `b.`.  But the `\ref`s end up the same.  
+
+With the same code in an `article` class with the `enumerate` package, you would see your second effect, too: the labels for bar and zip are set as `1a` and `1b`.  But to get beamer to do the same thing requires a bit of digging.  I'll try to do that digging and see what I can find.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/43558/redefining-enumerate-counters-in-beamer/43577#43577) on TeX Stack Exchange, 2012-02-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

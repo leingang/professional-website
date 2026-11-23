@@ -1,0 +1,70 @@
+---
+title: Is it wrong to define $-1 \circ -1 = -1$
+date: '2018-06-06'
+description: As a teacher, I interpret the question as “What is the smallest subset of the ring of quaternions that contains $i$, $j$, $k$, and $-1$, and is a group under…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2810439
+se-link: https://math.stackexchange.com/questions/2810391/is-it-wrong-to-define-1-circ-1-1/2810439#2810439
+se-score: 1
+se-accepted: false
+se-tags:
+- abstract-algebra
+- group-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is it wrong to define $-1 \circ -1 = -1$](https://math.stackexchange.com/questions/2810391/is-it-wrong-to-define-1-circ-1-1), asked by [pranphy](https://math.stackexchange.com/users/33556/pranphy) on Mathematics Stack Exchange (2018-06-06; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> **Problem:**
+> Quaternions are a set of objects that are an extension of imaginary numbers except that there are three of them $i$, $j$ and $k$, with the relations
+>     $$\begin{align*}
+>         i^{2} = j^{2} = k^{2} = ijk = -1
+>     \end{align*}$$
+> Construct the smallest group possible that contains all the quarternions.
+>
+>
+> **My Solution**:
+> Closure of the group requires that at least, $i,j,k$ and $-1$ to be the members of the group.
+>             Since $i^2 = i \circ i = -1$, $i$ can't be the identity of the group. Similarly $j$ and $k$ can't be identity of the group. That leaves $-1$ as the only candidate for the identity of the group. If we can satisfy other requirement of group, then $i,j,k$ and $-1$ will form a group with $-1$ as the identity.
+>
+> If we define $-1 \circ -1 = -1$, which doesn't violate any of the given requirements, $-1$, works as the identity element.
+>
+>   Since $i^2 = i \circ i = -1$ and $-1$ is identity, $i$ by definition becomes the inverse of itself. Similarly $j$ and $k$ are inverses of themselves.
+>             So the group is 
+>             $$\begin{align*}
+>                 G \left( \left\lbrace -1,i,j,k \right\rbrace, \circ \right)
+>             \end{align*}$$
+>
+> **Question**: If all we are given is the statement on problem is it wrong to define $-1 \circ -1 = -1$ for this problem?
+:::
+
+As a teacher, I interpret the question as “What is the smallest subset of the ring of quaternions that contains $i$, $j$, $k$, and $-1$, and is a group under quaternionic multiplication?” I agree with the commenters that what is written is not the same thing.
+
+Let us call this group $G$ for short.
+
+> Closure of the group requires that at least, $i,j,k$ and $-1$ to be the members of the group.
+
+Yes.  But the closure can, and usually does, contain more than the elements used to define it.  
+
+> Since $i^2 = i \circ i = -1$, $i$ can't be the identity of the group. Similarly $j$ and $k$ can't be identity of the group. 
+
+Indeed, identity elements are idempotents, so you are right that these non-idempotents can't be the identity.
+
+> That leaves $-1$ as the only candidate for the identity of the group. 
+
+Here is where I think your logic breaks down. Nobody said that $i$, $j$, $k$, and $-1$ were the *only* elements of $G$.  Any product of elements of $G$ must also be in $G$.  So the group has to contain $i^3=-i$ and $i^4=1$ as well.
+
+There are a few more quaternions that must be in $G$.  Can you find them?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2810391/is-it-wrong-to-define-1-circ-1-1/2810439#2810439) on Mathematics Stack Exchange, 2018-06-06. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

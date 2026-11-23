@@ -1,0 +1,55 @@
+---
+title: calculating an integral of a density function over a given surface
+date: '2019-07-24'
+description: The first thing to notice is that $S$ is the graph of a function $g$ over a region $D$ in the $xy$-plane. In situations like that, surface integrals of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3302994
+se-link: https://math.stackexchange.com/questions/3302724/calculating-an-integral-of-a-density-function-over-a-given-surface/3302994#3302994
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- integration
+- definite-integrals
+- surface-integrals
+- multiple-integral
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[calculating an integral of a density function over a given surface](https://math.stackexchange.com/questions/3302724/calculating-an-integral-of-a-density-function-over-a-given-surface), asked by [c00kie_monster](https://math.stackexchange.com/users/691178/c00kie-monster) on Mathematics Stack Exchange (2019-07-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am having a hard time with this question and would love to get some help.
+> The question is:
+>
+> > Calculate the mass of the surface:
+> $$S = \left\{(x,y,z) : z = \sqrt{x^2+y^2},\ x \leq y \leq 4x -2 - x^2 \right\}$$
+> with density 
+> $$\rho(x,y,z) = \frac{2z}{\sqrt{x^2+y^2}}$$
+>
+> * * *
+>
+> *(added from a comment by the asker)*
+> I'm not even sure what is the right way to do it.. whether it is a surface integral of just 3 variable integral. I tried to just integrate by $dy$ and then look on the $XZ$ plane but it didn't work out.
+:::
+
+The first thing to notice is that $S$ is the graph of a function $g$ over a region $D$ in the $xy$-plane.  In situations like that, surface integrals of functions can be calculated as regular two-variable area integrals:
+$$\iint_S \rho\,dS = \iint_D \rho(x,y,g(x,y)) \sqrt{1+g_x^2+g_y^2}\,dA$$
+The next thing to notice is that $D$ can be described as the region between the graphs of functions of $x$:
+$$D = \left\{(x,y) : a \leq x \leq b,\ \phi_1(x) \leq y \leq \phi_2(x) \right\}$$
+In situations like that, area integrals can be calculated as iterated integrals:
+$$\iint_D \rho(x,y,g(x,y)) \sqrt{1+g_x^2+g_y^2}\,dA
+= \int_a^b \int_{\phi_1(x)}^{\phi_2(x)}\rho(x,y,g(x,y))\sqrt{1+g_x^2+g_y^2}\,dy\,dx$$
+Now you “just” have to do these iterated integrals.  But for this particular $g$ and $\rho$ things work out pretty nicely.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3302724/calculating-an-integral-of-a-density-function-over-a-given-surface/3302994#3302994) on Mathematics Stack Exchange, 2019-07-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

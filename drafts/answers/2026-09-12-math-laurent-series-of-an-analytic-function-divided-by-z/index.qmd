@@ -1,0 +1,63 @@
+---
+title: Laurent series of an analytic function divided by $z$
+date: '2026-09-12'
+description: Transcribing Daniel Fischer's comment into an answer. The claim is that if $g$ is an analytic function with $g(0) = 0$, then $f(z) = g(z)/z$ has a removable…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5149272
+se-link: https://math.stackexchange.com/questions/544282/laurent-series-of-an-analytic-function-divided-by-z/5149272#5149272
+se-score: 1
+se-accepted: false
+se-tags:
+- complex-analysis
+- complex-numbers
+- laurent-series
+- singularity-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Laurent series of an analytic function divided by $z$](https://math.stackexchange.com/questions/544282/laurent-series-of-an-analytic-function-divided-by-z), asked by [Andomar](https://math.stackexchange.com/users/12912/andomar) on Mathematics Stack Exchange (2013-10-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> This is a probably basic question about Laurent series.  Say $g(z)$ is an analytic function, that $g(0) = 0$, and $f(z) = g(z)/z$.  My textbook says $z = 0$ is a removable singularity of $f(z)$.
+>
+> A removable singularity is defined as a singularity where the principal part of the Laurent series is zero.  The Laurent series is:
+>
+> $$\sum_{k=-\infty}^\infty c_k (z-z_0)^{k}$$
+>
+> $$c_k = \frac{1}{2\pi i} \oint_C \frac{f(\xi)}{(\xi - z_0)^{k+1}} d\xi$$
+>
+> The "principal part" of the Laurent series refers to the terms where $k \le -1$.  Now if I look at the terms $k=-2, -1, 0$ of the Laurent series of $f(z)$ around $z = 0$:
+>
+> $$c_{-2} = \frac{1}{2\pi i} \oint_C g(\xi) d\xi = 0$$
+>
+> (This follows from Cauchy's integral theorem and the fact that $g$ is analytic.)
+>
+> $$c_{-1} = \frac{1}{2\pi i} \oint_C \frac{g(\xi)}{\xi} d\xi$$
+>
+> $$c_{0} = \frac{1}{2\pi i} \oint_C \frac{g(\xi)}{\xi^2} d\xi$$
+>
+> Now it seems to me that $c_{-1}$ is not zero.  Therefore, the principal part is not zero, and $z=0$ is a pole of order one.
+>
+> Any hint or pointer as to where my reasoning goes wrong would be welcome.
+:::
+
+Transcribing Daniel Fischer's comment into an answer. The claim is that if $g$ is an analytic function with $g(0) = 0$, then $f(z) = g(z)/z$ has a removable singularity at $0$.
+
+Notice that
+$$\lim_{z\to 0} f(z) = \lim_{z\to0} \frac{g(z)}{z} 
+= \lim_{z\to0} \frac{g(z)-g(0)}{z-0}
+= g'(0)$$
+In particular, $f$ is bounded in a punctured neighborhood of $0$.
+This means the singularity of $f$ at $0$ is removable—we can remove it by setting $f(0) = g'(0)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/544282/laurent-series-of-an-analytic-function-divided-by-z/5149272#5149272) on Mathematics Stack Exchange, 2026-09-12. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,82 @@
+---
+title: How to number slides in the beamer theme Hannover ?
+date: '2011-03-11'
+description: 'You can install an outer theme on top of a complete theme, as in:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13235
+se-link: https://tex.stackexchange.com/questions/13223/how-to-number-slides-in-the-beamer-theme-hannover/13235#13235
+se-score: 8
+se-accepted: false
+se-tags:
+- beamer
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to number slides in the beamer theme Hannover ?](https://tex.stackexchange.com/questions/13223/how-to-number-slides-in-the-beamer-theme-hannover), asked by [gerry](https://tex.stackexchange.com/users/1967/gerry) on TeX Stack Exchange (2011-03-11; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I used the package `beamer outer theme split numbered` to make it for themes with navigation. But the theme `Hannover` is different. Is re-defining the footline the only choice, or is there some other convenient way? 
+>
+> Update: the solutions like 
+>
+> ```latex
+> \useoutertheme{infolines}
+> ```
+>
+> or
+>
+> ```latex
+> \setbeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+> ```
+>
+> can both do the job, but not so grace as I expect. Both of them will ruin the layout of Hannover. It is better to put the page number on the bottom of the left column, or at the left side of the navigation row.
+:::
+
+You can install an outer theme on top of a complete theme, as in:
+
+```latex
+\documentclass{beamer}
+\title{Test of Hannover with slide numbers}
+\usetheme{Hannover}
+\useoutertheme{infolines}
+\setbeamertemplate{headline}{} % removes the headline that infolines inserts
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Abel
+\item Baker
+\item Charlie
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Abel
+\item Baker
+\item Charlie
+\end{itemize}
+\end{frame}
+
+\end{document}
+```
+
+![sample code][1]
+
+  [1]: k3hoS.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13223/how-to-number-slides-in-the-beamer-theme-hannover/13235#13235) on TeX Stack Exchange, 2011-03-11. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

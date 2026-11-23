@@ -1,0 +1,52 @@
+---
+title: How to generate this symbol~ in pdf using latex
+date: '2010-11-29'
+description: Then \url{http://www.google.com/~find} See also this question on the TeX StackExchange.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 28312
+se-link: https://tex.stackexchange.com/questions/28309/how-to-generate-this-symbol-in-pdf-using-latex/28312#28312
+se-score: 8
+se-accepted: true
+se-tags:
+- urls
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to generate this symbol~ in pdf using latex](https://tex.stackexchange.com/questions/28309/how-to-generate-this-symbol-in-pdf-using-latex), asked by veda on TeX Stack Exchange (2010-11-29; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> > **Possible Duplicate:**  
+> > [URL with tilde character?](https://tex.stackexchange.com/questions/10858/url-with-tilde-character)  
+>
+> <!-- End of automatically inserted text -->
+>
+> How to generate this line in pdf using latex.
+>
+> > http://www.google.com/~find/
+>
+> How can I create **~find** in latex.
+>
+> I tried `\~\ find` which creates only
+>
+> > ~ find
+>
+> How can I do that....
+:::
+
+```latex
+\usepackage{url}
+```
+
+Then `\url{http://www.google.com/~find}`  See also [this question](https://tex.stackexchange.com/questions/3568/how-does-one-insert-a-url-correctly) on the TeX StackExchange.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/28309/how-to-generate-this-symbol-in-pdf-using-latex/28312#28312) on TeX Stack Exchange, 2010-11-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

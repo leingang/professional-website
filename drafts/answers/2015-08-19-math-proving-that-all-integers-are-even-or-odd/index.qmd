@@ -1,0 +1,49 @@
+---
+title: Proving that all integers are even or odd
+date: '2015-08-19'
+description: I prefer appealing to the well-ordering principle. It's equivalent to induction but in my opinion a tiny bit cleaner.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1402965
+se-link: https://math.stackexchange.com/questions/1402679/proving-that-all-integers-are-even-or-odd/1402965#1402965
+se-score: 8
+se-accepted: false
+se-tags:
+- elementary-number-theory
+- parity
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving that all integers are even or odd](https://math.stackexchange.com/questions/1402679/proving-that-all-integers-are-even-or-odd), asked by [John Doe](https://math.stackexchange.com/users/171192/john-doe) on Mathematics Stack Exchange (2015-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I know that $\mathbb{Z}$ is a group under addition with a multiplication defined. I have just the definition of even and odd integers: $n$ is even if $n = 2k$ for some integer $k$ and $n$ is odd if $n = 2k+1$ for some integer $k$.
+>
+> Using just this I am wondering how to prove that all integers are either even or odd. That is, how can I prove that given an integer $n$, $n$ must be even or odd?
+>
+> My problem with this is that it seems so simple. I know that one can divide an integer by $2$ and the remainder will be $0$ or $1$. Using this, it is clear that the even and odd integers make up everything. But how can I prove it without using this fact about remainders and such? I guess one could also use facts about prime numbers, but I am looking for a proof that just uses the definition of odd and even.
+:::
+
+I prefer appealing to the [well-ordering principle][1].  It's equivalent to induction but in my opinion a tiny bit cleaner.
+
+First, reduce the proposition to the statement that all positive integers are odd or even.  If there exist positive integers that are neither odd nor even, there must be a smallest positive integer $n$ which is neither odd nor even.  Since $1$ is definitely odd, $n \geq 2$, hence $n-1$ is still positive.
+Since $n$ is the *least* positive integer that is neither odd nor even, $n-1$ must be either odd or even.
+
+* If $n-1$ is even, $n-1 = 2k$ for some $k$.  But this implies $n=2k+1$, i.e., $n$ is odd.
+* If $n-1$ is odd, $n-1 = 2k+1$ for some $k$.  But this implies $n=2k+2 = 2(k+1)$, i.e., $n$ is even.
+
+Either way we have a contradiction, so the set of positive integers which are neither even nor odd is empty.
+
+
+  [1]: https://en.wikipedia.org/wiki/Well-ordering_principle
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1402679/proving-that-all-integers-are-even-or-odd/1402965#1402965) on Mathematics Stack Exchange, 2015-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

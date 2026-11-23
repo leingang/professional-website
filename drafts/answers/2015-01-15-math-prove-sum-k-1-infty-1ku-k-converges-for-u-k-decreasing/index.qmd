@@ -1,0 +1,107 @@
+---
+title: Prove $\sum_{k=1}^{\infty}(-1)^{k}u_k$ converges for u_k decreasing.
+date: '2015-01-15'
+description: Better to use $+$ or $-$ except at the end. And for $qn$ and $rn$ you know the sign of the last term too.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1105638
+se-link: https://math.stackexchange.com/questions/1105620/prove-sum-k-1-infty-1ku-k-converges-for-u-k-decreasing/1105638#1105638
+se-score: 4
+se-accepted: false
+se-tags:
+- real-analysis
+- sequences-and-series
+- limits
+- convergence-divergence
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove $\sum_{k=1}^{\infty}(-1)^{k}u_k$ converges for u_k decreasing.](https://math.stackexchange.com/questions/1105620/prove-sum-k-1-infty-1ku-k-converges-for-u-k-decreasing), asked by [MadMathFourierRoad](https://math.stackexchange.com/users/104016/madmathfourierroad) on Mathematics Stack Exchange (2015-01-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> **Problem:**
+>
+> $(u_n)_{n\in\Bbb{N}}$ is a sequence in $\Bbb{R}$ and $u_n \to 0$, 
+>
+> $$u_{n+1} \le u_n, \ \forall n \in \Bbb{N} \\
+>   u_n \ge 0, \ \forall n \in \Bbb{N}.$$
+>
+>
+> Define $s_n = \sum_{k=1}^{n}(-1)^{k}u_k \ .$
+>
+> Prove that $\sum_{k=1}^{\infty}(-1)^{k}u_k$ converges, thus $s_n = \sum_{k=1}^{n}(-1)^{k}u_k$ converges.
+>
+> Hints: Define $r_n = s_{2n+1}$ and $q_n = s_{2n}$. Show that $r_n$ converges, and $q_n$ has the same limit converges.
+>
+> >>**I did so:** 
+>
+> We claim there exists $A\in\Bbb{R},$ so that $A\ge0,$ is the sum of  $\sum_{k=1}^{\infty}(-1)^{k}u_k$.
+>
+> There exists an $\epsilon$ in $\Bbb{N}$, there is a $N_{\epsilon} \in \Bbb{N}$ and for all $n\ge N_{\epsilon}\\$ 
+> is $$|\sum_{k=1}^{\infty}(-1)^{k}u_k - A| < |s_{2n+1} - A|< |s_{2n} - A| < |s_n - A| < \epsilon. \\\\$$
+>
+> It's clear that $$\ r_n = q_n - u_{2n+1} \\$$ 
+> and $$-u_{2n+1}<0<\frac{\epsilon}{2}<\epsilon.$$
+>
+>
+> Then $$|r_n - A|=|q_n - u_{2n+1} -A| \le |q_n - A|+u_{2n+1}< \epsilon \\$$ 
+>
+> so that  $$|q_n -A|< \epsilon - u_{2n+1}< \frac{\epsilon}{2} < \epsilon.$$
+>
+>
+> This means  $q_n$ and $r_n$ have the same limit and are monotonically decreasing, therefore $\sum_{k=1}^{\infty}(-1)^{k}u_k$ converges to 0. 
+>
+>
+> >>>**Did I right? If not, could you give me any hints to understand what is wrong, please? Thanks in advance.**
+:::
+
+> $s_n = -u_1 + u_2 \mp ... \mp u_{n-1} \mp u_n$
+
+Better to use $+$ or $-$ except at the end.  And for $q_n$ and $r_n$ you know the sign of the last term too.
+
+> $\ldots\sum_{k=1}^{\infty}(-1)^{k}u_k.$
+
+You haven't really made a complete thought here.  What are the previous few lines supposed to tell you about this sum?
+
+> **Hypothesis:** $\exists A\in\Bbb{R}, \ A\ge0, r_n \to A$
+
+In formal writeups, use English words to make your work more readable.  Symbols are better for board work and scratch paper.  So you might write this instead as
+
+>> We claim there exists $A \in \mathbb{R}$ such that $A \geq 0$ and $r_n \to A$. 
+
+But you still haven't shown that.
+
+> $\Rightarrow \exists\epsilon\in\Bbb{N}, \ \text{for$\forall n\ge N_{\epsilon}$is$|r_n - A| < \epsilon$} \\$.
+
+This doesn't make sense either.  What I think you mean to say is:
+
+>> (Therefore?) For every $\epsilon > 0$ there exists $N_\epsilon \in \mathbb{N}$ such that $|r_n - A| < \epsilon$ for all $n \geq N_\epsilon$.
+
+This would be true if $r_n \to A$, which you still haven't shown.
+
+> Since $\ r_n = q_n - u_{2n-1} \$ follows that $|r_n - A|=|q_n - u_{2n+1} -A| \le |q_n - A|+u_{2n+1}< \epsilon$
+
+You are trying to make the claim that $q_n \to A$ as well, so really you should start with $|q_n - A|$ on the left and use $|r_n - A| < \epsilon$ on the right.
+
+You also need to use that $u_{2n+1} < \epsilon$ for $n$ sufficiently large.  And then the sum would be $2\epsilon$.  So you could go back to the beginning and replace all the $\epsilon$s with $\frac{\epsilon}{2}$, or just not worry about it.  It depends on how rigorous your instructor wants you to be.
+
+> It means that $\ q_n \to 0 \ \text{since$A \ge 0$}$, 
+
+If $q_n\to0$ then the series converges to zero, and I don't think that's what you're trying to show.  
+
+> and so the hypothesis is demonstarted.
+
+Again, you haven't said anything demonstrating whether $\{r_n\}$ converges.  What you have shown is (close to) a proof that if $r_n \to A$, then $q_n \to A$ as well.  This is true and part of the proof that the series converges.
+
+Here is a hint for the part you are missing: is $\{q_n\}$ or $\{r_n\}$ monotone?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1105620/prove-sum-k-1-infty-1ku-k-converges-for-u-k-decreasing/1105638#1105638) on Mathematics Stack Exchange, 2015-01-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

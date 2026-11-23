@@ -1,0 +1,50 @@
+---
+title: Approached Area Between Two Parabolas
+date: '2018-02-26'
+description: For each $x$, the two curves are exactly one unit apart in the $y$ direction. So the area between the curves over the interval $[a,b]$ is exactly $b-a$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2667923
+se-link: https://math.stackexchange.com/questions/2667917/approached-area-between-two-parabolas/2667923#2667923
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- graphing-functions
+- quadratics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Approached Area Between Two Parabolas](https://math.stackexchange.com/questions/2667917/approached-area-between-two-parabolas), asked by [adam](https://math.stackexchange.com/users/503374/adam) on Mathematics Stack Exchange (2018-02-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have two parabolas: 
+>
+> $$y = x^2$$
+> $$y = x^2 + 1$$
+>
+> From my understanding, the graphs would never cross, but they must get very close together when $x$ is very large. Hence what does the area approach to between the two curves? Or is it infinity?
+>
+> As you can see by the image from Desmos, the bulk of the area is located when $x$ is small, the larger $x$ gets the less area is added to the total, so it must approach some number right?
+>
+> This is just what I was thinking about whilst I was doing parabolas in further maths - I hope there's an interesting answer to it though :)[![enter image description here][q-1]][q-1]
+>
+>
+>   [q-1]: 16ohI.jpg
+:::
+
+For each $x$, the two curves are exactly one unit apart in the $y$ direction.  So the area between the curves over the interval $[a,b]$ is exactly $b-a$.  
+
+If you let $b\to\infty$ or $a\to-\infty$, the area is unbounded.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2667917/approached-area-between-two-parabolas/2667923#2667923) on Mathematics Stack Exchange, 2018-02-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

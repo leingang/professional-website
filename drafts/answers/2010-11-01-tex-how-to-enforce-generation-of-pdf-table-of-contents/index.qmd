@@ -1,0 +1,52 @@
+---
+title: How to enforce generation of PDF table of contents?
+date: '2010-11-01'
+description: The tableofcontents is generated and saved but never inserted into the document.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4789
+se-link: https://tex.stackexchange.com/questions/4785/how-to-enforce-generation-of-pdf-table-of-contents/4789#4789
+se-score: 4
+se-accepted: false
+se-tags:
+- hyperref
+- table-of-contents
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to enforce generation of PDF table of contents?](https://tex.stackexchange.com/questions/4785/how-to-enforce-generation-of-pdf-table-of-contents), asked by [yegor256](https://tex.stackexchange.com/users/1449/yegor256) on TeX Stack Exchange (2010-11-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> When I'm adding `\tableofcontents` to my document the PDF generated contains a nice list of sections/subsections on the left side, when viewed in Adobe Acrobat (I also use `hyperref` package). Everything is fine.
+>
+> But now I don't need this TOC to be visible in the document, but I want to keep it visible in the PDF. When I'm deleting `\tableofcontents` from the document it disappears in the PDF as well. How to solve it?
+>
+> ps. Maybe this is the problem (my log)?:
+>
+> ```latex
+> Package hyperref Warning: Option `bookmarks' has already been used,
+> (hyperref)                setting the option has no effect on input line 33.
+> ```
+:::
+
+Here's a hack:
+
+```latex
+\newsavebox{\discard}
+\sbox{\discard}{\vbox{\tableofcontents}}
+```
+
+The tableofcontents is generated and saved but never inserted into the document.
+
+But I just read @lockstep's comment; you may not need any of this.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4785/how-to-enforce-generation-of-pdf-table-of-contents/4789#4789) on TeX Stack Exchange, 2010-11-01. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

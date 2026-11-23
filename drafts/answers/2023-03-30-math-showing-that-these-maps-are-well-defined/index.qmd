@@ -1,0 +1,58 @@
+---
+title: Showing that these maps are well-defined
+date: '2023-03-30'
+description: I think “well-defined” means two different things in the two statements.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4669144
+se-link: https://math.stackexchange.com/questions/4669124/showing-that-these-maps-are-well-defined/4669144#4669144
+se-score: 3
+se-accepted: true
+se-tags:
+- linear-algebra
+- functional-analysis
+- proof-explanation
+- quotient-spaces
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Showing that these maps are well-defined](https://math.stackexchange.com/questions/4669124/showing-that-these-maps-are-well-defined), asked by [lmaosome](https://math.stackexchange.com/users/870771/lmaosome) on Mathematics Stack Exchange (2023-03-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $E$ be a (possibly infinite-dimensional) vector space and $F\subseteq E$ a closed linear subspace. The maps $\Phi : (E^*/F^\bot)\rightarrow F^*$ given by $\Phi(f + F^\bot) = f|_F$ and $\Psi:(E/F)^*\rightarrow F^\bot$ given by $\Psi(f) = f(\cdot + F)$ are well-defined.
+>
+> I know what "well-defined" means, but I can't follow the proofs. 
+>
+>   * For $\Phi$ the proof is: If $f + F^\bot = g + F^\bot$, then there is $h\in F^\bot$ such that $f = g + h$. So $$\Phi(f + F^\bot) = f|_F = (g + h)|_F = g|_F + h|_F = g|_F = \Phi(g + F^\bot)$$
+> since $h(x) = 0$ for all $x\in F$. Hence, $\Phi$ is well-defined.
+>   * For $\Psi$ the proof is: $\vert\Psi(f)(x)\vert = \vert f(x + F)\vert \leq \Vert f\Vert \Vert x + F\Vert \leq \Vert f\Vert \Vert x\Vert$, so $\Psi(f)\in E^*$. Now if $x\in F$, then $$\Psi(f)(x) = f(x + F) = f(F) = f(0 + F) = f(0_{E/F}) = 0$$ as $f\in (E/F)^*$. Hence $\Psi$ is well-defined.
+>
+> I don't see any pattern here. Of course, these are two different functions, but if I was now faced with a third function, I would not know how to start or what to do. I would be very happy if someone could explain me what is going on here so that I know what to do if I was given a third function and had to show it is well-defined.
+:::
+
+I think “well-defined” means two different things in the two statements.
+
+1. To say $\Phi$ is well-defined means that, even though the formula uses a representative $f$ of the coset $f + F^\perp$, the answer doesn't change if we choose a different representative.
+
+2. To say $\Psi$ is well-defined means that even though $\Psi(f)$ is defined as an element of $E^*$, it actually belongs to the subspace $F^\perp$.
+
+If you like, the “well-defined-ness” is needed on the domain side of the first and the codomain side of the second.
+
+* * *
+
+There's a more functorial way to prove these statements. Any time $T \colon W \to W$ is a linear transformation of vector spaces, there is a contravariant dual map $T^* \colon W^* \to V^*$ defined by $T(\lambda)(v) = \lambda(Tv)$. We are given a vector space $E$ and subspace $F$, so there are canonical maps given by the inclusion $\iota \colon F \to E$ and quotient $\psi \colon E \to E/F$. Notice that $\iota^*\colon E^* \to F^*$ is the restriction map $f \mapsto f|_F$, so $F^\perp$ is the kernel of $\iota^*$.
+
+Now notice $\Psi = \psi^*$. Since $\psi \mathrel{\circ} \iota = 0$, we have $\iota^* \mathrel{\circ} \psi^* = 0$. This means that restricting $\psi^*(f)$ to $F$ is the zero map, which is precisely what is needed for $\Psi(f)$ to be in $F^\perp$.
+
+Another quotient map is $\phi \colon E^* \to E^*/F^\perp$. Quotient spaces have the universal property that any map from the full space, whose kernel contains the subspace, factors through the quotient. The map $\Phi$ is the factoring map associated to $\iota^*$, by which we mean $\Phi \mathrel{\circ} \phi = \iota^*$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4669124/showing-that-these-maps-are-well-defined/4669144#4669144) on Mathematics Stack Exchange, 2023-03-30. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

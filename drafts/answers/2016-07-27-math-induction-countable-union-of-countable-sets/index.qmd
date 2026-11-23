@@ -1,0 +1,56 @@
+---
+title: Induction - Countable Union of Countable Sets
+date: '2016-07-27'
+description: 'The formal statement of the principle of mathematical induction is to start with a statement $P(n)$ that depends on a natural number variable $n$. If:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1872721
+se-link: https://math.stackexchange.com/questions/1872716/induction-countable-union-of-countable-sets/1872721#1872721
+se-score: 4
+se-accepted: false
+se-tags:
+- elementary-set-theory
+- induction
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Induction - Countable Union of Countable Sets](https://math.stackexchange.com/questions/1872716/induction-countable-union-of-countable-sets), asked by [Interested](https://math.stackexchange.com/users/356580/interested) on Mathematics Stack Exchange (2016-07-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Stephen Abbott has a an exercise in Chapter 1 (1.2.12) that suggests that one cannot use induction to prove that a countable union of countable sets is countably infinite.
+>
+> One answer is that $n={}$infinity cannot be demonstrated via induction, as inifinity is not a natural number. This seems sketchy. Rudin  in chapter 2 clearly distinguishes the use of inifinity symbol for a union of sets to indicate a countably infinite union of sets and distinguishes it from the infinity used to extend the reals.[![enter image description here][q-1]][q-1]
+>
+> All of this also appears to ignore the fact $N$ is countably infinite by definition. Therefore any bijection with $N$ is also proved for countably infinite cases.
+>
+> So why cannot induction be used to argue countable union of countable sets is countable?
+>
+>
+> Here is an example where induction is being used in the context of countably infinite sets.
+> https://math.stackexchange.com/questions/1455618/using-induction-to-prove-that-the-infinite-set-of-polynomials-is-countably-infin
+>
+>
+>   [q-1]: BZOHt.png
+:::
+
+The formal statement of the principle of mathematical induction is to start with a statement $P(n)$ that depends on a natural number variable $n$.  **If**:
+
+ 1. $P(1)$ is true
+ 2. $P(k+1)$ is true whenever $P(k)$ is true.
+
+**Then** $P(n)$ is true for all $n$.
+
+Let $A_1, A_2, \dots, A_n, \dots$ be an infinite sequence of countable sets.  To use induction, you would need to find a statement $P(n)$ such that
+$$P(n) \text{ is true }\forall n \leftrightarrow \bigcup_{n=1}^\infty A_n \text{ is countable}$$
+The statement on the left is that something holds for every number $n$, while the statement on the right is about something accumulated over all $n$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1872716/induction-countable-union-of-countable-sets/1872721#1872721) on Mathematics Stack Exchange, 2016-07-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

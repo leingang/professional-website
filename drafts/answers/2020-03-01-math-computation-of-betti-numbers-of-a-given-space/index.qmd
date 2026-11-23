@@ -1,0 +1,96 @@
+---
+title: Computation of Betti numbers of a given space
+date: '2020-03-01'
+description: That looks reasonable to me. Another way to think about it is that $W$ is homotopic to a sphere with four holes punched in it. A loop around each hole is a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3565660
+se-link: https://math.stackexchange.com/questions/3565649/computation-of-betti-numbers-of-a-given-space/3565660#3565660
+se-score: 5
+se-accepted: true
+se-tags:
+- general-topology
+- algebraic-topology
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Computation of Betti numbers of a given space](https://math.stackexchange.com/questions/3565649/computation-of-betti-numbers-of-a-given-space), asked by [them](https://math.stackexchange.com/users/90793/them) on Mathematics Stack Exchange (2020-03-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Trying to verify my computations below. I don't have much intuition for homology or the Betti numbers computation. It's a simple case, yet somehow intuitively I'm surprised to get $\beta_1(W) = 3$. 
+>
+> Is my computation wrong?  
+>
+>
+> * * *
+>
+>
+> * * *
+>
+>
+> Here is how I construct $W$. 
+>
+> $W$ is constructed by connecting two (hollow) cylinders by drilling a hole in the two cylinders and connecting them along the hole. 
+>
+> So you get a space $W = X \cup Y$ of the form
+>
+> $\quad$$\quad$$\quad$ [![enter image description here][q-1]][q-1]
+>
+> Where the spaces $X$and$Y$ are essentially identical 
+>
+> $\quad$$\quad$  $\quad$ [![enter image description here][q-2]][q-2]   
+>
+> And $W$ is obtained by gluing $X$ and $Y$ so that their intersection is a circle: 
+>
+> $\quad$ $\quad$ $\quad$ [![enter image description here][q-3]][q-3]
+>
+>
+> * * *
+>
+>
+> * * *
+>
+>
+> I do not want to use the Mayer-Vietoris sequence. Instead, I want to use Euler characteristics $\chi(W)$ and recover $\beta_i$ from$$\chi(W) = \beta_0(W)- \beta_1(W)+\beta_2(W)$$I notice that $\beta_0(W)=1$ ($W$ has one connected component) and $\beta_2(W) = 0$ (no enclosed void in $W$). Next, I want to use additivity of the Euler characteristic:$$
+> \chi(X\cup Y) = \chi(X) + \chi(Y) - \chi(X \cap Y)
+> $$Using the fact that $X\cap Y$ is a circle so its Euler characteristic is zero. 
+>
+>
+> * * *
+>
+>
+> Because $X$ and $Y$ are identical, it is enough to compute $\chi(X)$. Now, the space $X$ is equivalent to a cylinder with an open disk removed. I know that the Euler characteristic of a cylinder is zero. Consequently, removing a disk from a cylinder will yield a space whose Euler characteristic is $-1$, yielding $\chi(X) = \chi(Y) = -1$. 
+>
+>
+> Overall, I obtain$$
+> \chi(X\cup Y) = - 1 + -1  - 0 = -2,
+> $$yielding$$
+> -2 = \chi(X\cup Y) =   \chi(W)  = \beta_0(W) - \beta_1(W) + \beta_2(W) = 1 - \beta_1(W) + 0,
+> $$ 
+>
+> it follows that $\beta_1(W) = 3$. 
+>
+>
+> * * *
+>
+>
+> Intuitively I would expect to have a higher $\beta_1$ for $W$. Did I miss something or this calculation is correct? Any comments would be appreciated. 
+>
+>
+>   [q-1]: obFSXm.png
+>   [q-2]: RNT8km.png
+>   [q-3]: nmXg7m.jpg
+:::
+
+That looks reasonable to me.  Another way to think about it is that $W$ is homotopic to a sphere with four holes punched in it.  A loop around each hole is a generator of $H_1(W)$, but the sum of all of those loops is homologous to a loop around all the holes, and that's contractible by going around the other end of the sphere.  So the sum of all four generators is zero in homology.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3565649/computation-of-betti-numbers-of-a-given-space/3565660#3565660) on Mathematics Stack Exchange, 2020-03-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

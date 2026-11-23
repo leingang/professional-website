@@ -1,0 +1,58 @@
+---
+title: Why can you add $-a$ to both sides of $a+b=a+c$?
+date: '2019-08-28'
+description: 'This is one of the “Axioms” or common notions written in Euclid''s Elements. The complete list is:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3337404
+se-link: https://math.stackexchange.com/questions/3337381/why-can-you-add-a-to-both-sides-of-ab-ac/3337404#3337404
+se-score: 5
+se-accepted: true
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why can you add $-a$ to both sides of $a+b=a+c$?](https://math.stackexchange.com/questions/3337381/why-can-you-add-a-to-both-sides-of-ab-ac), asked by [Ion Aag](https://math.stackexchange.com/users/699246/ion-aag) on Mathematics Stack Exchange (2019-08-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> ```
+>  We are given that a+b = a+c
+>
+>
+>    (-a) + (a+b) = (-a) + (a+c) 
+>
+>    ((-a)+a) + b = ((-a)+a) + c           by BR2
+>
+>    (a+(-a)) + b = (a+(-a)) + c           by BR1
+>
+>             0+b = 0+c                    by BR4
+>
+> 	  b = c                      by BR1 and BR3
+> ```
+>
+>
+>
+> How is (-a) added? Where does that come from? How is that step allowed/legal?
+:::
+
+This is one of the “Axioms” or common notions written in Euclid's *Elements.*  The [complete list](https://mathcs.clarku.edu/~djoyce/java/elements/bookI/cn.html) is:
+
+> 1. Things which equal the same thing also equal one another.
+> 2. If equals are added to equals, then the wholes are equal.
+> 3. If equals are subtracted from equals, then the remainders are equal.
+> 4. Things which coincide with one another equal one another.
+> 5. The whole is greater than the part.
+
+Your derivation uses Axiom 3.  Now that we understand subtraction as just another form of addition (by negative numbers), Axioms 2 and 3 are considered equivalent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3337381/why-can-you-add-a-to-both-sides-of-ab-ac/3337404#3337404) on Mathematics Stack Exchange, 2019-08-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

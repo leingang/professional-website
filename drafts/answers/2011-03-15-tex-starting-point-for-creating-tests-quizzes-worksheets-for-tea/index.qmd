@@ -1,0 +1,41 @@
+---
+title: Starting point for creating tests, quizzes, worksheets for teachers
+date: '2011-03-15'
+description: I do this a lot but I use homegrown classes. If I were you, I would start looking at suitable document classes, such as eqexam, examdesign, exam, and mathexam.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13524
+se-link: https://tex.stackexchange.com/questions/13522/starting-point-for-creating-tests-quizzes-worksheets-for-teachers/13524#13524
+se-score: 17
+se-accepted: true
+se-tags:
+- teaching
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Starting point for creating tests, quizzes, worksheets for teachers](https://tex.stackexchange.com/questions/13522/starting-point-for-creating-tests-quizzes-worksheets-for-teachers), asked by [Curtis](https://tex.stackexchange.com/users/4232/curtis) on TeX Stack Exchange (2011-03-15; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to make some nice looking worksheets, tests, and quiz papers for my wife's classroom.  I see her and other teachers typing up a simple quiz and then wasting a lot of time fighting Word to get it to look decent.  TeX seems to be a perfect fit for this (especially if I code up a database of questions to pull from).  I'd like some way to incorporate an image or two (ideally vector-based) and have an easy way to enlarge the text for any vision-impaired students.
+>
+> Where would be a good place to start for reading up on this (websites, books, podcasts, etc.)?  Are there any editors and packages that would fit this role better than others?  I've attempted to do this a few times but I end up getting lost in a sea of dependencies or using bad practices that lead to broken documents with strange errors.
+:::
+
+I do this a lot but I use homegrown classes.  If I were you, I would start looking at suitable document classes, such as [`eqexam`](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=eqexam), [`examdesign`](http://ctan.org/tex-archive/macros/latex/contrib/examdesign/), [`exam`](http://ctan.org/tex-archive/macros/latex/contrib/exam/), and [`mathexam`](http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=mathexam).
+
+TeX is not going to help with querying a database.  If you really wanted to do that, you could write a tool in Perl or another scripted language that would do the querying and write TeX files.  But unless you have a large database of problems ready-to-go, this project might be a huge time sink.  
+
+Importing graphics is easy with the [`graphicx`](http://ctan.org/pkg/graphicx) package.  TikZ will help you create your own if you want.
+
+Enlarging the fonts document-wide is also just a few additional lines to your tex file, such as `\fontsize{20}{15}\selectfont`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13522/starting-point-for-creating-tests-quizzes-worksheets-for-teachers/13524#13524) on TeX Stack Exchange, 2011-03-15. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

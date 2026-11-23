@@ -1,0 +1,38 @@
+---
+title: Prove that if $na_n \rightarrow L \neq 0$, then $\sum_{k=1}^{\infty}a_k$ diverges
+date: '2023-02-15'
+description: The sequence $an$ eventually has the same sign as $L$. So if $L > 0$, the condition you need is already satisfied. If $L<0$, then the sequence $n(-an)$ has a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4639418
+se-link: https://math.stackexchange.com/questions/4639417/prove-that-if-na-n-rightarrow-l-neq-0-then-sum-k-1-inftya-k-diverge/4639418#4639418
+se-score: 2
+se-accepted: true
+se-tags:
+- real-analysis
+- sequences-and-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that if $na_n \rightarrow L \neq 0$, then $\sum_{k=1}^{\infty}a_k$ diverges](https://math.stackexchange.com/questions/4639417/prove-that-if-na-n-rightarrow-l-neq-0-then-sum-k-1-inftya-k-diverge), asked by [Joao Francisco Cabral Perez](https://math.stackexchange.com/users/1009001/joao-francisco-cabral-perez) on Mathematics Stack Exchange (2023-02-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know it is possible to prove it with the limit comparison test: if we let $b_n = \frac{1}{n}$, then $\frac{a_n}{b_n} = \frac{a_n}{\frac{1}{n}} = na_n \rightarrow L$. This implies that $\sum_{k=1}^{\infty}a_k$ has the same behavior of $\sum_{k=1}^{\infty}\frac{1}{k}$, which diverges. But for that we have to assume that $a_n \geq 0 \; \forall n$. 
+>
+> Is it possible to prove it without that assumption? If not, what is a counterexample?
+>
+> Edit: I thought of assuming WLOG that $L > 0$. Then $\exists N$ such that $n > N \implies a_n > 0$, and the limit comparison test could be used. Is that reasoning correct? The argument for $L <0$ would just use $b_n = - \frac{1}{n}$.
+:::
+
+The sequence $a_n$ eventually has the same sign as $L$. So if $L > 0$, the condition you need is already satisfied. If $L<0$, then the sequence $n(-a_n)$ has a positive limit, so by the same argument, $\sum_{n=1}^\infty (-a_n)$ diverges.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4639417/prove-that-if-na-n-rightarrow-l-neq-0-then-sum-k-1-inftya-k-diverge/4639418#4639418) on Mathematics Stack Exchange, 2023-02-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

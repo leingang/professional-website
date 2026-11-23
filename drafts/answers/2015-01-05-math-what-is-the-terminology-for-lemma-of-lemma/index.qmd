@@ -1,0 +1,54 @@
+---
+title: What is the terminology for "lemma of lemma"
+date: '2015-01-05'
+description: You can use Claim to set it on a lower footing than a lemma, but it's really not a big deal. One lemma can build on other lemmas.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1091895
+se-link: https://math.stackexchange.com/questions/1091880/what-is-the-terminology-for-lemma-of-lemma/1091895#1091895
+se-score: 1
+se-accepted: false
+se-tags:
+- terminology
+- article-writing
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the terminology for "lemma of lemma"](https://math.stackexchange.com/questions/1091880/what-is-the-terminology-for-lemma-of-lemma), asked by [Zuriel](https://math.stackexchange.com/users/23173/zuriel) on Mathematics Stack Exchange (2015-01-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let's say I need to prove a main theorem, to prove which I need three lemmas. Thus in writing the structure is as follows:
+>
+> > Lemma 1 
+> >
+> > *Proof*
+> > 
+> > Lemma 2
+> >
+> > *Proof*
+> >
+> > Lemma 3 
+> >
+> > *Proof*
+> >
+> > Theorem 
+> >
+> > *Proof*
+>
+> But if when proving Lemma 1, I need to prove another two results ("lemmas for the proof of a lemma"). Is there any standard terminology for this situation? It seems to me that calling them Lemmas makes the structure of the article messier.
+:::
+
+You can use *Claim* to set it on a lower footing than a lemma, but it's really not a big deal.  One lemma can build on other lemmas.
+
+The biggest distinction you want to make is between the results you consider broad and important (theorems), narrow but important for the proof of a theorem (lemmas), and immediate consequences of theorems (corollaries).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1091880/what-is-the-terminology-for-lemma-of-lemma/1091895#1091895) on Mathematics Stack Exchange, 2015-01-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

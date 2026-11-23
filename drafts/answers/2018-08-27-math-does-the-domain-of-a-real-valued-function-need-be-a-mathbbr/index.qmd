@@ -1,0 +1,42 @@
+---
+title: Does the domain of a real valued function need be a $\mathbb{R}$ or some subset of $\mathbb{R}$?
+date: '2018-08-27'
+description: It depends on the context. If you're taking a first course in calculus, it's usually assumed that all functions have a subset of real numbers as their domain.
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2896502
+se-link: https://math.stackexchange.com/questions/2896486/does-the-domain-of-a-real-valued-function-need-be-a-mathbbr-or-some-subset/2896502#2896502
+se-score: 1
+se-accepted: false
+se-tags:
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does the domain of a real valued function need be a $\mathbb{R}$ or some subset of $\mathbb{R}$?](https://math.stackexchange.com/questions/2896486/does-the-domain-of-a-real-valued-function-need-be-a-mathbbr-or-some-subset), asked by [William](https://math.stackexchange.com/users/552998/william) on Mathematics Stack Exchange (2018-08-27; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My text book says the domain and co-domain need to be either $\mathbb{R}$ or some subset of $\mathbb{R}$ but sometimes I read on the internet, a function that gives real values is a real valued function. 
+>
+> I'm not sure which one's correct though, can anyone help me out here?
+>
+> For instance, would you say 
+> $$f \, : \mathbb{C} \to \mathbb{R}$$ is a real valued function even though the domain is a set of complex numbers?
+:::
+
+It depends on the context.  If you're taking a first course in calculus, it's usually assumed that all functions have a subset of real numbers as their domain.
+
+But if it's a course in multivariable calculus, or complex analysis, or topology, then the domains may be subsets of the space, the complex plane, or some other arbitrary topological space.  
+
+When looking for definitions and conventions, it's better to use one reference (in this case, your textbook) and follow it.  Other sources may not match it, for reasons of convention or context.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2896486/does-the-domain-of-a-real-valued-function-need-be-a-mathbbr-or-some-subset/2896502#2896502) on Mathematics Stack Exchange, 2018-08-27. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

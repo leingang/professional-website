@@ -1,0 +1,109 @@
+---
+title: Where am I going wrong with this proof for partial fraction decomposition?
+date: '2021-07-29'
+description: 'That is a very strange proof. It seems easier this way: From $CG1 + DG2 = 1$ we have $$FC\cdot G1 + FD \cdot G2 = F$$ Now let $F1 = FD$ and $F2 = FC$. Then…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4212078
+se-link: https://math.stackexchange.com/questions/4212032/where-am-i-going-wrong-with-this-proof-for-partial-fraction-decomposition/4212078#4212078
+se-score: 1
+se-accepted: true
+se-tags:
+- partial-fractions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Where am I going wrong with this proof for partial fraction decomposition?](https://math.stackexchange.com/questions/4212032/where-am-i-going-wrong-with-this-proof-for-partial-fraction-decomposition), asked by [Tatai](https://math.stackexchange.com/users/921408/tatai) on Mathematics Stack Exchange (2021-07-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> We have to prove that $\frac{F}{G}$ can be written as $\frac{F_1}{G_1}+ \frac{F_2}{G_2}$ if $G=G_1G_2$ and $G_1,G_2$ are co-prime polynomials. This was the proof given in my textbook:
+> $$There \space exists \space polynomials \space C,D  \space such \space that \space CG_1+DG_2=1$$
+> $$Let  \space DF=G_1Q+F_1$$
+> $$Then \space CF=\frac{C}{D}{\left (\frac{Q(1-DG_2)}{C}+F_1 \right)}$$
+> $$CF= \frac{Q}{D}-QG_2+\frac{C}{D}F_1$$
+> $$CF+QG_2= \frac{Q}{D}+\frac{C}{D}F_1$$
+> The next line states that $\frac{Q}{D}+\frac{CF_1}{D}$ can be written as $F_2$. How do we prove that $Q+CF_1$ is divisible by $D$, otherwise we can't make this assumption
+:::
+
+That is a very strange proof.  It seems easier this way:  From $CG_1 + DG_2 = 1$ we have
+$$FC\cdot G_1 + FD \cdot G_2 = F$$
+Now let $F_1 = FD$ and $F_2 = FC$.  Then
+$$\begin{align*}
+    \frac{F_1}{G_1} + \frac{F_2}{G_2} &= \frac{F_1 G_2}{G_1 G_2} + \frac{F_2 G_1}{G_2 G_1} \\&= \frac{F_1 G_2 + F_2 G_1}{G_1 G_2} = \frac{F}{G}
+\end{align*}$$
+
+* * *
+
+After this answer was accepted I began to think more about the problem, and I decided there must be other conditions not stated.  The question title mentions partial fraction decomposition, after all.
+
+I think the full statement is this: 
+
+> Suppose that $G_1$ and $G_2$ are relatively prime polynomials and $G=G_1G_2$.  Suppose further that $F$ is a polynomial with $\deg F < \deg G$.  Then there exist polynomials $F_1$ and $F_2$ with $\deg F_1 < \deg G_1$, $\deg F_2 < \deg G_2$, and 
+> $$\frac{F_1}{G_1} + \frac{F_2}{G_2} = \frac{F}{G}$$
+
+I don't like the quoted proof; the use of quotients makes it hard to read.  Here is how I would organize it:
+
+Since $G_1$ and $G_2$ are relatively prime, there exist polynomials $C$ and $D$ such that $C G_1 + D G_2 = 1$.  By the division algorithm for polynomials, there exist polynomials $Q$ and $F_1$ such that $DF = QG_1 + F_1$, and $\deg F_1 < \deg G_1$.  Notice
+$$\begin{align*}
+    Q + CF_1 &= (CG_1  + D G_2)Q + CF_1
+    \\&= CG_1 Q + C F_1 + D Q G_2
+    \\&= C(QG_1 + F_1) + D Q G_2
+    \\&= CDF + D Q G_2 = D(CF + QG_2)
+\end{align*}$$
+
+Set $F_2 = CF + QG_2$.  Notice
+$$\begin{align*}
+    F_1 G_2 + F_2 G_1 
+    &= (DF - QG_1)G_2 + (CF + QG_2)G_1
+    \\&= DG_2 F - QG_1 G_2 + CG_1 F + Q G_1 G_2
+    \\&= (CG_1 + DG_2)F  = F
+\end{align*}$$
+Therefore the equation $\frac{F_1}{G_1} + \frac{F_2}{G_2} = \frac{F}{G}$ is satisfied.
+
+It remains to show that $\deg F_2 < \deg G_2$.  Since $F_2 G_1 = F - F_1 G_2$, we know that
+$$\deg(F_2 G_1) \leq \max \{\deg F, \deg(F_1 G_2)\}$$
+Now
+$$\begin{align*}
+    \deg(F_1 G_2) &= \deg F_1 + \deg G_2 < \deg G_1 + \deg G_2 \\
+    \deg F &< \deg G = \deg G_1 + \deg G_2
+\end{align*}$$
+So in either case,
+$$\deg F_2 + \deg G_1 < \deg G_1 + \deg G_2$$
+and we can cancel $\deg G_1$ from both sides.
+
+* * *
+
+Here is an example which compares the approaches.  You can see that the second is more “interesting” than the first.
+
+Let $G_1 = x+1$, $G_2 = x^2 + 1$, and $F = x$.  So we're looking for a decomposition of $\frac{x}{(x+1)(x^2+1)}$.  The Bézout coefficients $C = \frac{1}{2}(1-x)$ and $D = \frac{1}{2}$ satisfy $CG_1 + DG_2 = 1$.
+
+In the first answer, we let $F_1 = FD = \frac{1}{2} x$ and $F_2 = FC = \frac{1}{2}x(1-x)$.  The resulting decomposition is
+$$\frac{x}{(x+1)(x^2+1)}
+    = \frac{\frac{1}{2} x}{x+1}+ \frac{\frac{1}{2}x(1-x)}{x^2+1}$$
+Both of the fractions on the right are “improper” in the sense that the degree of the numerator equals that of the denominator.
+
+In the second answer, we divide: 
+$$DF = \frac{1}{2} x = \frac{1}{2}(x+1) - \frac{1}{2}$$
+So $Q=\frac{1}{2}$ and $F_1  = - \frac{1}{2}$.  Then
+$$F_2 = CF + QG_2 = \frac{1}{2}(1-x)x + \frac{1}{2}(x^2+1)
+    = \frac{1}{2} x + \frac{1}{2}$$
+Check:
+$$\begin{align*}
+    F_1 G_2 + F_2 G_1
+    = -\frac{1}{2}(x^2+1) + \frac{1}{2}(x+1)(x+1) = x
+\end{align*}$$
+This time the decomposition is
+$$\frac{x}{(x+1)(x^2+1)}
+    = \frac{-\frac{1}{2}}{x+1}+ \frac{\frac{1}{2}(x+1)}{x^2+1}$$
+and both fractions on the right are “proper.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4212032/where-am-i-going-wrong-with-this-proof-for-partial-fraction-decomposition/4212078#4212078) on Mathematics Stack Exchange, 2021-07-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

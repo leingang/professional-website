@@ -1,0 +1,87 @@
+---
+title: Missing } inserted, yet braces are balanced
+date: '2011-02-25'
+description: The \mathrm macro sets its input in a roman font, but it is still in (display) math mode. So the $s inside \mathrm are confusing TeX. It's as if you are trying…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 11992
+se-link: https://tex.stackexchange.com/questions/11990/missing-inserted-yet-braces-are-balanced/11992#11992
+se-score: 13
+se-accepted: true
+se-tags:
+- math-mode
+- errors
+- braces
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Missing } inserted, yet braces are balanced](https://tex.stackexchange.com/questions/11990/missing-inserted-yet-braces-are-balanced), asked by [Hammerite](https://tex.stackexchange.com/users/1427/hammerite) on TeX Stack Exchange (2011-02-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Regard the following document:
+>
+> ```latex
+> \documentclass[a4paper,reqno]{amsart}
+>
+> \usepackage{amssymb,amsmath,amsthm,fullpage}
+>
+> \begin{document}
+>
+> For each $k$ we denote by $\lambda_k$ the $k$th symmetric polynomial
+> in the $x_i$s; that is, we define
+> \[\textstyle\lambda_k := \sum_\mathrm{$I\subseteq\mathbb{N}_n$ such that $|I|=k$}x_I.\]
+>
+> \end{document}
+> ```
+>
+> When I try to compile it, I get:
+>
+> ```latex
+> ! Missing } inserted.
+> <inserted text> 
+>                 }
+> l.9 ...\mathrm{$I\subseteq\mathbb{N}_n$ such that $|I|=k$}
+>                                                           x_I.\]
+> ```
+>
+> Why? The braces are surely balanced.
+>
+> (Surrounding the call to `\mathrm` in a set of braces makes no difference.)
+:::
+
+The `\mathrm` macro sets its input in a roman font, but it is still in (display) math mode.  So the `$`s inside `\mathrm` are confusing TeX.  It's as if you are trying to embed math mode within display math mode.  
+
+I think what you want instead is 
+
+```latex
+\[\textstyle
+    \lambda_k := \sum_{\text{$I\subseteq\N_n$ such that $|I|=k$}}x_I.
+\]
+```
+
+But that won't work either until you tell TeX what you mean by `\N`.  So if you insert into the preamble or someplace else before the first use:
+
+```latex
+\newcommand{\N}{\mathbb{N}}
+```
+
+your document will successfully compile.
+
+A few comments:
+
+ - Why are you using `\textstyle`?  In display math some symbols like the `\sum` operator are bigger.  Try it without; you might like TeX's default choices.
+
+ - Whitespace is your friend.  When I type displayed equations I put the `\[` and `\]` on their own lines and indent the equation in the middle.  That way the source somewhat resembles the final document in that displayed math mode is "displayed."
+
+ - You might find this discussion we had on colon-equals interesting: https://tex.stackexchange.com/questions/4216/how-to-typseset-correctly
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11990/missing-inserted-yet-braces-are-balanced/11992#11992) on TeX Stack Exchange, 2011-02-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

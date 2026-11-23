@@ -1,0 +1,103 @@
+---
+title: 'Beamer: how to make each frame appear in the PDF toc?'
+date: '2011-05-03'
+description: Here is a solution that patches an auxiliary macro in \frametitle, adding code that adds a bookmark and table-of-contents line as if it were a subsection (you…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17233
+se-link: https://tex.stackexchange.com/questions/17230/beamer-how-to-make-each-frame-appear-in-the-pdf-toc/17233#17233
+se-score: 22
+se-accepted: true
+se-tags:
+- beamer
+- pdf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Beamer: how to make each frame appear in the PDF toc?](https://tex.stackexchange.com/questions/17230/beamer-how-to-make-each-frame-appear-in-the-pdf-toc), asked by [Yuval Filmus](https://tex.stackexchange.com/users/135/yuval-filmus) on TeX Stack Exchange (2011-05-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to have a beamer presentation in which *every* frame appears in the PDF table of contents (i.e. has a bookmark). My specific presentation only has sections, so all of the frames can appear as a "subsection" on the PDF. Note that I don't want to make a subsection for each frame.
+>
+> One way to do that is make up a command that patches frametitle by calling the appropriate bookmark command of hyperref. Is there any better way?
+:::
+
+Here is a solution that patches an auxiliary macro in `\frametitle`, adding code that adds a bookmark and table-of-contents line as if it were a subsection (you can just comment this out if not wanted):
+
+```latex
+\documentclass{beamer}
+
+\AtBeginSection{\frame{\tableofcontents[currentsection]}}
+
+\usepackage{bookmark}
+\usepackage{etoolbox}
+\makeatletter
+% save the current definition of \beamer@@frametitle
+\let\nobookmarkbeamer@@frametitle\beamer@@frametitle
+% then patch it to do the bookmarks and/or TOC entries
+\apptocmd{\beamer@@frametitle}{%
+  % keep this to add the frame title to the TOC at the "subsection level"
+  \addtocontents{toc}{\protect\beamer@subsectionintoc{\the\c@section}{0}{#1}{\the\c@page}{\the\c@part}%
+        {\the\beamer@tocsectionnumber}}%
+  % keep this line to add a bookmark that shows up in the PDF TOC at the subsection level
+  \bookmark[page=\the\c@page,level=3]{#1}%
+  }%
+  {\message{** patching of \string\beamer@@frametitle succeeded **}}%
+  {\errmessage{** patching of \string\beamer@@frametitle failed **}}%
+
+\pretocmd{\beamer@checknoslide}{%
+  % ensure the bookmark is not created if the slide is filtered out
+  \let\beamer@@frametitle\nobookmarkbeamer@@frametitle
+  }%
+  {\message{** patching of \string\beamer@checknoslide succeeded **}}%
+  {\errmessage{** patching of \string\beamer@checknoslide failed **}}%
+
+\makeatother
+
+
+
+\begin{document}
+
+
+
+\section{First Section}
+
+\begin{frame}{First frame}Text\end{frame}
+
+\begin{frame}{Second frame}Text\end{frame}
+
+
+
+\section{Second Section}
+
+\begin{frame}{Third frame}Text\end{frame}
+
+\begin{frame}\frametitle{Fourth frame}Text\end{frame}
+
+\begin{frame}<handout>\frametitle{Fifth frame}Text\end{frame}
+
+
+\end{document}
+```
+
+I had to dig around in `beamerbasesection.sty` to figure that out.  But it seems to work.
+
+![Output][1]
+
+**EDIT.** (by cyberSingularity): Now prevents unwanted bookmarks when the slide is not shown by also patching `\beamer@checknoslide`, and provided an additional frame to test.
+
+Note: if there are frames with multiple slides (e.g. due to `\pause`s), you may also be interested in [this follow up question](https://tex.stackexchange.com/q/66519).
+
+
+  [1]: CrPxF.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17230/beamer-how-to-make-each-frame-appear-in-the-pdf-toc/17233#17233) on TeX Stack Exchange, 2011-05-03, with [edits](https://tex.stackexchange.com/posts/17233/revisions) by [cyberSingularity](https://tex.stackexchange.com/users/17427/cybersingularity). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

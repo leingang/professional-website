@@ -1,0 +1,100 @@
+---
+title: Grouping two lines inside align environment to put something to their left
+date: '2013-05-06'
+description: You can use the remember picture and overlay TikZ methods to mark points and connect them with a tikzpicture later on.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 112772
+se-link: https://tex.stackexchange.com/questions/112754/grouping-two-lines-inside-align-environment-to-put-something-to-their-left/112772#112772
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+- math-mode
+- align
+- amsmath
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Grouping two lines inside align environment to put something to their left](https://tex.stackexchange.com/questions/112754/grouping-two-lines-inside-align-environment-to-put-something-to-their-left), asked by [71GA](https://tex.stackexchange.com/users/6760/71ga) on TeX Stack Exchange (2013-05-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have an equation which is alligned at 1st equal sign like this: 
+>
+> ```latex
+> \begin{align}
+> a &= b + c \nonumber\\ 
+> d &= e + f \label{eq1}\\    %this is row 1
+> g &= h + i \nonumber\\      %this is row 2
+> j &= k + l \nonumber\\
+> m &= n + o \nonumber
+> \end{align}
+> ```
+>
+> How can I group **row 1** and **row 2** so I can put something on the left side of them? I'll be more specific about this. I have constructed an arrow using TiKz like this: 
+>
+> ```latex
+> \begin{tikzpicture}
+> \path (0,0.80) coordinate(c1)
+> (-0.32,0.65) coordinate(c2)
+> (-0.32,0.25) coordinate(c3)
+> (0.0,0) coordinate(c4)
+> (-0.32,0.4) coordinate(c5);
+> \draw [-latex] (c1) .. controls (c2) and (c3) .. (c4);
+> \draw (c5) node [anchor=east] {\scriptsize \text{\eqref{eq1}}};
+> \end{tikzpicture}
+> ```
+>
+> It looks like this on the paper by itself: 
+>
+> ![enter image description here][q-1]
+>
+> Now I want to move this element to the left of rows **row 1** and **row 2**. What I am striving to is something like this: 
+>
+> ![enter image description here][q-2]
+>
+>
+>   [q-1]: CiRoM.png
+>   [q-2]: YZH59.png
+:::
+
+You can use the `remember picture` and `overlay` TikZ methods to mark points and connect them with a `tikzpicture` later on.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\tikzstyle{math atom}=[inner sep=0pt,outer sep=0pt,baseline=0,anchor=base]
+\usepackage{amsmath}
+\begin{document}
+\begin{align}
+\tikz[remember picture,overlay]{\node[math atom] (a) {$a$};}\;
+  &= b + c \nonumber\\ 
+\tikz[remember picture,overlay]{\node[math atom] (d) {$d$};}\;
+  &= e + f \label{eq1}\\    %this is row 1
+g &= h + i \nonumber\\      %this is row 2
+j &= k + l \nonumber\\
+m &= n + o \nonumber
+\end{align}
+\begin{tikzpicture}[remember picture,overlay]
+\draw [-latex] (a) .. controls ([xshift=-0.5cm]a) and ([xshift=-0.5cm]d) .. (d)
+  node [midway,anchor=east] {\scriptsize \text{\eqref{eq1}}};
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+  [1]: z1QIJ.png
+
+This requires two runs of LaTeX to position the coordinates in the right place, but you need two runs to get the cross-references right anyway.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/112754/grouping-two-lines-inside-align-environment-to-put-something-to-their-left/112772#112772) on TeX Stack Exchange, 2013-05-06, with [edits](https://tex.stackexchange.com/posts/112772/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

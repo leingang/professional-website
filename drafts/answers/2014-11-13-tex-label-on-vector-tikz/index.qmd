@@ -1,0 +1,96 @@
+---
+title: Label on vector - tikz
+date: '2014-11-13'
+description: The short answer is to replace your last line with
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 212049
+se-link: https://tex.stackexchange.com/questions/212039/label-on-vector-tikz/212049#212049
+se-score: 5
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Label on vector - tikz](https://tex.stackexchange.com/questions/212039/label-on-vector-tikz), asked by [Sotiris Kal.](https://tex.stackexchange.com/users/56276/sotiris-kal) on TeX Stack Exchange (2014-11-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have a line segment and a vector which is orthogonal to it. I would to add a label to the vector, e.g., x or y. Is it possible to do this via a parameter to the below code?
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \begin{document}
+>
+> \newcommand{\tikzAngleOfLine}{\tikz@AngleOfLine}
+> \def\tikz@AngleOfLine(#1)(#2)#3{%
+> \pgfmathanglebetweenpoints{%
+> \pgfpointanchor{#1}{center}}{%
+> \pgfpointanchor{#2}{center}}
+> \pgfmathsetmacro{#3}{\pgfmathresult}%
+> }
+>
+> \begin{tikzpicture}[scale=1.5]
+> \draw [<->,thick] (0,2) node (yaxis) [above] {$y$}
+>     |- (3,0) node (xaxis) [right] {$x$};
+> \draw (-1,3) coordinate (a_1) -- (3,0) coordinate (a_2);
+>
+> \tikzAngleOfLine(a_1)(a_2){\angle};
+> \draw[black,->] (a_2) -- ++ (\angle+90:0.3);
+>
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> ![enter image description here][q-1]
+>
+>
+>   [q-1]: ezpOD.png
+:::
+
+The short answer is to replace your last line with
+
+```latex
+\draw[black,->] (a_2) -- ++ (\angle+90:0.3) node[midway,above,sloped] {label};
+```
+
+I can't help but notice some additional optimizations.  First, the macro `\tikzAngleOfLine` does nothing other than expand `\tikz@AngleOfLine`, so you might have well just `\def`'d `\tikzAngleOfLine` to the contents of `\tikz@AngleOfLine`.  
+
+Even more, this kind of coordinate calculation is handled with the `calc` TikZ library, so you can just load that library and simplify your code.
+
+```latex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{document}
+
+\begin{tikzpicture}[scale=1.5]
+\draw [<->,thick] (0,2) node (yaxis) [above] {$y$}
+    |- (3,0) node (xaxis) [right] {$x$};
+\draw (-1,3) coordinate (a_1) -- (3,0) coordinate (a_2);
+
+\draw[black,->] (a_2) -- ($(a_2)!0.45cm!-90:(a_1)$) node[midway,above,sloped] {$\vec u$};
+
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+The coordinate specification `($(a_2)!0.45cm!-90:(a_1)$)` says "start from `a_2`, then move 0.45cm along the line which makes an angle of -90 degrees with the line from `a_2` to `a_1`."  The syntax is dangerously close to [tag:xy-pic] level readability, but it's very useful if you know how to read the manual.
+
+
+
+  [1]: eRdtH.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/212039/label-on-vector-tikz/212049#212049) on TeX Stack Exchange, 2014-11-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

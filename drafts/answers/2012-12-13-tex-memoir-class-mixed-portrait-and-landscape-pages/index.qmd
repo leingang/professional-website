@@ -1,0 +1,70 @@
+---
+title: memoir class - Mixed portrait and landscape pages
+date: '2012-12-13'
+description: It's true that memoir and pdflandscape are compatible.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 86880
+se-link: https://tex.stackexchange.com/questions/11991/memoir-class-mixed-portrait-and-landscape-pages/86880#86880
+se-score: 4
+se-accepted: false
+se-tags:
+- memoir
+- landscape
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[memoir class - Mixed portrait and landscape pages](https://tex.stackexchange.com/questions/11991/memoir-class-mixed-portrait-and-landscape-pages), asked by [learnr](https://tex.stackexchange.com/users/3319/learnr) on TeX Stack Exchange (2011-02-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> Section 4.2.2. in [Notes on book design][q-1] makes a reference to mixed portrait and landscape pages. 
+>
+> I am aware of `pdflscape`, that allows such a mixing, but as this manual is written by the author of `memoir` I would assume that such a scenario should be achievable also using the built-in capabilities of the package itself. 
+>
+> I am unable to find any references in the main manual, and would appreciate any comments pointing me in the right direction, as I am sure I must have been overlooking this feature.
+>
+>
+>
+>   [q-1]: http://tug.ctan.org/tex-archive/info/memdesign/
+:::
+
+It's true that `memoir` and `pdflandscape` are compatible.
+
+```latex
+\documentclass[ebook]{memoir}
+\usepackage{pdflscape}
+\usepackage{lipsum}
+
+\begin{document}
+
+\chapter[Testing Mixed Orientations]{Testing Mixed Page Orientations}
+\section{Portrait}
+\lipsum
+
+\begin{landscape}
+\section{Landscape}
+\lipsum
+\end{landscape}
+
+\section{Portrait Again}
+\lipsum
+
+\end{document}
+```
+
+![thumbnail gallery of compiled document][1]
+
+Notice that although the middle pages are rotated from their normal orientation and the page text is upright, the page header is rotated, too.
+
+  [1]: 4dNs6.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/11991/memoir-class-mixed-portrait-and-landscape-pages/86880#86880) on TeX Stack Exchange, 2012-12-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,147 @@
+---
+title: Convert GIF image to PNG on the fly
+date: '2010-11-05'
+description: \DeclareGraphicsRule requires the write18 stream to be enabled in order to talk to the operating system. Ordinarily this is disabled because it can be…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4982
+se-link: https://tex.stackexchange.com/questions/4979/convert-gif-image-to-png-on-the-fly/4982#4982
+se-score: 8
+se-accepted: false
+se-tags:
+- conversion
+- graphics
+- gif
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Convert GIF image to PNG on the fly](https://tex.stackexchange.com/questions/4979/convert-gif-image-to-png-on-the-fly), asked by [Amy](https://tex.stackexchange.com/users/1707/amy) on TeX Stack Exchange (2010-11-05; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am using pdflatex on Linux and attempting to convert GIF to PNG.
+> I can run scripts to find out the image attributes and even and convert 
+> the files supplied from a folder but I can not write back to that 
+> folder (or I'd convert them by hand). I have hundreds of gif files.
+>
+> I have found great instructions with regard to converting GIF to EPS. Those
+> weren't working for me, so I thought I'd try PNG files because I normally 
+> use PNG files. Thanks in advance for your time for reading and any comments.
+>
+>
+> Before `\begin{document}`, I have defined:
+>
+> ```latex
+> \DeclareGraphicsExtensions{.gif, .ps, .eps, .png}
+> \DeclareGraphicsRule{.gif}{png}{}{`convert #1 'png:-'}
+> ```
+>
+> Inside my document, I have 
+>
+> ```latex
+> \includegraphics{figures/filename.gif}
+> ```
+>
+> When I run pdflatex on my document, I get an error:
+>
+> ```latex
+> ! LaTeX Error: Cannot determine size
+> of graphic in `convert
+> figures/filename.gif 'png:-' (no size
+> specifed).
+> ```
+>
+> So, I added a bounding box manually to the includegraphics command:
+>
+> ```latex
+> \includegraphics[0,0][18,18]{figures/filename.gif}
+> ```
+>
+> I got the dimensions using imagemagick's identify command.
+>
+> I am able to convert the file, write it to a new file, and view it using imagemagick:
+>
+> ```latex
+> $ convert figures/filename.gif gif:figures/filename.png
+> ```
+>
+> I believe that the "convert" command I specified in the graphics rule is not actually running. What am I doing wrong? 
+>
+>
+> Here are some details about my build:
+>
+>
+> ```latex
+> $ pdflatex test.tex
+> This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1)
+> (./test.tex{pdftex.cfg}
+> LaTeX2e <2001/06/01>
+> Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+> talian, nohyphenation, loaded.
+> (/usr/share/texmf/tex/latex/base/article.cls
+> Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+> (/usr/share/texmf/tex/latex/base/size10.clo))
+> (/usr/share/texmf/tex/latex/tools/verbatim.sty)
+> (/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty)
+> (/usr/share/texmf/tex/latex/graphics/graphicx.sty
+> (/usr/share/texmf/tex/latex/graphics/keyval.sty)
+> (/usr/share/texmf/tex/latex/graphics/graphics.sty
+> (/usr/share/texmf/tex/latex/graphics/trig.sty)
+> (/usr/share/texmf/tex/latex/config/graphics.cfg)
+> (/usr/share/texmf/tex/latex/graphics/pdftex.def)))
+> (/usr/share/texmf/tex/latex/base/makeidx.sty)
+> Writing index file test.idx
+> (/usr/share/texmf/tex/latex/misc/pslatex.sty)
+> (/usr/share/texmf/tex/latex/pdfpages/pdfpages.sty
+> (/usr/share/texmf/tex/latex/base/ifthen.sty)
+> (/usr/share/texmf/tex/latex/tools/calc.sty)
+> (/usr/share/texmf/tex/latex/ms/eso-pic.sty
+> (/usr/share/texmf/tex/latex/ms/everyshi.sty))))
+>
+> LaTeX Warning: Unused global option(s):
+>     [8pt,english].
+>
+> No file test.aux.
+> (/usr/share/texmf/tex/latex/psnfss/omspzccm.fd)
+> (/usr/share/texmf/tex/context/base/supp-pdf.tex
+> (/usr/share/texmf/tex/context/base/supp-mis.tex
+> loading : Context Support Macros / Missing
+> )
+> loading : Context Support Macros / PDF
+> ) (/usr/share/texmf/tex/latex/psnfss/ot1ptmcm.fd)
+> (/usr/share/texmf/tex/latex/psnfss/omlptmcm.fd)
+> (/usr/share/texmf/tex/latex/psnfss/omxpsycm.fd)
+> <use `convert figures/remconf_edit.gif 'png:-'> [1{/usr/share/texmf/dvips/confi
+> g/pdftex.map}] (/usr/share/texmf/tex/latex/psnfss/omsphv.fd) [2] [3] [4]
+> (./test.aux) )</usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb>{/usr/share/t
+> exmf/dvips/base/8r.enc}
+> ```
+:::
+
+`\DeclareGraphicsRule` requires the `write18` stream to be enabled in order to talk to the operating system.  Ordinarily this is disabled because it can be dangerous.    Try the same source file with `pdflatex --shell-escape test.tex` instead.  See Joseph Wright's <a href="http://www.texdev.net/2009/10/06/what-does-write18-mean/">blog post about enabling write18</a>.
+
+On my machine if `\includegraphics{dir/foo.gif}` is encountered and `DeclareGraphicsRule{.gif}{png}...` is declared, LaTeX (1) runs the command; then (2) looks for a file `dir/foo_gif-converted-to.png`  So the graphics rule has to do that.  You could use
+
+```latex
+\DeclareGraphicsRule{.gif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .gif`-gif-converted-to.png}
+```
+
+But that will write to the same directory the file is originally in.  You said you are importing files from a different directory that you do not have write access to.  So instead do
+
+```latex
+\DeclareGraphicsRule{.gif}{png}{.png}{`convert #1 `basename #1 .gif`-gif-converted-to.png}
+```
+
+So the file will be written into the document's directory.  But now it won't be in `dir/` anymore!  So make sure that `dir/` is in the TEXINPUTS path (or `\graphicspath`) and just input it as `foo.gif`.  LaTeX will (0) find `foo.gif` in `dir/` (1) convert to `./foo_gif-converted-to.png`, (2) find `foo_gif-converted-to.png` in the current directory.
+
+Your graphics rule and question title indicate you want to do with using the output stream; that is, not create the converted files.  I couldn't get that to work.  The side effect is that you have a lot of ugly-titled converted files in your document's directory, and maybe you should have just done that in the first place with a script rather than through LaTeX.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4979/convert-gif-image-to-png-on-the-fly/4982#4982) on TeX Stack Exchange, 2010-11-05. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

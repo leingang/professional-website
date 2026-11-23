@@ -1,0 +1,128 @@
+---
+title: Customizing texdoc - funny search path
+date: '2012-01-31'
+description: I have three answers.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 42922
+se-link: https://tex.stackexchange.com/questions/42920/customizing-texdoc-funny-search-path/42922#42922
+se-score: 2
+se-accepted: false
+se-tags:
+- texdoc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Customizing texdoc - funny search path](https://tex.stackexchange.com/questions/42920/customizing-texdoc-funny-search-path), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2012-01-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to ensure that `texdoc cool` opens up `texmf-dist/doc/latex/cool/Content_LaTeX_Package_Demo.pdf` instead of `texmf-dist/doc/latex/cool/cool.pdf`:  My default configuration is this:
+>
+> ```latex
+> $ texdoc -l cool
+>  1 /usr/local/texlive/2010/texmf-dist/doc/latex/cool/cool.pdf
+>    = Package documentation
+>  2 /usr/local/texlive/2010/texmf-dist/doc/latex/cool/Content_LaTeX_Package_Demo.pdf
+>    = EXamples of use
+> Please enter the number of the file to view, anything else to skip:  
+> ```
+>
+> According to the [`texdoc` manual](http://tug.org/texdoc/doc/texdoc.pdf) this can by done with a local `texdoc/texdoc.cnf` file.  I get that.  But when I checked `texdoc`'s search path I get something funny:
+>
+> ```latex
+> $ texdoc -f
+> texdoc 0.72
+> Configuration files are:
+>     absent	/Users/matthew/Dropbox/Library/texmf:~/Library/texmf/texdoc/texdoc-x86_64-darwin.cnf
+> (*) absent	/Users/matthew/Dropbox/Library/texmf:~/Library/texmf/texdoc/texdoc.cnf
+>     absent	/Users/matthew/Dropbox/Library/texmf:~/Library/texmf/texdoc/texdoc-dist.cnf
+>     absent	/usr/local/texlive/2010/../texmf-local/texdoc/texdoc-x86_64-darwin.cnf
+>     absent	/usr/local/texlive/2010/../texmf-local/texdoc/texdoc.cnf
+>     active	/usr/local/texlive/2010/texmf/texdoc/texdoc.cnf
+> (*) This is the recommended configuration file for your personal preferences.
+> ```
+>
+> The first three directories look like they have a literal `:~` in them.  If I create config files in `~/Dropbox/Library/texmf/texdoc/` or `~/Library/texmf/texdoc` they are not found.
+>
+> I think I created this problem when I followed the solution to https://tex.stackexchange.com/questions/5162/how-to-add-an-extra-searchable-dir-with-personal-style-files-to-texlive-not-und :
+>
+> ```latex
+> $ kpsewhich --var-value=TEXMFHOME
+> /Users/matthew/Dropbox/Library/texmf:~/Library/texmf
+> ```
+>
+> It looks like `texdoc` assumes that `$TEXMFHOME` is a single directory and not a colon-separated list of directories.  Is there a workaround?
+:::
+
+I have three answers. 
+
+Upgrade `texdoc`
+===============
+
+Manuel Pégourié-Gonnard ([mpg](https://tex.stackexchange.com/users/1239/mpg)), the maintainer of `texdoc`, says the issue has been fixed since v0.81, which shipped with TeX Live 2011.  I'll verify this when I upgrade my TL.
+
+Set a KPSE variable
+===================
+
+See MPG's comment below.  The KPSE variable `$TEXMFHOME.texdoc` can be used to override `$TEXMFHOME` for `texdoc` purposes only.  I ran
+
+```latex
+$ sudo tlmgr conf texmf TEXMFHOME.texdoc "~/Library/texmf"
+```
+
+Now I see:
+
+```latex
+$ texdoc -f
+texdoc 0.72
+Configuration files are:
+    absent	/Users/matthew/Library/texmf/texdoc/texdoc-x86_64-darwin.cnf
+(*) active	/Users/matthew/Library/texmf/texdoc/texdoc.cnf
+    absent	/Users/matthew/Library/texmf/texdoc/texdoc-dist.cnf
+    absent	/usr/local/texlive/2010/../texmf-local/texdoc/texdoc-x86_64-darwin.cnf
+    absent	/usr/local/texlive/2010/../texmf-local/texdoc/texdoc.cnf
+    active	/usr/local/texlive/2010/texmf/texdoc/texdoc.cnf
+(*) This is the recommended configuration file for your personal preferences.
+```
+
+and if I add to `~/Library/texmf/texdoc/texdoc.cnf` the line
+
+```latex
+adjscore(cool) Content_LaTeX_Package_Demo = 10
+```
+
+I get:
+
+```latex
+$ texdoc -l cool
+ 1 /usr/local/texlive/2010/texmf-dist/doc/latex/cool/Content_LaTeX_Package_Demo.pdf
+   = EXamples of use
+ 2 /usr/local/texlive/2010/texmf-dist/doc/latex/cool/cool.pdf
+   = Package documentation
+```
+
+which is what I want.  Not only that, when I choose Help > Show Help for Package... in TeXShop, it reflects this update.
+
+Set a environment variable
+==========================
+
+This was my first answer.  The `texdoc` manual notes that environment variables can be overridden for `texdoc` purposes by suffixing `_texdoc` to them.  So a workaround is to set:
+
+```latex
+$ export TEXMFHOME_texdoc=~/Library/texmf
+```
+
+(I'm using the `bash` shell on Mac OSX.)  This has to be put in my `~/.profile` file so it is executed within every shell.  
+
+But since I have TeX Live and have already customized it it makes sense to go the TL route rather than environment variables.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/42920/customizing-texdoc-funny-search-path/42922#42922) on TeX Stack Exchange, 2012-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

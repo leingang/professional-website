@@ -1,0 +1,66 @@
+---
+title: How am I incorrectly solving this polar equations graph?
+date: '2017-05-08'
+description: One way to see that the polar curve loops inward is to graph $r$ versus $\theta$ on cartesian axes. You see that $r$ becomes negative when $\cos\theta <…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2271611
+se-link: https://math.stackexchange.com/questions/2271596/how-am-i-incorrectly-solving-this-polar-equations-graph/2271611#2271611
+se-score: 1
+se-accepted: false
+se-tags:
+- graphing-functions
+- polar-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How am I incorrectly solving this polar equations graph?](https://math.stackexchange.com/questions/2271596/how-am-i-incorrectly-solving-this-polar-equations-graph), asked by [yre](https://math.stackexchange.com/users/428730/yre) on Mathematics Stack Exchange (2017-05-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Graph: $r = 1 + 2\cos(\theta)$
+>
+> I set up a table of values and increment them by $π/2$:
+>
+> $$\begin{array}
+> {|c|c|}\hline
+> \phantom{\_\_\_}\theta\phantom{\_\_\_} &  \phantom{\_\_\_}r\phantom{\_\_\_} \\ \hline
+> 0      &  3 \\ \hline
+> \pi/2  &  1 \\ \hline
+> \pi    & -1 \\ \hline
+> 3\pi/2 &  1 \\ \hline
+> 2\pi   &  3 \\ \hline
+> 5\pi/2 &  1 \\ \hline
+> 3\pi   & -1 \\ \hline
+> 7\pi/2 &  1 \\ \hline
+> 4\pi   &  3 \\ \hline
+> \end{array}$$
+>
+> When I plot these points I get:
+>
+> [![enter image description here][q-1]][q-1]
+>
+> When I go about graphing I think of $\theta$ as direction, and $r$ as distance. So I point in a direction, and go a certain distance. Then to the next one and I connect the dots. But there seems to be more going on than just connecting the dots when I look at the actual graph on Desmos. How am I supposed to know it's going to loop inwards, go through the $y$-axis, and go back to $1$ on the $x$-axis?
+> Actual:
+>
+> [![enter image description here][q-2]][q-2]
+>
+>
+> Thank you
+>
+>
+>   [q-1]: J5fZs.png
+>   [q-2]: 1l2Iu.png
+:::
+
+One way to see that the polar curve loops inward is to graph $r$ versus $\theta$ on cartesian axes.  You see that $r$ becomes negative when $\cos\theta < -\frac{1}{2}$; that is on the interval $\left(\frac{2\pi}{3},\frac{4\pi}{3}\right)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2271596/how-am-i-incorrectly-solving-this-polar-equations-graph/2271611#2271611) on Mathematics Stack Exchange, 2017-05-08. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

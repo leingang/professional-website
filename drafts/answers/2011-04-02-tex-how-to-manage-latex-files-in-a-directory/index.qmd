@@ -1,0 +1,38 @@
+---
+title: How to manage LaTeX files in a directory?
+date: '2011-04-02'
+description: One directory per document, or set of documents with the same source.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 14786
+se-link: https://tex.stackexchange.com/questions/14762/how-to-manage-latex-files-in-a-directory/14786#14786
+se-score: 3
+se-accepted: false
+se-tags:
+- best-practices
+- revision-control
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to manage LaTeX files in a directory?](https://tex.stackexchange.com/questions/14762/how-to-manage-latex-files-in-a-directory), asked by [DQdlM](https://tex.stackexchange.com/users/4573/dqdlm) on TeX Stack Exchange (2011-04-01; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I use LaTeX to generate all of the documents for my courses and as a result I have a lot of small documents in a given directory, which can then be hard to navigate due to all of the files generated when the .tex files are compiled.  I have tried moving the output using output-directory and making an individual directory for each document but neither of these options have been entirely satisfactory.  So my question is what methods of file management have worked for you with respect to LaTeX file management?  Thanks.
+:::
+
+One directory per document, or set of documents with the same source.
+
+For my lectures I put the sources in a docstrip file, and docstrip splits them into the sources of the various documents I'll use (my lecture notes, student handouts, slides, worksheets, etc.).  This can be 50 files for one lesson with all the auxiliary files created.  But even without so many derivative and auxiliary files I think it's still cleaner to use lots of directories.  
+
+If you have files that need to be included into your class files, put them in your local texmf tree.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/14762/how-to-manage-latex-files-in-a-directory/14786#14786) on TeX Stack Exchange, 2011-04-02. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,51 @@
+---
+title: Preparing to DLR-Math
+date: '2017-06-25'
+description: 'Use the units to guide your arithmetic. You are given:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2335585
+se-link: https://math.stackexchange.com/questions/2335575/preparing-to-dlr-math/2335585#2335585
+se-score: 1
+se-accepted: true
+se-tags:
+- arithmetic
+- ratio
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Preparing to DLR-Math](https://math.stackexchange.com/questions/2335575/preparing-to-dlr-math), asked by user440404 on Mathematics Stack Exchange (2017-06-25; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Here is a question which I could not solve when preparing for my exam.
+>
+> > A car averages 27 miles per gallon. If gas costs $4.04 per gallon,  which of the following is closest to how much gas would cost for this car to travel 2,727 typical miles?
+>
+> My closest answer: $109.08
+:::
+
+Use the units to guide your arithmetic.  You are given:
+
+* The mileage of the car, in miles per gallon.
+* The price of gasoline, in dollars per gallon.
+* The distance to travel, in miles.
+
+You want to know the cost of the journey, in dollars.  Essentially, you want to convert that quantity of miles into a dollar amount.
+
+When multiplying units, you can cancel units that appear in the numerator and denominator.  Like so:
+$$\require{cancel}
+(2727\,\cancel{\text{miles}})
+\left(\frac{1\,\cancel{\text{gallon}}}{27\,\cancel{\text{miles}}}\right)
+\left(\frac{\$4.04}{1\,\cancel{\text{gallon}}}\right)
+= \$408.04$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2335575/preparing-to-dlr-math/2335585#2335585) on Mathematics Stack Exchange, 2017-06-25. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

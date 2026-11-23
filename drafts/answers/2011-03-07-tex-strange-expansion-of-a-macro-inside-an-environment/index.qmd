@@ -1,0 +1,206 @@
+---
+title: Strange expansion of a macro inside an environment
+date: '2011-03-07'
+description: The tabularx environment that you are using to typeset the table is evaluating the table contents three times before setting it once. This is probably to help…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 12882
+se-link: https://tex.stackexchange.com/questions/12871/strange-expansion-of-a-macro-inside-an-environment/12882#12882
+se-score: 2
+se-accepted: false
+se-tags:
+- macros
+- environments
+- expansion
+- fp
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Strange expansion of a macro inside an environment](https://tex.stackexchange.com/questions/12871/strange-expansion-of-a-macro-inside-an-environment), asked by user4038 on TeX Stack Exchange (2011-03-07; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm, I should confess, a total newbie. I'm trying to generate invoices with LaTeX, so I'm using the fp package. 
+>
+> But the strange thing is that calculations occur many times when they should only occur once per product. Here's my LaTeX file, below, can you please help me understand why it's behaving like this? And help me improve it?
+>
+> The two important pieces of it are probably the environment `invoice` and the macro `product`. For each product I multiply the unit price times the quantity, get that amount and add it to the total amount of the invoice called `TotalHT`
+>
+> ```latex
+> \documentclass[a4paper,12pt]{article}
+>
+> \usepackage[frenchb]{babel}
+> \usepackage[utf8x]{inputenc}
+> \usepackage[T1]{fontenc}
+> \usepackage{array}
+> \usepackage{tabularx}
+> \usepackage{fancyhdr}
+> \usepackage{textcomp}
+> \usepackage{fltpoint}
+> \usepackage[nomessages]{fp}
+> \RequirePackage{numprint}
+>
+> % - Page and Headers Style {{{
+> \setlength{\parindent}{0pt}
+> \pagestyle{fancy}
+> \fancyhf{} 
+> \renewcommand{\headheight}{51pt}
+> \lhead{\nous}
+> %\rhead{\nous}
+> \renewcommand{\headrulewidth}{0.125mm}
+> % - }}}
+>
+> % - New Commands {{{
+>
+> \def\TotalHT{0}
+>
+> % set standard decimal position (numprint package)
+> \nprounddigits{2}
+>
+> \newcommand{\nous}{
+>     \small{
+>         \textsf{%
+>             \textsc{My Company}\\
+>             My address\\
+>         }
+>     }
+> }
+>
+> \newcommand{\client}[1]{%
+>     \vspace{1cm}
+>     \begin{flushright}
+>         \small{\textsf {#1}}
+>     \end{flushright}
+> }
+>
+> \newcommand{\numero}[2]{%
+>     \vspace*{1cm}
+>     \begin{center}
+>         \Huge{\textbf{Facture n° #1}}\\
+>         \textsf{\small{Du #2}}
+>     \end{center}
+> }
+>
+> \newcommand{\firstth}[1]{
+>     \multicolumn{1}{|l|}{#1}
+> }
+>
+> \newenvironment{invoice}{%
+>     \ignorespaces
+>     \small
+>     \tabularx{\textwidth}{|X|r|c|r|}
+>     \hline
+>     \firstth{Designation} & Unit Price. & Qty. & Amount\\
+>     \hline
+> }%
+> {%
+>     \endtabularx%
+> }
+>
+> \newcommand{\product}[3]{%
+>     \FPround\p{#2}{2} 
+>     \FPeval\m{\p * #3}
+>     \FPround\m\m{2}
+>     \FPadd\TotalHT\TotalHT\m
+>     \global\let\TotalHT\TotalHT
+>     \message{t \TotalHT  prod #1}
+>     #1 & 
+>     \FPround{\p}{#2}{2}\numprint\p &
+>     #3 &
+>     \FPround\p{#2}{2} 
+>     \FPeval\m{\p * #3}
+>     \numprint\m\\ 
+>     \hline
+> }
+>
+>
+> \newcommand{\totalttc}{
+> 	\FPround\TotalHT\TotalHT{2}
+>     & \multicolumn{2}{r|}{\textbf{Total TTC}} & \numprint\TotalHT \\
+>     \cline{2-4}
+> }
+>
+> \newcommand{\enlettres}[1]{
+>     \vspace*{1cm}
+>     \textsf{Arrêter la présente facture à la somme de \textbf{#1}.}
+> }
+>
+> % - }}}
+>
+> \begin{document}
+> \numero{01/2010}{17/03/2010}
+>
+> \client{
+>     My Client Sarl.\\
+>     His address\\
+>     His phone
+> }
+>
+> \begin{invoice}
+>     \product{product One}{1000.00}{1}
+>     \product{product Two}{2000}{1}
+>     \product{product Three}{3000.00}{1}
+>     \product{Product Four}{5000.00}{1}
+>     \totalttc
+> \end{invoice}
+>
+> \enlettres{Cent dix-sept milles cinq cents euros et zéro centimes}
+> \end{document}
+> ```
+>
+> Whenever I run this through pdflatex, I have the message `\message{t \TotalHT  prod #1}` appear more than once for each product. But then again, in the table that's generated in the PDF I have exactly one row per product, but the total is wrong.
+>
+> Thanks a lot for helping me understand this!
+>
+> P.S. three brackets in comments like  `% - }}}` and `% - New Commands {{{` are just here for folding in vim
+:::
+
+The [`tabularx`](http://ctan.org/pkg/tabularx) environment that you are using to typeset the table is evaluating the table contents three times before setting it once.  This is probably to help it do its calculations.  
+
+You can avoid this issue by using a `tabular` environment instead:
+
+```latex
+\newenvironment{invoice}{%
+    \ignorespaces
+    \small
+    \tabular{|p{0.5\textwidth}|r|c|r|}
+    \hline
+    \firstth{Designation} & Unit Price. & Qty. & Amount\\
+    \hline
+}%
+{%
+    \endtabular%
+}
+```
+
+Not quite as pretty as `tabularx` but gets the job done.
+
+If you want `tabularx` and don't mind repeating the calculations, just make sure you initialize:
+
+```latex
+\newenvironment{invoice}{%
+    \ignorespaces
+    \small
+    \tabularx{\textwidth}{|X|r|c|r|}
+    \hline
+    \firstth{Designation} & Unit Price. & Qty. & Amount\\
+    \hline
+    \def\TotalHT{0}
+    \global\let\TotalHT\TotalHT
+}%
+{%
+    \endtabularx%
+}
+```
+
+Yet another way might be to store the order in a list data structure and total it separately from setting the table.  But I suspect this is more trouble than it's worth.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12871/strange-expansion-of-a-macro-inside-an-environment/12882#12882) on TeX Stack Exchange, 2011-03-07, with [edits](https://tex.stackexchange.com/posts/12882/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

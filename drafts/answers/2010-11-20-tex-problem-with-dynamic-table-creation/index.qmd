@@ -1,0 +1,104 @@
+---
+title: Problem with dynamic table creation
+date: '2010-11-20'
+description: 'You can fix \repeatntimes like this:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 5690
+se-link: https://tex.stackexchange.com/questions/5687/problem-with-dynamic-table-creation/5690#5690
+se-score: 5
+se-accepted: true
+se-tags:
+- tables
+- tex-core
+- programming
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Problem with dynamic table creation](https://tex.stackexchange.com/questions/5687/problem-with-dynamic-table-creation), asked by [bev](https://tex.stackexchange.com/users/2003/bev) on TeX Stack Exchange (2010-11-20; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I've wandered into uncharted territory with a package I'm writing. At one point I need to create a table of 'n' columns (n supplied by user in doc). Creating a variable in the preamble of the tabular declaration will handle the number of rows and the justification, but I can't seem to figure out how to create a row of labels with 'n' cells. Hopefully this MWE example will clarify (I've massively simplified my code to focus on, what I think, is the problem). This will generate the error.
+>
+>
+>
+>
+>
+> ```latex
+>     \documentclass{memoir}
+>     \begin{document}
+>
+>      \ newcounter{n}
+>       \newcommand{\repeatntimes}[2]{ % usage:\repeatntimes{c}{3} -> ccc
+>       \setcounter{n}{0}%
+>       \loop\addtocounter{n}{1}{#1}%
+>       \ifnum\value{n}<#2\repeat}
+>
+>       \newcommand{\sublabels}{\repeatntimes{blah &}{2}}
+>
+>       \begin{tabular}[t]{ccc}
+>       \sublabels blah \\
+>       \end{tabular}
+>     \end{document}
+> ```
+>
+>
+> I need \sublabels to expand such that what gets typeset is
+>
+> ```latex
+> \begin{tabular}[t]{ccc}
+> blah & blah & blah \\
+> \end{tabular}
+> ```
+>
+>  I know that this is an expansion problem, but there's another problems also, which is that the '&' is one of the 10 special characters that do funny things. The error message is 
+>
+> ```latex
+> ! Missing } inserted.
+> <inserted text>
+>                 }
+> ```
+>
+> I recall Knuth talking about this in the TeXbook, but I spend a long time today trying to find it and couldn't. I've tried all sorts of ways to sequence the expansion, but none work, I *think* because of the way '&' functions, but I'm not sure.
+>
+> I would appreciate any ideas. TIA
+:::
+
+You can fix `\repeatntimes` like this:
+
+```latex
+\newcommand{\repeatntimes}[2]{ % usage:\repeatntimes{c}{3} -> ccc
+   \newcount\i
+   \newtoks\ans
+   \loop
+      \ans=\expandafter{\the\ans#1}
+      %\showthe\ans% uncomment to watch this work
+      \advance\i by 1
+      \ifnum\i<#2\repeat
+   \the\ans
+}
+```
+
+Then
+
+```latex
+\newcommand{\sublabels}{\repeatntimes{blah &}{2}}
+\begin{tabular}[t]{ccc}
+\repeatntimes{blah &}{2} blah \\
+\end{tabular}
+```
+
+gives you what you said you wanted.
+
+But maybe there's something more elegant, depending on what you really want.  Do you want a row of cells in a table to all be the same thing?  Maybe you could read the column specification to find the correct n.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5687/problem-with-dynamic-table-creation/5690#5690) on TeX Stack Exchange, 2010-11-20, with [edits](https://tex.stackexchange.com/posts/5690/revisions) by [samcarter](https://tex.stackexchange.com/users/36296/samcarter). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

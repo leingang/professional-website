@@ -1,0 +1,59 @@
+---
+title: Improper Integral Exists Since a Limit Exists
+date: '2016-07-13'
+description: 'One of the big facts of integrability is: If $f$ is continuous on $[a,b]$, then $f$ is integrable on $[a,b]$.'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1858155
+se-link: https://math.stackexchange.com/questions/1858139/improper-integral-exists-since-a-limit-exists/1858155#1858155
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Improper Integral Exists Since a Limit Exists](https://math.stackexchange.com/questions/1858139/improper-integral-exists-since-a-limit-exists), asked by [Taru](https://math.stackexchange.com/users/285335/taru) on Mathematics Stack Exchange (2016-07-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have read a solution which I didn't understand.
+> $$\mbox{Given the improper integral:}\quad
+> \int_{0}^{1}{\,\mathrm{e}^x - \,\mathrm{e}^{-x} - 2x \over
+> 2x^{2}\left(\,\mathrm{e}^x - \,\mathrm{e}^{-x}\,\right)}\,\,\mathrm{d}x$$
+>
+> The integrand is undefined at $x = 0$, but the lecturer says that since 
+> $\displaystyle{%
+> \lim_{x \to 0^{+}}\,{\,\mathrm{e}^{x} - \,\mathrm{e}^{-x} - 2x \over
+> 2x^{2}\left(\,\mathrm{e}^{x} - \,\mathrm{e}^{-x}\,\,\right)}}$ exists,
+> <br><br>
+> therefore $x = 0$ is not a singular point, and therefore the improper integral exists, and it is finite.
+> I don't understand why showing that the integrand has a limit means that the definite integral has a limit when approaching $0$.
+>
+> Thank you.
+:::
+
+One of the big facts of integrability is: *If $f$ is continuous on $[a,b]$, then $f$ is integrable on $[a,b]$.*
+
+If $f$ is continuous on $(a,b]$, and $\lim_{x\to a^+} f(x) = L$, then we can create a new function $g$ on $[a,b]$ by
+$$g(x) = \begin{cases} f(x) & a < x \leq b \\
+                          L  & x=a
+          \end{cases}$$
+Then by design, $g$ is continuous on $[a,b]$.
+
+We claim that the improper integral $\int_a^b f(x)\,dx$ converges to $\int_a^b g(x)\,dx$.  Because,
+$$\lim_{x\to a^+} \int_x^b f(t)\,dt = \lim_{x\to a^+} \int_x^b g(t)\,dt$$
+since $f(t) = g(t)$ for all $t$ in $(a,b]$.  Also, since $g$ is integrable, the function $x\mapsto \int_x^b g(t)\,dt$ is continuous on $[a,b]$.  So
+$$\lim_{x\to a^+} \int_x^b g(t)\,dt = \int_a^b g(t)\,dt$$
+This establishes the claim.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1858139/improper-integral-exists-since-a-limit-exists/1858155#1858155) on Mathematics Stack Exchange, 2016-07-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,46 @@
+---
+title: Prove that $\cosh(x)=\sec(\theta )$ if $x=\ln(\sec \theta + \tan \theta)$
+date: '2017-11-10'
+description: You got to $$\cosh x = \frac{1}{2}\left(\sec\theta + \tan\theta + \frac{1}{\sec\theta+\tan\theta}\right)$$ Write this is as single fraction…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2514302
+se-link: https://math.stackexchange.com/questions/2514291/prove-that-coshx-sec-theta-if-x-ln-sec-theta-tan-theta/2514302#2514302
+se-score: 4
+se-accepted: false
+se-tags:
+- trigonometry
+- hyperbolic-functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove that $\cosh(x)=\sec(\theta )$ if $x=\ln(\sec \theta + \tan \theta)$](https://math.stackexchange.com/questions/2514291/prove-that-coshx-sec-theta-if-x-ln-sec-theta-tan-theta), asked by [Alpha857](https://math.stackexchange.com/users/493180/alpha857) on Mathematics Stack Exchange (2017-11-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm trying to prove that $\cosh(x)=\sec(\theta )$ if $x=x=\ln(\sec \theta + \tan \theta)$. I've substituted the value of $x$ into $\cosh(x)$ to get $$\frac{e^{\ln(\sec \theta + \tan \theta)}+e^{-\ln(\sec \theta + \tan \theta)}}{2}$$ and simplified to get $$\frac{(\sec \theta +\tan \theta)+\frac{1}{(\sec \theta + \tan \theta)}}{2}$$. However, I do not know where to continue from here. Help would be greatly appreciated.
+:::
+
+You got to
+$$\cosh x = \frac{1}{2}\left(\sec\theta + \tan\theta + \frac{1}{\sec\theta+\tan\theta}\right)$$
+Write this is as single fraction:
+$$\frac{1}{2}\left(\sec\theta + \tan\theta + \frac{1}{\sec\theta+\tan\theta}\right)
+= \frac{(\sec\theta + \tan\theta)^2 + 1}{2(\sec\theta + \tan\theta)}$$
+Expand and remember that $1 + \tan^2 \theta = \sec^2\theta$:
+$$\begin{align*}
+\frac{(\sec\theta + \tan\theta)^2 + 1}{2(\sec\theta + \tan\theta)}
+&= \frac{\sec^2\theta + 2\tan\theta\sec\theta + \tan^2\theta + 1}{2(\sec\theta + \tan\theta)}
+\\&= \frac{2\sec^2\theta + 2 \sec\theta\tan\theta}{2(\sec\theta + \tan\theta)}
+\\&= \frac{(2\sec\theta)(\sec\theta + \tan\theta)}{2(\sec\theta + \tan\theta)}
+   = \sec\theta
+\end{align*}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2514291/prove-that-coshx-sec-theta-if-x-ln-sec-theta-tan-theta/2514302#2514302) on Mathematics Stack Exchange, 2017-11-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

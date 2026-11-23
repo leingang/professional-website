@@ -1,0 +1,133 @@
+---
+title: pgfplots "every quiver plot" style key?
+date: '2014-11-19'
+description: 'As soon as I posted it I found a workaround:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 212975
+se-link: https://tex.stackexchange.com/questions/212974/pgfplots-every-quiver-plot-style-key/212975#212975
+se-score: 5
+se-accepted: true
+se-tags:
+- pgfplots
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[pgfplots "every quiver plot" style key?](https://tex.stackexchange.com/questions/212974/pgfplots-every-quiver-plot-style-key), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2014-11-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to add the same set of options to every `pgfplots` “quiver plot”.  PGFPlots provides style like `every axis plot` to add to every plot, but quiver plots are created inside a `quiver={...}` scope.  
+>
+> The obvious guess was to set a style key called `every quiver plot` but it doesn't have any effect. Adding quiver keys to `every axis plot` results in an error.
+>
+> Here is a minimal non-working example.  
+>
+> ```latex
+> \documentclass{standalone}
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=1.10}
+> \pgfplotsset{
+>     every axis/.append style={
+>         xmin=-1,xmax=1,ymin=-1,ymax=1,
+>         view={0}{90},
+>         width=4cm,
+>         axis equal image
+>     },
+>     every axis plot/.append style={
+>         blue,-stealth,
+>     },
+>     % compiles without error but has no effect
+>     every quiver plot/.style={
+>         scale arrows=0.5,  
+>         update limits
+>     }
+> }
+> \begin{document}
+> \begin{tikzpicture}
+>     \begin{axis}
+>         \addplot3[quiver={u=x,v=y}] {x};
+>     \end{axis}
+> \end{tikzpicture}
+> \qquad
+> \begin{tikzpicture}
+>     \begin{axis}
+>         \addplot3[quiver={u=-y,v=x}] {x};
+>     \end{axis}
+> \end{tikzpicture} 
+> \end{document}
+> ```
+>
+> ![sample code output][q-1]
+>
+>
+>   [q-1]: hoecD.png
+:::
+
+As soon as I posted it I found a workaround:
+
+```latex
+\documentclass[png]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\pgfplotsset{
+    every axis/.append style={
+        xmin=-1,xmax=1,ymin=-1,ymax=1,
+        view={0}{90},
+        width=4cm,
+        axis equal image
+    },
+    every axis plot/.append style={
+        blue,-stealth,
+        quiver={scale arrows=0.5,update limits}
+    }
+}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}
+        \addplot3[quiver={u=x,v=y}] {x};
+    \end{axis}
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+    \begin{axis}
+        \addplot3[quiver={u=-y,v=x}] {x};
+    \end{axis}
+\end{tikzpicture} 
+\end{document}
+```
+
+For some reason I thought that setting `quiver` keys in the plots would override those set in `every axis plot`.  Luckily, I was mistaken.  
+
+![sample code output][1]
+
+
+  [1]: rEvgi.png
+
+To achieve the interface I was looking for (i.e., an actual `every quiver plot` style), you can do it this way:
+
+```latex
+\pgfplotsset{
+    every quiver plot/.style={},
+    quiver/.prefix code={\pgfqkeys{/pgfplots/quiver}{/pgfplots/every quiver plot}}
+}
+```
+
+Then later:
+
+```latex
+\pgfplotsset{every quiver plot/.style={
+    scale arrows=0.5,  
+    update limits
+}}
+```
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/212974/pgfplots-every-quiver-plot-style-key/212975#212975) on TeX Stack Exchange, 2014-11-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

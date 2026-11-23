@@ -1,0 +1,50 @@
+---
+title: Derivative of a quadratic form
+date: '2014-12-21'
+description: I'm not sure the question is correct. Testing with xavierm02's suggested example, let $X = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}$. Then $$f(a1, a2) =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1076631
+se-link: https://math.stackexchange.com/questions/1075887/derivative-of-a-quadratic-form/1076631#1076631
+se-score: 3
+se-accepted: true
+se-tags:
+- linear-algebra
+- multivariable-calculus
+- complex-numbers
+- quadratic-forms
+- scalar-fields
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Derivative of a quadratic form](https://math.stackexchange.com/questions/1075887/derivative-of-a-quadratic-form), asked by [eHH](https://math.stackexchange.com/users/136241/ehh) on Mathematics Stack Exchange (2014-12-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> There is a Hermitian matrix $X$ and a complex vector $a$. I know that $a^HXa$ is a real scalar but derivative of $a^HXa$ with respect to $a$ is complex, 
+> $$\frac{\partial a^HXa}{\partial a}=Xa^*$$
+> Why is the derivative complex? Is it possible that the derivative of a real variable be complex? (matrix $X$ is complex).
+:::
+
+I'm not sure the question is correct.  Testing with xavierm02's suggested example, let $X = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}$.  Then
+$$f(a_1, a_2) = \begin{pmatrix} \bar a_1 & \bar a_2 \end{pmatrix}\begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} = \bar a_1 i a_2  - \bar a_2 i a_1$$
+So
+$$\frac{\partial f}{\partial a_1} = -\bar a_2 i \qquad \frac{\partial f}{a_2} = i\bar a_1$$
+In other words
+$$\frac{\partial f}{\partial a} = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}\begin{pmatrix} \bar a_1 \\ \bar a_2 \end{pmatrix} = X^*a^*$$
+
+In general, let $X = (x_{ij})$ be a Hermitian matrix. So $\bar x_{ij} = x_{ji}$.  If $a = (a_i)$ is a complex vector, then
+$$f(a) = \sum_{j=1}^n (a^H)_i (Xa)_i = \sum_{i,j=1}^n \bar a_i x_{ij} a_j$$
+Then for each $k$,
+$$\frac{\partial f}{\partial a_k}=\sum_{i,j=1}^n \bar a_i x_{ij} \delta_{jk} = \sum_{i=1}^n \bar a_i x_{ik} = \sum_{i=1}^n \bar{x}_{ki}\bar a_i$$
+which again is the coordinate form of $$\frac{\partial f}{\partial a} = X^*a^*$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1075887/derivative-of-a-quadratic-form/1076631#1076631) on Mathematics Stack Exchange, 2014-12-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

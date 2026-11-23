@@ -1,0 +1,57 @@
+---
+title: Finding the circulation of a vector field through a box in various ways.
+date: '2017-12-19'
+description: The orientation on $C$ induced by $S$ is the the one which keeps $S$ on your left as you walk around $C$ with head pointing in the direction of the normal…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2572686
+se-link: https://math.stackexchange.com/questions/2572660/finding-the-circulation-of-a-vector-field-through-a-box-in-various-ways/2572686#2572686
+se-score: 0
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- stokes-theorem
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding the circulation of a vector field through a box in various ways.](https://math.stackexchange.com/questions/2572660/finding-the-circulation-of-a-vector-field-through-a-box-in-various-ways), asked by [BadEnglishSorry](https://math.stackexchange.com/users/510670/badenglishsorry) on Mathematics Stack Exchange (2017-12-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $\newcommand{\curl}{\operatorname{curl}}$I have the box that lies "between the planes $x=\pm1$ (with $-1\le y, \ z \le 1$), $\ y=\pm1$ (with $-1\le x, \ z \le 1$), and $z=-1$ with ($-1\le x, \ y \le 1)$ with his normal outward oriented". And i have to find the circulation of $\vec G=curl\ \vec F$ over the surface $S$ of the mentioned region, where $\vec F(x,y,z)=(x, y-2x,x-z)$.
+>
+> If I have not been confused by the complicated instructions, this is a box centered in the origin, without the top, and there should be multiple ways to solve the problem. I tried two but they do not give me the same result:
+>
+>  - By Stokes Theorem I know: $\iint_S\curl \ \vec F\ dS=\int_C\vec F \cdot d\vec r=\iint_{S_1}\curl \ \vec F\ dS$, where $S_1$ is a surface with boundary $C$, in this case the square:
+>
+> $$S_1=\{(x,y,1);-1\le x\le 1, -1 \le y\le1\}$$
+>
+> $$\vec G= \curl\ \vec F=(0,1,-2)$$
+>
+> $$\int^1_{-1}\int_{-1}^1(0,1,-2)\cdot(0,0,1)\ dxdy=-8$$
+>
+>  - With the Divergence or Gauss theorem, I evaluate the entire cube to later subtract the flux through the top.
+>
+> $$\operatorname{div}\ G=0$$
+> $$\int_{-1}^1 \int_{-1}^1 \int_{-1}^1 0 \ dV-\iint_{S_1}\curl \ \vec F\ dS=8$$
+>
+> I have also calculated the flow on each surface and it resulted in 8.
+>
+> What i am doing wrong?
+>
+> Also, if i dont steal too much time: how could i solve this using only the curve $C$? I tried to divide it in four pieces and calculate every line integral but i end with $0$ always.
+:::
+
+The orientation on $C$ induced by $S$ is the the one which keeps $S$ on your left as you walk around $C$ with head pointing in the direction of the normal vector.  Picture doing this, and at the same time watching yourself from a vantage point above the cube.  You'll see you are walking around the square $C$ in a *clockwise* direction.
+
+This is the opposite of the normal (as in, usual) orientation given to the boundary of a horizontal surface.  So your first integral is the one that's off by a factor of $-1$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2572660/finding-the-circulation-of-a-vector-field-through-a-box-in-various-ways/2572686#2572686) on Mathematics Stack Exchange, 2017-12-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,56 @@
+---
+title: Interchanging summands and double summation.
+date: '2017-03-30'
+description: First, remember the geometric series formula $$\frac{1}{1-q^n} = \sum{d=0}^\infty (q^n)^j = \sum{d=0}^\infty q^{nd}$$ So $$\frac{q^n}{1-q^n} = \frac{1}{1-q^n}…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2209540
+se-link: https://math.stackexchange.com/questions/2209520/interchanging-summands-and-double-summation/2209540#2209540
+se-score: 1
+se-accepted: false
+se-tags:
+- calculus
+- summation
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Interchanging summands and double summation.](https://math.stackexchange.com/questions/2209520/interchanging-summands-and-double-summation), asked by [J. Doe](https://math.stackexchange.com/users/430612/j-doe) on Mathematics Stack Exchange (2017-03-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Could someone please explain how equality is satisfied?
+>
+> $$\sum_{n=1}^\infty \frac{n^lq^n}{1-q^n}=\sum_{k=1}^\infty \sigma_l(k)q^k$$
+>
+> Read this on a Research [Paper][q-1] (Page-$23$) which didn't really provide clarification. The paper is about sum of $l^{th}$ power of divisors of $n \in \mathbb{N}$.
+>
+>
+>   [q-1]: https://cds.cern.ch/record/818185/files/0501027.pdf
+:::
+
+First, remember the geometric series formula
+$$\frac{1}{1-q^n} = \sum_{d=0}^\infty (q^n)^j =  \sum_{d=0}^\infty q^{nd}$$
+So
+$$\frac{q^n}{1-q^n} = \frac{1}{1-q^n} - 1 = \sum_{d=0}^\infty q^{nd} -1 = \sum_{d=1}^\infty q^{nd}$$
+Therefore
+$$\sum_{n=1}^\infty \frac{n^l q^n}{1-q^n}
+   =\sum_{n=1}^\infty n^l \sum_{d=1}^\infty  q^{dn} 
+   =\sum_{n=1}^\infty \sum_{d=1}^\infty n^l q^{dn}$$
+As $n$ and $d$ both range from $1$ to $\infty$, their products $nd$ will hit all of the positive integers at least once.  All prime numbers get hit exactly twice, while all composite numbers get hit once for each factor.  So instead of summing $n$ from $1$ to $\infty$, and $d$ from $1$ to $\infty$, sum the product $k$ from $1$ to $\infty$, then for each $k$ sum over all pairs $(d,n)$ such that $dn=k$.
+$$\sum_{n=1}^\infty \sum_{d=1}^\infty n^l q^{dn}
+   =\sum_{k=1}^\infty \sum_{\substack{(n,d) \\ nd = k}} n^l q^k 
+   =\sum_{k=1}^\infty \sum_{\substack{(d,n) \\ nd = k}} d^l q^k$$
+In the last equality, we can interchange $d$ and $n$ by symmetry; all that matters is their product is $k$.  Finally, notice
+$$\sum_{\substack{(d,n) \\ nd = k}} d^l
+    =\sum_{d \mathrel{|} k} d^l = \sigma_l(k)$$
+and you are done.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2209520/interchanging-summands-and-double-summation/2209540#2209540) on Mathematics Stack Exchange, 2017-03-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

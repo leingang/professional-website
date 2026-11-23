@@ -1,0 +1,52 @@
+---
+title: To show solutions of a linear system lie on parabolas in phase space.
+date: '2015-01-12'
+description: Your equation $$\frac{x}{x0} = \left(\frac{y}{y0}\right)^{1/2}$$ won't hold if one (or both) of $x0$ or $y0$ is zero.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1101230
+se-link: https://math.stackexchange.com/questions/1101223/to-show-solutions-of-a-linear-system-lie-on-parabolas-in-phase-space/1101230#1101230
+se-score: 0
+se-accepted: true
+se-tags:
+- ordinary-differential-equations
+- dynamical-systems
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[To show solutions of a linear system lie on parabolas in phase space.](https://math.stackexchange.com/questions/1101223/to-show-solutions-of-a-linear-system-lie-on-parabolas-in-phase-space), asked by [DDaren](https://math.stackexchange.com/users/184949/ddaren) on Mathematics Stack Exchange (2015-01-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given a linear system
+>
+> $\dot{x}=x$
+>
+> $\dot{y}=2y$
+>
+> To show solutions of a linear system lie on parabolas in phase space. Which solutions (if any) do not lie on parabolas?
+>
+> It is the second question that bothers me. I have solved the system:
+>
+> $\frac{x}{x_0}=(\frac{y}{y_0})^{1/2}$ which is a parabola I suppose.
+:::
+
+Your equation
+$$\frac{x}{x_0} = \left(\frac{y}{y_0}\right)^{1/2}$$
+won't hold if one (or both) of $x_0$ or $y_0$ is zero.  
+
+For instance, if $x_0 = 0$, then $x(t) = 0$ for all $t$.  Meanwhile $y(t) = y_0 e^{2t}$.  The solution curve lies in the $y$-axis.
+
+On the other hand, if $y_0 = 0$, then $y(t) = 0$ for all $t$.  Meanwhile $x(t) = x_0 e^t$.  The solution curve lies in the $x$-axis.
+
+You might think of these curves as the limits of the curves $x y_0^2 = x_0 y^2$ as $x_0 \to 0$ or $y_0 \to 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1101223/to-show-solutions-of-a-linear-system-lie-on-parabolas-in-phase-space/1101230#1101230) on Mathematics Stack Exchange, 2015-01-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

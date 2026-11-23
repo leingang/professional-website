@@ -1,0 +1,53 @@
+---
+title: Is L'Hopital's rule just a shortcut? OR Are there limits that CANNOT be done without using L'Hopital's rule?
+date: '2023-03-01'
+description: 'Regarding your first paragraph: as an instructor, I have two learning objectives related to evaluating limits.'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4649046
+se-link: https://math.stackexchange.com/questions/4648921/is-lhopitals-rule-just-a-shortcut-or-are-there-limits-that-cannot-be-done-wit/4649046#4649046
+se-score: 5
+se-accepted: false
+se-tags:
+- calculus
+- limits
+- limits-without-lhopital
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is L'Hopital's rule just a shortcut? OR Are there limits that CANNOT be done without using L'Hopital's rule?](https://math.stackexchange.com/questions/4648921/is-lhopitals-rule-just-a-shortcut-or-are-there-limits-that-cannot-be-done-wit), asked by [semilocallysimplyconnected](https://math.stackexchange.com/users/892833/semilocallysimplyconnected) on Mathematics Stack Exchange (2023-03-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> When I was first taught limits, we were forbidden from using L'Hopital's rule to calculate it. It was regarded as a "shortcut" and not a "real method" to find a limit. Obviously, when you have to take a limit it is often a very easy and intuitive method to find the limit (provided you check the conditions correctly). 
+>
+> However, this led me to think whether this is because it really is just a shortcut that is unnecessary or whether there are places where it is absolutely essential.
+>
+> Of course, an example of a limit which does require L'Hopital's rule to be solved would answer my question, but especially if it's not true and you CAN always find a limit without L'Hopitals's rule, I want some kind of proof or at least understanding of this.
+:::
+
+Regarding your first paragraph: as an instructor, I have two learning objectives related to evaluating limits.
+
+* Use the limit laws (sum rule, product rule, etc.) to evaluate limits of functions.
+* Use L'Hôpital's rule to evaluate limits in indeterminate form.
+
+The first is important because we want students to know how derivatives are calculated “from scratch.” The second is important because L'Hôpital's rule is a powerful theorem.
+
+The trouble is, when you have a very big hammer, everything looks like a nail. Students tend to bang at every limit of any quotient of functions with L'Hôpital's hammer even in situations where:
+
+* the limit isn't in an indeterminate form (leading to an incorrect answer)
+* other methods (for example, Taylor series or established trigonometric limits) might resolve the limit more quickly 
+* using L'Hôpital's rule results in circular reasoning
+* functions of several variables are encountered, etc.
+
+For these reasons, we want students to know when to use L'Hôpital *and when not to*. That doesn't diminish the rule itself, though; it just puts the rule in its proper place.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4648921/is-lhopitals-rule-just-a-shortcut-or-are-there-limits-that-cannot-be-done-wit/4649046#4649046) on Mathematics Stack Exchange, 2023-03-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

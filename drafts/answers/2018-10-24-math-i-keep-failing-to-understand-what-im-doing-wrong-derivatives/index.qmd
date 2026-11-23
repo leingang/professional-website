@@ -1,0 +1,57 @@
+---
+title: I keep failing to understand what I'm doing wrong - derivatives
+date: '2018-10-24'
+description: 'Both terms in $4x^2(x-2)^3+2x(x-2)^4$ are multiples of $2x$ and $(x-2)^3$. So factor them out: $$4x^2(x-2)^3+2x(x-2)^4 = 2x(x-2)^3[2x+(x-2)] = 2x(x-2)^3(3x-2)$$'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2968622
+se-link: https://math.stackexchange.com/questions/2968619/i-keep-failing-to-understand-what-im-doing-wrong-derivatives/2968622#2968622
+se-score: 3
+se-accepted: true
+se-tags:
+- calculus
+- derivatives
+- chain-rule
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[I keep failing to understand what I'm doing wrong - derivatives](https://math.stackexchange.com/questions/2968619/i-keep-failing-to-understand-what-im-doing-wrong-derivatives), asked by [Matthew](https://math.stackexchange.com/users/607788/matthew) on Mathematics Stack Exchange (2018-10-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I need to find the derivative of this function:
+>
+> $f(x)=x^2(x-2)^4$
+>
+> I have gone about this two ways:
+>
+> 1. Chain Rule inside a Power Rule
+>
+> $$f(x)=x^2(x-2)^4$$
+> (I found the derivative of $(x-2)^4$ using the chain rule.)
+> $$f'(x)=(x^2)(4)(x-2)^3(1)+(x-2)^4(2x)$$
+> $$f'(x)=4x^2(x-2)^3+2x(x-2)^4$$
+>
+> 2. Power Rule only
+>
+> $$f(x)=x^2(x-2)^4$$
+> $$f'(x)=(x^2)(4(x-2)^3)+(x-2)^4(2x)$$
+> $$f'(x)=4x^2(x-2)^3+2x(x-2)^4$$
+>
+> My calculator gives me the same answer that I get in method 2. However the textbook says the answer to this problem is $2x(x-2)^3(3x-2)$
+>
+> So, assuming the textbook is correct (it better be), what are my calculator and I doing wrong? Also, why does the using the chain rule inside of the power rule produce a different result? I only ask the second question because I was under the impression that the chain rule was just another shortcut for finding derivatives.
+:::
+
+Both terms in $4x^2(x-2)^3+2x(x-2)^4$ are multiples of $2x$ and $(x-2)^3$.  So factor them out:
+$$4x^2(x-2)^3+2x(x-2)^4 = 2x(x-2)^3[2x+(x-2)] = 2x(x-2)^3(3x-2)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2968619/i-keep-failing-to-understand-what-im-doing-wrong-derivatives/2968622#2968622) on Mathematics Stack Exchange, 2018-10-24. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,84 @@
+---
+title: Adjusting space between array rows and columns
+date: '2013-03-20'
+description: Use the alignat environment from the amsmath package. You can also adjust the space between lines with the \setstretch command from the setspace package.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103509
+se-link: https://tex.stackexchange.com/questions/103508/adjusting-space-between-array-rows-and-columns/103509#103509
+se-score: 14
+se-accepted: false
+se-tags:
+- spacing
+- lyx
+- arrays
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Adjusting space between array rows and columns](https://tex.stackexchange.com/questions/103508/adjusting-space-between-array-rows-and-columns), asked by [hkBattousai](https://tex.stackexchange.com/users/7493/hkbattousai) on TeX Stack Exchange (2013-03-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> ![Output][q-1]
+>
+> ```latex
+> \documentclass[english]{article}
+> \usepackage[T1]{fontenc}
+> \usepackage[latin9]{inputenc}
+> \usepackage{babel}
+> \begin{document}
+> % ...
+> \[
+> \begin{array}{ccccc}
+> x(1) & = & \frac{x(0)}{1} & = & x(0)\\
+> x(2) & = & \frac{x(1)}{2} & = & \frac{x(0)}{2}\\
+> x(3) & = & \frac{x(2)}{3} & = & \frac{x(0)}{2.3}\\
+> x(4) & = & \frac{x(3)}{4} & = & \frac{x(0)}{4!}\\
+>  &  &  &  & \vdots\\
+> x(n) & = & \frac{x(n-1)}{n} & = & \frac{x(0)}{n!}
+> \end{array}
+> \]
+> % ...
+> \end{document}
+> ```
+>
+> Because of the fractions in the array cells, array elements are vertically too close to each other, they are literally touching to each other. Also the horizontal spacing is too much as you see in the image (screen shot from the output PDF file).
+>
+> How do I make these cell-spacings look better?
+>
+>   [q-1]: PLgka.png
+:::
+
+Use the `alignat` environment from the [`amsmath`](http://ctan.org/pkg/amsmath) package.  You can also adjust the space between lines with the `\setstretch` command from the [`setspace`](http://ctan.org/pkg/setspace) package.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{setspace}
+\begin{document}
+{\setstretch{2.25}
+\begin{alignat*}{2}
+x(1)   &=\frac{x(0)}{1}    &&= x(0)\\
+x(2)   &=\frac{x(1)}{2}    &&= \frac{x(0)}{2}\\
+x(3)   &=\frac{x(2)}{3}    &&= \frac{x(0)}{2.3}\\
+x(4)   &=\frac{x(3)}{4}    &&= \frac{x(0)}{4!}\\
+\vdots &                   && \\
+x(n)   &=\frac{x(n-1)}{n!} &&= \frac{x(0)}{n!}
+\end{alignat*}}
+\end{document}
+```
+
+![sample output][1]
+
+
+  [1]: CBt7E.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103508/adjusting-space-between-array-rows-and-columns/103509#103509) on TeX Stack Exchange, 2013-03-20, with [edits](https://tex.stackexchange.com/posts/103509/revisions) by [Troy](https://tex.stackexchange.com/users/117534/troy). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

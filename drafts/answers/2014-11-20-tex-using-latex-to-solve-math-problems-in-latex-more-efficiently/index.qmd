@@ -1,0 +1,90 @@
+---
+title: Using LaTeX to solve math problems in LaTeX more efficiently than with only paper
+date: '2014-11-20'
+description: I am pretty sure the answer to the question in the title—Is solving math problems in LaTeX without paper slower than in paper?—is yes. I work with a computer…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 213121
+se-link: https://tex.stackexchange.com/questions/213113/using-latex-to-solve-math-problems-in-latex-more-efficiently-than-with-only-pape/213121#213121
+se-score: 15
+se-accepted: false
+se-tags:
+- math-mode
+- workflow
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Using LaTeX to solve math problems in LaTeX more efficiently than with only paper](https://tex.stackexchange.com/questions/213113/using-latex-to-solve-math-problems-in-latex-more-efficiently-than-with-only-pape), asked by [Tim](https://tex.stackexchange.com/users/861/tim) on TeX Stack Exchange (2014-11-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have been always solving math problems in LaTeX without pen and paper, since a few years ago. Some have (many) lines of words, some (many) lines of equations, and some of both.
+>
+> When I saw that I was sometimes running into time problems, and feel not so straightforward for reasoning from the LaTeX code, and worry about the time waste in switching between LaTeX code, recompiling, and viewing pdf files, I began to wonder if doing things completely in LaTeX slows me down. But I remember that when I was doing things completely in paper, I hoped that I could "copy" and "paste" like I did in computer.  
+>
+> I'm looking for ways to improve my productivity for reasoning and working out math problems:
+>
+> - in pen and paper, 
+> - in LaTeX,  
+> - in some combination of both...
+>
+> When solving math problems in LaTeX without pen and paper, what are your tips which can improve our productivity?
+:::
+
+I am pretty sure the answer to the question in the title—*Is solving math problems in LaTeX without paper slower than in paper?*—is *yes*.  I work with a computer keyboard in front of me and a pen and pad to my left (yes, I'm left-handed), and when I'm typing up solutions to problems I usually leave the keyboard to scratch on the pad for a while, then go back to the keyboard to LaTeX it up.  I can think of some reasons why this might be more true:
+
+* I can think faster than I can type.
+* Although in English I type much faster than I write, when writing math I write much faster than I can type LaTeX.
+* I can draw pictures by hand *much much* faster than drawing them in LaTeX.
+
+I admit that this is a totally subjective answer, but I don't know of any colleagues who work first in LaTeX without scribbling on paper or a black/whiteboard first.
+ 
+As far as tips to be more productive when writing LaTeX, I would suggest to follow good coding practices.  AFAIK there are not that many settled conventions on code organization, but some general practices I follow are:
+
+* Start each sentence on a new line.
+
+* Indent code within environment blocks.
+
+* Use braces to enclose groups even if they are only one token.  I break this rule in super/subscripts, but adhere to it closely in `\frac`-tions.
+
+* Use the [`cool`](http://ctan.org/pkg/cool) package to make many math expression more like macros.  
+
+So for instance (not my best example but one that's at hand),
+
+```latex
+Let $E$ be the solid.
+Its volume is $\frac{1}{8} \frac{4}{3}\pi = \frac{\pi}{6}$.
+In spherical coordinates it is a wedge $0 \leq \rho\leq 1$, $0 \leq \theta \leq \pi/2$, $0 \leq \phi\leq \pi/2$.
+So the moments are 
+\begin{align*}
+    M_{yz} = \iiint_E x\,dV &= \int_0^{\pi/2}\int_0^{\pi/2} \int_0^1 (\rho \Sin{\phi}\Cos{\theta})\rho^2\Sin{\phi}\,d\rho\,d\phi\,d\theta \\
+          &= \int_0^{\pi/2} \Cos{\theta} \,d\theta\cdot\int_0^{\pi/2} \Sin{\phi}^2 \,d\phi\cdot\int_0^{1} \rho^3\,d\rho \\
+          &= 1 \cdot \frac{\pi}{4} \cdot \frac{1}{4} = \frac{\pi}{16} \\
+    M_{yz} = \iiint_E y\,dV 
+        &= \int_0^{\pi/2}\int_0^{\pi/2} \int_0^1 (\rho \Sin{\phi}\Sin{\theta})\rho^2\Sin{\phi}\,d\rho\,d\phi\,d\theta  \\
+        &= \int_0^{\pi/2} \Sin{\theta} \,d\theta\cdot\int_0^{\pi/2} \Sin{\phi}^2\,d\phi \cdot \int_0^1 \rho^3 \,d\rho \\
+        &= 1 \cdot \frac{\pi}{4} \cdot \frac{1}{4} = \frac{\pi}{16} \\
+    M_{xy} = \iiint_E z\,dV 
+        &= \int_0^{\pi/2}\int_0^{\pi/2} \int_0^1 (\rho \Cos{\phi})\rho^2\Sin{\phi}\,d\rho\,d\phi\,d\theta \\
+        &= \int_0^{\pi/2} d\theta\cdot \int_0^{\pi/2} \Sin{\phi}\Cos{\phi}\,d\phi \cdot \int_0^1 \rho^3 \,d\rho \\
+        &= \frac{\pi}{2} \cdot \frac{1}{2} \cdot \frac{1}{4} = \frac{\pi}{16}
+\end{align*}
+So the coordinates of the centroid are
+$\left(\frac{3}{8},\frac{3}{8},\frac{3}{8}\right)$
+```
+
+Even for this one I did work it out on paper first.
+
+* * *
+
+Update 2023: Nine years after writing this I got an upvote which gave me the occasion to reread it. My workflow hasn't changed much, except that the "pen and pad" to my left is often replaced with a tablet and stylus.  The advantage to this workflow is that diagrams are easier to begin freehand as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/213113/using-latex-to-solve-math-problems-in-latex-more-efficiently-than-with-only-pape/213121#213121) on TeX Stack Exchange, 2014-11-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

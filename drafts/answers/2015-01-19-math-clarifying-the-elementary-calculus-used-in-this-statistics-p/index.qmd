@@ -1,0 +1,58 @@
+---
+title: Clarifying the elementary calculus used in this statistics problem
+date: '2015-01-19'
+description: The simple answer for (1) is that the limits are values of the variable. If the variable changes, the limits need to change too. The limits change according to…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1110925
+se-link: https://math.stackexchange.com/questions/1110917/clarifying-the-elementary-calculus-used-in-this-statistics-problem/1110925#1110925
+se-score: 2
+se-accepted: true
+se-tags:
+- calculus
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Clarifying the elementary calculus used in this statistics problem](https://math.stackexchange.com/questions/1110917/clarifying-the-elementary-calculus-used-in-this-statistics-problem), asked by [forgetfulF](https://math.stackexchange.com/users/190745/forgetfulf) on Mathematics Stack Exchange (2015-01-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $X \sim N(\mu, \sigma^{2})$ and $Y = \alpha X + \beta$ for $\alpha > 0$. I'm looking at a demonstration that $Y = \alpha X + \beta \sim N(\alpha\mu + \beta, (\alpha\sigma)^{2})$, and find myself not following all the mechanical steps. I have a very weak calculus background, so I think this might clarify things for me.
+>
+> $$\begin{align*}
+> F_{Y}(c) &= P(Y \leq c) \\
+> &= P(\alpha{X} + \beta \leq c) \\
+> &= P \left( X \leq \frac{c - \beta}{\alpha} \right) \\
+> &= F_{X} \left( \frac{c - \beta}{\alpha} \right) \\
+> &= \int_{-\infty}^{\frac{c - \beta}{\alpha}} \frac{1}{\sqrt{2\pi}\sigma} \exp \left\{ \frac{-(x-\mu)^{2}}{2\sigma^{2}} \right\}dx
+> \end{align*}$$
+>
+> Using the change of variables $y = \alpha{x} + \beta$, we reduce this expression to $$\int_{-\infty}^{c} \frac{1}{\sqrt{2\pi} \alpha\sigma}\exp \left\{ \frac{-(y-(\alpha\mu + \beta))^{2}}{2\alpha^{2}\sigma^{2}} \right\}dy$$
+>
+> and conclude the desired result.
+>
+> **Questions:**
+>
+> 1) How does the limit of integration change from $\frac{c-\beta}{\alpha}$ to $c$? 
+>
+> 2) When approaching similar problems, is there a good way of thinking about how the equation needs to be transformed in order to come up with a change of variables that accomplishes the desired purpose?
+:::
+
+The simple answer for (1) is that the limits are values of the variable.  If the variable changes, the limits need to change too.  The limits change according to the substitution equation.
+
+If $y = \alpha x + \beta$, then when $x=\frac{c-\beta}{\alpha}$ we have
+$$y = \alpha\cdot \frac{c-\beta}{\alpha} + \beta = (c-\beta) + \beta = c$$
+The lower limit is still $-\infty$ because $y\to-\infty$ as $x\to-\infty$.
+
+As for (2) I'm not sure there's a simple answer.  You want to simplify the integral.  If the substitution is linear like this one that's pretty straightforward.  If $y$ is a nonlinear function of $x$, then you have to make sure the derivative of that function is part of the integrand so you can make a substitution of $dy$ in terms of $x$ and $dx$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1110917/clarifying-the-elementary-calculus-used-in-this-statistics-problem/1110925#1110925) on Mathematics Stack Exchange, 2015-01-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

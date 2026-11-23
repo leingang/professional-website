@@ -1,0 +1,56 @@
+---
+title: For matrices $2 \times 2$, conditions for $A$ such that $tr(XAY^{T})$ is an inner product
+date: '2019-09-02'
+description: Completing the square should help here. For instance, $$\begin{align} ax1^2 + d x2^2 + 2bx1x2 &= a\left(x1 + \frac{b}{a}x2\right)^2 + \left(d -…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3342090
+se-link: https://math.stackexchange.com/questions/3342068/for-matrices-2-times-2-conditions-for-a-such-that-trxayt-is-an-inne/3342090#3342090
+se-score: 0
+se-accepted: false
+se-tags:
+- linear-algebra
+- matrices
+- inner-products
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[For matrices $2 \times 2$, conditions for $A$ such that $tr(XAY^{T})$ is an inner product](https://math.stackexchange.com/questions/3342068/for-matrices-2-times-2-conditions-for-a-such-that-trxayt-is-an-inne), asked by [Alexandre Tourinho](https://math.stackexchange.com/users/557910/alexandre-tourinho) on Mathematics Stack Exchange (2019-09-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Given a generic $2 \times 2$ matrix $A$:
+>
+> $$\left[
+> \begin{array}{cc}
+>   a&b\\
+>   c&d
+> \end{array}
+> \right]$$
+>
+> the exercise is to determine conditions for $a$, $d$ and $b-c$ such that $tr(XAY^{T})$ is an inner product.
+>
+> Verifying linearity and symmetry we get $b=c$.
+>
+> My problem is verifying the positive-definite propertie. I arrived at the expression, where $x_1, x_2, x_3, x_4$ are the elements of the matrix $X$:
+>
+> $tr(XAX^{T}) = a(x_1^2+x_3^2) + d(x_2^2+x_4^2) + (b+c)(x_1x_2 + x_3x_4)$
+>
+> but was unable to analyse the conditions $a$ and $d$ should satisfie.
+:::
+
+Completing the square should help here.  For instance,
+$$\begin{align*}
+    ax_1^2 + d x_2^2 + 2bx_1x_2 &= a\left(x_1 + \frac{b}{a}x_2\right)^2 + \left(d - \frac{b^2}{a}\right)x_3^2
+\end{align*}$$
+You want the coefficients of the squares on the right to be positive.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3342068/for-matrices-2-times-2-conditions-for-a-such-that-trxayt-is-an-inne/3342090#3342090) on Mathematics Stack Exchange, 2019-09-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

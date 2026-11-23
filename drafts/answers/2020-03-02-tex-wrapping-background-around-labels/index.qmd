@@ -1,0 +1,122 @@
+---
+title: wrapping background around labels
+date: '2020-03-02'
+description: If you want to draw a shape that surrounds certain nodes, consider the fit TikZ library. Once you add a name to the label on the pk node, you can make sure the…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 530791
+se-link: https://tex.stackexchange.com/questions/530784/wrapping-background-around-labels/530791#530791
+se-score: 3
+se-accepted: true
+se-tags:
+- tikz-pgf
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[wrapping background around labels](https://tex.stackexchange.com/questions/530784/wrapping-background-around-labels), asked by [choucavalier](https://tex.stackexchange.com/users/37853/choucavalier) on TeX Stack Exchange (2020-03-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I have created the following tikz figure.
+>
+> I would like the gray background area to also include the labels of the two nodes `pk` and `Ak`.
+>
+> Is there a way to do that?
+>
+>
+> [![my figure][q-1]][q-1]
+>
+> ```latex
+> \documentclass[tikz]{standalone}
+> \usepackage{tikz}
+> \usepackage{pgfplots}
+> \usepackage{amsmath}
+> \usepackage{amsfonts}
+> \usepackage{amssymb}
+> \usepackage{mathtools}
+> \usepackage{bm}
+> \usepackage{stmaryrd}
+> \pgfplotsset{compat=1.12}
+> \usetikzlibrary{arrows,petri,backgrounds}
+> \tikzset{>=stealth',every on chain/.append style={join}, every join/.style={->}}
+> \begin{document}
+> \begin{tikzpicture}[thick,auto,node distance=1cm]
+>     \tikzstyle{n}=[circle,draw=blue!75,fill=blue!20,minimum size=10pt,inner sep=0pt]
+>     \tikzstyle{pil}=[->,thick,shorten <=2pt,shorten >=2pt]
+>
+>     \tikzstyle{nlegend}=[circle,draw=blue!75,fill=blue!20,minimum size=5pt,inner sep=0pt]
+>
+>     \node [n] (Z) [label=right:{$Z \sim \mathcal{N}(\bm{\mu}, \bm{\Sigma})$}] {};
+>     \node [n] (pk) [below of=Z,label=right:{$p_k = \texttt{logistic}(\langle \beta_k, Z \rangle))$},tokens=1] {};
+>     \node [n] (bk) [left of=pk,label=below:$\beta_k$,tokens=1] {};
+>     \node [n] (Ak) [below of=pk,label=right:$A_k \sim \mathcal{B}(p_k)$] {};
+>     \node (plate) [below of=bk] {\scriptsize$k \in V$};
+>
+>     \path[pil] (Z) edge (pk);
+>     \path[pil] (bk) edge (pk);
+>     \path[pil] (pk) edge (Ak);
+>
+>     \node [n] (nl) [label=right:deterministic,tokens=1,below of=plate] {};
+>
+>     \begin{pgfonlayer}{background}
+>     \filldraw [line width=4mm,join=round,black!10]
+>     (pk.north  -| plate.west)  rectangle (Ak.south  -| pk.east);
+>     \end{pgfonlayer}
+> \end{tikzpicture}
+>
+> \end{document}
+> ```
+>
+>   [q-1]: PPnoV.png
+:::
+
+If you want to draw a shape that surrounds certain nodes, consider the `fit` TikZ library.  Once you add a name to the *label* on the `pk` node, you can make sure the shape includes it.
+
+```latex
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usetikzlibrary{arrows,petri,backgrounds,fit}
+\tikzset{>=stealth',every on chain/.append style={join}, every join/.style={->}}
+\begin{document}
+\begin{tikzpicture}[thick,auto,node distance=1cm]
+    \tikzstyle{n}=[circle,draw=blue!75,fill=blue!20,minimum size=10pt,inner sep=0pt]
+    \tikzstyle{pil}=[->,thick,shorten <=2pt,shorten >=2pt]
+
+    \tikzstyle{nlegend}=[circle,draw=blue!75,fill=blue!20,minimum size=5pt,inner sep=0pt]
+
+    \node [n] (Z) [label=right:{$Z \sim \mathcal{N}(\bm{\mu}, \bm{\Sigma})$}] {};
+    \node [n] (pk) [below of=Z,label={[name=pklabel]right:{$p_k = \texttt{logistic}(\langle \beta_k, Z \rangle))$}},tokens=1] {};
+    \node [n] (bk) [left of=pk,label=below:$\beta_k$,tokens=1] {};
+    \node [n] (Ak) [below of=pk,label=right:$A_k \sim \mathcal{B}(p_k)$] {};
+    \node (plate) [below of=bk] {\scriptsize$k \in V$};
+
+    \path[pil] (Z) edge (pk);
+    \path[pil] (bk) edge (pk);
+    \path[pil] (pk) edge (Ak);
+
+    \node [n] (nl) [label=right:deterministic,tokens=1,below of=plate] {};
+
+    \begin{pgfonlayer}{background}
+    \node[draw=black!10,fill=black!10,rectangle,rounded corners,fit=(plate) (pklabel)] {};
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\end{document}
+```
+
+[![sample code output][1]][1]
+
+
+  [1]: w1SML.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/530784/wrapping-background-around-labels/530791#530791) on TeX Stack Exchange, 2020-03-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

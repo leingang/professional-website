@@ -1,0 +1,53 @@
+---
+title: Calc 3 - "Circulation" and Flux Question?
+date: '2017-11-28'
+description: If $C$ is a simple, oriented, closed curve in the plane with unit tangent field $\mathbf{T}$ and outward unit normal vector field $\mathbf{n}$, and…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2540457
+se-link: https://math.stackexchange.com/questions/2540448/calc-3-circulation-and-flux-question/2540457#2540457
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- line-integrals
+- grad-curl-div
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calc 3 - "Circulation" and Flux Question?](https://math.stackexchange.com/questions/2540448/calc-3-circulation-and-flux-question), asked by [jess trash](https://math.stackexchange.com/users/498725/jess-trash) on Mathematics Stack Exchange (2017-11-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let F(x,y)=⟨1,−xy⟩ and C be the unit circle centered at the origin drawn in a counterclockwise fashion as t runs from 0 to 2π. Set up an integral that will compute the flow along a curve C (circulation) and an integral that will compute the flow across a curve C (flux).
+>
+> I'm confused on what is meant by "circulation"... is this interchangeable with scalar curl? 
+> Also, it should be given in this format for "circulation": 
+> ∮F∙dp (across C) = ∮(____)dt from ___ to ___
+> and in this format for flux:
+> ∮F∙dn (across C) = ∮(____)dt from ___ to ___
+>
+> What is p? What is n?
+>
+> I figured that the limits for both are 0 to 2pi, but I don't understand what to put inside the actual integral for either, especially circulation. For flux, I tried just putting in the divergence of F (by the Divergence Theorem) but that didn't work because it's in terms of dt and not dV. 
+>
+> Any help is appreciated!
+:::
+
+If $C$ is a simple, oriented, closed curve in the plane with unit tangent field $\mathbf{T}$ and outward unit normal vector field $\mathbf{n}$, and $\mathbf{F}$ is a vector field on $C$, the circulation of $\mathbf{F}$ around $C$ is the integral
+$$\int_C \mathbf{F}\cdot \mathbf{T}\,ds = \int_C \mathbf{F}\cdot d\mathbf{s}$$
+The circulation is related to the scalar curl by Green's theorem.
+
+The flux of $\mathbf{F}$ across $C$ is the integral
+$$\int_C \mathbf{F} \cdot \mathbf{n}\,ds$$
+The flux is related to the divergence by Gauss's theorem.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2540448/calc-3-circulation-and-flux-question/2540457#2540457) on Mathematics Stack Exchange, 2017-11-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

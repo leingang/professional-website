@@ -1,0 +1,38 @@
+---
+title: Find probability that a vehicle requiring $2$ adjacent spaces can be parked
+date: '2017-04-21'
+description: First, notice there are $\binom{16}{12} = \binom{16}{4}$ ways to park the 12 cars in the 16 slots. You can think about an event in this sample space as a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2244386
+se-link: https://math.stackexchange.com/questions/2244359/find-probability-that-a-vehicle-requiring-2-adjacent-spaces-can-be-parked/2244386#2244386
+se-score: 2
+se-accepted: false
+se-tags:
+- combinatorics
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find probability that a vehicle requiring $2$ adjacent spaces can be parked](https://math.stackexchange.com/questions/2244359/find-probability-that-a-vehicle-requiring-2-adjacent-spaces-can-be-parked), asked by [Maverick](https://math.stackexchange.com/users/171392/maverick) on Mathematics Stack Exchange (2017-04-21; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > In a parking lot there are $16$ slots adjacent to each other in a row.$12$ drivers along with their cars enter the parking lot and park their cars in $12$ of the $16$ slots available at random.Uncle Sam enters the parking lot in his mini truck which requires $2$ adjacent slots to park.What is the probability that Uncle Sam will be able to park his car?
+>
+> My Attempt:I am confused about finding total number of ways in which 14 slots can be occupied. The given answer is $\frac{17}{28}$
+:::
+
+First, notice there are $\binom{16}{12} = \binom{16}{4}$ ways to park the 12 cars in the 16 slots.  You can think about an event in this sample space as a string of 16 ones and zeroes, where 1 means a car is parked in that slot, and 0 means there is none.  How many strings that are 16 long and have four 0's in them have at least one 00 in them?
+
+It's easier to count the opposite: how many such strings *do not* have 00 in them?  Either the last digit is a 1 or a 0.  We can form all strings that do not have 00 in them and end in 1 by shuffling eight 1's and four 01's.  There are $\binom{12}{4}$ ways to do this.  We can form all strings that do not have 00 in them and end in zero by shuffling nine 1's and three 01's, and adding 0 at the very end.  There are $\binom{12}{3}$ ways to do this.  So the probability that the truck *cannot* park is
+$$\frac{\binom{12}{4} + \binom{12}{3}}{\binom{16}{4}} = \frac{11}{28}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2244359/find-probability-that-a-vehicle-requiring-2-adjacent-spaces-can-be-parked/2244386#2244386) on Mathematics Stack Exchange, 2017-04-21. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,58 @@
+---
+title: The distribution of a constant $a$ is Dirac mass in $a$, and it's density doesn't exist
+date: '2016-07-12'
+description: '1. Unpack the variable $Y$: If $c < d$ are real numbers, then $$P(c < Y < d) = P(c < g(X) < d) = P(c < a < d)$$ This is 1 if $a$ is between $c$ and $d$, and…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1857205
+se-link: https://math.stackexchange.com/questions/1857177/the-distribution-of-a-constant-a-is-dirac-mass-in-a-and-its-density-doesn/1857205#1857205
+se-score: 1
+se-accepted: false
+se-tags:
+- probability-theory
+- dirac-delta
+- density-function
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The distribution of a constant $a$ is Dirac mass in $a$, and it's density doesn't exist](https://math.stackexchange.com/questions/1857177/the-distribution-of-a-constant-a-is-dirac-mass-in-a-and-its-density-doesn), asked by [Dave ddd](https://math.stackexchange.com/users/306574/dave-ddd) on Mathematics Stack Exchange (2016-07-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Let $X$ a real random variable with density $f_X$ and  $Y=g(X)$ with $g$ measurable. 
+>
+> I have some trouble understanding the following statement :
+>
+> "
+> If $g(x)=a$ with $a$ a constant, for all $x$,  the distribution of $Y$ is the Dirac mass in $a$, which doesn't have a density
+> "
+>
+> My questions : 
+>
+> 1 - How can we translate this statement into formulas?
+>
+> 2 - Why doesn't the density exist?
+:::
+
+1. Unpack the variable $Y$:  If $c < d$ are real numbers, then
+$$P(c < Y < d) = P(c < g(X) < d) = P(c < a < d)$$
+This is 1 if $a$ is between $c$ and $d$, and $0$ if it isn't.  
+So by extension, the distribution of $Y$ is identical to the distribution of a point mass centered at $a$:
+$$\mu_Y(E) = P(Y \subseteq E) = \begin{cases} 1 & a \in E \\ 0 & a \notin E \end{cases}$$
+
+2. The *distribution* of $Y$ doesn't have a *density* function.  To see why, suppose it did have a density $f_Y$.  let $E$ be the set of numbers $\neq a$.  Then for any measurable set $E'\subseteq E$, 
+$$\int_{E'} f_Y\,dx = \mu_Y(E') = 0$$
+since $a \notin E'$.  This means that $f_Y = 0$ almost everywhere in $E$.
+Replacing $a$ (a set of measure zero by itself), we still have $f_Y = 0$ almost everywhere in $\mathbb{R}$.  But 
+$$\int_{\mathbb{R}} f_Y\,dx = \mu_Y(\mathbb{R}) = 1,$$
+a contradiction.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1857177/the-distribution-of-a-constant-a-is-dirac-mass-in-a-and-its-density-doesn/1857205#1857205) on Mathematics Stack Exchange, 2016-07-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

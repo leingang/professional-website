@@ -1,0 +1,43 @@
+---
+title: What is the coefficient in the differential coefficient?
+date: '2016-11-22'
+description: If $y = 6x-x^2$, then $\frac{dy}{dx} = 6-2x$. This can be written as $$dy = (6-2x)\,dx$$ so that $6-2x$ is the “coefficient” of the differential $dx$. Not…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2026227
+se-link: https://math.stackexchange.com/questions/2026214/what-is-the-coefficient-in-the-differential-coefficient/2026227#2026227
+se-score: 4
+se-accepted: true
+se-tags:
+- calculus
+- ordinary-differential-equations
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[What is the coefficient in the differential coefficient?](https://math.stackexchange.com/questions/2026214/what-is-the-coefficient-in-the-differential-coefficient), asked by [Jim](https://math.stackexchange.com/users/22129/jim) on Mathematics Stack Exchange (2016-11-22; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A term that apparently not used so much now is that of [Differential Coefficient][q-1]  
+> But I can not understand what we mean by the term *coefficient* in this context.  
+> So basically if $y=6x-x^2$ then the differencial coefficient is $dy/dx=6-2x$ but what part is the "coefficient"?
+>
+>   [q-1]: https://en.wikipedia.org/wiki/Differential_coefficient
+:::
+
+If $y = 6x-x^2$, then $\frac{dy}{dx} = 6-2x$.  This can be written as
+$$dy = (6-2x)\,dx$$
+so that $6-2x$ is the “coefficient” of the differential $dx$.  Not coincidentally, $6-2x$ is also the derivative $\frac{dy}{dx}$.
+
+I've never heard this phrase used before.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2026214/what-is-the-coefficient-in-the-differential-coefficient/2026227#2026227) on Mathematics Stack Exchange, 2016-11-22. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,72 @@
+---
+title: Flux through a section of a sphere
+date: '2015-01-10'
+description: Flux depends on the designated normal direction. From the other side of the surface the flux has the opposite sign. For non-closed surfaces in space, we…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1098557
+se-link: https://math.stackexchange.com/questions/1098495/flux-through-a-section-of-a-sphere/1098557#1098557
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Flux through a section of a sphere](https://math.stackexchange.com/questions/1098495/flux-through-a-section-of-a-sphere), asked by [c0der](https://math.stackexchange.com/users/202786/c0der) on Mathematics Stack Exchange (2015-01-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Given $\textbf{F} = \langle 0,x,0 \rangle$ and $x^2 + y^2 + z^2 = a^2$ where $x\geq0, y\geq 0, z\geq0$, calculate the flux through the surface
+>
+> If I parameterize the surface as:
+>
+> $$x=\cos u\sin v$$
+> $$y=a\sin u\sin v$$
+> $$z=a\cos v$$
+>
+> with $0\leq u\leq \frac{\pi}{2}$ and $0\leq v\leq \frac{\pi}{2}$
+>
+> I get a flux of $-a^3/3$
+>
+> OR if I parameterize the surface as:
+>
+> $$x=\cos u\cos v$$
+> $$y=a\sin u\cos v$$
+> $$z=a\sin v$$
+>
+> with $0\leq u \leq \frac{\pi}{2}$ and $-\frac{\pi}{2} \leq v \leq 0$
+>
+> I get a flux of $a^3/3$
+>
+> Why are they opposite in sign when the flux should be invariant under any coord system as a physical quantity? The answer in the book is positive.
+:::
+
+Flux depends on the designated normal direction.  From the other side of the surface the flux has the opposite sign.  For non-closed surfaces in space, we usually follow the convention that the “positive” normal vector is the one that points *upwards*, i.e., has positive $z$-component.
+
+If you are computing the surface integral in the usual manner, you are probably forming the vector-valued function $\mathbf{r} = \left<a \cos(u) \sin(v),a\sin(u)\sin(v),a\cos(v)\right>$.  Then
+$$\iint_S \mathbf{F}\cdot d\mathbf{S} = \iint_D \mathbf{F}(\mathbf{r}(u,v))\cdot (\mathbf{r}_u \times \mathbf{r}_v)\,dA$$
+where $S$ is the surface in question (an *eighth* of the sphere, BTW), and $D=[0,\pi/2]\times[0,\pi/2]$.  But notice
+$$\mathbf{r}_u =\left<-a\sin(u)\sin(v),a\cos(u)\sin(v),0\right>$$
+and
+$$\mathbf{r}_v =\left<a \cos(u)\cos(v),a\sin(u)\cos(v),-a\sin(v)\right>$$
+So
+$$\mathbf{r}_u\times\mathbf{r}_v= \left<-a^2\cos(u)\sin^2(v),-a^2\sin(u)\sin^2(v),-a^2 \sin(v)\cos(v)\right>$$
+Notice this vector points *downwards* on $S$.  So we take its opposite vector, or take the cross product in the opposite order, to correctly orient the surface.
+
+Since
+$$\mathbf{F}(\mathbf{r}(u,v))\cdot (\mathbf{r}_v \times \mathbf{r}_u)
+= \left<0,a \cos(u) \sin(v),0\right>\cdot\left<a^2\cos(u)\sin^2(v),a^2\sin(u)\sin^2(v),a^2 \sin(v)\cos(v)\right>
+= a^3 \sin(u)\cos(u)\sin^3(v)$$
+The integral is equal to
+$$\int_0^{\pi/2}\int_0^{\pi/2} a^3 \sin(u)\cos(u)\sin^3(v)\,dv\,du = \frac{a^3}{3}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1098495/flux-through-a-section-of-a-sphere/1098557#1098557) on Mathematics Stack Exchange, 2015-01-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

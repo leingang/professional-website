@@ -1,0 +1,46 @@
+---
+title: Proving $(a,b) = (a{'}, b{'})$
+date: '2017-12-05'
+description: I'm not a number theorist, but I firmly believe that any time you're doing a number theory problem and you feel like dividing, you should multiply instead.…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2552235
+se-link: https://math.stackexchange.com/questions/2552192/proving-a-b-a-b/2552235#2552235
+se-score: 1
+se-accepted: true
+se-tags:
+- elementary-number-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving $(a,b) = (a{'}, b{'})$](https://math.stackexchange.com/questions/2552192/proving-a-b-a-b), asked by [jiten](https://math.stackexchange.com/users/424260/jiten) on Mathematics Stack Exchange (2017-12-05; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > If $p,q,r,s$ are integers s.t. $ps - qr = \pm 1$, and $a,b,a{'}, b{'}$ are integers such that : $a{'} = pa + qb, b{'} = ra + sb$. Prove that $(a,b) = (a{'}, b{'})$.
+>
+> The two given equations are : $a{'} = pa + qb, b{'} = ra + sb$. Solving the two equations for $a,b$:
+>
+> $a = \dfrac {a{'} - qb}{p}$, $b = \dfrac {b{'} - ra}{s}$
+>
+> I am unable to use the given property of integers ($p,q,r,s$) used to form linear combinations with new values as $a{'}, b{'}$. The reason being that $ps$ and $qr$ are joined by addition operator and not multiplication one, and hence seems to me solving an implausible idea.
+>
+> Also, the significance of the integers ($p,q,r,s$) having this sort of relation  among themselves is not clear at all to me.
+:::
+
+I'm not a number theorist, but I firmly believe that any time you're doing a number theory problem and you feel like dividing, you should multiply instead.  Notice that
+$$\begin{align*}
+    a' &= pa + qb &\implies sa' &= psa + qsb \\
+    b  &= ra + sb &\implies qb' &= qra + qsb \\
+\end{align*}$$
+Subtracting these gives $sa' - qb' = \pm a$.  So $\gcd(a',b')$ divides $a$.  I think this technique can repeated to show $\gcd(a',b') = \gcd(a,b)$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2552192/proving-a-b-a-b/2552235#2552235) on Mathematics Stack Exchange, 2017-12-05. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

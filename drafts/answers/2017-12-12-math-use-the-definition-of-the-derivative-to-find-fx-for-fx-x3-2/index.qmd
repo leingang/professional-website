@@ -1,0 +1,44 @@
+---
+title: Use the definition of the derivative to find $f'(x)$ for $f(x) = x^{3/2}$
+date: '2017-12-12'
+description: Here is a long-winded hint. For $f(x) = x^2$, a key to finding the derivative is algebraically simplifying $$\frac{x^2-a^2}{x-a} = \frac{(x-a)(x+a)}{x-a} =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2563486
+se-link: https://math.stackexchange.com/questions/2563472/use-the-definition-of-the-derivative-to-find-fx-for-fx-x3-2/2563486#2563486
+se-score: 2
+se-accepted: false
+se-tags:
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Use the definition of the derivative to find $f'(x)$ for $f(x) = x^{3/2}$](https://math.stackexchange.com/questions/2563472/use-the-definition-of-the-derivative-to-find-fx-for-fx-x3-2), asked by [Caroline. N](https://math.stackexchange.com/users/512930/caroline-n) on Mathematics Stack Exchange (2017-12-12; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is there anyone who can help me find $f'(x)$ for $f(x) = x^{3/2}$ using the definition of the derivative? 
+>
+> I have tried multiple times but I can't seem to get it right.
+:::
+
+Here is a long-winded hint.  For $f(x) = x^2$, a key to finding the derivative is algebraically simplifying
+$$\frac{x^2-a^2}{x-a} = \frac{(x-a)(x+a)}{x-a} = x+a$$
+(when $x \neq a$).
+For $f(x)= x^3$, the numerator factors a bit differently:
+$$\frac{x^3-a^3}{x-a} = \frac{(x-a)(x^2 + ax + a^2)}{x-a} = x^2+ax+a^2$$
+For $f(x) = x^{1/2}$, it's still different:
+$$\frac{\sqrt{x}-\sqrt{a}}{x-a}=
+\frac{\sqrt{x}-\sqrt{a}}{x-a}\cdot \frac{\sqrt{x}+\sqrt{a}}{\sqrt{x}+\sqrt{a}}
+= \frac{\sqrt{x}^2-\sqrt{a}^2}{(x-a)(\sqrt{x}+\sqrt{a})} = \frac{1}{\sqrt{x}+\sqrt{a}}$$
+You have $f(x) = x^{3/2}$, which is $(x^{1/2})^3$.  Can you combine the previous two approaches?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2563472/use-the-definition-of-the-derivative-to-find-fx-for-fx-x3-2/2563486#2563486) on Mathematics Stack Exchange, 2017-12-12. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

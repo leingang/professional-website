@@ -1,0 +1,52 @@
+---
+title: Using the combinational proof template for discrete mathematics is this a valid polished proof?
+date: '2022-10-25'
+description: 'Nice work so far! Some comments:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4560856
+se-link: https://math.stackexchange.com/questions/4560854/using-the-combinational-proof-template-for-discrete-mathematics-is-this-a-valid/4560856#4560856
+se-score: 1
+se-accepted: false
+se-tags:
+- discrete-mathematics
+- binomial-coefficients
+- combinatorial-proofs
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Using the combinational proof template for discrete mathematics is this a valid polished proof?](https://math.stackexchange.com/questions/4560854/using-the-combinational-proof-template-for-discrete-mathematics-is-this-a-valid), asked by [steeezyboy](https://math.stackexchange.com/users/1101864/steeezyboy) on Mathematics Stack Exchange (2022-10-24; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $k, m, n$ be positive integers such that $n\geq k\geq m\geq 0$.  Then,
+>     ${n\choose k} {k\choose m} = {n\choose m} {{n-m}\choose {k-m}}.$
+>
+> **Here is my Polished Proof:**
+>
+> **Claim:** Suppose $k$, $m$, and $n$ are positive integers such that $n\geq k\geq m\geq 0$. Then,  ${n\choose k} {k\choose m} = {n\choose m} {{n-m}\choose {k-m}}.$  
+>
+> **Proof:** To prove ${n\choose k} {k\choose m}$ $=$ ${n\choose m} {{n-m}\choose {k-m}}$ let's imagine that we have a class of $n$ people and we will choose $k$ of them to form a committee, of those on the committee we will choose $m$ of them to be on the subcommittee. We will consider the question: How many $k$-element subsets of people does the set $\{1,2,3...,n  \}$ have, and of $k$ people how many, $m$-element subsets of people does $k$ have? 
+>
+> Answer 1: Given $n$ people, we can form a committee of size $k$ in ${n\choose k}$ ways to get $k$-element subsets. Once the committee is selected, we can form a subcommittee of size $m$ in ${k\choose m}$ ways to get $m$-elements. Thus, we can form $k$-element subsets of $n$ and $m$-element subsets of $k$ by ${n\choose k} {k\choose m}$.  
+>
+> Answer 2: On the other hand, we can achieve the same total of ways by  forming a subcommittee of size $m$ in ${n\choose m}$ ways to get $m$-element subsets. Once we have selected the subcommittee we can form a committee of the remaining size of $(k-m)$ in ${{n-m}\choose {k-m}}$ to get $(k-m)$-element subsets. We choose $(k-m)$ people from $(n-m)$ people because we have already selected $m$ people for the subcommittee. Thus, we can form $m$-element subsets of $n$ and $(k-m)$-element subsets of $(n-m)$ by ${n\choose m} {{n-m}\choose {k-m}}$.  
+>
+> Since answers 1 and 2 are correct solutions to the same question, ${n\choose k} {k\choose m}$ $=$ ${n\choose m} {{n-m}\choose {k-m}}$.//
+:::
+
+Nice work so far! Some comments:
+
+ 1. Classes of students don't normally have committees. While it's not required, the metaphor is more convincing when it's familiar.
+ 2. The committee and subcommittee turned into subsets at some point. If you're going to use a metaphor, you should do it consistently.
+ 3. What justifies the multiplication in each answer? That should explained more.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4560854/using-the-combinational-proof-template-for-discrete-mathematics-is-this-a-valid/4560856#4560856) on Mathematics Stack Exchange, 2022-10-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

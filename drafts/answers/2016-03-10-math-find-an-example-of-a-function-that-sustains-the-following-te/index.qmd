@@ -1,0 +1,49 @@
+---
+title: 'Find an example of a function that sustains the following terms:'
+date: '2016-03-10'
+description: Let $$f(x1,x2) = \begin{cases} x1 & \text{if $|x2| \geq |x1|$} \\ -x1 & \text{if $|x2| < |x1|$} \\ \end{cases}$$ Then $$\lim{t\to 0} \frac{f(th1,th2)}{t} =…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1691783
+se-link: https://math.stackexchange.com/questions/1691720/find-an-example-of-a-function-that-sustains-the-following-terms/1691783#1691783
+se-score: 1
+se-accepted: true
+se-tags:
+- calculus
+- linear-algebra
+- analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find an example of a function that sustains the following terms:](https://math.stackexchange.com/questions/1691720/find-an-example-of-a-function-that-sustains-the-following-terms), asked by [lfc](https://math.stackexchange.com/users/253871/lfc) on Mathematics Stack Exchange (2016-03-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> It can happen that $\frac{d}{dt}|_{t=0}f(x_0 + th)$ exists for all h but is
+> not linear in h. Give an example.
+>
+> So of course, such $f$ cannot be differentiable at $x_0$. I wanted to try something with $cos$ and $sin$, but I didn't really find anything that sustains the terms above.
+:::
+
+Let
+$$f(x_1,x_2) = \begin{cases}
+        x_1  & \text{if $|x_2| \geq |x_1|$} \\
+        -x_1 & \text{if $|x_2| < |x_1|$} \\
+    \end{cases}$$
+Then 
+$$\lim_{t\to 0} \frac{f(th_1,th_2)}{t} 
+    = \begin{cases} 
+         h_1 & \text{if $|h_2| \geq |h_1|$}\\
+        -h_1 & \text{if $|h_2| < |h_1|$}\\
+      \end{cases}$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1691720/find-an-example-of-a-function-that-sustains-the-following-terms/1691783#1691783) on Mathematics Stack Exchange, 2016-03-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

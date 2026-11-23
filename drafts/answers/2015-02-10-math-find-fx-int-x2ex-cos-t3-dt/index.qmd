@@ -1,0 +1,47 @@
+---
+title: Find $F(x)=\int_{x^2}^{e^x} \cos (t^3) \ dt $
+date: '2015-02-10'
+description: There are two parts to the Fundamental Theorem of Calculus. One is that $$\inta^b f(x)\,dx = F(b) - F(a)$$ where $F$ is an antiderivative of $f$. The other…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1141601
+se-link: https://math.stackexchange.com/questions/1141598/find-fx-int-x2ex-cos-t3-dt/1141601#1141601
+se-score: 0
+se-accepted: false
+se-tags:
+- integration
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find $F(x)=\int_{x^2}^{e^x} \cos (t^3) \ dt $](https://math.stackexchange.com/questions/1141598/find-fx-int-x2ex-cos-t3-dt), asked by [Road Human](https://math.stackexchange.com/users/204093/road-human) on Mathematics Stack Exchange (2015-02-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> If $$F(x)=\int_{x^2}^{e^x} \cos (t^3) \ dt$$
+>
+> Find $$\int F(x) dx$$
+>
+> I tried to find $$\int \cos (t^3) \ dt$$ but it is not success !
+:::
+
+There are two parts to the Fundamental Theorem of Calculus.  One is that 
+$$\int_a^b f(x)\,dx = F(b) - F(a)$$
+where $F$ is an antiderivative of $f$.  The other part says that
+$$\frac{d}{dx} \int_a^x f(t)\,dt = f(x)$$
+This is the one that's relevant here.
+
+Combining with the Chain Rule,
+$$\frac{d}{dx} \int_a^{h(x)} f(t)\,dt = f(h(x))h'(x)$$
+Finally,
+$$\frac{d}{dx} \int_{g(x)}^{h(x)} f(t)\,dt = f(h(x))h'(x) - f(g(x))g'(x)$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1141598/find-fx-int-x2ex-cos-t3-dt/1141601#1141601) on Mathematics Stack Exchange, 2015-02-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

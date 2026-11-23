@@ -1,0 +1,45 @@
+---
+title: Student Seeking Beginning Calculus Advice
+date: '2020-04-01'
+description: Calculus is not necessarily the most reasonable next step. I don't advise self-study in calculus, because there are so many subtleties that aren't obvious to a…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3605537
+se-link: https://math.stackexchange.com/questions/3605532/student-seeking-beginning-calculus-advice/3605537#3605537
+se-score: 2
+se-accepted: false
+se-tags:
+- calculus
+- linear-algebra
+- algebra-precalculus
+- self-learning
+- advice
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Student Seeking Beginning Calculus Advice](https://math.stackexchange.com/questions/3605532/student-seeking-beginning-calculus-advice), asked by [K2SO](https://math.stackexchange.com/users/745615/k2so) on Mathematics Stack Exchange (2020-04-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am a junior in high school and I am seeking advice on where I should begin learning calculus. I have just completed trigonometry as a school class, and I have to admit I enjoyed it. During the course, I consistently felt that learning trigonometry through school was too slow, and it made me want to start learning mathematics on my own. I am fascinated with math, and I want to begin learning higher-level mathematics as soon as possible. As you can probably see, I am a complete beginner when it comes to knowing about the different calculus classes. I do not know the difference between any of the different calculus classes and I am simply seeking guidance as to which one I should begin first.
+>
+> I would appreciate any advice you can give me.
+>
+> Thank you for your time.
+>
+> Note: This question is not limited to calculus advice. I am merely looking for guidance on the next step I should take in my mathematical career. If that means combinatorics, abstract algebra or something else that is unrelated to calculus, I completely welcome that as well. I have just been told that calculus is the most reasonable next step.
+:::
+
+Calculus is *not necessarily* the most reasonable next step.  I don't advise self-study in calculus, because there are so many subtleties that aren't obvious to a student.
+
+Find a good book and read it, and do as many of the problems as you can.  One of my favorite books for general math, accessible from many levels, is [*Mathematics: A Human Endeavor*](https://books.google.com/books/about/Mathematics_A_Human_Endeavor.html?id=zO4ApMb3B8QC) by Harold R. Jacobs.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3605532/student-seeking-beginning-calculus-advice/3605537#3605537) on Mathematics Stack Exchange, 2020-04-01, with [edits](https://math.stackexchange.com/posts/3605537/revisions) by [J. W. Tanner](https://math.stackexchange.com/users/615567/j-w-tanner). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

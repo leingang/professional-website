@@ -1,0 +1,51 @@
+---
+title: Does probability of $1$% means that it is guaranteed to get a success event if I do $100$ tries?
+date: '2021-06-29'
+description: 'Reduce the number of outcomes from 100 to 2 and you have this question: If you flip a fair coin twice, are you guaranteed to get one head and one tail? This…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4186388
+se-link: https://math.stackexchange.com/questions/4186387/does-probability-of-1-means-that-it-is-guaranteed-to-get-a-success-event-if-i/4186388#4186388
+se-score: 10
+se-accepted: true
+se-tags:
+- probability
+- probability-theory
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Does probability of $1$% means that it is guaranteed to get a success event if I do $100$ tries?](https://math.stackexchange.com/questions/4186387/does-probability-of-1-means-that-it-is-guaranteed-to-get-a-success-event-if-i), asked by [Haidar](https://math.stackexchange.com/users/945765/haidar) on Mathematics Stack Exchange (2021-06-29; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let us suppose I have $100$ balls in a container, each one has a different number ( from $1$ to $100$).
+>
+> I want to pick a ball, and we'll suppose this is a random process ( i.e. choosing the ball is random).
+>
+> <h1>Question $1$</h1>
+>
+>  Given that the whole universe of balls ( a.k.a the set `Ω`) is made up of only those $100$ balls in the container, I can say that probability of picking up the ball `i` is 1% (`i` is any number from $1$ to $100$)?  
+>
+> <h1>Question $2$</h1>
+>
+> If the answer to question $1$ is "yes", and if I repeat the picking of a ball $100$ times (each time I put it back in the container, and I will suppose that the next pickup is unrelated to the previous one, hence randomness), Is it guaranteed that the ball `i` will appear at least one time during the $100$ pickups?
+>
+> **Note:** I am not a total beginner in maths, but I am confused about something: does a n% chance means that it is guaranteed to get n successes out of $100$ tries, or it is not guaranteed unless I repeat the tries till infinity?
+:::
+
+Reduce the number of outcomes from 100 to 2 and you have this question: If you flip a fair coin twice, are you guaranteed to get one head and one tail?  This one you can verify experimentally as well as analytically.
+
+Like Ted says in the comments, there are no certainties in probability.  There's also no such thing as "infinitely many trials." 
+The best we can do is say something like the [law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers):
+
+If you draw one ball from the 100 $n$ times, and keep a running total of the fraction of the times that ball $i$ is drawn, this fraction converges in probability to $0.01$ as $n$ becomes arbitrarily large.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4186387/does-probability-of-1-means-that-it-is-guaranteed-to-get-a-success-event-if-i/4186388#4186388) on Mathematics Stack Exchange, 2021-06-29. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,71 @@
+---
+title: The set of all matrix with rank $n-1$ is a hypersurface.
+date: '2015-06-16'
+description: Halmos always said to understand something about linear algebra you should look at a $2\times 2$ matrix. So let $n=2$ for now. Let $f$ be the determinant…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1328027
+se-link: https://math.stackexchange.com/questions/1327834/the-set-of-all-matrix-with-rank-n-1-is-a-hypersurface/1328027#1328027
+se-score: 1
+se-accepted: false
+se-tags:
+- matrices
+- multivariable-calculus
+- manifolds
+- smooth-manifolds
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The set of all matrix with rank $n-1$ is a hypersurface.](https://math.stackexchange.com/questions/1327834/the-set-of-all-matrix-with-rank-n-1-is-a-hypersurface), asked by [Otto Holzmann](https://math.stackexchange.com/users/217734/otto-holzmann) on Mathematics Stack Exchange (2015-06-16; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> >Prove that the set $M$ of $n\times n$ matrices with rank $n-1$ is a hypersurface in $\mathbb{R}^{n²}$ and find the tangent space at $A=(a_{ij})$ where $a_{ij}=\begin{cases}
+>  \delta_{ij} \ \text{if} \ (i,j)\neq(n,n) \\ 
+>  0 \ \ \ \text{if} \  (i,j)=(n,n)
+> \end{cases}$
+>
+> The teacher left this problem along with others to study for the test (a graduate course in multivariable calculus).  If I find a function $f:\mathbb{R}^{n²} \rightarrow \mathbb{R}\in C^1$ such that $M=f^{-1}(c)$ and $grad \ f(x)\neq 0 \  (\forall x;f(x)=c$) do the problem becomes a merely computation but I can't find such function.
+> Can anybody help me?
+>
+> Thanks in advance.
+:::
+
+Halmos always said to understand something about linear algebra you should look at a $2\times 2$ matrix.  So let $n=2$ for now.  Let $f$ be the determinant function.
+
+Let $A=\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix}$ and $X=\begin{pmatrix} x_{11} & x_{12} \\ x_{21} & x_{22}\end{pmatrix}$ be matrices.  Then
+$$\begin{split}
+    df_A(X) &= \left.\frac{d}{dt}\det(A + tX)\right|_{t=0} \\
+            &= \left.\frac{d}{dt}\left((a_{11} + tx_{11})(a_{22} + tx_{22}) - (a_{12}+tx_{12})(a_{21}+tx_{21})\right)\right|_{t=0} \\
+            &= a_{11} x_{22} + a_{22} x_{11} - a_{12} x_{21} - a_{21} x_{12}
+\end{split}$$
+This is equal to $\operatorname{tr}(\operatorname{adj}(A)X))$, where $\operatorname{adj}(A)$ is the *adjugate matrix* of $A$:
+$$\operatorname{adj}\begin{pmatrix} a_{11} &a_{12} \\ a_{21} &a_{22}\end{pmatrix}
+= \begin{pmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11}\end{pmatrix}$$
+
+We claim that if $A$ is in $M$ (that is $\operatorname{rank}(A) =1$), then $df_A$ is not the zero map.  Indeed, let $X=\operatorname{adj}(A^T)$.  Then
+$$\operatorname{tr}(\operatorname{adj}(A)X)
+= \operatorname{tr}\left(\begin{pmatrix} a_{22} & -a_{12} \\ -a_{21} & a_{11}\end{pmatrix}\begin{pmatrix} a_{22} & -a_{21} \\ -a_{12} & a_{11}\end{pmatrix}\right) = a_{11}^2 + a_{12}^2 + a_{21}^2 + a_{22}^2$$
+The only way this can be zero is if $A$ is the zero matrix, which, since it has rank one, it isn't.  This shows $M$ is a hypersurface.  It's not closed, because the closure would contain the zero matrix, a singular point.  
+
+Now let $A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$.  The tangent space to $M$ at $A$ is the kernel of $df_A$.  If $X$ is any $2\times 2$ matrix,
+$$df_A(X) = \operatorname{tr}\left(\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} x_{11} & x_{12} \\ x_{21} & x_{22} \end{pmatrix}\right) = \operatorname{tr}\begin{pmatrix} 0 & 0 \\ x_{21} & x_{22}\end{pmatrix} = x_{22}$$
+So the tangent space to $A$ is the set of matrices with bottom-right entry zero.
+It is spanned by 
+$$\left\{\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix},\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}\right\}$$
+
+If you read the wikipedia pages on [Adjugate][1] and [Determinant][2] you will see how this argument generalizes to larger matrices.  The derivative of the determinant map is the same.  If $A$ has rank $n-1$, you can cook up a matrix $X$ such that $df_A(X)$ is the sum of the squares of the $(n-1)\times(n-1)$ minors of $A$, which cannot be zero.  For the specific $A$, it should not be too hard to compute $df_A(X)$ in terms of the entries of $X$ and find a basis for its kernel.
+
+
+  [1]: https://en.wikipedia.org/wiki/Adjugate_matrix
+  [2]: https://en.wikipedia.org/wiki/Determinant#Derivative
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1327834/the-set-of-all-matrix-with-rank-n-1-is-a-hypersurface/1328027#1328027) on Mathematics Stack Exchange, 2015-06-16. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

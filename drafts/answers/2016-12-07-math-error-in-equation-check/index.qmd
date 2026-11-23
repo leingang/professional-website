@@ -1,0 +1,48 @@
+---
+title: Error in equation check
+date: '2016-12-07'
+description: 'Assuming your question is:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2048599
+se-link: https://math.stackexchange.com/questions/2048575/error-in-equation-check/2048599#2048599
+se-score: 2
+se-accepted: false
+se-tags:
+- algebra-precalculus
+- functions
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Error in equation check](https://math.stackexchange.com/questions/2048575/error-in-equation-check), asked by [peter.babic](https://math.stackexchange.com/users/235946/peter-babic) on Mathematics Stack Exchange (2016-12-07; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$f(x)=2x\cdot3x-4+x-\frac64$$
+> $$7x=\frac{16+6}{11}$$
+> $$x=\frac{11}{14}\dot=0.7857$$
+>
+> But substituting $\frac{11}{14}$ for x yields $-\frac{99}{98}$ instead of zero on Casio fx-991ES. Why? I have probably done numerous errors in calculations and asumptions. Please help me.
+:::
+
+Assuming your question is:
+
+> Find the zeros of $$f(x)=2x\cdot3x-4+x-\frac64$$
+
+DougM's comment points out your first error.  Instead, you should solve
+$$\begin{align*}
+    6x^2 + x - 4 - \frac{6}{4} &= 0 \\
+    6x^2 + x - \frac{22}{4} &= 0
+\end{align*}$$
+
+So the equation is quadratic.  Can you take it from here?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2048575/error-in-equation-check/2048599#2048599) on Mathematics Stack Exchange, 2016-12-07. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

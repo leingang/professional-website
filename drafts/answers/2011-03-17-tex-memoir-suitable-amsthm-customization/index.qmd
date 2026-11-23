@@ -1,0 +1,56 @@
+---
+title: Memoir suitable amsthm customization
+date: '2011-03-17'
+description: You have the families, shapes, and weights of the fonts you already are using, or you can use new fonts. If you want to use TrueType fonts it's easier to…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 13704
+se-link: https://tex.stackexchange.com/questions/13694/memoir-suitable-amsthm-customization/13704#13704
+se-score: 3
+se-accepted: false
+se-tags:
+- memoir
+- theorems
+- amsthm
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Memoir suitable amsthm customization](https://tex.stackexchange.com/questions/13694/memoir-suitable-amsthm-customization), asked by [RolandD](https://tex.stackexchange.com/users/4285/rolandd) on TeX Stack Exchange (2011-03-17; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm using the memoir class to write my master thesis. It's math related so there are lot's of Theorems, Definitions and stuff. I know how to customize theorems by using `amsthm`.
+> e.g. 
+>
+> ```latex
+> \newtheoremstyle{mainth}
+> {11pt}% hSpace abovei
+> {11pt}% hSpace belowi
+> {\itshape}% hBody fonti
+> {}% hIndent amounti1
+> {\ttfamily\bfseries}% hTheorem head fonti
+> { }% hPunctuation after theorem headi
+> {\newline}% hSpace after theorem headi2
+> { }% hTheorem head spec
+> ```
+>
+> I want to give my document an elegant and modern look. Therefore I played a bit with the `\newtheoremstyle` options, but I couldn't get a satisfying solution. E.g. I don't know what fonts are available, what space suits the memoir look,...
+>
+> Has somebody examples of nice looking customized theoremstyles. Like Theorem, Definition, Remark.
+:::
+
+You have the families, shapes, and weights of the fonts you already are using, or you can use new fonts.  If you want to use TrueType fonts it's easier to switch to `xelatex` from `pdflatex`.  Then the limits are only what you can procure.
+
+I'm using the [`thmtools`](http://ctan.org/pkg/thmtools) package for even fancier theorems.  It sits over `amsthm` and provides boxed theorems, shaded backgrounds, really anything you want.
+
+Rather than ask for everyone's favorites, pick one that you like and try to emulate it.  Leaf through your mathematical library to find styles you like.  If you can't figure out how to match a particular style, ask a question here.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/13694/memoir-suitable-amsthm-customization/13704#13704) on TeX Stack Exchange, 2011-03-17. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

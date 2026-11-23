@@ -1,0 +1,61 @@
+---
+title: How do I expand a macro into a tabular head?
+date: '2011-02-28'
+description: This is probably not practical but it's a nice demonstration of \expandafter and gets around the problem of macros in the table preamble with the array package.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 12272
+se-link: https://tex.stackexchange.com/questions/12234/how-do-i-expand-a-macro-into-a-tabular-head/12272#12272
+se-score: 11
+se-accepted: true
+se-tags:
+- tables
+- macros
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I expand a macro into a tabular head?](https://tex.stackexchange.com/questions/12234/how-do-i-expand-a-macro-into-a-tabular-head), asked by [yannisl](https://tex.stackexchange.com/users/963/yannisl) on TeX Stack Exchange (2011-02-27; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I would like to be able to define a macro that can be used in the tabular definition. How can I do this?
+>
+> This does not work:
+>
+> ```latex
+> \documentclass{article}
+>
+> \begin{document}
+> \gdef\buildtabularhead{|||}
+>
+> \begin{tabular}{\buildtabularhead}
+> 1 & 2 &3\\
+> \end{tabular}
+> \end{document}
+> ```
+:::
+
+This is probably not practical but it's a nice demonstration of `\expandafter` and gets around the problem of macros in the table preamble with the `array` package.
+
+```latex
+\documentclass{article}
+\usepackage{array}
+\begin{document}
+\def\buildtabularhead{|c|c|c|}
+\expandafter\tabular\expandafter{\buildtabularhead}
+1 & 2 &3\\
+\endtabular
+\end{document}
+```
+
+The two `\expandafter`s make sure that the macro `\buildtabularhead` is expanded *before* LaTeX knows it should be expecting a `tabular` preamble.  Notice also that instead of `\begin{tabular}`...`\end{tabular}` I had to use `\tabular`...`\endtabular`.  Internally the former does the same as the latter but surrounding it with a group and doing important checks, including proper nesting (See source2e Section 54.1).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12234/how-do-i-expand-a-macro-into-a-tabular-head/12272#12272) on TeX Stack Exchange, 2011-02-28, with [edits](https://tex.stackexchange.com/posts/12272/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

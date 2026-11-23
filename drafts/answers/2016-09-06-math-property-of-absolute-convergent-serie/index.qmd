@@ -1,0 +1,40 @@
+---
+title: Property of absolute convergent serie
+date: '2016-09-06'
+description: The infinite series $\sum{k=1}^\infty ak$ is shorthand for $\lim{k\to\infty} \sum{i=1}^k ai$. For each $k$, $$| a1 + a2 + \dots + ak | \leq |a1| + |a2| + \dots…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1917038
+se-link: https://math.stackexchange.com/questions/1917016/property-of-absolute-convergent-serie/1917038#1917038
+se-score: 3
+se-accepted: true
+se-tags:
+- real-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Property of absolute convergent serie](https://math.stackexchange.com/questions/1917016/property-of-absolute-convergent-serie), asked by [fejz1234](https://math.stackexchange.com/users/365227/fejz1234) on Mathematics Stack Exchange (2016-09-06; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> So I just ran into this inequality for absolutely convergent series:
+> $$|\sum_{k=1}^\infty a_k | \le \sum_{k=1}^\infty |a_k|$$
+> I cant seem to find the proof of this inequality, is it available somewhere?
+:::
+
+The infinite series $\sum_{k=1}^\infty a_k$ is shorthand for $\lim_{k\to\infty} \sum_{i=1}^k a_i$.  For each $k$,
+$$| a_1 + a_2 + \dots + a_k | \leq |a_1| + |a_2| + \dots + |a_k|$$
+(that is the triangle inequality).  Since both $\sum_{k=1}^\infty a_k$ and $\sum_{k=1}^\infty |a_k|$ converge, we can take the limit of each side of the above inequality and arrive at 
+$$\left|\lim_{k\to\infty}(a_1 + a_2 + \dots + a_k)\right|
+\leq \lim_{k\to\infty}\left(|a_1| + |a_2| + \dots + |a_k|\right)$$
+which is what we want.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1917016/property-of-absolute-convergent-serie/1917038#1917038) on Mathematics Stack Exchange, 2016-09-06. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,60 @@
+---
+title: Finding volume of hyperboloid bounded by two planes
+date: '2017-12-01'
+description: I like your change of coordinates step. So it's enough to show that the volume enclosed by the “standard” of one sheet $$x^2 + y^2 - z^2 = 1,\ \ -1 \leq z \leq…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2545411
+se-link: https://math.stackexchange.com/questions/2545344/finding-volume-of-hyperboloid-bounded-by-two-planes/2545411#2545411
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- integration
+- multivariable-calculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Finding volume of hyperboloid bounded by two planes](https://math.stackexchange.com/questions/2545344/finding-volume-of-hyperboloid-bounded-by-two-planes), asked by [Ninja](https://math.stackexchange.com/users/201094/ninja) on Mathematics Stack Exchange (2017-12-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to find the volume bounded by hyperboloid $\cfrac{x^2}{a^2}+\cfrac{y^2}{b^2}-\cfrac{z^2}{c^2} = 1$ and the planes $z=-c, z=c$.
+>
+>  I do not know whether should I use the cylindirical coordinates or spherical coordinates.  
+>
+>  At first, I am thinking to set $x =au, y=bv,z=cw$ and now we have $u^2+v^2 -w^2 = 1$. Jacobian of this transformation is $abc$. I guess that after this change of variables If I take a cross section then it will give me a circle on $uv-$plane but I do not know the reason.
+>
+> If we consider the part of the volume that is inside the first octant, my intuition says that the desired volume is $\displaystyle \int_{0}^{1}\int_{0}^{1-v^2}\int_{0}^{u^2+v^2-1}g(u,v,w)abc\times dwdudv$
+>  and I am not sure about $g$...
+>
+> To sum up, I appreciate if you could explain me what is going on exactly in a basic way.
+:::
+
+I like your change of coordinates step.  So it's enough to show that the volume enclosed by the “standard” of one sheet 
+$$x^2 + y^2 - z^2 = 1,\ \ -1 \leq z \leq 1$$
+is $\frac{8\pi}{3}$.  
+
+For this, use cylindrical coordinates.  The curved surface has equation $r^2 - z^2 = 1$, and the enclosed solid can be represented as
+$$\left\{(r,\theta,z) : -1 \leq z \leq 1,\ 0 \leq \theta \leq 2\pi,\ 0 \leq r \leq \sqrt{1+z^2}\right\}$$
+Therefore, the volume is
+$$\begin{align*}
+    \int_{-1}^1\int_0^{2\pi}\int_0^\sqrt{1+z^2} r\,dr \,d\theta\,dz = \frac{8\pi}{3}
+\end{align*}$$
+as desired.
+
+* * *
+
+Another user suggested, but unfortunately deleted, a “Calc II” solution where you realize this as a solid of revolution.  It's the curve $z^2-x^2 = 1$ revolved around the $z$-axis, between $z=-1$ and $z=1$.  A slice of the solid at a constant $z$-coordinate is a disk of radius $x^2$.  Since $x^2=1+z^2$, the area of that disk is $\pi(1+z^2)$.  Therefore the volume is
+$$\int_{-1}^1 \pi(1+z^2)\,dz = \frac{8\pi}{3}$$
+In fact, $\int_0^{2\pi}\int_0^{\sqrt{1+z^2}}r\,dr\,d\theta = \pi(1+z^2)$, so this is no coincidence.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2545344/finding-volume-of-hyperboloid-bounded-by-two-planes/2545411#2545411) on Mathematics Stack Exchange, 2017-12-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

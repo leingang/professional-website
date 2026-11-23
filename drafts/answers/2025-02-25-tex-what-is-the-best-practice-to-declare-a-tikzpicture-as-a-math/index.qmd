@@ -1,0 +1,301 @@
+---
+title: What is the best practice to declare a tikzpicture as a math symbol?
+date: '2025-02-25'
+description: I submit that declaring a TikZ picture as a math symbol is an anti-pattern. Leave font design to the font designers and use typography commands to make…
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 737871
+se-link: https://tex.stackexchange.com/questions/737348/what-is-the-best-practice-to-declare-a-tikzpicture-as-a-math-symbol/737871#737871
+se-score: 3
+se-accepted: false
+se-tags:
+- tikz-pgf
+- math-mode
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[What is the best practice to declare a tikzpicture as a math symbol?](https://tex.stackexchange.com/questions/737348/what-is-the-best-practice-to-declare-a-tikzpicture-as-a-math-symbol), asked by [Explorer](https://tex.stackexchange.com/users/322482/explorer) on TeX Stack Exchange (2025-02-17; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My problem is a bit similar to [this link][q-1], as the following MWE:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz,amsmath}
+> \usetikzlibrary{calc}
+> \begin{document}
+> \makeatletter
+> \def\pgfgetnodeheight(#1)#2{
+>   \path ($(#1.south) - (#1.north)$);
+>   \pgfmathsetmacro#2{veclen(\pgf@x, \pgf@y)}
+>   \edef#2{#2pt}
+> }
+> \def\pgfgetnodewidth(#1)#2{
+>   \path ($(#1.east) - (#1.west)$);
+>   \pgfmathsetmacro#2{veclen(\pgf@x, \pgf@y)}
+>   \edef#2{#2pt}
+> }
+> \makeatother
+> \DeclareRobustCommand{\notleftrightarrow}{%
+>     \mathrel{\begin{tikzpicture}[baseline=-.5ex]%
+>         \node[inner sep=0pt,outer sep=0pt] (a) {$\Longleftrightarrow$};
+>         \pgfgetnodewidth(a)\nWidth
+>         \pgfgetnodeheight(a)\nHeight
+>         \draw[line width=.5pt](-.6*\nHeight,-.25*\nWidth)--(.6*\nHeight,.25*\nWidth);
+>       \end{tikzpicture}%
+>     }\kern-1em%%
+> }
+> \[
+> \sum_{k}^{n}f(k)%
+> \fbox{%
+> \begin{tikzpicture}[baseline=-.5ex]%
+> \fbox{%
+>   \node[inner sep=0pt,draw] (a) {$\Longleftrightarrow$};%
+>   \pgfgetnodewidth(a)\nWidth%
+>   \pgfgetnodeheight(a)\nHeight%
+>   \fbox{%
+>     \draw[line width=.5pt](-.6*\nHeight,-.25*\nWidth)--(.6*\nHeight,.25*\nWidth);
+>   }
+>   \fill[red] (a) circle[radius=1pt];
+> }
+> \end{tikzpicture}}%\mkern-15mu%
+> ABC
+> \]
+>
+> \[
+> \sum_{k}^{n}f(k) \notleftrightarrow ABC
+> \]
+> \end{document}
+> ```
+>
+> ![the result of the MWE[2]][q-2]
+>
+> ## The main purpose of this post is searching for a general method to construct a math symbol(well both vertically and horizontally aligned) with a `tikzpicture`:
+>
+> So, I have two questions:
+>
+> 1. why there exists starnge space after the `node` inside the `tikzpicture`, how to tune the code here?
+>
+> 2. To turn a tikzpicture into a math symbol(which could change the four styles with `mathchoice`), is the solution of John Kormylo with `\tempdima` always the **best practice**?
+> I wonder whether if the `amsmath` or `mathtools` provide more powerful commands to deal with the space problem in this case better?
+>
+> ```latex
+> \DeclareRobustCommand{\myop}{%
+>   \mathbin{\text{\settoheight{\tempdima}{\mathstrut}\raisebox{-.3\tempdima}{%
+>     \tikz{\draw[line width=0.05\tempdima] circle (0.6\tempdima);
+>     \node[scale=0.8] {$r$};}}}}}
+> ```
+>
+> * * *
+> ## Editted Version of `egreg`'s comment about `centernot`:
+> ```latex
+> \documentclass{article}
+> \usepackage{amsmath,amssymb}
+> \usepackage{centernot}
+> \makeatletter
+> \newcommand*{\mycenternot}{%
+>     \mathpalette\@mycenternot
+> }
+> \def\@mycenternot#1#2{%
+>     \mathrel{%
+>         \rlap{%
+>                 \settowidth\dimen@{$\m@th#1{#2}$}%
+>                 \kern.5\dimen@
+>                 \settowidth\dimen@{$\m@th#1=$}%
+>                 \kern-.5\dimen@
+>                 $\m@th#1\slash$%<-%
+>             }%
+>         {#2}%
+>     }%
+> }
+> \makeatother
+> \begin{document}
+>
+> $\not$
+>
+> $/$
+>
+> $\char 92$%
+>
+> $\backslash$
+>
+> $\slash$
+>
+> $A \centernot{\Longleftrightarrow} B$  
+>
+> $A \mycenternot{\Longleftrightarrow} B$
+>
+> \end{document}
+> ```
+>
+> Actually, the `centernot` package use only 14 lines of code to achieve the center `\not` function, however, if I want to take the advantage of the `\not` inside the original code, it seemed not centered as below:
+>
+> [![the modification of centernot package][q-3]][q-3]
+>
+> ### Is there general solutions to take good advantage of `\centernot` package?
+>
+> * * *
+>
+> ## Editted Version of Jasper and by cfr's [elegant solution here][q-4]:
+>
+> However, it seemed that I don't make good use of `tikzmarknode` as below, and `\tikzmarknode[<name>]{content}` is not the syntax I want, just use the `savebox` and `usebox`, it also needs the manual adjustment as below:
+>
+> ```latex
+> % https://tex.stackexchange.com/questions/733370/alternative-to-using-a-tikzpicture-inside-of-a-tikzmarknode/733374#733374
+> \documentclass{article}
+> \usepackage{amssymb}
+> \usepackage{tikz}
+> \usetikzlibrary{tikzmark,calc}
+> \makeatletter
+> \def\pgfgetnodeheight(#1)#2{
+>   \path ($(#1.south) - (#1.north)$);
+>   \pgfmathsetmacro#2{veclen(\pgf@x, \pgf@y)}
+>   \edef#2{#2pt}
+> }
+> \def\pgfgetnodewidth(#1)#2{
+>   \path ($(#1.east) - (#1.west)$);
+>   \pgfmathsetmacro#2{veclen(\pgf@x, \pgf@y)}
+>   \edef#2{#2pt}
+> }
+> \makeatother
+> \newsavebox\mynotbox%
+> \newcommand{\mynot}[1]{%
+> \sbox\mynotbox{%
+>   \begin{tikzpicture}[baseline=-.6ex]%<- still needs manually spcified here...
+>         \node[inner sep=0pt,outer sep=0pt] (a) {$#1$};
+>         \pgfgetnodewidth(a)\nWidth
+>         \pgfgetnodeheight(a)\nHeight
+>         \draw[line width=.5pt](-.6*\nHeight,-.25*\nWidth)--(.6*\nHeight,.25*\nWidth);
+>     \end{tikzpicture}\kern-1em%<- still needs manually spcified here...
+>     }%
+>     \usebox\mynotbox%
+> }
+> \begin{document}
+> % \tikzmarknode{abc}{{A}{}B}
+> % it seemed that `\tikzmarknode' is not always needed(?)
+> \[
+>     A \mynot{\Longleftrightarrow} B
+> \]
+> \[
+>     A \mynot{\leftrightsquigarrow} B
+> \]
+>
+> In the second case, the \verb|\kern-1em| should be modified less, so? Is there exists best practice to construct a well aligned math symbol with a tikzpicture?
+> \end{document}
+> ```
+>
+> [![the result of the cfr's savebox and usebox example][q-5]][q-5]
+>
+> Above is my attempt, and I autually want to know a more well-extended's solution(best practice) in similar case to draw a **well aligned** math symbol customly.
+>
+> * * *
+> ## Try Matthew Leingang's youth's solution, but I still found that not properly aligned the `$\Longleftrightarrow$` inside the `node`(the same case as the first-post):
+> ```latex
+> \documentclass{article}
+> % https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers/7047#7047
+> \usepackage{tikz}
+> \usepackage{amsmath,amssymb}
+> \newcommand{\mynot}[1]{%
+>     \setbox0=\hbox{$#1$}%
+>     \dimen0\wd0%
+>     \divide\dimen0 by 2%
+>     \dimen1\ht0%
+>     \divide\dimen1 by 2%
+>     \begin{tikzpicture}%
+>         \useasboundingbox (-\the\dimen0,-\the\dimen1) rectangle (\the\dimen0,\the\dimen1);
+>         \node[outer sep=1pt,inner sep=.1ex,draw] (a) {$#1$};
+>         \fill [red] circle[radius=1pt];
+>         \draw[line width=.5pt](-.6*\the\dimen1,-.25*\the\dimen0)--(.6*\the\dimen1,.25*\the\dimen0);
+>     \end{tikzpicture}
+> }
+> \begin{document}
+> \[
+>     xyz \mynot{\Longleftrightarrow} zyx
+> \]
+> \[
+>     ABC \mynot{\Longleftrightarrow} CBA
+> \]
+> \[
+>     ABC \mynot{\leftrightsquigarrow} CBA
+> \]
+> \end{document}
+> ```
+>
+> [![the not aligned result][q-6]][q-6]
+>
+>
+> * * *
+> ## Editted Version of schtandard's comments on `ooalign`, which I think is a good method for alignment:
+>
+> ```latex
+> \documentclass{amsart}
+> \usepackage{amssymb}
+> \usepackage{tikz}
+> \usetikzlibrary{ducks}
+> \makeatletter
+> \newcommand*{\mynot}[2]{%
+>     \mathrel{\ooalign{%
+>     $\m@th{#1}$\cr\hidewidth$\m@th{#2}$\hidewidth\cr
+>     }}%
+> }%
+> \makeatother
+> \begin{document}
+>
+> \[
+> A \Longleftrightarrow B
+> \]
+>
+> \[
+> A \leftrightsquigarrow B
+> \]
+>
+> \[
+> A \mynot{\slash}{\Longleftrightarrow} B
+> \]
+>
+> \[
+> A \mynot{\backslash}{\leftrightsquigarrow} B
+> \]
+>
+> \[
+> A \mynot{\tikz[scale=.1]{\duck[witch=black!50!gray,
+> longhair=red!80!black,
+> jacket=black!50!gray,
+> magicwand]}}{\leftrightsquigarrow} B
+> \]
+>
+> \end{document}
+> ```
+>
+> [![the case with ooalign][q-7]][q-7]
+>
+> However, I still found that the length between the `\mynot` and the other math symbol inside is not easily to control.
+>
+> ## I wonder is there some summarizations or suggestions on above?
+> This post seemed to be longer and longer(without a general method or the always best practice)....
+>
+>   [q-1]: https://tex.stackexchange.com/questions/290746/scale-a-tikz-picture-according-to-current-font-in-math-mode
+>   [q-2]: IYw95MjW.png
+>   [q-3]: TFbWs4Jj.png
+>   [q-4]: https://tex.stackexchange.com/questions/733370/alternative-to-using-a-tikzpicture-inside-of-a-tikzmarknode/733374#733374
+>   [q-5]: i0BElxj8.png
+>   [q-6]: 3KxS3R1l.png
+>   [q-7]: T0Thd5Jj.png
+:::
+
+I submit that declaring a TikZ picture as a math symbol is an [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern). Leave font design to the font designers and use typography commands to make composite symbols.
+
+[I may have dabbled in this practice](https://tex.stackexchange.com/a/7047/1402) in my youth (well, I was not young 15 years ago either), but the linked question is a good use case. The CW answer from the OP weighs the pros and cons of several make-a-symbol implementations. 
+
+If you want something parametrizable that uses colors and variable sizes, then TikZ is the way. But if you want something that works in running math text, use an existing symbol or combination of glyphs.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/737348/what-is-the-best-practice-to-declare-a-tikzpicture-as-a-math-symbol/737871#737871) on TeX Stack Exchange, 2025-02-25. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

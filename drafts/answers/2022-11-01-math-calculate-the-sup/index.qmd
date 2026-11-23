@@ -1,0 +1,43 @@
+---
+title: Calculate the $\sup$
+date: '2022-11-01'
+description: Notice that $$\frac{1}{\left| \frac{\pi}{2} + 2\pi n \right|} = \frac{2}{\left| \pi + 4\pi n \right|} = \frac{2}{\pi} \cdot \frac{1}{\left|4n+1\right|}$$ So if…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4566746
+se-link: https://math.stackexchange.com/questions/4566740/calculate-the-sup/4566746#4566746
+se-score: 1
+se-accepted: true
+se-tags:
+- supremum-and-infimum
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Calculate the $\sup$](https://math.stackexchange.com/questions/4566740/calculate-the-sup), asked by [weymar andres](https://math.stackexchange.com/users/616791/weymar-andres) on Mathematics Stack Exchange (2022-11-01; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let us $A=\{\frac{1}{|\frac{\pi}{2}+2n\pi|}, n\in\mathbb Z \}$, Calculate $\sup A$.
+>
+> I am confuse, because $n\in\mathbb Z$ then for me i need to find the infimum of $|\frac{\pi}{2}+2n\pi|$ that it goes to $\infty$ implies that $\sup A= 0$ right?
+>
+> I thought well? or i am wrong?
+>
+> Thank you
+:::
+
+Notice that
+$$\frac{1}{\left| \frac{\pi}{2} + 2\pi n \right|}
+    = \frac{2}{\left| \pi + 4\pi n \right|}
+    = \frac{2}{\pi} \cdot \frac{1}{\left|4n+1\right|}$$
+So if you can find the supremum of $\left\{\left|\frac{1}{4n+1}\right|\right\}$, you are finished.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4566740/calculate-the-sup/4566746#4566746) on Mathematics Stack Exchange, 2022-11-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

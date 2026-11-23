@@ -1,0 +1,46 @@
+---
+title: Other power series expansions about arbitrary points within the domain of convergence
+date: '2022-07-14'
+description: Proposition 1.2.3 of Krantz and Park's book A Primer of Real Analytic Functions (2nd edition) addresses this exact question. Using your notation, the radius of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4492669
+se-link: https://math.stackexchange.com/questions/4492644/other-power-series-expansions-about-arbitrary-points-within-the-domain-of-conver/4492669#4492669
+se-score: 0
+se-accepted: true
+se-tags:
+- calculus
+- sequences-and-series
+- power-series
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Other power series expansions about arbitrary points within the domain of convergence](https://math.stackexchange.com/questions/4492644/other-power-series-expansions-about-arbitrary-points-within-the-domain-of-conver), asked by [rryan](https://math.stackexchange.com/users/1038687/rryan) on Mathematics Stack Exchange (2022-07-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> According to the uniqueness of Taylor series about a point, if an infinitively-differentiable function $f(x)$ satisfies that $f(x)=\sum_{n=0}^{+\infty}a_n(x-x_0)^n$, then we have $a_n=\frac{f^{(n)}{(x_0)}}{n!}$;
+>
+> Now we suppose that the series has a positive radius of convergence $R$，and the series converges within $(x_0-R,x_0+R)$;
+>
+> My question is,
+>
+> 1) If we use the derivatives of another point $x_1$ different than $x_0$ within $(x_0-R,x_0+R)$ for the coefficients, that is , define $b_n=\frac{f^{(n)}{(x_1)}}{n!}$, does the power series $\sum_{n=0}^{+\infty}b_n(x-x_0)^n$ always converge? If yes, is its radius of convergence $R_1$ somehow associated with $R$ ?(for example, $R_1=R-|x_1-x_0|$)
+> 2) Does the power series expansion about $x_1$ $\bigg(\sum_{n=0}^{+\infty}b_n(x-x_1)^n\bigg)$ always have a positive radius of convergence $R_2$?
+:::
+
+Proposition 1.2.3 of Krantz and Park's book *A Primer of Real Analytic Functions* (2nd edition) addresses this exact question. Using your notation, the radius of convergence of $\sum_{n=0}^\infty b_n(x-x_1)^n$ is *at least* $R - |x_1 - x_0|$. 
+
+Intuitively, the radius of convergence of a convergent power series is the farthest distance you can extend the function in a disk. So it goes as far as it can until the boundary hits some singularity, regardless of where you center the series.
+
+See also [Analytic function](https://en.wikipedia.org/wiki/Analytic_function) from Wikipedia.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4492644/other-power-series-expansions-about-arbitrary-points-within-the-domain-of-conver/4492669#4492669) on Mathematics Stack Exchange, 2022-07-14. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

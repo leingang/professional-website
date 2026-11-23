@@ -1,0 +1,2 @@
+# Defaults for imported Stack Exchange answers (tools/import_stackexchange.py).
+title-block-categories: true

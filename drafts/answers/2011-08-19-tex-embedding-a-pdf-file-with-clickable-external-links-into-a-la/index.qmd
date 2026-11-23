@@ -1,0 +1,59 @@
+---
+title: Embedding a PDF file with clickable external links into a LaTeX document
+date: '2011-08-19'
+description: I'm worried this is not going to be possible. It reminds me of a remark from the PGF manual regarding the pgfpages package.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 26139
+se-link: https://tex.stackexchange.com/questions/26128/embedding-a-pdf-file-with-clickable-external-links-into-a-latex-document/26139#26139
+se-score: 9
+se-accepted: false
+se-tags:
+- pdf
+- links
+- embedding
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Embedding a PDF file with clickable external links into a LaTeX document](https://tex.stackexchange.com/questions/26128/embedding-a-pdf-file-with-clickable-external-links-into-a-latex-document), asked by [Bkkbrad](https://tex.stackexchange.com/users/7331/bkkbrad) on TeX Stack Exchange (2011-08-19; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to embed a screenshot of a web page into a LaTeX document as a vector graphic with
+> clickable links.
+>
+> I'm using [wkhtmltopdf][q-1] to render the web page as a letter-sized pdf file with working links.  Then, I'm using this command to crop the pdf file while retaining the links:
+>
+> ```latex
+> gs -sDEVICE=pdfwrite -o "screenshot_cropped.pdf" -c "[/CropBox [`gs -sDEVICE=bbox -dBATCH -dNOPAUSE "screenshot.pdf" 2>&1 | awk '/HiRes/ { print $2,$3,$4,$5 }'`] /PAGES pdfmark" -f "screenshot.pdf"
+> ```
+>
+> (Commands taken from [this thread on comp.text.tex][q-2]; I can't use [pdfcrop][q-3], since it apparently removes the links)
+>
+> Finally, I'm embedding the file into my LaTeX document with the following:
+>
+> ```latex
+> \includegraphics[width=6 in]{screenshot_cropped.pdf}
+> ```
+>
+> Unfortunately, the links no longer work in the resulting pdf file.  How can I fix this?  I'm using XeLaTeX if it matters.
+>
+>
+>   [q-1]: http://code.google.com/p/wkhtmltopdf/
+>   [q-2]: https://groups.google.com/group/comp.text.tex/browse_thread/thread/e1491c733c7e3e53 "this thread"
+>   [q-3]: http://www.ctan.org/pkg/pdfcrop
+:::
+
+I'm worried this is not going to be possible.  It reminds me of a remark from the PGF manual regarding the `pgfpages` package.
+
+> A word of warning: *using `pgfpages` will destroy hyperlinks*. Actually, the hyperlinks are not destroyed, only they will appear at totally wrong positions on the final output. This is due to a fundamental flaw in the pdf specification: In pdf the bounding rectangle of a hyperlink is given in “absolute page coordinates” and translations or rotations do not affect them. Thus, the transformations applied by pgfpages to put the pages where you want them are (cannot, even) be applied to the coordinates of hyperlinks. It is unlikely that this will change in the foreseeable future.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/26128/embedding-a-pdf-file-with-clickable-external-links-into-a-latex-document/26139#26139) on TeX Stack Exchange, 2011-08-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

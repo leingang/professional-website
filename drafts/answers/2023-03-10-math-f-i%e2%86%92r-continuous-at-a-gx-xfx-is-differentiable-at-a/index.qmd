@@ -1,0 +1,56 @@
+---
+title: '$f: I→R$ continuous at a;$ g(x)=xf(x)$ is differentiable at a. Prove $f$ is differentiable at a.'
+date: '2023-03-10'
+description: As @aschepler points out, the proposition isn't true if $a=0$. Because $f(x) = x^{1/3}$ is not differentiable at $a=0$, while $g(x) = x f(x) = x^{4/3}$ is…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4656494
+se-link: https://math.stackexchange.com/questions/4656468/f-i%e2%86%92r-continuous-at-a-gx-xfx-is-differentiable-at-a-prove-f-is-diff/4656494#4656494
+se-score: 1
+se-accepted: false
+se-tags:
+- real-analysis
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$f: I→R$ continuous at a;$ g(x)=xf(x)$ is differentiable at a. Prove $f$ is differentiable at a.](https://math.stackexchange.com/questions/4656468/f-i%e2%86%92r-continuous-at-a-gx-xfx-is-differentiable-at-a-prove-f-is-diff), asked by [Pedro Henrique Ausechi](https://math.stackexchange.com/users/1158523/pedro-henrique-ausechi) on Mathematics Stack Exchange (2023-03-10; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let I be an interval, f:$I\rightarrow R$ is continuous at $a$; $g(x)=xf(x)$ and is differentiable at $a$. Prove f is also differentiable at $a$.
+>
+> What I tried to do, looking at similar threads on this site, was apply the definition of the derivative.
+>
+> Let $g'(a)=\frac{g(a+h)-g(a)}{h}\rightarrow$ Substitute on $g(x)=xf(x)$
+>
+> $g'(a)=\frac{(a+h)f(a+h)-af(a)}{h}\rightarrow$ Distributive Property
+>
+> $g'(a)=\frac{af(a+h)+hf(a+h)-af(a)}{h}\rightarrow$ Isolate a
+>
+> $g'(a)=\frac{a[f(a+h)-f(a)]+hf(a+h)}{h}\rightarrow$ Divide the second half by $h$ and then apply $\lim_{h\to 0}$
+>
+> $g'(a)=\frac{a[f(a+h)-f(a)]}{h}+\lim_{h\to 0} f(a+h)$
+>
+> $g'(a)=af'(a)+f(a)$
+>
+> I tried to argue that $f$ is continuous at both sides of $a$, so it has a derivate at $a$ but then realized it's not necessarily true. I don't know how to prove it anymore.
+:::
+
+As @aschepler points out, the proposition isn't true if $a=0$. Because $f(x) = x^{1/3}$ is not differentiable at $a=0$, while $g(x) = x f(x) = x^{4/3}$ is differentiable at $0$.
+
+If $a \neq 0$, you can apply the quotient rule to $f(x) = \frac{g(x)}{x}$. Then 
+$$f'(a) = \frac{a g'(a) - g(a)}{a^2} 
+          = \frac{g'(a)-f(a)}{a}$$
+
+Your argument assumes that $f$ is differentiable at $a$ (just like many heuristic “proofs” of the quotient rule do).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4656468/f-i%e2%86%92r-continuous-at-a-gx-xfx-is-differentiable-at-a-prove-f-is-diff/4656494#4656494) on Mathematics Stack Exchange, 2023-03-10. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

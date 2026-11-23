@@ -1,0 +1,36 @@
+---
+title: Is there a better name for a 'three-dimensional coordinate system'?
+date: '2017-10-27'
+description: Well, $\mathbb{R}^3$ is sometimes called space, so I suppose you could use spatial coordinate system. But other than that, I can't think of a name for a…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2492193
+se-link: https://math.stackexchange.com/questions/2492181/is-there-a-better-name-for-a-three-dimensional-coordinate-system/2492193#2492193
+se-score: 1
+se-accepted: false
+se-tags:
+- coordinate-systems
+- spherical-coordinates
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is there a better name for a 'three-dimensional coordinate system'?](https://math.stackexchange.com/questions/2492181/is-there-a-better-name-for-a-three-dimensional-coordinate-system), asked by [magnolia1](https://math.stackexchange.com/users/406547/magnolia1) on Mathematics Stack Exchange (2017-10-27; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am wondering if there is a commonly agreed name for any system that makes use of three coordinates. Something that includes 'geographical coordinate system', 'spherical coordinate system', 'celestial coordinat system' and all the likes.
+> Or is 'three-dimensional coordinate system' the answer?
+> thanks!
+:::
+
+Well, $\mathbb{R}^3$ is sometimes called *space*, so I suppose you could use *spatial coordinate system.*  But other than that, I can't think of a name for a coordinate system with three dimensions besides “three-dimensional coordinate system.”
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2492181/is-there-a-better-name-for-a-three-dimensional-coordinate-system/2492193#2492193) on Mathematics Stack Exchange, 2017-10-27. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

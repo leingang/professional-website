@@ -1,0 +1,60 @@
+---
+title: The method of substitution in the problem of finding the integral
+date: '2024-06-26'
+description: It's unclear to me what would make a solution to an antidifferentiation question incorrect, other than if the answer's derivative were not the integrand in…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4938085
+se-link: https://math.stackexchange.com/questions/4936797/the-method-of-substitution-in-the-problem-of-finding-the-integral/4938085#4938085
+se-score: 0
+se-accepted: false
+se-tags:
+- integration
+- solution-verification
+- substitution
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The method of substitution in the problem of finding the integral](https://math.stackexchange.com/questions/4936797/the-method-of-substitution-in-the-problem-of-finding-the-integral), asked by [Math_fun2006](https://math.stackexchange.com/users/952401/math-fun2006) on Mathematics Stack Exchange (2024-06-23; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> My teacher gave me a simple problem:  
+> Find $\int \dfrac{x}{\sqrt{x+1}} \, dx$.
+>
+> This is how I approached it:  
+> I set $u = \sqrt{x+1}$, which implies $u^2 = x + 1$, thus $2u \, du = dx$.  
+>
+> Therefore,  
+> $$\int \dfrac{x}{\sqrt{x+1}} \, dx = 2 \int \dfrac{u^2 - 1}{u} \, u \, du = 2 \int (u^2 - 1) \, du = \dfrac{2u^3}{3} - 2u + C$$
+>
+> That will give :  
+> $$\int \dfrac{x}{\sqrt{x+1}} \, dx = \dfrac{2(\sqrt{x+1})^3}{3} - 2\sqrt{x+1} + C$$
+>
+>
+> My teacher said it was wrong because $u = \sqrt{x+1}$ cannot be squared and then differentiated.  
+> I don't understand how my approach is incorrect?
+:::
+
+It's unclear to me what would make a solution to an antidifferentiation question *incorrect*, other than if the answer's derivative were not the integrand in question. 
+
+As far as integration by substitution goes, a sufficient condition that 
+$$\int_a^b f(g(x)) g'(x)\,dx = \int_{g(a)}^{g(b)} f(u)\,du$$
+is that $f$ and $g'$ are both continuous. And there are often many options for the $f$ and $g$ in a particular integration problem. For your problem, two options are:
+
+* $g(x) = x+1$ and $f(u) = \frac{u-1}{\sqrt{u}}$. Then $f(g(x)) = \frac{x}{\sqrt{x+1}}$ and $g'(x) = 1$.
+* $g(x) = \sqrt{x+1}$ and $f(u) = 2(u^2-1)$. Then $f(g(x)) = 2x$ and $g'(x) = \frac{1}{2\sqrt{x+1}}$. 
+
+In both cases, $f$ and $g'$ are continuous on the domain of the integrand, and $f(g(x))g'(x) = \frac{x}{\sqrt{x+1}}$, as desired.
+
+Starting from the substitution $u=\sqrt{x+1}$, one could say $\frac{du}{dx} = \frac{1}{2\sqrt{x+1}}= \frac{1}{2u}$, so $dx = 2u\,du$ without implicit differentiation. But your method is the same. In practice, integration is a much more formal (meaning, less attention is given to rigor) skill than a lot of single-variable calculus.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4936797/the-method-of-substitution-in-the-problem-of-finding-the-integral/4938085#4938085) on Mathematics Stack Exchange, 2024-06-26. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

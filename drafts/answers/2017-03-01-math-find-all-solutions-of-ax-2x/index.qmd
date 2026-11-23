@@ -1,0 +1,45 @@
+---
+title: Find all solutions of $AX=2X$
+date: '2017-03-01'
+description: 'It seems like the question is answered in the comments, so let me summarize. To find solutions of $Ax = 2x$, look for vectors in the nullspace of $A-2I$: $$A -…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2167050
+se-link: https://math.stackexchange.com/questions/2166674/find-all-solutions-of-ax-2x/2167050#2167050
+se-score: 1
+se-accepted: true
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Find all solutions of $AX=2X$](https://math.stackexchange.com/questions/2166674/find-all-solutions-of-ax-2x), asked by [Mitchell Faas](https://math.stackexchange.com/users/375710/mitchell-faas) on Mathematics Stack Exchange (2017-03-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm working on a linear algebra problem in which I'm asked to find all solutions of $AX = 2X$ with 
+>
+> $$A= \left[\begin{array}{ccc} 6 & -4 & 0 \\
+> 4 & -2 & 0 \\
+> -1 & 0 & 3\end{array}\right]$$
+>
+> But when I try doing it by row reducing, I get some nonsense answers, so I'd like some guidance on how to solve such a problem.
+:::
+
+It seems like the question is answered in the comments, so let me summarize.  To find solutions of $Ax = 2x$, look for vectors in the nullspace of $A-2I$:
+$$A - 2I = \begin{bmatrix} 4 & -4 & 0 \\ 4 & -4 & 0 \\ -1 & 0 & 1\end{bmatrix}$$
+The reduced row echelon form of this matrix is
+$$\operatorname{rref}(A-2I) = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}$$
+So a vector $x$ in the nullspace of $A-2I$ satisfies $x_2 = x_3$ and $x_1 = x_3$.  Hence $x$ is a multiple of $(1,1,1)$.
+
+You are, of course, correct that the problem is asking for the eigenspace of $A$ corresponding to the eigenvalue $2$.  But the question can be posed (and answered) without using those words.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2166674/find-all-solutions-of-ax-2x/2167050#2167050) on Mathematics Stack Exchange, 2017-03-01. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

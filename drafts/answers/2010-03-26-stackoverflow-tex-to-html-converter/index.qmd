@@ -1,0 +1,34 @@
+---
+title: TeX to html converter
+date: '2010-03-26'
+description: tex4ht is what I used for this. http://www.cse.ohio-state.edu/~gurari/TeX4ht/ But I haven't tried it on documents with PGF so I don't know if it will work for…
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 2524664
+se-link: https://stackoverflow.com/questions/2511909/tex-to-html-converter/2524664#2524664
+se-score: 4
+se-accepted: true
+se-tags:
+- html
+- latex
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TeX to html converter](https://stackoverflow.com/questions/2511909/tex-to-html-converter), asked by [Szymon Lipiński](https://stackoverflow.com/users/191332/szymon-lipi%c5%84ski) on Stack Overflow (2010-03-24; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What is the best way to convert latex document with PGF & TikZ images to html files?
+:::
+
+tex4ht is what I used for this.  http://www.cse.ohio-state.edu/~gurari/TeX4ht/  But I haven't tried it on documents with PGF so I don't know if it will work for you.  But in general I found that program much much much more useful than latex2html.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/2511909/tex-to-html-converter/2524664#2524664) on Stack Overflow, 2010-03-26. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

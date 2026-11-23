@@ -1,0 +1,55 @@
+---
+title: Is Facebook a necessary tool for a student?
+date: '2014-07-15'
+description: 'I think there are some terms which should be defined in order to understand the question:'
+categories:
+- academia.se
+license: CC BY-SA 3.0
+draft: true
+se-site: academia
+se-answer-id: 25931
+se-link: https://academia.stackexchange.com/questions/25870/is-facebook-a-necessary-tool-for-a-student/25931#25931
+se-score: 5
+se-accepted: false
+se-tags:
+- academic-life
+- social-skills
+- social-media
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is Facebook a necessary tool for a student?](https://academia.stackexchange.com/questions/25870/is-facebook-a-necessary-tool-for-a-student), asked by [CaptainCodeman](https://academia.stackexchange.com/users/15541/captaincodeman) on Academia Stack Exchange (2014-07-14; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm starting a master's degree in the autumn, and I recently received an email from the university inviting me to join the Facebook page for the course.
+>
+> However, I don't currently have an active Facebook account -- I deleted my account several years ago due to concerns about privacy as well as its overall usefulness.  (Mostly a case of "so why am I spending time on this site?")
+>
+> Is there any explicit advantage I would get by joining the course's Facebook page, or equivalently, is there any disadvantage of not joining?
+>
+> EDIT: I understand there is not likely to be an explicit requirement to join the group as official communication will be via email and university websites.  I'm asking more from the point of view of networking, socializing, etc.  Would the lack of Facebook be a handicap?
+>
+> EDIT: Clarification: By "course" I mean the UK definition: The course is the entire year-long degree program.  In this instance, the department has created a Facebook page for everybody who is doing the same degree program starting this year, and that's what they invited me to.  However, my question applies to other possible applications of Facebook as well.
+:::
+
+I think there are some terms which should be defined in order to understand the question:
+
+ - By *course* do you mean a semester-long sequence of lectures and exams in one subject? This is the US usage, while in other places *module* is used.  In those places *course* means what in the US is called a *degree program*: the set of courses/modules taken to complete the degree.
+
+ - Are you asked to "like" a Facebook *page* or "join" a Facebook *group*? Both have been used interchangeably in this discussion but they are not the same.  A Facebook page is used by an organization for self-promotion and broadcasting information.  It's mainly a one-way tool, though likers can comment and (sometimes, depending on settings) post.  A Facebook group can be official or unofficial but is used for multi-way communication among its members.
+
+If a course-as-in-degree-program is asking you to like their Facebook page, it's probably just to open up another line of communication to you.  For instance, they might use it to broadcast that the university is closed for bad weather, and you can get that information before checking your email.  You can do this without using Facebook for anything else; you don't have to interact with the other fans of the page.  I believe fans aren't privy to who is and isn't a fellow fan.  
+
+If a course-as-in-degree-program is asking you to join a Facebook group, it might be more for discussion as for a group, but would still be non-academic.  Perhaps they want to collect opinions about services.  Group members are able to see the list of group members, so you would be known.  But you don't have to be (Facebook) friends with the fellow group members, so you can interact with the group and keep  the other members at arm's length.
+
+If a course-as-in-module is asking you to like their Facebook page, it's going to be academic but still mainly broadcast.  I've done this in my large lecture courses to announce when slides are posted or reminders about due dates.  These are useful to get extra communication to the students, but they should not be used  to publish anything that's not also on a university website.  If you find that there is original course material published on Facebook, you might want to raise concern.
+
+If a course-as-in-module is asking you to join a Facebook group, it's likely that it's for academic discussion.  This can be beneficial as others have pointed out.  And the interface is familiar to most students so the content can be quite rich. But if the Facebook discussion is to be graded that's the most problematic combination.  Joining Facebook requires individuals to sacrifice a considerable amount of privacy, and I think it's not fair for university officials to explicitly require that consent to participate in instruction.  If you have a problem with joining Facebook and the instructor wants you do so for a grade, you should definitely be concerned.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/25870/is-facebook-a-necessary-tool-for-a-student/25931#25931) on Academia Stack Exchange, 2014-07-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

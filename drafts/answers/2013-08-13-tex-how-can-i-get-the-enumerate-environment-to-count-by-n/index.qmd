@@ -1,0 +1,84 @@
+---
+title: How can I get the enumerate environment to count by n?
+date: '2013-08-13'
+description: You could just customize the way the counter is printed to add a zero to the end.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 128107
+se-link: https://tex.stackexchange.com/questions/128104/how-can-i-get-the-enumerate-environment-to-count-by-n/128107#128107
+se-score: 6
+se-accepted: false
+se-tags:
+- enumerate
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How can I get the enumerate environment to count by n?](https://tex.stackexchange.com/questions/128104/how-can-i-get-the-enumerate-environment-to-count-by-n), asked by [adamglesser](https://tex.stackexchange.com/users/32844/adamglesser) on TeX Stack Exchange (2013-08-13; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> As part of a tenure portfolio packet, I need to create a list with numbering of the form
+>
+> ```latex
+> A.5.0 Section
+>      A.5.50 Subsection
+>      A.5.60 Subsection
+>      A.5.70 Subsection
+> ```
+>
+> How can I get the `enumerate` environment to automatically (i.e., without using `\setcounter` each time) count by 10 or, in general, by n?
+>
+> Edit: The solution should also be compatible with subsubsections. For example:
+>
+> ```latex
+> A.5.0 Section
+>      A.5.50 Subsection
+>          A.5.50.1 Subsubsection
+>          A.5.50.2 Subsubsection
+>      A.5.60 Subsection
+>      A.5.70 Subsection
+> ```
+:::
+
+You could just customize the way the counter is printed to add a zero to the end.
+
+```latex
+\documentclass{article}
+\renewcommand{\theenumi}{\Alph{enumi}}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.0}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\theenumi.\arabic{enumii}.\arabic{enumiii}0}
+\renewcommand{\labelenumiii}{\theenumiii}
+\begin{document}
+
+\begin{enumerate}
+  \item Top level
+  \begin{enumerate}
+     \setcounter{enumii}{4}
+     \item Section
+     \begin{enumerate}
+     \setcounter{enumiii}{4}
+         \item Subsection
+         \item Subsection
+         \item Subsection
+     \end{enumerate}     
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
+```
+
+![enter image description here][1]
+
+
+  [1]: UPQmF.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/128104/how-can-i-get-the-enumerate-environment-to-count-by-n/128107#128107) on TeX Stack Exchange, 2013-08-13. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

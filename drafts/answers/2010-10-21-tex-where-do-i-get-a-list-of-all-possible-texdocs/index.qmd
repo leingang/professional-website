@@ -1,0 +1,40 @@
+---
+title: Where do I get a list of all possible texdoc's?
+date: '2010-10-21'
+description: I usually google the package name before trying texdoc. It's more forgiving.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 4362
+se-link: https://tex.stackexchange.com/questions/4358/where-do-i-get-a-list-of-all-possible-texdocs/4362#4362
+se-score: 5
+se-accepted: false
+se-tags:
+- documentation
+- texdoc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Where do I get a list of all possible texdoc's?](https://tex.stackexchange.com/questions/4358/where-do-i-get-a-list-of-all-possible-texdocs), asked by [Kit](https://tex.stackexchange.com/users/791/kit) on TeX Stack Exchange (2010-10-20; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> An easy way out would be to just `texdoc` the package name, but almost everyone knows that this does not apply to all packages. Some examples:
+>
+> - I didn't know there was a `usrguide`  
+> - There is an `lshort.pdf` but I cannot `texdoc lshort`
+> - `tikz` is frequently mentioned in the TeX community but I need to `texdoc pgfmanual`
+>
+> Where do I get a list (and descriptions, and possibly a search function) of all possible `texdoc`'s in my installation? Yes, there is the MiKTeX Package Manager and the MacTeX TeX Live Utility, but as I've said, the package name or the PDF filename isn't necessarily the `texdoc` name.
+:::
+
+I usually google the package name before trying `texdoc`.   It's more forgiving.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/4358/where-do-i-get-a-list-of-all-possible-texdocs/4362#4362) on TeX Stack Exchange, 2010-10-21. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

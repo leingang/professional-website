@@ -1,0 +1,37 @@
+---
+title: Nicer way to test that exactly one flag is set
+date: '2010-11-19'
+description: You could create a counter, add one for each boolean that is true, then test if the counter has the value 1.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5638
+se-link: https://tex.stackexchange.com/questions/5637/nicer-way-to-test-that-exactly-one-flag-is-set/5638#5638
+se-score: 8
+se-accepted: true
+se-tags:
+- conditionals
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Nicer way to test that exactly one flag is set](https://tex.stackexchange.com/questions/5637/nicer-way-to-test-that-exactly-one-flag-is-set), asked by [Tomas Aschan](https://tex.stackexchange.com/users/223/tomas-aschan) on TeX Stack Exchange (2010-11-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I have a package that takes a long list of boolean flags (currently about 10) in its options, and I want to test if *exactly* one of these is set to true - something like an XOR for 10+ booleans.
+>
+> The only way I can think of is to use the `ifthen` package and construct a gigantic statement combining `\and` and `\or` to test this, but it quickly gets real ugly, and will be incredibly hard to maintain.
+>
+> Is there a better way to do this?
+:::
+
+You could create a counter, add one for each boolean that is true, then test if the counter has the value 1.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5637/nicer-way-to-test-that-exactly-one-flag-is-set/5638#5638) on TeX Stack Exchange, 2010-11-19. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

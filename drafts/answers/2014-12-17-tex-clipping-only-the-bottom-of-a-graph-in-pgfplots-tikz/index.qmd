@@ -1,0 +1,290 @@
+---
+title: Clipping only the bottom of a graph in pgfplots/tikz?
+date: '2014-12-17'
+description: 'Try clip mode=individual instead of clip=false:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 218452
+se-link: https://tex.stackexchange.com/questions/218447/clipping-only-the-bottom-of-a-graph-in-pgfplots-tikz/218452#218452
+se-score: 3
+se-accepted: true
+se-tags:
+- tikz-pgf
+- pgfplots
+- path-clipping
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Clipping only the bottom of a graph in pgfplots/tikz?](https://tex.stackexchange.com/questions/218447/clipping-only-the-bottom-of-a-graph-in-pgfplots-tikz), asked by [flexadecimal](https://tex.stackexchange.com/users/67575/flexadecimal) on TeX Stack Exchange (2014-12-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is it possible to clip only the bottom of a graph? I have a graph with a node above the area of it; when clipping over the entire thing is enabled, the node is cut away. However, no clipping means the function extends slightly over the bottom x axis.
+>
+> Have these in your preamble:
+>
+> ```latex
+> \usepackage{graphics}
+> \usepackage{tikz}
+> \usetikzlibrary{positioning, calc, plotmarks, patterns, arrows}
+> \tikzset{>=stealth}
+> \usepackage{pgfplots}
+> \pgfplotsset{compat=1.9}
+> ```
+>
+>
+> ![clipping off][q-1]
+> ![zoom in][q-3]
+>
+> ```latex
+> \begin{tikzpicture}[scale=1, transform shape]  %horizontal projection
+> %variable definitions
+> \def\g{-9.8} %gravity
+> \def\v{10} %velocity
+> \def\ang{51} %angle
+> \def\s{0.125}
+> \pgfmathsetmacro{\c}{{(-1*(2/\g)*\v*sin(\ang))/2}}
+> \pgfmathsetmacro{\a}{{(-1*(2/\g)*\v*sin(\ang))*.9}}
+>
+> \begin{axis}[
+> width=.7\linewidth, %set bigger width
+> height=4in,
+> xmin={{\v*cos(\ang)*\c}},xmax=10, %{\v*cos(\ang)*\a+\s*\v*cos(\ang)}
+> ymin=0,ymax={\v*\c*sin(\ang)+0.5*\g*(\c^2)},
+> xlabel=$X$,
+> ylabel=$y$,
+> axis x line = bottom,
+> axis y line = left,
+> y axis line style={<-},
+> x axis line style={<->},
+> ticks = none,clip=false,
+> ]
+>
+> \tikzset{every mark/.append style={fill=white}}
+>
+> %flight path
+> \addplot[
+> dashed,
+> domain={\v*cos(\ang)*\c}:10,
+> samples=100,]
+> {{\g*(x^2)/(2*\v^2*cos(\ang)^2)+x*tan(\ang)}};
+>
+> %vector at end
+> \pgfmathsetmacro{\a}{{(-1*(2/\g)*\v*sin(\ang))*.9}}
+> \coordinate (E) at (axis cs:{\v*cos(\ang)*\a},{\v*\a*sin(\ang)+0.5*\g*(\a^2)}){};
+> \coordinate (F) at (axis cs:{\v*cos(\ang)*\a+\s*\v*cos(\ang))}, {\v*\a*sin(\ang)+0.5*\g*\a^2+\s*(\v*sin(\ang)+\g*\a)});
+> \draw[very thick,->](E)--(F)
+> node[midway,sloped,above]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](E)--(F |- E)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](E)--(F-| E)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(E)};
+>
+> %vector at start
+> \pgfmathsetmacro{\c}{{(-1*(2/\g)*\v*sin(\ang))/2}}
+> \coordinate (L) at (axis cs:{\v*cos(\ang)*\c},{\v*\c*sin(\ang)+0.5*\g*(\c^2)});
+> \coordinate (M) at (axis cs:{\v*cos(\ang)*\c+\s*\v*cos(\ang))},{\v*\c*sin(\ang)+0.5*\g*\c^2+\s*(\v*sin(\ang)+\g*\c)});
+> \draw[very thick,->](L)--(M)
+> node[midway,sloped,above]{$\vec{V}$};
+>
+> \path plot[mark=*] coordinates {(L)};
+>
+> %vector 1/2 down
+> \pgfmathsetmacro{\d}{{(-1*(2/\g)*\v*sin(\ang))*0.6}}
+> \coordinate (P) at (axis cs:{\v*cos(\ang)*\d},{\v*\d*sin(\ang)+0.5*\g*(\d^2)});
+> \coordinate (Q) at (axis cs:{(\v*cos(\ang)*\d+\s*\v*cos(\ang))},{\v*\d*sin(\ang)+0.5*\g*\d^2+\s*(\v*sin(\ang)+\g*\d)});
+> \draw[very thick,->](P)--(Q)
+> %node[midway,sloped,above]{$\vec{V}$}
+> ;
+> \draw[densely dashed,very thick,->](P)--(Q|-P)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](P)--(Q-|P)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(P)};
+>
+> %vector 3/4 down
+> \pgfmathsetmacro{\f}{{(-1*(2/\g)*\v*sin(\ang))*0.7}}
+> \coordinate (R) at (axis cs:{\v*cos(\ang)*\f},{\v*\f*sin(\ang)+0.5*\g*(\f^2)});
+> \coordinate (S) at (axis cs:{(\v*cos(\ang)*\f+\s*\v*cos(\ang))},{\v*\f*sin(\ang)+0.5*\g*\f^2+\s*(\v*sin(\ang)+\g*\f)});
+> \draw[very thick,->](R)--(S)
+> node[midway,above,sloped]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](R)--(S|-R)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](R)--(S-|R)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(R)};
+>
+> %vector 1/4 down
+> \pgfmathsetmacro{\e}{{(-1*(2/\g)*\v*sin(\ang))*0.8}}
+> \coordinate (T) at (axis cs:{\v*cos(\ang)*\e},{\v*\e*sin(\ang)+0.5*\g*(\e^2)});
+> \coordinate (U) at (axis cs:{(\v*cos(\ang)*\e+\s*\v*cos(\ang))},{\v*\e*sin(\ang)+0.5*\g*\e^2+\s*(\v*sin(\ang)+\g*\e)});
+> \draw[very thick,->](T)--(U)
+> node[midway,sloped,above]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](T)--(U|-T)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](T)--(U-|T)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(T)};
+>
+> %free fall comparison plots
+> \pgfmathsetmacro{\z}{{(\v*cos(\ang)*\c+\v*cos(\ang)*\c+\s*\v*cos(\ang))*.5}}
+>
+> \draw[very thick,->] (axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*(\e^2)}) -- (axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*\e^2+\s*(\v*sin(\ang)+\g*\e)});
+> \draw[very thick,->] (axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*(\f^2)}) -- (axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*\f^2+\s*(\v*sin(\ang)+\g*\f)});
+> \draw[very thick,->] (axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*(\d^2)}) -- (axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*\d^2+\s*(\v*sin(\ang)+\g*\d)});
+> \draw[very thick,->] (axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*(\a^2)}) -- (axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*\a^2+\s*(\v*sin(\ang)+\g*\a)})
+> node[midway,right]{Vertical fall}
+> ;
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*(\e^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*(\f^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*(\d^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*(\a^2)})};
+>
+> \end{axis}
+> \end{tikzpicture} 
+> ```
+>
+> With clipping on:
+>
+> ![clipping on][q-2]
+>
+> ```latex
+> \begin{tikzpicture}[scale=1, transform shape]  %horizontal projection
+> %variable definitions
+> \def\g{-9.8} %gravity
+> \def\v{10} %velocity
+> \def\ang{51} %angle
+> \def\s{0.125}
+> \pgfmathsetmacro{\c}{{(-1*(2/\g)*\v*sin(\ang))/2}}
+> \pgfmathsetmacro{\a}{{(-1*(2/\g)*\v*sin(\ang))*.9}}
+>
+> \begin{axis}[
+> width=.7\linewidth, %set bigger width
+> height=4in,
+> xmin={{\v*cos(\ang)*\c}},xmax=10, %{\v*cos(\ang)*\a+\s*\v*cos(\ang)}
+> ymin=0,ymax={\v*\c*sin(\ang)+0.5*\g*(\c^2)},
+> xlabel=$X$,
+> ylabel=$y$,
+> axis x line = bottom,
+> axis y line = left,
+> y axis line style={<-},
+> x axis line style={<->},
+> ticks = none,clip=false,
+> ]
+>
+> \tikzset{every mark/.append style={fill=white}}
+>
+> %flight path
+> \addplot[
+> dashed,
+> domain={\v*cos(\ang)*\c}:10,
+> samples=100,]
+> {{\g*(x^2)/(2*\v^2*cos(\ang)^2)+x*tan(\ang)}};
+>
+> %vector at end
+> \pgfmathsetmacro{\a}{{(-1*(2/\g)*\v*sin(\ang))*.9}}
+> \coordinate (E) at (axis cs:{\v*cos(\ang)*\a},{\v*\a*sin(\ang)+0.5*\g*(\a^2)}){};
+> \coordinate (F) at (axis cs:{\v*cos(\ang)*\a+\s*\v*cos(\ang))}, {\v*\a*sin(\ang)+0.5*\g*\a^2+\s*(\v*sin(\ang)+\g*\a)});
+> \draw[very thick,->](E)--(F)
+> node[midway,sloped,above]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](E)--(F |- E)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](E)--(F-| E)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(E)};
+>
+> %vector at start
+> \pgfmathsetmacro{\c}{{(-1*(2/\g)*\v*sin(\ang))/2}}
+> \coordinate (L) at (axis cs:{\v*cos(\ang)*\c},{\v*\c*sin(\ang)+0.5*\g*(\c^2)});
+> \coordinate (M) at (axis cs:{\v*cos(\ang)*\c+\s*\v*cos(\ang))},{\v*\c*sin(\ang)+0.5*\g*\c^2+\s*(\v*sin(\ang)+\g*\c)});
+> \draw[very thick,->](L)--(M)
+> node[midway,sloped,above]{$\vec{V}$};
+>
+> \path plot[mark=*] coordinates {(L)};
+>
+> %vector 1/2 down
+> \pgfmathsetmacro{\d}{{(-1*(2/\g)*\v*sin(\ang))*0.6}}
+> \coordinate (P) at (axis cs:{\v*cos(\ang)*\d},{\v*\d*sin(\ang)+0.5*\g*(\d^2)});
+> \coordinate (Q) at (axis cs:{(\v*cos(\ang)*\d+\s*\v*cos(\ang))},{\v*\d*sin(\ang)+0.5*\g*\d^2+\s*(\v*sin(\ang)+\g*\d)});
+> \draw[very thick,->](P)--(Q)
+> %node[midway,sloped,above]{$\vec{V}$}
+> ;
+> \draw[densely dashed,very thick,->](P)--(Q|-P)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](P)--(Q-|P)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(P)};
+>
+> %vector 3/4 down
+> \pgfmathsetmacro{\f}{{(-1*(2/\g)*\v*sin(\ang))*0.7}}
+> \coordinate (R) at (axis cs:{\v*cos(\ang)*\f},{\v*\f*sin(\ang)+0.5*\g*(\f^2)});
+> \coordinate (S) at (axis cs:{(\v*cos(\ang)*\f+\s*\v*cos(\ang))},{\v*\f*sin(\ang)+0.5*\g*\f^2+\s*(\v*sin(\ang)+\g*\f)});
+> \draw[very thick,->](R)--(S)
+> node[midway,above,sloped]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](R)--(S|-R)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](R)--(S-|R)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(R)};
+>
+> %vector 1/4 down
+> \pgfmathsetmacro{\e}{{(-1*(2/\g)*\v*sin(\ang))*0.8}}
+> \coordinate (T) at (axis cs:{\v*cos(\ang)*\e},{\v*\e*sin(\ang)+0.5*\g*(\e^2)});
+> \coordinate (U) at (axis cs:{(\v*cos(\ang)*\e+\s*\v*cos(\ang))},{\v*\e*sin(\ang)+0.5*\g*\e^2+\s*(\v*sin(\ang)+\g*\e)});
+> \draw[very thick,->](T)--(U)
+> node[midway,sloped,above]{$\vec{V}$};
+> \draw[densely dashed,very thick,->](T)--(U|-T)
+> node[midway,above]{$\vec{V}_x$};
+> \draw[densely dashed,very thick,->](T)--(U-|T)
+> node[midway,left]{$\vec{V}_y$};
+>
+> \path plot[mark=*] coordinates {(T)};
+>
+> %free fall comparison plots
+> \pgfmathsetmacro{\z}{{(\v*cos(\ang)*\c+\v*cos(\ang)*\c+\s*\v*cos(\ang))*.5}}
+>
+> \draw[very thick,->] (axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*(\e^2)}) -- (axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*\e^2+\s*(\v*sin(\ang)+\g*\e)});
+> \draw[very thick,->] (axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*(\f^2)}) -- (axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*\f^2+\s*(\v*sin(\ang)+\g*\f)});
+> \draw[very thick,->] (axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*(\d^2)}) -- (axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*\d^2+\s*(\v*sin(\ang)+\g*\d)});
+> \draw[very thick,->] (axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*(\a^2)}) -- (axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*\a^2+\s*(\v*sin(\ang)+\g*\a)})
+> node[midway,right]{Vertical fall}
+> ;
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\e*sin(\ang)+0.5*\g*(\e^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\f*sin(\ang)+0.5*\g*(\f^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\d*sin(\ang)+0.5*\g*(\d^2)})};
+> \path plot[mark=*] coordinates {(axis cs:\z,{\v*\a*sin(\ang)+0.5*\g*(\a^2)})};
+>
+> \end{axis}
+> \end{tikzpicture}
+> ```
+>
+>
+>   [q-1]: BHqPE.png
+>   [q-2]: B5BIz.png
+>   [q-3]: hGCZg.png
+:::
+
+Try `clip mode=individual` instead of `clip=false`:
+
+![enter image description here][1]
+
+
+  [1]: ZEEVH.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/218447/clipping-only-the-bottom-of-a-graph-in-pgfplots-tikz/218452#218452) on TeX Stack Exchange, 2014-12-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

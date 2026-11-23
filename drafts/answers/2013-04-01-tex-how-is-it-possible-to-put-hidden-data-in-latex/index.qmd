@@ -1,0 +1,167 @@
+---
+title: How is it possible to put hidden data in LaTeX?
+date: '2013-04-01'
+description: 'I''m going off the use case described in your last paragraph:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 106397
+se-link: https://tex.stackexchange.com/questions/106381/how-is-it-possible-to-put-hidden-data-in-latex/106397#106397
+se-score: 3
+se-accepted: true
+se-tags:
+- latex-misc
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How is it possible to put hidden data in LaTeX?](https://tex.stackexchange.com/questions/106381/how-is-it-possible-to-put-hidden-data-in-latex), asked by [Pete](https://tex.stackexchange.com/users/24293/pete) on TeX Stack Exchange (2013-04-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> In my LaTeX document, I would like to put hidden data, like a marker or tag. The idea behind it is to be able to return an explicit error message.
+> For example in this latex file, I would like to put a tag or marker where the comment line is with stars:
+>
+> ```latex
+> \documentclass[12pt]{article}
+>
+> \usepackage[parfill]{parskip}
+> \usepackage[none]{hyphenat}
+> \sloppy
+> \usepackage[usenames,dvipsnames]{xcolor}
+> \usepackage{array,ragged2e, calc}
+> \usepackage{enumitem}
+> \usepackage{lipsum}
+> \usepackage{needspace}
+>
+> \definecolor{shadecolor}{RGB}{217,217,217}  % Color used for highlighting
+> \definecolor{light-blue}{RGB}{0,175,236}    % Color for the footer
+>
+> % ------------------------------------------------------------------------------------
+> % Header and footer management.
+> % ------------------------------------------------------------------------------------
+> \usepackage{fancyhdr}
+> \pagestyle{fancy}
+>
+> % clear any old style settings
+> \fancyhf{}
+> \fancyheadoffset{0in}
+> \headheight = 53pt
+> \renewcommand{\headrulewidth}{0pt}
+>
+> % ------------------------------------------------------------------------------------
+> % Defining the section style
+> \newcommand{\mysectionstyle}[1]{\colorbox{shadecolor}{\begin{tabular}{>{}p{\rectanglelength}}{\fontsize{13}{6}\selectfont\textbf{#1}}\end{tabular}}\vspace{6pt}}
+> % ------------------------------------------------------------------------------------
+> \addtolength{\footskip}{0.6cm}
+> \renewcommand{\footrulewidth}{1pt}
+> \renewcommand{\footrule}{{\color{light-blue}%
+> \vskip-\footruleskip\vskip-\footrulewidth
+> \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+> % ------------------------------------------------------------------------------------
+>
+> \usepackage[left=0.75in,top=1.5in,right=0.75in,bottom=1in]{geometry} % Document margins
+> \usepackage{titlesec}
+>
+> \newlength{\rectanglelength}
+> \setlength{\rectanglelength}{\textwidth}
+> \addtolength{\rectanglelength}{-6pt}
+>
+> \newlength{\foo}
+>
+> \begin{document}
+> \lipsum[1]
+>
+> \settototalheight{\foo}{\parbox[t]{\linewidth}{\begin{minipage}[t]{\linewidth} \begin{tabular}{@{}>{\RaggedRight}p{11cm}>{\RaggedLeft}p{6.35cm}@{}}\fontsize{13}{6}\selectfont{LaTeX}&\textbf{2011 to 2012}\end{tabular}\\\begin{tabular}{@{}>{\RaggedRight}p{11cm}>{\RaggedLeft}p{6.35cm}@{}}\textbf{Lead Programmer}&\textbf{}\end{tabular}%
+> \vspace{3pt}\begin{itemize}[parsep=0pt, topsep=0pt, itemsep=0pt, leftmargin=2ex]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\end{itemize}%
+> \vspace{7pt}\textbf{End Title}\\\lipsum[1]
+>
+> \vspace{10pt}\end{minipage}}
+> }
+> \needspace{\foo}{\setlength{\parskip}{4pt}
+>
+> % ******* I WANT TO INSERT A TAG OR MARKER HERE.*******
+> \mysectionstyle{Experiences}
+>
+> \begin{tabular}{@{}>{\RaggedRight}p{11cm}>{\RaggedLeft}p{6.35cm}@{}}\fontsize{13}{6}\selectfont{LaTeX}&\textbf{2011 to 2012}\end{tabular}\\\begin{tabular}{@{}>{\RaggedRight}p{11cm}>{\RaggedLeft}p{6.35cm}@{}}\textbf{Lead Programmer}&\textbf{}\end{tabular}%
+> \vspace{3pt}\begin{itemize}[parsep=0pt, topsep=0pt, itemsep=0pt, leftmargin=2ex]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\item \lipsum[1]\end{itemize}%
+> \vspace{7pt}\textbf{End Title}\\\lipsum[1]
+>
+> \vspace{10pt}}
+> \end{document}
+> ```
+>
+> I want to insert a tag or a marker into the LaTeX file so when an error occurred, I can retrieve the marker and then return a user-friendly message. Something like, there's an error in section X.
+>
+> Is it possible in LaTeX? If yes, how can I do that?
+:::
+
+I'm going off the use case described in your last paragraph:
+
+> I want to insert a tag or a marker into the LaTeX file so when an
+> error occurred, I can retrieve the marker and then return a
+> user-friendly message. Something like, there's an error in section X.
+
+The `\show` command will halt typesetting and print to the terminal a description of the next token.  Similarly, `\showthe` will halt and print the value of a counter.  
+
+When typesetting halts, the `i` command will allow you to insert tokens for processing.  
+
+Putting these together, you can write a macro which shows the section number and call for it on errors.
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}
+
+\makeatletter
+\newcommand{\showsection}{%
+   \showthe\c@section 
+}
+\makeatother
+
+\begin{document}
+
+\section{First}
+
+\lipsum
+
+\section{Second}
+
+\lipsum
+
+\foo% undefined cs
+
+\section{Third}
+
+\lipsum
+
+\end{document}
+```
+
+
+Here is a sample console session:
+
+```latex
+! Undefined control sequence.
+l.20 \foo
+         % undefined cs
+? i \showsection
+> 2.
+\showsection ->\showthe \c@section 
+
+l.20 \foo
+         % undefined cs
+? s
+OK, entering \scrollmode...
+```
+
+I typed `i \showsection` on the terminal input line and it printed `2.`  You can prettify the output as you like.
+
+As far as how to "tag" the document I would use what's already in place and hook into those macros.  For instance, noticed I used the existing counter for section numbers rather than created something new.  If I wanted to print the section *name* I could add commands to the `\section` macro that would save the section title to a macro and `\show` that instead.  (I didn't do this because if you read the source you will see that `\section` is not a simple macro.)
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/106381/how-is-it-possible-to-put-hidden-data-in-latex/106397#106397) on TeX Stack Exchange, 2013-04-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,64 @@
+---
+title: Is my proof that the closure of a subset $Y$ of $X$ coincides with the intersection of all closed subsets of $X$ that contain $Y$ valid?
+date: '2026-08-15'
+description: I don't see any mathematical or logical errors in your proof. So I think you understand why the statement is true. Good job! My feedback is from the point of…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 5147094
+se-link: https://math.stackexchange.com/questions/5147090/is-my-proof-that-the-closure-of-a-subset-y-of-x-coincides-with-the-intersect/5147094#5147094
+se-score: 2
+se-accepted: false
+se-tags:
+- general-topology
+- solution-verification
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Is my proof that the closure of a subset $Y$ of $X$ coincides with the intersection of all closed subsets of $X$ that contain $Y$ valid?](https://math.stackexchange.com/questions/5147090/is-my-proof-that-the-closure-of-a-subset-y-of-x-coincides-with-the-intersect), asked by [HMPtwo](https://math.stackexchange.com/users/1100229/hmptwo) on Mathematics Stack Exchange (2026-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Let $(X, d)$ be a metric space and let $Y \subset X$. Let $A$ be the intersection of all closed subsets of $X$ that contain $Y$. Also, $\hat{Y}$ is the closure of $Y$.
+>
+> First I show that $A \subset \hat{Y}$.
+>
+> If $x\in A$, then $x$ is in every closed subset of $X$ that contains $Y$. Specifically $\hat{Y}$ is a closed subset of $X$ that contains $Y$. Hence $x \in \hat{Y}$.
+>
+> Now $\hat{Y} \subset A$. 
+>
+> If $x \in \hat{Y}$ then for all $r > 0$, we have $B(x;r) \cap Y \neq \emptyset$.
+>
+> Suppose that $x \notin A$. That means there exists at least one closed subset of $X$ that contains $Y$ that does not contain $x$. We call one of these sets $\hat{A}$.
+>
+> That is, $x \notin \hat{A}$.
+>
+> Since $\hat{A}$ is a closed subset of $X$, we must be able to fit an open ball $B(x;\epsilon)$ in this hole, but this ball would remove part of $Y$ and so $\hat{A}$ no longer contains $Y$.
+>
+> I could probably find a proof on the internet or on here, I would like to know if what I have written actually proves what I am trying to prove. If not can I modify the proof to be correct?
+:::
+
+I don't see any mathematical or logical errors in your proof. So I think you understand why the statement is true. Good job! My feedback is from the point of view of a professor teaching proof-writing. 
+
+This sentence:
+
+> Since $\hat{A}$ is a closed subset of $X$, we must be able to fit an open ball $B(x;\epsilon)$ in this hole, but this ball would remove part of $Y$ and so $\hat{A}$ no longer contains $Y$.
+
+is where your tone shifts from simple, short, declarative sentences, into something a little more morally and subjectively (*must*...*would*...) tinged. It uses some vague terms (*hole*...*part*...) instead of precise, mathematically-defined ones. An $\epsilon$ appears out of nowhere, unquantified. It elides some details, and as a reader, I begin to wonder if you know how to fill in those details, or if you are hoping I will grant you the argument without demanding the details.
+
+If you were at the board proving this statement, and I were in my seat evaluating it, I would ask:
+
+* How do we know that there exists an $\epsilon$ such that $B(x;\epsilon)$ is contained in the complement of $\hat A$ (don't forget to change the name of this set).
+
+* How do we know that this ball does not contain any element of $Y$?
+
+* Why does that mean that $x \notin \hat Y$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/5147090/is-my-proof-that-the-closure-of-a-subset-y-of-x-coincides-with-the-intersect/5147094#5147094) on Mathematics Stack Exchange, 2026-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

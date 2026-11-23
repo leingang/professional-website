@@ -1,0 +1,77 @@
+---
+title: Two figures side by side
+date: '2010-11-22'
+description: You can put minipages inside a figure environment and get separate captions for each of them.
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 5770
+se-link: https://tex.stackexchange.com/questions/5769/two-figures-side-by-side/5770#5770
+se-score: 298
+se-accepted: true
+se-tags:
+- floats
+- captions
+- subfloats
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Two figures side by side](https://tex.stackexchange.com/questions/5769/two-figures-side-by-side), asked by [Little Bobby Tables](https://tex.stackexchange.com/users/1527/little-bobby-tables) on TeX Stack Exchange (2010-11-22; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> How can I put two figures side-by-side? Not two sub-figures, but two actual figures with separate "Fig.: bla bla" captions.  A figure is supposed to spread over the entire text width, but I have two figures which are narrow and long, and I need to save the space in order to withstand the pages limit.
+:::
+
+You can put `minipage`s inside a `figure` environment and get separate captions for each of them.  
+
+```latex
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{mwe}
+
+\begin{document}
+How can I put two figures side-by-side? Not two sub-figures, but two actual figures
+with separate "Fig.: bla bla" captions. A figure is supposed to spread over the
+entire text width, but I have two figures which are narrow and long, and I need to
+save the space in order to withstand the pages limit.
+
+\lipsum
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{example-image-a} % first figure itself
+        \caption{first figure}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{example-image-b} % second figure itself
+        \caption{second figure}
+    \end{minipage}
+\end{figure}
+
+\lipsum[3]
+
+\end{document}
+```
+
+[![sample code rendering][1]][1]
+
+I was surprised to discover two `\captions` in the same `figure` environment actually work as desired.
+
+HT: [LaTeX Matters][2] via Google
+
+
+  [1]: 6H7V8.png
+  [2]: http://texblog.wordpress.com/2007/08/01/placing-figurestables-side-by-side-minipage/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5769/two-figures-side-by-side/5770#5770) on TeX Stack Exchange, 2010-11-22, with [edits](https://tex.stackexchange.com/posts/5770/revisions) by [yo'](https://tex.stackexchange.com/users/11002/yo), [Hunsu](https://tex.stackexchange.com/users/50121/hunsu). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

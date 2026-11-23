@@ -1,0 +1,56 @@
+---
+title: Transforming an integral to an easier form
+date: '2018-04-10'
+description: There is a corollary to Stokes's theorem that allows us to change the surface to a more convenient one, if it shares the same boundary as the given one.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2731381
+se-link: https://math.stackexchange.com/questions/2731333/transforming-an-integral-to-an-easier-form/2731381#2731381
+se-score: 1
+se-accepted: true
+se-tags:
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Transforming an integral to an easier form](https://math.stackexchange.com/questions/2731333/transforming-an-integral-to-an-easier-form), asked by [sucksatmath](https://math.stackexchange.com/users/297790/sucksatmath) on Mathematics Stack Exchange (2018-04-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> $$\vec{\phi}(x,y,z)=\biggl(\frac{\ln(x^5y^3z^2+1)}{z^7+y^4+5}-yx^2e^{2z}, \ \ \cos^2(\pi z)xy^2, \ \ e^{x^2y^2}+\cos z\sin z^3 \biggr)$$
+>
+> Then let $S$ be the upper-hemisphere $x^2+y^2+z^2=4$ with outward $\vec{n}$. Using Stokes' Theorem, find $$\iint_S(\nabla \ \times \ \vec{\phi})\cdot d\vec{S}$$
+>
+> I asked this question in another thread, but I want to know another way of solving this.
+>
+> Apparently we can transform this integral to:
+>
+> $$\int_0^{2\pi}\int_0^2r^3drd\theta$$
+>
+> But, I don't the know the process to get there.
+:::
+
+There is a corollary to Stokes's theorem that allows us to change the surface to a more convenient one, if it shares the same boundary as the given one.
+
+Let $D$ be the disk of radius $2$ in the $xy$-plane, thought of as a surface in space.  Then $\partial S$ and $\partial D$ are the same curve $C$, the circle of radius $2$ in the $xy$-plane.  By Stokes' Theorem twice,
+$$\iint_S (\nabla \times \vec \phi)\cdot d\vec S
+   =\oint_C \vec\phi\cdot d\vec s = \iint_D (\nabla \times \vec \phi)\cdot d\vec S$$
+On $D$, $z=0$, so the vector field simplifies to $\vec\phi = \left(-yx^2,xy^2,e^{x^2y^2}\right)$.  And the normal vector on $D$ is just $\hat k$. When dotting with $\hat k$, all components of $\nabla\times\vec\phi$ are killed except the last one. So
+$$\iint_D (\nabla \times \vec \phi)\cdot d\vec S
+    =\iint_D \left(\frac{\partial}{\partial x}(xy^2) - \frac{\partial}{\partial y} (-yx^2)\right)\,dA
+    =\iint_D(y^2 + x^2)\,dA$$
+Now switch to polar coordinates on $D$:
+$$\iint_D(y^2 + x^2)\,dA = \int_0^{2\pi} \int_0^2 r^2\,r\,dr\,d\theta$$
+This is how we get to your “apparent” expression.  And as for that:
+$$\int_0^{2\pi} \int_0^2 r^3\,dr\,d\theta
+    = \int_0^{2\pi} 1\, d\theta \int_0^2 r^3\,dr = (2\pi) \left(\frac{2^4}{4}\right) = 8\pi$$
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2731333/transforming-an-integral-to-an-easier-form/2731381#2731381) on Mathematics Stack Exchange, 2018-04-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,42 @@
+---
+title: In the U.S., is it appropriate for math professors to ask students to rewrite their messy (poorly handwritten) homework to be graded?
+date: '2023-09-16'
+description: Try to give students the benefit of the doubt and act not as if they know what to do and refuse to do it, and instead that they don't know what to do.
+categories:
+- academia.se
+license: CC BY-SA 4.0
+draft: true
+se-site: academia
+se-answer-id: 201870
+se-link: https://academia.stackexchange.com/questions/201799/in-the-u-s-is-it-appropriate-for-math-professors-to-ask-students-to-rewrite-th/201870#201870
+se-score: 0
+se-accepted: false
+se-tags:
+- mathematics
+- united-states
+- teaching
+- grading
+---
+
+<!-- Imported from Academia.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[In the U.S., is it appropriate for math professors to ask students to rewrite their messy (poorly handwritten) homework to be graded?](https://academia.stackexchange.com/questions/201799/in-the-u-s-is-it-appropriate-for-math-professors-to-ask-students-to-rewrite-th), asked by [No One](https://academia.stackexchange.com/users/54886/no-one) on Academia Stack Exchange (2023-09-14; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Many students write their math homework assignments in a messy, barely readable way. When I was a student TA/grader, I didn't have the right to ask them to rewrite them. But as a math instructor, I wonder if it is appropriate for me to ask those who write their homework poorly to rewrite it, otherwise it won't be graded (even writing it in the syllabus)? I am also planning to show them some examples of nicely written homework. As a more exaggerated question, are professors in United States even allowed to do so?
+:::
+
+Try to give students the benefit of the doubt and act not as if they know what to do and refuse to do it, and instead that they don't know what to do.
+
+My impression is that US high school math students are trained on strategies for multiple choice questions, and what's necessary to write in free response exam questions that will earn them full marks. (Once I asked a student why they consistently wrote → instead of = on a paper. They said they were taught that misusing an equals sign could lead to losing points, but there were no such rules about →. So their teacher told them to just use →.) I don't get the impression that they've been graded on the quality of their written homework, and that college is the first time they are asked to do such things.
+
+So I tell them near the beginning of the course that clear presentation of written work is one of the learning objectives of the course. I try to give them examples of good and bad student work. I use a rubric that accounts for organization, legibility, complete sentences, etc., and make sure they see the rubric before they turn in their first problem set. And when a handful of students are inevitably surprised by their low scores, I point out all of these things that I have done and maintain that these are my expectations.
+
+If you're in charge of the grading policies for your course, you could do some of these things, and also allow for the first few assignments to be rewritten.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://academia.stackexchange.com/questions/201799/in-the-u-s-is-it-appropriate-for-math-professors-to-ask-students-to-rewrite-th/201870#201870) on Academia Stack Exchange, 2023-09-16. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

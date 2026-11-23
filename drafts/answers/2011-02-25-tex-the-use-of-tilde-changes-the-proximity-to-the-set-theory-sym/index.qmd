@@ -1,0 +1,67 @@
+---
+title: The use of "tilde" changes the proximity to the set theory symbol (ref img)
+date: '2011-02-25'
+description: Here is a complete code example with output (I just took Stefan's answer and wrote it out).
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 12083
+se-link: https://tex.stackexchange.com/questions/12044/the-use-of-tilde-changes-the-proximity-to-the-set-theory-symbol-ref-img/12083#12083
+se-score: 2
+se-accepted: false
+se-tags:
+- math-mode
+- symbols
+- tilde
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[The use of "tilde" changes the proximity to the set theory symbol (ref img)](https://tex.stackexchange.com/questions/12044/the-use-of-tilde-changes-the-proximity-to-the-set-theory-symbol-ref-img), asked by [Algific](https://tex.stackexchange.com/users/3796/algific) on TeX Stack Exchange (2011-02-25; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I just want to format a simple set theory example. But the following is annoying: 
+>
+> ```latex
+> \documentclass{article}
+> \begin{document}
+> $A$$=$$(A \cup B)$
+>
+> $A \cap (( A) \cap B)$ $= $ $ A \cap \sim B$ 
+> \end{document}
+> ```
+>
+> [![image of example code][q-1]][q-1]
+>
+> See how close the cap gets to the 'A' because of the tilde sign? 
+> I've used sim for the tilde sign. Any suggestions? 
+>
+>
+>   [q-1]: FyLQbsQV.png
+:::
+
+Here is a complete code example with output (I just took Stefan's answer and wrote it out).
+
+```latex
+\documentclass{article}
+\begin{document}
+$A = (A \cup B)$
+
+$A \cap (( A) \cap B) = A \cap \mathord{\sim}B$
+\end{document}
+```
+
+![sample output][1]
+
+  [1]: cSN9N.png
+
+Switching in and out of math mode is not a good way to get extra spaces.  If you still want them after classifying the tilde as an ordinal, you can insert them with `\,`, `\; `, or `\ `.  See [Herbert's mathmode document](https://ctan.org/tex-archive/info/math/voss/mathmode/Mathmode.pdf) for FMTYEWTK.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/12044/the-use-of-tilde-changes-the-proximity-to-the-set-theory-symbol-ref-img/12083#12083) on TeX Stack Exchange, 2011-02-25, with [edits](https://tex.stackexchange.com/posts/12083/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

@@ -1,0 +1,84 @@
+---
+title: xelatex and pgfpages compatibility
+date: '2020-02-20'
+description: The answer to your question “is this ever going to get fixed?” is yes. Because your MWE works fine for me as of now. I don't know when the bug got fixed.
+categories:
+- tex.se
+license: CC BY-SA 4.0
+draft: true
+se-site: tex
+se-answer-id: 529213
+se-link: https://tex.stackexchange.com/questions/3036/xelatex-and-pgfpages-compatibility/529213#529213
+se-score: 1
+se-accepted: false
+se-tags:
+- xetex
+- paper-size
+- incompatibility
+- pgfpages
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[xelatex and pgfpages compatibility](https://tex.stackexchange.com/questions/3036/xelatex-and-pgfpages-compatibility), asked by [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey) on TeX Stack Exchange (2010-09-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I've just switched from pdflatex to xelatex for my lectures to take advantage of the `unicode-math` package so that I can change the colours of all my mathematics.  When compiling the "handout" version last night, I found that it didn't work as I expected.  I use the `pgfpages` package to produce the handout as a 4-up document (with a nice box round each frame) to save paper.  But the page size in the resulting document was that of one slide, not a full a4 piece of paper.  A little googling led me to a quick fix on [tug](http://www.tug.org/pipermail/xetex/2008-November/011184.html):
+>
+> ```latex
+> \newlength\hackpaperwidth \hackpaperwidth210mm
+> \newlength\hackpaperheight \hackpaperheight297mm
+> \RequirePackage{everyshi}
+> \EveryShipout{%
+>  \special{papersize=\the\hackpaperwidth,\the\hackpaperheight}}
+> ```
+>
+> with the comment (from the author):
+>
+> > Probably not the cleanest way of doing things, so if someone has a
+> better idea and/or can locate the bug exactly, comments welcome.
+>
+> There were no follow-up comments, but it was dated November 2008.  In June 2009, there's a similar-looking problem on the xetex mailing list with this response:
+>
+> > That's a reported (and probably not fixed yet) problem in pgfpages. Use this
+> to tell pgfpages how to set page sizes in XeLaTeX:
+> >
+>     \renewcommand\pgfsetupphysicalpagesizes{%
+>         \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+>     }
+>
+> (These are (linked from) the top two hits on google for `xelatex pgfpages`).
+>
+> My _real_ question is: is this going to get fixed? But that's not a good tex.SE question.  So my attempt to make it into a good question is:
+>
+> > The second of the above seems the better of the two.  Is that the best way to fix this problem?
+>
+> PS The MWE from the first linked post is still a suitable one:
+>
+> ```latex
+> \documentclass{beamer}
+> \usepackage{pgfpages}
+> \pgfpagesuselayout{2 on 1}[a4paper]
+> \begin{document}
+> \frame{\frametitle{A} foo}
+> \frame{\frametitle{B} bar}
+> \end{document}
+> ```
+:::
+
+The answer to your question “is this ever going to get fixed?” is *yes*.  Because your MWE works fine for me as of now.  I don't know when the bug got fixed.
+
+Moreover, the `\renewcommand\pgfsetupphysicalpagesizes` workaround now produces unexpected behavior.  The physical page is clipped to a normal slide's dimension, which means most of the handout content is invisible.  If I apply it to your MWE, I get a page shaped like a regular slide (not A4), with one frame that has its right and bottom edges cut off.
+
+[![MWE output][1]][1]
+
+  [1]: SkSPJ.png
+
+I discovered this because a personal class file I wrote back in 2011 stopped working, and it was these two lines that were the culprit.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/3036/xelatex-and-pgfpages-compatibility/529213#529213) on TeX Stack Exchange, 2020-02-20. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

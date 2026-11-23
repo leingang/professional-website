@@ -1,0 +1,119 @@
+---
+title: Crossed hierarchy
+date: '2013-03-18'
+description: 'This is a hack because it uses the fact that the distance between nodes doesn''t change from level to level and so by default branches will overlap:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 103100
+se-link: https://tex.stackexchange.com/questions/103090/crossed-hierarchy/103100#103100
+se-score: 7
+se-accepted: true
+se-tags:
+- tikz-pgf
+- horizontal-alignment
+- tikz-trees
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Crossed hierarchy](https://tex.stackexchange.com/questions/103090/crossed-hierarchy), asked by [Masood](https://tex.stackexchange.com/users/27580/masood) on TeX Stack Exchange (2013-03-18; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I appreciate it if you let me know the most elegant way to draw a crossed hierarchy such as the followings:
+>
+>
+> ```latex
+>     X
+>    /      Y  Z
+>   /\/     p q  t
+> ```
+>
+> q has two parents Y and Z.
+:::
+
+This is a hack because it uses the fact that the distance between nodes doesn't change from level to level and so by default branches will overlap:
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\node {X} 
+   child {
+     node {Y}
+     child {
+        node {p}
+     }
+     child {
+        node {q}
+     }
+   }
+   child {
+      node {Z}      
+      child {
+         node {\phantom{q}}      
+      }
+      child {
+         node {t}      
+      }
+   }
+;
+\end{tikzpicture}
+\end{document}
+```
+
+
+![sample output][1]
+
+The edge from Z to q is not really to the q but to an invisible q that sits on top of the first q.
+
+A better way to do it is to name the nodes and draw the extra edge after the tree.  This way if the q node moves the extra edge will still point to it.  You can create a `missing` child node to keep the spacing as if there were an actual first child.
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[
+   level 1/.style={sibling distance=20mm},
+   level 2/.style={sibling distance=15mm}
+]
+\node {X} 
+   child {
+     node {Y}
+     child {
+        node {p}
+     }
+     child {
+        node (q) {q}
+     }
+   }
+   child {
+      node (Z) {Z}      
+      child[missing] {
+         node {q}
+      }
+      child {
+         node {t}      
+      }
+   }
+;
+\draw (Z) -- (q);
+\end{tikzpicture}
+\end{document}
+```
+
+![sample output][2]
+
+
+  [1]: sJoYS.png
+  [2]: IQZUf.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/103090/crossed-hierarchy/103100#103100) on TeX Stack Exchange, 2013-03-18. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,61 @@
+---
+title: Connectedness, continuous functions, and the intermediate value theorem
+date: '2015-01-31'
+description: 'Proof 1: If $f(p)\neq s$ for any $p\in M$, then $$f^{-1}((s,\infty)) \cup f^{-1}((-\infty,s)) = M$$ The two sets on the left are open and disjoint. Since $M$…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1127250
+se-link: https://math.stackexchange.com/questions/1127239/connectedness-continuous-functions-and-the-intermediate-value-theorem/1127250#1127250
+se-score: 3
+se-accepted: false
+se-tags:
+- real-analysis
+- general-topology
+- functions
+- continuity
+- connectedness
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Connectedness, continuous functions, and the intermediate value theorem](https://math.stackexchange.com/questions/1127239/connectedness-continuous-functions-and-the-intermediate-value-theorem), asked by [anon](https://math.stackexchange.com/users/211875/anon) on Mathematics Stack Exchange (2015-01-31; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I want to prove that  for a continuous function mapping a connected space to ℝ such that f(p) never equals s, it follows that f(p) < s for all p or f(p) > s for all s.
+>
+> So here's what I know so far:
+>
+> -Because f is continuous and the metric space M is connected, f(M) is connected.
+>
+> -f(M) is connected in the real numbers, so if $x,y \epsilon f(M)$ and x < z < y, then $z \epsilon f(M)$
+>
+> -I have a feeling the intermediate value theorem will play a part in this, but I'm not sure how.
+>
+> I'm having trouble relating these three points.
+:::
+
+*Proof 1:* If $f(p)\neq s$ for any $p\in M$, then 
+$$f^{-1}((s,\infty)) \cup f^{-1}((-\infty,s)) = M$$
+The two sets on the left are open and disjoint.  Since $M$ is connected, one of them is $M$ and one of them is $\varnothing$.  So either
+$$f^{-1}((s,\infty)) = M \implies \forall p \in M,\ f(p) > s$$
+or
+$$f^{-1}((-\infty,s)) = M \implies \forall p \in M,\ f(p) < s$$
+Q.E.D.
+
+*Proof 2:*
+Suppose it is not true that
+$$(\forall p\in M,\ f(p) > s)\text{ or }(\forall q\in M,\ f(q) < s)$$
+Since $s$ is not a value of $f$, we have
+$$(\exists p \in M,\ f(p) < s)\text{ and }(\exists q \in M,\ f(q) > s)$$
+By the Intermediate Value Theorem, there exists $r \in M$ with $f(r) = s$.
+This contradicts the condition that $s$ is not a value of $f$. Q.E.D.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1127239/connectedness-continuous-functions-and-the-intermediate-value-theorem/1127250#1127250) on Mathematics Stack Exchange, 2015-01-31. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,48 @@
+---
+title: 'Prove the set $K = \{0\} \cup \{\frac{1}{n} \in \mathbb{R} : n \in \mathbb{N} \}$ is compact without Heine-Borel'
+date: '2019-03-02'
+description: 'I see a difference between:'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3132802
+se-link: https://math.stackexchange.com/questions/3132787/prove-the-set-k-0-cup-frac1n-in-mathbbr-n-in-mathbbn/3132802#3132802
+se-score: 1
+se-accepted: false
+se-tags:
+- proof-verification
+- compactness
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Prove the set $K = \{0\} \cup \{\frac{1}{n} \in \mathbb{R} : n \in \mathbb{N} \}$ is compact without Heine-Borel](https://math.stackexchange.com/questions/3132787/prove-the-set-k-0-cup-frac1n-in-mathbbr-n-in-mathbbn), asked by [D.C. the III](https://math.stackexchange.com/users/183917/d-c-the-iii) on Mathematics Stack Exchange (2019-03-02; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Prove the set $K = \{0\} \cup \{\frac{1}{n} \in \mathbb{R} : n \in \mathbb{N} \}$ is compact without Heine-Borel
+>
+> I have completed the question and used the same procedure that was done in this version: https://math.stackexchange.com/questions/2948076/prove-the-set-k-frac1n-mid-n-in-mathbbn-cup-0-is-compact .
+>
+> My question though is why this proof is valid? If we are showing the set is compact it means that there must exist a finite sub-cover for **all** open covers. Is the **all** condition captured by generalizing $U$ to represent any open cover thus meaning **all** open covers?
+:::
+
+I see a difference between:
+
+> there exists a finite subcover for **all** open covers
+
+and
+
+> there exists a finite subcover for **any** open cover
+
+The former sounds like all the open covers are collected into one, and that cover has a finite subcover.  That is *not* the definition of compact.  In fact, it's not likely to be a useful condition for anything in most contexts.
+
+The latter says that given any open cover there is a finite subcover of that cover.  That's the correct interpretation of the definition.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3132787/prove-the-set-k-0-cup-frac1n-in-mathbbr-n-in-mathbbn/3132802#3132802) on Mathematics Stack Exchange, 2019-03-02. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

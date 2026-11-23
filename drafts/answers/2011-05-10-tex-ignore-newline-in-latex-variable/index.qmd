@@ -1,0 +1,47 @@
+---
+title: Ignore newline in LaTeX variable
+date: '2011-05-10'
+description: Within the group that you are expanding the macro you can do
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 17868
+se-link: https://tex.stackexchange.com/questions/17867/ignore-newline-in-latex-variable/17868#17868
+se-score: 16
+se-accepted: true
+se-tags:
+- tex-core
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Ignore newline in LaTeX variable](https://tex.stackexchange.com/questions/17867/ignore-newline-in-latex-variable), asked by [jesper](https://tex.stackexchange.com/users/3926/jesper) on TeX Stack Exchange (2011-05-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have some string in variable `\somevar`, eg. `foo\\bar`. How can I force LaTeX to ignore newline in `\somevar`. When I write content of the variable there should be
+> <pre>
+> foo bar
+> </pre>
+> and not
+> <pre>
+> foo
+> bar
+> </pre>
+:::
+
+Within the group that you are expanding the macro you can do 
+
+```latex
+\let\\=\relax
+```
+
+This will temporarily neuter the effect of `\\`.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/17867/ignore-newline-in-latex-variable/17868#17868) on TeX Stack Exchange, 2011-05-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

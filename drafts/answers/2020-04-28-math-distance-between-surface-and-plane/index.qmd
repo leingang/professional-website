@@ -1,0 +1,52 @@
+---
+title: Distance between surface and plane
+date: '2020-04-28'
+description: If $(x1,y1,z1)$ and $(x2,y2,z2)$ are points in space, the distance between them is minimized when the function $$f((x1,y1,z1),(x2,y2,z2)) = (x1-x2)^2 +…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 3648512
+se-link: https://math.stackexchange.com/questions/3648464/distance-between-surface-and-plane/3648512#3648512
+se-score: 1
+se-accepted: false
+se-tags:
+- multivariable-calculus
+- lagrange-multiplier
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Distance between surface and plane](https://math.stackexchange.com/questions/3648464/distance-between-surface-and-plane), asked by [Snowball](https://math.stackexchange.com/users/733272/snowball) on Mathematics Stack Exchange (2020-04-28; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I know this question may seem duplicate, but having searched all the possibilities, I could not find exact answer to this problem. Having a surface, for example $x^2+y^2-z^2=-1$, and a plane, such as $x+2y+3z=0$, what are the major techniques to evaluate the distance between surface and plane? Any complete explanation will be strongly appreciated. 
+>
+> Note: In fact, I want to evaluate shortest distance by using Lagrange Multipliers. So if there is not any concrete method, any help towards "shortest distance" by using Lagrange method would also be kindly appreciated.
+:::
+
+If $(x_1,y_1,z_1)$ and $(x_2,y_2,z_2)$ are points in space, the distance between them is minimized when the function
+$$f((x_1,y_1,z_1),(x_2,y_2,z_2)) = (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1- z_2)^2$$
+is minimized.  But if $(x_1,y_1,z_1)$ is on the surface, and $(x_2,y_2,z_2)$ is on the plane, you have two constraints given by
+$$\begin{align*}
+    g_1(x_1,y_1,z_1) &= x_1^2 + y_1^2 -z_1^2 \\
+    g_2(x_2,y_2,z_2) &= x_2 + 2y_2 + 3z_2 
+\end{align*}$$
+The Lagrange Multiplier equations give six equations in the eight variables
+$$\begin{align*}
+    2(x_1 - x_2) &= \lambda_1 2x_1 \\
+    2(y_1 - y_2) &= \lambda_1 2y_1 \\
+    2(z_1 - z_2) &= -\lambda_1 2z_1 \\
+   -2(x_1 - x_2) &= \lambda_2 \\
+   -2(y_1 - y_2) &= 2\lambda_2 \\
+   -2(z_1 - z_2) &= 3\lambda_2
+\end{align*}$$
+Then there are the two constraint equations $g_1(x_1,y_1,z_1) = -1$ and $g_2(x_2,y_2,z_2) = 0$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/3648464/distance-between-surface-and-plane/3648512#3648512) on Mathematics Stack Exchange, 2020-04-28. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

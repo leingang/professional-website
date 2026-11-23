@@ -1,0 +1,44 @@
+---
+title: How do I know if I'm well-prepared for a real analysis exam? Or more generally, proof-based exams?
+date: '2017-11-29'
+description: Did you get all the problems on the professor's sample exam right? By “right”, I mean, were you able to write perfect proofs, from scratch, without notes or…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2543207
+se-link: https://math.stackexchange.com/questions/2543172/how-do-i-know-if-im-well-prepared-for-a-real-analysis-exam-or-more-generally/2543207#2543207
+se-score: 2
+se-accepted: false
+se-tags:
+- soft-question
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How do I know if I'm well-prepared for a real analysis exam? Or more generally, proof-based exams?](https://math.stackexchange.com/questions/2543172/how-do-i-know-if-im-well-prepared-for-a-real-analysis-exam-or-more-generally), asked by [user398843](https://math.stackexchange.com/users/426645/user398843) on Mathematics Stack Exchange (2017-11-29; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'm taking real analysis I, and my professor gives us a previous exam with solution each time before the midterm/exam. I would do the previous exam and check if I get it right. But it's obvious that my professor are not going to give us the same questions.
+>
+> So, I also read and tried to understand the proofs that are given on the book. Sometimes, I proved the theorems and corollaries by myself. Besides, I would memorize the theorems and corollaries.
+>
+>
+> For courses like calculus, we have some general steps to solve a type of question. So it's easier to prepare for the exam. But for proof-based courses like real analysis, algebra and topology, etc, how can we know whether we're well-prepared for the exam? How did you study the materials and prepare for the exam when you were an undergraduate student? Exams are designed to test our understanding of the materials, but how can we test ourselves first?
+:::
+
+Did you get all the problems on the professor's sample exam right?  By “right”, I mean, were you able to write perfect proofs, from scratch, without notes or checking against the solutions?  If so, stop.  You are definitely prepared.
+
+If not, you know what topics you are less than prepared on: the ones that you missed the questions on, or had to check notes for.  Find more problems about these topics and attempt those problems.  If you have a textbook, it probably has problems in it.  Ask your professor or TA about them if you have trouble solving the additional problems.  
+
+When organizing the material, you should definitely memorize the definitions and theorems.  But see if you can organize them, not in a list, but in a [concept map](https://en.wikipedia.org/wiki/Concept_map).  That will help you see the connections between the ideas, so you know how to get from one to another in a new situation.  For instance, you tagged this with linear algebra, and I was able to find some premade linear algebra concept maps online ([example][1]).  But the real benefit will be when you create your own.
+
+  [1]: https://minireference.com/blog/linear-algebra-concept-maps/
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2543172/how-do-i-know-if-im-well-prepared-for-a-real-analysis-exam-or-more-generally/2543207#2543207) on Mathematics Stack Exchange, 2017-11-29. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

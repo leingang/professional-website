@@ -1,0 +1,46 @@
+---
+title: Differentiability at $0$ of $(\sum_1^n \lvert x_i\rvert^p)^{1/q}$
+date: '2022-11-08'
+description: 'Hints: For a vector $x \in \mathbb{R}^n$, and $p > 0$, set $\Vert x \Vertp = \left(\sum{i=1}^n|xi|^p\right)^{1/p}$. Then $f(x) = \Vert x \Vertp^{p/q}$. You…'
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 4571641
+se-link: https://math.stackexchange.com/questions/4571592/differentiability-at-0-of-sum-1n-lvert-x-i-rvertp1-q/4571641#4571641
+se-score: 1
+se-accepted: false
+se-tags:
+- analysis
+- multivariable-calculus
+- derivatives
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Differentiability at $0$ of $(\sum_1^n \lvert x_i\rvert^p)^{1/q}$](https://math.stackexchange.com/questions/4571592/differentiability-at-0-of-sum-1n-lvert-x-i-rvertp1-q), asked by [romperextremeabuser](https://math.stackexchange.com/users/1078713/romperextremeabuser) on Mathematics Stack Exchange (2022-11-07; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> Find all $p,q>0$ for which function $f:\Bbb R^n\to\Bbb R,$ $f(x)=(\sum_1^n \lvert x_i\rvert^p)^{1/q}$ is differentiable at $(0,\dots,0).$
+>
+> I know that $p$ has to be bigger than $q$ for the existence of partial derivatives.
+>
+> I wanted to take linear transformation which jacobian matrix is $(0,\dots,0)$ and compute the total derivative from definition but I guess I can't compute this limit.
+:::
+
+Hints: For a vector $x \in \mathbb{R}^n$, and $p > 0$, set $\Vert x \Vert_p = \left(\sum_{i=1}^n|x_i|^p\right)^{1/p}$. Then $f(x) = \Vert x \Vert_p^{p/q}$. You want to show 
+$$\lim_{x \to 0} \frac{\Vert x \Vert_p^{p/q}}{\Vert x \Vert_2}=0$$
+Suppose there exist constants $c$ and $C$ such that for all $x$,
+$$c \Vert x \Vert_2 \leq \Vert x \Vert_p \leq C \Vert x \Vert_2$$
+Then we would have
+$$c \Vert x \Vert_p^{p/q-1} \leq \frac{\Vert x \Vert_p^{p/q}}{\Vert x \Vert_2} \leq C \Vert x \Vert_p^{p/q-1}$$
+
+Can you take it from there? Can you find a suitable $c$ and $C$?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/4571592/differentiability-at-0-of-sum-1n-lvert-x-i-rvertp1-q/4571641#4571641) on Mathematics Stack Exchange, 2022-11-08. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

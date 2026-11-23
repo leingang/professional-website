@@ -1,0 +1,43 @@
+---
+title: How to prove $\int_{0}^{\infty}xe^{-x}dx$ converges without calculating the limit
+date: '2016-03-30'
+description: Here is another comparison method. We can use L'Hôpital's Rule to show that $$\lim{x\to\infty} xe^{-x/2} = 0$$ Therefore there exists a number $M$ such that…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1720718
+se-link: https://math.stackexchange.com/questions/1720620/how-to-prove-int-0-inftyxe-xdx-converges-without-calculating-the-limi/1720718#1720718
+se-score: 1
+se-accepted: false
+se-tags:
+- limits
+- convergence-divergence
+- improper-integrals
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How to prove $\int_{0}^{\infty}xe^{-x}dx$ converges without calculating the limit](https://math.stackexchange.com/questions/1720620/how-to-prove-int-0-inftyxe-xdx-converges-without-calculating-the-limi), asked by [Marcel](https://math.stackexchange.com/users/293988/marcel) on Mathematics Stack Exchange (2016-03-30; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am given $\int_{0}^{\infty}xe^{-x}dx$ and asked to prove that it converges and if it does, calculate the integral.
+>
+> I have calculated the integral and it gives 1. However, I cannot find a way to prove that it converges before calculating the limit.
+:::
+
+Here is another comparison method.  We can use L'Hôpital's Rule to show that
+$$\lim_{x\to\infty} xe^{-x/2} = 0$$
+Therefore there exists a number $M$ such that 
+$$0 < x e^{-x/2} < 1 \quad\text{when $x>M$}$$
+It follows that
+$$x e^{-x} < e^{-x/2} \quad\text{when $x>M$}$$
+So you can use the Comparison test to show that $\int_M^\infty xe^{-x}\,dx$ converges.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1720620/how-to-prove-int-0-inftyxe-xdx-converges-without-calculating-the-limi/1720718#1720718) on Mathematics Stack Exchange, 2016-03-30. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,70 @@
+---
+title: Proving that the following ensemble is not vector space if $\mathbb{K}=\mathbb{C}$
+date: '2017-05-04'
+description: 'Based on this: $$\begin{align} (x,y,z) \in F \iff (x+z-y)^2+z^2 &= 0 \\\iff (x+z-y+iz)(x+z-y-iz) &= 0 \end{align}$$ I agree with that $F$ is the union of two…'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2266007
+se-link: https://math.stackexchange.com/questions/2265946/proving-that-the-following-ensemble-is-not-vector-space-if-mathbbk-mathbbc/2266007#2266007
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Proving that the following ensemble is not vector space if $\mathbb{K}=\mathbb{C}$](https://math.stackexchange.com/questions/2265946/proving-that-the-following-ensemble-is-not-vector-space-if-mathbbk-mathbbc), asked by [StarBucK](https://math.stackexchange.com/users/374095/starbuck) on Mathematics Stack Exchange (2017-05-04; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I would like to check if my method to show that $F$ is not a vector space with $\mathbb{K}=\mathbb{C}$ is true.
+>
+> $$F = \{(x,y,z) / x^2+y^2+2z^2-2xy-2yz+2xz=0 \}$$
+>
+> $x^2+y^2+2z^2-2xy-2yz+2xz=0 \Leftrightarrow (x+z-y)^2+z^2=0 \Leftrightarrow (x+z-y)^2=-z^2$
+>
+> This equation admit solutions only if $z=i \alpha$.
+>
+> We have :
+>
+> $(x+i\alpha-y)^2=\alpha^2 \Leftrightarrow x=\pm \alpha +y -i \alpha$
+>
+> Finally my space of solutions is :
+>
+> $F=Span((\pm 1-i;0;i),(1;1;0))$
+>
+> And because of the $\pm$, I can say that I have a union of two vectorial spaces :
+>
+> $F_1=Span((+1-i;0;i),(1;1;0))$ and $F_2=Span((-1-i;0;i),(1;1;0))$ 
+>
+> Thus $F=F_1 \cup F_2$
+>
+> And as $F_1$ and $F_2$ are disjoint (the first is not included and the second and same for the second is not in the first), the global ensemble is not a vector space.
+>
+> Am I right ?
+:::
+
+Based on this:
+$$\begin{align*}
+(x,y,z) \in F \iff (x+z-y)^2+z^2 &= 0 \\\iff (x+z-y+iz)(x+z-y-iz) &= 0
+\end{align*}$$
+I agree with that $F$ is the union of two subspaces $F_1$ and $F_2$:
+$$\begin{align*}
+    F_1 &= \left\{(x,y,z)\mid x - y + (1+i) z = 0\right\}\\
+    F_2 &= \left\{(x,y,z)\mid x - y + (1-i) z = 0\right\}
+\end{align*}$$
+You're right that neither $F_1$ nor $F_2$ contains the other (I don't think it's conventional to use *disjoint* for this condition; I think of *disjoint* as meaning “having empty intersection”, and subspaces always share at least the zero vector).  
+
+I'm not sure exactly how best to get from here to the conclusion that $F$ is not a subspace.  My preference would be to show it violates one of the subspace conditions.  For instance, let $v_1 = (-1-i, 0, 1)$ and $v_2 = (-1+i,0,1)$.  Then $v_1 \in F_1$ and $v_2 \in F_2$, so they are both in $F$.  Their sum is
+$$v_1 + v_2 = (-2,0,2)$$
+This point does not satisfy the equation defining $F$.  Since $F$ is not closed under addition, $F$ cannot be a subspace.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2265946/proving-that-the-following-ensemble-is-not-vector-space-if-mathbbk-mathbbc/2266007#2266007) on Mathematics Stack Exchange, 2017-05-04. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

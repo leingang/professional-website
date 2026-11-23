@@ -1,0 +1,72 @@
+---
+title: Why is an ellipse, hyperbola, and circle not a function?
+date: '2014-11-10'
+description: I really love this question because you're obviously a smart student, but you have a misconception I see in my multivariable calculus students all the time.…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1015449
+se-link: https://math.stackexchange.com/questions/1014401/why-is-an-ellipse-hyperbola-and-circle-not-a-function/1015449#1015449
+se-score: 39
+se-accepted: false
+se-tags:
+- functions
+- conic-sections
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Why is an ellipse, hyperbola, and circle not a function?](https://math.stackexchange.com/questions/1014401/why-is-an-ellipse-hyperbola-and-circle-not-a-function), asked by [JohnMerlino](https://math.stackexchange.com/users/24263/johnmerlino) on Mathematics Stack Exchange (2014-11-10; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am aware of the vertical line test. If you place a vertical line over a shape, and if it crosses more than once, it fails the vertical line test and is no longer a function.
+>
+> But I don't understand why? To me a function is just input and output value:
+>
+> $$f(x)=x^2$$
+>
+> You enter an input value and you get an output value. Above is a parabola, since it is a basic quadratic function.
+>
+> But you can do the same with hyperbolas:
+>
+> $$f(x,y)={{x^2}\over9}–{{y^2}\over4}$$
+>
+> And you can do the same with ellipses, which are essentially the inverse of a hyperbola:
+>
+> $$f(x,y)={{x^2}\over9}+{{y^2}\over4}$$
+>
+> To me, those two are functions, as is the original quadratic. True, the latter two fail the vertical line test, but so what? You give it an input value and you get an output value. Why are these not functions?
+:::
+
+I really love this question because you're obviously a smart student, but you have a misconception I see in my multivariable calculus students all the time.  You have the right idea of function—“just input and output values” (**not** variables!)  OK, the definition is more precise, but the rest of your question shows you know what a function is.
+
+What I see you doing is identifying *functions* with *curves*, especially curves which are graphs of functions.  Your very question–“Why is an ellipse not a function?” shows it.  When read precisely, the obvious way to answer this question is, “Because an ellipse is a kind of curve, and a function is [to use your words] just input and output values.”
+
+Up until functions of more than one variable get introduced, we pretty much do treat a function (of one variable) as identical to its graph.  Our intuitive ideas about limits, continuity, derivatives, everything, are all based on geometric notions about the graph of a function.  And being able to graph functions quickly requires a kind of mental index of which kinds of functions have which kinds of curves as their graphs.
+
+The trouble with functions of two variables $f(x,y)$ is that there is more than one way to represent the function.  The graph $\left\{(x,y,z) \mid z = f(x,y)\right\}$ is one way to do that.  But it is a *surface* in space.  That surface does pass the vertical line test, because in this case *vertical* means parallel to the $z$-axis.  For example, if $f(x,y) = \frac{x^2}{9} + \frac{y^2}{4}$, the graph is a paraboloid.
+
+![graph of z=x^2+y^2][1]
+
+Another way to represent a function of two variables is by its contour plot.  A contour plot draws in the same plane several level curves of the form $f(x,y) = c$, for different values of $c$.  For example, if $f(x,y) = \frac{x^2}{9} + \frac{y^2}{4}$, the level curves have equation $\frac{x^2}{9} + \frac{y^2}{4}=c$, and are therefore ellipses.  
+
+![enter image description here][2]
+
+The vertical line test doesn't have any meaning here, because we are not looking at the graph of a function, we are looking at its domain.  The geometric property that characterizes “function” in a contour plot is that the level curves for two different values do not intersect.  For if the level curves for $1$ and $2$ intersected at $(a,b)$, then $f(a,b)=1$ and $f(a,b)=2$, which doesn't make sense.
+
+Like DavidK said in his comment: “If things start to get complicated, however, sometimes we can clear up confusion by being very explicit about exactly what we mean.”  A function is not the same as its graph, nor is it the same as its level curves.
+
+I think it gets even worse for my poor Calc III students, who have to integrate functions of three variables over three-dimensional solids.  There it is hopeless to think of graphs, because the graph of a function of three variables lies in four-dimensional hyperspace!  Instead, it's best to think of a function as measuring the “density” of a point in the solid.
+
+
+  [1]: 8PQ9v.png
+  [2]: 1Qlsa.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1014401/why-is-an-ellipse-hyperbola-and-circle-not-a-function/1015449#1015449) on Mathematics Stack Exchange, 2014-11-10. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

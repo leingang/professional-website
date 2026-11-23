@@ -1,0 +1,55 @@
+---
+title: External scripts when using TeXShop
+date: '2010-11-30'
+description: Look in the TeXShop Macro Editor—you'll see it can be used for code snippets or scripts. The first item in the Macro menu is "AppleScripts," where you can see…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 6236
+se-link: https://tex.stackexchange.com/questions/6215/external-scripts-when-using-texshop/6236#6236
+se-score: 6
+se-accepted: true
+se-tags:
+- editors
+- scripts
+- texshop
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[External scripts when using TeXShop](https://tex.stackexchange.com/questions/6215/external-scripts-when-using-texshop), asked by [Dror](https://tex.stackexchange.com/users/412/dror) on TeX Stack Exchange (2010-11-30; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> As I wrote in [this answer to my question][q-1], I decided to use a shell script in order to concatenate the bunch of .tex files and compile them. However, this way, when ever I want to compile the whole glossary, I have to switch to the `terminal` and run the script there, from the right directory, i.e. the glossary's directory. 
+>
+> I'm using TeXShop on a mac OSX, and I want to know is there a way to set a short cut in TeXShop that will invoke the script?
+>
+> Thanks,
+> Dror.
+>
+>
+>
+>   [q-1]: https://tex.stackexchange.com/questions/5821/creating-a-standalone-glossary/5955#5955
+:::
+
+Look in the TeXShop Macro Editor—you'll see it can be used for code snippets or scripts.  The first item in the Macro menu is "AppleScripts," where you can see some examples, including some that just wrap around a shell script or command.  So something like this should work:
+
+```latex
+--AppleScript
+-- #FILEPATH# in the text will be replaced by the path of the document
+
+do shell script "cd #FILEPATH# && source generateGlossary.sh"
+```
+
+The first line tells TeXShop that this macro should be run as a script.  The second line is just an AppleScript comment.  The third line does the work.
+
+Macros can be bound to command key combinations as well.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/6215/external-scripts-when-using-texshop/6236#6236) on TeX Stack Exchange, 2010-11-30. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

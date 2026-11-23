@@ -1,0 +1,104 @@
+---
+title: 'TikZ: "skipping" levels when drawing trees'
+date: '2010-11-08'
+description: Great question! TikZ is not set up to do this kind of tree. It assumes that the position of each child node is a function of the number of the child node and…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5098
+se-link: https://tex.stackexchange.com/questions/5078/tikz-skipping-levels-when-drawing-trees/5098#5098
+se-score: 15
+se-accepted: false
+se-tags:
+- tikz-pgf
+- trees
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[TikZ: "skipping" levels when drawing trees](https://tex.stackexchange.com/questions/5078/tikz-skipping-levels-when-drawing-trees), asked by [Anthony Labarre](https://tex.stackexchange.com/users/440/anthony-labarre) on TeX Stack Exchange (2010-11-08; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm interested in using TikZ to draw rooted trees whose leaves should all be on the same level, pretty much like this:
+>
+> ![alt text][q-1]
+>
+> Please don't pay attention to the fancy style and colours, I'm only interested in having all leaves at the same level. Anyone knows how to do this? I've looked into the manual and the [appropriate section on Texample][q-2], but had no luck so far.
+>
+>   [q-1]: Z48g4.gif
+>   [q-2]: http://www.texample.net/tikz/examples/feature/trees/
+>
+> **UPDATE:** a while after this question was answered, I found out about the [LaTeX newicktree package](http://cbr.jic.ac.uk/dicks/software/newicktree/index.html), which allows you to draw such trees in an extremely simple way, just by specifying them in the format people in phylogenetics already use. This is obviously much simpler than resorting to TikZ, but thanks anyway to everyone who contributed to helping me.
+:::
+
+Great question! TikZ is not set up to do this kind of tree.  It assumes that the position of each child node is a function of the number of the child node and the total number of child nodes.  To define the tree you have with a single child node for each leaf won't work because the rayfinned fish leaf needs to get further from the root when you add the mammals leaf.
+
+But you can trick it by creating invisible nodes at regular points.  Your tree would need to be 10 levels deep, I think.
+
+Or, you can hack by using a custom growth function (See section 42 of the PGF 2.00 manual or section 53 of the 2.10 manual):
+
+```latex
+\begin{tikzpicture}[%
+    grow via three points={% 
+        one child at (-0.5,1) and two children at (-0.5,1) and (0.5,1)},
+    genus/.style={
+        rectangle,inner sep=0pt,outer sep=1pt, minimum width=5pt,minimum height=5pt,fill,
+        label={[black,anchor=west,rotate around={90:(-2.5pt,0)}
+               ]0:#1}},
+    ]
+\node[coordinate] {} [%
+         grow via three points={one child at (0,0) and two children at (-4.5,9) and (0.5,1)},
+         very thick,yellow
+     ]
+     child {node[genus=rayfinned fish] {}}
+     child {
+         [grow via three points={one child at (0,0) and two children at (-4,8) and (0.5,1)}]     
+         child {node[genus=lungfish] {}}
+         child {
+             [grow via three points={one child at (0,0) and two children at (-3,6) and (1,2)}]      
+             child {
+                 [grow via three points={one child at (0,0) and two children at (-0.5,1) and (0.5,1)}]
+                 child {node[genus=salamanders] {}}
+                 child {node[genus=frogs] {}}    
+             }
+             child[blue] {
+                 [grow via three points={one child at (0,0) and two children at (-2.5,5) and (0.5,1)}]
+                 child {node[genus=turtles] {}}
+                 child {
+                     [grow via three points={one child at (0,0) and two children at (-0.5,1) and (2,4)}]
+                     child {
+                         [grow via three points={one child at (0,0) and two children at (-1,2) and (1,2)}]
+                         child {
+                             [grow via three points={one child at (0,0) and two children at (-0.5,1) and (0.5,1)}]
+                             child {node[genus=lizards] {}}
+                             child {node[genus=snakes] {}}
+                         }
+                         child {
+                             [grow via three points={one child at (0,0) and two children at (-0.5,1) and (0.5,1)}]
+                             child {node[genus=crocodiles] {}}
+                             child {node[genus=birds] {}}
+                         }
+                     }
+                     child {node[genus=mammals] {}}   
+                 }
+             }       
+         }
+     }
+;
+\end{tikzpicture}
+```
+
+![tree using code sample above][1]  
+
+  [1]: dcAV9.png
+
+That should probably be cleaned up--I think you can create a named coordinate in each direction and scale.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5078/tikz-skipping-levels-when-drawing-trees/5098#5098) on TeX Stack Exchange, 2010-11-08. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

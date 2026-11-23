@@ -1,0 +1,144 @@
+---
+title: 'Problem with labeled equations in beamer: Why do the labels have different positions after each compilation?'
+date: '2012-02-09'
+description: 'OK, I trimmed down the file quite a bit but here is something I think is closer to you want:'
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 43908
+se-link: https://tex.stackexchange.com/questions/43834/problem-with-labeled-equations-in-beamer-why-do-the-labels-have-different-posit/43908#43908
+se-score: 2
+se-accepted: true
+se-tags:
+- tikz-pgf
+- beamer
+- equations
+- paths
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Problem with labeled equations in beamer: Why do the labels have different positions after each compilation?](https://tex.stackexchange.com/questions/43834/problem-with-labeled-equations-in-beamer-why-do-the-labels-have-different-posit), asked by [J G](https://tex.stackexchange.com/users/11567/j-g) on TeX Stack Exchange (2012-02-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I'd like to make a slide in `beamer` with a few equations that labels the parts of the last equation shown.  I'm doing this with overlays so one equation is added at a time, and only that last equation shows is labeled.
+>
+> In one approach I've tried, the position of the labels changes each time I compile the file.  Specifically, the labels move something like `\vspace{0.05cm}` upward or `\vspace{-0.05cm}` downward each time I compile, depending on whether the label is above or below the equation.  I want these labels to stop moving on their own.  Compile the file about 20 times and you'll see a huge change.
+>
+> I am also having the problem sometimes that the equation is not all aligned.  In the following example, the "Max" is not aligned with the rest of the equation.
+>
+> ```latex
+> \documentclass[professionalfonts, smaller]{beamer} 
+> \usetheme{CambridgeUS}
+> \usepackage{tikz}
+> \usepackage{iwona}
+> \usepackage{amsmath}
+> \usepackage{mathtools}
+> \usetikzlibrary{arrows,shapes}
+> \DeclareMathOperator*{\Max}{Max}
+>
+> \begin{document}
+>
+> \tikzstyle{every picture}+=[remember picture]
+>
+> \everymath{\displaystyle}
+>
+> \begin{frame}
+> \frametitle{Slide Title}
+>
+> \tikzstyle{na} = [baseline=-.5ex]
+>
+>   \vspace{1cm}
+>  \hspace{0.0cm} Comment on x \tikz[na] \node[coordinate] (n1) {};
+>  \hspace{1.25cm} \tikz[na] \node[coordinate] (n2) {}; Comment on p(x)
+>  \vspace{0.0cm}
+>  \begin{equation*}
+>         \hspace{-4.5cm}
+>         \tikz[overlay, remember picture, baseline]{
+>              \node[anchor=base](t1){$\Max\limits_x$};
+>          }
+>         \tikz[overlay, remember picture, baseline]{
+>          \node[anchor=base, right of=t1, node distance=30pt](t2){$L(x) =$};
+>         } 
+>         \tikz[overlay, remember picture, baseline)]{
+>             \node[anchor=base, right of=t2, node distance=35pt](t3){$p(x) +$};
+>         } 
+>         \tikz[overlay, remember picture, baseline)]{
+>             \node[anchor=base, right of=t3, node distance=29pt](t4){$\gamma d(x)$};
+>         }
+> \end{equation*}
+>
+>   \vspace{0.4cm}
+>   \hspace{0cm} Comment on L(x) \tikz[na]\node [coordinate] (n3) {}; \hspace{1.5cm}   Comment on \tikz[na]\node [coordinate] (n4) {}; d(x)
+>
+> \begin{tikzpicture}[overlay]
+>     \path[->](n1) edge [bend left] (t1);
+>     \path[->](n2) edge [bend right] (t3);
+>     \path[->](n3) edge [bend right] (t2);
+>     \path[->](n4) edge [bend right] (t4);
+> \end{tikzpicture}
+>
+> \end{frame}
+> \end{document}
+> ```
+:::
+
+OK, I trimmed down the file quite a bit but here is something I think is closer to you want:
+
+```latex
+\documentclass{beamer} 
+\usetheme{CambridgeUS}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\DeclareMathOperator*{\Max}{Max}
+
+\tikzstyle{every picture}+=[remember picture]
+\newcommand\na[1]{\tikz[baseline=-.5ex]{\node[coordinate] (#1) {};}}
+\newcommand\ta[2]{\tikz[baseline]{\node[anchor=base] (#1) {#2};}}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Slide Title}
+
+Comment on x  \na{n1}
+\na{n2} Comment on $p(x)$
+\begin{equation*}
+        \ta{t1}{$\Max\limits_x$} \ta{t2}{$L(x)$} = \ta{t3}{$p(x)$} + \ta{t4}{$\gamma d(x)$}
+\end{equation*}
+
+Comment on L(x) \na{n3}
+Comment on \na{n4} $d(x)$
+
+\begin{tikzpicture}[overlay]
+    \path[->](n1) edge [bend left] (t1);
+    \path[->](n2) edge [bend right] (t3);
+    \path[->](n3) edge [bend right] (t2);
+    \path[->](n4) edge [bend right] (t4);
+\end{tikzpicture}
+
+\end{frame}
+\end{document}
+```
+
+ - I deleted all the `\hspace` and `\vspace` commands.  Usually there's a better way to achieve the spacing you want than to hardcode it.
+ - I macro-fied the tikz nodes that just mark nodes for the arrows to connect.  It makes the code within `\begin{frame}`...`\end{frame}` a bit more readable.
+ - I deleted the `only<1>{`...`}` part because you said you wanted it all one slide/overlay.  If you want fancier revealing ask another question.
+
+![sample output][1]
+
+Hope that helps.
+
+
+  [1]: V84EA.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/43834/problem-with-labeled-equations-in-beamer-why-do-the-labels-have-different-posit/43908#43908) on TeX Stack Exchange, 2012-02-09. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

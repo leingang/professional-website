@@ -1,0 +1,53 @@
+---
+title: Problems The Real Field Definition (Step 1) Theorem 1.19 Baby Rudin
+date: '2015-11-01'
+description: 'You are mistaking a statement for its converse. The statement is:'
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1508039
+se-link: https://math.stackexchange.com/questions/1508028/problems-the-real-field-definition-step-1-theorem-1-19-baby-rudin/1508039#1508039
+se-score: 0
+se-accepted: false
+se-tags:
+- general-topology
+- field-theory
+- real-numbers
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Problems The Real Field Definition (Step 1) Theorem 1.19 Baby Rudin](https://math.stackexchange.com/questions/1508028/problems-the-real-field-definition-step-1-theorem-1-19-baby-rudin), asked by [Yesid Fonseca V.](https://math.stackexchange.com/users/252386/yesid-fonseca-v) on Mathematics Stack Exchange (2015-11-01; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > **Step 1** The members of $R$ will be certain subsets of $Q$, called *cuts*. A cut is, by definition, any set $\alpha \subset Q$ with the following three properties.
+> >
+> > - $\alpha$ is not empty, $\alpha \neq Q$.
+> > - If $p\in\alpha$, $q\in Q$, and $q < p$, then $q\in\alpha$.
+> > - If $p\in\alpha$, then $p < r$ for some $r\in\alpha$.
+>
+> Well, I'm confused in the second item. 
+>
+> > **Experiment**: Let $\alpha=\{p: p\in Q \land p <0\}$. If we take $q\in\alpha$ and then we **analyse** (II) for all elements of $\alpha$, we have to find that $q<p$ for all $p\in\alpha$ because the other statements are true ($q\in Q$ and obviously $p\in\alpha$ and $q\in\alpha$). However $p=q\in\alpha$ doesn't satisfy $q<p=q$, then we can find a contradiction. I'm wrong? Why yes or why no?
+:::
+
+You are mistaking a statement for its converse.  The statement is:
+
+> For all $p \in \alpha$, every $q \in Q$ which is less than $p$ is in $\alpha$.
+
+You are thinking of:
+
+> For all $p \in \alpha$, every $q \in \alpha$ is less than $p$.
+
+You're right that the second statement doesn't make sense, because if $p\in\alpha$, one could take $q=p$.  Since $p < p$ is never true, this is a contradiction unless $\alpha$ is empty. But that contradicts the first condition. 
+
+But that's not what the original condition is.  In general, a statement and its converse are not logically equivalent.  "All Ferraris are red" does not imply that "All red cars are Ferraris."
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1508028/problems-the-real-field-definition-step-1-theorem-1-19-baby-rudin/1508039#1508039) on Mathematics Stack Exchange, 2015-11-01. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

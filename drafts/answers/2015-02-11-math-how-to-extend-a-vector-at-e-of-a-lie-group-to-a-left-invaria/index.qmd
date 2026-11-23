@@ -1,0 +1,75 @@
+---
+title: how to extend a vector at $e$ of a Lie group to a left invariant vector field?
+date: '2015-02-11'
+description: Your first example may not be so illustrative. Since $$\begin{pmatrix} 1 & 0 & a1 \\ 0 & 1 & a2 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & x1 \\ 0 & 1…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1143613
+se-link: https://math.stackexchange.com/questions/1143307/how-to-extend-a-vector-at-e-of-a-lie-group-to-a-left-invariant-vector-field/1143613#1143613
+se-score: 3
+se-accepted: true
+se-tags:
+- differential-geometry
+- lie-groups
+- lie-algebras
+- smooth-manifolds
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[how to extend a vector at $e$ of a Lie group to a left invariant vector field?](https://math.stackexchange.com/questions/1143307/how-to-extend-a-vector-at-e-of-a-lie-group-to-a-left-invariant-vector-field), asked by [Martial](https://math.stackexchange.com/users/99769/martial) on Mathematics Stack Exchange (2015-02-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I am reading some books about Lie group and Lie algebra. Denote the set of all the left invariant vector fields as $\mathfrak{X}_L$, and the tangent space at $e$ of $G$ as $T_eG$. They say that the $\mathfrak{X}_L$ and $T_eG$ are isomorphics. So we can extend a vector $\xi\in T_eG$ to the vector field on $G$ by this way:
+> $$X(g)=dL_g(\xi),\mbox{for any }g\in G$$
+>
+> where $X(g)$ is a vecotr at $g$, $L_g:G\rightarrow G$ is the left translation, and $dL_g:T_eG\rightarrow T_gG$ is the pushforward. My question is what is $dL_g(\xi)$ exactly?
+>
+> Thank you.
+:::
+
+Your first example may not be so illustrative.  Since
+$$\begin{pmatrix} 1 & 0 & a_1 \\ 0 & 1 & a_2 \\ 0 & 0 & 1 \end{pmatrix}
+\begin{pmatrix} 1 & 0 & x_1 \\ 0 & 1 & x_2 \\ 0 & 0 & 1 \end{pmatrix}=
+\begin{pmatrix} 1 & 0 & a_1+x_1 \\ 0 & 1 & a_2+x_2 \\ 0 & 0 & 1 \end{pmatrix}$$
+your Lie group is isomorphic to $\mathbb{R}^2$ under addition.  But if you think of those two positions as coordinates $y_1$ and $y_2$, then 
+$$\begin{align*} 
+\frac{\partial y_1}{x_1} &= 1 &\frac{\partial y_1}{x_2} &= 0\\
+\frac{\partial y_2}{x_1} &= 0 &\frac{\partial y_1}{x_2} &= 1
+\end{align*}$$
+So for each $(a_1,a_2)$, the map $dL_{(a_1,a_2)}$ is the identity map.
+
+A better example might be
+$$\begin{align*}
+G &= SU(2) = \left\{\begin{bmatrix} \alpha & -\bar\beta \\ \beta & \bar\alpha \end{bmatrix}
+: \alpha,\beta\in \mathbb{C},\ |\alpha^2| + |\beta^2| = 1\right\} \\
+\mathfrak{g} &= \mathfrak{su}(2)
+= \left\{\begin{bmatrix} ix & -\bar\beta \\ \beta & -ix \end{bmatrix}
+: x\in\mathbb{R},\beta\in \mathbb{C}\right\}
+\end{align*}$$
+Let $\xi = \begin{pmatrix} i & 0 \\ 0 &-i\end{pmatrix} \in \mathfrak{g}$.  Then $\xi$ is the derivative at $t=0$ of the path in $SU(2)$
+$$\gamma(t) = \exp\begin{pmatrix} it & 0 \\ 0 &-it\end{pmatrix}
+= \begin{pmatrix} e^{it} & 0 \\ 0 &e^{-it}\end{pmatrix}$$
+So for $g = \begin{pmatrix} \alpha & -\bar\beta \\ \beta & \bar\alpha \end{pmatrix} \in G$, we have
+$$\begin{align*}
+    L_g(\xi)
+    &= \left.\frac{d}{dt} \begin{pmatrix} \alpha & -\bar\beta \\ \beta & \bar\alpha \end{pmatrix}
+                    \begin{pmatrix} e^{it} & 0 \\ 0 & e^{-it} \end{pmatrix}\right|_{t=0} \\
+    &= \left.\frac{d}{dt} \begin{pmatrix} \alpha e^{it} & -\bar\beta e^{-it} \\ \beta e^{it} & \bar\alpha e^{-it} \end{pmatrix}\right|_{t=0} \\
+    &= \left.\begin{pmatrix} \alpha e^{it}(i) & -\bar\beta e^{-it}(-i) \\ \beta e^{it}(i) & \bar\alpha e^{-it}(-i) \end{pmatrix}\right|_{t=0} \\
+    &= \begin{pmatrix} \alpha i & \bar\beta i \\ \beta i & -\bar\alpha i\end{pmatrix}\\
+    &= \begin{pmatrix} \alpha  & -\bar\beta  \\ \beta  & \bar\alpha \end{pmatrix}
+\begin{pmatrix} i & 0  \\ 0  & -i\end{pmatrix}=g\xi\\
+\end{align*}$$
+
+Also, I'm not sure what your pictures are supposed to represent.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1143307/how-to-extend-a-vector-at-e-of-a-lie-group-to-a-left-invariant-vector-field/1143613#1143613) on Mathematics Stack Exchange, 2015-02-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

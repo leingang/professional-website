@@ -1,0 +1,59 @@
+---
+title: Integration of f(x) where f(x) is x in binary, used as a decimal
+date: '2017-04-28'
+description: Here's why zero can't be right. You can see $f(x) \geq 0.1$ on $[0.5,1.0)$. So $\int0^1 f(x)\,dx \geq (0.1)(0.5) = 0.05$.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2255579
+se-link: https://math.stackexchange.com/questions/2255564/integration-of-fx-where-fx-is-x-in-binary-used-as-a-decimal/2255579#2255579
+se-score: 10
+se-accepted: true
+se-tags:
+- definite-integrals
+- binary
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Integration of f(x) where f(x) is x in binary, used as a decimal](https://math.stackexchange.com/questions/2255564/integration-of-fx-where-fx-is-x-in-binary-used-as-a-decimal), asked by [John Lou](https://math.stackexchange.com/users/404782/john-lou) on Mathematics Stack Exchange (2017-04-28; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> > Define $f(x)$ when $x$ $\in [0,1]$ as $x_2$ ($x$ base 2) considered as a decimal value.
+> >
+> >Therefore, $f(0.75) = 0.11$, and $f(0.25) = 0.01$.
+> >
+> > Compute $\int_0^1f(x)dx$.
+>
+> [![Plot of f][q-1]][q-1]
+>
+> To do this, I figured that the answer might be $0$ because integrals aren't defined by the value at a point, and the graph shows its discontinuity. I also tried using a program, and I got $0$. Is this the correct answer? Is there a better way of doing it?
+>
+>
+>   [q-1]: 62gA5.png
+:::
+
+Here's why zero can't be right.  You can see $f(x) \geq 0.1$ on $[0.5,1.0)$.  
+So $\int_0^1 f(x)\,dx \geq (0.1)(0.5) = 0.05$.
+
+Also, $f(x) \geq 0.01$ on $[0.25,0.5)$, $f(x) \geq 0.1$ on $[0.5,0.75)$, and $f(x) \geq 0.11$ on $[0.75,1)$.  So
+$$\int_0^1 f(x)\,dx \geq (0.01)(0.25) + (0.1)(0.25) + (0.11)(0.25) = (0.22)(0.25) = 0.055$$
+Keep going.  Then try to generalize.
+
+Let $\chi_n(x)$ be the $n$th digit of $x$ in its binary expansion.  Notice that
+$$\int_0^1 \chi_n(x)\,dx = \frac{1}{2}$$
+That is, half of the numbers in $[0,1]$ have this digit zero, and half have it one.
+Also,
+$$f(x) = \sum_{n=1}^\infty \frac{\chi_n(x)}{10^n}$$
+Integrating term-by-term, we have
+$$\int_0^1 f(x)\,dx = \sum_{n=1}^\infty \frac{1/2}{10^n} = \frac{1/20}{1-1/10} = \frac{1}{18} = 0.05555\dotsc$$
+You will need to make sure that integrating the series term-by-term is justified.  That should be OK because $0 \leq \chi_n(x) \leq 1$.  By the Weierstrass $M$-test, the series converges uniformly.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2255564/integration-of-fx-where-fx-is-x-in-binary-used-as-a-decimal/2255579#2255579) on Mathematics Stack Exchange, 2017-04-28. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

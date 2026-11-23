@@ -1,0 +1,57 @@
+---
+title: Why is this vector field not conservative, even though it has a potential? (what is the actual definition of a conservative vector field?)
+date: '2017-10-20'
+description: Any mapping, be it a vector field or a scalar function or something else, requires a domain.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2481600
+se-link: https://math.stackexchange.com/questions/2481593/why-is-this-vector-field-not-conservative-even-though-it-has-a-potential-what/2481600#2481600
+se-score: 16
+se-accepted: true
+se-tags:
+- multivariable-calculus
+- vector-analysis
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Why is this vector field not conservative, even though it has a potential? (what is the actual definition of a conservative vector field?)](https://math.stackexchange.com/questions/2481593/why-is-this-vector-field-not-conservative-even-though-it-has-a-potential-what), asked by [Rax Adaam](https://math.stackexchange.com/users/179404/rax-adaam) on Mathematics Stack Exchange (2017-10-20; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> My question is really ''what is *the* definition of a conservative vector field''?
+>
+> I've consulted 3 textbooks that all say a vector field $\vec{F}$ is conservative by definition if there exists a scalar potential $\phi$ such that $\nabla \phi = \vec{F}$. Then, they go on to talk about connected domains, path independence and the equality of mixed partials and how they are all related. 
+>
+> In particular, they emphasize that e.g. in $\mathbb{R}^2$ given $\vec{F} = \bigl<F_1,\,F_2\bigr>$, if $\frac{\partial F_1}{\partial y} = \frac{\partial F_2}{\partial x}$ on a simply-connected domain, then $\vec{F}$ is conservative on that domain.
+>
+> However, without fail, all of them then offer the example of $\vec{F} = \bigl< \frac{-y}{x^2+y^2},\, \frac{x}{x^2+y^2} \bigr>$, pointing out:
+>
+>  1. it's line integral is _not_ path independent, even though
+>  2. $\frac{\partial F_1}{\partial y} = \frac{\partial F_2}{\partial x}$
+>
+> and this is explained by pointing out that the domain is not simply connected (if the path contains the origin).
+>
+> That much makes sense to me: we cannot conclude $\vec{F}$ is conservative based on the partial derivatives, because the domain is not simply connected - totally consistent with what has been presented.
+>
+> **What none of them address is why $\vec{F} = \bigl< \frac{-y}{x^2+y^2},\, \frac{x}{x^2+y^2} \bigr>$ is not conservative when there exists a potential $\phi = \arctan(y/x)$ such that $\nabla \phi = \vec{F}$**. None of the texts mention any necessary conditions on the scalar potential. So is the existence of a scalar potential the definition of a vector field being conservative or not?
+:::
+
+Any mapping, be it a vector field or a scalar function or something else, requires a domain.
+
+It is true that where $\phi(x,y)$ is defined, $\nabla \phi = \vec F$.  But $\vec F$'s domain is the plane minus the origin, while $\phi$'s domain is the plane minus a line (the $y$-axis).
+
+Since there's no function *with the same domain as $\vec F$* whose gradient is $\vec F$, $\vec F$ is not conservative.
+
+Notice that the right half of the plane is simply connected, and as you've shown, $\vec F$ restricted to that domain is conservative.  $\phi$ works as a potential on that domain.
+
+The upshot is that the question of whether $\vec F$ is conservative on $U$ is a question not just about the component functions of $\vec F$ but the “shape” (we say *topology*) of $U$.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2481593/why-is-this-vector-field-not-conservative-even-though-it-has-a-potential-what/2481600#2481600) on Mathematics Stack Exchange, 2017-10-20. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

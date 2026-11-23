@@ -1,0 +1,65 @@
+---
+title: Probability and Test Preparation Laziness
+date: '2017-04-26'
+description: You've basically taken probability out the question here. Like Catalin says, if you skip any one of them, and there's a positive probability the professor…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2252400
+se-link: https://math.stackexchange.com/questions/2252353/probability-and-test-preparation-laziness/2252400#2252400
+se-score: 5
+se-accepted: true
+se-tags:
+- probability
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Probability and Test Preparation Laziness](https://math.stackexchange.com/questions/2252353/probability-and-test-preparation-laziness), asked by [js-anon](https://math.stackexchange.com/users/427284/js-anon) on Mathematics Stack Exchange (2017-04-26; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> For an upcoming exam my professor has given us a list of 30 questions of which he will select 10 to quiz us on.
+>
+> My question is: **Assuming I will score a 100% on all of the questions I prepare for, how many of the 30 questions must I prepare for to receive a perfect score on the exam?**
+>
+> <small>*I understand this may be a slightly humorous question, but I think it holds mathematical merit, and I would like to hear the mathematical foundations of any answer presented*</small>
+>
+> Additionally, I'm not really interested in moral/pedagogical shortcomings inherent in my question, i'm more so interested in the probability/math involved in solving the question presented.
+:::
+
+> **Assuming I will score a 100% on all of the questions I prepare for, how many of the 30 questions must I prepare for to receive a perfect score on the exam?**
+
+You've basically taken probability out the question here.  Like Catalin says, if you skip any one of them, and there's a positive probability the professor chooses that one, then you have a positive probability of a less than perfect score.  So if this is your definition of success, your only option is to study them all.
+
+Here is another question:
+
+> If I decide in advance to select a certain number $n$ of questions to study, what is my expected score?
+
+Now this is sounding more like a probability question.  Your professor is sampling $10$ out of $30$, and you are sampling $n$ of them, without replacement.  Let $X$ be the number of successes among your $n$ trials.  Then $X$ follows a [hypergeometric distribution][1]:
+$$P(X = k) = \frac{\binom{10}{k}\binom{20}{n-k}}{\binom{30}{n}}$$
+You can look up the expected value of this distribution; it is:
+$$E(X) = n \cdot \frac{10}{30} = \frac{n}{3}$$
+Intuitively, that makes sense; your professor is picking a third of the problems, so you can expect that a third of *your* choices are among the professor's choices.  If you want to ensure an expected score of 9/10, study 27 of the problems.  If 5/10 is your threshold, study half of the problems.  
+
+You can further refine the question by trying to find a lower bound for the probability that your score will be above some mark (whether it's passing, or getting an A).  A Google Spreadsheet can do this for you in a few minutes.
+
+* * *
+
+Now, as a professor, I have some advice: 
+
+1. Answering this question yourself might have been a good study exercise.  But asking it online is not the same thing and has much less value for studying.  
+
+2. Coming back to the beginning, the most effective, most risk-averse strategy is to study all 30 questions.  Your professor is being extremely generous by limiting to that small a set.  
+
+In short, get back to work! `<smile />`
+
+  [1]: https://en.wikipedia.org/wiki/Hypergeometric_distribution
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2252353/probability-and-test-preparation-laziness/2252400#2252400) on Mathematics Stack Exchange, 2017-04-26. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

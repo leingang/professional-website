@@ -1,0 +1,43 @@
+---
+title: How many molecules does the Mississippi River discharge every minute?
+date: '2015-02-11'
+description: I think this is your real question. It's why we ask people to post their work along with the question they're working on. You understand that the numbers need…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1143863
+se-link: https://math.stackexchange.com/questions/1143847/how-many-molecules-does-the-mississippi-river-discharge-every-minute/1143863#1143863
+se-score: 2
+se-accepted: false
+se-tags:
+- algebra-precalculus
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[How many molecules does the Mississippi River discharge every minute?](https://math.stackexchange.com/questions/1143847/how-many-molecules-does-the-mississippi-river-discharge-every-minute), asked by [alejandro](https://math.stackexchange.com/users/214742/alejandro) on Mathematics Stack Exchange (2015-02-11; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> A liter of water contains about $3.35 \times 10^{25}$ molecules. The Mississippi River discharges about $1.7 \times 10^7$ liters of water every second.
+>
+> I try to multiply $(3.35\times 1.7) (10^{25}\times10^7)$ and then I got $(5.695)$ and in the book said you have to add the exponent $(10^{25+7})=10^{32}$ then I got lost.${}$
+:::
+
+From your comment:
+
+> I try to multiply (3.35x1.7) (10^25x10^7) and then I got (5.695) and in the book said you have to add the exponent (10^25+^7)=10^32 then I got lost
+
+I think this is your real question.  It's why we ask people to post their work along with the question they're working on.  You understand that the numbers need to be multiplied, but  you got lost with:
+$$10^{25} \cdot 10^7 = 10^{25+7} = 10^{32}$$
+Think about what $10^{25}$ is: The product of $25$ $10$s written in a row.  Similarly for $10^7$.  So $10^{25} \cdot 10^7$ is the concatenation of $25$ $10$s and $7$ more $10$s.  That's $32$ $10$s altogether, or $10^{32}$.
+
+In general, $a^b a^c = a^{b+c}$.  This is a rule of exponents that is true even when the exponents are negative or fractional.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1143847/how-many-molecules-does-the-mississippi-river-discharge-every-minute/1143863#1143863) on Mathematics Stack Exchange, 2015-02-11. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

@@ -1,0 +1,49 @@
+---
+title: DE Mixing Problem with decay
+date: '2018-08-15'
+description: “The chemical is breaking down at a rate proportional to the amount of chemical in the tank” means that there is a term in $\frac{dz}{dt}$ proportional to…
+categories:
+- math.se
+license: CC BY-SA 4.0
+draft: true
+se-site: math
+se-answer-id: 2883594
+se-link: https://math.stackexchange.com/questions/2883582/de-mixing-problem-with-decay/2883594#2883594
+se-score: 1
+se-accepted: false
+se-tags:
+- ordinary-differential-equations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[DE Mixing Problem with decay](https://math.stackexchange.com/questions/2883582/de-mixing-problem-with-decay), asked by user584413 on Mathematics Stack Exchange (2018-08-15; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+> I am curious how to put together a balance equation which adds in a decay element. 
+>
+> For example:
+>
+> > A large tank holds of a solution with chemical 'Z'. The flow rate of chemical Z entering the tank is equal to the flow rate exiting the tank.   
+>
+> From here I can work out that this works out to be the following balance equation:
+>
+> $$\frac{dz}{dt} = \frac{dz_{\text{in}}}{dt} - \frac{dz_{\text{out}}}{dt}$$
+>
+> But if the chemical is breaking down at a rate proportional to the amount of of chemical in the tank, how to I input that into the equation?
+>
+> In other words, how to I add a 'decay' element to this balance equation, and how would I go about solving it?
+:::
+
+“The chemical is breaking down at a rate proportional to the amount of chemical in the tank” means that there is a term in $\frac{dz}{dt}$ proportional to $-z$.  The constant of proportionality would have to be determined from other data in the problem.
+
+If $V$ is the volume of the tank, $v$ is the flow rate in and out of the tank, $c$ is the concentration of the solution coming in, and $k$ is the decay rate, then
+$$\frac{dz}{dt} = cv - \frac{z}{V} v - k z = cv - \left(\frac{v}{V}+k\right)z$$
+Since $v$, $V$, $c$, and $k$ are all constant, the equation is separable (homogeneous, in fact).
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2883582/de-mixing-problem-with-decay/2883594#2883594) on Mathematics Stack Exchange, 2018-08-15. Licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+:::

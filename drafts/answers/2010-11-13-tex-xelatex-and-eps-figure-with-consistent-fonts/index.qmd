@@ -1,0 +1,40 @@
+---
+title: XeLaTeX and EPS figure with consistent fonts
+date: '2010-11-13'
+description: There's the overpic package which provides an environment of included graphics picture overlay. You can definitely use pgf/tikz, but if you're not already it…
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 5324
+se-link: https://tex.stackexchange.com/questions/5319/xelatex-and-eps-figure-with-consistent-fonts/5324#5324
+se-score: 3
+se-accepted: true
+se-tags:
+- xetex
+- labels
+- pstricks
+- psfrag
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[XeLaTeX and EPS figure with consistent fonts](https://tex.stackexchange.com/questions/5319/xelatex-and-eps-figure-with-consistent-fonts), asked by [pluton](https://tex.stackexchange.com/users/371/pluton) on TeX Stack Exchange (2010-11-13; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I'm using Miktex 2.9 and XeLaTeX plus some EPS figures. For consistent fonts throughout the document, I used to play with [psfrag][q-1] or directly use [pstricks][q-2]. I'm facing the situation where none of the above works. Instead, I'm now using the `\put` command to place labels on EPS figures. I'd like to know others possibles approaches : Inkscape? [tikZ][q-3]?
+>
+>   [q-1]: http://ctan.org/pkg/psfrag
+>   [q-2]: http://ctan.org/pkg/pstricks
+>   [q-3]: http://ctan.org/pkg/pgf
+:::
+
+There's the `overpic` package which provides an environment of included graphics `picture` overlay.  You can definitely use pgf/tikz, but if you're not already it might be overkill.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5319/xelatex-and-eps-figure-with-consistent-fonts/5324#5324) on TeX Stack Exchange, 2010-11-13. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,58 @@
+---
+title: $x+\frac{1}{x}$ is an integer
+date: '2018-01-17'
+description: I get the gist of the argument and it looks correct to me. To verify it, though, I had to stare at the summations in the middle of the two displayed equations…
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 2609561
+se-link: https://math.stackexchange.com/questions/2609537/x-frac1x-is-an-integer/2609561#2609561
+se-score: 3
+se-accepted: true
+se-tags:
+- proof-verification
+- induction
+- binomial-coefficients
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[$x+\frac{1}{x}$ is an integer](https://math.stackexchange.com/questions/2609537/x-frac1x-is-an-integer), asked by [atifcppprogrammer](https://math.stackexchange.com/users/451530/atifcppprogrammer) on Mathematics Stack Exchange (2018-01-17; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Is the following Proof Correct? In particular please comment on the correctness of the given formulas.
+>
+> **Theorem.** Given that $x$ is a real number, $x\neq 0$, and $x + \frac{1}{x}$ is an integer. For all $n\ge 1$, $x^n+\frac{1}{x^n}$ is an integer.
+>
+> **Proof.** We construct the proof by recourse to *Strong-Induction*.  Assume for an arbitrary $n\in\mathbf{Z^+}$ that $x^k+\frac{1}{x^k}$ is an integer for any positive integer $k$ strictly less than $n$. Now Consider the following cases.
+>
+> *Case-1:* If $n$ is even then for some $l\in\mathbf{Z^+}$, $n = 2l$ thus the *Binomial-Theorem* implies that
+> $$(x+\frac{1}{x})^n - \sum_{j=1}^{l-1}\binom{n}{2j}\left(x^{2j}+\frac{1}{x^{2j}}\right)-\binom{n}{l} = x^n+\frac{1}{x^n}$$
+> from the inductive hypothesis we know that $x+\frac{1}{x}\in\mathbf{Z}$ which implies that $(x+\frac{1}{x})^n \in\mathbf{Z}$ in addition it also follows from the inductive hypothesis that $x^{2j}+\frac{1}{x^{2j}}\in\mathbf{Z}$ for $j\in\{1,2,3,...,l-1\}$ moreover we also that $\binom{n}{r}\in\mathbf{Z^+}$ is always a positive integer implying that $x^n+\frac{1}{x^n}$ is an integer.
+>
+> *Case-2:* If $n$ is odd then for some $l\in\mathbf{Z^+}$, $n = 2l+1$ thus the *Binomial-Theorem* implies that
+> $$(x+\frac{1}{x})^n - \sum_{j=1}^{l}\binom{n}{2j-1}\left(x^{2j-1}+\frac{1}{x^{2j-1}}\right) = x^n+\frac{1}{x^n}$$
+> and by using the same reasoning as in the previous case we can deduce that $x^n+\frac{1}{x^n}$ is an integer.
+:::
+
+I get the gist of the argument and it looks correct to me.  To verify it, though, I had to stare at the summations in the middle of the two displayed equations for a while.
+
+This would be annoying to a grader (graders are [lazy, stupid, and mean][1]).  So I suggest inserting your steps before those equations:
+
+1. Expand $\left(x + \frac{1}{x}\right)^{2l}$ with the Binomial Theorem
+2. Visually collect the terms into multiples of $\left(x^{k} + \frac{1}{x^{k}}\right)$
+3. Apply the inductive hypothesis.
+
+Basically I am asking for you to slow down at the point "The Binomial Theorem implies that" and be more explicit.
+
+
+  [1]: http://www.jimpryor.net/teaching/guidelines/writing.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/2609537/x-frac1x-is-an-integer/2609561#2609561) on Mathematics Stack Exchange, 2018-01-17. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

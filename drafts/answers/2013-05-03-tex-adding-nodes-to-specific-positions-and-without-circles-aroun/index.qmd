@@ -1,0 +1,101 @@
+---
+title: Adding nodes to specific positions and without circles around them(but only labels)
+date: '2013-05-03'
+description: If you don't want nodes 3 and 4 to be styled the same way as 1 and 2 then don't use the main node style on them. For the positioning, use below=of 1 instead of…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 112229
+se-link: https://tex.stackexchange.com/questions/112227/adding-nodes-to-specific-positions-and-without-circles-around-thembut-only-labe/112229#112229
+se-score: 4
+se-accepted: false
+se-tags:
+- tikz-pgf
+- nodes
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[Adding nodes to specific positions and without circles around them(but only labels)](https://tex.stackexchange.com/questions/112227/adding-nodes-to-specific-positions-and-without-circles-around-thembut-only-labe), asked by [Naji](https://tex.stackexchange.com/users/22083/naji) on TeX Stack Exchange (2013-05-03; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Based on a previously asked question by me I already have the following code:
+>
+>
+>
+> ```latex
+> \documentclass [11pt,a4paper] {article}
+> \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+> \usepackage{amsmath,tikz}
+> \usepackage[margin=1cm]{geometry}
+> \usepackage{collcell}
+> \usetikzlibrary{patterns,matrix,arrows}
+> \begin{document}
+> \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+>   thick,main node/.style={circle,fill=RoyalBlue!90!green!80,draw,font=\sffamily\Large\bfseries}]
+>   \node[main node] [label=above:Cause](1) {Y};
+>   \node[main node] [label=above:Effect](2) [right of=1] {$X$};
+>   \node[main node] [](3)[above=1] {$N_X$};
+>   \node[main node] [](4)[above=2] {$N_Y$};
+>
+>   \path[every node/.style={font=\sffamily\small}]
+>     (1)edge [right] node[below right] {$\varphi$} (2);
+>   \path[every node/.style={font=\sffamily\small, color=orange}]
+>     (2)edge[bend right,color=orange]node[above] {$\varphi^{-1}$} (1);
+>   \path[every node/.style={font=\sffamily\small, color=orange}]
+>     (3)edge[color=red]node[below] {id} (1);
+>   \path[every node/.style={font=\sffamily\small, color=orange}]
+>     (4)edge[color=blue]node[below] {} (2);
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> However I want to be able to add two nodes without borders as depicted in the following diagram to my diagram:
+>
+> ![enter image description here][q-1] 
+>
+> As you probably figured it by now, I don't know why but my code puts the circles above each other though I positioned them(3 and 4) relative to two different nodes(1 and 2). and also I don't know how to make the circles disappear and to only keep labels. I have to add that I am happy with the connections between nodes 1 and 2 and the colors of them. I only need the new connections and nodes. 
+>
+>
+>   [q-1]: mO1Uf.jpg
+:::
+
+If you don't want nodes `3` and `4` to be styled the same way as `1` and `2` then don't use the `main node` style on them.  For the positioning, use `below=of 1` instead of `above=1` and it should work out.
+
+Also, you can combine your `\path`s into a single one and use the scoping properties to limit the repetition.
+
+```latex
+\documentclass{standalone}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{amsmath,tikz}
+\usetikzlibrary{patterns,matrix,arrows,positioning}
+\begin{document}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+  thick,main node/.style={circle,fill=RoyalBlue!90!green!80,draw,font=\sffamily\Large\bfseries}]
+  \node[main node] [label=above:Cause](1) {Y};
+  \node[main node] [label=above:Effect](2) [right of=1] {X};
+  \node(3)[below=2cm of 1] {$N_X$};
+  \node(4)[below=2cm of 2] {$N_Y$};
+
+  \path[every node/.style={font=\sffamily\small}]
+    (1) edge [right] node[below right] {$\varphi$} (2)
+    (2) edge [bend right,color=orange] node[above] {$\varphi^{-1}$} (1)
+    (3) edge [color=red] node[right] {id} (1)
+    (4) edge[color=blue] (2);
+\end{tikzpicture}
+\end{document}
+```
+
+![sample code output][1]
+
+
+  [1]: dOMxA.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/112227/adding-nodes-to-specific-positions-and-without-circles-around-thembut-only-labe/112229#112229) on TeX Stack Exchange, 2013-05-03. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

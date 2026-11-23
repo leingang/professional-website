@@ -1,0 +1,76 @@
+---
+title: Write text above other text
+date: '2011-01-19'
+description: You might be interested in the cancel package. Or something similar can be implemented in TikZ.
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 9277
+se-link: https://tex.stackexchange.com/questions/9276/write-text-above-other-text/9277#9277
+se-score: 11
+se-accepted: false
+se-tags:
+- overlays
+- strikeout
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Write text above other text](https://tex.stackexchange.com/questions/9276/write-text-above-other-text), asked by JTzara on TeX Stack Exchange (2011-01-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> What I would like to do is to make corrections to a document- to cross out some text using the ulem package and then to put the "correct" answer above it.
+>
+> e.g.
+>
+> ```latex
+> \dotuline{\fontfamily{augie}\selectfont{nach den}} Türkei
+> ```
+>
+> yields a handwritten answer on a dotted line. Using `\usepackage{ulem}`, this can be struck out:
+>
+> ```latex
+> \dotuline{\sout{\fontfamily{augie}\selectfont{nach den}}} Türkei
+> ```
+>
+> but I would also like to put in the corrected answer above the text, preferably without having to go into math mode and using `\atop`.
+>
+> Any ideas?
+:::
+
+You might be interested in the [`cancel`](http://ctan.org/pkg/cancel) package.   Or something similar can be implemented in TikZ.  
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+
+\newcommand{\strikeout}[2][]{%
+    % usage: \strikeout[bar]{foo} strikes out foo and superimposes bar
+    %        \strikeout{foo} strikes out foo.
+    \begin{tikzpicture}[baseline=0]
+        \node[anchor=base,inner sep=0pt,outer sep=0pt] (main) {#2};
+        \draw[red] ([yshift=0.5ex]main.base west) -- ([yshift=0.5ex]main.base east);
+        \node[overlay,anchor=south,blue] at (main.north) (correction) {#1};
+    \end{tikzpicture}%
+}
+
+\begin{document}
+
+Now is the the time for all good \strikeout[citizens]{men} to come to the aid of their \strikeout{their} country.
+
+\end{document}
+```
+
+![sample][1]
+
+
+  [1]: c17Oq.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/9276/write-text-above-other-text/9277#9277) on TeX Stack Exchange, 2011-01-19. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

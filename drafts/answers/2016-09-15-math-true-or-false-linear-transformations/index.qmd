@@ -1,0 +1,69 @@
+---
+title: True or false - Linear Transformations
+date: '2016-09-15'
+description: You are correct that all three statements are false.
+categories:
+- math.se
+license: CC BY-SA 3.0
+draft: true
+se-site: math
+se-answer-id: 1927912
+se-link: https://math.stackexchange.com/questions/1927900/true-or-false-linear-transformations/1927912#1927912
+se-score: 1
+se-accepted: false
+se-tags:
+- linear-algebra
+- linear-transformations
+---
+
+<!-- Imported from Math.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[True or false - Linear Transformations](https://math.stackexchange.com/questions/1927900/true-or-false-linear-transformations), asked by [Bruno Reis](https://math.stackexchange.com/users/363968/bruno-reis) on Mathematics Stack Exchange (2016-09-15; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> Check if it's true or false:
+>
+> $\text{a) }f: R^2 \rightarrow R , f(x,y) = x\cdot y \text{  is linear}\\
+> \text{b) }f: V \rightarrow W \text{ and } dim(V)=dim(W) \text { so f is invertible}\\
+> \text{c) }\text{Exists a linear transfromation that maps }R^2 \text{ to } R^3 \text{ that is onto}$
+>
+> For a)
+> $$f((x,y)+(a,b)) = f(x+a,y+b) = (x+a)(y+b)\\
+> f(x,y) + f(a,b) = xy + ab \\
+> f((x,y)+(a,b)) \neq f(x,y) + f(a,b)$$
+> FALSE
+>
+> For b)
+> $$f:R^2 \rightarrow R^2, f(x,y) = (x-y,x-y)\\
+> ker(f) = span\left\{ (1,1) \right\}\\
+> dim(ker(f)) \neq  \left\{ 0 \right\} \\$$
+> Since it's not one to one, I can affirm that it's not isomorphic, therefore, not invertible.
+>
+>
+> For c)
+> $$f:R^2 \rightarrow R^3, f(x,y) = (x,y,c) \\
+> \text {or }c = 0 \text { or it is a combination between x and y}$$
+> in both cases for c, you can't get the third coordinate to vary throughout the real numbers independently from x and y, therefore, the image of that transformation will have some values that are not linked to it's domain, concluding that it's not onto.
+>
+> --UPDATE (FOR C)--
+> $$dim(ker(f)) + dim(im(f)) = 2$$
+> If my transformation is injective, the dimension of it's kernel is going to be 0, therefore, I'll have $dim(im(f)) = 2$, concluding that a basis for R^3 can't be a span of two L.I (vectors basis for im(f)), I can guarantee that it's false.
+>
+>
+> It's correct?! All three are falses affirmatives??
+:::
+
+You are correct that all three statements are false.
+
+Your proof that a) is false is a little sloppy, because you assume it's obvious that $(x+a)(y+b) \not\equiv xy + ab$.  It's sufficient, and customary, to choose specific vectors as counterexamples.  So instead, if you could show $f(1,0) + f(0,1) \neq f(1,1)$, that would be cleaner.
+
+Your counterexample for b) is good.
+
+For c), you have made extra assumptions about $f$.  What you want to show is that there does not exist an onto map $f$ from $\mathbb{R}^2$ to $\mathbb{R^3}$.  In other words, every map $f$ from $\mathbb{R}^2$ to $\mathbb{R^3}$ is not onto.  I"m not sure of your context, but if you're allowed to use dimension counts this is easy to show.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://math.stackexchange.com/questions/1927900/true-or-false-linear-transformations/1927912#1927912) on Mathematics Stack Exchange, 2016-09-15. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

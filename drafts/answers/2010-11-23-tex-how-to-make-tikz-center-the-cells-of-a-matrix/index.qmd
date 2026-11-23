@@ -1,0 +1,77 @@
+---
+title: How to make tikz center the cells of a matrix?
+date: '2010-11-23'
+description: You can't put paths in nodes, but you can put paths in tikzpictures in nodes! Compare the first and second lines. I added some styling as in Section 17.3 of…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 5841
+se-link: https://tex.stackexchange.com/questions/5838/how-to-make-tikz-center-the-cells-of-a-matrix/5841#5841
+se-score: 8
+se-accepted: true
+se-tags:
+- tikz-pgf
+- matrices
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How to make tikz center the cells of a matrix?](https://tex.stackexchange.com/questions/5838/how-to-make-tikz-center-the-cells-of-a-matrix), asked by [Ryan Reich](https://tex.stackexchange.com/users/575/ryan-reich) on TeX Stack Exchange (2010-11-23; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I want to construct complicated things in tikz matrices (but don't we all), and when I'm done, I want the rows and columns of the matrix to align along the centers of these complicated things.  Here is an example of what goes wrong:
+>
+> ```latex
+> \documentclass{article}
+> \usepackage{tikz}
+> \begin{document}
+> \begin{tikzpicture}
+>  \matrix
+>  {
+>   \path node{a} node[right] {b}; \\
+>   \node{c};\\
+>  };
+> \end{tikzpicture}
+> \end{document}
+> ```
+>
+> You will see that the second row is aligned at the *left* of the first row.  The reason for this is explained quite clearly in the tikz manual: rows and columns are aligned along the "origins" of the cells.
+>
+> What this means is that each cell is considered a tiny picture with an origin (that is, (0,0)) and all those points are put on a grid.  It's clear from this that what has happened in the above picture is that the `\path` begins at (0,0) and moves right, and likewise the `\node` begins at its (0,0) and moves right, and (as claimed) those two origins are put in a line.
+>
+> Unfortunately, that's not what I want and there's no obvious way to change it.  I want to tell tikz that the "origin" of the top cell is the center of its bounding box.  If it were a single node that would be easy: just write `[anchor = center]` as an option. 
+>
+> But I can't put paths in nodes, so there's no way to do that directly.  And although it is possible to pass an `[xshift = <dimen>]` to the `\path`, I would have to know what that shift is before starting, whereas (since it is *such* a complicated figure) I can't know that until the end, when it is too late to perform a coordinate transformation.
+>
+> How can I do this?  Basically, I want to give an entirely relative construction and then slap a coordinate system on it afterwards.  Alternatively, I want to know if there is any matrix option that does this that I have overlooked.  Another alternative: is there a different way to achieve this alignment without using matrices?
+:::
+
+You can't put paths in nodes, but you can put paths in tikzpictures in nodes!  Compare the first and second lines.  I added some styling as in Section 17.3 of the PGF (2.10) manual.![alt text][1]
+
+```latex
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[every node/.style={draw=black},font=\Huge]
+ \matrix[draw=red]
+ {
+  \node{a} node[right] {b}; \fill[blue] (0,0) circle (2pt); \\
+  \node{\tikz{\node{a} node[right] {b};}}; \fill[blue] (0,0) circle (2pt); \\
+ \node{c}; \fill[blue] (0,0) circle (2pt);\\
+ };
+\end{tikzpicture}
+\end{document}
+```
+
+Note how the options in the outer `tikzpicture` environment descend into the `\tikz` group inside the node.  
+
+  [1]: NG5zJ.png
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/5838/how-to-make-tikz-center-the-cells-of-a-matrix/5841#5841) on TeX Stack Exchange, 2010-11-23, with [edits](https://tex.stackexchange.com/posts/5841/revisions) by [David Carlisle](https://tex.stackexchange.com/users/1090/david-carlisle). Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::

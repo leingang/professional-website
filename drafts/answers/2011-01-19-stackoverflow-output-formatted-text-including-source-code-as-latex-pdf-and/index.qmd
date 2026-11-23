@@ -1,0 +1,57 @@
+---
+title: Output formatted text (including source code) as LaTeX, PDF and HTML
+date: '2011-01-19'
+description: Have you looked at <a href="http://docutils.sourceforge.net/">Docutils</a>?
+categories:
+- stackoverflow
+license: CC BY-SA 2.5
+draft: true
+se-site: stackoverflow
+se-answer-id: 4740067
+se-link: https://stackoverflow.com/questions/4739849/output-formatted-text-including-source-code-as-latex-pdf-and-html/4740067#4740067
+se-score: 1
+se-accepted: false
+se-tags:
+- html
+- pdf
+- latex
+- markdown
+---
+
+<!-- Imported from Stack Overflow by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Output formatted text (including source code) as LaTeX, PDF and HTML](https://stackoverflow.com/questions/4739849/output-formatted-text-including-source-code-as-latex-pdf-and-html), asked by [jottr](https://stackoverflow.com/users/273715/jottr) on Stack Overflow (2011-01-19; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am editing a lot of documents in latex that consist of code listings and are currently output to pdf. 
+>
+> Since I am working in teams on those documents, I often need to manually integrate changes done by group members to the latex source. 
+>
+> Most of the group members do not know latex, so I would like to have a means to enable them to do the document formatting in a style maybe similar to markdown. 
+>
+> Since the latex documents consist of figures, have references and use the **lslisting** package, I am wondering if it would be possible to map these specific areas to a simple markdown style syntax. 
+>
+> Workflow Example: 
+>
+> - Edit file in Markdown (or similar)
+>  - tag sections
+>  - tag code areas
+>  - tag figures
+>  - tag references
+> - convert to latex
+>  - automatically convert tags 
+> - output 
+>  - pdf
+>  - html
+>
+> Would it somehow be possible to achieve such a workflow? Maybe there are already solutions to my specific workflow?
+:::
+
+Have you looked at <a href="http://docutils.sourceforge.net/">Docutils</a>?
+
+::: {.se-attribution}
+Originally posted as [an answer](https://stackoverflow.com/questions/4739849/output-formatted-text-including-source-code-as-latex-pdf-and-html/4740067#4740067) on Stack Overflow, 2011-01-19. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

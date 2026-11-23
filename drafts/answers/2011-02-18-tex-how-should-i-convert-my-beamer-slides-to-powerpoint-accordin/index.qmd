@@ -1,0 +1,69 @@
+---
+title: How should I convert my beamer slides to PowerPoint according to these odd specifications?
+date: '2011-02-18'
+description: 'The method I selected was basically what I outlined in my question:'
+categories:
+- tex.se
+license: CC BY-SA 2.5
+draft: true
+se-site: tex
+se-answer-id: 11434
+se-link: https://tex.stackexchange.com/questions/9462/how-should-i-convert-my-beamer-slides-to-powerpoint-according-to-these-odd-speci/11434#11434
+se-score: 8
+se-accepted: true
+se-tags:
+- beamer
+- conversion
+- pgfpages
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple" collapse="true"}
+## The question
+
+[How should I convert my beamer slides to PowerPoint according to these odd specifications?](https://tex.stackexchange.com/questions/9462/how-should-i-convert-my-beamer-slides-to-powerpoint-according-to-these-odd-speci), asked by [Matthew Leingang](https://tex.stackexchange.com/users/1402/matthew-leingang) on TeX Stack Exchange (2011-01-22; [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)):
+
+> I am working with a program at my university that will videorecord my lectures, take my slides, and bundle them together into a movie to be put on the web, iTunesU, etc.  They have asked me to produce PowerPoint slides at the standard (standard for PPT, that is) 10" by 7.5" size with a 1" margin on the top and a 2" margin on the bottom.  This is to align with other logo elements put on the screen later and to allow for subtitles.  I have a workflow but I'm asking if there might be a better one.
+>
+> Producing PowerPoint is not going to be a big problem for me.  I can use [PDF2Keynote][q-1], then open in Keynote and save as PowerPoint.  That might even be AppleScriptable, hm...
+>
+> Instead of coercing `beamer` to create margins on my slides, I am thinking about using [`pgfpages`](http://ctan.org/pkg/pgfpages) to rescale the slide's page size and place it on the physical page with the requested margins.  Then the version that I put on the projector in the classroom would not use `pgfpages` and wouldn't have the margins (why would it need them anyway?)
+>
+> When I sent a proof-of-concept to the program coordinators they asked if I could make the left and right margins smaller.  The answer is no without changing the aspect ratio of the slide.  With the top and bottom margins so constrained and a 4:3 aspect ratio of the logical slide, the left and right margins have to be 2".  But if I produce slides in a 16:9 ratio, scale them and place them on the page with 1" margin at the top and 2" margin at the bottom, the left and right margins will be 1".  So that all works out.    I'm just slightly worried it will be suboptimal in class because the projector is still 4:3 and I will have to show letterboxed slides.
+>
+> Is there any part of this process that I could do a better way?  I had thought about using [`beamerposter`](http://ctan.org/pkg/beamerposter) to set the paper size to 20.32cm by 11.43cm, then scaling all the fonts up.  This might look a bit better than scaling 16cm by 9cm PDFs up to that size.  But screwing with the paper size is strongly discouraged by beamer, so I don't know how much extra work that's going to cause.
+>
+>   [q-1]: http://www.cs.hmc.edu/~oneill/freesoftware/pdftokeynote.html
+:::
+
+The method I selected was basically what I outlined in my question: 
+
+I write my beamer slides for class with the `aspectratio=169` option.  The projector in the room has a 4:3 aspect ratio but the letterboxing is not a noticeable issue for projection  If anything it makes the slides easier to see since students in the back don't have the bottom of the screen cut off.  
+
+It *is* a noticeable issue for me, as I spend a lot of time rearranging slides laid out in 4:3.  Also they've asked for much bigger font sizes than I normally use (72pt+ font size for the slide title??  I can't come anywhere near that close and have more than two words), but I'm working the best I can within their guidelines
+
+For the post-production version with margins I use a `pgfpages` layout:
+
+```latex
+\pgfpagesdeclarelayout{NYU Open Ed margins}{}{%
+    \pgfpagesphysicalpageoptions{%
+        logical pages=1,%
+        physical height=7.5in,
+        physical width=10in
+    }
+    \pgfpageslogicalpageoptions{1}{%
+        scale=1.27,
+        center=\pgfpoint{5in}{4.25in}
+    }
+}
+```
+
+That gives a 10in x 7.5in (4:3) slide with 1in margins on top, left, and right, and 2in on the bottom.  After subtracting these margins, the printable region has aspect ratio 16:9—a pretty lucky coincidence.
+
+Then I use PDF2Keynote (free) to convert the PDF, and open it in Keynote to save as PowerPoint.
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/9462/how-should-i-convert-my-beamer-slides-to-powerpoint-according-to-these-odd-speci/11434#11434) on TeX Stack Exchange, 2011-02-18. Licensed [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/).
+:::

@@ -1,0 +1,47 @@
+---
+title: Working with templates
+date: '2012-04-19'
+description: Like R. Schumacher I feel that templating is the domain of the IDE and not LaTeX itself. I use TeXShop, and it supports templating through the filesystem.…
+categories:
+- tex.se
+license: CC BY-SA 3.0
+draft: true
+se-site: tex
+se-answer-id: 52570
+se-link: https://tex.stackexchange.com/questions/51204/working-with-templates/52570#52570
+se-score: 4
+se-accepted: false
+se-tags:
+- templates
+- best-practices
+---
+
+<!-- Imported from TeX.SE by tools/import_stackexchange.py. Trim or paraphrase
+     the quoted question, expand the answer, then delete `draft: true`. -->
+
+::: {.callout-note .se-question appearance="simple"}
+## The question
+
+[Working with templates](https://tex.stackexchange.com/questions/51204/working-with-templates), asked by [Dror](https://tex.stackexchange.com/users/412/dror) on TeX Stack Exchange (2012-04-08; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)):
+
+> I have just read the wonderful article [LaTeX templates][q-1] and realized that I have tried to practice this approach but there is one technical aspect which I don't know how to tackle. I am talking about how to actually *use* these pre-prepared templates. The main issue is how to easily load them, when one starts writing a new document. The simplest approach would be to have one local central repository of templates (and maybe their revisions as Stefan Kottwitz suggested in [his post][q-2]), and when ever `template.tex` is needed *copy* it to a new directory dedicated to the new document. However, this misses some of the modularity of LaTeX, isn't it?.
+>
+> When working with a document personalized class file, which is stored somewhere where TeX can find, the user simply has to specify the class' name and it is at his disposal, regardless of where the class is stored for example. This is not the case with templates. So my question is essentially the following: *What is the best way to use LaTeX templates?* How should I store them? Where should I store them? How should I use them at the end of the day? Shouldn't a template be "exported" into a class file? If so, the what is the easiest way to achieve this?
+>
+>
+>   [q-1]: http://latex-community.org/know-how/429-latex-templates
+>   [q-2]: http://texblog.net/latex-archive/latex-general/templates/
+:::
+
+Like R. Schumacher I feel that templating is the domain of the IDE and not LaTeX itself.  I use TeXShop, and it supports templating through the filesystem.  Files put in `~/Library/TeXShop/Templates` are loaded into the Templates menu on the editor window so you can pull them out whenever.  Snippets (which I guess is pretty much the same thing but not an entire file) are implemented through TexShop's macro editor.
+
+A [TeX Directory Structure compliant][1] place to put your templates might be `${TEXMFHOME}/source/templates/`, then the format (`tex/`, `latex/`, etc. 
+
+Many times I see people on this site talking about *templates* when I think they are really talking about *classes*.  What is the difference?  To me, if a LaTeX file provides the look and feel—and macros to facilitate the formatting—of a specific type of document it is a class.  If it provides boilerplate content to be re-used or changed as necessary then it's a template. To put it another way, if the provided file all belongs in the preamble it is a class, and if it it includes document text it's a template.
+
+
+  [1]: http://www.tex.ac.uk/tex-archive/tds/tds.html
+
+::: {.se-attribution}
+Originally posted as [an answer](https://tex.stackexchange.com/questions/51204/working-with-templates/52570#52570) on TeX Stack Exchange, 2012-04-19. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+:::
