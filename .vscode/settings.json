@@ -1,0 +1,4 @@
+{
+    // Build LaTeX in this repo with LuaLaTeX (recipe defined in user settings).
+    "latex-workshop.latex.recipe.default": "latexmk (lualatex)"
+}
