@@ -6,3 +6,5 @@ site/_site/
 .DS_Store
 __pycache__/
 tools/se_cache/
+drafts/_site/
+drafts/**/index_files/

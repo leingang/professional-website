@@ -5,6 +5,8 @@
 #   make preview-site    live preview of the professional site
 #   make deploy-office   render + rsync office page to CIMS (dry run first!)
 #   make migrate         re-run the legacy blog migration (uses tools/posts_manifest.csv)
+#   make preview-post POST=<folder>   preview one post (draft or published), live reload
+#   make publish POST=<folder>        move a draft from drafts/answers/ into the site
 #   make import-se       import new Stack Exchange answers as draft posts (tools/stackexchange.yml)
 
 QUARTO   ?= quarto
@@ -20,7 +22,7 @@ RSYNC_FLAGS ?= -rltvz --delete --exclude .DS_Store $(RSYNC_PROTECT)
 SITE_PATHS = index.html courses.html office-hours.html assets
 FIX_PERMS = cd $(CIMS_DIR) && find $(SITE_PATHS) -type d -exec chmod 711 {} + && find $(SITE_PATHS) -type f -exec chmod 644 {} +
 
-.PHONY: all office site preview-office preview-site deploy-office deploy-office-dry migrate import-se clean
+.PHONY: all office site preview-office preview-site preview-post publish deploy-office deploy-office-dry migrate import-se clean
 
 all: office site
 
@@ -38,6 +40,15 @@ preview-office: office/assets/headshot.jpg
 
 preview-site: site/images/headshot.jpg
 	$(QUARTO) preview site
+
+# POST is a post folder or its index.qmd, in drafts/answers/ or site/blog/.
+preview-post:
+	@test -n "$(POST)" || { echo "usage: make preview-post POST=drafts/answers/<folder>"; exit 1; }
+	$(QUARTO) preview "$(patsubst %/,%,$(POST:%/index.qmd=%))/index.qmd" -M draft:false
+
+publish:
+	@test -n "$(POST)" || { echo "usage: make publish POST=drafts/answers/<folder>"; exit 1; }
+	python3 tools/import_stackexchange.py --publish "$(POST)"
 
 deploy-office-dry: office
 	rsync $(RSYNC_FLAGS) --dry-run office/_site/ $(CIMS_USER)@$(CIMS_HOST):$(CIMS_DIR)

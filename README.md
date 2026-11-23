@@ -38,7 +38,12 @@ Add `draft: true` to keep a post out of the build.
 
 ### Import Stack Exchange answers
 `tools/import_stackexchange.py` turns my Stack Exchange answers (Math.SE, TeX.SE, Stack Overflow, …) into draft posts in
-`site/blog/answers/`, listed in their own section on the Writing page.
+`drafts/answers/`. Published ones move to `site/blog/answers/` and are listed in their own
+section on the Writing page.
+
+Drafts are kept outside the `site/` project on purpose: Quarto reads every `.qmd` in a project
+before it builds anything, even drafts, and with ~1,400 drafts inside `site/` every build took
+more than ten minutes. `drafts/_quarto.yml` uses the site's theme so previews look right.
 
 1. One time: create `tools/stackexchange.yml` with the numeric user ids from the profile URLs
    (`math.stackexchange.com/users/<id>/…`, `stackoverflow.com/users/<id>/…`):
@@ -50,13 +55,18 @@ Add `draft: true` to keep a post out of the build.
    Any Stack Exchange site works. The key is the site's API name: usually the subdomain
    (`academia`, `physics`), or the domain for sites outside stackexchange.com
    (`stackoverflow`, `mathoverflow.net`, `superuser`).
-2. `make import-se`. Every answer becomes a post with `draft: true`, and
+2. `make import-se`. Every answer becomes a draft in `drafts/answers/`, and
    `tools/se_manifest.csv` lists them by score. Options: `--min-score N`, `--only ID,ID`,
    `--refresh` (re-download; API responses are cached in `tools/se_cache/`), and
    `--force ID` (regenerate one post; this overwrites your edits).
-3. Curate: edit a post (trim or paraphrase the quoted question, expand the answer), then
-   delete `draft: true`. Re-running never touches existing posts, except to point links
-   between my answers at the local copy once the target is published.
+3. Curate: edit a draft (trim or paraphrase the quoted question, expand the answer) and
+   check it with `make preview-post POST=drafts/answers/<folder>` (live reload, a few seconds).
+4. `make publish POST=drafts/answers/<folder>` moves it into `site/blog/answers/` and removes
+   its `draft: true` line. Then `make preview-site` or push.
+
+Re-running the import never touches existing posts (drafts or published), except to point
+links between my answers at the local copy once the target is published.
+`make preview-post` also works on any published post, e.g. `POST=site/blog/posts/<folder>`.
 
 Licensing: my answers are mine to republish. The quoted question and others' edits are CC BY-SA,
 so each post keeps the generated credit lines (asker, editors, link to the original) and its

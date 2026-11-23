@@ -7,16 +7,21 @@
     python3 tools/import_stackexchange.py --min-score 3      # skip low-scoring answers
     python3 tools/import_stackexchange.py --only 21209,250   # just these answer ids
     python3 tools/import_stackexchange.py --force 21209      # regenerate one post (overwrites!)
+    python3 tools/import_stackexchange.py --publish drafts/answers/<folder>   # = make publish
 
 Workflow
 --------
-1. Run it. Every answer becomes site/blog/answers/YYYY-MM-DD-<site>-<slug>/index.qmd
+1. Run it. Every answer becomes drafts/answers/YYYY-MM-DD-<site>-<slug>/index.qmd
    with `draft: true`, and tools/se_manifest.csv lists them all (sort by score).
+   Drafts live outside the site/ project on purpose: Quarto reads every .qmd in a
+   project before building, so 1,400 drafts there made every build take minutes.
 2. Curate by hand: edit the post (trim or paraphrase the quoted question, expand the
-   answer), then delete the `draft: true` line to publish it.
-3. Re-running is safe. Existing posts are never overwritten (except with --force).
-   Each run also rewrites links between answers: a link to another of my answers
-   points to the local post once that post is published.
+   answer). Preview it with `make preview-post POST=drafts/answers/<folder>`.
+3. Publish it with `make publish POST=drafts/answers/<folder>`: this moves the folder
+   to site/blog/answers/ and deletes the `draft: true` line.
+4. Re-running is safe. Existing posts (drafts or published) are never overwritten
+   (except with --force). Each run also rewrites links between answers: a link to
+   another of my answers points to the local post once that post is published.
 
 Licensing
 ---------
@@ -35,6 +40,8 @@ import gzip
 import html
 import json
 import re
+import shutil
+import subprocess
 import sys
 import time
 import urllib.error
@@ -46,7 +53,8 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "site" / "blog" / "answers"
+DRAFTS = ROOT / "drafts" / "answers"        # new posts go here (outside the site project)
+PUBLISHED = ROOT / "site" / "blog" / "answers"
 CACHE = ROOT / "tools" / "se_cache"
 CONFIG = ROOT / "tools" / "stackexchange.yml"
 MANIFEST = ROOT / "tools" / "se_manifest.csv"
@@ -414,7 +422,7 @@ def relink(posts: dict[str, Path]) -> int:
     published = {}
     for key, path in posts.items():
         front, _ = read_front(path / "index.qmd")
-        if not front.get("draft"):
+        if path.parent == PUBLISHED and not front.get("draft"):
             published[key] = f"/blog/answers/{path.name}/"
     host_site = {info["host"]: site for site, info in SITES.items()}
     changed = 0
@@ -581,12 +589,41 @@ def parse_site(s: str, refresh: bool = False) -> str:
 
 def existing_posts() -> dict[str, Path]:
     found = {}
-    if OUT.exists():
-        for f in OUT.glob("*/index.qmd"):
+    for d in (DRAFTS, PUBLISHED):
+        for f in d.glob("*/index.qmd") if d.exists() else []:
             front, _ = read_front(f)
             if front.get("se-site") and front.get("se-answer-id"):
                 found[f"{front['se-site']}/{front['se-answer-id']}"] = f.parent
     return found
+
+
+def publish(paths: list[str]) -> int:
+    """Move draft folders into the site and drop their `draft: true` line."""
+    for p in paths:
+        src = Path(p)
+        if src.name == "index.qmd":
+            src = src.parent
+        if not src.is_absolute():
+            src = (Path.cwd() / src).resolve()
+        if not (src / "index.qmd").exists():
+            src = DRAFTS / src.name   # allow a bare folder name
+        if src.parent != DRAFTS or not (src / "index.qmd").exists():
+            print(f"not a draft: {p} (expected drafts/answers/<folder>)", file=sys.stderr)
+            return 1
+        dest = PUBLISHED / src.name
+        if dest.exists():
+            print(f"already exists: {dest.relative_to(ROOT)}", file=sys.stderr)
+            return 1
+        moved = subprocess.run(["git", "mv", str(src), str(dest)], cwd=ROOT,
+                               capture_output=True).returncode == 0
+        if not moved:   # not tracked by git yet
+            shutil.move(str(src), str(dest))
+        f = dest / "index.qmd"
+        f.write_text(re.sub(r"(?m)^draft:\s*true[^\n]*\n", "", f.read_text(encoding="utf-8"),
+                            count=1), encoding="utf-8")
+        print(f"published {dest.relative_to(ROOT)}")
+    relink(existing_posts())
+    return 0
 
 
 def main() -> int:
@@ -597,7 +634,11 @@ def main() -> int:
     ap.add_argument("--min-score", type=int, default=None, help="skip answers below this score")
     ap.add_argument("--only", default="", help="comma-separated answer ids to import")
     ap.add_argument("--force", default="", help="comma-separated answer ids to regenerate (overwrites)")
+    ap.add_argument("--publish", nargs="+", metavar="FOLDER",
+                    help="move draft folder(s) into the site and publish them (no import)")
     args = ap.parse_args()
+    if args.publish:
+        return publish(args.publish)
 
     users: dict[str, int] = {}
     if args.user:
@@ -612,7 +653,7 @@ def main() -> int:
 
     only = {x.strip() for x in args.only.split(",") if x.strip()}
     force = {x.strip() for x in args.force.split(",") if x.strip()}
-    OUT.mkdir(parents=True, exist_ok=True)
+    DRAFTS.mkdir(parents=True, exist_ok=True)
     posts = existing_posts()
 
     rows, created = [], 0
@@ -632,8 +673,9 @@ def main() -> int:
             else:
                 post_dir = posts.get(key)
                 if post_dir is None:
-                    post_dir = OUT / f"{date_of(a['creation_date'])}-{site}-{slug_of(a)}"
-                    if post_dir.exists():   # another answer to the same question, same day
+                    name = f"{date_of(a['creation_date'])}-{site}-{slug_of(a)}"
+                    post_dir = DRAFTS / name
+                    if post_dir.exists() or (PUBLISHED / name).exists():   # another answer to the same question, same day
                         post_dir = post_dir.with_name(f"{post_dir.name}-{aid}")
                 post_dir.mkdir(exist_ok=True)
                 (post_dir / "index.qmd").write_text(build_post(site, a, q, revs, post_dir),
@@ -645,7 +687,7 @@ def main() -> int:
             rows.append(dict(
                 site=site, date=date_of(a["creation_date"]), score=a["score"],
                 accepted="yes" if a.get("is_accepted") else "",
-                draft="yes" if front.get("draft") else "",
+                published="yes" if post_dir.parent == PUBLISHED and not front.get("draft") else "",
                 title=html.unescape(a.get("title", "")),
                 edited_by_others=", ".join(html.unescape(u.get("display_name", ""))
                                            for u in other_editors(a, revs)),
@@ -658,7 +700,7 @@ def main() -> int:
             w.writeheader()
             w.writerows(rows)
     relinked = relink(posts)
-    print(f"{created} posts written to {OUT.relative_to(ROOT)}, {len(rows) - created} already there"
+    print(f"{created} posts written to {DRAFTS.relative_to(ROOT)}, {len(rows) - created} already there"
           f"; {relinked} posts relinked. Manifest: {MANIFEST.relative_to(ROOT)}")
     return 0
 
